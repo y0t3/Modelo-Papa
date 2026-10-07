@@ -9,6 +9,7 @@ import type {Turno} from './src/domain';
 import {buildSheet} from './src/sheet';
 import type {DailySheet,Match,Hit,SourceId} from './src/sheet';
 import {displayToIso,isoToDisplay,previousDrawDay,shiftDrawDay} from './src/dates';
+import {findPaths} from './src/paths';
 import type {Path} from './src/paths';
 import {buildPredictive,familyRoutes} from './src/predictive';
 import {analyzePredictive} from './src/analysisEngine';
