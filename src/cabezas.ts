@@ -13,12 +13,12 @@ function valueOf(v:any){return num(typeof v==='object'?(v?.numero??v?.cabeza??v?
 function putMomentos(row:any,j:string,out:CabezasDia){for(const [mk,t] of Object.entries(momento)){const n=valueOf(row?.[mk]);if(n!=='----')out[t][j]=n;}}
 function walk(x:any,out:CabezasDia){if(Array.isArray(x)){x.forEach(v=>walk(v,out));return;}if(!x||typeof x!=='object')return;const j=jurName(x),t=turnName(x),v=headValue(x);if(j&&t&&v!=='----')out[t][j]=v;if(j)putMomentos(x,j,out);Object.values(x).forEach(v=>{if(v&&typeof v==='object')walk(v,out)});}
 function parseDatos(data:any,out:CabezasDia){const d=data?.datos;if(!d||typeof d!=='object')return;for(const [id,row] of Object.entries(d)){const j=jurId[id];if(j&&row&&typeof row==='object')putMomentos(row,j,out);}}
-export async function descargarCabezas(fecha:string):Promise<CabezasDia>{
+export async function descargarCabezas(fecha:string,permitirVacio=false):Promise<CabezasDia>{
  const r=await fetch(`${FUENTE}?fecha=${encodeURIComponent(fecha)}&_=${Date.now()}`,{headers:{Accept:'application/json','Cache-Control':'no-cache'}});
  if(!r.ok)throw new Error(`Viví tu Suerte respondió ${r.status}`);
  const data=await r.json(); const out=diaVacio(); parseDatos(data,out); walk(data,out);
  const count=TURNOS.reduce((n,t)=>n+JURS.filter(j=>out[t][j]!=='----').length,0);
- if(!count)throw new Error(`No se encontraron cabezas para ${fecha}`);
+ if(!count&&!permitirVacio)throw new Error(`No se encontraron cabezas para ${fecha}`);
  return out;
 }
 export function tablaTurno(data:CabezasDia|undefined,t:string):Tabla{return data?.[t]||tablaVacia();}
