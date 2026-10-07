@@ -36,7 +36,18 @@ export default function App(){
  const routeLives=useMemo(()=>d7Sheet?buildRouteLives([d7Sheet,...olderSheets],predictive?.target||'Nocturno'):[],[d7Sheet,olderSheets,predictive?.target]);
  const routeStateStats=useMemo(()=>summarizeRouteStates(routeLives),[routeLives]);
  const validation=useMemo(()=>predictive?{top3:predictive.hotFamilies.slice(0,3).filter(x=>x.hit).length,top5:predictive.hotFamilies.slice(0,5).filter(x=>x.hit).length,hits:predictive.hotFamilies.filter(x=>x.hit).length,hitFamilies:predictive.hotFamilies.filter(x=>x.hit),nearFamilies:predictive.hotFamilies.filter(x=>!x.hit&&x.nearHeads.length)}:null,[predictive]);
- const selectedPredRoutes=useMemo(()=>predictive&&predRoute?familyRoutes(predictive,predRoute.family):predRoute?[predRoute]:[],[predictive,predRoute]);
+ const selectedPredRoutes=useMemo(()=>{
+  if(!predictive||!predRoute||!sheet)return predRoute?[predRoute]:[];
+  const values=predRoute.family.split('/');
+  const cols=sheet.columns.slice(0,TURNOS.indexOf(predictive.target)+1);
+  const base=familyRoutes(predictive,predRoute.family);
+  const out=[...base];
+  for(const col of cols)for(const value of values)for(const path of findPaths(col.values,value)){
+   if(out.some(r=>r.sourceId===col.id&&r.value===value&&r.path.map(x=>x.row+','+x.col).join('>')===path.map(x=>x.row+','+x.col).join('>')))continue;
+   out.push({...predRoute,value,sourceId:col.id,sourceTurn:col.sourceLabel,path});
+  }
+  return out;
+ },[predictive,predRoute,sheet]);
  const predInCell=(sourceId:SourceId,r:number,col:number)=>selectedPredRoutes.some(pr=>pr.sourceId===sourceId&&pr.path.some(x=>x.row===r&&x.col===col));
  const predStart=(sourceId:SourceId,r:number,col:number)=>selectedPredRoutes.some(pr=>pr.sourceId===sourceId&&pr.path[0]?.row===r&&pr.path[0]?.col===col);
  const predArrow=(sourceId:SourceId,r:number,col:number)=>{const pr=selectedPredRoutes.find(x=>x.sourceId===sourceId&&x.path.some(p=>p.row===r&&p.col===col));if(!pr)return '';const p=pr.path,i=p.findIndex(x=>x.row===r&&x.col===col);if(i<0||i===p.length-1)return '';const a=p[i],b=p[i+1],dr=b.row-a.row,dc=b.col-a.col;return dr<0?(dc<0?'↖':dc>0?'↗':'↑'):dr>0?(dc<0?'↙':dc>0?'↘':'↓'):(dc<0?'←':'→')};
