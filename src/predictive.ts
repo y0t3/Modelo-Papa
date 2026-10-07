@@ -42,10 +42,14 @@ export function buildPredictive(current:DailySheet,d7:DailySheet,target:Turno,ol
  const templates=new Map<string,Path>(),history=new Map<string,Set<number>>();
  const routeHistory=buildRouteHistory([d7,...older],target);
  const d7SourceKeys=new Set(provenRoutesForTarget(d7,target));
- // D−7 remains the causal selector. D−14/D−21 only measure persistence.
+ // D−7 is the primary selector. If that sheet has no proven VT3 for the target,
+ // keep the projection alive with the nearest proven routes from D−14/D−21.
  for(const m of d7.matches[target]) for(const h of m.hits) if(h.kind==='vt3') for(const p of h.paths) templates.set(sigKey(p),p);
+ if(!templates.size){
+  for(const rh of routeHistory){const p=rh.proven[0]?.path;if(p)templates.set(rh.signature,p)}
+ }
  for(const rh of routeHistory){
-  if(!d7SourceKeys.has(rh.sourceId+'|'+rh.signature))continue;
+  if(d7SourceKeys.size&& !d7SourceKeys.has(rh.sourceId+'|'+rh.signature))continue;
   if(!history.has(rh.signature))history.set(rh.signature,new Set());
   rh.weeks.forEach(w=>history.get(rh.signature)!.add(w));
  }
@@ -79,7 +83,7 @@ export function buildPredictive(current:DailySheet,d7:DailySheet,target:Turno,ol
   routes.push({...r,support,templates,state});
  }
  routes.sort((a,b)=>b.support-a.support||b.templates-a.templates||a.family.localeCompare(b.family));
- const actualHeads=current.matches[target].map(m=>m.cabeza),actualFamilies=new Map<string,string[]>();
+ const actualHeads=current.heads[target]||[],actualFamilies=new Map<string,string[]>();
  for(const h of actualHeads){const v=h.slice(-3),f=fam(v);if(!actualFamilies.has(f))actualFamilies.set(f,[]);actualFamilies.get(f)!.push(h)}
  const hotFamilies=[...new Set(routes.map(r=>r.family))].map(f=>{const rr=routes.filter(r=>r.family===f),support=Math.max(...rr.map(r=>r.support)),templates=Math.max(...rr.map(r=>r.templates));const historyWeeks=Math.max(...rr.map(r=>r.historyWeeks));return {family:f,support,templates,historyWeeks,state:(support>=2&&historyWeeks>=2)||support>=3?'ACTIVA':support>=2?'CONFIRMA':historyWeeks>=2||templates>=2?'OBSERVAR':'NACE',hit:actualFamilies.has(f),hitHeads:actualFamilies.get(f)||[]}}).sort((a,b)=>b.support-a.support||b.historyWeeks-a.historyWeeks||b.templates-a.templates||a.family.localeCompare(b.family));
  return {target,routes,families:hotFamilies.length,hotFamilies};
