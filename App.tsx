@@ -47,7 +47,7 @@ export default function App(){
   const highlighted=(r:number,c:number)=>hitInCell(col.id,r,c);
   const active=(r:number,c:number)=>activeInCell(col.id,r,c);
   return <View key={col.turno} style={s.column}><Text style={[s.turn,{fontSize:17*fontScale}]}>{col.turno}</Text><Text style={[s.source,{fontSize:11*fontScale}]}>← {col.sourceLabel}</Text>
-   {JURS.map((j,r)=>{const v=col.values[r];return <View key={j} style={s.gridRow}><Text style={[s.jurMini,{fontSize:11*fontScale}]}>{j}</Text>{[0,1].map(c=><View key={c} style={[s.digit,highlighted(r,c)&&s.hit,active(r,c)&&s.activeHit]}><Text style={[s.digitText,{fontSize:24*fontScale,highlighted(r,c)&&s.hitText]}>{v==='--'?'–':v[c]}</Text>{arrowAfter(col.id,r,c)?<Text style={s.pathArrow}>{arrowAfter(col.id,r,c)}</Text>:null}</View>)}</View>})}
+   {JURS.map((j,r)=>{const v=col.values[r];return <View key={j} style={s.gridRow}><Text style={[s.jurMini,{fontSize:11*fontScale}]}>{j}</Text>{[0,1].map(c=><View key={c} style={[s.digit,highlighted(r,c)&&s.hit,active(r,c)&&s.activeHit]}><Text style={[s.digitText,{fontSize:24*fontScale},highlighted(r,c)&&s.hitText]}>{v==='--'?'–':v[c]}</Text>{arrowAfter(col.id,r,c)?<Text style={s.pathArrow}>{arrowAfter(col.id,r,c)}</Text>:null}</View>)}</View>})}
    <Text style={[s.formed,{fontSize:10*fontScale}]}>CABEZAS COINCIDENTES</Text>{sheet.matches[col.turno].length?sheet.matches[col.turno].map(matchCard):<Text style={s.none}>—</Text>}
   </View>})}</View></ScrollView>;
 
