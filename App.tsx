@@ -2,11 +2,13 @@ import React,{useMemo,useState} from 'react';
 import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator,Alert,Platform,StatusBar as RNStatusBar} from 'react-native';
 import {StatusBar} from 'expo-status-bar';
 import DateField from './src/DateField';
-import {CabezasDia,descargarCabezas} from './src/cabezas';
+import {descargarCabezas} from './src/cabezas';
+import type {CabezasDia} from './src/domain';
 import {JURS,TURNOS} from './src/domain';
-import {buildSheet,DailySheet,Match} from './src/sheet';
+import {buildSheet} from './src/sheet';
+import type {DailySheet,Match} from './src/sheet';
 import {displayToIso,isoToDisplay,previousDrawDay,shiftDrawDay} from './src/dates';
-import {Path} from './src/paths';
+import type {Path} from './src/paths';
 
 type Screen='hoja'|'cabezas'|'analisis';
 type Sel={match:Match;kind:'vt2'|'vt3'|'vt4';index:number}|null;
