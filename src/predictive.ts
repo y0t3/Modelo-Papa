@@ -7,7 +7,7 @@ const provenRoutesForTarget=(s:DailySheet,t:Turno)=>provenRoutes(s,t,1).map(r=>r
 
 export type PredictiveRoute={
   family:string; value:string; sourceId:SourceId; sourceTurn:string;
-  path:Path; support:number; templates:number; historyWeeks:number; state:'NACE'|'OBSERVAR'|'CONFIRMA'|'ACTIVA';
+  path:Path; support:number; templates:number; historyWeeks:number; state:'NACE'|'OBSERVAR'|'CONFIRMA'|'ACTIVA'; antecedents:{week:number;head:string;jurisdiction:string;sourceTurn:string;value:string}[];
 };
 export type PredictiveFamily={family:string;support:number;templates:number;historyWeeks:number;state:string;hit:boolean;hitHeads:string[]};
 export type PredictiveView={target:Turno;routes:PredictiveRoute[];families:number;hotFamilies:PredictiveFamily[]};
@@ -48,14 +48,16 @@ export function buildPredictive(current:DailySheet,d7:DailySheet,target:Turno,ol
   rh.weeks.forEach(w=>history.get(rh.signature)!.add(w));
  }
 
+ const antecedentsBySig=new Map<string,{week:number;head:string;jurisdiction:string;sourceTurn:string;value:string}[]>();
+ for(const rh of routeHistory) for(const r of rh.proven){const a=antecedentsBySig.get(r.signature)||[];a.push({week:r.dateOffset,head:r.head,jurisdiction:r.jurisdiction,sourceTurn:r.sourceTurn,value:r.value});antecedentsBySig.set(r.signature,a)}
  const raw:PredictiveRoute[]=[];
  for(const tp of templates.values()){
   const moves=sig(tp);
   for(const col of available) for(const p of apply(col.values,moves)){
    const value=valueOf(p),family=fam(value);
-   raw.push({family,value,sourceId:col.id,sourceTurn:col.sourceLabel,path:p,support:1,templates:1,historyWeeks:history.get(sigKey(tp))?.size||1,state:'NACE'});
+   raw.push({family,value,sourceId:col.id,sourceTurn:col.sourceLabel,path:p,support:1,templates:1,historyWeeks:history.get(sigKey(tp))?.size||1,state:'NACE',antecedents:antecedentsBySig.get(sigKey(tp))||[]});
    const rev=[...p].reverse(),rv=valueOf(rev),rf=fam(rv);
-   raw.push({family:rf,value:rv,sourceId:col.id,sourceTurn:col.sourceLabel,path:rev,support:1,templates:1,historyWeeks:history.get(sigKey(tp))?.size||1,state:'NACE'});
+   raw.push({family:rf,value:rv,sourceId:col.id,sourceTurn:col.sourceLabel,path:rev,support:1,templates:1,historyWeeks:history.get(sigKey(tp))?.size||1,state:'NACE',antecedents:antecedentsBySig.get(sigKey(tp))||[]});
   }
  }
  const familySupport=new Map<string,Set<string>>();
