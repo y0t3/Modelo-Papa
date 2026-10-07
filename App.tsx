@@ -10,7 +10,7 @@ import {buildSheet} from './src/sheet';
 import type {DailySheet,Match,Hit,SourceId} from './src/sheet';
 import {displayToIso,isoToDisplay,previousDrawDay,shiftDrawDay} from './src/dates';
 import type {Path} from './src/paths';
-import {buildPredictive,sameReadingRoutes} from './src/predictive';
+import {buildPredictive,familyRoutes} from './src/predictive';
 import {analyzePredictive} from './src/analysisEngine';
 import type {PredictiveRoute} from './src/predictive';
 import {buildRouteLives,summarizeRouteStates} from './src/routeLife';
@@ -36,7 +36,7 @@ export default function App(){
  const routeLives=useMemo(()=>d7Sheet?buildRouteLives([d7Sheet,...olderSheets],predictive?.target||'Nocturno'):[],[d7Sheet,olderSheets,predictive?.target]);
  const routeStateStats=useMemo(()=>summarizeRouteStates(routeLives),[routeLives]);
  const validation=useMemo(()=>predictive?{top3:predictive.hotFamilies.slice(0,3).filter(x=>x.hit).length,top5:predictive.hotFamilies.slice(0,5).filter(x=>x.hit).length,hits:predictive.hotFamilies.filter(x=>x.hit).length,hitFamilies:predictive.hotFamilies.filter(x=>x.hit),nearFamilies:predictive.hotFamilies.filter(x=>!x.hit&&x.nearHeads.length)}:null,[predictive]);
- const selectedPredRoutes=useMemo(()=>predictive&&predRoute?sameReadingRoutes(predictive,predRoute):predRoute?[predRoute]:[],[predictive,predRoute]);
+ const selectedPredRoutes=useMemo(()=>predictive&&predRoute?familyRoutes(predictive,predRoute.family):predRoute?[predRoute]:[],[predictive,predRoute]);
  const predInCell=(sourceId:SourceId,r:number,col:number)=>selectedPredRoutes.some(pr=>pr.sourceId===sourceId&&pr.path.some(x=>x.row===r&&x.col===col));
  const predStart=(sourceId:SourceId,r:number,col:number)=>selectedPredRoutes.some(pr=>pr.sourceId===sourceId&&pr.path[0]?.row===r&&pr.path[0]?.col===col);
  const predArrow=(sourceId:SourceId,r:number,col:number)=>{const pr=selectedPredRoutes.find(x=>x.sourceId===sourceId&&x.path.some(p=>p.row===r&&p.col===col));if(!pr)return '';const p=pr.path,i=p.findIndex(x=>x.row===r&&x.col===col);if(i<0||i===p.length-1)return '';const a=p[i],b=p[i+1],dr=b.row-a.row,dc=b.col-a.col;return dr<0?(dc<0?'↖':dc>0?'↗':'↑'):dr>0?(dc<0?'↙':dc>0?'↘':'↓'):(dc<0?'←':'→')};
