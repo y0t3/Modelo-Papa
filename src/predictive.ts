@@ -10,6 +10,7 @@ export type PredictiveRoute={
   path:Path; support:number; templates:number; historyWeeks:number; state:'NACE'|'OBSERVAR'|'CONFIRMA'|'ACTIVA'; antecedents:{week:number;head:string;jurisdiction:string;sourceTurn:string;value:string}[];
 };
 export type PredictiveFamily={family:string;support:number;templates:number;historyWeeks:number;state:string;hit:boolean;hitHeads:string[]};
+export const familyRoutes=(view:PredictiveView,family:string)=>view.routes.filter(r=>r.family===family);
 export type PredictiveView={target:Turno;routes:PredictiveRoute[];families:number;hotFamilies:PredictiveFamily[]};
 
 const fam=(v:string)=>{const r=v.split('').reverse().join('');return v<=r?v+'/'+r:r+'/'+v};
