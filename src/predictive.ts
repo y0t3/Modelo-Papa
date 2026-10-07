@@ -9,7 +9,7 @@ export type PredictiveRoute={
   family:string; value:string; sourceId:SourceId; sourceTurn:string;
   path:Path; support:number; templates:number; historyWeeks:number; state:'NACE'|'OBSERVAR'|'CONFIRMA'|'ACTIVA'; antecedents:{week:number;head:string;jurisdiction:string;sourceTurn:string;value:string}[];
 };
-export type PredictiveFamily={family:string;support:number;templates:number;historyWeeks:number;state:string;hit:boolean;hitHeads:string[];nearHeads:string[]};
+export type PredictiveFamily={family:string;support:number;templates:number;historyWeeks:number;state:string;hit:boolean;hitHeads:string[];vt2Hits:{value:string;heads:string[]}[]};
 export const familyRoutes=(view:PredictiveView,family:string)=>view.routes.filter(r=>r.family===family);
 export const sameReadingRoutes=(view:PredictiveView,selected:PredictiveRoute)=>view.routes.filter(r=>r.family===selected.family&&r.value===selected.value);
 export type PredictiveView={target:Turno;routes:PredictiveRoute[];families:number;hotFamilies:PredictiveFamily[]};
@@ -85,7 +85,6 @@ export function buildPredictive(current:DailySheet,d7:DailySheet,target:Turno,ol
  routes.sort((a,b)=>b.support-a.support||b.templates-a.templates||a.family.localeCompare(b.family));
  const actualHeads=current.heads[target]||[],actualFamilies=new Map<string,string[]>();
  for(const h of actualHeads){const v=h.slice(-3),f=fam(v);if(!actualFamilies.has(f))actualFamilies.set(f,[]);actualFamilies.get(f)!.push(h)}
- const positional2of3=(family:string,head:string)=>{const actual=head.slice(-3);return family.split('/').some(v=>v.length===3&&[0,1,2].filter(i=>v[i]===actual[i]).length===2)};
- const hotFamilies=[...new Set(routes.map(r=>r.family))].map(f=>{const rr=routes.filter(r=>r.family===f),support=Math.max(...rr.map(r=>r.support)),templates=Math.max(...rr.map(r=>r.templates));const historyWeeks=Math.max(...rr.map(r=>r.historyWeeks));return {family:f,support,templates,historyWeeks,state:(support>=2&&historyWeeks>=2)||support>=3?'ACTIVA':support>=2?'CONFIRMA':historyWeeks>=2||templates>=2?'OBSERVAR':'NACE',hit:actualFamilies.has(f),hitHeads:actualFamilies.get(f)||[],nearHeads:actualHeads.filter(h=>!actualFamilies.has(f)&&positional2of3(f,h))}}).sort((a,b)=>b.support-a.support||b.historyWeeks-a.historyWeeks||b.templates-a.templates||a.family.localeCompare(b.family));
+ const hotFamilies=[...new Set(routes.map(r=>r.family))].map(f=>{const rr=routes.filter(r=>r.family===f),support=Math.max(...rr.map(r=>r.support)),templates=Math.max(...rr.map(r=>r.templates));const historyWeeks=Math.max(...rr.map(r=>r.historyWeeks));return {family:f,support,templates,historyWeeks,state:(support>=2&&historyWeeks>=2)||support>=3?'ACTIVA':support>=2?'CONFIRMA':historyWeeks>=2||templates>=2?'OBSERVAR':'NACE',hit:actualFamilies.has(f),hitHeads:actualFamilies.get(f)||[],vt2Hits:[...new Set(rr.flatMap(r=>[r.value.slice(-2),r.value.split('').reverse().join('').slice(-2)]))].map(v=>({value:v,heads:actualHeads.filter(h=>h.slice(-2)===v)})).filter(x=>x.heads.length)}}).sort((a,b)=>b.support-a.support||b.historyWeeks-a.historyWeeks||b.templates-a.templates||a.family.localeCompare(b.family));
  return {target,routes,families:hotFamilies.length,hotFamilies};
 }
