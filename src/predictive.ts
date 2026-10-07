@@ -5,7 +5,7 @@ import type {Turno} from './domain';
 
 export type PredictiveRoute={
   family:string; value:string; sourceId:SourceId; sourceTurn:string;
-  path:Path; support:number; templates:number; state:'NACE'|'OBSERVAR'|'CONFIRMA'|'ACTIVA';
+  path:Path; support:number; templates:number; historyWeeks:number; state:'NACE'|'OBSERVAR'|'CONFIRMA'|'ACTIVA';
 };
 export type PredictiveView={target:Turno;routes:PredictiveRoute[];families:number;hotFamilies:{family:string;support:number;templates:number;state:string}[]};
 
@@ -31,21 +31,20 @@ export function upcomingTarget(sheet:DailySheet):Turno{
  return 'Nocturno';
 }
 
-export function buildPredictive(current:DailySheet,d7:DailySheet,target:Turno):PredictiveView{
+export function buildPredictive(current:DailySheet,d7:DailySheet,target:Turno,older:DailySheet[]=[]):PredictiveView{
  const idx=TURNOS.indexOf(target);
  const available=current.columns.slice(0,idx+1);
- const templates=new Map<string,Path>();
- for(const m of d7.matches[target]) for(const h of m.hits) if(h.kind==='vt3')
-  for(const p of h.paths) templates.set(sigKey(p),p);
+ const templates=new Map<string,Path>(),history=new Map<string,Set<number>>();
+ [d7,...older].forEach((sh,week)=>{for(const m of sh.matches[target]) for(const h of m.hits) if(h.kind==='vt3') for(const p of h.paths){const k=sigKey(p);if(week===0)templates.set(k,p);if(!history.has(k))history.set(k,new Set());history.get(k)!.add(week+1)}});
 
  const raw:PredictiveRoute[]=[];
  for(const tp of templates.values()){
   const moves=sig(tp);
   for(const col of available) for(const p of apply(col.values,moves)){
    const value=valueOf(p),family=fam(value);
-   raw.push({family,value,sourceId:col.id,sourceTurn:col.sourceLabel,path:p,support:1,templates:1,state:'NACE'});
+   raw.push({family,value,sourceId:col.id,sourceTurn:col.sourceLabel,path:p,support:1,templates:1,historyWeeks:history.get(sigKey(tp))?.size||1,state:'NACE'});
    const rev=[...p].reverse(),rv=valueOf(rev),rf=fam(rv);
-   raw.push({family:rf,value:rv,sourceId:col.id,sourceTurn:col.sourceLabel,path:rev,support:1,templates:1,state:'NACE'});
+   raw.push({family:rf,value:rv,sourceId:col.id,sourceTurn:col.sourceLabel,path:rev,support:1,templates:1,historyWeeks:history.get(sigKey(tp))?.size||1,state:'NACE'});
   }
  }
  const familySupport=new Map<string,Set<string>>();
@@ -61,10 +60,10 @@ export function buildPredictive(current:DailySheet,d7:DailySheet,target:Turno):P
   const key=r.family+'|'+r.sourceId+'|'+r.path.map(x=>x.row+','+x.col).join('>');
   if(seen.has(key))continue;seen.add(key);
   const support=familySupport.get(r.family)!.size,templates=familyTemplates.get(r.family)!.size;
-  const state=support>=3?'ACTIVA':support>=2?'CONFIRMA':templates>=2?'OBSERVAR':'NACE';
+  const state=(support>=2&&r.historyWeeks>=2)||support>=3?'ACTIVA':support>=2?'CONFIRMA':r.historyWeeks>=2||templates>=2?'OBSERVAR':'NACE';
   routes.push({...r,support,templates,state});
  }
  routes.sort((a,b)=>b.support-a.support||b.templates-a.templates||a.family.localeCompare(b.family));
- const hotFamilies=[...new Set(routes.map(r=>r.family))].map(f=>{const rr=routes.filter(r=>r.family===f),support=Math.max(...rr.map(r=>r.support)),templates=Math.max(...rr.map(r=>r.templates));return {family:f,support,templates,state:support>=3?'ACTIVA':support>=2?'CONFIRMA':templates>=2?'OBSERVAR':'NACE'}}).sort((a,b)=>b.support-a.support||b.templates-a.templates||a.family.localeCompare(b.family));
+ const hotFamilies=[...new Set(routes.map(r=>r.family))].map(f=>{const rr=routes.filter(r=>r.family===f),support=Math.max(...rr.map(r=>r.support)),templates=Math.max(...rr.map(r=>r.templates));const historyWeeks=Math.max(...rr.map(r=>r.historyWeeks));return {family:f,support,templates,state:(support>=2&&historyWeeks>=2)||support>=3?'ACTIVA':support>=2?'CONFIRMA':historyWeeks>=2||templates>=2?'OBSERVAR':'NACE'}}).sort((a,b)=>b.support-a.support||b.templates-a.templates||a.family.localeCompare(b.family));
  return {target,routes,families:hotFamilies.length,hotFamilies};
 }
