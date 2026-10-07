@@ -2,12 +2,12 @@
   "expo": {
     "name": "Modelo Papá",
     "slug": "modelo-papa",
-    "version": "0.1.0",
-    "orientation": "portrait",
+    "version": "0.1.1",
+    "orientation": "default",
     "userInterfaceStyle": "dark",
     "android": {
       "package": "com.y0t3.modelopapa",
-      "versionCode": 1
+      "versionCode": 2
     }
   }
 }
