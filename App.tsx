@@ -5,6 +5,7 @@ import DateField from './src/DateField';
 import {descargarCabezas} from './src/cabezas';
 import type {CabezasDia} from './src/domain';
 import {JURS,TURNOS} from './src/domain';
+import type {Turno} from './src/domain';
 import {buildSheet} from './src/sheet';
 import type {DailySheet,Match,Hit,SourceId} from './src/sheet';
 import {displayToIso,isoToDisplay,previousDrawDay,shiftDrawDay} from './src/dates';
