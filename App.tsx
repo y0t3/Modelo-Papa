@@ -40,25 +40,25 @@ export default function App(){
  const paintedHead=(m:Match)=>{const k:Kind=sel?.match===m?sel.kind:(m.hits.some(h=>h.kind==='vt4')?'vt4':m.hits.some(h=>h.kind==='vt3')?'vt3':'vt2');const n=k==='vt4'?4:k==='vt3'?3:2;const cut=4-n;return <Text style={[s.headNum,{fontSize:20*fontScale}]}>{m.cabeza.slice(0,cut)}<Text style={s.mark}>{m.cabeza.slice(cut)}</Text></Text>};
  const matchCard=(m:Match)=><View key={m.jurisdiccion+'-'+m.cabeza} style={s.match}>
    <Text style={[s.matchJur,{fontSize:10*fontScale}]}>{m.jurisdiccion}</Text>{paintedHead(m)}
-   <View style={s.badges}>{(['vt4','vt3','vt2'] as Kind[]).map(k=>{const x=stat(m,k);return x.hits.length?<Pressable key={k} onPress={()=>choose(m,k)}><Text style={k==='vt2'?s.badge2:s.badge}>{k.toUpperCase()} · {x.cols} col · {x.paths} rec</Text></Pressable>:null})}</View>
+   <View style={s.badges}>{(['vt4','vt3','vt2'] as Kind[]).map(k=>{const x=stat(m,k);return x.hits.length?<Pressable key={k} onPress={()=>choose(m,k)}><Text style={[k==='vt2'?s.badge2:s.badge,{fontSize:10*fontScale}]}>{k.toUpperCase()} · {x.cols} col · {x.paths} rec</Text></Pressable>:null})}</View>
  </View>;
 
  const board=sheet&&<ScrollView horizontal><View style={s.boardRow}>{sheet.columns.map(col=>{
   const highlighted=(r:number,c:number)=>hitInCell(col.id,r,c);
   const active=(r:number,c:number)=>activeInCell(col.id,r,c);
-  return <View key={col.turno} style={s.column}><Text style={s.turn}>{col.turno}</Text><Text style={s.source}>← {col.sourceLabel}</Text>
-   {JURS.map((j,r)=>{const v=col.values[r];return <View key={j} style={s.gridRow}><Text style={s.jurMini}>{j}</Text>{[0,1].map(c=><View key={c} style={[s.digit,highlighted(r,c)&&s.hit,active(r,c)&&s.activeHit]}><Text style={[s.digitText,{fontSize:21*fontScale},highlighted(r,c)&&s.hitText]}>{v==='--'?'–':v[c]}</Text>{arrowAfter(col.id,r,c)?<Text style={s.pathArrow}>{arrowAfter(col.id,r,c)}</Text>:null}</View>)}</View>})}
-   <Text style={s.formed}>CABEZAS COINCIDENTES</Text>{sheet.matches[col.turno].length?sheet.matches[col.turno].map(matchCard):<Text style={s.none}>—</Text>}
+  return <View key={col.turno} style={s.column}><Text style={[s.turn,{fontSize:17*fontScale}]}>{col.turno}</Text><Text style={[s.source,{fontSize:11*fontScale}]}>← {col.sourceLabel}</Text>
+   {JURS.map((j,r)=>{const v=col.values[r];return <View key={j} style={s.gridRow}><Text style={[s.jurMini,{fontSize:11*fontScale}]}>{j}</Text>{[0,1].map(c=><View key={c} style={[s.digit,highlighted(r,c)&&s.hit,active(r,c)&&s.activeHit]}><Text style={[s.digitText,{fontSize:24*fontScale,highlighted(r,c)&&s.hitText]}>{v==='--'?'–':v[c]}</Text>{arrowAfter(col.id,r,c)?<Text style={s.pathArrow}>{arrowAfter(col.id,r,c)}</Text>:null}</View>)}</View>})}
+   <Text style={[s.formed,{fontSize:10*fontScale}]}>CABEZAS COINCIDENTES</Text>{sheet.matches[col.turno].length?sheet.matches[col.turno].map(matchCard):<Text style={s.none}>—</Text>}
   </View>})}</View></ScrollView>;
 
- const routeControls=sel&&<View style={s.routeBox}><Text style={s.routeTitle}>{sel.match.jurisdiccion} · {sel.match.cabeza} · {sel.kind.toUpperCase()}</Text>
-  <Text style={s.routeText}>{selectedHits.length} columna(s) · {flatRoutes.length} recorrido(s)</Text>{activeRoute?<Text style={s.origin}>ORIGEN ACTIVO: {activeRoute.hit.sourceTurn} · recorrido {sel.index+1}/{flatRoutes.length}</Text>:null}
+ const routeControls=sel&&<View style={s.routeBox}><Text style={[s.routeTitle,{fontSize:16*fontScale}]}>{sel.match.jurisdiccion} · {sel.match.cabeza} · {sel.kind.toUpperCase()}</Text>
+  <Text style={[s.routeText,{fontSize:14*fontScale}]}>{selectedHits.length} columna(s) · {flatRoutes.length} recorrido(s)</Text>{activeRoute?<Text style={[s.origin,{fontSize:14*fontScale}]}>ORIGEN ACTIVO: {activeRoute.hit.sourceTurn} · recorrido {sel.index+1}/{flatRoutes.length}</Text>:null}
   <View style={s.routeBtns}><Pressable style={s.smallBtn} onPress={()=>setSel({...sel,index:(sel.index-1+flatRoutes.length)%flatRoutes.length})}><Text style={s.btnTxt}>‹</Text></Pressable>
   <Pressable style={s.smallBtn} onPress={()=>setSel({...sel,index:(sel.index+1)%flatRoutes.length})}><Text style={s.btnTxt}>›</Text></Pressable>
   <Pressable style={s.clearBtn} onPress={()=>setSel(null)}><Text style={s.btnTxt}>CERRAR</Text></Pressable></View></View>;
 
  return <SafeAreaView style={s.safe}><StatusBar style="light"/><View style={s.nav}>{(['hoja','cabezas','analisis'] as Screen[]).map(x=><Pressable key={x} onPress={()=>setScreen(x)} style={[s.navBtn,screen===x&&s.on]}><Text style={s.navText}>{x.toUpperCase()}</Text></Pressable>)}</View>
- <ScrollView contentContainerStyle={s.page}><View style={s.fontBar}><Text style={s.fontLabel}>Tamaño</Text><Pressable style={s.fontBtn} onPress={()=>setFontScale(.86)}><Text style={s.fontTxt}>A−</Text></Pressable><Pressable style={s.fontBtn} onPress={()=>setFontScale(1)}><Text style={s.fontTxt}>A</Text></Pressable><Pressable style={s.fontBtn} onPress={()=>setFontScale(1.18)}><Text style={s.fontTxt}>A+</Text></Pressable></View><Text style={s.h1}>MODELO PAPÁ</Text><Text style={s.sub}>Hoja diaria · recorridos · flujo temporal</Text>
+ <ScrollView contentContainerStyle={s.page}><View style={s.fontBar}><Text style={s.fontLabel}>Tamaño</Text><Pressable style={s.fontBtn} onPress={()=>setFontScale(.78)}><Text style={s.fontTxt}>A−</Text></Pressable><Pressable style={s.fontBtn} onPress={()=>setFontScale(1)}><Text style={s.fontTxt}>A</Text></Pressable><Pressable style={s.fontBtn} onPress={()=>setFontScale(1.35)}><Text style={s.fontTxt}>A+</Text></Pressable></View><Text style={s.h1}>MODELO PAPÁ</Text><Text style={s.sub}>Hoja diaria · recorridos · flujo temporal</Text>
  <Text style={s.label}>Fecha de consulta</Text><DateField value={fechaText} onChange={v=>{setFechaText(v);setData(null);setSheet(null);setSel(null)}}/>
  <View style={s.quick}><Pressable style={s.qbtn} onPress={()=>move(-1)}><Text style={s.qtxt}>← DÍA</Text></Pressable><Pressable style={s.qbtn} onPress={d7}><Text style={s.qtxt}>D−7</Text></Pressable><Pressable style={s.qbtn} onPress={()=>move(1)}><Text style={s.qtxt}>DÍA →</Text></Pressable></View>
  <Pressable style={s.load} onPress={()=>cargar()} disabled={busy}>{busy?<ActivityIndicator color="#fff"/>:<Text style={s.loadText}>↻ CARGAR HOJA</Text>}</Pressable>
