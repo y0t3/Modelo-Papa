@@ -1,4 +1,5 @@
-import {CabezasDia,JURS,TURNOS,Tabla,diaVacio,tablaVacia} from './domain';
+import {JURS,TURNOS,diaVacio,tablaVacia} from './domain';
+import type {CabezasDia,Tabla} from './domain';
 export const FUENTE='https://vivitusuerte.com/api/juegos/cabezasDiarias';
 const norm=(s:string)=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const aliases:Record<string,string>={ciudad:'Ciudad',capital:'Ciudad',nacional:'Ciudad',provincia:'Provincia',buenosaires:'Provincia',cordoba:'Córdoba',santafe:'Santa Fé',entrerios:'Entre Ríos',montevideo:'Montevideo'};
