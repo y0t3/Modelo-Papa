@@ -1,5 +1,7 @@
-import {CabezasDia,JURS,Turno,TURNOS,mas11,sufijosValidos} from './domain';
-import {findPaths,Path} from './paths';
+import {JURS,TURNOS,mas11,sufijosValidos} from './domain';
+import type {CabezasDia,Turno} from './domain';
+import {findPaths} from './paths';
+import type {Path} from './paths';
 export type SheetColumn={turno:Turno;sourceLabel:string;values:string[]};
 export type Match={turno:Turno;jurisdiccion:string;cabeza:string;vt2?:Path[];vt3?:Path[];vt4?:Path[]};
 export type DailySheet={columns:SheetColumn[];matches:Record<string,Match[]>};
