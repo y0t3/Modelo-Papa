@@ -2,7 +2,8 @@ import type {DailySheet,SourceId} from './sheet';
 import type {Path,Cell} from './paths';
 import {TURNOS} from './domain';
 import type {Turno} from './domain';
-import {buildRouteHistory} from './routeHistory';
+import {buildRouteHistory,provenRoutes} from './routeHistory';
+const provenRoutesForTarget=(s:DailySheet,t:Turno)=>provenRoutes(s,t,1).map(r=>r.sourceId+'|'+r.signature);
 
 export type PredictiveRoute={
   family:string; value:string; sourceId:SourceId; sourceTurn:string;
@@ -38,9 +39,11 @@ export function buildPredictive(current:DailySheet,d7:DailySheet,target:Turno,ol
  const available=current.columns.slice(0,idx+1);
  const templates=new Map<string,Path>(),history=new Map<string,Set<number>>();
  const routeHistory=buildRouteHistory([d7,...older],target);
+ const d7SourceKeys=new Set(provenRoutesForTarget(d7,target));
  // D−7 remains the causal selector. D−14/D−21 only measure persistence.
  for(const m of d7.matches[target]) for(const h of m.hits) if(h.kind==='vt3') for(const p of h.paths) templates.set(sigKey(p),p);
  for(const rh of routeHistory){
+  if(!d7SourceKeys.has(rh.sourceId+'|'+rh.signature))continue;
   if(!history.has(rh.signature))history.set(rh.signature,new Set());
   rh.weeks.forEach(w=>history.get(rh.signature)!.add(w));
  }
