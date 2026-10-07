@@ -35,3 +35,13 @@ export function buildRouteLives(sheetsNewestFirst:DailySheet[],target:Turno):Rou
  const rank:Record<RouteLifeState,number>={ACTIVA:5,CONFIRMA:4,OBSERVAR:3,NACE:2,DECAE:1,MUERE:0};
  return out.sort((a,b)=>rank[b.state]-rank[a.state]||b.winningWeeks-a.winningWeeks||b.appearances-a.appearances||a.signature.localeCompare(b.signature));
 }
+
+
+export type StateStats={state:RouteLifeState;routes:number;winningWeeks:number;appearances:number;hitRate:number};
+export function summarizeRouteStates(lives:RouteLife[]):StateStats[]{
+ const states:RouteLifeState[]=['ACTIVA','CONFIRMA','OBSERVAR','NACE','DECAE','MUERE'];
+ return states.map(state=>{
+  const xs=lives.filter(x=>x.state===state),winningWeeks=xs.reduce((n,x)=>n+x.winningWeeks,0),appearances=xs.reduce((n,x)=>n+x.appearances,0);
+  return {state,routes:xs.length,winningWeeks,appearances,hitRate:appearances?winningWeeks/appearances:0};
+ }).filter(x=>x.routes>0);
+}
