@@ -7,7 +7,7 @@ export type SourceId='prevNocturno'|'Previa'|'Primera'|'Matutino'|'Vespertino';
 export type SheetColumn={id:SourceId;turno:Turno;sourceLabel:string;values:string[]};
 export type Hit={kind:'vt2'|'vt3'|'vt4';value:string;sourceId:SourceId;sourceTurn:string;paths:Path[]};
 export type Match={turno:Turno;jurisdiccion:string;cabeza:string;hits:Hit[]};
-export type DailySheet={columns:SheetColumn[];matches:Record<string,Match[]>};
+export type DailySheet={columns:SheetColumn[];matches:Record<string,Match[]>;heads:Record<string,string[]>};
 
 const values=(dia:CabezasDia|undefined,t:string)=>JURS.map(j=>{const h=dia?.[t]?.[j]||'----';return h==='----'?'--':mas11(h)});
 const sourceTurn=(c:SheetColumn)=>c.id==='prevNocturno'?'Nocturno anterior':c.id;
@@ -36,5 +36,6 @@ export function buildSheet(current:CabezasDia,previous:CabezasDia):DailySheet{
    if(hits.length)matches[target].push({turno:target,jurisdiccion:j,cabeza,hits});
   }
  });
- return {columns,matches};
+ const heads:Record<string,string[]>=Object.fromEntries(TURNOS.map(t=>[t,JURS.map(j=>current[t]?.[j]).filter((x):x is string=>!!x&&x!=='----')]));
+ return {columns,matches,heads};
 }
