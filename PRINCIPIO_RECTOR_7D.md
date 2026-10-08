@@ -27,3 +27,15 @@ Estos nombres indican **estados experimentales para observar cómo evoluciona un
 - Ante contradicciones, **volver a este documento y consultar al usuario**, no redefinir 7D por cuenta propia.
 
 **Objetivo final:** un motor que antes de cada sorteo emita pocos candidatos justificables por la evolución corta de sus recorridos, o se abstenga cuando no exista señal comprobable. Sin prometer ventaja sobre azar mientras no se demuestre.
+
+
+## Reglas permanentes para VT2, VT3 y VT4
+Acuerdo incorporado el 2026-10-08. Estas reglas guían diseño y evaluación; **no modifican todavía el selector congelado**.
+
+1. **VT2 independiente:** una coincidencia comprobada de últimas dos cifras tiene valor propio. Deben reconstruirse, registrarse, observarse y eventualmente proponerse candidatos VT2 aunque no haya VT3 ni VT4. No descartarla por concentrarse en ternas.
+2. **VT3 independiente:** las tres cifras conservan su propia selección y ciclo temporal; no es requisito extenderlas a cuatro.
+3. **VT4 siempre visible:** registrar todas las coincidencias y rutas VT4 válidas, sin convertir la ausencia de aciertos en motivo para descartarlas. El motor podrá recomendar VT4 experimental cuando haya fundamento anterior al sorteo; nunca forzar que exista un TOP VT4.
+4. **Extensión exploratoria de VT3:** para una terna ABC, sus cabezas posibles son 0ABC, 1ABC, …, 9ABC. Se puede mostrar una o dos extensiones opcionales, diferenciando claramente si la cuarta cifra tiene respaldo físico/histórico o es una **elección sin señal**. No presentar una cifra elegida al azar como si fuera pronosticada.
+5. **Contabilidad de aciertos separada:** evaluar VT2, VT3 y VT4 por separado. Un sufijo de VT2 dentro de una VT3 o VT4 no es automáticamente una ganancia adicional: depende de que esa apuesta de dos cifras se hubiera efectuado antes del sorteo. Registrar asimismo extensión acertada/fallida y su procedencia.
+6. **Cronología y alcance:** ningún resultado objetivo o posterior se usa para sugerir la extensión ni los candidatos. La validez de un recorrido exige celdas adyacentes de una única columna física y se conservan **todas** las rutas válidas. Las probabilidades de éxito de una extensión sin señal deben tratarse como azar, no como ventaja detectada.
+7. **Sin reglas obligatorias nuevas:** estas son pautas de registro y estudio del 7D, no una orden de introducir nuevos puntos, rangos o decisiones TOP. Cualquier inclusión en el selector exige ensayo cronológico y comparación fuera de muestra.
