@@ -17,6 +17,7 @@ export function reconstructMarkedMoments(days:DatedSheet[]):MarkedMoment[]{
  return ordered.flatMap(({date,sheet})=>TURNOS.map(turn=>{
   const marks:MarkedPath[]=[];
   for(const match of sheet.matches[turn]||[])for(const hit of match.hits)for(const route of hit.paths){
+   if(!sheet.columns.slice(0,TURNOS.indexOf(turn)+1).some(c=>c.id===hit.sourceId))throw new Error('Marca en columna futura o inexistente');
    if(!route.length||route.length!==Number(hit.kind.slice(-1)))throw new Error('Ruta inválida en hoja marcada');
    if(route.some((c,i)=>c.col<0||c.col>1||c.row<0||c.row>=6||(i>0&&(Math.abs(c.row-route[i-1].row)>1||Math.abs(c.col-route[i-1].col)>1||(c.row===route[i-1].row&&c.col===route[i-1].col)))))throw new Error('Ruta no contigua');
    if(new Set(cells(route)).size!==route.length)throw new Error('La ruta repite una celda');
