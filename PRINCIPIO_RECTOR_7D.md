@@ -39,3 +39,16 @@ Acuerdo incorporado el 2026-10-08. Estas reglas guían diseño y evaluación; **
 5. **Contabilidad de aciertos separada:** evaluar VT2, VT3 y VT4 por separado. Un sufijo de VT2 dentro de una VT3 o VT4 no es automáticamente una ganancia adicional: depende de que esa apuesta de dos cifras se hubiera efectuado antes del sorteo. Registrar asimismo extensión acertada/fallida y su procedencia.
 6. **Cronología y alcance:** ningún resultado objetivo o posterior se usa para sugerir la extensión ni los candidatos. La validez de un recorrido exige celdas adyacentes de una única columna física y se conservan **todas** las rutas válidas. Las probabilidades de éxito de una extensión sin señal deben tratarse como azar, no como ventaja detectada.
 7. **Sin reglas obligatorias nuevas:** estas son pautas de registro y estudio del 7D, no una orden de introducir nuevos puntos, rangos o decisiones TOP. Cualquier inclusión en el selector exige ensayo cronológico y comparación fuera de muestra.
+
+
+## REGLA INNEGOCIABLE: LA HOJA HISTÓRICA YA ESTÁ MARCADA
+**Antes de analizar cualquier candidato, el motor/investigador debe observar la hoja histórica CON TODAS SUS MARCAS COMPROBADAS** (VT2, VT3 y VT4, cada recorrido físicamente válido, sin elegir sólo uno). Esos recorridos se reconstruyen a partir de las cabezas sorteadas y constituyen la memoria visual real del análisis; **nunca tratar esa hoja como un tablero vacío**.
+
+**Orden obligatorio, sin excepciones:**
+1. Reconstruir cada hoja histórica +11 y sus cabezas completas coincidentes; dibujar/registrar TODOS los recorridos ganadores válidos por modalidad, turno y columna física.
+2. Interpretar la red de marcas que efectivamente existía hasta ese momento: solapamientos, puntos de contacto, bifurcaciones, convergencias, recorridos que reaparecen y cambios entre turnos y días en avance cronológico.
+3. Registrar el ciclo corto 7D de esas marcas observadas (NACE, OBSERVAR, CONFIRMA, ACTIVA, DECAE, MUERE como estados experimentales), sin confundir persistencia de una ruta disponible con una nueva confirmación ganadora.
+4. Sólo después considerar proyectar un número limitado de rutas justificadas a la hoja del turno objetivo. Una enumeración masiva de combinaciones físicamente posibles NO es un análisis del Modelo Papá ni constituye señal predictiva.
+5. Recién después del sorteo confrontar los candidatos fijados con TODAS las cabezas conocidas y registrar aciertos y fallos; jamás emplear esas cabezas para seleccionar.
+
+**CONTROL DE CALIDAD ANTES DE TODO NUEVO ENSAYO:** ¿se analizaron las hojas históricas marcadas, con sus recorridos? ¿Se interpretó su evolución antes de proyectar candidatos? ¿Se preservaron las columnas y la causalidad? Si alguna respuesta es no, DETENER el ensayo; no informar ese resultado como análisis 7D y rehacerlo. No hacer que el usuario tenga que volver a recordar este punto.
