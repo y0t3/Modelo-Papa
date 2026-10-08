@@ -57,3 +57,40 @@ export function cycleSnapshot(events:CycleEvent[],date:string,turn:Turno):CycleS
  const newEvents=events.filter(x=>x.date===date&&x.turn===turn);
  return {before,newEvents};
 }
+
+/**
+ * Estado observable ANTES del turno indicado. No etiqueta MUERE/DECAE:
+ * ausencia de nuevos aciertos no equivale a extinción de una figura.
+ */
+export type CycleFormation={
+ kind:CycleKind;sourceId:SourceId;signature:string;
+ confirmingDraws:number;firstConfirmed:string;lastConfirmed:string;
+ heads:string[];values:string[];routeCount:number;
+};
+export function priorCycleFormations(events:CycleEvent[],date:string,turn:Turno):CycleFormation[]{
+ const {before}=cycleSnapshot(events,date,turn);
+ const grouped=new Map<string,{
+  formation:CycleFormation;moments:Set<string>;routes:Set<string>;heads:Set<string>;values:Set<string>
+ }>();
+ for(const e of before){
+  const k=key(e);
+  let x=grouped.get(k);
+  if(!x){
+   x={formation:{kind:e.kind,sourceId:e.sourceId,signature:e.signature,confirmingDraws:0,
+    firstConfirmed:e.date+' '+e.turn,lastConfirmed:e.date+' '+e.turn,heads:[],values:[],routeCount:0},
+    moments:new Set(),routes:new Set(),heads:new Set(),values:new Set()};
+   grouped.set(k,x);
+  }
+  const moment=e.date+'|'+e.turn;
+  if(!x.moments.has(moment)){
+   x.moments.add(moment);
+   x.formation.lastConfirmed=e.date+' '+e.turn;
+  }
+  x.heads.add(e.head);x.values.add(e.value);
+  x.routes.add(e.route.map(c=>c.row+','+c.col).join('>'));
+ }
+ return [...grouped.values()].map(x=>({
+  ...x.formation,confirmingDraws:x.moments.size,routeCount:x.routes.size,
+  heads:[...x.heads],values:[...x.values]
+ })).sort((a,b)=>b.confirmingDraws-a.confirmingDraws||a.kind.localeCompare(b.kind)||a.sourceId.localeCompare(b.sourceId));
+}
