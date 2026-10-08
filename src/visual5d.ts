@@ -19,12 +19,12 @@ function project(values:string[],signature:string):Path[]{
  const moves=toMoves(signature),out:Path[]=[];
  if(moves.length!==2)return out;
  for(let r=0;r<values.length;r++)for(let c=0;c<2;c++){
-  if(!/^\\d{2}$/.test(values[r]))continue;
+  if(!/^\d{2}$/.test(values[r]))continue;
   const pos:[[number,number]]=[[r,c]];
   let rr=r,cc=c,valid=true;
   for(const [dr,dc] of moves){
    rr+=dr;cc+=dc;
-   if(rr<0||rr>=values.length||cc<0||cc>1||!/^\\d{2}$/.test(values[rr])||pos.some(([a,b])=>a===rr&&b===cc)){valid=false;break}
+   if(rr<0||rr>=values.length||cc<0||cc>1||!/^\d{2}$/.test(values[rr])||pos.some(([a,b])=>a===rr&&b===cc)){valid=false;break}
    pos.push([rr,cc]);
   }
   if(valid)out.push(pos.map(([a,b])=>({row:a,col:b,digit:values[a][b]})));
