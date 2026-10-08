@@ -34,7 +34,7 @@ function project(values:string[],signature:string):Path[]{
 function confirmedTraces(history:DailySheet[],target:Turno,includesCurrent=false):Trace[]{
  const ti=TURNOS.indexOf(target),out:Trace[]=[];
  history.forEach((day,dayIndex)=>{
-  for(const turn of TURNOS.slice(0,includesCurrent&&dayIndex===history.length-1?ti:ti+1)){
+  for(const turn of TURNOS.slice(0,includesCurrent&&dayIndex===history.length-1?ti:TURNOS.length)){
    for(const m of day.matches[turn]||[])for(const hit of m.hits){
     if(hit.kind!=='vt3')continue;
     for(const path of hit.paths){
