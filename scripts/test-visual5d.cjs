@@ -113,3 +113,9 @@ assert(independent.some(x=>x.kind==='vt4'&&x.classification==='NACE'),'VT4 obser
 assert(independent.filter(x=>x.date==='2026-06-15').every(x=>x.priorOccurrences===0),'all same-turn paths are simultaneous');
 assert(independent.filter(x=>x.date==='2026-06-16').every(x=>x.priorOccurrences===1),'multiple paths and heads in one drawing count once');
 console.log('OK: same-turn route multiplicity does not inflate historical confirmations');
+
+const formations=load('src/cycle7d.ts').priorCycleFormations;
+assert.equal(formations(independent,'2026-06-15','Previa').length,0);
+assert(formations(independent,'2026-06-16','Previa').some(x=>x.kind==='vt2'&&x.confirmingDraws===1));
+assert(formations(independent,'2026-06-17','Previa').some(x=>x.kind==='vt2'&&x.confirmingDraws===2));
+console.log('OK: causal snapshots');
