@@ -31,10 +31,10 @@ function project(values:string[],signature:string):Path[]{
  }
  return out;
 }
-function confirmedTraces(history:DailySheet[],target:Turno):Trace[]{
+function confirmedTraces(history:DailySheet[],target:Turno,includesCurrent=false):Trace[]{
  const ti=TURNOS.indexOf(target),out:Trace[]=[];
  history.forEach((day,dayIndex)=>{
-  for(const turn of TURNOS.slice(0,ti+1)){
+  for(const turn of TURNOS.slice(0,includesCurrent&&dayIndex===history.length-1?ti:ti+1)){
    for(const m of day.matches[turn]||[])for(const hit of m.hits){
     if(hit.kind!=='vt3')continue;
     for(const path of hit.paths){
@@ -48,7 +48,8 @@ function confirmedTraces(history:DailySheet[],target:Turno):Trace[]{
 export function analyzeVisual5D(current:DailySheet,historyOldestFirst:DailySheet[],target:Turno):Visual5DResult{
  const days=historyOldestFirst.slice(-5),empty=(reason:string):Visual5DResult=>({target,decision:'NO JUGAR',candidates:[],historyDays:days.length,reason,experimental:true});
  if(days.length<5)return empty('Faltan jornadas anteriores: se requieren cinco jornadas completas para 5D.');
- const records=confirmedTraces(days,target),groups=new Map<string,Trace[]>();
+ // Del día actual sólo se permiten marcas de turnos ANTERIORES al objetivo.
+ const records=confirmedTraces([...days,current],target,true),groups=new Map<string,Trace[]>();
  for(const x of records){const k=x.sourceId+'|'+x.signature;const xs=groups.get(k)||[];xs.push(x);groups.set(k,xs)}
  const available=current.columns.slice(0,TURNOS.indexOf(target)+1);
  const found:Visual5DCandidate[]=[];
@@ -74,7 +75,7 @@ export function analyzeVisual5D(current:DailySheet,historyOldestFirst:DailySheet
  const numbers:Visual5DCandidate[]=[];for(const x of ranked)if(!numbers.some(y=>y.value===x.value))numbers.push(x);
  if(!numbers.length)return empty('No se detectaron continuidades VT3 confirmadas en días consecutivos que puedan proyectarse en el tablero actual.');
  if(numbers.length>15)return {target,decision:'NO JUGAR',candidates:[],historyDays:5,reason:'Demasiadas proyecciones equivalentes: dispersión elevada; se evita forzar un top.',experimental:true};
- if(numbers[0].lastSeen<3)return {target,decision:'OBSERVAR',candidates:numbers.slice(0,5),historyDays:5,reason:'Continuidades antiguas dentro de la ventana; falta confirmación reciente.',experimental:true};
+ if(numbers[0].lastSeen<4)return {target,decision:'OBSERVAR',candidates:numbers.slice(0,5),historyDays:5,reason:'Continuidades antiguas dentro de la ventana; falta confirmación reciente.',experimental:true};
  if(numbers[0].transitions<2)return {target,decision:'OBSERVAR',candidates:numbers.slice(0,5),historyDays:5,reason:'Hay continuidad de dos jornadas, pero no alcanza el mínimo conservador para seleccionar.',experimental:true};
  return {target,decision:numbers.length<=3?'TOP 3':'TOP 5',candidates:numbers.slice(0,numbers.length<=3?3:5),historyDays:5,reason:'Geometrías ganadoras VT3 continuas en días consecutivos, proyectadas hacia adelante sobre celdas válidas. Señal experimental no validada.',experimental:true};
 }
