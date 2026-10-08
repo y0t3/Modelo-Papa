@@ -119,3 +119,15 @@ assert.equal(formations(independent,'2026-06-15','Previa').length,0);
 assert(formations(independent,'2026-06-16','Previa').some(x=>x.kind==='vt2'&&x.confirmingDraws===1));
 assert(formations(independent,'2026-06-17','Previa').some(x=>x.kind==='vt2'&&x.confirmingDraws===2));
 console.log('OK: causal snapshots');
+
+const {reconstructMarkedMoments,priorMarkedMoments}=load('src/markedSheet7d.ts');
+const markedMoments=reconstructMarkedMoments([{date:'2026-06-15',sheet:sheet(true)},{date:'2026-06-16',sheet:sheet(true)}]);
+assert.equal(markedMoments.length,10,'one snapshot for each turn');
+assert(markedMoments.find(m=>m.date==='2026-06-15'&&m.turn==='Previa').vt2>0,'marked VT2 is visible');
+assert(markedMoments.find(m=>m.date==='2026-06-15'&&m.turn==='Previa').vt3>0,'marked VT3 is visible');
+assert.equal(priorMarkedMoments(markedMoments,'2026-06-15','Previa').length,0,'no marked future turn read');
+assert.equal(priorMarkedMoments(markedMoments,'2026-06-16','Previa').length,5,'all five prior completed turns');
+const invalidFuture=sheet(true);
+invalidFuture.matches.Previa[0].hits[0].sourceId='Matutino';
+assert.throws(()=>reconstructMarkedMoments([{date:'2026-06-15',sheet:invalidFuture}]),/futura/,'no column from future turn');
+console.log('OK: historical marked sheets read first; target and later turns excluded');
