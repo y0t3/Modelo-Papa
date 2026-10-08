@@ -12,7 +12,7 @@ export type VisualMemory={transitions:VisualTransition[];marks:VisualMark[];time
 export const signature=(p:Path)=>p.slice(1).map((cell,i)=>[cell.row-p[i].row,cell.col-p[i].col].join(',')).join(';');
 const id=(p:Path[number],sourceId:SourceId)=>sourceId+':'+p.row+':'+p.col;
 export function buildVisualMemory(current:DailySheet,olderOldestFirst:DailySheet[],target:Turno):VisualMemory{
- const sheets=[...olderOldestFirst.slice(-5),current],marks:VisualMark[]=[],timeline:VisualMoment[]=[];
+ const sheets=[...olderOldestFirst.slice(-6),current],marks:VisualMark[]=[],timeline:VisualMoment[]=[];
  sheets.forEach((sheet,day)=>{
   const turns=day===sheets.length-1?TURNOS.slice(0,TURNOS.indexOf(target)):TURNOS;
   for(const turn of turns){
