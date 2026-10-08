@@ -7,6 +7,9 @@ export type HistoricalDraw={date:string;heads:CabezasDia};
 export function hasDrawResults(heads:CabezasDia):boolean{
  return TURNOS.some(t=>JURS.some(j=>/^\d{4}$/.test(heads[t]?.[j]||'')));
 }
+export function hasNocturnoBase(heads:CabezasDia):boolean{
+ return JURS.some(j=>/^\d{4}$/.test(heads.Nocturno?.[j]||''));
+}
 export async function loadPreviousDraws(
  targetDate:string,
  count:number,
@@ -18,8 +21,9 @@ export async function loadPreviousDraws(
  for(let checked=0;checked<maxLookback&&found.length<count;checked++){
   cursor=previousDrawDay(cursor);
   const heads=await download(cursor);
-  if(hasDrawResults(heads))found.unshift({date:cursor,heads});
+  // La jornada sólo cuenta como completa si puede alimentar la columna +11 del día siguiente.
+  if(hasDrawResults(heads)&&hasNocturnoBase(heads))found.unshift({date:cursor,heads});
  }
- if(found.length<count)throw new Error('No alcanzan las jornadas efectivamente sorteadas para completar la memoria.');
+ if(found.length<count)throw new Error('No alcanzan las jornadas con Nocturna registrada para completar la memoria.');
  return found;
 }
