@@ -25,13 +25,13 @@ function sheet(head=false){
  if(head)matches.Previa=[{cabeza:'1123',hits:[{kind:'vt2',value:'23',sourceId:'prevNocturno',paths:findPaths(values,'23')},{kind:'vt3',value:'123',sourceId:'prevNocturno',paths:findPaths(values,'123')},{kind:'vt4',value:'1123',sourceId:'prevNocturno',paths:findPaths(values,'1123')}]}];
  return {columns,matches,heads:{}};
 }
-const blank=sheet(),old=[sheet(),sheet(),sheet(),sheet(),sheet()];
-assert.equal(analyzeVisual5D(blank,old.slice(0,4),'Nocturno').decision,'NO JUGAR');
+const blank=sheet(),old=[sheet(),sheet(),sheet(),sheet(),sheet(),sheet()];
+assert.equal(analyzeVisual5D(blank,old.slice(0,5),'Nocturno').decision,'NO JUGAR');
 assert.equal(analyzeVisual5D(blank,old,'Nocturno').decision,'NO JUGAR');
 const baseMemory=buildVisualMemory(blank,old,'Primera');assert.equal(baseMemory.marks.length,0);
-const oldWithHit=[sheet(true),sheet(true),sheet(true),sheet(true),sheet(true)];
+const oldWithHit=[sheet(true),sheet(true),sheet(true),sheet(true),sheet(true),sheet(true)];
 const mem=buildVisualMemory(blank,oldWithHit,'Primera');
-assert.equal(mem.transitions.length,26,'5 historical days x 5 turns and current Previa');
+assert.equal(mem.transitions.length,31,'6 historical days x 5 turns and current Previa');
 assert.equal(mem.transitions[0].persistingColumns,0);
 assert.equal(mem.transitions[0].newColumns,1);
 assert.equal(mem.transitions[1].persistingColumns,1);
@@ -52,4 +52,4 @@ const altered=sheet(true);altered.matches.Previa.push({cabeza:'9999',hits:[{kind
 assert.deepStrictEqual(analyzeVisual5D(altered,old,'Previa'),first,'target-turn result must never leak');
 assert.deepStrictEqual(buildVisualMemory(altered,old,'Previa'),buildVisualMemory(current,old,'Previa'),'target excluded from memory');
 assert.deepStrictEqual(analyzeVisualEvolution(buildVisualMemory(altered,old,'Previa').marks,'Previa'),analyzeVisualEvolution(buildVisualMemory(current,old,'Previa').marks,'Previa'),'target excluded from geometry evolution');
-console.log('OK: 8 checks — 5 days, no signals, VT2/VT3/VT4, continuity, physical columns, temporal causality');
+console.log('OK: 8 checks — 6 days, no signals, VT2/VT3/VT4, continuity, physical columns, temporal causality');
