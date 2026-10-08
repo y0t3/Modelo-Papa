@@ -21,6 +21,8 @@ jobs:
         run: npm install
       - name: TypeScript check
         run: npx tsc --noEmit
+      - name: Visual 5D smoke tests
+        run: node scripts/test-visual5d.cjs
       - name: Generate Android project
         env:
           CI: '1'
