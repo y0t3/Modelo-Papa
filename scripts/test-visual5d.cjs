@@ -58,20 +58,24 @@ assert.deepStrictEqual(buildVisualMemory(altered,old,'Previa'),buildVisualMemory
 assert.deepStrictEqual(analyzeVisualEvolution(buildVisualMemory(altered,old,'Previa').marks,'Previa'),analyzeVisualEvolution(buildVisualMemory(current,old,'Previa').marks,'Previa'),'target excluded from geometry evolution');
 console.log('OK: 8 checks — 6 days, no signals, VT2/VT3/VT4, continuity, physical columns, temporal causality');
 
-const {loadPreviousDraws,hasDrawResults}=load('src/drawHistory.ts');
+const {loadPreviousDraws,hasDrawResults,hasNocturnoBase}=load('src/drawHistory.ts');
 const {diaVacio}=load('src/domain.ts');
 const mock=(date)=>{
  const data=diaVacio();
- if(date!=='2026-06-20')data.Nocturno.Ciudad='1234';
+ if(date==='2026-06-18')data.Previa.Ciudad='1234';
+ else if(date!=='2026-06-20')data.Nocturno.Ciudad='1234';
  return Promise.resolve(data);
 };
 (async()=>{
  assert.equal(hasDrawResults(diaVacio()),false);
+ assert.equal(hasNocturnoBase(diaVacio()),false);
  const history=await loadPreviousDraws('2026-06-23',7,mock);
  assert.equal(history.length,7);
  assert(!history.some(x=>x.date==='2026-06-20'),'skip holiday with no results');
+ assert(!history.some(x=>x.date==='2026-06-18'),'skip incomplete drawing day without Nocturna');
+ assert(history.every(x=>hasNocturnoBase(x.heads)),'every historical day can seed +11');
  assert.equal(history[history.length-1].date,'2026-06-22');
- assert.equal(history[0].date,'2026-06-13');
+ assert.equal(history[0].date,'2026-06-12');
  assert(history.every((x,i)=>i===0||x.date>history[i-1].date),'chronological oldest first');
  console.log('OK: six actual drawing days + preceding base day, holiday skipped');
 })().catch(e=>{console.error(e);process.exitCode=1});
