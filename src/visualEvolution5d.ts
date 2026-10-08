@@ -38,11 +38,11 @@ export function analyzeVisualEvolution(marks:VisualMark[],target:Turno):VisualEv
  }
  const changes:ShapeChange[]=[];
  // Sólo parejas cronológicas vecinas y misma columna física. No cruzar turnos en un recorrido.
- for(let d=0;d<=5;d++)for(let t=0;t<TURNOS.length;t++){
+ for(let d=0;d<=6;d++)for(let t=0;t<TURNOS.length;t++){
   const prior=moments.get(d+':'+t)||[];
   const nextKeys:string[]=[];
   if(t+1<TURNOS.length)nextKeys.push(d+':'+(t+1));
-  if(d<5)nextKeys.push((d+1)+':'+t);
+  if(d<6)nextKeys.push((d+1)+':'+t);
   for(const k of nextKeys) {
    const later=moments.get(k)||[];
    const [dayString,turnString]=k.split(':');
