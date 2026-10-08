@@ -20,7 +20,7 @@ function project(values:string[],signature:string):Path[]{
  if(moves.length!==2)return out;
  for(let r=0;r<values.length;r++)for(let c=0;c<2;c++){
   if(!/^\d{2}$/.test(values[r]))continue;
-  const pos:[[number,number]]=[[r,c]];
+  const pos:Array<[number,number]>=[[r,c]];
   let rr=r,cc=c,valid=true;
   for(const [dr,dc] of moves){
    rr+=dr;cc+=dc;
@@ -47,7 +47,7 @@ function confirmedTraces(history:DailySheet[],target:Turno,includesCurrent=false
 }
 export function analyzeVisual5D(current:DailySheet,historyOldestFirst:DailySheet[],target:Turno):Visual5DResult{
  const days=historyOldestFirst.slice(-6),empty=(reason:string):Visual5DResult=>({target,decision:'NO JUGAR',candidates:[],historyDays:days.length,reason,experimental:true});
- if(days.length<6)return empty('Faltan jornadas anteriores: se requieren cinco jornadas completas para 5D.');
+ if(days.length<6)return empty('Faltan jornadas anteriores: se requieren seis jornadas completas para Visual 6D.');
  // Del día actual sólo se permiten marcas de turnos ANTERIORES al objetivo.
  const records=confirmedTraces([...days,current],target,true),groups=new Map<string,Trace[]>();
  for(const x of records){const k=x.sourceId+'|'+x.signature;const xs=groups.get(k)||[];xs.push(x);groups.set(k,xs)}
