@@ -11,7 +11,7 @@ export type CycleEvent={
  date:string;turn:Turno;kind:CycleKind;sourceId:SourceId;signature:string;
  head:string;value:string;route:Path;
  classification:'NACE'|'RECONFIRMA';
- priorOccurrences:number;priorLastDate?:string;
+ priorOccurrences:number;priorLastDate?:string; // cantidad de sorteos anteriores que confirmaron esa geometría
 };
 export type CycleSnapshot={
  before:CycleEvent[]; // Sólo resultados de turnos previos, nunca el objetivo.
@@ -40,11 +40,11 @@ export function buildCycle7DBitacora(dated:DatedSheet[]):CycleEvent[]{
   }
   // Todos los caminos del mismo turno se comparan contra una memoria congelada
   // antes del sorteo, no contra otros caminos del mismo resultado.
-  const momentGroups=new Map<string,number>();
-  for(const x of current)momentGroups.set(key(x),(momentGroups.get(key(x))||0)+1);
-  for(const [k,n] of momentGroups){
+  const momentKeys=new Set(current.map(key));
+  for(const k of momentKeys){
    const last=prior.get(k);
-   prior.set(k,{count:(last?.count||0)+n,date});
+   // Varias cabezas o rutas en un mismo turno son una sola oportunidad temporal de confirmación.
+   prior.set(k,{count:(last?.count||0)+1,date});
   }
   out.push(...current);
  }
