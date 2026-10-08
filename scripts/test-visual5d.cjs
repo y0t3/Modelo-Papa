@@ -131,3 +131,23 @@ const invalidFuture=sheet(true);
 invalidFuture.matches.Previa[0].hits[0].sourceId='Matutino';
 assert.throws(()=>reconstructMarkedMoments([{date:'2026-06-15',sheet:invalidFuture}]),/futura/,'no column from future turn');
 console.log('OK: historical marked sheets read first; target and later turns excluded');
+
+const {analyzeAdaptive7D}=load('src/adaptive7d.ts');
+const adaptiveDays=[
+ {date:'2026-06-15',sheet:sheet(true)},
+ {date:'2026-06-16',sheet:sheet(true)},
+ {date:'2026-06-17',sheet:sheet(true)},
+ {date:'2026-06-18',sheet:sheet(false)}
+];
+const adaptiveA=analyzeAdaptive7D(adaptiveDays,sheet(false),'2026-06-18','Primera');
+const adaptiveFuture=analyzeAdaptive7D(
+ adaptiveDays.map(d=>d.date==='2026-06-18'?{...d,sheet:sheet(true)}:d),
+ sheet(false),'2026-06-18','Primera');
+assert.deepStrictEqual(adaptiveA,adaptiveFuture,'future results cannot influence adaptive decisions');
+assert(adaptiveA.candidates.every(c=>['vt2','vt3','vt4'].includes(c.kind)),'all three modes supported');
+assert(adaptiveA.candidates.filter(c=>c.kind==='vt2').length<=3);
+assert(adaptiveA.candidates.filter(c=>c.kind==='vt3').length<=3);
+assert(adaptiveA.candidates.filter(c=>c.kind==='vt4').length<=1);
+assert(adaptiveA.candidates.every(c=>c.path.length===Number(c.kind.slice(-1))),'physical routes valid');
+assert(adaptiveA.tracked>0,'marked figures tracked');
+console.log('OK: adaptive 7D causal cutoff and bounded independent VT2 VT3 VT4');
