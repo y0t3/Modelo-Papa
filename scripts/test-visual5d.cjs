@@ -94,3 +94,22 @@ assert.equal(beforeDraw.before.length,0,'no future leak before first drawing');
 assert(beforeDraw.newEvents.length>0,'confirmations known only after drawing');
 assert.equal(cycleSnapshot(weekly,'2026-06-16','Previa').before.filter(x=>x.date==='2026-06-16').length,0,'exclude target turn from antecedents');
 console.log('OK: independent VT2/VT3/VT4 histories and target-turn exclusion');
+
+const syntheticPath=[{row:0,col:0,digit:'1'},{row:0,col:1,digit:'2'}];
+const vt4Path=[{row:0,col:0,digit:'1'},{row:0,col:1,digit:'2'},{row:1,col:0,digit:'3'},{row:1,col:1,digit:'4'}];
+function markedDay(heads){
+ const x=sheet();
+ x.matches.Previa=heads.map(h=>({cabeza:h,hits:[
+  {kind:'vt2',sourceId:'prevNocturno',value:'12',paths:[syntheticPath,syntheticPath]},
+  {kind:'vt4',sourceId:'prevNocturno',value:'1234',paths:[vt4Path]}
+ ]}));
+ return x;
+}
+const independent=buildCycle7DBitacora([
+ {date:'2026-06-15',sheet:markedDay(['0012','1112'])},
+ {date:'2026-06-16',sheet:markedDay(['2212'])}
+]);
+assert(independent.some(x=>x.kind==='vt4'&&x.classification==='NACE'),'VT4 observed independently');
+assert(independent.filter(x=>x.date==='2026-06-15').every(x=>x.priorOccurrences===0),'all same-turn paths are simultaneous');
+assert(independent.filter(x=>x.date==='2026-06-16').every(x=>x.priorOccurrences===1),'multiple paths and heads in one drawing count once');
+console.log('OK: same-turn route multiplicity does not inflate historical confirmations');
