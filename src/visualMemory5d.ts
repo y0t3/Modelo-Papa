@@ -7,7 +7,8 @@ import type {Path} from './paths';
 export type VisualMark={day:number;turn:Turno;sourceId:SourceId;head:string;kind:'vt2'|'vt3'|'vt4';value:string;paths:Path[]};
 export type VisualMoment={day:number;turn:Turno;marks:number;heads:number;routes:number};
 export type VisualGeometry={kind:'vt2'|'vt3'|'vt4';signature:string;days:number[];turns:Turno[];occurrences:number;lastDay:number};
-export type VisualMemory={marks:VisualMark[];timeline:VisualMoment[];geometries:VisualGeometry[];overlapCells:number;branchCells:number;convergenceCells:number;vt2:number;vt3:number;vt4:number;sequentialTurnLinks:number;sequentialDayLinks:number};
+export type VisualTransition={day:number;turn:Turno;persistingColumns:number;newColumns:number;newMatches:number;newRoutes:number;newRoutesOnOldColumns:number;newRoutesOnNewColumn:number;repeatedShapesFromPreviousTurn:number};
+export type VisualMemory={transitions:VisualTransition[];marks:VisualMark[];timeline:VisualMoment[];geometries:VisualGeometry[];overlapCells:number;branchCells:number;convergenceCells:number;vt2:number;vt3:number;vt4:number;sequentialTurnLinks:number;sequentialDayLinks:number};
 export const signature=(p:Path)=>p.slice(1).map((cell,i)=>[cell.row-p[i].row,cell.col-p[i].col].join(',')).join(';');
 const id=(p:Path[number],sourceId:SourceId)=>sourceId+':'+p.row+':'+p.col;
 export function buildVisualMemory(current:DailySheet,olderOldestFirst:DailySheet[],target:Turno):VisualMemory{
@@ -53,6 +54,19 @@ export function buildVisualMemory(current:DailySheet,olderOldestFirst:DailySheet
   branchCells+=[...outgoing.values()].filter(x=>x.size>1).length;
   convergenceCells+=[...incoming.values()].filter(x=>x.size>1).length;
  }
+ const transitions:VisualTransition[]=[];
+ for(let day=0;day<sheets.length;day++){
+  const sheet=sheets[day],limit=day===sheets.length-1?TURNOS.indexOf(target):TURNOS.length;
+  for(let ti=0;ti<limit;ti++){
+   const turn=TURNOS[ti],available=sheet.columns.slice(0,ti+1);
+   const prior=sheet.columns.slice(0,ti);
+   const fresh=marks.filter(m=>m.day===day&&m.turn===turn);
+   const previous=ti?marks.filter(m=>m.day===day&&m.turn===TURNOS[ti-1]):[];
+   const previousShapes=new Set(previous.flatMap(m=>m.paths.map(p=>m.kind+"|"+m.sourceId+"|"+signature(p))));
+   const freshShapes=new Set(fresh.flatMap(m=>m.paths.map(p=>m.kind+"|"+m.sourceId+"|"+signature(p))));
+   transitions.push({day,turn,persistingColumns:prior.length,newColumns:available.length-prior.length,newMatches:new Set(fresh.map(m=>m.head+"|"+m.sourceId)).size,newRoutes:fresh.reduce((n,m)=>n+m.paths.length,0),newRoutesOnOldColumns:fresh.filter(m=>prior.some(c=>c.id===m.sourceId)).reduce((n,m)=>n+m.paths.length,0),newRoutesOnNewColumn:fresh.filter(m=>m.sourceId===available[available.length-1]?.id).reduce((n,m)=>n+m.paths.length,0),repeatedShapesFromPreviousTurn:[...freshShapes].filter(x=>previousShapes.has(x)).length});
+  }
+ }
  const geometries=[...map.values()].map(g=>({kind:g.kind,signature:g.signature,days:[...g.days].sort((a,b)=>a-b),turns:[...g.turns],occurrences:g.occurrences.size,lastDay:g.lastDay})).sort((a,b)=>b.days.length-a.days.length||b.lastDay-a.lastDay||a.signature.localeCompare(b.signature));
  let sequentialTurnLinks=0,sequentialDayLinks=0;
  const signaturesByMoment=new Map<string,Set<string>>();
@@ -62,5 +76,5 @@ export function buildVisualMemory(current:DailySheet,olderOldestFirst:DailySheet
   const next=signaturesByMoment.get(day+'|'+(ti+1));if(next&&[...s].some(v=>next.has(v)))sequentialTurnLinks++;
   const tomorrow=signaturesByMoment.get((day+1)+'|'+ti);if(tomorrow&&[...s].some(v=>tomorrow.has(v)))sequentialDayLinks++;
  }
- return {marks,timeline,geometries,overlapCells,branchCells,convergenceCells,vt2:marks.filter(m=>m.kind==='vt2').length,vt3:marks.filter(m=>m.kind==='vt3').length,vt4:marks.filter(m=>m.kind==='vt4').length,sequentialTurnLinks,sequentialDayLinks};
+ return {transitions,marks,timeline,geometries,overlapCells,branchCells,convergenceCells,vt2:marks.filter(m=>m.kind==='vt2').length,vt3:marks.filter(m=>m.kind==='vt3').length,vt4:marks.filter(m=>m.kind==='vt4').length,sequentialTurnLinks,sequentialDayLinks};
 }
