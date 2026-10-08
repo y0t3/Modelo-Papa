@@ -16,6 +16,7 @@ import {analyzePredictive} from './src/analysisEngine';
 import {analyzeVisual5D} from './src/visual5d';
 import {buildVisualMemory} from './src/visualMemory5d';
 import {analyzeVisualEvolution} from './src/visualEvolution5d';
+import {loadPreviousDraws} from './src/drawHistory';
 import type {PredictiveRoute} from './src/predictive';
 import {buildRouteLives,summarizeRouteStates} from './src/routeLife';
 
@@ -30,9 +31,11 @@ export default function App(){
  const iso=displayToIso(fechaText);
  const cargar=async(target?:string)=>{const d=target||iso;if(!d)return Alert.alert('Fecha inválida','Usá DD/MM/AAAA.');
   try{setBusy(true);setSel(null);setShowHits(false);setSelectedVt2(null);const ago=(days:number)=>new Date(new Date(d+'T12:00:00').getTime()-days*86400000).toISOString().slice(0,10);const d7date=ago(7),d14date=ago(14),d21date=ago(21);const [cur,prev,d7cur,d7prev,d14cur,d14prev,d21cur,d21prev]=await Promise.all([descargarCabezas(d,true),descargarCabezas(previousDrawDay(d)),descargarCabezas(d7date),descargarCabezas(previousDrawDay(d7date)),descargarCabezas(d14date),descargarCabezas(previousDrawDay(d14date)),descargarCabezas(d21date),descargarCabezas(previousDrawDay(d21date))]);setData(cur);setTargetTurn(null);setSheet(buildSheet(cur,prev));setD7Sheet(buildSheet(d7cur,d7prev));setOlderSheets([buildSheet(d14cur,d14prev),buildSheet(d21cur,d21prev)]);
-   const dates:string[]=[];let cursor=d;for(let i=0;i<6;i++){cursor=previousDrawDay(cursor);dates.unshift(cursor)}
-   const five=await Promise.all(dates.map(async date=>buildSheet(await descargarCabezas(date),await descargarCabezas(previousDrawDay(date)))));
-   setFiveDaySheets(five);setPredRoute(null);setFechaText(isoToDisplay(d));}
+   // Siete fechas reales: seis hojas y la Nocturna anterior a la primera.
+   // Días sin resultados (feriados, suspensión) no consumen memoria.
+   const actual=await loadPreviousDraws(d,7,date=>descargarCabezas(date,true));
+   const six=actual.slice(1).map((entry,i)=>buildSheet(entry.heads,actual[i].heads));
+   setFiveDaySheets(six);setSheet(buildSheet(cur,actual[6].heads));setPredRoute(null);setFechaText(isoToDisplay(d));}
   catch(e:any){Alert.alert('No se pudo cargar',e?.message||String(e));}finally{setBusy(false)}};
  const move=(n:1|-1)=>{if(!iso)return;void cargar(shiftDrawDay(iso,n))};
  const d7=()=>{if(!iso)return;void cargar(new Date(new Date(iso+'T12:00:00').getTime()-7*86400000).toISOString().slice(0,10))};
