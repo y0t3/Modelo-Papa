@@ -12,15 +12,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-          cache-dependency-path: package-lock.json
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v3
       - name: Instalar dependencias
-        run: npm ci
+        run: npm install --no-audit --no-fund
       - name: Verificar TypeScript
         run: npx tsc --noEmit
       - name: Generar proyecto Android
