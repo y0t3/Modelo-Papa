@@ -79,3 +79,18 @@ const mock=(date)=>{
  assert(history.every((x,i)=>i===0||x.date>history[i-1].date),'chronological oldest first');
  console.log('OK: six actual drawing days + preceding base day, holiday skipped');
 })().catch(e=>{console.error(e);process.exitCode=1});
+
+const {buildCycle7DBitacora,cycleSnapshot}=load('src/cycle7d.ts');
+const weekly=buildCycle7DBitacora([
+ {date:'2026-06-15',sheet:sheet(true)},
+ {date:'2026-06-16',sheet:sheet(true)},
+ {date:'2026-06-17',sheet:sheet(false)}
+]);
+assert(weekly.some(x=>x.kind==='vt2'&&x.classification==='NACE'),'VT2 has independent birth');
+assert(weekly.some(x=>x.kind==='vt3'&&x.classification==='NACE'),'VT3 has independent birth');
+assert(weekly.filter(x=>x.date==='2026-06-16').every(x=>x.classification==='RECONFIRMA'),'next-day geometry independently reconfirmed');
+const beforeDraw=cycleSnapshot(weekly,'2026-06-15','Previa');
+assert.equal(beforeDraw.before.length,0,'no future leak before first drawing');
+assert(beforeDraw.newEvents.length>0,'confirmations known only after drawing');
+assert.equal(cycleSnapshot(weekly,'2026-06-16','Previa').before.filter(x=>x.date==='2026-06-16').length,0,'exclude target turn from antecedents');
+console.log('OK: independent VT2/VT3/VT4 histories and target-turn exclusion');
