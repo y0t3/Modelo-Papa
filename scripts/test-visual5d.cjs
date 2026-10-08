@@ -26,8 +26,12 @@ function sheet(head=false){
  return {columns,matches,heads:{}};
 }
 const blank=sheet(),old=[sheet(),sheet(),sheet(),sheet(),sheet(),sheet()];
-assert.equal(analyzeVisual5D(blank,old.slice(0,5),'Nocturno').decision,'NO JUGAR');
+const insufficient=analyzeVisual5D(blank,old.slice(0,5),'Nocturno');
+assert.equal(insufficient.decision,'NO JUGAR');
+assert.equal(insufficient.historyDays,5);
+assert(insufficient.reason.includes('seis jornadas'),'explicit six-day minimum');
 assert.equal(analyzeVisual5D(blank,old,'Nocturno').decision,'NO JUGAR');
+assert.equal(analyzeVisual5D(blank,old,'Nocturno').historyDays,6);
 const baseMemory=buildVisualMemory(blank,old,'Primera');assert.equal(baseMemory.marks.length,0);
 const oldWithHit=[sheet(true),sheet(true),sheet(true),sheet(true),sheet(true),sheet(true)];
 const mem=buildVisualMemory(blank,oldWithHit,'Primera');
