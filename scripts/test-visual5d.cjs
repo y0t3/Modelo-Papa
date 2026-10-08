@@ -13,6 +13,7 @@ function load(file){
 }
 const {analyzeVisual5D}=load('src/visual5d.ts');
 const {buildVisualMemory}=load('src/visualMemory5d.ts');
+const {analyzeVisualEvolution}=load('src/visualEvolution5d.ts');
 const {findPaths}=load('src/paths.ts');
 const turns=['Previa','Primera','Matutino','Vespertino','Nocturno'];
 function sheet(head=false){
@@ -38,6 +39,10 @@ assert.equal(mem.transitions[1].newColumns,1);
 assert(mem.transitions[0].newRoutesOnNewColumn>0,'new routes are marked in the available column');
 assert(mem.vt2>0&&mem.vt3>0&&mem.vt4>=0,'historical kinds are preserved');
 assert(mem.sequentialDayLinks>0,'continuities between days');
+const evo=analyzeVisualEvolution(mem.marks,'Primera');
+assert(evo.dayChanges>0,'observed geometry evolution between consecutive days');
+assert(evo.changes.every(x=>x.toDay>=x.fromDay),'no backward transitions');
+
 const r=analyzeVisual5D(blank,oldWithHit,'Nocturno');
 assert(['TOP 3','TOP 5','OBSERVAR','NO JUGAR'].includes(r.decision));
 assert(r.candidates.every(x=>x.path.every(p=>p.col>=0&&p.col<=1)));
@@ -46,4 +51,5 @@ const first=analyzeVisual5D(current,old,'Previa');
 const altered=sheet(true);altered.matches.Previa.push({cabeza:'9999',hits:[{kind:'vt3',value:'999',sourceId:'prevNocturno',paths:[]}]});
 assert.deepStrictEqual(analyzeVisual5D(altered,old,'Previa'),first,'target-turn result must never leak');
 assert.deepStrictEqual(buildVisualMemory(altered,old,'Previa'),buildVisualMemory(current,old,'Previa'),'target excluded from memory');
+assert.deepStrictEqual(analyzeVisualEvolution(buildVisualMemory(altered,old,'Previa').marks,'Previa'),analyzeVisualEvolution(buildVisualMemory(current,old,'Previa').marks,'Previa'),'target excluded from geometry evolution');
 console.log('OK: 8 checks — 5 days, no signals, VT2/VT3/VT4, continuity, physical columns, temporal causality');
