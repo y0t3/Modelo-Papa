@@ -1,0 +1,38 @@
+name: Android APK Visual 5D
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+  workflow_dispatch:
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Verificar TypeScript
+        run: npx tsc --noEmit
+      - name: Generar proyecto Android
+        run: npx expo prebuild --platform android --non-interactive
+      - name: Compilar APK de prueba
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+      - name: Publicar APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Modelo-Papa-Visual5D-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
