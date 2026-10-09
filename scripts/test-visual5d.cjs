@@ -330,3 +330,19 @@ assert.deepStrictEqual(familyMove.after.primary,familyRef,'family root identity 
 assert.equal(familyMove.after.primaryQuiet,0,'fresh family evidence reactivates root');
 assert.equal(exactMove.after.primaryQuiet,1,'exact mode rejects shift');
 console.log('OK: bounded D7 families, no transitive merge, VT separation, dual focus continuation');
+
+const visualCases=[
+ {kind:'vt2',src:'Previa',root:[[4,1],[4,0]],member:[[3,1],[3,0]],d7:['21','49','05','88','65','--'],now:['96','35','16','09','74','--'],headD7:'2188',projection:'90',relation:'TRASLACION_CERCANA'},
+ {kind:'vt2',src:'prevNocturno',root:[[2,1],[1,1]],member:[[2,0],[1,0]],d7:['36','00','36','90','62','12'],now:['73','10','94','39','49','12'],headD7:'7030',projection:'91',relation:'TRASLACION_CERCANA'},
+ {kind:'vt3',src:'Previa',root:[[2,0],[3,0],[4,0]],member:[[2,1],[2,0],[3,0]],d7:['04','68','89','91','98','--'],now:['08','06','11','85','68','--'],headD7:'1989',projection:'118',relation:'RAMA_CERCANA'},
+ {kind:'vt4',src:'Previa',root:[[0,0],[0,1],[1,0],[2,1]],member:[[2,1],[1,1],[0,0],[0,1]],d7:['07','69','37','81','89','--'],now:['50','50','51','63','61','--'],headD7:'7907',projection:'1050',relation:'RAMA_CERCANA'},
+ {kind:'vt2',src:'Vespertino',root:[[2,1],[3,1]],member:[[3,1],[4,1]],d7:['97','71','30','65','27','--'],now:['27','37','68','17','58','--'],headD7:'8857',projection:'78',relation:'TRASLACION_CERCANA'},
+];
+for(const test of visualCases){
+ const make=(positions)=>({kind:test.kind,sourceId:test.src,route:positions.map(([row,col])=>({row,col,digit:''}))});
+ assert.equal(fam.familyRelation7D(make(test.root),make(test.member)),test.relation);
+ const from=(vals)=>test.member.map(([r,c])=>vals[r][c]).join('');
+ assert(test.headD7.endsWith(from(test.d7)),'D-7 marked winner must validate digit path');
+ assert.equal(from(test.now),test.projection,'pre-target candidate must depend on available column cells');
+}
+console.log('OK: five historical visual cases verify real geometric relation and D-7 projection');
