@@ -258,3 +258,24 @@ const priors=lineage.compareRouteLineages7D(rls);
 assert.deepStrictEqual(priors.map(x=>x.kind),['vt2','vt3','vt4']);
 assert(priors.every(x=>['OBSERVAR','MANTENER_GEOMETRIA','EXAMINAR_RAMA'].includes(x.action)));
 console.log('OK: geometric priority does not change the official candidate selector');
+
+const dual=load('src/dualFocus7d.ts');
+const trend=(f,n)=>({...f,recentDraws:n,previousDraws:0,totalDraws:n,direction:'SIN_BASE'});
+const dfA={kind:'vt2',sourceId:'Previa',winningTurn:'Nocturno',zone:'ARRIBA'};
+const dfB={kind:'vt2',sourceId:'Primera',winningTurn:'Nocturno',zone:'CENTRO'};
+let ds=dual.initialDualFocus7D('vt2');
+let st=dual.advanceDualFocusFromTrends7D(ds,[trend(dfA,3),trend(dfB,1)],'2026-06-10','Primera');
+assert.equal(st.action,'INICIAR');ds=st.after;
+st=dual.advanceDualFocusFromTrends7D(ds,[trend(dfB,4),trend(dfA,1)],'2026-06-10','Matutino');
+assert.equal(st.action,'OBSERVAR_EMERGENTE');
+assert.deepStrictEqual(st.after.primary,dfA);ds=st.after;
+st=dual.advanceDualFocusFromTrends7D(ds,[trend(dfB,4),trend(dfA,1)],'2026-06-10','Vespertino');
+assert.equal(st.action,'PROMOVER');assert.deepStrictEqual(st.after.primary,dfB);ds=st.after;
+for(let i=0;i<3;i++){st=dual.advanceDualFocusFromTrends7D(ds,[],'2026-06-11','Previa');ds=st.after;}
+assert.equal(ds.primaryResting,true);assert.deepStrictEqual(ds.primary,dfB);
+st=dual.advanceDualFocusFromTrends7D(ds,[trend(dfB,2)],'2026-06-11','Primera');
+assert.equal(st.action,'REACTIVAR');assert.deepStrictEqual(st.after.primary,dfB);
+const dualBase=dual.advanceDualFocus7D(dual.initialDualFocus7D('vt2'),d7history,sheet(false),'2026-06-22','Previa');
+const dualFuture=dual.advanceDualFocus7D(dual.initialDualFocus7D('vt2'),[...d7history,{date:'2026-06-23',sheet:sheet(true)}],sheet(true),'2026-06-22','Previa');
+assert.deepStrictEqual(dualBase,dualFuture,'future and target marks must not affect dual focus');
+console.log('OK: dual focus lifecycle, promotion, rest, reactivation and causal cutoff');
