@@ -253,3 +253,8 @@ const rlsFuture=lineage.readRouteLineages7D([...d7history,{date:'2026-06-23',she
 assert.deepStrictEqual(rls,rlsFuture,'future results must not change route lineage');
 assert(rls.lineages.every(x=>x.confirmedDraws>=1&&x.daysSinceLast>=0));
 console.log('OK: geometry lineage causality and temporal deduplication');
+
+const priors=lineage.compareRouteLineages7D(rls);
+assert.deepStrictEqual(priors.map(x=>x.kind),['vt2','vt3','vt4']);
+assert(priors.every(x=>['OBSERVAR','MANTENER_GEOMETRIA','EXAMINAR_RAMA'].includes(x.action)));
+console.log('OK: geometric priority does not change the official candidate selector');
