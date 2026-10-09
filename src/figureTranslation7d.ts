@@ -9,6 +9,7 @@ import type {Path} from './paths';
 import type {DatedSheet} from './cycle7d';
 import {reconstructMarkedMoments,priorMarkedMoments} from './markedSheet7d';
 import {freezeFigureReadings7D} from './figureReadings7d';
+import {familyRelation7D} from './geometryFamily7d';
 import type {FigureFrozen7D} from './figureReadings7d';
 import type {FigureFollowup7D} from './figureFollowup7d';
 
@@ -45,12 +46,12 @@ export function prefreezeFixedAndTranslated7D(
  const past=history.filter(h=>h.date<date).sort((a,b)=>a.date.localeCompare(b.date)).slice(-6);
  const moments=priorMarkedMoments(reconstructMarkedMoments(past),date,turn).filter(m=>m.turn===turn);
  const scored=alternatives.map(p=>{
-  const code=coords(p),set=new Set(p.map(point));
+  const code=coords(p),root={kind:memory.kind,sourceId:memory.sourceId,route:p};
   let exactDraws=0,nearDraws=0,latestDate:string|undefined;
   for(const m of moments){
    const related=m.marks.filter(x=>x.kind===memory.kind&&x.sourceId===memory.sourceId);
    if(related.some(x=>x.cells.join('>')===code)){exactDraws++;latestDate=m.date;}
-   if(related.some(x=>x.cells.filter(c=>set.has(c)).length>=Math.max(1,p.length-1)))nearDraws++;
+   if(related.some(x=>familyRelation7D(root,x)!=='NO_RELACION'))nearDraws++;
   }
   return {path:p,exactDraws,nearDraws,latestDate};
  }).sort((a,b)=>b.exactDraws-a.exactDraws||b.nearDraws-a.nearDraws||
