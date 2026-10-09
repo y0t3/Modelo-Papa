@@ -1,13 +1,15 @@
-// Modelo 7D: auditoría de HOJAS HISTÓRICAS YA MARCADAS.
-// Lee exclusivamente coincidencias ganadoras comprobadas. No proyecta números.
-// Es un paso obligatorio ANTES de ejecutar cualquier ensayo de selección.
+// Modelo 7D: reconstrucción retrospectiva de coincidencias de cabezas en hojas históricas.
+// buildSheet/findPaths enumera TODAS las rutas matemáticas que coinciden con una cabeza;
+// NO demuestra que esas rutas hayan sido señaladas a mano por papá.
+// La auditoría manual del trazo se guarda separadamente en manualMarkProvenance7d.ts.
+// No proyecta números ni permite inferir prioridad manual desde un resultado posterior.
 import {TURNOS} from './domain';
 import type {Turno} from './domain';
 import type {DailySheet,SourceId} from './sheet';
 import type {Path} from './paths';
 import type {DatedSheet} from './cycle7d';
 
-export type MarkedPath={date:string;turn:Turno;kind:'vt2'|'vt3'|'vt4';sourceId:SourceId;head:string;value:string;route:Path;cells:string[];edges:string[]};
+export type MarkedPath={date:string;turn:Turno;kind:'vt2'|'vt3'|'vt4';sourceId:SourceId;head:string;value:string;route:Path;cells:string[];edges:string[];provenance:'RECONSTRUIDA_DE_MATCHES'};
 export type MarkedMoment={date:string;turn:Turno;marks:MarkedPath[];sharedCells:number;branchCells:number;convergenceCells:number;vt2:number;vt3:number;vt4:number};
 const cells=(p:Path)=>p.map(c=>c.row+':'+c.col);
 const edges=(p:Path)=>p.slice(1).map((c,i)=>p[i].row+':'+p[i].col+'>'+c.row+':'+c.col);
@@ -26,7 +28,7 @@ export function reconstructMarkedMoments(days:DatedSheet[]):MarkedMoment[]{
    if(!physical||route.some(c=>physical.values[c.row]?.[c.col]!==c.digit))throw new Error('La ruta no coincide con las celdas de la hoja');
    if(!/^\d{4}$/.test(match.cabeza)||!match.cabeza.endsWith(hit.value))throw new Error('Ruta no coincide con la cabeza ganadora');
 
-   marks.push({date,turn,kind:hit.kind,sourceId:hit.sourceId,head:match.cabeza,value:hit.value,route,cells:cells(route),edges:edges(route)});
+   marks.push({date,turn,kind:hit.kind,sourceId:hit.sourceId,head:match.cabeza,value:hit.value,route,cells:cells(route),edges:edges(route),provenance:'RECONSTRUIDA_DE_MATCHES'});
   }
   const owners=new Map<string,Set<number>>(),incoming=new Map<string,Set<string>>(),outgoing=new Map<string,Set<string>>();
   marks.forEach((m,i)=>{
