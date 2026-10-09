@@ -219,3 +219,13 @@ assert.equal(graded.records[2].confirmed,false);
 assert.equal(log.records[2].confirmed,undefined,'outcome never rewrites previously recorded forecast');
 assert.throws(()=>dm.evaluateDecision7D(graded,'2026-06-15','Matutino','vt2',true),/ya anotado/);
 console.log('OK: persistent decision-memory causal ordering, focus continuity, immutable evaluation');
+
+const pf=load('src/persistentFlow7d.ts');
+const persistentEmpty=dm.emptyDecisionMemory7D();
+const persistentPreview=pf.decidePersistentFlow7D(persistentEmpty,d7history,sheet(false),'2026-06-22','Previa');
+const persistentFuture=pf.decidePersistentFlow7D(persistentEmpty,[...d7history,{date:'2026-06-23',sheet:sheet(true)}],sheet(false),'2026-06-22','Previa');
+assert.deepStrictEqual(persistentPreview,persistentFuture,'future date must not alter persisted controller');
+const persistentTarget=pf.decidePersistentFlow7D(persistentEmpty,d7history,sheet(true),'2026-06-22','Previa');
+assert.deepStrictEqual(persistentPreview,persistentTarget,'target heads must not alter persisted controller');
+assert.deepStrictEqual(persistentPreview.decisions.map(x=>x.kind),['vt2','vt3','vt4']);
+console.log('OK: persistent controller causal cutoff, original focus comes from recorded decisions');
