@@ -76,3 +76,28 @@ assert.equal(tracked.observations[2].status,'SIN_APOYO');
 assert.equal(tracked.rootId,pairMemory.initialTranslationMemory7D(memory).rootId,
  'lack of hits must never erase the original shape');
 console.log('OK: original figure survives shifts, independent observation, no double-counted turn');
+
+const promotion=load('src/figurePromotion7d.ts');
+let pinned=promotion.createPromotionFocus7D(memory,baseline);
+let p1=promotion.previewPromotionFocus7D(pinned,sheet(values),'2026-08-05','Nocturno');
+assert.equal(promotion.decidePromotionFocus7D(pinned,p1,'UNA_NUEVA').role,'PRINCIPAL_FIJA');
+assert.equal(promotion.decidePromotionFocus7D(pinned,p1,'DOS_NUEVAS').projected,'345');
+pinned=promotion.recordPromotionOutcome7D(pinned,p1,['0758']);
+let p2=promotion.previewPromotionFocus7D(pinned,sheet(values),'2026-08-06','Nocturno');
+assert.equal(promotion.decidePromotionFocus7D(pinned,p2,'UNA_NUEVA').projected,'758');
+assert.equal(promotion.decidePromotionFocus7D(pinned,p2,'DOS_NUEVAS').projected,'345');
+assert.equal(promotion.decidePromotionFocus7D(pinned,p2,'MARCA_PREVIA_MAS_UNA').projected,'345');
+pinned=promotion.recordPromotionOutcome7D(pinned,p2,['0758']);
+let p3=promotion.previewPromotionFocus7D(pinned,sheet(values),'2026-08-07','Nocturno');
+assert.equal(promotion.decidePromotionFocus7D(pinned,p3,'DOS_NUEVAS').role,'PROMOVER_TRASLADADA');
+assert.equal(promotion.decidePromotionFocus7D(pinned,p3,'DOS_NUEVAS').projected,'758');
+assert.equal(promotion.decidePromotionFocus7D(pinned,p3,'DOS_NUEVAS').exclusivePriorDraws,2);
+pinned=promotion.recordPromotionOutcome7D(pinned,p3,['0999']);
+assert.deepStrictEqual(pinned.fixedCoordinates,['0:0','0:1','1:1']);
+assert.deepStrictEqual(pinned.shiftedCoordinates,['1:0','1:1','2:1']);
+assert.throws(()=>promotion.previewPromotionFocus7D(pinned,sheet(values),'2026-08-07','Nocturno'),/repetido/);
+assert.throws(()=>promotion.previewPromotionFocus7D(pinned,sheet(values),'2026-08-08','Matutino'),/Turno/);
+const shiftedUnreadable=promotion.previewPromotionFocus7D(pinned,sheet(['34','75','--','19','20','31']),'2026-08-08','Nocturno');
+assert.equal(shiftedUnreadable.shifted,undefined);
+assert.equal(promotion.decidePromotionFocus7D(pinned,shiftedUnreadable,'DOS_NUEVAS').projected,'345');
+console.log('OK: persistent translation promotion needs new independent complete draws; original never erased');
