@@ -8,7 +8,7 @@ function load(file){
  const mod={exports:{}};cache.set(name,mod);
  const req=x=>x==='./domain'?{TURNOS:['Previa','Primera','Matutino','Vespertino','Nocturno']}:
   x.startsWith('.')?load(path.relative(root,path.resolve(path.dirname(name),x))):require(x);
- vm.runInThisContext('(function(require,module,exports){'+code+'\\n})',{filename:name})(req,mod,mod.exports);
+ vm.runInThisContext('(function(require,module,exports){'+code+'\n})',{filename:name})(req,mod,mod.exports);
  return mod.exports;
 }
 const figure=load('src/figureReadings7d.ts'),follow=load('src/figureFollowup7d.ts');
