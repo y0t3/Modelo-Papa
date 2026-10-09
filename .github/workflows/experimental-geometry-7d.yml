@@ -1,0 +1,17 @@
+name: Experimental 7D geometry tests
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+  workflow_dispatch:
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript runtime
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Run real TypeScript source smoke tests
+        run: NODE_PATH=/tmp/mp-ts/node_modules node scripts/test-visual5d.cjs
