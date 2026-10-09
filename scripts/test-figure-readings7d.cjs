@@ -47,3 +47,28 @@ const two=freezeFigureReadings7D(sheet,'2026-10-09','Nocturno','vt2','Primera',L
 assert.equal(two.direct,'45');assert.equal(two.reverse,'54');
 assert.equal(evaluateFigureReadings7D(two,['0354']).primaryClass,'INVERSA_COMPLETA');
 console.log('OK: TypeScript actual - figure L, 345, 543, 354, inverse VT2, causal cells, no cross columns, deduplicated heads');
+
+const memorySource=fs.readFileSync(path.join(__dirname,'../src/figureSupportMemory7d.ts'),'utf8');
+const memJs=ts.transpileModule(memorySource,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText;
+const memoryMod={exports:{}};
+vm.runInThisContext('(function(require,module,exports){'+memJs+'\\n})',{filename:'figureSupportMemory7d.ts'})
+ (name=>name==='./domain'?{TURNOS:['Previa','Primera','Matutino','Vespertino','Nocturno']}:require(name),memoryMod,memoryMod.exports);
+const fm=memoryMod.exports;
+let history=fm.initialFigureSupport7D(f);
+const inverseEvidence=evaluateFigureReadings7D(f,['0543']);
+history=fm.recordFigureSupport7D(history,inverseEvidence);
+assert.equal(history.status,'CON_APOYO_VISUAL');
+assert.equal(history.events[0].exact,false,'inverse cannot be registered as exact');
+assert.equal(history.events[0].geometric,true);
+assert.equal(fm.canRemainObserved7D(history),true);
+assert.throws(()=>fm.recordFigureSupport7D(history,inverseEvidence),/ya fue evaluado/);
+const tomorrow={...f,date:'2026-10-10'};
+history=fm.recordFigureSupport7D(history,evaluateFigureReadings7D(tomorrow,['0654']));
+assert.equal(history.status,'CON_APOYO_PARCIAL');
+assert.equal(history.events[1].geometric,false);
+assert.equal(history.events[1].partialVT2,true);
+assert.deepStrictEqual(history.rootCoordinates,f.coordinates,'root geometry never deleted');
+history=fm.recordFigureSupport7D(history,evaluateFigureReadings7D({...f,date:'2026-10-11'},['0999']));
+assert.equal(history.status,'OBSERVAR');
+assert.equal(fm.canRemainObserved7D(history),true,'absence of confirmation cannot kill family automatically');
+console.log('OK: visual memory preserves root through inverse, partial VT2 and absence of exact hits');
