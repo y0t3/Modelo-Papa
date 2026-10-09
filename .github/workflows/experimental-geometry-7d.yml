@@ -16,4 +16,5 @@ jobs:
       - name: Run real TypeScript source smoke tests
         run: |
           NODE_PATH=/tmp/mp-ts/node_modules node scripts/test-figure-readings7d.cjs
+          NODE_PATH=/tmp/mp-ts/node_modules node scripts/test-figure-followup7d.cjs
           NODE_PATH=/tmp/mp-ts/node_modules node scripts/test-visual5d.cjs
