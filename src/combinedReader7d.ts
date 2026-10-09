@@ -27,8 +27,10 @@ const edges=(p:Path)=>new Set(p.slice(1).map((c,i)=>p[i].row+':'+p[i].col+'>'+c.
 export function readCombined7D(dated:DatedSheet[],current:DailySheet,date:string,turn:Turno):CombinedResult{
  if(!TURNOS.includes(turn))throw new Error('Turno inválido');
  const targetIndex=TURNOS.indexOf(turn);
- // No historical sheet with the objective date may carry its own winning marks.
- const clean=dated.filter(x=>x.date<date);
+ // Snapshot causal: preserve earlier turns of the current date, discard target and later turns.
+ // Even if the caller passes a completed day, target heads can never leak into the ranking.
+ const safeCurrent:DailySheet={...current,matches:Object.fromEntries(TURNOS.map((t,i)=>[t,i<targetIndex?(current.matches[t]||[]):[]]))};
+ const clean=[...dated.filter(x=>x.date<date),{date,sheet:safeCurrent}];
  const moments=reconstructMarkedMoments(clean);
  const historical=priorMarkedMoments(moments,date,turn);
  const sameWeekday=clean.find(d=>d.date===weekAgo(date));
