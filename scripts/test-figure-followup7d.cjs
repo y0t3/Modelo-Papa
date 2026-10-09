@@ -101,3 +101,43 @@ const shiftedUnreadable=promotion.previewPromotionFocus7D(pinned,sheet(['34','75
 assert.equal(shiftedUnreadable.shifted,undefined);
 assert.equal(promotion.decidePromotionFocus7D(pinned,shiftedUnreadable,'DOS_NUEVAS').projected,'345');
 console.log('OK: persistent translation promotion needs new independent complete draws; original never erased');
+
+const restEngine=load('src/figureRestReactivation7d.ts');
+let reState=promotion.createPromotionFocus7D(memory,baseline);
+const sample=[
+ ['2026-08-05',['0345','0758']],
+ ['2026-08-06',['0999']],
+ ['2026-08-07',['0999']],
+ ['2026-08-08',['0758']],
+ ['2026-08-09',['0758']]
+];
+for(const [d,heads] of sample){
+ const preview=promotion.previewPromotionFocus7D(reState,sheet(values),d,'Nocturno');
+ const before=restEngine.decideRestPriority7D(reState,preview,'REPOSO_Y_REGRESO');
+ if(d==='2026-08-05')assert.equal(before.focus,'FIJA');
+ if(d==='2026-08-08')assert.equal(before.focus,'FIJA','target reactivation cannot trigger itself');
+ if(d==='2026-08-09'){
+  assert.equal(before.focus,'TRASLADADA','previous draw reactivation can change next decision');
+  assert.equal(before.stateBefore.fixed.phase,'REPOSO');
+  assert.equal(before.stateBefore.shifted.phase,'REACTIVACION_1');
+  assert.equal(restEngine.decideRestPriority7D(reState,preview,'REPOSO_Y_RECONFIRMACION').focus,'FIJA',
+   'requires another confirmed completed draw');
+ }
+ reState=promotion.recordPromotionOutcome7D(reState,preview,heads);
+}
+const view=restEngine.readPairRest7D(reState.observations);
+assert.equal(view.fixed.phase,'REPOSO');
+assert.equal(view.shifted.phase,'REACTIVACION_CONFIRMADA');
+assert.equal(view.shifted.reappearEvents,1);
+assert.equal(view.shifted.reconfirmEvents,1);
+const six=promotion.previewPromotionFocus7D(reState,sheet(values),'2026-08-10','Nocturno');
+assert.equal(restEngine.decideRestPriority7D(reState,six,'REPOSO_Y_RECONFIRMACION').focus,'TRASLADADA');
+const withOutcome=sheet(values);withOutcome.heads.Nocturno=['0345'];withOutcome.matches.Nocturno=[{cabeza:'0345',hits:[]}];
+const afterPeek=promotion.previewPromotionFocus7D(reState,withOutcome,'2026-08-10','Nocturno');
+assert.deepStrictEqual(restEngine.decideRestPriority7D(reState,afterPeek,'REPOSO_Y_RECONFIRMACION'),
+ restEngine.decideRestPriority7D(reState,six,'REPOSO_Y_RECONFIRMACION'),'target marks cannot affect priority');
+const noSource=promotion.previewPromotionFocus7D(reState,sheet(['--','75','68','19','20','31']),'2026-08-10','Nocturno');
+assert.equal(restEngine.decideRestPriority7D(reState,noSource,'REPOSO_Y_REGRESO').projected,undefined);
+assert.throws(()=>restEngine.decideRestPriority7D(reState,{...six,date:'2026-08-09'},'CONSERVAR_FIJA'),/posterior/);
+assert.equal(reState.fixedCoordinates.join('>'),'0:0>0:1>1:1');
+console.log('OK: rest and reactivation of original/translated path, new-draw confirmation, no lookahead');
