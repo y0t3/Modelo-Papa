@@ -32,3 +32,26 @@ memory=follow.settleFigureFollowup7D(memory,missing,['0354']);
 assert.equal(follow.summarizedFollowup7D(memory).projectable,1);
 assert.equal(follow.summarizedFollowup7D(memory).keepFigureInMemory,true);
 console.log('OK: figure followup TS real, frozen before target, inversa, VT2 parcial, same-turn only, missing cells');
+
+const translation=load('src/figureTranslation7d.ts');
+const futureDay='2026-08-05';
+const baseline=translation.prefreezeFixedAndTranslated7D(memory,[],sheet(values),futureDay,'Nocturno');
+assert.equal(baseline.fixed.direct,'345');
+assert.equal(baseline.shifted.direct,'758');
+assert.equal(baseline.translation.row,1);
+assert.equal(baseline.translation.col,0);
+assert.equal(baseline.validTranslations,1);
+assert.deepStrictEqual(baseline.fixed.coordinates,['0:0','0:1','1:1']);
+assert.deepStrictEqual(baseline.shifted.coordinates,['1:0','1:1','2:1']);
+const swapped=sheet(values);
+swapped.matches.Nocturno=[{cabeza:'2758',hits:[]}];swapped.heads.Nocturno=['2758'];
+assert.deepStrictEqual(translation.prefreezeFixedAndTranslated7D(memory,[],swapped,futureDay,'Nocturno'),baseline,
+ 'target outcome cannot alter fixed or shifted readings');
+assert.throws(()=>translation.prefreezeFixedAndTranslated7D(memory,[],sheet(values),'2026-08-01','Nocturno'),/fecha/);
+assert.throws(()=>translation.prefreezeFixedAndTranslated7D(memory,[],sheet(values),futureDay,'Matutino'),/turno/);
+const missingShift=sheet(['34','75','--','19','20','31']);
+const absent=translation.prefreezeFixedAndTranslated7D(memory,[],missingShift,futureDay,'Nocturno');
+assert.equal(absent.validTranslations,0);
+assert.equal(absent.shifted,undefined);
+assert.equal(absent.fixed.direct,'345');
+console.log('OK: frozen fixed/translated figures, bounded rigid shift, no lookahead, missing data');
