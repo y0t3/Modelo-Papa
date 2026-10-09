@@ -192,3 +192,13 @@ assert.deepStrictEqual(switchTarget,switchTargetBlank,'target marks cannot influ
 assert.deepStrictEqual(switchBase.decisions.map(x=>x.kind),['vt2','vt3','vt4']);
 assert(switchBase.decisions.every(x=>['MANTENER','CAMBIAR','OBSERVAR_NUEVA','ABSTENERSE'].includes(x.action)));
 console.log('OK: flow switch per VT mode and causal cutoff');
+
+const {decideConservativeFlow7D}=load('src/flowSwitchConservative7d.ts');
+const consBase=decideConservativeFlow7D(d7history,sheet(false),'2026-06-22','Primera');
+const consFuture=decideConservativeFlow7D([...d7history,{date:'2026-06-23',sheet:sheet(true)}],sheet(false),'2026-06-22','Primera');
+assert.deepStrictEqual(consBase,consFuture,'conservative flow cannot see later days');
+const consTarget=decideConservativeFlow7D(d7history,sheet(true),'2026-06-22','Previa');
+const consBlank=decideConservativeFlow7D(d7history,sheet(false),'2026-06-22','Previa');
+assert.deepStrictEqual(consTarget,consBlank,'conservative flow cannot see target result');
+assert.deepStrictEqual(consBase.decisions.map(x=>x.kind),['vt2','vt3','vt4']);
+console.log('OK: conservative switch causal cutoff and independent VT modes');
