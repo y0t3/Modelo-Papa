@@ -21,6 +21,11 @@ export function reconstructMarkedMoments(days:DatedSheet[]):MarkedMoment[]{
    if(!route.length||route.length!==Number(hit.kind.slice(-1))||route.map(c=>c.digit).join('')!==hit.value)throw new Error('Ruta inválida en hoja marcada');
    if(route.some((c,i)=>c.col<0||c.col>1||c.row<0||c.row>=6||(i>0&&(Math.abs(c.row-route[i-1].row)>1||Math.abs(c.col-route[i-1].col)>1||(c.row===route[i-1].row&&c.col===route[i-1].col)))))throw new Error('Ruta no contigua');
    if(new Set(cells(route)).size!==route.length)throw new Error('La ruta repite una celda');
+   // Validar contra la HOJA fisica, no solo contra la cadena guardada en la ruta.
+   const physical=sheet.columns.find(c=>c.id===hit.sourceId);
+   if(!physical||route.some(c=>physical.values[c.row]?.[c.col]!==c.digit))throw new Error('La ruta no coincide con las celdas de la hoja');
+   if(!/^\d{4}$/.test(match.cabeza)||!match.cabeza.endsWith(hit.value))throw new Error('Ruta no coincide con la cabeza ganadora');
+
    marks.push({date,turn,kind:hit.kind,sourceId:hit.sourceId,head:match.cabeza,value:hit.value,route,cells:cells(route),edges:edges(route)});
   }
   const owners=new Map<string,Set<number>>(),incoming=new Map<string,Set<string>>(),outgoing=new Map<string,Set<string>>();
