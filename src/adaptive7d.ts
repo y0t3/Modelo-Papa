@@ -2,6 +2,8 @@
 // Lee exclusivamente HOJAS HISTÓRICAS MARCADAS y actualiza después de cada turno.
 // El estado se recalcula desde cero para cada corte: impide usar resultados futuros.
 import {TURNOS} from './domain';
+import {observeSpatialFlow7D} from './spatialFlow7d';
+import type {SpatialFlow7D} from './spatialFlow7d';
 import type {Turno} from './domain';
 import type {DailySheet,SourceId} from './sheet';
 import type {Path} from './paths';
@@ -10,7 +12,7 @@ import type {DatedSheet, CycleKind} from './cycle7d';
 
 export type AdaptiveLife='NACE'|'OBSERVAR'|'CONFIRMA'|'ACTIVA'|'DECAE'|'MUERE';
 export type AdaptiveCandidate={kind:CycleKind;value:string;sourceId:SourceId;path:Path;state:AdaptiveLife;score:number;confirmations:number;lastSeenDraws:number;signature:string};
-export type Adaptive7DResult={date:string;target:Turno;mode:'EXPERIMENTAL';historyDays:number;candidates:AdaptiveCandidate[];tracked:number;reason:string};
+export type Adaptive7DResult={date:string;target:Turno;mode:'EXPERIMENTAL';historyDays:number;candidates:AdaptiveCandidate[];tracked:number;reason:string;spatialFlow:SpatialFlow7D};
 type Track={kind:CycleKind;sourceId:SourceId;signature:string;score:number;confirmations:number;last:number;first:number;};
 const sig=(path:Path)=>path.slice(1).map((c,i)=>(c.row-path[i].row)+','+(c.col-path[i].col)).join(';');
 function apply(values:string[],signature:string):Path[]{
@@ -83,6 +85,6 @@ export function analyzeAdaptive7D(dated:DatedSheet[],current:DailySheet,date:str
   if(chosen.some(c=>c.kind===candidate.kind&&c.value===candidate.value))continue;
   chosen.push(candidate);
  }
- return {date,target,mode:'EXPERIMENTAL',historyDays:priorDates.length,candidates:chosen,tracked:tracks.size,
+ return {date,target,mode:'EXPERIMENTAL',historyDays:priorDates.length,candidates:chosen,tracked:tracks.size,spatialFlow:observeSpatialFlow7D(dated,date,target),
   reason:'Memoria dinámica de figuras ganadoras ya marcadas; pesos heurísticos no validados. No reemplaza el selector semanal.'};
 }
