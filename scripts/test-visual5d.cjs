@@ -168,7 +168,7 @@ assert(combined.candidates.every(c=>c.signals[0].name==='D7'));
 assert(combined.candidates.filter(c=>c.kind==='vt2').length<=3);
 assert(combined.candidates.filter(c=>c.kind==='vt3').length<=3);
 assert(combined.candidates.filter(c=>c.kind==='vt4').length<=1);
-const missingD7=readCombined7D(d7history,sheet(false),'2026-06-23','Previa');
+const missingD7=readCombined7D(d7history,sheet(false),'2026-06-28','Previa');
 assert.equal(missingD7.decision,'NO JUGAR','no substitute for missing exact D-7');
 const addedFuture=[...d7history,{date:'2026-06-22',sheet:sheet(true)},{date:'2026-06-23',sheet:sheet(true)}];
 assert.deepStrictEqual(readCombined7D(addedFuture,sheet(false),'2026-06-22','Previa'),combined,'future data cannot modify combined prediction');
