@@ -244,3 +244,12 @@ const rest=lifecycle.advanceFocusLifecycle7D(dormant,[],sheet(false),'2026-06-22
 assert.equal(rest.next.phase,'REPOSO');
 assert.deepStrictEqual(rest.next.focus,dormant.focus,'rest cannot kill the focus');
 console.log('OK: lifecycle causal cutoff and reversible rest');
+
+const lineage=load('src/routeLineage7d.ts');
+const rls=lineage.readRouteLineages7D(d7history,sheet(false),'2026-06-22','Previa');
+const rlsTarget=lineage.readRouteLineages7D(d7history,sheet(true),'2026-06-22','Previa');
+assert.deepStrictEqual(rls,rlsTarget,'target results must never change route lineage');
+const rlsFuture=lineage.readRouteLineages7D([...d7history,{date:'2026-06-23',sheet:sheet(true)}],sheet(false),'2026-06-22','Previa');
+assert.deepStrictEqual(rls,rlsFuture,'future results must not change route lineage');
+assert(rls.lineages.every(x=>x.confirmedDraws>=1&&x.daysSinceLast>=0));
+console.log('OK: geometry lineage causality and temporal deduplication');
