@@ -51,7 +51,7 @@ console.log('OK: TypeScript actual - figure L, 345, 543, 354, inverse VT2, causa
 const memorySource=fs.readFileSync(path.join(__dirname,'../src/figureSupportMemory7d.ts'),'utf8');
 const memJs=ts.transpileModule(memorySource,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText;
 const memoryMod={exports:{}};
-vm.runInThisContext('(function(require,module,exports){'+memJs+'\\n})',{filename:'figureSupportMemory7d.ts'})
+vm.runInThisContext('(function(require,module,exports){'+memJs+'\n})',{filename:'figureSupportMemory7d.ts'})
  (name=>name==='./domain'?{TURNOS:['Previa','Primera','Matutino','Vespertino','Nocturno']}:require(name),memoryMod,memoryMod.exports);
 const fm=memoryMod.exports;
 let history=fm.initialFigureSupport7D(f);
