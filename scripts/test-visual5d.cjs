@@ -173,3 +173,11 @@ assert.equal(missingD7.decision,'NO JUGAR','no substitute for missing exact D-7'
 const addedFuture=[...d7history,{date:'2026-06-22',sheet:sheet(true)},{date:'2026-06-23',sheet:sheet(true)}];
 assert.deepStrictEqual(readCombined7D(addedFuture,sheet(false),'2026-06-22','Previa'),combined,'future data cannot modify combined prediction');
 console.log('OK: combined D-7 temporal cutoff, modality caps, exact weekly reference');
+
+const withTargetHeads=readCombined7D(d7history,sheet(true),'2026-06-22','Previa');
+assert.deepStrictEqual(withTargetHeads,combined,'target results must not influence the combined reader');
+const prevCompleted=readCombined7D(d7history,sheet(true),'2026-06-22','Primera');
+const prevIncomplete=readCombined7D(d7history,sheet(false),'2026-06-22','Primera');
+assert(prevCompleted.eligible===prevIncomplete.eligible,'prior results may change scores but not D7 candidate universe');
+assert(prevCompleted.candidates.length<=7);
+console.log('OK: combined current-day cutoff and earlier-turn reading');
