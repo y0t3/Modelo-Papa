@@ -7,7 +7,8 @@ import type {Path} from './paths';
 import type {DatedSheet,CycleKind} from './cycle7d';
 import type {MarkedPath,MarkedMoment} from './markedSheet7d';
 import {reconstructMarkedMoments,priorMarkedMoments} from './markedSheet7d';
-import {relationOf} from './routeLineage7d';
+import {familyRelation7D} from './geometryFamily7d';
+import type {FamilyRelation7D} from './geometryFamily7d';
 
 export type RouteFocusIdentity={kind:CycleKind;sourceId:SourceId;coordinates:string;route:Path};
 export type RouteEpisode7D={
@@ -25,6 +26,13 @@ export type DualRouteDecision7D={date:string;turn:Turno;action:DualRouteAction7D
 const moment=(date:string,turn:Turno)=>date+'|'+String(TURNOS.indexOf(turn));
 const routeId=(f:RouteFocusIdentity)=>[f.kind,f.sourceId,f.coordinates].join('|');
 const same=(a?:RouteFocusIdentity,b?:RouteFocusIdentity)=>!!a&&!!b&&routeId(a)===routeId(b);
+export type MatchingMode7D='EXACTA'|'FAMILIA';
+const relationship=(a:RouteFocusIdentity|undefined,b:RouteFocusIdentity,mode:MatchingMode7D):FamilyRelation7D=>
+ !a?'NO_RELACION':mode==='EXACTA'?(same(a,b)?'EXACTA':'NO_RELACION'):familyRelation7D(a,b);
+const priority:Record<FamilyRelation7D,number>={EXACTA:0,TRASLACION_CERCANA:1,RAMA_CERCANA:2,NO_RELACION:3};
+const familyEpisode=(root:RouteFocusIdentity|undefined,episodes:RouteEpisode7D[],mode:MatchingMode7D)=>
+ episodes.filter(e=>relationship(root,e.identity,mode)!=='NO_RELACION')
+ .sort((a,b)=>priority[relationship(root!,a.identity,mode)]-priority[relationship(root!,b.identity,mode)]||rank(a,b))[0];
 const identity=(m:MarkedPath):RouteFocusIdentity=>({kind:m.kind,sourceId:m.sourceId,coordinates:m.cells.join('>'),route:m.route});
 const weekAgo=(d:string)=>{const x=new Date(d+'T12:00:00Z');x.setUTCDate(x.getUTCDate()-7);return x.toISOString().slice(0,10)};
 const rank=(a:RouteEpisode7D,b:RouteEpisode7D)=>
@@ -59,16 +67,16 @@ export function buildRouteEpisodes7D(history:DatedSheet[],current:DailySheet,dat
   const events=new Map<string,Set<string>>();
   for(const m of recent)for(const x of m.marks){
    if(x.kind!==kind||x.sourceId!==anchor.sourceId)continue;
-   const relation=relationOf(anchor,x);
-   if(relation==='SIN_RELACION')continue;
+   const relation=familyRelation7D(identity(anchor),identity(x));
+   if(relation==='NO_RELACION')continue;
    const id=moment(m.date,m.turn);
    const types=events.get(id)||new Set<string>();types.add(relation);events.set(id,types);
   }
   let exact=0,movement=0,branches=0;
   for(const types of events.values()){
-   if(types.has('MISMA_RUTA'))exact++;
-   else if(types.has('MISMO_MOVIMIENTO'))movement++;
-   else if(types.has('RAMIFICA'))branches++;
+   if(types.has('EXACTA'))exact++;
+   else if(types.has('TRASLACION_CERCANA'))movement++;
+   else if(types.has('RAMA_CERCANA'))branches++;
   }
   const evidenceIds=[...events.keys()].sort();
   episodes.set(k,{identity:f,anchorDate:d7,projectedValue,evidenceIds,exact,movement,branches,lastEvidence:evidenceIds[evidenceIds.length-1]});
@@ -79,12 +87,12 @@ export function buildRouteEpisodes7D(history:DatedSheet[],current:DailySheet,dat
  * be considered a NEW confirmation. Promotion requires a NEW marked drawing
  * since the emerging focus was first observed, not two screen renders.
  */
-export function advanceDualRouteFromEpisodes7D(state:DualRouteState7D,episodes:RouteEpisode7D[],date:string,turn:Turno):DualRouteDecision7D{
+export function advanceDualRouteFromEpisodes7D(state:DualRouteState7D,episodes:RouteEpisode7D[],date:string,turn:Turno,mode:MatchingMode7D='EXACTA'):DualRouteDecision7D{
  if(state.target!==turn||TURNOS.indexOf(turn)<0)throw Error('Turno objetivo distinto del estado');
  const now=moment(date,turn);
  if(state.lastMoment&&state.lastMoment>=now)throw Error('La decision debe avanzar cronologicamente');
  const eligible=episodes.filter(e=>e.identity.kind===state.kind).sort(rank);
- const leader=eligible[0],primaryEpisode=eligible.find(x=>same(x.identity,state.primary));
+ const leader=eligible[0],primaryEpisode=familyEpisode(state.primary,eligible,mode);
  const currentEvidence=primaryEpisode?.evidenceIds||[];
  const freshPrimary=currentEvidence.filter(id=>!state.primarySeen.includes(id));
  const quiet=state.primary?(freshPrimary.length?0:state.primaryQuiet+1):0;
@@ -101,25 +109,25 @@ export function advanceDualRouteFromEpisodes7D(state:DualRouteState7D,episodes:R
   return make('SIN_FOCO',{...base,emerging:leader?.identity,emergingSeen:leader?.evidenceIds||[]},
     'Hay ruta D-7, pero todavia no tiene otra confirmacion del mismo turno.');
  }
- const alternate=eligible.find(e=>!same(e.identity,state.primary));
+ const alternate=eligible.find(e=>relationship(state.primary,e.identity,mode)==='NO_RELACION');
  if(!alternate){
   const action:DualRouteAction7D=state.resting&&freshPrimary.length?'REACTIVAR':resting?(state.resting?'SEGUIR_EN_REPOSO':'REPOSAR'):'MANTENER';
   return make(action,{...base,emerging:undefined,emergingSeen:[]},
    freshPrimary.length?'Confirmacion nueva del foco principal.':'No hay alternativa D-7 disponible con geometria distinta.',freshPrimary.length);
  }
- const previouslyObserved=same(state.emerging,alternate.identity);
+ const previouslyObserved=relationship(state.emerging,alternate.identity,mode)!=='NO_RELACION';
  const priorSeen=previouslyObserved?state.emergingSeen:[];
  const independentNew=alternate.evidenceIds.filter(x=>!priorSeen.includes(x));
- const next:DualRouteState7D={...base,emerging:alternate.identity,emergingSeen:[...new Set([...priorSeen,...alternate.evidenceIds])]};
+ const next:DualRouteState7D={...base,emerging:previouslyObserved?state.emerging:alternate.identity,emergingSeen:[...new Set([...priorSeen,...alternate.evidenceIds])]};
  const exceeds=alternate.evidenceIds.length>=2&&alternate.evidenceIds.length>(primaryEpisode?.evidenceIds.length||0);
  if(previouslyObserved&&independentNew.length>0&&exceeds){
-  const promoted:DualRouteState7D={...next,primary:alternate.identity,primarySeen:next.emergingSeen,
+  const promoted:DualRouteState7D={...next,primary:next.emerging,primarySeen:next.emergingSeen,
     emerging:state.primary,emergingSeen:base.primarySeen,primaryQuiet:0,resting:false};
   return make('PROMOVER',promoted,'Promocion solo tras nuevo sorteo confirmatorio independiente y ventaja sobre la ruta principal.',independentNew.length);
  }
  return make('OBSERVAR_EMERGENTE',next,'Se observa otra geometria sin desplazar la principal; no existe evidencia nueva suficiente para promover.',independentNew.length);
 }
-export function advanceDualRouteFocus7D(state:DualRouteState7D,history:DatedSheet[],current:DailySheet,date:string,turn:Turno):DualRouteDecision7D{
+export function advanceDualRouteFocus7D(state:DualRouteState7D,history:DatedSheet[],current:DailySheet,date:string,turn:Turno,mode:MatchingMode7D='EXACTA'):DualRouteDecision7D{
  const episodes=buildRouteEpisodes7D(history,current,date,turn,state.kind);
- return advanceDualRouteFromEpisodes7D(state,episodes,date,turn);
+ return advanceDualRouteFromEpisodes7D(state,episodes,date,turn,mode);
 }
