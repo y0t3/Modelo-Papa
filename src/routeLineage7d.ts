@@ -50,3 +50,20 @@ export function readRouteLineages7D(history:DatedSheet[],current:DailySheet,date
  return {date,turn,windowDays:dates.length,lineages:lineages.sort((a,b)=>b.confirmedDraws-a.confirmedDraws||a.coordinates.localeCompare(b.coordinates)),
  notice:'Relaciones geometricas descriptivas de rutas ganadoras; reposo no significa muerte. Un sorteo se cuenta una vez por linaje, pero los linajes superpuestos no son observaciones independientes.'};
 }
+
+export type RoutePriority7D={kind:CycleKind;leader?:RouteLineage;alternative?:RouteLineage;action:'OBSERVAR'|'MANTENER_GEOMETRIA'|'EXAMINAR_RAMA';reason:string};
+export function compareRouteLineages7D(report:RouteLineageReport):RoutePriority7D[]{
+ const result:RoutePriority7D[]=[];
+ for(const kind of ['vt2','vt3','vt4'] as CycleKind[]){
+  const ranked=report.lineages.filter(x=>x.kind===kind).sort((a,b)=>b.exactDraws-a.exactDraws||b.confirmedDraws-a.confirmedDraws||a.coordinates.localeCompare(b.coordinates));
+  const leader=ranked[0],alternative=ranked.find(x=>leader&&x.coordinates!==leader.coordinates&&x.sourceId===leader.sourceId&&x.branchDraws>0);
+  if(!leader||leader.exactDraws<2){
+   result.push({kind,leader,alternative,action:'OBSERVAR',reason:'Sin repeticion fisica exacta suficiente para priorizar una geometria.'});
+  }else if(alternative&&alternative.confirmedDraws>=leader.confirmedDraws){
+   result.push({kind,leader,alternative,action:'EXAMINAR_RAMA',reason:'Hay otra ruta conectada con actividad comparable; no se declara cambio aun.'});
+  }else{
+   result.push({kind,leader,alternative,action:'MANTENER_GEOMETRIA',reason:'Geometria exacta reconfirmada; continuar observando sin inferir ventaja predictiva.'});
+  }
+ }
+ return result;
+}
