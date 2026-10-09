@@ -55,3 +55,24 @@ assert.equal(absent.validTranslations,0);
 assert.equal(absent.shifted,undefined);
 assert.equal(absent.fixed.direct,'345');
 console.log('OK: frozen fixed/translated figures, bounded rigid shift, no lookahead, missing data');
+
+const pairMemory=load('src/figureTranslationMemory7d.ts');
+let tracked=pairMemory.initialTranslationMemory7D(memory);
+tracked=pairMemory.observeTranslatedFigure7D(tracked,memory,baseline,['0758']);
+assert.equal(tracked.observations[0].status,'SOLO_TRASLADADA');
+assert.equal(tracked.observations[0].fixedExact,false);
+assert.equal(tracked.observations[0].translatedExact,true);
+assert.equal(tracked.observations[0].translatedGeometric,true);
+assert.deepStrictEqual(memory.originCoordinates,['0:0','0:1','1:1']);
+assert.throws(()=>pairMemory.observeTranslatedFigure7D(tracked,memory,baseline,['0758']),/cronologia/);
+const nextPair=translation.prefreezeFixedAndTranslated7D(memory,[],sheet(values),'2026-08-06','Nocturno');
+tracked=pairMemory.observeTranslatedFigure7D(tracked,memory,nextPair,['0345','0758']);
+assert.equal(tracked.observations[1].status,'AMBAS','two compatible readings stay one event');
+assert.equal(tracked.observations.length,2);
+assert(tracked.observations[1].unionReadings<=tracked.observations[1].fixedReadings+tracked.observations[1].translatedReadings);
+const untouched=translation.prefreezeFixedAndTranslated7D(memory,[],sheet(values),'2026-08-07','Nocturno');
+tracked=pairMemory.observeTranslatedFigure7D(tracked,memory,untouched,['0999']);
+assert.equal(tracked.observations[2].status,'SIN_APOYO');
+assert.equal(tracked.rootId,pairMemory.initialTranslationMemory7D(memory).rootId,
+ 'lack of hits must never erase the original shape');
+console.log('OK: original figure survives shifts, independent observation, no double-counted turn');
