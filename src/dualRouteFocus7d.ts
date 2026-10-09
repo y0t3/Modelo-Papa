@@ -11,7 +11,7 @@ import {relationOf} from './routeLineage7d';
 
 export type RouteFocusIdentity={kind:CycleKind;sourceId:SourceId;coordinates:string;route:Path};
 export type RouteEpisode7D={
- identity:RouteFocusIdentity; anchorDate:string; evidenceIds:string[];
+ identity:RouteFocusIdentity; anchorDate:string; projectedValue:string; evidenceIds:string[];
  exact:number; movement:number; branches:number; lastEvidence?:string;
 };
 export type DualRouteState7D={
@@ -51,6 +51,9 @@ export function buildRouteEpisodes7D(history:DatedSheet[],current:DailySheet,dat
  const episodes=new Map<string,RouteEpisode7D>();
  for(const anchor of baseline.marks){
   if(anchor.kind!==kind||!available.has(anchor.sourceId))continue;
+  const column=current.columns.find(c=>c.id===anchor.sourceId);
+  if(!column||anchor.route.some(c=>!/^\d{2}$/.test(column.values[c.row]||'')))continue;
+  const projectedValue=anchor.route.map(c=>column.values[c.row][c.col]).join('');
   const f=identity(anchor),k=routeId(f);
   if(episodes.has(k))continue;
   const events=new Map<string,Set<string>>();
@@ -68,7 +71,7 @@ export function buildRouteEpisodes7D(history:DatedSheet[],current:DailySheet,dat
    else if(types.has('RAMIFICA'))branches++;
   }
   const evidenceIds=[...events.keys()].sort();
-  episodes.set(k,{identity:f,anchorDate:d7,evidenceIds,exact,movement,branches,lastEvidence:evidenceIds[evidenceIds.length-1]});
+  episodes.set(k,{identity:f,anchorDate:d7,projectedValue,evidenceIds,exact,movement,branches,lastEvidence:evidenceIds[evidenceIds.length-1]});
  }
  return [...episodes.values()].sort(rank);
 }
