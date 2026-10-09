@@ -229,3 +229,18 @@ const persistentTarget=pf.decidePersistentFlow7D(persistentEmpty,d7history,sheet
 assert.deepStrictEqual(persistentPreview,persistentTarget,'target heads must not alter persisted controller');
 assert.deepStrictEqual(persistentPreview.decisions.map(x=>x.kind),['vt2','vt3','vt4']);
 console.log('OK: persistent controller causal cutoff, original focus comes from recorded decisions');
+
+const lifecycle=load('src/flowLifecycle7d.ts');
+const init=lifecycle.initialFocusState7D('vt2');
+const lcBase=lifecycle.advanceFocusLifecycle7D(init,d7history,sheet(false),'2026-06-22','Primera');
+const lcFuture=lifecycle.advanceFocusLifecycle7D(init,[...d7history,{date:'2026-06-23',sheet:sheet(true)}],sheet(false),'2026-06-22','Primera');
+assert.deepStrictEqual(lcBase,lcFuture,'future sheet changes no lifecycle decisions');
+const lcTarget=lifecycle.advanceFocusLifecycle7D(init,d7history,sheet(true),'2026-06-22','Previa');
+const lcBlank=lifecycle.advanceFocusLifecycle7D(init,d7history,sheet(false),'2026-06-22','Previa');
+assert.deepStrictEqual(lcTarget,lcBlank,'target results must not change lifecycle');
+assert.equal(init.phase,'SIN_FOCO');
+const dormant={kind:'vt4',phase:'ACTIVO',focus:{kind:'vt4',sourceId:'Previa',winningTurn:'Nocturno',zone:'ABAJO'},quietTurns:2,started:'2026-06-01|Previa'};
+const rest=lifecycle.advanceFocusLifecycle7D(dormant,[],sheet(false),'2026-06-22','Previa');
+assert.equal(rest.next.phase,'REPOSO');
+assert.deepStrictEqual(rest.next.focus,dormant.focus,'rest cannot kill the focus');
+console.log('OK: lifecycle causal cutoff and reversible rest');
