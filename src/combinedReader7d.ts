@@ -16,7 +16,7 @@ export type CombinedCandidate={kind:CycleKind;value:string;sourceId:SourceId;pat
 export type CombinedResult={date:string;turn:Turno;decision:'OBSERVAR'|'NO JUGAR';candidates:CombinedCandidate[];evaluated:number;eligible:number;reason:string};
 const pathKey=(p:Path)=>p.map(c=>c.row+':'+c.col).join('>');
 const sortMoment=(d:string,t:Turno)=>d+'|'+String(TURNOS.indexOf(t));
-const weekday=(d:string)=>new Date(d+'T12:00:00Z').getUTCDay();
+const weekAgo=(d:string)=>{const x=new Date(d+'T12:00:00Z');x.setUTCDate(x.getUTCDate()-7);return x.toISOString().slice(0,10)};
 const verified=(p:Path,values:string[])=>p.length>=2&&p.every(c=>c.row>=0&&c.row<6&&c.col>=0&&c.col<2&&/^\d{2}$/.test(values[c.row]||'')&&values[c.row][c.col]===c.digit);
 const project=(p:Path,values:string[]):Path|null=>{
  const path=p.map(c=>({...c,digit:values[c.row]?.[c.col]||''}));
@@ -31,7 +31,7 @@ export function readCombined7D(dated:DatedSheet[],current:DailySheet,date:string
  const clean=dated.filter(x=>x.date<date);
  const moments=reconstructMarkedMoments(clean);
  const historical=priorMarkedMoments(moments,date,turn);
- const sameWeekday=clean.filter(d=>d.date<date&&weekday(d.date)===weekday(date)).sort((a,b)=>b.date.localeCompare(a.date))[0];
+ const sameWeekday=clean.find(d=>d.date===weekAgo(date));
  if(!sameWeekday)return {date,turn,decision:'NO JUGAR',candidates:[],eligible:0,evaluated:0,reason:'Falta la hoja del mismo día de la semana anterior.'};
  const weekly=historical.find(m=>m.date===sameWeekday.date&&m.turn===turn);
  if(!weekly||weekly.marks.length===0)return {date,turn,decision:'NO JUGAR',candidates:[],eligible:0,evaluated:0,reason:'La hoja D-7 no tiene rutas ganadoras marcadas en este turno.'};
