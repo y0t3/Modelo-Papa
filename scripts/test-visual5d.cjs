@@ -151,3 +151,11 @@ assert(adaptiveA.candidates.filter(c=>c.kind==='vt4').length<=1);
 assert(adaptiveA.candidates.every(c=>c.path.length===Number(c.kind.slice(-1))),'physical routes valid');
 assert(adaptiveA.tracked>0,'marked figures tracked');
 console.log('OK: adaptive 7D causal cutoff and bounded independent VT2 VT3 VT4');
+
+const spatial=load('src/spatialFlow7d.ts');
+assert.equal(spatial.routeZone({route:[{row:0,col:0},{row:1,col:0}]}),'ARRIBA');
+assert.equal(spatial.routeZone({route:[{row:1,col:0},{row:2,col:0}]}),'CRUZA_ZONAS');
+const spatialBefore=spatial.observeSpatialFlow7D(adaptiveDays,'2026-06-18','Primera');
+assert.deepStrictEqual(spatialBefore,adaptiveA.spatialFlow);
+assert(spatialBefore.trends.every(x=>x.totalDraws===x.recentDraws+x.previousDraws));
+console.log('OK: spatial flow zone and chronology');
