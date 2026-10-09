@@ -14,6 +14,7 @@ export type FigureFollowup7D={dateStarted:string;kind:CycleKind;target:Turno;sou
 export type FigurePreview7D={date:string;target:Turno;projectable:boolean;frozen?:FigureFrozen7D;reason?:string};
 const dateOK=(d:string)=>/^\d{4}-\d{2}-\d{2}$/.test(d);
 export function startFigureFollowup7D(e:FigureReadingEvidence7D):FigureFollowup7D{
+ if(e.headsChecked<1)throw Error('El estado de apoyo solo se conoce despues del sorteo');
  const status:FigureOriginStatus7D=e.numericExact?'EXACTO':e.geometricCompatible?'APOYO_GEOMETRICO_SIN_EXACTITUD':
   e.vt2Inverse?'APOYO_VT2_PARCIAL':'SIN_APOYO';
  return {dateStarted:e.frozen.date,kind:e.frozen.kind,target:e.frozen.target,sourceId:e.frozen.sourceId,
