@@ -159,3 +159,17 @@ const spatialBefore=spatial.observeSpatialFlow7D(adaptiveDays,'2026-06-18','Prim
 assert.deepStrictEqual(spatialBefore,adaptiveA.spatialFlow);
 assert(spatialBefore.trends.every(x=>x.totalDraws===x.recentDraws+x.previousDraws));
 console.log('OK: spatial flow zone and chronology');
+
+const {readCombined7D}=load('src/combinedReader7d.ts');
+const d7history=[{date:'2026-06-15',sheet:sheet(true)},{date:'2026-06-16',sheet:sheet(true)},{date:'2026-06-17',sheet:sheet(false)},{date:'2026-06-18',sheet:sheet(false)},{date:'2026-06-19',sheet:sheet(false)},{date:'2026-06-20',sheet:sheet(false)}];
+const combined=readCombined7D(d7history,sheet(false),'2026-06-22','Previa');
+assert(combined.candidates.length>0,'D-7 winning paths generate candidates');
+assert(combined.candidates.every(c=>c.signals[0].name==='D7'));
+assert(combined.candidates.filter(c=>c.kind==='vt2').length<=3);
+assert(combined.candidates.filter(c=>c.kind==='vt3').length<=3);
+assert(combined.candidates.filter(c=>c.kind==='vt4').length<=1);
+const missingD7=readCombined7D(d7history,sheet(false),'2026-06-23','Previa');
+assert.equal(missingD7.decision,'NO JUGAR','no substitute for missing exact D-7');
+const addedFuture=[...d7history,{date:'2026-06-22',sheet:sheet(true)},{date:'2026-06-23',sheet:sheet(true)}];
+assert.deepStrictEqual(readCombined7D(addedFuture,sheet(false),'2026-06-22','Previa'),combined,'future data cannot modify combined prediction');
+console.log('OK: combined D-7 temporal cutoff, modality caps, exact weekly reference');
