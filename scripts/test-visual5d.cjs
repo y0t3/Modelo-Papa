@@ -181,3 +181,14 @@ const prevIncomplete=readCombined7D(d7history,sheet(false),'2026-06-22','Primera
 assert(prevCompleted.eligible===prevIncomplete.eligible,'prior results may change scores but not D7 candidate universe');
 assert(prevCompleted.candidates.length<=7);
 console.log('OK: combined current-day cutoff and earlier-turn reading');
+
+const {decideFlowSwitch7D}=load('src/flowSwitch7d.ts');
+const switchBase=decideFlowSwitch7D(d7history,sheet(false),'2026-06-22','Primera');
+const switchFuture=decideFlowSwitch7D([...d7history,{date:'2026-06-23',sheet:sheet(true)}],sheet(false),'2026-06-22','Primera');
+assert.deepStrictEqual(switchBase,switchFuture,'future dated sheet cannot influence switching');
+const switchTarget=decideFlowSwitch7D(d7history,sheet(true),'2026-06-22','Previa');
+const switchTargetBlank=decideFlowSwitch7D(d7history,sheet(false),'2026-06-22','Previa');
+assert.deepStrictEqual(switchTarget,switchTargetBlank,'target marks cannot influence switching');
+assert.deepStrictEqual(switchBase.decisions.map(x=>x.kind),['vt2','vt3','vt4']);
+assert(switchBase.decisions.every(x=>['MANTENER','CAMBIAR','OBSERVAR_NUEVA','ABSTENERSE'].includes(x.action)));
+console.log('OK: flow switch per VT mode and causal cutoff');
