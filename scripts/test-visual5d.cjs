@@ -202,3 +202,20 @@ const consBlank=decideConservativeFlow7D(d7history,sheet(false),'2026-06-22','Pr
 assert.deepStrictEqual(consTarget,consBlank,'conservative flow cannot see target result');
 assert.deepStrictEqual(consBase.decisions.map(x=>x.kind),['vt2','vt3','vt4']);
 console.log('OK: conservative switch causal cutoff and independent VT modes');
+
+const dm=load('src/decisionMemory7d.ts');
+const focA={kind:'vt2',sourceId:'Primera',winningTurn:'Nocturno',zone:'ARRIBA'};
+const focB={kind:'vt2',sourceId:'Previa',winningTurn:'Nocturno',zone:'ABAJO'};
+let log=dm.emptyDecisionMemory7D();
+log=dm.recordDecisions7D(log,'2026-06-15','Previa',[{kind:'vt2',action:'MANTENER',focus:focA,explanation:'Inicio observado'}]);
+assert.deepStrictEqual(dm.lastFocus7D(log,'vt2'),focA);
+log=dm.recordDecisions7D(log,'2026-06-15','Primera',[{kind:'vt2',action:'OBSERVAR_NUEVA',focus:focB,explanation:'Empate'}]);
+assert.deepStrictEqual(dm.lastFocus7D(log,'vt2'),focA,'observing a new trend does not overwrite chosen focus');
+assert.throws(()=>dm.recordDecisions7D(log,'2026-06-15','Primera',[]),/posteriores/);
+log=dm.recordDecisions7D(log,'2026-06-15','Matutino',[{kind:'vt2',action:'CAMBIAR',focus:focB,explanation:'Cambio confirmado'}]);
+assert.deepStrictEqual(dm.lastFocus7D(log,'vt2'),focB);
+const graded=dm.evaluateDecision7D(log,'2026-06-15','Matutino','vt2',false);
+assert.equal(graded.records[2].confirmed,false);
+assert.equal(log.records[2].confirmed,undefined,'outcome never rewrites previously recorded forecast');
+assert.throws(()=>dm.evaluateDecision7D(graded,'2026-06-15','Matutino','vt2',true),/ya anotado/);
+console.log('OK: persistent decision-memory causal ordering, focus continuity, immutable evaluation');
