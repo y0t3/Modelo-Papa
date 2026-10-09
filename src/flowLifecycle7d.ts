@@ -25,7 +25,7 @@ export function advanceFocusLifecycle7D(state:FocusState,history:DatedSheet[],cu
  // Reposo, no muerte: se conserva la identidad y no se reinicia artificialmente.
  if(state.focus&&n===0&&state.quietTurns>=2){
   const next={...state,phase:'REPOSO' as FocusPhase,quietTurns:state.quietTurns+1};
-  return {kind:state.kind,previous:state,next,action:'REPOSAR',explanation:'Tres evaluaciones consecutivas sin actividad reciente de la categoría. El foco descansa, no muere.'};
+  return {kind:state.kind,previous:state,next,action:state.phase==='REPOSO'?'SEGUIR_EN_REPOSO':'REPOSAR',explanation:'Sin actividad reciente de la categoría. El foco descansa, no muere.'};
  }
  // El primer foco no necesita ganarle a TODAS las categorías, pero sí dos marcas;
  // en empate se observa hasta que aparezca una marca que discrimine.
