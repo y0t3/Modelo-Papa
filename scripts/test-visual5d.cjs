@@ -306,3 +306,27 @@ const drLater=dr.buildRouteEpisodes7D([...d7history,{date:'2026-06-23',sheet:she
 assert.deepStrictEqual(drHist,drLater,'D-7 episodes must not see future days');
 assert(drHist.every(x=>x.projectedValue.length===2&&x.identity.sourceId==='prevNocturno'));
 console.log('OK: route-anchored dual-focus causal split, independent evidence, no duplicate evaluation');
+
+const fam=load('src/geometryFamily7d.ts');
+const fid=(kind,sourceId,rs)=>({kind,sourceId,route:rs.map(([row,col])=>({row,col,digit:'1'}))});
+const fa=fid('vt2','Primera',[[0,0],[1,0]]);
+const fb=fid('vt2','Primera',[[1,0],[2,0]]);
+const fc=fid('vt2','Primera',[[2,0],[3,0]]);
+assert.equal(fam.familyRelation7D(fa,fa),'EXACTA');
+assert.equal(fam.familyRelation7D(fa,fb),'TRASLACION_CERCANA');
+assert.equal(fam.familyRelation7D(fa,fc),'NO_RELACION','never merge via transitive one-cell shifts');
+assert.equal(fam.familyRelation7D(fa,fid('vt2','Previa',[[0,0],[1,0]])),'NO_RELACION','never cross physical columns');
+assert.equal(fam.familyRelation7D(fa,fid('vt3','Primera',[[0,0],[1,0],[2,0]])),'NO_RELACION','never mix VT kinds');
+const branchA=fid('vt3','Primera',[[0,0],[1,0],[2,0]]);
+const branchB=fid('vt3','Primera',[[0,0],[1,0],[2,1]]);
+assert.equal(fam.familyRelation7D(branchA,branchB),'RAMA_CERCANA');
+assert.equal(fam.familyRelation7D(fa,fid('vt2','Primera',[[0,0],[0,1]])),'NO_RELACION','VT2 shared-cell alone cannot define a family');
+const shiftedEp={...makeEp({kind:'vt2',sourceId:'prevNocturno',coordinates:'1:0>1:1',route:rt2},['2026-06-16|0'])};
+const familyRef={kind:'vt2',sourceId:'prevNocturno',coordinates:'0:0>0:1',route:rt1};
+let familyState={...dr.initialDualRouteState7D('vt2','Previa'),primary:familyRef,primarySeen:[],lastMoment:'2026-06-18|0'};
+const familyMove=dr.advanceDualRouteFromEpisodes7D(familyState,[shiftedEp],'2026-06-19','Previa','FAMILIA');
+const exactMove=dr.advanceDualRouteFromEpisodes7D(familyState,[shiftedEp],'2026-06-19','Previa','EXACTA');
+assert.deepStrictEqual(familyMove.after.primary,familyRef,'family root identity never changes on translation');
+assert.equal(familyMove.after.primaryQuiet,0,'fresh family evidence reactivates root');
+assert.equal(exactMove.after.primaryQuiet,1,'exact mode rejects shift');
+console.log('OK: bounded D7 families, no transitive merge, VT separation, dual focus continuation');
