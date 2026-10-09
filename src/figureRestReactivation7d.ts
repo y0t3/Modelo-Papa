@@ -72,8 +72,8 @@ export function decideRestPriority7D(state:PromotionFocusState7D,
  const resting=f.phase==='REPOSO';
  const supportedNow=sh.quietValidDraws===0&&sh.lastSupportDate!==undefined;
  const allow=rule==='TRASLADADA_INMEDIATA'||
-  rule==='REPOSO_Y_REGRESO'&&resting&&['REACTIVACION_1','REACTIVACION_CONFIRMADA'].includes(sh.phase)||
-  rule==='REPOSO_Y_RECONFIRMACION'&&resting&&sh.phase==='REACTIVACION_CONFIRMADA'||
+  rule==='REPOSO_Y_REGRESO'&&resting&&supportedNow&&['REACTIVACION_1','REACTIVACION_CONFIRMADA'].includes(sh.phase)||
+  rule==='REPOSO_Y_RECONFIRMACION'&&resting&&supportedNow&&sh.phase==='REACTIVACION_CONFIRMADA'||
   rule==='REPOSO_Y_ACTIVIDAD'&&resting&&supportedNow;
  const shifted=!!preview.shifted&&allow;
  return {date:preview.date,target:preview.turn,rule,
