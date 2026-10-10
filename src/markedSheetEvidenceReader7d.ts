@@ -1,7 +1,9 @@
-// MODELO PAPÁ — lector de EVIDENCIA DE HOJA MARCADA, no de grillas vacías.
-// Alude sólo a marcas que se documentaron mediante una referencia visual.
-// Una cabeza coincidente puede reconstruir muchos caminos AUTOMÁTICOS,
-// pero NINGUNO de ellos se convierte en trazo de papá por esa coincidencia.
+// AUDITORÍA OPCIONAL DE FIDELIDAD A UNA FOTO MANUSCRITA.
+// No participa de la RECONSTRUCCIÓN HISTÓRICA del método: para ésta,
+// cada cabeza YA SORTEADA se busca en +11 previo al turno, y se dibujan
+// sus coincidencias (src/markedSheetAfterDraw7d.ts / markedSheet7d.ts).
+// Sólo si queremos reproducir exactamente qué tinta/flecha se ve en
+// una fotografía, necesitamos certificar orden/celdas del papel.
 import {TURNOS} from './domain';
 import type {Turno} from './domain';
 import type {DailySheet,SourceId} from './sheet';
@@ -54,7 +56,7 @@ export type MarkedSheetVisualReading7D={
  pendingOriginalImageCheck:number;unverifiedHighlightedGroups:number;
  automaticReconstructionsExcluded:number;
  reviews:MarkedWitnessReview7D[];
- decision:'INTERPRETACION_VISUAL_PENDIENTE'|'HAY_TRAZOS_DOCUMENTADOS_PARA_ESTUDIAR';
+ decision:'FOTO_PENDIENTE_DE_VERIFICACION'|'FOTO_CON_TRAZOS_VERIFICADOS';
  notes:string[];
 };
 const idx=(turn:Turno)=>TURNOS.indexOf(turn);
@@ -89,9 +91,9 @@ export function validateMarkedWitness7D(w:MarkedSheetWitness7D):MarkedSheetWitne
   },w.cells)!=='TRAZO_EXACTO_VERIFICADO')throw Error('No se verificó el recorrido ordenado');
  return {...w,cells:[...w.cells]};
 }
-/** Lee SOLO TESTIMONIOS PREVIOS. Nunca recupera recorridos del conjunto
- * automático de matches ni inventa candidatos de la tabla actual.
- * "HAY_TRAZOS..." no es permiso para apostar ni puntuar números.
+/** Auditoría de coincidencia con una FOTO original, no condición de acceso
+ * a los recorridos retrospectivos válidos. Los matches ya reconstruidos
+ * en markedSheetAfterDraw7d.ts siguen siendo la hoja marcada estudiable.
  */
 export function readMarkedSheetEvidenceBefore7D(
  history:DatedSheet[],full:DailySheet,date:string,target:Turno,
@@ -145,13 +147,13 @@ export function readMarkedSheetEvidenceBefore7D(
   pendingOriginalImageCheck:reviews.filter(x=>x.status==='FOTOGRAMA_REFERENCIADO_SIN_CELDAS_DIGITALIZADAS').length,
   unverifiedHighlightedGroups:reviews.filter(x=>x.status==='CELDAS_MANUALES_RESALTADAS_SIN_ORDEN').length,
   automaticReconstructionsExcluded:reviews.filter(x=>x.status==='RUTA_AUTOMATICA_NO_MANUAL').length,
-  reviews,decision:real?'HAY_TRAZOS_DOCUMENTADOS_PARA_ESTUDIAR':'INTERPRETACION_VISUAL_PENDIENTE',
+  reviews,decision:real?'FOTO_CON_TRAZOS_VERIFICADOS':'FOTO_PENDIENTE_DE_VERIFICACION',
   notes:[
    'La unidad de partida es la HOJA MARCADA + su cabeza coincidente debajo, jamás el universo geométrico de rutas.',
    'Sin fotograma legible no inventar coordenadas ni dirección de lectura.',
    'Una celda resaltada sin flecha no equivale a un recorrido ordenado.',
-   'Los caminos hallados tras conocer una cabeza tienen procedencia AUTOMÁTICA y no se promueven a manuales.',
-   'El lector no busca candidatos, no ordena ternas y no tiene objetivo predictivo todavía.',
+   'Los caminos reconstruidos tras conocer la cabeza SON la base válida de la hoja marcada; esta herramienta sólo distingue cuáles aparecen específicamente en el papel original.',
+   'No usamos esta auditoría fotográfica como veto para reconstruir las hojas históricas, estudiar su evolución ni interpretar recorridos.',
    'El turno objetivo y las columnas futuras permanecen ocultos; D−7 es contexto opcional.'
   ]};
 }
