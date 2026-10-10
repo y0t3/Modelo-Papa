@@ -1,0 +1,101 @@
+name: Complete marked-route visual evolution 08-30 Sep
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/visual-complete-evolution-sept.yml'
+      - 'scripts/run-blind-visual-95cuts.cjs'
+      - 'scripts/run-full-route-evolution-95cuts.cjs'
+      - 'scripts/run-morphology-atlas7d.cjs'
+      - 'scripts/run-visual-chain7d.cjs'
+      - 'scripts/visor-ciego7d.js'
+      - 'scripts/visor-ciego7d.css'
+      - 'src/visualMarkedSheet7d.ts'
+      - 'src/markedSheetAfterDraw7d.ts'
+      - 'PROTOCOLO_ATLAS_COMPLETO_CON_NEGATIVOS_08_30_SEPT_2026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cerrar-95-cortes-antes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Reconstruct full source sheets in two bounded chronological windows
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node scripts/run-visual-chain7d.cjs --from=2026-09-08 --to=2026-09-21 --out=out/cadena-08-21
+          node scripts/run-visual-chain7d.cjs --from=2026-09-21 --to=2026-09-30 --out=out/cadena-21-30
+          mkdir -p out/cadena-visual-08-30-septiembre
+          cp -a out/cadena-08-21/. out/cadena-visual-08-30-septiembre/
+          cp -a out/cadena-21-30/. out/cadena-visual-08-30-septiembre/
+          test "$(find out/cadena-visual-08-30-septiembre -maxdepth 1 -name '*-5-Nocturno.json' | wc -l)" -eq 20
+      - name: Test chronological masking and create 95 pre-turn marked visual viewers
+        run: |
+          node --check scripts/run-blind-visual-95cuts.cjs
+          node scripts/run-blind-visual-95cuts.cjs --test-only=true
+          node scripts/run-blind-visual-95cuts.cjs --input=out/cadena-visual-08-30-septiembre --out=out/examen-ciego-95-septiembre
+      - name: Freeze outcome-censored visual cuts as separate artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 95-cortes-ciegos-todas-huellas-08-30-septiembre
+          path: out/examen-ciego-95-septiembre/
+          if-no-files-found: error
+
+  estudiar-movimientos-y-negativos-despues:
+    needs: cerrar-95-cortes-antes
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Retrieve frozen blind cuts (without objective heads)
+        uses: actions/download-artifact@v4
+        with:
+          name: 95-cortes-ciegos-todas-huellas-08-30-septiembre
+          path: out/examen-ciego-95-septiembre/
+      - name: Rebuild complete marked sheets only AFTER blinded files were frozen
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node scripts/run-visual-chain7d.cjs --from=2026-09-08 --to=2026-09-21 --out=out/cadena-08-21
+          node scripts/run-visual-chain7d.cjs --from=2026-09-21 --to=2026-09-30 --out=out/cadena-21-30
+          mkdir -p out/cadena-visual-08-30-septiembre
+          cp -a out/cadena-08-21/. out/cadena-visual-08-30-septiembre/
+          cp -a out/cadena-21-30/. out/cadena-visual-08-30-septiembre/
+          test "$(find out/cadena-visual-08-30-septiembre -maxdepth 1 -name '*-5-Nocturno.json' | wc -l)" -eq 20
+      - name: Test and audit all physical routes and negative comparisons
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node --check scripts/run-full-route-evolution-95cuts.cjs
+          node scripts/run-full-route-evolution-95cuts.cjs --test-only=true
+          node scripts/run-full-route-evolution-95cuts.cjs --input=out/examen-ciego-95-septiembre --views=out/cadena-visual-08-30-septiembre --out=out/atlas-completo-negativos-08-30
+      - name: Rebuild the all-pairs visual atlas for full two-week coverage
+        run: |
+          node --check scripts/run-morphology-atlas7d.cjs
+          node scripts/run-morphology-atlas7d.cjs --test-only=true
+          node scripts/run-morphology-atlas7d.cjs --input=out/cadena-visual-08-30-septiembre --out=out/atlas-ocular-todas-huellas-08-30
+      - name: Save all movements AND absent relations as a separate posterior artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 19-transiciones-95-controles-positivos-negativos-08-30
+          path: out/atlas-completo-negativos-08-30/
+          if-no-files-found: error
+      - name: Save the retrospective all-pairs visual atlas
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-visual-todas-figuras-08-30-septiembre
+          path: out/atlas-ocular-todas-huellas-08-30/
+          if-no-files-found: error
