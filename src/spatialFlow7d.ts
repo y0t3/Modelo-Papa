@@ -44,7 +44,7 @@ export function observeSpatialFlow7D(dated:DatedSheet[],date:string,target:Turno
  }));
  // Comparar mitades cronológicas de turnos observados dentro del ciclo corto.
  const midpoint=Math.floor(observations.length/2);
- const trends:FlowTrend[]=[...keys.values()].map(x=>{
+ const trends:FlowTrend[]=[...keys.values()].map((x):FlowTrend=>{
   const recent=x.times.filter(i=>i>=midpoint).length;
   const previous=x.times.length-recent;
   return {sourceId:x.prototype.sourceId,winningTurn:x.prototype.winningTurn,kind:x.prototype.kind,zone:x.prototype.zone,
