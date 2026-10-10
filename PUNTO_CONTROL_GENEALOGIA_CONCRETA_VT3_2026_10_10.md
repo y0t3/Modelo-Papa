@@ -83,6 +83,27 @@ Las coordenadas son \`fila:columna_interna\`, base cero;
 cada columna de origen es independiente y tiene dos
 dígitos por fila.
 
+## Auditoría de ambigüedad: una cabeza, múltiples recorridos
+Se agruparon los testigos por `fecha + turno + origen + VT3 ganador`,
+para no contar caminos geométricos como sorteos independientes.
+
+| Objetivo | VT3 ganadores históricos distintos en los testigos | Con varias rutas válidas | Producían relecturas distintas en la hoja actual |
+|---|---:|---:|---:|
+| Previa | 6 | 5 | 1 |
+| Primera | 6 | 5 | 1 |
+| Matutino | 6 | 5 | 2 |
+| Vespertino | 10 | 7 | 3 |
+| Nocturno | 12 | 8 | 4 |
+
+**Hallazgo crítico:** antes de Nocturna, ocho de doce grupos históricos
+comprobados admitían más de una ruta; cuatro grupos producían dos o más
+cifras nuevas distintas al releer esos caminos en la tabla actual.
+La memoria debe guardar la **identidad de la ruta ordenada** y abstenerse
+de escoger retrospectivamente aquella que coincida con la cabeza posterior.
+
+Ejecución que vuelve a verificar los cinco cortes y registra esta
+ambigüedad: https://github.com/y0t3/Modelo-Papa/actions/runs/38034787634
+
 ## Importancia y límites
 **Hallazgo operacional:** no debemos recordar sólo el VT3 anterior.
 El mismo 289 histórico pudo ser explicado por dos caminos diferentes
