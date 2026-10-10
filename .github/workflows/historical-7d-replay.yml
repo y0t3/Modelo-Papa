@@ -1,0 +1,42 @@
+name: Historical blind 7D replay
+on:
+  workflow_dispatch:
+    inputs:
+      from:
+        description: "First historical date (include at least seven draw days of warmup)"
+        required: true
+        default: "2026-06-01"
+      to:
+        description: "Last historical date"
+        required: true
+        default: "2026-09-30"
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript compiler
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Smoke-test blind replay
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/test-causal-replay7d.cjs
+      - name: Replay historical 7D without target results
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+          FROM_DATE: ${{ inputs.from }}
+          TO_DATE: ${{ inputs.to }}
+        run: node scripts/run-causal-replay7d.cjs --from="$FROM_DATE" --to="$TO_DATE" --out="out/causal-replay-7d.json"
+      - name: Save complete audit and candidate trail
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-7d-causal-replay
+          path: out/causal-replay-7d.json
+          if-no-files-found: error
