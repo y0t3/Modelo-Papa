@@ -39,41 +39,6 @@ const hit=(value:string,heads:string[])=>heads.some(h=>h.endsWith(value));
  * si el cambio duplica otra candidata o si no hubo tiempo de seguimiento,
  * conserva la candidata original.
  */
-export function followOneRoot7D(days:DatedSheet[],date:string,turn:Turno,
- candidate:{kind:'vt2';value:string;sourceId:string;
- path:{row:number;col:number;digit:string}[]}):ShadowChoice7D{
- const root=ckey(candidate.path);
- const fallback=(reason:string):ShadowChoice7D=>({
-  original:candidate.value,chosen:candidate.value,sourceId:candidate.sourceId,
-  root,focus:'FIJA',priorObservations:0,reason});
- const anchor=weekAgo(date);
- if(days.some(x=>x.date>=date))throw Error('El seguimiento no admite hojas del turno futuro');
- if(!days.some(x=>x.date===anchor))return fallback('No existe D-7 exacto');
- const origin:FigureFollowup7D={
-  dateStarted:anchor,kind:'vt2',target:turn,sourceId:candidate.sourceId as FigureFollowup7D['sourceId'],
-  originCoordinates:root,originStatus:'EXACTO',observations:[]
- };
- const prior=days.filter(x=>x.date>anchor&&x.date<date).sort((a,b)=>a.date.localeCompare(b.date));
- let state:ReturnType<typeof createPromotionFocus7D>|undefined;
- for(const entry of prior){
-  const complete=known(entry.sheet,turn);
-  if(!complete.length)continue;
-  const before=freezeBeforeTurn7D(entry.sheet,turn);
-  if(!state){
-   const earlier=days.filter(x=>x.date<entry.date);
-   const start=prefreezeFixedAndTranslated7D(origin,earlier,before,entry.date,turn);
-   if(!start.fixed||!start.shifted)continue;
-   state=createPromotionFocus7D(origin,start);
-  }
-  const preview=previewPromotionFocus7D(state,before,entry.date,turn);
-  state=recordPromotionOutcome7D(state,preview,complete);
- }
- if(!state)return fallback('No hubo pareja fija/trasladada seguida en sorteos anteriores');
- const target=days.find(x=>x.date===date);
- if(target)throw Error('Se recibió una hoja futura para seleccionar');
- // Se adjunta la hoja objetivo EN BLANCO a traves del argumento separado.
- return {...fallback('La vista objetivo debe proporcionarse al resolver'),priorObservations:state.observations.length};
-}
 export function selectShadowForTurn7D(history:DatedSheet[],before:DailySheet,
  date:string,turn:Turno,candidates:ReplayTurn7D['candidates']):{
  choices:ShadowChoice7D[];physicalAlternatives:Set<string>}{
@@ -82,6 +47,7 @@ export function selectShadowForTurn7D(history:DatedSheet[],before:DailySheet,
  const out:ShadowChoice7D[]=[];
  const physicalAlternatives=physicalPoolBefore7D(history,before,date,turn).vt2;
  const occupied=new Set<string>();
+ const originalValues=new Set(candidates.filter(x=>x.kind==='vt2').map(x=>x.value));
  for(const cand of candidates.filter(x=>x.kind==='vt2')){
   const original=cand.value,root=[...cand.cells];
   let choice:ShadowChoice7D={original,chosen:original,sourceId:cand.sourceId,
@@ -112,7 +78,7 @@ export function selectShadowForTurn7D(history:DatedSheet[],before:DailySheet,
    const decision=decideRestPriority7D(state,preview,SHADOW_RULE_7D);
    const shifted=decision.focus==='TRASLADADA';
    const projected=decision.projected;
-   const usable=shifted&&projected&&projected!==original&&!occupied.has(projected);
+   const usable=shifted&&projected&&projected!==original&&!occupied.has(projected)&&!originalValues.has(projected);
    choice={original,chosen:usable?projected:original,sourceId:cand.sourceId,
     root,shifted:preview.shifted?.coordinates,
     focus:usable?'TRASLADADA':'FIJA',priorObservations:state.observations.length,
