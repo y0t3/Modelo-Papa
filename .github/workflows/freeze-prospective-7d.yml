@@ -1,0 +1,31 @@
+name: Freeze live 7D pre-draw evidence
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/freeze-prospective-7d.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript compiler
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Freeze next Previa prediction before results appear
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node scripts/freeze-prospective7d.cjs --date=2026-10-10 --turn=Previa --out=out/frozen-2026-10-10-previa.json
+      - name: Preserve timestamped prospective artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: prospective-2026-10-10-previa
+          path: out/frozen-2026-10-10-previa.json
+          if-no-files-found: error
