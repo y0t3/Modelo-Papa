@@ -18,7 +18,7 @@ export type VisualEvidenceStatus7D=
 export type MarkedSheetWitness7D={
  id:string;date:string;turn:Turno;
  sourceId:SourceId;kind:'VT2'|'VT3'|'VT4';
- // Cabeza anotada ABAJO de la hoja y ya sorteada.
+ // Cabeza coincidente conocida; su posición en la hoja se verifica aparte.
  headCoincidente:string;
  // Evita suponer que el número estaba legible debajo cuando sólo
  // se recuperó del resultado publicado.
@@ -57,7 +57,6 @@ export type MarkedSheetVisualReading7D={
  decision:'INTERPRETACION_VISUAL_PENDIENTE'|'HAY_TRAZOS_DOCUMENTADOS_PARA_ESTUDIAR';
  notes:string[];
 };
-const size=(kind:MarkedSheetWitness7D['kind'])=>Number(kind.slice(-1));
 const idx=(turn:Turno)=>TURNOS.indexOf(turn);
 const existsBefore=(date:string,turn:Turno,goalDate:string,target:Turno)=>
  date<goalDate||(date===goalDate&&idx(turn)<idx(target));
@@ -68,7 +67,7 @@ const cellsRead=(values:string[],cells:string[])=>{
  return digits.every(d=>/^\d$/.test(d))?digits.join(''):undefined;
 };
 export function validateMarkedWitness7D(w:MarkedSheetWitness7D):MarkedSheetWitness7D{
- if(!w.id.trim()||!/^\\d{4}-\\d{2}-\\d{2}$/.test(w.date)||
+ if(!w.id.trim()||!['DEBAJO_VISIBLE','RESULTADO_CONOCIDO_ANOTACION_NO_VERIFICADA'].includes(w.headLocation)||!/^\d{4}-\d{2}-\d{2}$/.test(w.date)||
   !TURNOS.includes(w.turn)||!/^\d{4}$/.test(w.headCoincidente)||
   !w.reference.trim())throw Error('Testimonio sin identidad, fecha, cabeza o fuente visual');
  if(w.status==='FOTOGRAMA_REFERENCIADO_SIN_CELDAS_DIGITALIZADAS'){
