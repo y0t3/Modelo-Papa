@@ -13,6 +13,9 @@ on:
       - 'src/visualMarkedSheet7d.ts'
       - 'src/markedSheetAfterDraw7d.ts'
       - 'PROTOCOLO_ATLAS_COMPLETO_CON_NEGATIVOS_08_30_SEPT_2026.md'
+      - 'PROTOCOLO_CIEGO_CONTACTO_RECONFIRMACION_95_CORTES_2026_10_10.md'
+      - 'scripts/run-blind-contact-inventory-95cuts.cjs'
+      - 'scripts/run-contact-reconfirmation-post-95cuts.cjs'
   workflow_dispatch:
 permissions:
   contents: read
@@ -98,4 +101,71 @@ jobs:
         with:
           name: atlas-visual-todas-figuras-08-30-septiembre
           path: out/atlas-ocular-todas-huellas-08-30/
+          if-no-files-found: error
+
+  sellar-contactos-antes:
+    needs: cerrar-95-cortes-antes
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Retrieve all 95 outcome-censored previously sealed cuts
+        uses: actions/download-artifact@v4
+        with:
+          name: 95-cortes-ciegos-todas-huellas-08-30-septiembre
+          path: out/examen-ciego-95-septiembre/
+      - name: Register every physical contact before its target result
+        run: |
+          node --check scripts/run-blind-contact-inventory-95cuts.cjs
+          node scripts/run-blind-contact-inventory-95cuts.cjs --test-only=true
+          node scripts/run-blind-contact-inventory-95cuts.cjs --input=out/examen-ciego-95-septiembre --out=out/contactos-antes-95
+      - name: Freeze the four contact classes as their own PRE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: contacto-fisico-PRE-95-cortes
+          path: out/contactos-antes-95/
+          if-no-files-found: error
+
+  cotejar-contactos-despues:
+    needs: [sellar-contactos-antes, estudiar-movimientos-y-negativos-despues]
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Receive already frozen PRE contact dossiers
+        uses: actions/download-artifact@v4
+        with:
+          name: contacto-fisico-PRE-95-cortes
+          path: out/contactos-antes-95/
+      - name: Receive independent posterior results with all six heads
+        uses: actions/download-artifact@v4
+        with:
+          name: 19-transiciones-95-controles-positivos-negativos-08-30
+          path: out/atlas-completo-negativos-08-30/
+      - name: Rebuild target-stage marked sheets only AFTER preturn seal
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+          node scripts/run-visual-chain7d.cjs --from=2026-09-08 --to=2026-09-21 --out=out/cadena-08-21
+          node scripts/run-visual-chain7d.cjs --from=2026-09-21 --to=2026-09-30 --out=out/cadena-21-30
+          mkdir -p out/cadena-visual-08-30-septiembre
+          cp -a out/cadena-08-21/. out/cadena-visual-08-30-septiembre/
+          cp -a out/cadena-21-30/. out/cadena-visual-08-30-septiembre/
+      - name: Check physical reconfirmations and all matched negatives
+        run: |
+          node --check scripts/run-contact-reconfirmation-post-95cuts.cjs
+          node scripts/run-contact-reconfirmation-post-95cuts.cjs --test-only=true
+          node scripts/run-contact-reconfirmation-post-95cuts.cjs --input=out/contactos-antes-95 --post=out/atlas-completo-negativos-08-30 --views=out/cadena-visual-08-30-septiembre --out=out/contactos-post-95
+      - name: Preserve every positive and negative result separately
+        uses: actions/upload-artifact@v4
+        with:
+          name: contacto-fisico-POST-95-cortes
+          path: out/contactos-post-95/
           if-no-files-found: error
