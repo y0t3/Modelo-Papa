@@ -230,6 +230,12 @@ async function main(){
  const overlap=rows.filter(r=>r.origins.length===2);
  const coverage=Object.fromEntries(T.map(t=>[t,J.filter(j=>/^\d{4}$/.test(today[t][j]||'')).length]));
  const allHeads=Object.fromEntries(T.map(t=>[t,J.map(j=>({jurisdiction:j,head:today[t][j]||'----'}))]));
+ const prior=await descargarCabezas('2026-10-09',true);
+ const masked=JSON.parse(JSON.stringify(today));
+ for(const later of T.slice(2))for(const j of J)masked[later][j]='----';
+ const finalTurn='Primera';
+ const fullMarked=buildVisualMarkedSheet7D(buildSheet(masked,prior),DATE,finalTurn);
+ const confirmed=fullMarked.strokes.filter(t=>t.turn==='Primera'&&cut.columns.some(c=>c.id===t.sourceId));
  const doc={protocol:'COMPARACION_PRESELLADA_PRIMERA_10OCT2026_V1',
   preSource:{runId:RUN,capturedAtUtc:manifest.capturedAtUtc,sha256:SHA,
    columns:cut.columns.map(c=>c.id),humanSelections:0},
@@ -244,12 +250,6 @@ async function main(){
   confirmedPrimeraStrokes:confirmed,
   forecastScore:null,humanForecastCount:0,
   interpretation:'Todas las rutas y ambas lecturas se conocían como alternativas, ninguna fue elegida antes.'};
- const prior=await descargarCabezas('2026-10-09',true);
- const masked=JSON.parse(JSON.stringify(today));
- for(const later of T.slice(2))for(const j of J)masked[later][j]='----';
- const finalTurn='Primera';
- const fullMarked=buildVisualMarkedSheet7D(buildSheet(masked,prior),DATE,finalTurn);
- const confirmed=fullMarked.strokes.filter(t=>t.turn==='Primera'&&cut.columns.some(c=>c.id===t.sourceId));
  fs.mkdirSync(out,{recursive:true});
  fs.copyFileSync(path.join(source,DATE+'-ANTES-Primera.json'),
   path.join(out,'FOTO_ORIGINAL_ANTES_PRIMERA.json'));
