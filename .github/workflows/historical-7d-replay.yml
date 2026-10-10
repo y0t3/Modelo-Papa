@@ -10,11 +10,11 @@ on:
       from:
         description: "First historical date (include at least seven draw days of warmup)"
         required: true
-        default: "2026-06-01"
+        default: "2025-01-01"
       to:
         description: "Last historical date"
         required: true
-        default: "2026-09-30"
+        default: "2025-12-31"
 permissions:
   contents: read
 jobs:
@@ -35,8 +35,8 @@ jobs:
       - name: Replay historical 7D without target results
         env:
           NODE_PATH: /tmp/mp-ts/node_modules
-          FROM_DATE: ${{ inputs.from || '2026-06-01' }}
-          TO_DATE: ${{ inputs.to || '2026-09-30' }}
+          FROM_DATE: ${{ inputs.from || '2025-01-01' }}
+          TO_DATE: ${{ inputs.to || '2025-12-31' }}
         run: node scripts/run-causal-replay7d.cjs --from="$FROM_DATE" --to="$TO_DATE" --out="out/causal-replay-7d.json"
       - name: Save complete audit and candidate trail
         if: success()
