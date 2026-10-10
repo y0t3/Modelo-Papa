@@ -37,6 +37,32 @@ function* dates(){
   const dt=new Date(ms);if(dt.getUTCDay()===0)continue;yield dt.toISOString().slice(0,10);
  }
 }
+const choose=(n,k)=>{
+ if(k<0||n<0||k>n)return 0;
+ k=Math.min(k,n-k);let out=1;
+ for(let i=1;i<=k;i++)out=out*(n-k+i)/i;
+ return out;
+};
+/** Exact null tail for drawing the same number of distinct candidates,
+ * uniformly from the physically eligible D-7 pool on each target turn.
+ * This tests the frozen HISTORICAL ranking, not a prospective edge.
+ */
+function physicalRandomTail(rows,kind,actualHits){
+ let probs=[1];
+ for(const row of rows){
+  const n=row.physicalPoolSizes[kind],w=row.physicalWinningValues[kind];
+  const m=row.candidates.filter(c=>c.kind===kind).length;
+  if(m===0||w===0)continue;
+  if(m>n)throw Error('Ranking seleccionó más números que el universo físico');
+  const divisor=choose(n,m),pmf=[];
+  for(let k=0;k<=m;k++)pmf.push(choose(w,k)*choose(n-w,m-k)/divisor);
+  const out=Array(probs.length+m).fill(0);
+  for(let i=0;i<probs.length;i++)for(let k=0;k<pmf.length;k++)
+   out[i+k]+=probs[i]*pmf[k];
+  probs=out;
+ }
+ return Math.max(0,Math.min(1,probs.slice(actualHits).reduce((a,b)=>a+b,0)));
+}
 async function main(){
  const days=[],skipped=[];
  for(const date of dates()){
@@ -49,9 +75,12 @@ async function main(){
  if(days.length<8)throw Error('Insuficientes días completos para replay causal (base + seis jornadas + objetivo)');
  const data=days.slice(1).map((d,i)=>({date:d.date,sheet:buildSheet(d.heads,days[i].heads)}));
  const audit=auditCombinedChronologically7D(data);
+ const physicalRandomTailChance=Object.fromEntries(audit.byKind.map(x=>[
+  x.kind,physicalRandomTail(audit.rows,x.kind,x.hits)
+ ]));
  const document={source:'Viví tu Suerte via src/cabezas.ts',from,to,
   drawingDays:days.length,skippedDays:skipped,recordedAt:new Date().toISOString(),
-  audit};
+  physicalRandomTailChance,audit};
  fs.mkdirSync(path.dirname(output),{recursive:true});
  fs.writeFileSync(output,JSON.stringify(document,null,2)+'\n');
  console.log('REPLAY 7D: '+days.length+' jornadas completas; '+skipped.length+' omitidas; '+audit.evaluatedTurns+' turnos evaluados.');
@@ -59,7 +88,8 @@ async function main(){
   console.log([x.kind,'candidatas='+x.candidates,'aciertos='+x.hits,
    'turnos_con_acierto='+x.turnsWithHit,'abstenciones='+x.abstentions,
    'azar_esperado='+x.randomExpectedHits.toFixed(3),
-   'azar_fisico_D7='+x.physicalExpectedHits.toFixed(3)].join(' | '));
+   'azar_fisico_D7='+x.physicalExpectedHits.toFixed(3),
+   'cola_azar_fisico='+physicalRandomTailChance[x.kind].toPrecision(4)].join(' | '));
  }
  // Corte mensual DESCRIPTIVO: no cambia candidatos ni reentrena pesos.
  const widths={vt2:2,vt3:3,vt4:4},universes={vt2:100,vt3:1000,vt4:10000};
@@ -87,6 +117,6 @@ async function main(){
    ' | azar_fisico_D7='+x.physicalExpected.toFixed(3));
  }
  console.log('Detalle reproducible: '+output);
- console.log('IMPORTANTE: referencia uniforme preliminar; no demuestra ventaja fuera de muestra.');
+ console.log('IMPORTANTE: cola de azar físico condicional y retrospectiva; los parámetros ya fueron explorados en estos meses. No es una prueba prospectiva ni causal del sorteo.');
 }
 main().catch(e=>{console.error(e.stack||String(e));process.exitCode=1});
