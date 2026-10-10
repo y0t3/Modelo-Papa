@@ -33,6 +33,7 @@ export type TransitionSelection7D={
  date:string;turn:Turno;columns:number;hasPreviousWeek:boolean;
  sameBudget:number;eligiblePoolSize:number;changed:number;
  baseline:TransitionCandidate7D[];transformed:TransitionCandidate7D[];
+ fullPool:TransitionCandidate7D[];
  allQualified:{bridge:number;intraday:number};
 };
 export type TransitionReplayRow7D={
@@ -112,7 +113,7 @@ export function selectQualitativeVT3Transition7D(
  return {date,turn,columns:inspected.columns,hasPreviousWeek:inspected.hasD7,
   sameBudget:count,eligiblePoolSize:ranked.length,
   changed:visual.filter(x=>!values.has(x.value)).length,
-  baseline:original,transformed:visual,
+  baseline:original,transformed:visual,fullPool:ranked,
   allQualified:{bridge:ranked.filter(x=>x.transition.level===2).length,
    intraday:ranked.filter(x=>x.transition.level===1).length}};
 }
@@ -142,7 +143,7 @@ export function auditQualitativeVT3Transition7D(input:DatedSheet[]):TransitionRe
    const hv=trans.filter(x=>actual.has(x)).length;
    // Pool de valores elegibles completo: su máximo retrospectivo
    // NO debe confundirse con candidatos publicados.
-   const all=inspectBeforeVT3Selection7D(prior,day.sheet,day.date,turn).pool;
+   const all=projection.fullPool;
    const countInPool=all.filter(x=>actual.has(x.value)).length;
    const expected=all.length?base.length*countInPool/all.length:0;
    rows.push({date:day.date,turn,heads,
