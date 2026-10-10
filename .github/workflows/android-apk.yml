@@ -23,6 +23,8 @@ jobs:
         run: npx tsc --noEmit
       - name: Visual 5D smoke tests
         run: node scripts/test-visual5d.cjs
+      - name: Panoramic whole-sheet geometry tests
+        run: node scripts/test-panorama-visual.cjs
       - name: Generate Android project
         env:
           CI: '1'
