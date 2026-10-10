@@ -12,6 +12,7 @@ on:
       - 'scripts/run-morphology-atlas7d.cjs'
       - 'scripts/run-blind-visual-exam7d.cjs'
       - 'scripts/run-causal-convergence-inventory7d.cjs'
+      - 'scripts/run-contact-topology-observer7d.cjs'
       - 'scripts/visor-ciego7d.js'
       - 'scripts/visor-ciego7d.css'
   workflow_dispatch:
@@ -58,6 +59,11 @@ jobs:
           node --check scripts/run-causal-convergence-inventory7d.cjs
           node scripts/run-causal-convergence-inventory7d.cjs --test-only=true
           node scripts/run-causal-convergence-inventory7d.cjs --input=out/examen-visual-ciego-septiembre --out=out/convergencias-causales-septiembre
+      - name: Test and trace physical contact topology for all historical pre-draw cuts
+        run: |
+          node --check scripts/run-contact-topology-observer7d.cjs
+          node scripts/run-contact-topology-observer7d.cjs --test-only=true
+          node scripts/run-contact-topology-observer7d.cjs --input=out/examen-visual-ciego-septiembre --out=out/topologia-contactos-ciegos
       - name: Preserve interactive marked historical sheets
         if: success()
         uses: actions/upload-artifact@v4
@@ -96,4 +102,12 @@ jobs:
         with:
           name: inventario-convergencias-previas-directas-invertidas
           path: out/convergencias-causales-septiembre/
+          if-no-files-found: error
+
+      - name: Preserve blind physical contact topology and negatives
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: topologia-contactos-marcados-30-cortes
+          path: out/topologia-contactos-ciegos/
           if-no-files-found: error
