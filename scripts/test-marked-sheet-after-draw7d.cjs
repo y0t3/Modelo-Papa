@@ -55,6 +55,19 @@ assert.deepEqual(vt3.map(x=>x.sourceId+' '+x.cells.join('>')).sort(),[
 assert(vt3.every(x=>x.provenance==='COINCIDENCIA_RETROSPECTIVA_CABEZA_CONOCIDA'));
 assert(province.traces.every(x=>!['Vespertino','Nocturno'].includes(x.sourceId)));
 assert(marked.physicalTraces>=3);
+ // El primer dígito de la cabeza COMPLETA no altera la coincidencia VT3.
+ // Ejemplo expresamente aclarado: 3261 produce la misma ruta 261,
+ // y la anotación inferior debe quedar como 3261 (no '261').
+ const example=diaVacio();
+ for(const turn of TURNOS)for(const j of JURS)example[turn][j]=curr[turn][j];
+ example.Vespertino.Provincia='3261';
+ const e=reconstructMarkedSheetAfterDraw7D(buildSheet(example,prev),d,'Vespertino');
+ const changedHead=e.annotationByTurn[3].headsBelow.find(x=>x.head==='3261'&&
+  x.jurisdiction==='Provincia');
+ assert(changedHead);
+ assert.equal(changedHead.traces.filter(x=>x.kind==='vt3'&&x.value==='261').length,3);
+ assert(!e.annotationByTurn[3].headsBelow.some(x=>x.head==='0261'&&
+  x.jurisdiction==='Provincia'));
 const changed=diaVacio();
 for(const turn of TURNOS)for(const j of JURS)
  changed[turn][j]=curr[turn][j];
