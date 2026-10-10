@@ -185,6 +185,19 @@ function main(){
      knownCells:c.knownCells,relation:c.relation,shared:c.shared,rolesOld:c.atOld,
      rolesKnown:c.atKnown})))} }));
  }
+ for(const day of ['2026-09-29','2026-09-30']){
+  const data=JSON.parse(fs.readFileSync(path.join(out,day+'-ANTES-Matutino.json'),'utf8'));
+  for(const f of data.families.filter(x=>x.kind==='vt3')){
+   console.log('VT3_CON_TODAS_ALTERNATIVAS '+day+' '+JSON.stringify({
+    readings:f.readings,priorHeads:f.independentHistoricalHeads,
+    paths:f.paths.map(p=>({head:p.head,oldNumber:p.originValue,
+     currentDirect:p.directToday,source:p.sourceId,cells:p.cells,
+     contacts:p.contacts.map(c=>({newHead:c.knownHead,newKind:c.knownKind,
+      relation:c.relation,shared:c.shared,oldRoles:c.atOld,
+      knownRoles:c.atKnown,newCells:c.knownCells}))}))
+   }));
+  }
+ }
  for(const s of summaries.filter(x=>x.target==='Matutino')){
   console.log('CONTROL_MATUTINO '+s.date+' '+JSON.stringify(s.families));
  }
