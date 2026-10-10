@@ -44,6 +44,8 @@ assert.equal(audit.evaluatedTurns,1);
 const vt2=audit.byKind.find(x=>x.kind==='vt2');
 assert.equal(vt2.turns,1);
 assert.equal(vt2.hits,1);
+assert.equal(vt2.physicalPoolCandidates,1,'D-7 contains exactly one physical VT2 reading');
+assert.equal(vt2.physicalExpectedHits,1,'Matched physical random control has the same one eligible value');
 assert(vt2.randomExpectedHits>0&&vt2.randomExpectedHits<1,'Azar con igual presupuesto');
 assert.equal(audit.byKind.find(x=>x.kind==='vt3').hits,0,'VT3 no hereda VT2');
 const changed=dates.map((d,i)=>day(d,i===0?'0023':i===6?'9999':undefined));
@@ -51,6 +53,7 @@ const other=auditCombinedChronologically7D(changed);
 assert.deepEqual(other.rows[0].candidates.map(c=>[c.kind,c.value,c.cells,c.signals]),
  audit.rows[0].candidates.map(c=>[c.kind,c.value,c.cells,c.signals]),
  'Cambiar SOLO el resultado objetivo no puede cambiar la prediccion');
+assert.equal(other.byKind.find(x=>x.kind==='vt2').physicalExpectedHits,0,'Physical baseline only scores after the target result');
 assert.equal(other.byKind.find(x=>x.kind==='vt2').hits,0,
  'El resultado objetivo solo cambia la evaluacion posterior');
 const noD7=['2026-10-01','2026-10-03','2026-10-05','2026-10-06',
