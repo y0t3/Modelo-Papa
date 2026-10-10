@@ -191,6 +191,73 @@ async function main(){
     ' | '+t.value+' -> '+t.readNow);
   }
  }
+
+ // Segunda mirada descriptiva: TODAS las huellas físicas que fueron
+ // confirmadas en dos días sucesivos y su estado al tercer día,
+ // incluyendo fallas. Cada geometría cuenta UNA vez aunque varias
+ // cabezas del día hayan dibujado exactamente la misma ruta.
+ const three=['# Tres jornadas: todas las continuidades confirmadas dos veces','',
+  'Estudio RETROSPECTIVO. Una huella pertenece a un solo origen y modalidad.',
+  'Dos cabezas distintas sobre la misma ruta NO son dos trayectorias independientes.',
+  'La lectura de la tercera fecha es la que permite la tabla ANTES de Nocturna;',
+  'la marca de la tercera fecha se informa después, por separado.','',
+  '| Trío de jornadas | Geometrías únicas marcadas 1.° día | Reconfirmadas 2.° día | Reconfirmadas también 3.° día | No reconfirmadas 3.° día |',
+  '|---|---:|---:|---:|---:|'];
+ const tripleCases=[];
+ for(let i=0;i<days.length-2;i++){
+  const d1=days[i],d2=days[i+1],d3=days[i+2];
+  const first=new Map(),second=new Map(),third=new Map();
+  for(const tr of d1.marked.strokes){
+   const sig=signature(tr);if(!first.has(sig))first.set(sig,[]);
+   first.get(sig).push(tr);
+  }
+  for(const tr of d2.marked.strokes){
+   const sig=signature(tr);if(!second.has(sig))second.set(sig,[]);
+   second.get(sig).push(tr);
+  }
+  for(const tr of d3.marked.strokes){
+   const sig=signature(tr);if(!third.has(sig))third.set(sig,[]);
+   third.get(sig).push(tr);
+  }
+  const twice=[...first.keys()].filter(sig=>second.has(sig));
+  let tripleCount=0;
+  for(const sig of twice){
+   const a=first.get(sig),b=second.get(sig),c=third.get(sig)||[];
+   const firstPath=a[0],secondPath=b[0],thirdReading=readTrace(firstPath,d3.full.columns);
+   if(thirdReading===null)throw Error('La huella faltó de las columnas de la tercera jornada');
+   if(c.length)tripleCount++;
+   const obj={dates:[d1.date,d2.date,d3.date],signature:sig,
+    kind:firstPath.kind,sourceId:firstPath.sourceId,cells:firstPath.cells,
+    first:{values:[...new Set(a.map(x=>x.value))],
+     heads:[...new Set(a.map(x=>x.fullHead+' ('+x.turn+')'))]},
+    second:{values:[...new Set(b.map(x=>x.value))],
+     heads:[...new Set(b.map(x=>x.fullHead+' ('+x.turn+')'))]},
+    third:{readBeforeNocturno:thirdReading,confirmedAfterDraw:c.length>0,
+     heads:[...new Set(c.map(x=>x.fullHead+' ('+x.turn+')'))]}};
+   tripleCases.push(obj);
+   console.log('CADENA_TRES '+obj.dates.join(' -> ')+' | '+sig+
+    ' | antes='+obj.first.values.join(',')+' -> '+obj.second.values.join(',')+
+    ' -> '+obj.third.readBeforeNocturno+
+    ' | confirmo_tercer_dia='+obj.third.confirmedAfterDraw);
+  }
+  three.push('| '+d1.date+' / '+d2.date+' / '+d3.date+' | '+first.size+
+   ' | '+twice.length+' | '+tripleCount+' | '+(twice.length-tripleCount)+' |');
+  console.log('TRIPLE_RESUMEN '+[d1.date,d2.date,d3.date].join(' -> ')+
+   ' | primeras_geometrias='+first.size+' | repetidas_segundo='+twice.length+
+   ' | repetidas_tercero='+tripleCount+' | NO_repetidas_tercero='+(twice.length-tripleCount));
+ }
+ three.push('','## Todas las cadenas que sobrevivieron dos fechas (sin selección)','',
+  '| Fechas | Modalidad y huella | Primera fecha | Segunda fecha | Lectura tercera | ¿Marca confirmada tercera? |',
+  '|---|---|---|---|---|---|');
+ for(const x of tripleCases)three.push('| '+x.dates.join(' → ')+' | '+
+  x.kind+' '+x.sourceId+' '+x.cells.join('→')+' | '+
+  x.first.values.join('/')+' | '+x.second.values.join('/')+' | '+
+  x.third.readBeforeNocturno+' | '+(x.third.confirmedAfterDraw?'Sí':'No')+' |');
+ three.push('','No usar este registro retrospectivo para asignar prioridades ni',
+  convertir dos marcas consecutivas en garantía de una tercera.','');
+ fs.writeFileSync(path.join(out,'CADENAS_TRES_JORNADAS.md'),three.join('\n'));
+ fs.writeFileSync(path.join(out,'CADENAS_TRES_JORNADAS.json'),JSON.stringify(tripleCases,null,2));
+
  summary.push('','**Interpretación correcta:** contacto y misma huella ya ganadora son',
  'propiedades retrospectivas de los recorridos, no prioridades ni pronósticos.',
  'Los conteos aumentan con las columnas y las marcas acumuladas; no se tratan',
