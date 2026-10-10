@@ -1,0 +1,41 @@
+name: Rebuild full visual marked plus11 sheets
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/visual-marked-sheets7d.yml'
+      - 'src/visualMarkedSheet7d.ts'
+      - 'src/markedSheetAfterDraw7d.ts'
+      - 'scripts/test-visual-marked-sheet7d.cjs'
+      - 'scripts/run-visual-marked-sheets7d.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  marked-sheets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Test complete VT2 VT3 VT4 reconstruction and causal stages
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node scripts/test-marked-sheet-after-draw7d.cjs
+          node scripts/test-visual-marked-sheet7d.cjs
+      - name: Build interactive real marked sheets 29 and 30 September
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/run-visual-marked-sheets7d.cjs --from=2026-09-29 --to=2026-09-30 --out=out/hojas-marcadas-septiembre
+      - name: Preserve interactive marked historical sheets
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hojas-11-marcadas-septiembre-2026
+          path: out/hojas-marcadas-septiembre/
+          if-no-files-found: error
