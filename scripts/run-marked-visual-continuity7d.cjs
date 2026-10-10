@@ -212,6 +212,21 @@ async function main(){
    ' | VT3='+cut.records.filter(x=>x.kind==='vt3').length+
    ' | VT4='+cut.records.filter(x=>x.kind==='vt4').length+
    ' | contactos_ya_comprobados_hoy='+cut.records.filter(x=>x.contactKnown).length);
+  const contacts=[];
+  for(const older of cut.records)for(const newer of cut.knownToday){
+   if(!closeTouch(older,newer))continue;
+   const shared=older.cells.filter(p=>newer.cells.includes(p));
+   contacts.push({older,newer,shared});
+  }
+  console.log('CONTACTOS '+cut.turn+' | relaciones_directas='+contacts.length+
+   ' | mismas_rutas='+contacts.filter(x=>key(x.older.cells)===key(x.newer.cells)).length);
+  for(const x of contacts.slice(0,2))
+   console.log('CONTACTO_VISIBLE ANTES '+cut.turn+
+    ' | 29 cabeza='+x.older.fullHead+' '+x.older.kind+
+    ' '+x.older.sourceId+'['+key(x.older.cells)+']'+
+    ' | 30 cabeza_ya_cerrada='+x.newer.fullHead+' '+x.newer.kind+
+    ' '+x.newer.sourceId+'['+key(x.newer.cells)+']'+
+    ' | mismas_celdas='+x.shared.join(','));
   for(const kind of ['vt2','vt3','vt4']){
    const example=cut.records.find(x=>x.kind===kind);
    if(example)console.log('TRAZA '+cut.turn+' '+kind+
