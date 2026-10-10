@@ -7,12 +7,12 @@
 import {TURNOS} from './domain';
 import type {Turno} from './domain';
 import type {DatedSheet} from './cycle7d';
-import type {DailySheet} from './sheet';
+import type {DailySheet,SourceId} from './sheet';
 import {readCombined7D} from './combinedReader7d';
 import {freezeBeforeTurn7D,physicalPoolBefore7D} from './causalReplay7d';
 import {reconstructMarkedMoments} from './markedSheet7d';
 import {allPhysicalVT3Before7D} from './vt3NetworkCoverage7d';
-export type D14ReserveCandidate={value:string;sourceId:string;cells:string[];
+export type D14ReserveCandidate={value:string;sourceId:SourceId;cells:string[];
  headD14:string;origin:'D14_RESERVA'};
 export type D14ReserveSelection={
  date:string;turn:Turno;hasD7:boolean;hasD14:boolean;
