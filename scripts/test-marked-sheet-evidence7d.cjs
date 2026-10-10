@@ -52,14 +52,14 @@ assert.equal(afterV.confirmedManualTraces,0,
  'TRES rutas reconstruidas de 0261 no prueban que papá haya marcado ninguna');
 assert.equal(afterV.pendingOriginalImageCheck,1);
 assert.equal(afterV.automaticReconstructionsExcluded,3);
-assert.equal(afterV.decision,'INTERPRETACION_VISUAL_PENDIENTE');
+assert.equal(afterV.decision,'FOTO_PENDIENTE_DE_VERIFICACION');
 assert.equal(afterV.reviews.some(x=>x.currentRead!==undefined),false);
 assert.deepEqual(afterV.visibleColumns,['prevNocturno','Previa','Primera','Matutino','Vespertino']);
 const nextDay=readMarkedSheetEvidenceBefore7D(
  [{date:'2026-10-07',sheet:oct07}],prev08,'2026-10-08','Previa',[audit]);
 assert.equal(nextDay.confirmedManualTraces,0);
 assert.equal(nextDay.witnessesAvailable,4);
-assert.equal(nextDay.decision,'INTERPRETACION_VISUAL_PENDIENTE');
+assert.equal(nextDay.decision,'FOTO_PENDIENTE_DE_VERIFICACION');
 // Contraprueba sintética: si realmente tuviéramos un fotograma legible
 // con el orden 2:0→2:1→1:1 y la cabeza debajo, habilita SOLO esa ruta.
 const confirmed={...audit.witnesses[1],id:'solo-para-prueba-sintetica',
