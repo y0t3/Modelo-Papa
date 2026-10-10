@@ -9,14 +9,15 @@ const output=path.resolve(root,args.out||'out/lab-cuaderno-ocular95');
 const turns=['Previa','Primera','Matutino','Vespertino','Nocturno'];
 const safe=x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const digest=cut=>crypto.createHash('sha256').update(JSON.stringify(cut)).digest('hex');
-function html(cut){
+function html(cut,opts={}){
+ const live=opts.session==='LIVE';
  assert.equal(cut.mode,'ANTES_DEL_SORTEO_OBJETIVO');
  assert.equal(cut.noAutomatedCandidate,true);
  const ix=turns.indexOf(cut.target);assert(ix>=0);
  assert.equal(cut.columns.length,ix+1);
  assert(cut.knownToday.every(s=>turns.indexOf(s.turn)<ix));
  const d=digest(cut);
- const serialized=JSON.stringify({cut,digest:d}).replace(/</g,'\\u003c');
+ const serialized=JSON.stringify({cut,digest:d,session:live?'LIVE':'REPLAY_HISTORICO'}).replace(/</g,'\\u003c');
  const before=cut.date+'-ANTES-'+cut.target;
  return '<!doctype html><html lang="es"><head><meta charset="utf-8">'+
   '<meta name="viewport" content="width=device-width, initial-scale=1">'+
@@ -25,9 +26,9 @@ function html(cut){
   '<h1>Modelo Papá · cuaderno ocular comparativo</h1>'+
   '<p><strong>'+safe(cut.date)+' · ANTES de '+safe(cut.target)+'</strong> · recuerdo D−1: '+safe(cut.priorDate)+
   (cut.d7Date?' · memoria D−7: '+safe(cut.d7Date):'')+'</p>'+
-  '<p class="muted"><strong>REPLAY HISTÓRICO.</strong> No contiene la cabeza objetivo ni el resultado futuro. '+
+  '<p class="muted"><strong>'+(live?'CAPTURA EN TIEMPO REAL; DECISIÓN TODAVÍA NO SELLADA.':'REPLAY HISTÓRICO.')+'</strong> No contiene la cabeza objetivo ni el resultado futuro. '+
   'Se pueden comparar todas las rutas realmente marcadas en la hoja anterior, sus giros/inversiones y las demás alternativas. '+
-  'No se elige un número automáticamente. El JSON local no certifica que la observación haya sido hecha antes del sorteo real.</p>'+
+  'No se elige un número automáticamente. El JSON local no certifica anterioridad: para ello hace falta un sello remoto previo al sorteo.</p>'+
   '<div class="panels"><section class="panel"><h2>Hoja anterior ya MARCADA · cabezas completas</h2>'+
   '<iframe src="'+safe(cut.priorDate)+'-5-Nocturno.html" title="Todas las cabezas y sus caminos"></iframe>'+
   '<p><a href="'+safe(before)+'.html">Abrir visor completo: dibujar otros recorridos manualmente</a></p></section>'+
