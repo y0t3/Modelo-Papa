@@ -60,6 +60,29 @@ async function main(){
    'turnos_con_acierto='+x.turnsWithHit,'abstenciones='+x.abstentions,
    'azar_esperado='+x.randomExpectedHits.toFixed(3)].join(' | '));
  }
+ // Corte mensual DESCRIPTIVO: no cambia candidatos ni reentrena pesos.
+ const widths={vt2:2,vt3:3,vt4:4},universes={vt2:100,vt3:1000,vt4:10000};
+ const monthly=new Map();
+ for(const row of audit.rows){
+  const month=row.date.slice(0,7);
+  if(!monthly.has(month))monthly.set(month,Object.fromEntries(['vt2','vt3','vt4'].map(kind=>[
+   kind,{turns:0,selected:0,hits:0,hitTurns:0,expected:0,abstentions:0}
+  ])));
+  for(const kind of ['vt2','vt3','vt4']){
+   const x=monthly.get(month)[kind],p=row.candidates.filter(c=>c.kind===kind);
+   x.turns++;x.selected+=p.length;x.hits+=p.filter(c=>c.hit).length;
+   if(p.some(c=>c.hit))x.hitTurns++;
+   if(!p.length)x.abstentions++;
+   const winners=new Set(row.heads.map(h=>h.slice(-widths[kind]))).size;
+   x.expected+=p.length*winners/universes[kind];
+  }
+ }
+ for(const [month,group] of monthly)for(const kind of ['vt2','vt3','vt4']){
+  const x=group[kind];
+  console.log('MES '+month+' '+kind+' | candidatas='+x.selected+
+   ' | aciertos='+x.hits+' | turnos_acertados='+x.hitTurns+
+   ' | abstenciones='+x.abstentions+' | azar_esperado='+x.expected.toFixed(3));
+ }
  console.log('Detalle reproducible: '+output);
  console.log('IMPORTANTE: referencia uniforme preliminar; no demuestra ventaja fuera de muestra.');
 }
