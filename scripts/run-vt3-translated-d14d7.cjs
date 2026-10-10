@@ -53,7 +53,7 @@ async function main(){
   ' | cambiados='+audit.changes+' | mejora_turnos='+audit.turnsImproved+
   ' | empeora_turnos='+audit.turnsWorsened+' | empata='+audit.turnsEqual+
   ' | azar_fisico='+audit.expectedPhysical.toFixed(3)+
-  ' | sufijo_VT2_base='+audit.vt2Baseline+' | sufijo_VT2_trasladado='+audit.vt2Repeated);
+  ' | sufijo_VT2_base='+audit.vt2Baseline+' | sufijo_VT2_trasladado='+audit.vt2Translated);
  console.log('DIRECCIONES_SELECCIONADAS: '+JSON.stringify(audit.directionCounts));
  for(const [month,m] of Object.entries(months))console.log('MES '+month+
   ' | base='+m.baselineHits+' | traslacion='+m.translatedHits+
