@@ -1,0 +1,56 @@
+name: VT3 independent VT2 physical support
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/vt3-independent-vt2.yml'
+      - 'src/vt3IndependentSupport7d.ts'
+      - 'scripts/test-vt3-independent7d.cjs'
+      - 'scripts/run-vt3-independent7d.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: "2024"
+            from: "2024-01-01"
+            to: "2024-12-31"
+          - label: "2025"
+            from: "2025-01-01"
+            to: "2025-12-31"
+          - label: "2026-jan-may"
+            from: "2026-01-01"
+            to: "2026-05-31"
+          - label: "2026-jun-sep"
+            from: "2026-06-01"
+            to: "2026-09-30"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript compiler
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Verify genuine VT2 support and blinding
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/test-vt3-independent7d.cjs
+      - name: Run paired VT3 ranking with identical budget
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+          FROM_DATE: ${{ matrix.from }}
+          TO_DATE: ${{ matrix.to }}
+          LABEL: ${{ matrix.label }}
+        run: node scripts/run-vt3-independent7d.cjs --from="$FROM_DATE" --to="$TO_DATE" --out="out/vt3-independent-$LABEL.json"
+      - name: Save every candidate, independent VT2 route and result
+        uses: actions/upload-artifact@v4
+        with:
+          name: vt3-independent-${{ matrix.label }}
+          path: out/vt3-independent-*.json
+          if-no-files-found: error
