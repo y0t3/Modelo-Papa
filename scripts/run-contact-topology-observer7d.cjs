@@ -38,7 +38,8 @@ function topology(old,known){
   atKnown:shared.map(c=>({cell:c,role:location(known,c)}))};
 }
 const orient=v=>[v,[...v].reverse().join('')].sort()[0];
-const geometry=t=>t.sourceId+'|'+t.cells.join('>');
+const geometry=t=>t.sourceId+'|'+[t.cells.join('>'),[...t.cells].reverse().join('>')].sort()[0];
+// Una ruta física y su inversa comparten una MISMA huella para esta auditoría.
 function classify(cut){
  const ti=turns.indexOf(cut.target);assert(ti>=0);
  assert.equal(cut.columns.length,ti+1,'Columnas futuras incluidas');
@@ -72,9 +73,13 @@ function classify(cut){
  const records=[...families.values()].map(f=>{
   const prevHeads=unique(f.paths.map(p=>p.head));
   const touchingPaths=f.paths.filter(p=>p.contacts.length>0);
+  const shapes=unique(f.paths.map(geometry));
+  const touchingShapes=unique(touchingPaths.map(geometry));
   const contactKnownHeads=unique(f.paths.flatMap(p=>p.distinctKnownHeads)).sort();
   const touchedTurns=unique(contactKnownHeads.map(h=>h.split('|')[0])).sort();
   return {...f,independentHistoricalHeads:prevHeads.length,
+   uniquePhysicalShapes:shapes.length,touchingPhysicalShapes:touchingShapes.length,
+   physicalShapes:shapes,
    independentTouchingHistoricalHeads:unique(touchingPaths.map(p=>p.head)).length,
    touchingPaths:touchingPaths.length,distinctKnownHeads:contactKnownHeads,
    touchedTurns,allContacts:f.paths.reduce((sum,p)=>sum+p.contacts.length,0)};
@@ -101,6 +106,14 @@ function tests(){
  assert.equal(r.families[0].touchingPaths,1);
  assert.equal(r.families[0].distinctKnownHeads.length,1,
   'Varias rutas de una cabeza conocida no equivalen a varias confirmaciones');
+ const samePathReverse={...old,fullHead:'9999',cells:[...old.cells].reverse()};
+ const duplicateRoutes=classify({...sample,inherited:[old,samePathReverse]});
+ assert.equal(duplicateRoutes.families[0].independentHistoricalHeads,2);
+ assert.equal(duplicateRoutes.families[0].uniquePhysicalShapes,1,
+  'Dos cabezas no implican dos dibujos; orientación inversa no añade una forma física');
+ const newShape={...old,fullHead:'8888',cells:['1:0','2:1','3:1']};
+ const distinctRoutes=classify({...sample,inherited:[old,newShape]});
+ assert.equal(distinctRoutes.families[0].uniquePhysicalShapes,2);
  assert.throws(()=>classify({...sample,target:'Primera'}),'No debe aceptar columnas futuras');
  console.log('TEST_TOPOLOGIA_OK: dos-celdas, ruta igual/invertida, columna independiente, cabeza deduplicada, causalidad');
 }
@@ -110,18 +123,18 @@ function markdownCase(caseRecord){
   '','**Retrospectivo, objetivo censurado.** Las familias no son candidatos propuestos;',
   'se muestran todas sin ranking, ni elección basada en resultados futuros.','',
   'Celdas en formato fila:lado (comenzando en cero). Cada recorrido usa una sola columna.','',
-  '| Familia física de lectura (sentidos incluidos) | Cabezas anteriores distintas | Caminos históricos | Caminos que contactan marcas de hoy | Cabezas comprobadas de hoy contactadas | Turnos de contacto |',
-  '|---|---:|---:|---:|---:|---|'];
+  '| Familia física de lectura (sentidos incluidos) | Cabezas anteriores distintas | Caminos históricos | Dibujos físicos distintos (sin duplicar inversión) | Caminos que contactan marcas de hoy | Cabezas comprobadas de hoy contactadas | Turnos de contacto |',
+  '|---|---:|---:|---:|---:|---:|---|'];
  for(const f of caseRecord.families){
   lines.push('| '+f.kind.toUpperCase()+' '+f.readings.join('/')+
    ' | '+f.independentHistoricalHeads+' | '+f.paths.length+
-   ' | '+f.touchingPaths+' | '+f.distinctKnownHeads.length+
+   ' | '+f.uniquePhysicalShapes+' | '+f.touchingPaths+' | '+f.distinctKnownHeads.length+
    ' | '+(f.touchedTurns.join(', ')||'—')+' |');
  }
  lines.push('','## Cada figura, sin ocultar las que no contactan','');
  for(const f of caseRecord.families){
   lines.push('### '+f.kind.toUpperCase()+' '+f.readings.join('/')+
-   ' · '+f.independentHistoricalHeads+' cabezas previas','');
+   ' · '+f.independentHistoricalHeads+' cabezas previas / '+f.uniquePhysicalShapes+' dibujos físicos distintos','');
   for(const p of f.paths){
    lines.push('- Cabeza anterior '+p.head+' · origen '+p.sourceId+
     ' · celdas '+p.cells.join('→')+' · antes '+p.originValue+
@@ -158,7 +171,8 @@ function main(){
    inherited:classified.allHistoricalRoutes,allFamilies:classified.families.length,
    convergentFamilies:contested.length,convergentContactFamilies:withContact.length,
    families:contested.map(f=>({kind:f.kind,readings:f.readings,
-    previousHeads:f.independentHistoricalHeads,
+    previousHeads:f.independentHistoricalHeads,uniquePhysicalShapes:f.uniquePhysicalShapes,
+    touchingPhysicalShapes:f.touchingPhysicalShapes,
     touchingPaths:f.touchingPaths,
     touchingPriorHeads:f.independentTouchingHistoricalHeads,
     contactedTodayHeads:f.distinctKnownHeads,
@@ -190,6 +204,8 @@ function main(){
   for(const f of data.families.filter(x=>x.kind==='vt3')){
    console.log('VT3_CON_TODAS_ALTERNATIVAS '+day+' '+JSON.stringify({
     readings:f.readings,priorHeads:f.independentHistoricalHeads,
+    distinctPhysicalShapes:f.uniquePhysicalShapes,
+    shapesTouching:f.touchingPhysicalShapes,
     paths:f.paths.map(p=>({head:p.head,oldNumber:p.originValue,
      currentDirect:p.directToday,source:p.sourceId,cells:p.cells,
      contacts:p.contacts.map(c=>({newHead:c.knownHead,newKind:c.knownKind,
