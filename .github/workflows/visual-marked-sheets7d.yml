@@ -9,6 +9,7 @@ on:
       - 'scripts/test-visual-marked-sheet7d.cjs'
       - 'scripts/run-visual-marked-sheets7d.cjs'
       - 'scripts/run-visual-chain7d.cjs'
+      - 'scripts/run-morphology-atlas7d.cjs'
   workflow_dispatch:
 permissions:
   contents: read
@@ -37,6 +38,11 @@ jobs:
         env:
           NODE_PATH: /tmp/mp-ts/node_modules
         run: node scripts/run-visual-chain7d.cjs --from=2026-09-23 --to=2026-09-30 --out=out/cadena-visual-septiembre
+      - name: Verify and build descriptive movement atlas
+        run: |
+          node --check scripts/run-morphology-atlas7d.cjs
+          node scripts/run-morphology-atlas7d.cjs --test-only=true
+          node scripts/run-morphology-atlas7d.cjs --input=out/cadena-visual-septiembre --out=out/atlas-cambios-visuales-septiembre
       - name: Preserve interactive marked historical sheets
         if: success()
         uses: actions/upload-artifact@v4
@@ -51,4 +57,12 @@ jobs:
         with:
           name: cadena-visual-marcada-23-30-septiembre-2026
           path: out/cadena-visual-septiembre/
+          if-no-files-found: error
+
+      - name: Preserve full movement atlas
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-giros-traslaciones-hojas-marcadas-septiembre
+          path: out/atlas-cambios-visuales-septiembre/
           if-no-files-found: error
