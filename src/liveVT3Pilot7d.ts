@@ -81,7 +81,8 @@ export function auditLiveVT3Pilot7D(input:DatedSheet[]):LivePilotAudit7D{
  const rows:LivePilotTurn7D[]=[];
  let withPilot=0,pilotPicks=0,pilotHits=0,pilotVT2Contained=0;
  let pilotFromToday=0,legacyPicks=0,legacyHits=0,randomPhysicalExpected=0;
- for(let i=1;i<dates.length;i++){
+ // Misma ventana mínima de historial que las auditorías del lector D−7.
+ for(let i=6;i<dates.length;i++){
   const day=dates[i],history=dates.slice(Math.max(0,i-10),i);
   for(const target of TURNOS){
    const safe=freezeBeforeTurn7D(day.sheet,target);
