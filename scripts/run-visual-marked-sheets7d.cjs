@@ -104,7 +104,7 @@ async function main(){
   'a{display:block;background:white;padding:14px;border:1px solid #ddd7e7;border-radius:8px;margin:8px 0;color:#5e369f}'+
   'small{color:#5c556d}</style></head><body><h1>Hojas +11 marcadas</h1>'+
   '<p>Documentos reconstruidos <strong>después de cada sorteo</strong>. Todas las coincidencias VT2, VT3 y VT4 y sus cabezas completas. Tocá una etapa para ver los recorridos.</p>'+
-  (records.length>=2?'<p><a href="comparar.html"><strong>Comparar lado a lado las dos jornadas</strong> — mismo turno, hojas completas y trazos originales reconstruidos</a></p>':'')+
+  (records.length>=2?'<p><a href="comparar.html"><strong>Comparar lado a lado las dos jornadas</strong> — mismo turno y coincidencias retrospectivas de las cabezas</a></p>':'')+
   records.map(day=>'<section><h2>'+day.date+'</h2><small>Base: Nocturna anterior '+day.previous+'</small>'+
    day.views.map(v=>'<a href="'+v.file+'"><strong>Después de '+v.turn+'</strong> · '+
     v.columns+' columnas · '+v.counts.heads+' cabezas debajo · '+v.counts.strokes+
