@@ -69,7 +69,8 @@ export function classifyVisualTransitionVT37D(
   candidateCells:[...candidate.cells]};
  const anchors=today.filter(m=>m.kind==='vt3'&&
   m.sourceId===candidate.sourceId&&m.cells.length===3&&
-  normShape(m)!==candidate.shape&&m.cells.some(x=>candidate.cells.includes(x)));
+  normShape(m)!==candidate.shape.replaceAll('>',';')&&
+  m.cells.some(x=>candidate.cells.includes(x)));
  if(!anchors.length)return {...base,signal:'SIN_GIRO',level:0,sharedCells:[]};
  // Cualquier antecedente relevante debe ser de otro sorteo ya finalizado
  // (jornada anterior), misma fuente física y MISMA forma del ancla actual.
