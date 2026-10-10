@@ -17,10 +17,10 @@ export type CrossColumnValue={value:string;sourceIds:SourceId[];
  examples:Route3Example[]};
 export type VT3ColumnStatistic={sourceId:SourceId;complete:boolean;
  pathCount:number;distinctShapes:number;distinctValues:number};
-export type VT3CrossMetrics={columns:number;allPhysicalRoutes:number;
+export type VT3CrossMetrics={columns:number;completeColumns:number;allPhysicalRoutes:number;
  uniqueVT3Values:number;repeatedValueAcrossColumns:number;
  sameValueSameShape:number;sameValueSameCoordinates:number;
- sharedVT2Suffixes:number;shapesPresentInEveryCompleteColumn:number};
+ sharedVT2Suffixes:number;shapesSharedAcrossAllColumns:number};
 export type VT3PermutationControl={repetitions:number;
  expectedRepeatedValue:number;expectedValueSameShape:number;
  expectedValueSameCoordinates:number;expectedSharedVT2:number;
@@ -62,11 +62,11 @@ const valuesFrom=(values:string[],sourceId:SourceId):Route3Example[]=>{
 };
 function summarize(columns:Array<{id:SourceId;values:string[]}>){
  const available:VT3ColumnStatistic[]=[],all:Route3Example[]=[];
- const shapesPerComplete:Array<Set<string>>=[];
+ const shapeSets:Array<Set<string>>=[];
  for(const column of columns){
   const paths=valuesFrom(column.values,column.id);all.push(...paths);
   const complete=column.values.length===6&&column.values.every(x=>/^\d{2}$/.test(x));
-  if(complete)shapesPerComplete.push(new Set(paths.map(x=>x.shape)));
+  shapeSets.push(new Set(paths.map(x=>x.shape)));
   available.push({sourceId:column.id,complete,pathCount:paths.length,
    distinctShapes:new Set(paths.map(x=>x.shape)).size,
    distinctValues:new Set(paths.map(x=>x.value)).size});
@@ -104,14 +104,15 @@ function summarize(columns:Array<{id:SourceId;values:string[]}>){
  matched.sort((a,b)=>Number(b.sameExactCoordinates)-Number(a.sameExactCoordinates)||
   Number(b.sameRelativeShape)-Number(a.sameRelativeShape)||
   b.sourceIds.length-a.sourceIds.length||a.value.localeCompare(b.value));
- const sharedShapes=shapesPerComplete.length?
-  [...shapesPerComplete[0]].filter(s=>shapesPerComplete.every(col=>col.has(s))).length:0;
+ const sharedShapes=shapeSets.length>=2?
+  [...shapeSets[0]].filter(s=>shapeSets.every(col=>col.has(s))).length:0;
  const metrics:VT3CrossMetrics={
-  columns:columns.length,allPhysicalRoutes:all.length,
+  columns:columns.length,completeColumns:available.filter(c=>c.complete).length,
+  allPhysicalRoutes:all.length,
   uniqueVT3Values:byValue.size,repeatedValueAcrossColumns:matched.length,
   sameValueSameShape:sameShape,sameValueSameCoordinates:sameCells,
   sharedVT2Suffixes:[...suffixSources.values()].filter(x=>x.size>=2).length,
-  shapesPresentInEveryCompleteColumn:sharedShapes
+  shapesSharedAcrossAllColumns:sharedShapes
  };
  return {metrics,available,matched};
 }
