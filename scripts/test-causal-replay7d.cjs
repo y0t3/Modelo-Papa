@@ -31,6 +31,14 @@ assert.deepEqual(safe.heads.Previa,[],'Sin cabezas del sorteo objetivo');
 const before=readCombined7D(history.slice(0,6),safe,dates[6],'Previa');
 assert(before.candidates.some(c=>c.kind==='vt2'&&c.value==='23'),
  'La cabeza 0023 de D-7 sostiene la proyeccion VT2 23');
+const repeated=dates.map((d,i)=>day(d,i===0||i===3||i===6?'0023':undefined));
+const repeatedPrediction=readCombined7D(repeated.slice(0,6),
+ freezeBeforeTurn7D(repeated[6].sheet,'Previa'),dates[6],'Previa');
+const repeatedVt2=repeatedPrediction.candidates.find(c=>c.kind==='vt2'&&c.value==='23');
+assert(repeatedVt2&&repeatedVt2.signals.some(s=>s.name==='RECONFIRMACION'),
+ 'La repeticion exacta anterior se reconoce como confirmacion');
+assert(!repeatedVt2.signals.some(s=>s.name==='PROXIMIDAD'),
+ 'El mismo sorteo exacto no puede sumarse tambien como proximidad');
 const audit=auditCombinedChronologically7D(history);
 assert.equal(audit.evaluatedTurns,1);
 const vt2=audit.byKind.find(x=>x.kind==='vt2');
