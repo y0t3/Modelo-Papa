@@ -37,6 +37,9 @@ export type ColumnDelta7D={
  retainedTop3:string[];enteredTop3:string[];leftTop3:string[];
  rankOrStatusChangeWithoutEntering:number;
  candidateDetails:ColumnDeltaCandidate7D[];
+ beforeTop3Details:Array<{value:string;sourceId:SourceId;rank:number;
+  state:string;score:number;lastSeenDraws:number;
+  stillEligibleAfter:boolean;rankAfter:number|null;stateAfter:string|null}>;
  explanation:string[];
 };
 const shapeOf=(c:string)=>c.replaceAll('>',';');
@@ -100,6 +103,13 @@ export function compareNextColumnVT37D(history:DatedSheet[],full:DailySheet,
  const newlyEligible=details.filter(x=>x.newlyEligible);
  const noLonger=[...beforeByValue.keys()].filter(x=>!afterByValue.has(x));
  const moves=details.filter(x=>!x.newlyEligible&&x.oldRank!==x.newRank);
+ const beforeTop3Details=before.pool.filter(c=>beforeSelected.has(c.value)).map(c=>{
+  const afterCandidate=afterByValue.get(c.value);
+  return {value:c.value,sourceId:c.sourceId,rank:c.rank,state:c.life,
+   score:c.score,lastSeenDraws:c.lastSeenDraws,
+   stillEligibleAfter:!!afterCandidate,rankAfter:afterCandidate?.rank??null,
+   stateAfter:afterCandidate?.life??null};
+ });
  const heads=(full.heads[justCompletedTurn]||[]).filter(x=>/^\d{4}$/.test(x));
  return {protocol:'VT3_INCREMENTAL_COLUMN_DELTA_V1',
   date,justCompletedTurn,previousTarget,nextTarget,
@@ -117,7 +127,7 @@ export function compareNextColumnVT37D(history:DatedSheet[],full:DailySheet,
   top3Before:[...before.selected],top3After:[...after.selected],
   retainedTop3,enteredTop3,leftTop3,
   rankOrStatusChangeWithoutEntering:moves.length,
-  candidateDetails:details,
+  candidateDetails:details,beforeTop3Details,
   explanation:[
    'El corte siguiente incorpora UNA columna +11 y las marcas ganadoras del turno recién terminado; ambos hechos pueden alterar el ranking.',
    'Un valor nuevo en columna antigua no es una columna nueva: puede activarse por memoria de un turno comprobado recién incorporado.',
