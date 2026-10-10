@@ -1,0 +1,62 @@
+name: Live source-only visual snapshot before 10 Oct Previa
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/captura-prospectiva-10oct-pre.yml'
+      - 'scripts/capture-live-visual-preturn.cjs'
+      - 'PROTOCOLO_CAPTURA_PROSPECTIVA_10_OCT_2026_PREVIA.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sellar-tablero-sin-prediccion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated historical board runtime
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Reject late runs BEFORE fetching anything
+        run: |
+          node -e "if(Date.now()>=Date.parse('2026-10-10T10:05:00-03:00')){throw Error('FUERA DE PLAZO. No tomar foto tardía como previa')} console.log('Captura temporalmente elegible, sin selección de cifra')"
+      - name: Validate source-censoring and hard-stop tests
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node --check scripts/capture-live-visual-preturn.cjs
+          node --check scripts/lab-comparativa95.js
+          node scripts/capture-live-visual-preturn.cjs --test-only=true
+          node scripts/build-cuaderno-ocular95.cjs --test-only=true
+          node scripts/check-cuaderno-ocular.cjs --test-only=true
+      - name: Capture live source without pre-draw results (fail closed)
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/capture-live-visual-preturn.cjs --date=2026-10-10 --target=Previa --deadline=2026-10-10T10:05:00-03:00 --out=out/captura-prospectiva-10-oct-Previa
+      - name: Verify digest, zero target heads, zero automatic selections
+        run: |
+          node - <<'NODE'
+          const assert=require('node:assert/strict'),fs=require('node:fs'),crypto=require('node:crypto');
+          const base='out/captura-prospectiva-10-oct-Previa';
+          const m=JSON.parse(fs.readFileSync(base+'/MANIFIESTO_CAPTURA.json','utf8'));
+          const c=JSON.parse(fs.readFileSync(base+'/2026-10-10-ANTES-Previa.json','utf8'));
+          const hash=crypto.createHash('sha256').update(JSON.stringify(c)).digest('hex');
+          assert.equal(m.cutSha256,hash);
+          assert.equal(m.targetHeadCountInSnapshot,0);
+          assert.equal(m.postTargetHeadCountInSnapshot,0);
+          assert.equal(m.humanSelections,0);
+          assert.equal(m.forecastMade,false);
+          assert.equal(c.knownToday.length,0);
+          assert.equal(c.columns.length,1);
+          assert(Date.parse(m.capturedAtUtc)<Date.parse(m.deadline));
+          console.log('ARCHIVO_PREVIO_SELLABLE_OK '+JSON.stringify({date:m.date,turn:m.target,at:m.capturedAtUtc,base:m.previousDate,paths:m.inheritedPaths}));
+          NODE
+      - name: Seal immutable input artifact before official draw or fail
+        uses: actions/upload-artifact@v4
+        with:
+          name: PREVIA-10-OCT-2026-SOLO-TABLERO-SIN-PRONOSTICO
+          path: out/captura-prospectiva-10-oct-Previa/
+          if-no-files-found: error
