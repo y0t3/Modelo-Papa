@@ -38,6 +38,34 @@ function crosswalk(cut){
  return {all,multiple:all.filter(x=>x.independentHeads>=2),
   mixed:all.filter(x=>x.independentHeads>=2&&x.mixedDirectInverse)};
 }
+// Un valor y su inversión representan una sola familia de orientación,
+// no dos confirmaciones independientes. Registrar actividad conocida HOY.
+function reverseFamilies(cut,result){
+ const by=new Map();
+ for(const x of result.multiple){
+  const rev=x.value.split('').reverse().join('');
+  const familyValue=[x.value,rev].sort()[0],key=x.kind+'|'+familyValue;
+  if(!by.has(key))by.set(key,{kind:x.kind,key,readings:[],sources:new Map()});
+  const family=by.get(key);
+  if(!family.readings.includes(x.value))family.readings.push(x.value);
+  for(const origin of x.origins)for(const t of origin.readings){
+   const id=origin.head+'|'+t.sourceId+'|'+t.cells.join('>');
+   if(!family.sources.has(id))family.sources.set(id,{head:origin.head,sourceId:t.sourceId,cells:t.cells});
+  }
+ }
+ const families=[...by.values()].map(f=>{
+  const paths=[...f.sources.values()];
+  const contacts=paths.filter(p=>cut.knownToday.some(k=>
+   k.sourceId===p.sourceId&&k.cells.some(c=>p.cells.includes(c))));
+  const exact=paths.filter(p=>cut.knownToday.some(k=>
+   k.sourceId===p.sourceId&&k.cells.join('>')===p.cells.join('>')));
+  return {kind:f.kind,readings:f.readings.sort(),numberOfPathHeadRecords:paths.length,
+   distinctPriorHeads:new Set(paths.map(p=>p.head)).size,
+   touchingKnownToday:contacts.length,exactlyMarkedToday:exact.length,
+   paths};
+ }).sort((a,b)=>a.kind.localeCompare(b.kind)||a.readings[0].localeCompare(b.readings[0]));
+ return families;
+}
 function tests(){
  const cols=[{id:'prevNocturno',values:['58','18','87','07','03','23']}];
  const traces=[
@@ -50,6 +78,8 @@ function tests(){
  const x=result.mixed.find(x=>x.kind==='vt3'&&x.value==='778');
  assert(x,'Convergencia directa+inversa de 778 no detectada');
  assert.equal(x.independentHeads,2);
+ const fam=reverseFamilies({knownToday:[]},result);
+ assert.equal(fam.filter(f=>f.kind==='vt3').length,1,'778 y 877 son UNA sola familia');
  assert(!result.all.some(x=>x.kind==='vt4'));
  const repeated={...traces[0],cells:['3:1','2:1','1:1']};
  const duplicate=crosswalk({columns:cols,inherited:[...traces,repeated]});
@@ -65,6 +95,7 @@ function main(){
   return {date:cut.date,target:cut.target,previousDate:cut.priorDate,
    inherited:cut.inherited.length,readings:r.all.length,
    multiHead:r.multiple.length,mixed:r.mixed.length,
+   reversalFamilies:reverseFamilies(cut,r),
    multiple:r.multiple};
  }).sort((a,b)=>a.date.localeCompare(b.date)||T.indexOf(a.target)-T.indexOf(b.target));
  assert.equal(cases.length,30,'Esperados 30 cortes causales');
@@ -102,6 +133,62 @@ function main(){
   }
   if(!c.multiple.length)lines.push('No se registraron convergencias de dos cabezas.','');
  }
+ // Las 4 lecturas convergentes de Primera 30 deberían colapsar en 2
+ // familias de dirección: VT2 {37,73} y VT3 {778,877}.
+ const row=cases.find(x=>x.date==='2026-09-30'&&x.target==='Primera');
+ assert.equal(row.reversalFamilies.length,2,'Hay que revisar la deduplicación inversa');
+ const fav=row.reversalFamilies.find(f=>f.kind==='vt3'&&f.readings.includes('778'));
+ assert(fav&&fav.readings.includes('877'),'Falta el par simétrico 778/877');
+ const fm=cases.find(x=>x.date==='2026-09-30'&&x.target==='Matutino');
+ const favMat=fm.reversalFamilies.find(f=>f.kind==='vt3'&&f.readings.includes('778'));
+ assert(favMat,'Falta familia 778/877 antes de Matutino');
+ console.log('FAMILIA_778_ANTES_PRIMERA '+JSON.stringify({
+  counts:row.multiHead,numberOfFamilies:row.reversalFamilies.length,
+  family:fav.readings,priorHeadPaths:fav.numberOfPathHeadRecords,
+  touchingKnownToday:fav.touchingKnownToday,exactlyMarkedToday:fav.exactlyMarkedToday}));
+ console.log('FAMILIA_778_ANTES_MATUTINO '+JSON.stringify({
+  counts:fm.multiHead,numberOfFamilies:fm.reversalFamilies.length,
+  family:favMat.readings,priorHeadPaths:favMat.numberOfPathHeadRecords,
+  touchingKnownToday:favMat.touchingKnownToday,exactlyMarkedToday:favMat.exactlyMarkedToday}));
+ const revFile=['# Familias de orientaciones opuestas, sin doble conteo','',
+  'Una lectura y su inversión son una sola familia de recorrido:',
+  '37/73 o 778/877, por ejemplo. Se comparan únicamente rutas',
+  'que habían quedado marcadas en la hoja de la jornada ANTERIOR.',
+  'Los contactos se registran sólo con marcas YA conocidas hoy',
+  'antes del turno objetivo. No es un selector ni ranking de apuestas.','',
+  '| Fecha | Antes de | Convergencias numéricas | Familias tras unificar inversiones |',
+  '|---|---|---:|---:|'];
+ for(const c of cases)revFile.push('| '+c.date+' | '+c.target+
+  ' | '+c.multiHead+' | '+c.reversalFamilies.length+' |');
+ revFile.push('','## Todas las familias de cada corte, sin ocultar negativas','');
+ for(const c of cases){
+  revFile.push('### '+c.date+' ANTES '+c.target,'');
+  if(!c.reversalFamilies.length)revFile.push('Ninguna familia con dos cabezas anteriores.');
+  for(const f of c.reversalFamilies){
+   revFile.push('- '+f.kind.toUpperCase()+' '+f.readings.join(' / ')+
+    ': '+f.distinctPriorHeads+' cabezas históricas, '+f.numberOfPathHeadRecords+
+    ' registros cabeza-huella; '+f.touchingKnownToday+
+    ' con contacto a marcas ya comprobadas de hoy, '+f.exactlyMarkedToday+
+    ' con misma huella ya confirmada hoy.');
+  }
+  revFile.push('');
+ }
+ revFile.push('## Control específico 30/09','',
+  'Antes de Primera se observaron '+row.multiHead+' valores convergentes',
+  'pero sólo '+row.reversalFamilies.length+' familias de inversión.',
+  'La familia de 778/877 tenía '+fav.touchingKnownToday+
+  ' contactos con marcas previas comprobadas.',
+  'Antes de Matutino seguía disponible; contaba con '+
+  favMat.touchingKnownToday+' contactos y '+favMat.exactlyMarkedToday+
+  ' huellas exactas ya comprobadas.',
+  'Esto documenta un cambio visual anterior al sorteo, pero NO permite',
+  'afirmar que ese cambio discrimina la próxima confirmación sin comparar',
+  'todas las familias que no resultaron confirmadas y fijar una regla',
+  'que no use el resultado posterior.','');
+ fs.writeFileSync(path.join(OUT,'FAMILIAS_ORIENTACION.md'),revFile.join('\n'));
+ fs.writeFileSync(path.join(OUT,'FAMILIAS_ORIENTACION.json'),
+  JSON.stringify(cases.map(c=>({date:c.date,target:c.target,families:c.reversalFamilies})),null,2));
+
  const first=cases.find(x=>x.date==='2026-09-30'&&x.target==='Primera');
  const mat=cases.find(x=>x.date==='2026-09-30'&&x.target==='Matutino');
  const case778=first?.multiple.find(x=>x.kind==='vt3'&&x.value==='778');
