@@ -150,4 +150,5 @@ function main(){
  assert.equal(records.length,95,'19 transiciones × 5 turnos = 95 cortes previos');
  console.log('EXAMEN_CIEGO_OK '+records.length+' cortes, sin resultados del objetivo en páginas');
 }
-main();
+if(require.main===module)main();
+module.exports={makeCut,page,reading};
