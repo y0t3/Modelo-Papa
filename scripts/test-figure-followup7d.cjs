@@ -48,7 +48,7 @@ swapped.matches.Nocturno=[{cabeza:'2758',hits:[]}];swapped.heads.Nocturno=['2758
 assert.deepStrictEqual(translation.prefreezeFixedAndTranslated7D(memory,[],swapped,futureDay,'Nocturno'),baseline,
  'target outcome cannot alter fixed or shifted readings');
 assert.throws(()=>translation.prefreezeFixedAndTranslated7D(memory,[],sheet(values),'2026-08-01','Nocturno'),/fecha/);
-assert.throws(()=>translation.prefreezeFixedAndTranslated7D(memory,[],sheet(values),futureDay,'Matutino'),/turno/);
+assert.throws(()=>translation.prefreezeFixedAndTranslated7D(memory,[],sheet(values),futureDay,'Matutino'),/turno/i);
 const missingShift=sheet(['34','75','--','19','20','31']);
 const absent=translation.prefreezeFixedAndTranslated7D(memory,[],missingShift,futureDay,'Nocturno');
 assert.equal(absent.validTranslations,0);
