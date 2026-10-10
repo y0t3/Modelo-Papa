@@ -20,4 +20,5 @@ jobs:
           NODE_PATH=/tmp/mp-ts/node_modules node scripts/test-figure-spatial7d.cjs
           NODE_PATH=/tmp/mp-ts/node_modules node scripts/test-manual-provenance7d.cjs
           NODE_PATH=/tmp/mp-ts/node_modules node scripts/test-causal-replay7d.cjs
+          NODE_PATH=/tmp/mp-ts/node_modules node scripts/test-intraday-without-d7.cjs
           NODE_PATH=/tmp/mp-ts/node_modules node scripts/test-visual5d.cjs
