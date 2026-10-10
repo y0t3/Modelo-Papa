@@ -19,7 +19,7 @@ function validateTrace(t,col){
   const [r,c]=coordinates(t.cells[i]);assert(Number.isInteger(r)&&r>=0&&r<6&&(c===0||c===1));
   if(i){const [pr,pc]=coordinates(t.cells[i-1]);assert.equal(Math.max(Math.abs(r-pr),Math.abs(c-pc)),1);}
  }
- assert.equal(read(t.cells,col),t.todayReading);
+ assert.equal(read(t.cells,col),t.todayReading===undefined?t.value:t.todayReading);
  assert(/^\d{4}$/.test(t.fullHead)&&t.fullHead.endsWith(t.value));
 }
 function seal(cut,m){
