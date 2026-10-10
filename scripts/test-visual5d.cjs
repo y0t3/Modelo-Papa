@@ -140,8 +140,12 @@ const adaptiveDays=[
  {date:'2026-06-18',sheet:sheet(false)}
 ];
 const adaptiveA=analyzeAdaptive7D(adaptiveDays,sheet(false),'2026-06-18','Primera');
+// Previa del mismo día ya ocurrió antes de Primera y SI puede aportar memoria.
+// Alteramos exclusivamente el sorteo objetivo Primera, que aún no existía.
+const targetOnly=sheet(false);
+targetOnly.matches.Primera=sheet(true).matches.Previa.map(x=>({...x,turno:'Primera'}));
 const adaptiveFuture=analyzeAdaptive7D(
- adaptiveDays.map(d=>d.date==='2026-06-18'?{...d,sheet:sheet(true)}:d),
+ adaptiveDays.map(d=>d.date==='2026-06-18'?{...d,sheet:targetOnly}:d),
  sheet(false),'2026-06-18','Primera');
 assert.deepStrictEqual(adaptiveA,adaptiveFuture,'future results cannot influence adaptive decisions');
 assert(adaptiveA.candidates.every(c=>['vt2','vt3','vt4'].includes(c.kind)),'all three modes supported');
