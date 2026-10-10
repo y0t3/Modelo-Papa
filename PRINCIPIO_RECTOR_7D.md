@@ -52,3 +52,46 @@ Acuerdo incorporado el 2026-10-08. Estas reglas guían diseño y evaluación; **
 5. Recién después del sorteo confrontar los candidatos fijados con TODAS las cabezas conocidas y registrar aciertos y fallos; jamás emplear esas cabezas para seleccionar.
 
 **CONTROL DE CALIDAD ANTES DE TODO NUEVO ENSAYO:** ¿se analizaron las hojas históricas marcadas, con sus recorridos? ¿Se interpretó su evolución antes de proyectar candidatos? ¿Se preservaron las columnas y la causalidad? Si alguna respuesta es no, DETENER el ensayo; no informar ese resultado como análisis 7D y rehacerlo. No hacer que el usuario tenga que volver a recordar este punto.
+
+## ACLARACIÓN CENTRAL — LECTURA VIVA ENTRE TURNOS Y JORNADAS (2026-10-10)
+El Modelo Papá **NO exige** que D−7 confirme o autorice una figura para poder considerarla en D.
+La semana anterior es una referencia comparativa, no un filtro obligatorio. El lector
+`combinedReader7d.ts` que genera candidatos **únicamente** desde rutas ganadoras D−7
+es una implementación experimental RESTRINGIDA: sus resultados NO representan una
+evaluación del método visual completo.
+
+**Orden y autonomía de la interpretación antes de cada turno:**
+1. Ver la hoja **de hoy hasta el turno ya terminado**. Las columnas Previa y Primera,
+   por ejemplo, ya están físicamente disponibles antes de la Matutina, junto con la
+   base Nocturna del día anterior. Sus figuras, relaciones, direcciones y marcas
+   comprobadas pueden fundamentar una hipótesis VT3 del turno siguiente
+   **aunque falte D−7**.
+2. Comparar la red de marcas de hoy con la última jornada efectivamente sorteada
+   (ayer o la jornada anterior si no hubo sorteo) y con otras jornadas recientes:
+   repeticiones, traslaciones, contactos, bifurcaciones, concentraciones y cambios
+   de columna de ORIGEN o turno de SALIDA.
+3. Consultar D−7 y otras semanas como memoria histórica adicional, nunca como
+   validación obligatoria. D−14/D−21 tampoco son orígenes obligatorios.
+4. A partir de esa interpretación, estudiar un **Top3 VT3 pequeño, explicable y
+   congelado antes del sorteo**. No ampliar candidatos por no entender las
+   señales, ni convertir en regla fija que dos columnas garantizan un acierto.
+5. Cuando una cabeza nueva se conozca, reconstruir todas sus marcas VT2/VT3/VT4
+   para alimentar las observaciones del turno **siguiente**, sin revisar a
+   posteriori las decisiones anteriores.
+
+**Precisión física:** un recorrido individual no puede mezclar celdas de
+distintas columnas. Es legítimo **comparar** figuras entre las columnas visibles
+y **relacionar** su movimiento o comportamiento, pero la terna candidata
+debe leerse íntegramente en una columna físicamente disponible para ese turno.
+
+**Disciplina causal:** no usar ni una cabeza de Matutina para seleccionar el
+pronóstico de esa misma Matutina. Sí se pueden utilizar las cabezas ya publicadas
+de Previa y Primera cuando el objetivo es Matutina. Si falta D−7 no se
+impone abstención automática; habrá abstención si no emerge señal visual
+justificable. Toda mejora predictiva permanece experimental hasta contrastarla
+con resultados posteriores y azar de igual cantidad de candidatos.
+
+**Próximo paso de ingeniería:** conectar las memorias de hoy, ayer y la semana
+anterior a una misma lectura cronológica, primero como OBSERVADOR sin pesos
+ni candidatos inventados. No volver a estudiar el D−7 aislado como si fuera
+todo el Modelo Papá, ni sustituir el selector oficial sin comprobarlo.
