@@ -127,4 +127,5 @@ function main(){
   'pronósticos reales realizados antes de esos sorteos.',''].join('\n'));
  console.log('CUADERNO_OCULAR_READY '+links.length+' vistas comparativas completas, no selecciona cifras');
 }
-main();
+if(require.main===module)main();
+module.exports={html,digest};
