@@ -144,7 +144,7 @@ function tests(){
  const cmp=compare([a],[cross]);assert.equal(cmp.stats.vt3.sin_relacion,1);
  assert.equal(cmp.stats.vt3.noCorrespondingNew,1);
  const src={date:'2026-09-22',target:'Previa',priorDate:'2026-09-21',
-  columns:[{id:'Previa'}],knownToday:[],inherited:[a]};
+  columns:[{id:'Previa'}],knownToday:[],inherited:[{...a,todayReading:'298'}]};
  assert.equal(truth(src,{Previa:{Ciudad:'1298'}}).stats.vt3.matched,1);
  const wrong={...src,knownToday:[{turn:'Previa'}]};
  assert.throws(()=>truth(wrong,{}));
