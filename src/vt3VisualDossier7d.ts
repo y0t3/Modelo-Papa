@@ -94,14 +94,11 @@ function makeFigure(candidate:VT3PoolInspectCandidate7D,
  const today=traceLinks(paths,board.marksToday,true);
  const yesterday=traceLinks(paths,board.lastDraw?.marks||[],true);
  const week=traceLinks(paths,board.previousWeek?.marks||[],true);
- const cross=traceLinks(paths,board.marksToday,false).filter(x=>
-  !paths.some(p=>p.sourceId===x.sourceId&&
-    (p.shape===x.shape||p.cells.join('>')===x.cells.join('>'))));
- // Comparaciones explícitas de formas en fuentes distintas. La hoja actual
- // puede tener rutas en la fuente de la marca; esta colección refleja
- // analogías entre fuentes sin mezclar los recorridos individuales.
- const crossColumn=traceLinks(paths,board.marksToday,false).filter(x=>
-  paths.some(p=>p.sourceId!==x.sourceId&&p.shape===x.shape));
+ // Una analogía entre columnas es SOLO igualdad de forma relativa.
+ // No puede presentarse como contacto entre celdas de fuentes diferentes.
+ const crossColumn=traceLinks(paths,board.marksToday,false)
+  .filter(x=>paths.some(p=>p.sourceId!==x.sourceId&&p.shape===x.shape))
+  .map(x=>({...x,relation:'MISMA_FORMA' as const}));
  const reasons=[
   'El valor '+candidate.value+' se lee en '+paths.length+
    ' recorrido(s) físico(s) sobre las columnas actuales; ninguna ruta cruza de columna',
@@ -116,7 +113,6 @@ function makeFigure(candidate:VT3PoolInspectCandidate7D,
  ];
  if(!today.length&&!yesterday.length&&!week.length)
   reasons.push('Sin coincidencia física directa en hoy, ayer ni D−7; el adaptativo puede haber elegido por memoria más antigua');
- void cross;
  return {value:candidate.value,sourceId:candidate.sourceId,
   selected:candidate.selected,oldRank:candidate.rank,modelState:candidate.life,
   zone:candidate.zone,originalCells:[...candidate.cells],
