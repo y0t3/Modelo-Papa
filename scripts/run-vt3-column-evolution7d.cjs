@@ -78,6 +78,15 @@ async function main(){
     ' | nuevos_pool='+s.newlyEligible+
     ' (nueva_col='+s.newlyEligibleFromNewColumn+
     ',otras_col='+s.newlyEligibleFromOldColumns+')');
+   if(s.newVerifiedVT3Marks===0&&s.newlyEligible===0&&s.enteredTop3.length>0){
+    console.log('SIN_NUEVA_MARCA_NI_ELEGIBLES '+day.date+' '+key+
+     ' | antes='+s.beforeTop3Details.map(x=>x.value+':'+x.state+'#'+x.rank+'→'+
+      (x.stillEligibleAfter?x.stateAfter+'#'+x.rankAfter:'FUERA_POOL')).join(',')+
+     ' | despues='+s.top3After.map(v=>{
+      const x=s.candidateDetails.find(c=>c.value===v);
+      return v+':'+x.newState+'#'+x.newRank+'(antes '+(x.oldRank??'no')+')';
+     }).join(','));
+   }
   }
   lines.push('','### Lectura de cada transición, sin sumar candidatas','');
   for(const s of trace.stages){
