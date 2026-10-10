@@ -16,7 +16,8 @@ export type ReplayCandidate7D={kind:CycleKind;value:string;sourceId:string;
  cells:string[];signals:string[];hit:boolean};
 export type ReplayTurn7D={date:string;turn:Turno;heads:string[];
  decision:CombinedResult['decision'];reason:string;eligible:number;
- candidates:ReplayCandidate7D[]};
+ candidates:ReplayCandidate7D[];physicalPoolSizes:Record<CycleKind,number>;
+ physicalWinningValues:Record<CycleKind,number>};
 export type ReplayKindStats7D={kind:CycleKind;turns:number;turnsWithCandidates:number;
  abstentions:number;candidates:number;hits:number;turnsWithHit:number;
  falseCandidates:number;randomExpectedHits:number;randomExpectedTurnsWithHit:number;
@@ -97,9 +98,16 @@ export function auditCombinedChronologically7D(input:DatedSheet[]):ReplayAudit7D
     cells:c.path.map(p=>p.row+':'+p.col),signals:c.signals.map(s=>s.name),
     hit:actual.some(h=>h.slice(-WIDTH[c.kind])===c.value)
    }));
-   rows.push({date,turn,heads:actual,decision:prediction.decision,
-    reason:prediction.reason,eligible:prediction.eligible,candidates});
    const physical=physicalPoolBefore7D(history,before,date,turn);
+   const physicalPoolSizes={vt2:physical.vt2.size,vt3:physical.vt3.size,vt4:physical.vt4.size};
+   const physicalWinningValues={vt2:0,vt3:0,vt4:0};
+   for(const kind of KINDS){
+    const winners=new Set(actual.map(h=>h.slice(-WIDTH[kind])));
+    physicalWinningValues[kind]=[...physical[kind]].filter(v=>winners.has(v)).length;
+   }
+   rows.push({date,turn,heads:actual,decision:prediction.decision,
+    reason:prediction.reason,eligible:prediction.eligible,candidates,
+    physicalPoolSizes,physicalWinningValues});
    for(const kind of KINDS){
     const k=stats[kind],selected=candidates.filter(c=>c.kind===kind);
     const winnerValues=new Set(actual.map(h=>h.slice(-WIDTH[kind])));
@@ -107,7 +115,7 @@ export function auditCombinedChronologically7D(input:DatedSheet[]):ReplayAudit7D
     const eligible=physical[kind];
     if(selected.some(c=>!eligible.has(c.value)))
      throw Error('Candidata no pertenece al conjunto fisico D-7 previamente disponible');
-    const eligibleHits=[...eligible].filter(x=>winnerValues.has(x)).length;
+    const eligibleHits=physicalWinningValues[kind];
     k.physicalPoolCandidates+=eligible.size;
     if(eligible.size){
      k.physicalExpectedHits+=selected.length*eligibleHits/eligible.size;
