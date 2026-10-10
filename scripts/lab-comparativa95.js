@@ -2,7 +2,7 @@
 (function(){
 'use strict';
 const data=JSON.parse(document.getElementById('cut-data').textContent);
-const cut=data.cut,digest=data.digest;
+const cut=data.cut,digest=data.digest,live=data.session==='LIVE';
 const $=id=>document.getElementById(id),SVG='http://www.w3.org/2000/svg';
 const uniq=a=>[...new Set(a)],reverse=s=>[...s].reverse().join('');
 const canonical=c=>[c.join('>'),[...c].reverse().join('>')].sort()[0];
@@ -165,7 +165,7 @@ $('save').onclick=()=>{
  if(!abstain&&!selected.length)return message('Registrá una huella o elegí OBSERVAR / NO JUGAR.');
  const file={
   protocol:'CUADERNO_OCULAR_COMPARATIVO_V1',
-  trial:'REPLAY_HISTORICO_NO_PROSPECTIVO',
+  trial:live?'OBSERVACION_LOCAL_NO_SELLADA':'REPLAY_HISTORICO_NO_PROSPECTIVO',
   date:cut.date,target:cut.target,priorDate:cut.priorDate,
   d7Date:cut.d7Date||null,availableSources:cut.columns.map(x=>x.id),
   sourceDigest:digest,createdLocalAt:new Date().toISOString(),
@@ -180,7 +180,7 @@ $('save').onclick=()=>{
  link.download='CUADERNO-'+cut.date+'-ANTES-'+cut.target+'.json';
  document.body.appendChild(link);link.click();link.remove();
  setTimeout(()=>URL.revokeObjectURL(link.href),1000);
- message('JSON exportado: conservá también el corte fuente para verificarlo. Esto sigue siendo replay histórico.');
+ message(live?'JSON local exportado. Para ser una elección prospectiva verificable hay que publicarlo externamente ANTES del sorteo.':'JSON exportado: conservá también el corte fuente para verificarlo. Esto sigue siendo replay histórico.');
 };
 populate();showBoard();toggle();refresh();drawSelected();
 })();
