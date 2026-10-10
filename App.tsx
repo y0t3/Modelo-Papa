@@ -23,8 +23,10 @@ import {freezeFigureReadings7D,evaluateFigureReadings7D,observationOfFigure7D} f
 import {decideFlowSwitch7D} from './src/flowSwitch7d';
 import type {PredictiveRoute} from './src/predictive';
 import {buildRouteLives,summarizeRouteStates} from './src/routeLife';
+import PanoramaSheet from './src/PanoramaSheet';
+import {buildDailyPanorama,buildPredictivePanorama} from './src/panoramaModel';
 
-type Screen='hoja'|'predictiva'|'cabezas'|'analisis';
+type Screen='hoja'|'predictiva'|'info'|'cabezas'|'analisis';
 type Kind='vt2'|'vt3'|'vt4';
 type Sel={match:Match;kind:Kind;index:number}|null;
 const today=()=>new Date().toISOString().slice(0,10);
@@ -47,6 +49,8 @@ export default function App(){
  const effectiveTarget=targetTurn||automaticTarget;
  const predictive=useMemo(()=>sheet&&d7Sheet?buildPredictive(sheet,d7Sheet,effectiveTarget,olderSheets):null,[sheet,d7Sheet,effectiveTarget,olderSheets]);
  const turnAnalysis=useMemo(()=>predictive?analyzePredictive(predictive):null,[predictive]);
+ const hojaPanorama=useMemo(()=>sheet?buildDailyPanorama(sheet,data):null,[sheet,data]);
+ const predPanorama=useMemo(()=>predictive?buildPredictivePanorama(predictive):null,[predictive]);
  const visual5D=useMemo(()=>sheet?analyzeVisual5D(sheet,fiveDaySheets,effectiveTarget):null,[sheet,fiveDaySheets,effectiveTarget]);
  const visualMemory=useMemo(()=>sheet?buildVisualMemory(sheet,fiveDaySheets,effectiveTarget):null,[sheet,fiveDaySheets,effectiveTarget]);
  const visualEvolution=useMemo(()=>visualMemory?analyzeVisualEvolution(visualMemory.marks,effectiveTarget):null,[visualMemory,effectiveTarget]);
@@ -135,12 +139,83 @@ export default function App(){
   <Pressable style={s.smallBtn} onPress={()=>setSel({...sel,index:(sel.index+1)%flatRoutes.length})}><Text style={s.btnTxt}>›</Text></Pressable>
   <Pressable style={s.clearBtn} onPress={()=>setSel(null)}><Text style={s.btnTxt}>CERRAR</Text></Pressable></View></View>;
 
- return <SafeAreaView style={s.safe}><StatusBar style="light"/><View style={s.nav}>{(['hoja','predictiva','cabezas','analisis'] as Screen[]).map(x=><Pressable key={x} onPress={()=>setScreen(x)} style={[s.navBtn,screen===x&&s.on]}><Text style={s.navText}>{x.toUpperCase()}</Text></Pressable>)}</View>
- <View style={s.floatZoom}><Text style={s.fontLabel}>Tamaño</Text><Pressable style={s.fontBtn} onPress={()=>setFontScale(.78)}><Text style={s.fontTxt}>A−</Text></Pressable><Pressable style={s.fontBtn} onPress={()=>setFontScale(1)}><Text style={s.fontTxt}>A</Text></Pressable><Pressable style={s.fontBtn} onPress={()=>setFontScale(1.35)}><Text style={s.fontTxt}>A+</Text></Pressable></View><ScrollView contentContainerStyle={s.page}><Text style={s.h1}>MODELO LALO</Text><Text style={s.sub}>Hoja diaria · recorridos · flujo temporal</Text>
- <Text style={s.label}>Fecha de consulta</Text><DateField value={fechaText} onChange={v=>{setFechaText(v);setData(null);setSheet(null);setSel(null)}}/>
- <View style={s.quick}><Pressable style={s.qbtn} onPress={()=>move(-1)}><Text style={s.qtxt}>← DÍA</Text></Pressable><Pressable style={s.qbtn} onPress={d7}><Text style={s.qtxt}>D−7</Text></Pressable><Pressable style={s.qbtn} onPress={()=>move(1)}><Text style={s.qtxt}>DÍA →</Text></Pressable></View>
- <Pressable style={s.load} onPress={()=>cargar()} disabled={busy}>{busy?<ActivityIndicator color="#fff"/>:<Text style={s.loadText}>↻ CARGAR HOJA</Text>}</Pressable>
- {screen==='cabezas'?heads:screen==='hoja'?<><Text style={s.section}>HOJA DIARIA · +11</Text>{routeControls}{board}</>:screen==='predictiva'?<><Text style={s.section}>HOJA PREDICTIVA</Text><Text style={s.targetLabel}>Turno a proyectar</Text><ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.targetRow}>{TURNOS.map(t=><Pressable key={t} style={[s.targetBtn,effectiveTarget===t&&s.targetOn]} onPress={()=>{setTargetTurn(t);setPredRoute(null);setAnalysisOpen(false)}}><Text style={s.targetText}>{t}</Text></Pressable>)}</ScrollView>{predictiveBoard}</>:analysisPanel}
+ return <SafeAreaView style={s.safe}><StatusBar style="light"/>
+ <View style={s.nav}>{(['hoja','predictiva','info'] as Screen[]).map(x=><Pressable key={x}
+  onPress={()=>setScreen(x)} style={[s.navBtn,screen===x&&s.on]}>
+  <Text style={s.navText}>{x.toUpperCase()}</Text></Pressable>)}</View>
+ {screen==='analisis'||screen==='cabezas'?<View style={[s.floatZoom,{top:topInset+56}]}>
+  <Pressable style={s.fontBtn} onPress={()=>setFontScale(.78)}><Text style={s.fontTxt}>A−</Text></Pressable>
+  <Pressable style={s.fontBtn} onPress={()=>setFontScale(1)}><Text style={s.fontTxt}>A</Text></Pressable>
+  <Pressable style={s.fontBtn} onPress={()=>setFontScale(1.35)}><Text style={s.fontTxt}>A+</Text></Pressable>
+ </View>:null}
+ <ScrollView contentContainerStyle={[s.page,{paddingTop:7}]}>
+  <Text style={[s.h1,{fontSize:23,marginTop:2}]}>MODELO PAPÁ</Text>
+  <Text style={[s.sub,{marginBottom:9}]}>Cuaderno visual +11</Text>
+  <View style={{backgroundColor:'#161020',borderRadius:12,padding:10}}>
+   <Text style={[s.label,{fontSize:11,marginBottom:4}]}>Fecha de la hoja</Text>
+   <DateField value={fechaText} onChange={v=>{setFechaText(v);setData(null);setSheet(null);setSel(null)}}/>
+   <View style={[s.quick,{marginTop:6}]}>
+    <Pressable style={s.qbtn} onPress={()=>move(-1)}><Text style={s.qtxt}>← Día</Text></Pressable>
+    <Pressable style={s.qbtn} onPress={d7}><Text style={s.qtxt}>D−7</Text></Pressable>
+    <Pressable style={s.qbtn} onPress={()=>move(1)}><Text style={s.qtxt}>Día →</Text></Pressable>
+   </View>
+   <Pressable style={[s.load,{padding:9,marginTop:9,marginBottom:1}]} onPress={()=>cargar()} disabled={busy}>
+    {busy?<ActivityIndicator color="#fff"/>:<Text style={s.loadText}>↻ ACTUALIZAR HOJA</Text>}
+   </Pressable>
+  </View>
+  {screen==='hoja'?
+    (sheet&&hojaPanorama?
+     <PanoramaSheet mode="hoja" sheet={sheet} data={hojaPanorama} onInfo={()=>setScreen('info')}/>:
+     <Text style={s.help}>Elegí una fecha y tocá «Actualizar hoja» para ver todas las marcas.</Text>)
+  :screen==='predictiva'?
+    <><View style={{marginTop:11}}>
+     <Text style={s.targetLabel}>Turno objetivo</Text>
+     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.targetRow}>
+      {TURNOS.map(t=><Pressable key={t} style={[s.targetBtn,effectiveTarget===t&&s.targetOn]}
+       onPress={()=>{setTargetTurn(t);setPredRoute(null);setAnalysisOpen(false)}}>
+       <Text style={s.targetText}>{t}</Text>
+      </Pressable>)}
+     </ScrollView>
+    </View>
+    {sheet&&predPanorama?
+     <PanoramaSheet mode="predictiva" sheet={sheet} data={predPanorama} target={effectiveTarget}
+      onInfo={()=>setScreen('info')}/>:
+     <Text style={s.help}>Cargá una hoja para observar las figuras disponibles antes del turno.</Text>}
+    </>
+  :screen==='info'?<View style={{backgroundColor:'#f7f3fa',borderRadius:12,padding:16,marginTop:12}}>
+    <Text style={{color:'#2c2240',fontSize:20,fontWeight:'900'}}>Cómo leer la hoja</Text>
+    <Text style={{color:'#60566d',marginTop:10,lineHeight:21}}>
+     El tablero muestra seis filas de dos cifras por columna. Cada trazo une celdas contiguas
+     dentro de una sola columna. Tocando una cabeza se iluminan TODOS sus recorridos
+     en todas las columnas y modalidades a la vez; las otras marcas continúan visibles.
+    </Text>
+    <Text style={{color:'#2c2240',fontWeight:'900',marginTop:16}}>Colores de los trazos</Text>
+    <Text style={{color:'#db547e',marginTop:8,fontWeight:'800'}}>VT2 · rosa · dos cifras</Text>
+    <Text style={{color:'#088f98',marginTop:5,fontWeight:'800'}}>VT3 · turquesa · tres cifras</Text>
+    <Text style={{color:'#c18b24',marginTop:5,fontWeight:'800'}}>VT4 · dorado · cuatro cifras</Text>
+    <Text style={{color:'#60566d',marginTop:12,lineHeight:21}}>
+     Una trayectoria dibujada de abajo hacia arriba es válida cuando sus celdas son vecinas.
+     Su inversa es otra lectura del mismo dibujo físico, no un nuevo recorrido.
+    </Text>
+    <Text style={{color:'#2c2240',fontWeight:'900',marginTop:16}}>Predictiva</Text>
+    <Text style={{color:'#60566d',marginTop:8,lineHeight:21}}>
+     La vista predictiva presenta visualmente todas las rutas que entrega el motor experimental
+     para el turno elegido. Sus formas son propuestas, no resultados confirmados.
+     Hoy el motor genera familias VT3: no añadimos VT2 ni VT4 artificiales.
+     Los colores y contactos no indican una probabilidad ni garantizan aciertos.
+     No se registra automáticamente una decisión personal.
+    </Text>
+    <Text style={{color:'#2c2240',fontWeight:'900',marginTop:16}}>Consultas adicionales</Text>
+    <Pressable onPress={()=>setScreen('cabezas')} style={[s.load,{marginVertical:7}]}>
+     <Text style={s.loadText}>Ver tabla completa de cabezas</Text>
+    </Pressable>
+    <Pressable onPress={()=>setScreen('analisis')} style={[s.load,{marginVertical:7,backgroundColor:'#51318a'}]}>
+     <Text style={s.loadText}>Abrir análisis y explicaciones técnicas</Text>
+    </Pressable>
+   </View>
+  :screen==='cabezas'?
+   <><Pressable onPress={()=>setScreen('info')}><Text style={s.help}>‹ Volver a Info</Text></Pressable>{heads}</>
+  :<><Pressable onPress={()=>setScreen('info')}><Text style={s.help}>‹ Volver a Info</Text></Pressable>{analysisPanel}</>}
  </ScrollView></SafeAreaView>
 }
 const topInset=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+8:8;
