@@ -1,0 +1,69 @@
+name: Compare sealed pre Primera 10 October with real first-draw heads
+on:
+  push:
+    branches: [auditoria-sorteo-10oct-2026]
+    paths:
+      - '.github/workflows/cotejar-primera-sellada-10oct.yml'
+      - 'scripts/run-post-frozen-primera-oct10.cjs'
+      - 'PROTOCOLO_COTEJO_PRIMERA_PRESELLADA_10OCT2026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  auditar-primera-todas-huellas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated historical board TypeScript runtime
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Test physical geometry, orientations, unknown coverage and negative retention
+        run: |
+          node --check scripts/run-post-frozen-primera-oct10.cjs
+          node scripts/run-post-frozen-primera-oct10.cjs --test-only=true
+      - name: Download original GitHub timestamped BEFORE Primera capture
+        uses: actions/download-artifact@v4
+        with:
+          name: ANTES-PRIMERA-10OCT-DOS-COLUMNAS-CERO-PRONOSTICOS
+          run-id: 38057490657
+          repository: y0t3/Modelo-Papa
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: out/pre-primera-original/
+      - name: Compare both D-1 and D-7 sources against all published Primera heads
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node scripts/run-post-frozen-primera-oct10.cjs --pre=out/pre-primera-original --out=out/cotejo-primera-10oct
+      - name: Verify original digest, all figures and zero prior choices
+        run: |
+          node - <<'NODE'
+          const assert=require('node:assert/strict'),fs=require('fs'),crypto=require('crypto');
+          const folder='out/cotejo-primera-10oct/';
+          const r=JSON.parse(fs.readFileSync(folder+'COMPARACION_COMPLETA_CON_NEGATIVOS.json'));
+          const cut=JSON.parse(fs.readFileSync(folder+'FOTO_ORIGINAL_ANTES_PRIMERA.json'));
+          const sum=v=>v.vt2.total+v.vt3.total+v.vt4.total;
+          const sourceHash=crypto.createHash('sha256').update(JSON.stringify(cut)).digest('hex');
+          assert.equal(sourceHash,'99e26413ffcb724b58a89be30a017ccfc76a7b994282073b99e5cf97dce545e9');
+          assert.equal(r.preSource.runId,'38057490657');
+          assert.equal(r.preSource.humanSelections,0);
+          assert.equal(r.humanForecastCount,0);
+          assert.equal(r.forecastScore,null);
+          assert.equal(r.union.figures.length,35);
+          assert.equal(sum(r.union.summary),35);
+          assert.equal(sum(r.commonGeometry.summary),7);
+          assert.equal(r.byMemory['D-1'].annotations,25);
+          assert.equal(r.byMemory['D-7'].annotations,29);
+          assert(r.actualHeadsPrimera.some(h=>/^\d{4}$/.test(h.head)));
+          assert.deepEqual(Object.keys(r.neutralAllPaths.bySource).sort(),['Previa','prevNocturno'].sort());
+          console.log('PRIMERA_COTEJO_VERIFICADO: SHA PRE, 35 figuras, 7 compartidas, todos negativos, 0 elecciones');
+          NODE
+      - name: Publish complete visual two-column audit of Primera
+        uses: actions/upload-artifact@v4
+        with:
+          name: RESULTADO-PRIMERA-10OCT-CONTRA-FOTO-PRE-1053-35-HUELLAS
+          path: out/cotejo-primera-10oct/
+          if-no-files-found: error
