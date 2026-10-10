@@ -50,21 +50,32 @@ export function readCombined7D(dated:DatedSheet[],current:DailySheet,date:string
   const value=path.map(c=>c.digit).join('');
   const zone=routeZone({route:path});
   const signature=moveKey(mark.route),shape=pathKey(mark.route),ee=edges(mark.route);
-  const confirmations=new Set<string>(),recent=new Set<string>(),branched=new Set<string>();
+  // Cada sorteo aporta COMO MAXIMO una categoria de apoyo geometrico:
+  // exacta > mismo movimiento en otra posicion > rama conectada.
+  // Sin esto una ruta exacta tambien sumaba como proximidad, duplicando el sorteo.
+  type Evidence='EXACTA'|'MOVIMIENTO'|'RAMA';
+  const strength:Record<Evidence,number>={EXACTA:3,MOVIMIENTO:2,RAMA:1};
+  const byDraw=new Map<string,Evidence>();
   for(const m of intermediate){
    for(const x of m.marks){
     if(x.kind!==mark.kind||x.sourceId!==mark.sourceId)continue;
     const moment=sortMoment(m.date,m.turn);
-    if(pathKey(x.route)===shape)confirmations.add(moment);
-    if(moveKey(x.route)===signature)recent.add(moment);
-    if(x.route.some(c=>mark.route.some(q=>q.row===c.row&&q.col===c.col))&&[...edges(x.route)].some(e=>!ee.has(e)))branched.add(moment);
+    const category:Evidence|undefined=pathKey(x.route)===shape?'EXACTA':
+     moveKey(x.route)===signature?'MOVIMIENTO':
+     x.route.some(c=>mark.route.some(q=>q.row===c.row&&q.col===c.col))&&
+     [...edges(x.route)].some(e=>!ee.has(e))?'RAMA':undefined;
+    if(category&&(!byDraw.has(moment)||strength[category]>strength[byDraw.get(moment)!]))
+     byDraw.set(moment,category);
    }
   }
+  const confirmations=[...byDraw.values()].filter(x=>x==='EXACTA').length;
+  const recent=[...byDraw.values()].filter(x=>x==='MOVIMIENTO').length;
+  const branched=[...byDraw.values()].filter(x=>x==='RAMA').length;
   const trend=flow.trends.find(x=>x.kind===mark.kind&&x.sourceId===mark.sourceId&&x.winningTurn===turn&&x.zone===zone);
   const signals:CombinedSignal[]=[{name:'D7',evidence:'Ruta ganadora marcada en '+sameWeekday.date+' · '+turn}];
-  if(confirmations.size)signals.push({name:'RECONFIRMACION',evidence:confirmations.size+' turnos intermedios con la misma ruta confirmada'});
-  if(recent.size)signals.push({name:'PROXIMIDAD',evidence:recent.size+' turnos intermedios con la misma geometría confirmada'});
-  if(branched.size)signals.push({name:'RAMA',evidence:branched.size+' turnos con rutas ganadoras conectadas (no confirmación exacta)'});
+  if(confirmations)signals.push({name:'RECONFIRMACION',evidence:confirmations+' turnos intermedios con la misma ruta confirmada'});
+  if(recent)signals.push({name:'PROXIMIDAD',evidence:recent+' turnos intermedios con la misma geometría confirmada'});
+  if(branched)signals.push({name:'RAMA',evidence:branched+' turnos con rutas ganadoras conectadas (no confirmación exacta)'});
   if(trend?.recentDraws)signals.push({name:'ESPACIAL',evidence:trend.recentDraws+' turnos recientes con origen '+mark.sourceId+', salida '+turn+' y zona '+zone});
   if(trend&&trend.previousDraws>0&&trend.recentDraws>trend.previousDraws)signals.push({name:'CRECIMIENTO',evidence:'Frecuencia reciente mayor que anterior dentro del ciclo'});
   // Una señal = una familia de evidencia; no suma por cada ruta/cabeza superpuesta.
