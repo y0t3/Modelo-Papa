@@ -6,6 +6,7 @@ on:
       - '.github/workflows/visual-holdout-septiembre.yml'
       - 'scripts/run-holdout-blind-visual7d.cjs'
       - 'scripts/run-holdout-post-visual7d.cjs'
+      - 'scripts/run-holdout-nearmiss-diagnostic7d.cjs'
       - 'scripts/run-visual-chain7d.cjs'
       - 'src/markedSheetAfterDraw7d.ts'
       - 'src/visualMarkedSheet7d.ts'
@@ -68,4 +69,29 @@ jobs:
         with:
           name: holdout-verificacion-POSTERIOR-16-23-septiembre
           path: out/holdout-resultados-posteriores/
+          if-no-files-found: error
+
+  diagnostico-sin-resultados:
+    needs: registrar-sin-resultados
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Read ONLY the already frozen blind files
+        uses: actions/download-artifact@v4
+        with:
+          name: holdout-ciego-hojas-16-23-septiembre
+          path: out/holdout-ciego-16-23/
+      - name: Diagnose preregistered near misses without target heads
+        run: |
+          node --check scripts/run-holdout-nearmiss-diagnostic7d.cjs
+          node scripts/run-holdout-nearmiss-diagnostic7d.cjs --input=out/holdout-ciego-16-23 --out=out/holdout-diagnostico-sin-resultados
+      - name: Save full geometric near-miss explanations separately
+        uses: actions/upload-artifact@v4
+        with:
+          name: holdout-diagnostico-solo-geometria-16-23
+          path: out/holdout-diagnostico-sin-resultados/
           if-no-files-found: error
