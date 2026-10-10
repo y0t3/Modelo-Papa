@@ -45,8 +45,14 @@ export function analyzeAdaptive7D(dated:DatedSheet[],current:DailySheet,date:str
  // La ventana no contiene resultados del turno objetivo ni posteriores.
  const marked=reconstructMarkedMoments(dated);
  const history=priorMarkedMoments(marked,date,target);
- const priorDates=[...new Set(history.map(x=>x.date))].sort().slice(-6);
- const moments=history.filter(x=>priorDates.includes(x.date));
+ // Sólo un sorteo con cabezas efectivamente publicadas es una oportunidad
+ // temporal de la figura. Reconstruir una hoja genera también momentos vacíos
+ // para turnos no sorteados: contarlos hacía decaer indebidamente el recorrido.
+ const completed=new Set(dated.flatMap(d=>TURNOS.filter(t=>
+  (d.sheet.heads[t]||[]).some(h=>/^\d{4}$/.test(h))).map(t=>d.date+'|'+t)));
+ const actualDraws=history.filter(m=>completed.has(m.date+'|'+m.turn));
+ const priorDates=[...new Set(actualDraws.map(x=>x.date))].sort().slice(-6);
+ const moments=actualDraws.filter(x=>priorDates.includes(x.date));
  const tracks=new Map<string,Track>();
  // Cada turno es un avance temporal; la memoria decae incluso cuando no se confirma nada.
  moments.forEach((m,index)=>{
