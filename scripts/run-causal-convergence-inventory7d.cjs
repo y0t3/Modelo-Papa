@@ -185,6 +185,7 @@ function main(){
   'afirmar que ese cambio discrimina la próxima confirmación sin comparar',
   'todas las familias que no resultaron confirmadas y fijar una regla',
   'que no use el resultado posterior.','');
+ fs.mkdirSync(OUT,{recursive:true});
  fs.writeFileSync(path.join(OUT,'FAMILIAS_ORIENTACION.md'),revFile.join('\n'));
  fs.writeFileSync(path.join(OUT,'FAMILIAS_ORIENTACION.json'),
   JSON.stringify(cases.map(c=>({date:c.date,target:c.target,families:c.reversalFamilies})),null,2));
