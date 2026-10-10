@@ -19,7 +19,10 @@ export type MarkedSheetWitness7D={
  id:string;date:string;turn:Turno;
  sourceId:SourceId;kind:'VT2'|'VT3'|'VT4';
  // Cabeza anotada ABAJO de la hoja y ya sorteada.
- headBelow:string;
+ headCoincidente:string;
+ // Evita suponer que el número estaba legible debajo cuando sólo
+ // se recuperó del resultado publicado.
+ headLocation:'DEBAJO_VISIBLE'|'RESULTADO_CONOCIDO_ANOTACION_NO_VERIFICADA';
  status:VisualEvidenceStatus7D;
  cells:string[];
  // Video: nombre y segundo exacto; imagen: nombre de archivo+zona;
@@ -33,7 +36,8 @@ export type MarkedSheetRecord7D={
  witnesses:MarkedSheetWitness7D[];
 };
 export type MarkedWitnessReview7D={
- id:string;date:string;turn:Turno;headBelow:string;sourceId:SourceId;
+ id:string;date:string;turn:Turno;headCoincidente:string;
+ headLocation:'DEBAJO_VISIBLE'|'RESULTADO_CONOCIDO_ANOTACION_NO_VERIFICADA';sourceId:SourceId;
  status:VisualEvidenceStatus7D;
  manualTraceConfirmed:boolean;
  sourceExistsBeforeOwnDraw:boolean;
@@ -65,7 +69,7 @@ const cellsRead=(values:string[],cells:string[])=>{
 };
 export function validateMarkedWitness7D(w:MarkedSheetWitness7D):MarkedSheetWitness7D{
  if(!w.id.trim()||!/^\\d{4}-\\d{2}-\\d{2}$/.test(w.date)||
-  !TURNOS.includes(w.turn)||!/^\\d{4}$/.test(w.headBelow)||
+  !TURNOS.includes(w.turn)||!/^\d{4}$/.test(w.headCoincidente)||
   !w.reference.trim())throw Error('Testimonio sin identidad, fecha, cabeza o fuente visual');
  if(w.status==='FOTOGRAMA_REFERENCIADO_SIN_CELDAS_DIGITALIZADAS'){
   if(w.cells.length)throw Error('No se pueden atribuir celdas a un fotograma sin digitalización');
@@ -117,11 +121,12 @@ export function readMarkedSheetEvidenceBefore7D(
    const isExact=w.status==='TRAZO_MANUAL_ORDENADO_VERIFICADO';
    const originalRead=isExact&&col?cellsRead(col.values,w.cells):undefined;
    if(isExact&&col&&originalRead&&
-    !w.headBelow.endsWith(originalRead))
+    !w.headCoincidente.endsWith(originalRead))
     throw Error('Trazo manual y cabeza anotada debajo no coinciden');
-   const active=isExact&&!!col&&originalRead!==undefined&&
-    w.headBelow.endsWith(originalRead);
-   reviews.push({id:w.id,date:w.date,turn:w.turn,headBelow:w.headBelow,
+   const active=isExact&&w.headLocation==='DEBAJO_VISIBLE'&&
+    !!col&&originalRead!==undefined&&w.headCoincidente.endsWith(originalRead);
+   reviews.push({id:w.id,date:w.date,turn:w.turn,headCoincidente:w.headCoincidente,
+    headLocation:w.headLocation,
     sourceId:w.sourceId,status:w.status,
     manualTraceConfirmed:active,
     sourceExistsBeforeOwnDraw:!!col,sourceVisibleNow:!!currently,
