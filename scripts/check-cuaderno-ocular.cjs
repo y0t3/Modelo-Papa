@@ -118,4 +118,5 @@ function main(){
  console.log('CUADERNO_VERIFICADO '+JSON.stringify(r));
  console.log('ADVERTENCIA: verifica integridad de datos y geometría, no hora real previa al sorteo.');
 }
-main();
+if(require.main===module)main();
+module.exports={check,sha,index};
