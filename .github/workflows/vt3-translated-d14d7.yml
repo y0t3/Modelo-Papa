@@ -1,0 +1,56 @@
+name: VT3 translated winning geometry D14 to D7
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/vt3-translated-d14d7.yml'
+      - 'src/vt3TranslatedD14d7.ts'
+      - 'scripts/test-vt3-translated-d14d7.cjs'
+      - 'scripts/run-vt3-translated-d14d7.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  repeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: "2024"
+            from: "2024-01-01"
+            to: "2024-12-31"
+          - label: "2025"
+            from: "2025-01-01"
+            to: "2025-12-31"
+          - label: "2026-jan-may"
+            from: "2026-01-01"
+            to: "2026-05-31"
+          - label: "2026-jun-sep"
+            from: "2026-06-01"
+            to: "2026-09-30"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install TypeScript compiler
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Validate same-shape VT3 movement D14/D7 without D result
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/test-vt3-translated-d14d7.cjs
+      - name: Compare translated winner VT3 Top3 with fixed budget
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+          FROM_DATE: ${{ matrix.from }}
+          TO_DATE: ${{ matrix.to }}
+          LABEL: ${{ matrix.label }}
+        run: node scripts/run-vt3-translated-d14d7.cjs --from="$FROM_DATE" --to="$TO_DATE" --out="out/vt3-translated-$LABEL.json"
+      - name: Save all route proofs and target results
+        uses: actions/upload-artifact@v4
+        with:
+          name: vt3-d14d7-translated-${{ matrix.label }}
+          path: out/vt3-translated-*.json
+          if-no-files-found: error
