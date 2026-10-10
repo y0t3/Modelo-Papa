@@ -11,6 +11,7 @@ on:
       - 'scripts/run-visual-chain7d.cjs'
       - 'scripts/run-morphology-atlas7d.cjs'
       - 'scripts/run-blind-visual-exam7d.cjs'
+      - 'scripts/run-causal-convergence-inventory7d.cjs'
       - 'scripts/visor-ciego7d.js'
       - 'scripts/visor-ciego7d.css'
   workflow_dispatch:
@@ -52,6 +53,11 @@ jobs:
           node --check scripts/visor-ciego7d.js
           node scripts/run-blind-visual-exam7d.cjs --test-only=true
           node scripts/run-blind-visual-exam7d.cjs --input=out/cadena-visual-septiembre --out=out/examen-visual-ciego-septiembre
+      - name: Test and enumerate ALL pre-turn independent-route convergences
+        run: |
+          node --check scripts/run-causal-convergence-inventory7d.cjs
+          node scripts/run-causal-convergence-inventory7d.cjs --test-only=true
+          node scripts/run-causal-convergence-inventory7d.cjs --input=out/examen-visual-ciego-septiembre --out=out/convergencias-causales-septiembre
       - name: Preserve interactive marked historical sheets
         if: success()
         uses: actions/upload-artifact@v4
@@ -82,4 +88,12 @@ jobs:
         with:
           name: examen-ciego-treinta-turnos-septiembre
           path: out/examen-visual-ciego-septiembre/
+          if-no-files-found: error
+
+      - name: Preserve non-ranked convergence inventory and temporal ambiguity
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: inventario-convergencias-previas-directas-invertidas
+          path: out/convergencias-causales-septiembre/
           if-no-files-found: error
