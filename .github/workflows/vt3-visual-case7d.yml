@@ -1,0 +1,38 @@
+name: VT3 complete visual case from plus 11
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/vt3-visual-case7d.yml'
+      - 'src/vt3VisualDossier7d.ts'
+      - 'scripts/test-vt3-visual-dossier7d.cjs'
+      - 'scripts/run-vt3-visual-dossier7d.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  case:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install TypeScript compiler
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Test unchanged selection and time cutoff for five stages
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/test-vt3-visual-dossier7d.cjs
+      - name: Generate complete progressive 2026-09-30 dossier
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/run-vt3-visual-dossier7d.cjs --date=2026-09-30 --out=out/expediente-vt3-2026-09-30
+      - name: Preserve all five pre-result dossiers and separate results
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: expediente-visual-vt3-2026-09-30
+          path: out/expediente-vt3-2026-09-30/
+          if-no-files-found: error
