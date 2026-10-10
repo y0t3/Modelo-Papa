@@ -37,7 +37,8 @@ function index(cut){
 const goodText=x=>typeof x==='string'&&x.trim().length>=16;
 function check(record,cut){
  assert.equal(record.protocol,'CUADERNO_OCULAR_COMPARATIVO_V1');
- assert.equal(record.trial,'REPLAY_HISTORICO_NO_PROSPECTIVO');
+ assert(['REPLAY_HISTORICO_NO_PROSPECTIVO','OBSERVACION_LOCAL_NO_SELLADA'].includes(record.trial),
+  'El registro local sólo puede indicar replay histórico u observación viva NO sellada');
  assert.equal(record.date,cut.date);
  assert.equal(record.target,cut.target);
  assert.equal(record.priorDate,cut.priorDate);
@@ -80,7 +81,8 @@ function check(record,cut){
  return {date:record.date,target:record.target,decision:record.mode,
   pathsCompared:all.size,decisions:record.candidates.length,
   sourceDigest:record.sourceDigest,
-  chronology:'NO_CERTIFICADA_POR_ARCHIVO_LOCAL'};
+  chronology:'NO_CERTIFICADA_POR_ARCHIVO_LOCAL',
+  trial:record.trial};
 }
 function tests(){
  const t=(head,cells)=>({kind:'vt2',sourceId:'prevNocturno',cells,turn:'Previa',
@@ -106,6 +108,7 @@ function tests(){
  assert.throws(()=>check({...record,candidates:[record.candidates[0],record.candidates[0]]},cut));
  assert.equal(check({...record,mode:'OBSERVAR_NO_JUGAR',candidates:[],
   abstentionReason:'No se puede distinguir entre las figuras que aparecen.'},cut).decisions,0);
+ assert.equal(check({...record,trial:'OBSERVACION_LOCAL_NO_SELLADA'},cut).decisions,1);
  console.log('TEST_CUADERNO_VALIDACION_OK hash fuente, inversión, cabezas, rival, no duplicar, abstención');
 }
 function main(){
