@@ -85,7 +85,8 @@ const before=selectQualitativeVT3Transition7D(history,generated('9999'),date,'Ma
 const after=selectQualitativeVT3Transition7D(history,generated('0000'),date,'Matutino');
 assert.deepEqual(before,after,'No se puede consultar la cabeza del turno objetivo');
 const audit=auditQualitativeVT3Transition7D([...history,{date,sheet:generated('9999')}]);
-assert.equal(audit.turns,5);
+assert.equal(audit.turns,TURNOS.length*(history.length+1-6),
+ 'Se evalúan también jornadas del historial posteriores al calentamiento');
 assert.equal(audit.picks,audit.rows.reduce((n,x)=>n+x.budget,0));
 assert.equal(audit.baselineHits,audit.rows.reduce((n,x)=>n+x.originalHits,0));
 assert(audit.rows.every(x=>x.selectedOriginal.length===x.selectedVisual.length));
