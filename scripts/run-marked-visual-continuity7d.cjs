@@ -337,8 +337,31 @@ async function main(){
    throw Error('Fuga del sorteo futuro: '+TURNOS[i]);
  }
  fs.mkdirSync(path.resolve(root,out),{recursive:true});
- fs.writeFileSync(path.resolve(root,out,'2-ANTES-Primera-TABLERO-COMPLETO.html'),
-  renderWholeBoardBeforeFirst(prior,cuts[1]));
+ if(prior.strokes.length!==37||cuts[1].records.length!==17)
+  throw Error('Caso 29→30/09 distinto al archivo de control de 37/17 rutas');
+ const beforeHtml=renderWholeBoardBeforeFirst(prior,cuts[1]);
+ if(beforeHtml.includes('0910')||
+    !beforeHtml.includes('Marcada 29')||
+    !beforeHtml.includes('ANTES de Primera'))
+  throw Error('Fuga de resultado Primera o vista previa incompleta');
+ fs.writeFileSync(path.resolve(root,out,'2-ANTES-Primera-TABLERO-COMPLETO.html'),beforeHtml);
+ // El resultado de Primera se deposita en documento APARTE: no alimenta
+ // ni las huellas del 29 ni su relectura, selección o explicación.
+ const resultadoPrimera=full.heads.Primera||[];
+ fs.writeFileSync(path.resolve(root,out,'99-DESPUES-Primera.md'),[
+  '# Resultado posterior — Primera del 30/09/2026','',
+  '**ABRIR SÓLO DESPUÉS DE EXAMINAR Y GUARDAR EL REGISTRO VISUAL**',
+  '',
+  'Cabezas publicadas: '+resultadoPrimera.join(', '), '',
+  'La cabeza 0910 confirma VT2 10 en prevNocturno, celdas 1:0→0:0.',
+  'La misma huella había explicado VT2 54 de la cabeza 0154 el 29/09.',
+  '',
+  'Es una correspondencia RETROSPECTIVA. Las 17 huellas estaban presentes',
+  'antes de Primera y ninguna se había elegido prospectivamente.',
+  'Una revisión histórica no valida la capacidad de pronóstico.',
+  ''
+ ].join('\n'));
+
  for(const [i,cut]of cuts.entries()){
   const label=String(i+1)+'-ANTES-'+cut.turn;
   fs.writeFileSync(path.resolve(root,out,label+'.md'),buildMarkdown(prior,cut));
@@ -390,6 +413,7 @@ async function main(){
   'sin fórmulas ni rankings. Los resultados del turno objetivo siempre están ocultos.',
   '',...TURNOS.map((t,i)=>'- '+String(i+1)+'-ANTES-'+t+'.html (galería visual), también en .md'),
   '','2-ANTES-Primera-TABLERO-COMPLETO.html: doble tablero con todas las marcas y registro de interpretación',
+  '99-DESPUES-Primera.md: resultado separado (abrir sólo tras registrar lectura)',
   '','No se entregan predicciones.',''];
  fs.writeFileSync(path.resolve(root,out,'00-INDICE.md'),index.join('\n'));
  console.log('LECTURA_REAL_COMPLETA: '+cuts.length+' cortes → '+out);
