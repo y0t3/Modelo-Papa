@@ -18,7 +18,7 @@ const {buildSheet}=load('src/sheet.ts');
 const {inspectBeforeVT3Selection7D}=load('src/vt3SelectedVsExcluded7d.ts');
 const {classifyVisualTransitionVT37D,selectQualitativeVT3Transition7D,
  auditQualitativeVT3Transition7D}=load('src/vt3QualitativeTransition7d.ts');
-const base={
+const vt3Input={
  value:'345',sourceId:'prevNocturno',cells:['2:0','2:1','3:0'],
  shape:'0,1>1,-1'
 };
@@ -29,23 +29,23 @@ const current=[mark('2026-10-10','Previa','prevNocturno',
  ['2:0','3:0','4:0'],'1,0>1,0')];
 const prior=[mark('2026-10-09','Previa','prevNocturno',
  ['0:0','1:0','2:0'],'1,0>1,0')];
-const full=classifyVisualTransitionVT37D(base,current,prior);
+const full=classifyVisualTransitionVT37D(vt3Input,current,prior);
 assert.equal(full.signal,'PUENTE_AYER_HOY_GIRO');
 assert.equal(full.level,2);
 assert.deepEqual(full.sharedCells,['2:0','3:0']);
 assert.equal(full.anchor.head,'0234');
 assert.equal(full.antecedentYesterday.date,'2026-10-09');
-assert.equal(classifyVisualTransitionVT37D(base,current,[]).level,1);
-assert.equal(classifyVisualTransitionVT37D(base,[],
+assert.equal(classifyVisualTransitionVT37D(vt3Input,current,[]).level,1);
+assert.equal(classifyVisualTransitionVT37D(vt3Input,[],
  prior).level,0,'Sin ancla de HOY, ayer solo no autoriza giro');
-assert.equal(classifyVisualTransitionVT37D(base,[
+assert.equal(classifyVisualTransitionVT37D(vt3Input,[
  mark('2026-10-10','Previa','Previa',['2:0','3:0','4:0'],'1,0>1,0')
  ],prior).level,0,'No se permite cruzar columnas de origen');
-assert.equal(classifyVisualTransitionVT37D(base,[
+assert.equal(classifyVisualTransitionVT37D(vt3Input,[
  mark('2026-10-10','Previa','prevNocturno',['2:0','2:1','3:0'],
   '0,1>1,-1')
  ],prior).level,0,'La misma secuencia no representa un giro');
-assert.equal(classifyVisualTransitionVT37D(base,[
+assert.equal(classifyVisualTransitionVT37D(vt3Input,[
  mark('2026-10-10','Previa','prevNocturno',['0:0','0:1','1:0'],
  '0,1>1,-1')
  ],prior).level,0,'Un giro exige al menos una celda de contacto');
