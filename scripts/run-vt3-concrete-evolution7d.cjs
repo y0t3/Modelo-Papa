@@ -101,6 +101,14 @@ async function main(){
    ' | traslaciones='+preview.translatedPredecessors+
    ' | ramas='+preview.branchPredecessors+
    ' | cifras_nuevas='+preview.digitChanges);
+  for(const p of reps.filter(x=>x.availableInCurrentBoard).slice(0,3))
+   console.log('TRAZA_VT3 '+preview.target+' | origen='+p.anchor.sourceId+
+    ' | testigo='+p.anchor.date+' '+p.anchor.turn+
+    ' '+p.originalVT3+'@'+p.anchor.cells.join('>')+
+    ' | relectura_hoy='+p.todayValue+
+    ' | antecedente='+ (p.predecessor?
+      p.predecessor.relation+' '+p.predecessor.earlier.date+' '+
+      p.predecessor.earlier.wonVT3:'sin_familia_previa'));
  }
  overview.push('','## Interpretación','',
   'Un «testigo» es un recorrido que explicó alguna cabeza YA CONOCIDA, no un pronóstico del siguiente turno.',
