@@ -88,4 +88,50 @@ const m=tampered.matches.Vespertino.find(x=>x.cabeza==='0261');
 const h=m.hits.find(x=>x.kind==='vt3');
 h.sourceId='Vespertino';
 assert.throws(()=>reconstructMarkedSheetAfterDraw7D(tampered,d,'Vespertino'),/futura/);
+
+// CASO A: 3621 completa disponible en la columna Nocturna anterior.
+// No se queda solamente con 621 (VT3): registra VT4, VT3 Y VT2.
+const forFull=diaVacio(),baseFull=diaVacio();
+baseFull.Nocturno[JURS[0]]=fromPlus11('36');
+baseFull.Nocturno[JURS[1]]=fromPlus11('21');
+forFull.Previa.Provincia='3621';
+const fullRecorded=reconstructMarkedSheetAfterDraw7D(
+ buildSheet(forFull,baseFull),'2026-10-10','Previa');
+const fullHead=fullRecorded.annotationByTurn[0].headsBelow.find(
+ x=>x.head==='3621'&&x.jurisdiction==='Provincia');
+assert(fullHead,'Anotar 3621 COMPLETA debajo');
+assert.deepEqual(new Set(fullHead.traces.map(x=>x.kind)),
+ new Set(['vt2','vt3','vt4']));
+assert(fullHead.traces.some(x=>x.kind==='vt4'&&x.value==='3621'&&
+ x.cells.join('>')==='0:0>0:1>1:0>1:1'));
+assert(fullHead.traces.some(x=>x.kind==='vt3'&&x.value==='621'&&
+ x.cells.join('>')==='0:1>1:0>1:1'));
+assert(fullHead.traces.some(x=>x.kind==='vt2'&&x.value==='21'&&
+ x.cells.join('>')==='1:0>1:1'));
+assert.equal(fullRecorded.annotationByTurn[0].headsBelow.filter(x=>x.head==='3621').length,1,
+ 'Una cabeza completa debajo, aunque existan múltiples modalidades/rutas');
+
+// CASO B: para la misma cabeza sólo existe la pareja 21.
+// Debe marcar VT2 y anotar 3621; no inventar 621 ni 3621.
+const baseTwo=diaVacio();
+baseTwo.Nocturno[JURS[0]]=fromPlus11('21');
+const onlyTwo=reconstructMarkedSheetAfterDraw7D(
+ buildSheet(forFull,baseTwo),'2026-10-10','Previa');
+const onlyHead=onlyTwo.annotationByTurn[0].headsBelow.find(
+ x=>x.head==='3621'&&x.jurisdiction==='Provincia');
+assert(onlyHead,'Una pareja VT2 también justifica anotar 3621 completa');
+assert(onlyHead.traces.length>0);
+assert(onlyHead.traces.every(x=>x.kind==='vt2'&&x.value==='21'));
+assert.equal(onlyTwo.annotationByTurn[0].headsBelow.length,1);
+
+// CASO C: sin 21, 621 ni 3621 no hay anotación de coincidencia.
+const baseNone=diaVacio();
+baseNone.Nocturno[JURS[0]]=fromPlus11('88');
+const noCoincidence=reconstructMarkedSheetAfterDraw7D(
+ buildSheet(forFull,baseNone),'2026-10-10','Previa');
+assert.equal(noCoincidence.annotationByTurn[0].headsBelow.length,0);
+assert(noCoincidence.annotationByTurn[0].unmatchedHeads.includes('3621'));
+
+console.log('OK: cabeza 3621 -> marcar simultáneamente VT4 3621, VT3 621 y VT2 21 cuando se pueden formar; con solo 21, dibujar VT2 y registrar 3621 completa. Ninguna coincidencia: no anotar.');
+
 console.log('OK: 7/10 cabeza 0261 conocida -> tres trazos VT3 en Primera/Matutino -> 0261 completa anotada debajo; nunca columnas futuras ni candidatos inventados');
