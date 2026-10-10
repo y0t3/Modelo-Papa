@@ -10,6 +10,9 @@ on:
       - 'scripts/run-visual-marked-sheets7d.cjs'
       - 'scripts/run-visual-chain7d.cjs'
       - 'scripts/run-morphology-atlas7d.cjs'
+      - 'scripts/run-blind-visual-exam7d.cjs'
+      - 'scripts/visor-ciego7d.js'
+      - 'scripts/visor-ciego7d.css'
   workflow_dispatch:
 permissions:
   contents: read
@@ -43,6 +46,12 @@ jobs:
           node --check scripts/run-morphology-atlas7d.cjs
           node scripts/run-morphology-atlas7d.cjs --test-only=true
           node scripts/run-morphology-atlas7d.cjs --input=out/cadena-visual-septiembre --out=out/atlas-cambios-visuales-septiembre
+      - name: Test and build 30 sealed-view before-draw observation cuts
+        run: |
+          node --check scripts/run-blind-visual-exam7d.cjs
+          node --check scripts/visor-ciego7d.js
+          node scripts/run-blind-visual-exam7d.cjs --test-only=true
+          node scripts/run-blind-visual-exam7d.cjs --input=out/cadena-visual-septiembre --out=out/examen-visual-ciego-septiembre
       - name: Preserve interactive marked historical sheets
         if: success()
         uses: actions/upload-artifact@v4
@@ -65,4 +74,12 @@ jobs:
         with:
           name: atlas-giros-traslaciones-hojas-marcadas-septiembre
           path: out/atlas-cambios-visuales-septiembre/
+          if-no-files-found: error
+
+      - name: Preserve thirty historical pre-draw blind viewers
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: examen-ciego-treinta-turnos-septiembre
+          path: out/examen-visual-ciego-septiembre/
           if-no-files-found: error
