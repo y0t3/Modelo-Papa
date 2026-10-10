@@ -72,7 +72,7 @@ function tests(){
  const a=html(sample),b=html(sample);
  assert.equal(a,b);
  assert(a.includes('OBSERVAR / NO JUGAR'));
- assert(a.includes('Por qué NO elegir esa alternativa'));
+ assert(a.includes('por qué NO elegir esa alternativa'));
  assert(!a.includes('6778'),'No inyectar el sorteo objetivo en datos de muestra');
  assert.throws(()=>html({...sample,knownToday:[{turn:'Matutino'}]}));
  console.log('TEST_CUADERNO_HTML_OK no resultado objetivo, modo abstencion, motivo comparativo, firma de fuente');
