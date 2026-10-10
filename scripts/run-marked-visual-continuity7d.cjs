@@ -227,6 +227,15 @@ async function main(){
     ' | 30 cabeza_ya_cerrada='+x.newer.fullHead+' '+x.newer.kind+
     ' '+x.newer.sourceId+'['+key(x.newer.cells)+']'+
     ' | mismas_celdas='+x.shared.join(','));
+  if(cut.turn==='Primera'){
+   for(const [i,trace] of cut.records.entries())
+    console.log('LECTURA_COMPLETA_ANTES_PRIMERA '+String(i+1).padStart(2,'0')+
+     ' | cabeza='+trace.fullHead+' '+trace.turn+
+     ' | '+trace.kind+' | origen='+trace.sourceId+
+     ' | ruta='+trace.cells.join('>')+' | marcada='+trace.value+
+     ' | relectura='+trace.readNow+' | contacto_previa='+trace.contactKnown+
+     ' | misma_ruta_previa='+trace.exactKnown);
+  }
   for(const kind of ['vt2','vt3','vt4']){
    const example=cut.records.find(x=>x.kind===kind);
    if(example)console.log('TRAZA '+cut.turn+' '+kind+
