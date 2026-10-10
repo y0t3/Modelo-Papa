@@ -17,7 +17,7 @@ export const initialDualFocus7D=(kind:CycleKind):DualFocusState=>({kind,primaryQ
 // PURE transition, testable without guessing future results. Consecutive evaluations are
 // NOT independent draws: streak is only an observational safeguard, not a predictive probability.
 export function advanceDualFocusFromTrends7D(state:DualFocusState,trends:FlowTrend[],date:string,turn:Turno):DualStep{
- const available=trends.filter(t=>t.kind===state.kind).sort((a,b)=>b.recentDraws-a.recentDraws||b.totalDraws-a.totalDraws||key(focus(a)).localeCompare(key(focus(b)));
+ const available=trends.filter(t=>t.kind===state.kind).sort((a,b)=>b.recentDraws-a.recentDraws||b.totalDraws-a.totalDraws||key(focus(a)).localeCompare(key(focus(b))));
  const best=available[0],challenger=best?focus(best):undefined;
  const second=available[1]?.recentDraws||0;
  const tracked=available.find(t=>eq(focus(t),state.primary));
