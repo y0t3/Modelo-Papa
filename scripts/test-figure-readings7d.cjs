@@ -8,9 +8,9 @@ const vm=require('node:vm');
 const source=fs.readFileSync(path.join(__dirname,'../src/figureReadings7d.ts'),'utf8');
 const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020},reportDiagnostics:true});
 assert.equal(js.diagnostics.length,0,'TypeScript transpilation diagnostics');
-const module={exports:{}};
-vm.runInThisContext('(function(require,module,exports){'+js.outputText+'\n})',{filename:'figureReadings7d.ts'})(name=>name==='./domain'?{TURNOS:['Previa','Primera','Matutino','Vespertino','Nocturno']}:require(name),module,module.exports);
-const {freezeFigureReadings7D,evaluateFigureReadings7D,observationOfFigure7D}=module.exports;
+const mod={exports:{}};
+vm.runInThisContext('(function(require,module,exports){'+js.outputText+'\n})',{filename:'figureReadings7d.ts'})(name=>name==='./domain'?{TURNOS:['Previa','Primera','Matutino','Vespertino','Nocturno']}:require(name),mod,mod.exports);
+const {freezeFigureReadings7D,evaluateFigureReadings7D,observationOfFigure7D}=mod.exports;
 const vals=['34','75','68','19','20','31'];
 const sheet={columns:[
  {id:'prevNocturno',values:vals},{id:'Previa',values:vals},{id:'Primera',values:vals},
