@@ -18,7 +18,7 @@ export function advanceFocusLifecycle7D(state:FocusState,history:DatedSheet[],cu
  const at=TURNOS.indexOf(target);if(at<0)throw Error('Turno inválido');
  const safe:DailySheet={...current,matches:Object.fromEntries(TURNOS.map((t,i)=>[t,i<at?(current.matches[t]||[]):[]]))};
  const trends=observeSpatialFlow7D([...history.filter(x=>x.date<date),{date,sheet:safe}],date,target).trends
-  .filter(t=>t.kind===state.kind).sort((a,b)=>b.recentDraws-a.recentDraws||b.totalDraws-a.totalDraws||key(focus(a)).localeCompare(key(focus(b)));
+  .filter(t=>t.kind===state.kind).sort((a,b)=>b.recentDraws-a.recentDraws||b.totalDraws-a.totalDraws||key(focus(a)).localeCompare(key(focus(b))));
  const leader=trends[0],runner=trends[1];
  const tracked=state.focus?trends.find(t=>same(focus(t),state.focus)):undefined;
  const n=tracked?.recentDraws||0,margin=leader?leader.recentDraws-(runner?.recentDraws||0):0;
