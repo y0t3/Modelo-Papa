@@ -68,6 +68,19 @@ async function main(){
   ' | sombra='+x.shadowHits+' | cambios='+x.changes+
   ' | gana='+x.gained+' | pierde='+x.lost+
   ' | azar_union='+x.expectedSameBudget.toFixed(3));
+ const allChoices=shadow.rows.flatMap(row=>row.choices);
+ const supported=allChoices.filter(c=>c.priorObservations>0);
+ const rootedRest=supported.filter(c=>c.rootPhase==='REPOSO');
+ const shifting=supported.filter(c=>c.shiftedPhase==='REACTIVACION_1'||c.shiftedPhase==='REACTIVACION_CONFIRMADA');
+ const reconfirmed=supported.filter(c=>c.shiftedPhase==='REACTIVACION_CONFIRMADA');
+ const both=reconfirmed.filter(c=>c.rootPhase==='REPOSO');
+ console.log('SHADOW_DIAGNOSTIC: total='+allChoices.length+
+  ' | estados_con_seguimiento='+supported.length+
+  ' | traslacion_legible='+supported.filter(c=>!!c.shifted).length+
+  ' | raiz_en_reposo='+rootedRest.length+
+  ' | traslacion_reactivada='+shifting.length+
+  ' | traslacion_reconfirmada='+reconfirmed.length+
+  ' | ambas_condiciones='+both.length);
  console.log('JSON: '+output);
  console.log('Interpretacion exploratoria: datos ya inspeccionados, sin evidencia prospectiva.');
 }
