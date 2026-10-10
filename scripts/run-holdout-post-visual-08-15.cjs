@@ -108,7 +108,7 @@ async function main(){
   oneFamilyUnknown:mainSample.filter(x=>x.eligibleEvaluated.length===1&&
    !x.coverageComplete&&!x.eligibleEvaluated[0].matches.length).length};
  assert.equal(counts.externalDays+counts.overlapDays,outcomes.length);
- const summary=['# Verificación externa 08–15 sept, con 23 como solapamiento','',
+ const summary=['# Segunda verificación externa 08–15 septiembre','',
   '**TODOS los resultados se consultaron DESPUÉS de cerrar el registro ciego.**',
   'La descripción VT3 de dos cabezas y dos dibujos distintos en una misma',
   'columna, ambos tocados por marcas de Primera, fue fijada por escrito',
