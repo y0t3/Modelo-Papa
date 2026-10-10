@@ -47,7 +47,9 @@ assert(withToday.candidates.length>0,
  'Previa y Primera de HOY deben sostener VT3 incluso SIN ayer ni D7');
 assert(withToday.candidates.some(c=>c.supportedByToday),
  'Deben provenir de recorrido ganador en turno previo de la misma jornada');
-const dated=[yday,{date,sheet:full}];
+const dated=['2026-10-01','2026-10-02','2026-10-05','2026-10-06','2026-10-08','2026-10-09']
+ .map(date=>({date,sheet:buildSheet(prior,basePrev)}));
+dated.push({date,sheet:full});
 const audit=auditLiveVT3Pilot7D(dated);
 assert.equal(audit.turns,5);
 assert.equal(audit.byTurn.Matutino.turns,1);
