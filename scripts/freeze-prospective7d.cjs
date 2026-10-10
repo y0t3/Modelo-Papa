@@ -18,6 +18,7 @@ const {buildSheet}=load('src/sheet.ts');
 const {freezeBeforeTurn7D}=load('src/causalReplay7d.ts');
 const {readCombined7D}=load('src/combinedReader7d.ts');
 const {selectShadowForTurn7D}=load('src/dualFocusShadow7d.ts');
+const {previewVT4Extra7D}=load('src/vt4Extra7d.ts');
 const {TURNOS,JURS}=load('src/domain.ts');
 const args=Object.fromEntries(process.argv.slice(2).filter(x=>x.startsWith('--')&&x.includes('='))
  .map(x=>x.slice(2).split(/=(.*)/s).slice(0,2)));
@@ -43,6 +44,17 @@ async function main(){
   cells:c.path.map(p=>p.row+':'+p.col),signals:c.signals.map(x=>x.name),hit:false}));
  const activity=selectShadowForTurn7D(dated,before,date,turn,raw,'REPOSO_Y_ACTIVIDAD');
  const strict=selectShadowForTurn7D(dated,before,date,turn,raw,'REPOSO_Y_RECONFIRMACION');
+ // Anexo puramente experimental; jamás altera el lector ni su cantidad de candidatos.
+ const vt3=base.candidates.filter(c=>c.kind==='vt3');
+ const prefixRules=['ULTIMO_VT2','ULTIMA_CABEZA','MODA_6D'];
+ const extras=Object.fromEntries(prefixRules.map(rule=>[rule,vt3.map(c=>{
+  const x=previewVT4Extra7D(dated,before,date,turn,c,rule);
+  return {vt3:x.vt3,vt2:x.vt2,prefix:x.prefix||null,
+   candidateVT4:x.candidateVT4||null,physicalVT4:x.physicalVT4,
+   provenance:x.physicalVT4?'RUTA_FISICA_COMPATIBLE':'EXTRA_SIN_TRAZO_FISICO',
+   sourceId:x.sourceId,route:x.route,reason:x.reason};
+ })]));
+
  const record={
   protocol:'FROZEN_PRE_DRAW_7D_V1',date,turn,
   frozenAt:new Date().toISOString(),commit:process.env.GITHUB_SHA||null,
@@ -60,6 +72,8 @@ async function main(){
   doubleFocusActivity:{rule:'REPOSO_Y_ACTIVIDAD',
    vt2:activity.choices.map(x=>({value:x.chosen,root:x.original,focus:x.focus,
     sourceId:x.sourceId,rootCells:x.root,shiftedCells:x.shifted,priorObservations:x.priorObservations}))},
+  vt4ExtraExperimental:{notSelector:true,rules:extras,
+   disclaimer:'Prefijos generados de memoria histórica sin ventaja validada; no reemplazan VT3 ni VT4 físico.'},
   note:'Proyeccion congelada antes del resultado, no recomendacion de apuesta ni evidencia de ventaja sobre el azar.'
  };
  // Comprobar OTRA VEZ antes de finalizar el sello: si el resultado aparece entre
