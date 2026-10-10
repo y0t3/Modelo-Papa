@@ -40,7 +40,6 @@ export type ColumnDelta7D={
  explanation:string[];
 };
 const shapeOf=(c:string)=>c.replaceAll('>',';');
-const coord=(s:string)=>s;
 const relation=(candidate:VT3PoolInspectCandidate7D,marks:ProgressiveMark7D[])=>
  marks.reduce((out,m)=>{
   if(m.kind!=='vt3')return out;
@@ -131,7 +130,7 @@ export function compareNextColumnVT37D(history:DatedSheet[],full:DailySheet,
 export type DayColumnEvolution7D={date:string;
  stages:ColumnDelta7D[];
  top3ByTurn:{turn:Turno;selected:string[]}[];
- changesTotal:number;newValuesTop3:number;stageWithNoChange:number;
+ changesTotal:number;newlyEligibleFromNewColumns:number;stageWithNoChange:number;
 };
 export function traceDayColumnEvolution7D(history:DatedSheet[],full:DailySheet,
  date:string):DayColumnEvolution7D{
@@ -142,6 +141,6 @@ export function traceDayColumnEvolution7D(history:DatedSheet[],full:DailySheet,
    ...stages.map(s=>({turn:s.nextTarget,selected:[...s.top3After]}))
   ],
   changesTotal:stages.reduce((n,s)=>n+s.enteredTop3.length,0),
-  newValuesTop3:stages.reduce((n,s)=>n+s.newlyEligibleFromNewColumn,0),
+  newlyEligibleFromNewColumns:stages.reduce((n,s)=>n+s.newlyEligibleFromNewColumn,0),
   stageWithNoChange:stages.filter(s=>s.enteredTop3.length===0).length};
 }
