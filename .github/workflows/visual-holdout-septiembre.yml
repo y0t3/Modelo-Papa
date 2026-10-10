@@ -1,0 +1,71 @@
+name: External visual week 16-23 September blind vs posterior
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/visual-holdout-septiembre.yml'
+      - 'scripts/run-holdout-blind-visual7d.cjs'
+      - 'scripts/run-holdout-post-visual7d.cjs'
+      - 'scripts/run-visual-chain7d.cjs'
+      - 'src/markedSheetAfterDraw7d.ts'
+      - 'src/visualMarkedSheet7d.ts'
+      - 'PROTOCOLO_CONGELADO_HOLDOUT_VISUAL_16_23_SEPT_2026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  registrar-sin-resultados:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Reconstruct full already-marked historical sheets 15-23 September
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/run-visual-chain7d.cjs --from=2026-09-15 --to=2026-09-23 --out=out/cadena-visual-holdout-16-23
+      - name: Verify pre-registered visual eligibility and build blind Matutina exams
+        run: |
+          node --check scripts/run-holdout-blind-visual7d.cjs
+          node scripts/run-holdout-blind-visual7d.cjs --test-only=true
+          node scripts/run-holdout-blind-visual7d.cjs --input=out/cadena-visual-holdout-16-23 --out=out/holdout-ciego-16-23
+      - name: Seal blind files as their own artifact, without any target outcomes
+        uses: actions/upload-artifact@v4
+        with:
+          name: holdout-ciego-hojas-16-23-septiembre
+          path: out/holdout-ciego-16-23/
+          if-no-files-found: error
+
+  verificar-despues:
+    needs: registrar-sin-resultados
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Receive the blind results from the already finished first job
+        uses: actions/download-artifact@v4
+        with:
+          name: holdout-ciego-hojas-16-23-septiembre
+          path: out/holdout-ciego-16-23/
+      - name: Verify actual published heads against frozen visible families
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node --check scripts/run-holdout-post-visual7d.cjs
+          node scripts/run-holdout-post-visual7d.cjs --test-only=true
+          node scripts/run-holdout-post-visual7d.cjs --input=out/holdout-ciego-16-23 --out=out/holdout-resultados-posteriores
+      - name: Save results SEPARATELY after blinded observations
+        uses: actions/upload-artifact@v4
+        with:
+          name: holdout-verificacion-POSTERIOR-16-23-septiembre
+          path: out/holdout-resultados-posteriores/
+          if-no-files-found: error
