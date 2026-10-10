@@ -1,0 +1,96 @@
+name: Second frozen visual holdout 08-15 September
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/visual-holdout-septiembre-08-15.yml'
+      - 'scripts/run-holdout-blind-visual-08-15.cjs'
+      - 'scripts/run-holdout-post-visual-08-15.cjs'
+      - 'scripts/run-visual-chain7d.cjs'
+      - 'src/visualMarkedSheet7d.ts'
+      - 'src/markedSheetAfterDraw7d.ts'
+      - 'PROTOCOLO_CONGELADO_SEGUNDO_HOLDOUT_08_15_SEPT_2026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  registrar-sin-matutina:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Reconstruct full marked historical sheets Sept 07-15
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/run-visual-chain7d.cjs --from=2026-09-07 --to=2026-09-15 --out=out/cadena-visual-holdout-08-15
+      - name: Apply identical frozen physical-route test, censoring target
+        run: |
+          node --check scripts/run-holdout-blind-visual-08-15.cjs
+          node scripts/run-holdout-blind-visual-08-15.cjs --test-only=true
+          node scripts/run-holdout-blind-visual-08-15.cjs --input=out/cadena-visual-holdout-08-15 --out=out/holdout-ciego-08-15
+      - name: Preserve frozen records before any target comparison
+        uses: actions/upload-artifact@v4
+        with:
+          name: segundo-holdout-CIEGO-08-15-septiembre
+          path: out/holdout-ciego-08-15/
+          if-no-files-found: error
+
+  cotejo-posterior:
+    needs: registrar-sin-matutina
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Download completed, previously frozen blind records
+        uses: actions/download-artifact@v4
+        with:
+          name: segundo-holdout-CIEGO-08-15-septiembre
+          path: out/holdout-ciego-08-15/
+      - name: Check actual Matutina heads after frozen observations
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node --check scripts/run-holdout-post-visual-08-15.cjs
+          node scripts/run-holdout-post-visual-08-15.cjs --test-only=true
+          node scripts/run-holdout-post-visual-08-15.cjs --input=out/holdout-ciego-08-15 --out=out/holdout-08-15-resultados-posteriores
+      - name: Preserve posterior result verification separately
+        uses: actions/upload-artifact@v4
+        with:
+          name: segundo-holdout-RESULTADOS-POST-08-15-septiembre
+          path: out/holdout-08-15-resultados-posteriores/
+          if-no-files-found: error
+
+  diagnostico-geometrico:
+    needs: registrar-sin-matutina
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Download ONLY sealed blind records
+        uses: actions/download-artifact@v4
+        with:
+          name: segundo-holdout-CIEGO-08-15-septiembre
+          path: out/holdout-ciego-08-15/
+      - name: Describe where geometric formation stopped without using results
+        run: |
+          node --check scripts/run-holdout-nearmiss-diagnostic7d.cjs
+          node scripts/run-holdout-nearmiss-diagnostic7d.cjs --input=out/holdout-ciego-08-15 --out=out/holdout-08-15-diagnostico
+      - name: Preserve descriptive geometric near misses
+        uses: actions/upload-artifact@v4
+        with:
+          name: segundo-holdout-DIAGNOSTICO-08-15-septiembre
+          path: out/holdout-08-15-diagnostico/
+          if-no-files-found: error
