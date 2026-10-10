@@ -79,6 +79,17 @@ function relationship(a,b){
  if(a.cells.some(c=>b.cells.includes(c)))return 'TOQUE_INTERNO';
  return 'SIN_CONTACTO';
 }
+function exactDisplacement(oldFig,newFig){
+ // Una forma invertida requiere alinear los pasos ANTES de hablar de desplazamiento.
+ for(const [cells,reversed] of [[newFig.cells,false],[rev(newFig.cells),true]]){
+  const [ar,ac]=point(oldFig.cells[0]),[br,bc]=point(cells[0]);
+  const dy=br-ar,dx=bc-ac;
+  if(oldFig.cells.every((old,i)=>{
+   const [r,c]=point(old),[nr,nc]=point(cells[i]);return r+dy===nr&&c+dx===nc;
+  }))return {deltaRows:dy,deltaSides:dx,reverseAlignment:reversed};
+ }
+ throw Error('La forma no es una traslación física comprobable');
+}
 function directedRelation(oldFig,newFig){
  const a=oldFig.orientations,b=newFig.orientations;
  if(!a.length||!b.length)return 'DESCONOCIDA';
@@ -97,10 +108,8 @@ function compare(source,following,fromDate,toDate,axis){
     newHeads:n.headMarks,newWinningTurns:n.winningTurns,
     sameWinningTurn:old.winningTurns.some(t=>n.winningTurns.includes(t)),
     orientation:relation==='MISMA_HUELLA'?directedRelation(old,n):null,
-    relativeOrigin:relation==='MISMA_FORMA_DESPLAZADA'?[
-     point(n.cells[0])[0]-point(old.cells[0])[0],
-     point(n.cells[0])[1]-point(old.cells[0])[1]
-    ]:null};
+    relativeOrigin:relation==='MISMA_FORMA_DESPLAZADA'?
+     exactDisplacement(old,n):null};
   });
   const priority=CLASSES.find(c=>links.some(l=>l.relation===c))||
    (candidates.length?'SIN_CONTACTO':'SIN_FIGURA_COMPARABLE');
@@ -157,6 +166,8 @@ function tests(){
  const step={...old,cells:['1:0','2:0','3:1'],value:'358',fullHead:'9358'};
  const moved=compress({columns:cols,strokes:[step]})[0];
  assert.equal(relationship(x,moved),'MISMA_FORMA_DESPLAZADA');
+ assert.deepEqual(exactDisplacement(x,moved),
+  {deltaRows:1,deltaSides:0,reverseAlignment:false});
  const gone=compare({columns:cols,strokes:[old],annotations:[]},
   {columns:cols,strokes:[],annotations:[]},'2026-09-08','2026-09-15','D-7');
  assert.equal(gone.old[0].priority,'SIN_FIGURA_COMPARABLE');
