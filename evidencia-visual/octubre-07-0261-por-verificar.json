@@ -1,0 +1,75 @@
+{
+  "id": "2026-10-07:Vespertino:Provincia:0261",
+  "date": "2026-10-07",
+  "mediaReferences": [
+    "AUDITORIA_VISUAL.html (biblioteca del proyecto; fotogramas originales referenciados, no materializados en este análisis)",
+    "Modelo_7D_Auditoria_Marcados_Originales_Octubre_6_8.zip (archivo de biblioteca; acceso a bytes no disponible en este turno)"
+  ],
+  "evidenceLimit": "La cabeza 0261 es un resultado conocido, pero no se certifica aquí que el 0261 se lea debajo del trazo original. Ninguna de las rutas automáticas está validada como trazo dibujado por papá.",
+  "witnesses": [
+    {
+      "id": "oct07-0261-fotograma-pendiente",
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "sourceId": "Primera",
+      "kind": "VT3",
+      "headCoincidente": "0261",
+      "headLocation": "RESULTADO_CONOCIDO_ANOTACION_NO_VERIFICADA",
+      "status": "FOTOGRAMA_REFERENCIADO_SIN_CELDAS_DIGITALIZADAS",
+      "cells": [],
+      "reference": "AUDITORIA_VISUAL.html: fotograma_original_hojas.jpg (referenciado pero inaccesible como imagen individual)",
+      "observation": "Se reportan celdas resaltadas originales, pero no se ha determinado visualmente cuál de las rutas de 261 fue la dibujada."
+    },
+    {
+      "id": "oct07-0261-auto-L",
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "sourceId": "Primera",
+      "kind": "VT3",
+      "headCoincidente": "0261",
+      "headLocation": "RESULTADO_CONOCIDO_ANOTACION_NO_VERIFICADA",
+      "status": "RUTA_AUTOMATICA_NO_MANUAL",
+      "cells": [
+        "2:0",
+        "2:1",
+        "1:1"
+      ],
+      "reference": "AUDITORIA_VISUAL.html: VT3 261 · L",
+      "observation": "Ruta calculada retrospectivamente. No es un trazo manual confirmado."
+    },
+    {
+      "id": "oct07-0261-auto-recta",
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "sourceId": "Primera",
+      "kind": "VT3",
+      "headCoincidente": "0261",
+      "headLocation": "RESULTADO_CONOCIDO_ANOTACION_NO_VERIFICADA",
+      "status": "RUTA_AUTOMATICA_NO_MANUAL",
+      "cells": [
+        "3:1",
+        "2:1",
+        "1:1"
+      ],
+      "reference": "AUDITORIA_VISUAL.html: VT3 261 · RECTA",
+      "observation": "Ruta calculada retrospectivamente. No es un trazo manual confirmado."
+    },
+    {
+      "id": "oct07-0261-auto-quiebre",
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "sourceId": "Matutino",
+      "kind": "VT3",
+      "headCoincidente": "0261",
+      "headLocation": "RESULTADO_CONOCIDO_ANOTACION_NO_VERIFICADA",
+      "status": "RUTA_AUTOMATICA_NO_MANUAL",
+      "cells": [
+        "2:1",
+        "3:0",
+        "2:0"
+      ],
+      "reference": "AUDITORIA_VISUAL.html: VT3 261 · QUIEBRE_OTRO",
+      "observation": "Ruta calculada retrospectivamente. No es un trazo manual confirmado."
+    }
+  ]
+}
