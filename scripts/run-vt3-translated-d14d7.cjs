@@ -40,7 +40,7 @@ async function main(){
   const m=months[month]||(months[month]={turns:0,picks:0,movementEligible:0,
    changes:0,baselineHits:0,translatedHits:0,expectedPhysical:0});
   m.turns++;m.picks+=x.baseline.length;m.movementEligible+=x.selection.movementEligible;
-  m.changes+=x.selection.changes;m.baselineHits+=x.hitsBaseline;
+  m.changes+=x.selection.changed;m.baselineHits+=x.hitsBaseline;
   m.translatedHits+=x.hitsTranslated;m.expectedPhysical+=x.expectedPhysical;
  }
  const report={source:'Viví tu Suerte / cabezas',from,to,drawDays:days.length,
@@ -50,7 +50,7 @@ async function main(){
  console.log('VT3_TRASLACION_D14_D7: '+from+' a '+to+' | turnos_ambas_semanas='+audit.turns+
   ' | candidatas='+audit.picks+' | elegibles_con_traslacion='+audit.movementEligible);
  console.log('VT3_TRASLADA: base='+audit.baselineHits+' | prioridad_movimiento='+audit.translatedHits+
-  ' | cambiados='+audit.changes+' | mejora_turnos='+audit.turnsImproved+
+  ' | cambiados='+audit.changed+' | mejora_turnos='+audit.turnsImproved+
   ' | empeora_turnos='+audit.turnsWorsened+' | empata='+audit.turnsEqual+
   ' | azar_fisico='+audit.expectedPhysical.toFixed(3)+
   ' | sufijo_VT2_base='+audit.vt2Baseline+' | sufijo_VT2_trasladado='+audit.vt2Translated);
