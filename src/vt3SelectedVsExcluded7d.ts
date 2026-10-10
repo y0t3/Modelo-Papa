@@ -49,10 +49,10 @@ export type VT3SelectionAudit7D={
  turns:number;turnsWithCandidates:number;selectedCandidates:number;
  selectedHits:number;eligibleCandidates:number;eligibleWinningValues:number;
  missedEligibleWinners:number;physicalWinningValues:number;
- winnersOutsideAdaptivePool:number;
+ winnersOutsideAdaptivePool:number;randomExpectedWithinAdaptivePool:number;
  featureCounts:Record<FeatureKey,FeatureCount>;
  byTurn:Record<Turno,{turns:number;selected:number;hits:number;
-  eligibleWinners:number;missedWinners:number;outsidePool:number}>;
+  eligibleWinners:number;missedWinners:number;outsidePool:number;expectedWithinPool:number}>;
  examples:MissedExample7D[];rows:AuditTurn7D[];
  notes:string[];
 };
@@ -138,12 +138,13 @@ export function auditSelectedVsExcludedVT37D(input:DatedSheet[],maxExamples=20):
   selectedCount:0,selectedHits:0,excludedCount:0,excludedHits:0
  }])) as Record<FeatureKey,FeatureCount>;
  const byTurn=Object.fromEntries(TURNOS.map(t=>[t,{
-  turns:0,selected:0,hits:0,eligibleWinners:0,missedWinners:0,outsidePool:0
+  turns:0,selected:0,hits:0,eligibleWinners:0,missedWinners:0,outsidePool:0,expectedWithinPool:0
  }])) as VT3SelectionAudit7D['byTurn'];
  const examples:MissedExample7D[]=[],rows:AuditTurn7D[]=[];
  let turnsWithCandidates=0,selectedCandidates=0,selectedHits=0;
  let eligibleCandidates=0,eligibleWinningValues=0,missedEligibleWinners=0;
  let physicalWinningValues=0,winnersOutsideAdaptivePool=0;
+ let randomExpectedWithinAdaptivePool=0;
  for(let i=6;i<days.length;i++){
   const day=days[i],history=days.slice(Math.max(0,i-10),i);
   for(const turn of TURNOS){
@@ -158,6 +159,8 @@ export function auditSelectedVsExcludedVT37D(input:DatedSheet[],maxExamples=20):
    const outside=winners.filter(x=>!poolSet.has(x));
    const canPhysicallyForm=winners.filter(x=>physical.has(x));
    const hits=snapshot.selected.filter(x=>win.has(x)).length;
+   const expected=snapshot.pool.length?
+    snapshot.selected.length*selectable.length/snapshot.pool.length:0;
    for(const cand of snapshot.pool){
     const winning=win.has(cand.value);
     for(const key of cand.features){
@@ -186,18 +189,21 @@ export function auditSelectedVsExcludedVT37D(input:DatedSheet[],maxExamples=20):
    const per=byTurn[turn];per.turns++;per.selected+=snapshot.selected.length;
    per.hits+=hits;per.eligibleWinners+=selectable.length;
    per.missedWinners+=missed.length;per.outsidePool+=outside.length;
+   per.expectedWithinPool+=expected;
    turnsWithCandidates+=Number(snapshot.selected.length>0);
    selectedCandidates+=snapshot.selected.length;selectedHits+=hits;
    eligibleCandidates+=snapshot.pool.length;
    eligibleWinningValues+=selectable.length;missedEligibleWinners+=missed.length;
    physicalWinningValues+=canPhysicallyForm.length;
    winnersOutsideAdaptivePool+=outside.length;
+   randomExpectedWithinAdaptivePool+=expected;
   }
  }
  return {protocol:'VT3_SELECTED_VS_EXCLUDED_VISUAL_DIAGNOSTIC_V1',
   turns:rows.length,turnsWithCandidates,selectedCandidates,selectedHits,
   eligibleCandidates,eligibleWinningValues,missedEligibleWinners,
   physicalWinningValues,winnersOutsideAdaptivePool,
+  randomExpectedWithinAdaptivePool,
   featureCounts,byTurn,examples,rows,notes:[
    'La instrumentación entrega TODAS las cifras distintas consideradas por el adaptativo antes del corte Top3, en el mismo orden.',
    'Las marcas, relaciones espaciales y antecedentes HOY/AYER/D−7 se calculan ANTES del resultado objetivo; no alteran ranking ni pesos.',
