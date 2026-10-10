@@ -56,6 +56,20 @@ async function main(){
    b.anchor.date.localeCompare(a.anchor.date)||
    a.anchor.sourceId.localeCompare(b.anchor.sourceId)||
    a.anchor.cells.join('>').localeCompare(b.anchor.cells.join('>')));
+  const byProvenance=new Map();
+  for(const projection of preview.projections){
+   const e=projection.anchor,key=[e.date,e.turn,e.sourceId,e.wonVT3].join('|');
+   const v=byProvenance.get(key)||{paths:new Set(),readings:new Set()};
+   v.paths.add(e.cells.join('>'));
+   if(projection.todayValue)v.readings.add(projection.todayValue);
+   byProvenance.set(key,v);
+  }
+  const multipleRoutes=[...byProvenance.values()].filter(x=>x.paths.size>1);
+  const divergentReadings=multipleRoutes.filter(x=>x.readings.size>1);
+  console.log('AMBIGUEDAD_VT3 '+preview.target+
+   ' | ternas_historicas='+byProvenance.size+
+   ' | ternas_con_varias_rutas='+multipleRoutes.length+
+   ' | distintas_relecturas_actuales='+divergentReadings.length);
   const lines=[
    '# '+date+' — ANTES de '+preview.target,'',
    '**Columnas disponibles:** '+preview.visibleSources.join(', '),
