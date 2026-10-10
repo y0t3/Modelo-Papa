@@ -1,0 +1,34 @@
+name: Frozen two-focus VT2 test on 2024
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/holdout-2024-shadow.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript compiler
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Chronology and budget regression
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/test-shadow7d.cjs
+      - name: Replay untouched 2024 period with activity-first rule frozen
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/run-shadow7d.cjs --from=2024-01-01 --to=2024-12-31 --rule=REPOSO_Y_ACTIVIDAD --out=out/shadow-2024-activity.json
+      - name: Preserve all predictions and outcomes
+        uses: actions/upload-artifact@v4
+        with:
+          name: dual-focus-2024-activity-audit
+          path: out/shadow-2024-activity.json
+          if-no-files-found: error
