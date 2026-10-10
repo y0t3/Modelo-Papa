@@ -1,0 +1,72 @@
+name: Manual comparative visual notebook 95 historical cuts
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/cuaderno-ocular-manual95.yml'
+      - 'scripts/lab-comparativa95.js'
+      - 'scripts/lab-comparativa95.css'
+      - 'scripts/build-cuaderno-ocular95.cjs'
+      - 'scripts/check-cuaderno-ocular.cjs'
+      - 'PROTOCOLO_CUADERNO_OCULAR_MANUAL_2026_10_10.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  crear-cuaderno-comparativo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Build 20 full marked historical sheets and their 95 target-censored cuts
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node scripts/run-visual-chain7d.cjs --from=2026-09-08 --to=2026-09-21 --out=out/cadena-08-21
+          node scripts/run-visual-chain7d.cjs --from=2026-09-21 --to=2026-09-30 --out=out/cadena-21-30
+          mkdir -p out/cadena-visual-08-30-septiembre
+          cp -a out/cadena-08-21/. out/cadena-visual-08-30-septiembre/
+          cp -a out/cadena-21-30/. out/cadena-visual-08-30-septiembre/
+          node scripts/run-blind-visual-95cuts.cjs --input=out/cadena-visual-08-30-septiembre --out=out/examen-ciego-95-septiembre
+      - name: Validate comparative browser source, abstention, geometry and provenance checks
+        run: |
+          node --check scripts/lab-comparativa95.js
+          node --check scripts/build-cuaderno-ocular95.cjs
+          node --check scripts/check-cuaderno-ocular.cjs
+          node scripts/build-cuaderno-ocular95.cjs --test-only=true
+          node scripts/check-cuaderno-ocular.cjs --test-only=true
+      - name: Build complete offline notebooks with all historical heads and no target heads
+        run: |
+          node scripts/build-cuaderno-ocular95.cjs --input=out/examen-ciego-95-septiembre --out=out/lab-cuaderno-ocular95
+          test "$(find out/lab-cuaderno-ocular95 -maxdepth 1 -name 'MIRADA-*-ANTES-*.html' | wc -l)" -eq 95
+          test "$(find out/lab-cuaderno-ocular95 -maxdepth 1 -name '*-ANTES-*.json' | wc -l)" -eq 95
+      - name: Inspect every embedded source digest and expected date/turn
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),path=require('path'),crypto=require('crypto'),assert=require('node:assert/strict');
+          const dir='out/lab-cuaderno-ocular95',files=fs.readdirSync(dir).filter(x=>/^MIRADA-.*-ANTES-.*\.html$/.test(x));
+          assert.equal(files.length,95);
+          for(const file of files){
+            const html=fs.readFileSync(path.join(dir,file),'utf8');
+            const match=html.match(/<script type="application\/json" id="cut-data">([\s\S]*?)<\/script>/);
+            assert(match,'Falta corte fuente embebido en '+file);
+            const {cut,digest}=JSON.parse(match[1]);
+            const check=crypto.createHash('sha256').update(JSON.stringify(cut)).digest('hex');
+            assert.equal(digest,check,'Digest alterado en '+file);
+            const stem=file.replace(/^MIRADA-/,'').replace(/\.html$/,'');
+            assert.equal(stem,cut.date+'-ANTES-'+cut.target);
+            assert.equal(cut.mode,'ANTES_DEL_SORTEO_OBJETIVO');
+          }
+          console.log('TEST_CUADERNO_95_OK 95 vistas con digest y corte censurado');
+          NODE
+      - name: Preserve complete offline comparative lab and source cuts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cuaderno-ocular-comparativo-95-cortes-offline
+          path: out/lab-cuaderno-ocular95/
+          if-no-files-found: error
