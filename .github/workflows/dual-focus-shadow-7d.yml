@@ -19,12 +19,15 @@ jobs:
       matrix:
         include:
           - label: "2025"
+            rule: "REPOSO_Y_ACTIVIDAD"
             from: "2025-01-01"
             to: "2025-12-31"
           - label: "2026-jan-may"
+            rule: "REPOSO_Y_ACTIVIDAD"
             from: "2026-01-01"
             to: "2026-05-31"
           - label: "2026-jun-sep"
+            rule: "REPOSO_Y_ACTIVIDAD"
             from: "2026-06-01"
             to: "2026-09-30"
     steps:
@@ -44,12 +47,13 @@ jobs:
           FROM: ${{ matrix.from }}
           TO: ${{ matrix.to }}
           LABEL: ${{ matrix.label }}
+          RULE: ${{ matrix.rule }}
         run: |
-          node scripts/run-shadow7d.cjs --from="$FROM" --to="$TO" --out="out/shadow-$LABEL.json"
+          node scripts/run-shadow7d.cjs --from="$FROM" --to="$TO" --rule="$RULE" --out="out/shadow-$LABEL-$RULE.json"
       - name: Save complete paired results
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: dual-focus-shadow-${{ matrix.label }}
+          name: dual-focus-shadow-${{ matrix.label }}-${{ matrix.rule }}
           path: out/shadow-*.json
           if-no-files-found: error
