@@ -24,7 +24,8 @@ const project=(p:Path,values:string[]):Path|null=>{
 };
 const moveKey=(p:Path)=>p.slice(1).map((c,i)=>(c.row-p[i].row)+','+(c.col-p[i].col)).join(';');
 const edges=(p:Path)=>new Set(p.slice(1).map((c,i)=>p[i].row+':'+p[i].col+'>'+c.row+':'+c.col));
-export function readCombined7D(dated:DatedSheet[],current:DailySheet,date:string,turn:Turno):CombinedResult{
+export function readCombined7D(dated:DatedSheet[],current:DailySheet,date:string,turn:Turno,
+ options?:{vt3Limit?:3|5}):CombinedResult{
  if(!TURNOS.includes(turn))throw new Error('Turno inválido');
  const targetIndex=TURNOS.indexOf(turn);
  // Snapshot causal: preserve earlier turns of the current date, discard target and later turns.
@@ -85,7 +86,10 @@ export function readCombined7D(dated:DatedSheet[],current:DailySheet,date:string
   if(!pool.has(key)||score>pool.get(key)!.score)pool.set(key,candidate);
  }
  const ordered=[...pool.values()].sort((a,b)=>b.score-a.score||a.kind.localeCompare(b.kind)||a.value.localeCompare(b.value));
- const caps:Record<CycleKind,number>={vt2:3,vt3:3,vt4:1};
+ // Test-only VT3 sensitivity; default reader and APK remain TOP 3.
+ if(options?.vt3Limit!==undefined&&options.vt3Limit!==3&&options.vt3Limit!==5)
+  throw Error('Límite VT3 experimental inválido');
+ const caps:Record<CycleKind,number>={vt2:3,vt3:options?.vt3Limit??3,vt4:1};
  const candidates:CombinedCandidate[]=[];
  for(const c of ordered)if(candidates.filter(x=>x.kind===c.kind).length<caps[c.kind])candidates.push(c);
  return {date,turn,decision:candidates.length?'OBSERVAR':'NO JUGAR',candidates,evaluated:weekly.marks.length,eligible:ordered.length,
