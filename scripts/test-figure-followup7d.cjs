@@ -137,7 +137,8 @@ const afterPeek=promotion.previewPromotionFocus7D(reState,withOutcome,'2026-08-1
 assert.deepStrictEqual(restEngine.decideRestPriority7D(reState,afterPeek,'REPOSO_Y_RECONFIRMACION'),
  restEngine.decideRestPriority7D(reState,six,'REPOSO_Y_RECONFIRMACION'),'target marks cannot affect priority');
 const noSource=promotion.previewPromotionFocus7D(reState,sheet(['--','75','68','19','20','31']),'2026-08-10','Nocturno');
-assert.equal(restEngine.decideRestPriority7D(reState,noSource,'REPOSO_Y_REGRESO').projected,undefined);
+assert.equal(restEngine.decideRestPriority7D(reState,noSource,'REPOSO_Y_REGRESO').projected,'758',
+ 'La figura trasladada puede proyectarse aunque la raiz tenga celdas vacias');
 assert.throws(()=>restEngine.decideRestPriority7D(reState,{...six,date:'2026-08-09'},'CONSERVAR_FIJA'),/posterior/);
 assert.equal(reState.fixedCoordinates.join('>'),'0:0>0:1>1:1');
 console.log('OK: rest and reactivation of original/translated path, new-draw confirmation, no lookahead');
