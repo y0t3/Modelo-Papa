@@ -13,6 +13,7 @@ on:
       - 'scripts/run-blind-visual-exam7d.cjs'
       - 'scripts/run-causal-convergence-inventory7d.cjs'
       - 'scripts/run-contact-topology-observer7d.cjs'
+      - 'scripts/run-post-visual-outcomes7d.cjs'
       - 'scripts/visor-ciego7d.js'
       - 'scripts/visor-ciego7d.css'
   workflow_dispatch:
@@ -64,6 +65,13 @@ jobs:
           node --check scripts/run-contact-topology-observer7d.cjs
           node scripts/run-contact-topology-observer7d.cjs --test-only=true
           node scripts/run-contact-topology-observer7d.cjs --input=out/examen-visual-ciego-septiembre --out=out/topologia-contactos-ciegos
+      - name: Check historical outcomes only after pre-draw topology is sealed
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node --check scripts/run-post-visual-outcomes7d.cjs
+          node scripts/run-post-visual-outcomes7d.cjs --test-only=true
+          node scripts/run-post-visual-outcomes7d.cjs --input=out/topologia-contactos-ciegos --out=out/verificacion-posterior-visual
       - name: Preserve interactive marked historical sheets
         if: success()
         uses: actions/upload-artifact@v4
@@ -110,4 +118,12 @@ jobs:
         with:
           name: topologia-contactos-marcados-30-cortes
           path: out/topologia-contactos-ciegos/
+          if-no-files-found: error
+
+      - name: Preserve later results in a separate post-examination artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-POSTERIORES-a-30-cortes-visuales
+          path: out/verificacion-posterior-visual/
           if-no-files-found: error
