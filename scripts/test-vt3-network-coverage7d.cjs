@@ -62,15 +62,18 @@ const frozenOther=previewVT3NetworkCoverage7D(changed.slice(0,12),
 assert.deepEqual(frozenOther,frozen,
  'El resultado desconocido D no puede cambiar los recorridos y las redes previas');
 const audit=auditVT3NetworkCoverage7D(days),auditOther=auditVT3NetworkCoverage7D(changed);
-assert.equal(audit.turns,1);
-assert.equal(audit.top3Hits,1);
-assert.equal(audit.d7OracleHits,1);
-assert.equal(audit.physicalHits,1);
-assert.equal(audit.notPhysical,0);
-assert.equal(auditOther.notPhysical,1,'999 no puede formarse en ningún recorrido');
-assert.equal(auditOther.d7OracleHits,0);
-assert.equal(auditOther.top3Hits,0);
+assert.equal(audit.turns,2,'D−7 también es evaluable en el corte completo');
+const target=audit.rows.find(x=>x.date===dates[12]&&x.turn==='Previa');
+const otherTarget=auditOther.rows.find(x=>x.date===dates[12]&&x.turn==='Previa');
+assert(target&&otherTarget);
+assert.equal(target.covered.top3,1);
+assert.equal(target.covered.d7,1);
+assert.equal(target.covered.anyPhysical,1);
+assert.equal(target.notPhysical.length,0);
+assert.deepEqual(otherTarget.notPhysical,['999'],'999 no puede formarse en ningún recorrido');
+assert.equal(otherTarget.covered.d7,0);
+assert.equal(otherTarget.covered.top3,0);
 assert.throws(()=>previewVT3NetworkCoverage7D(days,before,dates[12],'Previa'),/fuga temporal/);
-assert.equal(auditVT3NetworkCoverage7D(days.slice(6)).turns,0,
- 'Sin calentamiento no hay turno apto');
+assert.equal(auditVT3NetworkCoverage7D(days.slice(7)).turns,0,
+ 'Sin seis jornadas de calentamiento no hay turno apto');
 console.log('OK: VT3 network graph, forks, unique paths, D7/D14 coverage ceilings, and target blinding');
