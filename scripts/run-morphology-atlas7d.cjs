@@ -142,12 +142,12 @@ function pageHTML(data){
  'function show(){const i=Number(sel.value);if(!Number.isInteger(i)||!routes[i])return;const x=routes[i];'+
  'document.querySelector("#prior").innerHTML=board(x.prior.cells,x.prevColumn);'+
  'document.querySelector("#now").innerHTML=board(x.current.cells,x.nowColumn);'+
- 'document.querySelector("#label").textContent=x.prior.kind.toUpperCase()+" · "+x.type.replaceAll("_"," ")+
- " | "+x.prior.cells.join("→")+" → "+x.current.cells.join("→");'+
- 'document.querySelector("#provenance").textContent="Antes: "+x.prior.annotations.join("; ")+
- " · cifras marcadas "+x.prior.values.join("/")+
- " | Después: "+x.current.annotations.join("; ")+
- " · cifras marcadas "+x.current.values.join("/");'+
+ 'document.querySelector("#label").textContent=x.prior.kind.toUpperCase()+" · "+x.type.replaceAll("_"," ")+'+
+ ' " | "+x.prior.cells.join("→")+" → "+x.current.cells.join("→");'+
+ 'document.querySelector("#provenance").textContent="Antes: "+x.prior.annotations.join("; ")+'+
+ ' " · cifras marcadas "+x.prior.values.join("/")+'+
+ ' " | Después: "+x.current.annotations.join("; ")+'+
+ ' " · cifras marcadas "+x.current.values.join("/");'+
  'for(const [id,day]of [["left",x.dates[0]],["right",x.dates[1]]]){'+
  'document.querySelector("#"+id).src=day+"-5-Nocturno.html";'+
  'document.querySelector("#"+(id==="left"?"leftdate":"rightdate")).textContent=day;}'+
