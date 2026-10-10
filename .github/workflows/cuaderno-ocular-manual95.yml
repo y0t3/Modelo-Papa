@@ -8,6 +8,7 @@ on:
       - 'scripts/lab-comparativa95.css'
       - 'scripts/build-cuaderno-ocular95.cjs'
       - 'scripts/check-cuaderno-ocular.cjs'
+      - 'scripts/evaluar-cuaderno-ocular.cjs'
       - 'PROTOCOLO_CUADERNO_OCULAR_MANUAL_2026_10_10.md'
   workflow_dispatch:
 permissions:
@@ -38,8 +39,10 @@ jobs:
           node --check scripts/lab-comparativa95.js
           node --check scripts/build-cuaderno-ocular95.cjs
           node --check scripts/check-cuaderno-ocular.cjs
+          node --check scripts/evaluar-cuaderno-ocular.cjs
           node scripts/build-cuaderno-ocular95.cjs --test-only=true
           node scripts/check-cuaderno-ocular.cjs --test-only=true
+          node scripts/evaluar-cuaderno-ocular.cjs --test-only=true
       - name: Build complete offline notebooks with all historical heads and no target heads
         run: |
           node scripts/build-cuaderno-ocular95.cjs --input=out/examen-ciego-95-septiembre --out=out/lab-cuaderno-ocular95
