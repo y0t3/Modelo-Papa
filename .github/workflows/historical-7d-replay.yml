@@ -4,6 +4,7 @@ on:
     branches: [experimento-analisis-visual-5d]
     paths:
       - '.github/workflows/historical-7d-replay.yml'
+      - 'scripts/run-causal-replay7d.cjs'
   workflow_dispatch:
     inputs:
       from:
