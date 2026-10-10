@@ -1,0 +1,55 @@
+name: Compare 7D original vs two-focus shadow
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/dual-focus-shadow-7d.yml'
+      - 'src/dualFocusShadow7d.ts'
+      - 'scripts/run-shadow7d.cjs'
+      - 'scripts/test-shadow7d.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: "2025"
+            from: "2025-01-01"
+            to: "2025-12-31"
+          - label: "2026-jan-may"
+            from: "2026-01-01"
+            to: "2026-05-31"
+          - label: "2026-jun-sep"
+            from: "2026-06-01"
+            to: "2026-09-30"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript compiler
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Validate shadow chronology and equal VT2 budget
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/test-shadow7d.cjs
+      - name: Compare real historical turns
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+          FROM: ${{ matrix.from }}
+          TO: ${{ matrix.to }}
+          LABEL: ${{ matrix.label }}
+        run: |
+          node scripts/run-shadow7d.cjs --from="$FROM" --to="$TO" --out="out/shadow-$LABEL.json"
+      - name: Save complete paired results
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dual-focus-shadow-${{ matrix.label }}
+          path: out/shadow-*.json
+          if-no-files-found: error
