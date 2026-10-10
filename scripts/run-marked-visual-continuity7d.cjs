@@ -246,7 +246,7 @@ function renderWholeBoardBeforeFirst(old,cut){
    'h1{font-size:25px}p{line-height:1.5}.muted{color:#6c617e;font-size:12px;display:block}'+
    '.panels{display:grid;grid-template-columns:1.3fr 1fr;gap:12px}.panel{border:1px solid #d6cee2;'+
    'border-radius:9px;background:white;padding:12px;overflow:auto}svg{display:block;margin:auto}.digit{font:600 23px system-ui;fill:#251c38}'+
-   '.trace{opacity:.15;pointer-events:none}.trace.old,.trace.inherit{color:#7041be}'+
+   '.trace{opacity:.38;pointer-events:none}.trace.old,.trace.inherit{color:#7041be}'+
    '.trace.today{color:#129083}.trace.focus{opacity:.98;stroke-width:5}'+
    '.trace.today.showToday{opacity:.85}h2{font-size:18px}label{cursor:pointer}'+
    '.controls{background:#fff;padding:12px;border-radius:9px;border:1px solid #d6cee2;margin:13px 0}'+
@@ -294,6 +294,7 @@ function renderWholeBoardBeforeFirst(old,cut){
       'kind.has(t.dataset.kind);t.style.display=visible?"":"none";'+
       'const on=t.dataset.id===q("#focus").value;'+
       't.classList.toggle("focus",!!q("#focus").value&&on);'+
+      't.style.opacity=q("#focus").value&&!on&&!isToday?"0.06":"";'+
       't.classList.toggle("showToday",isToday&&q("#today").checked)}'+
     '}document.querySelectorAll(".controls input,.controls select").forEach(e=>e.addEventListener("change",show));'+
     'pick.forEach(x=>x.addEventListener("change",()=>{'+
@@ -416,6 +417,26 @@ async function main(){
   '99-DESPUES-Primera.md: resultado separado (abrir sólo tras registrar lectura)',
   '','No se entregan predicciones.',''];
  fs.writeFileSync(path.resolve(root,out,'00-INDICE.md'),index.join('\n'));
+
+ const landing='<!doctype html><html lang="es"><head><meta charset="utf-8">'+
+  '<meta name="viewport" content="width=device-width,initial-scale=1">'+
+  '<title>Modelo Papá — lectura visual 29 a 30 septiembre</title>'+
+  '<style>body{font:16px system-ui,sans-serif;background:#f9f7fc;color:#29243b;padding:24px;max-width:950px;margin:auto}'+
+  'a{display:block;padding:14px;margin:12px 0;border:1px solid #ddd6ea;border-radius:9px;background:white;color:#6540ab}'+
+  'small{color:#60576d}p{line-height:1.6}</style></head><body>'+
+  '<h1>Lectura visual de hojas marcadas: 29 → 30 septiembre</h1>'+
+  '<p>La hoja histórica del 29 ya contiene TODOS los recorridos VT2, VT3 y VT4 que coincidieron con cabezas sorteadas. '+
+   'Comparamos esas marcas con la tabla +11 que existía antes de cada turno del 30.</p>'+
+  '<a href="2-ANTES-Primera-TABLERO-COMPLETO.html"><strong>Examinar ambos tableros COMPLETOS antes de Primera</strong><br>'+
+   '<small>37 marcas históricas, 17 rutas legibles, Previa ya conocida; selección de trazos y notas sin ver Primera</small></a>'+
+  TURNOS.map((turn,i)=>'<a href="'+(i+1)+'-ANTES-'+turn+'.html">'+
+   'Antes de '+turn+': galería de TODOS los recorridos físicos heredados</a>').join('')+
+  '<p><strong>Después de registrar tu interpretación visual:</strong> '+
+   '<a href="99-DESPUES-Primera.md">Contrastar con las cabezas reales de Primera (resultado separado)</a></p>'+
+  '<p><small>Reconstrucción histórica retrospectiva: no es un registro prospectivo real ni demuestra ventaja sobre el azar.</small></p>'+
+  '</body></html>';
+ fs.writeFileSync(path.resolve(root,out,'index.html'),landing);
+
  console.log('LECTURA_REAL_COMPLETA: '+cuts.length+' cortes → '+out);
 }
 main().catch(e=>{console.error(e.stack||String(e));process.exitCode=1});
