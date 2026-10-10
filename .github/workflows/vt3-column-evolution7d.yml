@@ -1,0 +1,54 @@
+name: VT3 marginal plus11 column evolution
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/vt3-column-evolution7d.yml'
+      - 'src/vt3ColumnEvolution7d.ts'
+      - 'scripts/test-vt3-column-evolution7d.cjs'
+      - 'scripts/run-vt3-column-evolution7d.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: "2026-09-30"
+            from: "2026-09-30"
+            to: "2026-09-30"
+          - label: "2026-september"
+            from: "2026-09-01"
+            to: "2026-09-30"
+          - label: "2025-september"
+            from: "2025-09-01"
+            to: "2025-09-30"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript compiler
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Verify all five stage snapshots and zero future leakage
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/test-vt3-column-evolution7d.cjs
+      - name: Read marginal effect of new plus11 columns
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+          FROM_DATE: ${{ matrix.from }}
+          TO_DATE: ${{ matrix.to }}
+          LABEL: ${{ matrix.label }}
+        run: node scripts/run-vt3-column-evolution7d.cjs --from="$FROM_DATE" --to="$TO_DATE" --out="out/vt3-column-$LABEL"
+      - name: Preserve case and month-by-month visual transitions
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vt3-plus11-columns-${{ matrix.label }}
+          path: out/vt3-column-*/
+          if-no-files-found: error
