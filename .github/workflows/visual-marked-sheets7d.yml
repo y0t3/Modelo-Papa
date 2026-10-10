@@ -8,6 +8,7 @@ on:
       - 'src/markedSheetAfterDraw7d.ts'
       - 'scripts/test-visual-marked-sheet7d.cjs'
       - 'scripts/run-visual-marked-sheets7d.cjs'
+      - 'scripts/run-visual-chain7d.cjs'
   workflow_dispatch:
 permissions:
   contents: read
@@ -32,10 +33,22 @@ jobs:
         env:
           NODE_PATH: /tmp/mp-ts/node_modules
         run: node scripts/run-visual-marked-sheets7d.cjs --from=2026-09-29 --to=2026-09-30 --out=out/hojas-marcadas-septiembre
+      - name: Build 23-30 September historical marked-sheet visual chain with causal masking
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/run-visual-chain7d.cjs --from=2026-09-23 --to=2026-09-30 --out=out/cadena-visual-septiembre
       - name: Preserve interactive marked historical sheets
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: hojas-11-marcadas-septiembre-2026
           path: out/hojas-marcadas-septiembre/
+          if-no-files-found: error
+
+      - name: Preserve multi-day visual chain and all causal comparisons
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cadena-visual-marcada-23-30-septiembre-2026
+          path: out/cadena-visual-septiembre/
           if-no-files-found: error
