@@ -45,7 +45,8 @@ async function main(){
   ' | posibles_en_pool='+audit.eligibleWinningValues+
   ' | ganadores_omitidos='+audit.missedEligibleWinners+
   ' | ganadores_fuera_pool='+audit.winnersOutsideAdaptivePool+
-  ' | ganadores_fisicos='+audit.physicalWinningValues);
+  ' | ganadores_fisicos='+audit.physicalWinningValues+
+  ' | azar_top3_pool='+audit.randomExpectedWithinAdaptivePool.toFixed(3));
  for(const [turn,x]of Object.entries(audit.byTurn))
   console.log('TURNO '+turn+' | seleccionados='+x.selected+
    ' | aciertos='+x.hits+' | elegibles_ganadores='+x.eligibleWinners+
