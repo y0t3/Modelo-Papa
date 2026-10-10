@@ -1,0 +1,32 @@
+name: Read marked 29 Sep routes on 30 Sep progressive board
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/marked-visual-continuity7d.yml'
+      - 'scripts/run-marked-visual-continuity7d.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  continuity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Reconstruct complete prior marked sheet and five blind rereadings
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/run-marked-visual-continuity7d.cjs
+      - name: Preserve visual casebook and all routes without selection
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: continuidad-visual-marcadas-29-30-septiembre
+          path: out/lectura-real-marcada-29-30-sep/
+          if-no-files-found: error
