@@ -1,0 +1,57 @@
+name: VT3 graph topology and weekly coverage
+on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/vt3-network-coverage7d.yml'
+      - 'src/vt3NetworkCoverage7d.ts'
+      - 'scripts/test-vt3-network-coverage7d.cjs'
+      - 'scripts/run-vt3-network-coverage7d.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: "2024"
+            from: "2024-01-01"
+            to: "2024-12-31"
+          - label: "2025"
+            from: "2025-01-01"
+            to: "2025-12-31"
+          - label: "2026-jan-may"
+            from: "2026-01-01"
+            to: "2026-05-31"
+          - label: "2026-jun-sep"
+            from: "2026-06-01"
+            to: "2026-09-30"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated TypeScript compiler
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Validate network and blind pre-result coverage
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/test-vt3-network-coverage7d.cjs
+      - name: Audit historical network and oracle coverage without reranking
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+          FROM_DATE: ${{ matrix.from }}
+          TO_DATE: ${{ matrix.to }}
+          LABEL: ${{ matrix.label }}
+        run: node scripts/run-vt3-network-coverage7d.cjs --from="$FROM_DATE" --to="$TO_DATE" --out="out/vt3-network-$LABEL.json"
+      - name: Preserve complete route and coverage reports
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vt3-network-${{ matrix.label }}
+          path: out/vt3-network-*.json
+          if-no-files-found: error
