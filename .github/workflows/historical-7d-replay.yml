@@ -1,5 +1,9 @@
 name: Historical blind 7D replay
 on:
+  push:
+    branches: [experimento-analisis-visual-5d]
+    paths:
+      - '.github/workflows/historical-7d-replay.yml'
   workflow_dispatch:
     inputs:
       from:
@@ -30,8 +34,8 @@ jobs:
       - name: Replay historical 7D without target results
         env:
           NODE_PATH: /tmp/mp-ts/node_modules
-          FROM_DATE: ${{ inputs.from }}
-          TO_DATE: ${{ inputs.to }}
+          FROM_DATE: ${{ inputs.from || '2026-06-01' }}
+          TO_DATE: ${{ inputs.to || '2026-09-30' }}
         run: node scripts/run-causal-replay7d.cjs --from="$FROM_DATE" --to="$TO_DATE" --out="out/causal-replay-7d.json"
       - name: Save complete audit and candidate trail
         if: success()
