@@ -73,8 +73,8 @@ assert.equal(testing.confirmedManualTraces,1);
 assert.equal(testing.reviews[0].originalRead,'261');
 assert.equal(testing.reviews[0].sourceVisibleNow,false);
 assert.equal(testing.reviews[0].currentRead,undefined);
-assert.throws(()=>validateMarkedWitness7D({...confirmed,headCoincidente:'0000'}),
- /./); // this validation of shape alone doesn't know original grid
+// Los campos son válidos individualmente, pero una cabeza distinta NO
+// puede justificar ese recorrido en la hoja manuscrita.
 assert.throws(()=>readMarkedSheetEvidenceBefore7D(
  [{date:'2026-10-07',sheet:oct07}],prev08,'2026-10-08','Previa',[
  {...synthetic,witnesses:[{...confirmed,headCoincidente:'0000'}]}
