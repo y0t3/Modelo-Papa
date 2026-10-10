@@ -52,11 +52,14 @@ assert.equal(classifyVisualTransitionVT37D(vt3Input,[
 const previous=diaVacio();
 for(let i=0;i<6;i++)previous.Nocturno[JURS[i]]=
  ['0012','0023','0034','0045','0056','0067'][i];
-function generated(target='0234'){
+function generated(target='0234',maskFrom){
  const day=diaVacio();
  for(const turn of TURNOS)for(let i=0;i<5;i++)
   day[turn][JURS[i]]=['0234','0345','0456','0567','0678'][i];
- day.Matutino.Ciudad=target;return buildSheet(day,previous);
+ day.Matutino.Ciudad=target;
+ if(maskFrom){const at=TURNOS.indexOf(maskFrom);for(const name of TURNOS.slice(at))
+  for(const jurisdiction of JURS)day[name][jurisdiction]='9999';}
+ return buildSheet(day,previous);
 }
 const dates=['2026-10-01','2026-10-02','2026-10-03','2026-10-05',
  '2026-10-06','2026-10-07','2026-10-08','2026-10-09'];
@@ -75,7 +78,7 @@ for(const turn of TURNOS){
  assert(projected.transformed.every(x=>projected.fullPool.some(y=>y.value===x.value)));
  if(turn==='Previa')assert.equal(projected.changed,0,
   'Sin resultados de hoy no se priorizan giros inexistentes');
- const other=selectQualitativeVT3Transition7D(history,generated('0000'),date,turn);
+ const other=selectQualitativeVT3Transition7D(history,generated('9999',turn),date,turn);
  assert.deepEqual(other,projected,'La cabeza de Matutina no debe afectar otros turnos');
 }
 const before=selectQualitativeVT3Transition7D(history,generated('9999'),date,'Matutino');
