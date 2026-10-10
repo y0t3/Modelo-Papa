@@ -56,7 +56,7 @@ async function main(){
    summary.turns++;summary.fullColumnObservations+=result.available.filter(a=>a.complete).length;
    summary.shapeComparisonsIdentical+=Number(
     result.available.length>1&&result.available.every(a=>a.complete&&a.distinctShapes===38)&&
-    x.shapesPresentInEveryCompleteColumn===38);
+    x.shapesSharedAcrossAllColumns===38);
    summary.repeatedVT3Values+=x.repeatedValueAcrossColumns;
    summary.expectedRepeatedVT3Values+=c.expectedRepeatedValue;
    summary.sameValueSameShape+=x.sameValueSameShape;
@@ -72,13 +72,14 @@ async function main(){
    p.sameCoords+=x.sameValueSameCoordinates;
    p.expectedSameCoords+=c.expectedValueSameCoordinates;
    p.fullShapeOverlap+=Number(x.columns>1&&
-    result.available.every(a=>a.complete)&&x.shapesPresentInEveryCompleteColumn===38);
+    result.available.every(a=>a.complete)&&x.shapesSharedAcrossAllColumns===38);
   }
   reports.push({date:day.date,rows:targetRows});summary.days++;
   if(day.date===from&&day.date===to){
    for(const row of targetRows)console.log('CASO '+day.date+' '+row.target+
     ' | columnas='+row.observed.columns+
-    ' | formas_comunes='+row.observed.shapesPresentInEveryCompleteColumn+
+    ' | columnas_completas='+row.observed.completeColumns+
+    ' | formas_REALMENTE_comunes='+row.observed.shapesSharedAcrossAllColumns+
     ' | valores_VT3_multicolumna='+row.observed.repeatedValueAcrossColumns+
     ' (barajado_promedio='+row.control.expectedRepeatedValue.toFixed(2)+')'+
     ' | mismas_3_celdas='+row.observed.sameValueSameCoordinates+
