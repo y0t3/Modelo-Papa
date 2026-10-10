@@ -142,6 +142,14 @@ function main(){
  const fm=cases.find(x=>x.date==='2026-09-30'&&x.target==='Matutino');
  const favMat=fm.reversalFamilies.find(f=>f.kind==='vt3'&&f.readings.includes('778'));
  assert(favMat,'Falta familia 778/877 antes de Matutino');
+ for(const slice of [row,fm]){
+  console.log('COMPARADOR_FAMILIAS_'+slice.date+'_'+slice.target+' '+
+   JSON.stringify(slice.reversalFamilies.map(f=>({
+    kind:f.kind,readings:f.readings,priorHeads:f.distinctPriorHeads,
+    totalHeadRoutes:f.numberOfPathHeadRecords,
+    priorConfirmedContacts:f.touchingKnownToday,exactToday:f.exactlyMarkedToday
+   }))));
+ }
  console.log('FAMILIA_778_ANTES_PRIMERA '+JSON.stringify({
   counts:row.multiHead,numberOfFamilies:row.reversalFamilies.length,
   family:fav.readings,priorHeadPaths:fav.numberOfPathHeadRecords,
