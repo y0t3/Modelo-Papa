@@ -24,11 +24,13 @@ for(let i=0;i<3;i++){
  day.Previa[JURS[i]]=['0012','0023','0034'][i];
  day.Primera[JURS[i]]=['0012','0023','0034'][i];
 }
+day.Previa[JURS[3]]='0234';
+day.Primera[JURS[3]]='0234';
 day.Matutino[JURS[0]]='9999'; // DATO OBJETIVO PROHIBIDO
 const full=buildSheet(day,prev),frozen=freezeBeforeTurn7D(full,'Matutino');
 assert.deepEqual(frozen.columns.map(c=>c.id),['prevNocturno','Previa','Primera']);
-assert.equal(frozen.heads.Previa.length,3);
-assert.equal(frozen.heads.Primera.length,3);
+assert.equal(frozen.heads.Previa.length,4);
+assert.equal(frozen.heads.Primera.length,4);
 assert.deepEqual(frozen.heads.Matutino,[]);
 assert.deepEqual(frozen.matches.Matutino,[]);
 const moments=reconstructMarkedMoments([{date:'2026-10-09',sheet:frozen}]);
@@ -49,6 +51,8 @@ for(let i=0;i<3;i++){
  withoutTarget.Previa[JURS[i]]=['0012','0023','0034'][i];
  withoutTarget.Primera[JURS[i]]=['0012','0023','0034'][i];
 }
+withoutTarget.Previa[JURS[3]]='0234';
+withoutTarget.Primera[JURS[3]]='0234';
 const other=freezeBeforeTurn7D(buildSheet(withoutTarget,prev),'Matutino');
 assert.deepEqual(other,frozen,'La cabeza objetivo no puede alterar el tablero visible ni marcas previas');
 console.log('OK: Previa/Primera visibles, VT3 físicos en cada columna y marcas del mismo día antes de Matutino; D-7 NO es requisito de lectura.');
