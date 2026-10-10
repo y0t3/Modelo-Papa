@@ -134,6 +134,41 @@ function main(){
  fs.writeFileSync(path.join(output,'INFORME_CONTACTOS_PRE_VS_POST.md'),lines.join('\n'));
  fs.writeFileSync(path.join(output,'RESUMEN_CONTACTOS_PRE_VS_POST.json'),
   JSON.stringify({summary,strata,cutCount:all.length},null,2));
+ const paired={};
+ for(const kind of kinds){
+  const a=strata.filter(x=>x.kind===kind);
+  const group=['touching','notTouching'];
+  const totals=Object.fromEntries(group.map(label=>[label,{yes:0,no:0,unknown:0}]));
+  let ahead=0,behind=0,tied=0,indeterminate=0;
+  for(const row of a){
+   for(const label of group){
+    totals[label].yes+=row[label].yes;
+    totals[label].no+=row[label].no;
+    totals[label].unknown+=row[label].unknown;
+   }
+   const touchedKnown=row.touching.yes+row.touching.no;
+   const coldKnown=row.notTouching.yes+row.notTouching.no;
+   if(!touchedKnown||!coldKnown){indeterminate++;continue;}
+   const delta=row.touching.yes/touchedKnown-row.notTouching.yes/coldKnown;
+   if(delta>0)ahead++;else if(delta<0)behind++;else tied++;
+  }
+  paired[kind]={strata:a.length,totals,
+   strataTouchedHigher:ahead,strataColdHigher:behind,
+   strataTied:tied,strataIndeterminate:indeterminate};
+ }
+ fs.writeFileSync(path.join(output,'CONTROL_ESTRATOS_RESUMIDO.json'),JSON.stringify(paired,null,2));
+ console.log('CONTROL_APAREADO '+JSON.stringify(paired));
+ for(const [date,target,values] of [
+  ['2026-09-29','Matutino',['289','384']],
+  ['2026-09-30','Matutino',['778','37']]]){
+  const c=all.find(x=>x.date===date&&x.target===target);
+  if(!c)continue;
+  const shapes=c.rows.filter(x=>values.some(v=>x.readings.includes(v)));
+  console.log('EJEMPLO_VISUAL_Y_NEGATIVO '+date+' '+target+' '+JSON.stringify(shapes.map(x=>({
+   id:x.id,kind:x.kind,readings:x.readings,cells:x.cells,
+   type:x.type,contacts:x.contacts.map(k=>({head:k.knownHead,cells:k.shared})),
+   confirmedHeads:x.confirmedHeads,numericHeads:x.numericHeads}))));
+ }
  console.log('CONTACTO_POST_OK '+all.length+' cortes; estratos '+strata.length);
  console.log('CONTACTO_POST_SUMMARY '+JSON.stringify(summary));
 }
