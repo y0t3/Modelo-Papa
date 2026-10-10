@@ -42,12 +42,13 @@ const date='2026-10-10',full=buildSheet(today,prev);
 for(let i=0;i<TURNOS.length;i++){
  const result=inspectCrossColumnVT37D(full,date,TURNOS[i],12);
  assert.equal(result.available.length,i+1);
+ assert.equal(result.observed.completeColumns,i+1);
  assert.equal(result.observed.columns,i+1);
  assert.equal(result.geometricInvariant.routesPerFullColumn,184);
  assert.equal(result.geometricInvariant.shapeTypesPerFullColumn,38);
  assert(result.available.every(x=>x.complete&&x.pathCount===184&&
   x.distinctShapes===38));
- assert.equal(result.observed.shapesPresentInEveryCompleteColumn,38);
+ assert.equal(result.observed.shapesSharedAcrossAllColumns,38);
  assert.equal(result.control.repetitions,12);
  if(i===0){
   assert.equal(result.observed.repeatedValueAcrossColumns,0);
@@ -71,7 +72,8 @@ const sparse=inspectCrossColumnVT37D(buildSheet(incomplete,prev),date,'Primera',
 assert.equal(sparse.available[1].complete,false);
 assert.equal(sparse.available[1].distinctShapes,0);
 assert.equal(sparse.available[1].pathCount,0);
-assert.equal(sparse.observed.shapesPresentInEveryCompleteColumn,38);
+assert.equal(sparse.observed.completeColumns,1);
+assert.equal(sparse.observed.shapesSharedAcrossAllColumns,0);
 assert.throws(()=>inspectCrossColumnVT37D(full,date,'Matutino',0),/inválidos/);
 console.log('OK: 184 rutas y 38 formas invariantes por columna completa;');
 console.log('coincidencia VT3 de cifras y celdas sí observable; 5 cortes ciegos y control por barajado reproducible.');
