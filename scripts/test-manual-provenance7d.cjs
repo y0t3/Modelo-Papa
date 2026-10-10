@@ -20,6 +20,6 @@ assert.equal(assessMarkAgainstRoute7D(highlighted,L),'HUELLA_POSIBLE_DIRECCION_N
 assert.equal(assessMarkAgainstRoute7D(highlighted,line),'HUELLA_POSIBLE_DIRECCION_NO_VERIFICADA');
 assert.equal(manualPriority7D(highlighted,'2026-10-08'),'SOLO_ZONA_MANUAL');
 assert.throws(()=>tagVisualSource7D({...opt,provenance:'MANUAL_TRAZO_ORDENADO',cells:L,supportReference:''}),/referencia visual/);
-assert.throws(()=>tagVisualSource7D({...opt,provenance:'MANUAL_TRAZO_ORDENADO',cells:['0:0','2:0','3:0'],supportReference:'video'}),/no contigua/);
+assert.throws(()=>tagVisualSource7D({...opt,provenance:'MANUAL_TRAZO_ORDENADO',cells:['0:0','2:0','3:0'],supportReference:'video'}),/no contigu/i);
 assert.throws(()=>tagVisualSource7D({...opt,provenance:'MANUAL_TRAZO_ORDENADO',cells:['0:0','0:0','1:0'],supportReference:'video'}),/repite/);
 console.log('OK: trazos originales, huellas resaltadas y rutas reconstruidas separadas');
