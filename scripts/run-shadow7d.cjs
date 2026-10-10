@@ -22,6 +22,8 @@ const {auditShadow7D}=load('src/dualFocusShadow7d.ts');
 const args=Object.fromEntries(process.argv.slice(2).filter(x=>x.startsWith('--')&&x.includes('='))
  .map(x=>x.slice(2).split(/=(.*)/s).slice(0,2)));
 const from=args.from,to=args.to,output=args.out||'out/dual-focus-shadow-7d.json';
+const rule=args.rule||'REPOSO_Y_RECONFIRMACION';
+if(!['REPOSO_Y_RECONFIRMACION','REPOSO_Y_ACTIVIDAD'].includes(rule))throw Error('Regla sombra no permitida');
 const dateRe=/^\d{4}-\d{2}-\d{2}$/;
 const at=x=>Date.parse(x+'T12:00:00Z');
 if(!dateRe.test(from||'')||!dateRe.test(to||'')||!Number.isFinite(at(from))||
@@ -41,7 +43,7 @@ async function main(){
  if(complete.length<8)throw Error('Falta base Nocturna + seis jornadas de memoria y fecha objetivo');
  const days=complete.slice(1).map((d,i)=>({date:d.date,sheet:buildSheet(d.heads,complete[i].heads)}));
  const baseline=auditCombinedChronologically7D(days);
- const shadow=auditShadow7D(days,baseline.rows);
+ const shadow=auditShadow7D(days,baseline.rows,rule);
  const byMonth={};
  for(const row of shadow.rows){
   const key=row.date.slice(0,7);
@@ -58,7 +60,7 @@ async function main(){
   shadow,byMonth};
  fs.mkdirSync(path.dirname(output),{recursive:true});
  fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
- console.log('DUAL_FOCUS_SHADOW: '+from+' a '+to+' | turnos='+shadow.turns+
+ console.log('DUAL_FOCUS_SHADOW: '+from+' a '+to+' | regla='+shadow.rule+' | turnos='+shadow.turns+
   ' | candidatas iguales='+shadow.candidatesEach);
  console.log('VT2_FOCUS: fijo='+shadow.baselineHits+' sombra='+shadow.shadowHits+
   ' | elegidos_traslado='+shadow.selectedShift+' | reemplazos='+shadow.actualChanges+
