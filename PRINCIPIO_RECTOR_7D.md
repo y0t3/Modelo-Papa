@@ -95,3 +95,22 @@ con resultados posteriores y azar de igual cantidad de candidatos.
 anterior a una misma lectura cronológica, primero como OBSERVADOR sin pesos
 ni candidatos inventados. No volver a estudiar el D−7 aislado como si fuera
 todo el Modelo Papá, ni sustituir el selector oficial sin comprobarlo.
+
+## PRECISIÓN OPERATIVA — LECTURA PROGRESIVA DE TODA LA TABLA +11 (2026-10-10)
+**Esta precisión prevalece sobre cualquier ejemplo aislado de «Previa + Primera»: no hay un par de turnos privilegiado.** El modelo lee siempre la tabla +11 completa disponible, que crece columna a columna conforme se publican las cabezas reales del día. El horizonte semanal puede orientar, pero no es requisito.
+
+| Sorteo objetivo (aún no publicado) | Columnas físicas de +11 que YA existen |
+|---|---|
+| Previa | Nocturna anterior +11 |
+| Primera | Nocturna anterior +11; Previa +11 |
+| Matutina (identificador técnico `Matutino`) | Nocturna anterior +11; Previa +11; Primera +11 |
+| Vespertina (identificador técnico `Vespertino`) | Las tres anteriores; Matutina +11 |
+| Nocturna (identificador técnico `Nocturno`) | Las cuatro anteriores; Vespertina +11 |
+
+En cada etapa se **interpreta visualmente la totalidad de las columnas ya construidas**, no sólo la última ni únicamente las dos más recientes. Se comparan figuras, formas, concentración, orientación, contactos, coincidencias ganadoras de turnos cerrados, cambios y relaciones entre columnas y jornadas. Cada recorrido físico individual continúa dentro de **una única columna**, sin mezclar celdas de distintas columnas. El VT3 a proponer para el siguiente turno debe poder trazarse en alguna columna disponible.
+
+Cada sorteo terminado introduce su nueva columna +11 y también sus cabezas conocidas y coincidencias históricamente comprobadas, que se registran para el turno siguiente. Al congelar candidatos para el objetivo, su cabeza y toda columna futura deben permanecer excluidas de la lectura. Una señal surgida de las columnas de hoy **no necesita ser ganadora en D−7**, ni requiere la confirmación de ayer. La memoria de jornadas previas se utiliza como contexto de interpretación; no como llave que habilita una candidatura.
+
+**Alcance técnico:** `src/sheet.ts` ya construye progresivamente las cinco columnas de origen conforme a esta secuencia. Los tests del ejemplo Matutina son pruebas de un caso, no la especificación del método. El lector combinado D−7 permanece experimentalmente restringido y NO debe presentarse como implementación completa de esta nueva norma.
+
+**Restricción de investigación:** seguir proponiendo pocos candidatos VT3 justificados (Top3 como referencia), mantener VT2 independiente y VT4 físico o extra separado; nunca resolver la falta de señal agregando candidatos ni seleccionando trazos después de conocer el sorteo objetivo.
