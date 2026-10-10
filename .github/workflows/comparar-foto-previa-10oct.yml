@@ -1,0 +1,62 @@
+name: Compare immutable Oct 10 PRE photo with real results
+on:
+  push:
+    branches: [auditoria-sorteo-10oct-2026]
+    paths:
+      - '.github/workflows/comparar-foto-previa-10oct.yml'
+      - 'scripts/run-post-frozen-oct10.cjs'
+      - 'PROTOCOLO_POST_CAPTURA_SELLADA_PREVIA_10_OCT_2026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  cotejar-sin-contaminar-foto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Isolated TypeScript for original +11 engine
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Check all-path comparison before reading any draw
+        run: |
+          node --check scripts/run-post-frozen-oct10.cjs
+          node scripts/run-post-frozen-oct10.cjs --test-only=true
+      - name: Recover ORIGINAL immutably preserved pre-Previa artifact from 09:04 ART
+        uses: actions/download-artifact@v4
+        with:
+          name: PREVIA-10-OCT-2026-SOLO-TABLERO-SIN-PRONOSTICO
+          run-id: 38050639551
+          repository: y0t3/Modelo-Papa
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: out/snapshot-pre-original/
+      - name: Compare ALL D1 D7 2/3/4 physical paths with Saturday results
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node scripts/run-post-frozen-oct10.cjs --pre=out/snapshot-pre-original --out=out/post-cotejo-real-10oct
+      - name: Verify PRE stamp and no simulated forecast
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),crypto=require('crypto'),assert=require('assert/strict');
+          const root='out/post-cotejo-real-10oct/';
+          const a=JSON.parse(fs.readFileSync(root+'COMPARACION_COMPLETA_CON_NEGATIVOS.json'));
+          const b=JSON.parse(fs.readFileSync(root+'FOTO_ORIGINAL_ANTES_PREVIA.json'));
+          assert.equal(a.preSource.sha256,crypto.createHash('sha256').update(JSON.stringify(b)).digest('hex'));
+          assert.equal(a.preSource.runId,'38050639551');
+          assert.equal(a.preSource.humanSelections,0);
+          assert.equal(a.humanForecastCount,0);
+          assert.equal(a.forecastScore,null);
+          assert.equal(a.union.summary.vt2.total+a.union.summary.vt3.total+a.union.summary.vt4.total,a.union.figures.length);
+          assert(a.allHeads.Previa.some(h=>/^\d{4}$/.test(h.head)));
+          console.log('CONTROL_POST_REAL_OK: fuente PRE original, ambas lecturas, negativos, ninguna decisión atribuida');
+          NODE
+      - name: Save visual side by side, full heads and all negatives
+        uses: actions/upload-artifact@v4
+        with:
+          name: COTEJO-REAL-10OCT-PREVIA-D1-D7-CON-NEGATIVOS
+          path: out/post-cotejo-real-10oct/
+          if-no-files-found: error
