@@ -101,6 +101,11 @@ export function renderVisualMarkedSheetHTML7D(view:VisualMarkedSheet7D):string{
   })).join('');
   return bg+cells;
  }).join('');
+ const rowLabels=JURS.map((jurisdiction,row)=>{
+  const center=pos(0,row+':0');
+  return '<text x="10" y="'+(center.y+5)+'" font-size="11" fill="#625c73">'+
+   escaped(jurisdiction)+'</text>';
+ }).join('');
  const strokes=view.strokes.map((trace,index)=>{
   const source=view.columns.findIndex(x=>x.id===trace.sourceId);
   if(source<0)throw Error('No se puede dibujar un origen oculto');
@@ -156,7 +161,7 @@ export function renderVisualMarkedSheetHTML7D(view:VisualMarkedSheet7D):string{
   '<label><input type="checkbox" data-kind-filter="vt4" checked/> VT4</label>'+
   '</div><div class="board"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+
   width+' '+height+'" width="'+width+'" role="img" aria-label="Columnas +11 con cifras y recorridos coincidentes">'+
-  labels+board+strokes+
+  labels+board+rowLabels+strokes+
   '<text x="70" y="463" fill="#756d84" font-size="12">Las líneas unen dígitos de una sola columna. Los colores distinguen VT2, VT3 y VT4.</text>'+
   '</svg></div><p class="stats">Cabezas completas anotadas abajo: <strong>'+
   view.totals.heads+'</strong> · Recorridos: <strong>'+view.totals.strokes+
