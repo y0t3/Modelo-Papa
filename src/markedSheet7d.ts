@@ -1,8 +1,10 @@
-// Modelo 7D: reconstrucción retrospectiva de coincidencias de cabezas en hojas históricas.
-// buildSheet/findPaths enumera TODAS las rutas matemáticas que coinciden con una cabeza;
-// NO demuestra que esas rutas hayan sido señaladas a mano por papá.
-// La auditoría manual del trazo se guarda separadamente en manualMarkProvenance7d.ts.
-// No proyecta números ni permite inferir prioridad manual desde un resultado posterior.
+// Modelo Papá — etapa histórica: RESULTADO CONOCIDO -> buscar en columnas +11
+// anteriores al turno -> dibujar coincidencias -> anotar cabeza completa debajo.
+// Estas rutas encontradas DESPUÉS de la cabeza son precisamente el material
+// para reconstruir y ESTUDIAR las hojas marcadas; no son predicciones.
+// Una foto puede precisar qué tinta/flecha había en el manuscrito original,
+// pero NO habilita ni invalida la coincidencia física ya reconstruida.
+// Nunca convertir estas rutas retrospectivas en aciertos prospectivos.
 import {TURNOS} from './domain';
 import type {Turno} from './domain';
 import type {DailySheet,SourceId} from './sheet';
