@@ -1,77 +1,69 @@
-# Caso visual de referencia — 7 de octubre de 2026, 0261
+# Caso 7 de octubre de 2026 — cabeza 0261
 
-## Qué está efectivamente documentado
+## Procedimiento REAL del Modelo Papá
 
-Fuente secundaria: `AUDITORIA_VISUAL.html` de la Biblioteca del proyecto,
-preparada con fotogramas de las hojas manuscritas del 6 al 8 de octubre.
+El 7 de octubre, en **Provincia Vespertino**, salió la cabeza completa **0261**.
+DESPUÉS de ese resultado se revisa si su terminación VT3 **261** aparece
+formando una trayectoria válida en las columnas +11 que existían ANTES
+de Vespertino: `prevNocturno`, `Previa`, `Primera` y `Matutino`.
 
-- Resultado de Provincia, Vespertino: cabeza **0261**, VT3 **261**.
-- Tres formas VT3 **encontradas retrospectivamente por el programa**:
-  - `Primera`, recorrido `2:0→2:1→1:1` (forma L).
-  - `Primera`, recorrido `3:1→2:1→1:1` (recta).
-  - `Matutino`, recorrido `2:1→3:0→2:0` (otro quiebre).
-- Las tres rutas son matemáticamente válidas y distintas, dentro de
-  columnas individuales. La imagen elaborada `EJEMPLO_261_TRES_GEOMETRIAS.png`
-  muestra **rutas automáticas posteriores**, no los trazos originales.
-- La auditoría describe celdas resaltadas originales en los fotogramas,
-  pero **no digitalizó de forma inequívoca el orden y sentido de cada camino**.
-- Todavía no está confirmado en el material visual directamente disponible
-  que el número concreto 0261 sea legible bajo un trazo manuscrito determinado.
+En este caso se reconstruyeron tres trayectorias:
 
-**Por tanto: 0 recorridos manuales ordenados acreditados para este caso.**
-No elegir una de las tres rutas porque su relectura futura se parezca
-a un resultado, ni fabricar flechas, celdas o una selección Top3.
+| Columna +11 | Forma | Celdas (base cero) |
+|---|---|---|
+| Primera | L | `2:0 → 2:1 → 1:1` |
+| Primera | recta | `3:1 → 2:1 → 1:1` |
+| Matutino | otro quiebre | `2:1 → 3:0 → 2:0` |
 
-## Verificación que falta en la fuente original
+**Las tres son coincidencias históricas legítimas, porque se localizaron
+después de conocer la cabeza y sobre columnas que ya existían antes de
+ese turno.** Se trazan las coincidencias y se registra **0261 completa
+debajo de la hoja**, una sola vez por cabeza/jurisdicción, aun cuando
+admita varios trazos y/o modalidades VT2/VT3/VT4.
 
-Consultar directamente `fotograma_original_hojas.jpg` o
-`fotograma_hojas_completas.jpg`, contenidos/referenciados en el
-archivo de auditoría o el video original. Para el 7/10:
+Ninguno de estos caminos fue una **predicción previa del 0261**;
+todos son información histórica para observar el movimiento de
+figuras y estudiar posibles continuidades ANTES de otros sorteos.
 
-1. Verificar las cabezas concretas efectivamente anotadas **debajo**
-   de cada hoja y distinguirlas de las cabezas de la fuente publicada.
-2. Identificar **qué celdas están realmente resaltadas** en cada
-   columna +11 (fila 0–5, lado izquierdo 0 / derecho 1).
-3. Sólo si el trazo tiene flechas, números ordinales u otra evidencia
-   inequívoca, digitalizar el **orden** de la ruta.
-4. Si aparecen celdas coloreadas sin dirección verificable,
-   conservar exclusivamente una **huella sin sentido de lectura**.
-5. Contrastar entre hojas marcadas de días contiguos —no recorrer
-   las 184 formas de una cuadrícula vacía— para estudiar
-   continuidad, desplazamientos y ramificaciones observables.
+## ¿Para qué sirve la foto manuscrita?
 
-Los archivos ZIP de biblioteca con los fotogramas originales
-fueron localizados por su título, pero **no admitieron
-materialización para una inspección directa en esta sesión**.
-No simular que se los vio ni atribuirles coordenadas inexistentes.
+Sólo para verificar la reproducción exacta del papel: qué caminos
+se ven dibujados, colores, orden de flechas, etc. Si hay tres recorridos
+físicamente válidos, no hace falta imaginar una elección oculta ni
+exigir que esté digitalizada una foto original para reconstruir
+la hoja por coincidencias matemáticamente comprobadas.
 
-## Implementación realizada
+La auditoría `AUDITORIA_VISUAL.html` de la biblioteca describe
+fotogramas manuscritos, pero los fotogramas originales no pudieron
+abrirse en esta sesión. Por eso no afirmamos cuáles trazos tienen
+tinta visible en la foto; **esto NO bloquea la reconstrucción
+retrospectiva de las tres coincidencias válidas**.
 
-- `evidencia-visual/octubre-07-0261-por-verificar.json`:
-  ficha de evidencia con el fotograma **sin celdas digitalizadas**
-  y los tres recorridos automáticos explícitamente etiquetados
-  como **NO manuales**.
-- `src/markedSheetEvidenceReader7d.ts`:
-  observa sólo hojas marcadas con procedencia y referencias;
-  separa `FOTOGRAMA_REFERENCIADO_SIN_CELDAS_DIGITALIZADAS`,
-  `CELDAS_MANUALES_RESALTADAS_SIN_ORDEN`,
-  `TRAZO_MANUAL_ORDENADO_VERIFICADO` y
-  `RUTA_AUTOMATICA_NO_MANUAL`; no crea ni ordena ternas.
-  Distingue la cabeza `DEBAJO_VISIBLE` del resultado publicado
-  cuya anotación en la hoja no se pudo constatar.
-- `scripts/test-marked-sheet-evidence7d.cjs`: prueba sobre
-  el caso 0261 que ninguna ruta automática adquiere rango manual;
-  verifica la ocultación del turno objetivo y que un trazo
-  sintético ordenado y vinculado con una cabeza **simulada visible**
-  pueda leerse sólo cuando la fuente se comprueba.
+## Código y alcance
 
-## Qué investigar después
+- `src/sheet.ts`: columna +11 por turno y búsqueda de cabezas
+  conocidas en las fuentes disponibles antes de su sorteo.
+- `src/markedSheet7d.ts`: reconstruye rutas históricas VT2/VT3/VT4.
+- `src/markedSheetAfterDraw7d.ts`: representa explícitamente
+  las cabezas completas que se anotan debajo, con sus rutas físicas.
+- `scripts/test-marked-sheet-after-draw7d.cjs`: caso real
+  Provincia Vespertino **0261** y sus tres rutas VT3, una única
+  cabeza completa anotada debajo y exclusión de columnas futuras.
+- `src/markedSheetEvidenceReader7d.ts`: herramienta AUXILIAR
+  para verificar fidelidad a fotogramas; **no condiciona
+  la reconstrucción de los recorridos históricos**.
 
-**No corresponde programar otro selector todavía.** El paso
-decisivo es recuperar al menos **una hoja marcada original con las
-cabezas inferiores legibles** y estudiar a ojo cuáles rutas señaló
-realmente papá. Sólo entonces comparar esa figura contra otra hoja
-de la secuencia y buscar posibles continuaciones en la tabla +11
-ya disponible antes del siguiente turno.
+## Problema de investigación auténtico
 
-No modificar `main`, APK, filtros VT2 ni motor VT3 experimental.
+Una vez reconstruidas las hojas **marcadas tras los resultados**,
+leerlas como un conjunto visual: recorridos, contactos, zonas,
+desplazamientos, bifurcaciones y cambios entre jornadas y turnos.
+Recién después formular una proyección sobre las columnas +11
+disponibles para un turno FUTURO, congelarla y evaluarla tras el sorteo.
+
+Ni fórmula general, ni tablero vacío, ni ranking como sustituto
+de interpretación, ni pretendida selección previa de rutas que
+en realidad se trazaron después de salir la cabeza.
+
+El número máximo de candidatos sigue siendo un presupuesto
+experimental, no una exigencia de rellenar tres espacios.
