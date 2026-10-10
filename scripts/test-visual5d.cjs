@@ -23,7 +23,7 @@ function sheet(head=false){
   {id:'Matutino',sourceLabel:'Matutino',values},{id:'Vespertino',sourceLabel:'Vespertino',values}];
  const matches=Object.fromEntries(turns.map(x=>[x,[]]));
  if(head)matches.Previa=[{cabeza:'1123',hits:[{kind:'vt2',value:'23',sourceId:'prevNocturno',paths:findPaths(values,'23')},{kind:'vt3',value:'123',sourceId:'prevNocturno',paths:findPaths(values,'123')},{kind:'vt4',value:'1123',sourceId:'prevNocturno',paths:findPaths(values,'1123')}]}];
- return {columns,matches,heads:{}};
+ return {columns,matches,heads:head?{Previa:['1123']}:{}};
 }
 const blank=sheet(),old=[sheet(),sheet(),sheet(),sheet(),sheet(),sheet()];
 const insufficient=analyzeVisual5D(blank,old.slice(0,5),'Nocturno');
