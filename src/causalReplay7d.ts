@@ -133,7 +133,7 @@ export function auditCombinedChronologically7D(input:DatedSheet[]):ReplayAudit7D
  }
  return {protocol:'7D_CAUSAL_REPLAY_V1',historyDays:6,evaluatedTurns:rows.length,
   rows,byKind:KINDS.map(k=>stats[k]),
-  baseline:'AZAR_UNIFORME_MISMA_CANTIDAD_POR_MODALIDAD',
+  baseline:'AZAR_UNIFORME_Y_FISICO_D7_MISMO_PRESUPUESTO',
   notes:[
    'Reproduccion historica ciega por turno. Los resultados del objetivo se usan solo despues de generar candidatos.',
    'Los aciertos de VT2/VT3/VT4 y las abstenciones se contabilizan independientemente.',
