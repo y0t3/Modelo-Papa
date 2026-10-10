@@ -254,7 +254,7 @@ async function main(){
   x.first.values.join('/')+' | '+x.second.values.join('/')+' | '+
   x.third.readBeforeNocturno+' | '+(x.third.confirmedAfterDraw?'Sí':'No')+' |');
  three.push('','No usar este registro retrospectivo para asignar prioridades ni',
-  convertir dos marcas consecutivas en garantía de una tercera.','');
+  'convertir dos marcas consecutivas en garantía de una tercera.','');
  fs.writeFileSync(path.join(out,'CADENAS_TRES_JORNADAS.md'),three.join('\n'));
  fs.writeFileSync(path.join(out,'CADENAS_TRES_JORNADAS.json'),JSON.stringify(tripleCases,null,2));
 
