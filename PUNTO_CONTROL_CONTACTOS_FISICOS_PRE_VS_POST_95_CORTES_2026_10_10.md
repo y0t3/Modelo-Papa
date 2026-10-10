@@ -24,11 +24,11 @@ Los tests verifican contigüidad de celdas, que una inversión no crea una figur
 
 Unidades: exposiciones de una **figura física antigua distinta dentro del corte**; figuras en cortes sucesivos NO son independientes. En total **3186 exposiciones**: VT2 1962, VT3 967, VT4 257.
 
-| Modalidad | Huellas con contacto antes del objetivo | Reconfirmadas físicamente entre casos determinables | Huellas SIN contacto antes del objetivo | Reconfirmadas físicamente entre casos determinables |
-|---|---:|---:|---:|---:|
-| VT2 | 86 / 592 (**14,5 %**) | misma cifra | 81 / 383 (**21,1 %**) | misma cifra |
-| VT3 | 10 / 304 (**3,3 %**) | misma cifra | 5 / 138 (**3,6 %**) | misma cifra |
-| VT4 | 0 / 80 (**0 %**) | misma cifra | 0 / 40 (**0 %**) | misma cifra |
+| Modalidad | Con contacto previo: reconfirmaciones / casos determinables | Sin contacto previo: reconfirmaciones / casos determinables |
+|---|---:|---:|
+| VT2 | 86 / 592 (**14,5 %**) | 81 / 383 (**21,1 %**) |
+| VT3 | 10 / 304 (**3,3 %**) | 5 / 138 (**3,6 %**) |
+| VT4 | 0 / 80 (**0 %**) | 0 / 40 (**0 %**) |
 
 En la tabla, el porcentaje utiliza sólo **sí + no confirmados** como denominador. No incluye casos inciertos debido a datos de alguna de las seis jurisdicciones faltantes; éstos permanecen listados en los JSON.
 
