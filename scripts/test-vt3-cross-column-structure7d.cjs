@@ -48,7 +48,8 @@ for(let i=0;i<TURNOS.length;i++){
  assert.equal(result.geometricInvariant.shapeTypesPerFullColumn,38);
  assert(result.available.every(x=>x.complete&&x.pathCount===184&&
   x.distinctShapes===38));
- assert.equal(result.observed.shapesSharedAcrossAllColumns,38);
+ assert.equal(result.observed.shapesSharedAcrossAllColumns,i===0?0:38,
+  'Con una sola columna no existe un cruce entre columnas');
  assert.equal(result.control.repetitions,12);
  if(i===0){
   assert.equal(result.observed.repeatedValueAcrossColumns,0);
