@@ -1,0 +1,62 @@
+name: Real pre-Primera 10 Oct two-column capture
+on:
+  push:
+    branches: [auditoria-sorteo-10oct-2026]
+    paths:
+      - '.github/workflows/captura-real-antes-primera-10oct.yml'
+      - 'PROTOCOLO_CAPTURA_ANTES_PRIMERA_10OCT2026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sellar-dos-columnas-antes-primera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Isolated TypeScript runtime
+        run: npm install --prefix /tmp/mp-ts --no-save --ignore-scripts --no-audit --no-fund typescript@5.9.2
+      - name: Check timestamp deadline before any data request
+        run: |
+          node -e "if(Date.now()>=Date.parse('2026-10-10T11:45:00-03:00'))throw Error('El sorteo Primera está demasiado cerca; se prohíbe captura tardía')"
+      - name: Strict no-future-source unit tests
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: |
+          node --check scripts/capture-live-visual-preturn.cjs
+          node scripts/capture-live-visual-preturn.cjs --test-only=true
+      - name: Capture full +11 board BEFORE Primera result
+        env:
+          NODE_PATH: /tmp/mp-ts/node_modules
+        run: node scripts/capture-live-visual-preturn.cjs --date=2026-10-10 --target=Primera --deadline=2026-10-10T11:45:00-03:00 --out=out/snapshot-real-antes-primera-10oct
+      - name: Verify provenance, Previa marks and two visible columns only
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),assert=require('node:assert/strict'),crypto=require('crypto');
+          const out='out/snapshot-real-antes-primera-10oct/';
+          const m=JSON.parse(fs.readFileSync(out+'MANIFIESTO_CAPTURA.json'));
+          const c=JSON.parse(fs.readFileSync(out+'2026-10-10-ANTES-Primera.json'));
+          assert.equal(c.date,'2026-10-10');assert.equal(c.target,'Primera');
+          assert.deepEqual(c.columns.map(x=>x.id),['prevNocturno','Previa']);
+          assert(c.knownToday.every(r=>r.turn==='Previa'));
+          assert(c.knownToday.length>0,'Previa ya debería tener marcas confirmadas');
+          assert.equal(m.targetHeadCountInSnapshot,0);
+          assert.equal(m.postTargetHeadCountInSnapshot,0);
+          assert.equal(m.forecastMade,false);
+          assert.equal(m.humanSelections,0);
+          assert.equal(m.cutSha256,crypto.createHash('sha256').update(JSON.stringify(c)).digest('hex'));
+          assert(Date.parse(m.capturedAtUtc)<Date.parse(m.deadline));
+          console.log('PRIMERA_PRE_CAPTURE_OK '+JSON.stringify({utc:m.capturedAtUtc,
+            columns:c.columns.map(x=>x.id),prior:c.inherited.length,
+            d7:c.d7Inherited.length,confirmedPrevia:c.knownToday.length,
+            knownHeadsToday:m.knownHeadsToday,sha256:m.cutSha256}));
+          NODE
+      - name: Publish timestamped original two-column photo
+        uses: actions/upload-artifact@v4
+        with:
+          name: ANTES-PRIMERA-10OCT-DOS-COLUMNAS-CERO-PRONOSTICOS
+          path: out/snapshot-real-antes-primera-10oct/
+          if-no-files-found: error
