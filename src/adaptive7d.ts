@@ -12,7 +12,8 @@ import type {DatedSheet, CycleKind} from './cycle7d';
 
 export type AdaptiveLife='NACE'|'OBSERVAR'|'CONFIRMA'|'ACTIVA'|'DECAE'|'MUERE';
 export type AdaptiveCandidate={kind:CycleKind;value:string;sourceId:SourceId;path:Path;state:AdaptiveLife;score:number;confirmations:number;lastSeenDraws:number;signature:string};
-export type Adaptive7DResult={date:string;target:Turno;mode:'EXPERIMENTAL';historyDays:number;candidates:AdaptiveCandidate[];tracked:number;reason:string;spatialFlow:SpatialFlow7D};
+export type Adaptive7DResult={date:string;target:Turno;mode:'EXPERIMENTAL';historyDays:number;candidates:AdaptiveCandidate[];tracked:number;reason:string;spatialFlow:SpatialFlow7D;
+ vt3PoolForAudit?:AdaptiveCandidate[]};
 type Track={kind:CycleKind;sourceId:SourceId;signature:string;score:number;confirmations:number;last:number;first:number;};
 const sig=(path:Path)=>path.slice(1).map((c,i)=>(c.row-path[i].row)+','+(c.col-path[i].col)).join(';');
 function apply(values:string[],signature:string):Path[]{
@@ -40,7 +41,8 @@ function life(x:Track,lastIndex:number):AdaptiveLife{
  if(x.confirmations>=2)return 'OBSERVAR';
  return 'NACE';
 }
-export function analyzeAdaptive7D(dated:DatedSheet[],current:DailySheet,date:string,target:Turno):Adaptive7DResult{
+export function analyzeAdaptive7D(dated:DatedSheet[],current:DailySheet,date:string,target:Turno,
+ options?:{inspectVT3Pool?:boolean}):Adaptive7DResult{
  if(!TURNOS.includes(target))throw new Error('Turno objetivo inválido');
  // La ventana no contiene resultados del turno objetivo ni posteriores.
  const marked=reconstructMarkedMoments(dated);
@@ -91,6 +93,16 @@ export function analyzeAdaptive7D(dated:DatedSheet[],current:DailySheet,date:str
   if(chosen.some(c=>c.kind===candidate.kind&&c.value===candidate.value))continue;
   chosen.push(candidate);
  }
- return {date,target,mode:'EXPERIMENTAL',historyDays:priorDates.length,candidates:chosen,tracked:tracks.size,spatialFlow:observeSpatialFlow7D(dated,date,target),
+ // Instrumentación sin alterar el orden, el cupo ni la salida normal.
+ // Una cifra VT3 cuenta una vez, aunque tenga muchas rutas compatibles.
+ const vt3PoolForAudit:AdaptiveCandidate[]=[];
+ if(options?.inspectVT3Pool){
+  const seen=new Set<string>();
+  for(const c of candidates)if(c.kind==='vt3'&&!seen.has(c.value)){
+   seen.add(c.value);vt3PoolForAudit.push(c);
+  }
+ }
+ return {date,target,mode:'EXPERIMENTAL',historyDays:priorDates.length,candidates:chosen,tracked:tracks.size,
+  ...(options?.inspectVT3Pool?{vt3PoolForAudit}:{}),spatialFlow:observeSpatialFlow7D(dated,date,target),
   reason:'Memoria dinámica de figuras ganadoras ya marcadas; pesos heurísticos no validados. No reemplaza el selector semanal.'};
 }
