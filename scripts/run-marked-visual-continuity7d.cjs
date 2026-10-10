@@ -119,6 +119,67 @@ function buildMarkdown(old,cut){
   'relectura en una recomendación o sumar candidatos.');
  return lines.join('\n')+'\n';
 }
+
+// Galería estática y navegable: se ven dos tableros 6x2, con las celdas
+// de CADA recorrido histórico resaltadas y numeradas en su orden real.
+// Sin scripts, sin selección de pronósticos y sin nuevos caminos.
+function htmlEscape(x){return String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;')
+ .replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
+function boardHtml(col,cells){
+ const order=new Map(cells.map((cell,i)=>[cell,i+1]));
+ return '<table class="board"><thead><tr><th>Fila</th><th>Izq.</th><th>Der.</th></tr></thead><tbody>'+
+  JURS.map((jur,r)=>'<tr><th>'+htmlEscape(jur)+'</th>'+
+   [0,1].map(side=>{
+    const cell=r+':'+side;
+    const digit=col.values[r]?.[side]||'—';
+    const n=order.get(cell);
+    return '<td'+(n?' class="lit"':'')+'>'+
+     (n?'<sup>'+n+'</sup>':'')+htmlEscape(digit)+'</td>';
+   }).join('')+'</tr>').join('')+'</tbody></table>';
+}
+function htmlGallery(old,cut){
+ const details=cut.records.map((x,i)=>{
+  const oldCol=old.columns.find(c=>c.id===x.sourceId);
+  const newCol=cut.columns.find(c=>c.id===x.sourceId);
+  const relation=x.exactKnown?'Misma ruta ya marcada en turno anterior de hoy':
+   x.contactKnown?'Contacto con una marca previa de hoy':'Sin contacto con marcas previas de hoy';
+  return '<details><summary><strong>'+htmlEscape(x.fullHead)+'</strong> ('+
+   htmlEscape(x.turn)+' del 29) · '+x.kind.toUpperCase()+' · '+
+   htmlEscape(x.sourceId)+' · '+htmlEscape(x.value)+' → '+
+   htmlEscape(x.readNow)+'</summary><div class="pair"><section>'+
+   '<h3>29 de septiembre · marcas de cabeza '+htmlEscape(x.fullHead)+'</h3>'+
+   boardHtml(oldCol,x.cells)+'</section><section><h3>30 de septiembre · antes de '+
+   htmlEscape(cut.turn)+'</h3>'+boardHtml(newCol,x.cells)+'</section></div>'+
+   '<p>Ruta ordenada: '+htmlEscape(x.cells.join(' → '))+
+   ' · '+htmlEscape(relation)+'.</p></details>';
+ }).join('');
+ return '<!doctype html><html lang="es"><head><meta charset="utf-8">'+
+  '<meta name="viewport" content="width=device-width,initial-scale=1">'+
+  '<title>Hoja marcada 29 → 30 | antes de '+htmlEscape(cut.turn)+'</title>'+
+  '<style>body{font:16px system-ui,sans-serif;color:#2d2540;background:#faf9fd;'+
+  'padding:16px;max-width:1050px;margin:auto}h1{font-size:23px}p{line-height:1.5}'+
+  '.intro{color:#615978}details{border:1px solid #d4cce8;border-radius:9px;'+
+  'padding:13px;margin:9px 0;background:#fff}summary{cursor:pointer;font-size:15px}'+
+  '.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}'+
+  'section{min-width:0}h3{font-size:14px}.board{border-collapse:collapse;width:100%;}'+
+  '.board th,.board td{border:1px solid #dbd5e7;text-align:center;padding:8px}'+
+  '.board th{font-size:12px;font-weight:500}.board td{font-weight:700;font-size:21px;'+
+  'position:relative;min-width:40px}.board td.lit{background:#e5dbff;color:#5021a3}'+
+  'sup{font:10px system-ui;position:absolute;top:2px;left:4px}'+
+  '@media(max-width:640px){.pair{grid-template-columns:1fr}}'+
+  'a{color:#5939a6}</style></head><body>'+
+  '<h1>Hojas marcadas: 29 → 30 de septiembre</h1>'+
+  '<p class="intro">Antes de '+htmlEscape(cut.turn)+' del 30. Las dos tablas de cada ficha '+
+  'corresponden a la MISMA columna y las MISMAS celdas: a la izquierda la coincidencia '+
+  'histórica ya marcada; a la derecha, cómo se leen esos dígitos hoy. Los números '+
+  'pequeños señalan el orden de lectura del recorrido.</p>'+
+  '<p><strong>'+cut.records.length+' recorridos históricos visibles</strong> sobre '+
+  cut.columns.length+' columnas disponibles. Todos se muestran, sin priorizar '+
+  'ninguno por su cifra ni por los resultados del objetivo.</p>'+
+  details+'<p class="intro">No se generaron candidatos, rankings ni nuevos recorridos '+
+  'en una hoja vacía. <a href="index.html">Volver al índice</a>.</p></body></html>';
+}
+
 async function main(){
  const dates=['2026-09-28',OLD,NOW],data=[];
  for(const date of dates){
@@ -143,6 +204,7 @@ async function main(){
  for(const [i,cut]of cuts.entries()){
   const label=String(i+1)+'-ANTES-'+cut.turn;
   fs.writeFileSync(path.resolve(root,out,label+'.md'),buildMarkdown(prior,cut));
+  fs.writeFileSync(path.resolve(root,out,label+'.html'),htmlGallery(prior,cut));
   fs.writeFileSync(path.resolve(root,out,label+'.json'),JSON.stringify(cut,null,2)+'\n');
   console.log('LECTURA_REAL '+cut.turn+' | columnas='+cut.columns.length+
    ' | relecturas='+cut.records.length+
@@ -164,7 +226,7 @@ async function main(){
   'Partimos únicamente de las cabezas coincidentes y todos sus recorridos marcados.',
   'Cada documento incluye cada ruta VT2/VT3/VT4 y dos cuadrículas legibles,',
   'sin fórmulas ni rankings. Los resultados del turno objetivo siempre están ocultos.',
-  '',...TURNOS.map((t,i)=>'- '+String(i+1)+'-ANTES-'+t+'.md'),
+  '',...TURNOS.map((t,i)=>'- '+String(i+1)+'-ANTES-'+t+'.html (galería visual), también en .md'),
   '','No se entregan predicciones.',''];
  fs.writeFileSync(path.resolve(root,out,'00-INDICE.md'),index.join('\n'));
  console.log('LECTURA_REAL_COMPLETA: '+cuts.length+' cortes → '+out);
