@@ -13,6 +13,7 @@ import {prefreezeFixedAndTranslated7D} from './figureTranslation7d';
 import type {FigureFollowup7D} from './figureFollowup7d';
 import {createPromotionFocus7D,previewPromotionFocus7D,recordPromotionOutcome7D} from './figurePromotion7d';
 import {decideRestPriority7D} from './figureRestReactivation7d';
+export type ShadowRule7D='REPOSO_Y_RECONFIRMACION'|'REPOSO_Y_ACTIVIDAD';
 
 export const SHADOW_RULE_7D='REPOSO_Y_RECONFIRMACION' as const;
 export type ShadowChoice7D={original:string;chosen:string;sourceId:string;
@@ -22,7 +23,7 @@ export type ShadowTurn7D={date:string;turn:Turno;heads:string[];
  baseline:string[];shadow:string[];choices:ShadowChoice7D[];
  hitsBaseline:number;hitsShadow:number;eligibleUnion:number;
  expectedSameBudget:number;replaced:number};
-export type ShadowReport7D={rule:typeof SHADOW_RULE_7D;rows:ShadowTurn7D[];
+export type ShadowReport7D={rule:ShadowRule7D;rows:ShadowTurn7D[];
  turns:number;matchedBudget:boolean;candidatesEach:number;
  baselineHits:number;shadowHits:number;gained:number;lost:number;ties:number;
  selectedShift:number;actualChanges:number;physicalExpectedBoth:number;notes:string[]};
@@ -40,7 +41,8 @@ const hit=(value:string,heads:string[])=>heads.some(h=>h.endsWith(value));
  * conserva la candidata original.
  */
 export function selectShadowForTurn7D(history:DatedSheet[],before:DailySheet,
- date:string,turn:Turno,candidates:ReplayTurn7D['candidates']):{
+ date:string,turn:Turno,candidates:ReplayTurn7D['candidates'],
+ rule:ShadowRule7D=SHADOW_RULE_7D):{
  choices:ShadowChoice7D[];physicalAlternatives:Set<string>}{
  if(history.some(x=>x.date>=date))throw Error('Historia incluye sorteo objetivo o futuro');
  const anchor=weekAgo(date);
@@ -75,7 +77,7 @@ export function selectShadowForTurn7D(history:DatedSheet[],before:DailySheet,
   if(state){
    const preview=previewPromotionFocus7D(state,before,date,turn);
    if(preview.shifted)physicalAlternatives.add(preview.shifted.direct);
-   const decision=decideRestPriority7D(state,preview,SHADOW_RULE_7D);
+   const decision=decideRestPriority7D(state,preview,rule);
    const shifted=decision.focus==='TRASLADADA';
    const projected=decision.projected;
    const usable=shifted&&projected&&projected!==original&&!occupied.has(projected)&&!originalValues.has(projected);
@@ -93,7 +95,8 @@ export function selectShadowForTurn7D(history:DatedSheet[],before:DailySheet,
  }
  return {choices:out,physicalAlternatives};
 }
-export function auditShadow7D(ordered:DatedSheet[],baselineRows:ReplayTurn7D[]):ShadowReport7D{
+export function auditShadow7D(ordered:DatedSheet[],baselineRows:ReplayTurn7D[],
+ rule:ShadowRule7D=SHADOW_RULE_7D):ShadowReport7D{
  const sorted=[...ordered].sort((a,b)=>a.date.localeCompare(b.date));
  if(sorted.some((x,i)=>i>0&&x.date===sorted[i-1].date))throw Error('Fechas repetidas');
  const rows:ShadowTurn7D[]=[];
@@ -104,7 +107,7 @@ export function auditShadow7D(ordered:DatedSheet[],baselineRows:ReplayTurn7D[]):
   if(!current)throw Error('Falta fecha evaluada '+row.date);
   const history=sorted.filter(x=>x.date<row.date);
   const before=freezeBeforeTurn7D(current.sheet,row.turn);
-  const {choices,physicalAlternatives}=selectShadowForTurn7D(history,before,row.date,row.turn,row.candidates);
+  const {choices,physicalAlternatives}=selectShadowForTurn7D(history,before,row.date,row.turn,row.candidates,rule);
   const base=row.candidates.filter(c=>c.kind==='vt2').map(c=>c.value);
   const shadow=choices.map(c=>c.chosen);
   if(shadow.length!==base.length||new Set(shadow).size!==shadow.length)
@@ -129,12 +132,12 @@ export function auditShadow7D(ordered:DatedSheet[],baselineRows:ReplayTurn7D[]):
    eligibleUnion:physicalAlternatives.size,expectedSameBudget:exp,
    replaced:choices.filter(c=>c.chosen!==c.original).length});
  }
- return {rule:SHADOW_RULE_7D,rows,turns:rows.length,matchedBudget:true,
+ return {rule,rows,turns:rows.length,matchedBudget:true,
   candidatesEach,baselineHits,shadowHits,gained,lost,ties,
   selectedShift,actualChanges,physicalExpectedBoth,notes:[
    'La variante NO elige raíces nuevas; usa las rutas VT2 priorizadas por el lector D-7 congelado.',
    'Cada traslado nace en una oportunidad anterior, se congela y mantiene su identidad; no se lo elige mirando el resultado objetivo.',
-   'La traslación reemplaza la lectura original SOLO si la raíz está en reposo y la traslación se reactivó y reconfirmó antes del turno objetivo.',
+   'Se exige reposo de la raiz, más actividad previa de la traslacion segun la regla congelada para este ensayo.',
    'Mismo número exacto de candidatas VT2 por turno, sin sumar raíz y traslado como apuestas distintas.',
    'Los períodos comparados ya fueron examinados; cualquier diferencia es retrospectiva exploratoria.'
  ]};
