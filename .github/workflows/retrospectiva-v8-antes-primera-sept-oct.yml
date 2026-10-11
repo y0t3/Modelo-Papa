@@ -31,6 +31,7 @@ jobs:
         run: |
           mkdir -p out/backtest-v8-antes-primera
           cat > /tmp/v8-first-draw-replay.cjs <<'NODE'
+          (async()=>{
           'use strict';
           const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');
           const DIR=[];for(const a of [-1,0,1])for(const b of [-1,0,1])if(a||b)DIR.push([a,b]);
@@ -224,6 +225,7 @@ jobs:
           }));
           console.log('BACKTEST_V8_PRIMERA_SUCCESS');
           
+          })().catch(e=>{console.error(e.stack||e);process.exitCode=1});
           NODE
           node --check /tmp/v8-first-draw-replay.cjs
           node /tmp/v8-first-draw-replay.cjs
