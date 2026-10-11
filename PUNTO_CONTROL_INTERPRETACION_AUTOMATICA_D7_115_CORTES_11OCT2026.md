@@ -55,7 +55,7 @@ VT2 mismas posiciones D−7 septiembre **101 aciertos frente a 89,3 esperados**;
 
 ## Paquete autónomo y validaciones
 
-ZIP `/mnt/data/modelo-papa-interpretacion-automatica-d7-115-cortes.zip`, **24 archivos, 8.386.349 bytes, SHA256 `6b937952da852ca3f8f4cb92b701f0f71d68c72f1e274a021a2655e88fd73c58`** (verificado).
+ZIP `/mnt/data/modelo-papa-interpretacion-automatica-d7-115-cortes.zip`, **23 archivos, 8.385.855 bytes, SHA256 `328f9192e03ea36c4310ae08c30e4f349573a2a2c44baf0ef2ec509b9225b81e`** (verificado).
 Carpeta `/mnt/data/interpretacion_visual_d7_115/`:
 - `ANTES_INTERPRETACIONES_D7.html`: visor sin cabezas objetivo, **hoja D−7 izquierda y hoja actual derecha**, Top de familias y todas las rutas viejas confirmadas y actuales válidas. Trazos transferidos violeta, alternativos físicos naranja; cabezas de D−7 antiguas visibles porque son historia.
 - `DESPUES_INTERPRETACIONES_D7.html`: mismo visor y cotejo completo de las cinco cabezas argentinas objetivo POST.
