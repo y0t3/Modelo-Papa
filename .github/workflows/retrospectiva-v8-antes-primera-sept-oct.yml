@@ -1,0 +1,251 @@
+name: V8 original first-draw backtest Sep-Oct 2026
+on:
+  push:
+    branches: [auditoria-sorteo-10oct-2026]
+    paths:
+      - '.github/workflows/retrospectiva-v8-antes-primera-sept-oct.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  test-v8-first-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Download genuine 10Oct 10:53 first-draw pre-snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: ANTES-PRIMERA-10OCT-DOS-COLUMNAS-CERO-PRONOSTICOS
+          run-id: 38057490657
+          repository: y0t3/Modelo-Papa
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: out/foto-pre-primera
+      - name: Replay exact V8 source and source-bounded ablation over dated history
+        env:
+          PRE10_FOLDER: out/foto-pre-primera
+        run: |
+          mkdir -p out/backtest-v8-antes-primera
+          cat > /tmp/v8-first-draw-replay.cjs <<'NODE'
+          'use strict';
+          const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+          const DIR=[];for(const a of [-1,0,1])for(const b of [-1,0,1])if(a||b)DIR.push([a,b]);
+          const J=['Ciudad','Provincia','Córdoba','Santa Fé','Entre Ríos','Montevideo'],T=['Previa','Primera','Matutino','Vespertino','Nocturno'];
+          const IDS={'1':'Ciudad','2':'Provincia','3':'Santa Fé','4':'Montevideo','5':'Entre Ríos','7':'Córdoba'};
+          const MOM={momento_5:'Previa',momento_1:'Primera',momento_2:'Matutino',momento_3:'Vespertino',momento_4:'Nocturno'};
+          const OUT='out/backtest-v8-antes-primera';
+          fs.mkdirSync(OUT+'/fuentes-crudas',{recursive:true});
+          const hh=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
+          function norm(v) {
+           const raw=v&&typeof v==='object'?(v.numero??v.cabeza??v.resultado??v.valor??v.primero??v.numero_1):v;
+           if(raw==null||String(raw).trim()===''||raw==='----')return '----';
+           const m=String(raw).match(/\d+/);return m?m[0].slice(-4).padStart(4,'0'):'----';
+          }
+          function parse(data) {
+           const out=Object.fromEntries(T.map(t=>[t,Object.fromEntries(J.map(j=>[j,'----']))]));
+           for(const [key,row] of Object.entries(data.datos||{})){
+            const name=IDS[key];if(!name)continue;
+            for(const [mk,t] of Object.entries(MOM))out[t][name]=norm(row?.[mk]);
+           }
+           return out;
+          }
+          const days=[];
+          for(let d=Date.parse('2026-09-07T12:00:00Z');d<=Date.parse('2026-10-10T12:00:00Z');d+=86400000) {
+           const date=new Date(d).toISOString().slice(0,10);
+           if(new Date(d).getUTCDay()!==0)days.push(date);
+          }
+          const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+          async function retrieve(date) {
+           const url='https://vivitusuerte.com/api/juegos/cabezasDiarias?fecha='+date+'&_='+Date.now();
+           let last;
+           for(let k=0;k<4;k++)try {
+            const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),16000);
+            let res;try{res=await fetch(url,{headers:{'Accept':'application/json','Cache-Control':'no-cache'},signal:controller.signal});}
+            finally{clearTimeout(timer);}
+            if(!res.ok)throw Error('HTTP '+res.status);
+            const raw=await res.json();
+            fs.writeFileSync(OUT+'/fuentes-crudas/'+date+'.json',JSON.stringify(raw,null,2));
+            return {date,heads:parse(raw),ok:true,hash:hh(raw)};
+           }catch(e){last=String(e);await sleep((k+1)*1100)}
+           return {date,ok:false,error:last};
+          }
+          const all=[];
+          for(let start=0;start<days.length;start+=5){
+           const b=await Promise.all(days.slice(start,start+5).map(retrieve));
+           all.push(...b);
+           console.log('RECUPERADAS_HISTORICAS '+all.length+'/'+days.length);
+          }
+          function gridFrom(hist) {
+           return J.map(j=>hist.flatMap(h=>{
+            const n=h[j]||'----';
+            const val=/^\d{4}$/.test(n)?String((Number(n.slice(-2))+11)%100).padStart(2,'0'):'--';
+            return val==='--'?[null,null]:[val[0],val[1]];
+           }));
+          }
+          function candidates(G) {
+           const M=new Map(),R=G.length,C=G[0].length;
+           for(let r=0;r<R;r++)for(let c=0;c<C;c++){
+            if(G[r][c]==null)continue;
+            for(const d1 of DIR){
+             const a=[r+d1[0],c+d1[1]];
+             if(a[0]<0||a[0]>=R||a[1]<0||a[1]>=C||G[a[0]][a[1]]==null)continue;
+             for(const d2 of DIR){
+              const b=[a[0]+d2[0],a[1]+d2[1]];
+              if(b[0]<0||b[0]>=R||b[1]<0||b[1]>=C||G[b[0]][b[1]]==null||(b[0]===r&&b[1]===c))continue;
+              const path=[[r,c],a,b],v=path.map(([x,y])=>G[x][y]).join('');
+              if(!M.has(v))M.set(v,[]);
+              M.get(v).push(path);
+             }
+            }
+           }
+           return M;
+          }
+          function rank(candidates,validOnly=false) {
+           const out=[],total=2,src=col=>Math.floor(col/2);
+           for(const [numero,allPaths] of candidates){
+            const ps=validOnly?allPaths.filter(p=>new Set(p.map(x=>src(x[1]))).size===1):allPaths;
+            if(!ps.length)continue;
+            const n=ps.length,touch=ps.filter(p=>p.some(x=>src(x[1])===0)).length;
+            const solo=ps.filter(p=>p.every(x=>src(x[1])===0)).length;
+            const h=ps.filter(p=>new Set(p.map(x=>x[0])).size===1).length;
+            const sources=new Set(ps.flat().map(x=>src(x[1]))).size/total,c0=touch/n,horizontal=h/n;
+            const conf=Math.min(Math.log1p(ps.length)/Math.log(9),1);
+            const score=.55*c0+.30*sources+.05*horizontal+.10*conf;
+            const pathIds=new Set(ps.map(p=>{const a=p.map(c=>c.join(':')).join('>'),b=[...p].reverse().map(c=>c.join(':')).join('>');return [a,b].sort()[0]}));
+            const crossed=ps.filter(p=>new Set(p.map(x=>src(x[1]))).size>1).length;
+            out.push({numero,score,caminos:n,figurasFisicas:pathIds.size,cruzados:crossed,
+             caminosValidos:n-crossed,c0,solo_c0:solo/n,fuentes:sources,horizontal,conf});
+           }
+           out.sort((a,b)=>b.score-a.score||b.c0-a.c0||b.fuentes-a.fuentes||b.caminos-a.caminos||a.numero.localeCompare(b.numero));
+           return out;
+          }
+          function wins(list,heads,regionList){
+           const digits=regionList.map(j=>heads[j]).filter(x=>/^\d{4}$/.test(x)).map(s=>s.slice(-3));
+           return {heads:digits.length,top1:!!list[0]&&digits.includes(list[0].numero),
+            top3:list.slice(0,3).some(x=>digits.includes(x.numero)),
+            top5:list.slice(0,5).some(x=>digits.includes(x.numero)),
+            tie:list.filter(x=>list.length&&Math.abs(x.score-list[0].score)<1e-12).some(x=>digits.includes(x.numero)),
+            hitHeads:list[0]?regionList.filter(j=>/^\d{4}$/.test(heads[j])&&heads[j].endsWith(list[0].numero))
+                .map(j=>j+' '+heads[j]):[]};
+          }
+          const preFolder=process.env.PRE10_FOLDER||'out/foto-pre-primera';
+          const pre=JSON.parse(fs.readFileSync(preFolder+'/2026-10-10-ANTES-Primera.json','utf8'));
+          const SHA='99e26413ffcb724b58a89be30a017ccfc76a7b994282073b99e5cf97dce545e9';
+          assert.equal(hh(pre),SHA,'SNAPSHOT OCT10 changed');
+          assert.deepEqual(pre.columns.map(x=>x.id),['prevNocturno','Previa']);
+          const actual=[],byDay=Object.fromEntries(all.map(x=>[x.date,x])),excluded=[];
+          const a5=J.slice(0,5),a6=J;
+          for(let date of days.filter(x=>x>='2026-09-08')){
+           const current=byDay[date];
+           const p=days.filter(x=>x<date).reverse().find(x=>byDay[x]?.ok&&J.filter(j=>/^\d{4}$/.test(byDay[x].heads.Nocturno[j])).length>=4);
+           if(!current?.ok||!p){excluded.push({date,reason:!current?.ok?'Fuente actual faltante':'Nocturna anterior faltante'});continue;}
+           const prev=byDay[p];
+           let G=gridFrom([prev.heads.Nocturno,current.heads.Previa]);
+           let source='RETROSPECTIVO_DESPUES_RESULTADOS';
+           if(date==='2026-10-10'){
+            const official=pre.columns.map(x=>x.values.map(v=>/^\d{2}$/.test(v)?v:'--'));
+            G=J.map((_,r)=>official.flatMap(c=>/^\d{2}$/.test(c[r])?[c[r][0],c[r][1]]:[null,null]));
+            source='FOTO_PRE_AUTH_10_53';
+            // Non-empty data must agree with the source, but late additions may exist in the public API.
+            const g2=gridFrom([prev.heads.Nocturno,current.heads.Previa]);
+            for(let r=0;r<6;r++)for(let c=0;c<4;c++)if(G[r][c]!==null)
+             assert.equal(G[r][c],g2[r][c],'Original photo/updated API conflict on Oct10 '+r+'/'+c);
+           }
+           const earlierAvailable=J.filter((j,r)=>G[r][0]!=null&&G[r][1]!=null).length,
+           previaAvailable=J.filter((j,r)=>G[r][2]!=null&&G[r][3]!=null).length,
+           resultsA5=a5.filter(j=>/^\d{4}$/.test(current.heads.Primera[j])).length;
+           if(earlierAvailable<4||previaAvailable<4||resultsA5<4){
+            excluded.push({date,reason:'Cobertura insuficiente',earlierAvailable,previaAvailable,resultsA5});continue;
+           }
+           const originalCandidates=candidates(G);
+           const old=rank(originalCandidates),clean=rank(originalCandidates,true);
+           if(date==='2026-10-10'){
+            assert.equal(old[0].numero,'393');assert.equal(old[0].caminos,2);
+            assert.equal(old[0].cruzados,2);
+            assert(!clean.some(x=>x.numero==='393'));
+           }
+           const three=originalCandidates.get(old[0].numero)||[];
+           const tie=old.filter(x=>Math.abs(x.score-old[0].score)<1e-12);
+           const seal={date,base:p,status:source,heads:current.heads.Primera,
+            present:{prevNocturno:earlierAvailable,Previa:previaAvailable},
+            first:{...old[0],rank:1,threePaths:three},
+            ties:tie.map(x=>x.numero),tieCount:tie.length,
+            firstAllCrossings:old[0].caminosValidos===0,
+            original: {count:old.length,first:old[0], top5:old.slice(0,5), top10:old.slice(0,10),
+             allScores:old.map((x,i)=>({...x,rank:i+1})),
+             five:wins(old,current.heads.Primera,a5),six:wins(old,current.heads.Primera,a6)},
+            filtered: {count:clean.length,first:clean[0],top5:clean.slice(0,5),top10:clean.slice(0,10),
+             allScores:clean.map((x,i)=>({...x,rank:i+1})),
+             five:wins(clean,current.heads.Primera,a5),six:wins(clean,current.heads.Primera,a6)}
+           };
+           actual.push(seal);
+           console.log('DIA_PRIMERA_V8 '+JSON.stringify({date,base:p,first:old[0].numero,tieCount:tie.length,
+            firstPaths:old[0].caminos,firstCrossed:old[0].cruzados,
+            original5:seal.original.five.top1,validFirst:clean[0]?.numero,
+            valid5:seal.filtered.five.top1,heads:seal.original.five.heads}));
+          }
+          assert(actual.length>=15,'Insufficient historical days: '+actual.length);
+          const agg=(mode,region)=>({
+           n:actual.length,
+           heads:actual.reduce((n,x)=>n+x[mode][region].heads,0),
+           top1:actual.filter(x=>x[mode][region].top1).length,
+           top3:actual.filter(x=>x[mode][region].top3).length,
+           top5:actual.filter(x=>x[mode][region].top5).length,
+           topScoreTie:actual.filter(x=>x[mode][region].tie).length,
+           avgTieSize:mode==='original'?actual.reduce((n,x)=>n+x.tieCount,0)/actual.length:null,
+           top1AllCross:mode==='original'?actual.filter(x=>x.firstAllCrossings).length:null,
+           top1AnyCross:mode==='original'?actual.filter(x=>x.first.cruzados>0).length:null
+          });
+          const results={protocol:'RETROSPECTIVA_V8_PRIMERA_SEPT_OCT_2026_V1',
+           method:'Exact VF-Quiniela/src/engine.ts V8 scoring and directed 8-neighbour enumeration',
+           generatedAtUtc:new Date().toISOString(),datesRequested:days,datesEvaluated:actual.length,
+           rawSources:all.map(({date,ok,hash,error})=>({date,ok,hash,error})),
+           frozen10oct:{sha:SHA,match:true},
+           summaries:{original5:agg('original','five'),filtered5:agg('filtered','five'),
+           original6:agg('original','six'),filtered6:agg('filtered','six')},
+           days:actual,excluded,
+           limitations:'Postfactum V8 investigation motivated by October10 393; most historical boards reconstructed post-result with target columns masked; no independent prospective prediction.'};
+          fs.writeFileSync(OUT+'/RESULTADO_COMPLETO_V8_PRIMERA.json',JSON.stringify(results,null,2));
+          fs.writeFileSync(OUT+'/RESUMEN_COMPACTO.json',JSON.stringify({...results,days:actual.map(x=>({date:x.date,base:x.base,status:x.status,
+           heads:x.heads,first:x.first.numero,firstScore:x.first.score,firstPaths:x.first.caminos,
+           firstCrossed:x.first.cruzados,ties:x.ties,filteredFirst:x.filtered.first?.numero,
+           originalFive:x.original.five,filteredFive:x.filtered.five}))},null,2));
+          console.log('RESULTADO_BACKTEST_V8 '+JSON.stringify({
+           evaluated:actual.length,original5:results.summaries.original5,
+           filtered5:results.summaries.filtered5,original6:results.summaries.original6,
+           filtered6:results.summaries.filtered6,
+           hitsOriginal5:actual.filter(x=>x.original.five.top1).map(x=>({date:x.date,first:x.first.numero,heads:x.original.five.hitHeads})),
+           hitsFiltered5:actual.filter(x=>x.filtered.five.top1).map(x=>({date:x.date,first:x.filtered.first.numero,heads:x.filtered.five.hitHeads})),
+           excluded
+          }));
+          console.log('BACKTEST_V8_PRIMERA_SUCCESS');
+          
+          NODE
+          node --check /tmp/v8-first-draw-replay.cjs
+          node /tmp/v8-first-draw-replay.cjs
+          cp /tmp/v8-first-draw-replay.cjs out/backtest-v8-antes-primera/REPRODUCIR_BACKTEST_V8.cjs
+      - name: Verify distinct original and filtered outputs and historical raw source copies
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const x=JSON.parse(fs.readFileSync('out/backtest-v8-antes-primera/RESULTADO_COMPLETO_V8_PRIMERA.json'));
+          assert(x.datesEvaluated>=15);
+          const oct=x.days.find(y=>y.date==='2026-10-10');
+          assert(oct);assert.equal(oct.first.numero,'393');assert.equal(oct.first.cruzados,2);
+          assert(!oct.filtered.allScores.some(y=>y.numero==='393'));
+          assert(x.frozen10oct.match);assert(x.rawSources.some(x=>x.date==='2026-09-08'));
+          for(const day of x.days)for(const mode of ['original','filtered']){
+            for(const t of day[mode].top5)assert(t.caminos>0);
+            assert.equal(day[mode].allScores.length,day[mode].count);
+          }
+          console.log('CHECK_RETROSPECTIVA_V8_OK '+x.datesEvaluated+' valid date-scoped backtests');
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: V8-PRIMERA-RETROSPECTIVA-SEPT-OCT-CRUDA-Y-ABLACION
+          path: out/backtest-v8-antes-primera/
+          if-no-files-found: error
