@@ -1,3 +1,5 @@
+> **FE DE ERRATAS — 11/10/2026:** toda extensión VT3→VT4 debe conservar por separado la **familia madre VT3** y la **familia VT4 derivada**. En el ejemplo `3460 / 0643`, la VT3 madre era `346 / 643` (NO `460`); `6430 / 0346` sería otra propuesta derivada distinta, no elegida. No reescribir ni mezclar sus memorias. Ver [corrección auditada](PUNTO_CONTROL_CORRECCION_VT3_MADRE_VT4_DERIVADA_643_346_11OCT2026.md). Las 5.800 decisiones PRE originales y los cotejos se conservan intactos.
+
 # Rescate experimental: Top3/5/10 por familias + propuestas VT4 desde VT3 (roce/azar)
 
 **11/10/2026**. Rama exclusiva `auditoria-sorteo-10oct-2026`, sin modificar `main`, motor oficial, selector ni APK.
