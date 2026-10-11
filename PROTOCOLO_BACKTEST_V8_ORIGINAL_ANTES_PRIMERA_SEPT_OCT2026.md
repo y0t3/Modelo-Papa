@@ -1,0 +1,12 @@
+# Ensayo retrospectivo V8 antes de Primera (septiembre y octubre 2026)
+
+Protocolo documentado antes de ejecutar el backtest, después de conocer caso 393: por tanto **exploratorio**, no validación prospectiva independiente.
+
+- Fechas: sorteos disponibles del 08/09 al 10/10/2026, incluidos días de semana y sábados, excluidos domingos sin sorteo. El corte fijo es **ANTES de Primera**; se emplea únicamente la Nocturna del sorteo anterior y la Previa de la misma fecha (incluyendo resultados faltantes como celdas vacías). La fuente posterior de Primera se usa SOLO para calificar, jamás para construir V8.
+- Especial 10/10: exigir que el tablero coincide EXACTAMENTE con foto pre-Primera 10:53:58 ART del run `38057490657` con SHA256 `99e26413ffcb724b58a89be30a017ccfc76a7b994282073b99e5cf97dce545e9`. Si el API posterior ha completado celdas entonces NO sustituir los vacíos de la captura.
+- Código V8: reproducir fórmula `0.55*c0 + 0.30*fuentes + 0.05*horizontal + 0.10*min(log(1+paths)/log(9),1)`, con sus recorridos dirigidos y 8 vecinos por paso, sin repetir celda; regla de desempate del motor original. El sistema antiguo admite recorridos que crucen la frontera `floor(col/2)`.
+- Ablación independiente: **idéntico V8 y puntaje**, pero enumerar SOLAMENTE recorridos que permanezcan dentro de una fuente; deduplicar inversión también como diagnóstico de **figuras físicas**, no alterar V8 original.
+- Métricas por fecha y agregado: primero individual V8, top3, top5 (en seis y cinco jurisdicciones por separado), empates con tolerancia explícita `1e-12`, cantidad de caminos que cruzan de fuente, cantidad de figuras físicas únicas, si el primero posee al menos un camino físicamente válido, ranking ablado, cobertura de resultados, posición real del 393 en 10/10. Mostrar todos los días, también sin acierto y no elegibles por falta de datos.
+- No seleccionar retroactivamente el mejor de un empate ni comparar cinco y seis jurisdicciones sin denominadores. El resultado se mide como aparición de la terna en **alguna cabeza de Primera**, no como acertar de antemano la jurisdicción.
+- Conclusión condicionada por limitaciones: los sorteos ya se conocen y el caso 393 motivó el experimento, la muestra es pequeña, las cabezas de septiembre no están todas selladas antes de Primera. Ni un resultado notable demuestra capacidad de anticipar sorteos.
+- No modificar `main`, APK, motor, selector ni entrenamientos. Branch `auditoria-sorteo-10oct-2026`. 
