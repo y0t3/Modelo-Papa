@@ -26,6 +26,8 @@ Se propone recolectar las próximas **40 jornadas de sorteos con datos válidos*
 
 Se fija la muestra antes de ver los resultados; cortes faltantes, empate, cambio de API, error geométrico o interrupción se registran sin sustituir fechas favorables. Reportar también exposición efectiva: cantidad de familias, lecturas reversibles, rutas, fuentes, oportunidades por turno y negativos.
 
+> **Corrección posterior de la agrupación VT3→VT4:** distinguir la **familia madre VT3** del **grupo de extensiones hermanas** y del reverso de cada hija VT4. Ejemplo: madre `729/927` + dígito `3` por la izquierda produce el grupo `3729/3927`; las inversiones de las hijas (`9273/7293`) no generan una nueva VT3 `273`. Los Top antiguos de familias reversibles VT4 **no se pueden convertir** directamente en Top de grupos maternos. [Ver aclaración íntegra](ACLARACION_VT3_MADRE_EXTENSIONES_HERMANAS_VT4_729_927_11OCT2026.md).
+
 ## Regla geométrica y genealogía, SIN cambios
 
 La hoja +11 se marca **automáticamente** con TODOS los caminos que coincidan con las cabezas ya sorteadas, nunca con elecciones predictivas humanas. Cada ruta válida usa celdas contiguas (diagonal permitida) de **un solo par de columnas fuente**, sin vacíos, sin cruces a otra fuente, saltos o reutilización. Lectura y reverso = **una familia**. Conservar todas las rutas alternativas y las cabezas completas históricas.
