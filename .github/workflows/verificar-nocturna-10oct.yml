@@ -19,6 +19,7 @@ jobs:
         run: |
           mkdir -p out/nocturna-real-10oct
           node <<'NODE'
+          async function main(){
           const fs=require('node:fs'),assert=require('node:assert/strict');
           const url='https://vivitusuerte.com/api/juegos/cabezasDiarias?fecha=2026-10-10&_='+Date.now();
           const r=await fetch(url,{headers:{Accept:'application/json','Cache-Control':'no-cache'}});
@@ -49,6 +50,8 @@ jobs:
           fs.writeFileSync('out/nocturna-real-10oct/CABEZAS_AUDITADAS.json',JSON.stringify(document,null,2));
           console.log('NOCTURNA_10OCT_VERIFICADA '+JSON.stringify(document));
           assert(available.length>=4,'Nocturna no publicada con cobertura suficiente en fuente actual. Conservamos respuesta ORIGINAL.');
+          }
+          main().catch(e=>{throw e});
           NODE
       - uses: actions/upload-artifact@v4
         if: always()
