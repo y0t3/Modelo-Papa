@@ -1,3 +1,5 @@
+> **RECTIFICACIÓN DEL CRITERIO DE ACIERTO (11/10/2026):** La clasificación de la figura `91/19` como fallo es **INCORRECTA**. El usuario aclaró que acertar la **misma huella física aunque invertida** cuenta como **ACIERTO DE FAMILIA**. El balance VT2 correcto es **1 acierto físico / 10 elecciones**, no cero. Las cifras por dirección más abajo son una métrica secundaria, no deben usarse para entrenar memoria de éxito/fracaso. Ver [punto de control corregido](PUNTO_CONTROL_CORRECCION_FAMILIA_FISICA_19_91_Y_145_CORTES_11OCT2026.md).
+
 # Punto de control: diez elecciones visuales PRE y cotejo separado (11/10/2026)
 
 **Experimento ya efectuado, completamente retrospectivo. No es una prueba humana del padre ni predicciones anteriores al sorteo.** Rama aislada: `auditoria-sorteo-10oct-2026`. No se alteraron motor, selector, `main` ni APK.
