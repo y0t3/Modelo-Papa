@@ -23,7 +23,7 @@ jobs:
         run: npx tsc --noEmit
       - name: Pruebas motor Lalo VT2 VT3 VT4
         run: npx --yes tsx scripts/test-motor-lalo.ts
-            - name: Generate Android project
+      - name: Generate Android project
         env:
           CI: '1'
         run: npx expo prebuild --platform android --clean
