@@ -45,7 +45,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
     <Text style={s.title}>{mode==='hoja'?'HOJA +11':'HOJA PREDICTIVA'}</Text>
     <Text style={s.note}>{mode==='hoja'?
      'Marcas reales: cabezas publicadas y rutas verificadas':
-     'Propuestas del motor semanal · '+(target||'')}</Text>
+     'Propuestas físicas del Motor Lalo · '+(target||'')}</Text>
    </View>
    <Pressable onPress={onInfo} accessibilityRole="button" style={s.action}>
     <Text style={s.actionText}>ⓘ Info</Text>
@@ -86,7 +86,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
    <Text style={s.moreText}>{showAll?'Ver menos':'Ver las '+currentGroups.length+' familias'}</Text>
   </Pressable>:null}
   {mode==='hoja'?<Text style={s.note}>Las cabezas sin formación siguen visibles y apagadas. Se resaltan sólo los sufijos VT2, VT3 o VT4 coincidentes.</Text>:
-   <Text style={s.warning}>Este panel refleja el motor VT3 vigente. VT2 y VT4 no tienen aquí un ranking independiente confirmado.</Text>}
+   <Text style={s.warning}>Los tres Tops provienen del único Motor Lalo. Son criterios experimentales y no probabilidades de acierto.</Text>}
   <Modal visible={detail} transparent animationType="slide" onRequestClose={()=>setDetail(false)}>
    <View style={s.backdrop}><View style={s.sheet}>
     <View style={s.modalHeading}>
