@@ -2,15 +2,17 @@ import React from 'react';
 import {ScrollView,View,Pressable,Text,StyleSheet} from 'react-native';
 import type {Turno} from '../domain';
 import {TURNOS} from '../domain';
+import {useLaloTheme} from './LaloTheme';
 export default function TurnStrip({value,onChange}:{
  value:Turno;onChange:(next:Turno)=>void
 }){
+ const {colors:c}=useLaloTheme();
  return <ScrollView horizontal showsHorizontalScrollIndicator={false}
   contentContainerStyle={s.container} style={s.outer}>
   {TURNOS.map(t=><Pressable key={t} accessibilityRole="tab"
    accessibilityState={{selected:value===t}}
-   onPress={()=>onChange(t)} style={[s.tab,value===t&&s.active]}>
-   <Text style={[s.text,value===t&&s.activeText]}>{t}</Text>
+   onPress={()=>onChange(t)} style={[s.tab,{backgroundColor:value===t?c.accentFill:c.card,borderColor:value===t?c.accent:c.border}]}>
+   <Text style={[s.text,{color:value===t?c.accent:c.subtext}]}>{t}</Text>
   </Pressable>)}
  </ScrollView>;
 }
