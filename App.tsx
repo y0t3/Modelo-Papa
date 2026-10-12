@@ -27,6 +27,7 @@ import PanoramaSheet from './src/PanoramaSheet';
 import HeadsTable from './src/ui/HeadsTable';
 import PredictionSummary from './src/ui/PredictionSummary';
 import TurnStrip from './src/ui/TurnStrip';
+import InfoDashboard from './src/ui/InfoDashboard';
 import {buildDailyPanorama,buildPredictivePanorama} from './src/panoramaModel';
 
 type Screen='hoja'|'predictiva'|'prediccion'|'cabezas'|'info'|'analisis';
@@ -193,38 +194,8 @@ export default function App(){
     onFocus={family=>{setFocusedPredFamily(family);setScreen('predictiva')}}/>
   </View>
   :screen==='cabezas'?<HeadsTable data={data} sheet={sheet}/>
-  :screen==='info'?<View style={{backgroundColor:'#f7f3fa',borderRadius:12,padding:16,marginTop:12}}>
-    <Text style={{color:'#2c2240',fontSize:20,fontWeight:'900'}}>Cómo leer la hoja</Text>
-    <Text style={{color:'#60566d',marginTop:10,lineHeight:21}}>
-     El tablero tiene seis filas de dos cifras por fuente. Cada recorrido utiliza sólo casilleros vecinos
-     de esa misma fuente. Los bordes y rellenos muestran VT2, VT3 o VT4 sin tapar las cifras.
-     Tocá una cabeza para resaltar todas sus rutas; las demás permanecen visibles.
-    </Text>
-    <Text style={{color:'#2c2240',fontWeight:'900',marginTop:16}}>Colores de las marcas</Text>
-    <Text style={{color:'#db547e',marginTop:8,fontWeight:'800'}}>VT2 · rosa · dos cifras</Text>
-    <Text style={{color:'#088f98',marginTop:5,fontWeight:'800'}}>VT3 · turquesa · tres cifras</Text>
-    <Text style={{color:'#c18b24',marginTop:5,fontWeight:'800'}}>VT4 · dorado · cuatro cifras</Text>
-    <Text style={{color:'#60566d',marginTop:12,lineHeight:21}}>
-     También son válidas las lecturas de abajo hacia arriba si todas las casillas son vecinas.
-     El detalle muestra la secuencia; invertir una ruta no crea otra figura física.
-    </Text>
-    <Text style={{color:'#2c2240',fontWeight:'900',marginTop:16}}>Predictiva</Text>
-    <Text style={{color:'#60566d',marginTop:8,lineHeight:21}}>
-     Hoja predictiva y Predicción usan el mismo motor semanal y las mismas familias VT3.
-     Cada miniatura muestra la ruta física y los antecedentes disponibles.
-     VT2 y VT4 todavía no cuentan con un Top independiente en este selector.
-     Los colores y contactos no indican una probabilidad ni garantizan aciertos.
-     No se registra automáticamente una decisión personal.
-    </Text>
-    <Text style={{color:'#2c2240',fontWeight:'900',marginTop:16}}>Consultas adicionales</Text>
-    <Pressable onPress={()=>setScreen('cabezas')} style={[s.load,{marginVertical:7}]}>
-     <Text style={s.loadText}>Ver tabla completa de cabezas</Text>
-    </Pressable>
-    <Pressable onPress={()=>setScreen('analisis')} style={[s.load,{marginVertical:7,backgroundColor:'#51318a'}]}>
-     <Text style={s.loadText}>Abrir análisis y explicaciones técnicas</Text>
-    </Pressable>
-   </View>
-
+  :screen==='info'?<InfoDashboard turn={effectiveTarget} view={predictive} lives={routeLives}
+   onDetails={()=>setScreen('analisis')}/>
   :<><Pressable onPress={()=>setScreen('info')}><Text style={s.help}>‹ Volver a Info</Text></Pressable>{analysisPanel}</>}
  </ScrollView></SafeAreaView>
 }
