@@ -94,8 +94,16 @@ const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
   const paths=[...group.paths.values()];
   const sourceCount=new Set(paths.map(p=>p.sourceId)).size;
   const directIds=new Set(paths.flatMap(p=>p.rootIds));
-  const d7Roots=[...directIds].filter(id=>roots.get(id)?.period==='D−7').length;
-  const d1Roots=[...directIds].filter(id=>roots.get(id)?.period==='D−1').length;
+  // Una misma cabeza completa puede haber generado muchos dibujos: NO son
+  // varias confirmaciones históricas independientes.
+  const uniqueEvents=new Map<string,RootRef>();
+  for(const id of directIds){
+   const old=roots.get(id);if(!old)continue;
+   const event=[old.date,old.oldTurn,old.jurisdiction,old.head].join('|');
+   uniqueEvents.set(event,old);
+  }
+  const d7Roots=[...uniqueEvents.values()].filter(r=>r.period==='D−7').length;
+  const d1Roots=[...uniqueEvents.values()].filter(r=>r.period==='D−1').length;
   const physicalBlocks=new Set(paths.map(p=>p.sourceId+'|'+blockKey(p.path))).size;
   const branchBlocks=new Set(paths.filter(p=>p.origin==='BIFURCACIÓN').map(p=>p.sourceId+'|'+blockKey(p.path))).size;
   const parentFamilies=[...new Set(paths.flatMap(p=>p.mothers|| (p.mother?[p.mother]:[])))].sort();
@@ -107,8 +115,8 @@ const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
    kind==='vt2'?
    [directIds.size>0?1:0,Math.min(d1Roots,10),Math.min(d7Roots,10),parentFamilies.length,sourceCount,physicalBlocks]:
    [-parentRank,sourceCount,physicalBlocks,Math.min(parentFamilies.length,5)];
-  const state=directIds.size>=2||sourceCount>=2?'CON_APOYO':
-   directIds.size||parentFamilies.length?'EN_SEGUIMIENTO':'EN_FORMACIÓN';
+  const state=uniqueEvents.size>=2||sourceCount>=2?'CON_APOYO':
+   uniqueEvents.size||parentFamilies.length?'EN_SEGUIMIENTO':'EN_FORMACIÓN';
   const rationale=kind==='vt4'?
    'Extensión física de '+(parentFamilies[0]||'madre VT3')+
    ' · '+physicalBlocks+' bloque(s) propios de cuatro cifras':
@@ -117,7 +125,7 @@ const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
    (branchBlocks?branchBlocks+' bifurcación(es) · ':'')+
    (parentFamilies.length?parentFamilies.length+' madre(s) VT3 · ':'')+
    sourceCount+' fuente(s)';
-  return {...group,paths,sourceCount,directRoots:directIds.size,d7Roots,d1Roots,
+  return {...group,paths,sourceCount,directRoots:uniqueEvents.size,d7Roots,d1Roots,
    physicalBlocks,branchBlocks,parentFamilies,state,rationale,importance,parentRank};
  });
  all.sort((a,b)=>{
