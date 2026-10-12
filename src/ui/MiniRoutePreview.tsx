@@ -14,10 +14,10 @@ export default function MiniRoutePreview({sheet,route}:{
  const color=kinds[route.kind];
  return <View style={[s.wrap,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
   <Text style={[s.heading,{color:c.text}]}>Recorrido · {route.sourceId} · {route.kind.toUpperCase()}</Text>
-  <View style={s.grid}>{column.values.flatMap((pair,r)=>[0,1].map(c=>{
-   const step=order.get(key(r,c));
-   const digit=/^\d{2}$/.test(pair)?pair[c]:'–';
-   return <View key={key(r,c)} style={[s.cell,{backgroundColor:c.cell,borderColor:c.border},step!==undefined&&{
+  <View style={s.grid}>{column.values.flatMap((pair,r)=>[0,1].map(side=>{
+   const step=order.get(key(r,side));
+   const digit=/^\d{2}$/.test(pair)?pair[side]:'–';
+   return <View key={key(r,side)} style={[s.cell,{backgroundColor:c.cell,borderColor:c.border},step!==undefined&&{
     borderColor:color.line,backgroundColor:color.fill,borderWidth:2
    }]}>
     <Text style={[s.digit,{color:step!==undefined?color.text:c.text}]}>{digit}</Text>
