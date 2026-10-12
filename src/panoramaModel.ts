@@ -4,7 +4,7 @@
 import type {DailySheet,SourceId} from './sheet';
 import type {CabezasDia,Turno} from './domain';
 import {JURS,TURNOS} from './domain';
-import type {PredictiveView} from './predictive';
+import type {LaloView,LaloKind} from './motorLalo';
 import type {Path} from './paths';
 
 export type PanoramaKind='vt2'|'vt3'|'vt4';
@@ -51,29 +51,41 @@ export function buildDailyPanorama(sheet:DailySheet,heads:CabezasDia|null):Panor
  return {routes,groups};
 }
 
-export function buildPredictivePanorama(view:PredictiveView):PanoramaData{
+/**
+ * Única visualización PRE: exactamente los recorridos que creó Motor Lalo.
+ * Los nombres de madres e hijas se agrupan por modalidad: una familia VT4 no
+ * toma prestado el respaldo de la hermana.
+ */
+export function buildPredictivePanorama(view:LaloView):PanoramaData{
  const routes:PanoramaRoute[]=[],groups:PanoramaGroup[]=[];
- // Mostrar TODAS las familias y TODAS las rutas entregadas por el motor;
- // no hay tope de cinco ni nueva selección, ni conversión VT3 -> "VT4".
- for(const family of view.hotFamilies){
-  const unique=new Map<string,PanoramaRoute>();
-  for(const r of view.routes.filter(p=>p.family===family.family)){
-   const cells=routeSteps(r.path),kind:'vt3'='vt3';
-   const key=physicalKey(kind,r.sourceId,cells);
-   if(!unique.has(key))unique.set(key,{id:key,ownerId:family.family,
-    kind,sourceId:r.sourceId,cells,readings:[],headSources:[]});
-   const item=unique.get(key)!;
-   for(const reading of [r.value,reverseString(r.value)])
-    if(!item.readings.includes(reading))item.readings.push(reading);
-   for(const a of r.antecedents){
-    const src='D−'+a.week*7+' '+a.head+' '+a.jurisdiction;
-    if(!item.headSources.includes(src))item.headSources.push(src);
+ const rootMap=new Map(view.roots.map(r=>[r.id,r]));
+ for(const kind of ['vt2','vt3','vt4'] as LaloKind[]){
+  for(const family of view.ranks[kind]){
+   const id=kind+'|'+family.family,unique=new Map<string,PanoramaRoute>();
+   for(const r of family.paths){
+    const cells=routeSteps(r.path),key=physicalKey(kind,r.sourceId,cells);
+    if(!unique.has(key))unique.set(key,{id:key,ownerId:id,kind,sourceId:r.sourceId,
+     cells,readings:[],headSources:[]});
+    const p=unique.get(key)!;
+    for(const v of [r.value,reverseString(r.value)])
+     if(!p.readings.includes(v))p.readings.push(v);
+    for(const rootId of r.rootIds){
+     const root=rootMap.get(rootId);
+     if(root){
+      const label=root.period+' · '+root.date+' · '+root.head+
+       ' · '+root.jurisdiction+' ('+root.oldTurn+')';
+      if(!p.headSources.includes(label))p.headSources.push(label);
+     }
+    }
+    for(const mother of r.mothers||[]){
+     const label='Extensión propia de madre VT3 '+mother;
+     if(!p.headSources.includes(label))p.headSources.push(label);
+    }
    }
+   routes.push(...unique.values());
+   groups.push({id,label:family.family,subtitle:family.rationale,
+    routeCount:unique.size,kinds:unique.size?[kind]:[]});
   }
-  const these=[...unique.values()];
-  routes.push(...these);
-  groups.push({id:family.family,label:family.family,subtitle:family.state,
-   routeCount:these.length,kinds:these.length?['vt3']:[]});
  }
  return {routes,groups};
 }
