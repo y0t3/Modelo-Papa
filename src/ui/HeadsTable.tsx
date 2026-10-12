@@ -11,7 +11,7 @@ import {useLaloTheme} from './LaloTheme';
 export default function HeadsTable({data,sheet}:{
  data:CabezasDia|null;sheet:DailySheet|null
 }){
- const {colors:c,kinds}=useLaloTheme();
+ const {colors:c,kinds:vtColors}=useLaloTheme();
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
   <Text style={[s.title,{color:c.text}]}>CABEZAS COMPLETAS</Text>
   <Text style={[s.note,{color:c.subtext}]}>Los colores señalan únicamente los sufijos que coincidieron físicamente en la hoja +11. Las demás cabezas permanecen visibles pero apagadas.</Text>
@@ -31,7 +31,7 @@ export default function HeadsTable({data,sheet}:{
       return <View key={t} style={[s.value,muted&&s.muted]}>
        <ColoredDigits value={h} kinds={kinds} large/>
        <View style={s.tags}>{(['vt2','vt3','vt4'] as PanoramaKind[]).filter(k=>kinds.includes(k)).map(k=>
-        <Text key={k} style={[s.tag,{color:kinds[k].line}]}>{k.toUpperCase()} </Text>)}</View>
+        <Text key={k} style={[s.tag,{color:vtColors[k].line}]}>{k.toUpperCase()} </Text>)}</View>
       </View>;
      })}
     </View>)}
