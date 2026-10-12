@@ -1,0 +1,28 @@
+name: Sellar Nocturna 12oct PRE
+on:
+  push:
+    branches: [modelo-lalo-motor-unificado-vt234]
+    paths:
+      - 'scripts/sellar-lalo-nocturna-12oct.ts'
+      - '.github/workflows/sellar-nocturna-12oct.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sell:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - name: Preparar PRE sin objetivo Nocturna
+        run: npx --yes tsx scripts/sellar-lalo-nocturna-12oct.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Modelo-Lalo-Nocturna-12oct-PRE-SELLADO
+          path: resultados/modelo-lalo-nocturna-12oct/NOCTURNA_PRE_SELLADO.json
+          retention-days: 90
+          if-no-files-found: error
