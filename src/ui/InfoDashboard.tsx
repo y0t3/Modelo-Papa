@@ -12,7 +12,7 @@ export default function InfoDashboard({turn,view}:{turn:Turno;view:LaloView|null
   <Text style={[s.sub,{color:c.subtext}]}>Turno {turn} · tres modalidades, un solo motor</Text>
   <Text style={[s.warning,{color:c.subtext,backgroundColor:c.callout}]}>La actividad de una familia describe sus recorridos y antecedentes, no su probabilidad de salir.</Text>
   {(['vt2','vt3','vt4'] as LaloKind[]).map(k=><View key={k} style={[s.section,{borderTopColor:c.divider}]}>
-   <Text style={[s.heading,{color:kinds[k].line}]}>{k.toUpperCase()} · {KIND_COLOR[k].label}</Text>
+   <Text style={[s.heading,{color:kinds[k].line}]}>{k.toUpperCase()} · {kinds[k].label}</Text>
    <Text style={[s.note,{color:c.subtext}]}>{view?.ranks[k].length||0} familias físicas candidatas</Text>
    {view?.ranks[k].slice(0,5).map(f=><View key={f.family} style={[s.family,{backgroundColor:c.card}]}>
     <Text style={[s.number,{color:c.text}]}>{f.family}</Text>
