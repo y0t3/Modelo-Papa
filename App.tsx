@@ -79,7 +79,7 @@ function LaloApp(){
  const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null)};
  const showFamily=(id:string)=>{setFocused(id);setScreen('predictiva')};
 
- return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar}/>
+ return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar} backgroundColor={c.canvas}/>
   <View style={s.nav}>{nav.map(x=><Pressable key={x.id} accessibilityRole="tab"
     accessibilityState={{selected:screen===x.id}}
     style={[s.tab,screen===x.id&&s.tabOn]}
