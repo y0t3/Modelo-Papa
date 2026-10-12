@@ -2,7 +2,13 @@ name: Build Modelo Lalo APK
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [modelo-lalo-motor-unificado-vt234]
+    paths:
+      - 'app.json'
+      - 'App.tsx'
+      - 'src/**'
+      - 'package.json'
+      - '.github/workflows/android-apk.yml'
 permissions:
   contents: read
 jobs:
