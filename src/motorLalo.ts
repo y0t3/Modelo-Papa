@@ -16,7 +16,7 @@ export type RootRef={
 export type LaloRoute={
  kind:LaloKind;family:string;value:string;sourceId:SourceId;path:Path;
  origin:'TRASLADO'|'BIFURCACIÓN'|'DESDE_VT3';
- rootIds:string[];mother?:string;addedDigit?:string;
+ rootIds:string[];mother?:string;mothers?:string[];addedDigit?:string;
 };
 export type LaloFamily={
  kind:LaloKind;family:string;rank:number;paths:LaloRoute[];
@@ -83,9 +83,9 @@ const selectKind=(families:Map<string,Working>,kind:LaloKind,value:string,source
  if(prior){
   if(rootId&&!prior.rootIds.includes(rootId))prior.rootIds.push(rootId);
   if(prior.origin!=='TRASLADO'&&origin==='TRASLADO')prior.origin=origin;
-  if(mother&&!prior.mother)prior.mother=mother;
+  if(mother){if(!prior.mother)prior.mother=mother;if(!prior.mothers)prior.mothers=prior.mother?[prior.mother]:[];if(!prior.mothers.includes(mother))prior.mothers.push(mother)}
  }else candidate.paths.set(pkey,{kind,family:f,value,sourceId:source,path,
-  origin,rootIds:rootId?[rootId]:[],mother,addedDigit:extra});
+  origin,rootIds:rootId?[rootId]:[],mother,mothers:mother?[mother]:[],addedDigit:extra});
 };
 
 const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
@@ -98,7 +98,7 @@ const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
   const d1Roots=[...directIds].filter(id=>roots.get(id)?.period==='D−1').length;
   const physicalBlocks=new Set(paths.map(p=>p.sourceId+'|'+blockKey(p.path))).size;
   const branchBlocks=new Set(paths.filter(p=>p.origin==='BIFURCACIÓN').map(p=>p.sourceId+'|'+blockKey(p.path))).size;
-  const parentFamilies=[...new Set(paths.flatMap(p=>p.mother?[p.mother]:[]))].sort();
+  const parentFamilies=[...new Set(paths.flatMap(p=>p.mothers|| (p.mother?[p.mother]:[])))].sort();
   const parentRank=kind==='vt4'?Math.min(...parentFamilies.map(p=>motherRanks?.get(p)||99)):99;
   // Descriptivos, NO probabilidades ni pesos entrenados.
   // VT3: priorizar bifurcaciones verdaderas; D−1 y D−7 aportan raíces, no votos por recorrido.
@@ -142,6 +142,7 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
  for(const historic of historical){
   for(const t of TURNOS)for(const match of historic.sheet.matches[t]||[])
    for(const hit of match.hits){
+    if(match.jurisdiccion==='Montevideo')continue; // solo geometría del +11
     if(hit.kind!=='vt2'&&hit.kind!=='vt3')continue;
     const column=visible.find(x=>x.id===hit.sourceId);
     if(!column)continue;
