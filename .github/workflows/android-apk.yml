@@ -1,8 +1,8 @@
-name: Build Modelo Papa APK
+name: Build Modelo Lalo APK
 on:
   workflow_dispatch:
   push:
-    branches: [main, experimento-analisis-visual-5d]
+    branches: [main]
 permissions:
   contents: read
 jobs:
@@ -21,27 +21,25 @@ jobs:
         run: npm install
       - name: TypeScript check
         run: npx tsc --noEmit
-      - name: Visual 5D smoke tests
-        run: node scripts/test-visual5d.cjs
-      - name: Panoramic whole-sheet geometry tests
-        run: node scripts/test-panorama-visual.cjs
-      - name: Generate Android project
+      - name: Pruebas motor Lalo VT2 VT3 VT4
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+            - name: Generate Android project
         env:
           CI: '1'
         run: npx expo prebuild --platform android --clean
-      - name: Create Modelo Papa launcher icon
+      - name: Create Modelo Lalo launcher icon
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq imagemagick
-          mkdir -p /tmp/modelo-papa-icon
-          convert -size 1024x1024 xc:'#321066' -gravity center -fill white -font DejaVu-Sans-Bold -pointsize 300 -annotate +0+15 'MP' /tmp/modelo-papa-icon/icon.png
+          mkdir -p /tmp/modelo-lalo-icon
+          convert -size 1024x1024 xc:'#321066' -gravity center -fill white -font DejaVu-Sans-Bold -pointsize 300 -annotate +0+15 'ML' /tmp/modelo-lalo-icon/icon.png
           for spec in 'mipmap-mdpi 48' 'mipmap-hdpi 72' 'mipmap-xhdpi 96' 'mipmap-xxhdpi 144' 'mipmap-xxxhdpi 192'; do
             set -- $spec
             dir=$1
             size=$2
             mkdir -p android/app/src/main/res/$dir
             rm -f android/app/src/main/res/$dir/ic_launcher.webp android/app/src/main/res/$dir/ic_launcher_round.webp android/app/src/main/res/$dir/ic_launcher.png android/app/src/main/res/$dir/ic_launcher_round.png
-            convert /tmp/modelo-papa-icon/icon.png -resize ${size}x${size} PNG24:android/app/src/main/res/$dir/ic_launcher.png
+            convert /tmp/modelo-lalo-icon/icon.png -resize ${size}x${size} PNG24:android/app/src/main/res/$dir/ic_launcher.png
             cp android/app/src/main/res/$dir/ic_launcher.png android/app/src/main/res/$dir/ic_launcher_round.png
           done
       - name: Build standalone release APK
@@ -52,6 +50,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Modelo-Papa-APK
+          name: Modelo-Lalo-APK
           path: android/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
