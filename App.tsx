@@ -17,6 +17,7 @@ import PredictionSummary from './src/ui/PredictionSummary';
 import HeadsTable from './src/ui/HeadsTable';
 import InfoDashboard from './src/ui/InfoDashboard';
 import TurnStrip from './src/ui/TurnStrip';
+import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 
 type Screen='hoja'|'predictiva'|'prediccion'|'cabezas'|'info';
 const nav: {id:Screen;label:string}[]=[
@@ -25,7 +26,8 @@ const nav: {id:Screen;label:string}[]=[
  {id:'info',label:'INFO'}
 ];
 const today=()=>new Date().toISOString().slice(0,10);
-export default function App(){
+function LaloApp(){
+ const {mode,colors:c,toggle}=useLaloTheme();
  const [screen,setScreen]=useState<Screen>('hoja');
  const [dateText,setDateText]=useState(isoToDisplay(today()));
  const [data,setData]=useState<CabezasDia|null>(null);
@@ -77,43 +79,53 @@ export default function App(){
  const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null)};
  const showFamily=(id:string)=>{setFocused(id);setScreen('predictiva')};
 
- return <SafeAreaView style={s.safe}><StatusBar style="light"/>
+ return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar}/>
   <View style={s.nav}>{nav.map(x=><Pressable key={x.id} accessibilityRole="tab"
     accessibilityState={{selected:screen===x.id}}
     style={[s.tab,screen===x.id&&s.tabOn]}
     onPress={()=>{setScreen(x.id);if(x.id==='hoja')setFocused(null)}}>
     <Text style={s.tabText} numberOfLines={1} adjustsFontSizeToFit>{x.label}</Text>
    </Pressable>)}</View>
-  <ScrollView contentContainerStyle={s.content}>
-   <Text style={s.title}>MODELO LALO</Text>
-   <Text style={s.subtitle}>Cuaderno visual +11 · VT2 / VT3 / VT4</Text>
-   <View style={s.selector}>
-    <Text style={s.label}>Fecha del tablero</Text>
+  <ScrollView style={{backgroundColor:c.canvas}} contentContainerStyle={s.content}>
+   <View style={s.header}>
+    <View style={s.headerLeft}/>
+    <View style={{flex:1}}>
+     <Text style={[s.title,{color:c.text}]}>MODELO LALO</Text>
+     <Text style={s.subtitle}>Cuaderno visual +11 · VT2 / VT3 / VT4</Text>
+    </View>
+    <Pressable accessibilityRole="switch" accessibilityLabel="Modo oscuro"
+     accessibilityState={{checked:mode==='dark'}} onPress={toggle}
+     style={[s.modeButton,{backgroundColor:c.card,borderColor:c.border}]}>
+     <Text style={[s.modeLabel,{color:c.text}]}>{mode==='dark'?'☾ Oscuro':'☀ Claro'}</Text>
+    </Pressable>
+   </View>
+   <View style={[s.selector,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
+    <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
     <DateField value={dateText} onChange={value=>{
      setDateText(value);setData(null);setSheet(null);setHist([]);setFocused(null);
     }}/>
     <View style={s.shortcuts}>
-     <Pressable style={s.shortcut} onPress={()=>move(-1)}><Text style={s.shortText}>← Día</Text></Pressable>
-     <Pressable style={s.shortcut} onPress={()=>{if(date)void cargar(shiftDay(date,-7))}}><Text style={s.shortText}>D−7</Text></Pressable>
-     <Pressable style={s.shortcut} onPress={()=>move(1)}><Text style={s.shortText}>Día →</Text></Pressable>
+     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(-1)}><Text style={[s.shortText,{color:c.accent}]}>← Día</Text></Pressable>
+     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>{if(date)void cargar(shiftDay(date,-7))}}><Text style={[s.shortText,{color:c.accent}]}>D−7</Text></Pressable>
+     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(1)}><Text style={[s.shortText,{color:c.accent}]}>Día →</Text></Pressable>
     </View>
-    <Pressable style={s.reload} onPress={()=>{void cargar()}} disabled={busy}>
+    <Pressable style={[s.reload,{backgroundColor:c.button}]} onPress={()=>{void cargar()}} disabled={busy}>
      {busy?<ActivityIndicator color="#fff"/>:<Text style={s.reloadText}>↻ ACTUALIZAR HOJA</Text>}
     </Pressable>
    </View>
    {screen==='hoja'?
     sheet&&hoja?<PanoramaSheet mode="hoja" sheet={sheet} data={hoja}
      onInfo={()=>setScreen('info')}/>:
-    <Text style={s.empty}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
+    <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
    :screen==='predictiva'?<>
-    <Text style={s.heading}>Turno que queremos anticipar</Text>
+    <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
     {sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet}
      data={predictiva} target={target} focusedOwner={focused}
      onInfo={()=>setScreen('info')}/>:
-     <Text style={s.empty}>Cargá una hoja para ver las rutas que propone el motor Lalo.</Text>}
+     <Text style={[s.empty,{color:c.subtext}]}>Cargá una hoja para ver las rutas que propone el motor Lalo.</Text>}
    </>:screen==='prediccion'?<>
-    <Text style={s.heading}>Turno que queremos anticipar</Text>
+    <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
     <PredictionSummary date={dateText} turn={target} view={motor}
      post={post} onFocus={showFamily}/>
@@ -123,8 +135,14 @@ export default function App(){
   </ScrollView>
  </SafeAreaView>;
 }
+export default function App(){return <LaloThemeProvider><LaloApp/></LaloThemeProvider>}
 const insets=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+7:7;
 const s=StyleSheet.create({
+ header:{flexDirection:'row',alignItems:'center',gap:6,marginBottom:11},
+ headerLeft:{width:66},
+ modeButton:{minWidth:66,borderWidth:1,borderRadius:10,paddingHorizontal:5,paddingVertical:8,alignItems:'center'},
+ modeLabel:{fontSize:11,fontWeight:'900'},
+
  safe:{flex:1,backgroundColor:'#0c0812',paddingTop:insets},
  nav:{flexDirection:'row',backgroundColor:'#140d20',gap:3,paddingHorizontal:5,paddingVertical:9},
  tab:{flex:1,alignItems:'center',justifyContent:'center',borderRadius:8,paddingVertical:11},
