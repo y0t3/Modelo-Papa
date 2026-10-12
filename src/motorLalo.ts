@@ -115,7 +115,7 @@ const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
    kind==='vt2'?
    [directIds.size>0?1:0,Math.min(d1Roots,10),Math.min(d7Roots,10),parentFamilies.length,sourceCount,physicalBlocks]:
    [-parentRank,sourceCount,physicalBlocks,Math.min(parentFamilies.length,5)];
-  const state=uniqueEvents.size>=2||sourceCount>=2?'CON_APOYO':
+  const state:LaloFamily['state']=uniqueEvents.size>=2||sourceCount>=2?'CON_APOYO':
    uniqueEvents.size||parentFamilies.length?'EN_SEGUIMIENTO':'EN_FORMACIÓN';
   const rationale=kind==='vt4'?
    'Extensión física de '+(parentFamilies[0]||'madre VT3')+
