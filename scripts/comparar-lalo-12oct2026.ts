@@ -133,5 +133,11 @@ function post(){
  writeFileSync(join(dir,'DIAGNOSTICO_POR_CABEZA.csv'),csv.join('\n')+'\n');
  console.log('BALANCE_CUATRO_TURNOS',JSON.stringify(totals));
 }
-const mode=process.argv[2];if(mode==='prepare')await prepare();else if(mode==='pre')pre();
-else if(mode==='post')post();else throw Error('Usar prepare|pre|post');
+async function main(){
+ const mode=process.argv[2];
+ if(mode==='prepare')await prepare();
+ else if(mode==='pre')pre();
+ else if(mode==='post')post();
+ else throw Error('Usar prepare|pre|post');
+}
+void main().catch(e=>{console.error(e);process.exitCode=1});
