@@ -159,7 +159,7 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
       .find(x=>x.id===hit.sourceId);
      // La huella antigua debe coincidir REALMENTE con una cabeza completa
      // anterior y con los dígitos físicos de su fuente, no sólo con su forma.
-     if(!oldColumn||!/^\\d{4}$/.test(match.cabeza)||
+     if(!oldColumn||!/^\d{4}$/.test(match.cabeza)||
       !match.cabeza.endsWith(hit.value)||
       !valid(oldPath,Number(hit.kind.slice(-1)))||
       pathValue(oldPath)!==hit.value||
