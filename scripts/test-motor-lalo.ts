@@ -4,7 +4,7 @@ import type {DailySheet,SheetColumn,Match} from '../src/sheet';
 import type {Path} from '../src/paths';
 import {TURNOS} from '../src/domain';
 
-const pairs=['76','42','93','21','34','56'];
+const pairs=['76','48','93','21','34','56'];
 const names:SheetColumn['id'][]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
 const columns:SheetColumn[]=names.map((id,i)=>({id,turno:TURNOS[i],sourceLabel:id,
  values:i===0?pairs:['--','--','--','--','--','--']}));
@@ -29,6 +29,19 @@ assert.ok(a.ranks.vt3.some(f=>f.family==='749/947'),'VT3 trasladada sin inventar
 assert.ok(a.ranks.vt2.some(f=>f.family==='47/74'||f.family==='49/94'),'VT2 propia o derivada de una ruta');
 assert.ok(a.ranks.vt4.some(f=>f.family===reversibleFamily('7492')),
  'VT4 sólo si hay ruta de cuatro celdas');
+const selectedMother='749/947';
+const daughterB=reversibleFamily('7492'),daughterA=reversibleFamily('2749');
+assert.ok(a.ranks.vt4.some(f=>f.family===daughterB&&
+ f.paths.some(p=>(p.mothers||[]).includes(selectedMother))),
+ 'La hija B tiene testigo VT4 propio');
+assert.ok(!a.ranks.vt4.some(f=>f.family===daughterA&&
+ f.paths.some(p=>(p.mothers||[]).includes(selectedMother))),
+ 'La hija A no puede tomar prestado el recorrido físico de su hermana');
+const future=makeSheet('7492');
+future.columns[2].values=['99','99','99','99','99','99'];
+future.columns[4].values=['11','11','11','11','11','11'];
+assert.deepEqual(a,buildMotorLalo(future,'2026-10-12','Primera',[historical]),
+ 'Ni las columnas del futuro ni los resultados objetivo participan en PRE');
 for(const k of ['vt2','vt3','vt4'] as const)for(const f of a.ranks[k]){
  assert.ok(f.paths.every(p=>p.sourceId==='prevNocturno'),'nunca cruzar fuentes');
  assert.ok(f.paths.every(p=>new Set(p.path.map(c=>c.row+':'+c.col)).size===p.path.length),
