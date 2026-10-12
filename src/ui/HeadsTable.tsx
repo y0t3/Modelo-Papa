@@ -5,23 +5,24 @@ import type {CabezasDia} from '../domain';
 import {JURS,TURNOS} from '../domain';
 import type {PanoramaKind} from '../panoramaModel';
 import {ColoredDigits} from './HighlightedHead';
-import {KIND_COLOR} from './visualTokens';
+import {useLaloTheme} from './LaloTheme';
 
 /** La tabla de cabezas no es un ranking: muestra también las que no coincidieron. */
 export default function HeadsTable({data,sheet}:{
  data:CabezasDia|null;sheet:DailySheet|null
 }){
- return <View style={s.surface}>
-  <Text style={s.title}>CABEZAS COMPLETAS</Text>
-  <Text style={s.note}>Los colores señalan únicamente los sufijos que coincidieron físicamente en la hoja +11. Las demás cabezas permanecen visibles pero apagadas.</Text>
+ const {colors:c,kinds}=useLaloTheme();
+ return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
+  <Text style={[s.title,{color:c.text}]}>CABEZAS COMPLETAS</Text>
+  <Text style={[s.note,{color:c.subtext}]}>Los colores señalan únicamente los sufijos que coincidieron físicamente en la hoja +11. Las demás cabezas permanecen visibles pero apagadas.</Text>
   <ScrollView horizontal showsHorizontalScrollIndicator>
    <View>
-    <View style={s.row}>
-     <Text style={[s.first,s.header]}>Jurisdicción</Text>
-     {TURNOS.map(t=><Text key={t} style={[s.cell,s.header]}>{t}</Text>)}
+    <View style={[s.row,{borderBottomColor:c.divider}]}>
+     <Text style={[s.first,s.header,{color:c.subtext}]}>Jurisdicción</Text>
+     {TURNOS.map(t=><Text key={t} style={[s.cell,s.header,{color:c.subtext}]}>{t}</Text>)}
     </View>
-    {JURS.map(j=><View key={j} style={s.row}>
-     <Text style={[s.first,s.jur]}>{j}</Text>
+    {JURS.map(j=><View key={j} style={[s.row,{borderBottomColor:c.divider}]}>
+     <Text style={[s.first,s.jur,{color:c.text}]}>{j}</Text>
      {TURNOS.map(t=>{
       const h=data?.[t]?.[j]||'----';
       const hits=sheet?.matches[t]?.filter(m=>m.cabeza===h&&m.jurisdiccion===j)||[];
@@ -30,7 +31,7 @@ export default function HeadsTable({data,sheet}:{
       return <View key={t} style={[s.value,muted&&s.muted]}>
        <ColoredDigits value={h} kinds={kinds} large/>
        <View style={s.tags}>{(['vt2','vt3','vt4'] as PanoramaKind[]).filter(k=>kinds.includes(k)).map(k=>
-        <Text key={k} style={[s.tag,{color:KIND_COLOR[k].line}]}>{k.toUpperCase()} </Text>)}</View>
+        <Text key={k} style={[s.tag,{color:kinds[k].line}]}>{k.toUpperCase()} </Text>)}</View>
       </View>;
      })}
     </View>)}
