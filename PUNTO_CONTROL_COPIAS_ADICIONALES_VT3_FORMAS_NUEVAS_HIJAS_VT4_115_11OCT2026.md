@@ -39,18 +39,20 @@ Orden anterior `D7D1_overlap` congelado vs nueva prioridad descriptiva a **hija 
 | Top10 × 2 | **3** | **3** | **3,88** |
 | Top10 × 3 | **5** | **6** | **5,73** |
 
+**Corrección crítica — grupo madre+cifra frente a hija física específica:** En Top10×3, el orden anterior obtuvo **5 coincidencias de grupo, de las cuales 4 tenían testigo VT4 físico para la hija que salió y 1 era sólo numérica**; el orden de formas nuevas obtuvo **6 coincidencias de grupo, de las cuales también sólo 4 tenían testigo físico para la hija que salió y 2 eran sólo numéricas**. Por lo tanto, **no hubo aumento en los cortes con acierto físicamente respaldado (4→4)**. La coincidencia `4283` del 26/09 es una de las numéricas, porque la forma nueva generó su hermana `4382`, no la hija coincidente. Nunca trasladar testigos de una hermana a la otra. Este detalle prevalece sobre cualquier lectura numérica favorable del Top.
+
 Son **cortes con ≥1 cabeza completa cubierta**, de 115. Para Top10 × 3, **dos cortes rescatados y uno perdido**, delta **+1**; bootstrap descriptivo agrupado en las **23 jornadas** **[−2,+4]**, sin señal predictiva robusta. Promedio de valores distintos cubiertos Top10 × 3: antiguo **102,17**, nuevo **105,54**. Más cobertura es un posible confundidor. No afirmar que las formas nuevas anticipen sorteos.
 
 ### Casos obligatorios, positivos y negativos
 
-- **26/09 Nocturno:** madre `283/382` puesto 7, cifra `4` asciende del 5.º al 3.º; resultado POST `4283`. Una forma adicional aporta un testigo físico exclusivo de la hija reversible `2834/4382` (inversa del `4283` entre las lecturas propuestas).
+- **26/09 Nocturno — coincidencia exclusivamente NUMÉRICA:** madre `283/382` puesto 7, cifra `4` asciende del 5.º al 3.º; resultado POST `4283`. La forma nueva **NO** genera físicamente `4283/3824`: genera su **OTRA hija hermana** `4382/2834`. `4283` entra por la cobertura del grupo madre+cifra, sin recorrido VT4 de esa hija. **PROHIBIDO contabilizarlo como acierto físico**.
 - **29/09 Nocturno:** madre `243/342` puesto 10, cifra `7` asciende del 5.º al 2.º; cabeza POST `7342`; dos huellas VT4 de forma nueva para hija reversible `2437/7342`, no disponible desde padre heredado.
 - **19/09 Nocturno, negativo:** madre `109/901`, cifra `4` baja del 1.º al 3.º; se pierde `4109` en cupo 1 y 2 aunque hay caminos de procedencia heredada y nueva.
 - **05/10 Matutina, negativo:** madre `729/927`, cifra `3` baja del 3.º al 5.º; se pierde `3729` con Top10 × 3. Ambas hermanas físicas `3729/3927` ya estaban presentes por extensiones **heredadas**. No adjudicar retroactivamente como acierto nuevo.
 
 ## Reproducibilidad, visor y restricciones
 
-Paquete creado en la conversación: **`modelo-papa-copias-fisicas-nuevas-vt3-vt4-115-cortes-11oct2026.zip`**, 15 archivos, **3.245.913 bytes**, SHA256 **`c17ef404e079341110cfb0c5ecb02b7b569746cae36a4f86321b12a942413fcb`**. ZIP `testzip()` pasó; su contenido fue copiado a carpeta aislada **SIN POST** para fase PRE, SHA generado idéntico; al incorporar POST se reprodujeron idénticamente hashes POST, controles, CSV y ambos visores. Sin dependencias externas: Python 3 estándar.
+Paquete **corregido y reproducido después de auditar las dos hijas individualmente**: **`modelo-papa-copias-fisicas-nuevas-vt3-vt4-115-cortes-11oct2026-v2.zip`**, 15 archivos, **3.249.690 bytes**, SHA256 **`e9f94de533bbab7bb12c5c3224c218dc67b22143c256dcfb694996ff9eb1f6dc`**. **POST SHA256 corregido `60ecb366db118fc86793105804db69c91183d2f9b19d9cf16448d322acdf2153`**; el PRE mantiene su hash sin cambios. ZIP `testzip()` pasó; su contenido fue copiado a carpeta aislada **SIN POST** para fase PRE, SHA generado idéntico; al incorporar POST se reprodujeron idénticamente hashes POST, controles, CSV y ambos visores. Sin dependencias externas: Python 3 estándar.
 
 Incluye `INPUT_PRE.json`, `PRE_MOVIMIENTOS.json`, `RESULTADOS_POST.json` separado, `analizar_copias.py` (`pre`/`post`), `verificar.py`, `controles.py`, `generar_visores.py`, `PRE_COPIAS.json`, `POST_COPIAS.json`, `BALANCE_115.csv`, informe, instrucciones y `VISOR_COPIAS_PRE_115.html`/`VISOR_COPIAS_POST_115.html`. Las vistas están empaquetadas con **115 casos**; los controles interactivos se probaron **en una copia representativa del caso 05/10** usando Chromium/Playwright `set_content` con cambio de madre, cifra y rutas, sin errores JS, no se declara verificada la apertura íntegra 115 casos en el navegador local debido al bloqueo de `file://` del entorno.
 
