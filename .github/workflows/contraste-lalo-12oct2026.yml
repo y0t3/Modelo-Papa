@@ -1,0 +1,37 @@
+name: Contraste 12oct Previa a Vespertina
+on:
+  push:
+    branches: [modelo-lalo-motor-unificado-vt234]
+    paths:
+      - scripts/comparar-lalo-12oct2026.ts
+      - .github/workflows/contraste-lalo-12oct2026.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sealed-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - name: Obtener cabezas oficiales y preparar PRE/POST en archivos separados
+        run: npx --yes tsx scripts/comparar-lalo-12oct2026.ts prepare
+      - name: Retirar físicamente los resultados del 12/10, y sellar PRE
+        run: |
+          mv resultados/modelo-lalo-12oct2026/OBJETIVOS_POST.json /tmp/lalo-objetivos-12oct.json
+          test ! -e resultados/modelo-lalo-12oct2026/OBJETIVOS_POST.json
+          npx --yes tsx scripts/comparar-lalo-12oct2026.ts pre
+      - name: Reintroducir resultados y comparar sin reordenar candidatos
+        run: |
+          mv /tmp/lalo-objetivos-12oct.json resultados/modelo-lalo-12oct2026/OBJETIVOS_POST.json
+          npx --yes tsx scripts/comparar-lalo-12oct2026.ts post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Modelo-Lalo-12oct-Vespertina-PRE-POST
+          path: resultados/modelo-lalo-12oct2026
+          if-no-files-found: error
+          retention-days: 30
