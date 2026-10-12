@@ -155,7 +155,15 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
     const column=visible.find(x=>x.id===hit.sourceId);
     if(!column)continue;
     for(const oldPath of hit.paths){
-     if(!valid(oldPath,Number(hit.kind.slice(-1))))continue;
+     const oldColumn=historic.sheet.columns.slice(0,TURNOS.indexOf(t)+1)
+      .find(x=>x.id===hit.sourceId);
+     // La huella antigua debe coincidir REALMENTE con una cabeza completa
+     // anterior y con los dígitos físicos de su fuente, no sólo con su forma.
+     if(!oldColumn||!/^\\d{4}$/.test(match.cabeza)||
+      !match.cabeza.endsWith(hit.value)||
+      !valid(oldPath,Number(hit.kind.slice(-1)))||
+      pathValue(oldPath)!==hit.value||
+      oldPath.some(c=>oldColumn.values[c.row]?.[c.col]!==c.digit))continue;
      const id=[historic.date,historic.period,t,match.jurisdiccion,match.cabeza,
       hit.kind,hit.sourceId,reverseKey(oldPath)].join('|');
      if(!roots.has(id))roots.set(id,{id,period:historic.period,date:historic.date,
