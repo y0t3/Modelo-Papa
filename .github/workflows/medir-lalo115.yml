@@ -1,0 +1,39 @@
+name: Medicion Lalo historica 115 cortes
+on:
+  push:
+    branches: [modelo-lalo-motor-unificado-vt234]
+    paths:
+      - 'scripts/replay-lalo115.ts'
+      - 'src/motorLalo.ts'
+      - 'fixtures/**'
+      - '.github/workflows/medir-lalo115.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay115:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - name: Preparar entradas PRE y resultados POST separados
+        run: npx --yes tsx scripts/replay-lalo115.ts prepare
+      - name: Sellar PRE sin archivo POST presente
+        run: |
+          mv resultados/replay-lalo-115/OBJETIVOS_POST_115.json /tmp/objetivos-lalo-115.json
+          test ! -e resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          npx --yes tsx scripts/replay-lalo115.ts pre
+      - name: Cotejar resultados solo despues del sellado PRE
+        run: |
+          mv /tmp/objetivos-lalo-115.json resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          npx --yes tsx scripts/replay-lalo115.ts post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Modelo-Lalo-medicion-115-PRE-POST
+          path: resultados/replay-lalo-115/
+          retention-days: 30
+          if-no-files-found: error
