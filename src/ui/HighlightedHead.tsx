@@ -1,55 +1,54 @@
 import React from 'react';
 import {Pressable,View,Text,StyleSheet} from 'react-native';
 import type {PanoramaGroup,PanoramaKind} from '../panoramaModel';
-import {KIND_COLOR,KINDS,strongestKind} from './visualTokens';
+import {KINDS,strongestKind} from './visualTokens';
+import {useLaloTheme} from './LaloTheme';
 
-/** En cabezas ABCD solo se resalta el SUFIJO comprobado: CD / BCD / ABCD. */
 export function ColoredDigits({value,kinds,large=false}:{
  value:string;kinds:PanoramaKind[];large?:boolean
 }){
+ const {colors,kinds:tokens}=useLaloTheme();
  const kind=strongestKind(kinds);
- const numeric=/^\d{4}$/.test(value);
  const n=kind==='vt4'?4:kind==='vt3'?3:kind==='vt2'?2:0;
- if(!numeric||!n)return <Text style={[s.number,large&&s.large]}>{value}</Text>;
- return <Text style={[s.number,large&&s.large]}>
-  {value.slice(0,4-n)}
-  <Text style={{color:KIND_COLOR[kind!].line,
-   backgroundColor:KIND_COLOR[kind!].fill,textDecorationLine:'underline'}}>
-   {value.slice(4-n)}
-  </Text>
+ const textStyle={fontSize:large?20:16,fontWeight:'900' as const,color:colors.text,letterSpacing:1};
+ if(!/^\d{4}$/.test(value)||!n)return <Text style={textStyle}>{value}</Text>;
+ return <Text style={textStyle}>{value.slice(0,4-n)}
+  <Text style={{color:tokens[kind!].text,backgroundColor:tokens[kind!].fill,
+   textDecorationLine:'underline'}}>{value.slice(4-n)}</Text>
  </Text>;
 }
-
-export default function HighlightedHead({group,active,onPress,mode}:{
- group:PanoramaGroup;active:boolean;onPress:()=>void;mode:'hoja'|'predictiva'
+export default function HighlightedHead({group,active,onPress,mode,layout='carousel'}:{
+ group:PanoramaGroup;active:boolean;onPress:()=>void;mode:'hoja'|'predictiva';
+ layout?:'carousel'|'grid'
 }){
+ const {colors:c,kinds}=useLaloTheme();
  const empty=group.routeCount===0;
  return <Pressable onPress={onPress} accessibilityRole="button"
   accessibilityLabel={group.label+(empty?', sin coincidencia':', '+group.kinds.join(', '))}
   accessibilityState={{selected:active}}
-  style={[s.card,active&&s.active,empty&&s.faded]}>
-  {mode==='hoja'?
-   <ColoredDigits value={group.label} kinds={group.kinds} large/>:
-   <Text style={[s.number,s.large]}>{group.label}</Text>}
-  <Text style={s.subtitle} numberOfLines={1}>{group.subtitle}</Text>
-  {empty?<Text style={s.empty}>Sin marca</Text>:
+  style={[s.card,{backgroundColor:active?c.selected:c.card,borderColor:active?c.accent:c.border},
+   layout==='grid'?s.gridCard:s.carouselCard,active&&s.active,empty&&s.faded]}>
+  {mode==='hoja'?<ColoredDigits value={group.label} kinds={group.kinds} large/>:
+   <Text numberOfLines={1} adjustsFontSizeToFit style={[s.number,{color:c.text}]}>{group.label}</Text>}
+  <Text style={[s.subtitle,{color:c.subtext}]} numberOfLines={2}>{group.subtitle}</Text>
+  {empty?<Text style={[s.empty,{color:c.muted}]}>Sin marca</Text>:
    <View style={s.modes}>{KINDS.filter(k=>group.kinds.includes(k)).map(k=>
-    <View key={k} style={[s.kind,{borderColor:KIND_COLOR[k].line,backgroundColor:KIND_COLOR[k].fill}]}>
-     <Text style={{fontSize:9,fontWeight:'900',color:KIND_COLOR[k].line}}>{k.toUpperCase()}</Text>
+    <View key={k} style={[s.kind,{borderColor:kinds[k].line,backgroundColor:kinds[k].fill}]}>
+     <Text style={{fontSize:9,fontWeight:'900',color:kinds[k].text}}>{k.toUpperCase()}</Text>
     </View>)}</View>}
-  {group.routeCount>0?<Text style={s.count}>{group.routeCount} recorrido(s) físicos</Text>:null}
+  {group.routeCount>0?<Text style={[s.count,{color:c.subtext}]}>{group.routeCount} recorrido(s)</Text>:null}
  </Pressable>;
 }
 const s=StyleSheet.create({
- card:{width:116,minHeight:104,backgroundColor:'#fff',borderWidth:1,borderColor:'#ddd4e3',
-  borderRadius:10,padding:9,marginRight:8},
- active:{borderColor:'#6542a1',borderWidth:2,backgroundColor:'#f3eaff'},
- faded:{opacity:.5},
- number:{color:'#2c2240',fontSize:16,fontWeight:'900',letterSpacing:1},
- large:{fontSize:20},
- subtitle:{fontSize:10,color:'#766a7d',marginTop:4},
- modes:{flexDirection:'row',flexWrap:'wrap',gap:3,marginTop:6},
- kind:{borderWidth:1,borderRadius:4,paddingHorizontal:4,paddingVertical:2},
- count:{fontSize:9,color:'#6d6179',marginTop:6},
- empty:{fontSize:10,color:'#98909f',marginTop:9}
+ card:{minHeight:106,borderWidth:1,borderRadius:11,padding:10,justifyContent:'flex-start'},
+ carouselCard:{width:116,marginRight:8},
+ gridCard:{width:'48.3%',marginBottom:8},
+ active:{borderWidth:2},
+ faded:{opacity:.55},
+ number:{fontSize:20,fontWeight:'900',letterSpacing:.5},
+ subtitle:{fontSize:10,marginTop:5,lineHeight:14},
+ modes:{flexDirection:'row',flexWrap:'wrap',gap:4,marginTop:7},
+ kind:{borderWidth:1,borderRadius:4,paddingHorizontal:5,paddingVertical:2},
+ count:{fontSize:10,marginTop:7},
+ empty:{fontSize:10,marginTop:9}
 });
