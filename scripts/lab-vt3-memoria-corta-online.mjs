@@ -164,11 +164,9 @@ function post(){
   for(let k=0;k<book.length;k++){
    assert.equal(book[k].date,observedTrain[k].date);
    assert.equal(book[k].turn,observedTrain[k].turn);
-   assert.deepEqual(book[k].observedPhysicalPositives,
-    observedTrain[k].positives.map(x=>x.family).sort((a,b)=>
-     // Ordering may differ, so compare only sorted copies outside.
-     0
-    ).slice().sort(), 'Docente anterior contradice cabezas físicas');
+   assert.deepEqual([...book[k].observedPhysicalPositives].sort(),
+    observedTrain[k].positives.map(x=>x.family).sort(),
+    'Docente anterior contradice cabezas físicas');
   }
   const baseExamples=book.flatMap(x=>x.exemplars.map(z=>({
    ...z,i:trainIds.find(i=>src.rows[i].date===x.date&&src.rows[i].turn===x.turn),
