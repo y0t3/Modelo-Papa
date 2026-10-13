@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-13",
+  "turn": "Matutino",
+  "state": "POST_PARCIAL_1_DE_5_NO_FINAL",
+  "sealedPreSha256": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+  "sealedAtArgentina": "2026-10-13T13:52:03-03:00",
+  "observedAtArgentina": "2026-10-13T15:40:00-03:00",
+  "entries": [
+    {
+      "jurisdiction": "Córdoba",
+      "head": "2413",
+      "suffixVt3": "413",
+      "reversibleFamily": "314/413",
+      "physicalPaths": 0,
+      "rootedPaths": 0,
+      "rank": null,
+      "top3Hit": false,
+      "top5Hit": false,
+      "top10Hit": false,
+      "reason": "No hay un recorrido de 3 celdas vecinas de familia 314/413 en ninguna fuente sellada: prevNocturno carece de 3 dígitos adecuados, Previa no tiene dígito 1, Primera no tiene dígitos 3 ni 4.",
+      "sources": [
+        "https://www.cadena3.com/noticia/sociedad/quiniela-matutina-conoce-los-numeros-ganadores-de-hoy-martes-13-de-octubre_602995"
+      ]
+    }
+  ],
+  "pending": [
+    "Ciudad",
+    "Provincia",
+    "Santa Fé",
+    "Entre Ríos"
+  ],
+  "metric_note": "NO calcular Top3/Top5/Top10 total del turno con una sola de cinco cabezas. El corte se considera incompleto hasta recibir y verificar las restantes.",
+  "seal_immutable": true
+}
