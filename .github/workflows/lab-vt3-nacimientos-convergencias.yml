@@ -1,0 +1,47 @@
+name: VT3 nacimientos y convergencias físicas
+on:
+  push:
+    branches: [lab-vt3-nacimientos-convergencias-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-nacimientos-convergencias.mjs'
+      - 'PROTOCOLO_VT3_NACIMIENTOS_CONVERGENCIAS_13OCT2026.md'
+      - '.github/workflows/lab-vt3-nacimientos-convergencias.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  auditar-nacimientos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar POST físicamente
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/nacimientos-vt3-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/nacimientos-vt3-nocturna-post.json
+      - name: Validar retención de rutas y producir PRE de las once reglas
+        run: node scripts/lab-vt3-nacimientos-convergencias.mjs pre
+      - name: Contrastar PRE sellado contra resultados del pasado
+        run: |
+          mv /tmp/nacimientos-vt3-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/nacimientos-vt3-nocturna-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          node scripts/lab-vt3-nacimientos-convergencias.mjs post
+      - name: Guardar auditoría descargable
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-nacimientos-convergencias-115
+          path: auditorias/vt3-nacimientos-convergencias-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Conservar sellos, PRE y POST en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-nacimientos-convergencias-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): inventario de estados físicos, políticas y controles históricos'
+            git push origin HEAD:lab-vt3-nacimientos-convergencias-13oct2026
+          fi
