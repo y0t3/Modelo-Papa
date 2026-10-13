@@ -1,0 +1,61 @@
+name: VT4 diversidad Top10 madres y cifras fisicas
+on:
+  push:
+    branches: [lab-vt4-diversidad-madres-top10-13oct2026]
+    paths:
+      - 'scripts/lab-vt4-diversidad-top10.mjs'
+      - 'PROTOCOLO_VT4_DIVERSIDAD_MADRES_TOP10_13OCT2026.md'
+      - '.github/workflows/lab-vt4-diversidad-top10.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  vt4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Compilar VT4 corregido
+        run: |
+          npm install --no-audit --no-fund
+          npx tsc --noEmit
+      - name: Separar insumos historicos PRE y POST del fixture original
+        run: node scripts/lab-vt4-diversidad-top10.mjs prepare
+      - name: Sacar fisicamente POST y fixture con resultados de la fase PRE
+        run: |
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt4-diversidad-post.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt4-diversidad-fixture.b64
+          test ! -f auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          test ! -f fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+      - name: Construir Top10 de siete politicas PRE sin conocer cabezas
+        run: node scripts/lab-vt4-diversidad-top10.mjs pre
+      - name: Versionar PRE y sello ANTES de evaluar
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-diversidad-madres-top10-115-13oct2026/INPUT_PRE_115.json
+          git add auditorias/vt4-diversidad-madres-top10-115-13oct2026/PRE_115.json
+          git add auditorias/vt4-diversidad-madres-top10-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT4): siete repartos de diez plazas para 115 cortes sin POST'
+          git push origin HEAD:lab-vt4-diversidad-madres-top10-13oct2026
+      - name: Restaurar solo ahora los resultados de los 115 cortes
+        run: |
+          mv /tmp/vt4-diversidad-post.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          mv /tmp/vt4-diversidad-fixture.b64 fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt4-diversidad-top10.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT4-diversidad-madres-top10-115
+          path: auditorias/vt4-diversidad-madres-top10-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Versionar auditoria POST sin cambios en main ni motor
+        run: |
+          git add auditorias/vt4-diversidad-madres-top10-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT4): comparar cupos, rondas, madres, rutas y resultados 115 cortes'
+            git push origin HEAD:lab-vt4-diversidad-madres-top10-13oct2026
+          fi
