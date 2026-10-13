@@ -1,0 +1,34 @@
+name: VT4 explicacion de hermanas ganadoras y descartadas
+on:
+  push:
+    branches: [lab-vt4-hermanas-geometricas-13oct2026]
+    paths:
+      - 'scripts/lab-vt4-hermanas-atribucion-post.mjs'
+      - '.github/workflows/lab-vt4-hermanas-atribucion.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  atribucion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Auditar hermanas reales seleccionadas y perdidas, sin reordenar Tops
+        run: node scripts/lab-vt4-hermanas-atribucion-post.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt4-hermanas-atribucion
+          path: auditorias/vt4-hermanas-geometricas-115-13oct2026/ANALISIS_HERMANAS_GANADORAS.json
+          retention-days: 60
+          if-no-files-found: error
+      - name: Versionar explicacion retrospectiva en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-hermanas-geometricas-115-13oct2026/ANALISIS_HERMANAS_GANADORAS.json
+          git commit -m 'data(VT4): explicar tres hijas ganadoras descartadas por cupo dos'
+          git push origin HEAD:lab-vt4-hermanas-geometricas-13oct2026
