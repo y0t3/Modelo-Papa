@@ -1,0 +1,51 @@
+name: VT3 geometria de bloques entre jornadas
+on:
+  push:
+    branches: [lab-vt3-transformaciones-bloque-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-transformaciones-bloque.mjs'
+      - 'PROTOCOLO_VT3_TRANSFORMACIONES_BLOQUE_13OCT2026.md'
+      - '.github/workflows/lab-vt3-transformaciones-bloque.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  geometria:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar todas las cabezas objetivo POST
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/transform-base-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/transform-base-noct-post.json
+          mv auditorias/vt3-transiciones-individuales-115-13oct2026/POST_115.json /tmp/transform-transition-post.json
+          mv auditorias/vt3-transiciones-individuales-115-13oct2026/NOCTURNA_POST.json /tmp/transform-transition-noct-post.json
+      - name: Generar y sellar PRE sin resultados
+        run: node scripts/lab-vt3-transformaciones-bloque.mjs pre
+      - name: Restaurar POST y medir los controles negativos
+        run: |
+          mv /tmp/transform-base-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/transform-base-noct-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          mv /tmp/transform-transition-post.json auditorias/vt3-transiciones-individuales-115-13oct2026/POST_115.json
+          mv /tmp/transform-transition-noct-post.json auditorias/vt3-transiciones-individuales-115-13oct2026/NOCTURNA_POST.json
+          node scripts/lab-vt3-transformaciones-bloque.mjs post
+      - name: Publicar auditoría como artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-transformaciones-bloque-115
+          path: auditorias/vt3-transformaciones-bloque-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Archivar PRE sellado y POST íntegro en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-transformaciones-bloque-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): transformaciones fisicas por fuente y controles históricos'
+            git push origin HEAD:lab-vt3-transformaciones-bloque-13oct2026
+          fi
