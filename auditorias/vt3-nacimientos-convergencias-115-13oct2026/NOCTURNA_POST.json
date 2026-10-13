@@ -1,0 +1,321 @@
+{
+  "date": "2026-10-12",
+  "heads": [
+    "9851",
+    "1615",
+    "7242",
+    "8290",
+    "3264"
+  ],
+  "watched": [
+    {
+      "head": "9851",
+      "vt3": "851",
+      "family": "158/851",
+      "physicalPossible": true,
+      "anchored": false,
+      "state": "YA_PRESENTE",
+      "firstSource": "Primera",
+      "sourceAgeTurns": 2,
+      "physicalSources": 1,
+      "physicalBlocks": 1,
+      "anchoredNeighbors": 8,
+      "originalRank": null,
+      "ranks": {
+        "ORIGINAL": null,
+        "ANCHOR_CONVERGE": null,
+        "ANCHOR_SOURCE_NEW": null,
+        "ANCHOR_BIRTH": null,
+        "OPEN_BIRTH_1": null,
+        "OPEN_CONVERGE_1": null,
+        "OPEN_FRESH_1": null,
+        "OPEN_BRIDGE_1": null,
+        "OPEN_FRESH_2": null,
+        "OPEN_BRIDGE_2": null,
+        "OPEN_FRESH_NULL_1": null
+      }
+    },
+    {
+      "head": "1615",
+      "vt3": "615",
+      "family": "516/615",
+      "physicalPossible": true,
+      "anchored": true,
+      "state": "CONVERGE_FUENTES",
+      "firstSource": "Primera",
+      "sourceAgeTurns": 2,
+      "physicalSources": 2,
+      "physicalBlocks": 2,
+      "anchoredNeighbors": 0,
+      "originalRank": 54,
+      "ranks": {
+        "ORIGINAL": null,
+        "ANCHOR_CONVERGE": 4,
+        "ANCHOR_SOURCE_NEW": null,
+        "ANCHOR_BIRTH": null,
+        "OPEN_BIRTH_1": null,
+        "OPEN_CONVERGE_1": null,
+        "OPEN_FRESH_1": null,
+        "OPEN_BRIDGE_1": null,
+        "OPEN_FRESH_2": null,
+        "OPEN_BRIDGE_2": null,
+        "OPEN_FRESH_NULL_1": null
+      }
+    },
+    {
+      "head": "7242",
+      "vt3": "242",
+      "family": "242/242",
+      "physicalPossible": true,
+      "anchored": true,
+      "state": "NACE_FISICAMENTE",
+      "firstSource": "Vespertino",
+      "sourceAgeTurns": 0,
+      "physicalSources": 1,
+      "physicalBlocks": 2,
+      "anchoredNeighbors": 0,
+      "originalRank": 25,
+      "ranks": {
+        "ORIGINAL": null,
+        "ANCHOR_CONVERGE": null,
+        "ANCHOR_SOURCE_NEW": 3,
+        "ANCHOR_BIRTH": 3,
+        "OPEN_BIRTH_1": null,
+        "OPEN_CONVERGE_1": null,
+        "OPEN_FRESH_1": null,
+        "OPEN_BRIDGE_1": null,
+        "OPEN_FRESH_2": null,
+        "OPEN_BRIDGE_2": null,
+        "OPEN_FRESH_NULL_1": null
+      }
+    },
+    {
+      "head": "8290",
+      "vt3": "290",
+      "family": "092/290",
+      "physicalPossible": false,
+      "anchored": false,
+      "state": "NO_EXISTE_FISICAMENTE",
+      "firstSource": null,
+      "sourceAgeTurns": null,
+      "physicalSources": 0,
+      "physicalBlocks": 0,
+      "anchoredNeighbors": 0,
+      "originalRank": null,
+      "ranks": {
+        "ORIGINAL": null,
+        "ANCHOR_CONVERGE": null,
+        "ANCHOR_SOURCE_NEW": null,
+        "ANCHOR_BIRTH": null,
+        "OPEN_BIRTH_1": null,
+        "OPEN_CONVERGE_1": null,
+        "OPEN_FRESH_1": null,
+        "OPEN_BRIDGE_1": null,
+        "OPEN_FRESH_2": null,
+        "OPEN_BRIDGE_2": null,
+        "OPEN_FRESH_NULL_1": null
+      }
+    },
+    {
+      "head": "3264",
+      "vt3": "264",
+      "family": "264/462",
+      "physicalPossible": false,
+      "anchored": false,
+      "state": "NO_EXISTE_FISICAMENTE",
+      "firstSource": null,
+      "sourceAgeTurns": null,
+      "physicalSources": 0,
+      "physicalBlocks": 0,
+      "anchoredNeighbors": 0,
+      "originalRank": null,
+      "ranks": {
+        "ORIGINAL": null,
+        "ANCHOR_CONVERGE": null,
+        "ANCHOR_SOURCE_NEW": null,
+        "ANCHOR_BIRTH": null,
+        "OPEN_BIRTH_1": null,
+        "OPEN_CONVERGE_1": null,
+        "OPEN_FRESH_1": null,
+        "OPEN_BRIDGE_1": null,
+        "OPEN_FRESH_2": null,
+        "OPEN_BRIDGE_2": null,
+        "OPEN_FRESH_NULL_1": null
+      }
+    }
+  ],
+  "outcome": {
+    "ORIGINAL": {
+      "winnerFamiliesInTop10": [],
+      "proposedTop10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    },
+    "ANCHOR_CONVERGE": {
+      "winnerFamiliesInTop10": [
+        "516/615"
+      ],
+      "proposedTop10": [
+        "156/651",
+        "214/412",
+        "165/561",
+        "516/615",
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672"
+      ]
+    },
+    "ANCHOR_SOURCE_NEW": {
+      "winnerFamiliesInTop10": [
+        "242/242"
+      ],
+      "proposedTop10": [
+        "424/424",
+        "146/641",
+        "242/242",
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "265/562"
+      ]
+    },
+    "ANCHOR_BIRTH": {
+      "winnerFamiliesInTop10": [
+        "242/242"
+      ],
+      "proposedTop10": [
+        "424/424",
+        "146/641",
+        "242/242",
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "265/562"
+      ]
+    },
+    "OPEN_BIRTH_1": {
+      "winnerFamiliesInTop10": [],
+      "proposedTop10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "114/411"
+      ]
+    },
+    "OPEN_CONVERGE_1": {
+      "winnerFamiliesInTop10": [],
+      "proposedTop10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "124/421"
+      ]
+    },
+    "OPEN_FRESH_1": {
+      "winnerFamiliesInTop10": [],
+      "proposedTop10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "114/411"
+      ]
+    },
+    "OPEN_BRIDGE_1": {
+      "winnerFamiliesInTop10": [],
+      "proposedTop10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "017/710"
+      ]
+    },
+    "OPEN_FRESH_2": {
+      "winnerFamiliesInTop10": [],
+      "proposedTop10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "114/411",
+        "414/414"
+      ]
+    },
+    "OPEN_BRIDGE_2": {
+      "winnerFamiliesInTop10": [],
+      "proposedTop10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "017/710",
+        "078/870"
+      ]
+    },
+    "OPEN_FRESH_NULL_1": {
+      "winnerFamiliesInTop10": [],
+      "proposedTop10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "007/700"
+      ]
+    }
+  },
+  "caveat": "Diagnóstico POST retrospectivo, nunca nueva predicción sellada. No usar estos cinco resultados para ajustar la política."
+}
