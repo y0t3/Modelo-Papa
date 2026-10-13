@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-13",
+  "replicates": 500,
+  "cuts": 115,
+  "realCombined": {
+    "heads": 5,
+    "cuts": 4,
+    "top3": 0,
+    "top5": 0,
+    "top10": 4
+  },
+  "baseline": {
+    "heads": 4,
+    "cuts": 4,
+    "top3": 0,
+    "top5": 0,
+    "top10": 4
+  },
+  "controls": {
+    "heads": {
+      "mean": 3.632,
+      "min": 3,
+      "p05": 3,
+      "median": 3,
+      "p95": 5,
+      "max": 6,
+      "threshold": 5,
+      "replicasAtLeast": 62,
+      "fractionAtLeast": 0.124
+    },
+    "cuts": {
+      "mean": 3.56,
+      "min": 3,
+      "p05": 3,
+      "median": 3,
+      "p95": 5,
+      "max": 5,
+      "threshold": 4,
+      "replicasAtLeast": 248,
+      "fractionAtLeast": 0.496
+    },
+    "top3": {
+      "mean": 0,
+      "min": 0,
+      "p05": 0,
+      "median": 0,
+      "p95": 0,
+      "max": 0,
+      "threshold": 0,
+      "replicasAtLeast": 500,
+      "fractionAtLeast": 1
+    },
+    "top5": {
+      "mean": 0,
+      "min": 0,
+      "p05": 0,
+      "median": 0,
+      "p95": 0,
+      "max": 0,
+      "threshold": 0,
+      "replicasAtLeast": 500,
+      "fractionAtLeast": 1
+    },
+    "top10": {
+      "mean": 3.56,
+      "min": 3,
+      "p05": 3,
+      "median": 3,
+      "p95": 5,
+      "max": 5,
+      "threshold": 4,
+      "replicasAtLeast": 248,
+      "fractionAtLeast": 0.496
+    }
+  },
+  "seal": {
+    "code": "56cc6ff997f029f80562a380d059584b08cbbed2dd16f86e8d1cd8affa616204",
+    "protocol": "7716d5e38c47492bf2221f4366dd08ff69757146ba8dbb75e15db7b74f4f7a4d",
+    "original": "1e4e287fc37149c93d0c264e0c3b15ee58c7027890ead9467bc10527e50757dd",
+    "inventory": "ab8136f4279420f30cc5706798af9e04d063ce1bb6fd684cebaf85a8da42930b",
+    "file": "cc55e9f227df0c3c1a5212af98d12aaf3d24d81fa958cd9bd36a3aebf55568f9"
+  },
+  "caveat": "Control adicional decidido después de examinar el aumento de 4 a 5 cabezas; resultados exploratorios sobre corpus reutilizado."
+}
