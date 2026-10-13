@@ -1,0 +1,7463 @@
+{
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 15
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 15
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 15
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 15
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 19
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 15
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 15
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 15
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 9,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 14
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": [
+          {
+            "family": "2735/3725",
+            "rank": 9,
+            "heads": [
+              "2735"
+            ],
+            "mother": "273/372"
+          }
+        ]
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 9,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 15
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 15
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 14
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 14
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 14
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 15
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 15
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 19
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 12
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [
+          {
+            "family": "3159/3951",
+            "rank": 5,
+            "heads": [
+              "3159"
+            ],
+            "mother": "159/951"
+          }
+        ],
+        "CUPO_2": [
+          {
+            "family": "3159/3951",
+            "rank": 9,
+            "heads": [
+              "3159"
+            ],
+            "mother": "159/951"
+          }
+        ],
+        "CUPO_3": [],
+        "RONDA_MADRES": [
+          {
+            "family": "3159/3951",
+            "rank": 5,
+            "heads": [
+              "3159"
+            ],
+            "mother": "159/951"
+          }
+        ],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 15
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 15
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 19
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 14
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 12
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 14
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 12
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 19
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 18
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 18
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 20
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 20
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 18
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 14
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 15
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [
+          {
+            "family": "2295/2592",
+            "rank": 5,
+            "heads": [
+              "2592"
+            ],
+            "mother": "295/592"
+          }
+        ],
+        "CUPO_2": [
+          {
+            "family": "2295/2592",
+            "rank": 9,
+            "heads": [
+              "2592"
+            ],
+            "mother": "295/592"
+          }
+        ],
+        "CUPO_3": [],
+        "RONDA_MADRES": [
+          {
+            "family": "2295/2592",
+            "rank": 5,
+            "heads": [
+              "2592"
+            ],
+            "mother": "295/592"
+          }
+        ],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 14
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 13
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 9,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 14
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 14
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 13
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 14
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 13
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 13
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 11
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 12
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 14
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 13
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 13
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 13
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 17
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 16
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 10
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 16
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 16
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 10
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 10
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 14
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 14
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 15
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 12
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 15
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 15
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 18
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 15
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 17
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 14
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 17
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 17
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 8,
+          "distinctFour": 18
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 13
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 15
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 17
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 13
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 2,
+          "distinctFour": 15
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 20
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 20
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 18
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 18
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 19
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 19
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 16
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [
+          {
+            "family": "4562/6542",
+            "rank": 10,
+            "heads": [
+              "6542"
+            ],
+            "mother": "456/654"
+          }
+        ],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 7,
+          "distinctFour": 15
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [],
+        "CUPO_2": [],
+        "CUPO_3": [],
+        "RONDA_MADRES": [],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 13
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "groupedWins": {
+        "ORIGINAL_CORREGIDO": [],
+        "UNICO_NUMERO": [],
+        "CUPO_1": [
+          {
+            "family": "2456/2654",
+            "rank": 5,
+            "heads": [
+              "2654"
+            ],
+            "mother": "456/654"
+          }
+        ],
+        "CUPO_2": [
+          {
+            "family": "2456/2654",
+            "rank": 9,
+            "heads": [
+              "2654"
+            ],
+            "mother": "456/654"
+          }
+        ],
+        "CUPO_3": [],
+        "RONDA_MADRES": [
+          {
+            "family": "2456/2654",
+            "rank": 5,
+            "heads": [
+              "2654"
+            ],
+            "mother": "456/654"
+          }
+        ],
+        "BASE_NEUTRAL": []
+      },
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "UNICO_NUMERO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 1,
+          "distinctFour": 16
+        },
+        "CUPO_1": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "CUPO_2": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "mothers": 5,
+          "distinctFour": 19
+        },
+        "CUPO_3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 4,
+          "distinctFour": 18
+        },
+        "RONDA_MADRES": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "mothers": 10,
+          "distinctFour": 20
+        },
+        "BASE_NEUTRAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "mothers": 6,
+          "distinctFour": 17
+        }
+      }
+    }
+  ]
+}

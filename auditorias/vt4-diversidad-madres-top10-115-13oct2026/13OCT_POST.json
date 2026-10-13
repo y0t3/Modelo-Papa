@@ -1,0 +1,776 @@
+{
+  "date": "2026-10-13",
+  "cases": [
+    {
+      "date": "2026-10-13",
+      "turn": "Primera",
+      "validation": "POST_RECONSTRUCTION_NOT_PROSPECTIVE",
+      "originalSeal": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+      "preSources": [
+        "prevNocturno",
+        "Previa"
+      ],
+      "pool": 94,
+      "heads": [
+        "5485",
+        "0310",
+        "8857",
+        "3385",
+        "4084"
+      ],
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top5": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226",
+            "6226/6622",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "7305/7503"
+          ],
+          "bestMotherPositions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "distinctMothers": 2,
+          "uniqueNumeric4": 19,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "UNICO_NUMERO": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top5": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "7305/7503",
+            "1305/1503"
+          ],
+          "bestMotherPositions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "distinctMothers": 2,
+          "uniqueNumeric4": 20,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "CUPO_1": {
+          "top3": [
+            "2263/6223",
+            "3056/5036",
+            "3507/3705"
+          ],
+          "top5": [
+            "2263/6223",
+            "3056/5036",
+            "3507/3705",
+            "0036/0630",
+            "4857/5847"
+          ],
+          "top10": [
+            "2263/6223",
+            "3056/5036",
+            "3507/3705",
+            "0036/0630",
+            "4857/5847",
+            "2663/6623",
+            "0326/0623",
+            "0374/7304",
+            "5487/8457",
+            "0635/3605"
+          ],
+          "bestMotherPositions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "distinctMothers": 10,
+          "uniqueNumeric4": 18,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "CUPO_2": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top5": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "3507/3705"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "3507/3705",
+            "5073/7053",
+            "0036/0630",
+            "0360/6300",
+            "4857/5847",
+            "4859/5849"
+          ],
+          "bestMotherPositions": [
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "distinctMothers": 5,
+          "uniqueNumeric4": 20,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "CUPO_3": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top5": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "3056/5036",
+            "6305/6503"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "3507/3705",
+            "5073/7053",
+            "1507/1705",
+            "0036/0630"
+          ],
+          "bestMotherPositions": [
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4
+          ],
+          "distinctMothers": 4,
+          "uniqueNumeric4": 20,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "RONDA_MADRES": {
+          "top3": [
+            "2263/6223",
+            "3056/5036",
+            "3507/3705"
+          ],
+          "top5": [
+            "2263/6223",
+            "3056/5036",
+            "3507/3705",
+            "0036/0630",
+            "4857/5847"
+          ],
+          "top10": [
+            "2263/6223",
+            "3056/5036",
+            "3507/3705",
+            "0036/0630",
+            "4857/5847",
+            "2663/6623",
+            "0326/0623",
+            "0374/7304",
+            "5487/8457",
+            "0635/3605"
+          ],
+          "bestMotherPositions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "distinctMothers": 10,
+          "uniqueNumeric4": 18,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "BASE_NEUTRAL": {
+          "top3": [
+            "4850/5840",
+            "6305/6503",
+            "4507/4705"
+          ],
+          "top5": [
+            "4850/5840",
+            "6305/6503",
+            "4507/4705",
+            "7485/7584",
+            "5485/5584"
+          ],
+          "top10": [
+            "4850/5840",
+            "6305/6503",
+            "4507/4705",
+            "7485/7584",
+            "5485/5584",
+            "0037/0730",
+            "7063/7360",
+            "5480/8450",
+            "2662/6622",
+            "5226/5622"
+          ],
+          "bestMotherPositions": [
+            5,
+            2,
+            3,
+            5,
+            5,
+            8,
+            10,
+            9,
+            6,
+            1
+          ],
+          "distinctMothers": 8,
+          "uniqueNumeric4": 17,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": true,
+            "top10": true
+          },
+          "six": {
+            "top3": false,
+            "top5": true,
+            "top10": true
+          },
+          "targetRepresented": true
+        }
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "turn": "Matutino",
+      "validation": "POST_RECONSTRUCTION_NOT_PROSPECTIVE",
+      "originalSeal": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+      "preSources": [
+        "prevNocturno",
+        "Previa",
+        "Primera"
+      ],
+      "pool": 104,
+      "heads": [
+        "3376",
+        "1057",
+        "2413",
+        "3723",
+        "2284",
+        "3629"
+      ],
+      "policies": {
+        "ORIGINAL_CORREGIDO": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top5": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226",
+            "6226/6622",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "7305/7503"
+          ],
+          "bestMotherPositions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "distinctMothers": 2,
+          "uniqueNumeric4": 19,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "UNICO_NUMERO": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top5": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "7305/7503",
+            "1305/1503"
+          ],
+          "bestMotherPositions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "distinctMothers": 2,
+          "uniqueNumeric4": 20,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "CUPO_1": {
+          "top3": [
+            "2263/6223",
+            "3056/5036",
+            "5699/5996"
+          ],
+          "top5": [
+            "2263/6223",
+            "3056/5036",
+            "5699/5996",
+            "2665/6625",
+            "1629/1926"
+          ],
+          "top10": [
+            "2263/6223",
+            "3056/5036",
+            "5699/5996",
+            "2665/6625",
+            "1629/1926",
+            "3507/3705",
+            "5968/6958",
+            "0036/0630",
+            "4857/5847",
+            "0326/0623"
+          ],
+          "bestMotherPositions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "distinctMothers": 10,
+          "uniqueNumeric4": 18,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "CUPO_2": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top5": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "5699/5996"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "5699/5996",
+            "6995/9965",
+            "2665/6625",
+            "5266/5662",
+            "1629/1926",
+            "6291/9261"
+          ],
+          "bestMotherPositions": [
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+          ],
+          "distinctMothers": 5,
+          "uniqueNumeric4": 20,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "CUPO_3": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top5": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "3056/5036",
+            "6305/6503"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "5699/5996",
+            "6995/9965",
+            "6998/9968",
+            "2665/6625"
+          ],
+          "bestMotherPositions": [
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4
+          ],
+          "distinctMothers": 4,
+          "uniqueNumeric4": 20,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "RONDA_MADRES": {
+          "top3": [
+            "2263/6223",
+            "3056/5036",
+            "5699/5996"
+          ],
+          "top5": [
+            "2263/6223",
+            "3056/5036",
+            "5699/5996",
+            "2665/6625",
+            "1629/1926"
+          ],
+          "top10": [
+            "2263/6223",
+            "3056/5036",
+            "5699/5996",
+            "2665/6625",
+            "1629/1926",
+            "3507/3705",
+            "5968/6958",
+            "0036/0630",
+            "4857/5847",
+            "0326/0623"
+          ],
+          "bestMotherPositions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "distinctMothers": 10,
+          "uniqueNumeric4": 18,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        },
+        "BASE_NEUTRAL": {
+          "top3": [
+            "5961/6951",
+            "6992/9962",
+            "6305/6503"
+          ],
+          "top5": [
+            "5961/6951",
+            "6992/9962",
+            "6305/6503",
+            "2665/6625",
+            "0305/0503"
+          ],
+          "top10": [
+            "5961/6951",
+            "6992/9962",
+            "6305/6503",
+            "2665/6625",
+            "0305/0503",
+            "5305/5503",
+            "2596/2695",
+            "6296/9266",
+            "2699/2996",
+            "6291/9261"
+          ],
+          "bestMotherPositions": [
+            7,
+            3,
+            2,
+            4,
+            2,
+            2,
+            7,
+            5,
+            3,
+            5
+          ],
+          "distinctMothers": 5,
+          "uniqueNumeric4": 14,
+          "backfill": 0,
+          "argentina": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "six": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "targetRepresented": false
+        }
+      }
+    }
+  ],
+  "note": "Reconstrucción retrospectiva con PRE anterior a cada turno, no VT4 previamente sellado; cinco jurisdicciones y seis separadas."
+}
