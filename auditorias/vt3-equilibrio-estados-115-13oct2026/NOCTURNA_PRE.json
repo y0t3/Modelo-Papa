@@ -1,0 +1,1710 @@
+{
+  "date": "2026-10-12",
+  "turn": "Nocturno",
+  "rankings": {
+    "OFICIAL": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "424/424",
+      "265/562",
+      "526/625",
+      "255/552"
+    ],
+    "M1_P3": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "424/424",
+      "265/562",
+      "526/625",
+      "156/651"
+    ],
+    "M2_P3": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "424/424",
+      "146/641",
+      "156/651",
+      "214/412"
+    ],
+    "M3_P3": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "424/424",
+      "146/641",
+      "156/651",
+      "214/412",
+      "242/242",
+      "165/561"
+    ],
+    "M2_P5": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "424/424",
+      "146/641",
+      "156/651",
+      "214/412"
+    ],
+    "M2_P0": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "424/424",
+      "146/641",
+      "156/651",
+      "214/412"
+    ],
+    "CAP6_P3": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "424/424",
+      "146/641",
+      "156/651",
+      "214/412"
+    ],
+    "M1_P3_BRIDGE1": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "424/424",
+      "265/562",
+      "156/651",
+      "017/710"
+    ],
+    "M2_P3_BRIDGE1": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "424/424",
+      "146/641",
+      "156/651",
+      "214/412",
+      "017/710"
+    ],
+    "M2_P3_FRESH1": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "424/424",
+      "146/641",
+      "156/651",
+      "214/412",
+      "114/411"
+    ],
+    "M2_P3_BRIDGE2": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "424/424",
+      "146/641",
+      "156/651",
+      "214/412",
+      "017/710",
+      "078/870"
+    ],
+    "OPEN_BRIDGE1_ORIG": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "424/424",
+      "265/562",
+      "526/625",
+      "017/710"
+    ],
+    "OPEN_BRIDGE2_ORIG": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "424/424",
+      "265/562",
+      "017/710",
+      "078/870"
+    ],
+    "M2_P3_HASH_CONTROL": [
+      "565/565",
+      "556/655",
+      "555/555",
+      "365/563",
+      "536/635",
+      "276/672",
+      "146/641",
+      "156/651",
+      "214/412",
+      "242/242"
+    ]
+  },
+  "byFamily": {
+    "565/565": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 1,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "556/655": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 2,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "555/555": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 3,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "365/563": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 4,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "536/635": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 5,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "276/672": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 6,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "424/424": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": true,
+      "officialRank": 7,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "265/562": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 8,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "526/625": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 9,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "255/552": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 10,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "356/653": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 11,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "256/652": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 14,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "527/725": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 12,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "146/641": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": true,
+      "officialRank": 13,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "487/784": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 15,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "576/675": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 16,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "657/756": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 17,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "728/827": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 18,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "156/651": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": true,
+      "officialRank": 19,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "214/412": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": true,
+      "officialRank": 24,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "656/656": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 28,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "275/572": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 22,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "242/242": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": true,
+      "officialRank": 25,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "257/752": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 20,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "267/762": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 21,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "627/726": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 23,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "272/272": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 26,
+      "ageTurns": 4,
+      "anchoredNeighbors": 0
+    },
+    "545/545": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 27,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "658/856": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 29,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "075/570": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 30,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "187/781": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 31,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "507/705": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 32,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "568/865": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 33,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "718/817": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 34,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "107/701": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 43,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "047/740": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 39,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "104/401": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 42,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "407/704": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 50,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "478/874": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 52,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "587/785": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 58,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "165/561": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": true,
+      "officialRank": 46,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "178/871": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 48,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "516/615": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": true,
+      "officialRank": 54,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "578/875": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 56,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "015/510": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 35,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "016/610": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 36,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "018/810": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 37,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "045/540": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 38,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "057/750": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 40,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "085/580": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 41,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "108/801": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 44,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "163/361": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 45,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "166/661": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 47,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "366/663": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 49,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "408/804": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 51,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "508/805": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 53,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "517/715": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 55,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "586/685": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 57,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "618/816": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 59,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "636/636": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 60,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "668/866": {
+      "state": "YA_PRESENTE",
+      "anchored": true,
+      "officialRank": 61,
+      "ageTurns": 2,
+      "anchoredNeighbors": 0
+    },
+    "124/421": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 3
+    },
+    "142/241": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 4
+    },
+    "247/742": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 2
+    },
+    "017/710": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 9
+    },
+    "071/170": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 7
+    },
+    "274/472": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "427/724": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 2
+    },
+    "074/470": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 6
+    },
+    "147/741": {
+      "state": "CONVERGE_FUENTES",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "547/745": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 4
+    },
+    "174/471": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 5
+    },
+    "457/754": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 5
+    },
+    "475/574": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 5
+    },
+    "007/700": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "548/845": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 2
+    },
+    "567/765": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 4,
+      "anchoredNeighbors": 9
+    },
+    "001/100": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "004/400": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "010/010": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "013/310": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "031/130": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "114/411": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "131/131": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "137/731": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "171/171": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "173/371": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "317/713": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "355/553": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 4,
+      "anchoredNeighbors": 5
+    },
+    "414/414": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "458/854": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "485/584": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "525/525": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 4,
+      "anchoredNeighbors": 5
+    },
+    "003/300": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "127/721": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 2
+    },
+    "145/541": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "244/442": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 2
+    },
+    "278/872": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 2
+    },
+    "287/782": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 2
+    },
+    "477/774": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "558/855": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "748/847": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "758/857": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "000/000": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "037/730": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "040/040": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "054/450": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 4
+    },
+    "070/070": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "073/370": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "078/870": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 9
+    },
+    "081/180": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 8
+    },
+    "086/680": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 7
+    },
+    "087/780": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 9
+    },
+    "103/301": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "105/501": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 9
+    },
+    "112/211": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "113/311": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "115/511": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "116/611": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "117/711": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "121/121": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "128/821": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 2
+    },
+    "141/141": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "144/441": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "153/351": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 6
+    },
+    "154/451": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "158/851": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 8
+    },
+    "164/461": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "168/861": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 9
+    },
+    "172/271": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "175/571": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 6
+    },
+    "177/771": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "185/581": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 8
+    },
+    "186/681": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 7
+    },
+    "215/512": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "216/612": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "217/712": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "245/542": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "246/642": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 2
+    },
+    "252/252": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 4,
+      "anchoredNeighbors": 3
+    },
+    "277/772": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "284/482": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 2
+    },
+    "285/582": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "307/703": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 1,
+      "anchoredNeighbors": 0
+    },
+    "358/853": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 6
+    },
+    "368/863": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 8
+    },
+    "405/504": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 8
+    },
+    "415/514": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "416/614": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "417/714": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "428/824": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "447/744": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "455/554": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "456/654": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "465/564": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "474/474": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 0
+    },
+    "518/815": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 8
+    },
+    "535/535": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 4,
+      "anchoredNeighbors": 2
+    },
+    "546/645": {
+      "state": "NACE_FISICAMENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 0,
+      "anchoredNeighbors": 1
+    },
+    "557/755": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "566/665": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 9
+    },
+    "577/775": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "585/585": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    },
+    "617/716": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 9
+    },
+    "676/676": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 4,
+      "anchoredNeighbors": 3
+    },
+    "687/786": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 8
+    },
+    "708/807": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 2,
+      "anchoredNeighbors": 8
+    },
+    "727/727": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "778/877": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "787/787": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "848/848": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 1
+    },
+    "858/858": {
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ageTurns": 3,
+      "anchoredNeighbors": 0
+    }
+  },
+  "stateCounts": {
+    "INICIAL": 0,
+    "NACE_FISICAMENTE": 3,
+    "CONVERGE_FUENTES": 4,
+    "YA_PRESENTE": 54
+  },
+  "meta": {
+    "M1_P3": {
+      "min": 1,
+      "protect": 3,
+      "open": 0,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 1,
+        "CONVERGE_FUENTES": 1,
+        "YA_PRESENTE": 8
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "156/651"
+      ],
+      "displacedOfficial": [
+        "255/552"
+      ]
+    },
+    "M2_P3": {
+      "min": 2,
+      "protect": 3,
+      "open": 0,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 2,
+        "CONVERGE_FUENTES": 2,
+        "YA_PRESENTE": 6
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "displacedOfficial": [
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    },
+    "M3_P3": {
+      "min": 3,
+      "protect": 3,
+      "open": 0,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 3,
+        "YA_PRESENTE": 4
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "146/641",
+        "156/651",
+        "214/412",
+        "242/242",
+        "165/561"
+      ],
+      "displacedOfficial": [
+        "536/635",
+        "276/672",
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    },
+    "M2_P5": {
+      "min": 2,
+      "protect": 5,
+      "open": 0,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 2,
+        "CONVERGE_FUENTES": 2,
+        "YA_PRESENTE": 6
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "displacedOfficial": [
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    },
+    "M2_P0": {
+      "min": 2,
+      "protect": 0,
+      "open": 0,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 2,
+        "CONVERGE_FUENTES": 2,
+        "YA_PRESENTE": 6
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "displacedOfficial": [
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    },
+    "CAP6_P3": {
+      "cap": 6,
+      "protect": 3,
+      "realized": {
+        "NACE_FISICAMENTE": 2,
+        "CONVERGE_FUENTES": 2,
+        "YA_PRESENTE": 6
+      },
+      "promotedAnchored": [
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "displacedOfficial": [
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    },
+    "M1_P3_BRIDGE1": {
+      "min": 1,
+      "protect": 3,
+      "open": 1,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 1,
+        "CONVERGE_FUENTES": 1,
+        "YA_PRESENTE": 7
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "156/651"
+      ],
+      "displacedOfficial": [
+        "526/625",
+        "255/552"
+      ]
+    },
+    "M2_P3_BRIDGE1": {
+      "min": 2,
+      "protect": 3,
+      "open": 1,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 2,
+        "CONVERGE_FUENTES": 2,
+        "YA_PRESENTE": 5
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "displacedOfficial": [
+        "276/672",
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    },
+    "M2_P3_FRESH1": {
+      "min": 2,
+      "protect": 3,
+      "open": 1,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 2,
+        "CONVERGE_FUENTES": 2,
+        "YA_PRESENTE": 5
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "displacedOfficial": [
+        "276/672",
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    },
+    "M2_P3_BRIDGE2": {
+      "min": 2,
+      "protect": 3,
+      "open": 2,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 2,
+        "CONVERGE_FUENTES": 2,
+        "YA_PRESENTE": 4
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "displacedOfficial": [
+        "536/635",
+        "276/672",
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    },
+    "M2_P3_HASH_CONTROL": {
+      "min": 2,
+      "protect": 3,
+      "open": 0,
+      "available": {
+        "NACE_FISICAMENTE": 3,
+        "CONVERGE_FUENTES": 4,
+        "YA_PRESENTE": 54
+      },
+      "realized": {
+        "NACE_FISICAMENTE": 2,
+        "CONVERGE_FUENTES": 2,
+        "YA_PRESENTE": 6
+      },
+      "deficits": {
+        "NACE_FISICAMENTE": 0,
+        "CONVERGE_FUENTES": 0,
+        "YA_PRESENTE": 0
+      },
+      "promotedAnchored": [
+        "146/641",
+        "156/651",
+        "214/412",
+        "242/242"
+      ],
+      "displacedOfficial": [
+        "424/424",
+        "265/562",
+        "526/625",
+        "255/552"
+      ]
+    }
+  }
+}

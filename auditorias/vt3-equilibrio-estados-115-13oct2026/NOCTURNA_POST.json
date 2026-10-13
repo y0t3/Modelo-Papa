@@ -1,0 +1,343 @@
+{
+  "heads": [
+    "9851",
+    "1615",
+    "7242",
+    "8290",
+    "3264"
+  ],
+  "watch": [
+    {
+      "head": "9851",
+      "family": "158/851",
+      "state": "YA_PRESENTE",
+      "anchored": false,
+      "officialRank": null,
+      "ranks": {
+        "OFICIAL": null,
+        "M1_P3": null,
+        "M2_P3": null,
+        "M3_P3": null,
+        "M2_P5": null,
+        "M2_P0": null,
+        "CAP6_P3": null,
+        "M1_P3_BRIDGE1": null,
+        "M2_P3_BRIDGE1": null,
+        "M2_P3_FRESH1": null,
+        "M2_P3_BRIDGE2": null,
+        "OPEN_BRIDGE1_ORIG": null,
+        "OPEN_BRIDGE2_ORIG": null,
+        "M2_P3_HASH_CONTROL": null
+      }
+    },
+    {
+      "head": "1615",
+      "family": "516/615",
+      "state": "CONVERGE_FUENTES",
+      "anchored": true,
+      "officialRank": 54,
+      "ranks": {
+        "OFICIAL": null,
+        "M1_P3": null,
+        "M2_P3": null,
+        "M3_P3": null,
+        "M2_P5": null,
+        "M2_P0": null,
+        "CAP6_P3": null,
+        "M1_P3_BRIDGE1": null,
+        "M2_P3_BRIDGE1": null,
+        "M2_P3_FRESH1": null,
+        "M2_P3_BRIDGE2": null,
+        "OPEN_BRIDGE1_ORIG": null,
+        "OPEN_BRIDGE2_ORIG": null,
+        "M2_P3_HASH_CONTROL": null
+      }
+    },
+    {
+      "head": "7242",
+      "family": "242/242",
+      "state": "NACE_FISICAMENTE",
+      "anchored": true,
+      "officialRank": 25,
+      "ranks": {
+        "OFICIAL": null,
+        "M1_P3": null,
+        "M2_P3": null,
+        "M3_P3": 9,
+        "M2_P5": null,
+        "M2_P0": null,
+        "CAP6_P3": null,
+        "M1_P3_BRIDGE1": null,
+        "M2_P3_BRIDGE1": null,
+        "M2_P3_FRESH1": null,
+        "M2_P3_BRIDGE2": null,
+        "OPEN_BRIDGE1_ORIG": null,
+        "OPEN_BRIDGE2_ORIG": null,
+        "M2_P3_HASH_CONTROL": 10
+      }
+    },
+    {
+      "head": "8290",
+      "family": "092/290",
+      "state": "NO_FISICA",
+      "anchored": false,
+      "officialRank": null,
+      "ranks": {
+        "OFICIAL": null,
+        "M1_P3": null,
+        "M2_P3": null,
+        "M3_P3": null,
+        "M2_P5": null,
+        "M2_P0": null,
+        "CAP6_P3": null,
+        "M1_P3_BRIDGE1": null,
+        "M2_P3_BRIDGE1": null,
+        "M2_P3_FRESH1": null,
+        "M2_P3_BRIDGE2": null,
+        "OPEN_BRIDGE1_ORIG": null,
+        "OPEN_BRIDGE2_ORIG": null,
+        "M2_P3_HASH_CONTROL": null
+      }
+    },
+    {
+      "head": "3264",
+      "family": "264/462",
+      "state": "NO_FISICA",
+      "anchored": false,
+      "officialRank": null,
+      "ranks": {
+        "OFICIAL": null,
+        "M1_P3": null,
+        "M2_P3": null,
+        "M3_P3": null,
+        "M2_P5": null,
+        "M2_P0": null,
+        "CAP6_P3": null,
+        "M1_P3_BRIDGE1": null,
+        "M2_P3_BRIDGE1": null,
+        "M2_P3_FRESH1": null,
+        "M2_P3_BRIDGE2": null,
+        "OPEN_BRIDGE1_ORIG": null,
+        "OPEN_BRIDGE2_ORIG": null,
+        "M2_P3_HASH_CONTROL": null
+      }
+    }
+  ],
+  "rankings": {
+    "OFICIAL": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "255/552"
+      ],
+      "hits": []
+    },
+    "M1_P3": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "156/651"
+      ],
+      "hits": []
+    },
+    "M2_P3": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "hits": []
+    },
+    "M3_P3": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "424/424",
+        "146/641",
+        "156/651",
+        "214/412",
+        "242/242",
+        "165/561"
+      ],
+      "hits": [
+        "242/242"
+      ]
+    },
+    "M2_P5": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "hits": []
+    },
+    "M2_P0": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "hits": []
+    },
+    "CAP6_P3": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "146/641",
+        "156/651",
+        "214/412"
+      ],
+      "hits": []
+    },
+    "M1_P3_BRIDGE1": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "156/651",
+        "017/710"
+      ],
+      "hits": []
+    },
+    "M2_P3_BRIDGE1": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "424/424",
+        "146/641",
+        "156/651",
+        "214/412",
+        "017/710"
+      ],
+      "hits": []
+    },
+    "M2_P3_FRESH1": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "424/424",
+        "146/641",
+        "156/651",
+        "214/412",
+        "114/411"
+      ],
+      "hits": []
+    },
+    "M2_P3_BRIDGE2": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "424/424",
+        "146/641",
+        "156/651",
+        "214/412",
+        "017/710",
+        "078/870"
+      ],
+      "hits": []
+    },
+    "OPEN_BRIDGE1_ORIG": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "017/710"
+      ],
+      "hits": []
+    },
+    "OPEN_BRIDGE2_ORIG": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "017/710",
+        "078/870"
+      ],
+      "hits": []
+    },
+    "M2_P3_HASH_CONTROL": {
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "146/641",
+        "156/651",
+        "214/412",
+        "242/242"
+      ],
+      "hits": [
+        "242/242"
+      ]
+    }
+  },
+  "warning": "Simulación de corte del 12/10 ya conocido; no reemplaza predicción sellada antes del sorteo."
+}

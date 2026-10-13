@@ -1,0 +1,1919 @@
+{
+  "date": "2026-10-13",
+  "days": 23,
+  "cuts": 115,
+  "all": {
+    "scores": {
+      "OFICIAL": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamilies": 17,
+        "promotedWinners": 0,
+        "changedTop10Cuts": 0,
+        "numberIntroduced": 0
+      },
+      "M1_P3": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamilies": 17,
+        "promotedWinners": 0,
+        "changedTop10Cuts": 44,
+        "numberIntroduced": 46
+      },
+      "M2_P3": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamilies": 17,
+        "promotedWinners": 1,
+        "changedTop10Cuts": 69,
+        "numberIntroduced": 120
+      },
+      "M3_P3": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 12,
+        "winningFamilies": 14,
+        "promotedWinners": 1,
+        "changedTop10Cuts": 85,
+        "numberIntroduced": 225
+      },
+      "M2_P5": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamilies": 17,
+        "promotedWinners": 1,
+        "changedTop10Cuts": 69,
+        "numberIntroduced": 120
+      },
+      "M2_P0": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamilies": 17,
+        "promotedWinners": 1,
+        "changedTop10Cuts": 69,
+        "numberIntroduced": 120
+      },
+      "CAP6_P3": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamilies": 17,
+        "promotedWinners": 1,
+        "changedTop10Cuts": 61,
+        "numberIntroduced": 137
+      },
+      "M1_P3_BRIDGE1": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "winningFamilies": 18,
+        "promotedWinners": 1,
+        "changedTop10Cuts": 92,
+        "numberIntroduced": 137
+      },
+      "M2_P3_BRIDGE1": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "winningFamilies": 18,
+        "promotedWinners": 2,
+        "changedTop10Cuts": 92,
+        "numberIntroduced": 211
+      },
+      "M2_P3_FRESH1": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "winningFamilies": 18,
+        "promotedWinners": 2,
+        "changedTop10Cuts": 92,
+        "numberIntroduced": 212
+      },
+      "M2_P3_BRIDGE2": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 13,
+        "winningFamilies": 15,
+        "promotedWinners": 3,
+        "changedTop10Cuts": 92,
+        "numberIntroduced": 302
+      },
+      "OPEN_BRIDGE1_ORIG": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "winningFamilies": 18,
+        "promotedWinners": 1,
+        "changedTop10Cuts": 91,
+        "numberIntroduced": 91
+      },
+      "OPEN_BRIDGE2_ORIG": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 17,
+        "winningFamilies": 19,
+        "promotedWinners": 2,
+        "changedTop10Cuts": 91,
+        "numberIntroduced": 182
+      },
+      "M2_P3_HASH_CONTROL": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamilies": 17,
+        "promotedWinners": 1,
+        "changedTop10Cuts": 91,
+        "numberIntroduced": 235
+      }
+    },
+    "paired": {
+      "M1_P3": {
+        "gained": [],
+        "lost": []
+      },
+      "M2_P3": {
+        "gained": [
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "M3_P3": {
+        "gained": [
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-15|Matutino",
+          "2026-09-18|Nocturno",
+          "2026-09-22|Primera",
+          "2026-09-25|Matutino"
+        ]
+      },
+      "M2_P5": {
+        "gained": [
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "M2_P0": {
+        "gained": [
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "CAP6_P3": {
+        "gained": [
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "M1_P3_BRIDGE1": {
+        "gained": [
+          "2026-09-21|Primera"
+        ],
+        "lost": []
+      },
+      "M2_P3_BRIDGE1": {
+        "gained": [
+          "2026-09-21|Primera",
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "M2_P3_FRESH1": {
+        "gained": [
+          "2026-09-29|Nocturno",
+          "2026-09-30|Nocturno"
+        ],
+        "lost": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "M2_P3_BRIDGE2": {
+        "gained": [
+          "2026-09-16|Matutino",
+          "2026-09-21|Primera",
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-15|Matutino",
+          "2026-09-18|Nocturno",
+          "2026-09-22|Primera",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino"
+        ]
+      },
+      "OPEN_BRIDGE1_ORIG": {
+        "gained": [
+          "2026-09-21|Primera"
+        ],
+        "lost": []
+      },
+      "OPEN_BRIDGE2_ORIG": {
+        "gained": [
+          "2026-09-16|Matutino",
+          "2026-09-21|Primera"
+        ],
+        "lost": []
+      },
+      "M2_P3_HASH_CONTROL": {
+        "gained": [
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-18|Nocturno"
+        ]
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M1_P3": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M2_P3": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M3_P3": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M2_P5": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M2_P0": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "CAP6_P3": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M1_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M2_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M2_P3_FRESH1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M2_P3_BRIDGE2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M2_P3_HASH_CONTROL": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        }
+      },
+      "paired": {
+        "M1_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M3_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P5": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P0": {
+          "gained": [],
+          "lost": []
+        },
+        "CAP6_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M1_P3_BRIDGE1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_FRESH1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE2": {
+          "gained": [],
+          "lost": []
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "gained": [],
+          "lost": []
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_HASH_CONTROL": {
+          "gained": [],
+          "lost": []
+        }
+      }
+    },
+    "Primera": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M1_P3": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 9,
+          "numberIntroduced": 9
+        },
+        "M2_P3": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 21
+        },
+        "M3_P3": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 17,
+          "numberIntroduced": 35
+        },
+        "M2_P5": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 21
+        },
+        "M2_P0": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 21
+        },
+        "CAP6_P3": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 12,
+          "numberIntroduced": 19
+        },
+        "M1_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamilies": 2,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 32
+        },
+        "M2_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamilies": 2,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 44
+        },
+        "M2_P3_FRESH1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 44
+        },
+        "M2_P3_BRIDGE2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 67
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamilies": 2,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 23
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamilies": 2,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 46
+        },
+        "M2_P3_HASH_CONTROL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 22,
+          "numberIntroduced": 53
+        }
+      },
+      "paired": {
+        "M1_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M3_P3": {
+          "gained": [],
+          "lost": [
+            "2026-09-22|Primera"
+          ]
+        },
+        "M2_P5": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P0": {
+          "gained": [],
+          "lost": []
+        },
+        "CAP6_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M1_P3_BRIDGE1": {
+          "gained": [
+            "2026-09-21|Primera"
+          ],
+          "lost": []
+        },
+        "M2_P3_BRIDGE1": {
+          "gained": [
+            "2026-09-21|Primera"
+          ],
+          "lost": []
+        },
+        "M2_P3_FRESH1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE2": {
+          "gained": [
+            "2026-09-21|Primera"
+          ],
+          "lost": [
+            "2026-09-22|Primera"
+          ]
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "gained": [
+            "2026-09-21|Primera"
+          ],
+          "lost": []
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "gained": [
+            "2026-09-21|Primera"
+          ],
+          "lost": []
+        },
+        "M2_P3_HASH_CONTROL": {
+          "gained": [],
+          "lost": []
+        }
+      }
+    },
+    "Matutino": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M1_P3": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 10,
+          "numberIntroduced": 11
+        },
+        "M2_P3": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 26
+        },
+        "M3_P3": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 6,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 54
+        },
+        "M2_P5": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 26
+        },
+        "M2_P0": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 26
+        },
+        "CAP6_P3": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 11,
+          "numberIntroduced": 27
+        },
+        "M1_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 34
+        },
+        "M2_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 49
+        },
+        "M2_P3_FRESH1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 49
+        },
+        "M2_P3_BRIDGE2": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 6,
+          "winningFamilies": 7,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 72
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 23
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 9,
+          "winningFamilies": 10,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 46
+        },
+        "M2_P3_HASH_CONTROL": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 59
+        }
+      },
+      "paired": {
+        "M1_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M3_P3": {
+          "gained": [],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-25|Matutino"
+          ]
+        },
+        "M2_P5": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P0": {
+          "gained": [],
+          "lost": []
+        },
+        "CAP6_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M1_P3_BRIDGE1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_FRESH1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE2": {
+          "gained": [
+            "2026-09-16|Matutino"
+          ],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-24|Matutino",
+            "2026-09-25|Matutino"
+          ]
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "gained": [],
+          "lost": []
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "gained": [
+            "2026-09-16|Matutino"
+          ],
+          "lost": []
+        },
+        "M2_P3_HASH_CONTROL": {
+          "gained": [],
+          "lost": []
+        }
+      }
+    },
+    "Vespertino": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M1_P3": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 10,
+          "numberIntroduced": 11
+        },
+        "M2_P3": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 33
+        },
+        "M3_P3": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 66
+        },
+        "M2_P5": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 33
+        },
+        "M2_P0": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 33
+        },
+        "CAP6_P3": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 16,
+          "numberIntroduced": 41
+        },
+        "M1_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 34
+        },
+        "M2_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 56
+        },
+        "M2_P3_FRESH1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 56
+        },
+        "M2_P3_BRIDGE2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 79
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 23
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 46
+        },
+        "M2_P3_HASH_CONTROL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 65
+        }
+      },
+      "paired": {
+        "M1_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M3_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P5": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P0": {
+          "gained": [],
+          "lost": []
+        },
+        "CAP6_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M1_P3_BRIDGE1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_FRESH1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE2": {
+          "gained": [],
+          "lost": []
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "gained": [],
+          "lost": []
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_HASH_CONTROL": {
+          "gained": [
+            "2026-10-07|Vespertino"
+          ],
+          "lost": []
+        }
+      }
+    },
+    "Nocturno": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M1_P3": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 15,
+          "numberIntroduced": 15
+        },
+        "M2_P3": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 21,
+          "numberIntroduced": 40
+        },
+        "M3_P3": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 22,
+          "numberIntroduced": 70
+        },
+        "M2_P5": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 21,
+          "numberIntroduced": 40
+        },
+        "M2_P0": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 21,
+          "numberIntroduced": 40
+        },
+        "CAP6_P3": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 22,
+          "numberIntroduced": 50
+        },
+        "M1_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 37
+        },
+        "M2_P3_BRIDGE1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 62
+        },
+        "M2_P3_FRESH1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4,
+          "winningFamilies": 5,
+          "promotedWinners": 2,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 63
+        },
+        "M2_P3_BRIDGE2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 84
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 22,
+          "numberIntroduced": 22
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 22,
+          "numberIntroduced": 44
+        },
+        "M2_P3_HASH_CONTROL": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 2,
+          "winningFamilies": 3,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 23,
+          "numberIntroduced": 58
+        }
+      },
+      "paired": {
+        "M1_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M3_P3": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M2_P5": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M2_P0": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "CAP6_P3": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M1_P3_BRIDGE1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE1": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M2_P3_FRESH1": {
+          "gained": [
+            "2026-09-29|Nocturno",
+            "2026-09-30|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M2_P3_BRIDGE2": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "gained": [],
+          "lost": []
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_HASH_CONTROL": {
+          "gained": [],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        }
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M1_P3": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 26,
+          "numberIntroduced": 27
+        },
+        "M2_P3": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 42,
+          "numberIntroduced": 72
+        },
+        "M3_P3": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 7,
+          "winningFamilies": 7,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 53,
+          "numberIntroduced": 135
+        },
+        "M2_P5": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 42,
+          "numberIntroduced": 72
+        },
+        "M2_P0": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 42,
+          "numberIntroduced": 72
+        },
+        "CAP6_P3": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 37,
+          "numberIntroduced": 88
+        },
+        "M1_P3_BRIDGE1": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 11,
+          "winningFamilies": 11,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 56,
+          "numberIntroduced": 82
+        },
+        "M2_P3_BRIDGE1": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 11,
+          "winningFamilies": 11,
+          "promotedWinners": 2,
+          "changedTop10Cuts": 56,
+          "numberIntroduced": 127
+        },
+        "M2_P3_FRESH1": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 11,
+          "winningFamilies": 11,
+          "promotedWinners": 2,
+          "changedTop10Cuts": 56,
+          "numberIntroduced": 128
+        },
+        "M2_P3_BRIDGE2": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 8,
+          "winningFamilies": 8,
+          "promotedWinners": 3,
+          "changedTop10Cuts": 56,
+          "numberIntroduced": 182
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 11,
+          "winningFamilies": 11,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 55,
+          "numberIntroduced": 55
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 12,
+          "winningFamilies": 12,
+          "promotedWinners": 2,
+          "changedTop10Cuts": 55,
+          "numberIntroduced": 110
+        },
+        "M2_P3_HASH_CONTROL": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 9,
+          "winningFamilies": 9,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 56,
+          "numberIntroduced": 140
+        }
+      },
+      "paired": {
+        "M1_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M3_P3": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-18|Nocturno",
+            "2026-09-22|Primera",
+            "2026-09-25|Matutino"
+          ]
+        },
+        "M2_P5": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M2_P0": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "CAP6_P3": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M1_P3_BRIDGE1": {
+          "gained": [
+            "2026-09-21|Primera"
+          ],
+          "lost": []
+        },
+        "M2_P3_BRIDGE1": {
+          "gained": [
+            "2026-09-21|Primera",
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M2_P3_FRESH1": {
+          "gained": [
+            "2026-09-29|Nocturno",
+            "2026-09-30|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        },
+        "M2_P3_BRIDGE2": {
+          "gained": [
+            "2026-09-16|Matutino",
+            "2026-09-21|Primera",
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-18|Nocturno",
+            "2026-09-22|Primera",
+            "2026-09-24|Matutino",
+            "2026-09-25|Matutino"
+          ]
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "gained": [
+            "2026-09-21|Primera"
+          ],
+          "lost": []
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "gained": [
+            "2026-09-16|Matutino",
+            "2026-09-21|Primera"
+          ],
+          "lost": []
+        },
+        "M2_P3_HASH_CONTROL": {
+          "gained": [],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ]
+        }
+      }
+    },
+    "2026-10": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 0,
+          "numberIntroduced": 0
+        },
+        "M1_P3": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 18,
+          "numberIntroduced": 19
+        },
+        "M2_P3": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 27,
+          "numberIntroduced": 48
+        },
+        "M3_P3": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 32,
+          "numberIntroduced": 90
+        },
+        "M2_P5": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 27,
+          "numberIntroduced": 48
+        },
+        "M2_P0": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 27,
+          "numberIntroduced": 48
+        },
+        "CAP6_P3": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 24,
+          "numberIntroduced": 49
+        },
+        "M1_P3_BRIDGE1": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 36,
+          "numberIntroduced": 55
+        },
+        "M2_P3_BRIDGE1": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 36,
+          "numberIntroduced": 84
+        },
+        "M2_P3_FRESH1": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 36,
+          "numberIntroduced": 84
+        },
+        "M2_P3_BRIDGE2": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 36,
+          "numberIntroduced": 120
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 36,
+          "numberIntroduced": 36
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "promotedWinners": 0,
+          "changedTop10Cuts": 36,
+          "numberIntroduced": 72
+        },
+        "M2_P3_HASH_CONTROL": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 6,
+          "winningFamilies": 8,
+          "promotedWinners": 1,
+          "changedTop10Cuts": 35,
+          "numberIntroduced": 95
+        }
+      },
+      "paired": {
+        "M1_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M3_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P5": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P0": {
+          "gained": [],
+          "lost": []
+        },
+        "CAP6_P3": {
+          "gained": [],
+          "lost": []
+        },
+        "M1_P3_BRIDGE1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_FRESH1": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_BRIDGE2": {
+          "gained": [],
+          "lost": []
+        },
+        "OPEN_BRIDGE1_ORIG": {
+          "gained": [],
+          "lost": []
+        },
+        "OPEN_BRIDGE2_ORIG": {
+          "gained": [],
+          "lost": []
+        },
+        "M2_P3_HASH_CONTROL": {
+          "gained": [
+            "2026-10-07|Vespertino"
+          ],
+          "lost": []
+        }
+      }
+    }
+  },
+  "controls": {
+    "M1_P3": {
+      "observedDifference": 0,
+      "placeboMean": 0.3991,
+      "p05": -1,
+      "median": 0,
+      "p95": 2,
+      "tailAtLeastObserved": 0.8867056647167642,
+      "rotationsAtLeast": 20,
+      "rotationsMin": -1,
+      "rotationsMax": 4
+    },
+    "M2_P3": {
+      "observedDifference": 0,
+      "placeboMean": 0.4774,
+      "p05": -2,
+      "median": 0,
+      "p95": 3,
+      "tailAtLeastObserved": 0.7954102294885256,
+      "rotationsAtLeast": 18,
+      "rotationsMin": -2,
+      "rotationsMax": 3
+    },
+    "M3_P3": {
+      "observedDifference": -3,
+      "placeboMean": 0.5585,
+      "p05": -3,
+      "median": 1,
+      "p95": 4,
+      "tailAtLeastObserved": 0.9830008499575021,
+      "rotationsAtLeast": 21,
+      "rotationsMin": -4,
+      "rotationsMax": 3
+    },
+    "M2_P5": {
+      "observedDifference": 0,
+      "placeboMean": 0.4774,
+      "p05": -2,
+      "median": 0,
+      "p95": 3,
+      "tailAtLeastObserved": 0.7954102294885256,
+      "rotationsAtLeast": 18,
+      "rotationsMin": -2,
+      "rotationsMax": 3
+    },
+    "M2_P0": {
+      "observedDifference": 0,
+      "placeboMean": 0.4774,
+      "p05": -2,
+      "median": 0,
+      "p95": 3,
+      "tailAtLeastObserved": 0.7954102294885256,
+      "rotationsAtLeast": 18,
+      "rotationsMin": -2,
+      "rotationsMax": 3
+    },
+    "CAP6_P3": {
+      "observedDifference": 0,
+      "placeboMean": 0.5306,
+      "p05": -2,
+      "median": 1,
+      "p95": 3,
+      "tailAtLeastObserved": 0.767861606919654,
+      "rotationsAtLeast": 16,
+      "rotationsMin": -2,
+      "rotationsMax": 3
+    },
+    "M1_P3_BRIDGE1": {
+      "observedDifference": 1,
+      "placeboMean": 0.959,
+      "p05": -1,
+      "median": 1,
+      "p95": 3,
+      "tailAtLeastObserved": 0.6201189940502975,
+      "rotationsAtLeast": 13,
+      "rotationsMin": -3,
+      "rotationsMax": 6
+    },
+    "M2_P3_BRIDGE1": {
+      "observedDifference": 1,
+      "placeboMean": 0.8304,
+      "p05": -2,
+      "median": 1,
+      "p95": 4,
+      "tailAtLeastObserved": 0.5738213089345533,
+      "rotationsAtLeast": 10,
+      "rotationsMin": -3,
+      "rotationsMax": 6
+    },
+    "M2_P3_FRESH1": {
+      "observedDifference": 1,
+      "placeboMean": 0.6512,
+      "p05": -2,
+      "median": 1,
+      "p95": 4,
+      "tailAtLeastObserved": 0.5338733063346832,
+      "rotationsAtLeast": 11,
+      "rotationsMin": -3,
+      "rotationsMax": 6
+    },
+    "M2_P3_BRIDGE2": {
+      "observedDifference": -2,
+      "placeboMean": 0.6522,
+      "p05": -3,
+      "median": 1,
+      "p95": 4,
+      "tailAtLeastObserved": 0.9182540872956352,
+      "rotationsAtLeast": 21,
+      "rotationsMin": -3,
+      "rotationsMax": 7
+    },
+    "OPEN_BRIDGE1_ORIG": {
+      "observedDifference": 1,
+      "placeboMean": 0.5662,
+      "p05": -1,
+      "median": 0,
+      "p95": 3,
+      "tailAtLeastObserved": 0.4989250537473126,
+      "rotationsAtLeast": 10,
+      "rotationsMin": -1,
+      "rotationsMax": 4
+    },
+    "OPEN_BRIDGE2_ORIG": {
+      "observedDifference": 2,
+      "placeboMean": 0.6898,
+      "p05": -2,
+      "median": 1,
+      "p95": 4,
+      "tailAtLeastObserved": 0.31493425328733565,
+      "rotationsAtLeast": 8,
+      "rotationsMin": -3,
+      "rotationsMax": 6
+    },
+    "M2_P3_HASH_CONTROL": {
+      "observedDifference": 0,
+      "placeboMean": -0.0479,
+      "p05": -3,
+      "median": 0,
+      "p95": 3,
+      "tailAtLeastObserved": 0.5967701614919254,
+      "rotationsAtLeast": 13,
+      "rotationsMin": -3,
+      "rotationsMax": 4
+    }
+  },
+  "seal": {
+    "sourcePre": "512331f2695e2b632c7f2077f2dd7437041d00ee724556cf754e22f986a07f2b",
+    "sourceNocturna": "86426d26f2a90032ae7266bc094642c558628cf43c02b9838f31134bed33b5d8",
+    "script": "51df321efb0294f130d431af11c37726e93f62dc0bde8eb849a698d8307a4ed7",
+    "protocol": "013f3766af67c9c76205f741506ce64a065ca205c0cc56221c64c3a31cc3eee0",
+    "pre": "6f97f7187239f10b9269c017e643444d387effc62afaef66c886dc1049ed23d9",
+    "nocturnaPre": "58fa2b7fae6b062b267ab9c4bbe5998e192660a45cd9a6c8558f33ea6b9b7473"
+  },
+  "sourcePost": "fe39afc5301ffe57f1e7b69341d2474a6064c428a00f776bab3a83bb0582000f",
+  "sourceNocturnaPost": "88469be42790308fa7a5640964087bd118911e836f781b71d7b85e58d540079f",
+  "interpretation": "Mismas 23 jornadas usadas para explorar políticas: posible sobreajuste. No existe demostración de predictibilidad de lotería."
+}
