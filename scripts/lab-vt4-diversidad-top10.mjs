@@ -85,7 +85,6 @@ function groupsOf(view){
  const v=view.ranks.vt4;
  const motherRanks=new Map(view.ranks.vt3.map(x=>[x.family,x.rank]));
  assert.ok(view.ranks.vt3.length>=10);
- const seen=new Set();
  return v.map(g=>{
   const members=[...new Set(g.paths.map(p=>p.value))].sort();
   assert.ok(members.every(is4));
@@ -94,9 +93,7 @@ function groupsOf(view){
   assert.ok(g.parentFamilies.every(m=>motherRanks.has(m)&&motherRanks.get(m)<=10));
   const mother=g.parentFamilies.slice().sort((a,b)=>(motherRanks.get(a)-motherRanks.get(b))||a.localeCompare(b))[0];
   const motherRank=motherRanks.get(mother);
-  // Preserve physically unique group identity: group labels should not collide.
-  assert.ok(!seen.has(g.family),'Etiqueta VT4 compartida por grupos diferentes: '+g.family);
-  seen.add(g.family);
+  // Las etiquetas pueden coincidir (p. ej. 4444): cada grupo se identifica por su rango y madre física.
   for(const p of g.paths){
    assert.ok(p.mothers?.includes(mother));
    assert.equal(p.path.length,4);
@@ -121,11 +118,11 @@ function choose(all,method,seed){
   const aHash=sha(seed+'|'+a.family),bHash=sha(seed+'|'+b.family);
   return aHash.localeCompare(bHash)||a.orderRank-b.orderRank
  }):all;
- const canUse=g=>!usedGroups.has(g.family)&&!g.values.some(v=>usedValues.has(v));
+ const canUse=g=>!usedGroups.has(g.orderRank)&&!g.values.some(v=>usedValues.has(v));
  function add(g){
   assert.ok(canUse(g));
   selected.push(g);
-  usedGroups.add(g.family);
+  usedGroups.add(g.orderRank);
   for(const value of g.values)usedValues.add(value);
   motherCount.set(g.mother,1+(motherCount.get(g.mother)||0));
  }
