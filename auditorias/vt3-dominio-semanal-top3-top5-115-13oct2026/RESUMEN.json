@@ -1,0 +1,1472 @@
+{
+  "date": "2026-10-13",
+  "rounds": [
+    {
+      "trainWeek": "2026-09-14",
+      "testWeek": "2026-09-21",
+      "trainCuts": 25,
+      "testCuts": 30,
+      "trainingDistribution": {
+        "zero": 6,
+        "oneToThree": 17,
+        "fourOrFive": 2
+      },
+      "trainingReproduction": {
+        "possibleCuts": 19,
+        "fullyReproducedCuts": 19,
+        "status": "100pct_in_sample"
+      },
+      "casebookName": "MEMORIA_SEMANA_2026-09-14.json",
+      "casebookSha": "a8b9e5dd86596a255ec7330330021912e94335cba19bcf0c23796ba1d9e21e8e"
+    },
+    {
+      "trainWeek": "2026-09-21",
+      "testWeek": "2026-09-28",
+      "trainCuts": 30,
+      "testCuts": 30,
+      "trainingDistribution": {
+        "zero": 10,
+        "oneToThree": 19,
+        "fourOrFive": 1
+      },
+      "trainingReproduction": {
+        "possibleCuts": 20,
+        "fullyReproducedCuts": 20,
+        "status": "100pct_in_sample"
+      },
+      "casebookName": "MEMORIA_SEMANA_2026-09-21.json",
+      "casebookSha": "3f252b19e1cad7643d3b17a72f620c76d3256c70ddbf5363fe502c50ff919a90"
+    },
+    {
+      "trainWeek": "2026-09-28",
+      "testWeek": "2026-10-05",
+      "trainCuts": 30,
+      "testCuts": 30,
+      "trainingDistribution": {
+        "zero": 9,
+        "oneToThree": 19,
+        "fourOrFive": 2
+      },
+      "trainingReproduction": {
+        "possibleCuts": 21,
+        "fullyReproducedCuts": 21,
+        "status": "100pct_in_sample"
+      },
+      "casebookName": "MEMORIA_SEMANA_2026-09-28.json",
+      "casebookSha": "0314b3aaeebcbf1459efe458b883c8a00e81413e3daee804520c2f9f0bb2629f"
+    }
+  ],
+  "trainingTotal": {
+    "cases": 85,
+    "physicalPositiveFamilyExposures": 110,
+    "reachableCases": 60,
+    "fullyReproducedCases": 60,
+    "distribution": {
+      "zero": 25,
+      "oneToThree": 55,
+      "fourOrFive": 5
+    }
+  },
+  "overall": {
+    "OFICIAL": {
+      "cuts": 90,
+      "top3": 3,
+      "top5": 6,
+      "top10": 11,
+      "winnerFamilyTop3": 3,
+      "winnerFamilyTop5": 8,
+      "gained3": [],
+      "lost3": [],
+      "gained10": [],
+      "lost10": []
+    },
+    "PATRON_GLOBAL": {
+      "cuts": 90,
+      "top3": 2,
+      "top5": 2,
+      "top10": 2,
+      "winnerFamilyTop3": 2,
+      "winnerFamilyTop5": 2,
+      "gained3": [
+        "2026-09-21|Vespertino",
+        "2026-09-25|Matutino"
+      ],
+      "lost3": [
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-10|Nocturno"
+      ],
+      "gained10": [
+        "2026-09-21|Vespertino"
+      ],
+      "lost10": [
+        "2026-09-22|Primera",
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino",
+        "2026-09-29|Matutino",
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino",
+        "2026-10-08|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    },
+    "PATRON_MISMO_TURNO": {
+      "cuts": 90,
+      "top3": 1,
+      "top5": 5,
+      "top10": 6,
+      "winnerFamilyTop3": 1,
+      "winnerFamilyTop5": 5,
+      "gained3": [
+        "2026-09-26|Matutino"
+      ],
+      "lost3": [
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-10|Nocturno"
+      ],
+      "gained10": [
+        "2026-09-24|Nocturno",
+        "2026-09-26|Matutino",
+        "2026-09-28|Previa",
+        "2026-09-28|Matutino",
+        "2026-10-09|Vespertino"
+      ],
+      "lost10": [
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino",
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino",
+        "2026-10-08|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    },
+    "CASILLAS_FUENTE": {
+      "cuts": 90,
+      "top3": 1,
+      "top5": 2,
+      "top10": 4,
+      "winnerFamilyTop3": 1,
+      "winnerFamilyTop5": 2,
+      "gained3": [
+        "2026-10-06|Nocturno"
+      ],
+      "lost3": [
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-10|Nocturno"
+      ],
+      "gained10": [
+        "2026-09-21|Vespertino",
+        "2026-10-06|Nocturno",
+        "2026-10-08|Vespertino",
+        "2026-10-09|Vespertino"
+      ],
+      "lost10": [
+        "2026-09-22|Primera",
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino",
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino",
+        "2026-10-08|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    },
+    "VECINO_GEOMETRICO": {
+      "cuts": 90,
+      "top3": 2,
+      "top5": 2,
+      "top10": 5,
+      "winnerFamilyTop3": 2,
+      "winnerFamilyTop5": 2,
+      "gained3": [
+        "2026-09-22|Primera",
+        "2026-10-06|Nocturno"
+      ],
+      "lost3": [
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-10|Nocturno"
+      ],
+      "gained10": [
+        "2026-09-21|Primera",
+        "2026-09-28|Matutino",
+        "2026-10-06|Nocturno"
+      ],
+      "lost10": [
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino",
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino",
+        "2026-10-08|Matutino"
+      ]
+    },
+    "VECINO_RESPALDO": {
+      "cuts": 90,
+      "top3": 3,
+      "top5": 3,
+      "top10": 5,
+      "winnerFamilyTop3": 3,
+      "winnerFamilyTop5": 3,
+      "gained3": [
+        "2026-09-22|Primera",
+        "2026-10-05|Nocturno",
+        "2026-10-06|Nocturno"
+      ],
+      "lost3": [
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-10|Nocturno"
+      ],
+      "gained10": [
+        "2026-09-28|Matutino",
+        "2026-10-05|Nocturno",
+        "2026-10-06|Vespertino",
+        "2026-10-06|Nocturno"
+      ],
+      "lost10": [
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino",
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino",
+        "2026-10-08|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    },
+    "FUSION_CONSERVADORA": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 5,
+      "winnerFamilyTop3": 4,
+      "winnerFamilyTop5": 5,
+      "gained3": [
+        "2026-09-21|Vespertino"
+      ],
+      "lost3": [],
+      "gained10": [
+        "2026-09-21|Vespertino"
+      ],
+      "lost10": [
+        "2026-09-22|Primera",
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino",
+        "2026-09-29|Matutino",
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino",
+        "2026-10-08|Matutino"
+      ]
+    },
+    "CONTROL_NEGATIVAS": {
+      "cuts": 90,
+      "top3": 3,
+      "top5": 4,
+      "top10": 5,
+      "winnerFamilyTop3": 3,
+      "winnerFamilyTop5": 4,
+      "gained3": [
+        "2026-09-30|Vespertino",
+        "2026-10-07|Vespertino"
+      ],
+      "lost3": [
+        "2026-09-30|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "gained10": [
+        "2026-09-23|Matutino",
+        "2026-09-30|Vespertino",
+        "2026-10-01|Nocturno",
+        "2026-10-07|Vespertino"
+      ],
+      "lost10": [
+        "2026-09-22|Primera",
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino",
+        "2026-09-30|Matutino",
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino",
+        "2026-10-08|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    }
+  },
+  "byWeek": {
+    "2026-09-21": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 1,
+        "top10": 4,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "PATRON_GLOBAL": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "winnerFamilyTop3": 2,
+        "winnerFamilyTop5": 2,
+        "gained3": [
+          "2026-09-21|Vespertino",
+          "2026-09-25|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lost10": [
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino"
+        ]
+      },
+      "PATRON_MISMO_TURNO": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 2,
+        "top10": 3,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 2,
+        "gained3": [
+          "2026-09-26|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-09-24|Nocturno",
+          "2026-09-26|Matutino"
+        ],
+        "lost10": [
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino"
+        ]
+      },
+      "CASILLAS_FUENTE": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lost10": [
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino"
+        ]
+      },
+      "VECINO_GEOMETRICO": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-09-22|Primera"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-09-21|Primera"
+        ],
+        "lost10": [
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino"
+        ]
+      },
+      "VECINO_RESPALDO": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-09-22|Primera"
+        ],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino"
+        ]
+      },
+      "FUSION_CONSERVADORA": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 2,
+        "gained3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lost10": [
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino"
+        ]
+      },
+      "CONTROL_NEGATIVAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-09-23|Matutino"
+        ],
+        "lost10": [
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino"
+        ]
+      }
+    },
+    "2026-09-28": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "winnerFamilyTop3": 2,
+        "winnerFamilyTop5": 4,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "PATRON_GLOBAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-03|Matutino"
+        ]
+      },
+      "PATRON_MISMO_TURNO": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 2,
+        "top10": 2,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 2,
+        "gained3": [],
+        "lost3": [
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa"
+        ],
+        "gained10": [
+          "2026-09-28|Previa",
+          "2026-09-28|Matutino"
+        ],
+        "lost10": [
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-03|Matutino"
+        ]
+      },
+      "CASILLAS_FUENTE": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-03|Matutino"
+        ]
+      },
+      "VECINO_GEOMETRICO": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa"
+        ],
+        "gained10": [
+          "2026-09-28|Matutino"
+        ],
+        "lost10": [
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-03|Matutino"
+        ]
+      },
+      "VECINO_RESPALDO": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa"
+        ],
+        "gained10": [
+          "2026-09-28|Matutino"
+        ],
+        "lost10": [
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-03|Matutino"
+        ]
+      },
+      "FUSION_CONSERVADORA": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "winnerFamilyTop3": 2,
+        "winnerFamilyTop5": 2,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-29|Matutino",
+          "2026-10-03|Matutino"
+        ]
+      },
+      "CONTROL_NEGATIVAS": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "winnerFamilyTop3": 2,
+        "winnerFamilyTop5": 3,
+        "gained3": [
+          "2026-09-30|Vespertino"
+        ],
+        "lost3": [
+          "2026-09-30|Matutino"
+        ],
+        "gained10": [
+          "2026-09-30|Vespertino",
+          "2026-10-01|Nocturno"
+        ],
+        "lost10": [
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-03|Matutino"
+        ]
+      }
+    },
+    "2026-10-05": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 2,
+        "top10": 3,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "PATRON_GLOBAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino",
+          "2026-10-10|Nocturno"
+        ]
+      },
+      "PATRON_MISMO_TURNO": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-10-09|Vespertino"
+        ],
+        "lost10": [
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino",
+          "2026-10-10|Nocturno"
+        ]
+      },
+      "CASILLAS_FUENTE": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 2,
+        "top10": 3,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 2,
+        "gained3": [
+          "2026-10-06|Nocturno"
+        ],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-10-06|Nocturno",
+          "2026-10-08|Vespertino",
+          "2026-10-09|Vespertino"
+        ],
+        "lost10": [
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino",
+          "2026-10-10|Nocturno"
+        ]
+      },
+      "VECINO_GEOMETRICO": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-10-06|Nocturno"
+        ],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-10-06|Nocturno"
+        ],
+        "lost10": [
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "VECINO_RESPALDO": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "winnerFamilyTop3": 2,
+        "winnerFamilyTop5": 2,
+        "gained3": [
+          "2026-10-05|Nocturno",
+          "2026-10-06|Nocturno"
+        ],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-10-05|Nocturno",
+          "2026-10-06|Vespertino",
+          "2026-10-06|Nocturno"
+        ],
+        "lost10": [
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino",
+          "2026-10-10|Nocturno"
+        ]
+      },
+      "FUSION_CONSERVADORA": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "CONTROL_NEGATIVAS": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-10-07|Vespertino"
+        ],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-10-07|Vespertino"
+        ],
+        "lost10": [
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino",
+          "2026-10-10|Nocturno"
+        ]
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 2,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "PATRON_GLOBAL": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-10-02|Previa"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Previa",
+          "2026-10-02|Previa"
+        ]
+      },
+      "PATRON_MISMO_TURNO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [
+          "2026-10-02|Previa"
+        ],
+        "gained10": [
+          "2026-09-28|Previa"
+        ],
+        "lost10": [
+          "2026-09-24|Previa",
+          "2026-10-02|Previa"
+        ]
+      },
+      "CASILLAS_FUENTE": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-10-02|Previa"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Previa",
+          "2026-10-02|Previa"
+        ]
+      },
+      "VECINO_GEOMETRICO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-10-02|Previa"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Previa",
+          "2026-10-02|Previa"
+        ]
+      },
+      "VECINO_RESPALDO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-10-02|Previa"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Previa",
+          "2026-10-02|Previa"
+        ]
+      },
+      "FUSION_CONSERVADORA": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Previa"
+        ]
+      },
+      "CONTROL_NEGATIVAS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Previa"
+        ]
+      }
+    },
+    "Primera": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "PATRON_GLOBAL": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-22|Primera"
+        ]
+      },
+      "PATRON_MISMO_TURNO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "CASILLAS_FUENTE": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-22|Primera"
+        ]
+      },
+      "VECINO_GEOMETRICO": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-09-22|Primera"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-09-21|Primera"
+        ],
+        "lost10": []
+      },
+      "VECINO_RESPALDO": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-09-22|Primera"
+        ],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "FUSION_CONSERVADORA": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-22|Primera"
+        ]
+      },
+      "CONTROL_NEGATIVAS": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-22|Primera"
+        ]
+      }
+    },
+    "Matutino": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 3,
+        "top10": 7,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 4,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "PATRON_GLOBAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-09-25|Matutino"
+        ],
+        "lost3": [
+          "2026-09-30|Matutino"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Matutino",
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "PATRON_MISMO_TURNO": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 2,
+        "gained3": [
+          "2026-09-26|Matutino"
+        ],
+        "lost3": [
+          "2026-09-30|Matutino"
+        ],
+        "gained10": [
+          "2026-09-26|Matutino",
+          "2026-09-28|Matutino"
+        ],
+        "lost10": [
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "CASILLAS_FUENTE": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-09-30|Matutino"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "VECINO_GEOMETRICO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-09-30|Matutino"
+        ],
+        "gained10": [
+          "2026-09-28|Matutino"
+        ],
+        "lost10": [
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "VECINO_RESPALDO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-09-30|Matutino"
+        ],
+        "gained10": [
+          "2026-09-28|Matutino"
+        ],
+        "lost10": [
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "FUSION_CONSERVADORA": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 2,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-24|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "CONTROL_NEGATIVAS": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-09-30|Matutino"
+        ],
+        "gained10": [
+          "2026-09-23|Matutino"
+        ],
+        "lost10": [
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      }
+    },
+    "Vespertino": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "PATRON_GLOBAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lost10": []
+      },
+      "PATRON_MISMO_TURNO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-10-09|Vespertino"
+        ],
+        "lost10": []
+      },
+      "CASILLAS_FUENTE": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 1,
+        "top10": 3,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-09-21|Vespertino",
+          "2026-10-08|Vespertino",
+          "2026-10-09|Vespertino"
+        ],
+        "lost10": []
+      },
+      "VECINO_GEOMETRICO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "VECINO_RESPALDO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-10-06|Vespertino"
+        ],
+        "lost10": []
+      },
+      "FUSION_CONSERVADORA": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lost10": []
+      },
+      "CONTROL_NEGATIVAS": {
+        "cuts": 18,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "winnerFamilyTop3": 2,
+        "winnerFamilyTop5": 2,
+        "gained3": [
+          "2026-09-30|Vespertino",
+          "2026-10-07|Vespertino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-09-30|Vespertino",
+          "2026-10-07|Vespertino"
+        ],
+        "lost10": []
+      }
+    },
+    "Nocturno": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 2,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "PATRON_GLOBAL": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [],
+        "lost10": [
+          "2026-10-10|Nocturno"
+        ]
+      },
+      "PATRON_MISMO_TURNO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 0,
+        "gained3": [],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-09-24|Nocturno"
+        ],
+        "lost10": [
+          "2026-10-10|Nocturno"
+        ]
+      },
+      "CASILLAS_FUENTE": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-10-06|Nocturno"
+        ],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-10-06|Nocturno"
+        ],
+        "lost10": [
+          "2026-10-10|Nocturno"
+        ]
+      },
+      "VECINO_GEOMETRICO": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [
+          "2026-10-06|Nocturno"
+        ],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-10-06|Nocturno"
+        ],
+        "lost10": []
+      },
+      "VECINO_RESPALDO": {
+        "cuts": 18,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "winnerFamilyTop3": 2,
+        "winnerFamilyTop5": 2,
+        "gained3": [
+          "2026-10-05|Nocturno",
+          "2026-10-06|Nocturno"
+        ],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-10-05|Nocturno",
+          "2026-10-06|Nocturno"
+        ],
+        "lost10": [
+          "2026-10-10|Nocturno"
+        ]
+      },
+      "FUSION_CONSERVADORA": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 1,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "CONTROL_NEGATIVAS": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "winnerFamilyTop3": 0,
+        "winnerFamilyTop5": 1,
+        "gained3": [],
+        "lost3": [
+          "2026-10-10|Nocturno"
+        ],
+        "gained10": [
+          "2026-10-01|Nocturno"
+        ],
+        "lost10": [
+          "2026-10-10|Nocturno"
+        ]
+      }
+    }
+  },
+  "seal": {
+    "sourcePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "profilePre": "32319d0c1f0c38908d6a14d964e43907ee75417ca1144bc486ee9cef495f9a67",
+    "protocol": "a33f62a51624dfe625ce18874a2a849a761cf38a51f443bd7bc71b791c55c147",
+    "code": "914b7b31ac604aee64de4123b70f713b525c9ee5a9400e6aaa42ec5e3c8423fa",
+    "data": "42e5993b63b3740ecb911b2fb255508f1bf75408467cd530ffad65f8e685bd8e"
+  },
+  "postSha": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "conclusions": "La memoria aprende a reproducir las hojas X con respuestas conocidas; fuera de X aplica geometría, no memorias de números ni resultados futuros.",
+  "warning": "El libro de casos memoriza literalmente cabezas conocidas para dominar X. Su 100% NO implica poder anticipar X+1. Muestra ya examinada muchas veces; quiniela aleatoria."
+}
