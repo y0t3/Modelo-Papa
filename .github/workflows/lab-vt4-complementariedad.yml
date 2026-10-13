@@ -1,0 +1,53 @@
+name: VT4 complementariedad D1 D7 con diez plazas
+on:
+  push:
+    branches: [lab-vt4-complementariedad-d1-d7-13oct2026]
+    paths:
+      - 'scripts/lab-vt4-complementariedad.mjs'
+      - 'PROTOCOLO_VT4_COMPLEMENTARIEDAD_13OCT2026.md'
+      - '.github/workflows/lab-vt4-complementariedad.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  complementos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar cabezas objetivo y fixture original antes de construir PRE
+        run: |
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt4-complementos-post.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt4-complementos-fixture.b64
+          test ! -e auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          test ! -e fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+      - name: Crear siete Top10 PRE y medir complementos físicos del mismo corte
+        run: node scripts/lab-vt4-complementariedad.mjs pre
+      - name: Publicar sello de las decisiones antes de revelar resultados
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-complementariedad-d1-d7-115-13oct2026/PRE_115.json
+          git add auditorias/vt4-complementariedad-d1-d7-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT4): complementariedad D1 D7 PRE 115 cortes'
+          git push origin HEAD:lab-vt4-complementariedad-d1-d7-13oct2026
+      - name: Restaurar POST y evaluar cabezas exactas y turnos
+        run: |
+          mv /tmp/vt4-complementos-post.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          mv /tmp/vt4-complementos-fixture.b64 fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt4-complementariedad.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt4-complementariedad-d1-d7-115
+          path: auditorias/vt4-complementariedad-d1-d7-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Registrar POST comparativo sin cambiar motor ni app
+        run: |
+          git add auditorias/vt4-complementariedad-d1-d7-115-13oct2026/POST_115.json
+          git add auditorias/vt4-complementariedad-d1-d7-115-13oct2026/RESUMEN.json
+          git commit -m 'data(VT4): complementariedad previa vs cabezas futuras y controles'
+          git push origin HEAD:lab-vt4-complementariedad-d1-d7-13oct2026
