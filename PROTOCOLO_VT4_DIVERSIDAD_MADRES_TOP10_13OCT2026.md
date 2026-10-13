@@ -13,11 +13,11 @@ Tras corregir la identidad de VT4 para ser **madre VT3 reversible + cifra agrega
 Para cada corte, a partir de la lista ordenada de familias VT4 corregidas:
 1. `ORIGINAL_CORREGIDO`: primeras diez agrupaciones según prioridad absoluta de mejor madre, sin restricciones; sólo referencia.
 2. `UNICO_NUMERO`: primeras diez agrupaciones sin repetir una misma cuaterna física entre agrupaciones; control que aísla el efecto de no duplicar cifras.
-3. `CUPO_1`, `CUPO_2`, `CUPO_3`: recorrido voraz de la lista original, aceptando sólo si **ninguna** de las madres físicas propias del grupo ha agotado el cupo 1, 2 o 3; rellenar **sin violar el cupo**, siempre diez plazas cuando existan al menos diez madres elegibles. Conservar unicidad de cuaternas físicas.
+3. `CUPO_1`, `CUPO_2`, `CUPO_3`: recorrido voraz de la lista original, priorizando grupos cuya madre principal (mejor puesto VT3 propio) **aún no** ha agotado el cupo 1, 2 o 3; si no hay suficientes madres elegibles, completar hasta diez con otras hijas físicas válidas y registrar explícitamente cada plaza que **excede el cupo**. Conservar unicidad de cuaternas físicas. Estas son preferencias de reparto, no límites duros.
 4. `RONDA_MADRES`: una ronda por madre VT3 según su puesto 1..10, eligiendo primero su hija mejor ranqueada que no colisiona numéricamente; repetir rondas hasta llegar a diez, aunque en rondas posteriores pueda usar otra hija legítima de la misma madre. No inventar madres ni cifras nuevas.
 5. `BASE_NEUTRAL`: en cada corte seleccionar diez agrupaciones físicas distintas por hash determinista PRE, con unicidad numérica; control de cupo igual.
 
-**Si el cupo rígido no permite diez plazas, informar el faltante y NO compararlo falsamente como Top10 completo.** `RONDA_MADRES`, `UNICO_NUMERO` y `BASE_NEUTRAL` deben llenar diez, o el experimento abortará para ese corte si la bolsa física es menor que diez. Todas las políticas comparten el mismo motor de madres VT3, origen de rutas, fuentes y forma corregida.
+**Todos los métodos deben ocupar exactamente diez plazas; los cupos 1/2/3 son metas iniciales y pueden excederse mediante un pase de relleno registrado.** `RONDA_MADRES`, `UNICO_NUMERO` y `BASE_NEUTRAL` deben llenar diez, o el experimento abortará para ese corte si la bolsa física es menor que diez. Todas las políticas comparten el mismo motor de madres VT3, origen de rutas, fuentes y forma corregida.
 
 ## Procedimiento PRE/POST
 - Histórico congelado de 30 fechas, 115 cortes a partir de 23 jornadas. Generar los PRE del fixture con todas las cabezas del turno objetivo y siguientes sustituidas por `----`. D−1/D−7 **sólo fechas anteriores**.
