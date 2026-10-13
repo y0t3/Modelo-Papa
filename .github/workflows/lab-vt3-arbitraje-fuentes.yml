@@ -1,0 +1,46 @@
+name: VT3 arbitraje por fuentes y persistencia
+on:
+  push:
+    branches: [lab-vt3-arbitraje-fuentes-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-arbitraje-fuentes.mjs'
+      - 'PROTOCOLO_VT3_ARBITRAJE_FUENTES_13OCT2026.md'
+      - '.github/workflows/lab-vt3-arbitraje-fuentes.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  examinar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Separar los POST originales
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-post-original.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-post-nocturna.json
+      - name: Producir políticas y sellarlas ANTES del contraste
+        run: node scripts/lab-vt3-arbitraje-fuentes.mjs pre
+      - name: Contrastar cinco políticas con POST histórico separado
+        run: |
+          mv /tmp/vt3-post-original.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/vt3-post-nocturna.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          node scripts/lab-vt3-arbitraje-fuentes.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-arbitraje-fuentes-115
+          path: auditorias/vt3-arbitraje-fuentes-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar auditoría completa en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-arbitraje-fuentes-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): alternativas por fuentes y persistencia con controles negativos'
+            git push origin HEAD:lab-vt3-arbitraje-fuentes-13oct2026
+          fi
