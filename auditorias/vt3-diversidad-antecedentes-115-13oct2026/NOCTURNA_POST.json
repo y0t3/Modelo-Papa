@@ -1,0 +1,1294 @@
+{
+  "date": "2026-10-12",
+  "watch": [
+    {
+      "head": "9851",
+      "family": "158/851",
+      "anchored": false,
+      "originalRank": null,
+      "newRanks": {
+        "OFICIAL": null,
+        "COB20_P3": null,
+        "COB40_P3": null,
+        "COB20_P5": null,
+        "COB40_P5": null,
+        "VENTANA5_P3": null,
+        "VENTANA10_P3": null,
+        "COB20_P3_HASH": null,
+        "CONTROL_MAS_EVENTOS_20": null,
+        "CONTROL_REV_RANGO_20": null
+      }
+    },
+    {
+      "head": "1615",
+      "family": "516/615",
+      "anchored": false,
+      "originalRank": null,
+      "newRanks": {
+        "OFICIAL": null,
+        "COB20_P3": null,
+        "COB40_P3": null,
+        "COB20_P5": null,
+        "COB40_P5": null,
+        "VENTANA5_P3": null,
+        "VENTANA10_P3": null,
+        "COB20_P3_HASH": null,
+        "CONTROL_MAS_EVENTOS_20": null,
+        "CONTROL_REV_RANGO_20": null
+      }
+    },
+    {
+      "head": "7242",
+      "family": "242/242",
+      "anchored": true,
+      "originalRank": 25,
+      "newRanks": {
+        "OFICIAL": null,
+        "COB20_P3": null,
+        "COB40_P3": null,
+        "COB20_P5": null,
+        "COB40_P5": null,
+        "VENTANA5_P3": null,
+        "VENTANA10_P3": null,
+        "COB20_P3_HASH": null,
+        "CONTROL_MAS_EVENTOS_20": null,
+        "CONTROL_REV_RANGO_20": null
+      }
+    },
+    {
+      "head": "8290",
+      "family": "092/290",
+      "anchored": false,
+      "originalRank": null,
+      "newRanks": {
+        "OFICIAL": null,
+        "COB20_P3": null,
+        "COB40_P3": null,
+        "COB20_P5": null,
+        "COB40_P5": null,
+        "VENTANA5_P3": null,
+        "VENTANA10_P3": null,
+        "COB20_P3_HASH": null,
+        "CONTROL_MAS_EVENTOS_20": null,
+        "CONTROL_REV_RANGO_20": null
+      }
+    },
+    {
+      "head": "3264",
+      "family": "264/462",
+      "anchored": false,
+      "originalRank": null,
+      "newRanks": {
+        "OFICIAL": null,
+        "COB20_P3": null,
+        "COB40_P3": null,
+        "COB20_P5": null,
+        "COB40_P5": null,
+        "VENTANA5_P3": null,
+        "VENTANA10_P3": null,
+        "COB20_P3_HASH": null,
+        "CONTROL_MAS_EVENTOS_20": null,
+        "CONTROL_REV_RANGO_20": null
+      }
+    }
+  ],
+  "policies": {
+    "OFICIAL": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "255/552"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 8,
+        "totalEventIncidences": 23,
+        "maxFamiliesSharingOneEvent": 8,
+        "HHI": 0.190926,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 8
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-05|D−7|Matutino|Santa Fé|3729",
+            "families": 2
+          },
+          {
+            "event": "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "365/563",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "536/635",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "276/672",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "424/424",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215"
+            ]
+          },
+          {
+            "family": "265/562",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "526/625",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "255/552",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    },
+    "COB20_P3": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "424/424",
+        "487/784",
+        "536/635",
+        "276/672",
+        "265/562",
+        "526/625"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 9,
+        "totalEventIncidences": 22,
+        "maxFamiliesSharingOneEvent": 7,
+        "HHI": 0.169421,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 7
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-05|D−7|Matutino|Santa Fé|3729",
+            "families": 2
+          },
+          {
+            "event": "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+            "families": 2
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "365/563",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "424/424",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215"
+            ]
+          },
+          {
+            "family": "487/784",
+            "events": [
+              "2026-10-10|D−1|Matutino|Provincia|5918"
+            ]
+          },
+          {
+            "family": "536/635",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "276/672",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "265/562",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "526/625",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    },
+    "COB40_P3": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "424/424",
+        "487/784",
+        "536/635",
+        "276/672",
+        "265/562",
+        "526/625"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 9,
+        "totalEventIncidences": 22,
+        "maxFamiliesSharingOneEvent": 7,
+        "HHI": 0.169421,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 7
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-05|D−7|Matutino|Santa Fé|3729",
+            "families": 2
+          },
+          {
+            "event": "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+            "families": 2
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "365/563",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "424/424",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215"
+            ]
+          },
+          {
+            "family": "487/784",
+            "events": [
+              "2026-10-10|D−1|Matutino|Provincia|5918"
+            ]
+          },
+          {
+            "family": "536/635",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "276/672",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "265/562",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "526/625",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    },
+    "COB20_P5": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "424/424",
+        "487/784",
+        "276/672",
+        "265/562",
+        "526/625"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 9,
+        "totalEventIncidences": 22,
+        "maxFamiliesSharingOneEvent": 7,
+        "HHI": 0.169421,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 7
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-05|D−7|Matutino|Santa Fé|3729",
+            "families": 2
+          },
+          {
+            "event": "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+            "families": 2
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "365/563",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "536/635",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "424/424",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215"
+            ]
+          },
+          {
+            "family": "487/784",
+            "events": [
+              "2026-10-10|D−1|Matutino|Provincia|5918"
+            ]
+          },
+          {
+            "family": "276/672",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "265/562",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "526/625",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    },
+    "COB40_P5": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "424/424",
+        "487/784",
+        "276/672",
+        "265/562",
+        "526/625"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 9,
+        "totalEventIncidences": 22,
+        "maxFamiliesSharingOneEvent": 7,
+        "HHI": 0.169421,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 7
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-05|D−7|Matutino|Santa Fé|3729",
+            "families": 2
+          },
+          {
+            "event": "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+            "families": 2
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "365/563",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "536/635",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "424/424",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215"
+            ]
+          },
+          {
+            "family": "487/784",
+            "events": [
+              "2026-10-10|D−1|Matutino|Provincia|5918"
+            ]
+          },
+          {
+            "family": "276/672",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "265/562",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "526/625",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    },
+    "VENTANA5_P3": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "424/424",
+        "536/635",
+        "276/672",
+        "265/562",
+        "526/625",
+        "255/552"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 8,
+        "totalEventIncidences": 23,
+        "maxFamiliesSharingOneEvent": 8,
+        "HHI": 0.190926,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 8
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-05|D−7|Matutino|Santa Fé|3729",
+            "families": 2
+          },
+          {
+            "event": "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "365/563",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "424/424",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215"
+            ]
+          },
+          {
+            "family": "536/635",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "276/672",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "265/562",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "526/625",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "255/552",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    },
+    "VENTANA10_P3": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "424/424",
+        "487/784",
+        "536/635",
+        "276/672",
+        "265/562",
+        "526/625"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 9,
+        "totalEventIncidences": 22,
+        "maxFamiliesSharingOneEvent": 7,
+        "HHI": 0.169421,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 7
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-05|D−7|Matutino|Santa Fé|3729",
+            "families": 2
+          },
+          {
+            "event": "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+            "families": 2
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "365/563",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "424/424",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215"
+            ]
+          },
+          {
+            "family": "487/784",
+            "events": [
+              "2026-10-10|D−1|Matutino|Provincia|5918"
+            ]
+          },
+          {
+            "family": "536/635",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "276/672",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "265/562",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "526/625",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    },
+    "COB20_P3_HASH": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "576/675",
+        "265/562",
+        "527/725",
+        "256/652",
+        "536/635",
+        "526/625",
+        "728/827"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 7,
+        "totalEventIncidences": 19,
+        "maxFamiliesSharingOneEvent": 7,
+        "HHI": 0.224377,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 7
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 4
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "576/675",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542"
+            ]
+          },
+          {
+            "family": "265/562",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "527/725",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "256/652",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "536/635",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "526/625",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "728/827",
+            "events": [
+              "2026-10-10|D−1|Matutino|Provincia|5918"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    },
+    "CONTROL_MAS_EVENTOS_20": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "265/562",
+        "526/625",
+        "255/552",
+        "356/653",
+        "276/672"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 7,
+        "totalEventIncidences": 24,
+        "maxFamiliesSharingOneEvent": 8,
+        "HHI": 0.190972,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 8
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 4
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-05|D−7|Matutino|Santa Fé|3729",
+            "families": 2
+          },
+          {
+            "event": "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+            "families": 2
+          },
+          {
+            "event": "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "365/563",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "536/635",
+            "events": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "265/562",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "526/625",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "255/552",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654"
+            ]
+          },
+          {
+            "family": "356/653",
+            "events": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799",
+              "2026-10-10|D−1|Nocturno|Provincia|2654"
+            ]
+          },
+          {
+            "family": "276/672",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    },
+    "CONTROL_REV_RANGO_20": {
+      "top": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "257/752",
+        "156/651",
+        "728/827",
+        "657/756",
+        "576/675",
+        "487/784",
+        "256/652"
+      ],
+      "metrics": {
+        "uniqueRootEvents": 6,
+        "totalEventIncidences": 15,
+        "maxFamiliesSharingOneEvent": 4,
+        "HHI": 0.191111,
+        "sharedRootEvents": [
+          {
+            "event": "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+            "families": 4
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Ciudad|6542",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Primera|Entre Ríos|2473",
+            "families": 3
+          },
+          {
+            "event": "2026-10-10|D−1|Matutino|Provincia|5918",
+            "families": 2
+          },
+          {
+            "event": "2026-10-10|D−1|Nocturno|Provincia|2654",
+            "families": 2
+          }
+        ],
+        "eventsByFamily": [
+          {
+            "family": "565/565",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          },
+          {
+            "family": "556/655",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Nocturno|Provincia|2654",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "555/555",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "257/752",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654"
+            ]
+          },
+          {
+            "family": "156/651",
+            "events": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799"
+            ]
+          },
+          {
+            "family": "728/827",
+            "events": [
+              "2026-10-10|D−1|Matutino|Provincia|5918"
+            ]
+          },
+          {
+            "family": "657/756",
+            "events": [
+              "2026-10-10|D−1|Primera|Entre Ríos|2473"
+            ]
+          },
+          {
+            "family": "576/675",
+            "events": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542"
+            ]
+          },
+          {
+            "family": "487/784",
+            "events": [
+              "2026-10-10|D−1|Matutino|Provincia|5918"
+            ]
+          },
+          {
+            "family": "256/652",
+            "events": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564"
+            ]
+          }
+        ]
+      },
+      "hits": []
+    }
+  },
+  "warning": "Simulación POST sobre PRE físico antiguo, no sustituye sellos originales del 12/10"
+}

@@ -1,0 +1,1517 @@
+{
+  "date": "2026-10-13",
+  "days": 23,
+  "cuts": 115,
+  "overall": {
+    "OFICIAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "familyHits": 17,
+      "changedFamilyExposures": 0,
+      "averageDistinctEvents": 7.6348,
+      "avgMaxSharing": 4.513,
+      "avgHHI": 0.1894,
+      "gains": [],
+      "losses": []
+    },
+    "COB20_P3": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 9,
+      "top10": 17,
+      "familyHits": 19,
+      "changedFamilyExposures": 136,
+      "averageDistinctEvents": 8.9652,
+      "avgMaxSharing": 4.2696,
+      "avgHHI": 0.1722,
+      "gains": [
+        "2026-09-16|Matutino",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno"
+      ]
+    },
+    "COB40_P3": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 6,
+      "top10": 16,
+      "familyHits": 18,
+      "changedFamilyExposures": 213,
+      "averageDistinctEvents": 9.6783,
+      "avgMaxSharing": 4.113,
+      "avgHHI": 0.1629,
+      "gains": [
+        "2026-09-16|Matutino",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno",
+        "2026-09-24|Matutino"
+      ]
+    },
+    "COB20_P5": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17,
+      "familyHits": 19,
+      "changedFamilyExposures": 121,
+      "averageDistinctEvents": 8.8957,
+      "avgMaxSharing": 4.2435,
+      "avgHHI": 0.172,
+      "gains": [
+        "2026-09-16|Matutino",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno"
+      ]
+    },
+    "COB40_P5": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "familyHits": 18,
+      "changedFamilyExposures": 177,
+      "averageDistinctEvents": 9.4783,
+      "avgMaxSharing": 4.1217,
+      "avgHHI": 0.1638,
+      "gains": [
+        "2026-09-16|Matutino",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno",
+        "2026-09-24|Matutino"
+      ]
+    },
+    "VENTANA5_P3": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "familyHits": 17,
+      "changedFamilyExposures": 60,
+      "averageDistinctEvents": 8.3043,
+      "avgMaxSharing": 4.3304,
+      "avgHHI": 0.1792,
+      "gains": [
+        "2026-09-16|Matutino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno"
+      ]
+    },
+    "VENTANA10_P3": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17,
+      "familyHits": 19,
+      "changedFamilyExposures": 124,
+      "averageDistinctEvents": 8.9217,
+      "avgMaxSharing": 4.2087,
+      "avgHHI": 0.1714,
+      "gains": [
+        "2026-09-16|Matutino",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno"
+      ]
+    },
+    "COB20_P3_HASH": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 10,
+      "top10": 12,
+      "familyHits": 12,
+      "changedFamilyExposures": 464,
+      "averageDistinctEvents": 7.6957,
+      "avgMaxSharing": 4.5652,
+      "avgHHI": 0.1895,
+      "gains": [
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-22|Primera",
+        "2026-09-24|Previa",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino",
+        "2026-10-08|Matutino"
+      ]
+    },
+    "CONTROL_MAS_EVENTOS_20": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 7,
+      "top10": 17,
+      "familyHits": 19,
+      "changedFamilyExposures": 287,
+      "averageDistinctEvents": 7.8957,
+      "avgMaxSharing": 5.4522,
+      "avgHHI": 0.1905,
+      "gains": [
+        "2026-09-15|Previa",
+        "2026-09-16|Matutino",
+        "2026-09-29|Nocturno",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno",
+        "2026-09-24|Previa"
+      ]
+    },
+    "CONTROL_REV_RANGO_20": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 7,
+      "top10": 13,
+      "familyHits": 14,
+      "changedFamilyExposures": 799,
+      "averageDistinctEvents": 7.3391,
+      "avgMaxSharing": 4.7565,
+      "avgHHI": 0.2087,
+      "gains": [
+        "2026-09-24|Nocturno",
+        "2026-09-28|Primera",
+        "2026-09-28|Matutino",
+        "2026-09-29|Nocturno",
+        "2026-10-01|Previa",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-15|Matutino",
+        "2026-09-18|Nocturno",
+        "2026-09-22|Primera",
+        "2026-09-24|Previa",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino",
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino",
+        "2026-10-08|Matutino"
+      ]
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "familyHits": 3,
+        "changedFamilyExposures": 0,
+        "averageDistinctEvents": 5.3478,
+        "avgMaxSharing": 6.1304,
+        "avgHHI": 0.2887,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyHits": 3,
+        "changedFamilyExposures": 2,
+        "averageDistinctEvents": 5.3913,
+        "avgMaxSharing": 6.1304,
+        "avgHHI": 0.2865,
+        "gains": [],
+        "losses": []
+      },
+      "COB40_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyHits": 3,
+        "changedFamilyExposures": 5,
+        "averageDistinctEvents": 5.5217,
+        "avgMaxSharing": 6.087,
+        "avgHHI": 0.284,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "familyHits": 3,
+        "changedFamilyExposures": 1,
+        "averageDistinctEvents": 5.3913,
+        "avgMaxSharing": 6.1304,
+        "avgHHI": 0.2872,
+        "gains": [],
+        "losses": []
+      },
+      "COB40_P5": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "familyHits": 3,
+        "changedFamilyExposures": 4,
+        "averageDistinctEvents": 5.5217,
+        "avgMaxSharing": 6.087,
+        "avgHHI": 0.2848,
+        "gains": [],
+        "losses": []
+      },
+      "VENTANA5_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyHits": 3,
+        "changedFamilyExposures": 0,
+        "averageDistinctEvents": 5.3478,
+        "avgMaxSharing": 6.1304,
+        "avgHHI": 0.2887,
+        "gains": [],
+        "losses": []
+      },
+      "VENTANA10_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyHits": 3,
+        "changedFamilyExposures": 2,
+        "averageDistinctEvents": 5.3913,
+        "avgMaxSharing": 6.1304,
+        "avgHHI": 0.2865,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P3_HASH": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "familyHits": 2,
+        "changedFamilyExposures": 91,
+        "averageDistinctEvents": 5.087,
+        "avgMaxSharing": 6.1739,
+        "avgHHI": 0.2891,
+        "gains": [],
+        "losses": [
+          "2026-09-24|Previa"
+        ]
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyHits": 3,
+        "changedFamilyExposures": 62,
+        "averageDistinctEvents": 5.1304,
+        "avgMaxSharing": 7.2609,
+        "avgHHI": 0.2908,
+        "gains": [
+          "2026-09-15|Previa"
+        ],
+        "losses": [
+          "2026-09-24|Previa"
+        ]
+      },
+      "CONTROL_REV_RANGO_20": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "familyHits": 4,
+        "changedFamilyExposures": 155,
+        "averageDistinctEvents": 5.087,
+        "avgMaxSharing": 6.4348,
+        "avgHHI": 0.3021,
+        "gains": [
+          "2026-10-01|Previa"
+        ],
+        "losses": [
+          "2026-09-24|Previa"
+        ]
+      }
+    },
+    "Primera": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 0,
+        "averageDistinctEvents": 6.8696,
+        "avgMaxSharing": 4.6087,
+        "avgHHI": 0.2024,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 23,
+        "averageDistinctEvents": 8.0435,
+        "avgMaxSharing": 4.3043,
+        "avgHHI": 0.1776,
+        "gains": [],
+        "losses": []
+      },
+      "COB40_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 30,
+        "averageDistinctEvents": 8.3913,
+        "avgMaxSharing": 4.1304,
+        "avgHHI": 0.1695,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 23,
+        "averageDistinctEvents": 8.0435,
+        "avgMaxSharing": 4.3043,
+        "avgHHI": 0.1776,
+        "gains": [],
+        "losses": []
+      },
+      "COB40_P5": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 29,
+        "averageDistinctEvents": 8.3478,
+        "avgMaxSharing": 4.087,
+        "avgHHI": 0.1698,
+        "gains": [],
+        "losses": []
+      },
+      "VENTANA5_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 12,
+        "averageDistinctEvents": 7.5652,
+        "avgMaxSharing": 4.3478,
+        "avgHHI": 0.1862,
+        "gains": [],
+        "losses": []
+      },
+      "VENTANA10_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 22,
+        "averageDistinctEvents": 8.0435,
+        "avgMaxSharing": 4.3043,
+        "avgHHI": 0.1785,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P3_HASH": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "familyHits": 0,
+        "changedFamilyExposures": 89,
+        "averageDistinctEvents": 7.1739,
+        "avgMaxSharing": 4.7826,
+        "avgHHI": 0.1974,
+        "gains": [],
+        "losses": [
+          "2026-09-22|Primera"
+        ]
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 66,
+        "averageDistinctEvents": 7.087,
+        "avgMaxSharing": 5.8696,
+        "avgHHI": 0.2069,
+        "gains": [],
+        "losses": []
+      },
+      "CONTROL_REV_RANGO_20": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 161,
+        "averageDistinctEvents": 6.9565,
+        "avgMaxSharing": 5.2174,
+        "avgHHI": 0.2258,
+        "gains": [
+          "2026-09-28|Primera"
+        ],
+        "losses": [
+          "2026-09-22|Primera"
+        ]
+      }
+    },
+    "Matutino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "familyHits": 9,
+        "changedFamilyExposures": 0,
+        "averageDistinctEvents": 8.1304,
+        "avgMaxSharing": 4.0435,
+        "avgHHI": 0.1629,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 4,
+        "top10": 10,
+        "familyHits": 11,
+        "changedFamilyExposures": 30,
+        "averageDistinctEvents": 9.5652,
+        "avgMaxSharing": 3.8261,
+        "avgHHI": 0.1436,
+        "gains": [
+          "2026-09-16|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "losses": []
+      },
+      "COB40_P3": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 2,
+        "top10": 9,
+        "familyHits": 10,
+        "changedFamilyExposures": 50,
+        "averageDistinctEvents": 10.5652,
+        "avgMaxSharing": 3.6957,
+        "avgHHI": 0.1311,
+        "gains": [
+          "2026-09-16|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "losses": [
+          "2026-09-24|Matutino"
+        ]
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 10,
+        "familyHits": 11,
+        "changedFamilyExposures": 28,
+        "averageDistinctEvents": 9.5652,
+        "avgMaxSharing": 3.7391,
+        "avgHHI": 0.1424,
+        "gains": [
+          "2026-09-16|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "losses": []
+      },
+      "COB40_P5": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "familyHits": 10,
+        "changedFamilyExposures": 43,
+        "averageDistinctEvents": 10.4348,
+        "avgMaxSharing": 3.6087,
+        "avgHHI": 0.1308,
+        "gains": [
+          "2026-09-16|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "losses": [
+          "2026-09-24|Matutino"
+        ]
+      },
+      "VENTANA5_P3": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 4,
+        "top10": 9,
+        "familyHits": 10,
+        "changedFamilyExposures": 16,
+        "averageDistinctEvents": 9,
+        "avgMaxSharing": 3.8261,
+        "avgHHI": 0.149,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": []
+      },
+      "VENTANA10_P3": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 4,
+        "top10": 10,
+        "familyHits": 11,
+        "changedFamilyExposures": 26,
+        "averageDistinctEvents": 9.4783,
+        "avgMaxSharing": 3.7391,
+        "avgHHI": 0.1431,
+        "gains": [
+          "2026-09-16|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "losses": []
+      },
+      "COB20_P3_HASH": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 4,
+        "top10": 6,
+        "familyHits": 6,
+        "changedFamilyExposures": 92,
+        "averageDistinctEvents": 8.6087,
+        "avgMaxSharing": 3.9565,
+        "avgHHI": 0.1566,
+        "gains": [
+          "2026-10-02|Matutino"
+        ],
+        "losses": [
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "familyHits": 10,
+        "changedFamilyExposures": 48,
+        "averageDistinctEvents": 8.4783,
+        "avgMaxSharing": 4.9565,
+        "avgHHI": 0.1638,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": []
+      },
+      "CONTROL_REV_RANGO_20": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 2,
+        "top10": 4,
+        "familyHits": 4,
+        "changedFamilyExposures": 161,
+        "averageDistinctEvents": 7.4783,
+        "avgMaxSharing": 4.2609,
+        "avgHHI": 0.1856,
+        "gains": [
+          "2026-09-28|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "losses": [
+          "2026-09-15|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      }
+    },
+    "Vespertino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "familyHits": 0,
+        "changedFamilyExposures": 0,
+        "averageDistinctEvents": 8.7826,
+        "avgMaxSharing": 3.913,
+        "avgHHI": 0.1487,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 41,
+        "averageDistinctEvents": 10.6957,
+        "avgMaxSharing": 3.6087,
+        "avgHHI": 0.1288,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "COB40_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 64,
+        "averageDistinctEvents": 11.7391,
+        "avgMaxSharing": 3.3478,
+        "avgHHI": 0.1172,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 34,
+        "averageDistinctEvents": 10.5217,
+        "avgMaxSharing": 3.5652,
+        "avgHHI": 0.1281,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "COB40_P5": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 50,
+        "averageDistinctEvents": 11.3478,
+        "avgMaxSharing": 3.3913,
+        "avgHHI": 0.1183,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "VENTANA5_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "familyHits": 0,
+        "changedFamilyExposures": 16,
+        "averageDistinctEvents": 9.6957,
+        "avgMaxSharing": 3.6957,
+        "avgHHI": 0.1378,
+        "gains": [],
+        "losses": []
+      },
+      "VENTANA10_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 36,
+        "averageDistinctEvents": 10.6522,
+        "avgMaxSharing": 3.4783,
+        "avgHHI": 0.1264,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "COB20_P3_HASH": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 91,
+        "averageDistinctEvents": 8.913,
+        "avgMaxSharing": 4.087,
+        "avgHHI": 0.1504,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 54,
+        "averageDistinctEvents": 9.3478,
+        "avgMaxSharing": 4.6522,
+        "avgHHI": 0.1461,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "CONTROL_REV_RANGO_20": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyHits": 1,
+        "changedFamilyExposures": 161,
+        "averageDistinctEvents": 8.6087,
+        "avgMaxSharing": 3.8696,
+        "avgHHI": 0.1642,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      }
+    },
+    "Nocturno": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyHits": 4,
+        "changedFamilyExposures": 0,
+        "averageDistinctEvents": 9.0435,
+        "avgMaxSharing": 3.8696,
+        "avgHHI": 0.1441,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "familyHits": 3,
+        "changedFamilyExposures": 40,
+        "averageDistinctEvents": 11.1304,
+        "avgMaxSharing": 3.4783,
+        "avgHHI": 0.1245,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "COB40_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "familyHits": 3,
+        "changedFamilyExposures": 64,
+        "averageDistinctEvents": 12.1739,
+        "avgMaxSharing": 3.3043,
+        "avgHHI": 0.1125,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "familyHits": 3,
+        "changedFamilyExposures": 35,
+        "averageDistinctEvents": 10.9565,
+        "avgMaxSharing": 3.4783,
+        "avgHHI": 0.1247,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "COB40_P5": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "familyHits": 3,
+        "changedFamilyExposures": 51,
+        "averageDistinctEvents": 11.7391,
+        "avgMaxSharing": 3.4348,
+        "avgHHI": 0.1152,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "VENTANA5_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "familyHits": 3,
+        "changedFamilyExposures": 16,
+        "averageDistinctEvents": 9.913,
+        "avgMaxSharing": 3.6522,
+        "avgHHI": 0.1345,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "VENTANA10_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "familyHits": 3,
+        "changedFamilyExposures": 38,
+        "averageDistinctEvents": 11.0435,
+        "avgMaxSharing": 3.3913,
+        "avgHHI": 0.1226,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "COB20_P3_HASH": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "familyHits": 3,
+        "changedFamilyExposures": 101,
+        "averageDistinctEvents": 8.6957,
+        "avgMaxSharing": 3.8261,
+        "avgHHI": 0.1537,
+        "gains": [],
+        "losses": []
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyHits": 4,
+        "changedFamilyExposures": 57,
+        "averageDistinctEvents": 9.4348,
+        "avgMaxSharing": 4.5217,
+        "avgHHI": 0.1446,
+        "gains": [
+          "2026-09-29|Nocturno"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "CONTROL_REV_RANGO_20": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "familyHits": 4,
+        "changedFamilyExposures": 161,
+        "averageDistinctEvents": 8.5652,
+        "avgMaxSharing": 4,
+        "avgHHI": 0.1656,
+        "gains": [
+          "2026-09-24|Nocturno",
+          "2026-09-29|Nocturno"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "OFICIAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "familyHits": 10,
+        "changedFamilyExposures": 0,
+        "averageDistinctEvents": 8.0143,
+        "avgMaxSharing": 4.5714,
+        "avgHHI": 0.1787,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P3": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "familyHits": 10,
+        "changedFamilyExposures": 67,
+        "averageDistinctEvents": 9.2429,
+        "avgMaxSharing": 4.3429,
+        "avgHHI": 0.1639,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "COB40_P3": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 3,
+        "top10": 9,
+        "familyHits": 9,
+        "changedFamilyExposures": 117,
+        "averageDistinctEvents": 10.0857,
+        "avgMaxSharing": 4.1714,
+        "avgHHI": 0.1529,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno",
+          "2026-09-24|Matutino"
+        ]
+      },
+      "COB20_P5": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "familyHits": 10,
+        "changedFamilyExposures": 62,
+        "averageDistinctEvents": 9.1857,
+        "avgMaxSharing": 4.3571,
+        "avgHHI": 0.1646,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "COB40_P5": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 9,
+        "familyHits": 9,
+        "changedFamilyExposures": 104,
+        "averageDistinctEvents": 9.9286,
+        "avgMaxSharing": 4.1857,
+        "avgHHI": 0.1545,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno",
+          "2026-09-24|Matutino"
+        ]
+      },
+      "VENTANA5_P3": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "familyHits": 10,
+        "changedFamilyExposures": 39,
+        "averageDistinctEvents": 8.7857,
+        "avgMaxSharing": 4.4,
+        "avgHHI": 0.1689,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "VENTANA10_P3": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "familyHits": 10,
+        "changedFamilyExposures": 64,
+        "averageDistinctEvents": 9.2,
+        "avgMaxSharing": 4.3286,
+        "avgHHI": 0.164,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "COB20_P3_HASH": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 6,
+        "top10": 6,
+        "familyHits": 6,
+        "changedFamilyExposures": 280,
+        "averageDistinctEvents": 8,
+        "avgMaxSharing": 4.5429,
+        "avgHHI": 0.1773,
+        "gains": [],
+        "losses": [
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ]
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 5,
+        "top10": 11,
+        "familyHits": 11,
+        "changedFamilyExposures": 191,
+        "averageDistinctEvents": 8.3714,
+        "avgMaxSharing": 5.6,
+        "avgHHI": 0.1792,
+        "gains": [
+          "2026-09-15|Previa",
+          "2026-09-16|Matutino",
+          "2026-09-29|Nocturno"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno",
+          "2026-09-24|Previa"
+        ]
+      },
+      "CONTROL_REV_RANGO_20": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 8,
+        "familyHits": 9,
+        "changedFamilyExposures": 488,
+        "averageDistinctEvents": 7.5,
+        "avgMaxSharing": 4.7286,
+        "avgHHI": 0.1951,
+        "gains": [
+          "2026-09-24|Nocturno",
+          "2026-09-28|Primera",
+          "2026-09-28|Matutino",
+          "2026-09-29|Nocturno"
+        ],
+        "losses": [
+          "2026-09-15|Matutino",
+          "2026-09-18|Nocturno",
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ]
+      }
+    },
+    "2026-10": {
+      "OFICIAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "familyHits": 7,
+        "changedFamilyExposures": 0,
+        "averageDistinctEvents": 7.0444,
+        "avgMaxSharing": 4.4222,
+        "avgHHI": 0.206,
+        "gains": [],
+        "losses": []
+      },
+      "COB20_P3": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 5,
+        "top10": 7,
+        "familyHits": 9,
+        "changedFamilyExposures": 69,
+        "averageDistinctEvents": 8.5333,
+        "avgMaxSharing": 4.1556,
+        "avgHHI": 0.1852,
+        "gains": [
+          "2026-10-02|Matutino",
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "COB40_P3": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 3,
+        "top10": 7,
+        "familyHits": 9,
+        "changedFamilyExposures": 96,
+        "averageDistinctEvents": 9.0444,
+        "avgMaxSharing": 4.0222,
+        "avgHHI": 0.1783,
+        "gains": [
+          "2026-10-02|Matutino",
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "COB20_P5": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "familyHits": 9,
+        "changedFamilyExposures": 59,
+        "averageDistinctEvents": 8.4444,
+        "avgMaxSharing": 4.0667,
+        "avgHHI": 0.1835,
+        "gains": [
+          "2026-10-02|Matutino",
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "COB40_P5": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "familyHits": 9,
+        "changedFamilyExposures": 73,
+        "averageDistinctEvents": 8.7778,
+        "avgMaxSharing": 4.0222,
+        "avgHHI": 0.1781,
+        "gains": [
+          "2026-10-02|Matutino",
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "VENTANA5_P3": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "familyHits": 7,
+        "changedFamilyExposures": 21,
+        "averageDistinctEvents": 7.5556,
+        "avgMaxSharing": 4.2222,
+        "avgHHI": 0.1953,
+        "gains": [],
+        "losses": []
+      },
+      "VENTANA10_P3": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "familyHits": 9,
+        "changedFamilyExposures": 60,
+        "averageDistinctEvents": 8.4889,
+        "avgMaxSharing": 4.0222,
+        "avgHHI": 0.183,
+        "gains": [
+          "2026-10-02|Matutino",
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "COB20_P3_HASH": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "familyHits": 6,
+        "changedFamilyExposures": 184,
+        "averageDistinctEvents": 7.2222,
+        "avgMaxSharing": 4.6,
+        "avgHHI": 0.2084,
+        "gains": [
+          "2026-10-02|Matutino",
+          "2026-10-05|Vespertino"
+        ],
+        "losses": [
+          "2026-10-08|Matutino"
+        ]
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 2,
+        "top10": 6,
+        "familyHits": 8,
+        "changedFamilyExposures": 96,
+        "averageDistinctEvents": 7.1556,
+        "avgMaxSharing": 5.2222,
+        "avgHHI": 0.208,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": []
+      },
+      "CONTROL_REV_RANGO_20": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 3,
+        "top10": 5,
+        "familyHits": 5,
+        "changedFamilyExposures": 311,
+        "averageDistinctEvents": 7.0889,
+        "avgMaxSharing": 4.8,
+        "avgHHI": 0.2298,
+        "gains": [
+          "2026-10-01|Previa",
+          "2026-10-02|Matutino",
+          "2026-10-05|Vespertino"
+        ],
+        "losses": [
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      }
+    }
+  },
+  "uniform20": {
+    "n": 2000,
+    "mean": 13.8885,
+    "min": 6,
+    "median": 14,
+    "p05": 10,
+    "p95": 17,
+    "max": 22,
+    "fractionAtLeastObserved": 0.103,
+    "histogram": {
+      "6": 1,
+      "7": 3,
+      "8": 9,
+      "9": 31,
+      "10": 66,
+      "11": 141,
+      "12": 252,
+      "13": 347,
+      "14": 374,
+      "15": 319,
+      "16": 251,
+      "17": 127,
+      "18": 52,
+      "19": 21,
+      "20": 5,
+      "22": 1
+    }
+  },
+  "rootsRewired20": {
+    "n": 500,
+    "mean": 14.946,
+    "min": 12,
+    "median": 15,
+    "p05": 13,
+    "p95": 17,
+    "max": 20,
+    "fractionAtLeastObserved": 0.11,
+    "histogram": {
+      "12": 6,
+      "13": 55,
+      "14": 124,
+      "15": 159,
+      "16": 101,
+      "17": 44,
+      "18": 9,
+      "19": 1,
+      "20": 1
+    }
+  },
+  "placebos": {
+    "free": {
+      "COB20_P3": {
+        "realDifference": 2,
+        "expectedDifference": -0.0893,
+        "p05": -3,
+        "median": 0,
+        "p95": 3,
+        "empiricalUpperTail": 0.14208579142085792
+      },
+      "COB40_P3": {
+        "realDifference": 1,
+        "expectedDifference": -0.4434,
+        "p05": -3,
+        "median": 0,
+        "p95": 2,
+        "empiricalUpperTail": 0.29347065293470653
+      },
+      "COB20_P5": {
+        "realDifference": 2,
+        "expectedDifference": -0.0882,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "empiricalUpperTail": 0.125987401259874
+      },
+      "COB40_P5": {
+        "realDifference": 1,
+        "expectedDifference": -0.4053,
+        "p05": -3,
+        "median": 0,
+        "p95": 2,
+        "empiricalUpperTail": 0.29027097290270976
+      },
+      "VENTANA5_P3": {
+        "realDifference": 0,
+        "expectedDifference": 0.175,
+        "p05": -1,
+        "median": 0,
+        "p95": 2,
+        "empiricalUpperTail": 0.7952204779522047
+      },
+      "VENTANA10_P3": {
+        "realDifference": 2,
+        "expectedDifference": -0.0004,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "empiricalUpperTail": 0.1396860313968603
+      },
+      "COB20_P3_HASH": {
+        "realDifference": -3,
+        "expectedDifference": 0.4583,
+        "p05": -4,
+        "median": 0,
+        "p95": 5,
+        "empiricalUpperTail": 0.927007299270073
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "realDifference": 2,
+        "expectedDifference": -0.0064,
+        "p05": -3,
+        "median": 0,
+        "p95": 4,
+        "empiricalUpperTail": 0.2303769623037696
+      },
+      "CONTROL_REV_RANGO_20": {
+        "realDifference": -2,
+        "expectedDifference": 0.9958,
+        "p05": -5,
+        "median": 1,
+        "p95": 7,
+        "empiricalUpperTail": 0.827917208279172
+      }
+    },
+    "sameWeekday": {
+      "COB20_P3": {
+        "realDifference": 2,
+        "expectedDifference": -0.4287,
+        "p05": -3,
+        "median": 0,
+        "p95": 2,
+        "empiricalUpperTail": 0.060193980601939805
+      },
+      "COB40_P3": {
+        "realDifference": 1,
+        "expectedDifference": -0.6793,
+        "p05": -3,
+        "median": -1,
+        "p95": 2,
+        "empiricalUpperTail": 0.2226777322267773
+      },
+      "COB20_P5": {
+        "realDifference": 2,
+        "expectedDifference": -0.4287,
+        "p05": -3,
+        "median": 0,
+        "p95": 2,
+        "empiricalUpperTail": 0.060193980601939805
+      },
+      "COB40_P5": {
+        "realDifference": 1,
+        "expectedDifference": -0.9361,
+        "p05": -3,
+        "median": -1,
+        "p95": 1,
+        "empiricalUpperTail": 0.14808519148085192
+      },
+      "VENTANA5_P3": {
+        "realDifference": 0,
+        "expectedDifference": -1.0087,
+        "p05": -3,
+        "median": -1,
+        "p95": 1,
+        "empiricalUpperTail": 0.3367663233676632
+      },
+      "VENTANA10_P3": {
+        "realDifference": 2,
+        "expectedDifference": -0.4287,
+        "p05": -3,
+        "median": 0,
+        "p95": 2,
+        "empiricalUpperTail": 0.060193980601939805
+      },
+      "COB20_P3_HASH": {
+        "realDifference": -3,
+        "expectedDifference": 0.1395,
+        "p05": -3,
+        "median": 0,
+        "p95": 4,
+        "empiricalUpperTail": 0.9587041295870413
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "realDifference": 2,
+        "expectedDifference": 0.3133,
+        "p05": -3,
+        "median": 0,
+        "p95": 3,
+        "empiricalUpperTail": 0.2642735726427357
+      },
+      "CONTROL_REV_RANGO_20": {
+        "realDifference": -2,
+        "expectedDifference": 1.5311,
+        "p05": -3,
+        "median": 2,
+        "p95": 6,
+        "empiricalUpperTail": 0.9302069793020697
+      }
+    }
+  },
+  "seal": {
+    "sourcePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "code": "097c179bec0e1279e6f652e0c040c7c7b53076c8d3809117845a49ef84eb822f",
+    "protocol": "d647a76aae10ea51c24c69b5071642d2e9f69e32c1a2427569c7fd6efa54a6da",
+    "pre": "b190ed0a4715220501f564dee3300264c32efeccef7bc49fbfb1dee10999908e",
+    "nocturna": "f8bb9cacdd4613a3d050a59a9b84e4344d694ef57dde18065090583c677503d8",
+    "controls": "c59b509ba99d5c484f331885007c9e3c8f995b0d58669e9fd9aeeba0fcc36346"
+  },
+  "sourcePost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "limitations": "Muchas hipótesis exploradas sobre mismos 115 cortes. Múltiples rutas por evento deduplicadas; no existe demostración de capacidad predictiva de quiniela aleatoria."
+}
