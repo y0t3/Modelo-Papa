@@ -121,7 +121,7 @@ function serial(choice){
   family:g.family,mother:g.mother,motherRank:g.motherRank,values:g.values,
   sourceCount:g.sources,physicalBlocks:g.blocks,evidence:g.evidence,
   physicalPaths:g.paths})),
-  backfilledSlots:choice.backfill,
+  backfilledSlots:choice.backfill??choice.overflow??0,
   distinctMotherRanks:new Set(choice.chosen.map(g=>g.motherRank)).size,
   admittedFrom6to10:choice.chosen.filter(g=>g.motherRank>=6&&g.motherRank<=10).length,
   admittedFrom11plus:choice.chosen.filter(g=>g.motherRank>10).length};
@@ -152,8 +152,8 @@ function before(){
   frames.push(table);
   const rootRanks=view.ranks.vt3;
   const physicalCountsByBand=Object.fromEntries(
-   [3,5,10,25,99999].map(n=>[String(n),
-    Array.from({length:10000},(_,id)=>table.readUInt16LE(2*id)<=n).filter(Boolean).length]));
+   [3,5,10,25,65534].map(n=>[String(n),
+    Array.from({length:10000},(_,id)=>{const rank=table.readUInt16LE(2*id);return rank!==65535&&rank<=n}).filter(Boolean).length]));
   records.push({i,date:d.date,turn:d.turn,
    motherPool:{admittedFamilies:rootRanks.length,
     rootedVt4Groups:pools.admitted.length,
@@ -258,7 +258,7 @@ function after(){
    distinctWinningHeads:rows.reduce((s,x)=>s+x.heads.length,0),
    countOfPhysicalNumbersAvailableMean:Number(mean(pre.map(x=>
     l.name==='TODAS_FISICAS_SIN_RAIZ'?x.motherPool.allPhysicalExactNumbers:
-     x.motherPool.physicalCountsByBand[String(l.limit===65534?99999:l.limit)]
+     x.motherPool.physicalCountsByBand[String(l.limit)]
    )).toFixed(1))}];
  }));
  for(let i=1;i<levels.length;i++){
