@@ -1,0 +1,37 @@
+name: Laboratorio independiente VT3 115 cortes
+on:
+  push:
+    branches: [lab-raices-independientes-13oct2026]
+    paths:
+      - 'scripts/auditar-independencia-raices-115.ts'
+      - '.github/workflows/lab-raices-independientes-115.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  auditoria:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - name: Generar PRE y POST historicos por separado
+        run: npx --yes tsx scripts/replay-lalo115.ts prepare
+      - name: Auditar raices sin objetivos POST presentes
+        run: |
+          mv resultados/replay-lalo-115/OBJETIVOS_POST_115.json /tmp/objetivos-lalo-lab.json
+          test ! -e resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          npx --yes tsx scripts/auditar-independencia-raices-115.ts pre
+      - name: Contrastar POST solo despues de sellar PRE
+        run: |
+          mv /tmp/objetivos-lalo-lab.json resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          npx --yes tsx scripts/auditar-independencia-raices-115.ts post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-independencia-raices-115-PRE-POST
+          path: resultados/lab-raices-independientes-115/
+          retention-days: 60
+          if-no-files-found: error
