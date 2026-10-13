@@ -1,0 +1,48 @@
+name: VT3 auditoria grupos completos empatados
+on:
+  push:
+    branches: [lab-vt3-grupos-empatados-frontera-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-grupos-empatados.mjs'
+      - 'PROTOCOLO_VT3_GRUPOS_EMPATADOS_13OCT2026.md'
+      - '.github/workflows/lab-vt3-grupos-empatados.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  frontera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar POST antes de crear PRE de los grupos empatados
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-grupos-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-grupos-noct-post.json
+          mv auditorias/vt3-auditoria-puestos-115-13oct2026/POST_115.json /tmp/vt3-grupos-audit-post.json
+      - name: Medir grupos completos y sellar las 2000 selecciones neutrales
+        run: node scripts/lab-vt3-grupos-empatados.mjs pre
+      - name: Restaurar POST y contrastar controles pareados
+        run: |
+          mv /tmp/vt3-grupos-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/vt3-grupos-noct-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          mv /tmp/vt3-grupos-audit-post.json auditorias/vt3-auditoria-puestos-115-13oct2026/POST_115.json
+          node scripts/lab-vt3-grupos-empatados.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-grupos-empatados-115
+          path: auditorias/vt3-grupos-empatados-frontera-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Archivar datos y hashes en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-grupos-empatados-frontera-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): grupos completos empatados PRE y pruebas POST'
+            git push origin HEAD:lab-vt3-grupos-empatados-frontera-13oct2026
+          fi
