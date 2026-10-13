@@ -1,0 +1,16 @@
+{
+  "seed": 20261013,
+  "n": 2000,
+  "pseudorandom": "xorshift32, valor en [0,1), opción índice floor(u*pool.length)",
+  "allPhysical": true,
+  "matchedAdmissionAndBin": true,
+  "methods": [
+    "ORIGINAL_STATIC",
+    "FIRMA_UNICA_STATIC",
+    "FORMA_UNICA_STATIC",
+    "ORIGINAL_ONLINE",
+    "FIRMA_UNICA_ONLINE",
+    "FORMA_UNICA_ONLINE",
+    "NEG_FIRMA_UNICA_STATIC"
+  ]
+}
