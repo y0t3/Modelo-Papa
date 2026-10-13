@@ -71,7 +71,7 @@ function chooseGreedy(pools,poolMax,locked,window=0,overrides=null){
  while(chosen.length<10){
   const available=pool.filter(x=>!selected.has(x.family));
   const choices=window?available.slice(0,window):available;
-  const supported=selectedEvents(chosen);
+  const supported=selectedEvents(chosen.map(x=>({...x,events:overrides?.get(x.family)||x.events})));
   let best=null,maxGain=-1;
   for(const candidate of choices){
    const events=overrides?.get(candidate.family)||candidate.events;
