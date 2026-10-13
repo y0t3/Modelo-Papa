@@ -1,0 +1,45 @@
+name: VT3 cobertura y bifurcaciones 115 cortes
+on:
+  push:
+    branches: [lab-vt3-cobertura-bifurcaciones-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-cobertura-bifurcaciones.mjs'
+      - '.github/workflows/lab-vt3-cobertura-bifurcaciones.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Preparar entradas separadas
+        run: node scripts/lab-vt3-cobertura-bifurcaciones.mjs prepare
+      - name: Congelar inventario y cuatro rankings sin POST
+        run: |
+          mv resultados/replay-lalo-115/OBJETIVOS_POST_115.json /tmp/objetivos-vt3.json
+          node scripts/lab-vt3-cobertura-bifurcaciones.mjs pre
+          diff auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/SELLO_ESPERADO.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/SELLO.json
+      - name: Comparar con POST
+        run: |
+          mv /tmp/objetivos-vt3.json resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          node scripts/lab-vt3-cobertura-bifurcaciones.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-cobertura-bifurcaciones-115
+          path: auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar resultados completos
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): inventario completo y comparación factorial PRE POST'
+            git push origin HEAD:lab-vt3-cobertura-bifurcaciones-13oct2026
+          fi
