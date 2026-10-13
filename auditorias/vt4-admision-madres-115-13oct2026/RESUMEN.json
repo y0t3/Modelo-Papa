@@ -1,0 +1,830 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "total": {
+    "BASE_CORREGIDA": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 0,
+      "meanDistinctMothers": 1.287,
+      "meanDistinctFour": 15.948,
+      "meanUnanchoredSlots": 0,
+      "meanBeyondTop10Slots": 0,
+      "meanQuotasUnfilled": 0,
+      "gainsVsCupo2": [],
+      "lossesVsCupo2": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "changedTop10": 115
+    },
+    "TOP10_CUPO2": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "meanDistinctMothers": 5,
+      "meanDistinctFour": 17.757,
+      "meanUnanchoredSlots": 0,
+      "meanBeyondTop10Slots": 0,
+      "meanQuotasUnfilled": 0,
+      "gainsVsCupo2": [],
+      "lossesVsCupo2": [],
+      "changedTop10": 0
+    },
+    "ADMITIDAS_CUPO2": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "meanDistinctMothers": 5,
+      "meanDistinctFour": 17.757,
+      "meanUnanchoredSlots": 0,
+      "meanBeyondTop10Slots": 0,
+      "meanQuotasUnfilled": 0,
+      "gainsVsCupo2": [],
+      "lossesVsCupo2": [],
+      "changedTop10": 0
+    },
+    "ADMITIDAS_ESTRATOS": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 1,
+      "meanDistinctMothers": 4.93,
+      "meanDistinctFour": 18.278,
+      "meanUnanchoredSlots": 0,
+      "meanBeyondTop10Slots": 3.861,
+      "meanQuotasUnfilled": 0.139,
+      "gainsVsCupo2": [
+        "2026-09-15|Previa"
+      ],
+      "lossesVsCupo2": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "changedTop10": 115
+    },
+    "FISICAS_ESTRATOS": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 1,
+      "meanDistinctMothers": 5.235,
+      "meanDistinctFour": 18.365,
+      "meanUnanchoredSlots": 2,
+      "meanBeyondTop10Slots": 2,
+      "meanQuotasUnfilled": 0,
+      "gainsVsCupo2": [
+        "2026-09-15|Previa"
+      ],
+      "lossesVsCupo2": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "changedTop10": 115
+    },
+    "FISICAS_DOS_NUEVAS": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 0,
+      "meanDistinctMothers": 5.27,
+      "meanDistinctFour": 18.096,
+      "meanUnanchoredSlots": 2,
+      "meanBeyondTop10Slots": 0,
+      "meanQuotasUnfilled": 0,
+      "gainsVsCupo2": [],
+      "lossesVsCupo2": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "changedTop10": 115
+    },
+    "FISICAS_ORDEN_GLOBAL": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 0,
+      "meanDistinctMothers": 1.4,
+      "meanDistinctFour": 16.174,
+      "meanUnanchoredSlots": 0,
+      "meanBeyondTop10Slots": 0,
+      "meanQuotasUnfilled": 0,
+      "gainsVsCupo2": [],
+      "lossesVsCupo2": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "changedTop10": 115
+    }
+  },
+  "weeks": {
+    "2026-09-2": {
+      "BASE_CORREGIDA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1.6,
+        "meanDistinctFour": 14.5,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 30
+      },
+      "TOP10_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 17.167,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 17.167,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_ESTRATOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "meanDistinctMothers": 4.933,
+        "meanDistinctFour": 17.5,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 3.867,
+        "meanQuotasUnfilled": 0.133,
+        "gainsVsCupo2": [
+          "2026-09-15|Previa"
+        ],
+        "lossesVsCupo2": [],
+        "changedTop10": 30
+      },
+      "FISICAS_ESTRATOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "meanDistinctMothers": 5.167,
+        "meanDistinctFour": 17.733,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 2,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [
+          "2026-09-15|Previa"
+        ],
+        "lossesVsCupo2": [],
+        "changedTop10": 30
+      },
+      "FISICAS_DOS_NUEVAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5.267,
+        "meanDistinctFour": 17.567,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 30
+      },
+      "FISICAS_ORDEN_GLOBAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1.6,
+        "meanDistinctFour": 14.5,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 30
+      }
+    },
+    "2026-09-3": {
+      "BASE_CORREGIDA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1.2,
+        "meanDistinctFour": 17.267,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-09-24|Previa"
+        ],
+        "changedTop10": 30
+      },
+      "TOP10_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 18.2,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 18.2,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_ESTRATOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 19.033,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 4,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-09-24|Previa"
+        ],
+        "changedTop10": 30
+      },
+      "FISICAS_ESTRATOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5.367,
+        "meanDistinctFour": 18.967,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 2,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-09-24|Previa"
+        ],
+        "changedTop10": 30
+      },
+      "FISICAS_DOS_NUEVAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5.367,
+        "meanDistinctFour": 18.467,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-09-24|Previa"
+        ],
+        "changedTop10": 30
+      },
+      "FISICAS_ORDEN_GLOBAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1.4,
+        "meanDistinctFour": 17.433,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-09-24|Previa"
+        ],
+        "changedTop10": 30
+      }
+    },
+    "2026-09-4": {
+      "BASE_CORREGIDA": {
+        "cuts": 10,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1,
+        "meanDistinctFour": 16.9,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 10
+      },
+      "TOP10_CUPO2": {
+        "cuts": 10,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 17.8,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_CUPO2": {
+        "cuts": 10,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 17.8,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_ESTRATOS": {
+        "cuts": 10,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 4.9,
+        "meanDistinctFour": 18,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 3.8,
+        "meanQuotasUnfilled": 0.2,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 10
+      },
+      "FISICAS_ESTRATOS": {
+        "cuts": 10,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5.3,
+        "meanDistinctFour": 18.3,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 2,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 10
+      },
+      "FISICAS_DOS_NUEVAS": {
+        "cuts": 10,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5.3,
+        "meanDistinctFour": 18,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 10
+      },
+      "FISICAS_ORDEN_GLOBAL": {
+        "cuts": 10,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1.5,
+        "meanDistinctFour": 17.6,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 10
+      }
+    },
+    "2026-10-0": {
+      "BASE_CORREGIDA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1.267,
+        "meanDistinctFour": 15.767,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-03|Matutino"
+        ],
+        "changedTop10": 30
+      },
+      "TOP10_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 17.333,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 17.333,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_ESTRATOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 4.9,
+        "meanDistinctFour": 17.9,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 3.8,
+        "meanQuotasUnfilled": 0.2,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-03|Matutino"
+        ],
+        "changedTop10": 30
+      },
+      "FISICAS_ESTRATOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5.133,
+        "meanDistinctFour": 18.033,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 2,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-03|Matutino"
+        ],
+        "changedTop10": 30
+      },
+      "FISICAS_DOS_NUEVAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5.167,
+        "meanDistinctFour": 17.8,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-03|Matutino"
+        ],
+        "changedTop10": 30
+      },
+      "FISICAS_ORDEN_GLOBAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1.267,
+        "meanDistinctFour": 16.1,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-03|Matutino"
+        ],
+        "changedTop10": 30
+      }
+    },
+    "2026-10-1": {
+      "BASE_CORREGIDA": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1.067,
+        "meanDistinctFour": 15.933,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-10|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedTop10": 15
+      },
+      "TOP10_CUPO2": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 18.867,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_CUPO2": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "meanDistinctMothers": 5,
+        "meanDistinctFour": 18.867,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [],
+        "changedTop10": 0
+      },
+      "ADMITIDAS_ESTRATOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 4.867,
+        "meanDistinctFour": 19.267,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 3.733,
+        "meanQuotasUnfilled": 0.267,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-10|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedTop10": 15
+      },
+      "FISICAS_ESTRATOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5.267,
+        "meanDistinctFour": 19.133,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 2,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-10|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedTop10": 15
+      },
+      "FISICAS_DOS_NUEVAS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 5.267,
+        "meanDistinctFour": 19.067,
+        "meanUnanchoredSlots": 2,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-10|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedTop10": 15
+      },
+      "FISICAS_ORDEN_GLOBAL": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "meanDistinctMothers": 1.2,
+        "meanDistinctFour": 16.2,
+        "meanUnanchoredSlots": 0,
+        "meanBeyondTop10Slots": 0,
+        "meanQuotasUnfilled": 0,
+        "gainsVsCupo2": [],
+        "lossesVsCupo2": [
+          "2026-10-10|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedTop10": 15
+      }
+    }
+  },
+  "rescuedOrHitCuts": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "hits": {
+        "BASE_CORREGIDA": [],
+        "TOP10_CUPO2": [],
+        "ADMITIDAS_CUPO2": [],
+        "ADMITIDAS_ESTRATOS": [
+          {
+            "head": "7175",
+            "family": "7175/7571",
+            "rank": 8,
+            "mother": "175/571",
+            "evidence": "ROOTED"
+          }
+        ],
+        "FISICAS_ESTRATOS": [
+          {
+            "head": "7175",
+            "family": "7175/7571",
+            "rank": 8,
+            "mother": "175/571",
+            "evidence": "ROOTED"
+          }
+        ],
+        "FISICAS_DOS_NUEVAS": [],
+        "FISICAS_ORDEN_GLOBAL": []
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "hits": {
+        "BASE_CORREGIDA": [],
+        "TOP10_CUPO2": [
+          {
+            "head": "3159",
+            "family": "3159/3951",
+            "rank": 9,
+            "mother": "159/951",
+            "evidence": "ROOTED"
+          }
+        ],
+        "ADMITIDAS_CUPO2": [
+          {
+            "head": "3159",
+            "family": "3159/3951",
+            "rank": 9,
+            "mother": "159/951",
+            "evidence": "ROOTED"
+          }
+        ],
+        "ADMITIDAS_ESTRATOS": [],
+        "FISICAS_ESTRATOS": [],
+        "FISICAS_DOS_NUEVAS": [],
+        "FISICAS_ORDEN_GLOBAL": []
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "hits": {
+        "BASE_CORREGIDA": [],
+        "TOP10_CUPO2": [
+          {
+            "head": "2592",
+            "family": "2295/2592",
+            "rank": 9,
+            "mother": "295/592",
+            "evidence": "ROOTED"
+          }
+        ],
+        "ADMITIDAS_CUPO2": [
+          {
+            "head": "2592",
+            "family": "2295/2592",
+            "rank": 9,
+            "mother": "295/592",
+            "evidence": "ROOTED"
+          }
+        ],
+        "ADMITIDAS_ESTRATOS": [],
+        "FISICAS_ESTRATOS": [],
+        "FISICAS_DOS_NUEVAS": [],
+        "FISICAS_ORDEN_GLOBAL": []
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "hits": {
+        "BASE_CORREGIDA": [],
+        "TOP10_CUPO2": [
+          {
+            "head": "6542",
+            "family": "4562/6542",
+            "rank": 10,
+            "mother": "456/654",
+            "evidence": "ROOTED"
+          }
+        ],
+        "ADMITIDAS_CUPO2": [
+          {
+            "head": "6542",
+            "family": "4562/6542",
+            "rank": 10,
+            "mother": "456/654",
+            "evidence": "ROOTED"
+          }
+        ],
+        "ADMITIDAS_ESTRATOS": [],
+        "FISICAS_ESTRATOS": [],
+        "FISICAS_DOS_NUEVAS": [],
+        "FISICAS_ORDEN_GLOBAL": []
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "hits": {
+        "BASE_CORREGIDA": [],
+        "TOP10_CUPO2": [
+          {
+            "head": "2654",
+            "family": "2456/2654",
+            "rank": 9,
+            "mother": "456/654",
+            "evidence": "ROOTED"
+          }
+        ],
+        "ADMITIDAS_CUPO2": [
+          {
+            "head": "2654",
+            "family": "2456/2654",
+            "rank": 9,
+            "mother": "456/654",
+            "evidence": "ROOTED"
+          }
+        ],
+        "ADMITIDAS_ESTRATOS": [],
+        "FISICAS_ESTRATOS": [],
+        "FISICAS_DOS_NUEVAS": [],
+        "FISICAS_ORDEN_GLOBAL": []
+      }
+    }
+  ],
+  "physicalAdmissionNotes": "ROOTED path only if actual VT3 admitted path; ONLY_PHYSICAL means a different real path with no historical root, never borrowed.",
+  "warning": "Histórico explorado exhaustivamente. Conteos retrospectivos no prueban ventaja predictiva. Sorteos aleatorios.",
+  "seal": {
+    "input": "58365976e327d79a14cd922baa582a80d28651a0cade4e71955bcf4407fe8380",
+    "prior": "d50ae2261f2df0f582f50f0bfc10e2d407fe550ae5bdb789081eed080a326d19",
+    "protocol": "7d6e8ee42d2bed4b3637e77c03347645f3f8c447bceb60f58f6fba7745382e5c",
+    "code": "336a30c932dd3b8be3c34003536032f9291d2f043149e1ed1d8db3a921c44dc7",
+    "pre": "2c9ce1743a8057cdc819bc4a592cfcd2cee87cf45d5ea0ba3f8b24a1d1fb58bd"
+  }
+}
