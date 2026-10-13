@@ -1,0 +1,1615 @@
+{
+  "date": "2026-10-13",
+  "days": 23,
+  "cuts": 115,
+  "policies": {
+    "OFICIAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15
+    },
+    "COB20_P3": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 9,
+      "top10": 17
+    },
+    "COB20_P5": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17
+    },
+    "CONTROL_MAS_EVENTOS_20": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 7,
+      "top10": 17
+    },
+    "COND5": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16
+    },
+    "COND6": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16
+    }
+  },
+  "pairedChanges": {
+    "COB20_P3": {
+      "added": [
+        "2026-09-16|Matutino",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "lost": [
+        "2026-09-18|Nocturno"
+      ],
+      "net": 2
+    },
+    "COB20_P5": {
+      "added": [
+        "2026-09-16|Matutino",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "lost": [
+        "2026-09-18|Nocturno"
+      ],
+      "net": 2
+    },
+    "CONTROL_MAS_EVENTOS_20": {
+      "added": [
+        "2026-09-15|Previa",
+        "2026-09-16|Matutino",
+        "2026-09-29|Nocturno",
+        "2026-10-05|Vespertino"
+      ],
+      "lost": [
+        "2026-09-18|Nocturno",
+        "2026-09-24|Previa"
+      ],
+      "net": 2
+    },
+    "COND5": {
+      "added": [
+        "2026-10-05|Vespertino"
+      ],
+      "lost": [],
+      "net": 1
+    },
+    "COND6": {
+      "added": [
+        "2026-10-05|Vespertino"
+      ],
+      "lost": [],
+      "net": 1
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3
+      },
+      "COND5": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3
+      },
+      "COND6": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3
+      }
+    },
+    "Primera": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1
+      },
+      "COND5": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1
+      },
+      "COND6": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1
+      }
+    },
+    "Matutino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 4,
+        "top10": 10
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 10
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9
+      },
+      "COND5": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8
+      },
+      "COND6": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8
+      }
+    },
+    "Vespertino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1
+      },
+      "COND5": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1
+      },
+      "COND6": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1
+      }
+    },
+    "Nocturno": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2
+      },
+      "COB20_P5": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3
+      },
+      "COND5": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3
+      },
+      "COND6": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "OFICIAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10
+      },
+      "COB20_P3": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10
+      },
+      "COB20_P5": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 5,
+        "top10": 11
+      },
+      "COND5": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 3,
+        "top10": 10
+      },
+      "COND6": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 3,
+        "top10": 10
+      }
+    },
+    "2026-10": {
+      "OFICIAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5
+      },
+      "COB20_P3": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 5,
+        "top10": 7
+      },
+      "COB20_P5": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 2,
+        "top10": 6
+      },
+      "COND5": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 5,
+        "top10": 6
+      },
+      "COND6": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 5,
+        "top10": 6
+      }
+    }
+  },
+  "chronologicalBlocks": [
+    {
+      "start": "2026-09-15",
+      "end": "2026-09-21",
+      "counts": {
+        "OFICIAL": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4
+        },
+        "COB20_P3": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4
+        },
+        "COB20_P5": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4
+        },
+        "CONTROL_MAS_EVENTOS_20": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 3,
+          "top10": 5
+        },
+        "COND5": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4
+        },
+        "COND6": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4
+        }
+      }
+    },
+    {
+      "start": "2026-09-22",
+      "end": "2026-09-28",
+      "counts": {
+        "OFICIAL": {
+          "cuts": 30,
+          "top3": 0,
+          "top5": 1,
+          "top10": 4
+        },
+        "COB20_P3": {
+          "cuts": 30,
+          "top3": 0,
+          "top5": 0,
+          "top10": 4
+        },
+        "COB20_P5": {
+          "cuts": 30,
+          "top3": 0,
+          "top5": 1,
+          "top10": 4
+        },
+        "CONTROL_MAS_EVENTOS_20": {
+          "cuts": 30,
+          "top3": 0,
+          "top5": 0,
+          "top10": 3
+        },
+        "COND5": {
+          "cuts": 30,
+          "top3": 0,
+          "top5": 0,
+          "top10": 4
+        },
+        "COND6": {
+          "cuts": 30,
+          "top3": 0,
+          "top5": 0,
+          "top10": 4
+        }
+      }
+    },
+    {
+      "start": "2026-09-29",
+      "end": "2026-10-05",
+      "counts": {
+        "OFICIAL": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5
+        },
+        "COB20_P3": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 6,
+          "top10": 7
+        },
+        "COB20_P5": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 4,
+          "top10": 7
+        },
+        "CONTROL_MAS_EVENTOS_20": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 3,
+          "top10": 7
+        },
+        "COND5": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 5,
+          "top10": 6
+        },
+        "COND6": {
+          "cuts": 30,
+          "top3": 2,
+          "top5": 5,
+          "top10": 6
+        }
+      }
+    },
+    {
+      "start": "2026-10-06",
+      "end": "2026-10-10",
+      "counts": {
+        "OFICIAL": {
+          "cuts": 25,
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "COB20_P3": {
+          "cuts": 25,
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "COB20_P5": {
+          "cuts": 25,
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "CONTROL_MAS_EVENTOS_20": {
+          "cuts": 25,
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "COND5": {
+          "cuts": 25,
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "COND6": {
+          "cuts": 25,
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        }
+      }
+    }
+  ],
+  "concentration": {
+    "5": {
+      "high": {
+        "cuts": 42,
+        "official": {
+          "cuts": 42,
+          "top3": 1,
+          "top5": 3,
+          "top10": 5
+        },
+        "diversity": {
+          "cuts": 42,
+          "top3": 1,
+          "top5": 3,
+          "top10": 6
+        },
+        "abundance": {
+          "cuts": 42,
+          "top3": 1,
+          "top5": 1,
+          "top10": 6
+        },
+        "condition": {
+          "cuts": 42,
+          "top3": 1,
+          "top5": 3,
+          "top10": 6
+        },
+        "originalConcentrationMean": 6.190476190476191,
+        "meanEventIncrease": 0.6904761904761905,
+        "meanChangedFamilies": 0.5476190476190477
+      },
+      "low": {
+        "cuts": 73,
+        "official": {
+          "cuts": 73,
+          "top3": 4,
+          "top5": 5,
+          "top10": 10
+        },
+        "diversity": {
+          "cuts": 73,
+          "top3": 4,
+          "top5": 6,
+          "top10": 11
+        },
+        "abundance": {
+          "cuts": 73,
+          "top3": 4,
+          "top5": 6,
+          "top10": 11
+        },
+        "condition": {
+          "cuts": 73,
+          "top3": 4,
+          "top5": 5,
+          "top10": 10
+        },
+        "originalConcentrationMean": 3.547945205479452,
+        "meanEventIncrease": 1.6986301369863013,
+        "meanChangedFamilies": 1.547945205479452
+      }
+    },
+    "6": {
+      "high": {
+        "cuts": 26,
+        "official": {
+          "cuts": 26,
+          "top3": 1,
+          "top5": 3,
+          "top10": 3
+        },
+        "diversity": {
+          "cuts": 26,
+          "top3": 1,
+          "top5": 3,
+          "top10": 4
+        },
+        "abundance": {
+          "cuts": 26,
+          "top3": 1,
+          "top5": 1,
+          "top10": 3
+        },
+        "condition": {
+          "cuts": 26,
+          "top3": 1,
+          "top5": 3,
+          "top10": 4
+        },
+        "originalConcentrationMean": 6.923076923076923,
+        "meanEventIncrease": 0.7692307692307693,
+        "meanChangedFamilies": 0.5769230769230769
+      },
+      "low": {
+        "cuts": 89,
+        "official": {
+          "cuts": 89,
+          "top3": 4,
+          "top5": 5,
+          "top10": 12
+        },
+        "diversity": {
+          "cuts": 89,
+          "top3": 4,
+          "top5": 6,
+          "top10": 13
+        },
+        "abundance": {
+          "cuts": 89,
+          "top3": 4,
+          "top5": 6,
+          "top10": 14
+        },
+        "condition": {
+          "cuts": 89,
+          "top3": 4,
+          "top5": 5,
+          "top10": 12
+        },
+        "originalConcentrationMean": 3.808988764044944,
+        "meanEventIncrease": 1.4943820224719102,
+        "meanChangedFamilies": 1.3595505617977528
+      }
+    }
+  },
+  "replays": {
+    "FWD7_EXP": {
+      "counts": {
+        "replay": 10,
+        "official": 10,
+        "diversity": 12,
+        "abundance": 11
+      },
+      "deltaVsOfficial": 0,
+      "deltaVsStaticDiversity": -2,
+      "decisionsByDay": [
+        {
+          "date": "2026-09-23",
+          "policy": "CONTROL_MAS_EVENTOS_20",
+          "trainingFrom": 0,
+          "trainingToExclusive": 7,
+          "priorScore": {
+            "OFICIAL": 5,
+            "COB20_P3": 5,
+            "CONTROL_MAS_EVENTOS_20": 6
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-09-24",
+          "policy": "CONTROL_MAS_EVENTOS_20",
+          "trainingFrom": 0,
+          "trainingToExclusive": 8,
+          "priorScore": {
+            "OFICIAL": 5,
+            "COB20_P3": 5,
+            "CONTROL_MAS_EVENTOS_20": 6
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 2,
+            "diversity": 2,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-09-25",
+          "policy": "OFICIAL",
+          "trainingFrom": 0,
+          "trainingToExclusive": 9,
+          "priorScore": {
+            "OFICIAL": 7,
+            "COB20_P3": 7,
+            "CONTROL_MAS_EVENTOS_20": 7
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-09-26",
+          "policy": "OFICIAL",
+          "trainingFrom": 0,
+          "trainingToExclusive": 10,
+          "priorScore": {
+            "OFICIAL": 8,
+            "COB20_P3": 8,
+            "CONTROL_MAS_EVENTOS_20": 8
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-09-28",
+          "policy": "OFICIAL",
+          "trainingFrom": 0,
+          "trainingToExclusive": 11,
+          "priorScore": {
+            "OFICIAL": 8,
+            "COB20_P3": 8,
+            "CONTROL_MAS_EVENTOS_20": 8
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-09-29",
+          "policy": "OFICIAL",
+          "trainingFrom": 0,
+          "trainingToExclusive": 12,
+          "priorScore": {
+            "OFICIAL": 8,
+            "COB20_P3": 8,
+            "CONTROL_MAS_EVENTOS_20": 8
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 2
+          }
+        },
+        {
+          "date": "2026-09-30",
+          "policy": "CONTROL_MAS_EVENTOS_20",
+          "trainingFrom": 0,
+          "trainingToExclusive": 13,
+          "priorScore": {
+            "OFICIAL": 9,
+            "COB20_P3": 9,
+            "CONTROL_MAS_EVENTOS_20": 10
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-01",
+          "policy": "CONTROL_MAS_EVENTOS_20",
+          "trainingFrom": 0,
+          "trainingToExclusive": 14,
+          "priorScore": {
+            "OFICIAL": 10,
+            "COB20_P3": 10,
+            "CONTROL_MAS_EVENTOS_20": 11
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-02",
+          "policy": "CONTROL_MAS_EVENTOS_20",
+          "trainingFrom": 0,
+          "trainingToExclusive": 15,
+          "priorScore": {
+            "OFICIAL": 10,
+            "COB20_P3": 10,
+            "CONTROL_MAS_EVENTOS_20": 11
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 2,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-03",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 16,
+          "priorScore": {
+            "OFICIAL": 11,
+            "COB20_P3": 12,
+            "CONTROL_MAS_EVENTOS_20": 12
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-05",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 17,
+          "priorScore": {
+            "OFICIAL": 12,
+            "COB20_P3": 13,
+            "CONTROL_MAS_EVENTOS_20": 13
+          },
+          "postResult": 2,
+          "comparators": {
+            "official": 1,
+            "diversity": 2,
+            "abundance": 2
+          }
+        },
+        {
+          "date": "2026-10-06",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 18,
+          "priorScore": {
+            "OFICIAL": 13,
+            "COB20_P3": 15,
+            "CONTROL_MAS_EVENTOS_20": 15
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-07",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 19,
+          "priorScore": {
+            "OFICIAL": 13,
+            "COB20_P3": 15,
+            "CONTROL_MAS_EVENTOS_20": 15
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-08",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 20,
+          "priorScore": {
+            "OFICIAL": 13,
+            "COB20_P3": 15,
+            "CONTROL_MAS_EVENTOS_20": 15
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-09",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 21,
+          "priorScore": {
+            "OFICIAL": 14,
+            "COB20_P3": 16,
+            "CONTROL_MAS_EVENTOS_20": 16
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-10",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 22,
+          "priorScore": {
+            "OFICIAL": 14,
+            "COB20_P3": 16,
+            "CONTROL_MAS_EVENTOS_20": 16
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        }
+      ]
+    },
+    "FWD7_ROLL": {
+      "counts": {
+        "replay": 11,
+        "official": 10,
+        "diversity": 12,
+        "abundance": 11
+      },
+      "deltaVsOfficial": 1,
+      "deltaVsStaticDiversity": -1,
+      "decisionsByDay": [
+        {
+          "date": "2026-09-23",
+          "policy": "CONTROL_MAS_EVENTOS_20",
+          "trainingFrom": 0,
+          "trainingToExclusive": 7,
+          "priorScore": {
+            "OFICIAL": 5,
+            "COB20_P3": 5,
+            "CONTROL_MAS_EVENTOS_20": 6
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-09-24",
+          "policy": "OFICIAL",
+          "trainingFrom": 1,
+          "trainingToExclusive": 8,
+          "priorScore": {
+            "OFICIAL": 4,
+            "COB20_P3": 4,
+            "CONTROL_MAS_EVENTOS_20": 4
+          },
+          "postResult": 2,
+          "comparators": {
+            "official": 2,
+            "diversity": 2,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-09-25",
+          "policy": "OFICIAL",
+          "trainingFrom": 2,
+          "trainingToExclusive": 9,
+          "priorScore": {
+            "OFICIAL": 6,
+            "COB20_P3": 5,
+            "CONTROL_MAS_EVENTOS_20": 4
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-09-26",
+          "policy": "OFICIAL",
+          "trainingFrom": 3,
+          "trainingToExclusive": 10,
+          "priorScore": {
+            "OFICIAL": 5,
+            "COB20_P3": 4,
+            "CONTROL_MAS_EVENTOS_20": 3
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-09-28",
+          "policy": "OFICIAL",
+          "trainingFrom": 4,
+          "trainingToExclusive": 11,
+          "priorScore": {
+            "OFICIAL": 4,
+            "COB20_P3": 4,
+            "CONTROL_MAS_EVENTOS_20": 3
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-09-29",
+          "policy": "OFICIAL",
+          "trainingFrom": 5,
+          "trainingToExclusive": 12,
+          "priorScore": {
+            "OFICIAL": 4,
+            "COB20_P3": 4,
+            "CONTROL_MAS_EVENTOS_20": 3
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 2
+          }
+        },
+        {
+          "date": "2026-09-30",
+          "policy": "OFICIAL",
+          "trainingFrom": 6,
+          "trainingToExclusive": 13,
+          "priorScore": {
+            "OFICIAL": 5,
+            "COB20_P3": 5,
+            "CONTROL_MAS_EVENTOS_20": 5
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-01",
+          "policy": "OFICIAL",
+          "trainingFrom": 7,
+          "trainingToExclusive": 14,
+          "priorScore": {
+            "OFICIAL": 5,
+            "COB20_P3": 5,
+            "CONTROL_MAS_EVENTOS_20": 5
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-02",
+          "policy": "OFICIAL",
+          "trainingFrom": 8,
+          "trainingToExclusive": 15,
+          "priorScore": {
+            "OFICIAL": 5,
+            "COB20_P3": 5,
+            "CONTROL_MAS_EVENTOS_20": 5
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 2,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-03",
+          "policy": "COB20_P3",
+          "trainingFrom": 9,
+          "trainingToExclusive": 16,
+          "priorScore": {
+            "OFICIAL": 4,
+            "COB20_P3": 5,
+            "CONTROL_MAS_EVENTOS_20": 5
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-05",
+          "policy": "COB20_P3",
+          "trainingFrom": 10,
+          "trainingToExclusive": 17,
+          "priorScore": {
+            "OFICIAL": 4,
+            "COB20_P3": 5,
+            "CONTROL_MAS_EVENTOS_20": 5
+          },
+          "postResult": 2,
+          "comparators": {
+            "official": 1,
+            "diversity": 2,
+            "abundance": 2
+          }
+        },
+        {
+          "date": "2026-10-06",
+          "policy": "COB20_P3",
+          "trainingFrom": 11,
+          "trainingToExclusive": 18,
+          "priorScore": {
+            "OFICIAL": 5,
+            "COB20_P3": 7,
+            "CONTROL_MAS_EVENTOS_20": 7
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-07",
+          "policy": "COB20_P3",
+          "trainingFrom": 12,
+          "trainingToExclusive": 19,
+          "priorScore": {
+            "OFICIAL": 5,
+            "COB20_P3": 7,
+            "CONTROL_MAS_EVENTOS_20": 7
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-08",
+          "policy": "COB20_P3",
+          "trainingFrom": 13,
+          "trainingToExclusive": 20,
+          "priorScore": {
+            "OFICIAL": 4,
+            "COB20_P3": 6,
+            "CONTROL_MAS_EVENTOS_20": 5
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-09",
+          "policy": "COB20_P3",
+          "trainingFrom": 14,
+          "trainingToExclusive": 21,
+          "priorScore": {
+            "OFICIAL": 4,
+            "COB20_P3": 6,
+            "CONTROL_MAS_EVENTOS_20": 5
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-10",
+          "policy": "COB20_P3",
+          "trainingFrom": 15,
+          "trainingToExclusive": 22,
+          "priorScore": {
+            "OFICIAL": 4,
+            "COB20_P3": 6,
+            "CONTROL_MAS_EVENTOS_20": 5
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        }
+      ]
+    },
+    "FWD10_EXP": {
+      "counts": {
+        "replay": 8,
+        "official": 7,
+        "diversity": 9,
+        "abundance": 9
+      },
+      "deltaVsOfficial": 1,
+      "deltaVsStaticDiversity": -1,
+      "decisionsByDay": [
+        {
+          "date": "2026-09-26",
+          "policy": "OFICIAL",
+          "trainingFrom": 0,
+          "trainingToExclusive": 10,
+          "priorScore": {
+            "OFICIAL": 8,
+            "COB20_P3": 8,
+            "CONTROL_MAS_EVENTOS_20": 8
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-09-28",
+          "policy": "OFICIAL",
+          "trainingFrom": 0,
+          "trainingToExclusive": 11,
+          "priorScore": {
+            "OFICIAL": 8,
+            "COB20_P3": 8,
+            "CONTROL_MAS_EVENTOS_20": 8
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-09-29",
+          "policy": "OFICIAL",
+          "trainingFrom": 0,
+          "trainingToExclusive": 12,
+          "priorScore": {
+            "OFICIAL": 8,
+            "COB20_P3": 8,
+            "CONTROL_MAS_EVENTOS_20": 8
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 2
+          }
+        },
+        {
+          "date": "2026-09-30",
+          "policy": "CONTROL_MAS_EVENTOS_20",
+          "trainingFrom": 0,
+          "trainingToExclusive": 13,
+          "priorScore": {
+            "OFICIAL": 9,
+            "COB20_P3": 9,
+            "CONTROL_MAS_EVENTOS_20": 10
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-01",
+          "policy": "CONTROL_MAS_EVENTOS_20",
+          "trainingFrom": 0,
+          "trainingToExclusive": 14,
+          "priorScore": {
+            "OFICIAL": 10,
+            "COB20_P3": 10,
+            "CONTROL_MAS_EVENTOS_20": 11
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-02",
+          "policy": "CONTROL_MAS_EVENTOS_20",
+          "trainingFrom": 0,
+          "trainingToExclusive": 15,
+          "priorScore": {
+            "OFICIAL": 10,
+            "COB20_P3": 10,
+            "CONTROL_MAS_EVENTOS_20": 11
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 2,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-03",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 16,
+          "priorScore": {
+            "OFICIAL": 11,
+            "COB20_P3": 12,
+            "CONTROL_MAS_EVENTOS_20": 12
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-05",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 17,
+          "priorScore": {
+            "OFICIAL": 12,
+            "COB20_P3": 13,
+            "CONTROL_MAS_EVENTOS_20": 13
+          },
+          "postResult": 2,
+          "comparators": {
+            "official": 1,
+            "diversity": 2,
+            "abundance": 2
+          }
+        },
+        {
+          "date": "2026-10-06",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 18,
+          "priorScore": {
+            "OFICIAL": 13,
+            "COB20_P3": 15,
+            "CONTROL_MAS_EVENTOS_20": 15
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-07",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 19,
+          "priorScore": {
+            "OFICIAL": 13,
+            "COB20_P3": 15,
+            "CONTROL_MAS_EVENTOS_20": 15
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-08",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 20,
+          "priorScore": {
+            "OFICIAL": 13,
+            "COB20_P3": 15,
+            "CONTROL_MAS_EVENTOS_20": 15
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        },
+        {
+          "date": "2026-10-09",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 21,
+          "priorScore": {
+            "OFICIAL": 14,
+            "COB20_P3": 16,
+            "CONTROL_MAS_EVENTOS_20": 16
+          },
+          "postResult": 0,
+          "comparators": {
+            "official": 0,
+            "diversity": 0,
+            "abundance": 0
+          }
+        },
+        {
+          "date": "2026-10-10",
+          "policy": "COB20_P3",
+          "trainingFrom": 0,
+          "trainingToExclusive": 22,
+          "priorScore": {
+            "OFICIAL": 14,
+            "COB20_P3": 16,
+            "CONTROL_MAS_EVENTOS_20": 16
+          },
+          "postResult": 1,
+          "comparators": {
+            "official": 1,
+            "diversity": 1,
+            "abundance": 1
+          }
+        }
+      ]
+    }
+  },
+  "averagePhysicalRootMetrics": {
+    "original": 7.6347826086956525,
+    "diversity": 8.965217391304348,
+    "rootMaxShareOriginal": 4.51304347826087,
+    "rootMaxShareDiversity": 4.269565217391304
+  },
+  "bootstrap": {
+    "observed": 2,
+    "mean": 1.9633,
+    "p025": -2,
+    "median": 2,
+    "p975": 6,
+    "fractionNonPositive": 0.2244
+  },
+  "placebos": {
+    "free": {
+      "diversityFixed": {
+        "real": 2,
+        "mean": -0.0893,
+        "p05": -3,
+        "median": 0,
+        "p95": 3,
+        "upperTail": 0.14208579142085792
+      },
+      "FWD7_EXP": {
+        "vsOfficial": {
+          "real": 0,
+          "mean": 0.0591,
+          "p05": -1,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.7672232776722328
+        },
+        "vsDiversity": {
+          "real": -2,
+          "mean": 0.0623,
+          "p05": -2,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.9776022397760225
+        }
+      },
+      "FWD7_ROLL": {
+        "vsOfficial": {
+          "real": 1,
+          "mean": 0.0903,
+          "p05": -1,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.23017698230176983
+        },
+        "vsDiversity": {
+          "real": -1,
+          "mean": 0.0935,
+          "p05": -2,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.908009199080092
+        }
+      },
+      "FWD10_EXP": {
+        "vsOfficial": {
+          "real": 1,
+          "mean": 0.1321,
+          "p05": -1,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.20607939206079393
+        },
+        "vsDiversity": {
+          "real": -1,
+          "mean": 0.1384,
+          "p05": -2,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.9452054794520548
+        }
+      }
+    },
+    "weekday": {
+      "diversityFixed": {
+        "real": 2,
+        "mean": -0.424,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.05729427057294271
+      },
+      "FWD7_EXP": {
+        "vsOfficial": {
+          "real": 0,
+          "mean": -0.0512,
+          "p05": -2,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.7638236176382361
+        },
+        "vsDiversity": {
+          "real": -2,
+          "mean": 0.1258,
+          "p05": -2,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.9912008799120088
+        }
+      },
+      "FWD7_ROLL": {
+        "vsOfficial": {
+          "real": 1,
+          "mean": 0.1131,
+          "p05": -1,
+          "median": 0,
+          "p95": 1,
+          "upperTail": 0.2706729327067293
+        },
+        "vsDiversity": {
+          "real": -1,
+          "mean": 0.2901,
+          "p05": -1,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.9613038696130387
+        }
+      },
+      "FWD10_EXP": {
+        "vsOfficial": {
+          "real": 1,
+          "mean": 0.2363,
+          "p05": -1,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.24147585241475852
+        },
+        "vsDiversity": {
+          "real": -1,
+          "mean": 0.1684,
+          "p05": -1,
+          "median": 0,
+          "p95": 2,
+          "upperTail": 0.9708029197080292
+        }
+      }
+    }
+  },
+  "seal": {
+    "sourcePre": "b190ed0a4715220501f564dee3300264c32efeccef7bc49fbfb1dee10999908e",
+    "protocol": "b6a4cf456e3bf539dc8d91f3504e4fd17151ead2da728b07d18c594562cbcffb",
+    "code": "4fbdfb3ad135a4ef6ab54345d4b3156dd8d0b0a3401e7996558f9fe936ae64d1",
+    "pre": "26f3154e618cb23ad2045cb18f31082a1804bcd2ad93086ded4799ad8e4d7468"
+  },
+  "sourcePost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "limitation": "Las decisiones avanzan sin mirar futuros resultados dentro del replay, pero el conjunto de políticas fue elegido tras investigar las mismas 23 jornadas. No es validación prospectiva."
+}
