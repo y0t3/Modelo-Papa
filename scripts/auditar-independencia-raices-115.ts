@@ -88,6 +88,9 @@ function post(){
   top10Exposures:number;top10Eligible:number;bothPeriods:number;
   eventsMultiple:number;paths:number;blocks:number;
  }>;
+ const crossNames=['C_UN_EVENTO','C_MULTIPLES_EVENTOS'] as const;
+ const cross=Object.fromEntries(crossNames.map(k=>[k,{exposures:0,eligible:0,expected:0,top10Exposures:0,top10Eligible:0,bothPeriods:0}])) as
+ Record<typeof crossNames[number],{exposures:number,eligible:number,expected:number,top10Exposures:number,top10Eligible:number,bothPeriods:number}>;
  const perCut=[];const top={3:0,5:0,10:0};let poolWinCuts=0;
  for(let i=0;i<115;i++){
   const row=pre.rows[i],o=objectives.rows[i];
@@ -108,6 +111,13 @@ function post(){
    if(f.independentHeadEvents>=2)s.eventsMultiple++;
    if(f.rank<=3)s.top3Exposures++;
    if(f.rank<=10)s.top10Exposures++;
+   if(f.bucket==='C_BLOQUES_MISMA_FUENTE'){
+    const sub=f.independentHeadEvents>1?'C_MULTIPLES_EVENTOS':'C_UN_EVENTO';
+    const z=cross[sub];z.exposures++;z.expected+=size?matching.length/size:0;
+    if(f.rank<=10)z.top10Exposures++;
+    if(f.d1&&f.d7)z.bothPeriods++;
+    if(wins.has(f.family)){z.eligible++;if(f.rank<=10)z.top10Eligible++}
+   }
    if(wins.has(f.family)){
     s.eligible++;matchedCounts[f.bucket]=(matchedCounts[f.bucket]||0)+1;
     if(f.rank<=10)s.top10Eligible++;
@@ -124,6 +134,11 @@ function post(){
  assert.equal(perCut.length,115);
  const summary={nCuts:115,nDays:new Set(perCut.map(x=>x.date)).size,
   poolWinCuts,officialTop:top,
+  cBlocksByHistoricalEventCount:Object.fromEntries(crossNames.map(k=>[k,{
+   ...cross[k],expected:finite(cross[k].expected),
+   observedPer1000:finite(1000*cross[k].eligible/Math.max(1,cross[k].exposures)),
+   expectedPer1000:finite(1000*cross[k].expected/Math.max(1,cross[k].exposures))
+  }])),
   metricsByBucket:Object.fromEntries(bucketNames.map(k=>[k,{
    ...stats[k],expected:finite(stats[k].expected),
    shareMatchedPer1000Exposures:finite(1000*stats[k].eligible/Math.max(1,stats[k].exposures)),
