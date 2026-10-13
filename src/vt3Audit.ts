@@ -6,7 +6,7 @@ import type {DailySheet,SourceId} from './sheet';
 import {findPaths} from './paths';
 import type {Path} from './paths';
 import {reversibleFamily} from './motorLalo';
-import type {LaloFamily,LaloView,RootRef} from './motorLalo';
+import type {LaloFamily,LaloRoute,LaloView,RootRef} from './motorLalo';
 
 export type Vt3DiagnosticStatus='SIN_FORMACION'|'FISICA_SIN_ANCLAJE'|'EN_TOP3'|'EN_TOP10'|'FUERA_TOP10';
 export type Vt3AuditRoute={
@@ -81,7 +81,7 @@ export function auditVt3Family(sheet:DailySheet,view:LaloView,target:Turno,input
  if(targetIndex<0)throw Error('Turno inválido');
  const [a,b]=query.family.split('/');
  const candidate=view.ranks.vt3.find(f=>f.family===query.family);
- const accepted=new Map<string,typeof candidate extends undefined?never:LaloFamily['paths'][number]>();
+ const accepted=new Map<string,LaloRoute>();
  for(const p of candidate?.paths||[])accepted.set(physicalKey(p.sourceId,p.path),p);
  const roots=new Map(view.roots.map(r=>[r.id,r]));
  const paths=new Map<string,Vt3AuditRoute>();
