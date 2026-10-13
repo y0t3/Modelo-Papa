@@ -31,6 +31,7 @@ const compile=(k,source)=>{const f=resolve(runtime,k+'.mjs');
 for(const file of ['domain','dates','paths','sheet'])
  compile('src/'+file,read('src/'+file+'.ts'));
 compile('src/motorNuevo',read('src/motorLalo.ts'));
+compile('src/motorLalo',read('src/motorLalo.ts')); // Import exacto requerido por replay histórico.
 const original=execFileSync('git',['show',OLD_SHA+':src/motorLalo.ts'],{encoding:'utf8'});
 compile('src/motorAnterior',original);
 const load=x=>import(pathToFileURL(resolve(runtime,x+'.mjs')).href);
