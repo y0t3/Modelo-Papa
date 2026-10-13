@@ -93,7 +93,8 @@ function post(){
   details.push(result);
  }
  assert.deepEqual([scores.A_OFICIAL.top3,scores.A_OFICIAL.top5,scores.A_OFICIAL.top10],[5,8,15]);
- assert.equal(Object.values(byTurn).reduce((n,x)=>n+x.Matutino?.top10||0,0),0);
+ assert.equal(byTurn.Matutino.A_OFICIAL.top10,8);
+ assert.equal(byTurn.Vespertino.A_OFICIAL.top10,0);
  const summary={cuts:115,days:23,date:'2026-10-13',
   scores,byTurn,byMonth,paired,
   hashes:{sourcePre:expected,sourcePost:sha(read(src+'POST_115.json')),
