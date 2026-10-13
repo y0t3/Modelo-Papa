@@ -7,7 +7,7 @@ on:
       - '.github/workflows/lab-raices-independientes-115.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   auditoria:
     runs-on: ubuntu-latest
@@ -34,3 +34,14 @@ jobs:
           path: resultados/lab-raices-independientes-115/
           retention-days: 60
           if-no-files-found: error
+
+      - name: Respaldar JSON PRE y POST en rama experimental
+        run: |
+          mkdir -p auditorias/raices-independientes-vt3-115-13oct2026
+          cp resultados/lab-raices-independientes-115/INDEPENDENCIA_PRE_115.json auditorias/raices-independientes-vt3-115-13oct2026/
+          cp resultados/lab-raices-independientes-115/INDEPENDENCIA_POST_115.json auditorias/raices-independientes-vt3-115-13oct2026/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/raices-independientes-vt3-115-13oct2026/
+          git commit -m "data(lab): respaldar resultados PRE POST VT3 115 cortes" || echo 'Sin cambios'
+          git push origin HEAD:lab-raices-independientes-13oct2026
