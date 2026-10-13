@@ -1,0 +1,128 @@
+{
+  "seal": {
+    "preHash": "46f5d1f0e64fb72e6f05fa0c2de4ad1262cb9a0f7c71e18d803ff1073363e5d5",
+    "nocturnaHash": "6d69b3ddc0732724dc310b5bf12ec78a9dc989c1a53087676f20f7d838d587e2",
+    "protocolHash": "d528ac80d07edf688d049d298f528430b2acb88f328ae66f8bbf5cd1ff902335",
+    "codeHash": "114cf0f190e76ffb4231288e6a6a5cfdea425e3a52496be8b77dfbaa771f6ae0"
+  },
+  "overall": {
+    "cuts": 115,
+    "winningCuts": 80,
+    "winningExposures": 143,
+    "originalTop10Cuts": 15,
+    "originalTop10WinningExposures": 17,
+    "flags": {
+      "cambio_centro": {
+        "familyCutExposures": 612,
+        "winningExposures": 6,
+        "originalTop10WinningExposures": 0,
+        "comparableMatchedGroups": 278,
+        "comparableFamilyCutExposures": 2313,
+        "comparableSignalExposures": 539,
+        "comparableObserved": 5,
+        "comparableExpected": 5.633882783882783
+      },
+      "segunda_fuente_sin_raiz": {
+        "familyCutExposures": 919,
+        "winningExposures": 12,
+        "originalTop10WinningExposures": 1,
+        "comparableMatchedGroups": 219,
+        "comparableFamilyCutExposures": 2575,
+        "comparableSignalExposures": 865,
+        "comparableObserved": 12,
+        "comparableExpected": 10.515966161744887
+      },
+      "familia_sin_anclaje": {
+        "familyCutExposures": 8884,
+        "winningExposures": 79,
+        "originalTop10WinningExposures": 0,
+        "comparableMatchedGroups": 710,
+        "comparableFamilyCutExposures": 14425,
+        "comparableSignalExposures": 8659,
+        "comparableObserved": 76,
+        "comparableExpected": 76.42086262375142
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "cuts": 70,
+      "winningCuts": 50,
+      "winningExposures": 93,
+      "originalTop10Cuts": 10,
+      "originalTop10WinningExposures": 10,
+      "flags": {
+        "cambio_centro": {
+          "familyCutExposures": 350,
+          "winningExposures": 5,
+          "originalTop10WinningExposures": 0,
+          "comparableMatchedGroups": 166,
+          "comparableFamilyCutExposures": 1368,
+          "comparableSignalExposures": 307,
+          "comparableObserved": 4,
+          "comparableExpected": 4.030952380952381
+        },
+        "segunda_fuente_sin_raiz": {
+          "familyCutExposures": 538,
+          "winningExposures": 9,
+          "originalTop10WinningExposures": 0,
+          "comparableMatchedGroups": 128,
+          "comparableFamilyCutExposures": 1517,
+          "comparableSignalExposures": 498,
+          "comparableObserved": 9,
+          "comparableExpected": 6.764569725363934
+        },
+        "familia_sin_anclaje": {
+          "familyCutExposures": 5308,
+          "winningExposures": 46,
+          "originalTop10WinningExposures": 0,
+          "comparableMatchedGroups": 428,
+          "comparableFamilyCutExposures": 8737,
+          "comparableSignalExposures": 5176,
+          "comparableObserved": 44,
+          "comparableExpected": 48.49623878488037
+        }
+      }
+    },
+    "2026-10": {
+      "cuts": 45,
+      "winningCuts": 30,
+      "winningExposures": 50,
+      "originalTop10Cuts": 5,
+      "originalTop10WinningExposures": 7,
+      "flags": {
+        "cambio_centro": {
+          "familyCutExposures": 262,
+          "winningExposures": 1,
+          "originalTop10WinningExposures": 0,
+          "comparableMatchedGroups": 112,
+          "comparableFamilyCutExposures": 945,
+          "comparableSignalExposures": 232,
+          "comparableObserved": 1,
+          "comparableExpected": 1.6029304029304028
+        },
+        "segunda_fuente_sin_raiz": {
+          "familyCutExposures": 381,
+          "winningExposures": 3,
+          "originalTop10WinningExposures": 1,
+          "comparableMatchedGroups": 91,
+          "comparableFamilyCutExposures": 1058,
+          "comparableSignalExposures": 367,
+          "comparableObserved": 3,
+          "comparableExpected": 3.7513964363809564
+        },
+        "familia_sin_anclaje": {
+          "familyCutExposures": 3576,
+          "winningExposures": 33,
+          "originalTop10WinningExposures": 0,
+          "comparableMatchedGroups": 282,
+          "comparableFamilyCutExposures": 5688,
+          "comparableSignalExposures": 3483,
+          "comparableObserved": 32,
+          "comparableExpected": 27.92462383887103
+        }
+      }
+    }
+  },
+  "limitation": "Mismo histórico ya investigado; controles emparejados descriptivos, muestras correlacionadas. No se extrapola a nuevos sorteos ni se asignan raíces a rutas no ancladas."
+}

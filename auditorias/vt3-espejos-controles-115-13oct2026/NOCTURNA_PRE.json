@@ -1,0 +1,4651 @@
+{
+  "diagnostico": "Nocturna conocida; PRE original reproducido",
+  "row": {
+    "date": "2026-10-12",
+    "turn": "Nocturno",
+    "candidates": [
+      {
+        "family": "356/653",
+        "originalRank": 11,
+        "sources": 2,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 4,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:0",
+              "0:1",
+              "1:0"
+            ],
+            "value": "356",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|4:0>4:1>5:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:0",
+              "1:1",
+              "1:0"
+            ],
+            "value": "356",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|3:0>4:1>4:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "355/553",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "365/563",
+        "originalRank": 4,
+        "sources": 2,
+        "blocks": 6,
+        "totalPaths": 6,
+        "anchoredPaths": 6,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:0",
+              "1:0",
+              "0:1"
+            ],
+            "value": "365",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|3:0>4:0>4:1"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:0",
+              "1:0",
+              "1:1"
+            ],
+            "value": "365",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|3:0>4:0>4:1",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "536/635",
+        "originalRank": 5,
+        "sources": 2,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 4,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:1",
+              "0:0",
+              "1:0"
+            ],
+            "value": "536",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|4:1>4:0>5:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "1:0",
+              "0:0",
+              "1:1"
+            ],
+            "value": "635",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|4:1>4:0>5:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "535/535",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "565/565",
+        "originalRank": 1,
+        "sources": 1,
+        "blocks": 9,
+        "totalPaths": 9,
+        "anchoredPaths": 9,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:1",
+              "1:0",
+              "1:1"
+            ],
+            "value": "565",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542|vt3|prevNocturno|4:1>5:0>5:1",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:1>2:0>3:0",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|4:1>4:0>5:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "value": "565",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:1>2:0>3:0",
+              "2026-10-10|D−1|Matutino|Ciudad|6542|vt3|prevNocturno|4:1>5:0>5:1",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|4:1>4:0>5:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "556/655",
+        "originalRank": 2,
+        "sources": 1,
+        "blocks": 7,
+        "totalPaths": 12,
+        "anchoredPaths": 11,
+        "centerSwap": true,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1"
+            ],
+            "value": "655"
+          }
+        ],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:1",
+              "1:1",
+              "1:0"
+            ],
+            "value": "556",
+            "rootIds": [
+              "2026-10-10|D−1|Primera|Entre Ríos|2473|vt3|prevNocturno|2:1>3:1>3:0",
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|4:0>4:1>5:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "1:0",
+              "1:1",
+              "2:0"
+            ],
+            "value": "655",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|4:0>4:1>5:0",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473|vt3|prevNocturno|2:1>3:1>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "555/555",
+        "originalRank": 3,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 5,
+        "anchoredPaths": 5,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:1",
+              "1:1",
+              "2:0"
+            ],
+            "value": "555",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0",
+              "2026-10-10|D−1|Matutino|Ciudad|6542|vt3|prevNocturno|4:1>5:0>5:1",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473|vt3|prevNocturno|2:1>3:1>3:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "0:1",
+              "1:1",
+              "2:1"
+            ],
+            "value": "555",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473|vt3|prevNocturno|2:1>3:1>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "256/652",
+        "originalRank": 14,
+        "sources": 1,
+        "blocks": 8,
+        "totalPaths": 8,
+        "anchoredPaths": 2,
+        "centerSwap": true,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "1:0",
+              "2:1",
+              "3:0"
+            ],
+            "value": "652"
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:0",
+              "2:1",
+              "3:1"
+            ],
+            "value": "256"
+          }
+        ],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "1:0",
+              "2:0",
+              "3:0"
+            ],
+            "value": "652",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:0",
+              "2:0",
+              "3:1"
+            ],
+            "value": "256",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "656/656",
+        "originalRank": 28,
+        "sources": 2,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Primera",
+            "cells": [
+              "0:1",
+              "1:1",
+              "1:0"
+            ],
+            "value": "656"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:1",
+              "4:1",
+              "5:1"
+            ],
+            "value": "656",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "255/552",
+        "originalRank": 10,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 4,
+        "anchoredPaths": 4,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "1:1",
+              "2:0",
+              "3:0"
+            ],
+            "value": "552",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:1>2:0>3:0",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|4:1>4:0>5:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "1:1",
+              "2:1",
+              "3:0"
+            ],
+            "value": "552",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|4:0>4:1>5:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "525/525",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "526/625",
+        "originalRank": 9,
+        "sources": 1,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 4,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "2:0",
+              "3:0",
+              "3:1"
+            ],
+            "value": "526",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|3:0>4:0>4:1",
+              "2026-10-10|D−1|Matutino|Ciudad|6542|vt3|prevNocturno|4:1>5:0>5:1"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "2:1",
+              "3:0",
+              "3:1"
+            ],
+            "value": "526",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542|vt3|prevNocturno|4:1>5:0>5:1",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|3:0>4:0>4:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "527/725",
+        "originalRank": 12,
+        "sources": 1,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 3,
+        "centerSwap": true,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "4:0",
+              "5:0",
+              "4:1"
+            ],
+            "value": "725"
+          }
+        ],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "2:0",
+              "3:0",
+              "4:0"
+            ],
+            "value": "527",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:1>2:0>3:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "2:1",
+              "3:0",
+              "4:0"
+            ],
+            "value": "527",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:1>2:0>3:0",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "265/562",
+        "originalRank": 8,
+        "sources": 1,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 4,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "2:0",
+              "3:1",
+              "3:0"
+            ],
+            "value": "562",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|3:0>4:1>4:0",
+              "2026-10-10|D−1|Primera|Entre Ríos|2473|vt3|prevNocturno|2:1>3:1>3:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "2:1",
+              "3:1",
+              "3:0"
+            ],
+            "value": "562",
+            "rootIds": [
+              "2026-10-10|D−1|Primera|Entre Ríos|2473|vt3|prevNocturno|2:1>3:1>3:0",
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|3:0>4:1>4:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "567/765",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "267/762",
+        "originalRank": 21,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:0",
+              "3:1",
+              "4:0"
+            ],
+            "value": "267",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|4:0>4:1>5:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "4:0",
+              "5:1",
+              "5:0"
+            ],
+            "value": "762",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|3:0>4:1>4:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "276/672",
+        "originalRank": 6,
+        "sources": 1,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 3,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:0",
+              "4:0",
+              "3:1"
+            ],
+            "value": "276",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:1>2:0>3:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:1",
+              "4:0",
+              "5:0"
+            ],
+            "value": "672",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:1>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "275/572",
+        "originalRank": 22,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Previa",
+            "cells": [
+              "1:1",
+              "2:1",
+              "3:0"
+            ],
+            "value": "572"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:0",
+              "4:0",
+              "4:1"
+            ],
+            "value": "275",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|3:0>4:0>4:1",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|4:1>4:0>5:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "4:1",
+              "4:0",
+              "5:0"
+            ],
+            "value": "572",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|4:1>4:0>5:0",
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|3:0>4:0>4:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "272/272",
+        "originalRank": 26,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:0",
+              "4:0",
+              "5:0"
+            ],
+            "value": "272",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|1:0>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "257/752",
+        "originalRank": 20,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:0",
+              "4:1",
+              "4:0"
+            ],
+            "value": "257",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|3:0>4:1>4:0",
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|4:0>4:1>5:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "4:0",
+              "4:1",
+              "5:0"
+            ],
+            "value": "752",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|4:0>4:1>5:0",
+              "2026-10-10|D−1|Nocturno|Provincia|2654|vt3|prevNocturno|3:0>4:1>4:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "252/252",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "627/726",
+        "originalRank": 23,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:1",
+              "3:0",
+              "4:0"
+            ],
+            "value": "627",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|4:1>4:0>5:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "4:0",
+              "5:0",
+              "5:1"
+            ],
+            "value": "726",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Entre Ríos|0564|vt3|prevNocturno|3:0>4:0>4:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "576/675",
+        "originalRank": 16,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:1",
+              "4:0",
+              "4:1"
+            ],
+            "value": "675",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542|vt3|prevNocturno|4:1>5:0>5:1"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "4:1",
+              "4:0",
+              "5:1"
+            ],
+            "value": "576",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Ciudad|6542|vt3|prevNocturno|4:1>5:0>5:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "676/676",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "657/756",
+        "originalRank": 17,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:1",
+              "4:1",
+              "4:0"
+            ],
+            "value": "657",
+            "rootIds": [
+              "2026-10-10|D−1|Primera|Entre Ríos|2473|vt3|prevNocturno|2:1>3:1>3:0"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "4:0",
+              "4:1",
+              "5:1"
+            ],
+            "value": "756",
+            "rootIds": [
+              "2026-10-10|D−1|Primera|Entre Ríos|2473|vt3|prevNocturno|2:1>3:1>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "485/584",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "585/585",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "548/845",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "545/545",
+        "originalRank": 27,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Previa",
+            "cells": [
+              "0:0",
+              "1:0",
+              "1:1"
+            ],
+            "value": "545",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Provincia|5918|vt3|Previa|2:0>3:0>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "547/745",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "558/855",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "455/554",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "557/755",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "458/854",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "848/848",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "748/847",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "858/858",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "758/857",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "457/754",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "487/784",
+        "originalRank": 15,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Previa",
+            "cells": [
+              "1:0",
+              "2:0",
+              "2:1"
+            ],
+            "value": "487",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Provincia|5918|vt3|Previa|2:0>3:0>3:1"
+            ]
+          },
+          {
+            "source": "Previa",
+            "cells": [
+              "1:0",
+              "2:0",
+              "3:1"
+            ],
+            "value": "487",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Provincia|5918|vt3|Previa|2:0>3:0>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "284/482",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "475/574",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "478/874",
+        "originalRank": 52,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Previa",
+            "cells": [
+              "1:0",
+              "2:1",
+              "2:0"
+            ],
+            "value": "478"
+          },
+          {
+            "source": "Previa",
+            "cells": [
+              "2:0",
+              "3:1",
+              "4:1"
+            ],
+            "value": "874"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:1",
+              "3:1",
+              "4:0"
+            ],
+            "value": "874",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "274/472",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "477/774",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "587/785",
+        "originalRank": 58,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Previa",
+            "cells": [
+              "1:1",
+              "2:0",
+              "2:1"
+            ],
+            "value": "587"
+          },
+          {
+            "source": "Previa",
+            "cells": [
+              "1:1",
+              "2:0",
+              "3:1"
+            ],
+            "value": "587"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:1",
+              "2:1",
+              "3:1"
+            ],
+            "value": "587",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "285/582",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "578/875",
+        "originalRank": 56,
+        "sources": 2,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Previa",
+            "cells": [
+              "1:1",
+              "2:1",
+              "2:0"
+            ],
+            "value": "578"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:1",
+              "3:1",
+              "4:1"
+            ],
+            "value": "875",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "577/775",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "278/872",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "778/877",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "728/827",
+        "originalRank": 18,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Previa",
+            "cells": [
+              "2:0",
+              "3:0",
+              "2:1"
+            ],
+            "value": "827",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Provincia|5918|vt3|Previa|2:0>3:0>3:1"
+            ]
+          },
+          {
+            "source": "Previa",
+            "cells": [
+              "2:0",
+              "3:0",
+              "3:1"
+            ],
+            "value": "827",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Provincia|5918|vt3|Previa|2:0>3:0>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "128/821",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "428/824",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "178/871",
+        "originalRank": 48,
+        "sources": 2,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Previa",
+            "cells": [
+              "2:0",
+              "3:1",
+              "4:0"
+            ],
+            "value": "871"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:0",
+              "3:1",
+              "2:1"
+            ],
+            "value": "178",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:0>2:1>1:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "287/782",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "787/787",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "727/727",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "127/721",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "427/724",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "277/772",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "177/771",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "172/271",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "217/712",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "214/412",
+        "originalRank": 24,
+        "sources": 2,
+        "blocks": 5,
+        "totalPaths": 5,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "1:0",
+              "2:0",
+              "2:1"
+            ],
+            "value": "412"
+          },
+          {
+            "source": "Vespertino",
+            "cells": [
+              "1:1",
+              "2:0",
+              "2:1"
+            ],
+            "value": "412"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Previa",
+            "cells": [
+              "3:0",
+              "4:0",
+              "4:1"
+            ],
+            "value": "214",
+            "rootIds": [
+              "2026-10-10|D−1|Matutino|Provincia|5918|vt3|Previa|2:0>3:0>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "247/742",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 5,
+        "totalPaths": 5,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "142/241",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 7,
+        "totalPaths": 7,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "417/714",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "147/741",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "124/421",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 7,
+        "totalPaths": 7,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "174/471",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "366/663",
+        "originalRank": 49,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "0:0",
+              "1:0",
+              "0:1"
+            ],
+            "value": "366",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>1:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "163/361",
+        "originalRank": 45,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "0:0",
+              "1:0",
+              "2:0"
+            ],
+            "value": "361",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "368/863",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "153/351",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "358/853",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "636/636",
+        "originalRank": 60,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "0:1",
+              "0:0",
+              "1:0"
+            ],
+            "value": "636",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|2:1>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "566/665",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "166/661",
+        "originalRank": 47,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "value": "661",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:1>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "668/866",
+        "originalRank": 61,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "value": "668",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:1>2:0>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "156/651",
+        "originalRank": 19,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "3:0",
+              "4:0",
+              "4:1"
+            ],
+            "value": "156"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "0:1",
+              "1:1",
+              "2:0"
+            ],
+            "value": "651",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:0"
+            ]
+          },
+          {
+            "source": "Primera",
+            "cells": [
+              "1:0",
+              "1:1",
+              "2:0"
+            ],
+            "value": "651",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "658/856",
+        "originalRank": 29,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "0:1",
+              "1:1",
+              "2:1"
+            ],
+            "value": "658",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:1",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:0>1:1>2:1",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775|vt3|Primera|3:0>3:1>4:1"
+            ]
+          },
+          {
+            "source": "Primera",
+            "cells": [
+              "1:0",
+              "1:1",
+              "2:1"
+            ],
+            "value": "658",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:0>1:1>2:1",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775|vt3|Primera|3:0>3:1>4:1",
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "516/615",
+        "originalRank": 54,
+        "sources": 2,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "4:0",
+              "3:0",
+              "4:1"
+            ],
+            "value": "516"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:0",
+              "2:0",
+              "1:1"
+            ],
+            "value": "615",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>1:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "618/816",
+        "originalRank": 59,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:0",
+              "2:0",
+              "2:1"
+            ],
+            "value": "618",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>2:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "016/610",
+        "originalRank": 36,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:0",
+              "2:0",
+              "3:0"
+            ],
+            "value": "610",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "617/716",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "586/685",
+        "originalRank": 57,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:0",
+              "2:1",
+              "1:1"
+            ],
+            "value": "685",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:0>2:1>1:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "186/681",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "086/680",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "687/786",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "165/561",
+        "originalRank": 46,
+        "sources": 2,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "3:0",
+              "4:1",
+              "4:0"
+            ],
+            "value": "165"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:1",
+              "1:0",
+              "2:0"
+            ],
+            "value": "561",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|2:1>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "568/865",
+        "originalRank": 33,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:1",
+              "1:0",
+              "2:1"
+            ],
+            "value": "568",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|2:1>2:0>3:1",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775|vt3|Primera|3:1>3:0>4:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "518/815",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "015/510",
+        "originalRank": 35,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:1",
+              "2:0",
+              "3:0"
+            ],
+            "value": "510",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:1>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "517/715",
+        "originalRank": 55,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:1",
+              "2:0",
+              "3:1"
+            ],
+            "value": "517",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:1>2:0>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "185/581",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "085/580",
+        "originalRank": 41,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:1",
+              "2:1",
+              "3:0"
+            ],
+            "value": "580",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "168/861",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "158/851",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "081/180",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "187/781",
+        "originalRank": 31,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:0",
+              "2:1",
+              "3:1"
+            ],
+            "value": "187",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:0>1:1>2:1",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775|vt3|Primera|3:0>3:1>4:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "108/801",
+        "originalRank": 44,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:0",
+              "3:0",
+              "2:1"
+            ],
+            "value": "108",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>1:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "107/701",
+        "originalRank": 43,
+        "sources": 2,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Matutino",
+            "cells": [
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "value": "701"
+          },
+          {
+            "source": "Matutino",
+            "cells": [
+              "0:1",
+              "1:1",
+              "2:0"
+            ],
+            "value": "701"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:0",
+              "3:0",
+              "3:1"
+            ],
+            "value": "107",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>2:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "104/401",
+        "originalRank": 42,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Matutino",
+            "cells": [
+              "0:0",
+              "1:0",
+              "2:0"
+            ],
+            "value": "401"
+          },
+          {
+            "source": "Matutino",
+            "cells": [
+              "0:0",
+              "1:1",
+              "2:0"
+            ],
+            "value": "401"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:0",
+              "3:0",
+              "4:0"
+            ],
+            "value": "104",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:1>2:1>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "105/501",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "071/170",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "175/571",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "018/810",
+        "originalRank": 37,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:1",
+              "2:0",
+              "3:0"
+            ],
+            "value": "810",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|2:1>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "718/817",
+        "originalRank": 34,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:1",
+              "2:0",
+              "3:1"
+            ],
+            "value": "817",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|2:1>2:0>3:1",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775|vt3|Primera|3:1>3:0>4:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "708/807",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "408/804",
+        "originalRank": 51,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:1",
+              "3:0",
+              "4:0"
+            ],
+            "value": "804",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:1>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "508/805",
+        "originalRank": 53,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "2:1",
+              "3:0",
+              "4:1"
+            ],
+            "value": "805",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:1>2:0>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "078/870",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "017/710",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "087/780",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "074/470",
+        "originalRank": null,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "075/570",
+        "originalRank": 30,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "3:0",
+              "3:1",
+              "4:1"
+            ],
+            "value": "075",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:0>1:1>2:1",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775|vt3|Primera|3:0>3:1>4:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "047/740",
+        "originalRank": 39,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Matutino",
+            "cells": [
+              "0:1",
+              "0:0",
+              "1:0"
+            ],
+            "value": "740"
+          },
+          {
+            "source": "Matutino",
+            "cells": [
+              "0:1",
+              "0:0",
+              "1:1"
+            ],
+            "value": "740"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "3:0",
+              "4:0",
+              "3:1"
+            ],
+            "value": "047",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>1:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "045/540",
+        "originalRank": 38,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "3:0",
+              "4:0",
+              "4:1"
+            ],
+            "value": "045",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>2:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "057/750",
+        "originalRank": 40,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "3:0",
+              "4:1",
+              "3:1"
+            ],
+            "value": "057",
+            "rootIds": [
+              "2026-10-05|D−7|Vespertino|Entre Ríos|8799|vt3|Primera|1:0>2:1>1:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "054/450",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "407/704",
+        "originalRank": 50,
+        "sources": 2,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Matutino",
+            "cells": [
+              "0:0",
+              "1:0",
+              "0:1"
+            ],
+            "value": "407"
+          },
+          {
+            "source": "Matutino",
+            "cells": [
+              "0:0",
+              "1:1",
+              "0:1"
+            ],
+            "value": "407"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "3:1",
+              "3:0",
+              "4:0"
+            ],
+            "value": "704",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|2:1>2:0>3:0"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "507/705",
+        "originalRank": 32,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "3:1",
+              "3:0",
+              "4:1"
+            ],
+            "value": "705",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|2:1>2:0>3:1",
+              "2026-10-05|D−7|Nocturno|Entre Ríos|5775|vt3|Primera|3:1>3:0>4:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "405/504",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "004/400",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "007/700",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 5,
+        "totalPaths": 6,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "040/040",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "070/070",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "001/100",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 6,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "000/000",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "010/010",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "013/310",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "003/300",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "103/301",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "173/371",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "171/171",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "031/130",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "137/731",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "131/131",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "073/370",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "037/730",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "317/713",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "307/703",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "117/711",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "113/311",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "244/442",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "242/242",
+        "originalRank": 25,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 1,
+        "centerSwap": true,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 1
+        },
+        "exampleCenter": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "0:0",
+              "1:0",
+              "2:1"
+            ],
+            "value": "242"
+          }
+        ],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "0:0",
+              "1:1",
+              "2:1"
+            ],
+            "value": "242",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215|vt3|Vespertino|1:0>2:1>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "447/744",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "424/424",
+        "originalRank": 7,
+        "sources": 1,
+        "blocks": 4,
+        "totalPaths": 4,
+        "anchoredPaths": 3,
+        "centerSwap": true,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 4,
+          "palindrome": 1
+        },
+        "exampleCenter": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "1:0",
+              "0:0",
+              "1:1"
+            ],
+            "value": "424"
+          }
+        ],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "1:0",
+              "2:1",
+              "1:1"
+            ],
+            "value": "424",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215|vt3|Vespertino|1:0>2:1>3:1"
+            ]
+          },
+          {
+            "source": "Vespertino",
+            "cells": [
+              "1:0",
+              "2:1",
+              "3:1"
+            ],
+            "value": "424",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215|vt3|Vespertino|1:0>2:1>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "474/474",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "144/441",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "414/414",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 3,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "114/411",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 3,
+        "totalPaths": 4,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 3,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "121/121",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "112/211",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "115/511",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "116/611",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "141/141",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 1
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "145/541",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "146/641",
+        "originalRank": 13,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 2,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "2:0",
+              "3:1",
+              "4:1"
+            ],
+            "value": "146",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215|vt3|Vespertino|1:0>2:1>3:1"
+            ]
+          },
+          {
+            "source": "Vespertino",
+            "cells": [
+              "3:0",
+              "3:1",
+              "4:1"
+            ],
+            "value": "146",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215|vt3|Vespertino|1:0>2:1>3:1"
+            ]
+          }
+        ]
+      },
+      {
+        "family": "215/512",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "216/612",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "245/542",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "246/642",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "154/451",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "164/461",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "415/514",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "416/614",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "456/654",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "465/564",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      },
+      {
+        "family": "546/645",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": []
+      }
+    ]
+  }
+}

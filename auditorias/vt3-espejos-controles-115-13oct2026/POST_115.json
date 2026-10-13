@@ -1,0 +1,2432 @@
+{
+  "method": "Contraste morfológico exploratorio, no validación predictiva",
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "winning": [
+        "175/571"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "175/571",
+          "originalRank": 11,
+          "centerSwap": true,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "winning": [
+        "779/977",
+        "365/563"
+      ],
+      "originalTop10": [
+        "779/977"
+      ],
+      "features": [
+        {
+          "family": "779/977",
+          "originalRank": 7,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 1
+        },
+        {
+          "family": "365/563",
+          "originalRank": 12,
+          "centerSwap": true,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "winning": [
+        "565/565"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "565/565",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "winning": [
+        "265/562",
+        "174/471"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "265/562",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "174/471",
+          "originalRank": 54,
+          "centerSwap": true,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "winning": [
+        "087/780",
+        "178/871"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "087/780",
+          "originalRank": 12,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 1
+        },
+        {
+          "family": "178/871",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "winning": [
+        "070/070"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "070/070",
+          "originalRank": 61,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "winning": [
+        "446/644",
+        "438/834",
+        "748/847"
+      ],
+      "originalTop10": [
+        "446/644"
+      ],
+      "features": [
+        {
+          "family": "446/644",
+          "originalRank": 1,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 4,
+          "sources": 1
+        },
+        {
+          "family": "438/834",
+          "originalRank": 18,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 1
+        },
+        {
+          "family": "748/847",
+          "originalRank": 33,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "winning": [
+        "597/795"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "597/795",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "winning": [
+        "174/471",
+        "086/680"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "174/471",
+          "originalRank": 33,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 2
+        },
+        {
+          "family": "086/680",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "winning": [
+        "464/464",
+        "438/834",
+        "417/714",
+        "476/674",
+        "127/721"
+      ],
+      "originalTop10": [
+        "464/464"
+      ],
+      "features": [
+        {
+          "family": "464/464",
+          "originalRank": 2,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 6,
+          "sources": 1
+        },
+        {
+          "family": "438/834",
+          "originalRank": 21,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 5,
+          "sources": 2
+        },
+        {
+          "family": "417/714",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "476/674",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 3,
+          "sources": 2
+        },
+        {
+          "family": "127/721",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "winning": [
+        "294/492"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "294/492",
+          "originalRank": 46,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "winning": [
+        "617/716"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "617/716",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "winning": [
+        "537/735",
+        "447/744"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "537/735",
+          "originalRank": 83,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 2
+        },
+        {
+          "family": "447/744",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "winning": [
+        "798/897",
+        "173/371",
+        "657/756",
+        "446/644"
+      ],
+      "originalTop10": [
+        "173/371"
+      ],
+      "features": [
+        {
+          "family": "798/897",
+          "originalRank": 13,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "173/371",
+          "originalRank": 8,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "657/756",
+          "originalRank": 90,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "446/644",
+          "originalRank": 112,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "winning": [
+        "355/553",
+        "098/890"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "355/553",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "098/890",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "winning": [
+        "396/693"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "396/693",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "winning": [
+        "639/936",
+        "108/801"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "639/936",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "108/801",
+          "originalRank": 31,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "winning": [
+        "619/916"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "619/916",
+          "originalRank": 43,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "winning": [
+        "109/901",
+        "264/462",
+        "011/110"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "109/901",
+          "originalRank": 63,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 3
+        },
+        {
+          "family": "264/462",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "011/110",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "winning": [
+        "227/722"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "227/722",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 3,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "winning": [
+        "246/642"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "246/642",
+          "originalRank": 42,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "winning": [
+        "173/371"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "173/371",
+          "originalRank": 42,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 4,
+          "sources": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "winning": [
+        "456/654",
+        "042/240"
+      ],
+      "originalTop10": [
+        "456/654"
+      ],
+      "features": [
+        {
+          "family": "456/654",
+          "originalRank": 8,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "042/240",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "winning": [
+        "020/020"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "020/020",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "winning": [
+        "082/280"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "082/280",
+          "originalRank": 35,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "winning": [
+        "517/715",
+        "207/702",
+        "427/724"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "517/715",
+          "originalRank": 35,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "207/702",
+          "originalRank": 52,
+          "centerSwap": true,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 4,
+          "sources": 1
+        },
+        {
+          "family": "427/724",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "winning": [
+        "064/460"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "064/460",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "winning": [
+        "289/982"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "289/982",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "winning": [
+        "159/951"
+      ],
+      "originalTop10": [
+        "159/951"
+      ],
+      "features": [
+        {
+          "family": "159/951",
+          "originalRank": 5,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "winning": [
+        "025/520"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "025/520",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "winning": [
+        "194/491",
+        "189/981",
+        "676/676"
+      ],
+      "originalTop10": [
+        "194/491"
+      ],
+      "features": [
+        {
+          "family": "194/491",
+          "originalRank": 8,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 1
+        },
+        {
+          "family": "189/981",
+          "originalRank": 28,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "676/676",
+          "originalRank": 20,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "winning": [
+        "084/480",
+        "738/837"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "084/480",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "738/837",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "winning": [
+        "418/814",
+        "076/670"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "418/814",
+          "originalRank": 74,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 2
+        },
+        {
+          "family": "076/670",
+          "originalRank": 15,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "winning": [
+        "898/898"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "898/898",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "winning": [
+        "889/988",
+        "118/811",
+        "346/643",
+        "237/732"
+      ],
+      "originalTop10": [
+        "118/811"
+      ],
+      "features": [
+        {
+          "family": "889/988",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "118/811",
+          "originalRank": 6,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "346/643",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "237/732",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "winning": [
+        "429/924"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "429/924",
+          "originalRank": 73,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "winning": [
+        "107/701",
+        "137/731",
+        "207/702"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "107/701",
+          "originalRank": 52,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 1
+        },
+        {
+          "family": "137/731",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 4,
+          "sources": 1
+        },
+        {
+          "family": "207/702",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "winning": [
+        "757/757"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "757/757",
+          "originalRank": 66,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "winning": [
+        "283/382"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "283/382",
+          "originalRank": 47,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "winning": [
+        "273/372"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "273/372",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "winning": [
+        "037/730"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "037/730",
+          "originalRank": 16,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "winning": [
+        "949/949",
+        "067/760",
+        "319/913",
+        "107/701"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "949/949",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "067/760",
+          "originalRank": 18,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 4,
+          "sources": 1
+        },
+        {
+          "family": "319/913",
+          "originalRank": 25,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "107/701",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "winning": [
+        "949/949",
+        "517/715",
+        "508/805"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "949/949",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "517/715",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "508/805",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "winning": [
+        "168/861",
+        "718/817",
+        "137/731",
+        "778/877"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "168/861",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "718/817",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 2
+        },
+        {
+          "family": "137/731",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 4,
+          "sources": 1
+        },
+        {
+          "family": "778/877",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "winning": [
+        "389/983"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "389/983",
+          "originalRank": 34,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "winning": [
+        "289/982"
+      ],
+      "originalTop10": [
+        "289/982"
+      ],
+      "features": [
+        {
+          "family": "289/982",
+          "originalRank": 6,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "winning": [
+        "243/342",
+        "709/907"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "243/342",
+          "originalRank": 15,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 4,
+          "sources": 2
+        },
+        {
+          "family": "709/907",
+          "originalRank": 76,
+          "centerSwap": true,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "winning": [
+        "778/877",
+        "173/371",
+        "859/958"
+      ],
+      "originalTop10": [
+        "778/877"
+      ],
+      "features": [
+        {
+          "family": "778/877",
+          "originalRank": 1,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "173/371",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "859/958",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "winning": [
+        "151/151",
+        "293/392"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "151/151",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "293/392",
+          "originalRank": 26,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "winning": [
+        "067/760",
+        "687/786"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "067/760",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 2
+        },
+        {
+          "family": "687/786",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 4,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "winning": [
+        "748/847"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "748/847",
+          "originalRank": 19,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "winning": [
+        "507/705"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "507/705",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "winning": [
+        "598/895",
+        "105/501",
+        "384/483"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "598/895",
+          "originalRank": 58,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 2
+        },
+        {
+          "family": "105/501",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "384/483",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 4,
+          "sources": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "winning": [
+        "485/584"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "485/584",
+          "originalRank": 62,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "winning": [
+        "379/973",
+        "539/935",
+        "397/793"
+      ],
+      "originalTop10": [
+        "539/935"
+      ],
+      "features": [
+        {
+          "family": "379/973",
+          "originalRank": 21,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "539/935",
+          "originalRank": 2,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "397/793",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "winning": [
+        "075/570"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "075/570",
+          "originalRank": 18,
+          "centerSwap": true,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "winning": [
+        "686/686"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "686/686",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "winning": [
+        "328/823",
+        "979/979"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "328/823",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "979/979",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 3,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "winning": [
+        "295/592",
+        "238/832"
+      ],
+      "originalTop10": [
+        "295/592",
+        "238/832"
+      ],
+      "features": [
+        {
+          "family": "295/592",
+          "originalRank": 5,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 5,
+          "sources": 2
+        },
+        {
+          "family": "238/832",
+          "originalRank": 4,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 4,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "winning": [
+        "429/924",
+        "234/432"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "429/924",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 6,
+          "sources": 3
+        },
+        {
+          "family": "234/432",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "winning": [
+        "729/927"
+      ],
+      "originalTop10": [
+        "729/927"
+      ],
+      "features": [
+        {
+          "family": "729/927",
+          "originalRank": 5,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 6,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "winning": [
+        "799/997"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "799/997",
+          "originalRank": 15,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "winning": [
+        "577/775"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "577/775",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "winning": [
+        "163/361"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "163/361",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "winning": [
+        "697/796"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "697/796",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "winning": [
+        "508/805"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "508/805",
+          "originalRank": 49,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "winning": [
+        "226/622"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "226/622",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 3,
+          "sources": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "winning": [
+        "476/674",
+        "081/180",
+        "196/691"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "476/674",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 3,
+          "sources": 1
+        },
+        {
+          "family": "081/180",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "196/691",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "winning": [
+        "356/653"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "356/653",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "winning": [
+        "428/824",
+        "677/776",
+        "162/261"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "428/824",
+          "originalRank": 46,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "677/776",
+          "originalRank": 58,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "162/261",
+          "originalRank": 37,
+          "centerSwap": false,
+          "secondSource": true,
+          "unanchored": false,
+          "blocks": 3,
+          "sources": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "winning": [
+        "579/975",
+        "175/571",
+        "152/251"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "579/975",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "175/571",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "152/251",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "winning": [
+        "316/613",
+        "346/643",
+        "071/170"
+      ],
+      "originalTop10": [
+        "071/170"
+      ],
+      "features": [
+        {
+          "family": "316/613",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "346/643",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "071/170",
+          "originalRank": 7,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "winning": [
+        "017/710",
+        "409/904"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "017/710",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 3,
+          "sources": 1
+        },
+        {
+          "family": "409/904",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "winning": [
+        "435/534"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "435/534",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "winning": [
+        "348/843"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "348/843",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "winning": [
+        "148/841",
+        "037/730"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "148/841",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "037/730",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "winning": [
+        "354/453"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "354/453",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 3,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "winning": [
+        "374/473"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "374/473",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "winning": [
+        "245/542",
+        "819/918"
+      ],
+      "originalTop10": [],
+      "features": [
+        {
+          "family": "245/542",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        },
+        {
+          "family": "819/918",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "winning": [],
+      "originalTop10": [],
+      "features": []
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "winning": [
+        "465/564",
+        "456/654",
+        "215/512"
+      ],
+      "originalTop10": [
+        "465/564",
+        "456/654"
+      ],
+      "features": [
+        {
+          "family": "465/564",
+          "originalRank": 2,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 4,
+          "sources": 1
+        },
+        {
+          "family": "456/654",
+          "originalRank": 5,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": false,
+          "blocks": 2,
+          "sources": 1
+        },
+        {
+          "family": "215/512",
+          "originalRank": null,
+          "centerSwap": false,
+          "secondSource": false,
+          "unanchored": true,
+          "blocks": 1,
+          "sources": 1
+        }
+      ]
+    }
+  ]
+}

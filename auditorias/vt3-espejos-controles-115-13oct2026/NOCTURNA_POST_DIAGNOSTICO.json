@@ -1,0 +1,140 @@
+{
+  "knownAfterDraw": true,
+  "date": "2026-10-12",
+  "turn": "Nocturno",
+  "focus": [
+    {
+      "value": "851",
+      "family": "158/851",
+      "physicallyAvailable": true,
+      "features": {
+        "family": "158/851",
+        "originalRank": null,
+        "sources": 1,
+        "blocks": 1,
+        "totalPaths": 1,
+        "anchoredPaths": 0,
+        "centerSwap": false,
+        "secondSource": false,
+        "unanchored": true,
+        "bucket": {
+          "sources": 1,
+          "blocks": 1,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [],
+        "sampleAnchor": [],
+        "hit": true
+      }
+    },
+    {
+      "value": "615",
+      "family": "516/615",
+      "physicallyAvailable": true,
+      "features": {
+        "family": "516/615",
+        "originalRank": 54,
+        "sources": 2,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 1,
+        "centerSwap": false,
+        "secondSource": true,
+        "unanchored": false,
+        "bucket": {
+          "sources": 2,
+          "blocks": 2,
+          "palindrome": 0
+        },
+        "exampleCenter": [],
+        "exampleSecond": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "4:0",
+              "3:0",
+              "4:1"
+            ],
+            "value": "516"
+          }
+        ],
+        "sampleAnchor": [
+          {
+            "source": "Primera",
+            "cells": [
+              "1:0",
+              "2:0",
+              "1:1"
+            ],
+            "value": "615",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>1:1"
+            ]
+          }
+        ],
+        "hit": true
+      }
+    },
+    {
+      "value": "242",
+      "family": "242/242",
+      "physicallyAvailable": true,
+      "features": {
+        "family": "242/242",
+        "originalRank": 25,
+        "sources": 1,
+        "blocks": 2,
+        "totalPaths": 2,
+        "anchoredPaths": 1,
+        "centerSwap": true,
+        "secondSource": false,
+        "unanchored": false,
+        "bucket": {
+          "sources": 1,
+          "blocks": 2,
+          "palindrome": 1
+        },
+        "exampleCenter": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "0:0",
+              "1:0",
+              "2:1"
+            ],
+            "value": "242"
+          }
+        ],
+        "exampleSecond": [],
+        "sampleAnchor": [
+          {
+            "source": "Vespertino",
+            "cells": [
+              "0:0",
+              "1:1",
+              "2:1"
+            ],
+            "value": "242",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215|vt3|Vespertino|1:0>2:1>3:1"
+            ]
+          }
+        ],
+        "hit": true
+      }
+    },
+    {
+      "value": "290",
+      "family": "092/290",
+      "physicallyAvailable": false,
+      "features": null
+    },
+    {
+      "value": "264",
+      "family": "264/462",
+      "physicallyAvailable": false,
+      "features": null
+    }
+  ]
+}
