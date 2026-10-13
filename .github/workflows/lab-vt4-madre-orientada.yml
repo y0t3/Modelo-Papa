@@ -1,0 +1,41 @@
+name: VT4 corregir inversion de cuaternas por madre VT3
+on:
+  push:
+    branches: [lab-vt4-familia-madre-orientada-13oct2026]
+    paths:
+      - 'src/motorLalo.ts'
+      - 'scripts/lab-vt4-madre-orientada.mjs'
+      - '.github/workflows/lab-vt4-madre-orientada.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Compilar motor y aplicacion
+        run: |
+          npm install --no-audit --no-fund
+          npx tsc --noEmit
+      - name: Reconstruir VT4 corregido y compararlo con version congelada
+        run: node scripts/lab-vt4-madre-orientada.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt4-madre-orientada-13oct
+          path: auditorias/vt4-familia-madre-orientada-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar auditoria en rama lab
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-familia-madre-orientada-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT4): madre orientada vs inversion cuaterna y cotejos'
+            git push origin HEAD:lab-vt4-familia-madre-orientada-13oct2026
+          fi
