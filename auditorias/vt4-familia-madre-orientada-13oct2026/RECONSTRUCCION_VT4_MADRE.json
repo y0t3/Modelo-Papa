@@ -1,0 +1,308 @@
+{
+  "date": "2026-10-13",
+  "phase": "EXPLORATORY_RETROSPECTIVE",
+  "originalVt3MatSeal": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+  "originalCodeUnaffected": false,
+  "codeUpdate": "solo rama experimental, agrupa VT4 por madre VT3 + dígito y lado de extensión",
+  "reports": [
+    {
+      "turn": "Primera",
+      "sourceColumns": [
+        "prevNocturno",
+        "Previa"
+      ],
+      "vt3Top10": [
+        "226/622",
+        "305/503",
+        "507/705",
+        "036/630",
+        "485/584",
+        "266/662",
+        "326/623",
+        "037/730",
+        "548/845",
+        "063/360"
+      ],
+      "priorVT4Pool": 67,
+      "newVT4Pool": 94,
+      "beforeTop10": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "afterTop10": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622",
+        "5226/5622",
+        "2266/6226",
+        "6226/6622",
+        "3056/5036",
+        "6305/6503",
+        "3057/5037",
+        "7305/7503"
+      ],
+      "beforeTop3": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622"
+      ],
+      "afterTop3": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622"
+      ],
+      "totalPathsNew": 234,
+      "numberGroupsWithSameLabel": 68,
+      "legacyReversalOnlyExamples": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "resultHead": "5485",
+      "representedInNewBy": [
+        {
+          "family": "5485/5584",
+          "rank": 52,
+          "paths": [
+            {
+              "digits": "5485",
+              "source": "Previa",
+              "mother": "485/584",
+              "cells": [
+                "2:0",
+                "1:0",
+                "1:1",
+                "0:0"
+              ],
+              "added": "5"
+            },
+            {
+              "digits": "5485",
+              "source": "Previa",
+              "mother": "485/584",
+              "cells": [
+                "0:0",
+                "1:0",
+                "1:1",
+                "2:0"
+              ],
+              "added": "5"
+            }
+          ],
+          "mothers": [
+            "485/584"
+          ]
+        },
+        {
+          "family": "5485/8455",
+          "rank": 87,
+          "paths": [
+            {
+              "digits": "5485",
+              "source": "Previa",
+              "mother": "548/845",
+              "cells": [
+                "2:0",
+                "1:0",
+                "1:1",
+                "0:0"
+              ],
+              "added": "5"
+            },
+            {
+              "digits": "5485",
+              "source": "Previa",
+              "mother": "548/845",
+              "cells": [
+                "0:0",
+                "1:0",
+                "1:1",
+                "2:0"
+              ],
+              "added": "5"
+            }
+          ],
+          "mothers": [
+            "548/845"
+          ]
+        }
+      ],
+      "archivedLegacyFamily": {
+        "family": "5485/5845",
+        "rank": 35,
+        "pathCount": 2,
+        "sources": 1,
+        "physicalBlocks": 1,
+        "parentFamilies": [
+          "485/584",
+          "548/845"
+        ],
+        "bestMotherRank": 5,
+        "roots": 0,
+        "explanation": "Extensión física de 485/584 · 1 bloque(s) propios de cuatro cifras",
+        "paths": [
+          {
+            "source": "Previa",
+            "value": "5845",
+            "cells": [
+              "0:0",
+              "1:1",
+              "1:0",
+              "2:0"
+            ],
+            "physicalKey": "Previa|0:0>1:1>1:0>2:0",
+            "mothers": [
+              "485/584",
+              "548/845"
+            ],
+            "digitAdded": "5",
+            "origin": "DESDE_VT3"
+          },
+          {
+            "source": "Previa",
+            "value": "5485",
+            "cells": [
+              "0:0",
+              "1:0",
+              "1:1",
+              "2:0"
+            ],
+            "physicalKey": "Previa|0:0>1:0>1:1>2:0",
+            "mothers": [
+              "485/584",
+              "548/845"
+            ],
+            "digitAdded": "5",
+            "origin": "DESDE_VT3"
+          }
+        ]
+      },
+      "ambiguities": [
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual"
+      ]
+    },
+    {
+      "turn": "Matutino",
+      "sourceColumns": [
+        "prevNocturno",
+        "Previa",
+        "Primera"
+      ],
+      "vt3Top10": [
+        "226/622",
+        "305/503",
+        "699/996",
+        "266/662",
+        "629/926",
+        "507/705",
+        "596/695",
+        "036/630",
+        "485/584",
+        "326/623"
+      ],
+      "priorVT4Pool": 76,
+      "newVT4Pool": 104,
+      "beforeTop10": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "afterTop10": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622",
+        "5226/5622",
+        "2266/6226",
+        "6226/6622",
+        "3056/5036",
+        "6305/6503",
+        "3057/5037",
+        "7305/7503"
+      ],
+      "beforeTop3": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622"
+      ],
+      "afterTop3": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622"
+      ],
+      "totalPathsNew": 260,
+      "numberGroupsWithSameLabel": 66,
+      "legacyReversalOnlyExamples": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "resultHead": "1057",
+      "representedInNewBy": [],
+      "archivedLegacyFamily": null,
+      "ambiguities": [
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual",
+        "ambigüedad por dígito igual"
+      ]
+    }
+  ],
+  "lesson": {
+    "example": "3226",
+    "mother": "226/622",
+    "addedDigit": "3",
+    "position": "prefix",
+    "allowedFamily": "3226/3622",
+    "presentVariants": [
+      "3226",
+      "3622"
+    ],
+    "displayedGroups": [
+      "3226/3622"
+    ],
+    "note": "La otra orientación de la madre solamente se considera como lectura válida si hay recorrido propio de cuatro casillas. La etiqueta de familia expresa el par teórico, no afirma que las dos se dibujen."
+  },
+  "warning": "No fue sellado antes de los sorteos; no es nuevo acierto prospectivo."
+}
