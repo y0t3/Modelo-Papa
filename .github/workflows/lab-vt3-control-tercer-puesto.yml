@@ -1,0 +1,50 @@
+name: VT3 control tercer puesto aprendido
+on:
+  push:
+    branches: [lab-vt3-control-tercer-puesto-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-control-tercer-puesto.mjs'
+      - 'PROTOCOLO_VT3_CONTROL_TERCER_PUESTO_13OCT2026.md'
+      - '.github/workflows/lab-vt3-control-tercer-puesto.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  tercer-puesto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Retirar todas las auditorias POST y dejar solo PRE sellado
+        run: |
+          mv auditorias /tmp/vt3-control-tercer-antiguos
+          mkdir -p auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026/
+          cp /tmp/vt3-control-tercer-antiguos/vt3-dominio-semanal-top3-top5-115-13oct2026/PRE_115.json auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026/PRE_115.json
+          test "$(find auditorias -type f | wc -l)" -eq 1
+      - name: Sellar 90 cortes y protocolo de 5000 selecciones neutrales
+        run: node scripts/lab-vt3-control-tercer-puesto.mjs pre
+      - name: Restaurar resultados y cotejar Tops congelados contra controles
+        run: |
+          mv auditorias/vt3-control-tercer-puesto-90-13oct2026 /tmp/vt3-control-tercer-nuevos
+          cp -a /tmp/vt3-control-tercer-antiguos/. auditorias/
+          rm -rf auditorias/vt3-control-tercer-puesto-90-13oct2026
+          mv /tmp/vt3-control-tercer-nuevos auditorias/vt3-control-tercer-puesto-90-13oct2026
+          node scripts/lab-vt3-control-tercer-puesto.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-tercer-puesto-controles-90
+          path: auditorias/vt3-control-tercer-puesto-90-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar PRE POST y sellos sin tocar motor oficial
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-control-tercer-puesto-90-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): tercer puesto, sustituciones neutrales y permutaciones'
+            git push origin HEAD:lab-vt3-control-tercer-puesto-13oct2026
+          fi
