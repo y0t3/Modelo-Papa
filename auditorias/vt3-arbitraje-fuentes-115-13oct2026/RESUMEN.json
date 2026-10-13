@@ -1,0 +1,379 @@
+{
+  "cuts": 115,
+  "days": 23,
+  "date": "2026-10-13",
+  "scores": {
+    "A_OFICIAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "winningExposures": 17
+    },
+    "B_FUENTE_NUEVA": {
+      "cuts": 115,
+      "top3": 6,
+      "top5": 9,
+      "top10": 14,
+      "winningExposures": 16
+    },
+    "C_NOCTURNA_ANTERIOR_AL_FINAL": {
+      "cuts": 115,
+      "top3": 4,
+      "top5": 6,
+      "top10": 10,
+      "winningExposures": 11
+    },
+    "D_PERSISTENTE": {
+      "cuts": 115,
+      "top3": 6,
+      "top5": 10,
+      "top10": 14,
+      "winningExposures": 16
+    },
+    "E_NACIENTE": {
+      "cuts": 115,
+      "top3": 6,
+      "top5": 10,
+      "top10": 13,
+      "winningExposures": 14
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "A_OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "winningExposures": 3
+      },
+      "B_FUENTE_NUEVA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "winningExposures": 3
+      },
+      "C_NOCTURNA_ANTERIOR_AL_FINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "winningExposures": 3
+      },
+      "D_PERSISTENTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "winningExposures": 3
+      },
+      "E_NACIENTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "winningExposures": 3
+      }
+    },
+    "Primera": {
+      "A_OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winningExposures": 1
+      },
+      "B_FUENTE_NUEVA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winningExposures": 0
+      },
+      "C_NOCTURNA_ANTERIOR_AL_FINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winningExposures": 0
+      },
+      "D_PERSISTENTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "winningExposures": 2
+      },
+      "E_NACIENTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winningExposures": 0
+      }
+    },
+    "Matutino": {
+      "A_OFICIAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "winningExposures": 9
+      },
+      "B_FUENTE_NUEVA": {
+        "cuts": 23,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "winningExposures": 6
+      },
+      "C_NOCTURNA_ANTERIOR_AL_FINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "winningExposures": 5
+      },
+      "D_PERSISTENTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 5,
+        "top10": 6,
+        "winningExposures": 7
+      },
+      "E_NACIENTE": {
+        "cuts": 23,
+        "top3": 3,
+        "top5": 3,
+        "top10": 6,
+        "winningExposures": 7
+      }
+    },
+    "Vespertino": {
+      "A_OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winningExposures": 0
+      },
+      "B_FUENTE_NUEVA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "winningExposures": 2
+      },
+      "C_NOCTURNA_ANTERIOR_AL_FINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 2,
+        "winningExposures": 2
+      },
+      "D_PERSISTENTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "winningExposures": 0
+      },
+      "E_NACIENTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "winningExposures": 1
+      }
+    },
+    "Nocturno": {
+      "A_OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "winningExposures": 4
+      },
+      "B_FUENTE_NUEVA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 2,
+        "top10": 4,
+        "winningExposures": 5
+      },
+      "C_NOCTURNA_ANTERIOR_AL_FINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "winningExposures": 1
+      },
+      "D_PERSISTENTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "winningExposures": 4
+      },
+      "E_NACIENTE": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 3,
+        "winningExposures": 3
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "A_OFICIAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "winningExposures": 10
+      },
+      "B_FUENTE_NUEVA": {
+        "cuts": 70,
+        "top3": 1,
+        "top5": 4,
+        "top10": 8,
+        "winningExposures": 8
+      },
+      "C_NOCTURNA_ANTERIOR_AL_FINAL": {
+        "cuts": 70,
+        "top3": 1,
+        "top5": 2,
+        "top10": 5,
+        "winningExposures": 5
+      },
+      "D_PERSISTENTE": {
+        "cuts": 70,
+        "top3": 4,
+        "top5": 8,
+        "top10": 12,
+        "winningExposures": 13
+      },
+      "E_NACIENTE": {
+        "cuts": 70,
+        "top3": 2,
+        "top5": 5,
+        "top10": 7,
+        "winningExposures": 7
+      }
+    },
+    "2026-10": {
+      "A_OFICIAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "winningExposures": 7
+      },
+      "B_FUENTE_NUEVA": {
+        "cuts": 45,
+        "top3": 5,
+        "top5": 5,
+        "top10": 6,
+        "winningExposures": 8
+      },
+      "C_NOCTURNA_ANTERIOR_AL_FINAL": {
+        "cuts": 45,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "winningExposures": 6
+      },
+      "D_PERSISTENTE": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "winningExposures": 3
+      },
+      "E_NACIENTE": {
+        "cuts": 45,
+        "top3": 4,
+        "top5": 5,
+        "top10": 6,
+        "winningExposures": 7
+      }
+    }
+  },
+  "paired": {
+    "A_OFICIAL": {
+      "gained": [],
+      "lost": []
+    },
+    "B_FUENTE_NUEVA": {
+      "gained": [
+        "2026-09-15|Nocturno",
+        "2026-09-30|Vespertino",
+        "2026-10-07|Vespertino"
+      ],
+      "lost": [
+        "2026-09-15|Matutino",
+        "2026-09-22|Primera",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino"
+      ]
+    },
+    "C_NOCTURNA_ANTERIOR_AL_FINAL": {
+      "gained": [
+        "2026-09-22|Vespertino",
+        "2026-10-05|Vespertino"
+      ],
+      "lost": [
+        "2026-09-17|Nocturno",
+        "2026-09-22|Primera",
+        "2026-09-24|Matutino",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino",
+        "2026-09-30|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    },
+    "D_PERSISTENTE": {
+      "gained": [
+        "2026-09-16|Matutino",
+        "2026-09-28|Primera"
+      ],
+      "lost": [
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino",
+        "2026-10-08|Matutino"
+      ]
+    },
+    "E_NACIENTE": {
+      "gained": [
+        "2026-09-24|Nocturno",
+        "2026-09-28|Matutino",
+        "2026-09-29|Nocturno",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "lost": [
+        "2026-09-15|Matutino",
+        "2026-09-17|Nocturno",
+        "2026-09-22|Primera",
+        "2026-09-25|Matutino",
+        "2026-09-29|Matutino",
+        "2026-09-30|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    }
+  },
+  "hashes": {
+    "sourcePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "sourcePost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+    "seal": {
+      "sourcePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+      "protocol": "8608dce2a2a4eeab603fc5561b9b0c377f5f8bde142fe3bde0c4355ab166754d",
+      "code": "44546b51c6d3945fe8df922e29939cb1ecb36f36c16690ce5bbe39dba6f996ea",
+      "pre": "921ca60147b35d5b456b9b70a0e8a4ccd0e0ca1f7c8f14bec948a4cee8ce18e2"
+    }
+  },
+  "warning": "Ensayo diseñado tras detectar desigualdad de resultados por turno. El histórico ya fue usado para ajustar varios motores y no es confirmación prospectiva. No cambiar el Top o apostar sobre esta prueba."
+}
