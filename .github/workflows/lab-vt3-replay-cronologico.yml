@@ -1,0 +1,50 @@
+name: VT3 replay cronologico sin fuga de futuro
+on:
+  push:
+    branches: [lab-vt3-replay-cronologico-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-replay-cronologico.mjs'
+      - 'PROTOCOLO_VT3_REPLAY_CRONOLOGICO_13OCT2026.md'
+      - '.github/workflows/lab-vt3-replay-cronologico.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  reproducir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar todos los POST historicos y dejar solamente PRE congelado
+        run: |
+          mv auditorias /tmp/vt3-replay-auditorias
+          mkdir -p auditorias/vt3-diversidad-antecedentes-115-13oct2026
+          cp /tmp/vt3-replay-auditorias/vt3-diversidad-antecedentes-115-13oct2026/PRE_115.json auditorias/vt3-diversidad-antecedentes-115-13oct2026/PRE_115.json
+          test "$(find auditorias -type f | wc -l)" -eq 1
+      - name: Crear seleccion fija y diagnostico fisico PRE sellado
+        run: node scripts/lab-vt3-replay-cronologico.mjs pre
+      - name: Restaurar resultados e iniciar replay secuencial sin adelantarlos
+        run: |
+          mv auditorias/vt3-replay-cronologico-115-13oct2026 /tmp/vt3-replay-nuevo-pre
+          cp -a /tmp/vt3-replay-auditorias/. auditorias/
+          mv /tmp/vt3-replay-nuevo-pre auditorias/vt3-replay-cronologico-115-13oct2026
+          node scripts/lab-vt3-replay-cronologico.mjs post
+      - name: Descargar registro reproducible
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-replay-cronologico-115
+          path: auditorias/vt3-replay-cronologico-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Versionar solamente el laboratorio cronologico
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-replay-cronologico-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): replay sin futuro, concentracion y controles cronologicos'
+            git push origin HEAD:lab-vt3-replay-cronologico-13oct2026
+          fi
