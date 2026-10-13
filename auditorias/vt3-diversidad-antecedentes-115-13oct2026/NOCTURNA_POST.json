@@ -22,8 +22,8 @@
     {
       "head": "1615",
       "family": "516/615",
-      "anchored": false,
-      "originalRank": null,
+      "anchored": true,
+      "originalRank": 54,
       "newRanks": {
         "OFICIAL": null,
         "COB20_P3": null,
