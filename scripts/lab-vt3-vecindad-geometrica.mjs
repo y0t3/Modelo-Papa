@@ -131,7 +131,7 @@ function auditCut(pre,whole){
   G_UMBRAL2:(a,b)=>Number(b.has2AnchoredNeighbors)-Number(a.has2AnchoredNeighbors)||b.contactDensity-a.contactDensity||fallback(a,b),
   CONTROL_HASH:(a,b)=>hash('20261013|'+pre.date+'|'+pre.turn+'|'+a.family).localeCompare(hash('20261013|'+pre.date+'|'+pre.turn+'|'+b.family)),
   CONTROL_BLOQUES:(a,b)=>b.ownBlocks-a.ownBlocks||fallback(a,b),
-  CONTROL_SIN_VECINOS:(a,b)=>Number(a.anchoredNeighborFamilies===0)-Number(b.anchoredNeighborFamilies===0)||fallback(a,b)
+  CONTROL_SIN_VECINOS:(a,b)=>Number(b.anchoredNeighborFamilies===0)-Number(a.anchoredNeighborFamilies===0)||fallback(a,b)
  };
  const rankings={ORIGINAL:[...rank],BASE_RENOVADA:[...pre.tops.RENEW_LAST_BLOCKS]};
  assert.equal(info.length,pre.eligibles.length);
