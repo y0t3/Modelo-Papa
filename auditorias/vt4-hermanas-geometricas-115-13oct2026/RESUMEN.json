@@ -1,0 +1,636 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "examCuts": 90,
+  "total": {
+    "BASE_CUPO2": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "gains10": [],
+      "losses10": [],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 17.757
+    },
+    "MAS_CAMINOS": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 3,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 18.443
+    },
+    "MAS_FORMAS": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 3,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 18.443
+    },
+    "CONVERGENCIA": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 3,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 18.165
+    },
+    "UNICA_FORMA": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 3,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 18.461
+    },
+    "CONTROL_HASH": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 2,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa",
+        "2026-10-10|Nocturno"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 14.922
+    }
+  },
+  "exam": {
+    "BASE_CUPO2": {
+      "cuts": 90,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "gains10": [],
+      "losses10": [],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 17.856
+    },
+    "MAS_CAMINOS": {
+      "cuts": 90,
+      "top3": 0,
+      "top5": 0,
+      "top10": 3,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 18.667
+    },
+    "MAS_FORMAS": {
+      "cuts": 90,
+      "top3": 0,
+      "top5": 0,
+      "top10": 3,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 18.667
+    },
+    "CONVERGENCIA": {
+      "cuts": 90,
+      "top3": 0,
+      "top5": 0,
+      "top10": 3,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 18.311
+    },
+    "UNICA_FORMA": {
+      "cuts": 90,
+      "top3": 0,
+      "top5": 0,
+      "top10": 3,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 18.656
+    },
+    "CONTROL_HASH": {
+      "cuts": 90,
+      "top3": 0,
+      "top5": 0,
+      "top10": 2,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa",
+        "2026-10-10|Nocturno"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 14.944
+    },
+    "MEMORIA_X_GANADORA": {
+      "cuts": 90,
+      "top3": 0,
+      "top5": 0,
+      "top10": 2,
+      "gains10": [],
+      "losses10": [
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 17.644
+    },
+    "MEMORIA_X_NO_GANADORA": {
+      "cuts": 90,
+      "top3": 0,
+      "top5": 0,
+      "top10": 0,
+      "gains10": [],
+      "losses10": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "gains3": [],
+      "losses3": [],
+      "meanExactFour": 12.889
+    }
+  },
+  "byWeek": {
+    "Y1": {
+      "BASE_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 17.8
+      },
+      "MAS_CAMINOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains10": [],
+        "losses10": [
+          "2026-09-24|Previa"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.2
+      },
+      "MAS_FORMAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains10": [],
+        "losses10": [
+          "2026-09-24|Previa"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.2
+      },
+      "CONVERGENCIA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains10": [],
+        "losses10": [
+          "2026-09-24|Previa"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.067
+      },
+      "UNICA_FORMA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains10": [],
+        "losses10": [
+          "2026-09-24|Previa"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.2
+      },
+      "CONTROL_HASH": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains10": [],
+        "losses10": [
+          "2026-09-24|Previa"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 14.867
+      },
+      "MEMORIA_X_GANADORA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18
+      },
+      "MEMORIA_X_NO_GANADORA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains10": [],
+        "losses10": [
+          "2026-09-24|Previa"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 12.033
+      }
+    },
+    "Y2": {
+      "BASE_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 17.9
+      },
+      "MAS_CAMINOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 19.067
+      },
+      "MAS_FORMAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 19.067
+      },
+      "CONVERGENCIA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.467
+      },
+      "UNICA_FORMA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 19.067
+      },
+      "CONTROL_HASH": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 15.133
+      },
+      "MEMORIA_X_GANADORA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.633
+      },
+      "MEMORIA_X_NO_GANADORA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains10": [],
+        "losses10": [
+          "2026-10-03|Matutino"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 13.167
+      }
+    },
+    "Y3": {
+      "BASE_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 17.867
+      },
+      "MAS_CAMINOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.733
+      },
+      "MAS_FORMAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.733
+      },
+      "CONVERGENCIA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.4
+      },
+      "UNICA_FORMA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "gains10": [],
+        "losses10": [],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 18.7
+      },
+      "CONTROL_HASH": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains10": [],
+        "losses10": [
+          "2026-10-10|Nocturno"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 14.833
+      },
+      "MEMORIA_X_GANADORA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains10": [],
+        "losses10": [
+          "2026-10-10|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 16.3
+      },
+      "MEMORIA_X_NO_GANADORA": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains10": [],
+        "losses10": [
+          "2026-10-10|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "gains3": [],
+        "losses3": [],
+        "meanExactFour": 13.467
+      }
+    }
+  },
+  "memoryTraining": [
+    {
+      "transition": "15-19sep_TO_21-26sep",
+      "trainCuts": 25,
+      "testCuts": 30,
+      "winnerExampleGroups": 1,
+      "nonWinnerExampleGroups": 1145,
+      "distinctWinnerShapes": 4,
+      "trainedPositiveHeads": 1
+    },
+    {
+      "transition": "21-26sep_TO_28sep-03oct",
+      "trainCuts": 30,
+      "testCuts": 30,
+      "winnerExampleGroups": 1,
+      "nonWinnerExampleGroups": 1373,
+      "distinctWinnerShapes": 7,
+      "trainedPositiveHeads": 1
+    },
+    {
+      "transition": "28sep-03oct_TO_05-10oct",
+      "trainCuts": 30,
+      "testCuts": 30,
+      "winnerExampleGroups": 2,
+      "nonWinnerExampleGroups": 1592,
+      "distinctWinnerShapes": 10,
+      "trainedPositiveHeads": 2
+    }
+  ],
+  "opportunities": {
+    "cutsWithWinningVT4WithinTop5Mothers": 6,
+    "totalWinnerNumbersPhysical": 7,
+    "physicalWinningGroupExposures": 7,
+    "examples": [
+      {
+        "date": "2026-09-18",
+        "turn": "Vespertino",
+        "physicalWinningNumbers": [
+          "2735"
+        ],
+        "physicalGroupCount": 1,
+        "nPhysicalSiblings": 50,
+        "capturedByBase": false,
+        "missed": [
+          {
+            "family": "2735/3725",
+            "mother": "273/372",
+            "motherRank": 3,
+            "values": [
+              "2735"
+            ],
+            "paths": 4,
+            "shapeCount": 4,
+            "rank": 25
+          }
+        ]
+      },
+      {
+        "date": "2026-09-24",
+        "turn": "Previa",
+        "physicalWinningNumbers": [
+          "3159"
+        ],
+        "physicalGroupCount": 1,
+        "nPhysicalSiblings": 60,
+        "capturedByBase": true,
+        "missed": []
+      },
+      {
+        "date": "2026-10-03",
+        "turn": "Matutino",
+        "physicalWinningNumbers": [
+          "5832",
+          "2592"
+        ],
+        "physicalGroupCount": 2,
+        "nPhysicalSiblings": 50,
+        "capturedByBase": true,
+        "missed": [
+          {
+            "family": "5238/5832",
+            "mother": "238/832",
+            "motherRank": 4,
+            "values": [
+              "5832"
+            ],
+            "paths": 6,
+            "shapeCount": 6,
+            "rank": 37
+          }
+        ]
+      },
+      {
+        "date": "2026-10-05",
+        "turn": "Matutino",
+        "physicalWinningNumbers": [
+          "3729"
+        ],
+        "physicalGroupCount": 1,
+        "nPhysicalSiblings": 38,
+        "capturedByBase": false,
+        "missed": [
+          {
+            "family": "3729/3927",
+            "mother": "729/927",
+            "motherRank": 5,
+            "values": [
+              "3729"
+            ],
+            "paths": 5,
+            "shapeCount": 5,
+            "rank": 30
+          }
+        ]
+      },
+      {
+        "date": "2026-10-10",
+        "turn": "Matutino",
+        "physicalWinningNumbers": [
+          "6542"
+        ],
+        "physicalGroupCount": 1,
+        "nPhysicalSiblings": 54,
+        "capturedByBase": true,
+        "missed": []
+      },
+      {
+        "date": "2026-10-10",
+        "turn": "Nocturno",
+        "physicalWinningNumbers": [
+          "2654"
+        ],
+        "physicalGroupCount": 1,
+        "nPhysicalSiblings": 54,
+        "capturedByBase": true,
+        "missed": []
+      }
+    ]
+  },
+  "seal": {
+    "engine": "e1bb61a6e1933cffaa5784aa5c77539f004bd9320dfd11dbf9726165ed934448",
+    "code": "1cc89639ae06a837bb609c051ca00f7915d42614b5c97c16a16aaf0654521101",
+    "protocol": "9cb43678d4c53d4eba3d90ac8dafcb5fc73ef5c96f83de46ea1c3d56820059a6",
+    "source": "58365976e327d79a14cd922baa582a80d28651a0cade4e71955bcf4407fe8380",
+    "old": "d50ae2261f2df0f582f50f0bfc10e2d407fe550ae5bdb789081eed080a326d19",
+    "pre": "0dbfa812536f20b4ed1631faba5c7b812c0b6eb2709d79a4de3c29d3ca5e4538",
+    "nCuts": 115
+  },
+  "warning": "Los sorteos son aleatorios; este corpus es fuertemente exploratorio. Memoria X entrenada únicamente sobre días anteriores a los cortes evaluados."
+}
