@@ -151,7 +151,7 @@ function post(){
  for(let i=0;i<115;i++){
   const cut=pre[i],p=post[i];assert.equal(id(cut),id(p));
   assert.equal(p.targets.length,5);
-  const goals=new Set(p.targets.map(h=>{assert.match(h,/^\\d{4}$/);return fam(h.slice(-3))}));
+  const goals=new Set(p.targets.map(h=>{assert.match(h,/^\d{4}$/);return fam(h.slice(-3))}));
   const first10=new Set(cut.rankings.OFICIAL);
   for(const prof of cut.profiles){
    const category=prof.mature?'mature':prof.born?'born':'static';
