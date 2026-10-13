@@ -1,0 +1,8755 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "days": 23,
+  "policies": {
+    "ORIGINAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "tenthWinning": 0,
+      "gained": [],
+      "lost": []
+    },
+    "RENEW_LAST_BLOCKS": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 18,
+      "tenthWinning": 3,
+      "gained": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ],
+      "lost": []
+    },
+    "RENEW_MOST_BLOCKS": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17,
+      "tenthWinning": 2,
+      "gained": [
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ],
+      "lost": []
+    },
+    "RENEW_MOST_SOURCES": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "tenthWinning": 1,
+      "gained": [
+        "2026-10-03|Vespertino"
+      ],
+      "lost": []
+    },
+    "RENEW_FEWEST_BLOCKS": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "tenthWinning": 0,
+      "gained": [],
+      "lost": []
+    },
+    "RENEW_ALPHABETIC": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "tenthWinning": 0,
+      "gained": [],
+      "lost": []
+    },
+    "RENEW_REVERSE_ALPHA": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "tenthWinning": 1,
+      "gained": [
+        "2026-09-25|Previa"
+      ],
+      "lost": []
+    },
+    "RENEW_HASH_FIXED": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "tenthWinning": 0,
+      "gained": [],
+      "lost": []
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "ORIGINAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_LAST_BLOCKS": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-09-30|Nocturno"
+        ],
+        "lost": []
+      },
+      "RENEW_MOST_BLOCKS": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_MOST_SOURCES": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_FEWEST_BLOCKS": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_ALPHABETIC": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_REVERSE_ALPHA": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-09-25|Previa"
+        ],
+        "lost": []
+      },
+      "RENEW_HASH_FIXED": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "2026-10": {
+      "ORIGINAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_LAST_BLOCKS": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "tenthWinning": 2,
+        "gained": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ],
+        "lost": []
+      },
+      "RENEW_MOST_BLOCKS": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "tenthWinning": 2,
+        "gained": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ],
+        "lost": []
+      },
+      "RENEW_MOST_SOURCES": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-10-03|Vespertino"
+        ],
+        "lost": []
+      },
+      "RENEW_FEWEST_BLOCKS": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_ALPHABETIC": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_REVERSE_ALPHA": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_HASH_FIXED": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_LAST_BLOCKS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_MOST_BLOCKS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_MOST_SOURCES": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_FEWEST_BLOCKS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_ALPHABETIC": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_REVERSE_ALPHA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-09-25|Previa"
+        ],
+        "lost": []
+      },
+      "RENEW_HASH_FIXED": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Primera": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_LAST_BLOCKS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_MOST_BLOCKS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_MOST_SOURCES": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_FEWEST_BLOCKS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_ALPHABETIC": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_REVERSE_ALPHA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_HASH_FIXED": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Matutino": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_LAST_BLOCKS": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-10-01|Matutino"
+        ],
+        "lost": []
+      },
+      "RENEW_MOST_BLOCKS": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-10-01|Matutino"
+        ],
+        "lost": []
+      },
+      "RENEW_MOST_SOURCES": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_FEWEST_BLOCKS": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_ALPHABETIC": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_REVERSE_ALPHA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_HASH_FIXED": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Vespertino": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_LAST_BLOCKS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-10-03|Vespertino"
+        ],
+        "lost": []
+      },
+      "RENEW_MOST_BLOCKS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-10-03|Vespertino"
+        ],
+        "lost": []
+      },
+      "RENEW_MOST_SOURCES": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-10-03|Vespertino"
+        ],
+        "lost": []
+      },
+      "RENEW_FEWEST_BLOCKS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_ALPHABETIC": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_REVERSE_ALPHA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_HASH_FIXED": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Nocturno": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_LAST_BLOCKS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "tenthWinning": 1,
+        "gained": [
+          "2026-09-30|Nocturno"
+        ],
+        "lost": []
+      },
+      "RENEW_MOST_BLOCKS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_MOST_SOURCES": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_FEWEST_BLOCKS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_ALPHABETIC": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_REVERSE_ALPHA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RENEW_HASH_FIXED": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "tenthWinning": 0,
+        "gained": [],
+        "lost": []
+      }
+    }
+  },
+  "eligibleCounts": {
+    "total": 7403,
+    "cutsWithEligible": 110,
+    "mean": 64.37391304347825,
+    "max": 170
+  },
+  "neutral": [
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 20,
+      "tenthWinning": 5
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 20,
+      "tenthWinning": 5
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 5
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 20,
+      "tenthWinning": 5
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 20,
+      "tenthWinning": 6
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 20,
+      "tenthWinning": 5
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 6
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 20,
+      "tenthWinning": 5
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 5
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 18,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 3
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 19,
+      "tenthWinning": 4
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 17,
+      "tenthWinning": 2
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 0
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 16,
+      "tenthWinning": 1
+    },
+    {
+      "top10": 15,
+      "tenthWinning": 2
+    }
+  ],
+  "neutralDistribution": {
+    "draws": 2000,
+    "mean": 15.8185,
+    "median": 16,
+    "p05": 15,
+    "p95": 18,
+    "max": 20,
+    "min": 15,
+    "relativeToRenewed18": 0.0505,
+    "histogram": {
+      "15": 886,
+      "16": 722,
+      "17": 291,
+      "18": 77,
+      "19": 18,
+      "20": 6
+    }
+  },
+  "permutationControls": {
+    "free": {
+      "ORIGINAL": {
+        "observedDelta": 3,
+        "meanDelta": 0.3121,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "tailAtLeastObserved": 0.039196080391960805
+      },
+      "RENEW_HASH_FIXED": {
+        "observedDelta": 3,
+        "meanDelta": 0.3088,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "tailAtLeastObserved": 0.0380961903809619
+      },
+      "RENEW_MOST_BLOCKS": {
+        "observedDelta": 1,
+        "meanDelta": -0.3002,
+        "p05": -2,
+        "median": 0,
+        "p95": 1,
+        "tailAtLeastObserved": 0.12568743125687432
+      }
+    },
+    "sameWeekday": {
+      "ORIGINAL": {
+        "observedDelta": 3,
+        "meanDelta": 1.2309,
+        "p05": 0,
+        "median": 1,
+        "p95": 3,
+        "tailAtLeastObserved": 0.13488651134886512
+      },
+      "RENEW_HASH_FIXED": {
+        "observedDelta": 3,
+        "meanDelta": 1.2359,
+        "p05": 0,
+        "median": 1,
+        "p95": 3,
+        "tailAtLeastObserved": 0.13338666133386662
+      },
+      "RENEW_MOST_BLOCKS": {
+        "observedDelta": 1,
+        "meanDelta": -0.0981,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "tailAtLeastObserved": 0.23977602239776022
+      }
+    },
+    "sameMonth": {
+      "ORIGINAL": {
+        "observedDelta": 3,
+        "meanDelta": 0.5742,
+        "p05": -1,
+        "median": 1,
+        "p95": 3,
+        "tailAtLeastObserved": 0.061493850614938506
+      },
+      "RENEW_HASH_FIXED": {
+        "observedDelta": 3,
+        "meanDelta": 0.5612,
+        "p05": -1,
+        "median": 0,
+        "p95": 3,
+        "tailAtLeastObserved": 0.0683931606839316
+      },
+      "RENEW_MOST_BLOCKS": {
+        "observedDelta": 1,
+        "meanDelta": -0.0422,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "tailAtLeastObserved": 0.20157984201579843
+      }
+    }
+  },
+  "seal": {
+    "srcSealSha256": "36978ffa54cbe849ced8d670e64c84fc21c8a46ae01e090f1173bdea5fd63a62",
+    "srcPre": "0b44eb9f07130f0d949918da77df25fd971daed30fb5e408710b8947f6affdc1",
+    "protocol": "7c24efaedb1288e99756a4caeea9610fd793cc380fbf5a7b104e05cfbd7ec8df",
+    "code": "3c0d2aa092629ee66e9e2c7b3976f4d905f726048d74be0f425c973c63d7f00b",
+    "pre": "d5d641d02bdaa7a7ae14878ecfaa3ebdf6a3295fac44b1fa1fbf70eaabafbb0a",
+    "random": "b3caf0eb3cabca160c89bb8c27fdf79d0c176cf18bd109a957a7efc252317d55",
+    "nocturna": "8dee02f6a5000ab67dff862468cbb722bd09084f10043fbd08f7b9fcd464e9f8"
+  },
+  "postHash": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "caution": "Reutilización intensiva de 23 jornadas; controles no son validación ciega ni prueba de predicción en sorteos aleatorios."
+}

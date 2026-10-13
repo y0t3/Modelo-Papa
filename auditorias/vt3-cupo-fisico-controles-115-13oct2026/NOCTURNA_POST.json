@@ -1,0 +1,97 @@
+{
+  "heads": [
+    "9851",
+    "1615",
+    "7242",
+    "8290",
+    "3264"
+  ],
+  "watch": [
+    {
+      "head": "9851",
+      "family": "158/851",
+      "eligible": true,
+      "ranks": {
+        "ORIGINAL": null,
+        "RENEW_LAST_BLOCKS": null,
+        "RENEW_MOST_BLOCKS": null,
+        "RENEW_MOST_SOURCES": null,
+        "RENEW_FEWEST_BLOCKS": null,
+        "RENEW_ALPHABETIC": null,
+        "RENEW_REVERSE_ALPHA": null,
+        "RENEW_HASH_FIXED": null
+      }
+    },
+    {
+      "head": "1615",
+      "family": "516/615",
+      "eligible": false,
+      "ranks": {
+        "ORIGINAL": null,
+        "RENEW_LAST_BLOCKS": null,
+        "RENEW_MOST_BLOCKS": null,
+        "RENEW_MOST_SOURCES": null,
+        "RENEW_FEWEST_BLOCKS": null,
+        "RENEW_ALPHABETIC": null,
+        "RENEW_REVERSE_ALPHA": null,
+        "RENEW_HASH_FIXED": null
+      }
+    },
+    {
+      "head": "7242",
+      "family": "242/242",
+      "eligible": false,
+      "ranks": {
+        "ORIGINAL": null,
+        "RENEW_LAST_BLOCKS": null,
+        "RENEW_MOST_BLOCKS": null,
+        "RENEW_MOST_SOURCES": null,
+        "RENEW_FEWEST_BLOCKS": null,
+        "RENEW_ALPHABETIC": null,
+        "RENEW_REVERSE_ALPHA": null,
+        "RENEW_HASH_FIXED": null
+      }
+    },
+    {
+      "head": "8290",
+      "family": "092/290",
+      "eligible": false,
+      "ranks": {
+        "ORIGINAL": null,
+        "RENEW_LAST_BLOCKS": null,
+        "RENEW_MOST_BLOCKS": null,
+        "RENEW_MOST_SOURCES": null,
+        "RENEW_FEWEST_BLOCKS": null,
+        "RENEW_ALPHABETIC": null,
+        "RENEW_REVERSE_ALPHA": null,
+        "RENEW_HASH_FIXED": null
+      }
+    },
+    {
+      "head": "3264",
+      "family": "264/462",
+      "eligible": false,
+      "ranks": {
+        "ORIGINAL": null,
+        "RENEW_LAST_BLOCKS": null,
+        "RENEW_MOST_BLOCKS": null,
+        "RENEW_MOST_SOURCES": null,
+        "RENEW_FEWEST_BLOCKS": null,
+        "RENEW_ALPHABETIC": null,
+        "RENEW_REVERSE_ALPHA": null,
+        "RENEW_HASH_FIXED": null
+      }
+    }
+  ],
+  "top": {
+    "ORIGINAL": [],
+    "RENEW_LAST_BLOCKS": [],
+    "RENEW_MOST_BLOCKS": [],
+    "RENEW_MOST_SOURCES": [],
+    "RENEW_FEWEST_BLOCKS": [],
+    "RENEW_ALPHABETIC": [],
+    "RENEW_REVERSE_ALPHA": [],
+    "RENEW_HASH_FIXED": []
+  },
+  "warning": "Relectura retrospectiva, no sello predictivo anterior al sorteo"
+}

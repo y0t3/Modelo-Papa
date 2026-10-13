@@ -1,0 +1,8206 @@
+{
+  "cuts": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "goals": [
+        "609/906",
+        "475/574",
+        "175/571",
+        "248/842",
+        "549/945"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "goals": [
+        "205/502",
+        "014/410",
+        "037/730",
+        "576/675",
+        "237/732"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "goals": [
+        "365/563",
+        "779/977",
+        "105/501",
+        "539/935",
+        "596/695"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "goals": [
+        "417/714",
+        "298/892",
+        "565/565",
+        "103/301",
+        "267/762"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "goals": [
+        "265/562",
+        "698/896",
+        "696/696",
+        "174/471",
+        "889/988"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "goals": [
+        "617/716",
+        "065/560",
+        "659/956",
+        "627/726",
+        "445/544"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "goals": [
+        "269/962",
+        "485/584",
+        "486/684",
+        "208/802",
+        "068/860"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "goals": [
+        "178/871",
+        "087/780",
+        "445/544",
+        "059/950",
+        "108/801"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "goals": [
+        "457/754",
+        "467/764",
+        "107/701",
+        "798/897",
+        "475/574"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "goals": [
+        "339/933",
+        "135/531",
+        "233/332",
+        "267/762",
+        "070/070"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "goals": [
+        "438/834",
+        "446/644",
+        "578/875",
+        "748/847",
+        "869/968"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "goals": [
+        "597/795",
+        "267/762",
+        "158/851",
+        "356/653",
+        "132/231"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "goals": [
+        "294/492",
+        "198/891",
+        "237/732",
+        "164/461"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "goals": [
+        "086/680",
+        "111/111",
+        "174/471",
+        "677/776",
+        "042/240"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "goals": [
+        "476/674",
+        "438/834",
+        "417/714",
+        "464/464",
+        "127/721"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "goals": [
+        "205/502",
+        "294/492",
+        "106/601",
+        "658/856",
+        "229/922"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "goals": [
+        "144/441",
+        "054/450",
+        "262/262",
+        "177/771",
+        "839/938"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "goals": [
+        "019/910",
+        "194/491",
+        "034/430",
+        "344/443",
+        "617/716"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "goals": [
+        "317/713",
+        "082/280",
+        "447/744",
+        "138/831",
+        "537/735"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "goals": [
+        "657/756",
+        "828/828",
+        "446/644",
+        "173/371",
+        "798/897"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "goals": [
+        "355/553",
+        "098/890",
+        "318/813",
+        "393/393",
+        "315/513"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "goals": [
+        "447/744",
+        "478/874",
+        "078/870",
+        "396/693"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "goals": [
+        "043/340",
+        "639/936",
+        "445/544",
+        "108/801",
+        "099/990"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "goals": [
+        "619/916",
+        "499/994",
+        "335/533",
+        "537/735",
+        "356/653"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "goals": [
+        "264/462",
+        "709/907",
+        "626/626",
+        "011/110",
+        "109/901"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "goals": [
+        "044/440",
+        "108/801",
+        "203/302",
+        "122/221",
+        "274/472"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "goals": [
+        "073/370",
+        "578/875",
+        "556/655",
+        "446/644",
+        "227/722"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "goals": [
+        "456/654",
+        "065/560",
+        "489/984",
+        "529/925",
+        "779/977"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "goals": [
+        "476/674",
+        "052/250",
+        "306/603",
+        "215/512",
+        "246/642"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "goals": [
+        "173/371",
+        "529/925",
+        "153/351",
+        "134/431",
+        "063/360"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "goals": [
+        "358/853",
+        "666/666",
+        "596/695",
+        "609/906",
+        "738/837"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "goals": [
+        "838/838",
+        "228/822",
+        "456/654",
+        "042/240",
+        "627/726"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "goals": [
+        "298/892",
+        "020/020",
+        "344/443",
+        "568/865",
+        "235/532"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "goals": [
+        "487/784",
+        "337/733",
+        "128/821",
+        "082/280",
+        "345/543"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "goals": [
+        "427/724",
+        "057/750",
+        "207/702",
+        "517/715",
+        "425/524"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "goals": [
+        "687/786",
+        "219/912",
+        "379/973",
+        "166/661",
+        "139/931"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "goals": [
+        "576/675",
+        "849/948",
+        "619/916",
+        "435/534",
+        "169/961"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "goals": [
+        "164/461",
+        "179/971",
+        "014/410",
+        "064/460",
+        "103/301"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "goals": [
+        "289/982",
+        "349/943",
+        "049/940",
+        "324/423",
+        "949/949"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "goals": [
+        "418/814",
+        "429/924",
+        "084/480",
+        "324/423",
+        "387/783"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "goals": [
+        "166/661",
+        "648/846",
+        "159/951",
+        "417/714",
+        "474/474"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "goals": [
+        "576/675",
+        "496/694",
+        "559/955",
+        "025/520",
+        "056/650"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "goals": [
+        "334/433",
+        "194/491",
+        "123/321",
+        "676/676",
+        "189/981"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "goals": [
+        "084/480",
+        "737/737",
+        "828/828",
+        "088/880",
+        "738/837"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "goals": [
+        "373/373",
+        "718/817",
+        "418/814",
+        "076/670",
+        "090/090"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "goals": [
+        "249/942",
+        "259/952",
+        "359/953",
+        "979/979",
+        "898/898"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "898/898"
+          ],
+          "rank10Winner": true
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "goals": [
+        "457/754",
+        "498/894",
+        "365/563",
+        "313/313",
+        "162/261"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "goals": [
+        "339/933",
+        "346/643",
+        "237/732",
+        "118/811",
+        "889/988"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "goals": [
+        "256/652",
+        "299/992",
+        "708/807",
+        "415/514",
+        "164/461"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "goals": [
+        "197/791",
+        "395/593",
+        "429/924",
+        "174/471",
+        "029/920"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "goals": [
+        "389/983",
+        "069/960",
+        "326/623",
+        "099/990",
+        "217/712"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "goals": [
+        "379/973",
+        "526/625",
+        "147/741",
+        "416/614",
+        "266/662"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "goals": [
+        "107/701",
+        "137/731",
+        "466/664",
+        "586/685",
+        "207/702"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "goals": [
+        "979/979",
+        "757/757",
+        "003/300",
+        "606/606",
+        "299/992"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "goals": [
+        "283/382",
+        "768/867",
+        "065/560",
+        "019/910",
+        "568/865"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "goals": [
+        "273/372",
+        "126/621",
+        "158/851",
+        "028/820",
+        "234/432"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "goals": [
+        "037/730",
+        "165/561",
+        "104/401",
+        "297/792",
+        "159/951"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "goals": [
+        "949/949",
+        "319/913",
+        "107/701",
+        "262/262",
+        "067/760"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "goals": [
+        "086/680",
+        "182/281",
+        "508/805",
+        "517/715",
+        "949/949"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "goals": [
+        "137/731",
+        "245/542",
+        "718/817",
+        "778/877",
+        "168/861"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "goals": [
+        "223/322",
+        "304/403",
+        "181/181",
+        "308/803",
+        "305/503"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "goals": [
+        "515/515",
+        "444/444",
+        "377/773",
+        "154/451",
+        "389/983"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "goals": [
+        "289/982",
+        "687/786",
+        "185/581",
+        "606/606",
+        "647/746"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "goals": [
+        "626/626",
+        "262/262",
+        "027/720",
+        "137/731",
+        "101/101"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "goals": [
+        "497/794",
+        "709/907",
+        "679/976",
+        "697/796",
+        "243/342"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "goals": [
+        "229/922",
+        "159/951",
+        "355/553",
+        "215/512",
+        "206/602"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "goals": [
+        "408/804",
+        "019/910",
+        "107/701",
+        "849/948",
+        "094/490"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "goals": [
+        "173/371",
+        "859/958",
+        "778/877",
+        "012/210",
+        "239/932"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "goals": [
+        "556/655",
+        "768/867",
+        "151/151",
+        "293/392"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "goals": [
+        "167/761",
+        "848/848",
+        "094/490",
+        "687/786",
+        "067/760"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "687/786"
+          ],
+          "rank10Winner": true
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "goals": [
+        "124/421",
+        "738/837",
+        "357/753",
+        "123/321",
+        "748/847"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "goals": [
+        "032/230",
+        "507/705",
+        "237/732",
+        "878/878",
+        "188/881"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "goals": [
+        "347/743",
+        "105/501",
+        "294/492",
+        "384/483",
+        "598/895"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "384/483"
+          ],
+          "rank10Winner": true
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "384/483"
+          ],
+          "rank10Winner": true
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "goals": [
+        "265/562",
+        "207/702",
+        "799/997",
+        "308/803",
+        "189/981"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "goals": [
+        "485/584",
+        "269/962",
+        "739/937",
+        "265/562",
+        "258/852"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "goals": [
+        "379/973",
+        "303/303",
+        "397/793",
+        "539/935",
+        "077/770"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "goals": [
+        "828/828",
+        "557/755",
+        "729/927",
+        "263/362",
+        "197/791"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "goals": [
+        "125/521",
+        "798/897",
+        "466/664",
+        "075/570",
+        "006/600"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "goals": [
+        "313/313",
+        "799/997",
+        "155/551",
+        "686/686",
+        "288/882"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "goals": [
+        "499/994",
+        "328/823",
+        "343/343",
+        "313/313",
+        "979/979"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "goals": [
+        "778/877",
+        "318/813",
+        "548/845",
+        "377/773",
+        "232/232"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "goals": [
+        "177/771",
+        "124/421",
+        "112/211",
+        "383/383",
+        "416/614"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "goals": [
+        "378/873",
+        "265/562",
+        "295/592",
+        "188/881",
+        "238/832"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "goals": [
+        "566/665",
+        "234/432",
+        "429/924",
+        "016/610",
+        "129/921"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "429/924"
+          ],
+          "rank10Winner": true
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "429/924"
+          ],
+          "rank10Winner": true
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "429/924"
+          ],
+          "rank10Winner": true
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "goals": [
+        "226/622",
+        "377/773",
+        "267/762",
+        "060/060",
+        "266/662"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "goals": [
+        "798/897",
+        "059/950",
+        "072/270",
+        "171/171",
+        "339/933"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "goals": [
+        "529/925",
+        "068/860",
+        "318/813",
+        "667/766",
+        "194/491"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "goals": [
+        "315/513",
+        "719/917",
+        "168/861",
+        "729/927",
+        "529/925"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "goals": [
+        "174/471",
+        "456/654",
+        "136/631",
+        "899/998",
+        "799/997"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "goals": [
+        "314/413",
+        "558/855",
+        "449/944",
+        "327/723",
+        "577/775"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "goals": [
+        "505/505",
+        "163/361",
+        "659/956",
+        "818/818",
+        "159/951"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "goals": [
+        "697/796",
+        "142/241",
+        "019/910",
+        "077/770",
+        "748/847"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "goals": [
+        "508/805",
+        "046/640",
+        "179/971",
+        "517/715",
+        "719/917"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "goals": [
+        "226/622",
+        "809/908",
+        "010/010",
+        "001/100",
+        "384/483"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "goals": [
+        "196/691",
+        "549/945",
+        "338/833",
+        "476/674",
+        "081/180"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "goals": [
+        "566/665",
+        "758/857",
+        "191/191",
+        "019/910",
+        "617/716"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "goals": [
+        "189/981",
+        "063/360",
+        "015/510",
+        "147/741",
+        "218/812"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "goals": [
+        "448/844",
+        "646/646",
+        "108/801",
+        "356/653",
+        "747/747"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "goals": [
+        "428/824",
+        "162/261",
+        "677/776",
+        "144/441",
+        "778/877"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "goals": [
+        "175/571",
+        "579/975",
+        "387/783",
+        "103/301",
+        "152/251"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "goals": [
+        "218/812",
+        "103/301",
+        "405/504",
+        "556/655",
+        "486/684"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "goals": [
+        "599/995",
+        "006/600",
+        "567/765",
+        "457/754",
+        "448/844"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "goals": [
+        "179/971",
+        "346/643",
+        "008/800",
+        "316/613",
+        "071/170"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "goals": [
+        "017/710",
+        "235/532",
+        "409/904",
+        "125/521",
+        "848/848"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "goals": [
+        "435/534",
+        "859/958",
+        "355/553",
+        "526/625",
+        "378/873"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "goals": [
+        "001/100",
+        "013/310",
+        "242/242",
+        "348/843",
+        "435/534"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "goals": [
+        "159/951",
+        "415/514",
+        "309/903",
+        "369/963",
+        "042/240"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "goals": [
+        "327/723",
+        "779/977",
+        "232/232",
+        "759/957",
+        "094/490"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "goals": [
+        "056/650",
+        "059/950",
+        "496/694",
+        "037/730",
+        "148/841"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "goals": [
+        "226/622",
+        "448/844",
+        "259/952",
+        "336/633",
+        "354/453"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "goals": [
+        "659/956",
+        "045/540",
+        "182/281",
+        "507/705",
+        "061/160"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "goals": [
+        "393/393",
+        "056/650",
+        "656/656",
+        "112/211",
+        "374/473"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "goals": [
+        "245/542",
+        "819/918",
+        "297/792",
+        "848/848",
+        "051/150"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "goals": [
+        "185/581",
+        "415/514",
+        "022/220",
+        "485/584",
+        "027/720"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": [],
+          "rank10Winner": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "goals": [
+        "324/423",
+        "456/654",
+        "044/440",
+        "215/512",
+        "465/564"
+      ],
+      "hits": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_LAST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_MOST_SOURCES": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_FEWEST_BLOCKS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_ALPHABETIC": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_REVERSE_ALPHA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ],
+          "rank10Winner": false
+        },
+        "RENEW_HASH_FIXED": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ],
+          "rank10Winner": false
+        }
+      }
+    }
+  ]
+}
