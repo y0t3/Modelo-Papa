@@ -74,7 +74,7 @@ function describe(row,ti){
  return out;
 }
 function rankPolicies(row,ti,profiles){
- const anchor=profiles.filter(x=>x.anchored);
+ const anchor=profiles.filter(x=>x.anchored).sort((a,b)=>a.originalRank-b.originalRank);
  const official=row.strategies.A_ORIGINAL.map(x=>x.family);
  assert.deepEqual(anchor.map(x=>x.family),official,'Inventario cambia orden de ancladas');
  const unanchor=profiles.filter(x=>!x.anchored);
