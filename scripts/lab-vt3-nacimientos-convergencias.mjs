@@ -169,9 +169,20 @@ function prepare(){
  const summary={dates,cuts:115,verifiedHistoricalPathRetention:checks,states:stateCounts,
   policyNames:policies,days:dates.length};
  save('PRE_115.json',{summary,rows});
+ // Nocturna ya conocida por la investigación: este PRE es simulación retrospectiva,
+ // no reemplaza la predicción sellada a las 18:56. No accede a cabezas futuras.
+ const nocturna=json(inputDir+'NOCTURNA_SIMULACION.json').row;
+ assert.equal(nocturna.date,'2026-10-12');
+ assert.equal(nocturna.turn,'Nocturno');
+ const noctProfiles=describe(nocturna,4);
+ const noctRankings=rankPolicies(nocturna,4,noctProfiles);
+ save('NOCTURNA_PRE.json',{date:'2026-10-12',turn:'Nocturno',
+  warning:'Reproducción retrospectiva: no modifica el PRE verdaderamente sellado el 12/10 antes del sorteo',
+  profiles:noctProfiles,rankings:noctRankings});
  const seal={sourcePre:inputHash,protocol:sha(read(protocol)),
   script:sha(read('scripts/lab-vt3-nacimientos-convergencias.mjs')),
-  generatedPre:sha(read(out+'PRE_115.json'))};
+  generatedPre:sha(read(out+'PRE_115.json')),
+  nocturnaPre:sha(read(out+'NOCTURNA_PRE.json'))};
  save('SELLO.json',seal);
  console.log('VT3_NACIMIENTOS_PRE_PASS',JSON.stringify({summary,seal}));
 }
@@ -181,6 +192,7 @@ function evaluate(){
  assert.equal(seal.protocol,sha(read(protocol)));
  assert.equal(seal.script,sha(read('scripts/lab-vt3-nacimientos-convergencias.mjs')));
  assert.equal(seal.generatedPre,sha(read(out+'PRE_115.json')));
+ assert.equal(seal.nocturnaPre,sha(read(out+'NOCTURNA_PRE.json')));
  const pre=json(out+'PRE_115.json').rows;
  const post=json(inputDir+'POST_115.json').rows;
  assert.equal(pre.length,115);assert.equal(post.length,115);
@@ -283,13 +295,36 @@ function evaluate(){
   inputPostHash:sha(read(inputDir+'POST_115.json')),
   limitation:'Ensayo retrospectivo entre familias físicamente posibles; los sorteos aleatorios no tienen por qué seguir trazos. El mismo corpus se usó en muchas hipótesis, no es holdout.'};
  save('POST_115.json',{rows:actualRows});
+ const noctPre=json(out+'NOCTURNA_PRE.json');
+ const noctPost=json(inputDir+'NOCTURNA_POST_DIAGNOSTICO.json');
+ const targetHeads=noctPost.targets;assert.equal(targetHeads.length,5);
+ const watch=targetHeads.map(head=>{
+  const f=win(head),profile=noctPre.profiles.find(x=>x.family===f);
+  return {head,vt3:head.slice(-3),family:f,
+   physicalPossible:Boolean(profile),anchored:profile?.anchored??false,
+   state:profile?.state??'NO_EXISTE_FISICAMENTE',
+   firstSource:profile?.firstSource??null,
+   sourceAgeTurns:profile?.ageTurns??null,
+   physicalSources:profile?.sources??0,
+   physicalBlocks:profile?.physicalBlocks??0,
+   anchoredNeighbors:profile?.anchoredNeighborFamilies??0,
+   originalRank:profile?.originalRank??null,
+   ranks:Object.fromEntries(policies.map(p=>[p,noctPre.rankings[p].indexOf(f)===-1?null:noctPre.rankings[p].indexOf(f)+1]))};
+ });
+ const noctTarget=new Set(targetHeads.map(win));
+ const outcome=Object.fromEntries(policies.map(p=>[p,{
+  winnerFamiliesInTop10:noctPre.rankings[p].filter(f=>noctTarget.has(f)),
+  proposedTop10:noctPre.rankings[p]}]));
+ save('NOCTURNA_POST.json',{date:'2026-10-12',heads:targetHeads,
+  watched:watch,outcome,
+  caveat:'Diagnóstico POST retrospectivo, nunca nueva predicción sellada. No usar estos cinco resultados para ajustar la política.'});
  save('RESUMEN.json',summary);
  console.log('VT3_NACIMIENTOS_POST_PASS',JSON.stringify({
   preStates:json(out+'PRE_115.json').summary.states,
   scores:all.counts,
   paired:Object.fromEntries(Object.entries(all.paired).map(([k,v])=>[k,{rescued:v.rescued,lost:v.lost}])),
   perTurn:Object.fromEntries(Object.entries(byTurn).map(([k,v])=>[k,Object.fromEntries(Object.entries(v.counts).map(([p,q])=>[p,q.top10]))])),
-  stateStats,nullVsOriginal},null,2));
+  stateStats,nullVsOriginal,nocturna:watch},null,2));
 }
 const mode=process.argv[2];
 if(mode==='pre')prepare();else if(mode==='post')evaluate();else throw Error('Use pre|post');
