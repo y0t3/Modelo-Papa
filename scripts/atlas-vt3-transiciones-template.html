@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atlas visual VT3 · Nocturna 12/10/2026 · POST</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#101521;color:#e8ecf5}
+*{box-sizing:border-box}body{margin:0;padding:20px;max-width:1260px;margin-inline:auto}
+h1{font-size:clamp(24px,4vw,35px);margin:0 0 4px}h2{font-size:18px;margin:18px 0 8px}
+p{line-height:1.48;color:#b8c2d4}small{color:#99a9c1}
+.banner{border-left:4px solid #efbe53;padding:12px;background:#222535;border-radius:8px;margin:16px 0}
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0}
+select,button{background:#253249;border:1px solid #53627c;color:#f4f6fa;padding:9px 12px;border-radius:9px;font-size:14px;max-width:100%}
+button{cursor:pointer}button:hover{background:#3b4b64}
+.chip{border-radius:999px;padding:5px 9px;border:1px solid #5c6880;font-size:13px}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}
+.summary{background:#1d2838;border:1px solid #36445c;padding:14px;border-radius:11px}
+.board{display:flex;gap:13px;flex-wrap:wrap}
+.source{background:#1f2c40;border:1px solid #435373;border-radius:12px;padding:12px;min-width:151px;flex:1 1 165px;max-width:210px}
+.source h3{font-size:14px;margin:0 0 5px}.source .tag{font-size:11px;color:#a8b8cb;min-height:28px}
+.celldisplay{position:relative;width:108px;height:198px;margin:11px auto 0}
+.digits{display:grid;grid-template-columns:54px 54px;grid-template-rows:repeat(6,33px);position:absolute;inset:0}
+.cell{background:#2a394e;outline:1px solid #4a5b72;display:flex;align-items:center;justify-content:center;
+font-size:21px;font-variant-numeric:tabular-nums;font-weight:700;color:#edf1f8}
+.cell.blank{background:#172233;color:#566478}
+.cell.active{background:#5b451d;color:#fff1c2}
+.route-layer{position:absolute;inset:0;width:108px;height:198px;pointer-events:none;overflow:visible}
+.routeitem{border-left:4px solid var(--route);padding:5px 9px;background:#1e2b3b;border-radius:5px;margin:5px 0;font-size:13px}
+.routeitem strong{color:#f1f3f9}.routeitem em{font-style:normal;color:#b4bfd2}
+.route-lists{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.focus{background:#1b293b;border:1px solid #374960;border-radius:10px;padding:10px}
+.focus h3{font-size:15px;margin:0 0 4px}
+details{margin:12px 0;background:#1e293a;padding:10px;border-radius:10px}summary{cursor:pointer}
+.footer{margin-top:22px;border-top:1px solid #40516d;padding-top:10px}
+</style>
+</head>
+<body>
+<h1>Atlas visual VT3</h1>
+<p><strong>Nocturna del 12/10/2026</strong> · Hoja +11 reconstruida desde el PRE sellado · Recorridos físicos completos de todas las familias del inventario.</p>
+<div class="banner"><strong>DIAGNÓSTICO POST, NO PREDICCIÓN.</strong> Las cabezas de la Nocturna ya se conocían al crear este atlas. Los recorridos y las columnas proceden de la hoja PRE; las familias ganadoras sólo se usan para seleccionar ejemplos. Ninguna línea conecta fuentes distintas. La inversión de una terna es la misma familia reversible.</div>
+<div class="controls">
+<label for="fam">Familia VT3</label>
+<select id="fam" aria-label="Familia VT3"></select>
+<button id="prev">Anterior</button><button id="next">Siguiente</button>
+</div>
+<div id="meta" class="summary"></div>
+<h2>Las cinco fuentes físicas (separadas)</h2>
+<div id="board" class="board"></div>
+<h2>Todos los recorridos físicos de la familia</h2>
+<div id="routes" class="route-lists"></div>
+<details open>
+<summary>Comparación con negativas parecidas (selección retrospectiva)</summary>
+<p>Estas familias se eligieron usando semejanza física en el PRE del mismo corte, pero se clasificaron como negativas con el resultado POST. No son prueba de superioridad de ningún recorrido.</p>
+<div id="peers" class="badges"></div>
+</details>
+<div class="footer">
+<small>Fuente: y0t3/Modelo-Papa · Nocturna PRE sellada el 12/10/2026 a las 18:56 Argentina · Visor POST experimental del 13/10/2026. La fuente de una ruta se conserva siempre; mostrar estructuras similares en columnas diferentes no permite saltar entre ellas.</small>
+</div>
+<script type="application/json" id="data">__INLINE_DATA_JSON__</script>
+<script>
+(function(){
+'use strict';
+const data=JSON.parse(document.getElementById('data').textContent);
+const selector=document.getElementById('fam');
+const fset=new Set(data.focus);
+const order=[...data.focus,...data.negativeExamples,...Object.keys(data.families).sort()]
+ .filter((x,i,a)=>a.indexOf(x)===i&&data.families[x]);
+for(const f of order){
+ const opt=document.createElement('option');opt.value=f;
+ const p=data.profiles[f],type=fset.has(f)?' [resultado POST]':'';
+ opt.textContent=f+type+' · '+(p?.state||'SIN PERFIL');
+ selector.appendChild(opt);
+}
+function el(tag,cls,text){
+ const x=document.createElement(tag);if(cls)x.className=cls;
+ if(text!==undefined)x.textContent=text;return x;
+}
+function color(n){return 'hsl('+((n*73+35)%360)+' 89% 69%)'}
+function coord(a){const [row,col]=a.split(':').map(Number);return [27+col*54,16.5+row*33];}
+function refresh(){
+ const selected=selector.value;
+ const p=data.profiles[selected],e=data.families[selected];
+ const active=e?.paths||[];
+ const meta=document.getElementById('meta');meta.textContent='';
+ const h=el('h2','',selected+' · '+(p?.state||'SIN PERFIL'));meta.appendChild(h);
+ const b=el('div','badges');
+ const badges=[
+  p?.anchored?'Con raíz propia histórica':'SIN raíz histórica admitida',
+  'Puesto original: '+(p?.officialRank||'Fuera'),
+  'Fuentes: '+(p?.sourceCount||0),
+  'Bloques físicos: '+(p?.blockCount||0),
+  'Caminos: '+active.length,
+  'Antigüedad intradía: '+(p?.ageTurns??'—')+' turnos',
+  'Nueva raíz en última fuente: '+(p?.newAnchor?'sí':'no'),
+  'Misma forma entre fuentes: '+(p?.sameShapeAcrossSources?'sí':'no')
+ ];
+ for(const label of badges)b.appendChild(el('span','chip',label));
+ meta.appendChild(b);
+ const bnode=document.getElementById('board');bnode.textContent='';
+ for(const [si,col] of data.columns.entries()){
+  const container=el('section','source');
+  container.appendChild(el('h3','',col.sourceLabel));
+  const label=el('div','tag','Fuente: '+col.id+' · '+(si===0?'nocturna previa':'turno ya publicado'));
+  container.appendChild(label);
+  const display=el('div','celldisplay'),digits=el('div','digits');
+  const thesePaths=active.filter(x=>x.source===col.id);
+  const marked=new Set(thesePaths.flatMap(x=>x.cells));
+  for(let row=0;row<6;row++)for(let k=0;k<2;k++){
+   const v=col.values[row]?.[k]||'·';
+   const cell=el('div','cell'+(marked.has(row+':'+k)?' active':'')+(v==='·'?' blank':''),v);
+   digits.appendChild(cell);
+  }
+  display.appendChild(digits);
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('viewBox','0 0 108 198');
+  svg.setAttribute('class','route-layer');
+  thesePaths.forEach((x,idx)=>{
+   const colorValue=color(active.indexOf(x));
+   const points=x.cells.map(coord).map(z=>z.join(',')).join(' ');
+   const line=document.createElementNS('http://www.w3.org/2000/svg','polyline');
+   line.setAttribute('points',points);line.setAttribute('stroke',colorValue);
+   line.setAttribute('stroke-width',thesePaths.length>3?'3':'4.4');
+   line.setAttribute('stroke-linecap','round');line.setAttribute('stroke-linejoin','round');
+   line.setAttribute('fill','none');line.setAttribute('opacity','.92');svg.appendChild(line);
+   x.cells.forEach((c,j)=>{
+    const [cx,cy]=coord(c);
+    const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx',cx);dot.setAttribute('cy',cy);
+    dot.setAttribute('r',j===0?'5':'3.2');dot.setAttribute('fill',colorValue);svg.appendChild(dot);
+   });
+  });
+  display.appendChild(svg);container.appendChild(display);
+  container.appendChild(el('div','tag',thesePaths.length+' camino(s) en esta fuente'));
+  bnode.appendChild(container);
+ }
+ const rl=document.getElementById('routes');rl.textContent='';
+ for(const col of data.columns){
+  const frame=el('section','focus');frame.appendChild(el('h3','',col.sourceLabel));
+  const paths=active.filter(x=>x.source===col.id);
+  if(!paths.length)frame.appendChild(el('small','','No hay caminos de esta familia en esta fuente.'));
+  paths.forEach(x=>{
+   const div=el('div','routeitem');div.style.setProperty('--route',color(active.indexOf(x)));
+   const read=el('strong','',x.value+' · '+x.cells.join(' → '));
+   div.appendChild(read);
+   const label=el('div','',x.anchored?'Anclada por raíz propia':'Física, sin raíz anclada propia');
+   label.className='tag';div.appendChild(label);frame.appendChild(div);
+  });rl.appendChild(frame);
+ }
+ const peers=document.getElementById('peers');peers.textContent='';
+ const list=data.peers[selected]||[];
+ if(!list.length)peers.appendChild(el('small','','Sin comparación negativa preseleccionada para esta familia.'));
+ for(const f of list){const button=el('button','',f);button.onclick=()=>{selector.value=f;refresh()};peers.appendChild(button)}
+}
+selector.addEventListener('change',refresh);
+document.getElementById('prev').onclick=()=>{selector.selectedIndex=(selector.selectedIndex+selector.options.length-1)%selector.options.length;refresh()};
+document.getElementById('next').onclick=()=>{selector.selectedIndex=(selector.selectedIndex+1)%selector.options.length;refresh()};
+selector.value=data.focus[0];refresh();
+})();
+</script>
+</body></html>
