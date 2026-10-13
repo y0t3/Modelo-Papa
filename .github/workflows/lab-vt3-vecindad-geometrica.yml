@@ -1,0 +1,55 @@
+name: VT3 geometria vecinal y cupo fisico
+on:
+  push:
+    branches: [lab-vt3-vecindad-geometrica-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-vecindad-geometrica.mjs'
+      - 'PROTOCOLO_VT3_VECINDAD_GEOMETRICA_13OCT2026.md'
+      - '.github/workflows/lab-vt3-vecindad-geometrica.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  geometria-vecinal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar los POST del generador PRE
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-vecindad-basepost.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-vecindad-basenpost.json
+          mv auditorias/vt3-cupo-fisico-controles-115-13oct2026/POST_115.json /tmp/vt3-vecindad-cupopost.json
+          mv auditorias/vt3-cupo-fisico-controles-115-13oct2026/NOCTURNA_POST.json /tmp/vt3-vecindad-cuponpost.json
+          mv auditorias/vt3-transformaciones-bloque-115-13oct2026/POST_115.json /tmp/vt3-vecindad-blockpost.json
+          mv auditorias/vt3-transformaciones-bloque-115-13oct2026/NOCTURNA_POST.json /tmp/vt3-vecindad-blocknpost.json
+      - name: Auditar 115 cortes y sellar las 11 selecciones PRE
+        run: node scripts/lab-vt3-vecindad-geometrica.mjs pre
+      - name: Restaurar POST y ejecutar comprobaciones negativas
+        run: |
+          mv /tmp/vt3-vecindad-basepost.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/vt3-vecindad-basenpost.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          mv /tmp/vt3-vecindad-cupopost.json auditorias/vt3-cupo-fisico-controles-115-13oct2026/POST_115.json
+          mv /tmp/vt3-vecindad-cuponpost.json auditorias/vt3-cupo-fisico-controles-115-13oct2026/NOCTURNA_POST.json
+          mv /tmp/vt3-vecindad-blockpost.json auditorias/vt3-transformaciones-bloque-115-13oct2026/POST_115.json
+          mv /tmp/vt3-vecindad-blocknpost.json auditorias/vt3-transformaciones-bloque-115-13oct2026/NOCTURNA_POST.json
+          node scripts/lab-vt3-vecindad-geometrica.mjs post
+      - name: Guardar evidencia verificable
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-vecindad-geometrica-115
+          path: auditorias/vt3-vecindad-geometrica-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Versionar PRE, POST y sellos solamente en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-vecindad-geometrica-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): vecindad geométrica física PRE y controles negativos POST'
+            git push origin HEAD:lab-vt3-vecindad-geometrica-13oct2026
+          fi
