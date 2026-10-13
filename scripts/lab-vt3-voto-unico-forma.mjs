@@ -87,6 +87,7 @@ function post(){
     losses10:rs.filter(r=>!r.methods[kind][m].top10&&r.original.top10).map(key),
     changedVsOriginalLearner:rs.filter(r=>r.methods[kind][m].top[2]!==r.methods[kind].ORIGINAL_3_EJEMPLOS.top[2]).length}];
   }))]))};
+ };
  const all=stats(records);
  assert.deepEqual([all.official.top3,all.official.top10],[3,11]);
  assert.deepEqual([all.ESTATICA.ORIGINAL_3_EJEMPLOS.top3,all.ESTATICA.ORIGINAL_3_EJEMPLOS.top10],[4,12]);
