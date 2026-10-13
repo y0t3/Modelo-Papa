@@ -13,6 +13,7 @@ const POLICIES=['OFICIAL','COB20_P3','CONTROL_MAS_EVENTOS_20'];
 const TESTS=['COB20_P3','CONTROL_MAS_EVENTOS_20'];
 const read=p=>readFileSync(p,'utf8'),json=p=>JSON.parse(read(p));
 const sha=s=>createHash('sha256').update(s).digest('hex');
+mkdirSync(OUT,{recursive:true});
 const save=(f,v)=>writeFileSync(OUT+f,JSON.stringify(v,null,2)+'\n');
 const key=r=>r.date+'|'+r.turn;
 const family=h=>{assert.match(h,/^\d{4}$/);const t=h.slice(-3);
