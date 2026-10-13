@@ -88,6 +88,28 @@ const selectKind=(families:Map<string,Working>,kind:LaloKind,value:string,source
   origin,rootIds:rootId?[rootId]:[],mother,mothers:mother?[mother]:[],addedDigit:extra});
 };
 
+// VT4 NO invierte la cuaterna completa para definir una familia.
+// Conserva la madre VT3 reversible y la posición de la cifra añadida.
+// Cada variante registrada debe estar sustentada por un camino físico propio.
+const selectVt4Mother=(groups:Map<string,Working>,mother:string,added:string,
+ side:'prefix'|'suffix',value:string,source:SourceId,path:Path)=>{
+ if(!valid(path,4))return;
+ const [a,b]=mother.split('/');
+ if(!a||!b||a.length!==3||b.length!==3||rev(a)!==b)return;
+ const allowed=side==='prefix'?[added+a,added+b]:[a+added,b+added];
+ if(!allowed.includes(value))return;
+ const label=[...new Set(allowed)].join('/');
+ const id='vt4|'+mother+'|'+side+'|'+added;
+ let candidate=groups.get(id);
+ if(!candidate){candidate={kind:'vt4',family:label,paths:new Map()};groups.set(id,candidate)}
+ const k=canonical('vt4',source,path);
+ const existing=candidate.paths.get(k);
+ if(existing){
+  if(!existing.mothers?.includes(mother))existing.mothers=[...(existing.mothers||[]),mother];
+ }else candidate.paths.set(k,{kind:'vt4',family:label,value,sourceId:source,
+  path,origin:'DESDE_VT3',rootIds:[],mother,mothers:[mother],addedDigit:added});
+};
+
 const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
  kind:LaloKind,motherRanks?:Map<string,number>):LaloFamily[]=>{
  const all=[...groups.values()].filter(g=>g.kind===kind).map(group=>{
@@ -219,8 +241,8 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
     for(const candidate of [[c,...oriented],[...oriented,c]]){
      if(!valid(candidate,4))continue;
      const added=c.digit;
-     selectKind(vt4,'vt4',pathValue(candidate),parent.sourceId,candidate,
-      'DESDE_VT3',undefined,mother.family,added);
+     selectVt4Mother(vt4,mother.family,added,
+      candidate[0]===c?'prefix':'suffix',pathValue(candidate),parent.sourceId,candidate);
     }
    }
  }
