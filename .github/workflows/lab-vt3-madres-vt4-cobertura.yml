@@ -1,0 +1,54 @@
+name: VT3 apertura madres y cobertura fisica VT4 115 cortes
+on:
+  push:
+    branches: [lab-vt3-apertura-madres-vt4-cobertura-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-madres-vt4-cobertura.mjs'
+      - 'PROTOCOLO_VT3_APERTURA_MADRES_VT4_COBERTURA_13OCT2026.md'
+      - '.github/workflows/lab-vt3-madres-vt4-cobertura.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Retirar fisicamente cabezas POST y fixture historico del entorno PRE
+        run: |
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt3-vt4-cobertura-post.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt3-vt4-cobertura-fixture.b64
+          test ! -e auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          test ! -e fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+      - name: Codificar 115 inventarios PRE ciegos de 10000 cuaternas y siete Tops iguales
+        run: node scripts/lab-vt3-madres-vt4-cobertura.mjs pre
+      - name: Guardar y sellar PRE en GitHub ANTES de restaurar cabezas
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-madres-vt4-cobertura-115-13oct2026/PRE_115.json
+          git add auditorias/vt3-madres-vt4-cobertura-115-13oct2026/MAPAS_FISICOS_PRE_115.json
+          git add auditorias/vt3-madres-vt4-cobertura-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT3-VT4): 115 cortes mapas de alcance físico y Top10 sin POST'
+          git push origin HEAD:lab-vt3-apertura-madres-vt4-cobertura-13oct2026
+      - name: Restaurar POST y medir diferencia entre cobertura y diez plazas
+        run: |
+          mv /tmp/vt3-vt4-cobertura-post.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          mv /tmp/vt3-vt4-cobertura-fixture.b64 fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt3-madres-vt4-cobertura.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-madres-vt4-cobertura-115
+          path: auditorias/vt3-madres-vt4-cobertura-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar cotejo POST sin modificar codigo del motor
+        run: |
+          git add auditorias/vt3-madres-vt4-cobertura-115-13oct2026/POST_115.json
+          git add auditorias/vt3-madres-vt4-cobertura-115-13oct2026/RESUMEN.json
+          git commit -m 'data(VT3-VT4): medir techo fisico de madres y diez plazas reales'
+          git push origin HEAD:lab-vt3-apertura-madres-vt4-cobertura-13oct2026
