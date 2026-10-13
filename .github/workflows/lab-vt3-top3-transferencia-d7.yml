@@ -1,0 +1,50 @@
+name: VT3 transferencia del Top3 docente D-7
+on:
+  push:
+    branches: [lab-vt3-top3-transferencia-d7-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-top3-transferencia-d7.mjs'
+      - 'PROTOCOLO_VT3_TOP3_TRANSFERENCIA_D7_13OCT2026.md'
+      - '.github/workflows/lab-vt3-top3-transferencia-d7.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  geometria:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Apartar TODOS los resultados y dejar el único tablero PRE histórico
+        run: |
+          mv auditorias /tmp/vt3-top3-d7-auditorias
+          mkdir -p auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/
+          cp /tmp/vt3-top3-d7-auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json
+          test "$(find auditorias -type f | wc -l)" -eq 1
+      - name: Construir rutas físicas PRE y sellarlas sin cabezas futuras
+        run: node scripts/lab-vt3-top3-transferencia-d7.mjs pre
+      - name: Restaurar resultados después del sello y enseñar sólo desde D-7
+        run: |
+          mv auditorias/vt3-top3-transferencia-d7-115-13oct2026 /tmp/vt3-top3-d7-pre-nuevo
+          cp -a /tmp/vt3-top3-d7-auditorias/. auditorias/
+          rm -rf auditorias/vt3-top3-transferencia-d7-115-13oct2026
+          mv /tmp/vt3-top3-d7-pre-nuevo auditorias/vt3-top3-transferencia-d7-115-13oct2026
+          node scripts/lab-vt3-top3-transferencia-d7.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-top3-rutas-docentes-D7
+          path: auditorias/vt3-top3-transferencia-d7-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar el experimento solo en rama de laboratorio
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-top3-transferencia-d7-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): transferir caminos ganadores D-7 y controles negativos'
+            git push origin HEAD:lab-vt3-top3-transferencia-d7-13oct2026
+          fi
