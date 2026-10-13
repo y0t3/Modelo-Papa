@@ -18,7 +18,7 @@
           "5": 66,
           "10": 124,
           "25": 229,
-          "99999": 10000
+          "65534": 229
         }
       },
       "choices": {
@@ -1033,6 +1033,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 2,
           "distinctMotherRanks": 4,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 2
@@ -1055,7 +1056,7 @@
           "5": 64,
           "10": 135,
           "25": 315,
-          "99999": 10000
+          "65534": 368
         }
       },
       "choices": {
@@ -2075,6 +2076,7 @@
               "physicalPaths": 1
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -2097,7 +2099,7 @@
           "5": 56,
           "10": 127,
           "25": 339,
-          "99999": 10000
+          "65534": 563
         }
       },
       "choices": {
@@ -3119,6 +3121,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -3141,7 +3144,7 @@
           "5": 74,
           "10": 137,
           "25": 373,
-          "99999": 10000
+          "65534": 747
         }
       },
       "choices": {
@@ -4166,6 +4169,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -4188,7 +4192,7 @@
           "5": 74,
           "10": 137,
           "25": 397,
-          "99999": 10000
+          "65534": 1003
         }
       },
       "choices": {
@@ -5211,6 +5215,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -5233,7 +5238,7 @@
           "5": 64,
           "10": 117,
           "25": 250,
-          "99999": 10000
+          "65534": 292
         }
       },
       "choices": {
@@ -6250,6 +6255,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -6272,7 +6278,7 @@
           "5": 58,
           "10": 122,
           "25": 311,
-          "99999": 10000
+          "65534": 500
         }
       },
       "choices": {
@@ -7285,6 +7291,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -7307,7 +7314,7 @@
           "5": 64,
           "10": 130,
           "25": 326,
-          "99999": 10000
+          "65534": 556
         }
       },
       "choices": {
@@ -8323,6 +8330,7 @@
               "physicalPaths": 10
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -8345,7 +8353,7 @@
           "5": 64,
           "10": 127,
           "25": 374,
-          "99999": 10000
+          "65534": 741
         }
       },
       "choices": {
@@ -9367,6 +9375,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -9389,7 +9398,7 @@
           "5": 64,
           "10": 127,
           "25": 376,
-          "99999": 10000
+          "65534": 898
         }
       },
       "choices": {
@@ -10409,6 +10418,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -10431,7 +10441,7 @@
           "5": 49,
           "10": 114,
           "25": 278,
-          "99999": 10000
+          "65534": 340
         }
       },
       "choices": {
@@ -11446,6 +11456,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -11468,7 +11479,7 @@
           "5": 49,
           "10": 114,
           "25": 289,
-          "99999": 10000
+          "65534": 414
         }
       },
       "choices": {
@@ -12483,6 +12494,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -12505,7 +12517,7 @@
           "5": 49,
           "10": 114,
           "25": 289,
-          "99999": 10000
+          "65534": 450
         }
       },
       "choices": {
@@ -13520,6 +13532,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -13542,7 +13555,7 @@
           "5": 49,
           "10": 114,
           "25": 289,
-          "99999": 10000
+          "65534": 450
         }
       },
       "choices": {
@@ -14557,6 +14570,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -14579,7 +14593,7 @@
           "5": 54,
           "10": 117,
           "25": 308,
-          "99999": 10000
+          "65534": 499
         }
       },
       "choices": {
@@ -15596,6 +15610,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -15618,7 +15633,7 @@
           "5": 78,
           "10": 142,
           "25": 334,
-          "99999": 10000
+          "65534": 696
         }
       },
       "choices": {
@@ -16650,6 +16665,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -16672,7 +16688,7 @@
           "5": 74,
           "10": 146,
           "25": 366,
-          "99999": 10000
+          "65534": 918
         }
       },
       "choices": {
@@ -17692,6 +17708,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -17714,7 +17731,7 @@
           "5": 66,
           "10": 132,
           "25": 380,
-          "99999": 10000
+          "65534": 1065
         }
       },
       "choices": {
@@ -18719,6 +18736,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -18741,7 +18759,7 @@
           "5": 75,
           "10": 135,
           "25": 376,
-          "99999": 10000
+          "65534": 1238
         }
       },
       "choices": {
@@ -19762,6 +19780,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -19784,7 +19803,7 @@
           "5": 75,
           "10": 135,
           "25": 404,
-          "99999": 10000
+          "65534": 1386
         }
       },
       "choices": {
@@ -20805,6 +20824,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -20827,7 +20847,7 @@
           "5": 60,
           "10": 112,
           "25": 241,
-          "99999": 10000
+          "65534": 241
         }
       },
       "choices": {
@@ -21854,6 +21874,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 2,
           "distinctMotherRanks": 4,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 2
@@ -21876,7 +21897,7 @@
           "5": 64,
           "10": 124,
           "25": 330,
-          "99999": 10000
+          "65534": 565
         }
       },
       "choices": {
@@ -22892,6 +22913,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -22914,7 +22936,7 @@
           "5": 73,
           "10": 130,
           "25": 344,
-          "99999": 10000
+          "65534": 710
         }
       },
       "choices": {
@@ -23942,6 +23964,7 @@
               "physicalPaths": 7
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -23964,7 +23987,7 @@
           "5": 71,
           "10": 122,
           "25": 341,
-          "99999": 10000
+          "65534": 745
         }
       },
       "choices": {
@@ -24983,6 +25006,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -25005,7 +25029,7 @@
           "5": 75,
           "10": 130,
           "25": 356,
-          "99999": 10000
+          "65534": 858
         }
       },
       "choices": {
@@ -26021,6 +26045,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -26043,7 +26068,7 @@
           "5": 58,
           "10": 100,
           "25": 230,
-          "99999": 10000
+          "65534": 256
         }
       },
       "choices": {
@@ -27061,6 +27086,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -27083,7 +27109,7 @@
           "5": 61,
           "10": 110,
           "25": 283,
-          "99999": 10000
+          "65534": 407
         }
       },
       "choices": {
@@ -28090,6 +28116,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -28112,7 +28139,7 @@
           "5": 61,
           "10": 110,
           "25": 298,
-          "99999": 10000
+          "65534": 552
         }
       },
       "choices": {
@@ -29119,6 +29146,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -29141,7 +29169,7 @@
           "5": 58,
           "10": 112,
           "25": 305,
-          "99999": 10000
+          "65534": 832
         }
       },
       "choices": {
@@ -30149,6 +30177,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -30171,7 +30200,7 @@
           "5": 58,
           "10": 121,
           "25": 327,
-          "99999": 10000
+          "65534": 977
         }
       },
       "choices": {
@@ -31181,6 +31210,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -31203,7 +31233,7 @@
           "5": 58,
           "10": 112,
           "25": 279,
-          "99999": 10000
+          "65534": 344
         }
       },
       "choices": {
@@ -32217,6 +32247,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -32239,7 +32270,7 @@
           "5": 62,
           "10": 126,
           "25": 304,
-          "99999": 10000
+          "65534": 494
         }
       },
       "choices": {
@@ -33254,6 +33285,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -33276,7 +33308,7 @@
           "5": 62,
           "10": 133,
           "25": 308,
-          "99999": 10000
+          "65534": 552
         }
       },
       "choices": {
@@ -34294,6 +34326,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -34316,7 +34349,7 @@
           "5": 62,
           "10": 133,
           "25": 308,
-          "99999": 10000
+          "65534": 552
         }
       },
       "choices": {
@@ -35334,6 +35367,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -35356,7 +35390,7 @@
           "5": 65,
           "10": 137,
           "25": 357,
-          "99999": 10000
+          "65534": 698
         }
       },
       "choices": {
@@ -36372,6 +36406,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -36394,7 +36429,7 @@
           "5": 82,
           "10": 148,
           "25": 333,
-          "99999": 10000
+          "65534": 380
         }
       },
       "choices": {
@@ -37418,6 +37453,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -37440,7 +37476,7 @@
           "5": 72,
           "10": 141,
           "25": 386,
-          "99999": 10000
+          "65534": 690
         }
       },
       "choices": {
@@ -38474,6 +38510,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -38496,7 +38533,7 @@
           "5": 72,
           "10": 141,
           "25": 386,
-          "99999": 10000
+          "65534": 690
         }
       },
       "choices": {
@@ -39530,6 +39567,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -39552,7 +39590,7 @@
           "5": 72,
           "10": 141,
           "25": 386,
-          "99999": 10000
+          "65534": 690
         }
       },
       "choices": {
@@ -40586,6 +40624,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -40608,7 +40647,7 @@
           "5": 72,
           "10": 141,
           "25": 386,
-          "99999": 10000
+          "65534": 690
         }
       },
       "choices": {
@@ -41642,6 +41681,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -41664,7 +41704,7 @@
           "5": 80,
           "10": 132,
           "25": 332,
-          "99999": 10000
+          "65534": 504
         }
       },
       "choices": {
@@ -42690,6 +42730,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -42712,7 +42753,7 @@
           "5": 83,
           "10": 141,
           "25": 353,
-          "99999": 10000
+          "65534": 621
         }
       },
       "choices": {
@@ -43747,6 +43788,7 @@
               "physicalPaths": 9
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -43769,7 +43811,7 @@
           "5": 64,
           "10": 133,
           "25": 336,
-          "99999": 10000
+          "65534": 738
         }
       },
       "choices": {
@@ -44793,6 +44835,7 @@
               "physicalPaths": 7
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -44815,7 +44858,7 @@
           "5": 64,
           "10": 131,
           "25": 342,
-          "99999": 10000
+          "65534": 912
         }
       },
       "choices": {
@@ -45842,6 +45885,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -45864,7 +45908,7 @@
           "5": 64,
           "10": 131,
           "25": 342,
-          "99999": 10000
+          "65534": 912
         }
       },
       "choices": {
@@ -46891,6 +46935,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -46913,7 +46958,7 @@
           "5": 82,
           "10": 139,
           "25": 285,
-          "99999": 10000
+          "65534": 370
         }
       },
       "choices": {
@@ -47948,6 +47993,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -47970,7 +48016,7 @@
           "5": 82,
           "10": 139,
           "25": 327,
-          "99999": 10000
+          "65534": 548
         }
       },
       "choices": {
@@ -49005,6 +49051,7 @@
               "physicalPaths": 12
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -49027,7 +49074,7 @@
           "5": 81,
           "10": 145,
           "25": 365,
-          "99999": 10000
+          "65534": 762
         }
       },
       "choices": {
@@ -50062,6 +50109,7 @@
               "physicalPaths": 9
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -50084,7 +50132,7 @@
           "5": 54,
           "10": 129,
           "25": 356,
-          "99999": 10000
+          "65534": 875
         }
       },
       "choices": {
@@ -51097,6 +51145,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -51119,7 +51168,7 @@
           "5": 54,
           "10": 135,
           "25": 369,
-          "99999": 10000
+          "65534": 1021
         }
       },
       "choices": {
@@ -52130,6 +52179,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -52152,7 +52202,7 @@
           "5": 55,
           "10": 113,
           "25": 303,
-          "99999": 10000
+          "65534": 381
         }
       },
       "choices": {
@@ -53165,6 +53215,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -53187,7 +53238,7 @@
           "5": 66,
           "10": 122,
           "25": 321,
-          "99999": 10000
+          "65534": 500
         }
       },
       "choices": {
@@ -54208,6 +54259,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -54230,7 +54282,7 @@
           "5": 60,
           "10": 124,
           "25": 330,
-          "99999": 10000
+          "65534": 693
         }
       },
       "choices": {
@@ -55252,6 +55304,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -55274,7 +55327,7 @@
           "5": 60,
           "10": 124,
           "25": 335,
-          "99999": 10000
+          "65534": 790
         }
       },
       "choices": {
@@ -56293,6 +56346,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -56315,7 +56369,7 @@
           "5": 60,
           "10": 124,
           "25": 335,
-          "99999": 10000
+          "65534": 790
         }
       },
       "choices": {
@@ -57334,6 +57388,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -57356,7 +57411,7 @@
           "5": 77,
           "10": 123,
           "25": 282,
-          "99999": 10000
+          "65534": 290
         }
       },
       "choices": {
@@ -58386,6 +58441,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -58408,7 +58464,7 @@
           "5": 99,
           "10": 191,
           "25": 386,
-          "99999": 10000
+          "65534": 571
         }
       },
       "choices": {
@@ -59442,6 +59498,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -59464,7 +59521,7 @@
           "5": 99,
           "10": 191,
           "25": 386,
-          "99999": 10000
+          "65534": 663
         }
       },
       "choices": {
@@ -60498,6 +60555,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -60520,7 +60578,7 @@
           "5": 99,
           "10": 191,
           "25": 386,
-          "99999": 10000
+          "65534": 663
         }
       },
       "choices": {
@@ -61554,6 +61612,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -61576,7 +61635,7 @@
           "5": 86,
           "10": 177,
           "25": 404,
-          "99999": 10000
+          "65534": 806
         }
       },
       "choices": {
@@ -62606,6 +62665,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -62628,7 +62688,7 @@
           "5": 60,
           "10": 121,
           "25": 286,
-          "99999": 10000
+          "65534": 376
         }
       },
       "choices": {
@@ -63651,6 +63711,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -63673,7 +63734,7 @@
           "5": 64,
           "10": 112,
           "25": 337,
-          "99999": 10000
+          "65534": 578
         }
       },
       "choices": {
@@ -64692,6 +64753,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -64714,7 +64776,7 @@
           "5": 78,
           "10": 136,
           "25": 339,
-          "99999": 10000
+          "65534": 784
         }
       },
       "choices": {
@@ -65725,6 +65787,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -65747,7 +65810,7 @@
           "5": 87,
           "10": 161,
           "25": 396,
-          "99999": 10000
+          "65534": 1080
         }
       },
       "choices": {
@@ -66759,6 +66822,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -66781,7 +66845,7 @@
           "5": 87,
           "10": 161,
           "25": 396,
-          "99999": 10000
+          "65534": 1080
         }
       },
       "choices": {
@@ -67793,6 +67857,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -67815,7 +67880,7 @@
           "5": 63,
           "10": 113,
           "25": 171,
-          "99999": 10000
+          "65534": 171
         }
       },
       "choices": {
@@ -68830,6 +68895,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 2,
           "distinctMotherRanks": 4,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 2
@@ -68852,7 +68918,7 @@
           "5": 71,
           "10": 127,
           "25": 341,
-          "99999": 10000
+          "65534": 359
         }
       },
       "choices": {
@@ -69881,6 +69947,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -69903,7 +69970,7 @@
           "5": 71,
           "10": 127,
           "25": 335,
-          "99999": 10000
+          "65534": 409
         }
       },
       "choices": {
@@ -70930,6 +70997,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -70952,7 +71020,7 @@
           "5": 69,
           "10": 131,
           "25": 353,
-          "99999": 10000
+          "65534": 569
         }
       },
       "choices": {
@@ -71982,6 +72050,7 @@
               "physicalPaths": 1
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -72004,7 +72073,7 @@
           "5": 69,
           "10": 129,
           "25": 361,
-          "99999": 10000
+          "65534": 674
         }
       },
       "choices": {
@@ -73035,6 +73104,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -73057,7 +73127,7 @@
           "5": 78,
           "10": 128,
           "25": 312,
-          "99999": 10000
+          "65534": 401
         }
       },
       "choices": {
@@ -74089,6 +74159,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -74111,7 +74182,7 @@
           "5": 80,
           "10": 136,
           "25": 332,
-          "99999": 10000
+          "65534": 599
         }
       },
       "choices": {
@@ -75145,6 +75216,7 @@
               "physicalPaths": 1
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -75167,7 +75239,7 @@
           "5": 86,
           "10": 152,
           "25": 367,
-          "99999": 10000
+          "65534": 795
         }
       },
       "choices": {
@@ -76191,6 +76263,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -76213,7 +76286,7 @@
           "5": 88,
           "10": 165,
           "25": 397,
-          "99999": 10000
+          "65534": 1027
         }
       },
       "choices": {
@@ -77243,6 +77316,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -77265,7 +77339,7 @@
           "5": 99,
           "10": 168,
           "25": 410,
-          "99999": 10000
+          "65534": 1186
         }
       },
       "choices": {
@@ -78296,6 +78370,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -78318,7 +78393,7 @@
           "5": 66,
           "10": 134,
           "25": 298,
-          "99999": 10000
+          "65534": 368
         }
       },
       "choices": {
@@ -79334,6 +79409,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -79356,7 +79432,7 @@
           "5": 72,
           "10": 134,
           "25": 348,
-          "99999": 10000
+          "65534": 564
         }
       },
       "choices": {
@@ -80375,6 +80451,7 @@
               "physicalPaths": 7
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -80397,7 +80474,7 @@
           "5": 94,
           "10": 154,
           "25": 373,
-          "99999": 10000
+          "65534": 703
         }
       },
       "choices": {
@@ -81420,6 +81497,7 @@
               "physicalPaths": 7
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -81442,7 +81520,7 @@
           "5": 94,
           "10": 154,
           "25": 373,
-          "99999": 10000
+          "65534": 703
         }
       },
       "choices": {
@@ -82465,6 +82543,7 @@
               "physicalPaths": 7
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -82487,7 +82566,7 @@
           "5": 94,
           "10": 154,
           "25": 373,
-          "99999": 10000
+          "65534": 703
         }
       },
       "choices": {
@@ -83510,6 +83589,7 @@
               "physicalPaths": 7
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -83532,7 +83612,7 @@
           "5": 68,
           "10": 124,
           "25": 278,
-          "99999": 10000
+          "65534": 308
         }
       },
       "choices": {
@@ -84547,6 +84627,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -84569,7 +84650,7 @@
           "5": 56,
           "10": 116,
           "25": 317,
-          "99999": 10000
+          "65534": 529
         }
       },
       "choices": {
@@ -85575,6 +85656,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -85597,7 +85679,7 @@
           "5": 70,
           "10": 124,
           "25": 329,
-          "99999": 10000
+          "65534": 601
         }
       },
       "choices": {
@@ -86605,6 +86687,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -86627,7 +86710,7 @@
           "5": 70,
           "10": 124,
           "25": 339,
-          "99999": 10000
+          "65534": 667
         }
       },
       "choices": {
@@ -87638,6 +87721,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -87660,7 +87744,7 @@
           "5": 74,
           "10": 128,
           "25": 378,
-          "99999": 10000
+          "65534": 791
         }
       },
       "choices": {
@@ -88675,6 +88759,7 @@
               "physicalPaths": 9
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -88697,7 +88782,7 @@
           "5": 33,
           "10": 63,
           "25": 100,
-          "99999": 10000
+          "65534": 100
         }
       },
       "choices": {
@@ -89699,6 +89784,7 @@
               "physicalPaths": 8
             }
           ],
+          "backfilledSlots": 2,
           "distinctMotherRanks": 4,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 2
@@ -89721,7 +89807,7 @@
           "5": 33,
           "10": 73,
           "25": 271,
-          "99999": 10000
+          "65534": 344
         }
       },
       "choices": {
@@ -90724,6 +90810,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -90746,7 +90833,7 @@
           "5": 48,
           "10": 95,
           "25": 289,
-          "99999": 10000
+          "65534": 580
         }
       },
       "choices": {
@@ -91748,6 +91835,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -91770,7 +91858,7 @@
           "5": 48,
           "10": 95,
           "25": 305,
-          "99999": 10000
+          "65534": 1111
         }
       },
       "choices": {
@@ -92774,6 +92862,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -92796,7 +92885,7 @@
           "5": 48,
           "10": 95,
           "25": 305,
-          "99999": 10000
+          "65534": 1111
         }
       },
       "choices": {
@@ -93800,6 +93889,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -93822,7 +93912,7 @@
           "5": 62,
           "10": 103,
           "25": 166,
-          "99999": 10000
+          "65534": 166
         }
       },
       "choices": {
@@ -94835,6 +94925,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 2,
           "distinctMotherRanks": 4,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 2
@@ -94857,7 +94948,7 @@
           "5": 76,
           "10": 122,
           "25": 274,
-          "99999": 10000
+          "65534": 286
         }
       },
       "choices": {
@@ -95886,6 +95977,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -95908,7 +96000,7 @@
           "5": 82,
           "10": 148,
           "25": 349,
-          "99999": 10000
+          "65534": 691
         }
       },
       "choices": {
@@ -96938,6 +97030,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -96960,7 +97053,7 @@
           "5": 90,
           "10": 156,
           "25": 370,
-          "99999": 10000
+          "65534": 843
         }
       },
       "choices": {
@@ -97991,6 +98084,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -98013,7 +98107,7 @@
           "5": 93,
           "10": 165,
           "25": 389,
-          "99999": 10000
+          "65534": 941
         }
       },
       "choices": {
@@ -99046,6 +99140,7 @@
               "physicalPaths": 9
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -99068,7 +99163,7 @@
           "5": 70,
           "10": 124,
           "25": 309,
-          "99999": 10000
+          "65534": 309
         }
       },
       "choices": {
@@ -100080,6 +100175,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 2,
           "distinctMotherRanks": 4,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 2
@@ -100102,7 +100198,7 @@
           "5": 72,
           "10": 134,
           "25": 326,
-          "99999": 10000
+          "65534": 592
         }
       },
       "choices": {
@@ -101117,6 +101213,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -101139,7 +101236,7 @@
           "5": 64,
           "10": 140,
           "25": 379,
-          "99999": 10000
+          "65534": 769
         }
       },
       "choices": {
@@ -102152,6 +102249,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -102174,7 +102272,7 @@
           "5": 68,
           "10": 144,
           "25": 411,
-          "99999": 10000
+          "65534": 1003
         }
       },
       "choices": {
@@ -103184,6 +103282,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -103206,7 +103305,7 @@
           "5": 58,
           "10": 130,
           "25": 374,
-          "99999": 10000
+          "65534": 1144
         }
       },
       "choices": {
@@ -104209,6 +104308,7 @@
               "physicalPaths": 12
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -104231,7 +104331,7 @@
           "5": 76,
           "10": 133,
           "25": 303,
-          "99999": 10000
+          "65534": 303
         }
       },
       "choices": {
@@ -105252,6 +105352,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 2,
           "distinctMotherRanks": 4,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 2
@@ -105274,7 +105375,7 @@
           "5": 92,
           "10": 154,
           "25": 355,
-          "99999": 10000
+          "65534": 566
         }
       },
       "choices": {
@@ -106300,6 +106401,7 @@
               "physicalPaths": 6
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -106322,7 +106424,7 @@
           "5": 84,
           "10": 149,
           "25": 379,
-          "99999": 10000
+          "65534": 737
         }
       },
       "choices": {
@@ -107343,6 +107445,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -107365,7 +107468,7 @@
           "5": 82,
           "10": 160,
           "25": 404,
-          "99999": 10000
+          "65534": 1046
         }
       },
       "choices": {
@@ -108388,6 +108491,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -108410,7 +108514,7 @@
           "5": 82,
           "10": 160,
           "25": 404,
-          "99999": 10000
+          "65534": 1046
         }
       },
       "choices": {
@@ -109433,6 +109537,7 @@
               "physicalPaths": 5
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -109455,7 +109560,7 @@
           "5": 64,
           "10": 120,
           "25": 276,
-          "99999": 10000
+          "65534": 346
         }
       },
       "choices": {
@@ -110490,6 +110595,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -110512,7 +110618,7 @@
           "5": 64,
           "10": 120,
           "25": 276,
-          "99999": 10000
+          "65534": 346
         }
       },
       "choices": {
@@ -111547,6 +111653,7 @@
               "physicalPaths": 4
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -111569,7 +111676,7 @@
           "5": 64,
           "10": 124,
           "25": 340,
-          "99999": 10000
+          "65534": 632
         }
       },
       "choices": {
@@ -112601,6 +112708,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -112623,7 +112731,7 @@
           "5": 65,
           "10": 127,
           "25": 345,
-          "99999": 10000
+          "65534": 695
         }
       },
       "choices": {
@@ -113654,6 +113762,7 @@
               "physicalPaths": 2
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -113676,7 +113785,7 @@
           "5": 75,
           "10": 145,
           "25": 386,
-          "99999": 10000
+          "65534": 827
         }
       },
       "choices": {
@@ -114707,6 +114816,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -114729,7 +114839,7 @@
           "5": 67,
           "10": 115,
           "25": 148,
-          "99999": 10000
+          "65534": 148
         }
       },
       "choices": {
@@ -115759,6 +115869,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 2,
           "distinctMotherRanks": 4,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 2
@@ -115781,7 +115892,7 @@
           "5": 73,
           "10": 127,
           "25": 343,
-          "99999": 10000
+          "65534": 418
         }
       },
       "choices": {
@@ -116805,6 +116916,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -116827,7 +116939,7 @@
           "5": 77,
           "10": 149,
           "25": 372,
-          "99999": 10000
+          "65534": 683
         }
       },
       "choices": {
@@ -117859,6 +117971,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -117881,7 +117994,7 @@
           "5": 77,
           "10": 157,
           "25": 387,
-          "99999": 10000
+          "65534": 883
         }
       },
       "choices": {
@@ -118909,6 +119022,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
@@ -118931,7 +119045,7 @@
           "5": 77,
           "10": 157,
           "25": 387,
-          "99999": 10000
+          "65534": 883
         }
       },
       "choices": {
@@ -119959,6 +120073,7 @@
               "physicalPaths": 3
             }
           ],
+          "backfilledSlots": 0,
           "distinctMotherRanks": 5,
           "admittedFrom6to10": 2,
           "admittedFrom11plus": 4
