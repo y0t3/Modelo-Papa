@@ -238,7 +238,7 @@ function evaluate(){
    assert.ok(r.outsiders.some(x=>x.family===outsider),m);
    names[m].push(outsider);
   }
-  results.set(id(r),f.resultHeads.map(h=>{
+  results.set(id(r),f.heads.map(h=>{
    assert.match(h,/^\d{4}$/);
    const q=h.slice(-3);return [q,[...q].reverse().join('')].sort().join('/');
   }));
