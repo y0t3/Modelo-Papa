@@ -169,7 +169,7 @@ const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
   const physicalValues=kind==='vt4'?[...new Set(paths.map(p=>p.value))].sort():undefined;
   return {...group,paths,sourceCount,directRoots:uniqueEvents.size,d7Roots,d1Roots,
    physicalBlocks,branchBlocks,parentFamilies,state,rationale,importance,parentRank,
-   physicalValues};
+   ...(kind==='vt4'?{physicalValues}: {})};
  });
  all.sort((a,b)=>{
   for(let i=0;i<Math.max(a.importance.length,b.importance.length);i++){
