@@ -1,0 +1,1965 @@
+{
+  "date": "2026-10-13",
+  "days": 23,
+  "cuts": 115,
+  "preStats": {
+    "days": 23,
+    "cuts": 115,
+    "policies": [
+      "OFICIAL",
+      "NUEVA_1",
+      "NUEVA_2",
+      "NUEVA_7",
+      "ACTIVA_1",
+      "ACTIVA_2",
+      "ACTIVA_7",
+      "MADURA_HOY",
+      "NACE_HOY",
+      "CAMBIO_ACTUAL",
+      "MISMA_RUTA_2",
+      "RUTA_RENOVADA_2"
+    ],
+    "candidatesAll": 6389,
+    "nMature": 94,
+    "nBorn": 1042,
+    "nStatic": 4563,
+    "withPast1": 1549,
+    "withPast2": 2701,
+    "withPast7": 3761,
+    "sameRoute": 18,
+    "shortIncomplete": 1989,
+    "first5Dates": [
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19"
+    ],
+    "after5Dates": [
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08",
+      "2026-10-09",
+      "2026-10-10"
+    ],
+    "after7Dates": [
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08",
+      "2026-10-09",
+      "2026-10-10"
+    ]
+  },
+  "all": {
+    "scores": {
+      "OFICIAL": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamiliesInTop10": 17
+      },
+      "NUEVA_1": {
+        "cuts": 115,
+        "top3": 4,
+        "top5": 7,
+        "top10": 14,
+        "winningFamiliesInTop10": 16
+      },
+      "NUEVA_2": {
+        "cuts": 115,
+        "top3": 1,
+        "top5": 6,
+        "top10": 12,
+        "winningFamiliesInTop10": 14
+      },
+      "NUEVA_7": {
+        "cuts": 115,
+        "top3": 8,
+        "top5": 11,
+        "top10": 14,
+        "winningFamiliesInTop10": 15
+      },
+      "ACTIVA_1": {
+        "cuts": 115,
+        "top3": 3,
+        "top5": 6,
+        "top10": 8,
+        "winningFamiliesInTop10": 9
+      },
+      "ACTIVA_2": {
+        "cuts": 115,
+        "top3": 4,
+        "top5": 6,
+        "top10": 11,
+        "winningFamiliesInTop10": 11
+      },
+      "ACTIVA_7": {
+        "cuts": 115,
+        "top3": 4,
+        "top5": 5,
+        "top10": 11,
+        "winningFamiliesInTop10": 11
+      },
+      "MADURA_HOY": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 7,
+        "top10": 15,
+        "winningFamiliesInTop10": 17
+      },
+      "NACE_HOY": {
+        "cuts": 115,
+        "top3": 6,
+        "top5": 10,
+        "top10": 14,
+        "winningFamiliesInTop10": 16
+      },
+      "CAMBIO_ACTUAL": {
+        "cuts": 115,
+        "top3": 4,
+        "top5": 9,
+        "top10": 14,
+        "winningFamiliesInTop10": 16
+      },
+      "MISMA_RUTA_2": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamiliesInTop10": 17
+      },
+      "RUTA_RENOVADA_2": {
+        "cuts": 115,
+        "top3": 4,
+        "top5": 7,
+        "top10": 14,
+        "winningFamiliesInTop10": 16
+      }
+    },
+    "paired": {
+      "NUEVA_1": {
+        "gained": [
+          "2026-09-16|Matutino",
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-18|Nocturno",
+          "2026-09-30|Matutino",
+          "2026-10-08|Matutino"
+        ],
+        "changedFamilies": 91
+      },
+      "NUEVA_2": {
+        "gained": [
+          "2026-09-29|Nocturno",
+          "2026-09-30|Vespertino",
+          "2026-10-05|Vespertino"
+        ],
+        "lost": [
+          "2026-09-17|Previa",
+          "2026-09-18|Nocturno",
+          "2026-09-25|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-08|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedFamilies": 97
+      },
+      "NUEVA_7": {
+        "gained": [
+          "2026-09-26|Matutino",
+          "2026-10-01|Previa",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-08|Matutino"
+        ],
+        "changedFamilies": 77
+      },
+      "ACTIVA_1": {
+        "gained": [
+          "2026-09-28|Primera"
+        ],
+        "lost": [
+          "2026-09-17|Nocturno",
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedFamilies": 100
+      },
+      "ACTIVA_2": {
+        "gained": [
+          "2026-09-28|Primera",
+          "2026-09-28|Matutino",
+          "2026-10-01|Matutino"
+        ],
+        "lost": [
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "changedFamilies": 101
+      },
+      "ACTIVA_7": {
+        "gained": [
+          "2026-09-28|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "lost": [
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "changedFamilies": 80
+      },
+      "MADURA_HOY": {
+        "gained": [],
+        "lost": [],
+        "changedFamilies": 44
+      },
+      "NACE_HOY": {
+        "gained": [
+          "2026-09-15|Nocturno",
+          "2026-09-30|Vespertino",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-15|Matutino",
+          "2026-09-22|Primera",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ],
+        "changedFamilies": 77
+      },
+      "CAMBIO_ACTUAL": {
+        "gained": [
+          "2026-09-15|Nocturno",
+          "2026-09-30|Vespertino",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-15|Matutino",
+          "2026-09-22|Primera",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ],
+        "changedFamilies": 77
+      },
+      "MISMA_RUTA_2": {
+        "gained": [],
+        "lost": [],
+        "changedFamilies": 13
+      },
+      "RUTA_RENOVADA_2": {
+        "gained": [],
+        "lost": [
+          "2026-09-17|Previa"
+        ],
+        "changedFamilies": 7
+      }
+    }
+  },
+  "after5": {
+    "scores": {
+      "OFICIAL": {
+        "cuts": 90,
+        "top3": 3,
+        "top5": 6,
+        "top10": 11,
+        "winningFamiliesInTop10": 13
+      },
+      "NUEVA_1": {
+        "cuts": 90,
+        "top3": 2,
+        "top5": 5,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      },
+      "NUEVA_2": {
+        "cuts": 90,
+        "top3": 1,
+        "top5": 6,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      },
+      "NUEVA_7": {
+        "cuts": 90,
+        "top3": 6,
+        "top5": 9,
+        "top10": 10,
+        "winningFamiliesInTop10": 11
+      },
+      "ACTIVA_1": {
+        "cuts": 90,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "winningFamiliesInTop10": 5
+      },
+      "ACTIVA_2": {
+        "cuts": 90,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "winningFamiliesInTop10": 7
+      },
+      "ACTIVA_7": {
+        "cuts": 90,
+        "top3": 2,
+        "top5": 3,
+        "top10": 7,
+        "winningFamiliesInTop10": 7
+      },
+      "MADURA_HOY": {
+        "cuts": 90,
+        "top3": 3,
+        "top5": 5,
+        "top10": 11,
+        "winningFamiliesInTop10": 13
+      },
+      "NACE_HOY": {
+        "cuts": 90,
+        "top3": 5,
+        "top5": 8,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      },
+      "CAMBIO_ACTUAL": {
+        "cuts": 90,
+        "top3": 3,
+        "top5": 7,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      },
+      "MISMA_RUTA_2": {
+        "cuts": 90,
+        "top3": 3,
+        "top5": 6,
+        "top10": 11,
+        "winningFamiliesInTop10": 13
+      },
+      "RUTA_RENOVADA_2": {
+        "cuts": 90,
+        "top3": 3,
+        "top5": 6,
+        "top10": 11,
+        "winningFamiliesInTop10": 13
+      }
+    },
+    "paired": {
+      "NUEVA_1": {
+        "gained": [
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-30|Matutino",
+          "2026-10-08|Matutino"
+        ],
+        "changedFamilies": 73
+      },
+      "NUEVA_2": {
+        "gained": [
+          "2026-09-29|Nocturno",
+          "2026-09-30|Vespertino",
+          "2026-10-05|Vespertino"
+        ],
+        "lost": [
+          "2026-09-25|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-08|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedFamilies": 82
+      },
+      "NUEVA_7": {
+        "gained": [
+          "2026-09-26|Matutino",
+          "2026-10-01|Previa",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-08|Matutino"
+        ],
+        "changedFamilies": 77
+      },
+      "ACTIVA_1": {
+        "gained": [
+          "2026-09-28|Primera"
+        ],
+        "lost": [
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedFamilies": 81
+      },
+      "ACTIVA_2": {
+        "gained": [
+          "2026-09-28|Primera",
+          "2026-09-28|Matutino",
+          "2026-10-01|Matutino"
+        ],
+        "lost": [
+          "2026-09-22|Primera",
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "changedFamilies": 87
+      },
+      "ACTIVA_7": {
+        "gained": [
+          "2026-09-28|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "lost": [
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "changedFamilies": 80
+      },
+      "MADURA_HOY": {
+        "gained": [],
+        "lost": [],
+        "changedFamilies": 33
+      },
+      "NACE_HOY": {
+        "gained": [
+          "2026-09-30|Vespertino",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-22|Primera",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ],
+        "changedFamilies": 58
+      },
+      "CAMBIO_ACTUAL": {
+        "gained": [
+          "2026-09-30|Vespertino",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-22|Primera",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ],
+        "changedFamilies": 58
+      },
+      "MISMA_RUTA_2": {
+        "gained": [],
+        "lost": [],
+        "changedFamilies": 8
+      },
+      "RUTA_RENOVADA_2": {
+        "gained": [],
+        "lost": [],
+        "changedFamilies": 2
+      }
+    }
+  },
+  "after7": {
+    "scores": {
+      "OFICIAL": {
+        "cuts": 80,
+        "top3": 3,
+        "top5": 6,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      },
+      "NUEVA_1": {
+        "cuts": 80,
+        "top3": 2,
+        "top5": 5,
+        "top10": 9,
+        "winningFamiliesInTop10": 11
+      },
+      "NUEVA_2": {
+        "cuts": 80,
+        "top3": 1,
+        "top5": 5,
+        "top10": 9,
+        "winningFamiliesInTop10": 11
+      },
+      "NUEVA_7": {
+        "cuts": 80,
+        "top3": 6,
+        "top5": 9,
+        "top10": 9,
+        "winningFamiliesInTop10": 10
+      },
+      "ACTIVA_1": {
+        "cuts": 80,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "winningFamiliesInTop10": 5
+      },
+      "ACTIVA_2": {
+        "cuts": 80,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "winningFamiliesInTop10": 7
+      },
+      "ACTIVA_7": {
+        "cuts": 80,
+        "top3": 2,
+        "top5": 3,
+        "top10": 6,
+        "winningFamiliesInTop10": 6
+      },
+      "MADURA_HOY": {
+        "cuts": 80,
+        "top3": 3,
+        "top5": 5,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      },
+      "NACE_HOY": {
+        "cuts": 80,
+        "top3": 5,
+        "top5": 8,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      },
+      "CAMBIO_ACTUAL": {
+        "cuts": 80,
+        "top3": 3,
+        "top5": 7,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      },
+      "MISMA_RUTA_2": {
+        "cuts": 80,
+        "top3": 3,
+        "top5": 6,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      },
+      "RUTA_RENOVADA_2": {
+        "cuts": 80,
+        "top3": 3,
+        "top5": 6,
+        "top10": 10,
+        "winningFamiliesInTop10": 12
+      }
+    },
+    "paired": {
+      "NUEVA_1": {
+        "gained": [
+          "2026-09-29|Nocturno"
+        ],
+        "lost": [
+          "2026-09-30|Matutino",
+          "2026-10-08|Matutino"
+        ],
+        "changedFamilies": 64
+      },
+      "NUEVA_2": {
+        "gained": [
+          "2026-09-29|Nocturno",
+          "2026-09-30|Vespertino",
+          "2026-10-05|Vespertino"
+        ],
+        "lost": [
+          "2026-09-25|Matutino",
+          "2026-09-30|Matutino",
+          "2026-10-08|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedFamilies": 72
+      },
+      "NUEVA_7": {
+        "gained": [
+          "2026-09-26|Matutino",
+          "2026-10-01|Previa",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-08|Matutino"
+        ],
+        "changedFamilies": 77
+      },
+      "ACTIVA_1": {
+        "gained": [
+          "2026-09-28|Primera"
+        ],
+        "lost": [
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedFamilies": 72
+      },
+      "ACTIVA_2": {
+        "gained": [
+          "2026-09-28|Primera",
+          "2026-09-28|Matutino",
+          "2026-10-01|Matutino"
+        ],
+        "lost": [
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-02|Previa",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "changedFamilies": 77
+      },
+      "ACTIVA_7": {
+        "gained": [
+          "2026-09-28|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "lost": [
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "changedFamilies": 80
+      },
+      "MADURA_HOY": {
+        "gained": [],
+        "lost": [],
+        "changedFamilies": 29
+      },
+      "NACE_HOY": {
+        "gained": [
+          "2026-09-30|Vespertino",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ],
+        "changedFamilies": 51
+      },
+      "CAMBIO_ACTUAL": {
+        "gained": [
+          "2026-09-30|Vespertino",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ],
+        "changedFamilies": 51
+      },
+      "MISMA_RUTA_2": {
+        "gained": [],
+        "lost": [],
+        "changedFamilies": 8
+      },
+      "RUTA_RENOVADA_2": {
+        "gained": [],
+        "lost": [],
+        "changedFamilies": 2
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "NUEVA_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "NUEVA_2": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 2,
+          "winningFamiliesInTop10": 2
+        },
+        "NUEVA_7": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "ACTIVA_1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 2,
+          "winningFamiliesInTop10": 2
+        },
+        "ACTIVA_2": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 1,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "ACTIVA_7": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 1,
+          "top10": 2,
+          "winningFamiliesInTop10": 2
+        },
+        "MADURA_HOY": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "NACE_HOY": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "CAMBIO_ACTUAL": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "MISMA_RUTA_2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "RUTA_RENOVADA_2": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 2,
+          "winningFamiliesInTop10": 2
+        }
+      },
+      "paired": {
+        "NUEVA_1": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 9
+        },
+        "NUEVA_2": {
+          "gained": [],
+          "lost": [
+            "2026-09-17|Previa"
+          ],
+          "changedFamilies": 15
+        },
+        "NUEVA_7": {
+          "gained": [
+            "2026-10-01|Previa"
+          ],
+          "lost": [
+            "2026-10-02|Previa"
+          ],
+          "changedFamilies": 15
+        },
+        "ACTIVA_1": {
+          "gained": [],
+          "lost": [
+            "2026-09-24|Previa"
+          ],
+          "changedFamilies": 14
+        },
+        "ACTIVA_2": {
+          "gained": [],
+          "lost": [
+            "2026-09-24|Previa",
+            "2026-10-02|Previa"
+          ],
+          "changedFamilies": 17
+        },
+        "ACTIVA_7": {
+          "gained": [],
+          "lost": [
+            "2026-09-24|Previa"
+          ],
+          "changedFamilies": 16
+        },
+        "MADURA_HOY": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 0
+        },
+        "NACE_HOY": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 0
+        },
+        "CAMBIO_ACTUAL": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 0
+        },
+        "MISMA_RUTA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 1
+        },
+        "RUTA_RENOVADA_2": {
+          "gained": [],
+          "lost": [
+            "2026-09-17|Previa"
+          ],
+          "changedFamilies": 1
+        }
+      }
+    },
+    "Primera": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "NUEVA_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "NUEVA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 1,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "NUEVA_7": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "ACTIVA_1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 1,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "ACTIVA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 1,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "ACTIVA_7": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "MADURA_HOY": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "NACE_HOY": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        },
+        "CAMBIO_ACTUAL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        },
+        "MISMA_RUTA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "RUTA_RENOVADA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        }
+      },
+      "paired": {
+        "NUEVA_1": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 18
+        },
+        "NUEVA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 19
+        },
+        "NUEVA_7": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 16
+        },
+        "ACTIVA_1": {
+          "gained": [
+            "2026-09-28|Primera"
+          ],
+          "lost": [
+            "2026-09-22|Primera"
+          ],
+          "changedFamilies": 20
+        },
+        "ACTIVA_2": {
+          "gained": [
+            "2026-09-28|Primera"
+          ],
+          "lost": [
+            "2026-09-22|Primera"
+          ],
+          "changedFamilies": 21
+        },
+        "ACTIVA_7": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 16
+        },
+        "MADURA_HOY": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 10
+        },
+        "NACE_HOY": {
+          "gained": [],
+          "lost": [
+            "2026-09-22|Primera"
+          ],
+          "changedFamilies": 22
+        },
+        "CAMBIO_ACTUAL": {
+          "gained": [],
+          "lost": [
+            "2026-09-22|Primera"
+          ],
+          "changedFamilies": 22
+        },
+        "MISMA_RUTA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 2
+        },
+        "RUTA_RENOVADA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 1
+        }
+      }
+    },
+    "Matutino": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamiliesInTop10": 9
+        },
+        "NUEVA_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 2,
+          "top10": 7,
+          "winningFamiliesInTop10": 8
+        },
+        "NUEVA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 3,
+          "top10": 5,
+          "winningFamiliesInTop10": 7
+        },
+        "NUEVA_7": {
+          "cuts": 23,
+          "top3": 4,
+          "top5": 5,
+          "top10": 6,
+          "winningFamiliesInTop10": 6
+        },
+        "ACTIVA_1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 4,
+          "winningFamiliesInTop10": 4
+        },
+        "ACTIVA_2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 6,
+          "winningFamiliesInTop10": 6
+        },
+        "ACTIVA_7": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 5,
+          "winningFamiliesInTop10": 5
+        },
+        "MADURA_HOY": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 8,
+          "winningFamiliesInTop10": 9
+        },
+        "NACE_HOY": {
+          "cuts": 23,
+          "top3": 3,
+          "top5": 4,
+          "top10": 5,
+          "winningFamiliesInTop10": 6
+        },
+        "CAMBIO_ACTUAL": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 4,
+          "top10": 5,
+          "winningFamiliesInTop10": 6
+        },
+        "MISMA_RUTA_2": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamiliesInTop10": 9
+        },
+        "RUTA_RENOVADA_2": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamiliesInTop10": 9
+        }
+      },
+      "paired": {
+        "NUEVA_1": {
+          "gained": [
+            "2026-09-16|Matutino"
+          ],
+          "lost": [
+            "2026-09-30|Matutino",
+            "2026-10-08|Matutino"
+          ],
+          "changedFamilies": 20
+        },
+        "NUEVA_2": {
+          "gained": [],
+          "lost": [
+            "2026-09-25|Matutino",
+            "2026-09-30|Matutino",
+            "2026-10-08|Matutino"
+          ],
+          "changedFamilies": 21
+        },
+        "NUEVA_7": {
+          "gained": [
+            "2026-09-26|Matutino"
+          ],
+          "lost": [
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino",
+            "2026-10-08|Matutino"
+          ],
+          "changedFamilies": 16
+        },
+        "ACTIVA_1": {
+          "gained": [],
+          "lost": [
+            "2026-09-24|Matutino",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino",
+            "2026-10-03|Matutino"
+          ],
+          "changedFamilies": 22
+        },
+        "ACTIVA_2": {
+          "gained": [
+            "2026-09-28|Matutino",
+            "2026-10-01|Matutino"
+          ],
+          "lost": [
+            "2026-09-24|Matutino",
+            "2026-09-29|Matutino",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "changedFamilies": 21
+        },
+        "ACTIVA_7": {
+          "gained": [
+            "2026-09-28|Matutino",
+            "2026-10-02|Matutino"
+          ],
+          "lost": [
+            "2026-09-24|Matutino",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "changedFamilies": 16
+        },
+        "MADURA_HOY": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 13
+        },
+        "NACE_HOY": {
+          "gained": [],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedFamilies": 22
+        },
+        "CAMBIO_ACTUAL": {
+          "gained": [],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedFamilies": 22
+        },
+        "MISMA_RUTA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 2
+        },
+        "RUTA_RENOVADA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 1
+        }
+      }
+    },
+    "Vespertino": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        },
+        "NUEVA_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        },
+        "NUEVA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamiliesInTop10": 2
+        },
+        "NUEVA_7": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 1,
+          "top10": 1,
+          "winningFamiliesInTop10": 1
+        },
+        "ACTIVA_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        },
+        "ACTIVA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        },
+        "ACTIVA_7": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        },
+        "MADURA_HOY": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        },
+        "NACE_HOY": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 1,
+          "top10": 2,
+          "winningFamiliesInTop10": 2
+        },
+        "CAMBIO_ACTUAL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamiliesInTop10": 2
+        },
+        "MISMA_RUTA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        },
+        "RUTA_RENOVADA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamiliesInTop10": 0
+        }
+      },
+      "paired": {
+        "NUEVA_1": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 22
+        },
+        "NUEVA_2": {
+          "gained": [
+            "2026-09-30|Vespertino",
+            "2026-10-05|Vespertino"
+          ],
+          "lost": [],
+          "changedFamilies": 21
+        },
+        "NUEVA_7": {
+          "gained": [
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [],
+          "changedFamilies": 16
+        },
+        "ACTIVA_1": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 22
+        },
+        "ACTIVA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 21
+        },
+        "ACTIVA_7": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 16
+        },
+        "MADURA_HOY": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 11
+        },
+        "NACE_HOY": {
+          "gained": [
+            "2026-09-30|Vespertino",
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [],
+          "changedFamilies": 18
+        },
+        "CAMBIO_ACTUAL": {
+          "gained": [
+            "2026-09-30|Vespertino",
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [],
+          "changedFamilies": 18
+        },
+        "MISMA_RUTA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 4
+        },
+        "RUTA_RENOVADA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 2
+        }
+      }
+    },
+    "Nocturno": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamiliesInTop10": 4
+        },
+        "NUEVA_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamiliesInTop10": 4
+        },
+        "NUEVA_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamiliesInTop10": 2
+        },
+        "NUEVA_7": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 3,
+          "winningFamiliesInTop10": 4
+        },
+        "ACTIVA_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 1,
+          "top10": 1,
+          "winningFamiliesInTop10": 2
+        },
+        "ACTIVA_2": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 1,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "ACTIVA_7": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 1,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "MADURA_HOY": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamiliesInTop10": 4
+        },
+        "NACE_HOY": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 4,
+          "winningFamiliesInTop10": 5
+        },
+        "CAMBIO_ACTUAL": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 4,
+          "winningFamiliesInTop10": 5
+        },
+        "MISMA_RUTA_2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamiliesInTop10": 4
+        },
+        "RUTA_RENOVADA_2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamiliesInTop10": 4
+        }
+      },
+      "paired": {
+        "NUEVA_1": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno"
+          ],
+          "changedFamilies": 22
+        },
+        "NUEVA_2": {
+          "gained": [
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno",
+            "2026-10-10|Nocturno"
+          ],
+          "changedFamilies": 21
+        },
+        "NUEVA_7": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 14
+        },
+        "ACTIVA_1": {
+          "gained": [],
+          "lost": [
+            "2026-09-17|Nocturno",
+            "2026-10-10|Nocturno"
+          ],
+          "changedFamilies": 22
+        },
+        "ACTIVA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 21
+        },
+        "ACTIVA_7": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 16
+        },
+        "MADURA_HOY": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 10
+        },
+        "NACE_HOY": {
+          "gained": [
+            "2026-09-15|Nocturno"
+          ],
+          "lost": [],
+          "changedFamilies": 15
+        },
+        "CAMBIO_ACTUAL": {
+          "gained": [
+            "2026-09-15|Nocturno"
+          ],
+          "lost": [],
+          "changedFamilies": 15
+        },
+        "MISMA_RUTA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 4
+        },
+        "RUTA_RENOVADA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 2
+        }
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamiliesInTop10": 10
+        },
+        "NUEVA_1": {
+          "cuts": 70,
+          "top3": 2,
+          "top5": 3,
+          "top10": 10,
+          "winningFamiliesInTop10": 10
+        },
+        "NUEVA_2": {
+          "cuts": 70,
+          "top3": 0,
+          "top5": 3,
+          "top10": 8,
+          "winningFamiliesInTop10": 9
+        },
+        "NUEVA_7": {
+          "cuts": 70,
+          "top3": 5,
+          "top5": 6,
+          "top10": 9,
+          "winningFamiliesInTop10": 9
+        },
+        "ACTIVA_1": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 5,
+          "winningFamiliesInTop10": 6
+        },
+        "ACTIVA_2": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 5,
+          "top10": 8,
+          "winningFamiliesInTop10": 8
+        },
+        "ACTIVA_7": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 7,
+          "winningFamiliesInTop10": 7
+        },
+        "MADURA_HOY": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamiliesInTop10": 10
+        },
+        "NACE_HOY": {
+          "cuts": 70,
+          "top3": 1,
+          "top5": 4,
+          "top10": 8,
+          "winningFamiliesInTop10": 8
+        },
+        "CAMBIO_ACTUAL": {
+          "cuts": 70,
+          "top3": 1,
+          "top5": 4,
+          "top10": 8,
+          "winningFamiliesInTop10": 8
+        },
+        "MISMA_RUTA_2": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamiliesInTop10": 10
+        },
+        "RUTA_RENOVADA_2": {
+          "cuts": 70,
+          "top3": 2,
+          "top5": 3,
+          "top10": 9,
+          "winningFamiliesInTop10": 9
+        }
+      },
+      "paired": {
+        "NUEVA_1": {
+          "gained": [
+            "2026-09-16|Matutino",
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno",
+            "2026-09-30|Matutino"
+          ],
+          "changedFamilies": 57
+        },
+        "NUEVA_2": {
+          "gained": [
+            "2026-09-29|Nocturno",
+            "2026-09-30|Vespertino"
+          ],
+          "lost": [
+            "2026-09-17|Previa",
+            "2026-09-18|Nocturno",
+            "2026-09-25|Matutino",
+            "2026-09-30|Matutino"
+          ],
+          "changedFamilies": 58
+        },
+        "NUEVA_7": {
+          "gained": [
+            "2026-09-26|Matutino"
+          ],
+          "lost": [
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedFamilies": 34
+        },
+        "ACTIVA_1": {
+          "gained": [
+            "2026-09-28|Primera"
+          ],
+          "lost": [
+            "2026-09-17|Nocturno",
+            "2026-09-22|Primera",
+            "2026-09-24|Previa",
+            "2026-09-24|Matutino",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedFamilies": 60
+        },
+        "ACTIVA_2": {
+          "gained": [
+            "2026-09-28|Primera",
+            "2026-09-28|Matutino"
+          ],
+          "lost": [
+            "2026-09-22|Primera",
+            "2026-09-24|Previa",
+            "2026-09-24|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedFamilies": 58
+        },
+        "ACTIVA_7": {
+          "gained": [
+            "2026-09-28|Matutino"
+          ],
+          "lost": [
+            "2026-09-24|Previa",
+            "2026-09-24|Matutino",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedFamilies": 35
+        },
+        "MADURA_HOY": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 26
+        },
+        "NACE_HOY": {
+          "gained": [
+            "2026-09-15|Nocturno",
+            "2026-09-30|Vespertino"
+          ],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-22|Primera",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedFamilies": 47
+        },
+        "CAMBIO_ACTUAL": {
+          "gained": [
+            "2026-09-15|Nocturno",
+            "2026-09-30|Vespertino"
+          ],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-22|Primera",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedFamilies": 47
+        },
+        "MISMA_RUTA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 11
+        },
+        "RUTA_RENOVADA_2": {
+          "gained": [],
+          "lost": [
+            "2026-09-17|Previa"
+          ],
+          "changedFamilies": 7
+        }
+      }
+    },
+    "2026-10": {
+      "scores": {
+        "OFICIAL": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamiliesInTop10": 7
+        },
+        "NUEVA_1": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 4,
+          "winningFamiliesInTop10": 6
+        },
+        "NUEVA_2": {
+          "cuts": 45,
+          "top3": 1,
+          "top5": 3,
+          "top10": 4,
+          "winningFamiliesInTop10": 5
+        },
+        "NUEVA_7": {
+          "cuts": 45,
+          "top3": 3,
+          "top5": 5,
+          "top10": 5,
+          "winningFamiliesInTop10": 6
+        },
+        "ACTIVA_1": {
+          "cuts": 45,
+          "top3": 0,
+          "top5": 2,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "ACTIVA_2": {
+          "cuts": 45,
+          "top3": 1,
+          "top5": 1,
+          "top10": 3,
+          "winningFamiliesInTop10": 3
+        },
+        "ACTIVA_7": {
+          "cuts": 45,
+          "top3": 1,
+          "top5": 1,
+          "top10": 4,
+          "winningFamiliesInTop10": 4
+        },
+        "MADURA_HOY": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 3,
+          "top10": 5,
+          "winningFamiliesInTop10": 7
+        },
+        "NACE_HOY": {
+          "cuts": 45,
+          "top3": 5,
+          "top5": 6,
+          "top10": 6,
+          "winningFamiliesInTop10": 8
+        },
+        "CAMBIO_ACTUAL": {
+          "cuts": 45,
+          "top3": 3,
+          "top5": 5,
+          "top10": 6,
+          "winningFamiliesInTop10": 8
+        },
+        "MISMA_RUTA_2": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamiliesInTop10": 7
+        },
+        "RUTA_RENOVADA_2": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamiliesInTop10": 7
+        }
+      },
+      "paired": {
+        "NUEVA_1": {
+          "gained": [],
+          "lost": [
+            "2026-10-08|Matutino"
+          ],
+          "changedFamilies": 34
+        },
+        "NUEVA_2": {
+          "gained": [
+            "2026-10-05|Vespertino"
+          ],
+          "lost": [
+            "2026-10-08|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "changedFamilies": 39
+        },
+        "NUEVA_7": {
+          "gained": [
+            "2026-10-01|Previa",
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [
+            "2026-10-02|Previa",
+            "2026-10-08|Matutino"
+          ],
+          "changedFamilies": 43
+        },
+        "ACTIVA_1": {
+          "gained": [],
+          "lost": [
+            "2026-10-03|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "changedFamilies": 40
+        },
+        "ACTIVA_2": {
+          "gained": [
+            "2026-10-01|Matutino"
+          ],
+          "lost": [
+            "2026-10-02|Previa",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "changedFamilies": 43
+        },
+        "ACTIVA_7": {
+          "gained": [
+            "2026-10-02|Matutino"
+          ],
+          "lost": [
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "changedFamilies": 45
+        },
+        "MADURA_HOY": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 18
+        },
+        "NACE_HOY": {
+          "gained": [
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [],
+          "changedFamilies": 30
+        },
+        "CAMBIO_ACTUAL": {
+          "gained": [
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [],
+          "changedFamilies": 30
+        },
+        "MISMA_RUTA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 2
+        },
+        "RUTA_RENOVADA_2": {
+          "gained": [],
+          "lost": [],
+          "changedFamilies": 0
+        }
+      }
+    }
+  },
+  "winningStatusInAnchoredPool": {
+    "mature": {
+      "exposures": 94,
+      "winningExposures": 0,
+      "top10RealExposures": 45,
+      "top10RealWinning": 0
+    },
+    "born": {
+      "exposures": 1042,
+      "winningExposures": 10,
+      "top10RealExposures": 176,
+      "top10RealWinning": 4
+    },
+    "static": {
+      "exposures": 5253,
+      "winningExposures": 54,
+      "top10RealExposures": 929,
+      "top10RealWinning": 13
+    }
+  },
+  "seal": {
+    "inputPre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "inputModelSha": "7715327e6922c3c6f032c1075e6bb08927d5ef51c41552fa9e5758814c746074",
+    "protocol": "63f5fd02dae2dada124779022cdaaea7ca34beac39fb81519ba80bde955bff47",
+    "script": "d4ab11a534aae42ff1f20aede81622ac0245a6069d4b3af348772e452202070a",
+    "generatedPre": "d5ec68c90905904d39094c91459109cae0a5baefac10769d3d859538f6212c86"
+  },
+  "sourcePost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "caveat": "Mismo histórico fuertemente reutilizado para diseñar reglas. Comparaciones exploratorias; sin ventaja predictiva confirmada. Familias PRE y caminos físicos inalterados."
+}
