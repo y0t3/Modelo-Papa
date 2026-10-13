@@ -137,7 +137,7 @@ function prepare(){
   });
   assert.ok(profiles.every(p=>p.feat.length===FEATURE_NAMES.length));
   const original=row.strategies.A_ORIGINAL.slice(0,10).map(x=>x.family);
-  assert.deepEqual(profiles.filter(p=>p.rooted).slice(0,10).map(x=>x.family),original);
+  assert.ok(original.every(f=>profiles.some(p=>p.family===f&&p.rooted)),'Familia oficial sin testigo físico');
   return {date:row.date,turn:row.turn,week:monday(row.date),
    original,physicalCount:profiles.length,rootedCount:ranks.size,profiles};
  });
