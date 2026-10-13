@@ -1,0 +1,2102 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "comparisonMadeAfterDraw": true,
+  "uniqueCutsWithPhysicallyReachableFourByFiveMothers": 6,
+  "physicalWinningGroupExposures": 7,
+  "baseSelectedWinningGroupExposures": 4,
+  "rejectedWinningGroupExposures": 3,
+  "missedAmongPhysicallyReachable": [
+    {
+      "head": "2735",
+      "family": "2735/3725",
+      "mother": "273/372",
+      "motherRank": 3,
+      "siblingRank": 5,
+      "paths": 4,
+      "shapes": 4,
+      "selectedSisters": [
+        {
+          "family": "2739/3729",
+          "rank": 21,
+          "paths": 4,
+          "blocks": 3,
+          "sources": 1,
+          "shapes": 4,
+          "actualWinner": false
+        },
+        {
+          "family": "9273/9372",
+          "rank": 22,
+          "paths": 4,
+          "blocks": 3,
+          "sources": 1,
+          "shapes": 4,
+          "actualWinner": false
+        }
+      ]
+    },
+    {
+      "head": "5832",
+      "family": "5238/5832",
+      "mother": "238/832",
+      "motherRank": 4,
+      "siblingRank": 5,
+      "paths": 6,
+      "shapes": 6,
+      "selectedSisters": [
+        {
+          "family": "2384/8324",
+          "rank": 33,
+          "paths": 3,
+          "blocks": 3,
+          "sources": 1,
+          "shapes": 3,
+          "actualWinner": false
+        },
+        {
+          "family": "2385/8325",
+          "rank": 34,
+          "paths": 6,
+          "blocks": 3,
+          "sources": 1,
+          "shapes": 6,
+          "actualWinner": false
+        }
+      ]
+    },
+    {
+      "head": "3729",
+      "family": "3729/3927",
+      "mother": "729/927",
+      "motherRank": 5,
+      "siblingRank": 4,
+      "paths": 5,
+      "shapes": 5,
+      "selectedSisters": [
+        {
+          "family": "7297/9277",
+          "rank": 27,
+          "paths": 12,
+          "blocks": 6,
+          "sources": 1,
+          "shapes": 12,
+          "actualWinner": false
+        },
+        {
+          "family": "7729/7927",
+          "rank": 28,
+          "paths": 12,
+          "blocks": 6,
+          "sources": 1,
+          "shapes": 12,
+          "actualWinner": false
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "heads": [
+        "6317",
+        "8280",
+        "7447",
+        "3831",
+        "2735"
+      ],
+      "fullMotherInventory": [
+        {
+          "family": "455/554",
+          "rank": 1,
+          "paths": 5,
+          "d1": 1,
+          "d7": 0,
+          "branch": 2
+        },
+        {
+          "family": "248/842",
+          "rank": 2,
+          "paths": 2,
+          "d1": 2,
+          "d7": 0,
+          "branch": 1
+        },
+        {
+          "family": "273/372",
+          "rank": 3,
+          "paths": 2,
+          "d1": 2,
+          "d7": 0,
+          "branch": 1
+        },
+        {
+          "family": "547/745",
+          "rank": 4,
+          "paths": 2,
+          "d1": 2,
+          "d7": 0,
+          "branch": 1
+        },
+        {
+          "family": "557/755",
+          "rank": 5,
+          "paths": 2,
+          "d1": 2,
+          "d7": 0,
+          "branch": 1
+        }
+      ],
+      "winners": [
+        {
+          "headMatched": [
+            "2735"
+          ],
+          "family": "2735/3725",
+          "mother": "273/372",
+          "motherRank": 3,
+          "actualInBase": false,
+          "originalVt4Rank": 25,
+          "siblingRankByOriginalOrder": 5,
+          "siblingsCompeting": 12,
+          "own": {
+            "values": [
+              "2735",
+              "3725"
+            ],
+            "sourceCount": 1,
+            "blocks": 2,
+            "paths": 4,
+            "uniqueShapes": 4,
+            "fractionUnique": 1,
+            "physicalEvidence": [
+              {
+                "source": "prevNocturno",
+                "read": "3725",
+                "cells": [
+                  "4:0",
+                  "3:0",
+                  "4:1",
+                  "3:1"
+                ],
+                "shape": "0:1>1:1>0:0>1:0",
+                "maternalMother": "273/372"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "2735",
+                "cells": [
+                  "4:1",
+                  "3:0",
+                  "4:0",
+                  "3:1"
+                ],
+                "shape": "0:1>1:0>0:0>1:1",
+                "maternalMother": "273/372"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "2735",
+                "cells": [
+                  "2:0",
+                  "3:0",
+                  "4:0",
+                  "3:1"
+                ],
+                "shape": "0:0>1:0>2:0>1:1",
+                "maternalMother": "273/372"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "3725",
+                "cells": [
+                  "4:0",
+                  "3:0",
+                  "2:0",
+                  "3:1"
+                ],
+                "shape": "1:1>0:0>1:0>2:0",
+                "maternalMother": "273/372"
+              }
+            ]
+          },
+          "siblingsSelectedInCurrentTop10": [
+            {
+              "family": "2739/3729",
+              "rank": 21,
+              "readableValues": [
+                "2739",
+                "3729"
+              ],
+              "sources": 1,
+              "blocks": 3,
+              "paths": 4,
+              "shapes": 4,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "prevNocturno",
+                  "read": "3729",
+                  "cells": [
+                    "4:0",
+                    "3:0",
+                    "4:1",
+                    "5:1"
+                  ],
+                  "shape": "1:0>0:0>1:1>2:1",
+                  "maternalMother": "273/372"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "2739",
+                  "cells": [
+                    "4:1",
+                    "3:0",
+                    "4:0",
+                    "5:1"
+                  ],
+                  "shape": "1:1>0:0>1:0>2:1",
+                  "maternalMother": "273/372"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "2739",
+                  "cells": [
+                    "2:0",
+                    "3:0",
+                    "4:0",
+                    "5:1"
+                  ],
+                  "shape": "0:0>1:0>2:0>3:1",
+                  "maternalMother": "273/372"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "3729",
+                  "cells": [
+                    "4:0",
+                    "3:0",
+                    "2:0",
+                    "1:1"
+                  ],
+                  "shape": "0:1>1:0>2:0>3:0",
+                  "maternalMother": "273/372"
+                }
+              ],
+              "actualWinner": false
+            },
+            {
+              "family": "9273/9372",
+              "rank": 22,
+              "readableValues": [
+                "9273",
+                "9372"
+              ],
+              "sources": 1,
+              "blocks": 3,
+              "paths": 4,
+              "shapes": 4,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "prevNocturno",
+                  "read": "9372",
+                  "cells": [
+                    "5:1",
+                    "4:0",
+                    "3:0",
+                    "4:1"
+                  ],
+                  "shape": "1:1>0:0>1:0>2:1",
+                  "maternalMother": "273/372"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "9273",
+                  "cells": [
+                    "5:1",
+                    "4:1",
+                    "3:0",
+                    "4:0"
+                  ],
+                  "shape": "1:0>0:0>1:1>2:1",
+                  "maternalMother": "273/372"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "9273",
+                  "cells": [
+                    "1:1",
+                    "2:0",
+                    "3:0",
+                    "4:0"
+                  ],
+                  "shape": "0:1>1:0>2:0>3:0",
+                  "maternalMother": "273/372"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "9372",
+                  "cells": [
+                    "5:1",
+                    "4:0",
+                    "3:0",
+                    "2:0"
+                  ],
+                  "shape": "0:0>1:0>2:0>3:1",
+                  "maternalMother": "273/372"
+                }
+              ],
+              "actualWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "heads": [
+        "4661",
+        "1846",
+        "3159",
+        "3714",
+        "7474"
+      ],
+      "fullMotherInventory": [
+        {
+          "family": "139/931",
+          "rank": 1,
+          "paths": 4,
+          "d1": 0,
+          "d7": 2,
+          "branch": 2
+        },
+        {
+          "family": "394/493",
+          "rank": 2,
+          "paths": 4,
+          "d1": 0,
+          "d7": 3,
+          "branch": 1
+        },
+        {
+          "family": "194/491",
+          "rank": 3,
+          "paths": 3,
+          "d1": 0,
+          "d7": 2,
+          "branch": 1
+        },
+        {
+          "family": "395/593",
+          "rank": 4,
+          "paths": 3,
+          "d1": 0,
+          "d7": 1,
+          "branch": 1
+        },
+        {
+          "family": "159/951",
+          "rank": 5,
+          "paths": 2,
+          "d1": 0,
+          "d7": 1,
+          "branch": 1
+        }
+      ],
+      "winners": [
+        {
+          "headMatched": [
+            "3159"
+          ],
+          "family": "3159/3951",
+          "mother": "159/951",
+          "motherRank": 5,
+          "actualInBase": true,
+          "originalVt4Rank": 54,
+          "siblingRankByOriginalOrder": 2,
+          "siblingsCompeting": 8,
+          "own": {
+            "values": [
+              "3159",
+              "3951"
+            ],
+            "sourceCount": 1,
+            "blocks": 4,
+            "paths": 7,
+            "uniqueShapes": 7,
+            "fractionUnique": 1,
+            "physicalEvidence": [
+              {
+                "source": "prevNocturno",
+                "read": "3951",
+                "cells": [
+                  "1:0",
+                  "2:0",
+                  "1:1",
+                  "2:1"
+                ],
+                "shape": "0:0>1:0>0:1>1:1",
+                "maternalMother": "159/951"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "3951",
+                "cells": [
+                  "3:0",
+                  "2:0",
+                  "1:1",
+                  "2:1"
+                ],
+                "shape": "1:1>0:1>1:0>2:0",
+                "maternalMother": "159/951"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "3159",
+                "cells": [
+                  "1:0",
+                  "2:1",
+                  "1:1",
+                  "2:0"
+                ],
+                "shape": "0:0>1:1>0:1>1:0",
+                "maternalMother": "159/951"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "3159",
+                "cells": [
+                  "3:0",
+                  "2:1",
+                  "1:1",
+                  "2:0"
+                ],
+                "shape": "1:0>0:1>1:1>2:0",
+                "maternalMother": "159/951"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "3951",
+                "cells": [
+                  "1:0",
+                  "0:1",
+                  "1:1",
+                  "2:1"
+                ],
+                "shape": "1:0>0:1>1:1>2:1",
+                "maternalMother": "159/951"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "3159",
+                "cells": [
+                  "1:0",
+                  "2:1",
+                  "1:1",
+                  "0:1"
+                ],
+                "shape": "0:1>1:1>2:1>1:0",
+                "maternalMother": "159/951"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "3159",
+                "cells": [
+                  "3:0",
+                  "2:1",
+                  "1:1",
+                  "0:1"
+                ],
+                "shape": "0:1>1:1>2:1>3:0",
+                "maternalMother": "159/951"
+              }
+            ]
+          },
+          "siblingsSelectedInCurrentTop10": [
+            {
+              "family": "3159/3951",
+              "rank": 54,
+              "readableValues": [
+                "3159",
+                "3951"
+              ],
+              "sources": 1,
+              "blocks": 4,
+              "paths": 7,
+              "shapes": 7,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "prevNocturno",
+                  "read": "3951",
+                  "cells": [
+                    "1:0",
+                    "2:0",
+                    "1:1",
+                    "2:1"
+                  ],
+                  "shape": "0:0>1:0>0:1>1:1",
+                  "maternalMother": "159/951"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "3951",
+                  "cells": [
+                    "3:0",
+                    "2:0",
+                    "1:1",
+                    "2:1"
+                  ],
+                  "shape": "1:1>0:1>1:0>2:0",
+                  "maternalMother": "159/951"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "3159",
+                  "cells": [
+                    "1:0",
+                    "2:1",
+                    "1:1",
+                    "2:0"
+                  ],
+                  "shape": "0:0>1:1>0:1>1:0",
+                  "maternalMother": "159/951"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "3159",
+                  "cells": [
+                    "3:0",
+                    "2:1",
+                    "1:1",
+                    "2:0"
+                  ],
+                  "shape": "1:0>0:1>1:1>2:0",
+                  "maternalMother": "159/951"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "3951",
+                  "cells": [
+                    "1:0",
+                    "0:1",
+                    "1:1",
+                    "2:1"
+                  ],
+                  "shape": "1:0>0:1>1:1>2:1",
+                  "maternalMother": "159/951"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "3159",
+                  "cells": [
+                    "1:0",
+                    "2:1",
+                    "1:1",
+                    "0:1"
+                  ],
+                  "shape": "0:1>1:1>2:1>1:0",
+                  "maternalMother": "159/951"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "3159",
+                  "cells": [
+                    "3:0",
+                    "2:1",
+                    "1:1",
+                    "0:1"
+                  ],
+                  "shape": "0:1>1:1>2:1>3:0",
+                  "maternalMother": "159/951"
+                }
+              ],
+              "actualWinner": true
+            },
+            {
+              "family": "1594/9514",
+              "rank": 55,
+              "readableValues": [
+                "1594",
+                "9514"
+              ],
+              "sources": 1,
+              "blocks": 2,
+              "paths": 3,
+              "shapes": 3,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "prevNocturno",
+                  "read": "9514",
+                  "cells": [
+                    "2:0",
+                    "1:1",
+                    "2:1",
+                    "3:1"
+                  ],
+                  "shape": "1:0>0:1>1:1>2:1",
+                  "maternalMother": "159/951"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "1594",
+                  "cells": [
+                    "2:1",
+                    "1:1",
+                    "2:0",
+                    "3:1"
+                  ],
+                  "shape": "1:1>0:1>1:0>2:1",
+                  "maternalMother": "159/951"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "9514",
+                  "cells": [
+                    "0:1",
+                    "1:1",
+                    "2:1",
+                    "3:1"
+                  ],
+                  "shape": "0:0>1:0>2:0>3:0",
+                  "maternalMother": "159/951"
+                }
+              ],
+              "actualWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "heads": [
+        "8873",
+        "3265",
+        "2592",
+        "7881",
+        "5832"
+      ],
+      "fullMotherInventory": [
+        {
+          "family": "258/852",
+          "rank": 1,
+          "paths": 5,
+          "d1": 0,
+          "d7": 2,
+          "branch": 3
+        },
+        {
+          "family": "254/452",
+          "rank": 2,
+          "paths": 3,
+          "d1": 2,
+          "d7": 0,
+          "branch": 2
+        },
+        {
+          "family": "454/454",
+          "rank": 3,
+          "paths": 3,
+          "d1": 1,
+          "d7": 0,
+          "branch": 2
+        },
+        {
+          "family": "238/832",
+          "rank": 4,
+          "paths": 3,
+          "d1": 0,
+          "d7": 1,
+          "branch": 2
+        },
+        {
+          "family": "295/592",
+          "rank": 5,
+          "paths": 3,
+          "d1": 0,
+          "d7": 1,
+          "branch": 2
+        }
+      ],
+      "winners": [
+        {
+          "headMatched": [
+            "5832"
+          ],
+          "family": "5238/5832",
+          "mother": "238/832",
+          "motherRank": 4,
+          "actualInBase": false,
+          "originalVt4Rank": 37,
+          "siblingRankByOriginalOrder": 5,
+          "siblingsCompeting": 10,
+          "own": {
+            "values": [
+              "5238",
+              "5832"
+            ],
+            "sourceCount": 1,
+            "blocks": 3,
+            "paths": 6,
+            "uniqueShapes": 6,
+            "fractionUnique": 1,
+            "physicalEvidence": [
+              {
+                "source": "Primera",
+                "read": "5832",
+                "cells": [
+                  "1:1",
+                  "0:1",
+                  "1:0",
+                  "2:1"
+                ],
+                "shape": "1:1>0:1>1:0>2:1",
+                "maternalMother": "238/832"
+              },
+              {
+                "source": "Primera",
+                "read": "5238",
+                "cells": [
+                  "1:1",
+                  "2:1",
+                  "1:0",
+                  "0:1"
+                ],
+                "shape": "0:1>1:0>2:1>1:1",
+                "maternalMother": "238/832"
+              },
+              {
+                "source": "Primera",
+                "read": "5832",
+                "cells": [
+                  "1:1",
+                  "0:0",
+                  "1:0",
+                  "2:1"
+                ],
+                "shape": "1:1>0:0>1:0>2:1",
+                "maternalMother": "238/832"
+              },
+              {
+                "source": "Primera",
+                "read": "5238",
+                "cells": [
+                  "1:1",
+                  "2:1",
+                  "1:0",
+                  "0:0"
+                ],
+                "shape": "0:0>1:0>2:1>1:1",
+                "maternalMother": "238/832"
+              },
+              {
+                "source": "Primera",
+                "read": "5832",
+                "cells": [
+                  "1:1",
+                  "0:1",
+                  "1:0",
+                  "2:0"
+                ],
+                "shape": "1:1>0:1>1:0>2:0",
+                "maternalMother": "238/832"
+              },
+              {
+                "source": "Primera",
+                "read": "5238",
+                "cells": [
+                  "1:1",
+                  "2:0",
+                  "1:0",
+                  "0:1"
+                ],
+                "shape": "0:1>1:0>2:0>1:1",
+                "maternalMother": "238/832"
+              }
+            ]
+          },
+          "siblingsSelectedInCurrentTop10": [
+            {
+              "family": "2384/8324",
+              "rank": 33,
+              "readableValues": [
+                "8324"
+              ],
+              "sources": 1,
+              "blocks": 3,
+              "paths": 3,
+              "shapes": 3,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "Primera",
+                  "read": "8324",
+                  "cells": [
+                    "0:1",
+                    "1:0",
+                    "2:1",
+                    "3:1"
+                  ],
+                  "shape": "0:1>1:0>2:1>3:1",
+                  "maternalMother": "238/832"
+                },
+                {
+                  "source": "Primera",
+                  "read": "8324",
+                  "cells": [
+                    "0:0",
+                    "1:0",
+                    "2:1",
+                    "3:1"
+                  ],
+                  "shape": "0:0>1:0>2:1>3:1",
+                  "maternalMother": "238/832"
+                },
+                {
+                  "source": "Primera",
+                  "read": "8324",
+                  "cells": [
+                    "0:1",
+                    "1:0",
+                    "2:0",
+                    "3:1"
+                  ],
+                  "shape": "0:1>1:0>2:0>3:1",
+                  "maternalMother": "238/832"
+                }
+              ],
+              "actualWinner": false
+            },
+            {
+              "family": "2385/8325",
+              "rank": 34,
+              "readableValues": [
+                "2385",
+                "8325"
+              ],
+              "sources": 1,
+              "blocks": 3,
+              "paths": 6,
+              "shapes": 6,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "Primera",
+                  "read": "8325",
+                  "cells": [
+                    "0:1",
+                    "1:0",
+                    "2:1",
+                    "1:1"
+                  ],
+                  "shape": "0:1>1:0>2:1>1:1",
+                  "maternalMother": "238/832"
+                },
+                {
+                  "source": "Primera",
+                  "read": "2385",
+                  "cells": [
+                    "2:1",
+                    "1:0",
+                    "0:1",
+                    "1:1"
+                  ],
+                  "shape": "1:1>0:1>1:0>2:1",
+                  "maternalMother": "238/832"
+                },
+                {
+                  "source": "Primera",
+                  "read": "8325",
+                  "cells": [
+                    "0:0",
+                    "1:0",
+                    "2:1",
+                    "1:1"
+                  ],
+                  "shape": "0:0>1:0>2:1>1:1",
+                  "maternalMother": "238/832"
+                },
+                {
+                  "source": "Primera",
+                  "read": "2385",
+                  "cells": [
+                    "2:1",
+                    "1:0",
+                    "0:0",
+                    "1:1"
+                  ],
+                  "shape": "1:1>0:0>1:0>2:1",
+                  "maternalMother": "238/832"
+                },
+                {
+                  "source": "Primera",
+                  "read": "8325",
+                  "cells": [
+                    "0:1",
+                    "1:0",
+                    "2:0",
+                    "1:1"
+                  ],
+                  "shape": "0:1>1:0>2:0>1:1",
+                  "maternalMother": "238/832"
+                },
+                {
+                  "source": "Primera",
+                  "read": "2385",
+                  "cells": [
+                    "2:0",
+                    "1:0",
+                    "0:1",
+                    "1:1"
+                  ],
+                  "shape": "1:1>0:1>1:0>2:0",
+                  "maternalMother": "238/832"
+                }
+              ],
+              "actualWinner": false
+            }
+          ]
+        },
+        {
+          "headMatched": [
+            "2592"
+          ],
+          "family": "2295/2592",
+          "mother": "295/592",
+          "motherRank": 5,
+          "actualInBase": true,
+          "originalVt4Rank": 43,
+          "siblingRankByOriginalOrder": 1,
+          "siblingsCompeting": 8,
+          "own": {
+            "values": [
+              "2295",
+              "2592"
+            ],
+            "sourceCount": 1,
+            "blocks": 3,
+            "paths": 4,
+            "uniqueShapes": 4,
+            "fractionUnique": 1,
+            "physicalEvidence": [
+              {
+                "source": "Primera",
+                "read": "2295",
+                "cells": [
+                  "2:0",
+                  "2:1",
+                  "3:0",
+                  "4:1"
+                ],
+                "shape": "0:0>0:1>1:0>2:1",
+                "maternalMother": "295/592"
+              },
+              {
+                "source": "Primera",
+                "read": "2592",
+                "cells": [
+                  "4:0",
+                  "4:1",
+                  "3:0",
+                  "2:1"
+                ],
+                "shape": "0:1>1:0>2:1>2:0",
+                "maternalMother": "295/592"
+              },
+              {
+                "source": "Primera",
+                "read": "2295",
+                "cells": [
+                  "2:1",
+                  "2:0",
+                  "3:0",
+                  "4:1"
+                ],
+                "shape": "0:1>0:0>1:0>2:1",
+                "maternalMother": "295/592"
+              },
+              {
+                "source": "Primera",
+                "read": "2592",
+                "cells": [
+                  "4:0",
+                  "4:1",
+                  "3:0",
+                  "2:0"
+                ],
+                "shape": "0:0>1:0>2:1>2:0",
+                "maternalMother": "295/592"
+              }
+            ]
+          },
+          "siblingsSelectedInCurrentTop10": [
+            {
+              "family": "2295/2592",
+              "rank": 43,
+              "readableValues": [
+                "2295",
+                "2592"
+              ],
+              "sources": 1,
+              "blocks": 3,
+              "paths": 4,
+              "shapes": 4,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "Primera",
+                  "read": "2295",
+                  "cells": [
+                    "2:0",
+                    "2:1",
+                    "3:0",
+                    "4:1"
+                  ],
+                  "shape": "0:0>0:1>1:0>2:1",
+                  "maternalMother": "295/592"
+                },
+                {
+                  "source": "Primera",
+                  "read": "2592",
+                  "cells": [
+                    "4:0",
+                    "4:1",
+                    "3:0",
+                    "2:1"
+                  ],
+                  "shape": "0:1>1:0>2:1>2:0",
+                  "maternalMother": "295/592"
+                },
+                {
+                  "source": "Primera",
+                  "read": "2295",
+                  "cells": [
+                    "2:1",
+                    "2:0",
+                    "3:0",
+                    "4:1"
+                  ],
+                  "shape": "0:1>0:0>1:0>2:1",
+                  "maternalMother": "295/592"
+                },
+                {
+                  "source": "Primera",
+                  "read": "2592",
+                  "cells": [
+                    "4:0",
+                    "4:1",
+                    "3:0",
+                    "2:0"
+                  ],
+                  "shape": "0:0>1:0>2:1>2:0",
+                  "maternalMother": "295/592"
+                }
+              ],
+              "actualWinner": true
+            },
+            {
+              "family": "2952/5922",
+              "rank": 44,
+              "readableValues": [
+                "2952",
+                "5922"
+              ],
+              "sources": 1,
+              "blocks": 3,
+              "paths": 4,
+              "shapes": 4,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "Primera",
+                  "read": "2952",
+                  "cells": [
+                    "2:1",
+                    "3:0",
+                    "4:1",
+                    "4:0"
+                  ],
+                  "shape": "0:1>1:0>2:1>2:0",
+                  "maternalMother": "295/592"
+                },
+                {
+                  "source": "Primera",
+                  "read": "5922",
+                  "cells": [
+                    "4:1",
+                    "3:0",
+                    "2:1",
+                    "2:0"
+                  ],
+                  "shape": "0:0>0:1>1:0>2:1",
+                  "maternalMother": "295/592"
+                },
+                {
+                  "source": "Primera",
+                  "read": "2952",
+                  "cells": [
+                    "2:0",
+                    "3:0",
+                    "4:1",
+                    "4:0"
+                  ],
+                  "shape": "0:0>1:0>2:1>2:0",
+                  "maternalMother": "295/592"
+                },
+                {
+                  "source": "Primera",
+                  "read": "5922",
+                  "cells": [
+                    "4:1",
+                    "3:0",
+                    "2:0",
+                    "2:1"
+                  ],
+                  "shape": "0:1>0:0>1:0>2:1",
+                  "maternalMother": "295/592"
+                }
+              ],
+              "actualWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "heads": [
+        "5513",
+        "1917",
+        "5168",
+        "3729",
+        "0925"
+      ],
+      "fullMotherInventory": [
+        {
+          "family": "177/771",
+          "rank": 1,
+          "paths": 9,
+          "d1": 1,
+          "d7": 2,
+          "branch": 4
+        },
+        {
+          "family": "717/717",
+          "rank": 2,
+          "paths": 6,
+          "d1": 0,
+          "d7": 3,
+          "branch": 4
+        },
+        {
+          "family": "777/777",
+          "rank": 3,
+          "paths": 9,
+          "d1": 1,
+          "d7": 2,
+          "branch": 3
+        },
+        {
+          "family": "388/883",
+          "rank": 4,
+          "paths": 6,
+          "d1": 0,
+          "d7": 4,
+          "branch": 3
+        },
+        {
+          "family": "729/927",
+          "rank": 5,
+          "paths": 6,
+          "d1": 3,
+          "d7": 1,
+          "branch": 2
+        }
+      ],
+      "winners": [
+        {
+          "headMatched": [
+            "3729"
+          ],
+          "family": "3729/3927",
+          "mother": "729/927",
+          "motherRank": 5,
+          "actualInBase": false,
+          "originalVt4Rank": 30,
+          "siblingRankByOriginalOrder": 4,
+          "siblingsCompeting": 12,
+          "own": {
+            "values": [
+              "3729",
+              "3927"
+            ],
+            "sourceCount": 1,
+            "blocks": 4,
+            "paths": 5,
+            "uniqueShapes": 5,
+            "fractionUnique": 1,
+            "physicalEvidence": [
+              {
+                "source": "Primera",
+                "read": "3927",
+                "cells": [
+                  "0:0",
+                  "1:1",
+                  "2:0",
+                  "3:1"
+                ],
+                "shape": "0:0>1:1>2:0>3:1",
+                "maternalMother": "729/927"
+              },
+              {
+                "source": "Primera",
+                "read": "3927",
+                "cells": [
+                  "0:0",
+                  "1:1",
+                  "2:0",
+                  "3:0"
+                ],
+                "shape": "0:0>1:1>2:0>3:0",
+                "maternalMother": "729/927"
+              },
+              {
+                "source": "Primera",
+                "read": "3927",
+                "cells": [
+                  "0:0",
+                  "1:1",
+                  "2:0",
+                  "1:0"
+                ],
+                "shape": "0:0>1:1>2:0>1:0",
+                "maternalMother": "729/927"
+              },
+              {
+                "source": "Primera",
+                "read": "3729",
+                "cells": [
+                  "0:0",
+                  "1:0",
+                  "2:0",
+                  "1:1"
+                ],
+                "shape": "0:0>1:0>2:0>1:1",
+                "maternalMother": "729/927"
+              },
+              {
+                "source": "Primera",
+                "read": "3729",
+                "cells": [
+                  "0:0",
+                  "1:0",
+                  "2:0",
+                  "2:1"
+                ],
+                "shape": "0:0>1:0>2:0>2:1",
+                "maternalMother": "729/927"
+              }
+            ]
+          },
+          "siblingsSelectedInCurrentTop10": [
+            {
+              "family": "7297/9277",
+              "rank": 27,
+              "readableValues": [
+                "7297",
+                "9277"
+              ],
+              "sources": 1,
+              "blocks": 6,
+              "paths": 12,
+              "shapes": 12,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "Primera",
+                  "read": "7297",
+                  "cells": [
+                    "3:1",
+                    "2:0",
+                    "1:1",
+                    "1:0"
+                  ],
+                  "shape": "0:0>0:1>1:0>2:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "9277",
+                  "cells": [
+                    "1:1",
+                    "2:0",
+                    "3:1",
+                    "3:0"
+                  ],
+                  "shape": "0:1>1:0>2:1>2:0",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "9277",
+                  "cells": [
+                    "1:1",
+                    "2:0",
+                    "3:0",
+                    "3:1"
+                  ],
+                  "shape": "0:1>1:0>2:0>2:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7297",
+                  "cells": [
+                    "3:0",
+                    "2:0",
+                    "1:1",
+                    "1:0"
+                  ],
+                  "shape": "0:0>0:1>1:0>2:0",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7297",
+                  "cells": [
+                    "1:0",
+                    "2:0",
+                    "2:1",
+                    "3:0"
+                  ],
+                  "shape": "0:0>1:0>1:1>2:0",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7297",
+                  "cells": [
+                    "1:0",
+                    "2:0",
+                    "2:1",
+                    "3:1"
+                  ],
+                  "shape": "0:0>1:0>1:1>2:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "9277",
+                  "cells": [
+                    "2:1",
+                    "2:0",
+                    "3:0",
+                    "3:1"
+                  ],
+                  "shape": "0:1>0:0>1:0>1:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7297",
+                  "cells": [
+                    "3:0",
+                    "2:0",
+                    "2:1",
+                    "1:0"
+                  ],
+                  "shape": "0:0>1:1>1:0>2:0",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7297",
+                  "cells": [
+                    "3:0",
+                    "2:0",
+                    "2:1",
+                    "3:1"
+                  ],
+                  "shape": "1:0>0:0>0:1>1:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "9277",
+                  "cells": [
+                    "2:1",
+                    "2:0",
+                    "3:1",
+                    "3:0"
+                  ],
+                  "shape": "0:1>0:0>1:1>1:0",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7297",
+                  "cells": [
+                    "3:1",
+                    "2:0",
+                    "2:1",
+                    "1:0"
+                  ],
+                  "shape": "0:0>1:1>1:0>2:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7297",
+                  "cells": [
+                    "3:1",
+                    "2:0",
+                    "2:1",
+                    "3:0"
+                  ],
+                  "shape": "1:0>0:1>0:0>1:1",
+                  "maternalMother": "729/927"
+                }
+              ],
+              "actualWinner": false
+            },
+            {
+              "family": "7729/7927",
+              "rank": 28,
+              "readableValues": [
+                "7729",
+                "7927"
+              ],
+              "sources": 1,
+              "blocks": 6,
+              "paths": 12,
+              "shapes": 12,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "Primera",
+                  "read": "7729",
+                  "cells": [
+                    "3:0",
+                    "3:1",
+                    "2:0",
+                    "1:1"
+                  ],
+                  "shape": "0:1>1:0>2:1>2:0",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7927",
+                  "cells": [
+                    "1:0",
+                    "1:1",
+                    "2:0",
+                    "3:1"
+                  ],
+                  "shape": "0:0>0:1>1:0>2:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7927",
+                  "cells": [
+                    "1:0",
+                    "1:1",
+                    "2:0",
+                    "3:0"
+                  ],
+                  "shape": "0:0>0:1>1:0>2:0",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7729",
+                  "cells": [
+                    "3:1",
+                    "3:0",
+                    "2:0",
+                    "1:1"
+                  ],
+                  "shape": "0:1>1:0>2:0>2:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7927",
+                  "cells": [
+                    "3:0",
+                    "2:1",
+                    "2:0",
+                    "1:0"
+                  ],
+                  "shape": "0:0>1:0>1:1>2:0",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7927",
+                  "cells": [
+                    "3:1",
+                    "2:1",
+                    "2:0",
+                    "1:0"
+                  ],
+                  "shape": "0:0>1:0>1:1>2:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7927",
+                  "cells": [
+                    "1:0",
+                    "2:1",
+                    "2:0",
+                    "3:0"
+                  ],
+                  "shape": "0:0>1:1>1:0>2:0",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7927",
+                  "cells": [
+                    "3:1",
+                    "2:1",
+                    "2:0",
+                    "3:0"
+                  ],
+                  "shape": "1:0>0:0>0:1>1:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7729",
+                  "cells": [
+                    "3:1",
+                    "3:0",
+                    "2:0",
+                    "2:1"
+                  ],
+                  "shape": "0:1>0:0>1:0>1:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7927",
+                  "cells": [
+                    "1:0",
+                    "2:1",
+                    "2:0",
+                    "3:1"
+                  ],
+                  "shape": "0:0>1:1>1:0>2:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7927",
+                  "cells": [
+                    "3:0",
+                    "2:1",
+                    "2:0",
+                    "3:1"
+                  ],
+                  "shape": "1:0>0:1>0:0>1:1",
+                  "maternalMother": "729/927"
+                },
+                {
+                  "source": "Primera",
+                  "read": "7729",
+                  "cells": [
+                    "3:0",
+                    "3:1",
+                    "2:0",
+                    "2:1"
+                  ],
+                  "shape": "0:1>0:0>1:1>1:0",
+                  "maternalMother": "729/927"
+                }
+              ],
+              "actualWinner": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "heads": [
+        "6542",
+        "5918",
+        "3297",
+        "9848",
+        "5150"
+      ],
+      "fullMotherInventory": [
+        {
+          "family": "276/672",
+          "rank": 1,
+          "paths": 3,
+          "d1": 1,
+          "d7": 0,
+          "branch": 2
+        },
+        {
+          "family": "465/564",
+          "rank": 2,
+          "paths": 4,
+          "d1": 0,
+          "d7": 1,
+          "branch": 2
+        },
+        {
+          "family": "193/391",
+          "rank": 3,
+          "paths": 2,
+          "d1": 1,
+          "d7": 0,
+          "branch": 1
+        },
+        {
+          "family": "355/553",
+          "rank": 4,
+          "paths": 3,
+          "d1": 1,
+          "d7": 0,
+          "branch": 1
+        },
+        {
+          "family": "456/654",
+          "rank": 5,
+          "paths": 2,
+          "d1": 1,
+          "d7": 0,
+          "branch": 1
+        }
+      ],
+      "winners": [
+        {
+          "headMatched": [
+            "6542"
+          ],
+          "family": "4562/6542",
+          "mother": "456/654",
+          "motherRank": 5,
+          "actualInBase": true,
+          "originalVt4Rank": 46,
+          "siblingRankByOriginalOrder": 2,
+          "siblingsCompeting": 10,
+          "own": {
+            "values": [
+              "4562",
+              "6542"
+            ],
+            "sourceCount": 1,
+            "blocks": 2,
+            "paths": 3,
+            "uniqueShapes": 3,
+            "fractionUnique": 1,
+            "physicalEvidence": [
+              {
+                "source": "prevNocturno",
+                "read": "4562",
+                "cells": [
+                  "3:0",
+                  "4:1",
+                  "4:0",
+                  "5:1"
+                ],
+                "shape": "0:0>1:1>1:0>2:1",
+                "maternalMother": "456/654"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "6542",
+                "cells": [
+                  "4:0",
+                  "4:1",
+                  "5:0",
+                  "5:1"
+                ],
+                "shape": "0:0>0:1>1:0>1:1",
+                "maternalMother": "456/654"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "4562",
+                "cells": [
+                  "5:0",
+                  "4:1",
+                  "4:0",
+                  "5:1"
+                ],
+                "shape": "1:0>0:1>0:0>1:1",
+                "maternalMother": "456/654"
+              }
+            ]
+          },
+          "siblingsSelectedInCurrentTop10": [
+            {
+              "family": "2456/2654",
+              "rank": 45,
+              "readableValues": [
+                "2456",
+                "2654"
+              ],
+              "sources": 1,
+              "blocks": 2,
+              "paths": 3,
+              "shapes": 3,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "prevNocturno",
+                  "read": "2654",
+                  "cells": [
+                    "5:1",
+                    "4:0",
+                    "4:1",
+                    "3:0"
+                  ],
+                  "shape": "0:0>1:1>1:0>2:1",
+                  "maternalMother": "456/654"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "2654",
+                  "cells": [
+                    "5:1",
+                    "4:0",
+                    "4:1",
+                    "5:0"
+                  ],
+                  "shape": "1:0>0:1>0:0>1:1",
+                  "maternalMother": "456/654"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "2456",
+                  "cells": [
+                    "5:1",
+                    "5:0",
+                    "4:1",
+                    "4:0"
+                  ],
+                  "shape": "0:0>0:1>1:0>1:1",
+                  "maternalMother": "456/654"
+                }
+              ],
+              "actualWinner": false
+            },
+            {
+              "family": "4562/6542",
+              "rank": 46,
+              "readableValues": [
+                "4562",
+                "6542"
+              ],
+              "sources": 1,
+              "blocks": 2,
+              "paths": 3,
+              "shapes": 3,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "prevNocturno",
+                  "read": "4562",
+                  "cells": [
+                    "3:0",
+                    "4:1",
+                    "4:0",
+                    "5:1"
+                  ],
+                  "shape": "0:0>1:1>1:0>2:1",
+                  "maternalMother": "456/654"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "6542",
+                  "cells": [
+                    "4:0",
+                    "4:1",
+                    "5:0",
+                    "5:1"
+                  ],
+                  "shape": "0:0>0:1>1:0>1:1",
+                  "maternalMother": "456/654"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "4562",
+                  "cells": [
+                    "5:0",
+                    "4:1",
+                    "4:0",
+                    "5:1"
+                  ],
+                  "shape": "1:0>0:1>0:0>1:1",
+                  "maternalMother": "456/654"
+                }
+              ],
+              "actualWinner": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "heads": [
+        "4324",
+        "2654",
+        "1044",
+        "6215",
+        "0564"
+      ],
+      "fullMotherInventory": [
+        {
+          "family": "276/672",
+          "rank": 1,
+          "paths": 3,
+          "d1": 1,
+          "d7": 0,
+          "branch": 2
+        },
+        {
+          "family": "465/564",
+          "rank": 2,
+          "paths": 4,
+          "d1": 0,
+          "d7": 1,
+          "branch": 2
+        },
+        {
+          "family": "193/391",
+          "rank": 3,
+          "paths": 2,
+          "d1": 1,
+          "d7": 0,
+          "branch": 1
+        },
+        {
+          "family": "355/553",
+          "rank": 4,
+          "paths": 3,
+          "d1": 1,
+          "d7": 0,
+          "branch": 1
+        },
+        {
+          "family": "456/654",
+          "rank": 5,
+          "paths": 2,
+          "d1": 1,
+          "d7": 0,
+          "branch": 1
+        }
+      ],
+      "winners": [
+        {
+          "headMatched": [
+            "2654"
+          ],
+          "family": "2456/2654",
+          "mother": "456/654",
+          "motherRank": 5,
+          "actualInBase": true,
+          "originalVt4Rank": 45,
+          "siblingRankByOriginalOrder": 1,
+          "siblingsCompeting": 10,
+          "own": {
+            "values": [
+              "2456",
+              "2654"
+            ],
+            "sourceCount": 1,
+            "blocks": 2,
+            "paths": 3,
+            "uniqueShapes": 3,
+            "fractionUnique": 1,
+            "physicalEvidence": [
+              {
+                "source": "prevNocturno",
+                "read": "2654",
+                "cells": [
+                  "5:1",
+                  "4:0",
+                  "4:1",
+                  "3:0"
+                ],
+                "shape": "0:0>1:1>1:0>2:1",
+                "maternalMother": "456/654"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "2654",
+                "cells": [
+                  "5:1",
+                  "4:0",
+                  "4:1",
+                  "5:0"
+                ],
+                "shape": "1:0>0:1>0:0>1:1",
+                "maternalMother": "456/654"
+              },
+              {
+                "source": "prevNocturno",
+                "read": "2456",
+                "cells": [
+                  "5:1",
+                  "5:0",
+                  "4:1",
+                  "4:0"
+                ],
+                "shape": "0:0>0:1>1:0>1:1",
+                "maternalMother": "456/654"
+              }
+            ]
+          },
+          "siblingsSelectedInCurrentTop10": [
+            {
+              "family": "2456/2654",
+              "rank": 45,
+              "readableValues": [
+                "2456",
+                "2654"
+              ],
+              "sources": 1,
+              "blocks": 2,
+              "paths": 3,
+              "shapes": 3,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "prevNocturno",
+                  "read": "2654",
+                  "cells": [
+                    "5:1",
+                    "4:0",
+                    "4:1",
+                    "3:0"
+                  ],
+                  "shape": "0:0>1:1>1:0>2:1",
+                  "maternalMother": "456/654"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "2654",
+                  "cells": [
+                    "5:1",
+                    "4:0",
+                    "4:1",
+                    "5:0"
+                  ],
+                  "shape": "1:0>0:1>0:0>1:1",
+                  "maternalMother": "456/654"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "2456",
+                  "cells": [
+                    "5:1",
+                    "5:0",
+                    "4:1",
+                    "4:0"
+                  ],
+                  "shape": "0:0>0:1>1:0>1:1",
+                  "maternalMother": "456/654"
+                }
+              ],
+              "actualWinner": true
+            },
+            {
+              "family": "4562/6542",
+              "rank": 46,
+              "readableValues": [
+                "4562",
+                "6542"
+              ],
+              "sources": 1,
+              "blocks": 2,
+              "paths": 3,
+              "shapes": 3,
+              "fractionUnique": 1,
+              "physicalEvidence": [
+                {
+                  "source": "prevNocturno",
+                  "read": "4562",
+                  "cells": [
+                    "3:0",
+                    "4:1",
+                    "4:0",
+                    "5:1"
+                  ],
+                  "shape": "0:0>1:1>1:0>2:1",
+                  "maternalMother": "456/654"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "6542",
+                  "cells": [
+                    "4:0",
+                    "4:1",
+                    "5:0",
+                    "5:1"
+                  ],
+                  "shape": "0:0>0:1>1:0>1:1",
+                  "maternalMother": "456/654"
+                },
+                {
+                  "source": "prevNocturno",
+                  "read": "4562",
+                  "cells": [
+                    "5:0",
+                    "4:1",
+                    "4:0",
+                    "5:1"
+                  ],
+                  "shape": "1:0>0:1>0:0>1:1",
+                  "maternalMother": "456/654"
+                }
+              ],
+              "actualWinner": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "firstOct13": {
+    "head": "5485",
+    "mother": "485/584",
+    "motherRank": 5,
+    "actualRootedGroup": {
+      "mother": "485/584",
+      "motherRank": 5,
+      "family": "5485/5584",
+      "values": [
+        "5485"
+      ],
+      "paths": 2,
+      "physicalKeys": [
+        "Previa|0:0>1:1>1:0>2:0",
+        "Previa|0:0>1:0>1:1>2:0"
+      ]
+    },
+    "sistersSelectedForMotherRank5": [
+      "4857/5847",
+      "4859/5849"
+    ],
+    "explanation": "Post hoc case, not one of 115 historical cuts. No policy was adapted to favor 5485."
+  },
+  "caution": "Explanations of winning siblings are POST attribution, not predictions; target labels never used to rank groups in PRE."
+}
