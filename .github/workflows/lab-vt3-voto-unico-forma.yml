@@ -1,0 +1,50 @@
+name: VT3 voto unico por forma
+on:
+  push:
+    branches: [lab-vt3-voto-unico-forma-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-voto-unico-forma.mjs'
+      - 'PROTOCOLO_VT3_VOTO_UNICO_FORMA_13OCT2026.md'
+      - '.github/workflows/lab-vt3-voto-unico-forma.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  formas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar datos POST antes del sellado PRE
+        run: |
+          mv auditorias /tmp/vt3-formas-originales
+          mkdir -p auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026/
+          cp /tmp/vt3-formas-originales/vt3-dominio-semanal-top3-top5-115-13oct2026/PRE_115.json auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026/PRE_115.json
+          test "$(find auditorias -type f | wc -l)" -eq 1
+      - name: Preparar candidatos y sellar protocolo
+        run: node scripts/lab-vt3-voto-unico-forma.mjs pre
+      - name: Restaurar historico y comparar variantes temporalmente ciegas
+        run: |
+          mv auditorias/vt3-voto-unico-forma-90-13oct2026 /tmp/vt3-formas-pre-nuevo
+          cp -a /tmp/vt3-formas-originales/. auditorias/
+          rm -rf auditorias/vt3-voto-unico-forma-90-13oct2026
+          mv /tmp/vt3-formas-pre-nuevo auditorias/vt3-voto-unico-forma-90-13oct2026
+          node scripts/lab-vt3-voto-unico-forma.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-voto-unico-forma-90
+          path: auditorias/vt3-voto-unico-forma-90-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar prueba solo en rama de laboratorio
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-voto-unico-forma-90-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): evaluar votos geometricos unicos contra aprendiz congelado'
+            git push origin HEAD:lab-vt3-voto-unico-forma-13oct2026
+          fi
