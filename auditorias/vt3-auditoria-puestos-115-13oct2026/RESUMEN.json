@@ -1,0 +1,2497 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "days": 23,
+  "slotSummary": [
+    {
+      "rank": 1,
+      "appearances": 115,
+      "hits": 2,
+      "distinctFamilies": 45,
+      "rootKinds": {
+        "d1": 35,
+        "d7": 22,
+        "both": 58,
+        "none": 0
+      },
+      "average": {
+        "bif": 2.2435,
+        "d1": 1.1565,
+        "d7": 1.2174,
+        "sources": 1.2261,
+        "blocks": 3.8348,
+        "anchoredPaths": 4.5217
+      },
+      "median": {
+        "bif": 2,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 4,
+        "anchoredPaths": 4
+      },
+      "tiedBefore": 0,
+      "tiedAfter": 15
+    },
+    {
+      "rank": 2,
+      "appearances": 115,
+      "hits": 3,
+      "distinctFamilies": 54,
+      "rootKinds": {
+        "d1": 40,
+        "d7": 29,
+        "both": 46,
+        "none": 0
+      },
+      "average": {
+        "bif": 1.8696,
+        "d1": 1.0522,
+        "d7": 0.9565,
+        "sources": 1.1652,
+        "blocks": 3.5391,
+        "anchoredPaths": 3.6087
+      },
+      "median": {
+        "bif": 2,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 3,
+        "anchoredPaths": 4
+      },
+      "tiedBefore": 15,
+      "tiedAfter": 24
+    },
+    {
+      "rank": 3,
+      "appearances": 115,
+      "hits": 0,
+      "distinctFamilies": 62,
+      "rootKinds": {
+        "d1": 44,
+        "d7": 27,
+        "both": 44,
+        "none": 0
+      },
+      "average": {
+        "bif": 1.6609,
+        "d1": 0.9391,
+        "d7": 0.913,
+        "sources": 1.1391,
+        "blocks": 3.1739,
+        "anchoredPaths": 3.4522
+      },
+      "median": {
+        "bif": 2,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 3,
+        "anchoredPaths": 3
+      },
+      "tiedBefore": 24,
+      "tiedAfter": 37
+    },
+    {
+      "rank": 4,
+      "appearances": 115,
+      "hits": 1,
+      "distinctFamilies": 70,
+      "rootKinds": {
+        "d1": 49,
+        "d7": 32,
+        "both": 34,
+        "none": 0
+      },
+      "average": {
+        "bif": 1.5217,
+        "d1": 0.8261,
+        "d7": 0.8522,
+        "sources": 1.0435,
+        "blocks": 2.7391,
+        "anchoredPaths": 3.0261
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 3,
+        "anchoredPaths": 3
+      },
+      "tiedBefore": 37,
+      "tiedAfter": 51
+    },
+    {
+      "rank": 5,
+      "appearances": 115,
+      "hits": 4,
+      "distinctFamilies": 73,
+      "rootKinds": {
+        "d1": 58,
+        "d7": 34,
+        "both": 23,
+        "none": 0
+      },
+      "average": {
+        "bif": 1.4087,
+        "d1": 0.887,
+        "d7": 0.6435,
+        "sources": 1.0087,
+        "blocks": 2.6783,
+        "anchoredPaths": 2.7913
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 0,
+        "sources": 1,
+        "blocks": 3,
+        "anchoredPaths": 3
+      },
+      "tiedBefore": 51,
+      "tiedAfter": 57
+    },
+    {
+      "rank": 6,
+      "appearances": 115,
+      "hits": 2,
+      "distinctFamilies": 73,
+      "rootKinds": {
+        "d1": 54,
+        "d7": 32,
+        "both": 29,
+        "none": 0
+      },
+      "average": {
+        "bif": 1.2783,
+        "d1": 0.9217,
+        "d7": 0.6522,
+        "sources": 1.0696,
+        "blocks": 2.4522,
+        "anchoredPaths": 2.6087
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 3
+      },
+      "tiedBefore": 57,
+      "tiedAfter": 60
+    },
+    {
+      "rank": 7,
+      "appearances": 115,
+      "hits": 2,
+      "distinctFamilies": 82,
+      "rootKinds": {
+        "d1": 56,
+        "d7": 29,
+        "both": 30,
+        "none": 0
+      },
+      "average": {
+        "bif": 1.1826,
+        "d1": 0.9652,
+        "d7": 0.6087,
+        "sources": 1.1043,
+        "blocks": 2.4783,
+        "anchoredPaths": 2.5478
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 60,
+      "tiedAfter": 65
+    },
+    {
+      "rank": 8,
+      "appearances": 115,
+      "hits": 3,
+      "distinctFamilies": 80,
+      "rootKinds": {
+        "d1": 59,
+        "d7": 35,
+        "both": 21,
+        "none": 0
+      },
+      "average": {
+        "bif": 1.1217,
+        "d1": 0.8087,
+        "d7": 0.6,
+        "sources": 1.0783,
+        "blocks": 2.3739,
+        "anchoredPaths": 2.4174
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 0,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 65,
+      "tiedAfter": 71
+    },
+    {
+      "rank": 9,
+      "appearances": 115,
+      "hits": 0,
+      "distinctFamilies": 80,
+      "rootKinds": {
+        "d1": 53,
+        "d7": 36,
+        "both": 26,
+        "none": 0
+      },
+      "average": {
+        "bif": 1.0348,
+        "d1": 0.8522,
+        "d7": 0.6957,
+        "sources": 1.0783,
+        "blocks": 2.3739,
+        "anchoredPaths": 2.4348
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 71,
+      "tiedAfter": 59
+    },
+    {
+      "rank": 10,
+      "appearances": 115,
+      "hits": 0,
+      "distinctFamilies": 78,
+      "rootKinds": {
+        "d1": 55,
+        "d7": 36,
+        "both": 24,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.9304,
+        "d1": 0.9304,
+        "d7": 0.7043,
+        "sources": 1.087,
+        "blocks": 2.313,
+        "anchoredPaths": 2.4
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 59,
+      "tiedAfter": 62
+    },
+    {
+      "rank": 11,
+      "appearances": 115,
+      "hits": 1,
+      "distinctFamilies": 83,
+      "rootKinds": {
+        "d1": 47,
+        "d7": 38,
+        "both": 30,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.8435,
+        "d1": 0.8696,
+        "d7": 0.7478,
+        "sources": 1.0609,
+        "blocks": 2.2696,
+        "anchoredPaths": 2.3913
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 62,
+      "tiedAfter": 66
+    },
+    {
+      "rank": 12,
+      "appearances": 115,
+      "hits": 2,
+      "distinctFamilies": 80,
+      "rootKinds": {
+        "d1": 50,
+        "d7": 39,
+        "both": 26,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.7826,
+        "d1": 0.8696,
+        "d7": 0.687,
+        "sources": 1.0435,
+        "blocks": 2.1217,
+        "anchoredPaths": 2.1826
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 66,
+      "tiedAfter": 64
+    },
+    {
+      "rank": 13,
+      "appearances": 115,
+      "hits": 1,
+      "distinctFamilies": 85,
+      "rootKinds": {
+        "d1": 59,
+        "d7": 34,
+        "both": 22,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.7043,
+        "d1": 0.9217,
+        "d7": 0.7043,
+        "sources": 1.0261,
+        "blocks": 1.9913,
+        "anchoredPaths": 2.0783
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 0,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 64,
+      "tiedAfter": 68
+    },
+    {
+      "rank": 14,
+      "appearances": 114,
+      "hits": 0,
+      "distinctFamilies": 83,
+      "rootKinds": {
+        "d1": 58,
+        "d7": 35,
+        "both": 21,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.6842,
+        "d1": 0.8421,
+        "d7": 0.693,
+        "sources": 1.0263,
+        "blocks": 2.0088,
+        "anchoredPaths": 2.0877
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 0,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 68,
+      "tiedAfter": 74
+    },
+    {
+      "rank": 15,
+      "appearances": 114,
+      "hits": 3,
+      "distinctFamilies": 83,
+      "rootKinds": {
+        "d1": 49,
+        "d7": 37,
+        "both": 28,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.6228,
+        "d1": 0.8684,
+        "d7": 0.7368,
+        "sources": 1.0351,
+        "blocks": 1.9211,
+        "anchoredPaths": 2
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 74,
+      "tiedAfter": 79
+    },
+    {
+      "rank": 16,
+      "appearances": 113,
+      "hits": 1,
+      "distinctFamilies": 86,
+      "rootKinds": {
+        "d1": 52,
+        "d7": 38,
+        "both": 23,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.5929,
+        "d1": 0.8407,
+        "d7": 0.6637,
+        "sources": 1.0442,
+        "blocks": 1.8319,
+        "anchoredPaths": 1.8673
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 79,
+      "tiedAfter": 77
+    },
+    {
+      "rank": 17,
+      "appearances": 113,
+      "hits": 0,
+      "distinctFamilies": 86,
+      "rootKinds": {
+        "d1": 53,
+        "d7": 40,
+        "both": 20,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.5487,
+        "d1": 0.8319,
+        "d7": 0.6637,
+        "sources": 1.0619,
+        "blocks": 1.7788,
+        "anchoredPaths": 1.7965
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 77,
+      "tiedAfter": 74
+    },
+    {
+      "rank": 18,
+      "appearances": 111,
+      "hits": 3,
+      "distinctFamilies": 85,
+      "rootKinds": {
+        "d1": 56,
+        "d7": 41,
+        "both": 14,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.5135,
+        "d1": 0.8378,
+        "d7": 0.5946,
+        "sources": 1.027,
+        "blocks": 1.7297,
+        "anchoredPaths": 1.7568
+      },
+      "median": {
+        "bif": 1,
+        "d1": 1,
+        "d7": 0,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 74,
+      "tiedAfter": 80
+    },
+    {
+      "rank": 19,
+      "appearances": 111,
+      "hits": 1,
+      "distinctFamilies": 83,
+      "rootKinds": {
+        "d1": 48,
+        "d7": 42,
+        "both": 21,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.4595,
+        "d1": 0.8198,
+        "d7": 0.7207,
+        "sources": 1.027,
+        "blocks": 1.6757,
+        "anchoredPaths": 1.7297
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 80,
+      "tiedAfter": 83
+    },
+    {
+      "rank": 20,
+      "appearances": 110,
+      "hits": 1,
+      "distinctFamilies": 87,
+      "rootKinds": {
+        "d1": 50,
+        "d7": 45,
+        "both": 15,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.4545,
+        "d1": 0.7636,
+        "d7": 0.6818,
+        "sources": 1.0273,
+        "blocks": 1.6909,
+        "anchoredPaths": 1.7182
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 83,
+      "tiedAfter": 80
+    },
+    {
+      "rank": 21,
+      "appearances": 110,
+      "hits": 2,
+      "distinctFamilies": 84,
+      "rootKinds": {
+        "d1": 48,
+        "d7": 45,
+        "both": 17,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.4273,
+        "d1": 0.7455,
+        "d7": 0.6818,
+        "sources": 1.0455,
+        "blocks": 1.6727,
+        "anchoredPaths": 1.7182
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 80,
+      "tiedAfter": 85
+    },
+    {
+      "rank": 22,
+      "appearances": 110,
+      "hits": 0,
+      "distinctFamilies": 81,
+      "rootKinds": {
+        "d1": 44,
+        "d7": 46,
+        "both": 20,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.4091,
+        "d1": 0.7,
+        "d7": 0.6818,
+        "sources": 1.0727,
+        "blocks": 1.6545,
+        "anchoredPaths": 1.6909
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 85,
+      "tiedAfter": 84
+    },
+    {
+      "rank": 23,
+      "appearances": 108,
+      "hits": 0,
+      "distinctFamilies": 83,
+      "rootKinds": {
+        "d1": 43,
+        "d7": 40,
+        "both": 25,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.3611,
+        "d1": 0.7963,
+        "d7": 0.6944,
+        "sources": 1.0278,
+        "blocks": 1.5741,
+        "anchoredPaths": 1.6111
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 84,
+      "tiedAfter": 78
+    },
+    {
+      "rank": 24,
+      "appearances": 108,
+      "hits": 0,
+      "distinctFamilies": 84,
+      "rootKinds": {
+        "d1": 47,
+        "d7": 36,
+        "both": 25,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.2778,
+        "d1": 0.9259,
+        "d7": 0.6667,
+        "sources": 1.0648,
+        "blocks": 1.537,
+        "anchoredPaths": 1.5648
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 1,
+        "anchoredPaths": 1
+      },
+      "tiedBefore": 78,
+      "tiedAfter": 76
+    },
+    {
+      "rank": 25,
+      "appearances": 107,
+      "hits": 1,
+      "distinctFamilies": 85,
+      "rootKinds": {
+        "d1": 50,
+        "d7": 38,
+        "both": 19,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.2617,
+        "d1": 0.8692,
+        "d7": 0.7009,
+        "sources": 1.028,
+        "blocks": 1.5794,
+        "anchoredPaths": 1.5888
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 2,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 76,
+      "tiedAfter": 75
+    },
+    {
+      "rank": 26,
+      "appearances": 107,
+      "hits": 1,
+      "distinctFamilies": 83,
+      "rootKinds": {
+        "d1": 45,
+        "d7": 40,
+        "both": 22,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.2336,
+        "d1": 0.8318,
+        "d7": 0.7757,
+        "sources": 1.0374,
+        "blocks": 1.5421,
+        "anchoredPaths": 1.5794
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 1,
+        "anchoredPaths": 2
+      },
+      "tiedBefore": 75,
+      "tiedAfter": 67
+    },
+    {
+      "rank": 27,
+      "appearances": 104,
+      "hits": 0,
+      "distinctFamilies": 81,
+      "rootKinds": {
+        "d1": 46,
+        "d7": 35,
+        "both": 23,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.1923,
+        "d1": 0.9135,
+        "d7": 0.7115,
+        "sources": 1.0288,
+        "blocks": 1.4615,
+        "anchoredPaths": 1.5481
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 1,
+        "anchoredPaths": 1
+      },
+      "tiedBefore": 67,
+      "tiedAfter": 73
+    },
+    {
+      "rank": 28,
+      "appearances": 104,
+      "hits": 1,
+      "distinctFamilies": 81,
+      "rootKinds": {
+        "d1": 37,
+        "d7": 37,
+        "both": 30,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.1731,
+        "d1": 0.8269,
+        "d7": 0.875,
+        "sources": 1.0288,
+        "blocks": 1.4423,
+        "anchoredPaths": 1.4904
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 1,
+        "anchoredPaths": 1
+      },
+      "tiedBefore": 73,
+      "tiedAfter": 74
+    },
+    {
+      "rank": 29,
+      "appearances": 104,
+      "hits": 0,
+      "distinctFamilies": 80,
+      "rootKinds": {
+        "d1": 37,
+        "d7": 36,
+        "both": 31,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.125,
+        "d1": 0.875,
+        "d7": 0.8558,
+        "sources": 1.0288,
+        "blocks": 1.4327,
+        "anchoredPaths": 1.4423
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 1,
+        "anchoredPaths": 1
+      },
+      "tiedBefore": 74,
+      "tiedAfter": 68
+    },
+    {
+      "rank": 30,
+      "appearances": 101,
+      "hits": 0,
+      "distinctFamilies": 76,
+      "rootKinds": {
+        "d1": 36,
+        "d7": 35,
+        "both": 30,
+        "none": 0
+      },
+      "average": {
+        "bif": 0.099,
+        "d1": 0.8515,
+        "d7": 0.8713,
+        "sources": 1.0891,
+        "blocks": 1.4653,
+        "anchoredPaths": 1.495
+      },
+      "median": {
+        "bif": 0,
+        "d1": 1,
+        "d7": 1,
+        "sources": 1,
+        "blocks": 1,
+        "anchoredPaths": 1
+      },
+      "tiedBefore": 68,
+      "tiedAfter": 62
+    }
+  ],
+  "persistence": {
+    "transitions": 92,
+    "eachRank": {
+      "8": {
+        "same": 27,
+        "changed": 65
+      },
+      "9": {
+        "same": 27,
+        "changed": 65
+      },
+      "10": {
+        "same": 26,
+        "changed": 66
+      },
+      "11": {
+        "same": 24,
+        "changed": 68
+      },
+      "12": {
+        "same": 22,
+        "changed": 70
+      }
+    },
+    "unchangedPair9_10": 26,
+    "unchangedSet9_10": 26
+  },
+  "ties": {
+    "comparisons": 115,
+    "tie8_9": 71,
+    "tie9_10": 59,
+    "tie10_11": 62,
+    "tie11_12": 66,
+    "exactTenthVsEleventh": [
+      {
+        "date": "2026-09-15",
+        "turn": "Previa",
+        "rank10": "129/921",
+        "rank11": "175/571",
+        "tiedPool": [
+          "126/621",
+          "129/921",
+          "175/571",
+          "275/572",
+          "579/975"
+        ]
+      },
+      {
+        "date": "2026-09-15",
+        "turn": "Primera",
+        "rank10": "668/866",
+        "rank11": "719/917",
+        "tiedPool": [
+          "365/563",
+          "668/866",
+          "719/917"
+        ]
+      },
+      {
+        "date": "2026-09-15",
+        "turn": "Matutino",
+        "rank10": "068/860",
+        "rank11": "246/642",
+        "tiedPool": [
+          "068/860",
+          "246/642",
+          "365/563",
+          "548/845",
+          "668/866",
+          "719/917",
+          "788/887"
+        ]
+      },
+      {
+        "date": "2026-09-16",
+        "turn": "Matutino",
+        "rank10": "079/970",
+        "rank11": "080/080",
+        "tiedPool": [
+          "079/970",
+          "080/080",
+          "087/780"
+        ]
+      },
+      {
+        "date": "2026-09-17",
+        "turn": "Nocturno",
+        "rank10": "437/734",
+        "rank11": "478/874",
+        "tiedPool": [
+          "178/871",
+          "437/734",
+          "478/874",
+          "578/875"
+        ]
+      },
+      {
+        "date": "2026-09-18",
+        "turn": "Previa",
+        "rank10": "489/984",
+        "rank11": "527/725",
+        "tiedPool": [
+          "487/784",
+          "489/984",
+          "527/725"
+        ]
+      },
+      {
+        "date": "2026-09-18",
+        "turn": "Primera",
+        "rank10": "253/352",
+        "rank11": "298/892",
+        "tiedPool": [
+          "253/352",
+          "298/892",
+          "487/784",
+          "489/984",
+          "527/725"
+        ]
+      },
+      {
+        "date": "2026-09-18",
+        "turn": "Vespertino",
+        "rank10": "258/852",
+        "rank11": "457/754",
+        "tiedPool": [
+          "205/502",
+          "258/852",
+          "457/754",
+          "556/655",
+          "798/897"
+        ]
+      },
+      {
+        "date": "2026-09-18",
+        "turn": "Nocturno",
+        "rank10": "258/852",
+        "rank11": "457/754",
+        "tiedPool": [
+          "205/502",
+          "258/852",
+          "457/754",
+          "556/655",
+          "798/897"
+        ]
+      },
+      {
+        "date": "2026-09-19",
+        "turn": "Previa",
+        "rank10": "048/840",
+        "rank11": "049/940",
+        "tiedPool": [
+          "019/910",
+          "048/840",
+          "049/940",
+          "091/190",
+          "108/801",
+          "358/853",
+          "386/683",
+          "459/954",
+          "494/494",
+          "545/545",
+          "558/855",
+          "585/585",
+          "638/836",
+          "698/896"
+        ]
+      },
+      {
+        "date": "2026-09-19",
+        "turn": "Primera",
+        "rank10": "549/945",
+        "rank11": "598/895",
+        "tiedPool": [
+          "536/635",
+          "549/945",
+          "598/895"
+        ]
+      },
+      {
+        "date": "2026-09-19",
+        "turn": "Matutino",
+        "rank10": "094/490",
+        "rank11": "246/642",
+        "tiedPool": [
+          "085/580",
+          "094/490",
+          "246/642",
+          "395/593",
+          "408/804",
+          "536/635",
+          "549/945"
+        ]
+      },
+      {
+        "date": "2026-09-19",
+        "turn": "Vespertino",
+        "rank10": "025/520",
+        "rank11": "085/580",
+        "tiedPool": [
+          "025/520",
+          "085/580",
+          "094/490",
+          "246/642",
+          "255/552",
+          "395/593",
+          "408/804",
+          "536/635",
+          "549/945"
+        ]
+      },
+      {
+        "date": "2026-09-21",
+        "turn": "Primera",
+        "rank10": "193/391",
+        "rank11": "206/602",
+        "tiedPool": [
+          "113/311",
+          "193/391",
+          "206/602"
+        ]
+      },
+      {
+        "date": "2026-09-21",
+        "turn": "Matutino",
+        "rank10": "193/391",
+        "rank11": "206/602",
+        "tiedPool": [
+          "113/311",
+          "193/391",
+          "206/602"
+        ]
+      },
+      {
+        "date": "2026-09-21",
+        "turn": "Vespertino",
+        "rank10": "113/311",
+        "rank11": "193/391",
+        "tiedPool": [
+          "113/311",
+          "193/391",
+          "206/602"
+        ]
+      },
+      {
+        "date": "2026-09-22",
+        "turn": "Previa",
+        "rank10": "137/731",
+        "rank11": "457/754",
+        "tiedPool": [
+          "137/731",
+          "457/754"
+        ]
+      },
+      {
+        "date": "2026-09-22",
+        "turn": "Primera",
+        "rank10": "044/440",
+        "rank11": "464/464",
+        "tiedPool": [
+          "044/440",
+          "464/464"
+        ]
+      },
+      {
+        "date": "2026-09-24",
+        "turn": "Previa",
+        "rank10": "314/413",
+        "rank11": "319/913",
+        "tiedPool": [
+          "314/413",
+          "319/913",
+          "349/943",
+          "839/938"
+        ]
+      },
+      {
+        "date": "2026-09-25",
+        "turn": "Previa",
+        "rank10": "508/805",
+        "rank11": "518/815",
+        "tiedPool": [
+          "288/882",
+          "508/805",
+          "518/815",
+          "829/928"
+        ]
+      },
+      {
+        "date": "2026-09-25",
+        "turn": "Primera",
+        "rank10": "189/981",
+        "rank11": "192/291",
+        "tiedPool": [
+          "094/490",
+          "189/981",
+          "192/291",
+          "284/482",
+          "288/882",
+          "508/805",
+          "518/815",
+          "829/928"
+        ]
+      },
+      {
+        "date": "2026-09-25",
+        "turn": "Matutino",
+        "rank10": "074/470",
+        "rank11": "094/490",
+        "tiedPool": [
+          "064/460",
+          "074/470",
+          "094/490",
+          "189/981",
+          "192/291",
+          "284/482",
+          "288/882",
+          "347/743",
+          "508/805",
+          "518/815",
+          "556/655",
+          "657/756",
+          "829/928"
+        ]
+      },
+      {
+        "date": "2026-09-25",
+        "turn": "Nocturno",
+        "rank10": "056/650",
+        "rank11": "081/180",
+        "tiedPool": [
+          "056/650",
+          "081/180"
+        ]
+      },
+      {
+        "date": "2026-09-26",
+        "turn": "Previa",
+        "rank10": "053/350",
+        "rank11": "215/512",
+        "tiedPool": [
+          "053/350",
+          "215/512",
+          "244/442"
+        ]
+      },
+      {
+        "date": "2026-09-26",
+        "turn": "Primera",
+        "rank10": "013/310",
+        "rank11": "037/730",
+        "tiedPool": [
+          "013/310",
+          "037/730",
+          "173/371",
+          "177/771",
+          "238/832"
+        ]
+      },
+      {
+        "date": "2026-09-28",
+        "turn": "Previa",
+        "rank10": "076/670",
+        "rank11": "306/603",
+        "tiedPool": [
+          "072/270",
+          "076/670",
+          "306/603",
+          "479/974",
+          "769/967",
+          "779/977"
+        ]
+      },
+      {
+        "date": "2026-09-28",
+        "turn": "Primera",
+        "rank10": "163/361",
+        "rank11": "193/391",
+        "tiedPool": [
+          "163/361",
+          "193/391",
+          "314/413",
+          "387/783",
+          "397/793"
+        ]
+      },
+      {
+        "date": "2026-09-28",
+        "turn": "Matutino",
+        "rank10": "163/361",
+        "rank11": "193/391",
+        "tiedPool": [
+          "163/361",
+          "193/391",
+          "314/413",
+          "387/783",
+          "397/793"
+        ]
+      },
+      {
+        "date": "2026-09-28",
+        "turn": "Vespertino",
+        "rank10": "163/361",
+        "rank11": "193/391",
+        "tiedPool": [
+          "163/361",
+          "193/391",
+          "314/413",
+          "387/783",
+          "397/793"
+        ]
+      },
+      {
+        "date": "2026-09-28",
+        "turn": "Nocturno",
+        "rank10": "376/673",
+        "rank11": "379/973",
+        "tiedPool": [
+          "369/963",
+          "376/673",
+          "379/973",
+          "769/967"
+        ]
+      },
+      {
+        "date": "2026-09-29",
+        "turn": "Matutino",
+        "rank10": "143/341",
+        "rank11": "243/342",
+        "tiedPool": [
+          "143/341",
+          "243/342",
+          "799/997"
+        ]
+      },
+      {
+        "date": "2026-09-30",
+        "turn": "Previa",
+        "rank10": "073/370",
+        "rank11": "081/180",
+        "tiedPool": [
+          "058/850",
+          "073/370",
+          "081/180",
+          "308/803",
+          "377/773",
+          "508/805",
+          "587/785"
+        ]
+      },
+      {
+        "date": "2026-09-30",
+        "turn": "Primera",
+        "rank10": "017/710",
+        "rank11": "043/340",
+        "tiedPool": [
+          "017/710",
+          "043/340",
+          "058/850",
+          "073/370",
+          "081/180",
+          "126/621",
+          "267/762",
+          "308/803",
+          "347/743",
+          "377/773",
+          "437/734",
+          "508/805",
+          "587/785",
+          "637/736"
+        ]
+      },
+      {
+        "date": "2026-09-30",
+        "turn": "Matutino",
+        "rank10": "017/710",
+        "rank11": "043/340",
+        "tiedPool": [
+          "017/710",
+          "043/340",
+          "058/850",
+          "073/370",
+          "081/180",
+          "126/621",
+          "267/762",
+          "308/803",
+          "347/743",
+          "377/773",
+          "437/734",
+          "508/805",
+          "587/785",
+          "637/736"
+        ]
+      },
+      {
+        "date": "2026-09-30",
+        "turn": "Nocturno",
+        "rank10": "809/908",
+        "rank11": "879/978",
+        "tiedPool": [
+          "708/807",
+          "809/908",
+          "879/978"
+        ]
+      },
+      {
+        "date": "2026-10-01",
+        "turn": "Matutino",
+        "rank10": "519/915",
+        "rank11": "638/836",
+        "tiedPool": [
+          "348/843",
+          "519/915",
+          "638/836"
+        ]
+      },
+      {
+        "date": "2026-10-01",
+        "turn": "Vespertino",
+        "rank10": "065/560",
+        "rank11": "096/690",
+        "tiedPool": [
+          "065/560",
+          "096/690",
+          "316/613",
+          "348/843",
+          "519/915",
+          "638/836"
+        ]
+      },
+      {
+        "date": "2026-10-02",
+        "turn": "Previa",
+        "rank10": "607/706",
+        "rank11": "669/966",
+        "tiedPool": [
+          "075/570",
+          "607/706",
+          "669/966",
+          "739/937"
+        ]
+      },
+      {
+        "date": "2026-10-02",
+        "turn": "Primera",
+        "rank10": "468/864",
+        "rank11": "537/735",
+        "tiedPool": [
+          "084/480",
+          "468/864",
+          "537/735",
+          "576/675",
+          "657/756",
+          "769/967"
+        ]
+      },
+      {
+        "date": "2026-10-02",
+        "turn": "Matutino",
+        "rank10": "084/480",
+        "rank11": "369/963",
+        "tiedPool": [
+          "057/750",
+          "084/480",
+          "369/963",
+          "378/873",
+          "468/864",
+          "537/735",
+          "576/675",
+          "657/756",
+          "769/967"
+        ]
+      },
+      {
+        "date": "2026-10-02",
+        "turn": "Vespertino",
+        "rank10": "084/480",
+        "rank11": "369/963",
+        "tiedPool": [
+          "057/750",
+          "084/480",
+          "369/963",
+          "378/873",
+          "468/864",
+          "537/735",
+          "576/675",
+          "657/756",
+          "769/967"
+        ]
+      },
+      {
+        "date": "2026-10-02",
+        "turn": "Nocturno",
+        "rank10": "084/480",
+        "rank11": "369/963",
+        "tiedPool": [
+          "057/750",
+          "084/480",
+          "369/963",
+          "378/873",
+          "468/864",
+          "537/735",
+          "576/675",
+          "657/756",
+          "769/967"
+        ]
+      },
+      {
+        "date": "2026-10-03",
+        "turn": "Primera",
+        "rank10": "102/201",
+        "rank11": "134/431",
+        "tiedPool": [
+          "034/430",
+          "102/201",
+          "134/431",
+          "194/491",
+          "344/443"
+        ]
+      },
+      {
+        "date": "2026-10-03",
+        "turn": "Nocturno",
+        "rank10": "102/201",
+        "rank11": "204/402",
+        "tiedPool": [
+          "102/201",
+          "204/402"
+        ]
+      },
+      {
+        "date": "2026-10-06",
+        "turn": "Previa",
+        "rank10": "556/655",
+        "rank11": "566/665",
+        "tiedPool": [
+          "536/635",
+          "556/655",
+          "566/665",
+          "586/685"
+        ]
+      },
+      {
+        "date": "2026-10-06",
+        "turn": "Primera",
+        "rank10": "246/642",
+        "rank11": "267/762",
+        "tiedPool": [
+          "183/381",
+          "246/642",
+          "267/762",
+          "297/792",
+          "356/653",
+          "465/564",
+          "536/635",
+          "556/655",
+          "566/665",
+          "586/685"
+        ]
+      },
+      {
+        "date": "2026-10-06",
+        "turn": "Nocturno",
+        "rank10": "053/350",
+        "rank11": "158/851",
+        "tiedPool": [
+          "018/810",
+          "053/350",
+          "158/851"
+        ]
+      },
+      {
+        "date": "2026-10-07",
+        "turn": "Matutino",
+        "rank10": "102/201",
+        "rank11": "209/902",
+        "tiedPool": [
+          "097/790",
+          "102/201",
+          "209/902",
+          "267/762"
+        ]
+      },
+      {
+        "date": "2026-10-07",
+        "turn": "Vespertino",
+        "rank10": "097/790",
+        "rank11": "102/201",
+        "tiedPool": [
+          "097/790",
+          "102/201",
+          "209/902",
+          "267/762",
+          "456/654"
+        ]
+      },
+      {
+        "date": "2026-10-08",
+        "turn": "Previa",
+        "rank10": "131/131",
+        "rank11": "649/946",
+        "tiedPool": [
+          "131/131",
+          "649/946"
+        ]
+      },
+      {
+        "date": "2026-10-08",
+        "turn": "Primera",
+        "rank10": "145/541",
+        "rank11": "149/941",
+        "tiedPool": [
+          "142/241",
+          "145/541",
+          "149/941",
+          "163/361",
+          "208/802",
+          "209/902",
+          "456/654",
+          "566/665",
+          "569/965",
+          "659/956",
+          "899/998"
+        ]
+      },
+      {
+        "date": "2026-10-08",
+        "turn": "Vespertino",
+        "rank10": "071/170",
+        "rank11": "117/711",
+        "tiedPool": [
+          "071/170",
+          "117/711",
+          "176/671",
+          "178/871",
+          "189/981",
+          "278/872",
+          "287/782"
+        ]
+      },
+      {
+        "date": "2026-10-08",
+        "turn": "Nocturno",
+        "rank10": "071/170",
+        "rank11": "117/711",
+        "tiedPool": [
+          "071/170",
+          "117/711",
+          "176/671",
+          "178/871",
+          "189/981",
+          "278/872",
+          "287/782"
+        ]
+      },
+      {
+        "date": "2026-10-09",
+        "turn": "Previa",
+        "rank10": "074/470",
+        "rank11": "466/664",
+        "tiedPool": [
+          "074/470",
+          "466/664"
+        ]
+      },
+      {
+        "date": "2026-10-09",
+        "turn": "Primera",
+        "rank10": "074/470",
+        "rank11": "466/664",
+        "tiedPool": [
+          "074/470",
+          "466/664"
+        ]
+      },
+      {
+        "date": "2026-10-09",
+        "turn": "Matutino",
+        "rank10": "638/836",
+        "rank11": "647/746",
+        "tiedPool": [
+          "081/180",
+          "638/836",
+          "647/746"
+        ]
+      },
+      {
+        "date": "2026-10-09",
+        "turn": "Vespertino",
+        "rank10": "046/640",
+        "rank11": "081/180",
+        "tiedPool": [
+          "046/640",
+          "081/180",
+          "638/836",
+          "647/746"
+        ]
+      },
+      {
+        "date": "2026-10-09",
+        "turn": "Nocturno",
+        "rank10": "053/350",
+        "rank11": "104/401",
+        "tiedPool": [
+          "053/350",
+          "104/401",
+          "386/683"
+        ]
+      },
+      {
+        "date": "2026-10-10",
+        "turn": "Primera",
+        "rank10": "537/735",
+        "rank11": "647/746",
+        "tiedPool": [
+          "467/764",
+          "537/735",
+          "647/746"
+        ]
+      },
+      {
+        "date": "2026-10-10",
+        "turn": "Matutino",
+        "rank10": "172/271",
+        "rank11": "346/643",
+        "tiedPool": [
+          "139/931",
+          "172/271",
+          "346/643",
+          "537/735",
+          "617/716",
+          "647/746"
+        ]
+      },
+      {
+        "date": "2026-10-10",
+        "turn": "Vespertino",
+        "rank10": "089/980",
+        "rank11": "139/931",
+        "tiedPool": [
+          "089/980",
+          "139/931",
+          "172/271",
+          "346/643",
+          "537/735",
+          "617/716",
+          "647/746"
+        ]
+      },
+      {
+        "date": "2026-10-10",
+        "turn": "Nocturno",
+        "rank10": "089/980",
+        "rank11": "139/931",
+        "tiedPool": [
+          "089/980",
+          "139/931",
+          "172/271",
+          "346/643",
+          "537/735",
+          "617/716",
+          "647/746"
+        ]
+      }
+    ]
+  },
+  "controls": {
+    "OFICIAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gained": [],
+      "lost": []
+    },
+    "REEMPLAZAR_9_10_POR_11_12": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17,
+      "gained": [
+        "2026-09-15|Previa",
+        "2026-09-16|Matutino"
+      ],
+      "lost": []
+    },
+    "REEMPLAZAR_10_POR_11": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "gained": [
+        "2026-09-15|Previa"
+      ],
+      "lost": []
+    },
+    "MEZCLAR_EMPATES_9_10": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gained": [],
+      "lost": []
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "OFICIAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_9_10_POR_11_12": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 12,
+        "gained": [
+          "2026-09-15|Previa",
+          "2026-09-16|Matutino"
+        ],
+        "lost": []
+      },
+      "REEMPLAZAR_10_POR_11": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "gained": [
+          "2026-09-15|Previa"
+        ],
+        "lost": []
+      },
+      "MEZCLAR_EMPATES_9_10": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "2026-10": {
+      "OFICIAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_9_10_POR_11_12": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_10_POR_11": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "MEZCLAR_EMPATES_9_10": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_9_10_POR_11_12": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "gained": [
+          "2026-09-15|Previa"
+        ],
+        "lost": []
+      },
+      "REEMPLAZAR_10_POR_11": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "gained": [
+          "2026-09-15|Previa"
+        ],
+        "lost": []
+      },
+      "MEZCLAR_EMPATES_9_10": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Primera": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_9_10_POR_11_12": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_10_POR_11": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "MEZCLAR_EMPATES_9_10": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Matutino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_9_10_POR_11_12": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "gained": [
+          "2026-09-16|Matutino"
+        ],
+        "lost": []
+      },
+      "REEMPLAZAR_10_POR_11": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained": [],
+        "lost": []
+      },
+      "MEZCLAR_EMPATES_9_10": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Vespertino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_9_10_POR_11_12": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_10_POR_11": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "MEZCLAR_EMPATES_9_10": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Nocturno": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_9_10_POR_11_12": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "REEMPLAZAR_10_POR_11": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "MEZCLAR_EMPATES_9_10": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      }
+    }
+  },
+  "dayPlacebo": {
+    "free": {
+      "8": {
+        "observed": 3,
+        "mean": 1.3397,
+        "p05": 0,
+        "median": 1,
+        "p95": 3,
+        "tailAtMostObserved": 0.9561021948902555
+      },
+      "9": {
+        "observed": 0,
+        "mean": 0.9186,
+        "p05": 0,
+        "median": 1,
+        "p95": 3,
+        "tailAtMostObserved": 0.4040297985100745
+      },
+      "10": {
+        "observed": 0,
+        "mean": 0.6979,
+        "p05": 0,
+        "median": 1,
+        "p95": 2,
+        "tailAtMostObserved": 0.4840757962101895
+      },
+      "11": {
+        "observed": 1,
+        "mean": 1.0873,
+        "p05": 0,
+        "median": 1,
+        "p95": 3,
+        "tailAtMostObserved": 0.7012149392530374
+      },
+      "12": {
+        "observed": 2,
+        "mean": 0.697,
+        "p05": 0,
+        "median": 1,
+        "p95": 2,
+        "tailAtMostObserved": 0.9743012849357532
+      },
+      "pair9_10": {
+        "observed": 0,
+        "mean": 1.6165,
+        "p05": 0,
+        "median": 1,
+        "p95": 4,
+        "tailAtMostObserved": 0.18769061546922655
+      },
+      "pair11_12": {
+        "observed": 3,
+        "mean": 1.7842,
+        "p05": 0,
+        "median": 2,
+        "p95": 4,
+        "tailAtMostObserved": 0.8900554972251388
+      }
+    },
+    "weekday": {
+      "8": {
+        "observed": 3,
+        "mean": 2.2529,
+        "p05": 1,
+        "median": 2,
+        "p95": 4,
+        "tailAtMostObserved": 0.8846557672116394
+      },
+      "9": {
+        "observed": 0,
+        "mean": 0.8384,
+        "p05": 0,
+        "median": 1,
+        "p95": 2,
+        "tailAtMostObserved": 0.3717314134293285
+      },
+      "10": {
+        "observed": 0,
+        "mean": 0.249,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "tailAtMostObserved": 0.7510124493775311
+      },
+      "11": {
+        "observed": 1,
+        "mean": 0.748,
+        "p05": 0,
+        "median": 1,
+        "p95": 2,
+        "tailAtMostObserved": 0.8729063546822659
+      },
+      "12": {
+        "observed": 2,
+        "mean": 0.5037,
+        "p05": 0,
+        "median": 0,
+        "p95": 2,
+        "tailAtMostObserved": 1
+      },
+      "pair9_10": {
+        "observed": 0,
+        "mean": 1.0874,
+        "p05": 0,
+        "median": 1,
+        "p95": 3,
+        "tailAtMostObserved": 0.28173591320433977
+      },
+      "pair11_12": {
+        "observed": 3,
+        "mean": 1.2517,
+        "p05": 0,
+        "median": 1,
+        "p95": 3,
+        "tailAtMostObserved": 0.9841007949602519
+      }
+    }
+  },
+  "rotations": [
+    {
+      "lag": 1,
+      "values": {
+        "8": 1,
+        "9": 0,
+        "10": 1,
+        "11": 3,
+        "12": 2,
+        "pair9_10": 1,
+        "pair11_12": 5
+      }
+    },
+    {
+      "lag": 2,
+      "values": {
+        "8": 2,
+        "9": 1,
+        "10": 2,
+        "11": 1,
+        "12": 1,
+        "pair9_10": 3,
+        "pair11_12": 2
+      }
+    },
+    {
+      "lag": 3,
+      "values": {
+        "8": 0,
+        "9": 0,
+        "10": 0,
+        "11": 3,
+        "12": 0,
+        "pair9_10": 0,
+        "pair11_12": 3
+      }
+    },
+    {
+      "lag": 4,
+      "values": {
+        "8": 2,
+        "9": 1,
+        "10": 0,
+        "11": 2,
+        "12": 0,
+        "pair9_10": 1,
+        "pair11_12": 2
+      }
+    },
+    {
+      "lag": 5,
+      "values": {
+        "8": 3,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 2,
+        "pair9_10": 0,
+        "pair11_12": 2
+      }
+    },
+    {
+      "lag": 6,
+      "values": {
+        "8": 5,
+        "9": 2,
+        "10": 0,
+        "11": 1,
+        "12": 0,
+        "pair9_10": 2,
+        "pair11_12": 1
+      }
+    },
+    {
+      "lag": 7,
+      "values": {
+        "8": 1,
+        "9": 0,
+        "10": 0,
+        "11": 1,
+        "12": 0,
+        "pair9_10": 0,
+        "pair11_12": 1
+      }
+    },
+    {
+      "lag": 8,
+      "values": {
+        "8": 0,
+        "9": 0,
+        "10": 0,
+        "11": 0,
+        "12": 1,
+        "pair9_10": 0,
+        "pair11_12": 1
+      }
+    },
+    {
+      "lag": 9,
+      "values": {
+        "8": 2,
+        "9": 1,
+        "10": 1,
+        "11": 1,
+        "12": 0,
+        "pair9_10": 2,
+        "pair11_12": 1
+      }
+    },
+    {
+      "lag": 10,
+      "values": {
+        "8": 0,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "pair9_10": 3,
+        "pair11_12": 2
+      }
+    },
+    {
+      "lag": 11,
+      "values": {
+        "8": 0,
+        "9": 2,
+        "10": 3,
+        "11": 0,
+        "12": 0,
+        "pair9_10": 5,
+        "pair11_12": 0
+      }
+    },
+    {
+      "lag": 12,
+      "values": {
+        "8": 2,
+        "9": 2,
+        "10": 0,
+        "11": 1,
+        "12": 0,
+        "pair9_10": 2,
+        "pair11_12": 1
+      }
+    },
+    {
+      "lag": 13,
+      "values": {
+        "8": 0,
+        "9": 1,
+        "10": 0,
+        "11": 1,
+        "12": 0,
+        "pair9_10": 1,
+        "pair11_12": 1
+      }
+    },
+    {
+      "lag": 14,
+      "values": {
+        "8": 0,
+        "9": 3,
+        "10": 0,
+        "11": 3,
+        "12": 0,
+        "pair9_10": 3,
+        "pair11_12": 3
+      }
+    },
+    {
+      "lag": 15,
+      "values": {
+        "8": 0,
+        "9": 3,
+        "10": 1,
+        "11": 0,
+        "12": 1,
+        "pair9_10": 4,
+        "pair11_12": 1
+      }
+    },
+    {
+      "lag": 16,
+      "values": {
+        "8": 0,
+        "9": 0,
+        "10": 1,
+        "11": 1,
+        "12": 3,
+        "pair9_10": 1,
+        "pair11_12": 4
+      }
+    },
+    {
+      "lag": 17,
+      "values": {
+        "8": 1,
+        "9": 0,
+        "10": 1,
+        "11": 0,
+        "12": 0,
+        "pair9_10": 1,
+        "pair11_12": 0
+      }
+    },
+    {
+      "lag": 18,
+      "values": {
+        "8": 2,
+        "9": 0,
+        "10": 0,
+        "11": 1,
+        "12": 0,
+        "pair9_10": 0,
+        "pair11_12": 1
+      }
+    },
+    {
+      "lag": 19,
+      "values": {
+        "8": 0,
+        "9": 0,
+        "10": 1,
+        "11": 1,
+        "12": 0,
+        "pair9_10": 1,
+        "pair11_12": 1
+      }
+    },
+    {
+      "lag": 20,
+      "values": {
+        "8": 2,
+        "9": 0,
+        "10": 1,
+        "11": 0,
+        "12": 0,
+        "pair9_10": 1,
+        "pair11_12": 0
+      }
+    },
+    {
+      "lag": 21,
+      "values": {
+        "8": 1,
+        "9": 2,
+        "10": 1,
+        "11": 2,
+        "12": 1,
+        "pair9_10": 3,
+        "pair11_12": 3
+      }
+    },
+    {
+      "lag": 22,
+      "values": {
+        "8": 4,
+        "9": 1,
+        "10": 2,
+        "11": 1,
+        "12": 2,
+        "pair9_10": 3,
+        "pair11_12": 3
+      }
+    }
+  ],
+  "simulated": {
+    "randomReps": 2000,
+    "rank11to20": {
+      "mean": 15.908,
+      "min": 15,
+      "max": 20,
+      "median": 16,
+      "p05": 15,
+      "p95": 18,
+      "probabilityAtLeast18": 0.0545
+    },
+    "tieShuffle": {
+      "mean": 15.7315,
+      "min": 15,
+      "max": 17,
+      "median": 16,
+      "p05": 15,
+      "p95": 17,
+      "probabilityAtLeast18": 0
+    },
+    "candidateRank11to20Hits": {
+      "mean": 1.319,
+      "min": 0,
+      "max": 6,
+      "median": 1,
+      "p05": 0,
+      "p95": 3,
+      "probabilityAtLeast18": 0
+    },
+    "tiedRank9to10Hits": {
+      "mean": 1.253,
+      "min": 0,
+      "max": 4,
+      "median": 1,
+      "p05": 0,
+      "p95": 3,
+      "probabilityAtLeast18": 0
+    }
+  },
+  "seal": {
+    "input": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "protocol": "7ee6897cd8ca5521bdaa012ed2ba913cad62d7909206f75b31fa8dd1f3917d91",
+    "code": "01dcd46bd132c22c8e88a4cabcddb886423b0ebd2e298829f507131774a86d64",
+    "pre": "aefca578e4b2a5da5cdf8784c7538976452cad7b627481ac0bdee2299b7f72ee",
+    "neutralPre": "c90c647632d91aaada4316e3510ccc730e9b404583d3995faa0e7d86cc3ace53"
+  },
+  "postHash": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "warning": "Mismo histórico intensamente reutilizado; puestos vacíos pueden ser azar. Evaluación retrospectiva, sin prueba prospectiva ni ventaja de sorteo."
+}
