@@ -1,0 +1,54 @@
+name: VT4 hermanas geometricas y memoria X a X1
+on:
+  push:
+    branches: [lab-vt4-hermanas-geometricas-13oct2026]
+    paths:
+      - 'scripts/lab-vt4-hermanas-geometricas.mjs'
+      - 'PROTOCOLO_VT4_HERMANAS_GEOMETRICAS_13OCT2026.md'
+      - '.github/workflows/lab-vt4-hermanas-geometricas.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  hermanas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar fisicamente resultados y fixture con cabezas futuras
+        run: |
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt4-hermanas-post.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt4-hermanas-fixture.b64
+          test ! -e auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          test ! -e fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+      - name: Crear perfiles de hijas, Top10 PRE y sello sin POST
+        run: node scripts/lab-vt4-hermanas-geometricas.mjs pre
+      - name: Versionar opciones PRE antes del cotejo
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-hermanas-geometricas-115-13oct2026/PRE_115.json
+          git add auditorias/vt4-hermanas-geometricas-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT4): hermanas por madre con geometrías PRE para 115 cortes'
+          git push origin HEAD:lab-vt4-hermanas-geometricas-13oct2026
+      - name: Reponer resultados y evaluar transferencia X a semana siguiente
+        run: |
+          mv /tmp/vt4-hermanas-post.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          mv /tmp/vt4-hermanas-fixture.b64 fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt4-hermanas-geometricas.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt4-hermanas-geometricas-115
+          path: auditorias/vt4-hermanas-geometricas-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar comparativas solo en rama experimental
+        run: |
+          git add auditorias/vt4-hermanas-geometricas-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT4): ranking hermanas, transferencia X y oportunidades físicas'
+            git push origin HEAD:lab-vt4-hermanas-geometricas-13oct2026
+          fi
