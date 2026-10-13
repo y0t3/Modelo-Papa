@@ -1,0 +1,54 @@
+name: VT4 D7 D1 placebo ruta hermana 500
+on:
+  push:
+    branches: [lab-vt4-transferencia-rutas-ganadoras-13oct2026]
+    paths:
+      - 'scripts/lab-vt4-rutas-placebo.mjs'
+      - 'PROTOCOLO_VT4_CONTROL_PERMUTACION_RUTAS_13OCT2026.md'
+      - '.github/workflows/lab-vt4-rutas-placebo.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  placebo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Eliminar del entorno resultados futuros antes de seleccionar
+        run: |
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt4-placebo-post.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt4-placebo-fixture.b64
+          test ! -e auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+      - name: Generar 500 controles permutados y sellar PRE
+        run: node scripts/lab-vt4-rutas-placebo.mjs pre
+      - name: Versionar selecciones neutrales PRE antes de restaurar POST
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/PLACEBO_PRE_500.json
+          git add auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/PLACEBO_SELLO.json
+          git commit -m 'seal(VT4): 500 permutaciones neutrales de apoyo D7 D1 entre hermanas'
+          git push origin HEAD:lab-vt4-transferencia-rutas-ganadoras-13oct2026
+      - name: Comparar 500 controles con las cinco cabezas de política histórica verdadera
+        run: |
+          mv /tmp/vt4-placebo-post.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          mv /tmp/vt4-placebo-fixture.b64 fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt4-rutas-placebo.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt4-d7-d1-controles-permutacion
+          path: |
+            auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/PLACEBO_PRE_500.json
+            auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/PLACEBO_SELLO.json
+            auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/PLACEBO_RESUMEN.json
+          retention-days: 60
+          if-no-files-found: error
+      - name: Resguardar resumen en rama de laboratorio
+        run: |
+          git add auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/PLACEBO_RESUMEN.json
+          git commit -m 'data(VT4): comparativa 500 placebos contra cinco cabezas reales'
+          git push origin HEAD:lab-vt4-transferencia-rutas-ganadoras-13oct2026
