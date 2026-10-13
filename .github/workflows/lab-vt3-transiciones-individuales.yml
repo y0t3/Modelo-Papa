@@ -1,0 +1,51 @@
+name: VT3 transiciones individuales y negativos comparables
+on:
+  push:
+    branches: [lab-vt3-transiciones-individuales-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-transiciones-individuales.mjs'
+      - 'PROTOCOLO_VT3_TRANSICIONES_INDIVIDUALES_13OCT2026.md'
+      - '.github/workflows/lab-vt3-transiciones-individuales.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  evoluciones:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar por completo los resultados POST
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/transiciones-base-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/transiciones-base-nocturna.json
+          mv auditorias/vt3-nacimientos-convergencias-115-13oct2026/POST_115.json /tmp/transiciones-perfiles-post.json
+          mv auditorias/vt3-nacimientos-convergencias-115-13oct2026/NOCTURNA_POST.json /tmp/transiciones-perfiles-nocturna.json
+      - name: Auditar caminos, transiciones y PRE; sellar sin resultados
+        run: node scripts/lab-vt3-transiciones-individuales.mjs pre
+      - name: Restaurar POST y contrastar con negativos emparejados
+        run: |
+          mv /tmp/transiciones-base-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/transiciones-base-nocturna.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          mv /tmp/transiciones-perfiles-post.json auditorias/vt3-nacimientos-convergencias-115-13oct2026/POST_115.json
+          mv /tmp/transiciones-perfiles-nocturna.json auditorias/vt3-nacimientos-convergencias-115-13oct2026/NOCTURNA_POST.json
+          node scripts/lab-vt3-transiciones-individuales.mjs post
+      - name: Guardar auditoría
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-transiciones-individuales-115
+          path: auditorias/vt3-transiciones-individuales-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Versionar resultados en rama de investigación
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-transiciones-individuales-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): atlas de transiciones y controles matched negativos'
+            git push origin HEAD:lab-vt3-transiciones-individuales-13oct2026
+          fi
