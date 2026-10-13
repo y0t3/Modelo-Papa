@@ -14,6 +14,7 @@ import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
 import type {LaloHistorical} from './src/motorLalo';
 import PanoramaSheet from './src/PanoramaSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
+import Vt3Explainer from './src/ui/Vt3Explainer';
 import HeadsTable from './src/ui/HeadsTable';
 import InfoDashboard from './src/ui/InfoDashboard';
 import TurnStrip from './src/ui/TurnStrip';
@@ -129,6 +130,8 @@ function LaloApp(){
     <TurnStrip value={target} onChange={changeTurn}/>
     <PredictionSummary date={dateText} turn={target} view={motor}
      post={post} onFocus={showFamily}/>
+    <Vt3Explainer sheet={sheet} view={motor} turn={target}
+     heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
    </>:screen==='cabezas'?
     <HeadsTable data={data} sheet={sheet}/>:
     <InfoDashboard turn={target} view={motor}/>}
