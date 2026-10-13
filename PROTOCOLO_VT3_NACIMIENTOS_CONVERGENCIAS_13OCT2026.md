@@ -34,7 +34,7 @@ Siempre diez familias y en caso de falta de elegibles se completa con la lista o
 10. `OPEN_BRIDGE_2`: como 8 pero dos cupos.
 11. `OPEN_FRESH_NULL_1`: un cupo entre los mismos elegibles que 7, elegido por hash estable `sha256(fecha|turno|familia|seed)`, sin premiar geometrías (control negativo de admisión).
 
-`OPEN` se compara en 115 cortes contra el mismo Top10 original, y también contra el control nulo de exactamente un cupo. No retener únicamente rescates: dar los desalojos reales, por mes, por turno y exposición de familias nuevas. No cambiar pesos de producción.
+`OPEN` se compara en 115 cortes contra el mismo Top10 original, y también contra el control nulo de exactamente un cupo. **Ubicación del cupo físico sin raíz:** se reserva el último puesto del Top10 (o los dos últimos para cuota dos), manteniendo el orden original en los primeros nueve/ocho; no se impulsa una hipótesis física sin raíz al Top3 artificialmente. Faltando elegibles se rellena con las familias originales en su orden. No retener únicamente rescates: dar los desalojos reales, por mes, por turno y exposición de familias nuevas. No cambiar pesos de producción.
 
 ## Evaluación
 - PRE sellado con 115 cortes, perfiles de familias y listados exactos de 10 por política; POST sólo después de sello.
