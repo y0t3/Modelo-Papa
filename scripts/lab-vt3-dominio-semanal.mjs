@@ -274,7 +274,7 @@ function post(){
    trainingDistribution:counted,
    trainedPhysicalPositiveFamilies:trainingEval.reduce((s,x)=>s+x.positiveCount,0),
    trainingReproduction:{possibleCuts:trainingEval.filter(x=>x.positiveCount>0).length,
-    fullyReproducedCuts:trainingEval.filter(x=>x.allCovered).length,
+    fullyReproducedCuts:trainingEval.filter(x=>x.positiveCount>0&&x.allCovered).length,
     status:trainingEval.every(x=>x.allCovered)?'100pct_in_sample':'FAILED'},
    examReached:checked.filter(x=>x.physicallyAvailable.length>0).length,
    casebookName:bookName,casebookSha:sha(read(OUT+bookName)),
