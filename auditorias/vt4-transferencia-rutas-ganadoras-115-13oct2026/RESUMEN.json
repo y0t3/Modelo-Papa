@@ -1,0 +1,697 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "aggregate": {
+    "BASE_CUPO2": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "gainsTop10": [],
+      "lossesTop10": [],
+      "changedTop10": 0
+    },
+    "D7_EXACTO": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "gainsTop10": [],
+      "lossesTop10": [],
+      "changedTop10": 65
+    },
+    "D7_TRASLADO": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "gainsTop10": [],
+      "lossesTop10": [],
+      "changedTop10": 65
+    },
+    "D7_MISMO_TURNO": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "gainsTop10": [],
+      "lossesTop10": [],
+      "changedTop10": 65
+    },
+    "D1_EXACTO": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "gainsTop10": [],
+      "lossesTop10": [],
+      "changedTop10": 55
+    },
+    "D1_TRASLADO": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "gainsTop10": [],
+      "lossesTop10": [],
+      "changedTop10": 55
+    },
+    "D7_D1_COMBINADO": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "gainsTop10": [],
+      "lossesTop10": [],
+      "changedTop10": 84
+    },
+    "OTRA_FUENTE_CONTROL": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 2,
+      "gainsTop10": [],
+      "lossesTop10": [
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "changedTop10": 99
+    },
+    "CONTROL_HASH": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 1,
+      "top10": 1,
+      "gainsTop10": [
+        "2026-09-18|Vespertino"
+      ],
+      "lossesTop10": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "changedTop10": 115
+    }
+  },
+  "signalAvailability": {
+    "meanMarkedRoutes": 7.957,
+    "cutsWithD7SourceAndShape": 70,
+    "cutsWithD1SourceAndShape": 67,
+    "cutsWithD7Exact": 36,
+    "cutsNoHistoricalVt4Marks": 0,
+    "winnersWithinMotherPool": 6
+  },
+  "recoverableCases": [
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "winners": [
+        {
+          "family": "2735/3725",
+          "mother": "273/372",
+          "number": [
+            "2735"
+          ],
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          },
+          "traces": [
+            {
+              "source": "prevNocturno",
+              "read": "3725",
+              "cells": [
+                "4:0",
+                "3:0",
+                "4:1",
+                "3:1"
+              ],
+              "shape": "0:1>1:1>0:0>1:0"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "2735",
+              "cells": [
+                "4:1",
+                "3:0",
+                "4:0",
+                "3:1"
+              ],
+              "shape": "0:1>1:0>0:0>1:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "2735",
+              "cells": [
+                "2:0",
+                "3:0",
+                "4:0",
+                "3:1"
+              ],
+              "shape": "0:0>1:0>2:0>1:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "3725",
+              "cells": [
+                "4:0",
+                "3:0",
+                "2:0",
+                "3:1"
+              ],
+              "shape": "1:1>0:0>1:0>2:0"
+            }
+          ]
+        }
+      ],
+      "selected": [],
+      "actualHistoryMarks": 3
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "winners": [
+        {
+          "family": "3159/3951",
+          "mother": "159/951",
+          "number": [
+            "3159"
+          ],
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          },
+          "traces": [
+            {
+              "source": "prevNocturno",
+              "read": "3951",
+              "cells": [
+                "1:0",
+                "2:0",
+                "1:1",
+                "2:1"
+              ],
+              "shape": "0:0>1:0>0:1>1:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "3951",
+              "cells": [
+                "3:0",
+                "2:0",
+                "1:1",
+                "2:1"
+              ],
+              "shape": "1:1>0:1>1:0>2:0"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "3159",
+              "cells": [
+                "1:0",
+                "2:1",
+                "1:1",
+                "2:0"
+              ],
+              "shape": "0:0>1:1>0:1>1:0"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "3159",
+              "cells": [
+                "3:0",
+                "2:1",
+                "1:1",
+                "2:0"
+              ],
+              "shape": "1:0>0:1>1:1>2:0"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "3951",
+              "cells": [
+                "1:0",
+                "0:1",
+                "1:1",
+                "2:1"
+              ],
+              "shape": "1:0>0:1>1:1>2:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "3159",
+              "cells": [
+                "1:0",
+                "2:1",
+                "1:1",
+                "0:1"
+              ],
+              "shape": "0:1>1:1>2:1>1:0"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "3159",
+              "cells": [
+                "3:0",
+                "2:1",
+                "1:1",
+                "0:1"
+              ],
+              "shape": "0:1>1:1>2:1>3:0"
+            }
+          ]
+        }
+      ],
+      "selected": [
+        {
+          "head": "3159",
+          "family": "3159/3951",
+          "rank": 9,
+          "mother": "159/951",
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          }
+        }
+      ],
+      "actualHistoryMarks": 2
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "winners": [
+        {
+          "family": "5238/5832",
+          "mother": "238/832",
+          "number": [
+            "5832"
+          ],
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 1,
+            "d1shape": 1,
+            "otherSource": 0
+          },
+          "traces": [
+            {
+              "source": "Primera",
+              "read": "5832",
+              "cells": [
+                "1:1",
+                "0:1",
+                "1:0",
+                "2:1"
+              ],
+              "shape": "1:1>0:1>1:0>2:1"
+            },
+            {
+              "source": "Primera",
+              "read": "5238",
+              "cells": [
+                "1:1",
+                "2:1",
+                "1:0",
+                "0:1"
+              ],
+              "shape": "0:1>1:0>2:1>1:1"
+            },
+            {
+              "source": "Primera",
+              "read": "5832",
+              "cells": [
+                "1:1",
+                "0:0",
+                "1:0",
+                "2:1"
+              ],
+              "shape": "1:1>0:0>1:0>2:1"
+            },
+            {
+              "source": "Primera",
+              "read": "5238",
+              "cells": [
+                "1:1",
+                "2:1",
+                "1:0",
+                "0:0"
+              ],
+              "shape": "0:0>1:0>2:1>1:1"
+            },
+            {
+              "source": "Primera",
+              "read": "5832",
+              "cells": [
+                "1:1",
+                "0:1",
+                "1:0",
+                "2:0"
+              ],
+              "shape": "1:1>0:1>1:0>2:0"
+            },
+            {
+              "source": "Primera",
+              "read": "5238",
+              "cells": [
+                "1:1",
+                "2:0",
+                "1:0",
+                "0:1"
+              ],
+              "shape": "0:1>1:0>2:0>1:1"
+            }
+          ]
+        },
+        {
+          "family": "2295/2592",
+          "mother": "295/592",
+          "number": [
+            "2592"
+          ],
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 1,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          },
+          "traces": [
+            {
+              "source": "Primera",
+              "read": "2295",
+              "cells": [
+                "2:0",
+                "2:1",
+                "3:0",
+                "4:1"
+              ],
+              "shape": "0:0>0:1>1:0>2:1"
+            },
+            {
+              "source": "Primera",
+              "read": "2592",
+              "cells": [
+                "4:0",
+                "4:1",
+                "3:0",
+                "2:1"
+              ],
+              "shape": "0:1>1:0>2:1>2:0"
+            },
+            {
+              "source": "Primera",
+              "read": "2295",
+              "cells": [
+                "2:1",
+                "2:0",
+                "3:0",
+                "4:1"
+              ],
+              "shape": "0:1>0:0>1:0>2:1"
+            },
+            {
+              "source": "Primera",
+              "read": "2592",
+              "cells": [
+                "4:0",
+                "4:1",
+                "3:0",
+                "2:0"
+              ],
+              "shape": "0:0>1:0>2:1>2:0"
+            }
+          ]
+        }
+      ],
+      "selected": [
+        {
+          "head": "2592",
+          "family": "2295/2592",
+          "rank": 9,
+          "mother": "295/592",
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 1,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          }
+        }
+      ],
+      "actualHistoryMarks": 19
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "winners": [
+        {
+          "family": "3729/3927",
+          "mother": "729/927",
+          "number": [
+            "3729"
+          ],
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          },
+          "traces": [
+            {
+              "source": "Primera",
+              "read": "3927",
+              "cells": [
+                "0:0",
+                "1:1",
+                "2:0",
+                "3:1"
+              ],
+              "shape": "0:0>1:1>2:0>3:1"
+            },
+            {
+              "source": "Primera",
+              "read": "3927",
+              "cells": [
+                "0:0",
+                "1:1",
+                "2:0",
+                "3:0"
+              ],
+              "shape": "0:0>1:1>2:0>3:0"
+            },
+            {
+              "source": "Primera",
+              "read": "3927",
+              "cells": [
+                "0:0",
+                "1:1",
+                "2:0",
+                "1:0"
+              ],
+              "shape": "0:0>1:1>2:0>1:0"
+            },
+            {
+              "source": "Primera",
+              "read": "3729",
+              "cells": [
+                "0:0",
+                "1:0",
+                "2:0",
+                "1:1"
+              ],
+              "shape": "0:0>1:0>2:0>1:1"
+            },
+            {
+              "source": "Primera",
+              "read": "3729",
+              "cells": [
+                "0:0",
+                "1:0",
+                "2:0",
+                "2:1"
+              ],
+              "shape": "0:0>1:0>2:0>2:1"
+            }
+          ]
+        }
+      ],
+      "selected": [],
+      "actualHistoryMarks": 12
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "winners": [
+        {
+          "family": "4562/6542",
+          "mother": "456/654",
+          "number": [
+            "6542"
+          ],
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          },
+          "traces": [
+            {
+              "source": "prevNocturno",
+              "read": "4562",
+              "cells": [
+                "3:0",
+                "4:1",
+                "4:0",
+                "5:1"
+              ],
+              "shape": "0:0>1:1>1:0>2:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "6542",
+              "cells": [
+                "4:0",
+                "4:1",
+                "5:0",
+                "5:1"
+              ],
+              "shape": "0:0>0:1>1:0>1:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "4562",
+              "cells": [
+                "5:0",
+                "4:1",
+                "4:0",
+                "5:1"
+              ],
+              "shape": "1:0>0:1>0:0>1:1"
+            }
+          ]
+        }
+      ],
+      "selected": [
+        {
+          "head": "6542",
+          "family": "4562/6542",
+          "rank": 10,
+          "mother": "456/654",
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          }
+        }
+      ],
+      "actualHistoryMarks": 6
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "winners": [
+        {
+          "family": "2456/2654",
+          "mother": "456/654",
+          "number": [
+            "2654"
+          ],
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          },
+          "traces": [
+            {
+              "source": "prevNocturno",
+              "read": "2654",
+              "cells": [
+                "5:1",
+                "4:0",
+                "4:1",
+                "3:0"
+              ],
+              "shape": "0:0>1:1>1:0>2:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "2654",
+              "cells": [
+                "5:1",
+                "4:0",
+                "4:1",
+                "5:0"
+              ],
+              "shape": "1:0>0:1>0:0>1:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "2456",
+              "cells": [
+                "5:1",
+                "5:0",
+                "4:1",
+                "4:0"
+              ],
+              "shape": "0:0>0:1>1:0>1:1"
+            }
+          ]
+        }
+      ],
+      "selected": [
+        {
+          "head": "2654",
+          "family": "2456/2654",
+          "rank": 9,
+          "mother": "456/654",
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          }
+        }
+      ],
+      "actualHistoryMarks": 6
+    }
+  ],
+  "sel": {
+    "date": "2026-10-13",
+    "code": "9b2fc04db01daed926994f2e0050758e6a29ff6c632bbb5344d5a3b1fd68b41e",
+    "protocol": "c1f7dd204e98be58766094ff3416a8ec18f0b8d41257ad0145a80ed8f7549b07",
+    "input": "58365976e327d79a14cd922baa582a80d28651a0cade4e71955bcf4407fe8380",
+    "previous": "0dbfa812536f20b4ed1631faba5c7b812c0b6eb2709d79a4de3c29d3ca5e4538",
+    "baseline": "d50ae2261f2df0f582f50f0bfc10e2d407fe550ae5bdb789081eed080a326d19",
+    "pre": "1e4e287fc37149c93d0c264e0c3b15ee58c7027890ead9467bc10527e50757dd",
+    "inventory": "ab8136f4279420f30cc5706798af9e04d063ce1bb6fd684cebaf85a8da42930b"
+  },
+  "caveat": "Cotejo de muestras retrospectivas reutilizadas extensamente; no prueba ventaja predictiva. Selecciones PRE generadas sin objetivos del turno."
+}
