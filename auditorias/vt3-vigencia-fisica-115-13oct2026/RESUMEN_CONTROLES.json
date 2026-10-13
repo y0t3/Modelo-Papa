@@ -1,0 +1,471 @@
+{
+  "date": "2026-10-13",
+  "days": 23,
+  "cuts": 115,
+  "real": {
+    "OFICIAL": {
+      "3": 5,
+      "5": 8,
+      "10": 15
+    },
+    "NUEVA_7": {
+      "3": 8,
+      "5": 11,
+      "10": 14
+    },
+    "ACTIVA_1": {
+      "3": 3,
+      "5": 6,
+      "10": 8
+    },
+    "NACE_HOY": {
+      "3": 6,
+      "5": 10,
+      "10": 14
+    }
+  },
+  "rotations": {
+    "count": 22,
+    "metrics": {
+      "ORIGINAL_TOP3": {
+        "real": 5,
+        "mean": 2.77273,
+        "p05": 1,
+        "median": 3,
+        "p95": 4,
+        "atLeastReal": 1,
+        "oneSidedTail": 0.08695652173913043
+      },
+      "NUEVA_7_TOP3": {
+        "real": 8,
+        "mean": 2.90909,
+        "p05": 1,
+        "median": 2,
+        "p95": 5,
+        "atLeastReal": 0,
+        "oneSidedTail": 0.043478260869565216
+      },
+      "DELTA_NUEVA_7_VS_ORIGINAL_TOP3": {
+        "real": 3,
+        "mean": 0.13636,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "atLeastReal": 0,
+        "oneSidedTail": 0.043478260869565216
+      },
+      "ORIGINAL_TOP5": {
+        "real": 8,
+        "mean": 4.81818,
+        "p05": 2,
+        "median": 5,
+        "p95": 8,
+        "atLeastReal": 3,
+        "oneSidedTail": 0.17391304347826086
+      },
+      "NUEVA_7_TOP5": {
+        "real": 11,
+        "mean": 4.90909,
+        "p05": 2,
+        "median": 5,
+        "p95": 7,
+        "atLeastReal": 0,
+        "oneSidedTail": 0.043478260869565216
+      },
+      "DELTA_NUEVA_7_VS_ORIGINAL_TOP5": {
+        "real": 3,
+        "mean": 0.09091,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "atLeastReal": 1,
+        "oneSidedTail": 0.08695652173913043
+      },
+      "ORIGINAL_TOP10": {
+        "real": 15,
+        "mean": 9.5,
+        "p05": 6,
+        "median": 9,
+        "p95": 13,
+        "atLeastReal": 1,
+        "oneSidedTail": 0.08695652173913043
+      },
+      "NUEVA_7_TOP10": {
+        "real": 14,
+        "mean": 9.27273,
+        "p05": 6,
+        "median": 9,
+        "p95": 12,
+        "atLeastReal": 2,
+        "oneSidedTail": 0.13043478260869565
+      },
+      "DELTA_NUEVA_7_VS_ORIGINAL_TOP10": {
+        "real": -1,
+        "mean": -0.22727,
+        "p05": -3,
+        "median": 0,
+        "p95": 3,
+        "atLeastReal": 15,
+        "oneSidedTail": 0.6956521739130435
+      },
+      "ACTIVA_1_TOP3": {
+        "real": 3,
+        "mean": 3.09091,
+        "p05": 0,
+        "median": 3,
+        "p95": 5,
+        "atLeastReal": 12,
+        "oneSidedTail": 0.5652173913043478
+      },
+      "ACTIVA_1_TOP5": {
+        "real": 6,
+        "mean": 5.36364,
+        "p05": 1,
+        "median": 6,
+        "p95": 8,
+        "atLeastReal": 12,
+        "oneSidedTail": 0.5652173913043478
+      },
+      "ACTIVA_1_TOP10": {
+        "real": 8,
+        "mean": 11.31818,
+        "p05": 5,
+        "median": 12,
+        "p95": 16,
+        "atLeastReal": 17,
+        "oneSidedTail": 0.782608695652174
+      },
+      "NACE_HOY_TOP3": {
+        "real": 6,
+        "mean": 2.68182,
+        "p05": 0,
+        "median": 3,
+        "p95": 4,
+        "atLeastReal": 0,
+        "oneSidedTail": 0.043478260869565216
+      },
+      "NACE_HOY_TOP5": {
+        "real": 10,
+        "mean": 5.09091,
+        "p05": 3,
+        "median": 4,
+        "p95": 9,
+        "atLeastReal": 2,
+        "oneSidedTail": 0.13043478260869565
+      },
+      "NACE_HOY_TOP10": {
+        "real": 14,
+        "mean": 9.68182,
+        "p05": 6,
+        "median": 9,
+        "p95": 14,
+        "atLeastReal": 3,
+        "oneSidedTail": 0.17391304347826086
+      }
+    }
+  },
+  "placebo": {
+    "free": {
+      "repetitions": 20000,
+      "groups": [
+        23
+      ],
+      "metrics": {
+        "ORIGINAL_TOP3": {
+          "real": 5,
+          "mean": 2.8621,
+          "p05": 0,
+          "median": 3,
+          "p95": 6,
+          "atLeastReal": 3253,
+          "oneSidedTail": 0.16269186540672967
+        },
+        "NUEVA_7_TOP3": {
+          "real": 8,
+          "mean": 3.12905,
+          "p05": 1,
+          "median": 3,
+          "p95": 6,
+          "atLeastReal": 224,
+          "oneSidedTail": 0.011249437528123594
+        },
+        "DELTA_NUEVA_7_VS_ORIGINAL_TOP3": {
+          "real": 3,
+          "mean": 0.26695,
+          "p05": -2,
+          "median": 0,
+          "p95": 3,
+          "atLeastReal": 1441,
+          "oneSidedTail": 0.07209639518024098
+        },
+        "ORIGINAL_TOP5": {
+          "real": 8,
+          "mean": 4.9543,
+          "p05": 2,
+          "median": 5,
+          "p95": 9,
+          "atLeastReal": 2514,
+          "oneSidedTail": 0.12574371281435928
+        },
+        "NUEVA_7_TOP5": {
+          "real": 11,
+          "mean": 5.17705,
+          "p05": 2,
+          "median": 5,
+          "p95": 9,
+          "atLeastReal": 249,
+          "oneSidedTail": 0.012499375031248438
+        },
+        "DELTA_NUEVA_7_VS_ORIGINAL_TOP5": {
+          "real": 3,
+          "mean": 0.22275,
+          "p05": -3,
+          "median": 0,
+          "p95": 3,
+          "atLeastReal": 1836,
+          "oneSidedTail": 0.09184540772961351
+        },
+        "ORIGINAL_TOP10": {
+          "real": 15,
+          "mean": 9.7423,
+          "p05": 5,
+          "median": 10,
+          "p95": 15,
+          "atLeastReal": 1143,
+          "oneSidedTail": 0.05719714014299285
+        },
+        "NUEVA_7_TOP10": {
+          "real": 14,
+          "mean": 9.48465,
+          "p05": 5,
+          "median": 9,
+          "p95": 15,
+          "atLeastReal": 1857,
+          "oneSidedTail": 0.0928953552322384
+        },
+        "DELTA_NUEVA_7_VS_ORIGINAL_TOP10": {
+          "real": -1,
+          "mean": -0.25765,
+          "p05": -4,
+          "median": 0,
+          "p95": 3,
+          "atLeastReal": 14179,
+          "oneSidedTail": 0.7089645517724114
+        },
+        "ACTIVA_1_TOP3": {
+          "real": 3,
+          "mean": 3.0837,
+          "p05": 1,
+          "median": 3,
+          "p95": 6,
+          "atLeastReal": 12257,
+          "oneSidedTail": 0.6128693565321733
+        },
+        "ACTIVA_1_TOP5": {
+          "real": 6,
+          "mean": 5.38925,
+          "p05": 2,
+          "median": 5,
+          "p95": 9,
+          "atLeastReal": 9164,
+          "oneSidedTail": 0.4582270886455677
+        },
+        "ACTIVA_1_TOP10": {
+          "real": 8,
+          "mean": 11.18035,
+          "p05": 6,
+          "median": 11,
+          "p95": 16,
+          "atLeastReal": 17905,
+          "oneSidedTail": 0.895255237238138
+        },
+        "NACE_HOY_TOP3": {
+          "real": 6,
+          "mean": 2.82565,
+          "p05": 0,
+          "median": 3,
+          "p95": 6,
+          "atLeastReal": 1322,
+          "oneSidedTail": 0.06614669266536673
+        },
+        "NACE_HOY_TOP5": {
+          "real": 10,
+          "mean": 5.31345,
+          "p05": 2,
+          "median": 5,
+          "p95": 9,
+          "atLeastReal": 810,
+          "oneSidedTail": 0.040547972601369935
+        },
+        "NACE_HOY_TOP10": {
+          "real": 14,
+          "mean": 9.903,
+          "p05": 5,
+          "median": 10,
+          "p95": 15,
+          "atLeastReal": 2289,
+          "oneSidedTail": 0.1144942752862357
+        }
+      }
+    },
+    "sameWeekday": {
+      "repetitions": 20000,
+      "groups": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "metrics": {
+        "ORIGINAL_TOP3": {
+          "real": 5,
+          "mean": 2.73955,
+          "p05": 0,
+          "median": 3,
+          "p95": 6,
+          "atLeastReal": 2734,
+          "oneSidedTail": 0.13674316284185792
+        },
+        "NUEVA_7_TOP3": {
+          "real": 8,
+          "mean": 3.64765,
+          "p05": 1,
+          "median": 3,
+          "p95": 7,
+          "atLeastReal": 657,
+          "oneSidedTail": 0.03289835508224589
+        },
+        "DELTA_NUEVA_7_VS_ORIGINAL_TOP3": {
+          "real": 3,
+          "mean": 0.9081,
+          "p05": -2,
+          "median": 1,
+          "p95": 4,
+          "atLeastReal": 3002,
+          "oneSidedTail": 0.15014249287535622
+        },
+        "ORIGINAL_TOP5": {
+          "real": 8,
+          "mean": 4.14595,
+          "p05": 1,
+          "median": 4,
+          "p95": 7,
+          "atLeastReal": 900,
+          "oneSidedTail": 0.04504774761261937
+        },
+        "NUEVA_7_TOP5": {
+          "real": 11,
+          "mean": 5.1462,
+          "p05": 2,
+          "median": 5,
+          "p95": 9,
+          "atLeastReal": 230,
+          "oneSidedTail": 0.011549422528873556
+        },
+        "DELTA_NUEVA_7_VS_ORIGINAL_TOP5": {
+          "real": 3,
+          "mean": 1.00025,
+          "p05": -1,
+          "median": 1,
+          "p95": 3,
+          "atLeastReal": 1964,
+          "oneSidedTail": 0.09824508774561272
+        },
+        "ORIGINAL_TOP10": {
+          "real": 15,
+          "mean": 9.2212,
+          "p05": 5,
+          "median": 9,
+          "p95": 13,
+          "atLeastReal": 404,
+          "oneSidedTail": 0.020248987550622467
+        },
+        "NUEVA_7_TOP10": {
+          "real": 14,
+          "mean": 7.9762,
+          "p05": 4,
+          "median": 8,
+          "p95": 12,
+          "atLeastReal": 183,
+          "oneSidedTail": 0.00919954002299885
+        },
+        "DELTA_NUEVA_7_VS_ORIGINAL_TOP10": {
+          "real": -1,
+          "mean": -1.245,
+          "p05": -4,
+          "median": -1,
+          "p95": 2,
+          "atLeastReal": 10994,
+          "oneSidedTail": 0.5497225138743063
+        },
+        "ACTIVA_1_TOP3": {
+          "real": 3,
+          "mean": 2.59205,
+          "p05": 1,
+          "median": 3,
+          "p95": 5,
+          "atLeastReal": 10253,
+          "oneSidedTail": 0.512674366281686
+        },
+        "ACTIVA_1_TOP5": {
+          "real": 6,
+          "mean": 4.5989,
+          "p05": 2,
+          "median": 5,
+          "p95": 8,
+          "atLeastReal": 5920,
+          "oneSidedTail": 0.296035198240088
+        },
+        "ACTIVA_1_TOP10": {
+          "real": 8,
+          "mean": 10.0971,
+          "p05": 5,
+          "median": 10,
+          "p95": 16,
+          "atLeastReal": 15812,
+          "oneSidedTail": 0.7906104694765261
+        },
+        "NACE_HOY_TOP3": {
+          "real": 6,
+          "mean": 3.063,
+          "p05": 1,
+          "median": 3,
+          "p95": 6,
+          "atLeastReal": 1376,
+          "oneSidedTail": 0.06884655767211639
+        },
+        "NACE_HOY_TOP5": {
+          "real": 10,
+          "mean": 5.39805,
+          "p05": 2,
+          "median": 5,
+          "p95": 9,
+          "atLeastReal": 429,
+          "oneSidedTail": 0.021498925053747314
+        },
+        "NACE_HOY_TOP10": {
+          "real": 14,
+          "mean": 8.55215,
+          "p05": 5,
+          "median": 8,
+          "p95": 13,
+          "atLeastReal": 510,
+          "oneSidedTail": 0.025548722563871806
+        }
+      }
+    }
+  },
+  "seal": {
+    "inputBasePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "inputVigenciaPre": "d5ec68c90905904d39094c91459109cae0a5baefac10769d3d859538f6212c86",
+    "inputNocturnaPre": "9cf1cc482996a5d3c1e8d7d2e0f218e28bf23e8098c64008b3dc04b22c9d9962",
+    "protocol": "69c97f93404158b96b6be4ebbd94a1c722ba3e33754a87f7804c8ee3b186793b",
+    "script": "c7d2a6b65aa19b093103ec87fe37fb7560f4e927c0e1cb7bf71c2fecfa7c4ea3",
+    "nocturnaPre": "7cd5973230d00718670e9fa916f295bfcf189d66759a1c35d7c6ac824dd685fc"
+  },
+  "nocturnaPRE": "7cd5973230d00718670e9fa916f295bfcf189d66759a1c35d7c6ac824dd685fc",
+  "nocturnaPOST": "24a7e185087a4e23267e83742e5687ac5e8af8f350c030d3796cbfc76fc041fb",
+  "limitation": "Todos los criterios diseñados sobre muestra histórica conocida. Comparación por turnos mantiene los sorteos completos por fecha. P exploratorio; sin evidencia independiente de pronóstico."
+}

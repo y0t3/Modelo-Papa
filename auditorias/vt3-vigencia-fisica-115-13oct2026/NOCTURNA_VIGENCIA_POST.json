@@ -1,0 +1,218 @@
+{
+  "date": "2026-10-12",
+  "nocturnaTargetHeads": [
+    "9851",
+    "1615",
+    "7242",
+    "8290",
+    "3264"
+  ],
+  "names": [
+    {
+      "head": "9851",
+      "vt3": "158/851"
+    },
+    {
+      "head": "1615",
+      "vt3": "516/615"
+    },
+    {
+      "head": "7242",
+      "vt3": "242/242"
+    },
+    {
+      "head": "8290",
+      "vt3": "092/290"
+    },
+    {
+      "head": "3264",
+      "vt3": "264/462"
+    }
+  ],
+  "diagnostics": [
+    {
+      "head": "9851",
+      "vt3": "851",
+      "family": "158/851",
+      "physicalPossible": true,
+      "anchored": false,
+      "physicalRank": 127,
+      "originalRank": null,
+      "roots": null,
+      "historicalAppearances": null,
+      "ranks": {
+        "OFICIAL": null,
+        "NUEVA_1": null,
+        "NUEVA_2": null,
+        "NUEVA_7": null,
+        "ACTIVA_1": null,
+        "ACTIVA_2": null,
+        "ACTIVA_7": null
+      }
+    },
+    {
+      "head": "1615",
+      "vt3": "615",
+      "family": "516/615",
+      "physicalPossible": true,
+      "anchored": true,
+      "physicalRank": 43,
+      "originalRank": 54,
+      "roots": {
+        "d1": 0,
+        "d7": 1,
+        "bif": 0
+      },
+      "historicalAppearances": {
+        "1": 1,
+        "2": 1,
+        "7": 3
+      },
+      "ranks": {
+        "OFICIAL": 54,
+        "NUEVA_1": 60,
+        "NUEVA_2": 58,
+        "NUEVA_7": 54,
+        "ACTIVA_1": 32,
+        "ACTIVA_2": 51,
+        "ACTIVA_7": 37
+      }
+    },
+    {
+      "head": "7242",
+      "vt3": "242",
+      "family": "242/242",
+      "physicalPossible": true,
+      "anchored": true,
+      "physicalRank": 23,
+      "originalRank": 25,
+      "roots": {
+        "d1": 1,
+        "d7": 0,
+        "bif": 0
+      },
+      "historicalAppearances": {
+        "1": 1,
+        "2": 1,
+        "7": 5
+      },
+      "ranks": {
+        "OFICIAL": 25,
+        "NUEVA_1": 46,
+        "NUEVA_2": 31,
+        "NUEVA_7": 25,
+        "ACTIVA_1": 18,
+        "ACTIVA_2": 28,
+        "ACTIVA_7": 7
+      }
+    },
+    {
+      "head": "8290",
+      "vt3": "290",
+      "family": "092/290",
+      "physicalPossible": false,
+      "anchored": false,
+      "physicalRank": null,
+      "originalRank": null,
+      "roots": null,
+      "historicalAppearances": null,
+      "ranks": {
+        "OFICIAL": null,
+        "NUEVA_1": null,
+        "NUEVA_2": null,
+        "NUEVA_7": null,
+        "ACTIVA_1": null,
+        "ACTIVA_2": null,
+        "ACTIVA_7": null
+      }
+    },
+    {
+      "head": "3264",
+      "vt3": "264",
+      "family": "264/462",
+      "physicalPossible": false,
+      "anchored": false,
+      "physicalRank": null,
+      "originalRank": null,
+      "roots": null,
+      "historicalAppearances": null,
+      "ranks": {
+        "OFICIAL": null,
+        "NUEVA_1": null,
+        "NUEVA_2": null,
+        "NUEVA_7": null,
+        "ACTIVA_1": null,
+        "ACTIVA_2": null,
+        "ACTIVA_7": null
+      }
+    }
+  ],
+  "candidates": {
+    "OFICIAL": {
+      "top3": [],
+      "top5": [],
+      "top10": [],
+      "winnerFamilies": [
+        "242/242",
+        "516/615"
+      ]
+    },
+    "NUEVA_1": {
+      "top3": [],
+      "top5": [],
+      "top10": [],
+      "winnerFamilies": [
+        "242/242",
+        "516/615"
+      ]
+    },
+    "NUEVA_2": {
+      "top3": [],
+      "top5": [],
+      "top10": [],
+      "winnerFamilies": [
+        "242/242",
+        "516/615"
+      ]
+    },
+    "NUEVA_7": {
+      "top3": [],
+      "top5": [],
+      "top10": [],
+      "winnerFamilies": [
+        "242/242",
+        "516/615"
+      ]
+    },
+    "ACTIVA_1": {
+      "top3": [],
+      "top5": [],
+      "top10": [],
+      "winnerFamilies": [
+        "242/242",
+        "516/615"
+      ]
+    },
+    "ACTIVA_2": {
+      "top3": [],
+      "top5": [],
+      "top10": [],
+      "winnerFamilies": [
+        "242/242",
+        "516/615"
+      ]
+    },
+    "ACTIVA_7": {
+      "top3": [],
+      "top5": [],
+      "top10": [
+        "242/242"
+      ],
+      "winnerFamilies": [
+        "242/242",
+        "516/615"
+      ]
+    }
+  },
+  "interpretation": "Diagnóstico retrospectivo de sorteo YA CONOCIDO, no predicción ni nueva validación. Ninguna permutación abre familias sin anclaje."
+}
