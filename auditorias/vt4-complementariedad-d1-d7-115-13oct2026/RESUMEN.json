@@ -1,0 +1,814 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "overall": {
+    "BASE_CUPO2": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "heads": 4,
+      "complementaryCuts": 23,
+      "complementaryAndHit": 1,
+      "headsInComplementCuts": 1,
+      "gainsVsBase": [],
+      "lossesVsBase": [],
+      "gainedHeadsVsBase": [],
+      "lostHeadsVsBase": [],
+      "changedTop10": 0
+    },
+    "D7_D1_COMBINADO": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "heads": 5,
+      "complementaryCuts": 44,
+      "complementaryAndHit": 1,
+      "headsInComplementCuts": 2,
+      "gainsVsBase": [],
+      "lossesVsBase": [],
+      "gainedHeadsVsBase": [
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "head": "5832"
+        }
+      ],
+      "lostHeadsVsBase": [],
+      "changedTop10": 84
+    },
+    "DOBLE_POR_MADRE": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "heads": 4,
+      "complementaryCuts": 47,
+      "complementaryAndHit": 1,
+      "headsInComplementCuts": 1,
+      "gainsVsBase": [],
+      "lossesVsBase": [],
+      "gainedHeadsVsBase": [],
+      "lostHeadsVsBase": [],
+      "changedTop10": 84
+    },
+    "COBERTURA_GLOBAL": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "heads": 4,
+      "complementaryCuts": 47,
+      "complementaryAndHit": 1,
+      "headsInComplementCuts": 1,
+      "gainsVsBase": [],
+      "lossesVsBase": [],
+      "gainedHeadsVsBase": [],
+      "lostHeadsVsBase": [],
+      "changedTop10": 84
+    },
+    "EQUILIBRIO_PERIODOS": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "heads": 4,
+      "complementaryCuts": 47,
+      "complementaryAndHit": 1,
+      "headsInComplementCuts": 1,
+      "gainsVsBase": [],
+      "lossesVsBase": [],
+      "gainedHeadsVsBase": [],
+      "lostHeadsVsBase": [],
+      "changedTop10": 84
+    },
+    "SOPORTE_TOTAL": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "heads": 4,
+      "complementaryCuts": 47,
+      "complementaryAndHit": 1,
+      "headsInComplementCuts": 1,
+      "gainsVsBase": [],
+      "lossesVsBase": [],
+      "gainedHeadsVsBase": [],
+      "lostHeadsVsBase": [],
+      "changedTop10": 84
+    },
+    "HASH_NEUTRAL": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 1,
+      "heads": 1,
+      "complementaryCuts": 18,
+      "complementaryAndHit": 1,
+      "headsInComplementCuts": 1,
+      "gainsVsBase": [],
+      "lossesVsBase": [
+        "2026-09-24|Previa",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ],
+      "gainedHeadsVsBase": [
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "head": "5832"
+        }
+      ],
+      "lostHeadsVsBase": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "head": "3159"
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "head": "2592"
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "head": "6542"
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "head": "2654"
+        }
+      ],
+      "changedTop10": 115
+    }
+  },
+  "weeks": {
+    "X1": {
+      "BASE_CUPO2": {
+        "cuts": 25,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "heads": 0,
+        "complementaryCuts": 5,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 0
+      },
+      "D7_D1_COMBINADO": {
+        "cuts": 25,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "heads": 0,
+        "complementaryCuts": 12,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 20
+      },
+      "DOBLE_POR_MADRE": {
+        "cuts": 25,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "heads": 0,
+        "complementaryCuts": 12,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 20
+      },
+      "COBERTURA_GLOBAL": {
+        "cuts": 25,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "heads": 0,
+        "complementaryCuts": 12,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 20
+      },
+      "EQUILIBRIO_PERIODOS": {
+        "cuts": 25,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "heads": 0,
+        "complementaryCuts": 12,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 20
+      },
+      "SOPORTE_TOTAL": {
+        "cuts": 25,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "heads": 0,
+        "complementaryCuts": 12,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 20
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 25,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "heads": 0,
+        "complementaryCuts": 4,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 25
+      }
+    },
+    "Y1": {
+      "BASE_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 6,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 0
+      },
+      "D7_D1_COMBINADO": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "DOBLE_POR_MADRE": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "COBERTURA_GLOBAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "EQUILIBRIO_PERIODOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "SOPORTE_TOTAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "heads": 0,
+        "complementaryCuts": 3,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [
+          "2026-09-24|Previa"
+        ],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [
+          {
+            "date": "2026-09-24",
+            "turn": "Previa",
+            "head": "3159"
+          }
+        ],
+        "changedTop10": 30
+      }
+    },
+    "Y2": {
+      "BASE_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 1,
+        "headsInComplementCuts": 1,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 0
+      },
+      "D7_D1_COMBINADO": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 2,
+        "complementaryCuts": 17,
+        "complementaryAndHit": 1,
+        "headsInComplementCuts": 2,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [
+          {
+            "date": "2026-10-03",
+            "turn": "Matutino",
+            "head": "5832"
+          }
+        ],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "DOBLE_POR_MADRE": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 17,
+        "complementaryAndHit": 1,
+        "headsInComplementCuts": 1,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "COBERTURA_GLOBAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 17,
+        "complementaryAndHit": 1,
+        "headsInComplementCuts": 1,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "EQUILIBRIO_PERIODOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 17,
+        "complementaryAndHit": 1,
+        "headsInComplementCuts": 1,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "SOPORTE_TOTAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 17,
+        "complementaryAndHit": 1,
+        "headsInComplementCuts": 1,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 23
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "heads": 1,
+        "complementaryCuts": 7,
+        "complementaryAndHit": 1,
+        "headsInComplementCuts": 1,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [
+          {
+            "date": "2026-10-03",
+            "turn": "Matutino",
+            "head": "5832"
+          }
+        ],
+        "lostHeadsVsBase": [
+          {
+            "date": "2026-10-03",
+            "turn": "Matutino",
+            "head": "2592"
+          }
+        ],
+        "changedTop10": 30
+      }
+    },
+    "Y3": {
+      "BASE_CUPO2": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "heads": 2,
+        "complementaryCuts": 3,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 0
+      },
+      "D7_D1_COMBINADO": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "heads": 2,
+        "complementaryCuts": 6,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 18
+      },
+      "DOBLE_POR_MADRE": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "heads": 2,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 18
+      },
+      "COBERTURA_GLOBAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "heads": 2,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 18
+      },
+      "EQUILIBRIO_PERIODOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "heads": 2,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 18
+      },
+      "SOPORTE_TOTAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "heads": 2,
+        "complementaryCuts": 9,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [],
+        "changedTop10": 18
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "heads": 0,
+        "complementaryCuts": 4,
+        "complementaryAndHit": 0,
+        "headsInComplementCuts": 0,
+        "gainsVsBase": [],
+        "lossesVsBase": [
+          "2026-10-10|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "gainedHeadsVsBase": [],
+        "lostHeadsVsBase": [
+          {
+            "date": "2026-10-10",
+            "turn": "Matutino",
+            "head": "6542"
+          },
+          {
+            "date": "2026-10-10",
+            "turn": "Nocturno",
+            "head": "2654"
+          }
+        ],
+        "changedTop10": 30
+      }
+    }
+  },
+  "signalStats": {
+    "eligibleWithD7": 70,
+    "eligibleWithD1": 67,
+    "potentialComplementCuts": 47,
+    "potentialDifferentMother": 46,
+    "potentialSameMother": 32,
+    "cooccurrencesByTurn": {
+      "Previa": 8,
+      "Primera": 10,
+      "Matutino": 11,
+      "Vespertino": 9,
+      "Nocturno": 9
+    }
+  },
+  "doubleHits": [
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "heads": {
+        "BASE_CUPO2": [
+          "2592"
+        ],
+        "D7_D1_COMBINADO": [
+          "5832",
+          "2592"
+        ],
+        "DOBLE_POR_MADRE": [
+          "2592"
+        ],
+        "COBERTURA_GLOBAL": [
+          "2592"
+        ],
+        "EQUILIBRIO_PERIODOS": [
+          "2592"
+        ],
+        "SOPORTE_TOTAL": [
+          "2592"
+        ],
+        "HASH_NEUTRAL": [
+          "5832"
+        ]
+      }
+    }
+  ],
+  "focusOct3": {
+    "date": "2026-10-03",
+    "turn": "Matutino",
+    "physicalEvidence": {
+      "eligibleD7": 6,
+      "eligibleD1": 6,
+      "bothPossible": true,
+      "differentMothersPossible": true,
+      "sameMotherPossible": true,
+      "exactD7": 2,
+      "exactD1": 4
+    },
+    "perMethod": {
+      "BASE_CUPO2": {
+        "heads": [
+          "2592"
+        ],
+        "top10": [
+          "2589/8529",
+          "9258/9852",
+          "0254/0452",
+          "2540/4520",
+          "0454",
+          "4540",
+          "2384/8324",
+          "2385/8325",
+          "2295/2592",
+          "2952/5922"
+        ],
+        "complementary": true
+      },
+      "D7_D1_COMBINADO": {
+        "heads": [
+          "5832",
+          "2592"
+        ],
+        "top10": [
+          "2588/8528",
+          "8258/8852",
+          "0254/0452",
+          "2540/4520",
+          "0454",
+          "4540",
+          "2385/8325",
+          "5238/5832",
+          "2295/2592",
+          "2952/5922"
+        ],
+        "complementary": true
+      },
+      "DOBLE_POR_MADRE": {
+        "heads": [
+          "2592"
+        ],
+        "top10": [
+          "2588/8528",
+          "2583/8523",
+          "0254/0452",
+          "2540/4520",
+          "0454",
+          "4540",
+          "2385/8325",
+          "2388/8328",
+          "2295/2592",
+          "2954/5924"
+        ],
+        "complementary": true
+      },
+      "COBERTURA_GLOBAL": {
+        "heads": [
+          "2592"
+        ],
+        "top10": [
+          "2588/8528",
+          "2583/8523",
+          "0254/0452",
+          "2540/4520",
+          "0454",
+          "4540",
+          "2385/8325",
+          "2388/8328",
+          "2295/2592",
+          "2954/5924"
+        ],
+        "complementary": true
+      },
+      "EQUILIBRIO_PERIODOS": {
+        "heads": [
+          "2592"
+        ],
+        "top10": [
+          "2588/8528",
+          "2583/8523",
+          "0254/0452",
+          "2540/4520",
+          "0454",
+          "4540",
+          "2385/8325",
+          "2388/8328",
+          "2295/2592",
+          "2954/5924"
+        ],
+        "complementary": true
+      },
+      "SOPORTE_TOTAL": {
+        "heads": [
+          "2592"
+        ],
+        "top10": [
+          "2588/8528",
+          "2583/8523",
+          "0254/0452",
+          "2540/4520",
+          "0454",
+          "4540",
+          "2385/8325",
+          "2388/8328",
+          "2295/2592",
+          "2954/5924"
+        ],
+        "complementary": true
+      },
+      "HASH_NEUTRAL": {
+        "heads": [
+          "5832"
+        ],
+        "top10": [
+          "8258/8852",
+          "3258/3852",
+          "2549/4529",
+          "2541/4521",
+          "4544",
+          "4543",
+          "2385/8325",
+          "5238/5832",
+          "4295/4592",
+          "2954/5924"
+        ],
+        "complementary": true
+      }
+    }
+  },
+  "seal": {
+    "date": "2026-10-13",
+    "code": "1402439c72458dd9a1d878111e424e0a3e7e767c70b6c39e00514752ed252d27",
+    "protocol": "0c7040c6d12ad32adbdbd9a61dfb11075ad5791de00494896da9e28189e2d4cf",
+    "reference": "1e4e287fc37149c93d0c264e0c3b15ee58c7027890ead9467bc10527e50757dd",
+    "inventory": "ab8136f4279420f30cc5706798af9e04d063ce1bb6fd684cebaf85a8da42930b",
+    "sisters": "0dbfa812536f20b4ed1631faba5c7b812c0b6eb2709d79a4de3c29d3ca5e4538",
+    "pre": "3739de8b78bbeeae0293ec0382b86f4647514d0fc7cc37ba3fc1af710b31a232"
+  },
+  "caveat": "Resultados históricos sometidos a investigación repetida. Complementariedad PRE no equivale a capacidad predictiva y la quiniela es aleatoria."
+}
