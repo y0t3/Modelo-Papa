@@ -1,0 +1,51 @@
+name: VT3 entrenamiento Top3 semana X y examen X mas 1
+on:
+  push:
+    branches: [lab-vt3-top3-aprendizaje-dirigido-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-top3-dirigido.mjs'
+      - 'PROTOCOLO_VT3_TOP3_APRENDIZAJE_DIRIGIDO_13OCT2026.md'
+      - '.github/workflows/lab-vt3-top3-dirigido.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  dirigido:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar todos los resultados POST antes de construir fichas PRE
+        run: |
+          mv auditorias /tmp/vt3-top3-dirigido-historico
+          mkdir -p auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/
+          cp /tmp/vt3-top3-dirigido-historico/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json
+          test "$(find auditorias -type f | wc -l)" -eq 1
+      - name: Extraer rasgos físicos exclusivamente PRE y sellar
+        run: node scripts/lab-vt3-top3-dirigido.mjs pre
+      - name: Restaurar resultados y reproducir enseñanza y examen por semanas
+        run: |
+          mv auditorias/vt3-top3-dirigido-115-13oct2026 /tmp/vt3-top3-pre-sellado
+          cp -a /tmp/vt3-top3-dirigido-historico/. auditorias/
+          rm -rf auditorias/vt3-top3-dirigido-115-13oct2026
+          mv /tmp/vt3-top3-pre-sellado auditorias/vt3-top3-dirigido-115-13oct2026
+          node scripts/lab-vt3-top3-dirigido.mjs post
+      - name: Archivar informe técnico y decisiones para auditoría
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-top3-aprendizaje-semanal-dirigido-115
+          path: auditorias/vt3-top3-dirigido-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Persistir el laboratorio en la rama sin tocar producción
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-top3-dirigido-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): top3 docente, ranking entrenado y examen semanas posteriores'
+            git push origin HEAD:lab-vt3-top3-aprendizaje-dirigido-13oct2026
+          fi
