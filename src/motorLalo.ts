@@ -259,9 +259,11 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
   for(const oriented of [parent.path,[...parent.path].reverse()])
    for(const c of cells){
     if(oriented.includes(c))continue;
-    for(const [candidate,side] of [
-     [[c,...oriented],'ANTES'],[[...oriented,c],'DESPUES']
-    ] as const){
+    const options:{candidate:Path;side:Vt4MotherExtension['side']}[]=[
+     {candidate:[c,...oriented],side:'ANTES'},
+     {candidate:[...oriented,c],side:'DESPUES'}
+    ];
+    for(const {candidate,side} of options){
      if(!valid(candidate,4))continue;
      // El rótulo conserva la terna madre reversible y la posición de la cifra.
      // Las variantes visibles sólo se respaldan si existe cada camino completo.
