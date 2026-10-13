@@ -1,0 +1,38 @@
+name: VT3 controles temporales sobre 23 jornadas
+on:
+  push:
+    branches: [lab-vt3-placebos-cronologicos-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-placebos-cronologicos.mjs'
+      - 'PROTOCOLO_VT3_PLACEBOS_CRONOLOGICOS_13OCT2026.md'
+      - '.github/workflows/lab-vt3-placebos-cronologicos.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  control-negativo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Contrastar PRE sellado contra POST real y permutado, sin modificar producción
+        run: node scripts/lab-vt3-placebos-cronologicos.mjs
+      - name: Respaldar artefactos
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-placebos-cronologicos-115
+          path: auditorias/vt3-placebos-cronologicos-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Registrar resultados permanentes en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-placebos-cronologicos-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): control de azar con 22 desplazamientos y 60000 permutaciones'
+            git push origin HEAD:lab-vt3-placebos-cronologicos-13oct2026
+          fi
