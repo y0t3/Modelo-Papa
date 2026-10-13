@@ -1,0 +1,51 @@
+name: VT3 dominio semanal con Top3 y Top5
+on:
+  push:
+    branches: [lab-vt3-dominio-semanal-top3-top5-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-dominio-semanal.mjs'
+      - 'PROTOCOLO_VT3_DOMINIO_SEMANAL_13OCT2026.md'
+      - '.github/workflows/lab-vt3-dominio-semanal.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  dominio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Apartar todos los datos posteriores a sorteos antes de fabricar PRE
+        run: |
+          mv auditorias /tmp/vt3-dominio-auditorias
+          mkdir -p auditorias/vt3-cobertura-bifurcaciones-115-13oct2026 auditorias/vt3-top3-dirigido-115-13oct2026
+          cp /tmp/vt3-dominio-auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json
+          cp /tmp/vt3-dominio-auditorias/vt3-top3-dirigido-115-13oct2026/PRE_115.json auditorias/vt3-top3-dirigido-115-13oct2026/PRE_115.json
+          test "$(find auditorias -type f | wc -l)" -eq 2
+      - name: Construir fichas y sellar PRE antes de resultados
+        run: node scripts/lab-vt3-dominio-semanal.mjs pre
+      - name: Restaurar POST y entrenar una semana para examinar la siguiente
+        run: |
+          mv auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026 /tmp/vt3-dominio-pre-nuevo
+          cp -a /tmp/vt3-dominio-auditorias/. auditorias/
+          rm -rf auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026
+          mv /tmp/vt3-dominio-pre-nuevo auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026
+          node scripts/lab-vt3-dominio-semanal.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-dominio-top3-top5-115
+          path: auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Versionar memoria entrenada, sellos y comparación
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): dominio Top3 Top5 por memoria y traslado geométrico por semana'
+            git push origin HEAD:lab-vt3-dominio-semanal-top3-top5-13oct2026
+          fi
