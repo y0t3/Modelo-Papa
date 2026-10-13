@@ -1,0 +1,11 @@
+{
+  "seed": 20261013,
+  "samples": 5000,
+  "controls": [
+    "AZAR_FISICO",
+    "AZAR_MISMA_ADMISION",
+    "AZAR_MISMA_ADMISION_Y_RUTAS"
+  ],
+  "selectionRule": "For replicate r, cutoff i, use deterministic seeded xorshift32 uniform draws in order: all, sameAdmission, sameAdmissionRouteBin. Both matched categories are attributes of the frozen model proposal, not future result.",
+  "poolRule": "All candidates physically present but excluded from the original ten VT3 families."
+}

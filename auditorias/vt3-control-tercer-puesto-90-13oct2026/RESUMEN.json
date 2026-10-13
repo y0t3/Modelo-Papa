@@ -1,0 +1,617 @@
+{
+  "date": "2026-10-13",
+  "cuts": 90,
+  "days": 18,
+  "baseline": {
+    "top3": 3,
+    "top5": 6,
+    "top10": 11
+  },
+  "methods": {
+    "APRENDIDO": {
+      "top3": 4,
+      "top5": 5,
+      "top10": 12,
+      "selectedWinnerExposures": 1,
+      "gainsTop3": [
+        "2026-09-21|Vespertino"
+      ],
+      "lossesTop3": [],
+      "gainsTop10": [
+        "2026-09-21|Vespertino"
+      ],
+      "lossesTop10": []
+    },
+    "RANGO11": {
+      "top3": 3,
+      "top5": 4,
+      "top10": 11,
+      "selectedWinnerExposures": 0,
+      "gainsTop3": [],
+      "lossesTop3": [],
+      "gainsTop10": [],
+      "lossesTop10": []
+    },
+    "HASH_FIJO": {
+      "top3": 4,
+      "top5": 5,
+      "top10": 11,
+      "selectedWinnerExposures": 1,
+      "gainsTop3": [
+        "2026-09-24|Matutino"
+      ],
+      "lossesTop3": [],
+      "gainsTop10": [],
+      "lossesTop10": []
+    },
+    "RECUENTO_RUTAS": {
+      "top3": 5,
+      "top5": 6,
+      "top10": 13,
+      "selectedWinnerExposures": 2,
+      "gainsTop3": [
+        "2026-09-28|Matutino",
+        "2026-10-06|Vespertino"
+      ],
+      "lossesTop3": [],
+      "gainsTop10": [
+        "2026-09-28|Matutino",
+        "2026-10-06|Vespertino"
+      ],
+      "lossesTop10": []
+    }
+  },
+  "matchedNeutralControls": {
+    "AZAR_FISICO": {
+      "top3": {
+        "n": 5000,
+        "mean": 3.6844,
+        "min": 3,
+        "p05": 3,
+        "median": 3,
+        "p95": 5,
+        "max": 8,
+        "observed": 4,
+        "fractionAtLeastObserved": 0.4984,
+        "histogram": {
+          "3": 2508,
+          "4": 1729,
+          "5": 614,
+          "6": 133,
+          "7": 14,
+          "8": 2
+        }
+      },
+      "top10": {
+        "n": 5000,
+        "mean": 11.6106,
+        "min": 11,
+        "p05": 11,
+        "median": 11,
+        "p95": 13,
+        "max": 15,
+        "observed": 12,
+        "fractionAtLeastObserved": 0.46,
+        "histogram": {
+          "11": 2700,
+          "12": 1669,
+          "13": 522,
+          "14": 96,
+          "15": 13
+        }
+      },
+      "thirdWinners": {
+        "n": 5000,
+        "mean": 0.7456,
+        "min": 0,
+        "p05": 0,
+        "median": 1,
+        "p95": 2,
+        "max": 5,
+        "observed": 1,
+        "fractionAtLeastObserved": 0.5274,
+        "histogram": {
+          "0": 2363,
+          "1": 1763,
+          "2": 688,
+          "3": 161,
+          "4": 19,
+          "5": 6
+        }
+      }
+    },
+    "AZAR_MISMA_ADMISION": {
+      "top3": {
+        "n": 5000,
+        "mean": 3.6596,
+        "min": 3,
+        "p05": 3,
+        "median": 3,
+        "p95": 5,
+        "max": 7,
+        "observed": 4,
+        "fractionAtLeastObserved": 0.487,
+        "histogram": {
+          "3": 2565,
+          "4": 1725,
+          "5": 577,
+          "6": 113,
+          "7": 20
+        }
+      },
+      "top10": {
+        "n": 5000,
+        "mean": 11.5828,
+        "min": 11,
+        "p05": 11,
+        "median": 11,
+        "p95": 13,
+        "max": 15,
+        "observed": 12,
+        "fractionAtLeastObserved": 0.4478,
+        "histogram": {
+          "11": 2761,
+          "12": 1667,
+          "13": 476,
+          "14": 89,
+          "15": 7
+        }
+      },
+      "thirdWinners": {
+        "n": 5000,
+        "mean": 0.7204,
+        "min": 0,
+        "p05": 0,
+        "median": 1,
+        "p95": 2,
+        "max": 5,
+        "observed": 1,
+        "fractionAtLeastObserved": 0.5202,
+        "histogram": {
+          "0": 2399,
+          "1": 1792,
+          "2": 644,
+          "3": 139,
+          "4": 25,
+          "5": 1
+        }
+      }
+    },
+    "AZAR_MISMA_ADMISION_Y_RUTAS": {
+      "top3": {
+        "n": 5000,
+        "mean": 3.5428,
+        "min": 3,
+        "p05": 3,
+        "median": 3,
+        "p95": 5,
+        "max": 7,
+        "observed": 4,
+        "fractionAtLeastObserved": 0.4222,
+        "histogram": {
+          "3": 2889,
+          "4": 1606,
+          "5": 416,
+          "6": 80,
+          "7": 9
+        }
+      },
+      "top10": {
+        "n": 5000,
+        "mean": 11.4544,
+        "min": 11,
+        "p05": 11,
+        "median": 11,
+        "p95": 13,
+        "max": 15,
+        "observed": 12,
+        "fractionAtLeastObserved": 0.369,
+        "histogram": {
+          "11": 3155,
+          "12": 1473,
+          "13": 321,
+          "14": 47,
+          "15": 4
+        }
+      },
+      "thirdWinners": {
+        "n": 5000,
+        "mean": 0.6276,
+        "min": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 2,
+        "max": 5,
+        "observed": 1,
+        "fractionAtLeastObserved": 0.4702,
+        "histogram": {
+          "0": 2649,
+          "1": 1697,
+          "2": 540,
+          "3": 96,
+          "4": 17,
+          "5": 1
+        }
+      }
+    }
+  },
+  "exactExpectation": {
+    "neutralPhysicalExpectedThirdWinners": 0.7489655896395654,
+    "neutralSameAdmissionExpectedThirdWinners": 0.7357841780751073,
+    "neutralSameAdmissionAndBinExpectedThirdWinners": 0.6334716350851668,
+    "cutsWithOutsideWinningFamily": 57,
+    "winnerExposuresOutside": 93,
+    "meanOutsiders": 122.76666666666667,
+    "learnedRootedCount": 76,
+    "learnedUnrootedCount": 14,
+    "singletonAdmissionBins": 0
+  },
+  "selectedFamilyFrequency": [
+    [
+      "253/352",
+      10
+    ],
+    [
+      "066/660",
+      7
+    ],
+    [
+      "246/642",
+      6
+    ],
+    [
+      "058/850",
+      5
+    ],
+    [
+      "077/770",
+      5
+    ],
+    [
+      "143/341",
+      5
+    ],
+    [
+      "737/737",
+      5
+    ],
+    [
+      "029/920",
+      4
+    ],
+    [
+      "082/280",
+      3
+    ],
+    [
+      "158/851",
+      3
+    ],
+    [
+      "207/702",
+      3
+    ],
+    [
+      "273/372",
+      3
+    ],
+    [
+      "275/572",
+      3
+    ],
+    [
+      "285/582",
+      3
+    ],
+    [
+      "003/300",
+      2
+    ],
+    [
+      "034/430",
+      2
+    ],
+    [
+      "045/540",
+      2
+    ],
+    [
+      "179/971",
+      2
+    ],
+    [
+      "283/382",
+      2
+    ],
+    [
+      "318/813",
+      2
+    ],
+    [
+      "367/763",
+      2
+    ],
+    [
+      "012/210",
+      1
+    ],
+    [
+      "052/250",
+      1
+    ],
+    [
+      "054/450",
+      1
+    ],
+    [
+      "076/670",
+      1
+    ],
+    [
+      "112/211",
+      1
+    ],
+    [
+      "137/731",
+      1
+    ],
+    [
+      "148/841",
+      1
+    ],
+    [
+      "156/651",
+      1
+    ],
+    [
+      "191/191",
+      1
+    ],
+    [
+      "406/604",
+      1
+    ],
+    [
+      "535/535",
+      1
+    ]
+  ],
+  "byMonth": {
+    "2026-09": {
+      "APRENDIDO": {
+        "cuts": 45,
+        "top3": 2,
+        "top10": 7
+      },
+      "RANGO11": {
+        "cuts": 45,
+        "top3": 1,
+        "top10": 6
+      },
+      "HASH_FIJO": {
+        "cuts": 45,
+        "top3": 2,
+        "top10": 6
+      },
+      "RECUENTO_RUTAS": {
+        "cuts": 45,
+        "top3": 2,
+        "top10": 7
+      }
+    },
+    "2026-10": {
+      "APRENDIDO": {
+        "cuts": 45,
+        "top3": 2,
+        "top10": 5
+      },
+      "RANGO11": {
+        "cuts": 45,
+        "top3": 2,
+        "top10": 5
+      },
+      "HASH_FIJO": {
+        "cuts": 45,
+        "top3": 2,
+        "top10": 5
+      },
+      "RECUENTO_RUTAS": {
+        "cuts": 45,
+        "top3": 3,
+        "top10": 6
+      }
+    }
+  },
+  "byWeek": {
+    "2026-09-21": {
+      "APRENDIDO": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 5
+      },
+      "RANGO11": {
+        "cuts": 30,
+        "top3": 0,
+        "top10": 4
+      },
+      "HASH_FIJO": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 4
+      },
+      "RECUENTO_RUTAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top10": 4
+      }
+    },
+    "2026-09-28": {
+      "APRENDIDO": {
+        "cuts": 30,
+        "top3": 2,
+        "top10": 4
+      },
+      "RANGO11": {
+        "cuts": 30,
+        "top3": 2,
+        "top10": 4
+      },
+      "HASH_FIJO": {
+        "cuts": 30,
+        "top3": 2,
+        "top10": 4
+      },
+      "RECUENTO_RUTAS": {
+        "cuts": 30,
+        "top3": 3,
+        "top10": 5
+      }
+    },
+    "2026-10-05": {
+      "APRENDIDO": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3
+      },
+      "RANGO11": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3
+      },
+      "HASH_FIJO": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3
+      },
+      "RECUENTO_RUTAS": {
+        "cuts": 30,
+        "top3": 2,
+        "top10": 4
+      }
+    }
+  },
+  "gainedThirdExamples": [
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "heads": [
+        "9674",
+        "6250",
+        "1306",
+        "5512",
+        "4246"
+      ],
+      "firstTwo": [
+        "202/202",
+        "317/713"
+      ],
+      "thirdOld": "387/783",
+      "thirdLearned": {
+        "family": "246/642",
+        "rooted": true,
+        "rank": 42,
+        "routeCount": 1,
+        "routeBin": "1",
+        "shapeCount": 1,
+        "sourceShapeCount": 1,
+        "rootD1": 1,
+        "rootD7": 0
+      },
+      "extraWinners": [
+        "246/642"
+      ],
+      "outsiders": 140,
+      "rootedOutsiders": 72,
+      "matchedAdmission": 72,
+      "matchedBin": 20,
+      "controlRank11": {
+        "chosen": "193/391",
+        "selected": {
+          "family": "193/391",
+          "rooted": true,
+          "rank": 11,
+          "routeCount": 3,
+          "routeBin": "2-3",
+          "shapeCount": 3,
+          "sourceShapeCount": 3,
+          "rootD1": 0,
+          "rootD7": 0.33333
+        },
+        "top3": false,
+        "top5": false,
+        "top10": false,
+        "winningInThird": false,
+        "wins": []
+      },
+      "controlHash": {
+        "chosen": "565/565",
+        "selected": {
+          "family": "565/565",
+          "rooted": true,
+          "rank": 60,
+          "routeCount": 1,
+          "routeBin": "1",
+          "shapeCount": 1,
+          "sourceShapeCount": 1,
+          "rootD1": 0.33333,
+          "rootD7": 0
+        },
+        "top3": false,
+        "top5": false,
+        "top10": false,
+        "winningInThird": false,
+        "wins": []
+      },
+      "controlRoutes": {
+        "chosen": "022/220",
+        "selected": {
+          "family": "022/220",
+          "rooted": true,
+          "rank": 14,
+          "routeCount": 6,
+          "routeBin": "4-7",
+          "shapeCount": 6,
+          "sourceShapeCount": 6,
+          "rootD1": 0.66667,
+          "rootD7": 1
+        },
+        "top3": false,
+        "top5": false,
+        "top10": false,
+        "winningInThird": false,
+        "wins": []
+      }
+    }
+  ],
+  "permutationControls": {
+    "free": {
+      "observedDelta": 1,
+      "mean": 0.1071,
+      "p05": -2,
+      "median": 0,
+      "p95": 2,
+      "upperTail": 0.3304669533046695,
+      "fractionExact1": 0.2262
+    },
+    "sameWeekday": {
+      "observedDelta": 1,
+      "mean": 0.3332,
+      "p05": -1,
+      "median": 0,
+      "p95": 2,
+      "upperTail": 0.38606139386061394,
+      "fractionExact1": 0.3261
+    }
+  },
+  "originalScriptFrozen": "15c43f79390d1a8e9af6cf393e72eda4bdc360b4588ee634bce7052bf4676cd8",
+  "frozenModelPost": "4b6875728e52a979e88f974406bf54c4e34d0f0a90f4d45191b2f65007ae4d2c",
+  "originalHeadsPost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "seal": {
+    "input": "42e5993b63b3740ecb911b2fb255508f1bf75408467cd530ffad65f8e685bd8e",
+    "code": "871f86ee373550b348cb713bb5b73a06c8e1c32da5029fd753d57a04483d699c",
+    "protocol": "6c5e3263c1ec51422c3bb40eb7917c1689e43dca63d22b15b4e79f28c66596f1",
+    "pre": "5f506c1cde4988105da3bb7d1914379f9ebd5a3f8c68770b93022f1625bdacf0",
+    "controls": "43175b63661dd797969ed5fe4a3dd805a5795ec7323d7ef1d044cdef4e91afef"
+  },
+  "warning": "Control retrospectivo sobre las mismas fechas muy exploradas. El resultado de una cabeza aleatoria no está determinado por raíces ni por similitud. Un reemplazo ganador no demuestra ventaja futura."
+}
