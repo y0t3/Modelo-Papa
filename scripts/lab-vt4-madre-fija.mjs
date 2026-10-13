@@ -29,14 +29,13 @@ const compile=(k,source)=>{const f=resolve(runtime,k+'.mjs');
  return pathToFileURL(f).href;
 };
 for(const file of ['domain','dates','paths','sheet'])
- compile(file,read('src/'+file+'.ts'));
-compile('motorNuevo',read('src/motorLalo.ts')
- .replace("from './domain.mjs'","from './domain.mjs'")); // imports already rewritten
+ compile('src/'+file,read('src/'+file+'.ts'));
+compile('src/motorNuevo',read('src/motorLalo.ts'));
 const original=execFileSync('git',['show',OLD_SHA+':src/motorLalo.ts'],{encoding:'utf8'});
-compile('motorAnterior',original);
+compile('src/motorAnterior',original);
 const load=x=>import(pathToFileURL(resolve(runtime,x+'.mjs')).href);
-const nuevo=await load('motorNuevo'),anterior=await load('motorAnterior'),
- {TURNOS,diaVacio}=await load('domain'),{buildSheet}=await load('sheet');
+const nuevo=await load('src/motorNuevo'),anterior=await load('src/motorAnterior'),
+ {TURNOS,diaVacio}=await load('src/domain'),{buildSheet}=await load('src/sheet');
 assert.equal(nuevo.vt4MotherFamily('226/622','3','ANTES'),'3226/3622');
 assert.equal(nuevo.vt4MotherFamily('226/622','3','DESPUES'),'2263/6223');
 assert.equal(nuevo.vt4MotherFamily('485/584','5','ANTES'),'5485/5584');
@@ -145,8 +144,8 @@ const stages=['Primera','Matutino'].map((turn,i)=>{
 if(process.argv[2]==='prepare'){
  // Prepare PRE and outcome files using existing replay (POST will be physically hidden
  // by workflow before doing any prediction).
- compile('replay',read('scripts/replay-lalo115.ts'));
- await import(pathToFileURL(resolve(runtime,'replay.mjs')).href);
+ compile('scripts/replay-lalo115',read('scripts/replay-lalo115.ts'));
+ await import(pathToFileURL(resolve(runtime,'scripts/replay-lalo115.mjs')).href);
  console.log('VT4_MADRE_FIJA_PREPARE_OK');
 }else if(process.argv[2]==='pre'){
  assert.ok(!existsSync(POST),'Resultados visibles en fase PRE');
