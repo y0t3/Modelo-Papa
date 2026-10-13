@@ -1,0 +1,50 @@
+name: VT3 control de cupo libre y seleccion neutral
+on:
+  push:
+    branches: [lab-vt3-cupo-fisico-controles-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-cupo-fisico-controles.mjs'
+      - 'PROTOCOLO_VT3_CUPO_FISICO_CONTROLES_13OCT2026.md'
+      - '.github/workflows/lab-vt3-cupo-fisico-controles.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  controles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Separar cabezas POST antes de seleccionar entre elegibles
+        run: |
+          mv auditorias/vt3-transformaciones-bloque-115-13oct2026/POST_115.json /tmp/cupo-prev-post.json
+          mv auditorias/vt3-transformaciones-bloque-115-13oct2026/NOCTURNA_POST.json /tmp/cupo-prev-noct.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/cupo-base-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/cupo-base-noct.json
+      - name: Preparar 2000 selecciones neutrales por corte y sellar PRE
+        run: node scripts/lab-vt3-cupo-fisico-controles.mjs pre
+      - name: Restaurar POST y contrastar todas las políticas y controles
+        run: |
+          mv /tmp/cupo-prev-post.json auditorias/vt3-transformaciones-bloque-115-13oct2026/POST_115.json
+          mv /tmp/cupo-prev-noct.json auditorias/vt3-transformaciones-bloque-115-13oct2026/NOCTURNA_POST.json
+          mv /tmp/cupo-base-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/cupo-base-noct.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          node scripts/lab-vt3-cupo-fisico-controles.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-control-cupo-fisico-115
+          path: auditorias/vt3-cupo-fisico-controles-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar auditoria y sellos permanentemente en GitHub
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-cupo-fisico-controles-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): control neutral de cupo fisico con 2000 selecciones y 30000 placebos'
+            git push origin HEAD:lab-vt3-cupo-fisico-controles-13oct2026
+          fi
