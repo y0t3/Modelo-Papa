@@ -16,6 +16,7 @@ const METHODS=['ORIGINAL','MAS_BLOQUES_ANCLADOS','MAS_TRAMOS_ANCLADOS',
  'ALFABETO_INVERSO','HASH_FIJO'];
 const read=p=>readFileSync(p,'utf8'),load=p=>JSON.parse(read(p));
 const sha=x=>createHash('sha256').update(x).digest('hex');
+mkdirSync(OUT,{recursive:true});
 const save=(f,o)=>writeFileSync(OUT+f,JSON.stringify(o,null,2)+'\n');
 const id=r=>r.date+'|'+r.turn;
 const family=v=>[v,[...v].reverse().join('')].sort().join('/');
