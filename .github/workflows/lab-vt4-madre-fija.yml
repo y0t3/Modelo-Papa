@@ -1,0 +1,56 @@
+name: VT4 madre fija y cuarta cifra en extremo correcto
+on:
+  push:
+    branches: [lab-vt4-familia-madre-fija-13oct2026]
+    paths:
+      - 'src/motorLalo.ts'
+      - 'scripts/lab-vt4-madre-fija.mjs'
+      - 'PROTOCOLO_VT4_FAMILIA_MADRE_FIJA_13OCT2026.md'
+      - '.github/workflows/lab-vt4-madre-fija.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verificar que compila app con familia VT4 estructural
+        run: |
+          npm install --no-audit --no-fund
+          npx tsc --noEmit
+      - name: Construir entradas de los 115 cortes sin conocer objetivos durante el motor
+        run: node scripts/lab-vt4-madre-fija.mjs prepare
+      - name: Retirar objetivos antes de crear rankings y sellos PRE
+        run: |
+          mv resultados/replay-lalo-115/OBJETIVOS_POST_115.json /tmp/vt4-madre-fija-objetivos.json
+          test ! -f resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          node scripts/lab-vt4-madre-fija.mjs pre
+      - name: Versionar rankings PRE de 115 cortes antes del cotejo POST
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-madre-fija-115-13oct2026/PRE_115.json auditorias/vt4-madre-fija-115-13oct2026/PRE_13OCT.json auditorias/vt4-madre-fija-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT4): propuestas de madre fija 115 cortes sin leer POST'
+          git push origin HEAD:lab-vt4-familia-madre-fija-13oct2026
+      - name: Restaurar objetivos y cotejar retrospectivamente nuevo VT4 contra anterior
+        run: |
+          mv /tmp/vt4-madre-fija-objetivos.json resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          node scripts/lab-vt4-madre-fija.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT4-familia-madre-fija-115-13oct
+          path: auditorias/vt4-madre-fija-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar resultados POST sin alterar otras ramas
+        run: |
+          git add auditorias/vt4-madre-fija-115-13oct2026/POST_115.json auditorias/vt4-madre-fija-115-13oct2026/RESUMEN.json
+          git commit -m 'data(VT4): comparar corrección estructural y caminos por madre'
+          git push origin HEAD:lab-vt4-familia-madre-fija-13oct2026
