@@ -26,7 +26,7 @@
     "TODAS_ADMITIDAS_VT3": {
       "cuts": 32,
       "distinctWinningHeads": 38,
-      "countOfPhysicalNumbersAvailableMean": 10000
+      "countOfPhysicalNumbersAvailableMean": 645.7
     },
     "TODAS_FISICAS_SIN_RAIZ": {
       "cuts": 48,
@@ -561,7 +561,7 @@
       "averageMothers": 4.93,
       "averageExtra6to10": 2,
       "averageExtra11plus": 3.861,
-      "meanBackfills": null,
+      "meanBackfills": 0.139,
       "gainsVsBase": [
         "2026-09-15|Previa"
       ],
@@ -2389,7 +2389,7 @@
     }
   ],
   "integrity": {
-    "sealSHA": "e570615ac0e2971e6a532a49a0ddb3842f11aebc8586c157b6013bb9a532d7b2",
+    "sealSHA": "b5a338b7784bf221acd53cbf6ae1ed020361cc0afaf83529cf10219c8726fca7",
     "packedSHA": "acaa068c80ecb3ef267b05ea3e61cd68f31de8c750dbf9e97f1e1732d1b87a94",
     "priorTop5twoReproducedFor115": true,
     "priorTop10oneReproducedFor115": true
