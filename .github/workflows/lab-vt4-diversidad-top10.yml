@@ -18,10 +18,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Compilar VT4 corregido
-        run: |
-          npm install --no-audit --no-fund
-          npx tsc --noEmit
       - name: Separar insumos historicos PRE y POST del fixture original
         run: node scripts/lab-vt4-diversidad-top10.mjs prepare
       - name: Sacar fisicamente POST y fixture con resultados de la fase PRE
@@ -46,6 +42,7 @@ jobs:
           mv /tmp/vt4-diversidad-post.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
           mv /tmp/vt4-diversidad-fixture.b64 fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
           node scripts/lab-vt4-diversidad-top10.mjs post
+          node scripts/lab-vt4-diversidad-13oct.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: VT4-diversidad-madres-top10-115
