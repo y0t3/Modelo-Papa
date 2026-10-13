@@ -19,6 +19,7 @@ const save=(name,obj)=>writeFileSync(OUTPUT+name,JSON.stringify(obj,null,2)+'\n'
 const id=p=>p.date+'|'+p.turn;
 const family=(s)=>[s,[...s].reverse().join('')].sort().join('/');
 const target=(s)=>{assert.match(s,/^\d{4}$/);return family(s.slice(-3))};
+mkdirSync(OUTPUT,{recursive:true});
 const coord=x=>{let [r,c]=x.split(':').map(Number);assert.ok(r>=0&&r<6&&c>=0&&c<2);return [r,c]};
 const block=p=>p.cells.slice().sort().join(',');
 const edge=(source,a,b)=>source+'|'+[a,b].sort().join('~');
