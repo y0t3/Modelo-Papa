@@ -1,0 +1,1551 @@
+{
+  "date": "2026-10-13",
+  "source": "23 fechas, 115 cortes, mismo PRE original",
+  "all": {
+    "counts": {
+      "ORIGINAL": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamilies": 17,
+        "unanchoredSelected": 0,
+        "unanchoredWinning": 0
+      },
+      "ANCHOR_CONVERGE": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 6,
+        "top10": 14,
+        "winningFamilies": 14,
+        "unanchoredSelected": 0,
+        "unanchoredWinning": 0
+      },
+      "ANCHOR_SOURCE_NEW": {
+        "cuts": 115,
+        "top3": 6,
+        "top5": 9,
+        "top10": 14,
+        "winningFamilies": 16,
+        "unanchoredSelected": 0,
+        "unanchoredWinning": 0
+      },
+      "ANCHOR_BIRTH": {
+        "cuts": 115,
+        "top3": 6,
+        "top5": 9,
+        "top10": 13,
+        "winningFamilies": 15,
+        "unanchoredSelected": 0,
+        "unanchoredWinning": 0
+      },
+      "OPEN_BIRTH_1": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "winningFamilies": 18,
+        "unanchoredSelected": 92,
+        "unanchoredWinning": 1
+      },
+      "OPEN_CONVERGE_1": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "winningFamilies": 18,
+        "unanchoredSelected": 77,
+        "unanchoredWinning": 1
+      },
+      "OPEN_FRESH_1": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "winningFamilies": 18,
+        "unanchoredSelected": 92,
+        "unanchoredWinning": 1
+      },
+      "OPEN_BRIDGE_1": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "winningFamilies": 18,
+        "unanchoredSelected": 91,
+        "unanchoredWinning": 1
+      },
+      "OPEN_FRESH_2": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "winningFamilies": 18,
+        "unanchoredSelected": 184,
+        "unanchoredWinning": 1
+      },
+      "OPEN_BRIDGE_2": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 17,
+        "winningFamilies": 19,
+        "unanchoredSelected": 182,
+        "unanchoredWinning": 2
+      },
+      "OPEN_FRESH_NULL_1": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "winningFamilies": 17,
+        "unanchoredSelected": 92,
+        "unanchoredWinning": 0
+      }
+    },
+    "paired": {
+      "ANCHOR_CONVERGE": {
+        "rescued": [
+          "2026-09-17|Vespertino",
+          "2026-09-21|Nocturno",
+          "2026-09-29|Nocturno",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-15|Matutino",
+          "2026-09-18|Nocturno",
+          "2026-09-25|Matutino",
+          "2026-10-08|Matutino",
+          "2026-10-10|Nocturno"
+        ],
+        "changedTop10": 0
+      },
+      "ANCHOR_SOURCE_NEW": {
+        "rescued": [
+          "2026-09-15|Nocturno",
+          "2026-09-30|Vespertino",
+          "2026-10-07|Vespertino"
+        ],
+        "lost": [
+          "2026-09-15|Matutino",
+          "2026-09-22|Primera",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ],
+        "changedTop10": 0
+      },
+      "ANCHOR_BIRTH": {
+        "rescued": [
+          "2026-09-15|Nocturno",
+          "2026-09-30|Vespertino"
+        ],
+        "lost": [
+          "2026-09-15|Matutino",
+          "2026-09-22|Primera",
+          "2026-09-25|Matutino",
+          "2026-09-29|Matutino"
+        ],
+        "changedTop10": 0
+      },
+      "OPEN_BIRTH_1": {
+        "rescued": [
+          "2026-09-30|Nocturno"
+        ],
+        "lost": [],
+        "changedTop10": 0
+      },
+      "OPEN_CONVERGE_1": {
+        "rescued": [
+          "2026-10-03|Vespertino"
+        ],
+        "lost": [],
+        "changedTop10": 0
+      },
+      "OPEN_FRESH_1": {
+        "rescued": [
+          "2026-09-30|Nocturno"
+        ],
+        "lost": [],
+        "changedTop10": 0
+      },
+      "OPEN_BRIDGE_1": {
+        "rescued": [
+          "2026-09-21|Primera"
+        ],
+        "lost": [],
+        "changedTop10": 0
+      },
+      "OPEN_FRESH_2": {
+        "rescued": [
+          "2026-09-30|Nocturno"
+        ],
+        "lost": [],
+        "changedTop10": 0
+      },
+      "OPEN_BRIDGE_2": {
+        "rescued": [
+          "2026-09-16|Matutino",
+          "2026-09-21|Primera"
+        ],
+        "lost": [],
+        "changedTop10": 0
+      },
+      "OPEN_FRESH_NULL_1": {
+        "rescued": [],
+        "lost": [],
+        "changedTop10": 0
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "counts": {
+        "ORIGINAL": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_CONVERGE": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_BIRTH": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BIRTH_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 3,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        }
+      },
+      "paired": {
+        "ANCHOR_CONVERGE": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "ANCHOR_BIRTH": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BIRTH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_2": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        }
+      }
+    },
+    "Primera": {
+      "counts": {
+        "ORIGINAL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_CONVERGE": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_BIRTH": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BIRTH_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "unanchoredSelected": 11,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamilies": 2,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 1
+        },
+        "OPEN_FRESH_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "unanchoredSelected": 46,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamilies": 2,
+          "unanchoredSelected": 46,
+          "unanchoredWinning": 1
+        },
+        "OPEN_FRESH_NULL_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        }
+      },
+      "paired": {
+        "ANCHOR_CONVERGE": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "rescued": [],
+          "lost": [
+            "2026-09-22|Primera"
+          ],
+          "changedTop10": 0
+        },
+        "ANCHOR_BIRTH": {
+          "rescued": [],
+          "lost": [
+            "2026-09-22|Primera"
+          ],
+          "changedTop10": 0
+        },
+        "OPEN_BIRTH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "rescued": [
+            "2026-09-21|Primera"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_2": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "rescued": [
+            "2026-09-21|Primera"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        }
+      }
+    },
+    "Matutino": {
+      "counts": {
+        "ORIGINAL": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_CONVERGE": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 5,
+          "winningFamilies": 5,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "cuts": 23,
+          "top3": 3,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 6,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_BIRTH": {
+          "cuts": 23,
+          "top3": 3,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 6,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BIRTH_1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "unanchoredSelected": 20,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_2": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "unanchoredSelected": 46,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 9,
+          "winningFamilies": 10,
+          "unanchoredSelected": 46,
+          "unanchoredWinning": 1
+        },
+        "OPEN_FRESH_NULL_1": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 3,
+          "top10": 8,
+          "winningFamilies": 9,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        }
+      },
+      "paired": {
+        "ANCHOR_CONVERGE": {
+          "rescued": [],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-25|Matutino",
+            "2026-10-08|Matutino"
+          ],
+          "changedTop10": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "rescued": [],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedTop10": 0
+        },
+        "ANCHOR_BIRTH": {
+          "rescued": [],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedTop10": 0
+        },
+        "OPEN_BIRTH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_2": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "rescued": [
+            "2026-09-16|Matutino"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        }
+      }
+    },
+    "Vespertino": {
+      "counts": {
+        "ORIGINAL": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_CONVERGE": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamilies": 2,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 2,
+          "winningFamilies": 2,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_BIRTH": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BIRTH_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 1,
+          "winningFamilies": 1,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 1
+        },
+        "OPEN_FRESH_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "unanchoredSelected": 46,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "unanchoredSelected": 46,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "cuts": 23,
+          "top3": 0,
+          "top5": 0,
+          "top10": 0,
+          "winningFamilies": 0,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        }
+      },
+      "paired": {
+        "ANCHOR_CONVERGE": {
+          "rescued": [
+            "2026-09-17|Vespertino",
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "rescued": [
+            "2026-09-30|Vespertino",
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "ANCHOR_BIRTH": {
+          "rescued": [
+            "2026-09-30|Vespertino"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BIRTH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "rescued": [
+            "2026-10-03|Vespertino"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_2": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        }
+      }
+    },
+    "Nocturno": {
+      "counts": {
+        "ORIGINAL": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_CONVERGE": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 1,
+          "top10": 3,
+          "winningFamilies": 3,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 4,
+          "winningFamilies": 5,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_BIRTH": {
+          "cuts": 23,
+          "top3": 1,
+          "top5": 2,
+          "top10": 4,
+          "winningFamilies": 5,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BIRTH_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4,
+          "winningFamilies": 5,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 1
+        },
+        "OPEN_CONVERGE_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4,
+          "winningFamilies": 5,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 1
+        },
+        "OPEN_BRIDGE_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "unanchoredSelected": 22,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4,
+          "winningFamilies": 5,
+          "unanchoredSelected": 46,
+          "unanchoredWinning": 1
+        },
+        "OPEN_BRIDGE_2": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "unanchoredSelected": 44,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "cuts": 23,
+          "top3": 2,
+          "top5": 2,
+          "top10": 3,
+          "winningFamilies": 4,
+          "unanchoredSelected": 23,
+          "unanchoredWinning": 0
+        }
+      },
+      "paired": {
+        "ANCHOR_CONVERGE": {
+          "rescued": [
+            "2026-09-21|Nocturno",
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-18|Nocturno",
+            "2026-10-10|Nocturno"
+          ],
+          "changedTop10": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "rescued": [
+            "2026-09-15|Nocturno"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "ANCHOR_BIRTH": {
+          "rescued": [
+            "2026-09-15|Nocturno"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BIRTH_1": {
+          "rescued": [
+            "2026-09-30|Nocturno"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_1": {
+          "rescued": [
+            "2026-09-30|Nocturno"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_2": {
+          "rescued": [
+            "2026-09-30|Nocturno"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        }
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "counts": {
+        "ORIGINAL": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_CONVERGE": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "cuts": 70,
+          "top3": 1,
+          "top5": 4,
+          "top10": 8,
+          "winningFamilies": 8,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_BIRTH": {
+          "cuts": 70,
+          "top3": 1,
+          "top5": 4,
+          "top10": 8,
+          "winningFamilies": 8,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BIRTH_1": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 11,
+          "winningFamilies": 11,
+          "unanchoredSelected": 56,
+          "unanchoredWinning": 1
+        },
+        "OPEN_CONVERGE_1": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "unanchoredSelected": 46,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_1": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 11,
+          "winningFamilies": 11,
+          "unanchoredSelected": 56,
+          "unanchoredWinning": 1
+        },
+        "OPEN_BRIDGE_1": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 11,
+          "winningFamilies": 11,
+          "unanchoredSelected": 55,
+          "unanchoredWinning": 1
+        },
+        "OPEN_FRESH_2": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 11,
+          "winningFamilies": 11,
+          "unanchoredSelected": 112,
+          "unanchoredWinning": 1
+        },
+        "OPEN_BRIDGE_2": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 12,
+          "winningFamilies": 12,
+          "unanchoredSelected": 110,
+          "unanchoredWinning": 2
+        },
+        "OPEN_FRESH_NULL_1": {
+          "cuts": 70,
+          "top3": 3,
+          "top5": 4,
+          "top10": 10,
+          "winningFamilies": 10,
+          "unanchoredSelected": 56,
+          "unanchoredWinning": 0
+        }
+      },
+      "paired": {
+        "ANCHOR_CONVERGE": {
+          "rescued": [
+            "2026-09-17|Vespertino",
+            "2026-09-21|Nocturno",
+            "2026-09-29|Nocturno"
+          ],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-18|Nocturno",
+            "2026-09-25|Matutino"
+          ],
+          "changedTop10": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "rescued": [
+            "2026-09-15|Nocturno",
+            "2026-09-30|Vespertino"
+          ],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-22|Primera",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedTop10": 0
+        },
+        "ANCHOR_BIRTH": {
+          "rescued": [
+            "2026-09-15|Nocturno",
+            "2026-09-30|Vespertino"
+          ],
+          "lost": [
+            "2026-09-15|Matutino",
+            "2026-09-22|Primera",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino"
+          ],
+          "changedTop10": 0
+        },
+        "OPEN_BIRTH_1": {
+          "rescued": [
+            "2026-09-30|Nocturno"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_1": {
+          "rescued": [
+            "2026-09-30|Nocturno"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "rescued": [
+            "2026-09-21|Primera"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_2": {
+          "rescued": [
+            "2026-09-30|Nocturno"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "rescued": [
+            "2026-09-16|Matutino",
+            "2026-09-21|Primera"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        }
+      }
+    },
+    "2026-10": {
+      "counts": {
+        "ORIGINAL": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_CONVERGE": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 2,
+          "top10": 4,
+          "winningFamilies": 4,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "cuts": 45,
+          "top3": 5,
+          "top5": 5,
+          "top10": 6,
+          "winningFamilies": 8,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "ANCHOR_BIRTH": {
+          "cuts": 45,
+          "top3": 5,
+          "top5": 5,
+          "top10": 5,
+          "winningFamilies": 7,
+          "unanchoredSelected": 0,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BIRTH_1": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "unanchoredSelected": 36,
+          "unanchoredWinning": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 6,
+          "winningFamilies": 8,
+          "unanchoredSelected": 31,
+          "unanchoredWinning": 1
+        },
+        "OPEN_FRESH_1": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "unanchoredSelected": 36,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "unanchoredSelected": 36,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_2": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "unanchoredSelected": 72,
+          "unanchoredWinning": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "unanchoredSelected": 72,
+          "unanchoredWinning": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "cuts": 45,
+          "top3": 2,
+          "top5": 4,
+          "top10": 5,
+          "winningFamilies": 7,
+          "unanchoredSelected": 36,
+          "unanchoredWinning": 0
+        }
+      },
+      "paired": {
+        "ANCHOR_CONVERGE": {
+          "rescued": [
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [
+            "2026-10-08|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "changedTop10": 0
+        },
+        "ANCHOR_SOURCE_NEW": {
+          "rescued": [
+            "2026-10-07|Vespertino"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "ANCHOR_BIRTH": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BIRTH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_CONVERGE_1": {
+          "rescued": [
+            "2026-10-03|Vespertino"
+          ],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_2": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_BRIDGE_2": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        },
+        "OPEN_FRESH_NULL_1": {
+          "rescued": [],
+          "lost": [],
+          "changedTop10": 0
+        }
+      }
+    }
+  },
+  "stateStats": {
+    "ANCLADA_INICIAL": {
+      "exposures": 690,
+      "winningFamilies": 9,
+      "familiesInOriginalTop10": 230,
+      "winnersInOriginalTop10": 3
+    },
+    "NO_ANCLADA_INICIAL": {
+      "exposures": 600,
+      "winningFamilies": 7,
+      "familiesInOriginalTop10": 0,
+      "winnersInOriginalTop10": 0
+    },
+    "ANCLADA_YA_PRESENTE": {
+      "exposures": 4179,
+      "winningFamilies": 40,
+      "familiesInOriginalTop10": 647,
+      "winnersInOriginalTop10": 10
+    },
+    "ANCLADA_NACE_FISICAMENTE": {
+      "exposures": 925,
+      "winningFamilies": 8,
+      "familiesInOriginalTop10": 159,
+      "winnersInOriginalTop10": 3
+    },
+    "NO_ANCLADA_CONVERGE_FUENTES": {
+      "exposures": 491,
+      "winningFamilies": 4,
+      "familiesInOriginalTop10": 0,
+      "winnersInOriginalTop10": 0
+    },
+    "NO_ANCLADA_NACE_FISICAMENTE": {
+      "exposures": 2455,
+      "winningFamilies": 19,
+      "familiesInOriginalTop10": 0,
+      "winnersInOriginalTop10": 0
+    },
+    "NO_ANCLADA_YA_PRESENTE": {
+      "exposures": 5338,
+      "winningFamilies": 49,
+      "familiesInOriginalTop10": 0,
+      "winnersInOriginalTop10": 0
+    },
+    "ANCLADA_CONVERGE_FUENTES": {
+      "exposures": 595,
+      "winningFamilies": 7,
+      "familiesInOriginalTop10": 114,
+      "winnersInOriginalTop10": 1
+    }
+  },
+  "nullVsOriginal": {
+    "ANCHOR_CONVERGE": {
+      "observedDifference": -1,
+      "permutationMean": 0.3145,
+      "p05": -4,
+      "median": 0,
+      "p95": 5,
+      "tailAtLeastObserved": 0.7648235176482352,
+      "rotationMin": -5,
+      "rotationMax": 3,
+      "rotationsAtLeast": 20
+    },
+    "ANCHOR_SOURCE_NEW": {
+      "observedDifference": -1,
+      "permutationMean": 0.3138,
+      "p05": -4,
+      "median": 0,
+      "p95": 5,
+      "tailAtLeastObserved": 0.7447255274472553,
+      "rotationMin": -3,
+      "rotationMax": 6,
+      "rotationsAtLeast": 16
+    },
+    "ANCHOR_BIRTH": {
+      "observedDifference": -2,
+      "permutationMean": -0.0714,
+      "p05": -5,
+      "median": 0,
+      "p95": 5,
+      "tailAtLeastObserved": 0.8045195480451954,
+      "rotationMin": -5,
+      "rotationMax": 7,
+      "rotationsAtLeast": 20
+    },
+    "OPEN_BIRTH_1": {
+      "observedDifference": 1,
+      "permutationMean": 0.4723,
+      "p05": -1,
+      "median": 0,
+      "p95": 2,
+      "tailAtLeastObserved": 0.46595340465953405,
+      "rotationMin": -2,
+      "rotationMax": 2,
+      "rotationsAtLeast": 9
+    },
+    "OPEN_CONVERGE_1": {
+      "observedDifference": 1,
+      "permutationMean": 0.3651,
+      "p05": -1,
+      "median": 0,
+      "p95": 2,
+      "tailAtLeastObserved": 0.40585941405859416,
+      "rotationMin": -1,
+      "rotationMax": 2,
+      "rotationsAtLeast": 8
+    },
+    "OPEN_FRESH_1": {
+      "observedDifference": 1,
+      "permutationMean": 0.384,
+      "p05": -1,
+      "median": 0,
+      "p95": 2,
+      "tailAtLeastObserved": 0.43325667433256676,
+      "rotationMin": -2,
+      "rotationMax": 2,
+      "rotationsAtLeast": 9
+    },
+    "OPEN_BRIDGE_1": {
+      "observedDifference": 1,
+      "permutationMean": 0.5576,
+      "p05": -1,
+      "median": 0,
+      "p95": 3,
+      "tailAtLeastObserved": 0.49455054494550543,
+      "rotationMin": -1,
+      "rotationMax": 4,
+      "rotationsAtLeast": 10
+    },
+    "OPEN_FRESH_2": {
+      "observedDifference": 1,
+      "permutationMean": 0.5825,
+      "p05": -2,
+      "median": 1,
+      "p95": 3,
+      "tailAtLeastObserved": 0.5195480451954805,
+      "rotationMin": -2,
+      "rotationMax": 4,
+      "rotationsAtLeast": 12
+    },
+    "OPEN_BRIDGE_2": {
+      "observedDifference": 2,
+      "permutationMean": 0.6705,
+      "p05": -2,
+      "median": 1,
+      "p95": 4,
+      "tailAtLeastObserved": 0.3083691630836916,
+      "rotationMin": -3,
+      "rotationMax": 6,
+      "rotationsAtLeast": 8
+    },
+    "OPEN_FRESH_NULL_1": {
+      "observedDifference": 0,
+      "permutationMean": 0.0463,
+      "p05": -1,
+      "median": 0,
+      "p95": 2,
+      "tailAtLeastObserved": 0.7464253574642535,
+      "rotationMin": -1,
+      "rotationMax": 2,
+      "rotationsAtLeast": 16
+    }
+  },
+  "seal": {
+    "sourcePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "protocol": "19cda66a9bc74d35f1cf982b8d289b4e3d8b4b23976717741eb409e920a85ab5",
+    "script": "4a19cce9a97a9394354a6771784547b6e4d92fd0857e310a7a9676141d56ab13",
+    "generatedPre": "512331f2695e2b632c7f2077f2dd7437041d00ee724556cf754e22f986a07f2b"
+  },
+  "inputPostHash": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "limitation": "Ensayo retrospectivo entre familias físicamente posibles; los sorteos aleatorios no tienen por qué seguir trazos. El mismo corpus se usó en muchas hipótesis, no es holdout."
+}
