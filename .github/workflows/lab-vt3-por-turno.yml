@@ -1,0 +1,38 @@
+name: VT3 estudio por turno y control Matutino Vespertino
+on:
+  push:
+    branches: [lab-vt3-por-turno-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-por-turno.mjs'
+      - 'PROTOCOLO_VT3_POR_TURNO_13OCT2026.md'
+      - '.github/workflows/lab-vt3-por-turno.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Auditar 115 cortes y 40000 controles de fecha completa
+        run: node scripts/lab-vt3-por-turno.mjs
+      - name: Subir evidencia
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-por-turno-115
+          path: auditorias/vt3-por-turno-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Conservar salidas de laboratorio
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-por-turno-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): contraste Matutino Vespertino, fuentes y negativos'
+            git push origin HEAD:lab-vt3-por-turno-13oct2026
+          fi
