@@ -1,0 +1,976 @@
+{
+  "date": "2026-10-13",
+  "status": "VT4_RETROSPECTIVO_NO_SELLO_PROSPECTIVO",
+  "originalVt3MatSeal": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+  "cases": [
+    {
+      "turn": "Primera",
+      "vt3MothersTotal": 43,
+      "inventory": {
+        "native": 94,
+        "admitted": 478,
+        "unanchored": 776,
+        "geometry": {
+          "allPhysicalThreePaths": 144,
+          "acceptedPhysicalThreePaths": 62,
+          "allRootedVt4Groups": 510,
+          "unanchoredVt4Groups": 776,
+          "admittedBeyondTenGroups": 384,
+          "originalVt4Groups": 94,
+          "nativePhysicalKeys": 107
+        }
+      },
+      "focus": {
+        "head": "5485",
+        "rootedMatches": [
+          {
+            "mother": "485/584",
+            "motherRank": 5,
+            "family": "5485/5584",
+            "values": [
+              "5485"
+            ],
+            "paths": 2,
+            "physicalKeys": [
+              "Previa|0:0>1:1>1:0>2:0",
+              "Previa|0:0>1:0>1:1>2:0"
+            ]
+          },
+          {
+            "mother": "548/845",
+            "motherRank": 9,
+            "family": "5485/8455",
+            "values": [
+              "5485"
+            ],
+            "paths": 2,
+            "physicalKeys": [
+              "Previa|0:0>1:1>1:0>2:0",
+              "Previa|0:0>1:0>1:1>2:0"
+            ]
+          }
+        ],
+        "physicalOnlyMatches": []
+      },
+      "policies": {
+        "BASE_CORREGIDA": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226",
+            "6226/6622",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "7305/7503"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "5485",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "0310",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "8857",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3385",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "4084",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 19,
+          "mothers": 2,
+          "noRootSlots": 0
+        },
+        "TOP10_CUPO2": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "3507/3705",
+            "5073/7053",
+            "0036/0630",
+            "0360/6300",
+            "4857/5847",
+            "4859/5849"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "5485",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "0310",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "8857",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3385",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "4084",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 5,
+          "noRootSlots": 0
+        },
+        "ADMITIDAS_CUPO2": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "3507/3705",
+            "5073/7053",
+            "0036/0630",
+            "0360/6300",
+            "4857/5847",
+            "4859/5849"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "5485",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "0310",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "8857",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3385",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "4084",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 5,
+          "noRootSlots": 0
+        },
+        "ADMITIDAS_ESTRATOS": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "2663/6623",
+            "2665/6625",
+            "0307/0703",
+            "3070/7030",
+            "0006/0600",
+            "0060/6000"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "5485",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "0310",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "8857",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3385",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "4084",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 5,
+          "noRootSlots": 0
+        },
+        "FISICAS_ESTRATOS": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "2663/6623",
+            "2665/6625",
+            "0307/0703",
+            "3070/7030",
+            "0035/0530",
+            "0057/0750"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "5485",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "0310",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "8857",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3385",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "4084",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 6,
+          "noRootSlots": 2
+        },
+        "FISICAS_DOS_NUEVAS": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "3507/3705",
+            "5073/7053",
+            "0036/0630",
+            "0360/6300",
+            "0035/0530",
+            "0057/0750"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "5485",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "0310",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "8857",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3385",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "4084",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 6,
+          "noRootSlots": 2
+        },
+        "FISICAS_ORDEN_GLOBAL": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "7305/7503",
+            "1305/1503"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "5485",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "0310",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "8857",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3385",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "4084",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 2,
+          "noRootSlots": 0
+        }
+      }
+    },
+    {
+      "turn": "Matutino",
+      "vt3MothersTotal": 59,
+      "inventory": {
+        "native": 104,
+        "admitted": 660,
+        "unanchored": 1082,
+        "geometry": {
+          "allPhysicalThreePaths": 216,
+          "acceptedPhysicalThreePaths": 93,
+          "allRootedVt4Groups": 684,
+          "unanchoredVt4Groups": 1082,
+          "admittedBeyondTenGroups": 556,
+          "originalVt4Groups": 104,
+          "nativePhysicalKeys": 124
+        }
+      },
+      "focus": {
+        "head": "1057",
+        "rootedMatches": [],
+        "physicalOnlyMatches": [
+          {
+            "mother": "105/501",
+            "motherRank": null,
+            "family": "1057/5017",
+            "values": [
+              "1057",
+              "5017"
+            ],
+            "paths": 3,
+            "physicalKeys": [
+              "prevNocturno|2:0>3:0>3:1>4:0",
+              "prevNocturno|3:1>3:0>4:1>4:0",
+              "prevNocturno|4:0>3:1>3:0>4:1"
+            ]
+          },
+          {
+            "mother": "057/750",
+            "motherRank": null,
+            "family": "1057/1750",
+            "values": [
+              "1057",
+              "1750"
+            ],
+            "paths": 2,
+            "physicalKeys": [
+              "prevNocturno|3:1>3:0>4:1>4:0",
+              "prevNocturno|3:0>4:1>4:0>3:1"
+            ]
+          }
+        ]
+      },
+      "policies": {
+        "BASE_CORREGIDA": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226",
+            "6226/6622",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "7305/7503"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "3376",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "1057",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "2413",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3723",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "2284",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Montevideo",
+              "head": "3629",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 19,
+          "mothers": 2,
+          "noRootSlots": 0
+        },
+        "TOP10_CUPO2": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "5699/5996",
+            "6995/9965",
+            "2665/6625",
+            "5266/5662",
+            "1629/1926",
+            "6291/9261"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "3376",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "1057",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "2413",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3723",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "2284",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Montevideo",
+              "head": "3629",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 5,
+          "noRootSlots": 0
+        },
+        "ADMITIDAS_CUPO2": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "5699/5996",
+            "6995/9965",
+            "2665/6625",
+            "5266/5662",
+            "1629/1926",
+            "6291/9261"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "3376",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "1057",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "2413",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3723",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "2284",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Montevideo",
+              "head": "3629",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 5,
+          "noRootSlots": 0
+        },
+        "ADMITIDAS_ESTRATOS": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "3507/3705",
+            "5073/7053",
+            "5696/9656",
+            "5699/9659",
+            "0515/1505",
+            "5051/5150"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "3376",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "1057",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "2413",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3723",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "2284",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Montevideo",
+              "head": "3629",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 5,
+          "noRootSlots": 0
+        },
+        "FISICAS_ESTRATOS": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "3507/3705",
+            "5073/7053",
+            "5696/9656",
+            "5699/9659",
+            "6266",
+            "6626"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "3376",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "1057",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "2413",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3723",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "2284",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Montevideo",
+              "head": "3629",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 18,
+          "mothers": 5,
+          "noRootSlots": 2
+        },
+        "FISICAS_DOS_NUEVAS": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3056/5036",
+            "6305/6503",
+            "5699/5996",
+            "6995/9965",
+            "2665/6625",
+            "5266/5662",
+            "6266",
+            "6626"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "3376",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "1057",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "2413",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3723",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "2284",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Montevideo",
+              "head": "3629",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 18,
+          "mothers": 5,
+          "noRootSlots": 2
+        },
+        "FISICAS_ORDEN_GLOBAL": {
+          "top3": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622"
+          ],
+          "top10": [
+            "2263/6223",
+            "2265/6225",
+            "3226/3622",
+            "5226/5622",
+            "2266/6226",
+            "3056/5036",
+            "6305/6503",
+            "3057/5037",
+            "7305/7503",
+            "1305/1503"
+          ],
+          "heads": [
+            {
+              "jurisdiction": "Ciudad",
+              "head": "3376",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Provincia",
+              "head": "1057",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Córdoba",
+              "head": "2413",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Santa Fé",
+              "head": "3723",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Entre Ríos",
+              "head": "2284",
+              "hits": []
+            },
+            {
+              "jurisdiction": "Montevideo",
+              "head": "3629",
+              "hits": []
+            }
+          ],
+          "argentina5": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "includingMontevideo6": {
+            "top3": false,
+            "top5": false,
+            "top10": false
+          },
+          "uniqueFour": 20,
+          "mothers": 2,
+          "noRootSlots": 0
+        }
+      }
+    }
+  ],
+  "warning": "Se reconstruyeron PRE con resultados de Primera/Matutino ya publicados; no presentar como VT4 sellado anticipadamente. Las variantes sin raíz no reciben respaldo ajeno."
+}
