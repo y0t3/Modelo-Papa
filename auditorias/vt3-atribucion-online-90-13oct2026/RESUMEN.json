@@ -1,0 +1,6726 @@
+{
+  "date": "2026-10-13",
+  "cuts": 90,
+  "byWeek": {
+    "2026-09-21": {
+      "ESTATICA_SEMANA_X": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 5
+      },
+      "ONLINE_ACUMULATIVA": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 5
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 4
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 4
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 5
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 4
+      }
+    },
+    "2026-09-28": {
+      "ESTATICA_SEMANA_X": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 4
+      },
+      "ONLINE_ACUMULATIVA": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 4
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 4
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 4
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 4
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 4
+      }
+    },
+    "2026-10-05": {
+      "ESTATICA_SEMANA_X": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 3
+      },
+      "ONLINE_ACUMULATIVA": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 3
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 3
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 3
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 3
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 3
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 8,
+      "ONLINE_DIA_ACTUAL": 0,
+      "ONLINE_ULTIMOS_5_TURNOS": 16,
+      "ONLINE_ULTIMOS_15_TURNOS": 14,
+      "ONLINE_NEGATIVAS_5_TURNOS": 18
+    },
+    "Primera": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 8,
+      "ONLINE_DIA_ACTUAL": 7,
+      "ONLINE_ULTIMOS_5_TURNOS": 17,
+      "ONLINE_ULTIMOS_15_TURNOS": 14,
+      "ONLINE_NEGATIVAS_5_TURNOS": 17
+    },
+    "Matutino": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 9,
+      "ONLINE_DIA_ACTUAL": 11,
+      "ONLINE_ULTIMOS_5_TURNOS": 17,
+      "ONLINE_ULTIMOS_15_TURNOS": 16,
+      "ONLINE_NEGATIVAS_5_TURNOS": 17
+    },
+    "Vespertino": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 9,
+      "ONLINE_DIA_ACTUAL": 18,
+      "ONLINE_ULTIMOS_5_TURNOS": 16,
+      "ONLINE_ULTIMOS_15_TURNOS": 16,
+      "ONLINE_NEGATIVAS_5_TURNOS": 18
+    },
+    "Nocturno": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 9,
+      "ONLINE_DIA_ACTUAL": 17,
+      "ONLINE_ULTIMOS_5_TURNOS": 18,
+      "ONLINE_ULTIMOS_15_TURNOS": 15,
+      "ONLINE_NEGATIVAS_5_TURNOS": 18
+    }
+  },
+  "byDay": {
+    "2026-09-21": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 0,
+      "ONLINE_DIA_ACTUAL": 2,
+      "ONLINE_ULTIMOS_5_TURNOS": 4,
+      "ONLINE_ULTIMOS_15_TURNOS": 0,
+      "ONLINE_NEGATIVAS_5_TURNOS": 3
+    },
+    "2026-09-22": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 0,
+      "ONLINE_DIA_ACTUAL": 3,
+      "ONLINE_ULTIMOS_5_TURNOS": 1,
+      "ONLINE_ULTIMOS_15_TURNOS": 0,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-09-23": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 0,
+      "ONLINE_DIA_ACTUAL": 2,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 3,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-09-24": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 0,
+      "ONLINE_DIA_ACTUAL": 4,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 3,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-09-25": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 5,
+      "ONLINE_DIA_ACTUAL": 4,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-09-26": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 5,
+      "ONLINE_DIA_ACTUAL": 2,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-09-28": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 2,
+      "ONLINE_DIA_ACTUAL": 4,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-09-29": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 5,
+      "ONLINE_DIA_ACTUAL": 3,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-09-30": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 5,
+      "ONLINE_DIA_ACTUAL": 2,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-10-01": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 5,
+      "ONLINE_DIA_ACTUAL": 4,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-10-02": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 5,
+      "ONLINE_DIA_ACTUAL": 4,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-10-03": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 5,
+      "ONLINE_DIA_ACTUAL": 2,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-10-05": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 0,
+      "ONLINE_DIA_ACTUAL": 2,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-10-06": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 0,
+      "ONLINE_DIA_ACTUAL": 4,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 4,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-10-07": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 0,
+      "ONLINE_DIA_ACTUAL": 2,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-10-08": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 0,
+      "ONLINE_DIA_ACTUAL": 2,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-10-09": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 1,
+      "ONLINE_DIA_ACTUAL": 4,
+      "ONLINE_ULTIMOS_5_TURNOS": 4,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    },
+    "2026-10-10": {
+      "ESTATICA_SEMANA_X": 0,
+      "ONLINE_ACUMULATIVA": 5,
+      "ONLINE_DIA_ACTUAL": 3,
+      "ONLINE_ULTIMOS_5_TURNOS": 5,
+      "ONLINE_ULTIMOS_15_TURNOS": 5,
+      "ONLINE_NEGATIVAS_5_TURNOS": 5
+    }
+  },
+  "overall": {
+    "ESTATICA_SEMANA_X": {
+      "top3": 4,
+      "top5": 5,
+      "top10": 12
+    },
+    "ONLINE_ACUMULATIVA": {
+      "top3": 4,
+      "top5": 5,
+      "top10": 12
+    },
+    "ONLINE_DIA_ACTUAL": {
+      "top3": 3,
+      "top5": 4,
+      "top10": 11
+    },
+    "ONLINE_ULTIMOS_5_TURNOS": {
+      "top3": 3,
+      "top5": 4,
+      "top10": 11
+    },
+    "ONLINE_ULTIMOS_15_TURNOS": {
+      "top3": 4,
+      "top5": 5,
+      "top10": 12
+    },
+    "ONLINE_NEGATIVAS_5_TURNOS": {
+      "top3": 3,
+      "top5": 4,
+      "top10": 11
+    }
+  },
+  "summaries": {
+    "ESTATICA_SEMANA_X": {
+      "changedCuts": 0,
+      "changedWithRecentAmongTop3": 0,
+      "changedWithNovelShapeAmongRecentTop3": 0,
+      "changedWithRepeatedShapeAmongRecentTop3": 0,
+      "changedNoRecentTop3": 0,
+      "changedDespiteZeroSimilarity": 0,
+      "meanBankSize": 36.666666666666664,
+      "meanDistinctShapeSignatures": 29,
+      "meanRecentExamples": 0,
+      "thirdWinnerExposures": 1,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [],
+      "allChangedCases": [],
+      "uniqueChangedThirds": 0
+    },
+    "ONLINE_ACUMULATIVA": {
+      "changedCuts": 43,
+      "changedWithRecentAmongTop3": 43,
+      "changedWithNovelShapeAmongRecentTop3": 0,
+      "changedWithRepeatedShapeAmongRecentTop3": 43,
+      "changedNoRecentTop3": 0,
+      "changedDespiteZeroSimilarity": 0,
+      "meanBankSize": 53.6,
+      "meanDistinctShapeSignatures": 39.56666666666667,
+      "meanRecentExamples": 16.933333333333334,
+      "thirdWinnerExposures": 1,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [],
+      "allChangedCases": [
+        "2026-09-25|Previa",
+        "2026-09-25|Primera",
+        "2026-09-25|Matutino",
+        "2026-09-25|Vespertino",
+        "2026-09-25|Nocturno",
+        "2026-09-26|Previa",
+        "2026-09-26|Primera",
+        "2026-09-26|Matutino",
+        "2026-09-26|Vespertino",
+        "2026-09-26|Nocturno",
+        "2026-09-28|Vespertino",
+        "2026-09-28|Nocturno",
+        "2026-09-29|Previa",
+        "2026-09-29|Primera",
+        "2026-09-29|Matutino",
+        "2026-09-29|Vespertino",
+        "2026-09-29|Nocturno",
+        "2026-09-30|Previa",
+        "2026-09-30|Primera",
+        "2026-09-30|Matutino",
+        "2026-09-30|Vespertino",
+        "2026-09-30|Nocturno",
+        "2026-10-01|Previa",
+        "2026-10-01|Primera",
+        "2026-10-01|Matutino",
+        "2026-10-01|Vespertino",
+        "2026-10-01|Nocturno",
+        "2026-10-02|Previa",
+        "2026-10-02|Primera",
+        "2026-10-02|Matutino",
+        "2026-10-02|Vespertino",
+        "2026-10-02|Nocturno",
+        "2026-10-03|Previa",
+        "2026-10-03|Primera",
+        "2026-10-03|Matutino",
+        "2026-10-03|Vespertino",
+        "2026-10-03|Nocturno",
+        "2026-10-09|Matutino",
+        "2026-10-10|Previa",
+        "2026-10-10|Primera",
+        "2026-10-10|Matutino",
+        "2026-10-10|Vespertino",
+        "2026-10-10|Nocturno"
+      ],
+      "uniqueChangedThirds": 16
+    },
+    "ONLINE_DIA_ACTUAL": {
+      "changedCuts": 53,
+      "changedWithRecentAmongTop3": 53,
+      "changedWithNovelShapeAmongRecentTop3": 3,
+      "changedWithRepeatedShapeAmongRecentTop3": 51,
+      "changedNoRecentTop3": 0,
+      "changedDespiteZeroSimilarity": 0,
+      "meanBankSize": 16.477777777777778,
+      "meanDistinctShapeSignatures": 13.3,
+      "meanRecentExamples": 1.711111111111111,
+      "thirdWinnerExposures": 0,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [
+        "2026-09-21|Vespertino"
+      ],
+      "allChangedCases": [
+        "2026-09-21|Matutino",
+        "2026-09-21|Vespertino",
+        "2026-09-22|Matutino",
+        "2026-09-22|Vespertino",
+        "2026-09-22|Nocturno",
+        "2026-09-23|Vespertino",
+        "2026-09-23|Nocturno",
+        "2026-09-24|Primera",
+        "2026-09-24|Matutino",
+        "2026-09-24|Vespertino",
+        "2026-09-24|Nocturno",
+        "2026-09-25|Primera",
+        "2026-09-25|Matutino",
+        "2026-09-25|Vespertino",
+        "2026-09-25|Nocturno",
+        "2026-09-26|Vespertino",
+        "2026-09-26|Nocturno",
+        "2026-09-28|Primera",
+        "2026-09-28|Matutino",
+        "2026-09-28|Vespertino",
+        "2026-09-28|Nocturno",
+        "2026-09-29|Matutino",
+        "2026-09-29|Vespertino",
+        "2026-09-29|Nocturno",
+        "2026-09-30|Vespertino",
+        "2026-09-30|Nocturno",
+        "2026-10-01|Primera",
+        "2026-10-01|Matutino",
+        "2026-10-01|Vespertino",
+        "2026-10-01|Nocturno",
+        "2026-10-02|Primera",
+        "2026-10-02|Matutino",
+        "2026-10-02|Vespertino",
+        "2026-10-02|Nocturno",
+        "2026-10-03|Vespertino",
+        "2026-10-03|Nocturno",
+        "2026-10-05|Vespertino",
+        "2026-10-05|Nocturno",
+        "2026-10-06|Primera",
+        "2026-10-06|Matutino",
+        "2026-10-06|Vespertino",
+        "2026-10-06|Nocturno",
+        "2026-10-07|Vespertino",
+        "2026-10-07|Nocturno",
+        "2026-10-08|Vespertino",
+        "2026-10-08|Nocturno",
+        "2026-10-09|Primera",
+        "2026-10-09|Matutino",
+        "2026-10-09|Vespertino",
+        "2026-10-09|Nocturno",
+        "2026-10-10|Matutino",
+        "2026-10-10|Vespertino",
+        "2026-10-10|Nocturno"
+      ],
+      "uniqueChangedThirds": 36
+    },
+    "ONLINE_ULTIMOS_5_TURNOS": {
+      "changedCuts": 84,
+      "changedWithRecentAmongTop3": 78,
+      "changedWithNovelShapeAmongRecentTop3": 6,
+      "changedWithRepeatedShapeAmongRecentTop3": 75,
+      "changedNoRecentTop3": 6,
+      "changedDespiteZeroSimilarity": 0,
+      "meanBankSize": 5.955555555555556,
+      "meanDistinctShapeSignatures": 5.7444444444444445,
+      "meanRecentExamples": 5.277777777777778,
+      "thirdWinnerExposures": 0,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [
+        "2026-09-21|Vespertino"
+      ],
+      "allChangedCases": [
+        "2026-09-21|Primera",
+        "2026-09-21|Matutino",
+        "2026-09-21|Vespertino",
+        "2026-09-21|Nocturno",
+        "2026-09-22|Nocturno",
+        "2026-09-23|Previa",
+        "2026-09-23|Primera",
+        "2026-09-23|Matutino",
+        "2026-09-23|Vespertino",
+        "2026-09-23|Nocturno",
+        "2026-09-24|Previa",
+        "2026-09-24|Primera",
+        "2026-09-24|Matutino",
+        "2026-09-24|Vespertino",
+        "2026-09-24|Nocturno",
+        "2026-09-25|Previa",
+        "2026-09-25|Primera",
+        "2026-09-25|Matutino",
+        "2026-09-25|Vespertino",
+        "2026-09-25|Nocturno",
+        "2026-09-26|Previa",
+        "2026-09-26|Primera",
+        "2026-09-26|Matutino",
+        "2026-09-26|Vespertino",
+        "2026-09-26|Nocturno",
+        "2026-09-28|Previa",
+        "2026-09-28|Primera",
+        "2026-09-28|Matutino",
+        "2026-09-28|Vespertino",
+        "2026-09-28|Nocturno",
+        "2026-09-29|Previa",
+        "2026-09-29|Primera",
+        "2026-09-29|Matutino",
+        "2026-09-29|Vespertino",
+        "2026-09-29|Nocturno",
+        "2026-09-30|Previa",
+        "2026-09-30|Primera",
+        "2026-09-30|Matutino",
+        "2026-09-30|Vespertino",
+        "2026-09-30|Nocturno",
+        "2026-10-01|Previa",
+        "2026-10-01|Primera",
+        "2026-10-01|Matutino",
+        "2026-10-01|Vespertino",
+        "2026-10-01|Nocturno",
+        "2026-10-02|Previa",
+        "2026-10-02|Primera",
+        "2026-10-02|Matutino",
+        "2026-10-02|Vespertino",
+        "2026-10-02|Nocturno",
+        "2026-10-03|Previa",
+        "2026-10-03|Primera",
+        "2026-10-03|Matutino",
+        "2026-10-03|Vespertino",
+        "2026-10-03|Nocturno",
+        "2026-10-05|Previa",
+        "2026-10-05|Primera",
+        "2026-10-05|Matutino",
+        "2026-10-05|Vespertino",
+        "2026-10-05|Nocturno",
+        "2026-10-06|Previa",
+        "2026-10-06|Primera",
+        "2026-10-06|Matutino",
+        "2026-10-06|Vespertino",
+        "2026-10-06|Nocturno",
+        "2026-10-07|Previa",
+        "2026-10-07|Primera",
+        "2026-10-07|Matutino",
+        "2026-10-07|Vespertino",
+        "2026-10-07|Nocturno",
+        "2026-10-08|Previa",
+        "2026-10-08|Primera",
+        "2026-10-08|Matutino",
+        "2026-10-08|Vespertino",
+        "2026-10-08|Nocturno",
+        "2026-10-09|Previa",
+        "2026-10-09|Primera",
+        "2026-10-09|Matutino",
+        "2026-10-09|Nocturno",
+        "2026-10-10|Previa",
+        "2026-10-10|Primera",
+        "2026-10-10|Matutino",
+        "2026-10-10|Vespertino",
+        "2026-10-10|Nocturno"
+      ],
+      "uniqueChangedThirds": 60
+    },
+    "ONLINE_ULTIMOS_15_TURNOS": {
+      "changedCuts": 75,
+      "changedWithRecentAmongTop3": 67,
+      "changedWithNovelShapeAmongRecentTop3": 2,
+      "changedWithRepeatedShapeAmongRecentTop3": 65,
+      "changedNoRecentTop3": 8,
+      "changedDespiteZeroSimilarity": 0,
+      "meanBankSize": 18.666666666666668,
+      "meanDistinctShapeSignatures": 16.31111111111111,
+      "meanRecentExamples": 13.1,
+      "thirdWinnerExposures": 1,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [],
+      "allChangedCases": [
+        "2026-09-23|Matutino",
+        "2026-09-23|Vespertino",
+        "2026-09-23|Nocturno",
+        "2026-09-24|Matutino",
+        "2026-09-24|Vespertino",
+        "2026-09-24|Nocturno",
+        "2026-09-25|Previa",
+        "2026-09-25|Primera",
+        "2026-09-25|Matutino",
+        "2026-09-25|Vespertino",
+        "2026-09-25|Nocturno",
+        "2026-09-26|Previa",
+        "2026-09-26|Primera",
+        "2026-09-26|Matutino",
+        "2026-09-26|Vespertino",
+        "2026-09-26|Nocturno",
+        "2026-09-28|Previa",
+        "2026-09-28|Primera",
+        "2026-09-28|Matutino",
+        "2026-09-28|Vespertino",
+        "2026-09-28|Nocturno",
+        "2026-09-29|Previa",
+        "2026-09-29|Primera",
+        "2026-09-29|Matutino",
+        "2026-09-29|Vespertino",
+        "2026-09-29|Nocturno",
+        "2026-09-30|Previa",
+        "2026-09-30|Primera",
+        "2026-09-30|Matutino",
+        "2026-09-30|Vespertino",
+        "2026-09-30|Nocturno",
+        "2026-10-01|Previa",
+        "2026-10-01|Primera",
+        "2026-10-01|Matutino",
+        "2026-10-01|Vespertino",
+        "2026-10-01|Nocturno",
+        "2026-10-02|Previa",
+        "2026-10-02|Primera",
+        "2026-10-02|Matutino",
+        "2026-10-02|Vespertino",
+        "2026-10-02|Nocturno",
+        "2026-10-03|Previa",
+        "2026-10-03|Primera",
+        "2026-10-03|Matutino",
+        "2026-10-03|Vespertino",
+        "2026-10-03|Nocturno",
+        "2026-10-05|Previa",
+        "2026-10-05|Primera",
+        "2026-10-05|Matutino",
+        "2026-10-05|Vespertino",
+        "2026-10-05|Nocturno",
+        "2026-10-06|Previa",
+        "2026-10-06|Primera",
+        "2026-10-06|Matutino",
+        "2026-10-06|Vespertino",
+        "2026-10-07|Previa",
+        "2026-10-07|Primera",
+        "2026-10-07|Matutino",
+        "2026-10-07|Vespertino",
+        "2026-10-07|Nocturno",
+        "2026-10-08|Previa",
+        "2026-10-08|Primera",
+        "2026-10-08|Matutino",
+        "2026-10-08|Vespertino",
+        "2026-10-08|Nocturno",
+        "2026-10-09|Previa",
+        "2026-10-09|Primera",
+        "2026-10-09|Matutino",
+        "2026-10-09|Vespertino",
+        "2026-10-09|Nocturno",
+        "2026-10-10|Previa",
+        "2026-10-10|Primera",
+        "2026-10-10|Matutino",
+        "2026-10-10|Vespertino",
+        "2026-10-10|Nocturno"
+      ],
+      "uniqueChangedThirds": 42
+    },
+    "ONLINE_NEGATIVAS_5_TURNOS": {
+      "changedCuts": 88,
+      "changedWithRecentAmongTop3": 83,
+      "changedWithNovelShapeAmongRecentTop3": 6,
+      "changedWithRepeatedShapeAmongRecentTop3": 79,
+      "changedNoRecentTop3": 5,
+      "changedDespiteZeroSimilarity": 0,
+      "meanBankSize": 7.511111111111111,
+      "meanDistinctShapeSignatures": 7.188888888888889,
+      "meanRecentExamples": 6.711111111111111,
+      "thirdWinnerExposures": 0,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [
+        "2026-09-21|Vespertino"
+      ],
+      "allChangedCases": [
+        "2026-09-21|Previa",
+        "2026-09-21|Vespertino",
+        "2026-09-21|Nocturno",
+        "2026-09-22|Previa",
+        "2026-09-22|Primera",
+        "2026-09-22|Matutino",
+        "2026-09-22|Vespertino",
+        "2026-09-22|Nocturno",
+        "2026-09-23|Previa",
+        "2026-09-23|Primera",
+        "2026-09-23|Matutino",
+        "2026-09-23|Vespertino",
+        "2026-09-23|Nocturno",
+        "2026-09-24|Previa",
+        "2026-09-24|Primera",
+        "2026-09-24|Matutino",
+        "2026-09-24|Vespertino",
+        "2026-09-24|Nocturno",
+        "2026-09-25|Previa",
+        "2026-09-25|Primera",
+        "2026-09-25|Matutino",
+        "2026-09-25|Vespertino",
+        "2026-09-25|Nocturno",
+        "2026-09-26|Previa",
+        "2026-09-26|Primera",
+        "2026-09-26|Matutino",
+        "2026-09-26|Vespertino",
+        "2026-09-26|Nocturno",
+        "2026-09-28|Previa",
+        "2026-09-28|Primera",
+        "2026-09-28|Matutino",
+        "2026-09-28|Vespertino",
+        "2026-09-28|Nocturno",
+        "2026-09-29|Previa",
+        "2026-09-29|Primera",
+        "2026-09-29|Matutino",
+        "2026-09-29|Vespertino",
+        "2026-09-29|Nocturno",
+        "2026-09-30|Previa",
+        "2026-09-30|Primera",
+        "2026-09-30|Matutino",
+        "2026-09-30|Vespertino",
+        "2026-09-30|Nocturno",
+        "2026-10-01|Previa",
+        "2026-10-01|Primera",
+        "2026-10-01|Matutino",
+        "2026-10-01|Vespertino",
+        "2026-10-01|Nocturno",
+        "2026-10-02|Previa",
+        "2026-10-02|Primera",
+        "2026-10-02|Matutino",
+        "2026-10-02|Vespertino",
+        "2026-10-02|Nocturno",
+        "2026-10-03|Previa",
+        "2026-10-03|Primera",
+        "2026-10-03|Matutino",
+        "2026-10-03|Vespertino",
+        "2026-10-03|Nocturno",
+        "2026-10-05|Previa",
+        "2026-10-05|Primera",
+        "2026-10-05|Matutino",
+        "2026-10-05|Vespertino",
+        "2026-10-05|Nocturno",
+        "2026-10-06|Previa",
+        "2026-10-06|Primera",
+        "2026-10-06|Matutino",
+        "2026-10-06|Vespertino",
+        "2026-10-06|Nocturno",
+        "2026-10-07|Previa",
+        "2026-10-07|Primera",
+        "2026-10-07|Matutino",
+        "2026-10-07|Vespertino",
+        "2026-10-07|Nocturno",
+        "2026-10-08|Previa",
+        "2026-10-08|Primera",
+        "2026-10-08|Matutino",
+        "2026-10-08|Vespertino",
+        "2026-10-08|Nocturno",
+        "2026-10-09|Previa",
+        "2026-10-09|Primera",
+        "2026-10-09|Matutino",
+        "2026-10-09|Vespertino",
+        "2026-10-09|Nocturno",
+        "2026-10-10|Previa",
+        "2026-10-10|Primera",
+        "2026-10-10|Matutino",
+        "2026-10-10|Vespertino",
+        "2026-10-10|Nocturno"
+      ],
+      "uniqueChangedThirds": 55
+    }
+  },
+  "newInfluence": [
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "third": "282/282",
+      "oldThird": "058/850",
+      "recentExamples": 21,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 38,
+            "date": "2026-09-23",
+            "turn": "Vespertino",
+            "family": "289/982",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "third": "282/282",
+      "oldThird": "058/850",
+      "recentExamples": 22,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 38,
+            "date": "2026-09-23",
+            "turn": "Vespertino",
+            "family": "289/982",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "third": "057/750",
+      "oldThird": "058/850",
+      "recentExamples": 22,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 38,
+            "date": "2026-09-23",
+            "turn": "Vespertino",
+            "family": "289/982",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "third": "057/750",
+      "oldThird": "058/850",
+      "recentExamples": 26,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 38,
+            "date": "2026-09-23",
+            "turn": "Vespertino",
+            "family": "289/982",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "third": "057/750",
+      "oldThird": "058/850",
+      "recentExamples": 26,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 38,
+            "date": "2026-09-23",
+            "turn": "Vespertino",
+            "family": "289/982",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "third": "005/500",
+      "oldThird": "283/382",
+      "recentExamples": 27,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 47,
+            "date": "2026-09-25",
+            "turn": "Matutino",
+            "family": "889/988",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>2:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>2:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "third": "005/500",
+      "oldThird": "283/382",
+      "recentExamples": 27,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 47,
+            "date": "2026-09-25",
+            "turn": "Matutino",
+            "family": "889/988",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>2:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>2:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "third": "005/500",
+      "oldThird": "275/572",
+      "recentExamples": 27,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 47,
+            "date": "2026-09-25",
+            "turn": "Matutino",
+            "family": "889/988",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>2:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>2:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "third": "005/500",
+      "oldThird": "275/572",
+      "recentExamples": 30,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 47,
+            "date": "2026-09-25",
+            "turn": "Matutino",
+            "family": "889/988",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>2:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>2:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "third": "005/500",
+      "oldThird": "275/572",
+      "recentExamples": 31,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 47,
+            "date": "2026-09-25",
+            "turn": "Matutino",
+            "family": "889/988",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>2:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>2:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 26,
+            "date": "2026-09-21",
+            "turn": "Primera",
+            "family": "227/722",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:1>1:0",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 28,
+            "date": "2026-09-21",
+            "turn": "Vespertino",
+            "family": "246/642",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 29,
+            "date": "2026-09-21",
+            "turn": "Nocturno",
+            "family": "173/371",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "456/654",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:0>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:1>1:0"
+            ]
+          },
+          {
+            "i": 31,
+            "date": "2026-09-22",
+            "turn": "Primera",
+            "family": "042/240",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 32,
+            "date": "2026-09-22",
+            "turn": "Matutino",
+            "family": "020/020",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 33,
+            "date": "2026-09-22",
+            "turn": "Vespertino",
+            "family": "082/280",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "third": "197/791",
+      "oldThird": "003/300",
+      "recentExamples": 6,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.111111111,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "third": "363/363",
+      "oldThird": "003/300",
+      "recentExamples": 9,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.111111111,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "517/715",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "third": "384/483",
+      "oldThird": "285/582",
+      "recentExamples": 13,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "third": "384/483",
+      "oldThird": "285/582",
+      "recentExamples": 13,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "third": "384/483",
+      "oldThird": "285/582",
+      "recentExamples": 14,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "third": "384/483",
+      "oldThird": "179/971",
+      "recentExamples": 15,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "third": "384/483",
+      "oldThird": "179/971",
+      "recentExamples": 15,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "third": "377/773",
+      "oldThird": "077/770",
+      "recentExamples": 17,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.111111111,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "517/715",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "third": "043/340",
+      "oldThird": "077/770",
+      "recentExamples": 17,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.111111111,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "517/715",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "third": "043/340",
+      "oldThird": "077/770",
+      "recentExamples": 17,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.111111111,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "517/715",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "third": "043/340",
+      "oldThird": "077/770",
+      "recentExamples": 20,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.111111111,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "517/715",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "third": "043/340",
+      "oldThird": "077/770",
+      "recentExamples": 22,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.111111111,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": [
+              "0:1>1:1>1:0"
+            ]
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "517/715",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "third": "017/710",
+      "oldThird": "158/851",
+      "recentExamples": 24,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "third": "017/710",
+      "oldThird": "158/851",
+      "recentExamples": 25,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "third": "017/710",
+      "oldThird": "158/851",
+      "recentExamples": 26,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "third": "017/710",
+      "oldThird": "406/604",
+      "recentExamples": 29,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "949/949",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "third": "057/750",
+      "oldThird": "191/191",
+      "recentExamples": 29,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:0>2:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "517/715",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "third": "067/760",
+      "oldThird": "066/660",
+      "recentExamples": 30,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 59,
+            "date": "2026-09-28",
+            "turn": "Nocturno",
+            "family": "168/861",
+            "deltaMargin": -0.166666667,
+            "shapes": [
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>2:0"
+            ]
+          },
+          {
+            "i": 67,
+            "date": "2026-09-30",
+            "turn": "Matutino",
+            "family": "173/371",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 74,
+            "date": "2026-10-01",
+            "turn": "Nocturno",
+            "family": "485/584",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 1
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "third": "067/760",
+      "oldThird": "066/660",
+      "recentExamples": 33,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 59,
+            "date": "2026-09-28",
+            "turn": "Nocturno",
+            "family": "168/861",
+            "deltaMargin": -0.166666667,
+            "shapes": [
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>2:0"
+            ]
+          },
+          {
+            "i": 67,
+            "date": "2026-09-30",
+            "turn": "Matutino",
+            "family": "173/371",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 74,
+            "date": "2026-10-01",
+            "turn": "Nocturno",
+            "family": "485/584",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 1
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "third": "067/760",
+      "oldThird": "066/660",
+      "recentExamples": 33,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 59,
+            "date": "2026-09-28",
+            "turn": "Nocturno",
+            "family": "168/861",
+            "deltaMargin": -0.166666667,
+            "shapes": [
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>2:0"
+            ]
+          },
+          {
+            "i": 67,
+            "date": "2026-09-30",
+            "turn": "Matutino",
+            "family": "173/371",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 74,
+            "date": "2026-10-01",
+            "turn": "Nocturno",
+            "family": "485/584",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 1
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "third": "067/760",
+      "oldThird": "066/660",
+      "recentExamples": 34,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 59,
+            "date": "2026-09-28",
+            "turn": "Nocturno",
+            "family": "168/861",
+            "deltaMargin": -0.166666667,
+            "shapes": [
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>2:0"
+            ]
+          },
+          {
+            "i": 67,
+            "date": "2026-09-30",
+            "turn": "Matutino",
+            "family": "173/371",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 74,
+            "date": "2026-10-01",
+            "turn": "Nocturno",
+            "family": "485/584",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:1>1:0"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 1
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "third": "065/560",
+      "oldThird": "535/535",
+      "recentExamples": 35,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 59,
+            "date": "2026-09-28",
+            "turn": "Nocturno",
+            "family": "168/861",
+            "deltaMargin": -0.166666667,
+            "shapes": [
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:1>1:1>2:0"
+            ]
+          },
+          {
+            "i": 70,
+            "date": "2026-10-01",
+            "turn": "Previa",
+            "family": "748/847",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>0:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 78,
+            "date": "2026-10-02",
+            "turn": "Vespertino",
+            "family": "686/686",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>0:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 1
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "third": "041/140",
+      "oldThird": "143/341",
+      "recentExamples": 37,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 70,
+            "date": "2026-10-01",
+            "turn": "Previa",
+            "family": "748/847",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>0:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 78,
+            "date": "2026-10-02",
+            "turn": "Vespertino",
+            "family": "686/686",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>0:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "third": "041/140",
+      "oldThird": "143/341",
+      "recentExamples": 37,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 70,
+            "date": "2026-10-01",
+            "turn": "Previa",
+            "family": "748/847",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>0:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 78,
+            "date": "2026-10-02",
+            "turn": "Vespertino",
+            "family": "686/686",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>0:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "third": "041/140",
+      "oldThird": "143/341",
+      "recentExamples": 37,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 70,
+            "date": "2026-10-01",
+            "turn": "Previa",
+            "family": "748/847",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>0:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 78,
+            "date": "2026-10-02",
+            "turn": "Vespertino",
+            "family": "686/686",
+            "deltaMargin": 0.166666667,
+            "shapes": [
+              "0:0>1:1>0:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>1:1>0:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 2,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "third": "032/230",
+      "oldThird": "143/341",
+      "recentExamples": 39,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "517/715",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "third": "032/230",
+      "oldThird": "143/341",
+      "recentExamples": 41,
+      "novelTop3": 0,
+      "repeatedTop3": 2,
+      "margins": {
+        "currentMargin": 0.166666667,
+        "topInfluences": [
+          {
+            "i": 55,
+            "date": "2026-09-28",
+            "turn": "Previa",
+            "family": "273/372",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 56,
+            "date": "2026-09-28",
+            "turn": "Primera",
+            "family": "037/730",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "067/760",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:1>2:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "319/913",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "107/701",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 57,
+            "date": "2026-09-28",
+            "turn": "Matutino",
+            "family": "949/949",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:0>0:1>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 58,
+            "date": "2026-09-28",
+            "turn": "Vespertino",
+            "family": "517/715",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "third": "025/520",
+      "oldThird": "052/250",
+      "recentExamples": 24,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 94,
+            "date": "2026-10-06",
+            "turn": "Nocturno",
+            "family": "081/180",
+            "deltaMargin": 0.222222222,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:0>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 87,
+            "date": "2026-10-05",
+            "turn": "Matutino",
+            "family": "729/927",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0",
+              "0:1>0:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:0>2:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 88,
+            "date": "2026-10-05",
+            "turn": "Vespertino",
+            "family": "799/997",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 89,
+            "date": "2026-10-05",
+            "turn": "Nocturno",
+            "family": "577/775",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:1>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 90,
+            "date": "2026-10-06",
+            "turn": "Previa",
+            "family": "163/361",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "1:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 91,
+            "date": "2026-10-06",
+            "turn": "Primera",
+            "family": "697/796",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 92,
+            "date": "2026-10-06",
+            "turn": "Matutino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 93,
+            "date": "2026-10-06",
+            "turn": "Vespertino",
+            "family": "226/622",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>2:1",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0",
+              "1:0>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "third": "245/542",
+      "oldThird": "246/642",
+      "recentExamples": 27,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 94,
+            "date": "2026-10-06",
+            "turn": "Nocturno",
+            "family": "081/180",
+            "deltaMargin": 0.222222222,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:0>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 87,
+            "date": "2026-10-05",
+            "turn": "Matutino",
+            "family": "729/927",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0",
+              "0:1>0:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:0>2:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:0>1:1"
+            ]
+          },
+          {
+            "i": 88,
+            "date": "2026-10-05",
+            "turn": "Vespertino",
+            "family": "799/997",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 89,
+            "date": "2026-10-05",
+            "turn": "Nocturno",
+            "family": "577/775",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:1>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 90,
+            "date": "2026-10-06",
+            "turn": "Previa",
+            "family": "163/361",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "1:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 91,
+            "date": "2026-10-06",
+            "turn": "Primera",
+            "family": "697/796",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 92,
+            "date": "2026-10-06",
+            "turn": "Matutino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 93,
+            "date": "2026-10-06",
+            "turn": "Vespertino",
+            "family": "226/622",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>2:1",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0",
+              "1:0>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "third": "157/751",
+      "oldThird": "156/651",
+      "recentExamples": 27,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 94,
+            "date": "2026-10-06",
+            "turn": "Nocturno",
+            "family": "081/180",
+            "deltaMargin": 0.222222222,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:0>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 87,
+            "date": "2026-10-05",
+            "turn": "Matutino",
+            "family": "729/927",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0",
+              "0:1>0:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:0>2:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:0>1:1"
+            ]
+          },
+          {
+            "i": 88,
+            "date": "2026-10-05",
+            "turn": "Vespertino",
+            "family": "799/997",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 89,
+            "date": "2026-10-05",
+            "turn": "Nocturno",
+            "family": "577/775",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:1>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 90,
+            "date": "2026-10-06",
+            "turn": "Previa",
+            "family": "163/361",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "1:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 91,
+            "date": "2026-10-06",
+            "turn": "Primera",
+            "family": "697/796",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 92,
+            "date": "2026-10-06",
+            "turn": "Matutino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 93,
+            "date": "2026-10-06",
+            "turn": "Vespertino",
+            "family": "226/622",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>2:1",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0",
+              "1:0>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "third": "157/751",
+      "oldThird": "066/660",
+      "recentExamples": 28,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 94,
+            "date": "2026-10-06",
+            "turn": "Nocturno",
+            "family": "081/180",
+            "deltaMargin": 0.222222222,
+            "shapes": [
+              "0:1>1:0>1:1"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:0>1:1"
+            ],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 87,
+            "date": "2026-10-05",
+            "turn": "Matutino",
+            "family": "729/927",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0",
+              "0:1>0:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:0>2:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 88,
+            "date": "2026-10-05",
+            "turn": "Vespertino",
+            "family": "799/997",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:0>2:0"
+            ]
+          },
+          {
+            "i": 89,
+            "date": "2026-10-05",
+            "turn": "Nocturno",
+            "family": "577/775",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:1>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 90,
+            "date": "2026-10-06",
+            "turn": "Previa",
+            "family": "163/361",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "1:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 91,
+            "date": "2026-10-06",
+            "turn": "Primera",
+            "family": "697/796",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 92,
+            "date": "2026-10-06",
+            "turn": "Matutino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 93,
+            "date": "2026-10-06",
+            "turn": "Vespertino",
+            "family": "226/622",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>2:1",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0",
+              "1:0>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 1,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "third": "157/751",
+      "oldThird": "066/660",
+      "recentExamples": 30,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 87,
+            "date": "2026-10-05",
+            "turn": "Matutino",
+            "family": "729/927",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0",
+              "0:1>0:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:0>2:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 88,
+            "date": "2026-10-05",
+            "turn": "Vespertino",
+            "family": "799/997",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:0>2:0"
+            ]
+          },
+          {
+            "i": 89,
+            "date": "2026-10-05",
+            "turn": "Nocturno",
+            "family": "577/775",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:1>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 90,
+            "date": "2026-10-06",
+            "turn": "Previa",
+            "family": "163/361",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "1:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 91,
+            "date": "2026-10-06",
+            "turn": "Primera",
+            "family": "697/796",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 92,
+            "date": "2026-10-06",
+            "turn": "Matutino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 93,
+            "date": "2026-10-06",
+            "turn": "Vespertino",
+            "family": "226/622",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>2:1",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0",
+              "1:0>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 94,
+            "date": "2026-10-06",
+            "turn": "Nocturno",
+            "family": "476/674",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>0:0>1:0",
+              "0:1>1:0>1:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:0>1:1"
+            ],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "third": "157/751",
+      "oldThird": "066/660",
+      "recentExamples": 30,
+      "novelTop3": 0,
+      "repeatedTop3": 1,
+      "margins": {
+        "currentMargin": 0,
+        "topInfluences": [
+          {
+            "i": 87,
+            "date": "2026-10-05",
+            "turn": "Matutino",
+            "family": "729/927",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>1:1",
+              "0:1>0:0>1:0",
+              "0:1>0:0>1:1",
+              "0:1>1:0>2:0",
+              "0:1>1:0>2:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 88,
+            "date": "2026-10-05",
+            "turn": "Vespertino",
+            "family": "799/997",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:0>1:0>2:0",
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": [
+              "0:0>1:0>2:0"
+            ]
+          },
+          {
+            "i": 89,
+            "date": "2026-10-05",
+            "turn": "Nocturno",
+            "family": "577/775",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>0:1>1:1",
+              "0:1>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 90,
+            "date": "2026-10-06",
+            "turn": "Previa",
+            "family": "163/361",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "1:0>0:1>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 91,
+            "date": "2026-10-06",
+            "turn": "Primera",
+            "family": "697/796",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>0:1",
+              "0:1>1:1>2:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 92,
+            "date": "2026-10-06",
+            "turn": "Matutino",
+            "family": "508/805",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:1>2:0",
+              "0:1>0:0>1:0"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 93,
+            "date": "2026-10-06",
+            "turn": "Vespertino",
+            "family": "226/622",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:0>1:0>0:1",
+              "0:0>1:0>2:1",
+              "0:0>1:1>1:0",
+              "0:1>0:0>1:0",
+              "1:0>0:0>1:1"
+            ],
+            "candidateShapeOverlap": [],
+            "oldShapeOverlap": []
+          },
+          {
+            "i": 94,
+            "date": "2026-10-06",
+            "turn": "Nocturno",
+            "family": "476/674",
+            "deltaMargin": 0,
+            "shapes": [
+              "0:1>0:0>1:0",
+              "0:1>1:0>1:1",
+              "0:1>1:1>1:0"
+            ],
+            "candidateShapeOverlap": [
+              "0:1>1:0>1:1"
+            ],
+            "oldShapeOverlap": []
+          }
+        ],
+        "positiveEffects": 0,
+        "negativeEffects": 0
+      },
+      "winningThird": false
+    }
+  ],
+  "winnerExplanations": [
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "physicalWinnerFamilies": [
+        "246/642"
+      ],
+      "modes": {
+        "ESTATICA_SEMANA_X": {
+          "selected": "246/642",
+          "hit": true,
+          "changed": false,
+          "recentTop3": 0,
+          "explanation": [
+            {
+              "priorDate": "2026-09-15",
+              "priorTurn": "Vespertino",
+              "priorFamily": "565/565",
+              "sourceCutIndex": 3,
+              "fromCurrentWeek": false,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:0>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "Previa|3:0>4:1>4:0"
+              ],
+              "sameShapes": [
+                "0:0>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "Previa"
+              ]
+            },
+            {
+              "priorDate": "2026-09-16",
+              "priorTurn": "Nocturno",
+              "priorFamily": "070/070",
+              "sourceCutIndex": 9,
+              "fromCurrentWeek": false,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:0>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|1:0>2:1>2:0"
+              ],
+              "sameShapes": [
+                "0:0>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [
+                "prevNocturno|0:0>1:1>1:0"
+              ],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            },
+            {
+              "priorDate": "2026-09-19",
+              "priorTurn": "Previa",
+              "priorFamily": "098/890",
+              "sourceCutIndex": 20,
+              "fromCurrentWeek": false,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:0>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|3:0>4:1>4:0"
+              ],
+              "sameShapes": [
+                "0:0>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [
+                "prevNocturno|0:0>1:1>1:0"
+              ],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            }
+          ]
+        },
+        "ONLINE_ACUMULATIVA": {
+          "selected": "246/642",
+          "hit": true,
+          "changed": false,
+          "recentTop3": 0,
+          "explanation": [
+            {
+              "priorDate": "2026-09-15",
+              "priorTurn": "Vespertino",
+              "priorFamily": "565/565",
+              "sourceCutIndex": 3,
+              "fromCurrentWeek": false,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:0>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "Previa|3:0>4:1>4:0"
+              ],
+              "sameShapes": [
+                "0:0>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "Previa"
+              ]
+            },
+            {
+              "priorDate": "2026-09-16",
+              "priorTurn": "Nocturno",
+              "priorFamily": "070/070",
+              "sourceCutIndex": 9,
+              "fromCurrentWeek": false,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:0>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|1:0>2:1>2:0"
+              ],
+              "sameShapes": [
+                "0:0>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [
+                "prevNocturno|0:0>1:1>1:0"
+              ],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            },
+            {
+              "priorDate": "2026-09-19",
+              "priorTurn": "Previa",
+              "priorFamily": "098/890",
+              "sourceCutIndex": 20,
+              "fromCurrentWeek": false,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:0>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|3:0>4:1>4:0"
+              ],
+              "sameShapes": [
+                "0:0>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [
+                "prevNocturno|0:0>1:1>1:0"
+              ],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            }
+          ]
+        },
+        "ONLINE_DIA_ACTUAL": {
+          "selected": "227/722",
+          "hit": false,
+          "changed": true,
+          "recentTop3": 1,
+          "explanation": [
+            {
+              "priorDate": "2026-09-21",
+              "priorTurn": "Primera",
+              "priorFamily": "227/722",
+              "sourceCutIndex": 26,
+              "fromCurrentWeek": true,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|2:1>3:0>3:1",
+                "prevNocturno|2:1>3:0>4:0",
+                "prevNocturno|2:1>3:1>3:0",
+                "prevNocturno|2:1>3:1>4:0"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|2:1>3:0>3:1",
+                "prevNocturno|2:1>3:0>4:0",
+                "prevNocturno|2:1>3:1>3:0",
+                "prevNocturno|2:1>3:1>4:0"
+              ],
+              "sameShapes": [
+                "0:1>1:0>1:1",
+                "0:1>1:0>2:0",
+                "0:1>1:1>1:0",
+                "0:1>1:1>2:0"
+              ],
+              "samePhysicalShapeAndSource": [
+                "prevNocturno|0:1>1:0>1:1",
+                "prevNocturno|0:1>1:0>2:0",
+                "prevNocturno|0:1>1:1>1:0",
+                "prevNocturno|0:1>1:1>2:0"
+              ],
+              "sameActualCellsAndSource": [
+                "prevNocturno|2:1>3:0>3:1",
+                "prevNocturno|2:1>3:0>4:0",
+                "prevNocturno|2:1>3:1>3:0",
+                "prevNocturno|2:1>3:1>4:0"
+              ],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            }
+          ]
+        },
+        "ONLINE_ULTIMOS_5_TURNOS": {
+          "selected": "046/640",
+          "hit": false,
+          "changed": true,
+          "recentTop3": 1,
+          "explanation": [
+            {
+              "priorDate": "2026-09-19",
+              "priorTurn": "Nocturno",
+              "priorFamily": "264/462",
+              "sourceCutIndex": 24,
+              "fromCurrentWeek": false,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:1>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "Previa|3:1>4:1>4:0"
+              ],
+              "sameShapes": [
+                "0:1>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:1>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "Previa"
+              ]
+            },
+            {
+              "priorDate": "2026-09-21",
+              "priorTurn": "Primera",
+              "priorFamily": "227/722",
+              "sourceCutIndex": 26,
+              "fromCurrentWeek": true,
+              "similarScore": 0.25,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:1>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|2:1>3:0>3:1",
+                "prevNocturno|2:1>3:0>4:0",
+                "prevNocturno|2:1>3:1>3:0",
+                "prevNocturno|2:1>3:1>4:0"
+              ],
+              "sameShapes": [
+                "0:1>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [
+                "prevNocturno|0:1>1:1>1:0"
+              ],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:1>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            },
+            {
+              "priorDate": "2026-09-19",
+              "priorTurn": "Vespertino",
+              "priorFamily": "619/916",
+              "sourceCutIndex": 23,
+              "fromCurrentWeek": false,
+              "similarScore": 0,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:1>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "Previa|0:0>1:1>2:1"
+              ],
+              "sameShapes": [],
+              "samePhysicalShapeAndSource": [],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [],
+              "uniquePhysicalSources": [
+                "Previa"
+              ]
+            }
+          ]
+        },
+        "ONLINE_ULTIMOS_15_TURNOS": {
+          "selected": "246/642",
+          "hit": true,
+          "changed": false,
+          "recentTop3": 0,
+          "explanation": [
+            {
+              "priorDate": "2026-09-19",
+              "priorTurn": "Previa",
+              "priorFamily": "098/890",
+              "sourceCutIndex": 20,
+              "fromCurrentWeek": false,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:0>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|3:0>4:1>4:0"
+              ],
+              "sameShapes": [
+                "0:0>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [
+                "prevNocturno|0:0>1:1>1:0"
+              ],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            },
+            {
+              "priorDate": "2026-09-19",
+              "priorTurn": "Primera",
+              "priorFamily": "396/693",
+              "sourceCutIndex": 21,
+              "fromCurrentWeek": false,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:0>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|0:0>1:1>1:0"
+              ],
+              "sameShapes": [
+                "0:0>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [
+                "prevNocturno|0:0>1:1>1:0"
+              ],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            },
+            {
+              "priorDate": "2026-09-19",
+              "priorTurn": "Previa",
+              "priorFamily": "355/553",
+              "sourceCutIndex": 20,
+              "fromCurrentWeek": false,
+              "similarScore": 0.5,
+              "physicalCandidatePaths": [
+                "prevNocturno|4:0>5:1>5:0"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|1:0>2:0>2:1",
+                "prevNocturno|1:0>2:1>2:0"
+              ],
+              "sameShapes": [
+                "0:0>1:1>1:0"
+              ],
+              "samePhysicalShapeAndSource": [
+                "prevNocturno|0:0>1:1>1:0"
+              ],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:1>1:0"
+              ],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            }
+          ]
+        },
+        "ONLINE_NEGATIVAS_5_TURNOS": {
+          "selected": "193/391",
+          "hit": false,
+          "changed": true,
+          "recentTop3": 1,
+          "explanation": [
+            {
+              "priorDate": "2026-09-21",
+              "priorTurn": "Primera",
+              "priorFamily": "193/391",
+              "sourceCutIndex": 26,
+              "fromCurrentWeek": true,
+              "similarScore": 1,
+              "physicalCandidatePaths": [
+                "Previa|0:1>1:1>2:1",
+                "Previa|1:0>1:1>2:1",
+                "Previa|2:0>1:1>2:1"
+              ],
+              "historicalExemplarPaths": [
+                "Previa|0:1>1:1>2:1",
+                "Previa|1:0>1:1>2:1",
+                "Previa|2:0>1:1>2:1"
+              ],
+              "sameShapes": [
+                "0:0>0:1>1:1",
+                "0:0>1:0>2:0",
+                "1:0>0:1>1:1"
+              ],
+              "samePhysicalShapeAndSource": [
+                "Previa|0:0>0:1>1:1",
+                "Previa|0:0>1:0>2:0",
+                "Previa|1:0>0:1>1:1"
+              ],
+              "sameActualCellsAndSource": [
+                "Previa|0:1>1:1>2:1",
+                "Previa|1:0>1:1>2:1",
+                "Previa|2:0>1:1>2:1"
+              ],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>0:1>1:1",
+                "0:0>1:0>2:0",
+                "1:0>0:1>1:1"
+              ],
+              "uniquePhysicalSources": [
+                "Previa"
+              ]
+            },
+            {
+              "priorDate": "2026-09-19",
+              "priorTurn": "Nocturno",
+              "priorFamily": "454/454",
+              "sourceCutIndex": 24,
+              "fromCurrentWeek": false,
+              "similarScore": 0.333333,
+              "physicalCandidatePaths": [
+                "Previa|0:1>1:1>2:1",
+                "Previa|1:0>1:1>2:1",
+                "Previa|2:0>1:1>2:1"
+              ],
+              "historicalExemplarPaths": [
+                "Vespertino|2:0>1:1>2:1"
+              ],
+              "sameShapes": [
+                "1:0>0:1>1:1"
+              ],
+              "samePhysicalShapeAndSource": [],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "1:0>0:1>1:1"
+              ],
+              "uniquePhysicalSources": [
+                "Vespertino"
+              ]
+            },
+            {
+              "priorDate": "2026-09-19",
+              "priorTurn": "Vespertino",
+              "priorFamily": "536/635",
+              "sourceCutIndex": 23,
+              "fromCurrentWeek": false,
+              "similarScore": 0.25,
+              "physicalCandidatePaths": [
+                "Previa|0:1>1:1>2:1",
+                "Previa|1:0>1:1>2:1",
+                "Previa|2:0>1:1>2:1"
+              ],
+              "historicalExemplarPaths": [
+                "prevNocturno|0:0>1:0>2:0",
+                "prevNocturno|0:0>1:0>2:1"
+              ],
+              "sameShapes": [
+                "0:0>1:0>2:0"
+              ],
+              "samePhysicalShapeAndSource": [],
+              "sameActualCellsAndSource": [],
+              "formsUnseenInTrainingWeek": [],
+              "repeatedFormsInMemory": [
+                "0:0>1:0>2:0"
+              ],
+              "uniquePhysicalSources": [
+                "prevNocturno"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "seal": {
+    "input": "42e5993b63b3740ecb911b2fb255508f1bf75408467cd530ffad65f8e685bd8e",
+    "protocol": "14ba4cf0ce781218a7985fae806393048e5058301ecf1938c6a13f639b19706c",
+    "script": "fcc72238e43e81a18c1d242cbbda6478115810e2ad4423ee334f8bd98d292f74",
+    "pre": "3b4a7cc532003b663ff1b050d3a48c9100b0760befd07db1e60a8f57929235b3"
+  },
+  "priorFrozen": "31f889e1ed44fa354192edb133c13ce4896c63f2c67a3d573514843c82b28ce4",
+  "headsPost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "interpretation": "Análisis de contribuciones Jaccard de los tres ejemplos más cercanos; una forma repetida no es un recorrido histórico independiente. La selección de todos los Tops se verificó contra los 90 anteriores congelados.",
+  "warning": "Explicaciones retrospectivas de un motor de similitud, no una relación causal con los resultados de quiniela aleatorios. Corpus muy explorado."
+}
