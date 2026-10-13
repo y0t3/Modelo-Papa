@@ -1,0 +1,51 @@
+name: VT3 aprendizaje de recorridos por semanas
+on:
+  push:
+    branches: [lab-vt3-aprendizaje-semanal-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-aprendizaje-semanal.mjs'
+      - 'PROTOCOLO_VT3_APRENDIZAJE_SEMANAL_13OCT2026.md'
+      - '.github/workflows/lab-vt3-aprendizaje-semanal.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  semanas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Retirar por completo historicos POST antes de generar fichas PRE
+        run: |
+          mv auditorias /tmp/vt3-aprendizaje-base
+          mkdir -p auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/
+          cp /tmp/vt3-aprendizaje-base/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json
+          test "$(find auditorias -type f | wc -l)" -eq 1
+      - name: Construir las fichas de recorridos sin resultados y sellar
+        run: node scripts/lab-vt3-aprendizaje-semanal.mjs pre
+      - name: Reponer solo entonces el historico y entrenar por semana anterior
+        run: |
+          mv auditorias/vt3-aprendizaje-semanal-115-13oct2026 /tmp/vt3-aprendizaje-pre-generado
+          cp -a /tmp/vt3-aprendizaje-base/. auditorias/
+          rm -rf auditorias/vt3-aprendizaje-semanal-115-13oct2026
+          mv /tmp/vt3-aprendizaje-pre-generado auditorias/vt3-aprendizaje-semanal-115-13oct2026
+          node scripts/lab-vt3-aprendizaje-semanal.mjs post
+      - name: Publicar datos auditables
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-aprendizaje-semanal-115
+          path: auditorias/vt3-aprendizaje-semanal-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Versionar pruebas y sellos en rama de investigacion
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-aprendizaje-semanal-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): recorridos aprendidos en semana X y prueba X+1'
+            git push origin HEAD:lab-vt3-aprendizaje-semanal-13oct2026
+          fi
