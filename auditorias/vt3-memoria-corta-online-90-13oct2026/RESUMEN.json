@@ -1,0 +1,2721 @@
+{
+  "date": "2026-10-13",
+  "daysTotal": 18,
+  "cuts": 90,
+  "full": {
+    "OFICIAL": {
+      "cuts": 90,
+      "top3": 3,
+      "top5": 6,
+      "top10": 11,
+      "hitFamilyExposures": 13,
+      "physicalCeiling": 61,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ESTATICA_SEMANA_X": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 12,
+      "hitFamilyExposures": 14,
+      "physicalCeiling": 61,
+      "gainedTop3": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop3": [],
+      "gainedTop10": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop10": []
+    },
+    "ESTATICA_ULTIMO_DIA_X": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 12,
+      "hitFamilyExposures": 14,
+      "physicalCeiling": 61,
+      "gainedTop3": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop3": [],
+      "gainedTop10": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop10": []
+    },
+    "ESTATICA_ULTIMOS_3_DIAS_X": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 12,
+      "hitFamilyExposures": 14,
+      "physicalCeiling": 61,
+      "gainedTop3": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop3": [],
+      "gainedTop10": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop10": []
+    },
+    "ONLINE_ACUMULATIVA": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 12,
+      "hitFamilyExposures": 14,
+      "physicalCeiling": 61,
+      "gainedTop3": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop3": [],
+      "gainedTop10": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop10": []
+    },
+    "ONLINE_DIA_ACTUAL": {
+      "cuts": 90,
+      "top3": 3,
+      "top5": 4,
+      "top10": 11,
+      "hitFamilyExposures": 13,
+      "physicalCeiling": 61,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ONLINE_ULTIMOS_5_TURNOS": {
+      "cuts": 90,
+      "top3": 3,
+      "top5": 4,
+      "top10": 11,
+      "hitFamilyExposures": 13,
+      "physicalCeiling": 61,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ONLINE_ULTIMOS_15_TURNOS": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 12,
+      "hitFamilyExposures": 14,
+      "physicalCeiling": 61,
+      "gainedTop3": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop3": [],
+      "gainedTop10": [
+        "2026-09-21|Vespertino"
+      ],
+      "lostTop10": []
+    },
+    "ONLINE_NEGATIVAS_5_TURNOS": {
+      "cuts": 90,
+      "top3": 3,
+      "top5": 4,
+      "top10": 11,
+      "hitFamilyExposures": 13,
+      "physicalCeiling": 61,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "HASH_FISICO": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 11,
+      "hitFamilyExposures": 14,
+      "physicalCeiling": 61,
+      "gainedTop3": [
+        "2026-09-24|Matutino"
+      ],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    }
+  },
+  "first": {
+    "primeros_1_dias": {
+      "OFICIAL": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "primeros_2_dias": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 23,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 23,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 23,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 23,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 23,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 23,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 23,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 23,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 23,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 23,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "primeros_3_dias": {
+      "OFICIAL": {
+        "cuts": 45,
+        "top3": 1,
+        "top5": 2,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 31,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 2,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 31,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 2,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 31,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 2,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 31,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 2,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 31,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 45,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 31,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 45,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 31,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 2,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 31,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 45,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 31,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 45,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 31,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    }
+  },
+  "later": {
+    "OFICIAL": {
+      "cuts": 45,
+      "top3": 2,
+      "top5": 4,
+      "top10": 7,
+      "hitFamilyExposures": 9,
+      "physicalCeiling": 30,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ESTATICA_SEMANA_X": {
+      "cuts": 45,
+      "top3": 2,
+      "top5": 3,
+      "top10": 7,
+      "hitFamilyExposures": 9,
+      "physicalCeiling": 30,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ESTATICA_ULTIMO_DIA_X": {
+      "cuts": 45,
+      "top3": 2,
+      "top5": 3,
+      "top10": 7,
+      "hitFamilyExposures": 9,
+      "physicalCeiling": 30,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ESTATICA_ULTIMOS_3_DIAS_X": {
+      "cuts": 45,
+      "top3": 2,
+      "top5": 3,
+      "top10": 7,
+      "hitFamilyExposures": 9,
+      "physicalCeiling": 30,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ONLINE_ACUMULATIVA": {
+      "cuts": 45,
+      "top3": 2,
+      "top5": 3,
+      "top10": 7,
+      "hitFamilyExposures": 9,
+      "physicalCeiling": 30,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ONLINE_DIA_ACTUAL": {
+      "cuts": 45,
+      "top3": 2,
+      "top5": 3,
+      "top10": 7,
+      "hitFamilyExposures": 9,
+      "physicalCeiling": 30,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ONLINE_ULTIMOS_5_TURNOS": {
+      "cuts": 45,
+      "top3": 2,
+      "top5": 3,
+      "top10": 7,
+      "hitFamilyExposures": 9,
+      "physicalCeiling": 30,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ONLINE_ULTIMOS_15_TURNOS": {
+      "cuts": 45,
+      "top3": 2,
+      "top5": 3,
+      "top10": 7,
+      "hitFamilyExposures": 9,
+      "physicalCeiling": 30,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "ONLINE_NEGATIVAS_5_TURNOS": {
+      "cuts": 45,
+      "top3": 2,
+      "top5": 3,
+      "top10": 7,
+      "hitFamilyExposures": 9,
+      "physicalCeiling": 30,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    },
+    "HASH_FISICO": {
+      "cuts": 45,
+      "top3": 3,
+      "top5": 4,
+      "top10": 7,
+      "hitFamilyExposures": 10,
+      "physicalCeiling": 30,
+      "gainedTop3": [
+        "2026-09-24|Matutino"
+      ],
+      "lostTop3": [],
+      "gainedTop10": [],
+      "lostTop10": []
+    }
+  },
+  "everyDay": {
+    "dia_1": {
+      "OFICIAL": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 11,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 11,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "dia_2": {
+      "OFICIAL": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "dia_3": {
+      "OFICIAL": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "dia_4": {
+      "OFICIAL": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 0,
+        "top5": 0,
+        "top10": 3,
+        "hitFamilyExposures": 3,
+        "physicalCeiling": 12,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 12,
+        "gainedTop3": [
+          "2026-09-24|Matutino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "dia_5": {
+      "OFICIAL": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 10,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "dia_6": {
+      "OFICIAL": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 15,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    }
+  },
+  "perWeek": {
+    "2026-09-21": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 20,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 20,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 20,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 20,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 5,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 20,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 4,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 20,
+        "gainedTop3": [
+          "2026-09-24|Matutino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "2026-09-28": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "hitFamilyExposures": 5,
+        "physicalCeiling": 21,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "2026-10-05": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 2,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "hitFamilyExposures": 4,
+        "physicalCeiling": 20,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    }
+  },
+  "perTurn": {
+    "Previa": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 7,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "Primera": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 8,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "Matutino": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 3,
+        "top10": 7,
+        "hitFamilyExposures": 8,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 7,
+        "hitFamilyExposures": 8,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 7,
+        "hitFamilyExposures": 8,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 7,
+        "hitFamilyExposures": 8,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 7,
+        "hitFamilyExposures": 8,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 7,
+        "hitFamilyExposures": 8,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 7,
+        "hitFamilyExposures": 8,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 7,
+        "hitFamilyExposures": 8,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 2,
+        "top10": 7,
+        "hitFamilyExposures": 8,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 18,
+        "top3": 2,
+        "top5": 3,
+        "top10": 7,
+        "hitFamilyExposures": 9,
+        "physicalCeiling": 16,
+        "gainedTop3": [
+          "2026-09-24|Matutino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "Vespertino": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "hitFamilyExposures": 0,
+        "physicalCeiling": 14,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 14,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 14,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 14,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 14,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "hitFamilyExposures": 0,
+        "physicalCeiling": 14,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "hitFamilyExposures": 0,
+        "physicalCeiling": 14,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 1,
+        "physicalCeiling": 14,
+        "gainedTop3": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop3": [],
+        "gainedTop10": [
+          "2026-09-21|Vespertino"
+        ],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "hitFamilyExposures": 0,
+        "physicalCeiling": 14,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 18,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "hitFamilyExposures": 0,
+        "physicalCeiling": 14,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    },
+    "Nocturno": {
+      "OFICIAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_SEMANA_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMO_DIA_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ESTATICA_ULTIMOS_3_DIAS_X": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ACUMULATIVA": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_DIA_ACTUAL": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_ULTIMOS_15_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "ONLINE_NEGATIVAS_5_TURNOS": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      },
+      "HASH_FISICO": {
+        "cuts": 18,
+        "top3": 1,
+        "top5": 1,
+        "top10": 1,
+        "hitFamilyExposures": 2,
+        "physicalCeiling": 16,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "gainedTop10": [],
+        "lostTop10": []
+      }
+    }
+  },
+  "changes": {
+    "ESTATICA_ULTIMO_DIA_X": {
+      "thirdDifferentFromStatic": 43,
+      "withinDayChangedThird": 41,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [],
+      "rescues10VsStatic": [],
+      "losses10VsStatic": []
+    },
+    "ESTATICA_ULTIMOS_3_DIAS_X": {
+      "thirdDifferentFromStatic": 52,
+      "withinDayChangedThird": 50,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [],
+      "rescues10VsStatic": [],
+      "losses10VsStatic": []
+    },
+    "ONLINE_ACUMULATIVA": {
+      "thirdDifferentFromStatic": 43,
+      "withinDayChangedThird": 43,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [],
+      "rescues10VsStatic": [],
+      "losses10VsStatic": []
+    },
+    "ONLINE_DIA_ACTUAL": {
+      "thirdDifferentFromStatic": 53,
+      "withinDayChangedThird": 53,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [
+        "2026-09-21|Vespertino"
+      ],
+      "rescues10VsStatic": [],
+      "losses10VsStatic": [
+        "2026-09-21|Vespertino"
+      ]
+    },
+    "ONLINE_ULTIMOS_5_TURNOS": {
+      "thirdDifferentFromStatic": 84,
+      "withinDayChangedThird": 82,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [
+        "2026-09-21|Vespertino"
+      ],
+      "rescues10VsStatic": [],
+      "losses10VsStatic": [
+        "2026-09-21|Vespertino"
+      ]
+    },
+    "ONLINE_ULTIMOS_15_TURNOS": {
+      "thirdDifferentFromStatic": 75,
+      "withinDayChangedThird": 73,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [],
+      "rescues10VsStatic": [],
+      "losses10VsStatic": []
+    },
+    "ONLINE_NEGATIVAS_5_TURNOS": {
+      "thirdDifferentFromStatic": 88,
+      "withinDayChangedThird": 85,
+      "rescuesVsStatic": [],
+      "lossesVsStatic": [
+        "2026-09-21|Vespertino"
+      ],
+      "rescues10VsStatic": [],
+      "losses10VsStatic": [
+        "2026-09-21|Vespertino"
+      ]
+    },
+    "HASH_FISICO": {
+      "thirdDifferentFromStatic": 90,
+      "withinDayChangedThird": 87,
+      "rescuesVsStatic": [
+        "2026-09-24|Matutino"
+      ],
+      "lossesVsStatic": [
+        "2026-09-21|Vespertino"
+      ],
+      "rescues10VsStatic": [],
+      "losses10VsStatic": [
+        "2026-09-21|Vespertino"
+      ]
+    }
+  },
+  "neutralControls": {
+    "firstDay": {
+      "top3": {
+        "n": 2000,
+        "mean": 0.1455,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "min": 0,
+        "max": 2,
+        "benchmark": 1,
+        "fractionAtLeastBenchmark": 0.1375
+      },
+      "top5": {
+        "n": 2000,
+        "mean": 0.1455,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "min": 0,
+        "max": 2,
+        "benchmark": 1,
+        "fractionAtLeastBenchmark": 0.1375
+      },
+      "top10": {
+        "n": 2000,
+        "mean": 1.1455,
+        "p05": 1,
+        "median": 1,
+        "p95": 2,
+        "min": 1,
+        "max": 3,
+        "benchmark": 2,
+        "fractionAtLeastBenchmark": 0.1375
+      }
+    },
+    "firstTwo": {
+      "top3": {
+        "n": 2000,
+        "mean": 0.301,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "min": 0,
+        "max": 3,
+        "benchmark": 1,
+        "fractionAtLeastBenchmark": 0.261
+      },
+      "top5": {
+        "n": 2000,
+        "mean": 0.301,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "min": 0,
+        "max": 3,
+        "benchmark": 1,
+        "fractionAtLeastBenchmark": 0.261
+      },
+      "top10": {
+        "n": 2000,
+        "mean": 3.2835,
+        "p05": 3,
+        "median": 3,
+        "p95": 4,
+        "min": 3,
+        "max": 6,
+        "benchmark": 4,
+        "fractionAtLeastBenchmark": 0.247
+      }
+    },
+    "firstThree": {
+      "top3": {
+        "n": 2000,
+        "mean": 1.368,
+        "p05": 1,
+        "median": 1,
+        "p95": 3,
+        "min": 1,
+        "max": 4,
+        "benchmark": 2,
+        "fractionAtLeastBenchmark": 0.308
+      },
+      "top5": {
+        "n": 2000,
+        "mean": 1.368,
+        "p05": 1,
+        "median": 1,
+        "p95": 3,
+        "min": 1,
+        "max": 4,
+        "benchmark": 2,
+        "fractionAtLeastBenchmark": 0.308
+      },
+      "top10": {
+        "n": 2000,
+        "mean": 4.3505,
+        "p05": 4,
+        "median": 4,
+        "p95": 6,
+        "min": 4,
+        "max": 7,
+        "benchmark": 5,
+        "fractionAtLeastBenchmark": 0.2955
+      }
+    },
+    "complete": {
+      "top3": {
+        "n": 2000,
+        "mean": 3.712,
+        "p05": 3,
+        "median": 4,
+        "p95": 5,
+        "min": 3,
+        "max": 8,
+        "benchmark": 4,
+        "fractionAtLeastBenchmark": 0.509
+      },
+      "top5": {
+        "n": 2000,
+        "mean": 4.712,
+        "p05": 4,
+        "median": 5,
+        "p95": 6,
+        "min": 4,
+        "max": 9,
+        "benchmark": 5,
+        "fractionAtLeastBenchmark": 0.509
+      },
+      "top10": {
+        "n": 2000,
+        "mean": 11.638,
+        "p05": 11,
+        "median": 11,
+        "p95": 13,
+        "min": 11,
+        "max": 16,
+        "benchmark": 12,
+        "fractionAtLeastBenchmark": 0.471
+      }
+    }
+  },
+  "seal": {
+    "sourcePre": "42e5993b63b3740ecb911b2fb255508f1bf75408467cd530ffad65f8e685bd8e",
+    "protocol": "8fc690ed7bbce096e53d15e85b34e4b2aa028c1e06f9a80c0e842e3f87194831",
+    "script": "62f2ad75a548374286e7660129479f41433f7735fdce4a97bcc526c5a7a5ec00",
+    "pre": "9477aff535701397cd5c1e1e4331e02fc4802081cebddd8c752a15704ce0262d",
+    "neutral": "23fd92a9a7cd8fdf60eb7e3e168b9a42db8c4d9066f6166beb1ebe93fbedc56f"
+  },
+  "frozenSelectionHash": "4b6875728e52a979e88f974406bf54c4e34d0f0a90f4d45191b2f65007ae4d2c",
+  "postHeadsHash": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "caveats": [
+    "Las memorias de entrenamiento reproducían 60/60 cortes físicamente alcanzables por almacenar los resultados conocidos de la semana X. Eso no valida su generalización.",
+    "Pocas observaciones: primeros 1–3 días equivalen a 15, 30 y 45 cortes en total, no a muestras independientes nuevas.",
+    "La quiniela es aleatoria y todo este corpus ha sido reutilizado para formular hipótesis: el ensayo es descriptivo retrospectivo."
+  ]
+}
