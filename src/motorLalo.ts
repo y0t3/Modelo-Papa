@@ -22,9 +22,11 @@ export type LaloFamily={
  kind:LaloKind;family:string;rank:number;paths:LaloRoute[];
  sourceCount:number;directRoots:number;d7Roots:number;d1Roots:number;
  physicalBlocks:number;branchBlocks:number;parentFamilies:string[];
+ vt4Meta?:Vt4MotherExtension;physicalValues?:string[];
  state:'EN_FORMACIÓN'|'EN_SEGUIMIENTO'|'CON_APOYO';
  rationale:string;
 };
+export type Vt4MotherExtension={motherFamily:string;addedDigit:string;side:'ANTES'|'DESPUES'};
 export type LaloView={
  target:Turno;date:string;status:'EXPERIMENTAL_SIN_VALIDACIÓN';
  roots:RootRef[];
@@ -71,7 +73,44 @@ const transferred=(values:string[],old:Path):Path[]=>{
  return out;
 };
 
-type Working={kind:LaloKind;family:string;paths:Map<string,LaloRoute>};
+type Working={kind:LaloKind;family:string;paths:Map<string,LaloRoute>;vt4Meta?:Vt4MotherExtension};
+
+/** Familia VT4: cifra extra en el mismo extremo + VT3, nunca inversa de las cuatro cifras. */
+export function vt4MotherFamily(motherFamily:string,addedDigit:string,side:Vt4MotherExtension['side']):string{
+ const pieces=motherFamily.split('/');
+ if(pieces.length!==2||!pieces.every(x=>/^\d{3}$/.test(x))||
+  [...pieces[0]].reverse().join('')!==pieces[1]||!/^\d$/.test(addedDigit))
+  throw Error('Madre VT3/cifra extra inválida');
+ const options=pieces.map(x=>side==='ANTES'?addedDigit+x:x+addedDigit);
+ return options.sort().join('/');
+}
+
+/** Un único rótulo por madre+cifra+extremo; sólo guardar rutas físicas existentes. */
+function selectVt4(groups:Map<string,Working>,mother:string,extra:string,
+ side:Vt4MotherExtension['side'],source:SourceId,path:Path){
+ if(!valid(path,4))return;
+ const f=vt4MotherFamily(mother,extra,side),v=pathValue(path);
+ if(!f.split('/').includes(v))throw Error('La VT4 no coincide con la madre VT3 y extremo');
+ const key='vt4|'+mother+'|'+extra+'|'+side;
+ let candidate=groups.get(key);
+ if(!candidate){
+  candidate={kind:'vt4',family:f,paths:new Map(),
+   vt4Meta:{motherFamily:mother,addedDigit:extra,side}};
+  groups.set(key,candidate);
+ }
+ const pkey=canonical('vt4',source,path);
+ const prior=candidate.paths.get(pkey);
+ if(prior){
+  if(!prior.mothers?.includes(mother)){
+   prior.mothers=[...(prior.mothers||[]),mother];
+   if(!prior.mother)prior.mother=mother;
+  }
+ }else{
+  candidate.paths.set(pkey,{kind:'vt4',family:f,value:v,sourceId:source,
+   path,origin:'DESDE_VT3',rootIds:[],mother,mothers:[mother],addedDigit:extra});
+ }
+}
+
 const selectKind=(families:Map<string,Working>,kind:LaloKind,value:string,source:SourceId,
  path:Path,origin:LaloRoute['origin'],rootId?:string,mother?:string,extra?:string)=>{
  if(!valid(path,kind==='vt2'?2:kind==='vt3'?3:4))return;
@@ -118,15 +157,19 @@ const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
   const state:LaloFamily['state']=uniqueEvents.size>=2||sourceCount>=2?'CON_APOYO':
    uniqueEvents.size||parentFamilies.length?'EN_SEGUIMIENTO':'EN_FORMACIÓN';
   const rationale=kind==='vt4'?
-   'Extensión física de '+(parentFamilies[0]||'madre VT3')+
-   ' · '+physicalBlocks+' bloque(s) propios de cuatro cifras':
+   'Cifra '+group.vt4Meta?.addedDigit+' '+(group.vt4Meta?.side==='ANTES'?'antes':'después')+
+   ' de madre '+group.vt4Meta?.motherFamily+
+   ' · '+physicalBlocks+' bloque(s) físicos · variantes trazadas: '+
+   [...new Set(paths.map(p=>p.value))].sort().join(', '):
    (d7Roots?d7Roots+' raíz/raíces D−7 · ':'')+
    (d1Roots?d1Roots+' raíz/raíces D−1 · ':'')+
    (branchBlocks?branchBlocks+' bifurcación(es) · ':'')+
    (parentFamilies.length?parentFamilies.length+' madre(s) VT3 · ':'')+
    sourceCount+' fuente(s)';
+  const physicalValues=kind==='vt4'?[...new Set(paths.map(p=>p.value))].sort():undefined;
   return {...group,paths,sourceCount,directRoots:uniqueEvents.size,d7Roots,d1Roots,
-   physicalBlocks,branchBlocks,parentFamilies,state,rationale,importance,parentRank};
+   physicalBlocks,branchBlocks,parentFamilies,state,rationale,importance,parentRank,
+   physicalValues};
  });
  all.sort((a,b)=>{
   for(let i=0;i<Math.max(a.importance.length,b.importance.length);i++){
@@ -216,11 +259,13 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
   for(const oriented of [parent.path,[...parent.path].reverse()])
    for(const c of cells){
     if(oriented.includes(c))continue;
-    for(const candidate of [[c,...oriented],[...oriented,c]]){
+    for(const [candidate,side] of [
+     [[c,...oriented],'ANTES'],[[...oriented,c],'DESPUES']
+    ] as const){
      if(!valid(candidate,4))continue;
-     const added=c.digit;
-     selectKind(vt4,'vt4',pathValue(candidate),parent.sourceId,candidate,
-      'DESDE_VT3',undefined,mother.family,added);
+     // El rótulo conserva la terna madre reversible y la posición de la cifra.
+     // Las variantes visibles sólo se respaldan si existe cada camino completo.
+     selectVt4(vt4,mother.family,c.digit,side,parent.sourceId,candidate);
     }
    }
  }
@@ -236,6 +281,8 @@ export function compareMotorLaloAfterDraw(view:LaloView,heads:string[]):Record<L
  return Object.fromEntries((['vt2','vt3','vt4'] as LaloKind[]).map(k=>{
   const n=Number(k.slice(-1));
   const observed=new Set(actual.map(h=>reversibleFamily(h.slice(-n))));
-  return [k,view.ranks[k].slice(0,10).filter(f=>observed.has(f.family)).map(f=>f.family)];
+  return [k,view.ranks[k].slice(0,10).filter(f=>
+   k==='vt4'?f.paths.some(p=>actual.includes(p.value)):observed.has(f.family)
+  ).map(f=>f.family)];
  })) as Record<LaloKind,string[]>;
 }
