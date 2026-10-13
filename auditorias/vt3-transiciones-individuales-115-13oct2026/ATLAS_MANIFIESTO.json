@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-13",
+  "status": "DIAGNOSTICO_POST",
+  "file": "auditorias/vt3-transiciones-individuales-115-13oct2026/ATLAS_NOCTURNA_12OCT_POST.html",
+  "htmlSha256": "e35aa1aa684fe7566d806c70e53dbf94d9d6aac9a54d8786c84df92a6f09b1c1",
+  "bytes": 195049,
+  "focus": [
+    "158/851",
+    "516/615",
+    "242/242"
+  ],
+  "matchedNegativePeers": {
+    "158/851": [
+      "054/450",
+      "078/870",
+      "081/180"
+    ],
+    "516/615": [
+      "165/561",
+      "178/871",
+      "578/875"
+    ],
+    "242/242": [
+      "146/641",
+      "424/424",
+      "145/541"
+    ]
+  },
+  "physicalFamilyCount": 172,
+  "totalPhysicalPaths": 380,
+  "sourceHashes": {
+    "sealedNocturna": "5398d99157a15c0335b5017adecb50f01a9e7b6807f6d303c238710cd22be061",
+    "pre": "0efd24879ad55b80b65372d8452179f6e9697ad01a6949711741718dd514514a",
+    "physicalWitnesses": "9cf1cc482996a5d3c1e8d7d2e0f218e28bf23e8098c64008b3dc04b22c9d9962",
+    "post": "416a553ac6ee275936f63c31360e0358496904843176cb065794d26e9f9de0cd"
+  }
+}
