@@ -12,6 +12,7 @@ const POLICIES=['OFICIAL','REEMPLAZAR_9_10_POR_11_12','REEMPLAZAR_10_POR_11','ME
 const read=p=>readFileSync(p,'utf8');
 const load=p=>JSON.parse(read(p));
 const sha=s=>createHash('sha256').update(s).digest('hex');
+mkdirSync(DIR,{recursive:true});
 const save=(f,x)=>writeFileSync(DIR+f,JSON.stringify(x,null,2)+'\n');
 const identity=r=>r.date+'|'+r.turn;
 const rev=s=>[...s].reverse().join('');
