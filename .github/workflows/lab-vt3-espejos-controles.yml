@@ -1,0 +1,46 @@
+name: VT3 espejos fisicos y controles 115 cortes
+on:
+  push:
+    branches: [lab-vt3-espejos-controles-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-espejos-controles.mjs'
+      - 'PROTOCOLO_VT3_ESPEJOS_CONTROLES_13OCT2026.md'
+      - '.github/workflows/lab-vt3-espejos-controles.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Separar POST del PRE y comprobar fuente sellada
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-objetivos-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-nocturna-post.json
+          node scripts/lab-vt3-espejos-controles.mjs pre
+      - name: Contrastar los mismos 115 cortes y Nocturna conocida
+        run: |
+          mv /tmp/vt3-objetivos-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/vt3-nocturna-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          node scripts/lab-vt3-espejos-controles.mjs post
+      - name: Guardar evidencia
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-espejos-controles-115
+          path: auditorias/vt3-espejos-controles-115-13oct2026/
+          if-no-files-found: error
+          retention-days: 60
+      - name: Respaldar resultados permanentes en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-espejos-controles-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): espejos fisicos controles PRE POST en 115 cortes'
+            git push origin HEAD:lab-vt3-espejos-controles-13oct2026
+          fi
