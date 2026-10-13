@@ -1,0 +1,54 @@
+name: VT4 traslado rutas ganadoras D7 D1
+on:
+  push:
+    branches: [lab-vt4-transferencia-rutas-ganadoras-13oct2026]
+    paths:
+      - 'scripts/lab-vt4-transferencia-ganadoras.mjs'
+      - 'PROTOCOLO_VT4_TRANSFERENCIA_RUTAS_D7_D1_13OCT2026.md'
+      - '.github/workflows/lab-vt4-transferencia-ganadoras.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  traslado:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar resultados POST y fixture del corte actual
+        run: |
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt4-transferencia-post.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt4-transferencia-fixture.b64
+          test ! -e auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          test ! -e fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+      - name: Auditar marcas históricas VT4 y sellar selección PRE sin resultados actuales
+        run: node scripts/lab-vt4-transferencia-ganadoras.mjs pre
+      - name: Comprometer PRE y sello SHA antes de reponer resultados
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/PRE_115.json
+          git add auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/INVENTARIO_RUTAS_PRE_115.json
+          git add auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT4): comparar rutas ganadoras anteriores D-7 D-1 sin POST'
+          git push origin HEAD:lab-vt4-transferencia-rutas-ganadoras-13oct2026
+      - name: Restaurar objetivos del corte y cotejar nueve ranking VT4
+        run: |
+          mv /tmp/vt4-transferencia-post.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          mv /tmp/vt4-transferencia-fixture.b64 fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt4-transferencia-ganadoras.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt4-transferencia-rutas-ganadoras-115
+          path: auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Versionar informe POST experimental
+        run: |
+          git add auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/POST_115.json
+          git add auditorias/vt4-transferencia-rutas-ganadoras-115-13oct2026/RESUMEN.json
+          git commit -m 'data(VT4): transferencia D-7 D-1 y controles de rutas físicas'
+          git push origin HEAD:lab-vt4-transferencia-rutas-ganadoras-13oct2026
