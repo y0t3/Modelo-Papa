@@ -1,0 +1,721 @@
+{
+  "date": "2026-10-13",
+  "summary": {
+    "physicalEligibleGroupExposures": 5564,
+    "d1SupportedGroupExposures": 370,
+    "d7SupportedGroupExposures": 392,
+    "supportedByBothPeriodsExposures": 22,
+    "historicallyWinningGroupExposures": 7,
+    "winningGroupsWithD1": 1,
+    "winningGroupsWithD7": 1,
+    "distinctPhysicallyWinningHeads": 7,
+    "cutsWithPhysicallyWinningHeads": 6
+  },
+  "focus": {
+    "date": "2026-10-03",
+    "turn": "Matutino",
+    "siblings": {
+      "2592": {
+        "family": "2295/2592",
+        "mother": "295/592",
+        "motherRank": 5,
+        "signal": "d7shape",
+        "signalOfWinner": 1,
+        "totalSisters": 8,
+        "qualifyingSisters": 2,
+        "otherQualifyingSisters": [
+          {
+            "family": "2952/5922",
+            "rank": 44,
+            "periodSignal": 1,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 1,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          }
+        ],
+        "allSisters": [
+          {
+            "family": "2295/2592",
+            "rank": 43,
+            "periodSignal": 1,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 1,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "2952/5922",
+            "rank": 44,
+            "periodSignal": 1,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 1,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "2954/5924",
+            "rank": 45,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 1,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "4295/4592",
+            "rank": 46,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 1,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "2953/5923",
+            "rank": 47,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "2955/5925",
+            "rank": 48,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "3295/3592",
+            "rank": 49,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "5295/5592",
+            "rank": 50,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          }
+        ],
+        "top10ByMethod": {
+          "BASE_CUPO2": {
+            "selected": [
+              {
+                "family": "2295/2592",
+                "rank": 43,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2952/5922",
+                "rank": 44,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": true
+          },
+          "D7_D1_COMBINADO": {
+            "selected": [
+              {
+                "family": "2295/2592",
+                "rank": 43,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2952/5922",
+                "rank": 44,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": true
+          },
+          "DOBLE_POR_MADRE": {
+            "selected": [
+              {
+                "family": "2295/2592",
+                "rank": 43,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2954/5924",
+                "rank": 45,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": true
+          },
+          "COBERTURA_GLOBAL": {
+            "selected": [
+              {
+                "family": "2295/2592",
+                "rank": 43,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2954/5924",
+                "rank": 45,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": true
+          },
+          "EQUILIBRIO_PERIODOS": {
+            "selected": [
+              {
+                "family": "2295/2592",
+                "rank": 43,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2954/5924",
+                "rank": 45,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": true
+          },
+          "SOPORTE_TOTAL": {
+            "selected": [
+              {
+                "family": "2295/2592",
+                "rank": 43,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2954/5924",
+                "rank": 45,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": true
+          },
+          "HASH_NEUTRAL": {
+            "selected": [
+              {
+                "family": "4295/4592",
+                "rank": 46,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2954/5924",
+                "rank": 45,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": false
+          }
+        }
+      },
+      "5832": {
+        "family": "5238/5832",
+        "mother": "238/832",
+        "motherRank": 4,
+        "signal": "d1exact",
+        "signalOfWinner": 1,
+        "totalSisters": 10,
+        "qualifyingSisters": 2,
+        "otherQualifyingSisters": [
+          {
+            "family": "2385/8325",
+            "rank": 34,
+            "periodSignal": 1,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 1,
+              "d1shape": 1,
+              "otherSource": 0
+            }
+          }
+        ],
+        "allSisters": [
+          {
+            "family": "2384/8324",
+            "rank": 33,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "2385/8325",
+            "rank": 34,
+            "periodSignal": 1,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 1,
+              "d1shape": 1,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "2389/8329",
+            "rank": 35,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "4238/4832",
+            "rank": 36,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "5238/5832",
+            "rank": 37,
+            "periodSignal": 1,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 1,
+              "d1shape": 1,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "9238/9832",
+            "rank": 38,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "2238/2832",
+            "rank": 39,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "2382/8322",
+            "rank": 40,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 0,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "2388/8328",
+            "rank": 41,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 1,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          },
+          {
+            "family": "8238/8832",
+            "rank": 42,
+            "periodSignal": 0,
+            "signals": {
+              "d7exact": 0,
+              "d7shape": 1,
+              "d7turn": 0,
+              "d1exact": 0,
+              "d1shape": 0,
+              "otherSource": 0
+            }
+          }
+        ],
+        "top10ByMethod": {
+          "BASE_CUPO2": {
+            "selected": [
+              {
+                "family": "2384/8324",
+                "rank": 33,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2385/8325",
+                "rank": 34,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 1,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": false
+          },
+          "D7_D1_COMBINADO": {
+            "selected": [
+              {
+                "family": "2385/8325",
+                "rank": 34,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 1,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "5238/5832",
+                "rank": 37,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 1,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": true
+          },
+          "DOBLE_POR_MADRE": {
+            "selected": [
+              {
+                "family": "2385/8325",
+                "rank": 34,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 1,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2388/8328",
+                "rank": 41,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": false
+          },
+          "COBERTURA_GLOBAL": {
+            "selected": [
+              {
+                "family": "2385/8325",
+                "rank": 34,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 1,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2388/8328",
+                "rank": 41,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": false
+          },
+          "EQUILIBRIO_PERIODOS": {
+            "selected": [
+              {
+                "family": "2385/8325",
+                "rank": 34,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 1,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2388/8328",
+                "rank": 41,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": false
+          },
+          "SOPORTE_TOTAL": {
+            "selected": [
+              {
+                "family": "2385/8325",
+                "rank": 34,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 1,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "2388/8328",
+                "rank": 41,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 1,
+                  "d7turn": 0,
+                  "d1exact": 0,
+                  "d1shape": 0,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": false
+          },
+          "HASH_NEUTRAL": {
+            "selected": [
+              {
+                "family": "2385/8325",
+                "rank": 34,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 1,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              },
+              {
+                "family": "5238/5832",
+                "rank": 37,
+                "signal": {
+                  "d7exact": 0,
+                  "d7shape": 0,
+                  "d7turn": 0,
+                  "d1exact": 1,
+                  "d1shape": 1,
+                  "otherSource": 0
+                }
+              }
+            ],
+            "found": true
+          }
+        }
+      }
+    }
+  },
+  "notes": [
+    "Todas las rutas, marcas históricas y grupos ya estaban en PRE sellados de laboratorios anteriores. Esta es una atribución POST sin editar rankings.",
+    "La pregunta no es si existen señales, sino cuántas candidatas físicas distintas comparten esas señales dentro de la misma madre.",
+    "Los conteos de grupos no son probabilidades de ganar; la quiniela es aleatoria y el corpus ya se investigó reiteradamente."
+  ]
+}
