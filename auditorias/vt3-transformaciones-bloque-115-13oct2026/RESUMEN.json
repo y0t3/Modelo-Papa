@@ -1,0 +1,1030 @@
+{
+  "days": 23,
+  "cuts": 115,
+  "total": {
+    "ORIGINAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gains": [],
+      "losses": []
+    },
+    "ANCLADA_TRASLADA": {
+      "cuts": 115,
+      "top3": 4,
+      "top5": 6,
+      "top10": 13,
+      "gains": [],
+      "losses": [
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino"
+      ]
+    },
+    "ANCLADA_CAMBIO_1_CELDA": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gains": [
+        "2026-10-07|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno"
+      ]
+    },
+    "ANCLADA_IDENTICA": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 9,
+      "top10": 15,
+      "gains": [],
+      "losses": []
+    },
+    "ANCLADA_FUENTE_RENOVADA": {
+      "cuts": 115,
+      "top3": 4,
+      "top5": 7,
+      "top10": 13,
+      "gains": [],
+      "losses": [
+        "2026-09-30|Matutino",
+        "2026-10-08|Matutino"
+      ]
+    },
+    "ANCLADA_TRASLADA_O_CAMBIA": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 7,
+      "top10": 12,
+      "gains": [
+        "2026-10-07|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno",
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino",
+        "2026-09-29|Matutino"
+      ]
+    },
+    "ABIERTA_TRASLADA_1": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gains": [],
+      "losses": []
+    },
+    "ABIERTA_CAMBIO_1_CELDA": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17,
+      "gains": [
+        "2026-09-28|Nocturno",
+        "2026-10-08|Vespertino"
+      ],
+      "losses": []
+    },
+    "ABIERTA_FUENTE_RENOVADA_1": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 18,
+      "gains": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ],
+      "losses": []
+    },
+    "ABIERTA_TRASLADA_CONTROL_HASH": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gains": [],
+      "losses": []
+    }
+  },
+  "excludingFirstDay": {
+    "ORIGINAL": {
+      "cuts": 110,
+      "top3": 5,
+      "top5": 8,
+      "top10": 14,
+      "gains": [],
+      "losses": []
+    },
+    "ANCLADA_TRASLADA": {
+      "cuts": 110,
+      "top3": 4,
+      "top5": 6,
+      "top10": 12,
+      "gains": [],
+      "losses": [
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino"
+      ]
+    },
+    "ANCLADA_CAMBIO_1_CELDA": {
+      "cuts": 110,
+      "top3": 5,
+      "top5": 8,
+      "top10": 14,
+      "gains": [
+        "2026-10-07|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno"
+      ]
+    },
+    "ANCLADA_IDENTICA": {
+      "cuts": 110,
+      "top3": 5,
+      "top5": 9,
+      "top10": 14,
+      "gains": [],
+      "losses": []
+    },
+    "ANCLADA_FUENTE_RENOVADA": {
+      "cuts": 110,
+      "top3": 4,
+      "top5": 7,
+      "top10": 12,
+      "gains": [],
+      "losses": [
+        "2026-09-30|Matutino",
+        "2026-10-08|Matutino"
+      ]
+    },
+    "ANCLADA_TRASLADA_O_CAMBIA": {
+      "cuts": 110,
+      "top3": 5,
+      "top5": 7,
+      "top10": 11,
+      "gains": [
+        "2026-10-07|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno",
+        "2026-09-24|Previa",
+        "2026-09-24|Matutino",
+        "2026-09-29|Matutino"
+      ]
+    },
+    "ABIERTA_TRASLADA_1": {
+      "cuts": 110,
+      "top3": 5,
+      "top5": 8,
+      "top10": 14,
+      "gains": [],
+      "losses": []
+    },
+    "ABIERTA_CAMBIO_1_CELDA": {
+      "cuts": 110,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "gains": [
+        "2026-09-28|Nocturno",
+        "2026-10-08|Vespertino"
+      ],
+      "losses": []
+    },
+    "ABIERTA_FUENTE_RENOVADA_1": {
+      "cuts": 110,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17,
+      "gains": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ],
+      "losses": []
+    },
+    "ABIERTA_TRASLADA_CONTROL_HASH": {
+      "cuts": 110,
+      "top3": 5,
+      "top5": 8,
+      "top10": 14,
+      "gains": [],
+      "losses": []
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "ORIGINAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 3,
+        "top10": 8,
+        "gains": [],
+        "losses": [
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino"
+        ]
+      },
+      "ANCLADA_CAMBIO_1_CELDA": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 9,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "ANCLADA_IDENTICA": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_FUENTE_RENOVADA": {
+        "cuts": 70,
+        "top3": 2,
+        "top5": 3,
+        "top10": 9,
+        "gains": [],
+        "losses": [
+          "2026-09-30|Matutino"
+        ]
+      },
+      "ANCLADA_TRASLADA_O_CAMBIA": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 3,
+        "top10": 6,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno",
+          "2026-09-24|Previa",
+          "2026-09-24|Matutino",
+          "2026-09-29|Matutino"
+        ]
+      },
+      "ABIERTA_TRASLADA_1": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_CAMBIO_1_CELDA": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "gains": [
+          "2026-09-28|Nocturno"
+        ],
+        "losses": []
+      },
+      "ABIERTA_FUENTE_RENOVADA_1": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "gains": [
+          "2026-09-30|Nocturno"
+        ],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_CONTROL_HASH": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gains": [],
+        "losses": []
+      }
+    },
+    "2026-10": {
+      "ORIGINAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA": {
+        "cuts": 45,
+        "top3": 1,
+        "top5": 3,
+        "top10": 5,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_CAMBIO_1_CELDA": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "gains": [
+          "2026-10-07|Vespertino"
+        ],
+        "losses": []
+      },
+      "ANCLADA_IDENTICA": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 5,
+        "top10": 5,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_FUENTE_RENOVADA": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 4,
+        "gains": [],
+        "losses": [
+          "2026-10-08|Matutino"
+        ]
+      },
+      "ANCLADA_TRASLADA_O_CAMBIA": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "gains": [
+          "2026-10-07|Vespertino"
+        ],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_1": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_CAMBIO_1_CELDA": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "gains": [
+          "2026-10-08|Vespertino"
+        ],
+        "losses": []
+      },
+      "ABIERTA_FUENTE_RENOVADA_1": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "gains": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_CONTROL_HASH": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gains": [],
+        "losses": []
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "gains": [],
+        "losses": [
+          "2026-09-24|Previa"
+        ]
+      },
+      "ANCLADA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_IDENTICA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_FUENTE_RENOVADA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA_O_CAMBIA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "gains": [],
+        "losses": [
+          "2026-09-24|Previa"
+        ]
+      },
+      "ABIERTA_TRASLADA_1": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_FUENTE_RENOVADA_1": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      }
+    },
+    "Primera": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_IDENTICA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_FUENTE_RENOVADA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA_O_CAMBIA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_1": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_FUENTE_RENOVADA_1": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [],
+        "losses": []
+      }
+    },
+    "Matutino": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 7,
+        "gains": [],
+        "losses": [
+          "2026-09-24|Matutino"
+        ]
+      },
+      "ANCLADA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 8,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_IDENTICA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 4,
+        "top10": 8,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_FUENTE_RENOVADA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 2,
+        "top10": 6,
+        "gains": [],
+        "losses": [
+          "2026-09-30|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "ANCLADA_TRASLADA_O_CAMBIA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 6,
+        "gains": [],
+        "losses": [
+          "2026-09-24|Matutino",
+          "2026-09-29|Matutino"
+        ]
+      },
+      "ABIERTA_TRASLADA_1": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_FUENTE_RENOVADA_1": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "gains": [
+          "2026-10-01|Matutino"
+        ],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gains": [],
+        "losses": []
+      }
+    },
+    "Vespertino": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "gains": [
+          "2026-10-07|Vespertino"
+        ],
+        "losses": []
+      },
+      "ANCLADA_IDENTICA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_FUENTE_RENOVADA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA_O_CAMBIA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "gains": [
+          "2026-10-07|Vespertino"
+        ],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_1": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [
+          "2026-10-08|Vespertino"
+        ],
+        "losses": []
+      },
+      "ABIERTA_FUENTE_RENOVADA_1": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gains": [
+          "2026-10-03|Vespertino"
+        ],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gains": [],
+        "losses": []
+      }
+    },
+    "Nocturno": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 1,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "ANCLADA_IDENTICA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 2,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_FUENTE_RENOVADA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ANCLADA_TRASLADA_O_CAMBIA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 1,
+        "top10": 2,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "ABIERTA_TRASLADA_1": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      },
+      "ABIERTA_CAMBIO_1_CELDA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "gains": [
+          "2026-09-28|Nocturno"
+        ],
+        "losses": []
+      },
+      "ABIERTA_FUENTE_RENOVADA_1": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "gains": [
+          "2026-09-30|Nocturno"
+        ],
+        "losses": []
+      },
+      "ABIERTA_TRASLADA_CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gains": [],
+        "losses": []
+      }
+    }
+  },
+  "signals": {
+    "exactBlock": {
+      "exposures": 86,
+      "winners": 3,
+      "anchored": 35,
+      "anchoredWinners": 1
+    },
+    "changeOneCell": {
+      "exposures": 597,
+      "winners": 5,
+      "anchored": 208,
+      "anchoredWinners": 2
+    },
+    "translated": {
+      "exposures": 282,
+      "winners": 2,
+      "anchored": 152,
+      "anchoredWinners": 1
+    },
+    "cleanTranslation": {
+      "exposures": 282,
+      "winners": 2,
+      "anchored": 152,
+      "anchoredWinners": 1
+    },
+    "disjointSource": {
+      "exposures": 542,
+      "winners": 1,
+      "anchored": 225,
+      "anchoredWinners": 1
+    },
+    "allSourcesNew": {
+      "exposures": 12908,
+      "winners": 125,
+      "anchored": 5505,
+      "anchoredWinners": 57
+    },
+    "changedShape": {
+      "exposures": 1617,
+      "winners": 12,
+      "anchored": 634,
+      "anchoredWinners": 3
+    }
+  },
+  "matched": {
+    "exactBlock": {
+      "observed": 3,
+      "expected": 1.26605,
+      "mixedGroups": 8,
+      "excludedWinners": 134,
+      "delta": 1.73395
+    },
+    "changeOneCell": {
+      "observed": 5,
+      "expected": 5.25111,
+      "mixedGroups": 44,
+      "excludedWinners": 92,
+      "delta": -0.25111
+    },
+    "translated": {
+      "observed": 2,
+      "expected": 3.09925,
+      "mixedGroups": 25,
+      "excludedWinners": 115,
+      "delta": -1.09925
+    },
+    "cleanTranslation": {
+      "observed": 2,
+      "expected": 3.09925,
+      "mixedGroups": 25,
+      "excludedWinners": 115,
+      "delta": -1.09925
+    },
+    "disjointSource": {
+      "observed": 1,
+      "expected": 5.29619,
+      "mixedGroups": 49,
+      "excludedWinners": 85,
+      "delta": -4.29619
+    },
+    "allSourcesNew": {
+      "observed": 78,
+      "expected": 74.16076,
+      "mixedGroups": 79,
+      "excludedWinners": 53,
+      "delta": 3.83924
+    },
+    "changedShape": {
+      "observed": 12,
+      "expected": 15.39959,
+      "mixedGroups": 79,
+      "excludedWinners": 53,
+      "delta": -3.39959
+    }
+  },
+  "controls": {
+    "ANCLADA_TRASLADA": {
+      "delta": -2,
+      "nullMean": -0.2791,
+      "p05": -2,
+      "median": 0,
+      "p95": 2,
+      "upperTail": 0.9588041195880412
+    },
+    "ANCLADA_CAMBIO_1_CELDA": {
+      "delta": 0,
+      "nullMean": 0.7869,
+      "p05": -2,
+      "median": 1,
+      "p95": 3,
+      "upperTail": 0.8036196380361964
+    },
+    "ANCLADA_IDENTICA": {
+      "delta": 0,
+      "nullMean": 0.128,
+      "p05": -1,
+      "median": 0,
+      "p95": 1,
+      "upperTail": 0.9237076292370763
+    },
+    "ANCLADA_FUENTE_RENOVADA": {
+      "delta": -2,
+      "nullMean": -0.2503,
+      "p05": -3,
+      "median": 0,
+      "p95": 2,
+      "upperTail": 0.9327067293270673
+    },
+    "ANCLADA_TRASLADA_O_CAMBIA": {
+      "delta": -3,
+      "nullMean": 0.5427,
+      "p05": -3,
+      "median": 0,
+      "p95": 4,
+      "upperTail": 0.9834016598340166
+    },
+    "ABIERTA_TRASLADA_1": {
+      "delta": 0,
+      "nullMean": 0.1321,
+      "p05": -1,
+      "median": 0,
+      "p95": 1,
+      "upperTail": 0.9014098590140985
+    },
+    "ABIERTA_CAMBIO_1_CELDA": {
+      "delta": 2,
+      "nullMean": 0.0007,
+      "p05": -1,
+      "median": 0,
+      "p95": 1,
+      "upperTail": 0.044295570442955706
+    },
+    "ABIERTA_FUENTE_RENOVADA_1": {
+      "delta": 3,
+      "nullMean": 0.3121,
+      "p05": -2,
+      "median": 0,
+      "p95": 2,
+      "upperTail": 0.039196080391960805
+    },
+    "ABIERTA_TRASLADA_CONTROL_HASH": {
+      "delta": 0,
+      "nullMean": -0.0407,
+      "p05": -1,
+      "median": 0,
+      "p95": 1,
+      "upperTail": 0.8836116388361164
+    }
+  },
+  "seal": {
+    "sourcePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "priorLabPre": "02a1a4a10de5371c87f2fa2d7fbdbc6a8672642a9664ef2cba0eeefa99613224",
+    "protocol": "246356b8aab202e4675bff99d76d188702e26931e0c8eabbfbb6f20215b99216",
+    "code": "49c3ec3cd8ecb9ca2bf1fde7bfff4bab157f6a2c3ca55431403fcc97c4303e1b",
+    "pre": "0b44eb9f07130f0d949918da77df25fd971daed30fb5e408710b8947f6affdc1",
+    "nocturna": "7820bedd159b5328df15493ecb966edf533361dd4078262b09fecb7055c35dc9"
+  },
+  "postHash": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "limitation": "Retrospectiva en 23 días reutilizados. Ninguna transformación demuestra capacidad predictiva."
+}
