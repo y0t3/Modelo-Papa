@@ -1,0 +1,229 @@
+{
+  "date": "2026-10-12",
+  "turn": "Nocturno",
+  "targets": [
+    "9851",
+    "1615",
+    "7242",
+    "8290",
+    "3264"
+  ],
+  "strategies": {
+    "A_ORIGINAL": {
+      "pool": 61,
+      "hits": [
+        {
+          "family": "242/242",
+          "rank": 25,
+          "originalRank": 25,
+          "anchoredPaths": 1
+        },
+        {
+          "family": "516/615",
+          "rank": 54,
+          "originalRank": 54,
+          "anchoredPaths": 1
+        }
+      ],
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "top10Names": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "255/552"
+      ],
+      "expected": {
+        "3": 0.09672131147540985,
+        "5": 0.1584699453551912,
+        "10": 0.30327868852459006
+      },
+      "sourceMemberships": {
+        "prevNocturno": 9,
+        "Primera": 2,
+        "Vespertino": 1
+      },
+      "unanchoredTop10": 0
+    },
+    "B_INVENTARIO": {
+      "pool": 172,
+      "hits": [
+        {
+          "family": "242/242",
+          "rank": 23,
+          "originalRank": 25,
+          "anchoredPaths": 1
+        },
+        {
+          "family": "516/615",
+          "rank": 43,
+          "originalRank": 54,
+          "anchoredPaths": 1
+        },
+        {
+          "family": "158/851",
+          "rank": 127,
+          "originalRank": null,
+          "anchoredPaths": 0
+        }
+      ],
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "top10Names": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "424/424",
+        "265/562",
+        "526/625",
+        "255/552"
+      ],
+      "expected": {
+        "3": 0.05171478628170989,
+        "5": 0.08518131854945177,
+        "10": 0.16538267693858466
+      },
+      "sourceMemberships": {
+        "prevNocturno": 9,
+        "Primera": 2,
+        "Vespertino": 1
+      },
+      "unanchoredTop10": 0
+    },
+    "C_SIN_PRIORIDAD_BIF": {
+      "pool": 61,
+      "hits": [
+        {
+          "family": "242/242",
+          "rank": 24,
+          "originalRank": 25,
+          "anchoredPaths": 1
+        },
+        {
+          "family": "516/615",
+          "rank": 54,
+          "originalRank": 54,
+          "anchoredPaths": 1
+        }
+      ],
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "top10Names": [
+        "556/655",
+        "555/555",
+        "565/565",
+        "265/562",
+        "526/625",
+        "255/552",
+        "365/563",
+        "536/635",
+        "356/653",
+        "276/672"
+      ],
+      "expected": {
+        "3": 0.09672131147540985,
+        "5": 0.1584699453551912,
+        "10": 0.30327868852459006
+      },
+      "sourceMemberships": {
+        "prevNocturno": 10,
+        "Primera": 3
+      },
+      "unanchoredTop10": 0
+    },
+    "D_AMBOS": {
+      "pool": 172,
+      "hits": [
+        {
+          "family": "242/242",
+          "rank": 22,
+          "originalRank": 25,
+          "anchoredPaths": 1
+        },
+        {
+          "family": "516/615",
+          "rank": 43,
+          "originalRank": 54,
+          "anchoredPaths": 1
+        },
+        {
+          "family": "158/851",
+          "rank": 127,
+          "originalRank": null,
+          "anchoredPaths": 0
+        }
+      ],
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "top10Names": [
+        "556/655",
+        "555/555",
+        "565/565",
+        "265/562",
+        "526/625",
+        "255/552",
+        "365/563",
+        "536/635",
+        "356/653",
+        "214/412"
+      ],
+      "expected": {
+        "3": 0.05171478628170989,
+        "5": 0.08518131854945177,
+        "10": 0.16538267693858466
+      },
+      "sourceMemberships": {
+        "prevNocturno": 9,
+        "Primera": 3,
+        "Previa": 1,
+        "Vespertino": 1
+      },
+      "unanchoredTop10": 0
+    }
+  },
+  "targetRanks": {
+    "242": {
+      "A_ORIGINAL": 25,
+      "B_INVENTARIO": 23,
+      "C_SIN_PRIORIDAD_BIF": 24,
+      "D_AMBOS": 22
+    },
+    "264": {
+      "A_ORIGINAL": null,
+      "B_INVENTARIO": null,
+      "C_SIN_PRIORIDAD_BIF": null,
+      "D_AMBOS": null
+    },
+    "290": {
+      "A_ORIGINAL": null,
+      "B_INVENTARIO": null,
+      "C_SIN_PRIORIDAD_BIF": null,
+      "D_AMBOS": null
+    },
+    "615": {
+      "A_ORIGINAL": 54,
+      "B_INVENTARIO": 43,
+      "C_SIN_PRIORIDAD_BIF": 54,
+      "D_AMBOS": 43
+    },
+    "851": {
+      "A_ORIGINAL": null,
+      "B_INVENTARIO": 127,
+      "C_SIN_PRIORIDAD_BIF": null,
+      "D_AMBOS": 127
+    }
+  }
+}
