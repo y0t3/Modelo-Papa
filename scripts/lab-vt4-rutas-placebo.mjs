@@ -39,24 +39,32 @@ const original=()=>j(DIR+'PRE_115.json').rows;
 const inventory=()=>j(DIR+'INVENTARIO_RUTAS_PRE_115.json').rows;
 function pre(){
  assert.ok(!existsSync(GOALS));assert.ok(!existsSync(FUTURE));
- const rows=original(),bank=inventory();assert.equal(rows.length,115);assert.equal(bank.length,115);
+ const rows=original(),bank=inventory();
+ const catalog=j('auditorias/vt4-hermanas-geometricas-115-13oct2026/PRE_115.json').rows;
+ assert.equal(rows.length,115);assert.equal(bank.length,115);assert.equal(catalog.length,115);
  const rnd=rng(SEED),output=[];
  for(let i=0;i<115;i++){
   const row=rows[i],b=bank[i];
   assert.equal(row.date,b.date);assert.equal(row.turn,b.turn);
-  const base=new Map(b.groups.map(g=>[g.rank,g.signal]));
-  assert.deepEqual(select(b.groups,base),row.methods.D7_D1_COMBINADO.map(x=>x.oldRank));
+  const fullByRank=new Map(catalog[i].physicalGroups.map(g=>[g.rank,g]));
+  const groups=b.groups.map(g=>{
+   const parent=fullByRank.get(g.rank);assert.ok(parent);
+   assert.equal(parent.family,g.family);assert.equal(parent.mother,g.mother);
+   return {...g,motherRank:parent.motherRank};
+  });
+  const base=new Map(groups.map(g=>[g.rank,g.signal]));
+  assert.deepEqual(select(groups,base),row.methods.D7_D1_COMBINADO.map(x=>x.oldRank));
   const controls=[];
   for(let n=0;n<N;n++){
    const fake=new Map();
    for(let mother=1;mother<=5;mother++){
-    const sisters=b.groups.filter(g=>g.motherRank===mother);
+    const sisters=groups.filter(g=>g.motherRank===mother);
     const shuffled=shuffle(sisters.map(x=>x.signal),rnd);
     sisters.forEach((g,k)=>fake.set(g.rank,shuffled[k]));
    }
-   controls.push(select(b.groups,fake));
+   controls.push(select(groups,fake));
   }
-  output.push({date:row.date,turn:row.turn,groups:b.groups.map(g=>({rank:g.rank,values:g.values})),controls});
+  output.push({date:row.date,turn:row.turn,groups:groups.map(g=>({rank:g.rank,values:g.values})),controls});
  }
  save('PLACEBO_PRE_500.json',{seed:SEED,replicates:N,rows:output});
  const seal={code:sha(read('scripts/lab-vt4-rutas-placebo.mjs')),
