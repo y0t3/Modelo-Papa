@@ -344,10 +344,12 @@ function evaluate(){
   }));
  }
  const noct=load(OUT+'NOCTURNA_PRE.json'),observed=load(ROOT+'NOCTURNA_POST_DIAGNOSTICO.json');
+ const originalNoct=load(ROOT+'NOCTURNA_SIMULACION.json').row;
+ const anchoredRanks=new Map(originalNoct.strategies.A_ORIGINAL.map(x=>[x.family,x.rank]));
  const watch=observed.targets.map(h=>{
   const f=target(h);
-  return {head:h,family:f,anchored:noct.pool.some(x=>x.family===f),
-   originalRank:noct.pool.find(x=>x.family===f)?.originalRank??null,
+  return {head:h,family:f,anchored:anchoredRanks.has(f),
+   originalRank:anchoredRanks.get(f)??null,
    newRanks:Object.fromEntries(POLICIES.map(p=>[p,
     noct.choices[p].families.indexOf(f)===-1?null:noct.choices[p].families.indexOf(f)+1]))};
  });
