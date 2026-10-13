@@ -1,0 +1,8271 @@
+{
+  "rows": [
+    {
+      "i": 25,
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "week": "2026-09-21",
+      "original": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "204/402",
+        "206/602",
+        "187/781",
+        "022/220",
+        "226/622",
+        "278/872",
+        "318/813"
+      ],
+      "heads": [
+        "7440",
+        "4108",
+        "9302",
+        "4122",
+        "1274"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "223/322",
+        "MAYOR_RUTAS": "223/322",
+        "MAYOR_FORMAS": "223/322",
+        "BANCO_TODAS_FISICAS_X": "223/322",
+        "BANCO_TOP10_X": "223/322"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.210526
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.210526
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 26,
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "week": "2026-09-21",
+      "original": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "335/533",
+        "133/331",
+        "191/191",
+        "204/402",
+        "313/313",
+        "113/311",
+        "193/391"
+      ],
+      "heads": [
+        "8073",
+        "9875",
+        "0556",
+        "9644",
+        "0722"
+      ],
+      "physicalWinners": [
+        "227/722"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "022/220",
+        "MAYOR_RUTAS": "022/220",
+        "MAYOR_FORMAS": "022/220",
+        "BANCO_TODAS_FISICAS_X": "022/220",
+        "BANCO_TOP10_X": "022/220"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.315789
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 27,
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "week": "2026-09-21",
+      "original": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "335/533",
+        "133/331",
+        "191/191",
+        "204/402",
+        "313/313",
+        "113/311",
+        "193/391"
+      ],
+      "heads": [
+        "1654",
+        "8560",
+        "4984",
+        "0529",
+        "3779"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "022/220",
+        "MAYOR_RUTAS": "022/220",
+        "MAYOR_FORMAS": "022/220",
+        "BANCO_TODAS_FISICAS_X": "022/220",
+        "BANCO_TOP10_X": "022/220"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.315789
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 28,
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "week": "2026-09-21",
+      "original": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "335/533",
+        "094/490",
+        "133/331",
+        "191/191",
+        "204/402",
+        "313/313",
+        "113/311"
+      ],
+      "heads": [
+        "9674",
+        "6250",
+        "1306",
+        "5512",
+        "4246"
+      ],
+      "physicalWinners": [
+        "246/642"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "022/220",
+        "MAYOR_RUTAS": "022/220",
+        "MAYOR_FORMAS": "022/220",
+        "BANCO_TODAS_FISICAS_X": "022/220",
+        "BANCO_TOP10_X": "022/220"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.315789
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.988843,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 29,
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "week": "2026-09-21",
+      "original": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "335/533",
+        "094/490",
+        "133/331",
+        "191/191",
+        "204/402",
+        "313/313",
+        "172/271"
+      ],
+      "heads": [
+        "7173",
+        "1529",
+        "9153",
+        "4134",
+        "5360"
+      ],
+      "physicalWinners": [
+        "173/371"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "022/220",
+        "MAYOR_RUTAS": "113/311",
+        "MAYOR_FORMAS": "022/220",
+        "BANCO_TODAS_FISICAS_X": "022/220",
+        "BANCO_TOP10_X": "022/220"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 15,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.988899,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 30,
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "week": "2026-09-21",
+      "original": [
+        "408/804",
+        "404/404",
+        "406/604",
+        "446/644",
+        "417/714",
+        "456/654",
+        "064/460",
+        "044/440",
+        "464/464",
+        "137/731"
+      ],
+      "heads": [
+        "0358",
+        "9666",
+        "0596",
+        "8609",
+        "3837"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "448/844",
+        "MAYOR_RUTAS": "448/844",
+        "MAYOR_FORMAS": "448/844",
+        "BANCO_TODAS_FISICAS_X": "448/844",
+        "BANCO_TOP10_X": "448/844"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.157895
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.157895
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 31,
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "week": "2026-09-21",
+      "original": [
+        "077/770",
+        "408/804",
+        "404/404",
+        "406/604",
+        "007/700",
+        "446/644",
+        "417/714",
+        "456/654",
+        "064/460",
+        "044/440"
+      ],
+      "heads": [
+        "0838",
+        "6228",
+        "1654",
+        "3042",
+        "8627"
+      ],
+      "physicalWinners": [
+        "456/654",
+        "042/240"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "677/776",
+        "MAYOR_RUTAS": "677/776",
+        "MAYOR_FORMAS": "677/776",
+        "BANCO_TODAS_FISICAS_X": "677/776",
+        "BANCO_TOP10_X": "677/776"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 16,
+          "score": 0.210526
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 16,
+          "score": 0.210526
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 32,
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "week": "2026-09-21",
+      "original": [
+        "077/770",
+        "408/804",
+        "404/404",
+        "406/604",
+        "007/700",
+        "355/553",
+        "446/644",
+        "417/714",
+        "456/654",
+        "064/460"
+      ],
+      "heads": [
+        "1892",
+        "6020",
+        "9344",
+        "2568",
+        "5235"
+      ],
+      "physicalWinners": [
+        "020/020"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "044/440",
+        "MAYOR_RUTAS": "044/440",
+        "MAYOR_FORMAS": "044/440",
+        "BANCO_TODAS_FISICAS_X": "044/440",
+        "BANCO_TOP10_X": "044/440"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.263158
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 33,
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "week": "2026-09-21",
+      "original": [
+        "077/770",
+        "408/804",
+        "404/404",
+        "406/604",
+        "007/700",
+        "355/553",
+        "446/644",
+        "417/714",
+        "456/654",
+        "064/460"
+      ],
+      "heads": [
+        "1784",
+        "1733",
+        "1128",
+        "7082",
+        "4345"
+      ],
+      "physicalWinners": [
+        "082/280"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "044/440",
+        "MAYOR_RUTAS": "044/440",
+        "MAYOR_FORMAS": "044/440",
+        "BANCO_TODAS_FISICAS_X": "044/440",
+        "BANCO_TOP10_X": "044/440"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.263158
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.993547,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 34,
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "week": "2026-09-21",
+      "original": [
+        "077/770",
+        "408/804",
+        "549/945",
+        "394/493",
+        "404/404",
+        "406/604",
+        "439/934",
+        "007/700",
+        "355/553",
+        "446/644"
+      ],
+      "heads": [
+        "0724",
+        "9750",
+        "8207",
+        "6517",
+        "6524"
+      ],
+      "physicalWinners": [
+        "427/724",
+        "207/702",
+        "517/715"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "335/533",
+        "MAYOR_RUTAS": "399/993",
+        "MAYOR_FORMAS": "335/533",
+        "BANCO_TODAS_FISICAS_X": "335/533",
+        "BANCO_TOP10_X": "335/533"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 21,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.991366,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 35,
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "week": "2026-09-21",
+      "original": [
+        "182/281",
+        "188/881",
+        "365/563",
+        "118/811",
+        "128/821",
+        "165/561",
+        "328/823",
+        "528/825",
+        "538/835",
+        "186/681"
+      ],
+      "heads": [
+        "3687",
+        "9912",
+        "3379",
+        "7661",
+        "4139"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "618/816",
+        "MAYOR_RUTAS": "356/653",
+        "MAYOR_FORMAS": "618/816",
+        "BANCO_TODAS_FISICAS_X": "618/816",
+        "BANCO_TOP10_X": "618/816"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": false,
+          "rank": null,
+          "score": 0.157895
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 2,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.105263
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.946253,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 36,
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "week": "2026-09-21",
+      "original": [
+        "182/281",
+        "075/570",
+        "297/792",
+        "027/720",
+        "029/920",
+        "079/970",
+        "092/290",
+        "188/881",
+        "293/392",
+        "839/938"
+      ],
+      "heads": [
+        "7576",
+        "1948",
+        "7619",
+        "8435",
+        "2961"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "118/811",
+        "MAYOR_RUTAS": "365/563",
+        "MAYOR_FORMAS": "118/811",
+        "BANCO_TODAS_FISICAS_X": "118/811",
+        "BANCO_TOP10_X": "118/811"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.157895
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 2,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.105263
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.962282,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 37,
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "week": "2026-09-21",
+      "original": [
+        "182/281",
+        "075/570",
+        "297/792",
+        "027/720",
+        "029/920",
+        "079/970",
+        "092/290",
+        "188/881",
+        "293/392",
+        "839/938"
+      ],
+      "heads": [
+        "0461",
+        "3971",
+        "0410",
+        "8064",
+        "1103"
+      ],
+      "physicalWinners": [
+        "064/460"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "118/811",
+        "MAYOR_RUTAS": "536/635",
+        "MAYOR_FORMAS": "118/811",
+        "BANCO_TODAS_FISICAS_X": "118/811",
+        "BANCO_TOP10_X": "118/811"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.157895
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 3,
+          "rooted": false,
+          "rank": null,
+          "score": 0.157895
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.96479,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 38,
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "week": "2026-09-21",
+      "original": [
+        "182/281",
+        "075/570",
+        "297/792",
+        "027/720",
+        "029/920",
+        "079/970",
+        "092/290",
+        "188/881",
+        "293/392",
+        "839/938"
+      ],
+      "heads": [
+        "2982",
+        "9349",
+        "0940",
+        "3423",
+        "4949"
+      ],
+      "physicalWinners": [
+        "289/982"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "218/812",
+        "MAYOR_RUTAS": "128/821",
+        "MAYOR_FORMAS": "218/812",
+        "BANCO_TODAS_FISICAS_X": "218/812",
+        "BANCO_TOP10_X": "218/812"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": false,
+          "rank": null,
+          "score": 0.210526
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.157895
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.977705,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 39,
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "week": "2026-09-21",
+      "original": [
+        "182/281",
+        "075/570",
+        "297/792",
+        "027/720",
+        "029/920",
+        "079/970",
+        "092/290",
+        "188/881",
+        "293/392",
+        "839/938"
+      ],
+      "heads": [
+        "1418",
+        "0924",
+        "8480",
+        "5423",
+        "9387"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "039/930",
+        "MAYOR_RUTAS": "536/635",
+        "MAYOR_FORMAS": "039/930",
+        "BANCO_TODAS_FISICAS_X": "039/930",
+        "BANCO_TOP10_X": "039/930"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": false,
+          "rank": null,
+          "score": 0.210526
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 4,
+          "rooted": false,
+          "rank": null,
+          "score": 0.210526
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.985407,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 40,
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "week": "2026-09-21",
+      "original": [
+        "139/931",
+        "394/493",
+        "194/491",
+        "395/593",
+        "159/951",
+        "184/481",
+        "239/932",
+        "419/914",
+        "849/948",
+        "314/413"
+      ],
+      "heads": [
+        "4661",
+        "1846",
+        "3159",
+        "3714",
+        "7474"
+      ],
+      "physicalWinners": [
+        "159/951"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "149/941",
+        "MAYOR_RUTAS": "149/941",
+        "MAYOR_FORMAS": "149/941",
+        "BANCO_TODAS_FISICAS_X": "149/941",
+        "BANCO_TOP10_X": "149/941"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 20,
+          "score": 0.157895
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 20,
+          "score": 0.157895
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 41,
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "week": "2026-09-21",
+      "original": [
+        "577/775",
+        "139/931",
+        "207/702",
+        "394/493",
+        "194/491",
+        "395/593",
+        "159/951",
+        "184/481",
+        "205/502",
+        "239/932"
+      ],
+      "heads": [
+        "9576",
+        "4496",
+        "7955",
+        "9025",
+        "5056"
+      ],
+      "physicalWinners": [
+        "025/520"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "527/725",
+        "MAYOR_RUTAS": "527/725",
+        "MAYOR_FORMAS": "527/725",
+        "BANCO_TODAS_FISICAS_X": "527/725",
+        "BANCO_TOP10_X": "527/725"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.210526
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.210526
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 42,
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "week": "2026-09-21",
+      "original": [
+        "366/663",
+        "577/775",
+        "139/931",
+        "666/666",
+        "207/702",
+        "667/766",
+        "394/493",
+        "194/491",
+        "678/876",
+        "395/593"
+      ],
+      "heads": [
+        "1433",
+        "0194",
+        "8123",
+        "2676",
+        "0189"
+      ],
+      "physicalWinners": [
+        "194/491",
+        "676/676",
+        "189/981"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "636/636",
+        "MAYOR_RUTAS": "636/636",
+        "MAYOR_FORMAS": "636/636",
+        "BANCO_TODAS_FISICAS_X": "636/636",
+        "BANCO_TOP10_X": "636/636"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.315789
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.995889,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 43,
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "week": "2026-09-21",
+      "original": [
+        "366/663",
+        "577/775",
+        "139/931",
+        "054/450",
+        "666/666",
+        "354/453",
+        "404/404",
+        "207/702",
+        "667/766",
+        "078/870"
+      ],
+      "heads": [
+        "9480",
+        "9737",
+        "3828",
+        "4088",
+        "5738"
+      ],
+      "physicalWinners": [
+        "084/480",
+        "738/837"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "636/636",
+        "MAYOR_RUTAS": "636/636",
+        "MAYOR_FORMAS": "636/636",
+        "BANCO_TODAS_FISICAS_X": "636/636",
+        "BANCO_TOP10_X": "636/636"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.315789
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.991091,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 44,
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "week": "2026-09-21",
+      "original": [
+        "366/663",
+        "577/775",
+        "139/931",
+        "054/450",
+        "666/666",
+        "354/453",
+        "404/404",
+        "207/702",
+        "667/766",
+        "078/870"
+      ],
+      "heads": [
+        "7373",
+        "1817",
+        "3418",
+        "4670",
+        "3090"
+      ],
+      "physicalWinners": [
+        "418/814",
+        "076/670"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "499/994",
+        "MAYOR_RUTAS": "499/994",
+        "MAYOR_FORMAS": "499/994",
+        "BANCO_TODAS_FISICAS_X": "499/994",
+        "BANCO_TOP10_X": "499/994"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": false,
+          "rank": null,
+          "score": 0.526316
+        },
+        "abundance": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": false,
+          "rank": null,
+          "score": 0.526316
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.991431,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 45,
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "week": "2026-09-21",
+      "original": [
+        "108/801",
+        "298/892",
+        "228/822",
+        "081/180",
+        "118/811",
+        "189/981",
+        "192/291",
+        "284/482",
+        "288/882",
+        "508/805"
+      ],
+      "heads": [
+        "3249",
+        "0259",
+        "8953",
+        "7979",
+        "7898"
+      ],
+      "physicalWinners": [
+        "898/898"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "829/928",
+        "MAYOR_RUTAS": "829/928",
+        "MAYOR_FORMAS": "829/928",
+        "BANCO_TODAS_FISICAS_X": "829/928",
+        "BANCO_TOP10_X": "829/928"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.210526
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.210526
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.976541,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 46,
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "week": "2026-09-21",
+      "original": [
+        "108/801",
+        "298/892",
+        "228/822",
+        "081/180",
+        "118/811",
+        "009/900",
+        "064/460",
+        "074/470",
+        "094/490",
+        "189/981"
+      ],
+      "heads": [
+        "1754",
+        "0894",
+        "5365",
+        "6313",
+        "0162"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "829/928",
+        "MAYOR_RUTAS": "829/928",
+        "MAYOR_FORMAS": "829/928",
+        "BANCO_TODAS_FISICAS_X": "829/928",
+        "BANCO_TOP10_X": "829/928"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 16,
+          "score": 0.210526
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 16,
+          "score": 0.210526
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.98378,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 47,
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "week": "2026-09-21",
+      "original": [
+        "108/801",
+        "298/892",
+        "228/822",
+        "056/650",
+        "081/180",
+        "118/811",
+        "247/742",
+        "009/900",
+        "064/460",
+        "074/470"
+      ],
+      "heads": [
+        "6933",
+        "5643",
+        "9237",
+        "6811",
+        "0889"
+      ],
+      "physicalWinners": [
+        "346/643",
+        "237/732",
+        "118/811",
+        "889/988"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "067/760",
+        "MAYOR_RUTAS": "067/760",
+        "MAYOR_FORMAS": "067/760",
+        "BANCO_TODAS_FISICAS_X": "067/760",
+        "BANCO_TOP10_X": "067/760"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 24,
+          "score": 0.263158
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 24,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.987537,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 48,
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "week": "2026-09-21",
+      "original": [
+        "454/454",
+        "203/302",
+        "458/854",
+        "202/202",
+        "108/801",
+        "448/844",
+        "298/892",
+        "228/822",
+        "056/650",
+        "081/180"
+      ],
+      "heads": [
+        "1256",
+        "4299",
+        "6708",
+        "2415",
+        "9461"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "445/544",
+        "MAYOR_RUTAS": "445/544",
+        "MAYOR_FORMAS": "445/544",
+        "BANCO_TODAS_FISICAS_X": "445/544",
+        "BANCO_TOP10_X": "445/544"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 8,
+          "shapes": 7,
+          "rooted": true,
+          "rank": 22,
+          "score": 0.368421
+        },
+        "abundance": {
+          "routes": 8,
+          "shapes": 7,
+          "rooted": true,
+          "rank": 22,
+          "score": 0.368421
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.99008,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 49,
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "week": "2026-09-21",
+      "original": [
+        "454/454",
+        "203/302",
+        "458/854",
+        "202/202",
+        "108/801",
+        "448/844",
+        "267/762",
+        "298/892",
+        "228/822",
+        "056/650"
+      ],
+      "heads": [
+        "5791",
+        "3593",
+        "0429",
+        "5174",
+        "2920"
+      ],
+      "physicalWinners": [
+        "429/924"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "445/544",
+        "MAYOR_RUTAS": "445/544",
+        "MAYOR_FORMAS": "445/544",
+        "BANCO_TODAS_FISICAS_X": "445/544",
+        "BANCO_TOP10_X": "445/544"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 8,
+          "shapes": 7,
+          "rooted": true,
+          "rank": 24,
+          "score": 0.368421
+        },
+        "abundance": {
+          "routes": 8,
+          "shapes": 7,
+          "rooted": true,
+          "rank": 24,
+          "score": 0.368421
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.986705,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 50,
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "week": "2026-09-21",
+      "original": [
+        "004/400",
+        "408/804",
+        "042/240",
+        "002/200",
+        "024/420",
+        "538/835",
+        "138/831",
+        "238/832",
+        "040/040",
+        "053/350"
+      ],
+      "heads": [
+        "1389",
+        "4960",
+        "3326",
+        "3099",
+        "0712"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "044/440",
+        "MAYOR_RUTAS": "044/440",
+        "MAYOR_FORMAS": "044/440",
+        "BANCO_TODAS_FISICAS_X": "044/440",
+        "BANCO_TOP10_X": "044/440"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 51,
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "week": "2026-09-21",
+      "original": [
+        "004/400",
+        "017/710",
+        "077/770",
+        "408/804",
+        "042/240",
+        "002/200",
+        "024/420",
+        "538/835",
+        "138/831",
+        "013/310"
+      ],
+      "heads": [
+        "3973",
+        "8526",
+        "6147",
+        "7416",
+        "6266"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "044/440",
+        "MAYOR_RUTAS": "044/440",
+        "MAYOR_FORMAS": "044/440",
+        "BANCO_TODAS_FISICAS_X": "044/440",
+        "BANCO_TOP10_X": "044/440"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 1,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 52,
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "week": "2026-09-21",
+      "original": [
+        "004/400",
+        "017/710",
+        "077/770",
+        "727/727",
+        "728/827",
+        "538/835",
+        "408/804",
+        "042/240",
+        "527/725",
+        "002/200"
+      ],
+      "heads": [
+        "1701",
+        "0137",
+        "3466",
+        "1586",
+        "4702"
+      ],
+      "physicalWinners": [
+        "107/701",
+        "137/731",
+        "207/702"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "277/772",
+        "MAYOR_RUTAS": "277/772",
+        "MAYOR_FORMAS": "277/772",
+        "BANCO_TODAS_FISICAS_X": "277/772",
+        "BANCO_TOP10_X": "277/772"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.315789
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.995445,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 53,
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "week": "2026-09-21",
+      "original": [
+        "004/400",
+        "017/710",
+        "077/770",
+        "727/727",
+        "728/827",
+        "797/797",
+        "538/835",
+        "408/804",
+        "042/240",
+        "527/725"
+      ],
+      "heads": [
+        "9979",
+        "3757",
+        "1003",
+        "1606",
+        "6299"
+      ],
+      "physicalWinners": [
+        "757/757"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "277/772",
+        "MAYOR_RUTAS": "277/772",
+        "MAYOR_FORMAS": "277/772",
+        "BANCO_TODAS_FISICAS_X": "277/772",
+        "BANCO_TOP10_X": "277/772"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.315789
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.989467,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 54,
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "week": "2026-09-21",
+      "original": [
+        "004/400",
+        "017/710",
+        "077/770",
+        "727/727",
+        "728/827",
+        "797/797",
+        "538/835",
+        "408/804",
+        "042/240",
+        "527/725"
+      ],
+      "heads": [
+        "4283",
+        "4768",
+        "7065",
+        "5019",
+        "7865"
+      ],
+      "physicalWinners": [
+        "283/382"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "277/772",
+        "MAYOR_RUTAS": "071/170",
+        "MAYOR_FORMAS": "277/772",
+        "BANCO_TODAS_FISICAS_X": "277/772",
+        "BANCO_TOP10_X": "277/772"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.315789
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.315789
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.989738,
+      "scoresCorrelationWithShapeCount": 1,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 55,
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "week": "2026-09-28",
+      "original": [
+        "607/706",
+        "637/736",
+        "307/703",
+        "799/997",
+        "036/630",
+        "037/730",
+        "062/260",
+        "067/760",
+        "072/270",
+        "076/670"
+      ],
+      "heads": [
+        "4372",
+        "9126",
+        "8158",
+        "7820",
+        "8432"
+      ],
+      "physicalWinners": [
+        "273/372"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "779/977",
+        "MAYOR_RUTAS": "779/977",
+        "MAYOR_FORMAS": "779/977",
+        "BANCO_TODAS_FISICAS_X": "779/977",
+        "BANCO_TOP10_X": "779/977"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.166667
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.926838,
+      "scoresCorrelationWithShapeCount": 0.926838,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 56,
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "week": "2026-09-28",
+      "original": [
+        "637/736",
+        "607/706",
+        "367/763",
+        "307/703",
+        "799/997",
+        "369/963",
+        "376/673",
+        "379/973",
+        "769/967",
+        "163/361"
+      ],
+      "heads": [
+        "8037",
+        "6165",
+        "1104",
+        "8297",
+        "9159"
+      ],
+      "physicalWinners": [
+        "037/730"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "067/760",
+        "MAYOR_RUTAS": "067/760",
+        "MAYOR_FORMAS": "679/976",
+        "BANCO_TODAS_FISICAS_X": "679/976",
+        "BANCO_TOP10_X": "679/976"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.166667
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.908471,
+      "scoresCorrelationWithShapeCount": 0.929703,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 57,
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "week": "2026-09-28",
+      "original": [
+        "637/736",
+        "607/706",
+        "367/763",
+        "307/703",
+        "799/997",
+        "369/963",
+        "376/673",
+        "379/973",
+        "769/967",
+        "163/361"
+      ],
+      "heads": [
+        "2949",
+        "4319",
+        "6107",
+        "8262",
+        "1760"
+      ],
+      "physicalWinners": [
+        "949/949",
+        "319/913",
+        "107/701",
+        "067/760"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "067/760",
+        "MAYOR_RUTAS": "067/760",
+        "MAYOR_FORMAS": "679/976",
+        "BANCO_TODAS_FISICAS_X": "679/976",
+        "BANCO_TOP10_X": "679/976"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": true
+        },
+        "MAYOR_RUTAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": true
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.166667
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.903943,
+      "scoresCorrelationWithShapeCount": 0.921285,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 58,
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "week": "2026-09-28",
+      "original": [
+        "637/736",
+        "607/706",
+        "367/763",
+        "307/703",
+        "799/997",
+        "369/963",
+        "376/673",
+        "379/973",
+        "769/967",
+        "163/361"
+      ],
+      "heads": [
+        "1086",
+        "0281",
+        "5508",
+        "2517",
+        "7949"
+      ],
+      "physicalWinners": [
+        "508/805",
+        "517/715",
+        "949/949"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "063/360",
+        "MAYOR_RUTAS": "063/360",
+        "MAYOR_FORMAS": "063/360",
+        "BANCO_TODAS_FISICAS_X": "063/360",
+        "BANCO_TOP10_X": "063/360"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.944146,
+      "scoresCorrelationWithShapeCount": 0.952675,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 59,
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "week": "2026-09-28",
+      "original": [
+        "637/736",
+        "219/912",
+        "607/706",
+        "729/927",
+        "929/929",
+        "367/763",
+        "307/703",
+        "799/997",
+        "369/963",
+        "376/673"
+      ],
+      "heads": [
+        "5137",
+        "0542",
+        "2817",
+        "8778",
+        "2168"
+      ],
+      "physicalWinners": [
+        "137/731",
+        "718/817",
+        "778/877",
+        "168/861"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "063/360",
+        "MAYOR_RUTAS": "063/360",
+        "MAYOR_FORMAS": "063/360",
+        "BANCO_TODAS_FISICAS_X": "063/360",
+        "BANCO_TOP10_X": "063/360"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.943589,
+      "scoresCorrelationWithShapeCount": 0.95221,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 60,
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "week": "2026-09-28",
+      "original": [
+        "798/897",
+        "289/982",
+        "597/795",
+        "799/997",
+        "779/977",
+        "789/987",
+        "879/978",
+        "238/832",
+        "899/998",
+        "538/835"
+      ],
+      "heads": [
+        "3322",
+        "5403",
+        "8181",
+        "5308",
+        "2503"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "579/975",
+        "MAYOR_RUTAS": "579/975",
+        "MAYOR_FORMAS": "579/975",
+        "BANCO_TODAS_FISICAS_X": "579/975",
+        "BANCO_TOP10_X": "579/975"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": false,
+          "rank": null,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": false,
+          "rank": null,
+          "score": 0.166667
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.913504,
+      "scoresCorrelationWithShapeCount": 0.913504,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 61,
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "week": "2026-09-28",
+      "original": [
+        "798/897",
+        "289/982",
+        "597/795",
+        "192/291",
+        "143/341",
+        "243/342",
+        "799/997",
+        "779/977",
+        "789/987",
+        "879/978"
+      ],
+      "heads": [
+        "3515",
+        "0444",
+        "4773",
+        "0154",
+        "4983"
+      ],
+      "physicalWinners": [
+        "389/983"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "194/491",
+        "MAYOR_RUTAS": "194/491",
+        "MAYOR_FORMAS": "194/491",
+        "BANCO_TODAS_FISICAS_X": "194/491",
+        "BANCO_TOP10_X": "194/491"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 43,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 43,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.942448,
+      "scoresCorrelationWithShapeCount": 0.942448,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 62,
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "week": "2026-09-28",
+      "original": [
+        "545/545",
+        "546/645",
+        "585/585",
+        "586/685",
+        "798/897",
+        "289/982",
+        "597/795",
+        "485/584",
+        "192/291",
+        "143/341"
+      ],
+      "heads": [
+        "7289",
+        "7786",
+        "9581",
+        "2606",
+        "6647"
+      ],
+      "physicalWinners": [
+        "289/982"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "458/854",
+        "MAYOR_RUTAS": "458/854",
+        "MAYOR_FORMAS": "458/854",
+        "BANCO_TODAS_FISICAS_X": "458/854",
+        "BANCO_TOP10_X": "458/854"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.95623,
+      "scoresCorrelationWithShapeCount": 0.95623,
+      "candidateShapeCoverage": 0.833333
+    },
+    {
+      "i": 63,
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "week": "2026-09-28",
+      "original": [
+        "799/997",
+        "789/987",
+        "079/970",
+        "545/545",
+        "546/645",
+        "585/585",
+        "586/685",
+        "729/927",
+        "798/897",
+        "597/795"
+      ],
+      "heads": [
+        "1626",
+        "5262",
+        "9720",
+        "8731",
+        "8101"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "129/921",
+        "MAYOR_RUTAS": "129/921",
+        "MAYOR_FORMAS": "458/854",
+        "BANCO_TODAS_FISICAS_X": "458/854",
+        "BANCO_TOP10_X": "458/854"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.955857,
+      "scoresCorrelationWithShapeCount": 0.959401,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 64,
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "week": "2026-09-28",
+      "original": [
+        "799/997",
+        "789/987",
+        "079/970",
+        "545/545",
+        "546/645",
+        "585/585",
+        "586/685",
+        "729/927",
+        "798/897",
+        "597/795"
+      ],
+      "heads": [
+        "8794",
+        "4907",
+        "8976",
+        "5796",
+        "7342"
+      ],
+      "physicalWinners": [
+        "709/907",
+        "243/342"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "337/733",
+        "MAYOR_RUTAS": "337/733",
+        "MAYOR_FORMAS": "337/733",
+        "BANCO_TODAS_FISICAS_X": "337/733",
+        "BANCO_TOP10_X": "337/733"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 7,
+          "shapes": 7,
+          "rooted": false,
+          "rank": null,
+          "score": 0.388889
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 7,
+          "rooted": false,
+          "rank": null,
+          "score": 0.388889
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.965342,
+      "scoresCorrelationWithShapeCount": 0.968797,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 65,
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "week": "2026-09-28",
+      "original": [
+        "778/877",
+        "335/533",
+        "337/733",
+        "708/807",
+        "053/350",
+        "018/810",
+        "187/781",
+        "017/710",
+        "058/850",
+        "073/370"
+      ],
+      "heads": [
+        "6922",
+        "2159",
+        "1553",
+        "3512",
+        "9206"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "078/870",
+        "MAYOR_RUTAS": "078/870",
+        "MAYOR_FORMAS": "078/870",
+        "BANCO_TODAS_FISICAS_X": "078/870",
+        "BANCO_TOP10_X": "078/870"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": false,
+          "rank": null,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": false,
+          "rank": null,
+          "score": 0.166667
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.98067,
+      "scoresCorrelationWithShapeCount": 0.98067,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 66,
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "week": "2026-09-28",
+      "original": [
+        "778/877",
+        "337/733",
+        "335/533",
+        "376/673",
+        "708/807",
+        "053/350",
+        "018/810",
+        "187/781",
+        "304/403",
+        "017/710"
+      ],
+      "heads": [
+        "2804",
+        "0910",
+        "4107",
+        "2948",
+        "8490"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "033/330",
+        "MAYOR_RUTAS": "033/330",
+        "MAYOR_FORMAS": "033/330",
+        "BANCO_TODAS_FISICAS_X": "033/330",
+        "BANCO_TOP10_X": "033/330"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": false,
+          "rank": null,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": false,
+          "rank": null,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.963357,
+      "scoresCorrelationWithShapeCount": 0.963357,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 67,
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "week": "2026-09-28",
+      "original": [
+        "778/877",
+        "337/733",
+        "335/533",
+        "376/673",
+        "708/807",
+        "053/350",
+        "018/810",
+        "187/781",
+        "304/403",
+        "017/710"
+      ],
+      "heads": [
+        "6371",
+        "3859",
+        "6778",
+        "2012",
+        "8239"
+      ],
+      "physicalWinners": [
+        "173/371",
+        "859/958",
+        "778/877"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "033/330",
+        "MAYOR_RUTAS": "033/330",
+        "MAYOR_FORMAS": "033/330",
+        "BANCO_TODAS_FISICAS_X": "033/330",
+        "BANCO_TOP10_X": "033/330"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": false,
+          "rank": null,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": false,
+          "rank": null,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.964873,
+      "scoresCorrelationWithShapeCount": 0.964873,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 68,
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "week": "2026-09-28",
+      "original": [
+        "778/877",
+        "337/733",
+        "335/533",
+        "209/902",
+        "259/952",
+        "376/673",
+        "708/807",
+        "809/908",
+        "879/978",
+        "053/350"
+      ],
+      "heads": [
+        "6655",
+        "9867",
+        "2768",
+        "3151",
+        "5293"
+      ],
+      "physicalWinners": [
+        "151/151",
+        "293/392"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "078/870",
+        "MAYOR_RUTAS": "087/780",
+        "MAYOR_FORMAS": "078/870",
+        "BANCO_TODAS_FISICAS_X": "078/870",
+        "BANCO_TOP10_X": "078/870"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 22,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.955188,
+      "scoresCorrelationWithShapeCount": 0.957897,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 69,
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "week": "2026-09-28",
+      "original": [
+        "778/877",
+        "337/733",
+        "335/533",
+        "209/902",
+        "259/952",
+        "376/673",
+        "678/876",
+        "679/976",
+        "708/807",
+        "809/908"
+      ],
+      "heads": [
+        "6167",
+        "8848",
+        "1490",
+        "4786",
+        "1067"
+      ],
+      "physicalWinners": [
+        "687/786",
+        "067/760"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "078/870",
+        "MAYOR_RUTAS": "087/780",
+        "MAYOR_FORMAS": "078/870",
+        "BANCO_TODAS_FISICAS_X": "078/870",
+        "BANCO_TOP10_X": "078/870"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 25,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.947294,
+      "scoresCorrelationWithShapeCount": 0.951271,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 70,
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "week": "2026-09-28",
+      "original": [
+        "789/987",
+        "097/790",
+        "509/905",
+        "519/915",
+        "019/910",
+        "479/974",
+        "489/984",
+        "198/891",
+        "487/784",
+        "879/978"
+      ],
+      "heads": [
+        "5124",
+        "1738",
+        "4357",
+        "8123",
+        "3847"
+      ],
+      "physicalWinners": [
+        "748/847"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "798/897",
+        "MAYOR_RUTAS": "798/897",
+        "MAYOR_FORMAS": "798/897",
+        "BANCO_TODAS_FISICAS_X": "798/897",
+        "BANCO_TOP10_X": "798/897"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.931529,
+      "scoresCorrelationWithShapeCount": 0.931529,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 71,
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "week": "2026-09-28",
+      "original": [
+        "789/987",
+        "097/790",
+        "509/905",
+        "348/843",
+        "519/915",
+        "638/836",
+        "019/910",
+        "438/834",
+        "479/974",
+        "489/984"
+      ],
+      "heads": [
+        "8032",
+        "4705",
+        "4732",
+        "3878",
+        "5188"
+      ],
+      "physicalWinners": [
+        "507/705"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "879/978",
+        "MAYOR_RUTAS": "879/978",
+        "MAYOR_FORMAS": "879/978",
+        "BANCO_TODAS_FISICAS_X": "879/978",
+        "BANCO_TOP10_X": "879/978"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.950033,
+      "scoresCorrelationWithShapeCount": 0.959622,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 72,
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "week": "2026-09-28",
+      "original": [
+        "489/984",
+        "789/987",
+        "314/413",
+        "389/983",
+        "364/463",
+        "097/790",
+        "509/905",
+        "316/613",
+        "348/843",
+        "519/915"
+      ],
+      "heads": [
+        "3743",
+        "9105",
+        "4294",
+        "8483",
+        "9598"
+      ],
+      "physicalWinners": [
+        "105/501",
+        "384/483",
+        "598/895"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "899/998",
+        "MAYOR_RUTAS": "899/998",
+        "MAYOR_FORMAS": "899/998",
+        "BANCO_TODAS_FISICAS_X": "899/998",
+        "BANCO_TOP10_X": "899/998"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 24,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 24,
+          "score": 0.333333
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.962502,
+      "scoresCorrelationWithShapeCount": 0.966645,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 73,
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "week": "2026-09-28",
+      "original": [
+        "489/984",
+        "789/987",
+        "049/940",
+        "314/413",
+        "389/983",
+        "099/990",
+        "364/463",
+        "097/790",
+        "509/905",
+        "065/560"
+      ],
+      "heads": [
+        "9562",
+        "8702",
+        "6799",
+        "2308",
+        "7189"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "899/998",
+        "MAYOR_RUTAS": "899/998",
+        "MAYOR_FORMAS": "899/998",
+        "BANCO_TODAS_FISICAS_X": "899/998",
+        "BANCO_TOP10_X": "899/998"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 31,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 31,
+          "score": 0.333333
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.95111,
+      "scoresCorrelationWithShapeCount": 0.962352,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 74,
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "week": "2026-09-28",
+      "original": [
+        "091/190",
+        "489/984",
+        "789/987",
+        "011/110",
+        "049/940",
+        "314/413",
+        "389/983",
+        "099/990",
+        "109/901",
+        "364/463"
+      ],
+      "heads": [
+        "4584",
+        "8962",
+        "6739",
+        "8265",
+        "8852"
+      ],
+      "physicalWinners": [
+        "485/584"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "899/998",
+        "MAYOR_RUTAS": "019/910",
+        "MAYOR_FORMAS": "899/998",
+        "BANCO_TODAS_FISICAS_X": "899/998",
+        "BANCO_TOP10_X": "899/998"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 39,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 23,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.952172,
+      "scoresCorrelationWithShapeCount": 0.965116,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 75,
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "week": "2026-09-28",
+      "original": [
+        "639/936",
+        "539/935",
+        "637/736",
+        "057/750",
+        "537/735",
+        "576/675",
+        "657/756",
+        "769/967",
+        "075/570",
+        "607/706"
+      ],
+      "heads": [
+        "0379",
+        "5303",
+        "6397",
+        "8935",
+        "7770"
+      ],
+      "physicalWinners": [
+        "379/973",
+        "397/793",
+        "539/935"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "739/937",
+        "MAYOR_RUTAS": "739/937",
+        "MAYOR_FORMAS": "739/937",
+        "BANCO_TODAS_FISICAS_X": "739/937",
+        "BANCO_TOP10_X": "739/937"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.166667
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.939544,
+      "scoresCorrelationWithShapeCount": 0.939544,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 76,
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "week": "2026-09-28",
+      "original": [
+        "639/936",
+        "048/840",
+        "104/401",
+        "539/935",
+        "637/736",
+        "019/910",
+        "041/140",
+        "057/750",
+        "084/480",
+        "468/864"
+      ],
+      "heads": [
+        "5828",
+        "7755",
+        "8927",
+        "1263",
+        "0197"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "075/570",
+        "MAYOR_RUTAS": "075/570",
+        "MAYOR_FORMAS": "075/570",
+        "BANCO_TODAS_FISICAS_X": "075/570",
+        "BANCO_TOP10_X": "075/570"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 15,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 15,
+          "score": 0.166667
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.923526,
+      "scoresCorrelationWithShapeCount": 0.923526,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 77,
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "week": "2026-09-28",
+      "original": [
+        "637/736",
+        "639/936",
+        "486/684",
+        "048/840",
+        "104/401",
+        "539/935",
+        "019/910",
+        "041/140",
+        "057/750",
+        "084/480"
+      ],
+      "heads": [
+        "5521",
+        "2897",
+        "7466",
+        "4570",
+        "9006"
+      ],
+      "physicalWinners": [
+        "075/570"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "369/963",
+        "MAYOR_RUTAS": "369/963",
+        "MAYOR_FORMAS": "369/963",
+        "BANCO_TODAS_FISICAS_X": "369/963",
+        "BANCO_TOP10_X": "369/963"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.333333
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.951865,
+      "scoresCorrelationWithShapeCount": 0.955485,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 78,
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "week": "2026-09-28",
+      "original": [
+        "637/736",
+        "639/936",
+        "486/684",
+        "048/840",
+        "104/401",
+        "539/935",
+        "019/910",
+        "041/140",
+        "057/750",
+        "084/480"
+      ],
+      "heads": [
+        "4313",
+        "7997",
+        "3155",
+        "3686",
+        "1288"
+      ],
+      "physicalWinners": [
+        "686/686"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "369/963",
+        "MAYOR_RUTAS": "078/870",
+        "MAYOR_FORMAS": "369/963",
+        "BANCO_TODAS_FISICAS_X": "369/963",
+        "BANCO_TOP10_X": "369/963"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.333333
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.965658,
+      "scoresCorrelationWithShapeCount": 0.967762,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 79,
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "week": "2026-09-28",
+      "original": [
+        "637/736",
+        "639/936",
+        "486/684",
+        "048/840",
+        "104/401",
+        "539/935",
+        "019/910",
+        "041/140",
+        "057/750",
+        "084/480"
+      ],
+      "heads": [
+        "8499",
+        "6823",
+        "8343",
+        "9313",
+        "9979"
+      ],
+      "physicalWinners": [
+        "328/823",
+        "979/979"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "369/963",
+        "MAYOR_RUTAS": "078/870",
+        "MAYOR_FORMAS": "369/963",
+        "BANCO_TODAS_FISICAS_X": "369/963",
+        "BANCO_TOP10_X": "369/963"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.333333
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.96134,
+      "scoresCorrelationWithShapeCount": 0.970779,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 80,
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "week": "2026-09-28",
+      "original": [
+        "254/452",
+        "454/454",
+        "354/453",
+        "435/534",
+        "024/420",
+        "034/430",
+        "102/201",
+        "134/431",
+        "194/491",
+        "344/443"
+      ],
+      "heads": [
+        "4778",
+        "0318",
+        "1548",
+        "8377",
+        "9232"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "445/544",
+        "MAYOR_RUTAS": "445/544",
+        "MAYOR_FORMAS": "445/544",
+        "BANCO_TODAS_FISICAS_X": "445/544",
+        "BANCO_TOP10_X": "445/544"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 24,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 24,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.934679,
+      "scoresCorrelationWithShapeCount": 0.954749,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 81,
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "week": "2026-09-28",
+      "original": [
+        "254/452",
+        "454/454",
+        "829/928",
+        "859/958",
+        "929/929",
+        "354/453",
+        "435/534",
+        "024/420",
+        "034/430",
+        "102/201"
+      ],
+      "heads": [
+        "4177",
+        "4124",
+        "1211",
+        "0383",
+        "1614"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "899/998",
+        "MAYOR_RUTAS": "899/998",
+        "MAYOR_FORMAS": "899/998",
+        "BANCO_TODAS_FISICAS_X": "899/998",
+        "BANCO_TOP10_X": "899/998"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 15,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 15,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.954902,
+      "scoresCorrelationWithShapeCount": 0.961504,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 82,
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "week": "2026-09-28",
+      "original": [
+        "258/852",
+        "254/452",
+        "454/454",
+        "238/832",
+        "295/592",
+        "829/928",
+        "859/958",
+        "929/929",
+        "354/453",
+        "435/534"
+      ],
+      "heads": [
+        "8873",
+        "3265",
+        "2592",
+        "7881",
+        "5832"
+      ],
+      "physicalWinners": [
+        "295/592",
+        "238/832"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "529/925",
+        "MAYOR_RUTAS": "529/925",
+        "MAYOR_FORMAS": "529/925",
+        "BANCO_TODAS_FISICAS_X": "529/925",
+        "BANCO_TOP10_X": "529/925"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.333333
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.971347,
+      "scoresCorrelationWithShapeCount": 0.979591,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 83,
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "week": "2026-09-28",
+      "original": [
+        "258/852",
+        "254/452",
+        "454/454",
+        "238/832",
+        "295/592",
+        "829/928",
+        "859/958",
+        "929/929",
+        "354/453",
+        "435/534"
+      ],
+      "heads": [
+        "8566",
+        "2234",
+        "7429",
+        "3610",
+        "6129"
+      ],
+      "physicalWinners": [
+        "234/432",
+        "429/924"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "529/925",
+        "MAYOR_RUTAS": "529/925",
+        "MAYOR_FORMAS": "529/925",
+        "BANCO_TODAS_FISICAS_X": "529/925",
+        "BANCO_TOP10_X": "529/925"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 19,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 19,
+          "score": 0.333333
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.968168,
+      "scoresCorrelationWithShapeCount": 0.976943,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 84,
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "week": "2026-09-28",
+      "original": [
+        "258/852",
+        "454/454",
+        "254/452",
+        "014/410",
+        "238/832",
+        "295/592",
+        "829/928",
+        "859/958",
+        "929/929",
+        "102/201"
+      ],
+      "heads": [
+        "2622",
+        "1377",
+        "7762",
+        "9060",
+        "4266"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "529/925",
+        "MAYOR_RUTAS": "024/420",
+        "MAYOR_FORMAS": "024/420",
+        "BANCO_TODAS_FISICAS_X": "024/420",
+        "BANCO_TOP10_X": "024/420"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 24,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 7,
+          "rooted": true,
+          "rank": 17,
+          "score": 0.315789
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.969031,
+      "scoresCorrelationWithShapeCount": 0.974531,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 85,
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "week": "2026-10-05",
+      "original": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "338/833",
+        "377/773",
+        "317/713",
+        "738/837",
+        "787/787",
+        "778/877"
+      ],
+      "heads": [
+        "9798",
+        "8059",
+        "4270",
+        "5171",
+        "7933"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "387/783",
+        "MAYOR_RUTAS": "387/783",
+        "MAYOR_FORMAS": "387/783",
+        "BANCO_TODAS_FISICAS_X": "387/783",
+        "BANCO_TOP10_X": "387/783"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.333333
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.973334,
+      "scoresCorrelationWithShapeCount": 0.984788,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 86,
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "week": "2026-10-05",
+      "original": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "338/833",
+        "377/773",
+        "428/824",
+        "317/713",
+        "738/837",
+        "787/787"
+      ],
+      "heads": [
+        "2925",
+        "4068",
+        "4318",
+        "5766",
+        "0194"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "778/877",
+        "MAYOR_RUTAS": "778/877",
+        "MAYOR_FORMAS": "778/877",
+        "BANCO_TODAS_FISICAS_X": "778/877",
+        "BANCO_TOP10_X": "778/877"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.473684
+        },
+        "abundance": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.473684
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.972835,
+      "scoresCorrelationWithShapeCount": 0.973623,
+      "candidateShapeCoverage": 0.9
+    },
+    {
+      "i": 87,
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "week": "2026-10-05",
+      "original": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "729/927",
+        "338/833",
+        "377/773",
+        "428/824",
+        "797/797",
+        "317/713"
+      ],
+      "heads": [
+        "5513",
+        "1917",
+        "5168",
+        "3729",
+        "0925"
+      ],
+      "physicalWinners": [
+        "729/927"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "778/877",
+        "MAYOR_RUTAS": "778/877",
+        "MAYOR_FORMAS": "778/877",
+        "BANCO_TODAS_FISICAS_X": "778/877",
+        "BANCO_TOP10_X": "778/877"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.473684
+        },
+        "abundance": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.473684
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.967115,
+      "scoresCorrelationWithShapeCount": 0.969763,
+      "candidateShapeCoverage": 0.9
+    },
+    {
+      "i": 88,
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "week": "2026-10-05",
+      "original": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "729/927",
+        "338/833",
+        "377/773",
+        "428/824",
+        "797/797",
+        "317/713"
+      ],
+      "heads": [
+        "2174",
+        "1456",
+        "2631",
+        "1899",
+        "8799"
+      ],
+      "physicalWinners": [
+        "799/997"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "778/877",
+        "MAYOR_RUTAS": "778/877",
+        "MAYOR_FORMAS": "778/877",
+        "BANCO_TODAS_FISICAS_X": "778/877",
+        "BANCO_TOP10_X": "778/877"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.473684
+        },
+        "abundance": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.473684
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.96153,
+      "scoresCorrelationWithShapeCount": 0.968125,
+      "candidateShapeCoverage": 0.9
+    },
+    {
+      "i": 89,
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "week": "2026-10-05",
+      "original": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "729/927",
+        "338/833",
+        "377/773",
+        "428/824",
+        "797/797",
+        "317/713"
+      ],
+      "heads": [
+        "0413",
+        "4855",
+        "5944",
+        "6327",
+        "5775"
+      ],
+      "physicalWinners": [
+        "577/775"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "778/877",
+        "MAYOR_RUTAS": "778/877",
+        "MAYOR_FORMAS": "778/877",
+        "BANCO_TODAS_FISICAS_X": "778/877",
+        "BANCO_TOP10_X": "778/877"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.473684
+        },
+        "abundance": {
+          "routes": 10,
+          "shapes": 10,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.473684
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.958589,
+      "scoresCorrelationWithShapeCount": 0.964662,
+      "candidateShapeCoverage": 0.9
+    },
+    {
+      "i": 90,
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "week": "2026-10-05",
+      "original": [
+        "368/863",
+        "538/835",
+        "658/856",
+        "386/683",
+        "183/381",
+        "246/642",
+        "356/653",
+        "465/564",
+        "536/635",
+        "556/655"
+      ],
+      "heads": [
+        "0505",
+        "5163",
+        "5956",
+        "8818",
+        "8951"
+      ],
+      "physicalWinners": [
+        "163/361"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "265/562",
+        "MAYOR_RUTAS": "566/665",
+        "MAYOR_FORMAS": "566/665",
+        "BANCO_TODAS_FISICAS_X": "566/665",
+        "BANCO_TOP10_X": "566/665"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.157895
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.902148,
+      "scoresCorrelationWithShapeCount": 0.902148,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 91,
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "week": "2026-10-05",
+      "original": [
+        "368/863",
+        "538/835",
+        "658/856",
+        "296/692",
+        "647/746",
+        "386/683",
+        "147/741",
+        "176/671",
+        "183/381",
+        "246/642"
+      ],
+      "heads": [
+        "6697",
+        "3241",
+        "1019",
+        "8770",
+        "0847"
+      ],
+      "physicalWinners": [
+        "697/796"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "356/653",
+        "MAYOR_RUTAS": "356/653",
+        "MAYOR_FORMAS": "356/653",
+        "BANCO_TODAS_FISICAS_X": "356/653",
+        "BANCO_TOP10_X": "356/653"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 13,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.933191,
+      "scoresCorrelationWithShapeCount": 0.933191,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 92,
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "week": "2026-10-05",
+      "original": [
+        "538/835",
+        "368/863",
+        "658/856",
+        "296/692",
+        "647/746",
+        "025/520",
+        "183/381",
+        "018/810",
+        "053/350",
+        "158/851"
+      ],
+      "heads": [
+        "0508",
+        "8640",
+        "4179",
+        "2715",
+        "1917"
+      ],
+      "physicalWinners": [
+        "508/805"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "356/653",
+        "MAYOR_RUTAS": "356/653",
+        "MAYOR_FORMAS": "356/653",
+        "BANCO_TODAS_FISICAS_X": "356/653",
+        "BANCO_TOP10_X": "356/653"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 17,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 17,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.929006,
+      "scoresCorrelationWithShapeCount": 0.929006,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 93,
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "week": "2026-10-05",
+      "original": [
+        "538/835",
+        "296/692",
+        "368/863",
+        "658/856",
+        "647/746",
+        "025/520",
+        "183/381",
+        "018/810",
+        "053/350",
+        "158/851"
+      ],
+      "heads": [
+        "9226",
+        "8809",
+        "2010",
+        "8001",
+        "8483"
+      ],
+      "physicalWinners": [
+        "226/622"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "226/622",
+        "MAYOR_RUTAS": "226/622",
+        "MAYOR_FORMAS": "226/622",
+        "BANCO_TODAS_FISICAS_X": "226/622",
+        "BANCO_TOP10_X": "226/622"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": true
+        },
+        "MAYOR_RUTAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": true
+        },
+        "MAYOR_FORMAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": true
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": true
+        },
+        "BANCO_TOP10_X": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": true
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.936555,
+      "scoresCorrelationWithShapeCount": 0.938172,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 94,
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "week": "2026-10-05",
+      "original": [
+        "538/835",
+        "296/692",
+        "368/863",
+        "658/856",
+        "122/221",
+        "647/746",
+        "025/520",
+        "183/381",
+        "018/810",
+        "053/350"
+      ],
+      "heads": [
+        "5196",
+        "0945",
+        "2338",
+        "9476",
+        "2081"
+      ],
+      "physicalWinners": [
+        "196/691",
+        "476/674",
+        "081/180"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "112/211",
+        "MAYOR_RUTAS": "112/211",
+        "MAYOR_FORMAS": "112/211",
+        "BANCO_TODAS_FISICAS_X": "112/211",
+        "BANCO_TOP10_X": "112/211"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.941567,
+      "scoresCorrelationWithShapeCount": 0.944963,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 95,
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "week": "2026-10-05",
+      "original": [
+        "489/984",
+        "279/972",
+        "479/974",
+        "064/460",
+        "224/422",
+        "428/824",
+        "469/964",
+        "576/675",
+        "598/895",
+        "798/897"
+      ],
+      "heads": [
+        "8566",
+        "6758",
+        "1191",
+        "9910",
+        "1716"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "229/922",
+        "MAYOR_RUTAS": "229/922",
+        "MAYOR_FORMAS": "229/922",
+        "BANCO_TODAS_FISICAS_X": "229/922",
+        "BANCO_TOP10_X": "229/922"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 2,
+          "shapes": 2,
+          "rooted": true,
+          "rank": 15,
+          "score": 0.111111
+        },
+        "abundance": {
+          "routes": 2,
+          "shapes": 2,
+          "rooted": true,
+          "rank": 15,
+          "score": 0.111111
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.840168,
+      "scoresCorrelationWithShapeCount": 0.840168,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 96,
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "week": "2026-10-05",
+      "original": [
+        "212/212",
+        "012/210",
+        "227/722",
+        "769/967",
+        "097/790",
+        "102/201",
+        "209/902",
+        "267/762",
+        "022/220",
+        "489/984"
+      ],
+      "heads": [
+        "5189",
+        "9360",
+        "8015",
+        "6741",
+        "4812"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "122/221",
+        "MAYOR_RUTAS": "122/221",
+        "MAYOR_FORMAS": "122/221",
+        "BANCO_TODAS_FISICAS_X": "122/221",
+        "BANCO_TOP10_X": "122/221"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 14,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.92434,
+      "scoresCorrelationWithShapeCount": 0.92434,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 97,
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "week": "2026-10-05",
+      "original": [
+        "012/210",
+        "256/652",
+        "252/252",
+        "253/352",
+        "212/212",
+        "227/722",
+        "769/967",
+        "071/170",
+        "097/790",
+        "102/201"
+      ],
+      "heads": [
+        "5448",
+        "9646",
+        "8801",
+        "2653",
+        "5747"
+      ],
+      "physicalWinners": [
+        "356/653"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "122/221",
+        "MAYOR_RUTAS": "122/221",
+        "MAYOR_FORMAS": "122/221",
+        "BANCO_TODAS_FISICAS_X": "122/221",
+        "BANCO_TOP10_X": "122/221"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 19,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 19,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.944936,
+      "scoresCorrelationWithShapeCount": 0.944936,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 98,
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "week": "2026-10-05",
+      "original": [
+        "012/210",
+        "256/652",
+        "252/252",
+        "253/352",
+        "485/584",
+        "212/212",
+        "227/722",
+        "769/967",
+        "071/170",
+        "097/790"
+      ],
+      "heads": [
+        "2428",
+        "0261",
+        "1677",
+        "6441",
+        "9877"
+      ],
+      "physicalWinners": [
+        "428/824",
+        "162/261",
+        "677/776"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "122/221",
+        "MAYOR_RUTAS": "122/221",
+        "MAYOR_FORMAS": "122/221",
+        "BANCO_TODAS_FISICAS_X": "122/221",
+        "BANCO_TOP10_X": "122/221"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 22,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 22,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.931369,
+      "scoresCorrelationWithShapeCount": 0.943574,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 99,
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "week": "2026-10-05",
+      "original": [
+        "858/858",
+        "828/828",
+        "012/210",
+        "256/652",
+        "252/252",
+        "528/825",
+        "253/352",
+        "485/584",
+        "212/212",
+        "227/722"
+      ],
+      "heads": [
+        "3571",
+        "8579",
+        "0387",
+        "2103",
+        "7152"
+      ],
+      "physicalWinners": [
+        "175/571",
+        "579/975",
+        "152/251"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "285/582",
+        "MAYOR_RUTAS": "288/882",
+        "MAYOR_FORMAS": "285/582",
+        "BANCO_TODAS_FISICAS_X": "285/582",
+        "BANCO_TOP10_X": "285/582"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 6,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 21,
+          "score": 0.333333
+        },
+        "abundance": {
+          "routes": 6,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 19,
+          "score": 0.157895
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.92351,
+      "scoresCorrelationWithShapeCount": 0.9492,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 100,
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "week": "2026-10-05",
+      "original": [
+        "809/908",
+        "189/981",
+        "098/890",
+        "134/431",
+        "163/361",
+        "165/561",
+        "208/802",
+        "209/902",
+        "899/998",
+        "131/131"
+      ],
+      "heads": [
+        "7218",
+        "4103",
+        "2504",
+        "6655",
+        "3684"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "089/980",
+        "MAYOR_RUTAS": "089/980",
+        "MAYOR_FORMAS": "089/980",
+        "BANCO_TODAS_FISICAS_X": "089/980",
+        "BANCO_TOP10_X": "089/980"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.166667
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.864036,
+      "scoresCorrelationWithShapeCount": 0.864036,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 101,
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "week": "2026-10-05",
+      "original": [
+        "156/651",
+        "809/908",
+        "165/561",
+        "516/615",
+        "189/981",
+        "098/890",
+        "116/611",
+        "134/431",
+        "142/241",
+        "145/541"
+      ],
+      "heads": [
+        "4599",
+        "1006",
+        "3765",
+        "3754",
+        "3448"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "569/965",
+        "MAYOR_RUTAS": "566/665",
+        "MAYOR_FORMAS": "566/665",
+        "BANCO_TODAS_FISICAS_X": "566/665",
+        "BANCO_TOP10_X": "566/665"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 17,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": true,
+          "rank": 16,
+          "score": 0.157895
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.923403,
+      "scoresCorrelationWithShapeCount": 0.923403,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 102,
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "week": "2026-10-05",
+      "original": [
+        "659/956",
+        "156/651",
+        "567/765",
+        "809/908",
+        "165/561",
+        "516/615",
+        "071/170",
+        "117/711",
+        "176/671",
+        "189/981"
+      ],
+      "heads": [
+        "9179",
+        "9643",
+        "9800",
+        "6316",
+        "7071"
+      ],
+      "physicalWinners": [
+        "346/643",
+        "316/613",
+        "071/170"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "566/665",
+        "MAYOR_RUTAS": "566/665",
+        "MAYOR_FORMAS": "566/665",
+        "BANCO_TODAS_FISICAS_X": "566/665",
+        "BANCO_TOP10_X": "566/665"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 23,
+          "score": 0.263158
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 23,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.912785,
+      "scoresCorrelationWithShapeCount": 0.933281,
+      "candidateShapeCoverage": 0.833333
+    },
+    {
+      "i": 103,
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "week": "2026-10-05",
+      "original": [
+        "145/541",
+        "149/941",
+        "659/956",
+        "156/651",
+        "567/765",
+        "172/271",
+        "809/908",
+        "165/561",
+        "516/615",
+        "071/170"
+      ],
+      "heads": [
+        "2710",
+        "9532",
+        "7409",
+        "5125",
+        "0848"
+      ],
+      "physicalWinners": [
+        "017/710",
+        "409/904"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "566/665",
+        "MAYOR_RUTAS": "566/665",
+        "MAYOR_FORMAS": "566/665",
+        "BANCO_TODAS_FISICAS_X": "566/665",
+        "BANCO_TOP10_X": "566/665"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 27,
+          "score": 0.263158
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 27,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.923736,
+      "scoresCorrelationWithShapeCount": 0.938055,
+      "candidateShapeCoverage": 0.833333
+    },
+    {
+      "i": 104,
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "week": "2026-10-05",
+      "original": [
+        "145/541",
+        "149/941",
+        "659/956",
+        "156/651",
+        "567/765",
+        "172/271",
+        "809/908",
+        "165/561",
+        "516/615",
+        "071/170"
+      ],
+      "heads": [
+        "4534",
+        "6859",
+        "4553",
+        "3625",
+        "6873"
+      ],
+      "physicalWinners": [
+        "435/534"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "596/695",
+        "MAYOR_RUTAS": "566/665",
+        "MAYOR_FORMAS": "566/665",
+        "BANCO_TODAS_FISICAS_X": "566/665",
+        "BANCO_TOP10_X": "566/665"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": true,
+          "rank": 27,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.91698,
+      "scoresCorrelationWithShapeCount": 0.939222,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 105,
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "week": "2026-10-05",
+      "original": [
+        "346/643",
+        "436/634",
+        "438/834",
+        "687/786",
+        "468/864",
+        "386/683",
+        "046/640",
+        "638/836",
+        "647/746",
+        "074/470"
+      ],
+      "heads": [
+        "5001",
+        "7310",
+        "8242",
+        "4843",
+        "0534"
+      ],
+      "physicalWinners": [
+        "348/843"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "476/674",
+        "MAYOR_RUTAS": "466/664",
+        "MAYOR_FORMAS": "466/664",
+        "BANCO_TODAS_FISICAS_X": "466/664",
+        "BANCO_TOP10_X": "466/664"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 12,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 3,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 11,
+          "score": 0.105263
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.878374,
+      "scoresCorrelationWithShapeCount": 0.903288,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 106,
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "week": "2026-10-05",
+      "original": [
+        "346/643",
+        "436/634",
+        "438/834",
+        "687/786",
+        "468/864",
+        "386/683",
+        "046/640",
+        "638/836",
+        "647/746",
+        "074/470"
+      ],
+      "heads": [
+        "9159",
+        "3514",
+        "3903",
+        "8369",
+        "2240"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "445/544",
+        "MAYOR_RUTAS": "455/554",
+        "MAYOR_FORMAS": "455/554",
+        "BANCO_TODAS_FISICAS_X": "455/554",
+        "BANCO_TOP10_X": "455/554"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.936404,
+      "scoresCorrelationWithShapeCount": 0.952451,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 107,
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "week": "2026-10-05",
+      "original": [
+        "346/643",
+        "436/634",
+        "438/834",
+        "687/786",
+        "468/864",
+        "104/401",
+        "386/683",
+        "046/640",
+        "081/180",
+        "638/836"
+      ],
+      "heads": [
+        "4327",
+        "3977",
+        "2232",
+        "8759",
+        "1094"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "445/544",
+        "MAYOR_RUTAS": "455/554",
+        "MAYOR_FORMAS": "455/554",
+        "BANCO_TODAS_FISICAS_X": "455/554",
+        "BANCO_TOP10_X": "455/554"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.926598,
+      "scoresCorrelationWithShapeCount": 0.942148,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 108,
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "week": "2026-10-05",
+      "original": [
+        "388/883",
+        "346/643",
+        "436/634",
+        "438/834",
+        "687/786",
+        "468/864",
+        "053/350",
+        "104/401",
+        "386/683",
+        "046/640"
+      ],
+      "heads": [
+        "1056",
+        "4059",
+        "3694",
+        "7730",
+        "7148"
+      ],
+      "physicalWinners": [
+        "037/730",
+        "148/841"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "384/483",
+        "MAYOR_RUTAS": "455/554",
+        "MAYOR_FORMAS": "455/554",
+        "BANCO_TODAS_FISICAS_X": "455/554",
+        "BANCO_TOP10_X": "455/554"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 49,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.916054,
+      "scoresCorrelationWithShapeCount": 0.947793,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 109,
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "week": "2026-10-05",
+      "original": [
+        "388/883",
+        "346/643",
+        "436/634",
+        "507/705",
+        "438/834",
+        "687/786",
+        "051/150",
+        "415/514",
+        "468/864",
+        "053/350"
+      ],
+      "heads": [
+        "9226",
+        "6844",
+        "7952",
+        "0336",
+        "7354"
+      ],
+      "physicalWinners": [
+        "354/453"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "405/504",
+        "MAYOR_RUTAS": "455/554",
+        "MAYOR_FORMAS": "455/554",
+        "BANCO_TODAS_FISICAS_X": "455/554",
+        "BANCO_TOP10_X": "455/554"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 27,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 7,
+          "shapes": 6,
+          "rooted": false,
+          "rank": null,
+          "score": 0.263158
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.880329,
+      "scoresCorrelationWithShapeCount": 0.951613,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 110,
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "week": "2026-10-05",
+      "original": [
+        "465/564",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "346/643",
+        "467/764",
+        "537/735",
+        "647/746",
+        "426/624"
+      ],
+      "heads": [
+        "0956",
+        "2540",
+        "6182",
+        "9507",
+        "0061"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "356/653",
+        "MAYOR_RUTAS": "356/653",
+        "MAYOR_FORMAS": "356/653",
+        "BANCO_TODAS_FISICAS_X": "356/653",
+        "BANCO_TOP10_X": "356/653"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": false,
+          "rank": null,
+          "score": 0.222222
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 4,
+          "rooted": false,
+          "rank": null,
+          "score": 0.222222
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.962438,
+      "scoresCorrelationWithShapeCount": 0.962438,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 111,
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "week": "2026-10-05",
+      "original": [
+        "465/564",
+        "193/391",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "139/931",
+        "346/643",
+        "467/764",
+        "537/735"
+      ],
+      "heads": [
+        "8393",
+        "4650",
+        "9656",
+        "2211",
+        "2473"
+      ],
+      "physicalWinners": [
+        "374/473"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "356/653",
+        "MAYOR_RUTAS": "356/653",
+        "MAYOR_FORMAS": "356/653",
+        "BANCO_TODAS_FISICAS_X": "356/653",
+        "BANCO_TOP10_X": "356/653"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.946828,
+      "scoresCorrelationWithShapeCount": 0.953883,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 112,
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "week": "2026-10-05",
+      "original": [
+        "276/672",
+        "465/564",
+        "193/391",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "467/764",
+        "139/931",
+        "172/271"
+      ],
+      "heads": [
+        "6542",
+        "5918",
+        "3297",
+        "9848",
+        "5150"
+      ],
+      "physicalWinners": [
+        "245/542",
+        "819/918"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "356/653",
+        "MAYOR_RUTAS": "356/653",
+        "MAYOR_FORMAS": "356/653",
+        "BANCO_TODAS_FISICAS_X": "356/653",
+        "BANCO_TOP10_X": "356/653"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.921985,
+      "scoresCorrelationWithShapeCount": 0.940107,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 113,
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "week": "2026-10-05",
+      "original": [
+        "276/672",
+        "465/564",
+        "193/391",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "589/985",
+        "467/764",
+        "089/980"
+      ],
+      "heads": [
+        "5185",
+        "5415",
+        "9220",
+        "2584",
+        "0720"
+      ],
+      "physicalWinners": [],
+      "chosen": {
+        "PRESENCIA_FORMAS": "356/653",
+        "MAYOR_RUTAS": "356/653",
+        "MAYOR_FORMAS": "356/653",
+        "BANCO_TODAS_FISICAS_X": "356/653",
+        "BANCO_TOP10_X": "356/653"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.911514,
+      "scoresCorrelationWithShapeCount": 0.932246,
+      "candidateShapeCoverage": 1
+    },
+    {
+      "i": 114,
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "week": "2026-10-05",
+      "original": [
+        "276/672",
+        "465/564",
+        "193/391",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "589/985",
+        "467/764",
+        "089/980"
+      ],
+      "heads": [
+        "4324",
+        "2654",
+        "1044",
+        "6215",
+        "0564"
+      ],
+      "physicalWinners": [
+        "456/654",
+        "215/512",
+        "465/564"
+      ],
+      "chosen": {
+        "PRESENCIA_FORMAS": "356/653",
+        "MAYOR_RUTAS": "153/351",
+        "MAYOR_FORMAS": "153/351",
+        "BANCO_TODAS_FISICAS_X": "153/351",
+        "BANCO_TOP10_X": "153/351"
+      },
+      "results": {
+        "OFICIAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "PRESENCIA_FORMAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_RUTAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "MAYOR_FORMAS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TODAS_FISICAS_X": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        },
+        "BANCO_TOP10_X": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "thirdWin": false
+        }
+      },
+      "candidateStats": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": true,
+          "rank": 20,
+          "score": 0.210526
+        }
+      },
+      "scoresCorrelationWithRouteCount": 0.929823,
+      "scoresCorrelationWithShapeCount": 0.943721,
+      "candidateShapeCoverage": 1
+    }
+  ]
+}

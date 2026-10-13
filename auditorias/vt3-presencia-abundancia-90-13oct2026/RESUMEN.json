@@ -1,0 +1,861 @@
+{
+  "date": "2026-10-13",
+  "cuts": 90,
+  "trainRounds": [
+    {
+      "week": "2026-09-21",
+      "learnedWeek": "2026-09-14",
+      "trainCuts": 25,
+      "trainWinners": 37,
+      "shapeUnionWinner": 19,
+      "shapeUnionPhysical": 19,
+      "shapeUnionTop10": 19,
+      "shapesMissingWinner": []
+    },
+    {
+      "week": "2026-09-28",
+      "learnedWeek": "2026-09-21",
+      "trainCuts": 30,
+      "trainWinners": 32,
+      "shapeUnionWinner": 18,
+      "shapeUnionPhysical": 19,
+      "shapeUnionTop10": 19,
+      "shapesMissingWinner": [
+        "0:0>1:0>2:1"
+      ]
+    },
+    {
+      "week": "2026-10-05",
+      "learnedWeek": "2026-09-28",
+      "trainCuts": 30,
+      "trainWinners": 41,
+      "shapeUnionWinner": 18,
+      "shapeUnionPhysical": 19,
+      "shapeUnionTop10": 19,
+      "shapesMissingWinner": [
+        "0:1>0:0>1:1"
+      ]
+    }
+  ],
+  "summary": {
+    "OFICIAL": {
+      "cuts": 90,
+      "top3": 3,
+      "top5": 6,
+      "top10": 11,
+      "thirdWinnerExposures": 0,
+      "gains3": [],
+      "losses3": [],
+      "gains10": [],
+      "losses10": []
+    },
+    "PRESENCIA_FORMAS": {
+      "cuts": 90,
+      "top3": 5,
+      "top5": 6,
+      "top10": 13,
+      "thirdWinnerExposures": 2,
+      "gains3": [
+        "2026-09-28|Matutino",
+        "2026-10-06|Vespertino"
+      ],
+      "losses3": [],
+      "gains10": [
+        "2026-09-28|Matutino",
+        "2026-10-06|Vespertino"
+      ],
+      "losses10": []
+    },
+    "MAYOR_RUTAS": {
+      "cuts": 90,
+      "top3": 5,
+      "top5": 6,
+      "top10": 13,
+      "thirdWinnerExposures": 2,
+      "gains3": [
+        "2026-09-28|Matutino",
+        "2026-10-06|Vespertino"
+      ],
+      "losses3": [],
+      "gains10": [
+        "2026-09-28|Matutino",
+        "2026-10-06|Vespertino"
+      ],
+      "losses10": []
+    },
+    "MAYOR_FORMAS": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 12,
+      "thirdWinnerExposures": 1,
+      "gains3": [
+        "2026-10-06|Vespertino"
+      ],
+      "losses3": [],
+      "gains10": [
+        "2026-10-06|Vespertino"
+      ],
+      "losses10": []
+    },
+    "BANCO_TODAS_FISICAS_X": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 12,
+      "thirdWinnerExposures": 1,
+      "gains3": [
+        "2026-10-06|Vespertino"
+      ],
+      "losses3": [],
+      "gains10": [
+        "2026-10-06|Vespertino"
+      ],
+      "losses10": []
+    },
+    "BANCO_TOP10_X": {
+      "cuts": 90,
+      "top3": 4,
+      "top5": 5,
+      "top10": 12,
+      "thirdWinnerExposures": 1,
+      "gains3": [
+        "2026-10-06|Vespertino"
+      ],
+      "losses3": [],
+      "gains10": [
+        "2026-10-06|Vespertino"
+      ],
+      "losses10": []
+    }
+  },
+  "byWeek": {
+    "2026-09-21": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 1,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      },
+      "PRESENCIA_FORMAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      },
+      "MAYOR_RUTAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      },
+      "MAYOR_FORMAS": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      },
+      "BANCO_TODAS_FISICAS_X": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      },
+      "BANCO_TOP10_X": {
+        "cuts": 30,
+        "top3": 0,
+        "top5": 0,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      }
+    },
+    "2026-09-28": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      },
+      "PRESENCIA_FORMAS": {
+        "cuts": 30,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "thirdWinnerExposures": 1,
+        "gains3": [
+          "2026-09-28|Matutino"
+        ],
+        "losses3": [],
+        "gains10": [
+          "2026-09-28|Matutino"
+        ],
+        "losses10": []
+      },
+      "MAYOR_RUTAS": {
+        "cuts": 30,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "thirdWinnerExposures": 1,
+        "gains3": [
+          "2026-09-28|Matutino"
+        ],
+        "losses3": [],
+        "gains10": [
+          "2026-09-28|Matutino"
+        ],
+        "losses10": []
+      },
+      "MAYOR_FORMAS": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      },
+      "BANCO_TODAS_FISICAS_X": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      },
+      "BANCO_TOP10_X": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      }
+    },
+    "2026-10-05": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 1,
+        "top5": 2,
+        "top10": 3,
+        "thirdWinnerExposures": 0,
+        "gains3": [],
+        "losses3": [],
+        "gains10": [],
+        "losses10": []
+      },
+      "PRESENCIA_FORMAS": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "thirdWinnerExposures": 1,
+        "gains3": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses3": [],
+        "gains10": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses10": []
+      },
+      "MAYOR_RUTAS": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "thirdWinnerExposures": 1,
+        "gains3": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses3": [],
+        "gains10": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses10": []
+      },
+      "MAYOR_FORMAS": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "thirdWinnerExposures": 1,
+        "gains3": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses3": [],
+        "gains10": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses10": []
+      },
+      "BANCO_TODAS_FISICAS_X": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "thirdWinnerExposures": 1,
+        "gains3": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses3": [],
+        "gains10": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses10": []
+      },
+      "BANCO_TOP10_X": {
+        "cuts": 30,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "thirdWinnerExposures": 1,
+        "gains3": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses3": [],
+        "gains10": [
+          "2026-10-06|Vespertino"
+        ],
+        "losses10": []
+      }
+    }
+  },
+  "comparisons": {
+    "sameThirdIn90": 66,
+    "differentThirdIn90": 24,
+    "sameWinnerCases": [
+      "2026-09-28|Matutino",
+      "2026-10-06|Vespertino"
+    ],
+    "differencesThatWonByEither": [],
+    "meanScoreRoutePearson": 0.954749,
+    "meanScoreShapePearson": 0.964102,
+    "meanPresenceCandidateRoutes": 5.166667,
+    "meanMaxRoutesCandidateRoutes": 5.333333,
+    "meanCandidateCoverage": 0.99,
+    "allShapesCoveredInPresenceCandidate": 83,
+    "meanPhysicalCandidateShapes": 18.888889
+  },
+  "winningCases": [
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "family": "067/760",
+      "heads": [
+        "2949",
+        "4319",
+        "6107",
+        "8262",
+        "1760"
+      ],
+      "otherPhysicalWinners": [
+        "949/949",
+        "319/913",
+        "107/701",
+        "067/760"
+      ],
+      "thirdLearnedAndMaxRoutesAgree": true,
+      "tests": {
+        "presence": {
+          "routes": 4,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.166667
+        },
+        "abundance": {
+          "routes": 4,
+          "shapes": 3,
+          "rooted": true,
+          "rank": 18,
+          "score": 0.166667
+        }
+      },
+      "winningWitnesses": {
+        "paths": [
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "1:0",
+              "2:1",
+              "3:1"
+            ],
+            "physicalKey": "prevNocturno|1:0>2:1>3:1",
+            "digits": "760",
+            "anchored": false,
+            "events": []
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "2:0",
+              "2:1",
+              "3:1"
+            ],
+            "physicalKey": "prevNocturno|2:0>2:1>3:1",
+            "digits": "760",
+            "anchored": false,
+            "events": []
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "3:1",
+              "4:1",
+              "4:0"
+            ],
+            "physicalKey": "prevNocturno|3:1>4:1>4:0",
+            "digits": "067",
+            "anchored": true,
+            "events": [
+              "2026-09-21|D−7|Primera|Entre Ríos|0722"
+            ]
+          },
+          {
+            "source": "prevNocturno",
+            "cells": [
+              "4:0",
+              "4:1",
+              "5:1"
+            ],
+            "physicalKey": "prevNocturno|4:0>4:1>5:1",
+            "digits": "760",
+            "anchored": true,
+            "events": [
+              "2026-09-21|D−7|Primera|Entre Ríos|0722"
+            ]
+          }
+        ],
+        "uniquePaths": 4,
+        "independentRootEvents": [
+          "2026-09-21|D−7|Primera|Entre Ríos|0722"
+        ]
+      },
+      "candidates": 145,
+      "trainingSourceWeek": {
+        "week": "2026-09-28",
+        "learnedWeek": "2026-09-21",
+        "trainCuts": 30,
+        "trainWinners": 32,
+        "shapeUnionWinner": 18,
+        "shapeUnionPhysical": 19,
+        "shapeUnionTop10": 19,
+        "shapesMissingWinner": [
+          "0:0>1:0>2:1"
+        ]
+      },
+      "uniqueWinnerShapesSeenInTraining": 18,
+      "candidateShapeCoverage": 1,
+      "highestRankByPresence": [
+        {
+          "family": "067/760",
+          "score": 0.16666666666666666,
+          "routeCount": 4,
+          "shapeCount": 3,
+          "rooted": true,
+          "rank": 18
+        },
+        {
+          "family": "779/977",
+          "score": 0.16666666666666666,
+          "routeCount": 3,
+          "shapeCount": 3,
+          "rooted": true,
+          "rank": 23
+        },
+        {
+          "family": "697/796",
+          "score": 0.16666666666666666,
+          "routeCount": 3,
+          "shapeCount": 3,
+          "rooted": true,
+          "rank": 48
+        },
+        {
+          "family": "497/794",
+          "score": 0.16666666666666666,
+          "routeCount": 3,
+          "shapeCount": 3,
+          "rooted": true,
+          "rank": 49
+        },
+        {
+          "family": "063/360",
+          "score": 0.16666666666666666,
+          "routeCount": 3,
+          "shapeCount": 3,
+          "rooted": false,
+          "rank": null
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "family": "226/622",
+      "heads": [
+        "9226",
+        "8809",
+        "2010",
+        "8001",
+        "8483"
+      ],
+      "otherPhysicalWinners": [
+        "226/622"
+      ],
+      "thirdLearnedAndMaxRoutesAgree": true,
+      "tests": {
+        "presence": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        },
+        "abundance": {
+          "routes": 5,
+          "shapes": 5,
+          "rooted": false,
+          "rank": null,
+          "score": 0.277778
+        }
+      },
+      "winningWitnesses": {
+        "paths": [
+          {
+            "source": "Previa",
+            "cells": [
+              "2:0",
+              "3:0",
+              "4:1"
+            ],
+            "physicalKey": "Previa|2:0>3:0>4:1",
+            "digits": "622",
+            "anchored": false,
+            "events": []
+          },
+          {
+            "source": "Previa",
+            "cells": [
+              "3:0",
+              "4:1",
+              "4:0"
+            ],
+            "physicalKey": "Previa|3:0>4:1>4:0",
+            "digits": "226",
+            "anchored": false,
+            "events": []
+          },
+          {
+            "source": "Previa",
+            "cells": [
+              "4:0",
+              "3:0",
+              "4:1"
+            ],
+            "physicalKey": "Previa|4:0>3:0>4:1",
+            "digits": "622",
+            "anchored": false,
+            "events": []
+          },
+          {
+            "source": "Matutino",
+            "cells": [
+              "3:0",
+              "4:0",
+              "3:1"
+            ],
+            "physicalKey": "Matutino|3:0>4:0>3:1",
+            "digits": "226",
+            "anchored": false,
+            "events": []
+          },
+          {
+            "source": "Matutino",
+            "cells": [
+              "3:1",
+              "3:0",
+              "4:0"
+            ],
+            "physicalKey": "Matutino|3:1>3:0>4:0",
+            "digits": "622",
+            "anchored": false,
+            "events": []
+          }
+        ],
+        "uniquePaths": 5,
+        "independentRootEvents": []
+      },
+      "candidates": 175,
+      "trainingSourceWeek": {
+        "week": "2026-10-05",
+        "learnedWeek": "2026-09-28",
+        "trainCuts": 30,
+        "trainWinners": 41,
+        "shapeUnionWinner": 18,
+        "shapeUnionPhysical": 19,
+        "shapeUnionTop10": 19,
+        "shapesMissingWinner": [
+          "0:1>0:0>1:1"
+        ]
+      },
+      "uniqueWinnerShapesSeenInTraining": 18,
+      "candidateShapeCoverage": 1,
+      "highestRankByPresence": [
+        {
+          "family": "226/622",
+          "score": 0.2777777777777778,
+          "routeCount": 5,
+          "shapeCount": 5,
+          "rooted": false,
+          "rank": null
+        },
+        {
+          "family": "269/962",
+          "score": 0.2777777777777778,
+          "routeCount": 5,
+          "shapeCount": 5,
+          "rooted": false,
+          "rank": null
+        },
+        {
+          "family": "356/653",
+          "score": 0.2222222222222222,
+          "routeCount": 4,
+          "shapeCount": 4,
+          "rooted": true,
+          "rank": 21
+        },
+        {
+          "family": "465/564",
+          "score": 0.2222222222222222,
+          "routeCount": 4,
+          "shapeCount": 4,
+          "rooted": true,
+          "rank": 22
+        },
+        {
+          "family": "556/655",
+          "score": 0.2222222222222222,
+          "routeCount": 4,
+          "shapeCount": 4,
+          "rooted": true,
+          "rank": 24
+        }
+      ]
+    }
+  ],
+  "placebo": {
+    "uniform": {
+      "top3": {
+        "n": 500,
+        "mean": 4.096,
+        "min": 3,
+        "p05": 3,
+        "median": 4,
+        "p95": 5,
+        "max": 6,
+        "observed": 5,
+        "fracAtLeastObserved": 0.166,
+        "hist": {
+          "3": 41,
+          "4": 376,
+          "5": 77,
+          "6": 6
+        }
+      },
+      "top10": {
+        "n": 500,
+        "mean": 12.096,
+        "min": 11,
+        "p05": 11,
+        "median": 12,
+        "p95": 13,
+        "max": 14,
+        "observed": 13,
+        "fracAtLeastObserved": 0.166,
+        "hist": {
+          "11": 41,
+          "12": 376,
+          "13": 77,
+          "14": 6
+        }
+      },
+      "agreement": {
+        "n": 500,
+        "mean": 70.384,
+        "min": 51,
+        "p05": 58,
+        "median": 71,
+        "p95": 78,
+        "max": 86,
+        "observed": 90,
+        "fracAtLeastObserved": 0,
+        "hist": {
+          "51": 2,
+          "53": 3,
+          "54": 1,
+          "55": 2,
+          "56": 8,
+          "57": 5,
+          "58": 6,
+          "59": 9,
+          "60": 8,
+          "61": 8,
+          "62": 11,
+          "63": 15,
+          "64": 15,
+          "65": 17,
+          "66": 24,
+          "67": 36,
+          "68": 14,
+          "69": 22,
+          "70": 15,
+          "71": 43,
+          "72": 22,
+          "73": 22,
+          "74": 19,
+          "75": 24,
+          "76": 15,
+          "77": 108,
+          "78": 11,
+          "79": 2,
+          "80": 5,
+          "81": 6,
+          "86": 2
+        }
+      }
+    },
+    "matched": {
+      "top3": {
+        "n": 500,
+        "mean": 4.13,
+        "min": 3,
+        "p05": 4,
+        "median": 4,
+        "p95": 5,
+        "max": 6,
+        "observed": 5,
+        "fracAtLeastObserved": 0.164,
+        "hist": {
+          "3": 20,
+          "4": 398,
+          "5": 79,
+          "6": 3
+        }
+      },
+      "top10": {
+        "n": 500,
+        "mean": 12.13,
+        "min": 11,
+        "p05": 12,
+        "median": 12,
+        "p95": 13,
+        "max": 14,
+        "observed": 13,
+        "fracAtLeastObserved": 0.164,
+        "hist": {
+          "11": 20,
+          "12": 398,
+          "13": 79,
+          "14": 3
+        }
+      },
+      "agreement": {
+        "n": 500,
+        "mean": 72.898,
+        "min": 56,
+        "p05": 63,
+        "median": 74,
+        "p95": 80,
+        "max": 88,
+        "observed": 90,
+        "fracAtLeastObserved": 0,
+        "hist": {
+          "56": 1,
+          "57": 2,
+          "59": 2,
+          "60": 2,
+          "61": 6,
+          "62": 8,
+          "63": 5,
+          "64": 10,
+          "65": 10,
+          "66": 17,
+          "67": 18,
+          "68": 13,
+          "69": 29,
+          "70": 44,
+          "71": 31,
+          "72": 17,
+          "73": 19,
+          "74": 23,
+          "75": 36,
+          "76": 25,
+          "77": 143,
+          "78": 5,
+          "79": 3,
+          "80": 7,
+          "81": 18,
+          "83": 2,
+          "85": 1,
+          "86": 2,
+          "88": 1
+        }
+      }
+    }
+  },
+  "seal": {
+    "physical": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "dom": "42e5993b63b3740ecb911b2fb255508f1bf75408467cd530ffad65f8e685bd8e",
+    "code": "d40f84f9dddeca4460d1f06f5351c555df8a137bc3c4af5967156b98bdb332f4",
+    "protocol": "0d4743d90e5a587e402ee9a411ecae7bb9a37c9126f93d92c43c7701dc353714",
+    "pre": "ffa678301cbce6615e9d5dfe461b4f4e0902887d59d7e807f58285671f5ecdbb"
+  },
+  "votesFrozenHash": "2580e3ca4a55f476ecdad39daccc63549ec12d1acf03d5ac19f9aa55454c0f22",
+  "pathsFrozenHash": "36e7effad2ebb93f10dd5873d361b536246f81583f6ebb00b9db2dcbce409c62",
+  "warning": "La quiniela es aleatoria. Controles de etiquetas placebo retrospectivos sobre 23 fechas largamente investigadas, no test prospectivo ni prueba concluyente."
+}
