@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-13",
+  "turn": "Matutino",
+  "source": "Captura aportada por el usuario (15:45 de Argentina)",
+  "sealBeforeDraw": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+  "predictedTop3": [
+    "226/622",
+    "305/503",
+    "699/996"
+  ],
+  "predictedTop5": [
+    "226/622",
+    "305/503",
+    "699/996",
+    "266/662",
+    "629/926"
+  ],
+  "heads": [
+    {
+      "jur": "Ciudad",
+      "head": "3376",
+      "fam": "376/673",
+      "physicalPaths": 0,
+      "officialRank": null
+    },
+    {
+      "jur": "Provincia",
+      "head": "1057",
+      "fam": "057/750",
+      "physicalPaths": 2,
+      "officialRank": null
+    },
+    {
+      "jur": "Córdoba",
+      "head": "2413",
+      "fam": "314/413",
+      "physicalPaths": 0,
+      "officialRank": null
+    },
+    {
+      "jur": "Santa Fe",
+      "head": "3723",
+      "fam": "327/723",
+      "physicalPaths": 0,
+      "officialRank": null
+    },
+    {
+      "jur": "Entre Ríos",
+      "head": "2284",
+      "fam": "284/482",
+      "physicalPaths": 0,
+      "officialRank": null
+    },
+    {
+      "jur": "Montevideo",
+      "head": "3629",
+      "fam": "629/926",
+      "physicalPaths": 2,
+      "officialRank": 5
+    }
+  ],
+  "argentina5": {
+    "top3": false,
+    "top5": false,
+    "top10": false
+  },
+  "withMontevideo6": {
+    "top3": false,
+    "top5": true,
+    "top10": true
+  },
+  "notes": [
+    "Montevideo 3629: familia 629/926, puesto #5 con dos recorridos admitidos y dos eventos raíz D−1.",
+    "Provincia 1057: familia 057/750 tiene dos recorridos físicos (uno en prevNocturno, otro en Previa), sin admisión oficial.",
+    "No mezclar evaluación original de cinco jurisdicciones argentinas con resultado de seis incluyendo Montevideo.",
+    "Matutina PRE permanece sin cambios."
+  ]
+}
