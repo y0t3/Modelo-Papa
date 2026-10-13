@@ -1,0 +1,44 @@
+name: VT3 13oct Previa Primera y sello Matutina
+on:
+  push:
+    branches: [lab-vt3-turnos-13oct2026-pre-primera-sello-mat]
+    paths:
+      - 'scripts/lab-vt3-en-vivo-13oct2026.mjs'
+      - '.github/workflows/lab-vt3-en-vivo-13oct2026.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  vivo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Crear PRE Matutina con solo los turnos ya publicados
+        run: node scripts/lab-vt3-en-vivo-13oct2026.mjs pre
+      - name: Guardar y subir el sello Matutina ANTES del cotejo
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-en-vivo-13oct2026/PREVIA_PRIMERA_RECONSTRUIDAS_PRE.json
+          git add auditorias/vt3-en-vivo-13oct2026/MATUTINA_PRE_SELLADA.json
+          git add auditorias/vt3-en-vivo-13oct2026/SELLO.json
+          git commit -m 'seal(VT3): pre Matutina 13oct con Previa y Primera ya conocidas'
+          git push origin HEAD:lab-vt3-turnos-13oct2026-pre-primera-sello-mat
+      - name: Cotejar resultados publicados SOLO de Previa y Primera
+        run: node scripts/lab-vt3-en-vivo-13oct2026.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-13oct-previa-primera-sello-matutina
+          path: auditorias/vt3-en-vivo-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar POST y resumen sin alterar motor oficial
+        run: |
+          git add auditorias/vt3-en-vivo-13oct2026/POST_PREVIA_PRIMERA.json
+          git add auditorias/vt3-en-vivo-13oct2026/RESUMEN.json
+          git commit -m 'data(VT3): cotejar cabezas Previa Primera 13oct contra PRE reproducido'
+          git push origin HEAD:lab-vt3-turnos-13oct2026-pre-primera-sello-mat
