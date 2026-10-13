@@ -1,0 +1,52 @@
+name: VT3 inercia fisica de la tercera familia
+on:
+  push:
+    branches: [lab-vt3-inercia-recorridos-tercero-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-inercia-tercero.mjs'
+      - 'PROTOCOLO_VT3_INERCIA_TERCERO_13OCT2026.md'
+      - '.github/workflows/lab-vt3-inercia-tercero.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inercia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar POST y restaurar solo los dos PRE fisicos originales
+        run: |
+          mv auditorias /tmp/vt3-inercia-auditorias
+          mkdir -p auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/
+          mkdir -p auditorias/vt3-control-tercer-puesto-90-13oct2026/
+          cp /tmp/vt3-inercia-auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json
+          cp /tmp/vt3-inercia-auditorias/vt3-control-tercer-puesto-90-13oct2026/PRE_90.json auditorias/vt3-control-tercer-puesto-90-13oct2026/PRE_90.json
+          test "$(find auditorias -type f | wc -l)" -eq 2
+      - name: Construir huellas, transiciones fisicas y sello sin resultados
+        run: node scripts/lab-vt3-inercia-tercero.mjs pre
+      - name: Restaurar POST y auditar tercero aprendido con 5000 selecciones neutrales
+        run: |
+          mv auditorias/vt3-inercia-tercero-90-13oct2026 /tmp/vt3-inercia-pre-nuevo
+          cp -a /tmp/vt3-inercia-auditorias/. auditorias/
+          rm -rf auditorias/vt3-inercia-tercero-90-13oct2026
+          mv /tmp/vt3-inercia-pre-nuevo auditorias/vt3-inercia-tercero-90-13oct2026
+          node scripts/lab-vt3-inercia-tercero.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-inercia-tercero-90
+          path: auditorias/vt3-inercia-tercero-90-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar diagnosticos solo en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-inercia-tercero-90-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): inercia fisica y novedades de raiz frente a neutrales'
+            git push origin HEAD:lab-vt3-inercia-recorridos-tercero-13oct2026
+          fi
