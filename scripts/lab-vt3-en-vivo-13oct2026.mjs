@@ -35,6 +35,19 @@ const {auditVt3Family}=await load('vt3Audit');
 const raw=JSON.parse(gunzipSync(Buffer.from(read(SOURCE).trim(),'base64')).toString('utf8'));
 assert.equal(Object.keys(raw).length,30);
 assert.ok(!raw[DATE],'No debe existir el día objetivo en el fixture histórico');
+// El fixture histórico de 30 fechas termina el 10/10. Agregar como D−1
+// la jornada del lunes 12/10 ya PUBLICADA; nunca son objetivos del 13/10.
+// Cabezas Ciudad/Provincia/Córdoba/Santa Fé/Entre Ríos verificadas en
+// quinielacorrentina.com, lanacion.com.ar, tujugada.com.ar y fuentes oficiales.
+// Montevideo se conserva ---- porque no hay cabeza publicada verificable
+// para 12/10; nunca se inventa la sexta cifra del tablero.
+raw['2026-10-12']=[
+ ['7447','0334','5276','4616','2403','----'],
+ ['3825','9554','3107','2696','7634','----'],
+ ['2436','3489','1099','8362','2400','----'],
+ ['2716','3433','4801','4903','3245','----'],
+ ['9851','1615','7242','8290','3264','----']
+];
 for(const date of ['2026-10-05','2026-10-06','2026-10-10','2026-10-12'])assert.ok(raw[date]);
 function draw(d){
  const result=diaVacio();
