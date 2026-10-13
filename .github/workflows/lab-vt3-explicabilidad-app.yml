@@ -1,0 +1,54 @@
+name: VT3 explicabilidad fisica en app sin alterar Tops
+on:
+  push:
+    branches: [lab-vt3-explicabilidad-app-13oct2026]
+    paths:
+      - 'src/vt3Audit.ts'
+      - 'src/ui/Vt3Explainer.tsx'
+      - 'App.tsx'
+      - 'scripts/lab-vt3-explicabilidad.mjs'
+      - 'PROTOCOLO_VT3_EXPLICABILIDAD_APP_13OCT2026.md'
+      - '.github/workflows/lab-vt3-explicabilidad-app.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  auditoria:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verificar TypeScript completo de la app y del panel nuevo
+        run: |
+          npm install --no-audit --no-fund
+          npx tsc --noEmit
+      - name: Preparar 115 hojas PRE y resultados POST separados
+        run: node scripts/lab-vt3-cobertura-bifurcaciones.mjs prepare
+      - name: Ocultar resultados de sorteo antes de la auditoria
+        run: |
+          mv resultados/replay-lalo-115/OBJETIVOS_POST_115.json /tmp/objetivos-lalo-explicabilidad.json
+          test ! -f resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+      - name: Verificar caminos fisicos y puestos sin resultado futuro
+        run: node scripts/lab-vt3-explicabilidad.mjs pre
+      - name: Comparar 115 cabezas solo despues del sello PRE
+        run: |
+          mv /tmp/objetivos-lalo-explicabilidad.json resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          node scripts/lab-vt3-explicabilidad.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-explicabilidad-app-115
+          path: auditorias/vt3-explicabilidad-app-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar auditoria sin tocar main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-explicabilidad-app-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): diagnósticos PRE y POST de las 115 hojas y Nocturna 12oct'
+            git push origin HEAD:lab-vt3-explicabilidad-app-13oct2026
+          fi
