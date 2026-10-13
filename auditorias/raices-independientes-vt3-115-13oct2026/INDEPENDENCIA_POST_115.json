@@ -1,0 +1,2183 @@
+{
+  "summary": {
+    "nCuts": 115,
+    "nDays": 23,
+    "poolWinCuts": 46,
+    "officialTop": {
+      "3": 5,
+      "5": 8,
+      "10": 15
+    },
+    "cMultipleEventsByHistoricalBlockCount": {
+      "C_VARIOS_EVENTOS_UN_BLOQUE_ANTIGUO": {
+        "exposures": 10,
+        "eligible": 0,
+        "expected": 0.182,
+        "top10Exposures": 5,
+        "top10Eligible": 0,
+        "bothPeriods": 0,
+        "observedPer1000": 0,
+        "expectedPer1000": 18.235
+      },
+      "C_VARIOS_EVENTOS_DISTINTOS_BLOQUES_ANTIGUOS": {
+        "exposures": 1046,
+        "eligible": 15,
+        "expected": 10.367,
+        "top10Exposures": 432,
+        "top10Eligible": 10,
+        "bothPeriods": 587,
+        "observedPer1000": 14.34,
+        "expectedPer1000": 9.911
+      }
+    },
+    "cBlocksByHistoricalEventCount": {
+      "C_UN_EVENTO": {
+        "exposures": 1558,
+        "eligible": 14,
+        "expected": 14.66,
+        "top10Exposures": 582,
+        "top10Eligible": 7,
+        "bothPeriods": 0,
+        "observedPer1000": 8.986,
+        "expectedPer1000": 9.41
+      },
+      "C_MULTIPLES_EVENTOS": {
+        "exposures": 1056,
+        "eligible": 15,
+        "expected": 10.549,
+        "top10Exposures": 437,
+        "top10Eligible": 10,
+        "bothPeriods": 587,
+        "observedPer1000": 14.205,
+        "expectedPer1000": 9.99
+      }
+    },
+    "metricsByBucket": {
+      "A_RAIZ_REPETIDA": {
+        "exposures": 2895,
+        "eligible": 31,
+        "expected": 29.138,
+        "top3Exposures": 0,
+        "top10Exposures": 16,
+        "top10Eligible": 0,
+        "bothPeriods": 0,
+        "eventsMultiple": 0,
+        "paths": 2906,
+        "blocks": 2895,
+        "shareMatchedPer1000Exposures": 10.708,
+        "expectedPer1000Exposures": 10.065
+      },
+      "B_RAICES_MISMO_BLOQUE": {
+        "exposures": 642,
+        "eligible": 4,
+        "expected": 7.103,
+        "top3Exposures": 0,
+        "top10Exposures": 3,
+        "top10Eligible": 0,
+        "bothPeriods": 309,
+        "eventsMultiple": 642,
+        "paths": 688,
+        "blocks": 642,
+        "shareMatchedPer1000Exposures": 6.231,
+        "expectedPer1000Exposures": 11.063
+      },
+      "C_BLOQUES_MISMA_FUENTE": {
+        "exposures": 2614,
+        "eligible": 29,
+        "expected": 25.21,
+        "top3Exposures": 284,
+        "top10Exposures": 1019,
+        "top10Eligible": 17,
+        "bothPeriods": 587,
+        "eventsMultiple": 1056,
+        "paths": 6466,
+        "blocks": 6164,
+        "shareMatchedPer1000Exposures": 11.094,
+        "expectedPer1000Exposures": 9.644
+      },
+      "D_FUENTES_DISTINTAS": {
+        "exposures": 238,
+        "eligible": 0,
+        "expected": 2.55,
+        "top3Exposures": 61,
+        "top10Exposures": 112,
+        "top10Eligible": 0,
+        "bothPeriods": 161,
+        "eventsMultiple": 237,
+        "paths": 748,
+        "blocks": 731,
+        "shareMatchedPer1000Exposures": 0,
+        "expectedPer1000Exposures": 10.714
+      },
+      "U_SIN_RAIZ": {
+        "exposures": 0,
+        "eligible": 0,
+        "expected": 0,
+        "top3Exposures": 0,
+        "top10Exposures": 0,
+        "top10Eligible": 0,
+        "bothPeriods": 0,
+        "eventsMultiple": 0,
+        "paths": 0,
+        "blocks": 0,
+        "shareMatchedPer1000Exposures": 0,
+        "expectedPer1000Exposures": 0
+      }
+    },
+    "caveats": "Retrospectivo y exploratorio. Exposiciones repetidas entre cortes; proporciones NO son probabilidades de loteria. Los 115 cortes fueron investigados previamente. Sin modificacion de ranking ni de VT4."
+  },
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "pool": 19,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "B_RAICES_MISMO_BLOQUE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "175/571",
+          "rank": 11,
+          "bucket": "B_RAICES_MISMO_BLOQUE",
+          "headEvents": 2,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "pool": 29,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "pool": 43,
+      "eligible": 2,
+      "top3": false,
+      "top5": false,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 2
+      },
+      "winningRankDetails": [
+        {
+          "family": "779/977",
+          "rank": 7,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 3,
+          "sources": 1,
+          "currentBlocks": 3,
+          "d1": true,
+          "d7": false
+        },
+        {
+          "family": "365/563",
+          "rank": 12,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "pool": 58,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "pool": 75,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "174/471",
+          "rank": 54,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "pool": 34,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "pool": 50,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "pool": 54,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "087/780",
+          "rank": 12,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 2,
+          "sources": 1,
+          "currentBlocks": 3,
+          "d1": true,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "pool": 66,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "pool": 76,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "070/070",
+          "rank": 61,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "pool": 33,
+      "eligible": 3,
+      "top3": true,
+      "top5": true,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1,
+        "A_RAIZ_REPETIDA": 2
+      },
+      "winningRankDetails": [
+        {
+          "family": "446/644",
+          "rank": 1,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 5,
+          "sources": 1,
+          "currentBlocks": 4,
+          "d1": true,
+          "d7": true
+        },
+        {
+          "family": "438/834",
+          "rank": 18,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        },
+        {
+          "family": "748/847",
+          "rank": 33,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "pool": 39,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "pool": 42,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "pool": 42,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "174/471",
+          "rank": 33,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "pool": 45,
+      "eligible": 2,
+      "top3": true,
+      "top5": true,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1,
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "464/464",
+          "rank": 2,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 3,
+          "sources": 1,
+          "currentBlocks": 6,
+          "d1": true,
+          "d7": true
+        },
+        {
+          "family": "438/834",
+          "rank": 21,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "pool": 68,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "294/492",
+          "rank": 46,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "pool": 84,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "pool": 95,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "pool": 107,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "537/735",
+          "rank": 83,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "pool": 117,
+      "eligible": 4,
+      "top3": false,
+      "top5": false,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 2,
+        "A_RAIZ_REPETIDA": 2
+      },
+      "winningRankDetails": [
+        {
+          "family": "173/371",
+          "rank": 8,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": false
+        },
+        {
+          "family": "798/897",
+          "rank": 13,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": false
+        },
+        {
+          "family": "657/756",
+          "rank": 90,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        },
+        {
+          "family": "446/644",
+          "rank": 112,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "pool": 22,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "pool": 47,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "pool": 59,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "108/801",
+          "rank": 31,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "pool": 62,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "619/916",
+          "rank": 43,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "pool": 71,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "109/901",
+          "rank": 63,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "pool": 30,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "pool": 46,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "pool": 60,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "pool": 82,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "B_RAICES_MISMO_BLOQUE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "246/642",
+          "rank": 42,
+          "bucket": "B_RAICES_MISMO_BLOQUE",
+          "headEvents": 3,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "pool": 91,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "173/371",
+          "rank": 42,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 4,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "pool": 34,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "pool": 46,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "456/654",
+          "rank": 8,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 2,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "pool": 50,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "pool": 50,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "082/280",
+          "rank": 35,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "pool": 63,
+      "eligible": 2,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1,
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "517/715",
+          "rank": 35,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": false
+        },
+        {
+          "family": "207/702",
+          "rank": 52,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "pool": 29,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "pool": 54,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "pool": 54,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "pool": 54,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "pool": 54,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "pool": 52,
+      "eligible": 1,
+      "top3": false,
+      "top5": true,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "159/951",
+          "rank": 5,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "pool": 61,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "pool": 72,
+      "eligible": 3,
+      "top3": false,
+      "top5": false,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1,
+        "A_RAIZ_REPETIDA": 1,
+        "B_RAICES_MISMO_BLOQUE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "194/491",
+          "rank": 8,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 2,
+          "sources": 1,
+          "currentBlocks": 3,
+          "d1": false,
+          "d7": true
+        },
+        {
+          "family": "676/676",
+          "rank": 20,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        },
+        {
+          "family": "189/981",
+          "rank": 28,
+          "bucket": "B_RAICES_MISMO_BLOQUE",
+          "headEvents": 3,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "pool": 85,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "pool": 85,
+      "eligible": 2,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1,
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "076/670",
+          "rank": 15,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": false,
+          "d7": true
+        },
+        {
+          "family": "418/814",
+          "rank": 74,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "pool": 37,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "pool": 54,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "pool": 68,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "118/811",
+          "rank": 6,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 2,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "pool": 80,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "pool": 89,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "429/924",
+          "rank": 73,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "pool": 33,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "pool": 43,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "pool": 59,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "107/701",
+          "rank": 52,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "pool": 67,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "757/757",
+          "rank": 66,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "pool": 67,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "B_RAICES_MISMO_BLOQUE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "283/382",
+          "rank": 47,
+          "bucket": "B_RAICES_MISMO_BLOQUE",
+          "headEvents": 3,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "pool": 26,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "pool": 47,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "037/730",
+          "rank": 16,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "pool": 53,
+      "eligible": 2,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 2
+      },
+      "winningRankDetails": [
+        {
+          "family": "067/760",
+          "rank": 18,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": false,
+          "d7": true
+        },
+        {
+          "family": "319/913",
+          "rank": 25,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 2,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "pool": 53,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "pool": 63,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "pool": 36,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "pool": 56,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "389/983",
+          "rank": 34,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "pool": 74,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "289/982",
+          "rank": 6,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 4,
+          "sources": 1,
+          "currentBlocks": 3,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "pool": 94,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "pool": 94,
+      "eligible": 2,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1,
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "243/342",
+          "rank": 15,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 2,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": true
+        },
+        {
+          "family": "709/907",
+          "rank": 76,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "pool": 15,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "pool": 26,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "pool": 30,
+      "eligible": 1,
+      "top3": true,
+      "top5": true,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "778/877",
+          "rank": 1,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 2,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "pool": 40,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "293/392",
+          "rank": 26,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "pool": 46,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "pool": 34,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "748/847",
+          "rank": 19,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "pool": 48,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "pool": 64,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "598/895",
+          "rank": 58,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "pool": 81,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "pool": 96,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "485/584",
+          "rank": 62,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "pool": 33,
+      "eligible": 2,
+      "top3": true,
+      "top5": true,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1,
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "539/935",
+          "rank": 2,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 2,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": true
+        },
+        {
+          "family": "379/973",
+          "rank": 21,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "pool": 46,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "pool": 56,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "075/570",
+          "rank": 18,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "pool": 56,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "pool": 56,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "pool": 29,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "pool": 54,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "pool": 60,
+      "eligible": 2,
+      "top3": false,
+      "top5": true,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 2
+      },
+      "winningRankDetails": [
+        {
+          "family": "238/832",
+          "rank": 4,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 3,
+          "d1": false,
+          "d7": true
+        },
+        {
+          "family": "295/592",
+          "rank": 5,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 3,
+          "d1": false,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "pool": 63,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "pool": 71,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "pool": 17,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "pool": 34,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "pool": 59,
+      "eligible": 1,
+      "top3": false,
+      "top5": true,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "729/927",
+          "rank": 5,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 4,
+          "sources": 1,
+          "currentBlocks": 6,
+          "d1": true,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "pool": 94,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "799/997",
+          "rank": 15,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 3,
+          "sources": 1,
+          "currentBlocks": 3,
+          "d1": true,
+          "d7": true
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "pool": 94,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "pool": 17,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "pool": 26,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "pool": 58,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "508/805",
+          "rank": 49,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "pool": 67,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "pool": 74,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "pool": 24,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "pool": 48,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "pool": 62,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "pool": 77,
+      "eligible": 3,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {
+        "A_RAIZ_REPETIDA": 3
+      },
+      "winningRankDetails": [
+        {
+          "family": "162/261",
+          "rank": 37,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        },
+        {
+          "family": "428/824",
+          "rank": 46,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        },
+        {
+          "family": "677/776",
+          "rank": 58,
+          "bucket": "A_RAIZ_REPETIDA",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 1,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "pool": 91,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "pool": 22,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "pool": 44,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "pool": 57,
+      "eligible": 1,
+      "top3": false,
+      "top5": false,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 1
+      },
+      "winningRankDetails": [
+        {
+          "family": "071/170",
+          "rank": 7,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "pool": 81,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "pool": 81,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "pool": 33,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "pool": 33,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "pool": 51,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "pool": 55,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "pool": 64,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "pool": 13,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "pool": 32,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "pool": 57,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "pool": 69,
+      "eligible": 0,
+      "top3": false,
+      "top5": false,
+      "top10": false,
+      "matchedCounts": {},
+      "winningRankDetails": []
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "pool": 69,
+      "eligible": 2,
+      "top3": true,
+      "top5": true,
+      "top10": true,
+      "matchedCounts": {
+        "C_BLOQUES_MISMA_FUENTE": 2
+      },
+      "winningRankDetails": [
+        {
+          "family": "465/564",
+          "rank": 2,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 4,
+          "d1": false,
+          "d7": true
+        },
+        {
+          "family": "456/654",
+          "rank": 5,
+          "bucket": "C_BLOQUES_MISMA_FUENTE",
+          "headEvents": 1,
+          "sources": 1,
+          "currentBlocks": 2,
+          "d1": true,
+          "d7": false
+        }
+      ]
+    }
+  ]
+}
