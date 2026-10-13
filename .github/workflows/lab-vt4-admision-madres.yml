@@ -1,0 +1,54 @@
+name: VT4 admision madres y cuaternas fisicas 115 cortes
+on:
+  push:
+    branches: [lab-vt4-admision-madres-13oct2026]
+    paths:
+      - 'scripts/lab-vt4-admision-madres.mjs'
+      - 'PROTOCOLO_VT4_ADMISION_MADRES_13OCT2026.md'
+      - '.github/workflows/lab-vt4-admision-madres.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  admision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Separar POST y fixture original antes de calcular predicciones
+        run: |
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt4-admision-post.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt4-admision-fixture.b64
+          test ! -e auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          test ! -e fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+      - name: Generar PRE de siete estrategias de admision con las mismas diez plazas
+        run: node scripts/lab-vt4-admision-madres.mjs pre
+      - name: Guardar sello PRE antes de volver a leer resultados
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-admision-madres-115-13oct2026/PRE_115.json
+          git add auditorias/vt4-admision-madres-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT4): 115 cortes de admision por madres físicas y raíces'
+          git push origin HEAD:lab-vt4-admision-madres-13oct2026
+      - name: Restaurar POST, cotejar las 115 predicciones y guardar resultados
+        run: |
+          mv /tmp/vt4-admision-post.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          mv /tmp/vt4-admision-fixture.b64 fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt4-admision-madres.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt4-admision-madres-115
+          path: auditorias/vt4-admision-madres-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar POST sin tocar motor ni main
+        run: |
+          git add auditorias/vt4-admision-madres-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT4): admision Top10, admitidas y físicas sobre 115 cortes'
+            git push origin HEAD:lab-vt4-admision-madres-13oct2026
+          fi
