@@ -1,0 +1,2135 @@
+{
+  "date": "2026-10-12",
+  "target": "Nocturno",
+  "sealedAtUtc": "2026-10-12T21:56:11.783Z",
+  "commit": "9820e76eb599a81f15099b4ae61479a134acf152",
+  "note": "PRE ANTES DEL SORTEO: no contiene cabeza Nocturna. Candidatas experimentales, no probabilidades.",
+  "previousDates": [
+    "2026-10-10",
+    "2026-10-05"
+  ],
+  "sourceColumns": [
+    {
+      "id": "prevNocturno",
+      "turno": "Previa",
+      "sourceLabel": "Nocturna anterior",
+      "values": [
+        "35",
+        "65",
+        "55",
+        "26",
+        "75",
+        "26"
+      ]
+    },
+    {
+      "id": "Previa",
+      "turno": "Primera",
+      "sourceLabel": "Previa",
+      "values": [
+        "58",
+        "45",
+        "87",
+        "27",
+        "14",
+        "--"
+      ]
+    },
+    {
+      "id": "Primera",
+      "turno": "Matutino",
+      "sourceLabel": "Primera",
+      "values": [
+        "36",
+        "65",
+        "18",
+        "07",
+        "45",
+        "--"
+      ]
+    },
+    {
+      "id": "Matutino",
+      "turno": "Vespertino",
+      "sourceLabel": "Matutino",
+      "values": [
+        "47",
+        "00",
+        "10",
+        "73",
+        "11",
+        "--"
+      ]
+    },
+    {
+      "id": "Vespertino",
+      "turno": "Nocturno",
+      "sourceLabel": "Vespertino",
+      "values": [
+        "27",
+        "44",
+        "12",
+        "14",
+        "56",
+        "--"
+      ]
+    }
+  ],
+  "roots": 85,
+  "ranks": {
+    "vt2": [
+      {
+        "family": "56/65",
+        "rank": 1,
+        "sourceCount": 2,
+        "paths": 10,
+        "physicalBlocks": 10,
+        "directRoots": 20,
+        "d7Roots": 11,
+        "d1Roots": 9,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "265/562",
+          "365/563",
+          "556/655",
+          "565/565"
+        ],
+        "rationale": "11 raíz/raíces D−7 · 9 raíz/raíces D−1 · 4 madre(s) VT3 · 2 fuente(s)"
+      },
+      {
+        "family": "36/63",
+        "rank": 2,
+        "sourceCount": 2,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 18,
+        "d7Roots": 10,
+        "d1Roots": 8,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "365/563",
+          "536/635"
+        ],
+        "rationale": "10 raíz/raíces D−7 · 8 raíz/raíces D−1 · 2 madre(s) VT3 · 2 fuente(s)"
+      },
+      {
+        "family": "27/72",
+        "rank": 3,
+        "sourceCount": 2,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 15,
+        "d7Roots": 7,
+        "d1Roots": 8,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "276/672"
+        ],
+        "rationale": "7 raíz/raíces D−7 · 8 raíz/raíces D−1 · 1 madre(s) VT3 · 2 fuente(s)"
+      },
+      {
+        "family": "55/55",
+        "rank": 4,
+        "sourceCount": 2,
+        "paths": 5,
+        "physicalBlocks": 5,
+        "directRoots": 13,
+        "d7Roots": 6,
+        "d1Roots": 7,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "255/552",
+          "555/555",
+          "556/655"
+        ],
+        "rationale": "6 raíz/raíces D−7 · 7 raíz/raíces D−1 · 3 madre(s) VT3 · 2 fuente(s)"
+      },
+      {
+        "family": "58/85",
+        "rank": 5,
+        "sourceCount": 2,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 13,
+        "d7Roots": 6,
+        "d1Roots": 7,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "6 raíz/raíces D−7 · 7 raíz/raíces D−1 · 2 fuente(s)"
+      },
+      {
+        "family": "45/54",
+        "rank": 6,
+        "sourceCount": 2,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 10,
+        "d7Roots": 3,
+        "d1Roots": 7,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "3 raíz/raíces D−7 · 7 raíz/raíces D−1 · 2 fuente(s)"
+      },
+      {
+        "family": "78/87",
+        "rank": 7,
+        "sourceCount": 2,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 13,
+        "d7Roots": 7,
+        "d1Roots": 6,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "7 raíz/raíces D−7 · 6 raíz/raíces D−1 · 2 fuente(s)"
+      },
+      {
+        "family": "35/53",
+        "rank": 8,
+        "sourceCount": 2,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 11,
+        "d7Roots": 5,
+        "d1Roots": 6,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "536/635"
+        ],
+        "rationale": "5 raíz/raíces D−7 · 6 raíz/raíces D−1 · 1 madre(s) VT3 · 2 fuente(s)"
+      },
+      {
+        "family": "04/40",
+        "rank": 9,
+        "sourceCount": 2,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 11,
+        "d7Roots": 5,
+        "d1Roots": 6,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "5 raíz/raíces D−7 · 6 raíz/raíces D−1 · 2 fuente(s)"
+      },
+      {
+        "family": "17/71",
+        "rank": 10,
+        "sourceCount": 3,
+        "paths": 5,
+        "physicalBlocks": 5,
+        "directRoots": 10,
+        "d7Roots": 4,
+        "d1Roots": 6,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "4 raíz/raíces D−7 · 6 raíz/raíces D−1 · 3 fuente(s)"
+      },
+      {
+        "family": "57/75",
+        "rank": 11,
+        "sourceCount": 3,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 12,
+        "d7Roots": 7,
+        "d1Roots": 5,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "7 raíz/raíces D−7 · 5 raíz/raíces D−1 · 3 fuente(s)"
+      },
+      {
+        "family": "25/52",
+        "rank": 12,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 10,
+        "d7Roots": 5,
+        "d1Roots": 5,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "255/552",
+          "526/625"
+        ],
+        "rationale": "5 raíz/raíces D−7 · 5 raíz/raíces D−1 · 2 madre(s) VT3 · 1 fuente(s)"
+      },
+      {
+        "family": "01/10",
+        "rank": 13,
+        "sourceCount": 2,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 10,
+        "d7Roots": 5,
+        "d1Roots": 5,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "5 raíz/raíces D−7 · 5 raíz/raíces D−1 · 2 fuente(s)"
+      },
+      {
+        "family": "26/62",
+        "rank": 14,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 8,
+        "d7Roots": 3,
+        "d1Roots": 5,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "265/562",
+          "526/625"
+        ],
+        "rationale": "3 raíz/raíces D−7 · 5 raíz/raíces D−1 · 2 madre(s) VT3 · 1 fuente(s)"
+      },
+      {
+        "family": "07/70",
+        "rank": 15,
+        "sourceCount": 2,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 8,
+        "d7Roots": 3,
+        "d1Roots": 5,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "3 raíz/raíces D−7 · 5 raíz/raíces D−1 · 2 fuente(s)"
+      },
+      {
+        "family": "13/31",
+        "rank": 16,
+        "sourceCount": 1,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 7,
+        "d7Roots": 2,
+        "d1Roots": 5,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 5 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "14/41",
+        "rank": 17,
+        "sourceCount": 2,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 8,
+        "d7Roots": 4,
+        "d1Roots": 4,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "4 raíz/raíces D−7 · 4 raíz/raíces D−1 · 2 fuente(s)"
+      },
+      {
+        "family": "00/00",
+        "rank": 18,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 6,
+        "d7Roots": 2,
+        "d1Roots": 4,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 4 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "47/74",
+        "rank": 19,
+        "sourceCount": 3,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 7,
+        "d7Roots": 4,
+        "d1Roots": 3,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "4 raíz/raíces D−7 · 3 raíz/raíces D−1 · 3 fuente(s)"
+      },
+      {
+        "family": "67/76",
+        "rank": 20,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 5,
+        "d7Roots": 2,
+        "d1Roots": 3,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "276/672"
+        ],
+        "rationale": "2 raíz/raíces D−7 · 3 raíz/raíces D−1 · 1 madre(s) VT3 · 1 fuente(s)"
+      },
+      {
+        "family": "16/61",
+        "rank": 21,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 6,
+        "d7Roots": 4,
+        "d1Roots": 2,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "4 raíz/raíces D−7 · 2 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "15/51",
+        "rank": 22,
+        "sourceCount": 2,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 5,
+        "d7Roots": 3,
+        "d1Roots": 2,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "3 raíz/raíces D−7 · 2 raíz/raíces D−1 · 2 fuente(s)"
+      },
+      {
+        "family": "03/30",
+        "rank": 23,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 4,
+        "d7Roots": 2,
+        "d1Roots": 2,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 2 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "05/50",
+        "rank": 24,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 4,
+        "d7Roots": 2,
+        "d1Roots": 2,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 2 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "68/86",
+        "rank": 25,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 4,
+        "d7Roots": 2,
+        "d1Roots": 2,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 2 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "18/81",
+        "rank": 26,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 3,
+        "d7Roots": 1,
+        "d1Roots": 2,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 2 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "24/42",
+        "rank": 27,
+        "sourceCount": 2,
+        "paths": 5,
+        "physicalBlocks": 5,
+        "directRoots": 4,
+        "d7Roots": 3,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "424/424"
+        ],
+        "rationale": "3 raíz/raíces D−7 · 1 raíz/raíces D−1 · 1 madre(s) VT3 · 2 fuente(s)"
+      },
+      {
+        "family": "11/11",
+        "rank": 28,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 3,
+        "d7Roots": 2,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "46/64",
+        "rank": 29,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 3,
+        "d7Roots": 2,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "48/84",
+        "rank": 30,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 2,
+        "d7Roots": 1,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "08/80",
+        "rank": 31,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 2,
+        "d7Roots": 1,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "66/66",
+        "rank": 32,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 2,
+        "d7Roots": 1,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "12/21",
+        "rank": 33,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "28/82",
+        "rank": 34,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "77/77",
+        "rank": 35,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      }
+    ],
+    "vt3": [
+      {
+        "family": "565/565",
+        "rank": 1,
+        "sourceCount": 1,
+        "paths": 9,
+        "physicalBlocks": 9,
+        "directRoots": 2,
+        "d7Roots": 0,
+        "d1Roots": 2,
+        "branchBlocks": 5,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−1 · 5 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "556/655",
+        "rank": 2,
+        "sourceCount": 1,
+        "paths": 11,
+        "physicalBlocks": 7,
+        "directRoots": 3,
+        "d7Roots": 0,
+        "d1Roots": 3,
+        "branchBlocks": 4,
+        "parentFamilies": [],
+        "rationale": "3 raíz/raíces D−1 · 4 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "555/555",
+        "rank": 3,
+        "sourceCount": 1,
+        "paths": 5,
+        "physicalBlocks": 3,
+        "directRoots": 3,
+        "d7Roots": 0,
+        "d1Roots": 3,
+        "branchBlocks": 2,
+        "parentFamilies": [],
+        "rationale": "3 raíz/raíces D−1 · 2 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "365/563",
+        "rank": 4,
+        "sourceCount": 2,
+        "paths": 6,
+        "physicalBlocks": 6,
+        "directRoots": 4,
+        "d7Roots": 3,
+        "d1Roots": 1,
+        "branchBlocks": 2,
+        "parentFamilies": [],
+        "rationale": "3 raíz/raíces D−7 · 1 raíz/raíces D−1 · 2 bifurcación(es) · 2 fuente(s)"
+      },
+      {
+        "family": "536/635",
+        "rank": 5,
+        "sourceCount": 2,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 3,
+        "d7Roots": 2,
+        "d1Roots": 1,
+        "branchBlocks": 2,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 1 raíz/raíces D−1 · 2 bifurcación(es) · 2 fuente(s)"
+      },
+      {
+        "family": "276/672",
+        "rank": 6,
+        "sourceCount": 1,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 2,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 2 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "424/424",
+        "rank": 7,
+        "sourceCount": 1,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 2,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 2 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "265/562",
+        "rank": 8,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 2,
+        "d7Roots": 0,
+        "d1Roots": 2,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "526/625",
+        "rank": 9,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 2,
+        "d7Roots": 0,
+        "d1Roots": 2,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "255/552",
+        "rank": 10,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 2,
+        "d7Roots": 0,
+        "d1Roots": 2,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "356/653",
+        "rank": 11,
+        "sourceCount": 2,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 2,
+        "d7Roots": 1,
+        "d1Roots": 1,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 raíz/raíces D−1 · 1 bifurcación(es) · 2 fuente(s)"
+      },
+      {
+        "family": "527/725",
+        "rank": 12,
+        "sourceCount": 1,
+        "paths": 3,
+        "physicalBlocks": 3,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "146/641",
+        "rank": 13,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "256/652",
+        "rank": 14,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "487/784",
+        "rank": 15,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "576/675",
+        "rank": 16,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "657/756",
+        "rank": 17,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "728/827",
+        "rank": 18,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "156/651",
+        "rank": 19,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 1,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 bifurcación(es) · 1 fuente(s)"
+      },
+      {
+        "family": "257/752",
+        "rank": 20,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "267/762",
+        "rank": 21,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "275/572",
+        "rank": 22,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "627/726",
+        "rank": 23,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "214/412",
+        "rank": 24,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "242/242",
+        "rank": 25,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "272/272",
+        "rank": 26,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "545/545",
+        "rank": 27,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "656/656",
+        "rank": 28,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)"
+      },
+      {
+        "family": "658/856",
+        "rank": 29,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 2,
+        "d7Roots": 2,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "075/570",
+        "rank": 30,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 2,
+        "d7Roots": 2,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "187/781",
+        "rank": 31,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 2,
+        "d7Roots": 2,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "507/705",
+        "rank": 32,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 2,
+        "d7Roots": 2,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "568/865",
+        "rank": 33,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 2,
+        "d7Roots": 2,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "718/817",
+        "rank": 34,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 2,
+        "d7Roots": 2,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "2 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "015/510",
+        "rank": 35,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "016/610",
+        "rank": 36,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "018/810",
+        "rank": 37,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "045/540",
+        "rank": 38,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "047/740",
+        "rank": 39,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "057/750",
+        "rank": 40,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "085/580",
+        "rank": 41,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "104/401",
+        "rank": 42,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "107/701",
+        "rank": 43,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "108/801",
+        "rank": 44,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "163/361",
+        "rank": 45,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "165/561",
+        "rank": 46,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "166/661",
+        "rank": 47,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "178/871",
+        "rank": 48,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "366/663",
+        "rank": 49,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "407/704",
+        "rank": 50,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "408/804",
+        "rank": 51,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "478/874",
+        "rank": 52,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "508/805",
+        "rank": 53,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "516/615",
+        "rank": 54,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "517/715",
+        "rank": 55,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "578/875",
+        "rank": 56,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "586/685",
+        "rank": 57,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "587/785",
+        "rank": 58,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "618/816",
+        "rank": 59,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "636/636",
+        "rank": 60,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      },
+      {
+        "family": "668/866",
+        "rank": 61,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)"
+      }
+    ],
+    "vt4": [
+      {
+        "family": "2565/5652",
+        "rank": 1,
+        "sourceCount": 1,
+        "paths": 14,
+        "physicalBlocks": 10,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "565/565"
+        ],
+        "rationale": "Extensión física de 565/565 · 10 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5656/6565",
+        "rank": 2,
+        "sourceCount": 1,
+        "paths": 12,
+        "physicalBlocks": 9,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "565/565"
+        ],
+        "rationale": "Extensión física de 565/565 · 9 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5565/5655",
+        "rank": 3,
+        "sourceCount": 1,
+        "paths": 22,
+        "physicalBlocks": 8,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "556/655",
+          "565/565"
+        ],
+        "rationale": "Extensión física de 556/655 · 8 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "3565/5653",
+        "rank": 4,
+        "sourceCount": 1,
+        "paths": 6,
+        "physicalBlocks": 5,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "565/565"
+        ],
+        "rationale": "Extensión física de 565/565 · 5 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5657/7565",
+        "rank": 5,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "565/565"
+        ],
+        "rationale": "Extensión física de 565/565 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5556/6555",
+        "rank": 6,
+        "sourceCount": 1,
+        "paths": 16,
+        "physicalBlocks": 6,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "555/555",
+          "556/655"
+        ],
+        "rationale": "Extensión física de 555/555 · 6 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "3556/6553",
+        "rank": 7,
+        "sourceCount": 1,
+        "paths": 5,
+        "physicalBlocks": 5,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "556/655"
+        ],
+        "rationale": "Extensión física de 556/655 · 5 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2556/6552",
+        "rank": 8,
+        "sourceCount": 1,
+        "paths": 6,
+        "physicalBlocks": 4,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "255/552",
+          "556/655"
+        ],
+        "rationale": "Extensión física de 255/552 · 4 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "3655/5563",
+        "rank": 9,
+        "sourceCount": 1,
+        "paths": 8,
+        "physicalBlocks": 4,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "365/563",
+          "556/655"
+        ],
+        "rationale": "Extensión física de 365/563 · 4 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2655/5562",
+        "rank": 10,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "265/562",
+          "556/655"
+        ],
+        "rationale": "Extensión física de 265/562 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5567/7655",
+        "rank": 11,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "556/655"
+        ],
+        "rationale": "Extensión física de 556/655 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "6556/6556",
+        "rank": 12,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "556/655"
+        ],
+        "rationale": "Extensión física de 556/655 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2555/5552",
+        "rank": 13,
+        "sourceCount": 1,
+        "paths": 6,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "255/552",
+          "555/555"
+        ],
+        "rationale": "Extensión física de 255/552 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "3555/5553",
+        "rank": 14,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "555/555"
+        ],
+        "rationale": "Extensión física de 555/555 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5555/5555",
+        "rank": 15,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 1,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "555/555"
+        ],
+        "rationale": "Extensión física de 555/555 · 1 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "3656/6563",
+        "rank": 16,
+        "sourceCount": 2,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "365/563"
+        ],
+        "rationale": "Extensión física de 365/563 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5365/5635",
+        "rank": 17,
+        "sourceCount": 1,
+        "paths": 6,
+        "physicalBlocks": 5,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "365/563",
+          "536/635"
+        ],
+        "rationale": "Extensión física de 365/563 · 5 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "1563/3651",
+        "rank": 18,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "365/563"
+        ],
+        "rationale": "Extensión física de 365/563 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2563/3652",
+        "rank": 19,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "365/563"
+        ],
+        "rationale": "Extensión física de 365/563 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "3658/8563",
+        "rank": 20,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "365/563"
+        ],
+        "rationale": "Extensión física de 365/563 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5636/6365",
+        "rank": 21,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 1,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "365/563"
+        ],
+        "rationale": "Extensión física de 365/563 · 1 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5536/6355",
+        "rank": 22,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "536/635"
+        ],
+        "rationale": "Extensión física de 536/635 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "1536/6351",
+        "rank": 23,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "536/635"
+        ],
+        "rationale": "Extensión física de 536/635 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "6358/8536",
+        "rank": 24,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "536/635"
+        ],
+        "rationale": "Extensión física de 536/635 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "1635/5361",
+        "rank": 25,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "536/635"
+        ],
+        "rationale": "Extensión física de 536/635 · 1 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5366/6635",
+        "rank": 26,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 1,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "536/635"
+        ],
+        "rationale": "Extensión física de 536/635 · 1 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5368/8635",
+        "rank": 27,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "536/635"
+        ],
+        "rationale": "Extensión física de 536/635 · 1 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "6356/6536",
+        "rank": 28,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 1,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "536/635"
+        ],
+        "rationale": "Extensión física de 536/635 · 1 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2765/5672",
+        "rank": 29,
+        "sourceCount": 1,
+        "paths": 7,
+        "physicalBlocks": 7,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "276/672"
+        ],
+        "rationale": "Extensión física de 276/672 · 7 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5276/6725",
+        "rank": 30,
+        "sourceCount": 1,
+        "paths": 5,
+        "physicalBlocks": 5,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "276/672"
+        ],
+        "rationale": "Extensión física de 276/672 · 5 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2672/2762",
+        "rank": 31,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "276/672"
+        ],
+        "rationale": "Extensión física de 276/672 · 1 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "6276/6726",
+        "rank": 32,
+        "sourceCount": 1,
+        "paths": 1,
+        "physicalBlocks": 1,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "276/672"
+        ],
+        "rationale": "Extensión física de 276/672 · 1 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "1424/4241",
+        "rank": 33,
+        "sourceCount": 1,
+        "paths": 8,
+        "physicalBlocks": 5,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "424/424"
+        ],
+        "rationale": "Extensión física de 424/424 · 5 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2424/4242",
+        "rank": 34,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "424/424"
+        ],
+        "rationale": "Extensión física de 424/424 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "4247/7424",
+        "rank": 35,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "424/424"
+        ],
+        "rationale": "Extensión física de 424/424 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "4245/5424",
+        "rank": 36,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "424/424"
+        ],
+        "rationale": "Extensión física de 424/424 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "4246/6424",
+        "rank": 37,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "424/424"
+        ],
+        "rationale": "Extensión física de 424/424 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "4244/4424",
+        "rank": 38,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 1,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "424/424"
+        ],
+        "rationale": "Extensión física de 424/424 · 1 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2656/6562",
+        "rank": 39,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "265/562"
+        ],
+        "rationale": "Extensión física de 265/562 · 4 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5627/7265",
+        "rank": 40,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "265/562"
+        ],
+        "rationale": "Extensión física de 265/562 · 4 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5265/5625",
+        "rank": 41,
+        "sourceCount": 1,
+        "paths": 6,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "265/562",
+          "526/625"
+        ],
+        "rationale": "Extensión física de 265/562 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2562/2652",
+        "rank": 42,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "265/562"
+        ],
+        "rationale": "Extensión física de 265/562 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2657/7562",
+        "rank": 43,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "265/562"
+        ],
+        "rationale": "Extensión física de 265/562 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5267/7625",
+        "rank": 44,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "526/625"
+        ],
+        "rationale": "Extensión física de 526/625 · 4 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "6256/6526",
+        "rank": 45,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 4,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "526/625"
+        ],
+        "rationale": "Extensión física de 526/625 · 4 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5526/6255",
+        "rank": 46,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "255/552",
+          "526/625"
+        ],
+        "rationale": "Extensión física de 255/552 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2526/6252",
+        "rank": 47,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "526/625"
+        ],
+        "rationale": "Extensión física de 526/625 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "6257/7526",
+        "rank": 48,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "526/625"
+        ],
+        "rationale": "Extensión física de 526/625 · 2 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5255/5525",
+        "rank": 49,
+        "sourceCount": 1,
+        "paths": 6,
+        "physicalBlocks": 4,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "255/552"
+        ],
+        "rationale": "Extensión física de 255/552 · 4 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "5527/7255",
+        "rank": 50,
+        "sourceCount": 1,
+        "paths": 4,
+        "physicalBlocks": 3,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "255/552"
+        ],
+        "rationale": "Extensión física de 255/552 · 3 bloque(s) propios de cuatro cifras"
+      },
+      {
+        "family": "2553/3552",
+        "rank": 51,
+        "sourceCount": 1,
+        "paths": 2,
+        "physicalBlocks": 2,
+        "directRoots": 0,
+        "d7Roots": 0,
+        "d1Roots": 0,
+        "branchBlocks": 0,
+        "parentFamilies": [
+          "255/552"
+        ],
+        "rationale": "Extensión física de 255/552 · 2 bloque(s) propios de cuatro cifras"
+      }
+    ]
+  }
+}

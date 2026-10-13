@@ -1,0 +1,825 @@
+{
+  "sealedAt": "2026-10-12T21:56:11.783Z",
+  "replayExact": true,
+  "physicalFamilies": 172,
+  "engineFamilies": 61,
+  "bySource": [
+    {
+      "source": "prevNocturno",
+      "physicalFamilies": 26,
+      "engineFamilies": 20,
+      "top10": [
+        "565/565",
+        "556/655",
+        "555/555",
+        "365/563",
+        "536/635",
+        "276/672",
+        "265/562",
+        "526/625",
+        "255/552"
+      ],
+      "historicVT3Roots": [
+        {
+          "date": "2026-10-10",
+          "head": "2473",
+          "turn": "Primera",
+          "jur": "Entre Ríos",
+          "cells": [
+            "3:0",
+            "3:1",
+            "2:1"
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "head": "6542",
+          "turn": "Matutino",
+          "jur": "Ciudad",
+          "cells": [
+            "4:1",
+            "5:0",
+            "5:1"
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "head": "2654",
+          "turn": "Nocturno",
+          "jur": "Provincia",
+          "cells": [
+            "4:0",
+            "4:1",
+            "3:0"
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "head": "2654",
+          "turn": "Nocturno",
+          "jur": "Provincia",
+          "cells": [
+            "4:0",
+            "4:1",
+            "5:0"
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "head": "0564",
+          "turn": "Nocturno",
+          "jur": "Entre Ríos",
+          "cells": [
+            "1:0",
+            "2:0",
+            "3:0"
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "head": "0564",
+          "turn": "Nocturno",
+          "jur": "Entre Ríos",
+          "cells": [
+            "1:1",
+            "2:0",
+            "3:0"
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "head": "0564",
+          "turn": "Nocturno",
+          "jur": "Entre Ríos",
+          "cells": [
+            "4:1",
+            "4:0",
+            "3:0"
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "head": "0564",
+          "turn": "Nocturno",
+          "jur": "Entre Ríos",
+          "cells": [
+            "4:1",
+            "4:0",
+            "5:0"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Previa",
+      "physicalFamilies": 47,
+      "engineFamilies": 4,
+      "top10": [],
+      "historicVT3Roots": [
+        {
+          "date": "2026-10-10",
+          "head": "5918",
+          "turn": "Matutino",
+          "jur": "Provincia",
+          "cells": [
+            "2:0",
+            "3:0",
+            "3:1"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Primera",
+      "physicalFamilies": 65,
+      "engineFamilies": 37,
+      "top10": [
+        "365/563",
+        "536/635"
+      ],
+      "historicVT3Roots": [
+        {
+          "date": "2026-10-05",
+          "head": "3729",
+          "turn": "Matutino",
+          "jur": "Santa Fé",
+          "cells": [
+            "1:0",
+            "2:0",
+            "1:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "3729",
+          "turn": "Matutino",
+          "jur": "Santa Fé",
+          "cells": [
+            "1:0",
+            "2:0",
+            "2:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "3729",
+          "turn": "Matutino",
+          "jur": "Santa Fé",
+          "cells": [
+            "3:0",
+            "2:0",
+            "1:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "3729",
+          "turn": "Matutino",
+          "jur": "Santa Fé",
+          "cells": [
+            "3:0",
+            "2:0",
+            "2:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "3729",
+          "turn": "Matutino",
+          "jur": "Santa Fé",
+          "cells": [
+            "3:1",
+            "2:0",
+            "1:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "3729",
+          "turn": "Matutino",
+          "jur": "Santa Fé",
+          "cells": [
+            "3:1",
+            "2:0",
+            "2:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "8799",
+          "turn": "Vespertino",
+          "jur": "Entre Ríos",
+          "cells": [
+            "1:0",
+            "1:1",
+            "2:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "8799",
+          "turn": "Vespertino",
+          "jur": "Entre Ríos",
+          "cells": [
+            "1:0",
+            "2:1",
+            "1:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "8799",
+          "turn": "Vespertino",
+          "jur": "Entre Ríos",
+          "cells": [
+            "3:0",
+            "2:1",
+            "1:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "8799",
+          "turn": "Vespertino",
+          "jur": "Entre Ríos",
+          "cells": [
+            "3:1",
+            "2:1",
+            "1:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "5775",
+          "turn": "Nocturno",
+          "jur": "Entre Ríos",
+          "cells": [
+            "3:0",
+            "3:1",
+            "4:1"
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "head": "5775",
+          "turn": "Nocturno",
+          "jur": "Entre Ríos",
+          "cells": [
+            "3:1",
+            "3:0",
+            "4:1"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Matutino",
+      "physicalFamilies": 28,
+      "engineFamilies": 0,
+      "top10": [],
+      "historicVT3Roots": []
+    },
+    {
+      "source": "Vespertino",
+      "physicalFamilies": 36,
+      "engineFamilies": 3,
+      "top10": [
+        "424/424"
+      ],
+      "historicVT3Roots": [
+        {
+          "date": "2026-10-10",
+          "head": "6215",
+          "turn": "Nocturno",
+          "jur": "Santa Fé",
+          "cells": [
+            "1:0",
+            "2:1",
+            "3:1"
+          ]
+        }
+      ]
+    }
+  ],
+  "details": [
+    {
+      "value": "815",
+      "family": "518/815",
+      "sealedRank": null,
+      "physical": [
+        {
+          "source": "Primera",
+          "path": [
+            {
+              "row": 2,
+              "col": 1,
+              "digit": "8"
+            },
+            {
+              "row": 2,
+              "col": 0,
+              "digit": "1"
+            },
+            {
+              "row": 1,
+              "col": 1,
+              "digit": "5"
+            }
+          ],
+          "value": "815",
+          "enginePath": false
+        }
+      ],
+      "roots": [],
+      "priority": null,
+      "exclusionByFirstKey": null
+    },
+    {
+      "value": "851",
+      "family": "158/851",
+      "sealedRank": null,
+      "physical": [
+        {
+          "source": "Primera",
+          "path": [
+            {
+              "row": 2,
+              "col": 1,
+              "digit": "8"
+            },
+            {
+              "row": 1,
+              "col": 1,
+              "digit": "5"
+            },
+            {
+              "row": 2,
+              "col": 0,
+              "digit": "1"
+            }
+          ],
+          "value": "851",
+          "enginePath": false
+        }
+      ],
+      "roots": [],
+      "priority": null,
+      "exclusionByFirstKey": null
+    },
+    {
+      "value": "615",
+      "family": "516/615",
+      "sealedRank": 54,
+      "physical": [
+        {
+          "source": "Primera",
+          "path": [
+            {
+              "row": 1,
+              "col": 0,
+              "digit": "6"
+            },
+            {
+              "row": 2,
+              "col": 0,
+              "digit": "1"
+            },
+            {
+              "row": 1,
+              "col": 1,
+              "digit": "5"
+            }
+          ],
+          "value": "615",
+          "enginePath": true
+        },
+        {
+          "source": "Vespertino",
+          "path": [
+            {
+              "row": 4,
+              "col": 1,
+              "digit": "6"
+            },
+            {
+              "row": 3,
+              "col": 0,
+              "digit": "1"
+            },
+            {
+              "row": 4,
+              "col": 0,
+              "digit": "5"
+            }
+          ],
+          "value": "615",
+          "enginePath": false
+        }
+      ],
+      "engine": {
+        "kind": "vt3",
+        "family": "516/615",
+        "paths": [
+          {
+            "kind": "vt3",
+            "family": "516/615",
+            "value": "615",
+            "sourceId": "Primera",
+            "path": [
+              {
+                "row": 1,
+                "col": 0,
+                "digit": "6"
+              },
+              {
+                "row": 2,
+                "col": 0,
+                "digit": "1"
+              },
+              {
+                "row": 1,
+                "col": 1,
+                "digit": "5"
+              }
+            ],
+            "origin": "TRASLADO",
+            "rootIds": [
+              "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>1:1"
+            ],
+            "mothers": []
+          }
+        ],
+        "sourceCount": 1,
+        "directRoots": 1,
+        "d7Roots": 1,
+        "d1Roots": 0,
+        "physicalBlocks": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "state": "EN_SEGUIMIENTO",
+        "rationale": "1 raíz/raíces D−7 · 1 fuente(s)",
+        "rank": 54
+      },
+      "roots": [
+        {
+          "id": "2026-10-05|D−7|Matutino|Santa Fé|3729|vt3|Primera|1:0>2:0>1:1",
+          "period": "D−7",
+          "date": "2026-10-05",
+          "head": "3729",
+          "jurisdiction": "Santa Fé",
+          "oldTurn": "Matutino",
+          "sourceId": "Primera",
+          "oldCells": [
+            "1:0",
+            "2:0",
+            "1:1"
+          ]
+        }
+      ],
+      "priority": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "exclusionByFirstKey": {
+        "hayBifurcacion": 19,
+        "raicesD1": 9,
+        "raicesD7": 6,
+        "alfabetico": 19
+      }
+    },
+    {
+      "value": "242",
+      "family": "242/242",
+      "sealedRank": 25,
+      "physical": [
+        {
+          "source": "Vespertino",
+          "path": [
+            {
+              "row": 0,
+              "col": 0,
+              "digit": "2"
+            },
+            {
+              "row": 1,
+              "col": 0,
+              "digit": "4"
+            },
+            {
+              "row": 2,
+              "col": 1,
+              "digit": "2"
+            }
+          ],
+          "value": "242",
+          "enginePath": false
+        },
+        {
+          "source": "Vespertino",
+          "path": [
+            {
+              "row": 0,
+              "col": 0,
+              "digit": "2"
+            },
+            {
+              "row": 1,
+              "col": 1,
+              "digit": "4"
+            },
+            {
+              "row": 2,
+              "col": 1,
+              "digit": "2"
+            }
+          ],
+          "value": "242",
+          "enginePath": true
+        },
+        {
+          "source": "Vespertino",
+          "path": [
+            {
+              "row": 2,
+              "col": 1,
+              "digit": "2"
+            },
+            {
+              "row": 1,
+              "col": 0,
+              "digit": "4"
+            },
+            {
+              "row": 0,
+              "col": 0,
+              "digit": "2"
+            }
+          ],
+          "value": "242",
+          "enginePath": false
+        },
+        {
+          "source": "Vespertino",
+          "path": [
+            {
+              "row": 2,
+              "col": 1,
+              "digit": "2"
+            },
+            {
+              "row": 1,
+              "col": 1,
+              "digit": "4"
+            },
+            {
+              "row": 0,
+              "col": 0,
+              "digit": "2"
+            }
+          ],
+          "value": "242",
+          "enginePath": true
+        }
+      ],
+      "engine": {
+        "kind": "vt3",
+        "family": "242/242",
+        "paths": [
+          {
+            "kind": "vt3",
+            "family": "242/242",
+            "value": "242",
+            "sourceId": "Vespertino",
+            "path": [
+              {
+                "row": 0,
+                "col": 0,
+                "digit": "2"
+              },
+              {
+                "row": 1,
+                "col": 1,
+                "digit": "4"
+              },
+              {
+                "row": 2,
+                "col": 1,
+                "digit": "2"
+              }
+            ],
+            "origin": "TRASLADO",
+            "rootIds": [
+              "2026-10-10|D−1|Nocturno|Santa Fé|6215|vt3|Vespertino|1:0>2:1>3:1"
+            ],
+            "mothers": []
+          }
+        ],
+        "sourceCount": 1,
+        "directRoots": 1,
+        "d7Roots": 0,
+        "d1Roots": 1,
+        "physicalBlocks": 1,
+        "branchBlocks": 0,
+        "parentFamilies": [],
+        "state": "EN_SEGUIMIENTO",
+        "rationale": "1 raíz/raíces D−1 · 1 fuente(s)",
+        "rank": 25
+      },
+      "roots": [
+        {
+          "id": "2026-10-10|D−1|Nocturno|Santa Fé|6215|vt3|Vespertino|1:0>2:1>3:1",
+          "period": "D−1",
+          "date": "2026-10-10",
+          "head": "6215",
+          "jurisdiction": "Santa Fé",
+          "oldTurn": "Nocturno",
+          "sourceId": "Vespertino",
+          "oldCells": [
+            "1:0",
+            "2:1",
+            "3:1"
+          ]
+        }
+      ],
+      "priority": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "exclusionByFirstKey": {
+        "hayBifurcacion": 19,
+        "bloques": 4,
+        "alfabetico": 1
+      }
+    },
+    {
+      "value": "290",
+      "family": "092/290",
+      "sealedRank": null,
+      "physical": [],
+      "roots": [],
+      "priority": null,
+      "exclusionByFirstKey": null
+    },
+    {
+      "value": "264",
+      "family": "264/462",
+      "sealedRank": null,
+      "physical": [],
+      "roots": [],
+      "priority": null,
+      "exclusionByFirstKey": null
+    }
+  ],
+  "top10": [
+    {
+      "family": "565/565",
+      "priority": [
+        1,
+        5,
+        2,
+        0,
+        1,
+        9
+      ],
+      "sources": [
+        "prevNocturno"
+      ]
+    },
+    {
+      "family": "556/655",
+      "priority": [
+        1,
+        4,
+        3,
+        0,
+        1,
+        7
+      ],
+      "sources": [
+        "prevNocturno"
+      ]
+    },
+    {
+      "family": "555/555",
+      "priority": [
+        1,
+        2,
+        3,
+        0,
+        1,
+        3
+      ],
+      "sources": [
+        "prevNocturno"
+      ]
+    },
+    {
+      "family": "365/563",
+      "priority": [
+        1,
+        2,
+        1,
+        3,
+        2,
+        6
+      ],
+      "sources": [
+        "prevNocturno",
+        "Primera"
+      ]
+    },
+    {
+      "family": "536/635",
+      "priority": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        4
+      ],
+      "sources": [
+        "prevNocturno",
+        "Primera"
+      ]
+    },
+    {
+      "family": "276/672",
+      "priority": [
+        1,
+        2,
+        1,
+        0,
+        1,
+        3
+      ],
+      "sources": [
+        "prevNocturno"
+      ]
+    },
+    {
+      "family": "424/424",
+      "priority": [
+        1,
+        2,
+        1,
+        0,
+        1,
+        3
+      ],
+      "sources": [
+        "Vespertino"
+      ]
+    },
+    {
+      "family": "265/562",
+      "priority": [
+        1,
+        1,
+        2,
+        0,
+        1,
+        4
+      ],
+      "sources": [
+        "prevNocturno"
+      ]
+    },
+    {
+      "family": "526/625",
+      "priority": [
+        1,
+        1,
+        2,
+        0,
+        1,
+        4
+      ],
+      "sources": [
+        "prevNocturno"
+      ]
+    },
+    {
+      "family": "255/552",
+      "priority": [
+        1,
+        1,
+        2,
+        0,
+        1,
+        3
+      ],
+      "sources": [
+        "prevNocturno"
+      ]
+    }
+  ]
+}
