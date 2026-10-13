@@ -1,0 +1,10 @@
+{
+  "rootPre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+  "eligiblePre": "d5d641d02bdaa7a7ae14878ecfaa3ebdf6a3295fac44b1fa1fbf70eaabafbb0a",
+  "eligibleSeal": "125d07d3de95242b0d523419a88ee2b4d111d8b3c0bfbd8e36b78d9c3acef551",
+  "protocol": "6729c0ce2410cd8773c548583be4a9a713361bd188e61e4805794fbf2919b1de",
+  "script": "eb2bd067add6d563966c3b27eef342a13a86edf01373ad06da151391a79abc5e",
+  "pre": "fc1fb88b42695197e78f9eb743b859ef55f0ab5ea6b30466506fff0c32ff8ccc",
+  "nocturnaPre": "a132879c9d59c681c88f437961dfb707f74826073e67deaab294e07ea21134fb",
+  "priorRandomPre": "b3caf0eb3cabca160c89bb8c27fdf79d0c176cf18bd109a957a7efc252317d55"
+}

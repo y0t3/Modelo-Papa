@@ -1,0 +1,124 @@
+{
+  "heads": [
+    "9851",
+    "1615",
+    "7242",
+    "8290",
+    "3264"
+  ],
+  "watch": [
+    {
+      "head": "9851",
+      "family": "158/851",
+      "eligible": true,
+      "geometry": {
+        "family": "158/851",
+        "anchored": false,
+        "ownBlocks": 1,
+        "ownPaths": 1,
+        "ownSources": 1,
+        "anchoredNeighborFamilies": 8,
+        "anchoredPivotFamilies": 2,
+        "anchoredSameBlockFamilies": 0,
+        "contactSources": 1,
+        "pivotBlocks": 1,
+        "edgePairs": 10,
+        "pivotPairs": 4,
+        "blockPairs": 0,
+        "contactDensity": 8,
+        "latestPhysical": false,
+        "has2AnchoredNeighbors": true
+      },
+      "positions": {
+        "ORIGINAL": null,
+        "BASE_RENOVADA": null,
+        "G_PIVOTE": null,
+        "G_VECINOS": null,
+        "G_FUENTES": null,
+        "G_BLOQUE": null,
+        "G_DENSIDAD": null,
+        "G_UMBRAL2": null,
+        "CONTROL_HASH": null,
+        "CONTROL_BLOQUES": null,
+        "CONTROL_SIN_VECINOS": null
+      }
+    },
+    {
+      "head": "1615",
+      "family": "516/615",
+      "eligible": false,
+      "geometry": null,
+      "positions": {
+        "ORIGINAL": null,
+        "BASE_RENOVADA": null,
+        "G_PIVOTE": null,
+        "G_VECINOS": null,
+        "G_FUENTES": null,
+        "G_BLOQUE": null,
+        "G_DENSIDAD": null,
+        "G_UMBRAL2": null,
+        "CONTROL_HASH": null,
+        "CONTROL_BLOQUES": null,
+        "CONTROL_SIN_VECINOS": null
+      }
+    },
+    {
+      "head": "7242",
+      "family": "242/242",
+      "eligible": false,
+      "geometry": null,
+      "positions": {
+        "ORIGINAL": null,
+        "BASE_RENOVADA": null,
+        "G_PIVOTE": null,
+        "G_VECINOS": null,
+        "G_FUENTES": null,
+        "G_BLOQUE": null,
+        "G_DENSIDAD": null,
+        "G_UMBRAL2": null,
+        "CONTROL_HASH": null,
+        "CONTROL_BLOQUES": null,
+        "CONTROL_SIN_VECINOS": null
+      }
+    },
+    {
+      "head": "8290",
+      "family": "092/290",
+      "eligible": false,
+      "geometry": null,
+      "positions": {
+        "ORIGINAL": null,
+        "BASE_RENOVADA": null,
+        "G_PIVOTE": null,
+        "G_VECINOS": null,
+        "G_FUENTES": null,
+        "G_BLOQUE": null,
+        "G_DENSIDAD": null,
+        "G_UMBRAL2": null,
+        "CONTROL_HASH": null,
+        "CONTROL_BLOQUES": null,
+        "CONTROL_SIN_VECINOS": null
+      }
+    },
+    {
+      "head": "3264",
+      "family": "264/462",
+      "eligible": false,
+      "geometry": null,
+      "positions": {
+        "ORIGINAL": null,
+        "BASE_RENOVADA": null,
+        "G_PIVOTE": null,
+        "G_VECINOS": null,
+        "G_FUENTES": null,
+        "G_BLOQUE": null,
+        "G_DENSIDAD": null,
+        "G_UMBRAL2": null,
+        "CONTROL_HASH": null,
+        "CONTROL_BLOQUES": null,
+        "CONTROL_SIN_VECINOS": null
+      }
+    }
+  ],
+  "note": "Reproducción retrospectiva. No sustituye las predicciones selladas antes de este sorteo."
+}

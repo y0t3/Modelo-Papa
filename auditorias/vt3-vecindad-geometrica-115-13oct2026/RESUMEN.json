@@ -1,0 +1,1504 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "days": 23,
+  "all": {
+    "ORIGINAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "slotWins": 0,
+      "gains": [],
+      "losses": [],
+      "vsBaseGains": [],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "BASE_RENOVADA": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 18,
+      "slotWins": 3,
+      "gains": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ],
+      "losses": [],
+      "vsBaseGains": [],
+      "vsBaseLosses": []
+    },
+    "G_PIVOTE": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "slotWins": 1,
+      "gains": [
+        "2026-09-16|Matutino"
+      ],
+      "losses": [],
+      "vsBaseGains": [
+        "2026-09-16|Matutino"
+      ],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "G_VECINOS": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "slotWins": 1,
+      "gains": [
+        "2026-09-21|Primera"
+      ],
+      "losses": [],
+      "vsBaseGains": [
+        "2026-09-21|Primera"
+      ],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "G_FUENTES": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "slotWins": 1,
+      "gains": [
+        "2026-10-03|Vespertino"
+      ],
+      "losses": [],
+      "vsBaseGains": [],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino"
+      ]
+    },
+    "G_BLOQUE": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "slotWins": 1,
+      "gains": [
+        "2026-10-01|Matutino"
+      ],
+      "losses": [],
+      "vsBaseGains": [],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno",
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "G_DENSIDAD": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17,
+      "slotWins": 3,
+      "gains": [
+        "2026-09-16|Matutino",
+        "2026-10-06|Nocturno"
+      ],
+      "losses": [],
+      "vsBaseGains": [
+        "2026-09-16|Matutino",
+        "2026-10-06|Nocturno"
+      ],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "G_UMBRAL2": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17,
+      "slotWins": 3,
+      "gains": [
+        "2026-09-16|Matutino",
+        "2026-10-06|Nocturno"
+      ],
+      "losses": [],
+      "vsBaseGains": [
+        "2026-09-16|Matutino",
+        "2026-10-06|Nocturno"
+      ],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "CONTROL_HASH": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "slotWins": 0,
+      "gains": [],
+      "losses": [],
+      "vsBaseGains": [],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "CONTROL_BLOQUES": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 17,
+      "slotWins": 2,
+      "gains": [
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ],
+      "losses": [],
+      "vsBaseGains": [],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno"
+      ]
+    },
+    "CONTROL_SIN_VECINOS": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "slotWins": 0,
+      "gains": [],
+      "losses": [],
+      "vsBaseGains": [],
+      "vsBaseLosses": [
+        "2026-09-30|Nocturno",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ]
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "ORIGINAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "BASE_RENOVADA": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "slotWins": 1,
+        "gains": [
+          "2026-09-30|Nocturno"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_PIVOTE": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "slotWins": 1,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-09-16|Matutino"
+        ],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_VECINOS": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "slotWins": 1,
+        "gains": [
+          "2026-09-21|Primera"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-09-21|Primera"
+        ],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_FUENTES": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_BLOQUE": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_DENSIDAD": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "slotWins": 2,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-09-16|Matutino"
+        ],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_UMBRAL2": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "slotWins": 2,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-09-16|Matutino"
+        ],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "CONTROL_HASH": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "CONTROL_BLOQUES": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "CONTROL_SIN_VECINOS": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      }
+    },
+    "2026-10": {
+      "ORIGINAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "BASE_RENOVADA": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "slotWins": 2,
+        "gains": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_PIVOTE": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "G_VECINOS": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "G_FUENTES": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-03|Vespertino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino"
+        ]
+      },
+      "G_BLOQUE": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-01|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "G_DENSIDAD": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-06|Nocturno"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-10-06|Nocturno"
+        ],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "G_UMBRAL2": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-06|Nocturno"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-10-06|Nocturno"
+        ],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "CONTROL_HASH": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "CONTROL_BLOQUES": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 7,
+        "slotWins": 2,
+        "gains": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "CONTROL_SIN_VECINOS": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino",
+          "2026-10-03|Vespertino"
+        ]
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "BASE_RENOVADA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_PIVOTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_VECINOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_FUENTES": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_BLOQUE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_DENSIDAD": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_UMBRAL2": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "CONTROL_BLOQUES": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "CONTROL_SIN_VECINOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      }
+    },
+    "Primera": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "BASE_RENOVADA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_PIVOTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_VECINOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 2,
+        "slotWins": 1,
+        "gains": [
+          "2026-09-21|Primera"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-09-21|Primera"
+        ],
+        "vsBaseLosses": []
+      },
+      "G_FUENTES": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_BLOQUE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_DENSIDAD": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_UMBRAL2": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "CONTROL_BLOQUES": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "CONTROL_SIN_VECINOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      }
+    },
+    "Matutino": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino"
+        ]
+      },
+      "BASE_RENOVADA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-01|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_PIVOTE": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "slotWins": 1,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-09-16|Matutino"
+        ],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino"
+        ]
+      },
+      "G_VECINOS": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino"
+        ]
+      },
+      "G_FUENTES": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino"
+        ]
+      },
+      "G_BLOQUE": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-01|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_DENSIDAD": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "slotWins": 1,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-09-16|Matutino"
+        ],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino"
+        ]
+      },
+      "G_UMBRAL2": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "slotWins": 1,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-09-16|Matutino"
+        ],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino"
+        ]
+      },
+      "CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino"
+        ]
+      },
+      "CONTROL_BLOQUES": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-01|Matutino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "CONTROL_SIN_VECINOS": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-01|Matutino"
+        ]
+      }
+    },
+    "Vespertino": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "BASE_RENOVADA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-03|Vespertino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_PIVOTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "G_VECINOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "G_FUENTES": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-03|Vespertino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_BLOQUE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "G_DENSIDAD": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "G_UMBRAL2": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-03|Vespertino"
+        ]
+      },
+      "CONTROL_BLOQUES": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slotWins": 1,
+        "gains": [
+          "2026-10-03|Vespertino"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "CONTROL_SIN_VECINOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-10-03|Vespertino"
+        ]
+      }
+    },
+    "Nocturno": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "BASE_RENOVADA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "slotWins": 1,
+        "gains": [
+          "2026-09-30|Nocturno"
+        ],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": []
+      },
+      "G_PIVOTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_VECINOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_FUENTES": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_BLOQUE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_DENSIDAD": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "slotWins": 2,
+        "gains": [
+          "2026-10-06|Nocturno"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-10-06|Nocturno"
+        ],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "G_UMBRAL2": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 4,
+        "slotWins": 2,
+        "gains": [
+          "2026-10-06|Nocturno"
+        ],
+        "losses": [],
+        "vsBaseGains": [
+          "2026-10-06|Nocturno"
+        ],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "CONTROL_HASH": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "CONTROL_BLOQUES": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      },
+      "CONTROL_SIN_VECINOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slotWins": 0,
+        "gains": [],
+        "losses": [],
+        "vsBaseGains": [],
+        "vsBaseLosses": [
+          "2026-09-30|Nocturno"
+        ]
+      }
+    }
+  },
+  "members": {
+    "anchoredNeighborFamilies": {
+      "exposures": 6239,
+      "winners": 58,
+      "zeros": 1164,
+      "winnerZeros": 10
+    },
+    "anchoredPivotFamilies": {
+      "exposures": 5112,
+      "winners": 44,
+      "zeros": 2291,
+      "winnerZeros": 24
+    },
+    "anchoredSameBlockFamilies": {
+      "exposures": 2526,
+      "winners": 18,
+      "zeros": 4877,
+      "winnerZeros": 50
+    }
+  },
+  "eligible": {
+    "total": 7403,
+    "mean": 64.37391304347825,
+    "anyNeighbor": 6239,
+    "pivot": 5112,
+    "sharedBlock": 2526,
+    "twoNeighbors": 5564
+  },
+  "randomBaseline": {
+    "mean": 15.8185,
+    "median": 16,
+    "minimum": 15,
+    "maximum": 20,
+    "fractionAtLeast": {
+      "ORIGINAL": {
+        "top10": 15,
+        "neutralFractionAtLeast": 1
+      },
+      "BASE_RENOVADA": {
+        "top10": 18,
+        "neutralFractionAtLeast": 0.0505
+      },
+      "G_PIVOTE": {
+        "top10": 16,
+        "neutralFractionAtLeast": 0.557
+      },
+      "G_VECINOS": {
+        "top10": 16,
+        "neutralFractionAtLeast": 0.557
+      },
+      "G_FUENTES": {
+        "top10": 16,
+        "neutralFractionAtLeast": 0.557
+      },
+      "G_BLOQUE": {
+        "top10": 16,
+        "neutralFractionAtLeast": 0.557
+      },
+      "G_DENSIDAD": {
+        "top10": 17,
+        "neutralFractionAtLeast": 0.196
+      },
+      "G_UMBRAL2": {
+        "top10": 17,
+        "neutralFractionAtLeast": 0.196
+      },
+      "CONTROL_HASH": {
+        "top10": 15,
+        "neutralFractionAtLeast": 1
+      },
+      "CONTROL_BLOQUES": {
+        "top10": 17,
+        "neutralFractionAtLeast": 0.196
+      },
+      "CONTROL_SIN_VECINOS": {
+        "top10": 15,
+        "neutralFractionAtLeast": 1
+      }
+    }
+  },
+  "permutationControls": {
+    "all": {
+      "ORIGINAL": {
+        "observed": -3,
+        "mean": -0.3121,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.9932006799320068
+      },
+      "BASE_RENOVADA": {
+        "observed": 0,
+        "mean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "upperTail": 1
+      },
+      "G_PIVOTE": {
+        "observed": -2,
+        "mean": -0.2683,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.9687031296870313
+      },
+      "G_VECINOS": {
+        "observed": -2,
+        "mean": 0.0211,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.9825017498250175
+      },
+      "G_FUENTES": {
+        "observed": -2,
+        "mean": 0.0759,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.9862013798620138
+      },
+      "G_BLOQUE": {
+        "observed": -2,
+        "mean": -0.097,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.9762023797620238
+      },
+      "G_DENSIDAD": {
+        "observed": -1,
+        "mean": 0.1972,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.8955104489551045
+      },
+      "G_UMBRAL2": {
+        "observed": -1,
+        "mean": 0.1972,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.8955104489551045
+      },
+      "CONTROL_HASH": {
+        "observed": -3,
+        "mean": -0.3088,
+        "p05": -2,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.9942005799420058
+      },
+      "CONTROL_BLOQUES": {
+        "observed": -1,
+        "mean": 0.3002,
+        "p05": -1,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.9897010298970103
+      },
+      "CONTROL_SIN_VECINOS": {
+        "observed": -3,
+        "mean": 0.1731,
+        "p05": -1,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 1
+      }
+    },
+    "sameWeekday": {
+      "ORIGINAL": {
+        "observed": -3,
+        "mean": -1.2635,
+        "p05": -3,
+        "median": -1,
+        "p95": 0,
+        "upperTail": 0.9671032896710329
+      },
+      "BASE_RENOVADA": {
+        "observed": 0,
+        "mean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "upperTail": 1
+      },
+      "G_PIVOTE": {
+        "observed": -2,
+        "mean": -0.4231,
+        "p05": -3,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.9179082091790821
+      },
+      "G_VECINOS": {
+        "observed": -2,
+        "mean": 0.1559,
+        "p05": -3,
+        "median": 0,
+        "p95": 3,
+        "upperTail": 0.9447055294470553
+      },
+      "G_FUENTES": {
+        "observed": -2,
+        "mean": -0.1806,
+        "p05": -3,
+        "median": 0,
+        "p95": 2,
+        "upperTail": 0.948005199480052
+      },
+      "G_BLOQUE": {
+        "observed": -2,
+        "mean": -0.7537,
+        "p05": -3,
+        "median": -1,
+        "p95": 1,
+        "upperTail": 0.922107789221078
+      },
+      "G_DENSIDAD": {
+        "observed": -1,
+        "mean": 0.0089,
+        "p05": -3,
+        "median": 0,
+        "p95": 3,
+        "upperTail": 0.82991700829917
+      },
+      "G_UMBRAL2": {
+        "observed": -1,
+        "mean": 0.0089,
+        "p05": -3,
+        "median": 0,
+        "p95": 3,
+        "upperTail": 0.82991700829917
+      },
+      "CONTROL_HASH": {
+        "observed": -3,
+        "mean": -1.2643,
+        "p05": -3,
+        "median": -1,
+        "p95": 0,
+        "upperTail": 0.9666033396660334
+      },
+      "CONTROL_BLOQUES": {
+        "observed": -1,
+        "mean": 0.0803,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 0.9671032896710329
+      },
+      "CONTROL_SIN_VECINOS": {
+        "observed": -3,
+        "mean": -0.7545,
+        "p05": -2,
+        "median": -1,
+        "p95": 1,
+        "upperTail": 0.997000299970003
+      }
+    }
+  },
+  "seal": {
+    "rootPre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "eligiblePre": "d5d641d02bdaa7a7ae14878ecfaa3ebdf6a3295fac44b1fa1fbf70eaabafbb0a",
+    "eligibleSeal": "125d07d3de95242b0d523419a88ee2b4d111d8b3c0bfbd8e36b78d9c3acef551",
+    "protocol": "6729c0ce2410cd8773c548583be4a9a713361bd188e61e4805794fbf2919b1de",
+    "script": "eb2bd067add6d563966c3b27eef342a13a86edf01373ad06da151391a79abc5e",
+    "pre": "fc1fb88b42695197e78f9eb743b859ef55f0ab5ea6b30466506fff0c32ff8ccc",
+    "nocturnaPre": "a132879c9d59c681c88f437961dfb707f74826073e67deaab294e07ea21134fb",
+    "priorRandomPre": "b3caf0eb3cabca160c89bb8c27fdf79d0c176cf18bd109a957a7efc252317d55"
+  },
+  "caveat": "Todas las reglas creadas después de explorar este mismo corpus histórico. Las coincidencias no prueban ventaja predictiva en sorteos aleatorios."
+}
