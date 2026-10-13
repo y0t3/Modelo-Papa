@@ -1,0 +1,1855 @@
+{
+  "date": "2026-10-13",
+  "methodTotals": {
+    "BASE_CUPO2": {
+      "turns": 4,
+      "heads": 4,
+      "matchedCases": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "heads": [
+            "3159"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "heads": [
+            "2592"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "heads": [
+            "6542"
+          ],
+          "ranks": [
+            10
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "heads": [
+            "2654"
+          ],
+          "ranks": [
+            9
+          ]
+        }
+      ]
+    },
+    "D7_EXACTO": {
+      "turns": 4,
+      "heads": 4,
+      "matchedCases": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "heads": [
+            "3159"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "heads": [
+            "2592"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "heads": [
+            "6542"
+          ],
+          "ranks": [
+            10
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "heads": [
+            "2654"
+          ],
+          "ranks": [
+            9
+          ]
+        }
+      ]
+    },
+    "D7_TRASLADO": {
+      "turns": 4,
+      "heads": 4,
+      "matchedCases": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "heads": [
+            "3159"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "heads": [
+            "2592"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "heads": [
+            "6542"
+          ],
+          "ranks": [
+            10
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "heads": [
+            "2654"
+          ],
+          "ranks": [
+            9
+          ]
+        }
+      ]
+    },
+    "D7_MISMO_TURNO": {
+      "turns": 4,
+      "heads": 4,
+      "matchedCases": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "heads": [
+            "3159"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "heads": [
+            "2592"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "heads": [
+            "6542"
+          ],
+          "ranks": [
+            10
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "heads": [
+            "2654"
+          ],
+          "ranks": [
+            9
+          ]
+        }
+      ]
+    },
+    "D1_EXACTO": {
+      "turns": 4,
+      "heads": 4,
+      "matchedCases": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "heads": [
+            "3159"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "heads": [
+            "5832"
+          ],
+          "ranks": [
+            8
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "heads": [
+            "6542"
+          ],
+          "ranks": [
+            10
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "heads": [
+            "2654"
+          ],
+          "ranks": [
+            9
+          ]
+        }
+      ]
+    },
+    "D1_TRASLADO": {
+      "turns": 4,
+      "heads": 4,
+      "matchedCases": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "heads": [
+            "3159"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "heads": [
+            "5832"
+          ],
+          "ranks": [
+            8
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "heads": [
+            "6542"
+          ],
+          "ranks": [
+            10
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "heads": [
+            "2654"
+          ],
+          "ranks": [
+            9
+          ]
+        }
+      ]
+    },
+    "D7_D1_COMBINADO": {
+      "turns": 4,
+      "heads": 5,
+      "matchedCases": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "heads": [
+            "3159"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "heads": [
+            "2592",
+            "5832"
+          ],
+          "ranks": [
+            9,
+            8
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "heads": [
+            "6542"
+          ],
+          "ranks": [
+            10
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "heads": [
+            "2654"
+          ],
+          "ranks": [
+            9
+          ]
+        }
+      ]
+    },
+    "OTRA_FUENTE_CONTROL": {
+      "turns": 2,
+      "heads": 2,
+      "matchedCases": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "heads": [
+            "3159"
+          ],
+          "ranks": [
+            9
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "heads": [
+            "2592"
+          ],
+          "ranks": [
+            9
+          ]
+        }
+      ]
+    },
+    "CONTROL_HASH": {
+      "turns": 1,
+      "heads": 1,
+      "matchedCases": [
+        {
+          "date": "2026-09-18",
+          "turn": "Vespertino",
+          "heads": [
+            "2735"
+          ],
+          "ranks": [
+            5
+          ]
+        }
+      ]
+    }
+  },
+  "focus": [
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "head": "2735",
+      "physicalGroups": [
+        {
+          "family": "2735/3725",
+          "mother": "273/372",
+          "rank": 25,
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          },
+          "paths": [
+            {
+              "source": "prevNocturno",
+              "read": "3725",
+              "cells": [
+                "4:0",
+                "3:0",
+                "4:1",
+                "3:1"
+              ],
+              "shape": "0:1>1:1>0:0>1:0"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "2735",
+              "cells": [
+                "4:1",
+                "3:0",
+                "4:0",
+                "3:1"
+              ],
+              "shape": "0:1>1:0>0:0>1:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "2735",
+              "cells": [
+                "2:0",
+                "3:0",
+                "4:0",
+                "3:1"
+              ],
+              "shape": "0:0>1:0>2:0>1:1"
+            },
+            {
+              "source": "prevNocturno",
+              "read": "3725",
+              "cells": [
+                "4:0",
+                "3:0",
+                "2:0",
+                "3:1"
+              ],
+              "shape": "1:1>0:0>1:0>2:0"
+            }
+          ]
+        }
+      ],
+      "relevantHistoricalMarks": [],
+      "selected": {
+        "BASE_CUPO2": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 5,
+              "mother": "273/372",
+              "family": "2739/3729",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 6,
+              "mother": "273/372",
+              "family": "9273/9372",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_EXACTO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 5,
+              "mother": "273/372",
+              "family": "2739/3729",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 6,
+              "mother": "273/372",
+              "family": "9273/9372",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_TRASLADO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 5,
+              "mother": "273/372",
+              "family": "2739/3729",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 6,
+              "mother": "273/372",
+              "family": "9273/9372",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_MISMO_TURNO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 5,
+              "mother": "273/372",
+              "family": "2739/3729",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 6,
+              "mother": "273/372",
+              "family": "9273/9372",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D1_EXACTO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 5,
+              "mother": "273/372",
+              "family": "2739/3729",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 6,
+              "mother": "273/372",
+              "family": "9273/9372",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D1_TRASLADO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 5,
+              "mother": "273/372",
+              "family": "2739/3729",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 6,
+              "mother": "273/372",
+              "family": "9273/9372",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_D1_COMBINADO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 5,
+              "mother": "273/372",
+              "family": "2739/3729",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 6,
+              "mother": "273/372",
+              "family": "9273/9372",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "OTRA_FUENTE_CONTROL": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 5,
+              "mother": "273/372",
+              "family": "2739/3729",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 6,
+              "mother": "273/372",
+              "family": "9273/9372",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "CONTROL_HASH": {
+          "present": true,
+          "rank": 5,
+          "motherSiblingSlots": [
+            {
+              "rank": 5,
+              "mother": "273/372",
+              "family": "2735/3725",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 6,
+              "mother": "273/372",
+              "family": "2273/2372",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "head": "5832",
+      "physicalGroups": [
+        {
+          "family": "5238/5832",
+          "mother": "238/832",
+          "rank": 37,
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 1,
+            "d1shape": 1,
+            "otherSource": 0
+          },
+          "paths": [
+            {
+              "source": "Primera",
+              "read": "5832",
+              "cells": [
+                "1:1",
+                "0:1",
+                "1:0",
+                "2:1"
+              ],
+              "shape": "1:1>0:1>1:0>2:1"
+            },
+            {
+              "source": "Primera",
+              "read": "5238",
+              "cells": [
+                "1:1",
+                "2:1",
+                "1:0",
+                "0:1"
+              ],
+              "shape": "0:1>1:0>2:1>1:1"
+            },
+            {
+              "source": "Primera",
+              "read": "5832",
+              "cells": [
+                "1:1",
+                "0:0",
+                "1:0",
+                "2:1"
+              ],
+              "shape": "1:1>0:0>1:0>2:1"
+            },
+            {
+              "source": "Primera",
+              "read": "5238",
+              "cells": [
+                "1:1",
+                "2:1",
+                "1:0",
+                "0:0"
+              ],
+              "shape": "0:0>1:0>2:1>1:1"
+            },
+            {
+              "source": "Primera",
+              "read": "5832",
+              "cells": [
+                "1:1",
+                "0:1",
+                "1:0",
+                "2:0"
+              ],
+              "shape": "1:1>0:1>1:0>2:0"
+            },
+            {
+              "source": "Primera",
+              "read": "5238",
+              "cells": [
+                "1:1",
+                "2:0",
+                "1:0",
+                "0:1"
+              ],
+              "shape": "0:1>1:0>2:0>1:1"
+            }
+          ]
+        }
+      ],
+      "relevantHistoricalMarks": [
+        {
+          "date": "2026-10-02",
+          "period": "D−1",
+          "oldTurn": "Vespertino",
+          "source": "Primera",
+          "path": "0:0>1:0>2:1>1:1",
+          "shape": "0:0>1:0>2:1>1:1",
+          "event": "2026-10-02|D−1|Vespertino|Santa Fé|3686"
+        }
+      ],
+      "selected": {
+        "BASE_CUPO2": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 7,
+              "mother": "238/832",
+              "family": "2384/8324",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 8,
+              "mother": "238/832",
+              "family": "2385/8325",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 1,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_EXACTO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 7,
+              "mother": "238/832",
+              "family": "2388/8328",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 8,
+              "mother": "238/832",
+              "family": "8238/8832",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_TRASLADO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 7,
+              "mother": "238/832",
+              "family": "2388/8328",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 8,
+              "mother": "238/832",
+              "family": "8238/8832",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_MISMO_TURNO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 7,
+              "mother": "238/832",
+              "family": "2388/8328",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 8,
+              "mother": "238/832",
+              "family": "8238/8832",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D1_EXACTO": {
+          "present": true,
+          "rank": 8,
+          "motherSiblingSlots": [
+            {
+              "rank": 7,
+              "mother": "238/832",
+              "family": "2385/8325",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 1,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 8,
+              "mother": "238/832",
+              "family": "5238/5832",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 1,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D1_TRASLADO": {
+          "present": true,
+          "rank": 8,
+          "motherSiblingSlots": [
+            {
+              "rank": 7,
+              "mother": "238/832",
+              "family": "2385/8325",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 1,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 8,
+              "mother": "238/832",
+              "family": "5238/5832",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 1,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_D1_COMBINADO": {
+          "present": true,
+          "rank": 8,
+          "motherSiblingSlots": [
+            {
+              "rank": 7,
+              "mother": "238/832",
+              "family": "2385/8325",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 1,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 8,
+              "mother": "238/832",
+              "family": "5238/5832",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 1,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "OTRA_FUENTE_CONTROL": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 7,
+              "mother": "238/832",
+              "family": "2384/8324",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 8,
+              "mother": "238/832",
+              "family": "2385/8325",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 1,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "CONTROL_HASH": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 7,
+              "mother": "238/832",
+              "family": "9238/9832",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 8,
+              "mother": "238/832",
+              "family": "8238/8832",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "head": "2592",
+      "physicalGroups": [
+        {
+          "family": "2295/2592",
+          "mother": "295/592",
+          "rank": 43,
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 1,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          },
+          "paths": [
+            {
+              "source": "Primera",
+              "read": "2295",
+              "cells": [
+                "2:0",
+                "2:1",
+                "3:0",
+                "4:1"
+              ],
+              "shape": "0:0>0:1>1:0>2:1"
+            },
+            {
+              "source": "Primera",
+              "read": "2592",
+              "cells": [
+                "4:0",
+                "4:1",
+                "3:0",
+                "2:1"
+              ],
+              "shape": "0:1>1:0>2:1>2:0"
+            },
+            {
+              "source": "Primera",
+              "read": "2295",
+              "cells": [
+                "2:1",
+                "2:0",
+                "3:0",
+                "4:1"
+              ],
+              "shape": "0:1>0:0>1:0>2:1"
+            },
+            {
+              "source": "Primera",
+              "read": "2592",
+              "cells": [
+                "4:0",
+                "4:1",
+                "3:0",
+                "2:0"
+              ],
+              "shape": "0:0>1:0>2:1>2:0"
+            }
+          ]
+        }
+      ],
+      "relevantHistoricalMarks": [
+        {
+          "date": "2026-09-26",
+          "period": "D−7",
+          "oldTurn": "Vespertino",
+          "source": "Primera",
+          "path": "1:0>1:1>2:0>3:1",
+          "shape": "0:0>0:1>1:0>2:1",
+          "event": "2026-09-26|D−7|Vespertino|Provincia|3757"
+        }
+      ],
+      "selected": {
+        "BASE_CUPO2": {
+          "present": true,
+          "rank": 9,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "295/592",
+              "family": "2295/2592",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "295/592",
+              "family": "2952/5922",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_EXACTO": {
+          "present": true,
+          "rank": 9,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "295/592",
+              "family": "2295/2592",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "295/592",
+              "family": "2952/5922",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_TRASLADO": {
+          "present": true,
+          "rank": 9,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "295/592",
+              "family": "2295/2592",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "295/592",
+              "family": "2952/5922",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_MISMO_TURNO": {
+          "present": true,
+          "rank": 9,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "295/592",
+              "family": "2295/2592",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "295/592",
+              "family": "2952/5922",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D1_EXACTO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "295/592",
+              "family": "2954/5924",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "295/592",
+              "family": "4295/4592",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D1_TRASLADO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "295/592",
+              "family": "2954/5924",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "295/592",
+              "family": "4295/4592",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_D1_COMBINADO": {
+          "present": true,
+          "rank": 9,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "295/592",
+              "family": "2295/2592",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "295/592",
+              "family": "2952/5922",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "OTRA_FUENTE_CONTROL": {
+          "present": true,
+          "rank": 9,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "295/592",
+              "family": "2295/2592",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "295/592",
+              "family": "2952/5922",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 1,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "CONTROL_HASH": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "295/592",
+              "family": "2953/5923",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "295/592",
+              "family": "2955/5925",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "head": "3729",
+      "physicalGroups": [
+        {
+          "family": "3729/3927",
+          "mother": "729/927",
+          "rank": 30,
+          "signal": {
+            "d7exact": 0,
+            "d7shape": 0,
+            "d7turn": 0,
+            "d1exact": 0,
+            "d1shape": 0,
+            "otherSource": 0
+          },
+          "paths": [
+            {
+              "source": "Primera",
+              "read": "3927",
+              "cells": [
+                "0:0",
+                "1:1",
+                "2:0",
+                "3:1"
+              ],
+              "shape": "0:0>1:1>2:0>3:1"
+            },
+            {
+              "source": "Primera",
+              "read": "3927",
+              "cells": [
+                "0:0",
+                "1:1",
+                "2:0",
+                "3:0"
+              ],
+              "shape": "0:0>1:1>2:0>3:0"
+            },
+            {
+              "source": "Primera",
+              "read": "3927",
+              "cells": [
+                "0:0",
+                "1:1",
+                "2:0",
+                "1:0"
+              ],
+              "shape": "0:0>1:1>2:0>1:0"
+            },
+            {
+              "source": "Primera",
+              "read": "3729",
+              "cells": [
+                "0:0",
+                "1:0",
+                "2:0",
+                "1:1"
+              ],
+              "shape": "0:0>1:0>2:0>1:1"
+            },
+            {
+              "source": "Primera",
+              "read": "3729",
+              "cells": [
+                "0:0",
+                "1:0",
+                "2:0",
+                "2:1"
+              ],
+              "shape": "0:0>1:0>2:0>2:1"
+            }
+          ]
+        }
+      ],
+      "relevantHistoricalMarks": [],
+      "selected": {
+        "BASE_CUPO2": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "729/927",
+              "family": "7297/9277",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 1
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "729/927",
+              "family": "7729/7927",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 1
+              }
+            }
+          ]
+        },
+        "D7_EXACTO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "729/927",
+              "family": "0729/0927",
+              "signal": {
+                "d7exact": 1,
+                "d7shape": 1,
+                "d7turn": 1,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "729/927",
+              "family": "7290/9270",
+              "signal": {
+                "d7exact": 1,
+                "d7shape": 1,
+                "d7turn": 1,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_TRASLADO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "729/927",
+              "family": "0729/0927",
+              "signal": {
+                "d7exact": 1,
+                "d7shape": 1,
+                "d7turn": 1,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "729/927",
+              "family": "7290/9270",
+              "signal": {
+                "d7exact": 1,
+                "d7shape": 1,
+                "d7turn": 1,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D7_MISMO_TURNO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "729/927",
+              "family": "0729/0927",
+              "signal": {
+                "d7exact": 1,
+                "d7shape": 1,
+                "d7turn": 1,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "729/927",
+              "family": "7290/9270",
+              "signal": {
+                "d7exact": 1,
+                "d7shape": 1,
+                "d7turn": 1,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "D1_EXACTO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "729/927",
+              "family": "7297/9277",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 1
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "729/927",
+              "family": "7729/7927",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 1
+              }
+            }
+          ]
+        },
+        "D1_TRASLADO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "729/927",
+              "family": "7297/9277",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 1
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "729/927",
+              "family": "7729/7927",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 1
+              }
+            }
+          ]
+        },
+        "D7_D1_COMBINADO": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "729/927",
+              "family": "0729/0927",
+              "signal": {
+                "d7exact": 1,
+                "d7shape": 1,
+                "d7turn": 1,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "729/927",
+              "family": "7290/9270",
+              "signal": {
+                "d7exact": 1,
+                "d7shape": 1,
+                "d7turn": 1,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        },
+        "OTRA_FUENTE_CONTROL": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "729/927",
+              "family": "7297/9277",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 1
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "729/927",
+              "family": "7729/7927",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 1,
+                "otherSource": 1
+              }
+            }
+          ]
+        },
+        "CONTROL_HASH": {
+          "present": false,
+          "rank": 0,
+          "motherSiblingSlots": [
+            {
+              "rank": 9,
+              "mother": "729/927",
+              "family": "7296/9276",
+              "signal": {
+                "d7exact": 0,
+                "d7shape": 0,
+                "d7turn": 0,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            },
+            {
+              "rank": 10,
+              "mother": "729/927",
+              "family": "7290/9270",
+              "signal": {
+                "d7exact": 1,
+                "d7shape": 1,
+                "d7turn": 1,
+                "d1exact": 0,
+                "d1shape": 0,
+                "otherSource": 0
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "note": "Auditoría POST de la selección PRE: cuenta cabezas exactas, no sólo turnos acertados. Nunca reordena Tops."
+}
