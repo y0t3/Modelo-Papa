@@ -1,0 +1,10 @@
+{
+  "hashes": {
+    "protocol": "4d6d713d6e994ea1573f3f143ffe13bae51ec0c1380080ce51fc02a31a30a154",
+    "sourcePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "sourcePost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+    "script": "bd23f35b972bf36adfe0a8039d16106441e780501ab7ffa92da1cf8117f30378"
+  },
+  "resumen": "599205fcdabcd243a7c365967c0cfde8ad61b48418436e0c46b76d8898ad73ea",
+  "cases": "9dcad1040a060b2fb48a13a11607c4f7f13e358ee4c81cf5c3ed3cc15731ba52"
+}

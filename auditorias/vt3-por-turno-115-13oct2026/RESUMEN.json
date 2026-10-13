@@ -1,0 +1,714 @@
+{
+  "context": "POST-motivado: se inspeccionó Matutino 8/23 y Vespertino 0/23 ANTES de definir esta prueba",
+  "period": "15/09 a 10/10/2026",
+  "date": "2026-10-13",
+  "cuts": 115,
+  "days": 23,
+  "byTurn": {
+    "Previa": {
+      "cuts": 23,
+      "physicalCuts": 11,
+      "anchoredCuts": 6,
+      "top10Cuts": 3,
+      "physicalWinningFamilies": 16,
+      "anchoredWinningFamilies": 9,
+      "top10WinningFamilies": 3,
+      "sourcePresenceTop10": {
+        "prevNocturno": 230
+      },
+      "physicalAvailableButMissingTop10": 8,
+      "persistedTop10Wins": 0,
+      "top10Wins": [
+        {
+          "date": "2026-09-17",
+          "family": "446/644",
+          "originalRank": 1,
+          "physicalRank": 1,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 1,
+          "d7": 4,
+          "bif": 3,
+          "paths": 8,
+          "anchoredPaths": 8,
+          "inheritedTop10PreviousTurn": false
+        },
+        {
+          "date": "2026-09-24",
+          "family": "159/951",
+          "originalRank": 5,
+          "physicalRank": 5,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 0,
+          "d7": 1,
+          "bif": 1,
+          "paths": 2,
+          "anchoredPaths": 2,
+          "inheritedTop10PreviousTurn": false
+        },
+        {
+          "date": "2026-10-02",
+          "family": "539/935",
+          "originalRank": 2,
+          "physicalRank": 2,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 1,
+          "d7": 1,
+          "bif": 1,
+          "paths": 2,
+          "anchoredPaths": 2,
+          "inheritedTop10PreviousTurn": false
+        }
+      ]
+    },
+    "Primera": {
+      "cuts": 23,
+      "physicalCuts": 10,
+      "anchoredCuts": 3,
+      "top10Cuts": 1,
+      "physicalWinningFamilies": 11,
+      "anchoredWinningFamilies": 3,
+      "top10WinningFamilies": 1,
+      "sourcePresenceTop10": {
+        "prevNocturno": 156,
+        "Previa": 87
+      },
+      "physicalAvailableButMissingTop10": 9,
+      "persistedTop10Wins": 1,
+      "top10Wins": [
+        {
+          "date": "2026-09-22",
+          "family": "456/654",
+          "originalRank": 8,
+          "physicalRank": 8,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 2,
+          "d7": 0,
+          "bif": 1,
+          "paths": 2,
+          "anchoredPaths": 2,
+          "inheritedTop10PreviousTurn": true
+        }
+      ]
+    },
+    "Matutino": {
+      "cuts": 23,
+      "physicalCuts": 20,
+      "anchoredCuts": 15,
+      "top10Cuts": 8,
+      "physicalWinningFamilies": 41,
+      "anchoredWinningFamilies": 20,
+      "top10WinningFamilies": 9,
+      "sourcePresenceTop10": {
+        "prevNocturno": 121,
+        "Primera": 65,
+        "Previa": 71
+      },
+      "physicalAvailableButMissingTop10": 12,
+      "persistedTop10Wins": 5,
+      "top10Wins": [
+        {
+          "date": "2026-09-15",
+          "family": "779/977",
+          "originalRank": 7,
+          "physicalRank": 7,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 3,
+          "d7": 0,
+          "bif": 1,
+          "paths": 4,
+          "anchoredPaths": 3,
+          "inheritedTop10PreviousTurn": true
+        },
+        {
+          "date": "2026-09-24",
+          "family": "194/491",
+          "originalRank": 8,
+          "physicalRank": 8,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 0,
+          "d7": 2,
+          "bif": 1,
+          "paths": 3,
+          "anchoredPaths": 3,
+          "inheritedTop10PreviousTurn": true
+        },
+        {
+          "date": "2026-09-25",
+          "family": "118/811",
+          "originalRank": 6,
+          "physicalRank": 6,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 1,
+          "d7": 1,
+          "bif": 1,
+          "paths": 3,
+          "anchoredPaths": 3,
+          "inheritedTop10PreviousTurn": true
+        },
+        {
+          "date": "2026-09-29",
+          "family": "289/982",
+          "originalRank": 6,
+          "physicalRank": 6,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 4,
+          "d7": 0,
+          "bif": 1,
+          "paths": 3,
+          "anchoredPaths": 3,
+          "inheritedTop10PreviousTurn": true
+        },
+        {
+          "date": "2026-09-30",
+          "family": "778/877",
+          "originalRank": 1,
+          "physicalRank": 1,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 2,
+          "d7": 0,
+          "bif": 1,
+          "paths": 3,
+          "anchoredPaths": 3,
+          "inheritedTop10PreviousTurn": true
+        },
+        {
+          "date": "2026-10-03",
+          "family": "238/832",
+          "originalRank": 4,
+          "physicalRank": 5,
+          "sources": [
+            "Primera"
+          ],
+          "anchoredSources": [
+            "Primera"
+          ],
+          "d1": 0,
+          "d7": 1,
+          "bif": 2,
+          "paths": 4,
+          "anchoredPaths": 3,
+          "inheritedTop10PreviousTurn": false
+        },
+        {
+          "date": "2026-10-03",
+          "family": "295/592",
+          "originalRank": 5,
+          "physicalRank": 4,
+          "sources": [
+            "Previa",
+            "Primera"
+          ],
+          "anchoredSources": [
+            "Primera"
+          ],
+          "d1": 0,
+          "d7": 1,
+          "bif": 2,
+          "paths": 5,
+          "anchoredPaths": 3,
+          "inheritedTop10PreviousTurn": false
+        },
+        {
+          "date": "2026-10-05",
+          "family": "729/927",
+          "originalRank": 5,
+          "physicalRank": 5,
+          "sources": [
+            "Primera"
+          ],
+          "anchoredSources": [
+            "Primera"
+          ],
+          "d1": 3,
+          "d7": 1,
+          "bif": 2,
+          "paths": 6,
+          "anchoredPaths": 6,
+          "inheritedTop10PreviousTurn": false
+        },
+        {
+          "date": "2026-10-08",
+          "family": "071/170",
+          "originalRank": 7,
+          "physicalRank": 8,
+          "sources": [
+            "Primera"
+          ],
+          "anchoredSources": [
+            "Primera"
+          ],
+          "d1": 1,
+          "d7": 0,
+          "bif": 1,
+          "paths": 2,
+          "anchoredPaths": 2,
+          "inheritedTop10PreviousTurn": false
+        }
+      ]
+    },
+    "Vespertino": {
+      "cuts": 23,
+      "physicalCuts": 18,
+      "anchoredCuts": 9,
+      "top10Cuts": 0,
+      "physicalWinningFamilies": 29,
+      "anchoredWinningFamilies": 11,
+      "top10WinningFamilies": 0,
+      "sourcePresenceTop10": {
+        "Primera": 55,
+        "Matutino": 44,
+        "prevNocturno": 106,
+        "Previa": 60
+      },
+      "physicalAvailableButMissingTop10": 18,
+      "persistedTop10Wins": 0,
+      "top10Wins": []
+    },
+    "Nocturno": {
+      "cuts": 23,
+      "physicalCuts": 21,
+      "anchoredCuts": 13,
+      "top10Cuts": 3,
+      "physicalWinningFamilies": 46,
+      "anchoredWinningFamilies": 21,
+      "top10WinningFamilies": 4,
+      "sourcePresenceTop10": {
+        "Primera": 55,
+        "Matutino": 42,
+        "prevNocturno": 94,
+        "Previa": 54,
+        "Vespertino": 25
+      },
+      "physicalAvailableButMissingTop10": 18,
+      "persistedTop10Wins": 4,
+      "top10Wins": [
+        {
+          "date": "2026-09-17",
+          "family": "464/464",
+          "originalRank": 2,
+          "physicalRank": 2,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 1,
+          "d7": 2,
+          "bif": 3,
+          "paths": 6,
+          "anchoredPaths": 6,
+          "inheritedTop10PreviousTurn": true
+        },
+        {
+          "date": "2026-09-18",
+          "family": "173/371",
+          "originalRank": 8,
+          "physicalRank": 11,
+          "sources": [
+            "Previa"
+          ],
+          "anchoredSources": [
+            "Previa"
+          ],
+          "d1": 1,
+          "d7": 0,
+          "bif": 1,
+          "paths": 2,
+          "anchoredPaths": 2,
+          "inheritedTop10PreviousTurn": true
+        },
+        {
+          "date": "2026-10-10",
+          "family": "465/564",
+          "originalRank": 2,
+          "physicalRank": 2,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 0,
+          "d7": 1,
+          "bif": 2,
+          "paths": 4,
+          "anchoredPaths": 4,
+          "inheritedTop10PreviousTurn": true
+        },
+        {
+          "date": "2026-10-10",
+          "family": "456/654",
+          "originalRank": 5,
+          "physicalRank": 6,
+          "sources": [
+            "prevNocturno"
+          ],
+          "anchoredSources": [
+            "prevNocturno"
+          ],
+          "d1": 1,
+          "d7": 0,
+          "bif": 1,
+          "paths": 2,
+          "anchoredPaths": 2,
+          "inheritedTop10PreviousTurn": true
+        }
+      ]
+    }
+  },
+  "placebo": {
+    "all": {
+      "Previa": {
+        "top10": {
+          "real": 3,
+          "mean": 1.7454,
+          "p05": 0,
+          "p50": 2,
+          "p95": 4,
+          "empiricalTail": 0.25073746312684364,
+          "bonferroniFiveTurns": 1
+        },
+        "anchored": {
+          "real": 6,
+          "mean": 5.48135,
+          "p05": 2,
+          "p50": 5,
+          "p95": 9,
+          "empiricalTail": 0.48112594370281486,
+          "bonferroniFiveTurns": 1
+        },
+        "physical": {
+          "real": 11,
+          "mean": 9.2968,
+          "p05": 6,
+          "p50": 9,
+          "p95": 13,
+          "empiricalTail": 0.2966351682415879,
+          "bonferroniFiveTurns": 1
+        }
+      },
+      "Primera": {
+        "top10": {
+          "real": 1,
+          "mean": 2.13755,
+          "p05": 0,
+          "p50": 2,
+          "p95": 5,
+          "empiricalTail": 0.9043047847607619,
+          "bonferroniFiveTurns": 1
+        },
+        "anchored": {
+          "real": 3,
+          "mean": 8.35415,
+          "p05": 5,
+          "p50": 8,
+          "p95": 12,
+          "empiricalTail": 0.9981500924953752,
+          "bonferroniFiveTurns": 1
+        },
+        "physical": {
+          "real": 10,
+          "mean": 14.8677,
+          "p05": 11,
+          "p50": 15,
+          "p95": 18,
+          "empiricalTail": 0.9912504374781261,
+          "bonferroniFiveTurns": 1
+        }
+      },
+      "Matutino": {
+        "top10": {
+          "real": 8,
+          "mean": 2.12555,
+          "p05": 0,
+          "p50": 2,
+          "p95": 5,
+          "empiricalTail": 0.0006999650017499125,
+          "bonferroniFiveTurns": 0.0034998250087495625
+        },
+        "anchored": {
+          "real": 15,
+          "mean": 10.8218,
+          "p05": 7,
+          "p50": 11,
+          "p95": 15,
+          "empiricalTail": 0.052597370131493425,
+          "bonferroniFiveTurns": 0.26298685065746713
+        },
+        "physical": {
+          "real": 20,
+          "mean": 17.9891,
+          "p05": 15,
+          "p50": 18,
+          "p95": 21,
+          "empiricalTail": 0.22768861556922154,
+          "bonferroniFiveTurns": 1
+        }
+      },
+      "Vespertino": {
+        "top10": {
+          "real": 0,
+          "mean": 1.65435,
+          "p05": 0,
+          "p50": 2,
+          "p95": 4,
+          "empiricalTail": 1,
+          "bonferroniFiveTurns": 1
+        },
+        "anchored": {
+          "real": 9,
+          "mean": 10.49175,
+          "p05": 7,
+          "p50": 10,
+          "p95": 14,
+          "empiricalTail": 0.8026598670066497,
+          "bonferroniFiveTurns": 1
+        },
+        "physical": {
+          "real": 18,
+          "mean": 18.8809,
+          "p05": 16,
+          "p50": 19,
+          "p95": 22,
+          "empiricalTail": 0.783460826958652,
+          "bonferroniFiveTurns": 1
+        }
+      },
+      "Nocturno": {
+        "top10": {
+          "real": 3,
+          "mean": 2.07945,
+          "p05": 0,
+          "p50": 2,
+          "p95": 4,
+          "empiricalTail": 0.34348282585870704,
+          "bonferroniFiveTurns": 1
+        },
+        "anchored": {
+          "real": 13,
+          "mean": 12.63265,
+          "p05": 9,
+          "p50": 13,
+          "p95": 16,
+          "empiricalTail": 0.5255737213139343,
+          "bonferroniFiveTurns": 1
+        },
+        "physical": {
+          "real": 21,
+          "mean": 20.27425,
+          "p05": 18,
+          "p50": 20,
+          "p95": 22,
+          "empiricalTail": 0.47017649117544125,
+          "bonferroniFiveTurns": 1
+        }
+      }
+    },
+    "sameWeekday": {
+      "Previa": {
+        "top10": {
+          "real": 3,
+          "mean": 1.3275,
+          "p05": 0,
+          "p50": 1,
+          "p95": 3,
+          "empiricalTail": 0.12389380530973451,
+          "bonferroniFiveTurns": 0.6194690265486725
+        },
+        "anchored": {
+          "real": 6,
+          "mean": 5.8267,
+          "p05": 3,
+          "p50": 6,
+          "p95": 8,
+          "empiricalTail": 0.5827208639568021,
+          "bonferroniFiveTurns": 1
+        },
+        "physical": {
+          "real": 11,
+          "mean": 9.9966,
+          "p05": 7,
+          "p50": 10,
+          "p95": 13,
+          "empiricalTail": 0.39508024598770064,
+          "bonferroniFiveTurns": 1
+        }
+      },
+      "Primera": {
+        "top10": {
+          "real": 1,
+          "mean": 0.7521,
+          "p05": 0,
+          "p50": 1,
+          "p95": 2,
+          "empiricalTail": 0.6276686165691715,
+          "bonferroniFiveTurns": 1
+        },
+        "anchored": {
+          "real": 3,
+          "mean": 5.75925,
+          "p05": 3,
+          "p50": 6,
+          "p95": 8,
+          "empiricalTail": 0.983550822458877,
+          "bonferroniFiveTurns": 1
+        },
+        "physical": {
+          "real": 10,
+          "mean": 11.68835,
+          "p05": 9,
+          "p50": 12,
+          "p95": 15,
+          "empiricalTail": 0.8853557322133894,
+          "bonferroniFiveTurns": 1
+        }
+      },
+      "Matutino": {
+        "top10": {
+          "real": 8,
+          "mean": 3.83035,
+          "p05": 1,
+          "p50": 4,
+          "p95": 6,
+          "empiricalTail": 0.013149342532873356,
+          "bonferroniFiveTurns": 0.06574671266436678
+        },
+        "anchored": {
+          "real": 15,
+          "mean": 13.16075,
+          "p05": 10,
+          "p50": 13,
+          "p95": 17,
+          "empiricalTail": 0.27348632568371584,
+          "bonferroniFiveTurns": 1
+        },
+        "physical": {
+          "real": 20,
+          "mean": 19.914,
+          "p05": 17,
+          "p50": 20,
+          "p95": 22,
+          "empiricalTail": 0.6277186140692965,
+          "bonferroniFiveTurns": 1
+        }
+      },
+      "Vespertino": {
+        "top10": {
+          "real": 0,
+          "mean": 1.58745,
+          "p05": 0,
+          "p50": 2,
+          "p95": 3,
+          "empiricalTail": 1,
+          "bonferroniFiveTurns": 1
+        },
+        "anchored": {
+          "real": 9,
+          "mean": 10.6528,
+          "p05": 7,
+          "p50": 11,
+          "p95": 14,
+          "empiricalTail": 0.8264086795660217,
+          "bonferroniFiveTurns": 1
+        },
+        "physical": {
+          "real": 18,
+          "mean": 17.90975,
+          "p05": 15,
+          "p50": 18,
+          "p95": 21,
+          "empiricalTail": 0.6054197290135493,
+          "bonferroniFiveTurns": 1
+        }
+      },
+      "Nocturno": {
+        "top10": {
+          "real": 3,
+          "mean": 1.75605,
+          "p05": 0,
+          "p50": 2,
+          "p95": 3,
+          "empiricalTail": 0.21398930053497325,
+          "bonferroniFiveTurns": 1
+        },
+        "anchored": {
+          "real": 13,
+          "mean": 13.0381,
+          "p05": 10,
+          "p50": 13,
+          "p95": 16,
+          "empiricalTail": 0.6068196590170492,
+          "bonferroniFiveTurns": 1
+        },
+        "physical": {
+          "real": 21,
+          "mean": 20.75855,
+          "p05": 19,
+          "p50": 21,
+          "p95": 22,
+          "empiricalTail": 0.6090195490225488,
+          "bonferroniFiveTurns": 1
+        }
+      }
+    }
+  },
+  "checks": {
+    "top10": 15,
+    "anchoredCuts": 46,
+    "physicalCuts": 80,
+    "selectedAndPreviouslyListed": 5,
+    "remarks": "Los turnos y las muestras fueron elegidos tras resultados conocidos. Múltiples tests y tuning previo impiden validación predictiva; la comparación es descriptiva."
+  },
+  "hashes": {
+    "protocol": "4d6d713d6e994ea1573f3f143ffe13bae51ec0c1380080ce51fc02a31a30a154",
+    "sourcePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "sourcePost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+    "script": "bd23f35b972bf36adfe0a8039d16106441e780501ab7ffa92da1cf8117f30378"
+  }
+}
