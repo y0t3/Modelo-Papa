@@ -6,7 +6,7 @@ import {resolve,dirname} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {stripTypeScriptTypes} from 'node:module';
 
-const OUT='auditorias/vt4-13oct2026/';
+const OUT='auditorias/vt4-familia-madre-orientada-13oct2026/';
 const APP='lab-vt3-turnos-13oct2026-pre-primera-sello-mat';
 const SOURCE='fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64';
 const JUR=['Ciudad','Provincia','Córdoba','Santa Fé','Entre Ríos','Montevideo'];
