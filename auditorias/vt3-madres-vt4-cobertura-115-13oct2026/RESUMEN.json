@@ -1,0 +1,2398 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "targetHeads": 575,
+  "coverage": {
+    "TOP3_VT3": {
+      "cuts": 1,
+      "distinctWinningHeads": 1,
+      "countOfPhysicalNumbersAvailableMean": 44.1
+    },
+    "TOP5_VT3": {
+      "cuts": 6,
+      "distinctWinningHeads": 7,
+      "countOfPhysicalNumbersAvailableMean": 69.8
+    },
+    "TOP10_VT3": {
+      "cuts": 7,
+      "distinctWinningHeads": 8,
+      "countOfPhysicalNumbersAvailableMean": 132.2
+    },
+    "TOP25_VT3": {
+      "cuts": 17,
+      "distinctWinningHeads": 18,
+      "countOfPhysicalNumbersAvailableMean": 332.4
+    },
+    "TODAS_ADMITIDAS_VT3": {
+      "cuts": 32,
+      "distinctWinningHeads": 38,
+      "countOfPhysicalNumbersAvailableMean": 10000
+    },
+    "TODAS_FISICAS_SIN_RAIZ": {
+      "cuts": 48,
+      "distinctWinningHeads": 67,
+      "countOfPhysicalNumbersAvailableMean": 1242.3
+    }
+  },
+  "jumps": {
+    "TOP3_VT3 → TOP5_VT3": {
+      "newHeads": 6,
+      "examples": [
+        {
+          "date": "2026-09-24",
+          "turn": "Previa",
+          "head": "3159",
+          "rootRank": 5
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "head": "2592",
+          "rootRank": 5
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Matutino",
+          "head": "5832",
+          "rootRank": 4
+        },
+        {
+          "date": "2026-10-05",
+          "turn": "Matutino",
+          "head": "3729",
+          "rootRank": 5
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "head": "6542",
+          "rootRank": 5
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "head": "2654",
+          "rootRank": 5
+        }
+      ]
+    },
+    "TOP5_VT3 → TOP10_VT3": {
+      "newHeads": 1,
+      "examples": [
+        {
+          "date": "2026-09-15",
+          "turn": "Matutino",
+          "head": "1977",
+          "rootRank": 7
+        }
+      ]
+    },
+    "TOP10_VT3 → TOP25_VT3": {
+      "newHeads": 10,
+      "examples": [
+        {
+          "date": "2026-09-15",
+          "turn": "Previa",
+          "head": "7175",
+          "rootRank": 11
+        },
+        {
+          "date": "2026-09-15",
+          "turn": "Nocturno",
+          "head": "6174",
+          "rootRank": 18
+        },
+        {
+          "date": "2026-09-17",
+          "turn": "Previa",
+          "head": "1438",
+          "rootRank": 18
+        },
+        {
+          "date": "2026-09-19",
+          "turn": "Nocturno",
+          "head": "2462",
+          "rootRank": 16
+        },
+        {
+          "date": "2026-09-22",
+          "turn": "Nocturno",
+          "head": "0724",
+          "rootRank": 22
+        },
+        {
+          "date": "2026-09-26",
+          "turn": "Matutino",
+          "head": "0137",
+          "rootRank": 17
+        },
+        {
+          "date": "2026-09-28",
+          "turn": "Matutino",
+          "head": "4319",
+          "rootRank": 24
+        },
+        {
+          "date": "2026-09-30",
+          "turn": "Matutino",
+          "head": "6371",
+          "rootRank": 23
+        },
+        {
+          "date": "2026-10-01",
+          "turn": "Matutino",
+          "head": "9105",
+          "rootRank": 13
+        },
+        {
+          "date": "2026-10-02",
+          "turn": "Previa",
+          "head": "0379",
+          "rootRank": 21
+        }
+      ]
+    },
+    "TOP25_VT3 → TODAS_ADMITIDAS_VT3": {
+      "newHeads": 20,
+      "examples": [
+        {
+          "date": "2026-09-16",
+          "turn": "Nocturno",
+          "head": "8070",
+          "rootRank": 61
+        },
+        {
+          "date": "2026-09-19",
+          "turn": "Nocturno",
+          "head": "4109",
+          "rootRank": 63
+        },
+        {
+          "date": "2026-09-21",
+          "turn": "Vespertino",
+          "head": "4246",
+          "rootRank": 42
+        },
+        {
+          "date": "2026-09-21",
+          "turn": "Nocturno",
+          "head": "7173",
+          "rootRank": 42
+        },
+        {
+          "date": "2026-09-22",
+          "turn": "Vespertino",
+          "head": "7082",
+          "rootRank": 35
+        },
+        {
+          "date": "2026-09-22",
+          "turn": "Nocturno",
+          "head": "8207",
+          "rootRank": 52
+        },
+        {
+          "date": "2026-09-22",
+          "turn": "Nocturno",
+          "head": "6517",
+          "rootRank": 35
+        },
+        {
+          "date": "2026-09-23",
+          "turn": "Vespertino",
+          "head": "2982",
+          "rootRank": 42
+        },
+        {
+          "date": "2026-09-26",
+          "turn": "Matutino",
+          "head": "1701",
+          "rootRank": 52
+        },
+        {
+          "date": "2026-09-26",
+          "turn": "Vespertino",
+          "head": "3757",
+          "rootRank": 66
+        },
+        {
+          "date": "2026-09-28",
+          "turn": "Vespertino",
+          "head": "7949",
+          "rootRank": 49
+        },
+        {
+          "date": "2026-09-30",
+          "turn": "Vespertino",
+          "head": "5293",
+          "rootRank": 26
+        },
+        {
+          "date": "2026-10-01",
+          "turn": "Matutino",
+          "head": "9598",
+          "rootRank": 58
+        },
+        {
+          "date": "2026-10-01",
+          "turn": "Nocturno",
+          "head": "4584",
+          "rootRank": 62
+        },
+        {
+          "date": "2026-10-06",
+          "turn": "Matutino",
+          "head": "0508",
+          "rootRank": 49
+        },
+        {
+          "date": "2026-10-06",
+          "turn": "Vespertino",
+          "head": "2010",
+          "rootRank": 43
+        },
+        {
+          "date": "2026-10-06",
+          "turn": "Nocturno",
+          "head": "2081",
+          "rootRank": 29
+        },
+        {
+          "date": "2026-10-07",
+          "turn": "Matutino",
+          "head": "9646",
+          "rootRank": 38
+        },
+        {
+          "date": "2026-10-07",
+          "turn": "Vespertino",
+          "head": "2428",
+          "rootRank": 46
+        },
+        {
+          "date": "2026-10-07",
+          "turn": "Nocturno",
+          "head": "7152",
+          "rootRank": 57
+        }
+      ]
+    },
+    "TODAS_ADMITIDAS_VT3 → TODAS_FISICAS_SIN_RAIZ": {
+      "newHeads": 29,
+      "examples": [
+        {
+          "date": "2026-09-15",
+          "turn": "Nocturno",
+          "head": "1265",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-15",
+          "turn": "Nocturno",
+          "head": "6696",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-17",
+          "turn": "Nocturno",
+          "head": "7476",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-17",
+          "turn": "Nocturno",
+          "head": "0438",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-18",
+          "turn": "Matutino",
+          "head": "6716",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-19",
+          "turn": "Nocturno",
+          "head": "2011",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-24",
+          "turn": "Nocturno",
+          "head": "3418",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-25",
+          "turn": "Matutino",
+          "head": "5643",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-28",
+          "turn": "Matutino",
+          "head": "6107",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-29",
+          "turn": "Vespertino",
+          "head": "5262",
+          "rootRank": null
+        },
+        {
+          "date": "2026-09-29",
+          "turn": "Nocturno",
+          "head": "7342",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-01",
+          "turn": "Matutino",
+          "head": "8483",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-02",
+          "turn": "Previa",
+          "head": "5303",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-02",
+          "turn": "Vespertino",
+          "head": "3686",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-02",
+          "turn": "Nocturno",
+          "head": "8343",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-02",
+          "turn": "Nocturno",
+          "head": "9979",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-03",
+          "turn": "Nocturno",
+          "head": "9060",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-05",
+          "turn": "Nocturno",
+          "head": "5775",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-06",
+          "turn": "Previa",
+          "head": "8818",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-06",
+          "turn": "Vespertino",
+          "head": "9226",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-06",
+          "turn": "Nocturno",
+          "head": "5196",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-07",
+          "turn": "Matutino",
+          "head": "2653",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-08",
+          "turn": "Matutino",
+          "head": "6316",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-08",
+          "turn": "Vespertino",
+          "head": "0848",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-09",
+          "turn": "Previa",
+          "head": "4843",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-09",
+          "turn": "Matutino",
+          "head": "2232",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Primera",
+          "head": "8393",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Matutino",
+          "head": "5918",
+          "rootRank": null
+        },
+        {
+          "date": "2026-10-10",
+          "turn": "Nocturno",
+          "head": "6215",
+          "rootRank": null
+        }
+      ]
+    }
+  },
+  "ranking": {
+    "TOP5_CUPO2": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 4,
+      "heads": 4,
+      "averageMothers": 5,
+      "averageExtra6to10": 0,
+      "averageExtra11plus": 0,
+      "meanBackfills": 0,
+      "gainsVsBase": [],
+      "lossesVsBase": []
+    },
+    "TOP10_CUPO1": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 3,
+      "top10": 3,
+      "heads": 3,
+      "averageMothers": 10,
+      "averageExtra6to10": 5,
+      "averageExtra11plus": 0,
+      "meanBackfills": 0,
+      "gainsVsBase": [],
+      "lossesVsBase": [
+        "2026-10-10|Matutino"
+      ]
+    },
+    "MIX_8MAS2_6A10": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 0,
+      "heads": 0,
+      "averageMothers": 6,
+      "averageExtra6to10": 2,
+      "averageExtra11plus": 0,
+      "meanBackfills": 0,
+      "gainsVsBase": [],
+      "lossesVsBase": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    },
+    "MIX_8MAS2_11PLUS": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 0,
+      "heads": 0,
+      "averageMothers": 6,
+      "averageExtra6to10": 0,
+      "averageExtra11plus": 2,
+      "meanBackfills": 0,
+      "gainsVsBase": [],
+      "lossesVsBase": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    },
+    "MIX_5MAS5_6PLUS": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 3,
+      "top10": 3,
+      "heads": 3,
+      "averageMothers": 10,
+      "averageExtra6to10": 5,
+      "averageExtra11plus": 0,
+      "meanBackfills": 0,
+      "gainsVsBase": [],
+      "lossesVsBase": [
+        "2026-10-10|Matutino"
+      ]
+    },
+    "MIX_5MAS5_11PLUS": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 3,
+      "top10": 3,
+      "heads": 3,
+      "averageMothers": 9.983,
+      "averageExtra6to10": 0,
+      "averageExtra11plus": 4.983,
+      "meanBackfills": 0.017,
+      "gainsVsBase": [],
+      "lossesVsBase": [
+        "2026-10-10|Matutino"
+      ]
+    },
+    "ESTRATOS_ANTERIOR": {
+      "cuts": 115,
+      "top3": 0,
+      "top5": 0,
+      "top10": 1,
+      "heads": 1,
+      "averageMothers": 4.93,
+      "averageExtra6to10": 2,
+      "averageExtra11plus": 3.861,
+      "meanBackfills": null,
+      "gainsVsBase": [
+        "2026-09-15|Previa"
+      ],
+      "lossesVsBase": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-10|Matutino",
+        "2026-10-10|Nocturno"
+      ]
+    }
+  },
+  "byWeek": {
+    "X1": {
+      "cuts": 25,
+      "coverage": {
+        "TOP3_VT3": 1,
+        "TOP5_VT3": 1,
+        "TOP10_VT3": 2,
+        "TOP25_VT3": 6,
+        "TODAS_ADMITIDAS_VT3": 7,
+        "TODAS_FISICAS_SIN_RAIZ": 9
+      },
+      "top10": {
+        "TOP5_CUPO2": 0,
+        "TOP10_CUPO1": 0,
+        "MIX_8MAS2_6A10": 0,
+        "MIX_8MAS2_11PLUS": 0,
+        "MIX_5MAS5_6PLUS": 0,
+        "MIX_5MAS5_11PLUS": 0,
+        "ESTRATOS_ANTERIOR": 1
+      }
+    },
+    "Y1": {
+      "cuts": 30,
+      "coverage": {
+        "TOP3_VT3": 0,
+        "TOP5_VT3": 1,
+        "TOP10_VT3": 1,
+        "TOP25_VT3": 3,
+        "TODAS_ADMITIDAS_VT3": 8,
+        "TODAS_FISICAS_SIN_RAIZ": 10
+      },
+      "top10": {
+        "TOP5_CUPO2": 1,
+        "TOP10_CUPO1": 1,
+        "MIX_8MAS2_6A10": 0,
+        "MIX_8MAS2_11PLUS": 0,
+        "MIX_5MAS5_6PLUS": 1,
+        "MIX_5MAS5_11PLUS": 1,
+        "ESTRATOS_ANTERIOR": 0
+      }
+    },
+    "Y2": {
+      "cuts": 30,
+      "coverage": {
+        "TOP3_VT3": 0,
+        "TOP5_VT3": 1,
+        "TOP10_VT3": 1,
+        "TOP25_VT3": 5,
+        "TODAS_ADMITIDAS_VT3": 8,
+        "TODAS_FISICAS_SIN_RAIZ": 13
+      },
+      "top10": {
+        "TOP5_CUPO2": 1,
+        "TOP10_CUPO1": 1,
+        "MIX_8MAS2_6A10": 0,
+        "MIX_8MAS2_11PLUS": 0,
+        "MIX_5MAS5_6PLUS": 1,
+        "MIX_5MAS5_11PLUS": 1,
+        "ESTRATOS_ANTERIOR": 0
+      }
+    },
+    "Y3": {
+      "cuts": 30,
+      "coverage": {
+        "TOP3_VT3": 0,
+        "TOP5_VT3": 3,
+        "TOP10_VT3": 3,
+        "TOP25_VT3": 3,
+        "TODAS_ADMITIDAS_VT3": 9,
+        "TODAS_FISICAS_SIN_RAIZ": 16
+      },
+      "top10": {
+        "TOP5_CUPO2": 2,
+        "TOP10_CUPO1": 1,
+        "MIX_8MAS2_6A10": 0,
+        "MIX_8MAS2_11PLUS": 0,
+        "MIX_5MAS5_6PLUS": 1,
+        "MIX_5MAS5_11PLUS": 1,
+        "ESTRATOS_ANTERIOR": 0
+      }
+    }
+  },
+  "exampleLines": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "heads": [
+        {
+          "head": "7175",
+          "lowestRootedMotherRank": 11,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": [
+          {
+            "head": [
+              "7175"
+            ],
+            "family": "7175/7571",
+            "mother": "175/571",
+            "motherRank": 11,
+            "position": 8
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "1977",
+          "lowestRootedMotherRank": 7,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": true,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "1265",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "6696",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "6174",
+          "lowestRootedMotherRank": 18,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "8070",
+          "lowestRootedMotherRank": 61,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "heads": [
+        {
+          "head": "1438",
+          "lowestRootedMotherRank": 18,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "7476",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "0438",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "6716",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "2735",
+          "lowestRootedMotherRank": 3,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": true,
+            "TOP5_VT3": true,
+            "TOP10_VT3": true,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "2462",
+          "lowestRootedMotherRank": 16,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "2011",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "4109",
+          "lowestRootedMotherRank": 63,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "4246",
+          "lowestRootedMotherRank": 42,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "7173",
+          "lowestRootedMotherRank": 42,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "7082",
+          "lowestRootedMotherRank": 35,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "0724",
+          "lowestRootedMotherRank": 22,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "8207",
+          "lowestRootedMotherRank": 52,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "6517",
+          "lowestRootedMotherRank": 35,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "2982",
+          "lowestRootedMotherRank": 42,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "heads": [
+        {
+          "head": "3159",
+          "lowestRootedMotherRank": 5,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": true,
+            "TOP10_VT3": true,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [
+          {
+            "head": [
+              "3159"
+            ],
+            "family": "3159/3951",
+            "mother": "159/951",
+            "motherRank": 5,
+            "position": 9
+          }
+        ],
+        "TOP10_CUPO1": [
+          {
+            "head": [
+              "3159"
+            ],
+            "family": "3159/3951",
+            "mother": "159/951",
+            "motherRank": 5,
+            "position": 5
+          }
+        ],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [
+          {
+            "head": [
+              "3159"
+            ],
+            "family": "3159/3951",
+            "mother": "159/951",
+            "motherRank": 5,
+            "position": 5
+          }
+        ],
+        "MIX_5MAS5_11PLUS": [
+          {
+            "head": [
+              "3159"
+            ],
+            "family": "3159/3951",
+            "mother": "159/951",
+            "motherRank": 5,
+            "position": 5
+          }
+        ],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "3418",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "5643",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "1701",
+          "lowestRootedMotherRank": 52,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "0137",
+          "lowestRootedMotherRank": 17,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "3757",
+          "lowestRootedMotherRank": 66,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "4319",
+          "lowestRootedMotherRank": 24,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "6107",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "7949",
+          "lowestRootedMotherRank": 49,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "5262",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "7342",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "6371",
+          "lowestRootedMotherRank": 23,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "5293",
+          "lowestRootedMotherRank": 26,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "9105",
+          "lowestRootedMotherRank": 13,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "8483",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "9598",
+          "lowestRootedMotherRank": 58,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "4584",
+          "lowestRootedMotherRank": 62,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "heads": [
+        {
+          "head": "0379",
+          "lowestRootedMotherRank": 21,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "5303",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "3686",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "8343",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "9979",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "2592",
+          "lowestRootedMotherRank": 5,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": true,
+            "TOP10_VT3": true,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "5832",
+          "lowestRootedMotherRank": 4,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": true,
+            "TOP10_VT3": true,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [
+          {
+            "head": [
+              "2592"
+            ],
+            "family": "2295/2592",
+            "mother": "295/592",
+            "motherRank": 5,
+            "position": 9
+          }
+        ],
+        "TOP10_CUPO1": [
+          {
+            "head": [
+              "2592"
+            ],
+            "family": "2295/2592",
+            "mother": "295/592",
+            "motherRank": 5,
+            "position": 5
+          }
+        ],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [
+          {
+            "head": [
+              "2592"
+            ],
+            "family": "2295/2592",
+            "mother": "295/592",
+            "motherRank": 5,
+            "position": 5
+          }
+        ],
+        "MIX_5MAS5_11PLUS": [
+          {
+            "head": [
+              "2592"
+            ],
+            "family": "2295/2592",
+            "mother": "295/592",
+            "motherRank": 5,
+            "position": 5
+          }
+        ],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "9060",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "3729",
+          "lowestRootedMotherRank": 5,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": true,
+            "TOP10_VT3": true,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "5775",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "heads": [
+        {
+          "head": "8818",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "0508",
+          "lowestRootedMotherRank": 49,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "9226",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "2010",
+          "lowestRootedMotherRank": 43,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "5196",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "2081",
+          "lowestRootedMotherRank": 29,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "9646",
+          "lowestRootedMotherRank": 38,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "2653",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "2428",
+          "lowestRootedMotherRank": 46,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "7152",
+          "lowestRootedMotherRank": 57,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "6316",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "heads": [
+        {
+          "head": "0848",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "heads": [
+        {
+          "head": "4843",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "2232",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "heads": [
+        {
+          "head": "8393",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "head": "6542",
+          "lowestRootedMotherRank": 5,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": true,
+            "TOP10_VT3": true,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "5918",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [
+          {
+            "head": [
+              "6542"
+            ],
+            "family": "4562/6542",
+            "mother": "456/654",
+            "motherRank": 5,
+            "position": 10
+          }
+        ],
+        "TOP10_CUPO1": [],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [],
+        "MIX_5MAS5_11PLUS": [],
+        "ESTRATOS_ANTERIOR": []
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "heads": [
+        {
+          "head": "2654",
+          "lowestRootedMotherRank": 5,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": true,
+            "TOP10_VT3": true,
+            "TOP25_VT3": true,
+            "TODAS_ADMITIDAS_VT3": true,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        },
+        {
+          "head": "6215",
+          "lowestRootedMotherRank": null,
+          "physicallyPresent": true,
+          "reachableBy": {
+            "TOP3_VT3": false,
+            "TOP5_VT3": false,
+            "TOP10_VT3": false,
+            "TOP25_VT3": false,
+            "TODAS_ADMITIDAS_VT3": false,
+            "TODAS_FISICAS_SIN_RAIZ": true
+          }
+        }
+      ],
+      "chosen": {
+        "TOP5_CUPO2": [
+          {
+            "head": [
+              "2654"
+            ],
+            "family": "2456/2654",
+            "mother": "456/654",
+            "motherRank": 5,
+            "position": 9
+          }
+        ],
+        "TOP10_CUPO1": [
+          {
+            "head": [
+              "2654"
+            ],
+            "family": "2456/2654",
+            "mother": "456/654",
+            "motherRank": 5,
+            "position": 5
+          }
+        ],
+        "MIX_8MAS2_6A10": [],
+        "MIX_8MAS2_11PLUS": [],
+        "MIX_5MAS5_6PLUS": [
+          {
+            "head": [
+              "2654"
+            ],
+            "family": "2456/2654",
+            "mother": "456/654",
+            "motherRank": 5,
+            "position": 5
+          }
+        ],
+        "MIX_5MAS5_11PLUS": [
+          {
+            "head": [
+              "2654"
+            ],
+            "family": "2456/2654",
+            "mother": "456/654",
+            "motherRank": 5,
+            "position": 5
+          }
+        ],
+        "ESTRATOS_ANTERIOR": []
+      }
+    }
+  ],
+  "integrity": {
+    "sealSHA": "e570615ac0e2971e6a532a49a0ddb3842f11aebc8586c157b6013bb9a532d7b2",
+    "packedSHA": "acaa068c80ecb3ef267b05ea3e61cd68f31de8c750dbf9e97f1e1732d1b87a94",
+    "priorTop5twoReproducedFor115": true,
+    "priorTop10oneReproducedFor115": true
+  },
+  "warning": "Techos físicos calculados POST, no pronósticos. Histórico muy reutilizado. El sorteo es aleatorio."
+}
