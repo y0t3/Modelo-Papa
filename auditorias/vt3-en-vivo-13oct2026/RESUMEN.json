@@ -1,0 +1,189 @@
+{
+  "date": "2026-10-13",
+  "asOfUtc": "2026-10-13T16:52:06.001Z",
+  "totals": {
+    "cuts": 2,
+    "physicalOutcomeHeads": 3,
+    "admittedOutcomeHeads": 2,
+    "top3": 0,
+    "top5": 1,
+    "top10": 1
+  },
+  "firstTwo": [
+    {
+      "turn": "Previa",
+      "top3": [
+        "226/622",
+        "266/662",
+        "305/503"
+      ],
+      "top10": [
+        "226/622",
+        "266/662",
+        "305/503",
+        "326/623",
+        "507/705",
+        "051/150",
+        "056/650",
+        "071/170",
+        "152/251",
+        "225/522"
+      ],
+      "heads": [
+        {
+          "head": "6448",
+          "family": "448/844",
+          "rank": null,
+          "status": "SIN_FORMACION",
+          "physicalRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "head": "6337",
+          "family": "337/733",
+          "rank": null,
+          "status": "SIN_FORMACION",
+          "physicalRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "head": "5546",
+          "family": "546/645",
+          "rank": null,
+          "status": "SIN_FORMACION",
+          "physicalRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "head": "5119",
+          "family": "119/911",
+          "rank": null,
+          "status": "SIN_FORMACION",
+          "physicalRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "head": "1495",
+          "family": "495/594",
+          "rank": null,
+          "status": "SIN_FORMACION",
+          "physicalRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "top3Hit": false,
+      "top10Hit": false
+    },
+    {
+      "turn": "Primera",
+      "top3": [
+        "226/622",
+        "305/503",
+        "507/705"
+      ],
+      "top10": [
+        "226/622",
+        "305/503",
+        "507/705",
+        "036/630",
+        "485/584",
+        "266/662",
+        "326/623",
+        "037/730",
+        "548/845",
+        "063/360"
+      ],
+      "heads": [
+        {
+          "head": "5485",
+          "family": "485/584",
+          "rank": 5,
+          "status": "EN_TOP10",
+          "physicalRoutes": 2,
+          "d1": 1,
+          "d7": 1,
+          "reason": "Cantidad de fuentes físicas"
+        },
+        {
+          "head": "0310",
+          "family": "013/310",
+          "rank": null,
+          "status": "FISICA_SIN_ANCLAJE",
+          "physicalRoutes": 1,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "head": "8857",
+          "family": "758/857",
+          "rank": 42,
+          "status": "FUERA_TOP10",
+          "physicalRoutes": 1,
+          "d1": 0,
+          "d7": 1,
+          "reason": "Presencia de bifurcación física propia"
+        },
+        {
+          "head": "3385",
+          "family": "385/583",
+          "rank": null,
+          "status": "SIN_FORMACION",
+          "physicalRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "head": "4084",
+          "family": "084/480",
+          "rank": null,
+          "status": "SIN_FORMACION",
+          "physicalRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "top3Hit": false,
+      "top10Hit": true
+    }
+  ],
+  "matutina": {
+    "seal": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+    "sealedAtUtc": "2026-10-13T16:52:03.733Z",
+    "top3": [
+      "226/622",
+      "305/503",
+      "699/996"
+    ],
+    "top5": [
+      "226/622",
+      "305/503",
+      "699/996",
+      "266/662",
+      "629/926"
+    ],
+    "top10": [
+      "226/622",
+      "305/503",
+      "699/996",
+      "266/662",
+      "629/926",
+      "507/705",
+      "596/695",
+      "036/630",
+      "485/584",
+      "326/623"
+    ],
+    "sources": [
+      "prevNocturno",
+      "Previa",
+      "Primera"
+    ],
+    "noTargetLoaded": true
+  },
+  "warning": "Los cortes Previa y Primera se reconstruyeron después de publicarse. Solo Matutina se selló como pronóstico previo."
+}

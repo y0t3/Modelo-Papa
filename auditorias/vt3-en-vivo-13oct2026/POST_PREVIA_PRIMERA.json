@@ -1,0 +1,372 @@
+{
+  "rows": [
+    {
+      "date": "2026-10-13",
+      "turn": "Previa",
+      "roots": 31,
+      "heads": [
+        {
+          "jurisdiction": "Ciudad",
+          "head": "6448",
+          "family": "448/844",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "sources": 0,
+          "d1": 0,
+          "d7": 0,
+          "branchBlocks": 0,
+          "priorityReasons": [],
+          "routes": []
+        },
+        {
+          "jurisdiction": "Provincia",
+          "head": "6337",
+          "family": "337/733",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "sources": 0,
+          "d1": 0,
+          "d7": 0,
+          "branchBlocks": 0,
+          "priorityReasons": [],
+          "routes": []
+        },
+        {
+          "jurisdiction": "Córdoba",
+          "head": "5546",
+          "family": "546/645",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "sources": 0,
+          "d1": 0,
+          "d7": 0,
+          "branchBlocks": 0,
+          "priorityReasons": [],
+          "routes": []
+        },
+        {
+          "jurisdiction": "Santa Fé",
+          "head": "5119",
+          "family": "119/911",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "sources": 0,
+          "d1": 0,
+          "d7": 0,
+          "branchBlocks": 0,
+          "priorityReasons": [],
+          "routes": []
+        },
+        {
+          "jurisdiction": "Entre Ríos",
+          "head": "1495",
+          "family": "495/594",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "sources": 0,
+          "d1": 0,
+          "d7": 0,
+          "branchBlocks": 0,
+          "priorityReasons": [],
+          "routes": []
+        }
+      ],
+      "winFamilies": [
+        "448/844",
+        "337/733",
+        "546/645",
+        "119/911",
+        "495/594"
+      ],
+      "physicallyPossible": 0,
+      "admittedFamilies": 0,
+      "top3Hit": false,
+      "top5Hit": false,
+      "top10Hit": false,
+      "top3": [
+        "226/622",
+        "266/662",
+        "305/503"
+      ],
+      "top5": [
+        "226/622",
+        "266/662",
+        "305/503",
+        "326/623",
+        "507/705"
+      ],
+      "top10": [
+        "226/622",
+        "266/662",
+        "305/503",
+        "326/623",
+        "507/705",
+        "051/150",
+        "056/650",
+        "071/170",
+        "152/251",
+        "225/522"
+      ],
+      "note": "Reconstrucción PRE de turno ya sorteado (no es pronóstico sellado antes del sorteo)."
+    },
+    {
+      "date": "2026-10-13",
+      "turn": "Primera",
+      "roots": 60,
+      "heads": [
+        {
+          "jurisdiction": "Ciudad",
+          "head": "5485",
+          "family": "485/584",
+          "status": "EN_TOP10",
+          "rank": 5,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "sources": 1,
+          "d1": 1,
+          "d7": 1,
+          "branchBlocks": 1,
+          "priorityReasons": [
+            {
+              "cutoff": 3,
+              "boundaryFamily": "507/705",
+              "boundaryRank": 3,
+              "decisiveCriterion": "Cantidad de fuentes físicas",
+              "candidateValue": 1,
+              "boundaryValue": 2
+            }
+          ],
+          "routes": [
+            {
+              "source": "Previa",
+              "value": "485",
+              "cells": [
+                "1:0",
+                "1:1",
+                "0:0"
+              ],
+              "admitted": true,
+              "rootEvents": [
+                {
+                  "id": "2026-10-12|D−1|Primera|Provincia|9554",
+                  "date": "2026-10-12",
+                  "period": "D−1",
+                  "turn": "Primera",
+                  "jurisdiction": "Provincia",
+                  "head": "9554",
+                  "source": "Previa"
+                },
+                {
+                  "id": "2026-10-06|D−7|Vespertino|Ciudad|9226",
+                  "date": "2026-10-06",
+                  "period": "D−7",
+                  "turn": "Vespertino",
+                  "jurisdiction": "Ciudad",
+                  "head": "9226",
+                  "source": "Previa"
+                }
+              ]
+            },
+            {
+              "source": "Previa",
+              "value": "485",
+              "cells": [
+                "1:0",
+                "1:1",
+                "2:0"
+              ],
+              "admitted": true,
+              "rootEvents": [
+                {
+                  "id": "2026-10-12|D−1|Primera|Provincia|9554",
+                  "date": "2026-10-12",
+                  "period": "D−1",
+                  "turn": "Primera",
+                  "jurisdiction": "Provincia",
+                  "head": "9554",
+                  "source": "Previa"
+                },
+                {
+                  "id": "2026-10-06|D−7|Vespertino|Ciudad|9226",
+                  "date": "2026-10-06",
+                  "period": "D−7",
+                  "turn": "Vespertino",
+                  "jurisdiction": "Ciudad",
+                  "head": "9226",
+                  "source": "Previa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "jurisdiction": "Provincia",
+          "head": "0310",
+          "family": "013/310",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "sources": 1,
+          "d1": 0,
+          "d7": 0,
+          "branchBlocks": 0,
+          "priorityReasons": [],
+          "routes": [
+            {
+              "source": "prevNocturno",
+              "value": "013",
+              "cells": [
+                "3:0",
+                "3:1",
+                "2:1"
+              ],
+              "admitted": false,
+              "rootEvents": []
+            }
+          ]
+        },
+        {
+          "jurisdiction": "Córdoba",
+          "head": "8857",
+          "family": "758/857",
+          "status": "FUERA_TOP10",
+          "rank": 42,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "sources": 1,
+          "d1": 0,
+          "d7": 1,
+          "branchBlocks": 0,
+          "priorityReasons": [
+            {
+              "cutoff": 3,
+              "boundaryFamily": "507/705",
+              "boundaryRank": 3,
+              "decisiveCriterion": "Presencia de bifurcación física propia",
+              "candidateValue": 0,
+              "boundaryValue": 1
+            },
+            {
+              "cutoff": 10,
+              "boundaryFamily": "063/360",
+              "boundaryRank": 10,
+              "decisiveCriterion": "Cantidad de eventos raíz D−1 (máximo 10)",
+              "candidateValue": 0,
+              "boundaryValue": 1
+            }
+          ],
+          "routes": [
+            {
+              "source": "Previa",
+              "value": "758",
+              "cells": [
+                "2:1",
+                "2:0",
+                "1:1"
+              ],
+              "admitted": true,
+              "rootEvents": [
+                {
+                  "id": "2026-10-06|D−7|Nocturno|Santa Fé|9476",
+                  "date": "2026-10-06",
+                  "period": "D−7",
+                  "turn": "Nocturno",
+                  "jurisdiction": "Santa Fé",
+                  "head": "9476",
+                  "source": "Previa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "jurisdiction": "Santa Fé",
+          "head": "3385",
+          "family": "385/583",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "sources": 0,
+          "d1": 0,
+          "d7": 0,
+          "branchBlocks": 0,
+          "priorityReasons": [],
+          "routes": []
+        },
+        {
+          "jurisdiction": "Entre Ríos",
+          "head": "4084",
+          "family": "084/480",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "sources": 0,
+          "d1": 0,
+          "d7": 0,
+          "branchBlocks": 0,
+          "priorityReasons": [],
+          "routes": []
+        }
+      ],
+      "winFamilies": [
+        "485/584",
+        "013/310",
+        "758/857",
+        "385/583",
+        "084/480"
+      ],
+      "physicallyPossible": 3,
+      "admittedFamilies": 2,
+      "top3Hit": false,
+      "top5Hit": true,
+      "top10Hit": true,
+      "top3": [
+        "226/622",
+        "305/503",
+        "507/705"
+      ],
+      "top5": [
+        "226/622",
+        "305/503",
+        "507/705",
+        "036/630",
+        "485/584"
+      ],
+      "top10": [
+        "226/622",
+        "305/503",
+        "507/705",
+        "036/630",
+        "485/584",
+        "266/662",
+        "326/623",
+        "037/730",
+        "548/845",
+        "063/360"
+      ],
+      "note": "Reconstrucción PRE de turno ya sorteado (no es pronóstico sellado antes del sorteo)."
+    }
+  ],
+  "totals": {
+    "cuts": 2,
+    "physicalOutcomeHeads": 3,
+    "admittedOutcomeHeads": 2,
+    "top3": 0,
+    "top5": 1,
+    "top10": 1
+  },
+  "disclaimer": "Solo se leyeron como objetivos las 10 cabezas conocidas de Previa/Primera; Matutina continúa sin resultado en este archivo."
+}
