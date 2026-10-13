@@ -16,7 +16,7 @@ const json=p=>JSON.parse(read(p));
 const save=(name,obj)=>writeFileSync(`${out}/${name}`,JSON.stringify(obj,null,2)+'\n');
 mkdirSync(out,{recursive:true});
 const engineSource=read('src/motorLalo.ts');
-assert.equal(hash(engineSource),'ace7e40f0462554afb3eab105b625fdc20b167be83290018f879234d1e303b16');
+assert.equal(hash(engineSource),'7715327e6922c3c6f032c1075e6bb08927d5ef51c41552fa9e5758814c746074');
 function compile(path,code=read(path)){
  const dest=resolve(runtime,path.replace(/\.ts$/,'.mjs'));
  mkdirSync(dirname(dest),{recursive:true});
