@@ -1,0 +1,52 @@
+name: VT3 controles de vigencia y Nocturna del 12oct
+on:
+  push:
+    branches: [lab-vt3-vigencia-fisica-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-vigencia-controles.mjs'
+      - 'PROTOCOLO_VT3_VIGENCIA_CONTROLES_13OCT2026.md'
+      - '.github/workflows/lab-vt3-vigencia-controles.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  controles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Apartar POST para generar Nocturna PRE y sello sin objetivos
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-vigencia-controles-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-vigencia-controles-nocturna-post.json
+      - name: Preparar Nocturna PRE reordenada sólo con información temporal disponible
+        run: node scripts/lab-vt3-vigencia-controles.mjs pre
+      - name: Aplicar resultados reales y controles negativos históricos
+        run: |
+          mv /tmp/vt3-vigencia-controles-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/vt3-vigencia-controles-nocturna-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          node scripts/lab-vt3-vigencia-controles.mjs post
+      - name: Guardar artefactos y sellos
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-vigencia-controles-nocturna
+          path: |
+            auditorias/vt3-vigencia-fisica-115-13oct2026/SELLO_CONTROLES.json
+            auditorias/vt3-vigencia-fisica-115-13oct2026/NOCTURNA_VIGENCIA_PRE.json
+            auditorias/vt3-vigencia-fisica-115-13oct2026/NOCTURNA_VIGENCIA_POST.json
+            auditorias/vt3-vigencia-fisica-115-13oct2026/RESUMEN_CONTROLES.json
+            auditorias/vt3-vigencia-fisica-115-13oct2026/ROTACIONES_CONTROLES.json
+          retention-days: 60
+          if-no-files-found: error
+      - name: Archivar resultados adicionales de laboratorio
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-vigencia-fisica-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): placebos de frescura y diagnóstico Nocturna 12oct sellados'
+            git push origin HEAD:lab-vt3-vigencia-fisica-13oct2026
+          fi
