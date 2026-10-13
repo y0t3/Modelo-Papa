@@ -6,7 +6,7 @@ Rama exclusiva `lab-vt3-vecindad-geometrica-13oct2026`. Investigación explorato
 Una familia física sin raíz puede compartir casilleros/bloques con familias ancladas de la MISMA fuente sin recibir las raíces de éstas. ¿Los contactos *estructurados* distinguen entre las ~64 candidatas elegibles por corte, más allá del número de bloques o de que la fuente sea reciente?
 
 ## Entradas y aislamiento
-- Entrada congelada `auditorias/vt3-cupo-fisico-controles-115-13oct2026/PRE_115.json`, SHA256 `d5d641d02bdaa7a7ae14878ecfaa3ebdf6a3295fac44b1fa1fbf70eaabafbb0a`; su sello SHA `36978ffa54cbe849ced8d670e64c84fc21c8a46ae01e090f1173bdea5fd63a62`.
+- Entrada congelada `auditorias/vt3-cupo-fisico-controles-115-13oct2026/PRE_115.json`, SHA256 `d5d641d02bdaa7a7ae14878ecfaa3ebdf6a3295fac44b1fa1fbf70eaabafbb0a`; su sello SHA `125d07d3de95242b0d523419a88ee2b4d111d8b3c0bfbd8e36b78d9c3acef551`.
 - Testigos físicos `auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json`, SHA256 `be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612`.
 - Ventana: exactamente las mismas familias **no ancladas, sin fuente homónima anterior** preseleccionadas por el laboratorio previo, para los 115 cortes. No ampliar elegibilidad. Una elegida ocupará sólo el puesto 10; primeros nueve originales permanecen íntegros.
 - Antes de crear los PRE de este laboratorio, workflow aparta físicamente del checkout los POST de estos laboratorios y Nocturna. Guarda sello de programa, reglas y PRE, luego incorpora las cabezas y evalúa.
