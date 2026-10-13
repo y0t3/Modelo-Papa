@@ -1,0 +1,2981 @@
+{
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "targetHeads": [
+        "3609",
+        "0475",
+        "7175",
+        "6842",
+        "7945"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "targetHeads": [
+        "1205",
+        "1014",
+        "6037",
+        "3576",
+        "3237"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "targetHeads": [
+        "4563",
+        "1977",
+        "7105",
+        "2935",
+        "8695"
+      ],
+      "oldHitFamilies": [
+        "1977/7791"
+      ],
+      "newHitFamilies": [
+        {
+          "family": "1779/1977",
+          "rank": 47,
+          "physicalValues": [
+            "1779",
+            "1977"
+          ],
+          "mother": "779/977",
+          "side": "ANTES"
+        }
+      ],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "4714",
+        "1298",
+        "9565",
+        "3103",
+        "5267"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "1265",
+        "5698",
+        "6696",
+        "6174",
+        "8889"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "targetHeads": [
+        "3716",
+        "3560",
+        "8956",
+        "6627",
+        "5445"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "targetHeads": [
+        "4962",
+        "0584",
+        "0486",
+        "0802",
+        "6068"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "targetHeads": [
+        "9178",
+        "6087",
+        "6445",
+        "6950",
+        "3108"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "8754",
+        "1764",
+        "4701",
+        "6897",
+        "1574"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "2933",
+        "9135",
+        "4332",
+        "7267",
+        "8070"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "targetHeads": [
+        "1438",
+        "9446",
+        "6875",
+        "9748",
+        "8869"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "targetHeads": [
+        "7795",
+        "6267",
+        "6158",
+        "6356",
+        "4132"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "targetHeads": [
+        "0492",
+        "5198",
+        "6732",
+        "9237",
+        "7461"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "4680",
+        "6111",
+        "9471",
+        "8776",
+        "1240"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "7476",
+        "0438",
+        "6417",
+        "1464",
+        "6721"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "targetHeads": [
+        "7502",
+        "3294",
+        "3601",
+        "6856",
+        "7922"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "targetHeads": [
+        "8144",
+        "1054",
+        "3262",
+        "2177",
+        "2938"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "targetHeads": [
+        "0910",
+        "4194",
+        "9034",
+        "1443",
+        "6716"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "6317",
+        "8280",
+        "7447",
+        "3831",
+        "2735"
+      ],
+      "oldHitFamilies": [
+        "2735/5372"
+      ],
+      "newHitFamilies": [
+        {
+          "family": "2735/3725",
+          "rank": 25,
+          "physicalValues": [
+            "2735",
+            "3725"
+          ],
+          "mother": "273/372",
+          "side": "DESPUES"
+        }
+      ],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "1657",
+        "0828",
+        "9644",
+        "3173",
+        "5798"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "targetHeads": [
+        "6553",
+        "6890",
+        "8318",
+        "2393",
+        "0315"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "targetHeads": [
+        "5447",
+        "4874",
+        "2078",
+        "4693",
+        "7870"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "targetHeads": [
+        "9043",
+        "0639",
+        "2544",
+        "6801",
+        "0099"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "6619",
+        "5994",
+        "8533",
+        "1537",
+        "4356"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "2462",
+        "6907",
+        "3626",
+        "2011",
+        "4109"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "targetHeads": [
+        "7440",
+        "4108",
+        "9302",
+        "4122",
+        "1274"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "targetHeads": [
+        "8073",
+        "9875",
+        "0556",
+        "9644",
+        "0722"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "targetHeads": [
+        "1654",
+        "8560",
+        "4984",
+        "0529",
+        "3779"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "9674",
+        "6250",
+        "1306",
+        "5512",
+        "4246"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "7173",
+        "1529",
+        "9153",
+        "4134",
+        "5360"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "targetHeads": [
+        "0358",
+        "9666",
+        "0596",
+        "8609",
+        "3837"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "targetHeads": [
+        "0838",
+        "6228",
+        "1654",
+        "3042",
+        "8627"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "targetHeads": [
+        "1892",
+        "6020",
+        "9344",
+        "2568",
+        "5235"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "1784",
+        "1733",
+        "1128",
+        "7082",
+        "4345"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "0724",
+        "9750",
+        "8207",
+        "6517",
+        "6524"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "targetHeads": [
+        "3687",
+        "9912",
+        "3379",
+        "7661",
+        "4139"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "targetHeads": [
+        "7576",
+        "1948",
+        "7619",
+        "8435",
+        "2961"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "targetHeads": [
+        "0461",
+        "3971",
+        "0410",
+        "8064",
+        "1103"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "2982",
+        "9349",
+        "0940",
+        "3423",
+        "4949"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "1418",
+        "0924",
+        "8480",
+        "5423",
+        "9387"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "targetHeads": [
+        "4661",
+        "1846",
+        "3159",
+        "3714",
+        "7474"
+      ],
+      "oldHitFamilies": [
+        "3159/9513"
+      ],
+      "newHitFamilies": [
+        {
+          "family": "3159/3951",
+          "rank": 54,
+          "physicalValues": [
+            "3159",
+            "3951"
+          ],
+          "mother": "159/951",
+          "side": "ANTES"
+        }
+      ],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "targetHeads": [
+        "9576",
+        "4496",
+        "7955",
+        "9025",
+        "5056"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "targetHeads": [
+        "1433",
+        "0194",
+        "8123",
+        "2676",
+        "0189"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "9480",
+        "9737",
+        "3828",
+        "4088",
+        "5738"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "7373",
+        "1817",
+        "3418",
+        "4670",
+        "3090"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "targetHeads": [
+        "3249",
+        "0259",
+        "8953",
+        "7979",
+        "7898"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "targetHeads": [
+        "1754",
+        "0894",
+        "5365",
+        "6313",
+        "0162"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "targetHeads": [
+        "6933",
+        "5643",
+        "9237",
+        "6811",
+        "0889"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "1256",
+        "4299",
+        "6708",
+        "2415",
+        "9461"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "5791",
+        "3593",
+        "0429",
+        "5174",
+        "2920"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "targetHeads": [
+        "1389",
+        "4960",
+        "3326",
+        "3099",
+        "0712"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "targetHeads": [
+        "3973",
+        "8526",
+        "6147",
+        "7416",
+        "6266"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "targetHeads": [
+        "1701",
+        "0137",
+        "3466",
+        "1586",
+        "4702"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "9979",
+        "3757",
+        "1003",
+        "1606",
+        "6299"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "4283",
+        "4768",
+        "7065",
+        "5019",
+        "7865"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "targetHeads": [
+        "4372",
+        "9126",
+        "8158",
+        "7820",
+        "8432"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "targetHeads": [
+        "8037",
+        "6165",
+        "1104",
+        "8297",
+        "9159"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "targetHeads": [
+        "2949",
+        "4319",
+        "6107",
+        "8262",
+        "1760"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "1086",
+        "0281",
+        "5508",
+        "2517",
+        "7949"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "5137",
+        "0542",
+        "2817",
+        "8778",
+        "2168"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "targetHeads": [
+        "3322",
+        "5403",
+        "8181",
+        "5308",
+        "2503"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "targetHeads": [
+        "3515",
+        "0444",
+        "4773",
+        "0154",
+        "4983"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "targetHeads": [
+        "7289",
+        "7786",
+        "9581",
+        "2606",
+        "6647"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "1626",
+        "5262",
+        "9720",
+        "8731",
+        "8101"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "8794",
+        "4907",
+        "8976",
+        "5796",
+        "7342"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "targetHeads": [
+        "6922",
+        "2159",
+        "1553",
+        "3512",
+        "9206"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "targetHeads": [
+        "2804",
+        "0910",
+        "4107",
+        "2948",
+        "8490"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "targetHeads": [
+        "6371",
+        "3859",
+        "6778",
+        "2012",
+        "8239"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "6655",
+        "9867",
+        "2768",
+        "3151",
+        "5293"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "6167",
+        "8848",
+        "1490",
+        "4786",
+        "1067"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "targetHeads": [
+        "5124",
+        "1738",
+        "4357",
+        "8123",
+        "3847"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "targetHeads": [
+        "8032",
+        "4705",
+        "4732",
+        "3878",
+        "5188"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "targetHeads": [
+        "3743",
+        "9105",
+        "4294",
+        "8483",
+        "9598"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "9562",
+        "8702",
+        "6799",
+        "2308",
+        "7189"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "4584",
+        "8962",
+        "6739",
+        "8265",
+        "8852"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "targetHeads": [
+        "0379",
+        "5303",
+        "6397",
+        "8935",
+        "7770"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "targetHeads": [
+        "5828",
+        "7755",
+        "8927",
+        "1263",
+        "0197"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "targetHeads": [
+        "5521",
+        "2897",
+        "7466",
+        "4570",
+        "9006"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "4313",
+        "7997",
+        "3155",
+        "3686",
+        "1288"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "8499",
+        "6823",
+        "8343",
+        "9313",
+        "9979"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "targetHeads": [
+        "4778",
+        "0318",
+        "1548",
+        "8377",
+        "9232"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "targetHeads": [
+        "4177",
+        "4124",
+        "1211",
+        "0383",
+        "1614"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "targetHeads": [
+        "8873",
+        "3265",
+        "2592",
+        "7881",
+        "5832"
+      ],
+      "oldHitFamilies": [
+        "2385/5832",
+        "2592/2952"
+      ],
+      "newHitFamilies": [
+        {
+          "family": "5238/5832",
+          "rank": 37,
+          "physicalValues": [
+            "5238",
+            "5832"
+          ],
+          "mother": "238/832",
+          "side": "ANTES"
+        },
+        {
+          "family": "2295/2592",
+          "rank": 43,
+          "physicalValues": [
+            "2295",
+            "2592"
+          ],
+          "mother": "295/592",
+          "side": "ANTES"
+        }
+      ],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "8566",
+        "2234",
+        "7429",
+        "3610",
+        "6129"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "2622",
+        "1377",
+        "7762",
+        "9060",
+        "4266"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "targetHeads": [
+        "9798",
+        "8059",
+        "4270",
+        "5171",
+        "7933"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "targetHeads": [
+        "2925",
+        "4068",
+        "4318",
+        "5766",
+        "0194"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "targetHeads": [
+        "5513",
+        "1917",
+        "5168",
+        "3729",
+        "0925"
+      ],
+      "oldHitFamilies": [
+        "3729/9273"
+      ],
+      "newHitFamilies": [
+        {
+          "family": "3729/3927",
+          "rank": 30,
+          "physicalValues": [
+            "3729",
+            "3927"
+          ],
+          "mother": "729/927",
+          "side": "ANTES"
+        }
+      ],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "2174",
+        "1456",
+        "2631",
+        "1899",
+        "8799"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "0413",
+        "4855",
+        "5944",
+        "6327",
+        "5775"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "targetHeads": [
+        "0505",
+        "5163",
+        "5956",
+        "8818",
+        "8951"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "targetHeads": [
+        "6697",
+        "3241",
+        "1019",
+        "8770",
+        "0847"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "targetHeads": [
+        "0508",
+        "8640",
+        "4179",
+        "2715",
+        "1917"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "9226",
+        "8809",
+        "2010",
+        "8001",
+        "8483"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "5196",
+        "0945",
+        "2338",
+        "9476",
+        "2081"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "targetHeads": [
+        "8566",
+        "6758",
+        "1191",
+        "9910",
+        "1716"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "targetHeads": [
+        "5189",
+        "9360",
+        "8015",
+        "6741",
+        "4812"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "targetHeads": [
+        "5448",
+        "9646",
+        "8801",
+        "2653",
+        "5747"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "2428",
+        "0261",
+        "1677",
+        "6441",
+        "9877"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "3571",
+        "8579",
+        "0387",
+        "2103",
+        "7152"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "targetHeads": [
+        "7218",
+        "4103",
+        "2504",
+        "6655",
+        "3684"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "targetHeads": [
+        "4599",
+        "1006",
+        "3765",
+        "3754",
+        "3448"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "targetHeads": [
+        "9179",
+        "9643",
+        "9800",
+        "6316",
+        "7071"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "2710",
+        "9532",
+        "7409",
+        "5125",
+        "0848"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "4534",
+        "6859",
+        "4553",
+        "3625",
+        "6873"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "targetHeads": [
+        "5001",
+        "7310",
+        "8242",
+        "4843",
+        "0534"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "targetHeads": [
+        "9159",
+        "3514",
+        "3903",
+        "8369",
+        "2240"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "targetHeads": [
+        "4327",
+        "3977",
+        "2232",
+        "8759",
+        "1094"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "1056",
+        "4059",
+        "3694",
+        "7730",
+        "7148"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "9226",
+        "6844",
+        "7952",
+        "0336",
+        "7354"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "targetHeads": [
+        "0956",
+        "2540",
+        "6182",
+        "9507",
+        "0061"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "targetHeads": [
+        "8393",
+        "4650",
+        "9656",
+        "2211",
+        "2473"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "targetHeads": [
+        "6542",
+        "5918",
+        "3297",
+        "9848",
+        "5150"
+      ],
+      "oldHitFamilies": [
+        "2456/6542"
+      ],
+      "newHitFamilies": [
+        {
+          "family": "4562/6542",
+          "rank": 46,
+          "physicalValues": [
+            "4562",
+            "6542"
+          ],
+          "mother": "456/654",
+          "side": "DESPUES"
+        }
+      ],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "targetHeads": [
+        "5185",
+        "5415",
+        "9220",
+        "2584",
+        "0720"
+      ],
+      "oldHitFamilies": [],
+      "newHitFamilies": [],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "targetHeads": [
+        "4324",
+        "2654",
+        "1044",
+        "6215",
+        "0564"
+      ],
+      "oldHitFamilies": [
+        "2654/4562"
+      ],
+      "newHitFamilies": [
+        {
+          "family": "2456/2654",
+          "rank": 45,
+          "physicalValues": [
+            "2456",
+            "2654"
+          ],
+          "mother": "456/654",
+          "side": "ANTES"
+        }
+      ],
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    }
+  ]
+}

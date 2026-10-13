@@ -1,0 +1,2360 @@
+{
+  "cuts": 115,
+  "old": {
+    "3": 0,
+    "5": 0,
+    "10": 0
+  },
+  "new": {
+    "3": 0,
+    "5": 0,
+    "10": 0
+  },
+  "perCut": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "top3": {
+        "old": false,
+        "new": false
+      },
+      "top5": {
+        "old": false,
+        "new": false
+      },
+      "top10": {
+        "old": false,
+        "new": false
+      }
+    }
+  ],
+  "avgOldPool": 66.68695652173913,
+  "avgNewPool": 95.02608695652174,
+  "countCutsDuplicateFamilyLabels": 13,
+  "countCutsNumericOverlaps": 113,
+  "totalUniqueNewFamiliesOver115": 3329,
+  "oct13": [
+    {
+      "turn": "Primera",
+      "heads": [
+        {
+          "jurisdiction": "Ciudad",
+          "head": "5485",
+          "oldFamily": "5485/5845",
+          "matchedNewFamilies": [
+            {
+              "family": "5485/5584",
+              "rank": 52,
+              "mother": "485/584",
+              "extra": "5",
+              "side": "ANTES",
+              "physicalValues": [
+                "5485"
+              ]
+            },
+            {
+              "family": "5485/8455",
+              "rank": 87,
+              "mother": "548/845",
+              "extra": "5",
+              "side": "DESPUES",
+              "physicalValues": [
+                "5485"
+              ]
+            }
+          ],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        },
+        {
+          "jurisdiction": "Provincia",
+          "head": "0310",
+          "oldFamily": "0130/0310",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        },
+        {
+          "jurisdiction": "Córdoba",
+          "head": "8857",
+          "oldFamily": "7588/8857",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        },
+        {
+          "jurisdiction": "Santa Fe",
+          "head": "3385",
+          "oldFamily": "3385/5833",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        },
+        {
+          "jurisdiction": "Entre Ríos",
+          "head": "4084",
+          "oldFamily": "4084/4804",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        }
+      ],
+      "top3": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622"
+      ],
+      "top5": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622",
+        "5226/5622",
+        "2266/6226"
+      ],
+      "top10": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622",
+        "5226/5622",
+        "2266/6226",
+        "6226/6622",
+        "3056/5036",
+        "6305/6503",
+        "3057/5037",
+        "7305/7503"
+      ],
+      "oldTop10": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "argentina5": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "includingMontevideo": null,
+      "duplicateFamilies": [],
+      "overlappingNumberExamples": [
+        [
+          "2266",
+          [
+            {
+              "family": "2266/6226",
+              "rank": 5,
+              "mother": "226/622",
+              "side": "DESPUES"
+            },
+            {
+              "family": "2266/2662",
+              "rank": 57,
+              "mother": "266/662",
+              "side": "ANTES"
+            }
+          ]
+        ],
+        [
+          "6226",
+          [
+            {
+              "family": "2266/6226",
+              "rank": 5,
+              "mother": "226/622",
+              "side": "DESPUES"
+            },
+            {
+              "family": "6226/6622",
+              "rank": 6,
+              "mother": "226/622",
+              "side": "ANTES"
+            }
+          ]
+        ],
+        [
+          "6622",
+          [
+            {
+              "family": "6226/6622",
+              "rank": 6,
+              "mother": "226/622",
+              "side": "ANTES"
+            },
+            {
+              "family": "2662/6622",
+              "rank": 58,
+              "mother": "266/662",
+              "side": "DESPUES"
+            }
+          ]
+        ],
+        [
+          "5036",
+          [
+            {
+              "family": "3056/5036",
+              "rank": 7,
+              "mother": "305/503",
+              "side": "DESPUES"
+            },
+            {
+              "family": "5036/5630",
+              "rank": 41,
+              "mother": "036/630",
+              "side": "ANTES"
+            }
+          ]
+        ],
+        [
+          "6305",
+          [
+            {
+              "family": "6305/6503",
+              "rank": 8,
+              "mother": "305/503",
+              "side": "ANTES"
+            },
+            {
+              "family": "0365/6305",
+              "rank": 39,
+              "mother": "036/630",
+              "side": "DESPUES"
+            }
+          ]
+        ],
+        [
+          "5037",
+          [
+            {
+              "family": "3057/5037",
+              "rank": 9,
+              "mother": "305/503",
+              "side": "DESPUES"
+            },
+            {
+              "family": "5037/5730",
+              "rank": 74,
+              "mother": "037/730",
+              "side": "ANTES"
+            }
+          ]
+        ],
+        [
+          "7305",
+          [
+            {
+              "family": "7305/7503",
+              "rank": 10,
+              "mother": "305/503",
+              "side": "ANTES"
+            },
+            {
+              "family": "0375/7305",
+              "rank": 70,
+              "mother": "037/730",
+              "side": "DESPUES"
+            }
+          ]
+        ],
+        [
+          "0630",
+          [
+            {
+              "family": "0036/0630",
+              "rank": 37,
+              "mother": "036/630",
+              "side": "ANTES"
+            },
+            {
+              "family": "0630/3600",
+              "rank": 94,
+              "mother": "063/360",
+              "side": "DESPUES"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "turn": "Matutino",
+      "heads": [
+        {
+          "jurisdiction": "Ciudad",
+          "head": "3376",
+          "oldFamily": "3376/6733",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        },
+        {
+          "jurisdiction": "Provincia",
+          "head": "1057",
+          "oldFamily": "1057/7501",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        },
+        {
+          "jurisdiction": "Córdoba",
+          "head": "2413",
+          "oldFamily": "2413/3142",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        },
+        {
+          "jurisdiction": "Santa Fe",
+          "head": "3723",
+          "oldFamily": "3273/3723",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        },
+        {
+          "jurisdiction": "Entre Ríos",
+          "head": "2284",
+          "oldFamily": "2284/4822",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        },
+        {
+          "jurisdiction": "Montevideo",
+          "head": "3629",
+          "oldFamily": "3629/9263",
+          "matchedNewFamilies": [],
+          "newTop3": false,
+          "newTop5": false,
+          "newTop10": false
+        }
+      ],
+      "top3": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622"
+      ],
+      "top5": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622",
+        "5226/5622",
+        "2266/6226"
+      ],
+      "top10": [
+        "2263/6223",
+        "2265/6225",
+        "3226/3622",
+        "5226/5622",
+        "2266/6226",
+        "6226/6622",
+        "3056/5036",
+        "6305/6503",
+        "3057/5037",
+        "7305/7503"
+      ],
+      "oldTop10": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "argentina5": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "includingMontevideo": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "duplicateFamilies": [],
+      "overlappingNumberExamples": [
+        [
+          "2266",
+          [
+            {
+              "family": "2266/6226",
+              "rank": 5,
+              "mother": "226/622",
+              "side": "DESPUES"
+            },
+            {
+              "family": "2266/2662",
+              "rank": 40,
+              "mother": "266/662",
+              "side": "ANTES"
+            }
+          ]
+        ],
+        [
+          "6226",
+          [
+            {
+              "family": "2266/6226",
+              "rank": 5,
+              "mother": "226/622",
+              "side": "DESPUES"
+            },
+            {
+              "family": "6226/6622",
+              "rank": 6,
+              "mother": "226/622",
+              "side": "ANTES"
+            }
+          ]
+        ],
+        [
+          "6622",
+          [
+            {
+              "family": "6226/6622",
+              "rank": 6,
+              "mother": "226/622",
+              "side": "ANTES"
+            },
+            {
+              "family": "2662/6622",
+              "rank": 42,
+              "mother": "266/662",
+              "side": "DESPUES"
+            }
+          ]
+        ],
+        [
+          "5036",
+          [
+            {
+              "family": "3056/5036",
+              "rank": 7,
+              "mother": "305/503",
+              "side": "DESPUES"
+            },
+            {
+              "family": "5036/5630",
+              "rank": 83,
+              "mother": "036/630",
+              "side": "ANTES"
+            }
+          ]
+        ],
+        [
+          "6305",
+          [
+            {
+              "family": "6305/6503",
+              "rank": 8,
+              "mother": "305/503",
+              "side": "ANTES"
+            },
+            {
+              "family": "0365/6305",
+              "rank": 81,
+              "mother": "036/630",
+              "side": "DESPUES"
+            }
+          ]
+        ],
+        [
+          "6996",
+          [
+            {
+              "family": "6699/6996",
+              "rank": 29,
+              "mother": "699/996",
+              "side": "ANTES"
+            },
+            {
+              "family": "6996/9966",
+              "rank": 32,
+              "mother": "699/996",
+              "side": "DESPUES"
+            }
+          ]
+        ],
+        [
+          "6629",
+          [
+            {
+              "family": "2669/6629",
+              "rank": 35,
+              "mother": "266/662",
+              "side": "DESPUES"
+            },
+            {
+              "family": "6629/6926",
+              "rank": 50,
+              "mother": "629/926",
+              "side": "ANTES"
+            }
+          ]
+        ],
+        [
+          "9266",
+          [
+            {
+              "family": "9266/9662",
+              "rank": 36,
+              "mother": "266/662",
+              "side": "ANTES"
+            },
+            {
+              "family": "6296/9266",
+              "rank": 49,
+              "mother": "629/926",
+              "side": "DESPUES"
+            }
+          ]
+        ]
+      ]
+    }
+  ],
+  "strictInterpretation": "VT4 de esta rama es estructural: madre VT3+posición de cifra. Sus variantes textuales NO equivalen a rutas salvo si physicalValues contiene esa cifra. POST cotejado contra p.value físico, no inversión total automática.",
+  "noProspectiveClaim": "El histórico de 115 cortes y VT4 13oct son retrospectivos; el sello original Matutino previo era VT3, no VT4."
+}
