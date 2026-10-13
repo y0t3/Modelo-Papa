@@ -1,0 +1,467 @@
+{
+  "cuts": 115,
+  "days": 23,
+  "preSha256": "62227deb54cf75bd5f8679d2b6cd53cd55ef90b7405c07f74a2578ce1b90751a",
+  "stats": {
+    "original": {
+      "vt3Top3": 5,
+      "vt3Top5": 8,
+      "vt3Top10": 15,
+      "vt4Top3": 0,
+      "vt4Top5": 0,
+      "vt4Top10": 0,
+      "poolHitCuts": 7,
+      "winningFamilies": 8,
+      "totalDaughters": 7669,
+      "motherBlocks": 3215,
+      "expectedTop10": 1.2152010856796474
+    },
+    "raices_distintas": {
+      "vt3Top3": 6,
+      "vt3Top5": 12,
+      "vt3Top10": 16,
+      "vt4Top3": 0,
+      "vt4Top5": 0,
+      "vt4Top10": 2,
+      "poolHitCuts": 9,
+      "winningFamilies": 9,
+      "totalDaughters": 7299,
+      "motherBlocks": 3070,
+      "expectedTop10": 1.36440375385803
+    },
+    "control_bloques": {
+      "vt3Top3": 6,
+      "vt3Top5": 9,
+      "vt3Top10": 16,
+      "vt4Top3": 0,
+      "vt4Top5": 0,
+      "vt4Top10": 0,
+      "poolHitCuts": 7,
+      "winningFamilies": 8,
+      "totalDaughters": 7306,
+      "motherBlocks": 3044,
+      "expectedTop10": 1.2516074835953863
+    }
+  },
+  "paired": {
+    "raices_distintas": {
+      "changedMotherSets": 106,
+      "gainedPoolCuts": [
+        "2026-09-21 Nocturno",
+        "2026-09-28 Matutino",
+        "2026-09-28 Vespertino",
+        "2026-10-06 Nocturno"
+      ],
+      "lostPoolCuts": [
+        "2026-09-24 Previa",
+        "2026-10-03 Matutino"
+      ],
+      "gainedTop10Cuts": [
+        "2026-09-15 Matutino",
+        "2026-09-18 Vespertino"
+      ],
+      "lostTop10Cuts": []
+    },
+    "control_bloques": {
+      "changedMotherSets": 52,
+      "gainedPoolCuts": [],
+      "lostPoolCuts": [],
+      "gainedTop10Cuts": [],
+      "lostTop10Cuts": []
+    }
+  },
+  "perDay": [
+    {
+      "date": "2026-09-15",
+      "methods": {
+        "original": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 1,
+          "top10Cuts": 1
+        },
+        "control_bloques": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "methods": {
+        "original": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 1,
+          "top10Cuts": 1
+        },
+        "control_bloques": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "methods": {
+        "original": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 2,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "methods": {
+        "original": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "methods": {
+        "original": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 1,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "methods": {
+        "original": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 0,
+          "top10Cuts": 0
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "methods": {
+        "original": {
+          "poolCuts": 2,
+          "top10Cuts": 0
+        },
+        "raices_distintas": {
+          "poolCuts": 2,
+          "top10Cuts": 0
+        },
+        "control_bloques": {
+          "poolCuts": 2,
+          "top10Cuts": 0
+        }
+      }
+    }
+  ],
+  "limitation": "Exploratorio sobre fechas reutilizadas. Control bloques parcial, no igualación exacta de densidad. Referencia uniforme condicionada a bolsa no prueba ventaja. Nocturna 12/10 excluida."
+}
