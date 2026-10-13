@@ -1,0 +1,44 @@
+name: Laboratorio madres VT3 hijas VT4 115 cortes
+on:
+  push:
+    branches: [lab-madres-vt3-hijas-vt4-13oct2026]
+    paths:
+      - 'scripts/lab-madres-vt4.mjs'
+      - '.github/workflows/lab-madres-vt4-115.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Preparar entradas historicas
+        run: node scripts/lab-madres-vt4.mjs prepare
+      - name: Generar PRE sin objetivos POST
+        run: |
+          mv resultados/replay-lalo-115/OBJETIVOS_POST_115.json /tmp/objetivos-madres.json
+          node scripts/lab-madres-vt4.mjs pre
+      - name: Comparar POST con PRE sellado
+        run: |
+          mv /tmp/objetivos-madres.json resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          node scripts/lab-madres-vt4.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Madres-VT3-hijas-VT4-115-PRE-POST
+          path: auditorias/madres-vt3-hijas-vt4-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar resultados completos en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/madres-vt3-hijas-vt4-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(lab): resultados madres VT3 hijas VT4 115 cortes'
+            git push origin HEAD:lab-madres-vt3-hijas-vt4-13oct2026
+          fi
