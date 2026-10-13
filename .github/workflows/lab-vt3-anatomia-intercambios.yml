@@ -1,0 +1,51 @@
+name: VT3 anatomia de intercambios y antecedentes
+on:
+  push:
+    branches: [lab-vt3-anatomia-intercambios-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-anatomia-intercambios.mjs'
+      - 'PROTOCOLO_VT3_ANATOMIA_INTERCAMBIOS_13OCT2026.md'
+      - '.github/workflows/lab-vt3-anatomia-intercambios.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  investigar-intercambios:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar todo POST y preservar solo los dos insumos PRE sellados
+        run: |
+          mv auditorias /tmp/vt3-intercambios-auditorias
+          mkdir -p auditorias/vt3-diversidad-antecedentes-115-13oct2026/
+          cp /tmp/vt3-intercambios-auditorias/vt3-diversidad-antecedentes-115-13oct2026/PRE_115.json auditorias/vt3-diversidad-antecedentes-115-13oct2026/PRE_115.json
+          cp /tmp/vt3-intercambios-auditorias/vt3-diversidad-antecedentes-115-13oct2026/CONTROLES_PRE.json auditorias/vt3-diversidad-antecedentes-115-13oct2026/CONTROLES_PRE.json
+          test "$(find auditorias -type f | wc -l)" -eq 2
+      - name: Medir intercambios de todas las familias y sellar 2000 controles PRE
+        run: node scripts/lab-vt3-anatomia-intercambios.mjs pre
+      - name: Restaurar POST sin pisar los PRE nuevos y evaluar negativos
+        run: |
+          mv auditorias/vt3-anatomia-intercambios-115-13oct2026 /tmp/vt3-intercambios-nuevos
+          cp -a /tmp/vt3-intercambios-auditorias/. auditorias/
+          rm -rf auditorias/vt3-anatomia-intercambios-115-13oct2026
+          mv /tmp/vt3-intercambios-nuevos auditorias/vt3-anatomia-intercambios-115-13oct2026
+          node scripts/lab-vt3-anatomia-intercambios.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-anatomia-intercambios-115
+          path: auditorias/vt3-anatomia-intercambios-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar auditorias verificadas solo en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-anatomia-intercambios-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): auditoría de intercambios, negativos y controles de igual presupuesto'
+            git push origin HEAD:lab-vt3-anatomia-intercambios-13oct2026
+          fi
