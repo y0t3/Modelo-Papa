@@ -1,0 +1,1727 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "days": 23,
+  "physicalWinningExposures": 143,
+  "anchoredWinningExposures": 64,
+  "featureStats": {
+    "birth": {
+      "exposures": 3380,
+      "winningExposures": 27,
+      "winnerCuts": 25,
+      "anchoredExposures": 925,
+      "anchoredWins": 8,
+      "unanchoredExposures": 2455,
+      "unanchoredWins": 19
+    },
+    "converge": {
+      "exposures": 1086,
+      "winningExposures": 11,
+      "winnerCuts": 11,
+      "anchoredExposures": 595,
+      "anchoredWins": 7,
+      "unanchoredExposures": 491,
+      "unanchoredWins": 4
+    },
+    "newSource": {
+      "exposures": 5756,
+      "winningExposures": 54,
+      "winnerCuts": 44,
+      "anchoredExposures": 2210,
+      "anchoredWins": 24,
+      "unanchoredExposures": 3546,
+      "unanchoredWins": 30
+    },
+    "newAnchor": {
+      "exposures": 1826,
+      "winningExposures": 19,
+      "winnerCuts": 15,
+      "anchoredExposures": 1826,
+      "anchoredWins": 19,
+      "unanchoredExposures": 0,
+      "unanchoredWins": 0
+    },
+    "newBlocks2": {
+      "exposures": 2002,
+      "winningExposures": 21,
+      "winnerCuts": 19,
+      "anchoredExposures": 1048,
+      "anchoredWins": 15,
+      "unanchoredExposures": 954,
+      "unanchoredWins": 6
+    },
+    "sameShapeAcrossSources": {
+      "exposures": 70,
+      "winningExposures": 1,
+      "winnerCuts": 1,
+      "anchoredExposures": 48,
+      "anchoredWins": 0,
+      "unanchoredExposures": 22,
+      "unanchoredWins": 1
+    },
+    "sameEdgeGeometry": {
+      "exposures": 281,
+      "winningExposures": 5,
+      "winnerCuts": 5,
+      "anchoredExposures": 171,
+      "anchoredWins": 2,
+      "unanchoredExposures": 110,
+      "unanchoredWins": 3
+    },
+    "reuseOwnHistoricalRoot": {
+      "exposures": 0,
+      "winningExposures": 0,
+      "winnerCuts": 0,
+      "anchoredExposures": 0,
+      "anchoredWins": 0,
+      "unanchoredExposures": 0,
+      "unanchoredWins": 0
+    },
+    "pastFamily1": {
+      "exposures": 3998,
+      "winningExposures": 36,
+      "winnerCuts": 27,
+      "anchoredExposures": 1549,
+      "anchoredWins": 11,
+      "unanchoredExposures": 2449,
+      "unanchoredWins": 25
+    },
+    "pastFamily2": {
+      "exposures": 6748,
+      "winningExposures": 65,
+      "winnerCuts": 42,
+      "anchoredExposures": 2701,
+      "anchoredWins": 24,
+      "unanchoredExposures": 4047,
+      "unanchoredWins": 41
+    },
+    "pastFamily7": {
+      "exposures": 9355,
+      "winningExposures": 84,
+      "winnerCuts": 47,
+      "anchoredExposures": 3761,
+      "anchoredWins": 30,
+      "unanchoredExposures": 5594,
+      "unanchoredWins": 54
+    },
+    "sameSourceFamilyLastDay": {
+      "exposures": 1678,
+      "winningExposures": 12,
+      "winnerCuts": 10,
+      "anchoredExposures": 660,
+      "anchoredWins": 3,
+      "unanchoredExposures": 1018,
+      "unanchoredWins": 9
+    },
+    "sameBlockFamilyLastDay": {
+      "exposures": 86,
+      "winningExposures": 3,
+      "winnerCuts": 3,
+      "anchoredExposures": 35,
+      "anchoredWins": 1,
+      "unanchoredExposures": 51,
+      "unanchoredWins": 2
+    },
+    "unanchored": {
+      "exposures": 8884,
+      "winningExposures": 79,
+      "winnerCuts": 52,
+      "anchoredExposures": 0,
+      "anchoredWins": 0,
+      "unanchoredExposures": 8884,
+      "unanchoredWins": 79
+    },
+    "nonInitialStable": {
+      "exposures": 9517,
+      "winningExposures": 89,
+      "winnerCuts": 56,
+      "anchoredExposures": 4179,
+      "anchoredWins": 40,
+      "unanchoredExposures": 5338,
+      "unanchoredWins": 49
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "birth": {
+        "exposures": 2025,
+        "winningExposures": 16,
+        "winnerCuts": 14,
+        "anchoredExposures": 512,
+        "anchoredWins": 4,
+        "unanchoredExposures": 1513,
+        "unanchoredWins": 12
+      },
+      "converge": {
+        "exposures": 656,
+        "winningExposures": 6,
+        "winnerCuts": 6,
+        "anchoredExposures": 345,
+        "anchoredWins": 5,
+        "unanchoredExposures": 311,
+        "unanchoredWins": 1
+      },
+      "newSource": {
+        "exposures": 3471,
+        "winningExposures": 32,
+        "winnerCuts": 26,
+        "anchoredExposures": 1325,
+        "anchoredWins": 15,
+        "unanchoredExposures": 2146,
+        "unanchoredWins": 17
+      },
+      "newAnchor": {
+        "exposures": 1086,
+        "winningExposures": 10,
+        "winnerCuts": 8,
+        "anchoredExposures": 1086,
+        "anchoredWins": 10,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "newBlocks2": {
+        "exposures": 1245,
+        "winningExposures": 12,
+        "winnerCuts": 11,
+        "anchoredExposures": 630,
+        "anchoredWins": 9,
+        "unanchoredExposures": 615,
+        "unanchoredWins": 3
+      },
+      "sameShapeAcrossSources": {
+        "exposures": 31,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 26,
+        "anchoredWins": 0,
+        "unanchoredExposures": 5,
+        "unanchoredWins": 0
+      },
+      "sameEdgeGeometry": {
+        "exposures": 158,
+        "winningExposures": 2,
+        "winnerCuts": 2,
+        "anchoredExposures": 97,
+        "anchoredWins": 2,
+        "unanchoredExposures": 61,
+        "unanchoredWins": 0
+      },
+      "reuseOwnHistoricalRoot": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "pastFamily1": {
+        "exposures": 2296,
+        "winningExposures": 21,
+        "winnerCuts": 14,
+        "anchoredExposures": 875,
+        "anchoredWins": 8,
+        "unanchoredExposures": 1421,
+        "unanchoredWins": 13
+      },
+      "pastFamily2": {
+        "exposures": 3656,
+        "winningExposures": 40,
+        "winnerCuts": 26,
+        "anchoredExposures": 1478,
+        "anchoredWins": 16,
+        "unanchoredExposures": 2178,
+        "unanchoredWins": 24
+      },
+      "pastFamily7": {
+        "exposures": 4123,
+        "winningExposures": 43,
+        "winnerCuts": 23,
+        "anchoredExposures": 1655,
+        "anchoredWins": 17,
+        "unanchoredExposures": 2468,
+        "unanchoredWins": 26
+      },
+      "sameSourceFamilyLastDay": {
+        "exposures": 972,
+        "winningExposures": 6,
+        "winnerCuts": 4,
+        "anchoredExposures": 378,
+        "anchoredWins": 1,
+        "unanchoredExposures": 594,
+        "unanchoredWins": 5
+      },
+      "sameBlockFamilyLastDay": {
+        "exposures": 44,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 14,
+        "anchoredWins": 0,
+        "unanchoredExposures": 30,
+        "unanchoredWins": 1
+      },
+      "unanchored": {
+        "exposures": 5308,
+        "winningExposures": 46,
+        "winnerCuts": 30,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 5308,
+        "unanchoredWins": 46
+      },
+      "nonInitialStable": {
+        "exposures": 5776,
+        "winningExposures": 61,
+        "winnerCuts": 37,
+        "anchoredExposures": 2614,
+        "anchoredWins": 32,
+        "unanchoredExposures": 3162,
+        "unanchoredWins": 29
+      }
+    },
+    "2026-10": {
+      "birth": {
+        "exposures": 1355,
+        "winningExposures": 11,
+        "winnerCuts": 11,
+        "anchoredExposures": 413,
+        "anchoredWins": 4,
+        "unanchoredExposures": 942,
+        "unanchoredWins": 7
+      },
+      "converge": {
+        "exposures": 430,
+        "winningExposures": 5,
+        "winnerCuts": 5,
+        "anchoredExposures": 250,
+        "anchoredWins": 2,
+        "unanchoredExposures": 180,
+        "unanchoredWins": 3
+      },
+      "newSource": {
+        "exposures": 2285,
+        "winningExposures": 22,
+        "winnerCuts": 18,
+        "anchoredExposures": 885,
+        "anchoredWins": 9,
+        "unanchoredExposures": 1400,
+        "unanchoredWins": 13
+      },
+      "newAnchor": {
+        "exposures": 740,
+        "winningExposures": 9,
+        "winnerCuts": 7,
+        "anchoredExposures": 740,
+        "anchoredWins": 9,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "newBlocks2": {
+        "exposures": 757,
+        "winningExposures": 9,
+        "winnerCuts": 8,
+        "anchoredExposures": 418,
+        "anchoredWins": 6,
+        "unanchoredExposures": 339,
+        "unanchoredWins": 3
+      },
+      "sameShapeAcrossSources": {
+        "exposures": 39,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 22,
+        "anchoredWins": 0,
+        "unanchoredExposures": 17,
+        "unanchoredWins": 1
+      },
+      "sameEdgeGeometry": {
+        "exposures": 123,
+        "winningExposures": 3,
+        "winnerCuts": 3,
+        "anchoredExposures": 74,
+        "anchoredWins": 0,
+        "unanchoredExposures": 49,
+        "unanchoredWins": 3
+      },
+      "reuseOwnHistoricalRoot": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "pastFamily1": {
+        "exposures": 1702,
+        "winningExposures": 15,
+        "winnerCuts": 13,
+        "anchoredExposures": 674,
+        "anchoredWins": 3,
+        "unanchoredExposures": 1028,
+        "unanchoredWins": 12
+      },
+      "pastFamily2": {
+        "exposures": 3092,
+        "winningExposures": 25,
+        "winnerCuts": 16,
+        "anchoredExposures": 1223,
+        "anchoredWins": 8,
+        "unanchoredExposures": 1869,
+        "unanchoredWins": 17
+      },
+      "pastFamily7": {
+        "exposures": 5232,
+        "winningExposures": 41,
+        "winnerCuts": 24,
+        "anchoredExposures": 2106,
+        "anchoredWins": 13,
+        "unanchoredExposures": 3126,
+        "unanchoredWins": 28
+      },
+      "sameSourceFamilyLastDay": {
+        "exposures": 706,
+        "winningExposures": 6,
+        "winnerCuts": 6,
+        "anchoredExposures": 282,
+        "anchoredWins": 2,
+        "unanchoredExposures": 424,
+        "unanchoredWins": 4
+      },
+      "sameBlockFamilyLastDay": {
+        "exposures": 42,
+        "winningExposures": 2,
+        "winnerCuts": 2,
+        "anchoredExposures": 21,
+        "anchoredWins": 1,
+        "unanchoredExposures": 21,
+        "unanchoredWins": 1
+      },
+      "unanchored": {
+        "exposures": 3576,
+        "winningExposures": 33,
+        "winnerCuts": 22,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 3576,
+        "unanchoredWins": 33
+      },
+      "nonInitialStable": {
+        "exposures": 3741,
+        "winningExposures": 28,
+        "winnerCuts": 19,
+        "anchoredExposures": 1565,
+        "anchoredWins": 8,
+        "unanchoredExposures": 2176,
+        "unanchoredWins": 20
+      }
+    }
+  },
+  "matched": {
+    "birth": {
+      "observed": 24,
+      "expected": 25.94179,
+      "winsInMixedStrata": 80,
+      "exposureInMixedStrata": 2348,
+      "mixedStrata": 69,
+      "winStrataWithAlternatives": 69,
+      "excludedWinningExposures": 63,
+      "observedMinusExpected": -1.94179,
+      "ratioToMatchedReference": 0.9251
+    },
+    "converge": {
+      "observed": 7,
+      "expected": 6.08669,
+      "winsInMixedStrata": 13,
+      "exposureInMixedStrata": 106,
+      "mixedStrata": 13,
+      "winStrataWithAlternatives": 13,
+      "excludedWinningExposures": 130,
+      "observedMinusExpected": 0.91331,
+      "ratioToMatchedReference": 1.15
+    },
+    "newSource": {
+      "observed": 31,
+      "expected": 32.02849,
+      "winsInMixedStrata": 93,
+      "exposureInMixedStrata": 2454,
+      "mixedStrata": 82,
+      "winStrataWithAlternatives": 82,
+      "excludedWinningExposures": 50,
+      "observedMinusExpected": -1.02849,
+      "ratioToMatchedReference": 0.9679
+    },
+    "newAnchor": {
+      "observed": 8,
+      "expected": 8.27019,
+      "winsInMixedStrata": 24,
+      "exposureInMixedStrata": 186,
+      "mixedStrata": 23,
+      "winStrataWithAlternatives": 23,
+      "excludedWinningExposures": 119,
+      "observedMinusExpected": -0.27019,
+      "ratioToMatchedReference": 0.9673
+    },
+    "newBlocks2": {
+      "observed": 12,
+      "expected": 11.2699,
+      "winsInMixedStrata": 28,
+      "exposureInMixedStrata": 209,
+      "mixedStrata": 28,
+      "winStrataWithAlternatives": 28,
+      "excludedWinningExposures": 115,
+      "observedMinusExpected": 0.7301,
+      "ratioToMatchedReference": 1.0648
+    },
+    "sameShapeAcrossSources": {
+      "observed": 1,
+      "expected": 1.38571,
+      "winsInMixedStrata": 4,
+      "exposureInMixedStrata": 23,
+      "mixedStrata": 4,
+      "winStrataWithAlternatives": 4,
+      "excludedWinningExposures": 139,
+      "observedMinusExpected": -0.38571,
+      "ratioToMatchedReference": 0.7216
+    },
+    "sameEdgeGeometry": {
+      "observed": 4,
+      "expected": 2.64048,
+      "winsInMixedStrata": 7,
+      "exposureInMixedStrata": 36,
+      "mixedStrata": 7,
+      "winStrataWithAlternatives": 7,
+      "excludedWinningExposures": 136,
+      "observedMinusExpected": 1.35952,
+      "ratioToMatchedReference": 1.5149
+    },
+    "reuseOwnHistoricalRoot": {
+      "observed": 0,
+      "expected": 0,
+      "winsInMixedStrata": 0,
+      "exposureInMixedStrata": 0,
+      "mixedStrata": 0,
+      "winStrataWithAlternatives": 0,
+      "excludedWinningExposures": 143,
+      "observedMinusExpected": 0,
+      "ratioToMatchedReference": null
+    },
+    "pastFamily1": {
+      "observed": 35,
+      "expected": 36.58854,
+      "winsInMixedStrata": 109,
+      "exposureInMixedStrata": 2610,
+      "mixedStrata": 95,
+      "winStrataWithAlternatives": 95,
+      "excludedWinningExposures": 34,
+      "observedMinusExpected": -1.58854,
+      "ratioToMatchedReference": 0.9566
+    },
+    "pastFamily2": {
+      "observed": 64,
+      "expected": 63.75913,
+      "winsInMixedStrata": 124,
+      "exposureInMixedStrata": 2660,
+      "mixedStrata": 110,
+      "winStrataWithAlternatives": 110,
+      "excludedWinningExposures": 19,
+      "observedMinusExpected": 0.24087,
+      "ratioToMatchedReference": 1.0038
+    },
+    "pastFamily7": {
+      "observed": 52,
+      "expected": 52.8353,
+      "winsInMixedStrata": 64,
+      "exposureInMixedStrata": 1858,
+      "mixedStrata": 55,
+      "winStrataWithAlternatives": 55,
+      "excludedWinningExposures": 79,
+      "observedMinusExpected": -0.8353,
+      "ratioToMatchedReference": 0.9842
+    },
+    "sameSourceFamilyLastDay": {
+      "observed": 12,
+      "expected": 15.83924,
+      "winsInMixedStrata": 90,
+      "exposureInMixedStrata": 2414,
+      "mixedStrata": 79,
+      "winStrataWithAlternatives": 79,
+      "excludedWinningExposures": 53,
+      "observedMinusExpected": -3.83924,
+      "ratioToMatchedReference": 0.7576
+    },
+    "sameBlockFamilyLastDay": {
+      "observed": 3,
+      "expected": 1.26605,
+      "winsInMixedStrata": 9,
+      "exposureInMixedStrata": 321,
+      "mixedStrata": 8,
+      "winStrataWithAlternatives": 8,
+      "excludedWinningExposures": 134,
+      "observedMinusExpected": 1.73395,
+      "ratioToMatchedReference": 2.3696
+    },
+    "unanchored": {
+      "observed": 0,
+      "expected": 0,
+      "winsInMixedStrata": 0,
+      "exposureInMixedStrata": 0,
+      "mixedStrata": 0,
+      "winStrataWithAlternatives": 0,
+      "excludedWinningExposures": 143,
+      "observedMinusExpected": 0,
+      "ratioToMatchedReference": null
+    },
+    "nonInitialStable": {
+      "observed": 62,
+      "expected": 60.97151,
+      "winsInMixedStrata": 93,
+      "exposureInMixedStrata": 2454,
+      "mixedStrata": 82,
+      "winStrataWithAlternatives": 82,
+      "excludedWinningExposures": 50,
+      "observedMinusExpected": 1.02849,
+      "ratioToMatchedReference": 1.0169
+    }
+  },
+  "matchedByMonth": {
+    "2026-09": {
+      "birth": {
+        "observed": 14,
+        "expected": 16.19987,
+        "winsInMixedStrata": 50,
+        "exposureInMixedStrata": 1300,
+        "mixedStrata": 43,
+        "winStrataWithAlternatives": 43,
+        "excludedWinningExposures": 43,
+        "observedMinusExpected": -2.19987,
+        "ratioToMatchedReference": 0.8642
+      },
+      "converge": {
+        "observed": 4,
+        "expected": 3.7486,
+        "winsInMixedStrata": 9,
+        "exposureInMixedStrata": 86,
+        "mixedStrata": 9,
+        "winStrataWithAlternatives": 9,
+        "excludedWinningExposures": 84,
+        "observedMinusExpected": 0.2514,
+        "ratioToMatchedReference": 1.0671
+      },
+      "newSource": {
+        "observed": 18,
+        "expected": 19.94847,
+        "winsInMixedStrata": 59,
+        "exposureInMixedStrata": 1386,
+        "mixedStrata": 52,
+        "winStrataWithAlternatives": 52,
+        "excludedWinningExposures": 34,
+        "observedMinusExpected": -1.94847,
+        "ratioToMatchedReference": 0.9023
+      },
+      "newAnchor": {
+        "observed": 3,
+        "expected": 4.64241,
+        "winsInMixedStrata": 15,
+        "exposureInMixedStrata": 131,
+        "mixedStrata": 15,
+        "winStrataWithAlternatives": 15,
+        "excludedWinningExposures": 78,
+        "observedMinusExpected": -1.64241,
+        "ratioToMatchedReference": 0.6462
+      },
+      "newBlocks2": {
+        "observed": 6,
+        "expected": 6.32897,
+        "winsInMixedStrata": 16,
+        "exposureInMixedStrata": 132,
+        "mixedStrata": 16,
+        "winStrataWithAlternatives": 16,
+        "excludedWinningExposures": 77,
+        "observedMinusExpected": -0.32897,
+        "ratioToMatchedReference": 0.948
+      },
+      "sameShapeAcrossSources": {
+        "observed": 0,
+        "expected": 0.7,
+        "winsInMixedStrata": 2,
+        "exposureInMixedStrata": 11,
+        "mixedStrata": 2,
+        "winStrataWithAlternatives": 2,
+        "excludedWinningExposures": 91,
+        "observedMinusExpected": -0.7,
+        "ratioToMatchedReference": 0
+      },
+      "sameEdgeGeometry": {
+        "observed": 1,
+        "expected": 0.87857,
+        "winsInMixedStrata": 3,
+        "exposureInMixedStrata": 16,
+        "mixedStrata": 3,
+        "winStrataWithAlternatives": 3,
+        "excludedWinningExposures": 90,
+        "observedMinusExpected": 0.12143,
+        "ratioToMatchedReference": 1.1382
+      },
+      "reuseOwnHistoricalRoot": {
+        "observed": 0,
+        "expected": 0,
+        "winsInMixedStrata": 0,
+        "exposureInMixedStrata": 0,
+        "mixedStrata": 0,
+        "winStrataWithAlternatives": 0,
+        "excludedWinningExposures": 93,
+        "observedMinusExpected": 0,
+        "ratioToMatchedReference": null
+      },
+      "pastFamily1": {
+        "observed": 20,
+        "expected": 22.33639,
+        "winsInMixedStrata": 68,
+        "exposureInMixedStrata": 1467,
+        "mixedStrata": 59,
+        "winStrataWithAlternatives": 59,
+        "excludedWinningExposures": 25,
+        "observedMinusExpected": -2.33639,
+        "ratioToMatchedReference": 0.8954
+      },
+      "pastFamily2": {
+        "observed": 39,
+        "expected": 38.7635,
+        "winsInMixedStrata": 75,
+        "exposureInMixedStrata": 1485,
+        "mixedStrata": 66,
+        "winStrataWithAlternatives": 66,
+        "excludedWinningExposures": 18,
+        "observedMinusExpected": 0.2365,
+        "ratioToMatchedReference": 1.0061
+      },
+      "pastFamily7": {
+        "observed": 26,
+        "expected": 23.55003,
+        "winsInMixedStrata": 29,
+        "exposureInMixedStrata": 756,
+        "mixedStrata": 24,
+        "winStrataWithAlternatives": 24,
+        "excludedWinningExposures": 64,
+        "observedMinusExpected": 2.44997,
+        "ratioToMatchedReference": 1.104
+      },
+      "sameSourceFamilyLastDay": {
+        "observed": 6,
+        "expected": 9.50775,
+        "winsInMixedStrata": 52,
+        "exposureInMixedStrata": 1288,
+        "mixedStrata": 46,
+        "winStrataWithAlternatives": 46,
+        "excludedWinningExposures": 41,
+        "observedMinusExpected": -3.50775,
+        "ratioToMatchedReference": 0.6311
+      },
+      "sameBlockFamilyLastDay": {
+        "observed": 1,
+        "expected": 0.375,
+        "winsInMixedStrata": 1,
+        "exposureInMixedStrata": 8,
+        "mixedStrata": 1,
+        "winStrataWithAlternatives": 1,
+        "excludedWinningExposures": 92,
+        "observedMinusExpected": 0.625,
+        "ratioToMatchedReference": 2.6667
+      },
+      "unanchored": {
+        "observed": 0,
+        "expected": 0,
+        "winsInMixedStrata": 0,
+        "exposureInMixedStrata": 0,
+        "mixedStrata": 0,
+        "winStrataWithAlternatives": 0,
+        "excludedWinningExposures": 93,
+        "observedMinusExpected": 0,
+        "ratioToMatchedReference": null
+      },
+      "nonInitialStable": {
+        "observed": 41,
+        "expected": 39.05153,
+        "winsInMixedStrata": 59,
+        "exposureInMixedStrata": 1386,
+        "mixedStrata": 52,
+        "winStrataWithAlternatives": 52,
+        "excludedWinningExposures": 34,
+        "observedMinusExpected": 1.94847,
+        "ratioToMatchedReference": 1.0499
+      }
+    },
+    "2026-10": {
+      "birth": {
+        "observed": 10,
+        "expected": 9.74192,
+        "winsInMixedStrata": 30,
+        "exposureInMixedStrata": 1048,
+        "mixedStrata": 26,
+        "winStrataWithAlternatives": 26,
+        "excludedWinningExposures": 20,
+        "observedMinusExpected": 0.25808,
+        "ratioToMatchedReference": 1.0265
+      },
+      "converge": {
+        "observed": 3,
+        "expected": 2.3381,
+        "winsInMixedStrata": 4,
+        "exposureInMixedStrata": 20,
+        "mixedStrata": 4,
+        "winStrataWithAlternatives": 4,
+        "excludedWinningExposures": 46,
+        "observedMinusExpected": 0.6619,
+        "ratioToMatchedReference": 1.2831
+      },
+      "newSource": {
+        "observed": 13,
+        "expected": 12.08002,
+        "winsInMixedStrata": 34,
+        "exposureInMixedStrata": 1068,
+        "mixedStrata": 30,
+        "winStrataWithAlternatives": 30,
+        "excludedWinningExposures": 16,
+        "observedMinusExpected": 0.91998,
+        "ratioToMatchedReference": 1.0762
+      },
+      "newAnchor": {
+        "observed": 5,
+        "expected": 3.62778,
+        "winsInMixedStrata": 9,
+        "exposureInMixedStrata": 55,
+        "mixedStrata": 8,
+        "winStrataWithAlternatives": 8,
+        "excludedWinningExposures": 41,
+        "observedMinusExpected": 1.37222,
+        "ratioToMatchedReference": 1.3783
+      },
+      "newBlocks2": {
+        "observed": 6,
+        "expected": 4.94093,
+        "winsInMixedStrata": 12,
+        "exposureInMixedStrata": 77,
+        "mixedStrata": 12,
+        "winStrataWithAlternatives": 12,
+        "excludedWinningExposures": 38,
+        "observedMinusExpected": 1.05907,
+        "ratioToMatchedReference": 1.2143
+      },
+      "sameShapeAcrossSources": {
+        "observed": 1,
+        "expected": 0.68571,
+        "winsInMixedStrata": 2,
+        "exposureInMixedStrata": 12,
+        "mixedStrata": 2,
+        "winStrataWithAlternatives": 2,
+        "excludedWinningExposures": 48,
+        "observedMinusExpected": 0.31429,
+        "ratioToMatchedReference": 1.4583
+      },
+      "sameEdgeGeometry": {
+        "observed": 3,
+        "expected": 1.7619,
+        "winsInMixedStrata": 4,
+        "exposureInMixedStrata": 20,
+        "mixedStrata": 4,
+        "winStrataWithAlternatives": 4,
+        "excludedWinningExposures": 46,
+        "observedMinusExpected": 1.2381,
+        "ratioToMatchedReference": 1.7027
+      },
+      "reuseOwnHistoricalRoot": {
+        "observed": 0,
+        "expected": 0,
+        "winsInMixedStrata": 0,
+        "exposureInMixedStrata": 0,
+        "mixedStrata": 0,
+        "winStrataWithAlternatives": 0,
+        "excludedWinningExposures": 50,
+        "observedMinusExpected": 0,
+        "ratioToMatchedReference": null
+      },
+      "pastFamily1": {
+        "observed": 15,
+        "expected": 14.25216,
+        "winsInMixedStrata": 41,
+        "exposureInMixedStrata": 1143,
+        "mixedStrata": 36,
+        "winStrataWithAlternatives": 36,
+        "excludedWinningExposures": 9,
+        "observedMinusExpected": 0.74784,
+        "ratioToMatchedReference": 1.0525
+      },
+      "pastFamily2": {
+        "observed": 25,
+        "expected": 24.99563,
+        "winsInMixedStrata": 49,
+        "exposureInMixedStrata": 1175,
+        "mixedStrata": 44,
+        "winStrataWithAlternatives": 44,
+        "excludedWinningExposures": 1,
+        "observedMinusExpected": 0.00437,
+        "ratioToMatchedReference": 1.0002
+      },
+      "pastFamily7": {
+        "observed": 26,
+        "expected": 29.28527,
+        "winsInMixedStrata": 35,
+        "exposureInMixedStrata": 1102,
+        "mixedStrata": 31,
+        "winStrataWithAlternatives": 31,
+        "excludedWinningExposures": 15,
+        "observedMinusExpected": -3.28527,
+        "ratioToMatchedReference": 0.8878
+      },
+      "sameSourceFamilyLastDay": {
+        "observed": 6,
+        "expected": 6.33149,
+        "winsInMixedStrata": 38,
+        "exposureInMixedStrata": 1126,
+        "mixedStrata": 33,
+        "winStrataWithAlternatives": 33,
+        "excludedWinningExposures": 12,
+        "observedMinusExpected": -0.33149,
+        "ratioToMatchedReference": 0.9476
+      },
+      "sameBlockFamilyLastDay": {
+        "observed": 2,
+        "expected": 0.89105,
+        "winsInMixedStrata": 8,
+        "exposureInMixedStrata": 313,
+        "mixedStrata": 7,
+        "winStrataWithAlternatives": 7,
+        "excludedWinningExposures": 42,
+        "observedMinusExpected": 1.10895,
+        "ratioToMatchedReference": 2.2445
+      },
+      "unanchored": {
+        "observed": 0,
+        "expected": 0,
+        "winsInMixedStrata": 0,
+        "exposureInMixedStrata": 0,
+        "mixedStrata": 0,
+        "winStrataWithAlternatives": 0,
+        "excludedWinningExposures": 50,
+        "observedMinusExpected": 0,
+        "ratioToMatchedReference": null
+      },
+      "nonInitialStable": {
+        "observed": 21,
+        "expected": 21.91998,
+        "winsInMixedStrata": 34,
+        "exposureInMixedStrata": 1068,
+        "mixedStrata": 30,
+        "winStrataWithAlternatives": 30,
+        "excludedWinningExposures": 16,
+        "observedMinusExpected": -0.91998,
+        "ratioToMatchedReference": 0.958
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "birth": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "converge": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "newSource": {
+        "exposures": 1290,
+        "winningExposures": 16,
+        "winnerCuts": 11,
+        "anchoredExposures": 690,
+        "anchoredWins": 9,
+        "unanchoredExposures": 600,
+        "unanchoredWins": 7
+      },
+      "newAnchor": {
+        "exposures": 690,
+        "winningExposures": 9,
+        "winnerCuts": 6,
+        "anchoredExposures": 690,
+        "anchoredWins": 9,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "newBlocks2": {
+        "exposures": 493,
+        "winningExposures": 6,
+        "winnerCuts": 5,
+        "anchoredExposures": 351,
+        "anchoredWins": 5,
+        "unanchoredExposures": 142,
+        "unanchoredWins": 1
+      },
+      "sameShapeAcrossSources": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "sameEdgeGeometry": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "reuseOwnHistoricalRoot": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "pastFamily1": {
+        "exposures": 114,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 51,
+        "anchoredWins": 0,
+        "unanchoredExposures": 63,
+        "unanchoredWins": 1
+      },
+      "pastFamily2": {
+        "exposures": 232,
+        "winningExposures": 2,
+        "winnerCuts": 2,
+        "anchoredExposures": 113,
+        "anchoredWins": 1,
+        "unanchoredExposures": 119,
+        "unanchoredWins": 1
+      },
+      "pastFamily7": {
+        "exposures": 493,
+        "winningExposures": 5,
+        "winnerCuts": 4,
+        "anchoredExposures": 238,
+        "anchoredWins": 2,
+        "unanchoredExposures": 255,
+        "unanchoredWins": 3
+      },
+      "sameSourceFamilyLastDay": {
+        "exposures": 114,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 51,
+        "anchoredWins": 0,
+        "unanchoredExposures": 63,
+        "unanchoredWins": 1
+      },
+      "sameBlockFamilyLastDay": {
+        "exposures": 4,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 2,
+        "anchoredWins": 0,
+        "unanchoredExposures": 2,
+        "unanchoredWins": 0
+      },
+      "unanchored": {
+        "exposures": 600,
+        "winningExposures": 7,
+        "winnerCuts": 6,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 600,
+        "unanchoredWins": 7
+      },
+      "nonInitialStable": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      }
+    },
+    "Primera": {
+      "birth": {
+        "exposures": 954,
+        "winningExposures": 4,
+        "winnerCuts": 4,
+        "anchoredExposures": 344,
+        "anchoredWins": 0,
+        "unanchoredExposures": 610,
+        "unanchoredWins": 4
+      },
+      "converge": {
+        "exposures": 76,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 54,
+        "anchoredWins": 0,
+        "unanchoredExposures": 22,
+        "unanchoredWins": 0
+      },
+      "newSource": {
+        "exposures": 1030,
+        "winningExposures": 4,
+        "winnerCuts": 4,
+        "anchoredExposures": 398,
+        "anchoredWins": 0,
+        "unanchoredExposures": 632,
+        "unanchoredWins": 4
+      },
+      "newAnchor": {
+        "exposures": 378,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 378,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "newBlocks2": {
+        "exposures": 391,
+        "winningExposures": 2,
+        "winnerCuts": 2,
+        "anchoredExposures": 206,
+        "anchoredWins": 0,
+        "unanchoredExposures": 185,
+        "unanchoredWins": 2
+      },
+      "sameShapeAcrossSources": {
+        "exposures": 4,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 3,
+        "anchoredWins": 0,
+        "unanchoredExposures": 1,
+        "unanchoredWins": 0
+      },
+      "sameEdgeGeometry": {
+        "exposures": 12,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 9,
+        "anchoredWins": 0,
+        "unanchoredExposures": 3,
+        "unanchoredWins": 0
+      },
+      "reuseOwnHistoricalRoot": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "pastFamily1": {
+        "exposures": 360,
+        "winningExposures": 4,
+        "winnerCuts": 4,
+        "anchoredExposures": 162,
+        "anchoredWins": 1,
+        "unanchoredExposures": 198,
+        "unanchoredWins": 3
+      },
+      "pastFamily2": {
+        "exposures": 633,
+        "winningExposures": 5,
+        "winnerCuts": 5,
+        "anchoredExposures": 282,
+        "anchoredWins": 1,
+        "unanchoredExposures": 351,
+        "unanchoredWins": 4
+      },
+      "pastFamily7": {
+        "exposures": 1163,
+        "winningExposures": 5,
+        "winnerCuts": 5,
+        "anchoredExposures": 516,
+        "anchoredWins": 2,
+        "unanchoredExposures": 647,
+        "unanchoredWins": 3
+      },
+      "sameSourceFamilyLastDay": {
+        "exposures": 211,
+        "winningExposures": 2,
+        "winnerCuts": 2,
+        "anchoredExposures": 90,
+        "anchoredWins": 0,
+        "unanchoredExposures": 121,
+        "unanchoredWins": 2
+      },
+      "sameBlockFamilyLastDay": {
+        "exposures": 8,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 5,
+        "anchoredWins": 0,
+        "unanchoredExposures": 3,
+        "unanchoredWins": 0
+      },
+      "unanchored": {
+        "exposures": 1197,
+        "winningExposures": 8,
+        "winnerCuts": 8,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 1197,
+        "unanchoredWins": 8
+      },
+      "nonInitialStable": {
+        "exposures": 1214,
+        "winningExposures": 7,
+        "winnerCuts": 7,
+        "anchoredExposures": 649,
+        "anchoredWins": 3,
+        "unanchoredExposures": 565,
+        "unanchoredWins": 4
+      }
+    },
+    "Matutino": {
+      "birth": {
+        "exposures": 807,
+        "winningExposures": 11,
+        "winnerCuts": 10,
+        "anchoredExposures": 255,
+        "anchoredWins": 5,
+        "unanchoredExposures": 552,
+        "unanchoredWins": 6
+      },
+      "converge": {
+        "exposures": 223,
+        "winningExposures": 3,
+        "winnerCuts": 3,
+        "anchoredExposures": 136,
+        "anchoredWins": 2,
+        "unanchoredExposures": 87,
+        "unanchoredWins": 1
+      },
+      "newSource": {
+        "exposures": 1030,
+        "winningExposures": 14,
+        "winnerCuts": 12,
+        "anchoredExposures": 391,
+        "anchoredWins": 7,
+        "unanchoredExposures": 639,
+        "unanchoredWins": 7
+      },
+      "newAnchor": {
+        "exposures": 323,
+        "winningExposures": 6,
+        "winnerCuts": 5,
+        "anchoredExposures": 323,
+        "anchoredWins": 6,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "newBlocks2": {
+        "exposures": 367,
+        "winningExposures": 7,
+        "winnerCuts": 6,
+        "anchoredExposures": 184,
+        "anchoredWins": 7,
+        "unanchoredExposures": 183,
+        "unanchoredWins": 0
+      },
+      "sameShapeAcrossSources": {
+        "exposures": 21,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 11,
+        "anchoredWins": 0,
+        "unanchoredExposures": 10,
+        "unanchoredWins": 0
+      },
+      "sameEdgeGeometry": {
+        "exposures": 57,
+        "winningExposures": 2,
+        "winnerCuts": 2,
+        "anchoredExposures": 32,
+        "anchoredWins": 1,
+        "unanchoredExposures": 25,
+        "unanchoredWins": 1
+      },
+      "reuseOwnHistoricalRoot": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "pastFamily1": {
+        "exposures": 649,
+        "winningExposures": 9,
+        "winnerCuts": 7,
+        "anchoredExposures": 275,
+        "anchoredWins": 3,
+        "unanchoredExposures": 374,
+        "unanchoredWins": 6
+      },
+      "pastFamily2": {
+        "exposures": 1200,
+        "winningExposures": 19,
+        "winnerCuts": 12,
+        "anchoredExposures": 521,
+        "anchoredWins": 6,
+        "unanchoredExposures": 679,
+        "unanchoredWins": 13
+      },
+      "pastFamily7": {
+        "exposures": 1860,
+        "winningExposures": 29,
+        "winnerCuts": 14,
+        "anchoredExposures": 806,
+        "anchoredWins": 12,
+        "unanchoredExposures": 1054,
+        "unanchoredWins": 17
+      },
+      "sameSourceFamilyLastDay": {
+        "exposures": 293,
+        "winningExposures": 4,
+        "winnerCuts": 3,
+        "anchoredExposures": 125,
+        "anchoredWins": 2,
+        "unanchoredExposures": 168,
+        "unanchoredWins": 2
+      },
+      "sameBlockFamilyLastDay": {
+        "exposures": 15,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 7,
+        "anchoredWins": 1,
+        "unanchoredExposures": 8,
+        "unanchoredWins": 0
+      },
+      "unanchored": {
+        "exposures": 1714,
+        "winningExposures": 21,
+        "winnerCuts": 13,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 1714,
+        "unanchoredWins": 21
+      },
+      "nonInitialStable": {
+        "exposures": 2021,
+        "winningExposures": 27,
+        "winnerCuts": 15,
+        "anchoredExposures": 946,
+        "anchoredWins": 13,
+        "unanchoredExposures": 1075,
+        "unanchoredWins": 14
+      }
+    },
+    "Vespertino": {
+      "birth": {
+        "exposures": 967,
+        "winningExposures": 7,
+        "winnerCuts": 6,
+        "anchoredExposures": 208,
+        "anchoredWins": 1,
+        "unanchoredExposures": 759,
+        "unanchoredWins": 6
+      },
+      "converge": {
+        "exposures": 357,
+        "winningExposures": 4,
+        "winnerCuts": 4,
+        "anchoredExposures": 193,
+        "anchoredWins": 2,
+        "unanchoredExposures": 164,
+        "unanchoredWins": 2
+      },
+      "newSource": {
+        "exposures": 1324,
+        "winningExposures": 11,
+        "winnerCuts": 9,
+        "anchoredExposures": 401,
+        "anchoredWins": 3,
+        "unanchoredExposures": 923,
+        "unanchoredWins": 8
+      },
+      "newAnchor": {
+        "exposures": 267,
+        "winningExposures": 2,
+        "winnerCuts": 2,
+        "anchoredExposures": 267,
+        "anchoredWins": 2,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "newBlocks2": {
+        "exposures": 425,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 161,
+        "anchoredWins": 0,
+        "unanchoredExposures": 264,
+        "unanchoredWins": 1
+      },
+      "sameShapeAcrossSources": {
+        "exposures": 23,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 17,
+        "anchoredWins": 0,
+        "unanchoredExposures": 6,
+        "unanchoredWins": 1
+      },
+      "sameEdgeGeometry": {
+        "exposures": 97,
+        "winningExposures": 2,
+        "winnerCuts": 2,
+        "anchoredExposures": 60,
+        "anchoredWins": 0,
+        "unanchoredExposures": 37,
+        "unanchoredWins": 2
+      },
+      "reuseOwnHistoricalRoot": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "pastFamily1": {
+        "exposures": 1230,
+        "winningExposures": 6,
+        "winnerCuts": 6,
+        "anchoredExposures": 469,
+        "anchoredWins": 2,
+        "unanchoredExposures": 761,
+        "unanchoredWins": 4
+      },
+      "pastFamily2": {
+        "exposures": 2043,
+        "winningExposures": 11,
+        "winnerCuts": 9,
+        "anchoredExposures": 797,
+        "anchoredWins": 5,
+        "unanchoredExposures": 1246,
+        "unanchoredWins": 6
+      },
+      "pastFamily7": {
+        "exposures": 2675,
+        "winningExposures": 18,
+        "winnerCuts": 10,
+        "anchoredExposures": 1049,
+        "anchoredWins": 5,
+        "unanchoredExposures": 1626,
+        "unanchoredWins": 13
+      },
+      "sameSourceFamilyLastDay": {
+        "exposures": 480,
+        "winningExposures": 3,
+        "winnerCuts": 3,
+        "anchoredExposures": 184,
+        "anchoredWins": 1,
+        "unanchoredExposures": 296,
+        "unanchoredWins": 2
+      },
+      "sameBlockFamilyLastDay": {
+        "exposures": 28,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 10,
+        "anchoredWins": 0,
+        "unanchoredExposures": 18,
+        "unanchoredWins": 1
+      },
+      "unanchored": {
+        "exposures": 2435,
+        "winningExposures": 18,
+        "winnerCuts": 12,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 2435,
+        "unanchoredWins": 18
+      },
+      "nonInitialStable": {
+        "exposures": 2694,
+        "winningExposures": 18,
+        "winnerCuts": 15,
+        "anchoredExposures": 1182,
+        "anchoredWins": 8,
+        "unanchoredExposures": 1512,
+        "unanchoredWins": 10
+      }
+    },
+    "Nocturno": {
+      "birth": {
+        "exposures": 652,
+        "winningExposures": 5,
+        "winnerCuts": 5,
+        "anchoredExposures": 118,
+        "anchoredWins": 2,
+        "unanchoredExposures": 534,
+        "unanchoredWins": 3
+      },
+      "converge": {
+        "exposures": 430,
+        "winningExposures": 4,
+        "winnerCuts": 4,
+        "anchoredExposures": 212,
+        "anchoredWins": 3,
+        "unanchoredExposures": 218,
+        "unanchoredWins": 1
+      },
+      "newSource": {
+        "exposures": 1082,
+        "winningExposures": 9,
+        "winnerCuts": 8,
+        "anchoredExposures": 330,
+        "anchoredWins": 5,
+        "unanchoredExposures": 752,
+        "unanchoredWins": 4
+      },
+      "newAnchor": {
+        "exposures": 168,
+        "winningExposures": 2,
+        "winnerCuts": 2,
+        "anchoredExposures": 168,
+        "anchoredWins": 2,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "newBlocks2": {
+        "exposures": 326,
+        "winningExposures": 5,
+        "winnerCuts": 5,
+        "anchoredExposures": 146,
+        "anchoredWins": 3,
+        "unanchoredExposures": 180,
+        "unanchoredWins": 2
+      },
+      "sameShapeAcrossSources": {
+        "exposures": 22,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 17,
+        "anchoredWins": 0,
+        "unanchoredExposures": 5,
+        "unanchoredWins": 0
+      },
+      "sameEdgeGeometry": {
+        "exposures": 115,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 70,
+        "anchoredWins": 1,
+        "unanchoredExposures": 45,
+        "unanchoredWins": 0
+      },
+      "reuseOwnHistoricalRoot": {
+        "exposures": 0,
+        "winningExposures": 0,
+        "winnerCuts": 0,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 0,
+        "unanchoredWins": 0
+      },
+      "pastFamily1": {
+        "exposures": 1645,
+        "winningExposures": 16,
+        "winnerCuts": 9,
+        "anchoredExposures": 592,
+        "anchoredWins": 5,
+        "unanchoredExposures": 1053,
+        "unanchoredWins": 11
+      },
+      "pastFamily2": {
+        "exposures": 2640,
+        "winningExposures": 28,
+        "winnerCuts": 14,
+        "anchoredExposures": 988,
+        "anchoredWins": 11,
+        "unanchoredExposures": 1652,
+        "unanchoredWins": 17
+      },
+      "pastFamily7": {
+        "exposures": 3164,
+        "winningExposures": 27,
+        "winnerCuts": 14,
+        "anchoredExposures": 1152,
+        "anchoredWins": 9,
+        "unanchoredExposures": 2012,
+        "unanchoredWins": 18
+      },
+      "sameSourceFamilyLastDay": {
+        "exposures": 580,
+        "winningExposures": 2,
+        "winnerCuts": 1,
+        "anchoredExposures": 210,
+        "anchoredWins": 0,
+        "unanchoredExposures": 370,
+        "unanchoredWins": 2
+      },
+      "sameBlockFamilyLastDay": {
+        "exposures": 31,
+        "winningExposures": 1,
+        "winnerCuts": 1,
+        "anchoredExposures": 11,
+        "anchoredWins": 0,
+        "unanchoredExposures": 20,
+        "unanchoredWins": 1
+      },
+      "unanchored": {
+        "exposures": 2938,
+        "winningExposures": 25,
+        "winnerCuts": 13,
+        "anchoredExposures": 0,
+        "anchoredWins": 0,
+        "unanchoredExposures": 2938,
+        "unanchoredWins": 25
+      },
+      "nonInitialStable": {
+        "exposures": 3588,
+        "winningExposures": 37,
+        "winnerCuts": 19,
+        "anchoredExposures": 1402,
+        "anchoredWins": 16,
+        "unanchoredExposures": 2186,
+        "unanchoredWins": 21
+      }
+    }
+  },
+  "control": {
+    "birth": {
+      "observedWinningFamilyExposures": 27,
+      "mean": 28.4096,
+      "min": 12,
+      "max": 48,
+      "upperTailEmpirical": 0.6476352364763523
+    },
+    "converge": {
+      "observedWinningFamilyExposures": 11,
+      "mean": 10.7727,
+      "min": 2,
+      "max": 24,
+      "upperTailEmpirical": 0.52004799520048
+    },
+    "newSource": {
+      "observedWinningFamilyExposures": 54,
+      "mean": 50.8183,
+      "min": 28,
+      "max": 77,
+      "upperTailEmpirical": 0.3457654234576542
+    },
+    "newAnchor": {
+      "observedWinningFamilyExposures": 19,
+      "mean": 16.5483,
+      "min": 3,
+      "max": 32,
+      "upperTailEmpirical": 0.3047695230476952
+    },
+    "newBlocks2": {
+      "observedWinningFamilyExposures": 21,
+      "mean": 18.5862,
+      "min": 5,
+      "max": 35,
+      "upperTailEmpirical": 0.3153684631536846
+    },
+    "sameShapeAcrossSources": {
+      "observedWinningFamilyExposures": 1,
+      "mean": 0.7061,
+      "min": 0,
+      "max": 6,
+      "upperTailEmpirical": 0.5043495650434956
+    },
+    "sameEdgeGeometry": {
+      "observedWinningFamilyExposures": 5,
+      "mean": 2.8232,
+      "min": 0,
+      "max": 11,
+      "upperTailEmpirical": 0.14458554144585542
+    },
+    "reuseOwnHistoricalRoot": {
+      "observedWinningFamilyExposures": 0,
+      "mean": 0,
+      "min": 0,
+      "max": 0,
+      "upperTailEmpirical": 1
+    },
+    "pastFamily1": {
+      "observedWinningFamilyExposures": 36,
+      "mean": 38.47,
+      "min": 17,
+      "max": 63,
+      "upperTailEmpirical": 0.6856314368563143
+    },
+    "pastFamily2": {
+      "observedWinningFamilyExposures": 65,
+      "mean": 64.3732,
+      "min": 38,
+      "max": 96,
+      "upperTailEmpirical": 0.48305169483051696
+    },
+    "pastFamily7": {
+      "observedWinningFamilyExposures": 84,
+      "mean": 89.045,
+      "min": 59,
+      "max": 121,
+      "upperTailEmpirical": 0.7521247875212479
+    },
+    "sameSourceFamilyLastDay": {
+      "observedWinningFamilyExposures": 12,
+      "mean": 16.2897,
+      "min": 5,
+      "max": 35,
+      "upperTailEmpirical": 0.897010298970103
+    },
+    "sameBlockFamilyLastDay": {
+      "observedWinningFamilyExposures": 3,
+      "mean": 1.1796,
+      "min": 0,
+      "max": 7,
+      "upperTailEmpirical": 0.10838916108389161
+    },
+    "unanchored": {
+      "observedWinningFamilyExposures": 79,
+      "mean": 79.8337,
+      "min": 53,
+      "max": 112,
+      "upperTailEmpirical": 0.5623437656234377
+    },
+    "nonInitialStable": {
+      "observedWinningFamilyExposures": 89,
+      "mean": 90.283,
+      "min": 60,
+      "max": 125,
+      "upperTailEmpirical": 0.5792420757924207
+    }
+  },
+  "seal": {
+    "basePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "predecessorPre": "512331f2695e2b632c7f2077f2dd7437041d00ee724556cf754e22f986a07f2b",
+    "nocturnaPrevious": "86426d26f2a90032ae7266bc094642c558628cf43c02b9838f31134bed33b5d8",
+    "protocol": "9e690715d14fa7cd2feb246c97ddce0e4d6523fd9683df89a2f6df2ca19df614",
+    "script": "225fe8acfef948a7dbb49abb7cb384a10e687a3b77346753e7d8b5f740ed16ce",
+    "pre": "02a1a4a10de5371c87f2fa2d7fbdbc6a8672642a9664ef2cba0eeefa99613224",
+    "nocturnaPre": "0efd24879ad55b80b65372d8452179f6e9697ad01a6949711741718dd514514a"
+  },
+  "limitation": "23 jornadas ya explotadas por múltiples hipótesis; controles negativos son exploratorios. Relación espacial NO implica anticipación de resultados aleatorios."
+}
