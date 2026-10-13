@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-13",
+  "review": "POST_RESULTADO_CON_VT4_RECONSTRUIDO_NO_SELLADO_ANTES_DEL_SORTEO",
+  "vt3MatSealSHA": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+  "comparables": [
+    {
+      "turn": "Primera",
+      "fromPublishedFive": {
+        "headCount": 5,
+        "physicalHeads": 1,
+        "admittedHeads": 1,
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "withMontevideo": null,
+      "top3": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622"
+      ],
+      "top5": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622"
+      ],
+      "top10": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "pool": 67,
+      "highlighted": [
+        {
+          "jurisdiction": "Ciudad",
+          "head": "5485",
+          "family": "5485/5845",
+          "physicalRoutes": 2,
+          "admitted": 2,
+          "rank": 35,
+          "mothers": [
+            "485/584",
+            "548/845"
+          ],
+          "bestMotherRank": 5,
+          "reason": "RANKEADA_FUERA_TOP10",
+          "physicalMotherFamilies": [
+            "485/584",
+            "548/845"
+          ]
+        }
+      ]
+    },
+    {
+      "turn": "Matutino",
+      "fromPublishedFive": {
+        "headCount": 5,
+        "physicalHeads": 1,
+        "admittedHeads": 0,
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "withMontevideo": {
+        "headCount": 6,
+        "physicalHeads": 1,
+        "admittedHeads": 0,
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "top3": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622"
+      ],
+      "top5": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622"
+      ],
+      "top10": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "pool": 76,
+      "highlighted": [
+        {
+          "jurisdiction": "Provincia",
+          "head": "1057",
+          "family": "1057/7501",
+          "physicalRoutes": 1,
+          "admitted": 0,
+          "rank": null,
+          "mothers": [],
+          "bestMotherRank": null,
+          "reason": "FISICA_SIN_MADRE_VT3_TOP10_FISICA",
+          "physicalMotherFamilies": []
+        }
+      ]
+    }
+  ],
+  "warning": "App colores VT4 sólo documentan coincidencia física POST. Rank VT4 no se guardó a las 13:52; su cotejo es retrospectivo a partir de PRE disponible, no un acierto VT4 sellado antes de sorteo."
+}

@@ -1,0 +1,289 @@
+{
+  "rows": [
+    {
+      "date": "2026-10-13",
+      "turn": "Primera",
+      "heads": [
+        {
+          "jurisdiction": "Ciudad",
+          "head": "5485",
+          "family4": "5485/5845",
+          "physicalRoutes": 2,
+          "admittedPaths": 2,
+          "rank": 35,
+          "bestMotherRank": 5,
+          "motherFamilies": [
+            "485/584",
+            "548/845"
+          ],
+          "reason": "RANKEADA_FUERA_TOP10",
+          "allPhysical": [
+            {
+              "source": "Previa",
+              "read": "5485",
+              "cells": [
+                "0:0",
+                "1:0",
+                "1:1",
+                "2:0"
+              ],
+              "viableTop10MotherFamilies": [
+                "485/584",
+                "548/845"
+              ],
+              "includedInLaloVT4": true,
+              "creditedMothers": [
+                "485/584",
+                "548/845"
+              ]
+            },
+            {
+              "source": "Previa",
+              "read": "5485",
+              "cells": [
+                "2:0",
+                "1:0",
+                "1:1",
+                "0:0"
+              ],
+              "viableTop10MotherFamilies": [
+                "485/584",
+                "548/845"
+              ],
+              "includedInLaloVT4": true,
+              "creditedMothers": [
+                "485/584",
+                "548/845"
+              ]
+            }
+          ],
+          "firstPhysicalMothersFromTop10": [
+            "485/584",
+            "548/845"
+          ],
+          "rankData": {
+            "sources": 1,
+            "physicalBlocks": 1,
+            "parentFamilies": [
+              "485/584",
+              "548/845"
+            ],
+            "explanation": "Extensión física de 485/584 · 1 bloque(s) propios de cuatro cifras"
+          }
+        },
+        {
+          "jurisdiction": "Provincia",
+          "head": "0310",
+          "family4": "0130/0310",
+          "physicalRoutes": 0,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "NO_FORMACION_FISICA",
+          "allPhysical": [],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        },
+        {
+          "jurisdiction": "Córdoba",
+          "head": "8857",
+          "family4": "7588/8857",
+          "physicalRoutes": 0,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "NO_FORMACION_FISICA",
+          "allPhysical": [],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        },
+        {
+          "jurisdiction": "Santa Fe",
+          "head": "3385",
+          "family4": "3385/5833",
+          "physicalRoutes": 0,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "NO_FORMACION_FISICA",
+          "allPhysical": [],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        },
+        {
+          "jurisdiction": "Entre Ríos",
+          "head": "4084",
+          "family4": "4084/4804",
+          "physicalRoutes": 0,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "NO_FORMACION_FISICA",
+          "allPhysical": [],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        }
+      ],
+      "argentina5": {
+        "headCount": 5,
+        "physicalHeads": 1,
+        "admittedHeads": 1,
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "withMontevideo": null,
+      "rankingVT4Top10": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "rankingPool": 67
+    },
+    {
+      "date": "2026-10-13",
+      "turn": "Matutino",
+      "heads": [
+        {
+          "jurisdiction": "Ciudad",
+          "head": "3376",
+          "family4": "3376/6733",
+          "physicalRoutes": 0,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "NO_FORMACION_FISICA",
+          "allPhysical": [],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        },
+        {
+          "jurisdiction": "Provincia",
+          "head": "1057",
+          "family4": "1057/7501",
+          "physicalRoutes": 1,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "FISICA_SIN_MADRE_VT3_TOP10_FISICA",
+          "allPhysical": [
+            {
+              "source": "prevNocturno",
+              "read": "1057",
+              "cells": [
+                "3:1",
+                "3:0",
+                "4:1",
+                "4:0"
+              ],
+              "viableTop10MotherFamilies": [],
+              "includedInLaloVT4": false,
+              "creditedMothers": []
+            }
+          ],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        },
+        {
+          "jurisdiction": "Córdoba",
+          "head": "2413",
+          "family4": "2413/3142",
+          "physicalRoutes": 0,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "NO_FORMACION_FISICA",
+          "allPhysical": [],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        },
+        {
+          "jurisdiction": "Santa Fe",
+          "head": "3723",
+          "family4": "3273/3723",
+          "physicalRoutes": 0,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "NO_FORMACION_FISICA",
+          "allPhysical": [],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        },
+        {
+          "jurisdiction": "Entre Ríos",
+          "head": "2284",
+          "family4": "2284/4822",
+          "physicalRoutes": 0,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "NO_FORMACION_FISICA",
+          "allPhysical": [],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        },
+        {
+          "jurisdiction": "Montevideo",
+          "head": "3629",
+          "family4": "3629/9263",
+          "physicalRoutes": 0,
+          "admittedPaths": 0,
+          "rank": null,
+          "bestMotherRank": null,
+          "motherFamilies": [],
+          "reason": "NO_FORMACION_FISICA",
+          "allPhysical": [],
+          "firstPhysicalMothersFromTop10": [],
+          "rankData": null
+        }
+      ],
+      "argentina5": {
+        "headCount": 5,
+        "physicalHeads": 1,
+        "admittedHeads": 0,
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "withMontevideo": {
+        "headCount": 6,
+        "physicalHeads": 1,
+        "admittedHeads": 0,
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "rankingVT4Top10": [
+        "3226/6223",
+        "5226/6225",
+        "2266/6622",
+        "2263/3622",
+        "2265/5622",
+        "6226/6226",
+        "5036/6305",
+        "3057/7503",
+        "1305/5031",
+        "1503/3051"
+      ],
+      "rankingPool": 76
+    }
+  ],
+  "readFrom": "captura del usuario y reconstrucción del 13/10"
+}
