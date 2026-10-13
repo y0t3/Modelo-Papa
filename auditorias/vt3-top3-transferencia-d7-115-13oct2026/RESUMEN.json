@@ -1,0 +1,874 @@
+{
+  "date": "2026-10-13",
+  "total": {
+    "OFICIAL": {
+      "cuts": 85,
+      "top3": 3,
+      "top10": 11,
+      "gainsTop3": [],
+      "lossesTop3": [],
+      "gainsTop10": [],
+      "lossesTop10": []
+    },
+    "ABS_ANCLADA": {
+      "cuts": 85,
+      "top3": 3,
+      "top10": 11,
+      "gainsTop3": [],
+      "lossesTop3": [],
+      "gainsTop10": [],
+      "lossesTop10": []
+    },
+    "ABS_FISICA": {
+      "cuts": 85,
+      "top3": 3,
+      "top10": 11,
+      "gainsTop3": [],
+      "lossesTop3": [],
+      "gainsTop10": [],
+      "lossesTop10": []
+    },
+    "FORMA_FUENTE_ANCLADA": {
+      "cuts": 85,
+      "top3": 1,
+      "top10": 11,
+      "gainsTop3": [],
+      "lossesTop3": [
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa"
+      ],
+      "gainsTop10": [],
+      "lossesTop10": []
+    },
+    "FORMA_FUENTE_FISICA": {
+      "cuts": 85,
+      "top3": 1,
+      "top10": 11,
+      "gainsTop3": [],
+      "lossesTop3": [
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa"
+      ],
+      "gainsTop10": [],
+      "lossesTop10": []
+    },
+    "FORMA_LIBRE_ANCLADA": {
+      "cuts": 85,
+      "top3": 2,
+      "top10": 11,
+      "gainsTop3": [
+        "2026-09-29|Matutino"
+      ],
+      "lossesTop3": [
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa"
+      ],
+      "gainsTop10": [],
+      "lossesTop10": []
+    },
+    "FORMA_LIBRE_FISICA": {
+      "cuts": 85,
+      "top3": 2,
+      "top10": 11,
+      "gainsTop3": [
+        "2026-09-29|Matutino"
+      ],
+      "lossesTop3": [
+        "2026-09-30|Matutino",
+        "2026-10-02|Previa"
+      ],
+      "gainsTop10": [],
+      "lossesTop10": []
+    },
+    "NEGATIVO_ABS": {
+      "cuts": 85,
+      "top3": 2,
+      "top10": 11,
+      "gainsTop3": [],
+      "lossesTop3": [
+        "2026-10-02|Previa"
+      ],
+      "gainsTop10": [],
+      "lossesTop10": []
+    }
+  },
+  "byWeek": {
+    "2026-09-21": {
+      "OFICIAL": {
+        "cuts": 25,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_ANCLADA": {
+        "cuts": 25,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_FISICA": {
+        "cuts": 25,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_ANCLADA": {
+        "cuts": 25,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_FISICA": {
+        "cuts": 25,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_ANCLADA": {
+        "cuts": 25,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_FISICA": {
+        "cuts": 25,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "NEGATIVO_ABS": {
+        "cuts": 25,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      }
+    },
+    "2026-09-28": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 2,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_ANCLADA": {
+        "cuts": 30,
+        "top3": 2,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_FISICA": {
+        "cuts": 30,
+        "top3": 2,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_ANCLADA": {
+        "cuts": 30,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_FISICA": {
+        "cuts": 30,
+        "top3": 0,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_ANCLADA": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 4,
+        "gainsTop3": [
+          "2026-09-29|Matutino"
+        ],
+        "lossesTop3": [
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_FISICA": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 4,
+        "gainsTop3": [
+          "2026-09-29|Matutino"
+        ],
+        "lossesTop3": [
+          "2026-09-30|Matutino",
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "NEGATIVO_ABS": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 4,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      }
+    },
+    "2026-10-05": {
+      "OFICIAL": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_ANCLADA": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_FISICA": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_ANCLADA": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_FISICA": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_ANCLADA": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_FISICA": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "NEGATIVO_ABS": {
+        "cuts": 30,
+        "top3": 1,
+        "top10": 3,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "OFICIAL": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 2,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_ANCLADA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 2,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_FISICA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 2,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_ANCLADA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 2,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_FISICA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 2,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_ANCLADA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 2,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_FISICA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 2,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "NEGATIVO_ABS": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 2,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-10-02|Previa"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      }
+    },
+    "Primera": {
+      "OFICIAL": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_ANCLADA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_FISICA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_ANCLADA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_FISICA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_ANCLADA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_FISICA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "NEGATIVO_ABS": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      }
+    },
+    "Matutino": {
+      "OFICIAL": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 7,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_ANCLADA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 7,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_FISICA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 7,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_ANCLADA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 7,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-09-30|Matutino"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_FISICA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 7,
+        "gainsTop3": [],
+        "lossesTop3": [
+          "2026-09-30|Matutino"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_ANCLADA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 7,
+        "gainsTop3": [
+          "2026-09-29|Matutino"
+        ],
+        "lossesTop3": [
+          "2026-09-30|Matutino"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_FISICA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 7,
+        "gainsTop3": [
+          "2026-09-29|Matutino"
+        ],
+        "lossesTop3": [
+          "2026-09-30|Matutino"
+        ],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "NEGATIVO_ABS": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 7,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      }
+    },
+    "Vespertino": {
+      "OFICIAL": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 0,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_ANCLADA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 0,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_FISICA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 0,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_ANCLADA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 0,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_FISICA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 0,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_ANCLADA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 0,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_FISICA": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 0,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "NEGATIVO_ABS": {
+        "cuts": 17,
+        "top3": 0,
+        "top10": 0,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      }
+    },
+    "Nocturno": {
+      "OFICIAL": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_ANCLADA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "ABS_FISICA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_ANCLADA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_FUENTE_FISICA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_ANCLADA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "FORMA_LIBRE_FISICA": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      },
+      "NEGATIVO_ABS": {
+        "cuts": 17,
+        "top3": 1,
+        "top10": 1,
+        "gainsTop3": [],
+        "lossesTop3": [],
+        "gainsTop10": [],
+        "lossesTop10": []
+      }
+    }
+  },
+  "stats": {
+    "evaluated": 85,
+    "skippedWithoutD7": 30,
+    "days": 17,
+    "priorPhysicalWinnerExposures": 110,
+    "teacherPositiveFamilyExposures": 104,
+    "currentPhysicallyReachableCuts": 58,
+    "currentPhysicallyReachableFamilies": 103,
+    "exactMatchedCuts": 60,
+    "averageMatchingFamilies": 2.3529411764705883,
+    "shapeMatchedCuts": 60,
+    "averageShapeMatchingFamilies": 9.611764705882353
+  },
+  "missing": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa"
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera"
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino"
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino"
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno"
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa"
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera"
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino"
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino"
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno"
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa"
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera"
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino"
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino"
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno"
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa"
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera"
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino"
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino"
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno"
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa"
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera"
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino"
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino"
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno"
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa"
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera"
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino"
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino"
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno"
+    }
+  ],
+  "seal": {
+    "input": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "protocol": "323905787a4b2dac44e3c2d5efa47356fdb9e68326ebc42cd165d711436d3369",
+    "code": "5d7fb6c2b80a1b7200743cdc7ad4152ab0c824e0fbe9c5c17b66aef6173a837d",
+    "pre": "cbbdb1d233d9f3f322176689618548973ae1dc53019ee6733f3a9f47b45118e6"
+  },
+  "postSHA": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "warning": "Solo D-7 se usó para entrenar; evaluación retrospectiva con datos ya examinados en múltiples hipótesis, no prueba de predictibilidad del azar."
+}
