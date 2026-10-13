@@ -1,0 +1,39 @@
+name: VT3 atlas geometrico de Nocturna 12oct
+on:
+  push:
+    branches: [lab-vt3-transiciones-individuales-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-atlas-nocturna.mjs'
+      - 'scripts/atlas-vt3-transiciones-template.html'
+      - '.github/workflows/lab-vt3-atlas-nocturna.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  atlas-nocturna:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Generar atlas visual POST, sin alterar Tops PRE
+        run: node scripts/lab-vt3-atlas-nocturna.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Atlas-VT3-Nocturna-12Oct-POST
+          path: |
+            auditorias/vt3-transiciones-individuales-115-13oct2026/ATLAS_NOCTURNA_12OCT_POST.html
+            auditorias/vt3-transiciones-individuales-115-13oct2026/ATLAS_MANIFIESTO.json
+          retention-days: 60
+          if-no-files-found: error
+      - name: Conservar atlas auditado en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-transiciones-individuales-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): atlas HTML de cinco fuentes y todos los caminos físicos'
+            git push origin HEAD:lab-vt3-transiciones-individuales-13oct2026
+          fi
