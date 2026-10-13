@@ -91,6 +91,9 @@ function post(){
  const crossNames=['C_UN_EVENTO','C_MULTIPLES_EVENTOS'] as const;
  const cross=Object.fromEntries(crossNames.map(k=>[k,{exposures:0,eligible:0,expected:0,top10Exposures:0,top10Eligible:0,bothPeriods:0}])) as
  Record<typeof crossNames[number],{exposures:number,eligible:number,expected:number,top10Exposures:number,top10Eligible:number,bothPeriods:number}>;
+ const geoKeys=['C_VARIOS_EVENTOS_UN_BLOQUE_ANTIGUO','C_VARIOS_EVENTOS_DISTINTOS_BLOQUES_ANTIGUOS'] as const;
+ const geo=Object.fromEntries(geoKeys.map(k=>[k,{exposures:0,eligible:0,expected:0,top10Exposures:0,top10Eligible:0,bothPeriods:0}])) as
+ Record<typeof geoKeys[number],{exposures:number,eligible:number,expected:number,top10Exposures:number,top10Eligible:number,bothPeriods:number}>;
  const perCut=[];const top={3:0,5:0,10:0};let poolWinCuts=0;
  for(let i=0;i<115;i++){
   const row=pre.rows[i],o=objectives.rows[i];
@@ -117,6 +120,13 @@ function post(){
     if(f.rank<=10)z.top10Exposures++;
     if(f.d1&&f.d7)z.bothPeriods++;
     if(wins.has(f.family)){z.eligible++;if(f.rank<=10)z.top10Eligible++}
+    if(f.independentHeadEvents>1){
+     const g=f.historicalBlocks>1?'C_VARIOS_EVENTOS_DISTINTOS_BLOQUES_ANTIGUOS':'C_VARIOS_EVENTOS_UN_BLOQUE_ANTIGUO';
+     const zz=geo[g];zz.exposures++;zz.expected+=size?matching.length/size:0;
+     if(f.rank<=10)zz.top10Exposures++;
+     if(f.d1&&f.d7)zz.bothPeriods++;
+     if(wins.has(f.family)){zz.eligible++;if(f.rank<=10)zz.top10Eligible++}
+    }
    }
    if(wins.has(f.family)){
     s.eligible++;matchedCounts[f.bucket]=(matchedCounts[f.bucket]||0)+1;
@@ -134,6 +144,11 @@ function post(){
  assert.equal(perCut.length,115);
  const summary={nCuts:115,nDays:new Set(perCut.map(x=>x.date)).size,
   poolWinCuts,officialTop:top,
+  cMultipleEventsByHistoricalBlockCount:Object.fromEntries(geoKeys.map(k=>[k,{
+   ...geo[k],expected:finite(geo[k].expected),
+   observedPer1000:finite(1000*geo[k].eligible/Math.max(1,geo[k].exposures)),
+   expectedPer1000:finite(1000*geo[k].expected/Math.max(1,geo[k].exposures))
+  }])),
   cBlocksByHistoricalEventCount:Object.fromEntries(crossNames.map(k=>[k,{
    ...cross[k],expected:finite(cross[k].expected),
    observedPer1000:finite(1000*cross[k].eligible/Math.max(1,cross[k].exposures)),
