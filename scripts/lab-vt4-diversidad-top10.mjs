@@ -179,7 +179,7 @@ function pre(){
  assert.ok(!existsSync(FILE),'Fixture con cabezas futuras accesible durante PRE');
  const ins=json(INPUT).rows;
  assert.equal(ins.length,115);
- const rows=[],originalMother3=new Set(),pathSeen=0;
+ const rows=[];let pathSeen=0;
  for(const [i,r] of ins.entries()){
   const ti=TURNOS.indexOf(r.turn);assert.ok(ti>=0);
   assert.ok(r.history.every(x=>x.date<r.date));
