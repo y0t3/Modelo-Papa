@@ -1,0 +1,47 @@
+name: VT3 vigencia fisica y memoria reciente
+on:
+  push:
+    branches: [lab-vt3-vigencia-fisica-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-vigencia-fisica.mjs'
+      - 'PROTOCOLO_VT3_VIGENCIA_FISICA_13OCT2026.md'
+      - '.github/workflows/lab-vt3-vigencia-fisica.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  vigencia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Apartar objetivos POST del generador PRE
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-vigencia-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-vigencia-nocturna-post.json
+      - name: Generar diez políticas VT3 por ventanas y sellar PRE
+        run: node scripts/lab-vt3-vigencia-fisica.mjs pre
+      - name: Reincorporar POST y medir aciertos y perdidas pareadas
+        run: |
+          mv /tmp/vt3-vigencia-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/vt3-vigencia-nocturna-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          node scripts/lab-vt3-vigencia-fisica.mjs post
+      - name: Guardar evidencia como artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-vigencia-fisica-115
+          path: auditorias/vt3-vigencia-fisica-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Archivar resultados y sellos en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-vigencia-fisica-115-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): vigencia de familias y rutas con PRE sellado'
+            git push origin HEAD:lab-vt3-vigencia-fisica-13oct2026
+          fi
