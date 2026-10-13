@@ -1,0 +1,2366 @@
+{
+  "date": "2026-10-13",
+  "days": 23,
+  "cuts": 115,
+  "all": {
+    "OFICIAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "familyWinnerExposures": 17,
+      "gains": [],
+      "losses": [],
+      "swapExposures": 0,
+      "enteringWinnerExposures": 0,
+      "leavingWinnerExposures": 0
+    },
+    "COB20_P3": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 9,
+      "top10": 17,
+      "familyWinnerExposures": 19,
+      "gains": [
+        "2026-09-16|Matutino",
+        "2026-10-02|Matutino",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno"
+      ],
+      "swapExposures": 136,
+      "enteringWinnerExposures": 3,
+      "leavingWinnerExposures": 1
+    },
+    "CONTROL_MAS_EVENTOS_20": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 7,
+      "top10": 17,
+      "familyWinnerExposures": 19,
+      "gains": [
+        "2026-09-15|Previa",
+        "2026-09-16|Matutino",
+        "2026-09-29|Nocturno",
+        "2026-10-05|Vespertino"
+      ],
+      "losses": [
+        "2026-09-18|Nocturno",
+        "2026-09-24|Previa"
+      ],
+      "swapExposures": 287,
+      "enteringWinnerExposures": 4,
+      "leavingWinnerExposures": 2
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "familyWinnerExposures": 3,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 0,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyWinnerExposures": 3,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 2,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyWinnerExposures": 3,
+        "gains": [
+          "2026-09-15|Previa"
+        ],
+        "losses": [
+          "2026-09-24|Previa"
+        ],
+        "swapExposures": 62,
+        "enteringWinnerExposures": 1,
+        "leavingWinnerExposures": 1
+      }
+    },
+    "Primera": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyWinnerExposures": 1,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 0,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyWinnerExposures": 1,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 23,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyWinnerExposures": 1,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 66,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      }
+    },
+    "Matutino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "familyWinnerExposures": 9,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 0,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 4,
+        "top10": 10,
+        "familyWinnerExposures": 11,
+        "gains": [
+          "2026-09-16|Matutino",
+          "2026-10-02|Matutino"
+        ],
+        "losses": [],
+        "swapExposures": 30,
+        "enteringWinnerExposures": 2,
+        "leavingWinnerExposures": 0
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "familyWinnerExposures": 10,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [],
+        "swapExposures": 48,
+        "enteringWinnerExposures": 1,
+        "leavingWinnerExposures": 0
+      }
+    },
+    "Vespertino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "familyWinnerExposures": 0,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 0,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "familyWinnerExposures": 1,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": [],
+        "swapExposures": 41,
+        "enteringWinnerExposures": 1,
+        "leavingWinnerExposures": 0
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "familyWinnerExposures": 1,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": [],
+        "swapExposures": 54,
+        "enteringWinnerExposures": 1,
+        "leavingWinnerExposures": 0
+      }
+    },
+    "Nocturno": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyWinnerExposures": 4,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 0,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      },
+      "COB20_P3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "familyWinnerExposures": 3,
+        "gains": [],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ],
+        "swapExposures": 40,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 1
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "familyWinnerExposures": 4,
+        "gains": [
+          "2026-09-29|Nocturno"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ],
+        "swapExposures": 57,
+        "enteringWinnerExposures": 1,
+        "leavingWinnerExposures": 1
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "OFICIAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "familyWinnerExposures": 10,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 0,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      },
+      "COB20_P3": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "familyWinnerExposures": 10,
+        "gains": [
+          "2026-09-16|Matutino"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno"
+        ],
+        "swapExposures": 67,
+        "enteringWinnerExposures": 1,
+        "leavingWinnerExposures": 1
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 5,
+        "top10": 11,
+        "familyWinnerExposures": 11,
+        "gains": [
+          "2026-09-15|Previa",
+          "2026-09-16|Matutino",
+          "2026-09-29|Nocturno"
+        ],
+        "losses": [
+          "2026-09-18|Nocturno",
+          "2026-09-24|Previa"
+        ],
+        "swapExposures": 191,
+        "enteringWinnerExposures": 3,
+        "leavingWinnerExposures": 2
+      }
+    },
+    "2026-10": {
+      "OFICIAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "familyWinnerExposures": 7,
+        "gains": [],
+        "losses": [],
+        "swapExposures": 0,
+        "enteringWinnerExposures": 0,
+        "leavingWinnerExposures": 0
+      },
+      "COB20_P3": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 5,
+        "top10": 7,
+        "familyWinnerExposures": 9,
+        "gains": [
+          "2026-10-02|Matutino",
+          "2026-10-05|Vespertino"
+        ],
+        "losses": [],
+        "swapExposures": 69,
+        "enteringWinnerExposures": 2,
+        "leavingWinnerExposures": 0
+      },
+      "CONTROL_MAS_EVENTOS_20": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 2,
+        "top10": 6,
+        "familyWinnerExposures": 8,
+        "gains": [
+          "2026-10-05|Vespertino"
+        ],
+        "losses": [],
+        "swapExposures": 96,
+        "enteringWinnerExposures": 1,
+        "leavingWinnerExposures": 0
+      }
+    }
+  },
+  "opportunity": {
+    "outOfOfficialPoolExposures": 1131,
+    "outOfOfficialWinners": 13,
+    "cutsWithWinnerOutsideTop": 13,
+    "cutsWithRescuePossible": 9
+  },
+  "slices": {
+    "COB20_P3": {
+      "changedCuts": 73,
+      "swapExposures": 136,
+      "entrantWinningExposures": 3,
+      "displacedWinningExposures": 1,
+      "losingEntrantExposures": 133,
+      "averageIncomingRank": 15.007352941176471,
+      "averageOutgoingRank": 8.566176470588236,
+      "averageIncomingRootEvents": 1.8235294117647058,
+      "averageOutgoingRootEvents": 1.3161764705882353,
+      "averageIncomingNovelToCore": 1.2058823529411764,
+      "averageOutgoingNovelToCore": 0.07352941176470588,
+      "gainedEventTotal": 153,
+      "lostEventTotal": 0,
+      "increasedCoverageCuts": 68,
+      "unchangedCoverageCuts": 5,
+      "declinedCoverageCuts": 0,
+      "negativeExamples": 70,
+      "changesHHI": -0.02702500469863014,
+      "rootD1Incoming": 0.8823529411764706,
+      "rootD1Outgoing": 0.7426470588235294,
+      "rootD7Incoming": 0.9411764705882353,
+      "rootD7Outgoing": 0.5735294117647058
+    },
+    "CONTROL_MAS_EVENTOS_20": {
+      "changedCuts": 89,
+      "swapExposures": 287,
+      "entrantWinningExposures": 4,
+      "displacedWinningExposures": 2,
+      "losingEntrantExposures": 283,
+      "averageIncomingRank": 14.62020905923345,
+      "averageOutgoingRank": 7.494773519163763,
+      "averageIncomingRootEvents": 2.6794425087108014,
+      "averageOutgoingRootEvents": 1.0522648083623694,
+      "averageIncomingNovelToCore": 0.5017421602787456,
+      "averageOutgoingNovelToCore": 0.2961672473867596,
+      "gainedEventTotal": 72,
+      "lostEventTotal": 42,
+      "increasedCoverageCuts": 27,
+      "unchangedCoverageCuts": 41,
+      "declinedCoverageCuts": 21,
+      "negativeExamples": 85,
+      "changesHHI": 0.0014237781910112356,
+      "rootD1Incoming": 1.4390243902439024,
+      "rootD1Outgoing": 0.5400696864111498,
+      "rootD7Incoming": 1.240418118466899,
+      "rootD7Outgoing": 0.5121951219512195
+    }
+  },
+  "directComparison": {
+    "onlyD": [
+      "2026-09-24|Previa",
+      "2026-10-02|Matutino"
+    ],
+    "onlyAbundance": [
+      "2026-09-15|Previa",
+      "2026-09-29|Nocturno"
+    ],
+    "bothWin": [
+      "2026-09-15|Matutino",
+      "2026-09-16|Matutino",
+      "2026-09-17|Previa",
+      "2026-09-17|Nocturno",
+      "2026-09-22|Primera",
+      "2026-09-24|Matutino",
+      "2026-09-25|Matutino",
+      "2026-09-29|Matutino",
+      "2026-09-30|Matutino",
+      "2026-10-02|Previa",
+      "2026-10-03|Matutino",
+      "2026-10-05|Matutino",
+      "2026-10-05|Vespertino",
+      "2026-10-08|Matutino",
+      "2026-10-10|Nocturno"
+    ],
+    "bothFail": 96,
+    "differentTops": 99
+  },
+  "caseStudies": [
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "heads": [
+        "9178",
+        "6087",
+        "6445",
+        "6950",
+        "3108"
+      ],
+      "officialHits": [],
+      "divHits": [
+        "087/780"
+      ],
+      "abundanceHits": [
+        "087/780"
+      ],
+      "pool11to20Winners": [
+        {
+          "family": "087/780",
+          "rank": 12,
+          "win": true,
+          "events": 2,
+          "noveltyVsCore": 1,
+          "divSelected": true,
+          "abundanceSelected": true
+        }
+      ],
+      "diversity": {
+        "policy": "COB20_P3",
+        "original": [
+          "008/800",
+          "617/716",
+          "717/717",
+          "739/937",
+          "759/957",
+          "050/050",
+          "058/850",
+          "097/790",
+          "005/500",
+          "079/970"
+        ],
+        "chosen": [
+          "008/800",
+          "617/716",
+          "717/717",
+          "005/500",
+          "739/937",
+          "087/780",
+          "386/683",
+          "759/957",
+          "050/050",
+          "058/850"
+        ],
+        "common": [
+          "008/800",
+          "617/716",
+          "717/717",
+          "739/937",
+          "759/957",
+          "050/050",
+          "058/850",
+          "005/500"
+        ],
+        "entering": [
+          "087/780",
+          "386/683"
+        ],
+        "leaving": [
+          "097/790",
+          "079/970"
+        ],
+        "swapCount": 2,
+        "commonStats": {
+          "uniqueEvents": 7,
+          "eventIncidences": 13,
+          "maxSharing": 3,
+          "HHI": 0.1597633136094675,
+          "events": [
+            "2026-09-09|D−7|Matutino|Santa Fé|9351",
+            "2026-09-09|D−7|Previa|Santa Fé|5168",
+            "2026-09-09|D−7|Vespertino|Entre Ríos|3415",
+            "2026-09-15|D−1|Matutino|Ciudad|4563",
+            "2026-09-15|D−1|Matutino|Provincia|1977",
+            "2026-09-15|D−1|Nocturno|Ciudad|1265",
+            "2026-09-15|D−1|Previa|Córdoba|7175"
+          ]
+        },
+        "originalStats": {
+          "uniqueEvents": 7,
+          "eventIncidences": 16,
+          "maxSharing": 4,
+          "HHI": 0.1640625
+        },
+        "chosenStats": {
+          "uniqueEvents": 9,
+          "eventIncidences": 16,
+          "maxSharing": 3,
+          "HHI": 0.1328125
+        },
+        "gainedEvents": [
+          "2026-09-09|D−7|Primera|Entre Ríos|1413",
+          "2026-09-15|D−1|Vespertino|Córdoba|9565"
+        ],
+        "lostEvents": [],
+        "enteredProfiles": [
+          {
+            "family": "087/780",
+            "originalRank": 12,
+            "eventCount": 2,
+            "events": [
+              "2026-09-09|D−7|Primera|Entre Ríos|1413",
+              "2026-09-15|D−1|Matutino|Provincia|1977"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 1,
+            "blocks": 3,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [
+              "2026-09-09|D−7|Primera|Entre Ríos|1413"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "386/683",
+            "originalRank": 15,
+            "eventCount": 1,
+            "events": [
+              "2026-09-15|D−1|Vespertino|Córdoba|9565"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [
+              "2026-09-15|D−1|Vespertino|Córdoba|9565"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 0,
+            "anchorFraction": 1
+          }
+        ],
+        "displacedProfiles": [
+          {
+            "family": "097/790",
+            "originalRank": 8,
+            "eventCount": 1,
+            "events": [
+              "2026-09-09|D−7|Previa|Santa Fé|5168"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 1,
+            "blocks": 3,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 4,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 0.75
+          },
+          {
+            "family": "079/970",
+            "originalRank": 10,
+            "eventCount": 2,
+            "events": [
+              "2026-09-09|D−7|Matutino|Santa Fé|9351",
+              "2026-09-15|D−1|Matutino|Provincia|1977"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 1,
+            "blocks": 3,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 1
+          }
+        ],
+        "changeOfCoverage": 2,
+        "changedRootConcentration": -1,
+        "changedHHI": -0.03125
+      },
+      "abundance": {
+        "policy": "CONTROL_MAS_EVENTOS_20",
+        "original": [
+          "008/800",
+          "617/716",
+          "717/717",
+          "739/937",
+          "759/957",
+          "050/050",
+          "058/850",
+          "097/790",
+          "005/500",
+          "079/970"
+        ],
+        "chosen": [
+          "008/800",
+          "617/716",
+          "717/717",
+          "005/500",
+          "079/970",
+          "080/080",
+          "087/780",
+          "586/685",
+          "030/030",
+          "739/937"
+        ],
+        "common": [
+          "008/800",
+          "617/716",
+          "717/717",
+          "739/937",
+          "005/500",
+          "079/970"
+        ],
+        "entering": [
+          "080/080",
+          "087/780",
+          "586/685",
+          "030/030"
+        ],
+        "leaving": [
+          "759/957",
+          "050/050",
+          "058/850",
+          "097/790"
+        ],
+        "swapCount": 4,
+        "commonStats": {
+          "uniqueEvents": 7,
+          "eventIncidences": 12,
+          "maxSharing": 3,
+          "HHI": 0.16666666666666666,
+          "events": [
+            "2026-09-09|D−7|Matutino|Santa Fé|9351",
+            "2026-09-09|D−7|Previa|Santa Fé|5168",
+            "2026-09-09|D−7|Vespertino|Entre Ríos|3415",
+            "2026-09-15|D−1|Matutino|Ciudad|4563",
+            "2026-09-15|D−1|Matutino|Provincia|1977",
+            "2026-09-15|D−1|Nocturno|Ciudad|1265",
+            "2026-09-15|D−1|Previa|Córdoba|7175"
+          ]
+        },
+        "originalStats": {
+          "uniqueEvents": 7,
+          "eventIncidences": 16,
+          "maxSharing": 4,
+          "HHI": 0.1640625
+        },
+        "chosenStats": {
+          "uniqueEvents": 8,
+          "eventIncidences": 20,
+          "maxSharing": 5,
+          "HHI": 0.165
+        },
+        "gainedEvents": [
+          "2026-09-09|D−7|Primera|Entre Ríos|1413"
+        ],
+        "lostEvents": [],
+        "enteredProfiles": [
+          {
+            "family": "080/080",
+            "originalRank": 11,
+            "eventCount": 2,
+            "events": [
+              "2026-09-09|D−7|Vespertino|Entre Ríos|3415",
+              "2026-09-15|D−1|Matutino|Provincia|1977"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 1,
+            "blocks": 3,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 1
+          },
+          {
+            "family": "087/780",
+            "originalRank": 12,
+            "eventCount": 2,
+            "events": [
+              "2026-09-09|D−7|Primera|Entre Ríos|1413",
+              "2026-09-15|D−1|Matutino|Provincia|1977"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 1,
+            "blocks": 3,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [
+              "2026-09-09|D−7|Primera|Entre Ríos|1413"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "586/685",
+            "originalRank": 13,
+            "eventCount": 2,
+            "events": [
+              "2026-09-09|D−7|Vespertino|Entre Ríos|3415",
+              "2026-09-15|D−1|Matutino|Ciudad|4563"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 1,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 1
+          },
+          {
+            "family": "030/030",
+            "originalRank": 17,
+            "eventCount": 2,
+            "events": [
+              "2026-09-09|D−7|Matutino|Santa Fé|9351",
+              "2026-09-09|D−7|Previa|Santa Fé|5168"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 2,
+            "blocks": 3,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 1
+          }
+        ],
+        "displacedProfiles": [
+          {
+            "family": "759/957",
+            "originalRank": 5,
+            "eventCount": 1,
+            "events": [
+              "2026-09-15|D−1|Nocturno|Ciudad|1265"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 3,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 4,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 0.75
+          },
+          {
+            "family": "050/050",
+            "originalRank": 6,
+            "eventCount": 1,
+            "events": [
+              "2026-09-09|D−7|Previa|Santa Fé|5168"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 1,
+            "blocks": 3,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "058/850",
+            "originalRank": 7,
+            "eventCount": 1,
+            "events": [
+              "2026-09-09|D−7|Previa|Santa Fé|5168"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 1,
+            "blocks": 3,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "097/790",
+            "originalRank": 8,
+            "eventCount": 1,
+            "events": [
+              "2026-09-09|D−7|Previa|Santa Fé|5168"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 1,
+            "blocks": 3,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 4,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 0.75
+          }
+        ],
+        "changeOfCoverage": 1,
+        "changedRootConcentration": 1,
+        "changedHHI": 0.0009375
+      },
+      "divergences": {
+        "shared": [
+          "008/800",
+          "617/716",
+          "717/717",
+          "005/500",
+          "739/937",
+          "087/780"
+        ],
+        "selectedOnlyD": [
+          "386/683",
+          "759/957",
+          "050/050",
+          "058/850"
+        ],
+        "selectedOnlyA": [
+          "079/970",
+          "080/080",
+          "586/685",
+          "030/030"
+        ],
+        "eventOnlyD": [
+          "2026-09-15|D−1|Vespertino|Córdoba|9565"
+        ],
+        "eventOnlyA": []
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "heads": [
+        "1657",
+        "0828",
+        "9644",
+        "3173",
+        "5798"
+      ],
+      "officialHits": [
+        "173/371"
+      ],
+      "divHits": [],
+      "abundanceHits": [],
+      "pool11to20Winners": [
+        {
+          "family": "798/897",
+          "rank": 13,
+          "win": true,
+          "events": 1,
+          "noveltyVsCore": 1,
+          "divSelected": false,
+          "abundanceSelected": false
+        }
+      ],
+      "diversity": {
+        "policy": "COB20_P3",
+        "original": [
+          "455/554",
+          "248/842",
+          "273/372",
+          "547/745",
+          "557/755",
+          "638/836",
+          "172/271",
+          "173/371",
+          "205/502",
+          "258/852"
+        ],
+        "chosen": [
+          "455/554",
+          "248/842",
+          "273/372",
+          "487/784",
+          "285/582",
+          "547/745",
+          "205/502",
+          "367/763",
+          "557/755",
+          "638/836"
+        ],
+        "common": [
+          "455/554",
+          "248/842",
+          "273/372",
+          "547/745",
+          "557/755",
+          "638/836",
+          "205/502"
+        ],
+        "entering": [
+          "487/784",
+          "285/582",
+          "367/763"
+        ],
+        "leaving": [
+          "172/271",
+          "173/371",
+          "258/852"
+        ],
+        "swapCount": 3,
+        "commonStats": {
+          "uniqueEvents": 7,
+          "eventIncidences": 12,
+          "maxSharing": 2,
+          "HHI": 0.15277777777777776,
+          "events": [
+            "2026-09-17|D−1|Nocturno|Ciudad|7476",
+            "2026-09-17|D−1|Nocturno|Entre Ríos|6721",
+            "2026-09-17|D−1|Nocturno|Provincia|0438",
+            "2026-09-17|D−1|Previa|Provincia|9446",
+            "2026-09-17|D−1|Previa|Santa Fé|9748",
+            "2026-09-17|D−1|Vespertino|Ciudad|4680",
+            "2026-09-17|D−1|Vespertino|Córdoba|9471"
+          ]
+        },
+        "originalStats": {
+          "uniqueEvents": 8,
+          "eventIncidences": 15,
+          "maxSharing": 3,
+          "HHI": 0.1466666666666667
+        },
+        "chosenStats": {
+          "uniqueEvents": 12,
+          "eventIncidences": 22,
+          "maxSharing": 4,
+          "HHI": 0.11157024793388423
+        },
+        "gainedEvents": [
+          "2026-09-11|D−7|Matutino|Entre Ríos|4160",
+          "2026-09-11|D−7|Nocturno|Ciudad|9085",
+          "2026-09-17|D−1|Nocturno|Córdoba|6417",
+          "2026-09-17|D−1|Previa|Ciudad|1438"
+        ],
+        "lostEvents": [],
+        "enteredProfiles": [
+          {
+            "family": "487/784",
+            "originalRank": 17,
+            "eventCount": 5,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Ciudad|7476",
+              "2026-09-17|D−1|Nocturno|Córdoba|6417",
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464",
+              "2026-09-17|D−1|Previa|Provincia|9446",
+              "2026-09-17|D−1|Vespertino|Ciudad|4680"
+            ],
+            "historicalRootsD1": 5,
+            "historicalRootsD7": 0,
+            "blocks": 3,
+            "bif": 0,
+            "sources": 2,
+            "rootedPaths": 3,
+            "physicalPaths": 4,
+            "newVsSharedCore": [
+              "2026-09-17|D−1|Nocturno|Córdoba|6417",
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464"
+            ],
+            "newVsSharedCoreCount": 2,
+            "alreadyPresentInCoreCount": 3,
+            "anchorFraction": 0.75
+          },
+          {
+            "family": "285/582",
+            "originalRank": 20,
+            "eventCount": 4,
+            "events": [
+              "2026-09-11|D−7|Nocturno|Ciudad|9085",
+              "2026-09-17|D−1|Nocturno|Provincia|0438",
+              "2026-09-17|D−1|Previa|Ciudad|1438",
+              "2026-09-17|D−1|Previa|Provincia|9446"
+            ],
+            "historicalRootsD1": 3,
+            "historicalRootsD7": 1,
+            "blocks": 2,
+            "bif": 0,
+            "sources": 2,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [
+              "2026-09-11|D−7|Nocturno|Ciudad|9085",
+              "2026-09-17|D−1|Previa|Ciudad|1438"
+            ],
+            "newVsSharedCoreCount": 2,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 1
+          },
+          {
+            "family": "367/763",
+            "originalRank": 14,
+            "eventCount": 1,
+            "events": [
+              "2026-09-11|D−7|Matutino|Entre Ríos|4160"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 1,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 3,
+            "newVsSharedCore": [
+              "2026-09-11|D−7|Matutino|Entre Ríos|4160"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 0,
+            "anchorFraction": 0.6666666666666666
+          }
+        ],
+        "displacedProfiles": [
+          {
+            "family": "172/271",
+            "originalRank": 7,
+            "eventCount": 1,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Provincia|0438"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 0.6666666666666666
+          },
+          {
+            "family": "173/371",
+            "originalRank": 8,
+            "eventCount": 1,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Ciudad|7476"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "258/852",
+            "originalRank": 10,
+            "eventCount": 1,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 3,
+            "newVsSharedCore": [
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 0,
+            "anchorFraction": 0.6666666666666666
+          }
+        ],
+        "changeOfCoverage": 4,
+        "changedRootConcentration": 1,
+        "changedHHI": -0.035096419
+      },
+      "abundance": {
+        "policy": "CONTROL_MAS_EVENTOS_20",
+        "original": [
+          "455/554",
+          "248/842",
+          "273/372",
+          "547/745",
+          "557/755",
+          "638/836",
+          "172/271",
+          "173/371",
+          "205/502",
+          "258/852"
+        ],
+        "chosen": [
+          "455/554",
+          "248/842",
+          "273/372",
+          "487/784",
+          "257/752",
+          "498/894",
+          "285/582",
+          "547/745",
+          "557/755",
+          "638/836"
+        ],
+        "common": [
+          "455/554",
+          "248/842",
+          "273/372",
+          "547/745",
+          "557/755",
+          "638/836"
+        ],
+        "entering": [
+          "487/784",
+          "257/752",
+          "498/894",
+          "285/582"
+        ],
+        "leaving": [
+          "172/271",
+          "173/371",
+          "205/502",
+          "258/852"
+        ],
+        "swapCount": 4,
+        "commonStats": {
+          "uniqueEvents": 6,
+          "eventIncidences": 11,
+          "maxSharing": 2,
+          "HHI": 0.17355371900826447,
+          "events": [
+            "2026-09-17|D−1|Nocturno|Ciudad|7476",
+            "2026-09-17|D−1|Nocturno|Entre Ríos|6721",
+            "2026-09-17|D−1|Nocturno|Provincia|0438",
+            "2026-09-17|D−1|Previa|Provincia|9446",
+            "2026-09-17|D−1|Previa|Santa Fé|9748",
+            "2026-09-17|D−1|Vespertino|Ciudad|4680"
+          ]
+        },
+        "originalStats": {
+          "uniqueEvents": 8,
+          "eventIncidences": 15,
+          "maxSharing": 3,
+          "HHI": 0.1466666666666667
+        },
+        "chosenStats": {
+          "uniqueEvents": 10,
+          "eventIncidences": 28,
+          "maxSharing": 6,
+          "HHI": 0.13265306122448978
+        },
+        "gainedEvents": [
+          "2026-09-11|D−7|Nocturno|Ciudad|9085",
+          "2026-09-17|D−1|Nocturno|Córdoba|6417",
+          "2026-09-17|D−1|Previa|Ciudad|1438"
+        ],
+        "lostEvents": [
+          "2026-09-17|D−1|Vespertino|Córdoba|9471"
+        ],
+        "enteredProfiles": [
+          {
+            "family": "487/784",
+            "originalRank": 17,
+            "eventCount": 5,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Ciudad|7476",
+              "2026-09-17|D−1|Nocturno|Córdoba|6417",
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464",
+              "2026-09-17|D−1|Previa|Provincia|9446",
+              "2026-09-17|D−1|Vespertino|Ciudad|4680"
+            ],
+            "historicalRootsD1": 5,
+            "historicalRootsD7": 0,
+            "blocks": 3,
+            "bif": 0,
+            "sources": 2,
+            "rootedPaths": 3,
+            "physicalPaths": 4,
+            "newVsSharedCore": [
+              "2026-09-17|D−1|Nocturno|Córdoba|6417",
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464"
+            ],
+            "newVsSharedCoreCount": 2,
+            "alreadyPresentInCoreCount": 3,
+            "anchorFraction": 0.75
+          },
+          {
+            "family": "257/752",
+            "originalRank": 18,
+            "eventCount": 4,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Provincia|0438",
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464",
+              "2026-09-17|D−1|Previa|Ciudad|1438",
+              "2026-09-17|D−1|Previa|Provincia|9446"
+            ],
+            "historicalRootsD1": 4,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 0,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 3,
+            "newVsSharedCore": [
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464",
+              "2026-09-17|D−1|Previa|Ciudad|1438"
+            ],
+            "newVsSharedCoreCount": 2,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 0.6666666666666666
+          },
+          {
+            "family": "498/894",
+            "originalRank": 19,
+            "eventCount": 4,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Provincia|0438",
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464",
+              "2026-09-17|D−1|Previa|Ciudad|1438",
+              "2026-09-17|D−1|Previa|Provincia|9446"
+            ],
+            "historicalRootsD1": 4,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 0,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 4,
+            "newVsSharedCore": [
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464",
+              "2026-09-17|D−1|Previa|Ciudad|1438"
+            ],
+            "newVsSharedCoreCount": 2,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 0.5
+          },
+          {
+            "family": "285/582",
+            "originalRank": 20,
+            "eventCount": 4,
+            "events": [
+              "2026-09-11|D−7|Nocturno|Ciudad|9085",
+              "2026-09-17|D−1|Nocturno|Provincia|0438",
+              "2026-09-17|D−1|Previa|Ciudad|1438",
+              "2026-09-17|D−1|Previa|Provincia|9446"
+            ],
+            "historicalRootsD1": 3,
+            "historicalRootsD7": 1,
+            "blocks": 2,
+            "bif": 0,
+            "sources": 2,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [
+              "2026-09-11|D−7|Nocturno|Ciudad|9085",
+              "2026-09-17|D−1|Previa|Ciudad|1438"
+            ],
+            "newVsSharedCoreCount": 2,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 1
+          }
+        ],
+        "displacedProfiles": [
+          {
+            "family": "172/271",
+            "originalRank": 7,
+            "eventCount": 1,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Provincia|0438"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 0.6666666666666666
+          },
+          {
+            "family": "173/371",
+            "originalRank": 8,
+            "eventCount": 1,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Ciudad|7476"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "205/502",
+            "originalRank": 9,
+            "eventCount": 1,
+            "events": [
+              "2026-09-17|D−1|Vespertino|Córdoba|9471"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 3,
+            "newVsSharedCore": [
+              "2026-09-17|D−1|Vespertino|Córdoba|9471"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 0,
+            "anchorFraction": 0.6666666666666666
+          },
+          {
+            "family": "258/852",
+            "originalRank": 10,
+            "eventCount": 1,
+            "events": [
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 3,
+            "newVsSharedCore": [
+              "2026-09-17|D−1|Nocturno|Santa Fé|1464"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 0,
+            "anchorFraction": 0.6666666666666666
+          }
+        ],
+        "changeOfCoverage": 2,
+        "changedRootConcentration": 3,
+        "changedHHI": -0.014013605
+      },
+      "divergences": {
+        "shared": [
+          "455/554",
+          "248/842",
+          "273/372",
+          "487/784",
+          "285/582",
+          "547/745",
+          "557/755",
+          "638/836"
+        ],
+        "selectedOnlyD": [
+          "205/502",
+          "367/763"
+        ],
+        "selectedOnlyA": [
+          "257/752",
+          "498/894"
+        ],
+        "eventOnlyD": [
+          "2026-09-17|D−1|Vespertino|Córdoba|9471",
+          "2026-09-11|D−7|Matutino|Entre Ríos|4160"
+        ],
+        "eventOnlyA": []
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "heads": [
+        "5521",
+        "2897",
+        "7466",
+        "4570",
+        "9006"
+      ],
+      "officialHits": [],
+      "divHits": [
+        "075/570"
+      ],
+      "abundanceHits": [],
+      "pool11to20Winners": [
+        {
+          "family": "075/570",
+          "rank": 18,
+          "win": true,
+          "events": 1,
+          "noveltyVsCore": 1,
+          "divSelected": true,
+          "abundanceSelected": false
+        }
+      ],
+      "diversity": {
+        "policy": "COB20_P3",
+        "original": [
+          "637/736",
+          "639/936",
+          "486/684",
+          "048/840",
+          "104/401",
+          "539/935",
+          "019/910",
+          "041/140",
+          "057/750",
+          "084/480"
+        ],
+        "chosen": [
+          "637/736",
+          "639/936",
+          "486/684",
+          "041/140",
+          "057/750",
+          "657/756",
+          "075/570",
+          "366/663",
+          "048/840",
+          "104/401"
+        ],
+        "common": [
+          "637/736",
+          "639/936",
+          "486/684",
+          "048/840",
+          "104/401",
+          "041/140",
+          "057/750"
+        ],
+        "entering": [
+          "657/756",
+          "075/570",
+          "366/663"
+        ],
+        "leaving": [
+          "539/935",
+          "019/910",
+          "084/480"
+        ],
+        "swapCount": 3,
+        "commonStats": {
+          "uniqueEvents": 8,
+          "eventIncidences": 14,
+          "maxSharing": 3,
+          "HHI": 0.15306122448979592,
+          "events": [
+            "2026-09-25|D−7|Matutino|Provincia|5643",
+            "2026-09-25|D−7|Matutino|Santa Fé|6811",
+            "2026-09-25|D−7|Previa|Entre Ríos|7898",
+            "2026-10-01|D−1|Matutino|Entre Ríos|9598",
+            "2026-10-01|D−1|Matutino|Provincia|9105",
+            "2026-10-01|D−1|Matutino|Santa Fé|8483",
+            "2026-10-01|D−1|Nocturno|Ciudad|4584",
+            "2026-10-01|D−1|Previa|Entre Ríos|3847"
+          ]
+        },
+        "originalStats": {
+          "uniqueEvents": 8,
+          "eventIncidences": 18,
+          "maxSharing": 4,
+          "HHI": 0.14814814814814814
+        },
+        "chosenStats": {
+          "uniqueEvents": 11,
+          "eventIncidences": 17,
+          "maxSharing": 3,
+          "HHI": 0.11418685121107267
+        },
+        "gainedEvents": [
+          "2026-09-25|D−7|Matutino|Córdoba|9237",
+          "2026-09-25|D−7|Nocturno|Córdoba|0429",
+          "2026-10-01|D−1|Primera|Provincia|4705"
+        ],
+        "lostEvents": [],
+        "enteredProfiles": [
+          {
+            "family": "657/756",
+            "originalRank": 16,
+            "eventCount": 1,
+            "events": [
+              "2026-10-01|D−1|Primera|Provincia|4705"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [
+              "2026-10-01|D−1|Primera|Provincia|4705"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 0,
+            "anchorFraction": 1
+          },
+          {
+            "family": "075/570",
+            "originalRank": 18,
+            "eventCount": 1,
+            "events": [
+              "2026-09-25|D−7|Nocturno|Córdoba|0429"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 1,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 3,
+            "newVsSharedCore": [
+              "2026-09-25|D−7|Nocturno|Córdoba|0429"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 0,
+            "anchorFraction": 0.6666666666666666
+          },
+          {
+            "family": "366/663",
+            "originalRank": 19,
+            "eventCount": 1,
+            "events": [
+              "2026-09-25|D−7|Matutino|Córdoba|9237"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 1,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 6,
+            "newVsSharedCore": [
+              "2026-09-25|D−7|Matutino|Córdoba|9237"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 0,
+            "anchorFraction": 0.5
+          }
+        ],
+        "displacedProfiles": [
+          {
+            "family": "539/935",
+            "originalRank": 6,
+            "eventCount": 2,
+            "events": [
+              "2026-09-25|D−7|Matutino|Santa Fé|6811",
+              "2026-10-01|D−1|Previa|Entre Ríos|3847"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 1,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 1
+          },
+          {
+            "family": "019/910",
+            "originalRank": 7,
+            "eventCount": 1,
+            "events": [
+              "2026-10-01|D−1|Matutino|Entre Ríos|9598"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "084/480",
+            "originalRank": 10,
+            "eventCount": 1,
+            "events": [
+              "2026-10-01|D−1|Nocturno|Ciudad|4584"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 0.6666666666666666
+          }
+        ],
+        "changeOfCoverage": 3,
+        "changedRootConcentration": -1,
+        "changedHHI": -0.033961297
+      },
+      "abundance": {
+        "policy": "CONTROL_MAS_EVENTOS_20",
+        "original": [
+          "637/736",
+          "639/936",
+          "486/684",
+          "048/840",
+          "104/401",
+          "539/935",
+          "019/910",
+          "041/140",
+          "057/750",
+          "084/480"
+        ],
+        "chosen": [
+          "637/736",
+          "639/936",
+          "486/684",
+          "048/840",
+          "104/401",
+          "539/935",
+          "019/910",
+          "041/140",
+          "057/750",
+          "084/480"
+        ],
+        "common": [
+          "637/736",
+          "639/936",
+          "486/684",
+          "048/840",
+          "104/401",
+          "539/935",
+          "019/910",
+          "041/140",
+          "057/750",
+          "084/480"
+        ],
+        "entering": [],
+        "leaving": [],
+        "swapCount": 0,
+        "commonStats": {
+          "uniqueEvents": 8,
+          "eventIncidences": 18,
+          "maxSharing": 4,
+          "HHI": 0.14814814814814814,
+          "events": [
+            "2026-09-25|D−7|Matutino|Provincia|5643",
+            "2026-09-25|D−7|Matutino|Santa Fé|6811",
+            "2026-09-25|D−7|Previa|Entre Ríos|7898",
+            "2026-10-01|D−1|Matutino|Entre Ríos|9598",
+            "2026-10-01|D−1|Matutino|Provincia|9105",
+            "2026-10-01|D−1|Matutino|Santa Fé|8483",
+            "2026-10-01|D−1|Nocturno|Ciudad|4584",
+            "2026-10-01|D−1|Previa|Entre Ríos|3847"
+          ]
+        },
+        "originalStats": {
+          "uniqueEvents": 8,
+          "eventIncidences": 18,
+          "maxSharing": 4,
+          "HHI": 0.14814814814814814
+        },
+        "chosenStats": {
+          "uniqueEvents": 8,
+          "eventIncidences": 18,
+          "maxSharing": 4,
+          "HHI": 0.14814814814814814
+        },
+        "gainedEvents": [],
+        "lostEvents": [],
+        "enteredProfiles": [],
+        "displacedProfiles": [],
+        "changeOfCoverage": 0,
+        "changedRootConcentration": 0,
+        "changedHHI": 0
+      },
+      "divergences": {
+        "shared": [
+          "637/736",
+          "639/936",
+          "486/684",
+          "041/140",
+          "057/750",
+          "048/840",
+          "104/401"
+        ],
+        "selectedOnlyD": [
+          "657/756",
+          "075/570",
+          "366/663"
+        ],
+        "selectedOnlyA": [
+          "539/935",
+          "019/910",
+          "084/480"
+        ],
+        "eventOnlyD": [
+          "2026-10-01|D−1|Primera|Provincia|4705",
+          "2026-09-25|D−7|Nocturno|Córdoba|0429",
+          "2026-09-25|D−7|Matutino|Córdoba|9237"
+        ],
+        "eventOnlyA": []
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "heads": [
+        "2174",
+        "1456",
+        "2631",
+        "1899",
+        "8799"
+      ],
+      "officialHits": [],
+      "divHits": [
+        "799/997"
+      ],
+      "abundanceHits": [
+        "799/997"
+      ],
+      "pool11to20Winners": [
+        {
+          "family": "799/997",
+          "rank": 15,
+          "win": true,
+          "events": 3,
+          "noveltyVsCore": 3,
+          "divSelected": true,
+          "abundanceSelected": true
+        }
+      ],
+      "diversity": {
+        "policy": "COB20_P3",
+        "original": [
+          "177/771",
+          "717/717",
+          "777/777",
+          "388/883",
+          "729/927",
+          "338/833",
+          "377/773",
+          "428/824",
+          "797/797",
+          "317/713"
+        ],
+        "chosen": [
+          "177/771",
+          "717/717",
+          "777/777",
+          "729/927",
+          "799/997",
+          "097/790",
+          "284/482",
+          "388/883",
+          "338/833",
+          "377/773"
+        ],
+        "common": [
+          "177/771",
+          "717/717",
+          "777/777",
+          "388/883",
+          "729/927",
+          "338/833",
+          "377/773"
+        ],
+        "entering": [
+          "799/997",
+          "097/790",
+          "284/482"
+        ],
+        "leaving": [
+          "428/824",
+          "797/797",
+          "317/713"
+        ],
+        "swapCount": 3,
+        "commonStats": {
+          "uniqueEvents": 9,
+          "eventIncidences": 24,
+          "maxSharing": 5,
+          "HHI": 0.15277777777777776,
+          "events": [
+            "2026-09-28|D−7|Matutino|Ciudad|2949",
+            "2026-09-28|D−7|Matutino|Entre Ríos|1760",
+            "2026-09-28|D−7|Previa|Ciudad|4372",
+            "2026-09-28|D−7|Primera|Ciudad|8037",
+            "2026-09-28|D−7|Vespertino|Entre Ríos|7949",
+            "2026-09-28|D−7|Vespertino|Santa Fé|2517",
+            "2026-10-03|D−1|Matutino|Córdoba|2592",
+            "2026-10-03|D−1|Matutino|Entre Ríos|5832",
+            "2026-10-03|D−1|Vespertino|Córdoba|7429"
+          ]
+        },
+        "originalStats": {
+          "uniqueEvents": 9,
+          "eventIncidences": 28,
+          "maxSharing": 6,
+          "HHI": 0.1454081632653061
+        },
+        "chosenStats": {
+          "uniqueEvents": 13,
+          "eventIncidences": 30,
+          "maxSharing": 5,
+          "HHI": 0.10888888888888887
+        },
+        "gainedEvents": [
+          "2026-09-28|D−7|Matutino|Córdoba|6107",
+          "2026-09-28|D−7|Nocturno|Ciudad|5137",
+          "2026-09-28|D−7|Nocturno|Entre Ríos|2168",
+          "2026-10-03|D−1|Vespertino|Provincia|2234"
+        ],
+        "lostEvents": [],
+        "enteredProfiles": [
+          {
+            "family": "799/997",
+            "originalRank": 15,
+            "eventCount": 3,
+            "events": [
+              "2026-09-28|D−7|Matutino|Córdoba|6107",
+              "2026-09-28|D−7|Nocturno|Entre Ríos|2168",
+              "2026-10-03|D−1|Matutino|Entre Ríos|5832"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 2,
+            "blocks": 3,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 4,
+            "physicalPaths": 4,
+            "newVsSharedCore": [
+              "2026-09-28|D−7|Matutino|Córdoba|6107",
+              "2026-09-28|D−7|Nocturno|Entre Ríos|2168"
+            ],
+            "newVsSharedCoreCount": 2,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "097/790",
+            "originalRank": 16,
+            "eventCount": 2,
+            "events": [
+              "2026-09-28|D−7|Nocturno|Ciudad|5137",
+              "2026-10-03|D−1|Matutino|Córdoba|2592"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 1,
+            "blocks": 3,
+            "bif": 1,
+            "sources": 2,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [
+              "2026-09-28|D−7|Nocturno|Ciudad|5137"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "284/482",
+            "originalRank": 18,
+            "eventCount": 1,
+            "events": [
+              "2026-10-03|D−1|Vespertino|Provincia|2234"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 4,
+            "newVsSharedCore": [
+              "2026-10-03|D−1|Vespertino|Provincia|2234"
+            ],
+            "newVsSharedCoreCount": 1,
+            "alreadyPresentInCoreCount": 0,
+            "anchorFraction": 0.5
+          }
+        ],
+        "displacedProfiles": [
+          {
+            "family": "428/824",
+            "originalRank": 8,
+            "eventCount": 1,
+            "events": [
+              "2026-10-03|D−1|Matutino|Córdoba|2592"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 3,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 6,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 0.5
+          },
+          {
+            "family": "797/797",
+            "originalRank": 9,
+            "eventCount": 1,
+            "events": [
+              "2026-10-03|D−1|Vespertino|Córdoba|7429"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 3,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "317/713",
+            "originalRank": 10,
+            "eventCount": 2,
+            "events": [
+              "2026-09-28|D−7|Matutino|Entre Ríos|1760",
+              "2026-09-28|D−7|Previa|Ciudad|4372"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 2,
+            "blocks": 4,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 4,
+            "physicalPaths": 4,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 1
+          }
+        ],
+        "changeOfCoverage": 4,
+        "changedRootConcentration": -1,
+        "changedHHI": -0.036519274
+      },
+      "abundance": {
+        "policy": "CONTROL_MAS_EVENTOS_20",
+        "original": [
+          "177/771",
+          "717/717",
+          "777/777",
+          "388/883",
+          "729/927",
+          "338/833",
+          "377/773",
+          "428/824",
+          "797/797",
+          "317/713"
+        ],
+        "chosen": [
+          "177/771",
+          "717/717",
+          "777/777",
+          "778/877",
+          "338/833",
+          "388/883",
+          "729/927",
+          "799/997",
+          "137/731",
+          "377/773"
+        ],
+        "common": [
+          "177/771",
+          "717/717",
+          "777/777",
+          "388/883",
+          "729/927",
+          "338/833",
+          "377/773"
+        ],
+        "entering": [
+          "778/877",
+          "799/997",
+          "137/731"
+        ],
+        "leaving": [
+          "428/824",
+          "797/797",
+          "317/713"
+        ],
+        "swapCount": 3,
+        "commonStats": {
+          "uniqueEvents": 9,
+          "eventIncidences": 24,
+          "maxSharing": 5,
+          "HHI": 0.15277777777777776,
+          "events": [
+            "2026-09-28|D−7|Matutino|Ciudad|2949",
+            "2026-09-28|D−7|Matutino|Entre Ríos|1760",
+            "2026-09-28|D−7|Previa|Ciudad|4372",
+            "2026-09-28|D−7|Primera|Ciudad|8037",
+            "2026-09-28|D−7|Vespertino|Entre Ríos|7949",
+            "2026-09-28|D−7|Vespertino|Santa Fé|2517",
+            "2026-10-03|D−1|Matutino|Córdoba|2592",
+            "2026-10-03|D−1|Matutino|Entre Ríos|5832",
+            "2026-10-03|D−1|Vespertino|Córdoba|7429"
+          ]
+        },
+        "originalStats": {
+          "uniqueEvents": 9,
+          "eventIncidences": 28,
+          "maxSharing": 6,
+          "HHI": 0.1454081632653061
+        },
+        "chosenStats": {
+          "uniqueEvents": 11,
+          "eventIncidences": 36,
+          "maxSharing": 6,
+          "HHI": 0.13117283950617287
+        },
+        "gainedEvents": [
+          "2026-09-28|D−7|Matutino|Córdoba|6107",
+          "2026-09-28|D−7|Nocturno|Entre Ríos|2168"
+        ],
+        "lostEvents": [],
+        "enteredProfiles": [
+          {
+            "family": "778/877",
+            "originalRank": 14,
+            "eventCount": 6,
+            "events": [
+              "2026-09-28|D−7|Matutino|Ciudad|2949",
+              "2026-09-28|D−7|Matutino|Entre Ríos|1760",
+              "2026-09-28|D−7|Previa|Ciudad|4372",
+              "2026-09-28|D−7|Primera|Ciudad|8037",
+              "2026-09-28|D−7|Vespertino|Entre Ríos|7949",
+              "2026-10-03|D−1|Vespertino|Córdoba|7429"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 5,
+            "blocks": 6,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 7,
+            "physicalPaths": 10,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 6,
+            "anchorFraction": 0.7
+          },
+          {
+            "family": "799/997",
+            "originalRank": 15,
+            "eventCount": 3,
+            "events": [
+              "2026-09-28|D−7|Matutino|Córdoba|6107",
+              "2026-09-28|D−7|Nocturno|Entre Ríos|2168",
+              "2026-10-03|D−1|Matutino|Entre Ríos|5832"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 2,
+            "blocks": 3,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 4,
+            "physicalPaths": 4,
+            "newVsSharedCore": [
+              "2026-09-28|D−7|Matutino|Córdoba|6107",
+              "2026-09-28|D−7|Nocturno|Entre Ríos|2168"
+            ],
+            "newVsSharedCoreCount": 2,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "137/731",
+            "originalRank": 20,
+            "eventCount": 3,
+            "events": [
+              "2026-09-28|D−7|Matutino|Ciudad|2949",
+              "2026-09-28|D−7|Matutino|Entre Ríos|1760",
+              "2026-09-28|D−7|Vespertino|Entre Ríos|7949"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 3,
+            "blocks": 2,
+            "bif": 1,
+            "sources": 1,
+            "rootedPaths": 2,
+            "physicalPaths": 2,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 3,
+            "anchorFraction": 1
+          }
+        ],
+        "displacedProfiles": [
+          {
+            "family": "428/824",
+            "originalRank": 8,
+            "eventCount": 1,
+            "events": [
+              "2026-10-03|D−1|Matutino|Córdoba|2592"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 3,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 6,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 0.5
+          },
+          {
+            "family": "797/797",
+            "originalRank": 9,
+            "eventCount": 1,
+            "events": [
+              "2026-10-03|D−1|Vespertino|Córdoba|7429"
+            ],
+            "historicalRootsD1": 1,
+            "historicalRootsD7": 0,
+            "blocks": 3,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 3,
+            "physicalPaths": 3,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 1,
+            "anchorFraction": 1
+          },
+          {
+            "family": "317/713",
+            "originalRank": 10,
+            "eventCount": 2,
+            "events": [
+              "2026-09-28|D−7|Matutino|Entre Ríos|1760",
+              "2026-09-28|D−7|Previa|Ciudad|4372"
+            ],
+            "historicalRootsD1": 0,
+            "historicalRootsD7": 2,
+            "blocks": 4,
+            "bif": 2,
+            "sources": 1,
+            "rootedPaths": 4,
+            "physicalPaths": 4,
+            "newVsSharedCore": [],
+            "newVsSharedCoreCount": 0,
+            "alreadyPresentInCoreCount": 2,
+            "anchorFraction": 1
+          }
+        ],
+        "changeOfCoverage": 2,
+        "changedRootConcentration": 0,
+        "changedHHI": -0.014235324
+      },
+      "divergences": {
+        "shared": [
+          "177/771",
+          "717/717",
+          "777/777",
+          "729/927",
+          "799/997",
+          "388/883",
+          "338/833",
+          "377/773"
+        ],
+        "selectedOnlyD": [
+          "097/790",
+          "284/482"
+        ],
+        "selectedOnlyA": [
+          "778/877",
+          "137/731"
+        ],
+        "eventOnlyD": [
+          "2026-09-28|D−7|Nocturno|Ciudad|5137",
+          "2026-10-03|D−1|Vespertino|Provincia|2234"
+        ],
+        "eventOnlyA": []
+      }
+    }
+  ],
+  "matchedSlotControls": {
+    "COB20_P3": {
+      "top10": {
+        "n": 2000,
+        "actual": 17,
+        "mean": 15.4815,
+        "min": 14,
+        "p05": 14,
+        "median": 15,
+        "p95": 17,
+        "max": 19,
+        "fractionAtLeastObserved": 0.1645,
+        "countAtLeastObserved": 329
+      },
+      "selectedWinnerFamilies": {
+        "n": 2000,
+        "actual": 3,
+        "mean": 1.578,
+        "min": 0,
+        "p05": 0,
+        "median": 1,
+        "p95": 3,
+        "max": 6,
+        "fractionAtLeastObserved": 0.192,
+        "countAtLeastObserved": 384
+      }
+    },
+    "CONTROL_MAS_EVENTOS_20": {
+      "top10": {
+        "n": 2000,
+        "actual": 17,
+        "mean": 15.679,
+        "min": 13,
+        "p05": 14,
+        "median": 16,
+        "p95": 18,
+        "max": 20,
+        "fractionAtLeastObserved": 0.256,
+        "countAtLeastObserved": 512
+      },
+      "selectedWinnerFamilies": {
+        "n": 2000,
+        "actual": 4,
+        "mean": 3.5645,
+        "min": 0,
+        "p05": 1,
+        "median": 4,
+        "p95": 6,
+        "max": 9,
+        "fractionAtLeastObserved": 0.506,
+        "countAtLeastObserved": 1012
+      }
+    }
+  },
+  "comparativePlacebos": {
+    "free": {
+      "observedDelta": 0,
+      "averageDelta": -0.0829,
+      "p05": -3,
+      "median": 0,
+      "p95": 3,
+      "positiveFraction": 0.3877,
+      "negativeFraction": 0.4139,
+      "twoSidedTailAroundNull": 1
+    },
+    "sameWeekday": {
+      "observedDelta": 0,
+      "averageDelta": -0.7445,
+      "p05": -3,
+      "median": -1,
+      "p95": 2,
+      "positiveFraction": 0.2231,
+      "negativeFraction": 0.55,
+      "twoSidedTailAroundNull": 0.9001099890010998
+    }
+  },
+  "seal": {
+    "source": "b190ed0a4715220501f564dee3300264c32efeccef7bc49fbfb1dee10999908e",
+    "neutralSource": "c59b509ba99d5c484f331885007c9e3c8f995b0d58669e9fd9aeeba0fcc36346",
+    "code": "51808274a20d348f9409f964ff5d9c1f15652c5dfaaab1f0d7562778fca8af68",
+    "protocol": "bb191aa4a84716c02613e50c19b0dea34d4972cb3f58a182e80ce817c81b8ff1",
+    "pre": "770000b5af44c21b3092bf1a3063c18df05e5f0192c6eb26b9e1bd233310bfe1",
+    "control": "5001299e67df88696c066965e63971edb66985a0c9d4049ab3aa3306ec4bc7d4"
+  },
+  "sourcePost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "limitation": "Investigación retrospectiva de muchas hipótesis sobre 23 jornadas; distinguir mecanismos geométricos no confiere probabilidad superior en sorteos aleatorios."
+}
