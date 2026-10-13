@@ -88,7 +88,8 @@ function onePerMother(pools,lower,upper,limit){
 function policies(pools){
  const base=choose(pools,'TOP10_CUPO2').chosen;
  assert.equal(base.length,10);
- const cup1=choose(pools,'TOP10_CUPO1').chosen;
+ const cup1=onePerMother(pools,1,10,10);
+ assert.equal(cup1.length,10,'Top10 requiere una madre raíz física en cada puesto 1..10');
  const rootedOthers=pools.admitted.filter(x=>x.motherRank>=11);
  const rank6to10=pools.admitted.filter(x=>x.motherRank>=6&&x.motherRank<=10);
  const backfillOption=(first,extras,nExtras)=>{
