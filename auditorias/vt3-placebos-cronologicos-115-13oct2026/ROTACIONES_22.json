@@ -1,0 +1,401 @@
+{
+  "note": "22 asignaciones POST falsas por desplazamiento de jornada operativa, para las mismas hojas PRE",
+  "shifts": [
+    {
+      "shiftOperationalDays": 1,
+      "score": {
+        "A.top3": 1,
+        "A.top5": 1,
+        "A.top10": 6,
+        "A.pool": 48,
+        "B.top10": 6,
+        "B.pool": 88,
+        "C.top3": 2,
+        "C.top5": 2,
+        "C.top10": 7,
+        "D.top3": 3,
+        "D.top5": 3,
+        "D.top10": 5,
+        "C.minusA.top10": 1
+      }
+    },
+    {
+      "shiftOperationalDays": 2,
+      "score": {
+        "A.top3": 4,
+        "A.top5": 7,
+        "A.top10": 12,
+        "A.pool": 49,
+        "B.top10": 12,
+        "B.pool": 81,
+        "C.top3": 3,
+        "C.top5": 8,
+        "C.top10": 13,
+        "D.top3": 3,
+        "D.top5": 8,
+        "D.top10": 15,
+        "C.minusA.top10": 1
+      }
+    },
+    {
+      "shiftOperationalDays": 3,
+      "score": {
+        "A.top3": 4,
+        "A.top5": 8,
+        "A.top10": 12,
+        "A.pool": 51,
+        "B.top10": 12,
+        "B.pool": 85,
+        "C.top3": 6,
+        "C.top5": 12,
+        "C.top10": 17,
+        "D.top3": 7,
+        "D.top5": 11,
+        "D.top10": 16,
+        "C.minusA.top10": 5
+      }
+    },
+    {
+      "shiftOperationalDays": 4,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 5,
+        "A.top10": 9,
+        "A.pool": 53,
+        "B.top10": 10,
+        "B.pool": 87,
+        "C.top3": 4,
+        "C.top5": 4,
+        "C.top10": 7,
+        "D.top3": 4,
+        "D.top5": 4,
+        "D.top10": 8,
+        "C.minusA.top10": -2
+      }
+    },
+    {
+      "shiftOperationalDays": 5,
+      "score": {
+        "A.top3": 4,
+        "A.top5": 8,
+        "A.top10": 12,
+        "A.pool": 52,
+        "B.top10": 13,
+        "B.pool": 84,
+        "C.top3": 6,
+        "C.top5": 6,
+        "C.top10": 11,
+        "D.top3": 6,
+        "D.top5": 6,
+        "D.top10": 11,
+        "C.minusA.top10": -1
+      }
+    },
+    {
+      "shiftOperationalDays": 6,
+      "score": {
+        "A.top3": 1,
+        "A.top5": 3,
+        "A.top10": 11,
+        "A.pool": 50,
+        "B.top10": 11,
+        "B.pool": 85,
+        "C.top3": 2,
+        "C.top5": 5,
+        "C.top10": 11,
+        "D.top3": 3,
+        "D.top5": 5,
+        "D.top10": 11,
+        "C.minusA.top10": 0
+      }
+    },
+    {
+      "shiftOperationalDays": 7,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 4,
+        "A.top10": 6,
+        "A.pool": 40,
+        "B.top10": 7,
+        "B.pool": 75,
+        "C.top3": 5,
+        "C.top5": 5,
+        "C.top10": 9,
+        "D.top3": 5,
+        "D.top5": 5,
+        "D.top10": 10,
+        "C.minusA.top10": 3
+      }
+    },
+    {
+      "shiftOperationalDays": 8,
+      "score": {
+        "A.top3": 4,
+        "A.top5": 7,
+        "A.top10": 8,
+        "A.pool": 36,
+        "B.top10": 8,
+        "B.pool": 75,
+        "C.top3": 3,
+        "C.top5": 4,
+        "C.top10": 7,
+        "D.top3": 3,
+        "D.top5": 4,
+        "D.top10": 6,
+        "C.minusA.top10": -1
+      }
+    },
+    {
+      "shiftOperationalDays": 9,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 7,
+        "A.top10": 11,
+        "A.pool": 48,
+        "B.top10": 11,
+        "B.pool": 81,
+        "C.top3": 1,
+        "C.top5": 8,
+        "C.top10": 12,
+        "D.top3": 2,
+        "D.top5": 5,
+        "D.top10": 10,
+        "C.minusA.top10": 1
+      }
+    },
+    {
+      "shiftOperationalDays": 10,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 7,
+        "A.top10": 12,
+        "A.pool": 52,
+        "B.top10": 12,
+        "B.pool": 85,
+        "C.top3": 1,
+        "C.top5": 4,
+        "C.top10": 7,
+        "D.top3": 0,
+        "D.top5": 4,
+        "D.top10": 10,
+        "C.minusA.top10": -5
+      }
+    },
+    {
+      "shiftOperationalDays": 11,
+      "score": {
+        "A.top3": 1,
+        "A.top5": 2,
+        "A.top10": 8,
+        "A.pool": 45,
+        "B.top10": 7,
+        "B.pool": 80,
+        "C.top3": 1,
+        "C.top5": 6,
+        "C.top10": 9,
+        "D.top3": 1,
+        "D.top5": 4,
+        "D.top10": 8,
+        "C.minusA.top10": 1
+      }
+    },
+    {
+      "shiftOperationalDays": 12,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 3,
+        "A.top10": 8,
+        "A.pool": 46,
+        "B.top10": 8,
+        "B.pool": 77,
+        "C.top3": 1,
+        "C.top5": 3,
+        "C.top10": 8,
+        "D.top3": 1,
+        "D.top5": 3,
+        "D.top10": 9,
+        "C.minusA.top10": 0
+      }
+    },
+    {
+      "shiftOperationalDays": 13,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 5,
+        "A.top10": 7,
+        "A.pool": 42,
+        "B.top10": 7,
+        "B.pool": 81,
+        "C.top3": 1,
+        "C.top5": 2,
+        "C.top10": 7,
+        "D.top3": 1,
+        "D.top5": 2,
+        "D.top10": 5,
+        "C.minusA.top10": 0
+      }
+    },
+    {
+      "shiftOperationalDays": 14,
+      "score": {
+        "A.top3": 5,
+        "A.top5": 8,
+        "A.top10": 13,
+        "A.pool": 42,
+        "B.top10": 12,
+        "B.pool": 78,
+        "C.top3": 2,
+        "C.top5": 5,
+        "C.top10": 8,
+        "D.top3": 2,
+        "D.top5": 4,
+        "D.top10": 8,
+        "C.minusA.top10": -5
+      }
+    },
+    {
+      "shiftOperationalDays": 15,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 4,
+        "A.top10": 11,
+        "A.pool": 45,
+        "B.top10": 11,
+        "B.pool": 76,
+        "C.top3": 2,
+        "C.top5": 3,
+        "C.top10": 8,
+        "D.top3": 2,
+        "D.top5": 4,
+        "D.top10": 7,
+        "C.minusA.top10": -3
+      }
+    },
+    {
+      "shiftOperationalDays": 16,
+      "score": {
+        "A.top3": 2,
+        "A.top5": 2,
+        "A.top10": 5,
+        "A.pool": 48,
+        "B.top10": 5,
+        "B.pool": 80,
+        "C.top3": 1,
+        "C.top5": 4,
+        "C.top10": 7,
+        "D.top3": 2,
+        "D.top5": 4,
+        "D.top10": 7,
+        "C.minusA.top10": 2
+      }
+    },
+    {
+      "shiftOperationalDays": 17,
+      "score": {
+        "A.top3": 1,
+        "A.top5": 3,
+        "A.top10": 6,
+        "A.pool": 48,
+        "B.top10": 6,
+        "B.pool": 79,
+        "C.top3": 4,
+        "C.top5": 4,
+        "C.top10": 8,
+        "D.top3": 3,
+        "D.top5": 4,
+        "D.top10": 8,
+        "C.minusA.top10": 2
+      }
+    },
+    {
+      "shiftOperationalDays": 18,
+      "score": {
+        "A.top3": 1,
+        "A.top5": 2,
+        "A.top10": 7,
+        "A.pool": 46,
+        "B.top10": 6,
+        "B.pool": 77,
+        "C.top3": 1,
+        "C.top5": 6,
+        "C.top10": 10,
+        "D.top3": 1,
+        "D.top5": 4,
+        "D.top10": 9,
+        "C.minusA.top10": 3
+      }
+    },
+    {
+      "shiftOperationalDays": 19,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 5,
+        "A.top10": 9,
+        "A.pool": 51,
+        "B.top10": 9,
+        "B.pool": 83,
+        "C.top3": 3,
+        "C.top5": 5,
+        "C.top10": 13,
+        "D.top3": 2,
+        "D.top5": 4,
+        "D.top10": 12,
+        "C.minusA.top10": 4
+      }
+    },
+    {
+      "shiftOperationalDays": 20,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 4,
+        "A.top10": 8,
+        "A.pool": 54,
+        "B.top10": 8,
+        "B.pool": 80,
+        "C.top3": 3,
+        "C.top5": 5,
+        "C.top10": 9,
+        "D.top3": 3,
+        "D.top5": 5,
+        "D.top10": 9,
+        "C.minusA.top10": 1
+      }
+    },
+    {
+      "shiftOperationalDays": 21,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 6,
+        "A.top10": 13,
+        "A.pool": 54,
+        "B.top10": 12,
+        "B.pool": 83,
+        "C.top3": 5,
+        "C.top5": 7,
+        "C.top10": 11,
+        "D.top3": 6,
+        "D.top5": 7,
+        "D.top10": 11,
+        "C.minusA.top10": -2
+      }
+    },
+    {
+      "shiftOperationalDays": 22,
+      "score": {
+        "A.top3": 3,
+        "A.top5": 5,
+        "A.top10": 15,
+        "A.pool": 52,
+        "B.top10": 15,
+        "B.pool": 90,
+        "C.top3": 3,
+        "C.top5": 6,
+        "C.top10": 13,
+        "D.top3": 3,
+        "D.top5": 6,
+        "D.top10": 12,
+        "C.minusA.top10": -2
+      }
+    }
+  ]
+}

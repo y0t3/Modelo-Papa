@@ -1,0 +1,702 @@
+{
+  "metadata": {
+    "date": "2026-10-13",
+    "dates": 23,
+    "cuts": 115,
+    "seed": 20261013,
+    "repetitionsPerScheme": 20000,
+    "originalPreSha256": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "originalPostSha256": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+    "protocolSha256": "4c492b501b42cbe5d769a0d029035d7aa2135accc54dcd91a89029a9f4b6c512",
+    "scriptSha256": "f876fd8844c41724f833979eab8c3f1d827878968b642b0bc34e52706736d8e9"
+  },
+  "observed": {
+    "A.top3": 5,
+    "A.top5": 8,
+    "A.top10": 15,
+    "A.pool": 46,
+    "B.top10": 15,
+    "B.pool": 80,
+    "C.top3": 9,
+    "C.top5": 12,
+    "C.top10": 16,
+    "D.top3": 9,
+    "D.top5": 12,
+    "D.top10": 15,
+    "C.minusA.top10": 1
+  },
+  "byMonth": {
+    "2026-09": {
+      "A.top3": 3,
+      "A.top5": 4,
+      "A.top10": 10,
+      "A.pool": 34,
+      "B.top10": 10,
+      "B.pool": 50,
+      "C.top3": 7,
+      "C.top5": 9,
+      "C.top10": 12,
+      "D.top3": 7,
+      "D.top5": 10,
+      "D.top10": 12,
+      "C.minusA.top10": 2
+    },
+    "2026-10": {
+      "A.top3": 2,
+      "A.top5": 4,
+      "A.top10": 5,
+      "A.pool": 12,
+      "B.top10": 5,
+      "B.pool": 30,
+      "C.top3": 2,
+      "C.top5": 3,
+      "C.top10": 4,
+      "D.top3": 2,
+      "D.top5": 2,
+      "D.top10": 3,
+      "C.minusA.top10": -1
+    }
+  },
+  "persistence": {
+    "identicalTop3All5": 3,
+    "identicalTop10All5": 0,
+    "meanDistinctTop10AcrossDay": 18.565217391304348,
+    "meanTop10RepeatedAll5": 3.5652173913043477
+  },
+  "rotation": {
+    "count": 22,
+    "metrics": {
+      "A.top3": {
+        "observed": 5,
+        "min": 1,
+        "median": 3,
+        "max": 5,
+        "rotationsAtLeastActual": 1
+      },
+      "A.top5": {
+        "observed": 8,
+        "min": 1,
+        "median": 5,
+        "max": 8,
+        "rotationsAtLeastActual": 3
+      },
+      "A.top10": {
+        "observed": 15,
+        "min": 5,
+        "median": 9,
+        "max": 15,
+        "rotationsAtLeastActual": 1
+      },
+      "A.pool": {
+        "observed": 46,
+        "min": 36,
+        "median": 48,
+        "max": 54,
+        "rotationsAtLeastActual": 16
+      },
+      "B.top10": {
+        "observed": 15,
+        "min": 5,
+        "median": 9,
+        "max": 15,
+        "rotationsAtLeastActual": 1
+      },
+      "B.pool": {
+        "observed": 80,
+        "min": 75,
+        "median": 81,
+        "max": 90,
+        "rotationsAtLeastActual": 15
+      },
+      "C.top3": {
+        "observed": 9,
+        "min": 1,
+        "median": 2,
+        "max": 6,
+        "rotationsAtLeastActual": 0
+      },
+      "C.top5": {
+        "observed": 12,
+        "min": 2,
+        "median": 5,
+        "max": 12,
+        "rotationsAtLeastActual": 1
+      },
+      "C.top10": {
+        "observed": 16,
+        "min": 7,
+        "median": 9,
+        "max": 17,
+        "rotationsAtLeastActual": 1
+      },
+      "D.top3": {
+        "observed": 9,
+        "min": 0,
+        "median": 3,
+        "max": 7,
+        "rotationsAtLeastActual": 0
+      },
+      "D.top5": {
+        "observed": 12,
+        "min": 2,
+        "median": 4,
+        "max": 11,
+        "rotationsAtLeastActual": 0
+      },
+      "D.top10": {
+        "observed": 15,
+        "min": 5,
+        "median": 9,
+        "max": 16,
+        "rotationsAtLeastActual": 2
+      },
+      "C.minusA.top10": {
+        "observed": 1,
+        "min": -5,
+        "median": 0,
+        "max": 5,
+        "rotationsAtLeastActual": 11
+      }
+    }
+  },
+  "permutations": {
+    "all": {
+      "repetitions": 20000,
+      "groups": [
+        [
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-26",
+          "2026-09-28",
+          "2026-09-29",
+          "2026-09-30",
+          "2026-10-01",
+          "2026-10-02",
+          "2026-10-03",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10"
+        ]
+      ],
+      "metrics": {
+        "A.top3": {
+          "observed": 5,
+          "mean": 2.8621,
+          "min": 0,
+          "p05": 0,
+          "p50": 3,
+          "p95": 6,
+          "max": 12,
+          "countAtLeastObserved": 3253,
+          "empiricalTail": 0.16269186540672967
+        },
+        "A.top5": {
+          "observed": 8,
+          "mean": 4.9543,
+          "min": 0,
+          "p05": 2,
+          "p50": 5,
+          "p95": 9,
+          "max": 15,
+          "countAtLeastObserved": 2514,
+          "empiricalTail": 0.12574371281435928
+        },
+        "A.top10": {
+          "observed": 15,
+          "mean": 9.7423,
+          "min": 1,
+          "p05": 5,
+          "p50": 10,
+          "p95": 15,
+          "max": 23,
+          "countAtLeastObserved": 1143,
+          "empiricalTail": 0.05719714014299285
+        },
+        "A.pool": {
+          "observed": 46,
+          "mean": 47.7817,
+          "min": 25,
+          "p05": 40,
+          "p50": 48,
+          "p95": 56,
+          "max": 67,
+          "countAtLeastObserved": 13683,
+          "empiricalTail": 0.6841657917104145
+        },
+        "B.top10": {
+          "observed": 15,
+          "mean": 9.70495,
+          "min": 1,
+          "p05": 5,
+          "p50": 10,
+          "p95": 15,
+          "max": 22,
+          "countAtLeastObserved": 1086,
+          "empiricalTail": 0.05434728263586821
+        },
+        "B.pool": {
+          "observed": 80,
+          "mean": 81.30875,
+          "min": 61,
+          "p05": 74,
+          "p50": 81,
+          "p95": 89,
+          "max": 98,
+          "countAtLeastObserved": 13190,
+          "empiricalTail": 0.6595170241487925
+        },
+        "C.top3": {
+          "observed": 9,
+          "mean": 3.01435,
+          "min": 0,
+          "p05": 1,
+          "p50": 3,
+          "p95": 6,
+          "max": 11,
+          "countAtLeastObserved": 55,
+          "empiricalTail": 0.00279986000699965
+        },
+        "C.top5": {
+          "observed": 12,
+          "mean": 5.50115,
+          "min": 0,
+          "p05": 2,
+          "p50": 5,
+          "p95": 9,
+          "max": 16,
+          "countAtLeastObserved": 155,
+          "empiricalTail": 0.007799610019499025
+        },
+        "C.top10": {
+          "observed": 16,
+          "mean": 9.9222,
+          "min": 0,
+          "p05": 5,
+          "p50": 10,
+          "p95": 15,
+          "max": 23,
+          "countAtLeastObserved": 675,
+          "empiricalTail": 0.033798310084495777
+        },
+        "D.top3": {
+          "observed": 9,
+          "mean": 3.14345,
+          "min": 0,
+          "p05": 1,
+          "p50": 3,
+          "p95": 6,
+          "max": 11,
+          "countAtLeastObserved": 51,
+          "empiricalTail": 0.002599870006499675
+        },
+        "D.top5": {
+          "observed": 12,
+          "mean": 5.14945,
+          "min": 0,
+          "p05": 2,
+          "p50": 5,
+          "p95": 9,
+          "max": 16,
+          "countAtLeastObserved": 101,
+          "empiricalTail": 0.0050997450127493625
+        },
+        "D.top10": {
+          "observed": 15,
+          "mean": 9.66305,
+          "min": 0,
+          "p05": 5,
+          "p50": 10,
+          "p95": 15,
+          "max": 24,
+          "countAtLeastObserved": 1208,
+          "empiricalTail": 0.060446977651117444
+        },
+        "C.minusA.top10": {
+          "observed": 1,
+          "mean": 0.1799,
+          "min": -11,
+          "p05": -4,
+          "p50": 0,
+          "p95": 5,
+          "max": 11,
+          "countAtLeastObserved": 9068,
+          "empiricalTail": 0.4534273286335683
+        }
+      }
+    },
+    "sameWeekday": {
+      "repetitions": 20000,
+      "groups": [
+        [
+          "2026-09-15",
+          "2026-09-22",
+          "2026-09-29",
+          "2026-10-06"
+        ],
+        [
+          "2026-09-16",
+          "2026-09-23",
+          "2026-09-30",
+          "2026-10-07"
+        ],
+        [
+          "2026-09-17",
+          "2026-09-24",
+          "2026-10-01",
+          "2026-10-08"
+        ],
+        [
+          "2026-09-18",
+          "2026-09-25",
+          "2026-10-02",
+          "2026-10-09"
+        ],
+        [
+          "2026-09-19",
+          "2026-09-26",
+          "2026-10-03",
+          "2026-10-10"
+        ],
+        [
+          "2026-09-21",
+          "2026-09-28",
+          "2026-10-05"
+        ]
+      ],
+      "metrics": {
+        "A.top3": {
+          "observed": 5,
+          "mean": 2.73355,
+          "min": 0,
+          "p05": 0,
+          "p50": 3,
+          "p95": 6,
+          "max": 9,
+          "countAtLeastObserved": 2749,
+          "empiricalTail": 0.1374931253437328
+        },
+        "A.top5": {
+          "observed": 8,
+          "mean": 4.14245,
+          "min": 0,
+          "p05": 1,
+          "p50": 4,
+          "p95": 7,
+          "max": 11,
+          "countAtLeastObserved": 905,
+          "empiricalTail": 0.045297735113244336
+        },
+        "A.top10": {
+          "observed": 15,
+          "mean": 9.2161,
+          "min": 1,
+          "p05": 5,
+          "p50": 9,
+          "p95": 13,
+          "max": 19,
+          "countAtLeastObserved": 390,
+          "empiricalTail": 0.019549022548872558
+        },
+        "A.pool": {
+          "observed": 46,
+          "mean": 48.3981,
+          "min": 37,
+          "p05": 43,
+          "p50": 48,
+          "p95": 53,
+          "max": 59,
+          "countAtLeastObserved": 16508,
+          "empiricalTail": 0.8254087295635218
+        },
+        "B.top10": {
+          "observed": 15,
+          "mean": 9.21845,
+          "min": 1,
+          "p05": 5,
+          "p50": 9,
+          "p95": 14,
+          "max": 20,
+          "countAtLeastObserved": 525,
+          "empiricalTail": 0.026298685065746712
+        },
+        "B.pool": {
+          "observed": 80,
+          "mean": 80.2499,
+          "min": 68,
+          "p05": 75,
+          "p50": 80,
+          "p95": 85,
+          "max": 91,
+          "countAtLeastObserved": 12097,
+          "empiricalTail": 0.6048697565121743
+        },
+        "C.top3": {
+          "observed": 9,
+          "mean": 4.59515,
+          "min": 0,
+          "p05": 2,
+          "p50": 4,
+          "p95": 8,
+          "max": 12,
+          "countAtLeastObserved": 388,
+          "empiricalTail": 0.019449027548622568
+        },
+        "C.top5": {
+          "observed": 12,
+          "mean": 6.6805,
+          "min": 0,
+          "p05": 3,
+          "p50": 7,
+          "p95": 10,
+          "max": 16,
+          "countAtLeastObserved": 312,
+          "empiricalTail": 0.015649217539123045
+        },
+        "C.top10": {
+          "observed": 16,
+          "mean": 11.4125,
+          "min": 3,
+          "p05": 7,
+          "p50": 11,
+          "p95": 16,
+          "max": 22,
+          "countAtLeastObserved": 1277,
+          "empiricalTail": 0.06389680515974201
+        },
+        "D.top3": {
+          "observed": 9,
+          "mean": 4.09365,
+          "min": 0,
+          "p05": 1,
+          "p50": 4,
+          "p95": 7,
+          "max": 12,
+          "countAtLeastObserved": 228,
+          "empiricalTail": 0.011449427528623568
+        },
+        "D.top5": {
+          "observed": 12,
+          "mean": 6.4305,
+          "min": 0,
+          "p05": 3,
+          "p50": 6,
+          "p95": 10,
+          "max": 16,
+          "countAtLeastObserved": 367,
+          "empiricalTail": 0.0183990800459977
+        },
+        "D.top10": {
+          "observed": 15,
+          "mean": 10.9069,
+          "min": 1,
+          "p05": 6,
+          "p50": 11,
+          "p95": 16,
+          "max": 22,
+          "countAtLeastObserved": 2095,
+          "empiricalTail": 0.1047947602619869
+        },
+        "C.minusA.top10": {
+          "observed": 1,
+          "mean": 2.1964,
+          "min": -7,
+          "p05": -2,
+          "p50": 2,
+          "p95": 6,
+          "max": 10,
+          "countAtLeastObserved": 15366,
+          "empiricalTail": 0.768311584420779
+        }
+      }
+    },
+    "sameMonth": {
+      "repetitions": 20000,
+      "groups": [
+        [
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-26",
+          "2026-09-28",
+          "2026-09-29",
+          "2026-09-30"
+        ],
+        [
+          "2026-10-01",
+          "2026-10-02",
+          "2026-10-03",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09",
+          "2026-10-10"
+        ]
+      ],
+      "metrics": {
+        "A.top3": {
+          "observed": 5,
+          "mean": 2.40415,
+          "min": 0,
+          "p05": 0,
+          "p50": 2,
+          "p95": 5,
+          "max": 10,
+          "countAtLeastObserved": 1915,
+          "empiricalTail": 0.09579521023948803
+        },
+        "A.top5": {
+          "observed": 8,
+          "mean": 4.6921,
+          "min": 0,
+          "p05": 2,
+          "p50": 5,
+          "p95": 8,
+          "max": 14,
+          "countAtLeastObserved": 1811,
+          "empiricalTail": 0.09059547022648867
+        },
+        "A.top10": {
+          "observed": 15,
+          "mean": 10.0486,
+          "min": 1,
+          "p05": 6,
+          "p50": 10,
+          "p95": 15,
+          "max": 23,
+          "countAtLeastObserved": 1258,
+          "empiricalTail": 0.06294685265736713
+        },
+        "A.pool": {
+          "observed": 46,
+          "mean": 48.48155,
+          "min": 30,
+          "p05": 40,
+          "p50": 48,
+          "p95": 57,
+          "max": 66,
+          "countAtLeastObserved": 14495,
+          "empiricalTail": 0.7247637618119094
+        },
+        "B.top10": {
+          "observed": 15,
+          "mean": 10.04965,
+          "min": 1,
+          "p05": 6,
+          "p50": 10,
+          "p95": 15,
+          "max": 23,
+          "countAtLeastObserved": 1232,
+          "empiricalTail": 0.0616469176541173
+        },
+        "B.pool": {
+          "observed": 80,
+          "mean": 82.68105,
+          "min": 63,
+          "p05": 75,
+          "p50": 83,
+          "p95": 90,
+          "max": 100,
+          "countAtLeastObserved": 15190,
+          "empiricalTail": 0.7595120243987801
+        },
+        "C.top3": {
+          "observed": 9,
+          "mean": 3.56395,
+          "min": 0,
+          "p05": 1,
+          "p50": 3,
+          "p95": 7,
+          "max": 12,
+          "countAtLeastObserved": 123,
+          "empiricalTail": 0.006199690015499225
+        },
+        "C.top5": {
+          "observed": 12,
+          "mean": 6.3157,
+          "min": 0,
+          "p05": 3,
+          "p50": 6,
+          "p95": 10,
+          "max": 15,
+          "countAtLeastObserved": 378,
+          "empiricalTail": 0.01894905254737263
+        },
+        "C.top10": {
+          "observed": 16,
+          "mean": 10.782,
+          "min": 1,
+          "p05": 6,
+          "p50": 11,
+          "p95": 16,
+          "max": 23,
+          "countAtLeastObserved": 1197,
+          "empiricalTail": 0.05989700514974251
+        },
+        "D.top3": {
+          "observed": 9,
+          "mean": 3.71205,
+          "min": 0,
+          "p05": 1,
+          "p50": 4,
+          "p95": 7,
+          "max": 12,
+          "countAtLeastObserved": 167,
+          "empiricalTail": 0.00839958002099895
+        },
+        "D.top5": {
+          "observed": 12,
+          "mean": 5.991,
+          "min": 0,
+          "p05": 3,
+          "p50": 6,
+          "p95": 10,
+          "max": 16,
+          "countAtLeastObserved": 257,
+          "empiricalTail": 0.012899355032248387
+        },
+        "D.top10": {
+          "observed": 15,
+          "mean": 10.37465,
+          "min": 1,
+          "p05": 6,
+          "p50": 10,
+          "p95": 15,
+          "max": 23,
+          "countAtLeastObserved": 1700,
+          "empiricalTail": 0.08504574771261438
+        },
+        "C.minusA.top10": {
+          "observed": 1,
+          "mean": 0.7334,
+          "min": -11,
+          "p05": -4,
+          "p50": 1,
+          "p95": 5,
+          "max": 13,
+          "countAtLeastObserved": 10623,
+          "empiricalTail": 0.5311734413279336
+        }
+      }
+    }
+  },
+  "limitation": "Mismo corpus septiembre-octubre 2026 ya optimizado y explorado. Permutaciones no reparan sesgo de selección de hipótesis ni prueban ventaja futura. Controles de resultados completos por fecha (5 turnos, 5 jurisdicciones), sin tocar geometría o Top."
+}
