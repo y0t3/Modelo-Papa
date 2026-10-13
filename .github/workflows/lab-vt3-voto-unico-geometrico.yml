@@ -1,0 +1,50 @@
+name: VT3 voto unico por geometria
+on:
+  push:
+    branches: [lab-vt3-voto-unico-geometrico-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-voto-unico-geometrico.mjs'
+      - 'PROTOCOLO_VT3_VOTO_UNICO_GEOMETRICO_13OCT2026.md'
+      - '.github/workflows/lab-vt3-voto-unico-geometrico.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  voto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar POST y conservar solo la ficha fisica PRE
+        run: |
+          mv auditorias /tmp/vt3-voto-unico-historico
+          mkdir -p auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026/
+          cp /tmp/vt3-voto-unico-historico/vt3-dominio-semanal-top3-top5-115-13oct2026/PRE_115.json auditorias/vt3-dominio-semanal-top3-top5-115-13oct2026/PRE_115.json
+          test "$(find auditorias -type f | wc -l)" -eq 1
+      - name: Preparar noventa cortes y sellar controles antes de las cabezas
+        run: node scripts/lab-vt3-voto-unico-geometrico.mjs pre
+      - name: Restaurar pasado y examinar secuencialmente cada turno sin futuro
+        run: |
+          mv auditorias/vt3-voto-unico-geometrico-90-13oct2026 /tmp/vt3-voto-unico-pre-sellado
+          cp -a /tmp/vt3-voto-unico-historico/. auditorias/
+          rm -rf auditorias/vt3-voto-unico-geometrico-90-13oct2026
+          mv /tmp/vt3-voto-unico-pre-sellado auditorias/vt3-voto-unico-geometrico-90-13oct2026
+          node scripts/lab-vt3-voto-unico-geometrico.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VT3-voto-unico-geometrico-90
+          path: auditorias/vt3-voto-unico-geometrico-90-13oct2026/
+          if-no-files-found: error
+          retention-days: 60
+      - name: Respaldar evidencia en rama de laboratorio sin tocar main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-voto-unico-geometrico-90-13oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): comparar voto por firma y forma unica con ejemplos repetidos'
+            git push origin HEAD:lab-vt3-voto-unico-geometrico-13oct2026
+          fi
