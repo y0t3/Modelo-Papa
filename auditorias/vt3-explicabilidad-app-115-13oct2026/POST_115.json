@@ -1,0 +1,6072 @@
+{
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "609/906",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "475/574",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "175/571",
+          "status": "FUERA_TOP10",
+          "rank": 11,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 2,
+          "d7": 0
+        },
+        {
+          "family": "248/842",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "549/945",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "205/502",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "014/410",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "037/730",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "576/675",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "237/732",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "365/563",
+          "status": "FUERA_TOP10",
+          "rank": 12,
+          "physicalRoutes": 3,
+          "admittedRoutes": 2,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "779/977",
+          "status": "EN_TOP10",
+          "rank": 7,
+          "physicalRoutes": 4,
+          "admittedRoutes": 3,
+          "d1": 3,
+          "d7": 0
+        },
+        {
+          "family": "105/501",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "539/935",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "596/695",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "417/714",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "298/892",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "565/565",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "103/301",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "267/762",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "265/562",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "698/896",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "696/696",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "174/471",
+          "status": "FUERA_TOP10",
+          "rank": 54,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "889/988",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "617/716",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "065/560",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "659/956",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "627/726",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "445/544",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "269/962",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "485/584",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "486/684",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "208/802",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "068/860",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "178/871",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "087/780",
+          "status": "FUERA_TOP10",
+          "rank": 12,
+          "physicalRoutes": 3,
+          "admittedRoutes": 3,
+          "d1": 1,
+          "d7": 1
+        },
+        {
+          "family": "445/544",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "059/950",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "108/801",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "457/754",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "467/764",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "107/701",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "798/897",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "475/574",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "339/933",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "135/531",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "233/332",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "267/762",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "070/070",
+          "status": "FUERA_TOP10",
+          "rank": 61,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "438/834",
+          "status": "FUERA_TOP10",
+          "rank": 18,
+          "physicalRoutes": 3,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "446/644",
+          "status": "EN_TOP3",
+          "rank": 1,
+          "physicalRoutes": 8,
+          "admittedRoutes": 8,
+          "d1": 1,
+          "d7": 4
+        },
+        {
+          "family": "578/875",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "748/847",
+          "status": "FUERA_TOP10",
+          "rank": 33,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "869/968",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": true,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "597/795",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "267/762",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "158/851",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "356/653",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "132/231",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "294/492",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "198/891",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "237/732",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "164/461",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "086/680",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "111/111",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "174/471",
+          "status": "FUERA_TOP10",
+          "rank": 33,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "677/776",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "042/240",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "476/674",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 3,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "438/834",
+          "status": "FUERA_TOP10",
+          "rank": 21,
+          "physicalRoutes": 5,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "417/714",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "464/464",
+          "status": "EN_TOP3",
+          "rank": 2,
+          "physicalRoutes": 6,
+          "admittedRoutes": 6,
+          "d1": 1,
+          "d7": 2
+        },
+        {
+          "family": "127/721",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": true,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "205/502",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "294/492",
+          "status": "FUERA_TOP10",
+          "rank": 46,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "106/601",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "658/856",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "229/922",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "144/441",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "054/450",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "262/262",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "177/771",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "839/938",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "019/910",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "194/491",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "034/430",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "344/443",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "617/716",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "317/713",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "082/280",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "447/744",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "138/831",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "537/735",
+          "status": "FUERA_TOP10",
+          "rank": 83,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "657/756",
+          "status": "FUERA_TOP10",
+          "rank": 90,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "828/828",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "446/644",
+          "status": "FUERA_TOP10",
+          "rank": 112,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "173/371",
+          "status": "EN_TOP10",
+          "rank": 8,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "798/897",
+          "status": "FUERA_TOP10",
+          "rank": 13,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 1,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "355/553",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "098/890",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "318/813",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "393/393",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "315/513",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "447/744",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "478/874",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "078/870",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "396/693",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "043/340",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "639/936",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "445/544",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "108/801",
+          "status": "FUERA_TOP10",
+          "rank": 31,
+          "physicalRoutes": 3,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "099/990",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "619/916",
+          "status": "FUERA_TOP10",
+          "rank": 43,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "499/994",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "335/533",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "537/735",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "356/653",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "264/462",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "709/907",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "626/626",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "011/110",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "109/901",
+          "status": "FUERA_TOP10",
+          "rank": 63,
+          "physicalRoutes": 3,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "044/440",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "108/801",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "203/302",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "122/221",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "274/472",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "073/370",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "578/875",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "556/655",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "446/644",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "227/722",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 4,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "456/654",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "065/560",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "489/984",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "529/925",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "779/977",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "476/674",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "052/250",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "306/603",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "215/512",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "246/642",
+          "status": "FUERA_TOP10",
+          "rank": 42,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 3,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "173/371",
+          "status": "FUERA_TOP10",
+          "rank": 42,
+          "physicalRoutes": 4,
+          "admittedRoutes": 2,
+          "d1": 4,
+          "d7": 0
+        },
+        {
+          "family": "529/925",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "153/351",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "134/431",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "063/360",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "358/853",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "666/666",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "596/695",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "609/906",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "738/837",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "838/838",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "228/822",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "456/654",
+          "status": "EN_TOP10",
+          "rank": 8,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 2,
+          "d7": 0
+        },
+        {
+          "family": "042/240",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "627/726",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "298/892",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "020/020",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "344/443",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "568/865",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "235/532",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "487/784",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "337/733",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "128/821",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "082/280",
+          "status": "FUERA_TOP10",
+          "rank": 35,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "345/543",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "427/724",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "057/750",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "207/702",
+          "status": "FUERA_TOP10",
+          "rank": 52,
+          "physicalRoutes": 4,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "517/715",
+          "status": "FUERA_TOP10",
+          "rank": 35,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "425/524",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "687/786",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "219/912",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "379/973",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "166/661",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "139/931",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "576/675",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "849/948",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "619/916",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "435/534",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "169/961",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "164/461",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "179/971",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "014/410",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "064/460",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "103/301",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "289/982",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "349/943",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "049/940",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "324/423",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "949/949",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "418/814",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "429/924",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "084/480",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "324/423",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "387/783",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "166/661",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "648/846",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "159/951",
+          "status": "EN_TOP10",
+          "rank": 5,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "417/714",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "474/474",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "576/675",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "496/694",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "559/955",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "025/520",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "056/650",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "334/433",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "194/491",
+          "status": "EN_TOP10",
+          "rank": 8,
+          "physicalRoutes": 3,
+          "admittedRoutes": 3,
+          "d1": 0,
+          "d7": 2
+        },
+        {
+          "family": "123/321",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "676/676",
+          "status": "FUERA_TOP10",
+          "rank": 20,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "189/981",
+          "status": "FUERA_TOP10",
+          "rank": 28,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 3
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "084/480",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "737/737",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "828/828",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "088/880",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "738/837",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "373/373",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "718/817",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "418/814",
+          "status": "FUERA_TOP10",
+          "rank": 74,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "076/670",
+          "status": "FUERA_TOP10",
+          "rank": 15,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "090/090",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "249/942",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "259/952",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "359/953",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "979/979",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "898/898",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "457/754",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "498/894",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "365/563",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "313/313",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "162/261",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "339/933",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "346/643",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "237/732",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "118/811",
+          "status": "EN_TOP10",
+          "rank": 6,
+          "physicalRoutes": 3,
+          "admittedRoutes": 3,
+          "d1": 1,
+          "d7": 1
+        },
+        {
+          "family": "889/988",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "256/652",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "299/992",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "708/807",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "415/514",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "164/461",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "197/791",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "395/593",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "429/924",
+          "status": "FUERA_TOP10",
+          "rank": 73,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "174/471",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "029/920",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "389/983",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "069/960",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "326/623",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "099/990",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "217/712",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "379/973",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "526/625",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "147/741",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "416/614",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "266/662",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "107/701",
+          "status": "FUERA_TOP10",
+          "rank": 52,
+          "physicalRoutes": 3,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "137/731",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 4,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "466/664",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "586/685",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "207/702",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "979/979",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "757/757",
+          "status": "FUERA_TOP10",
+          "rank": 66,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "003/300",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "606/606",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "299/992",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "283/382",
+          "status": "FUERA_TOP10",
+          "rank": 47,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 3
+        },
+        {
+          "family": "768/867",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "065/560",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "019/910",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "568/865",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "273/372",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "126/621",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "158/851",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "028/820",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "234/432",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "037/730",
+          "status": "FUERA_TOP10",
+          "rank": 16,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "165/561",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "104/401",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "297/792",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "159/951",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "949/949",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "319/913",
+          "status": "FUERA_TOP10",
+          "rank": 25,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 2,
+          "d7": 0
+        },
+        {
+          "family": "107/701",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "262/262",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "067/760",
+          "status": "FUERA_TOP10",
+          "rank": 18,
+          "physicalRoutes": 4,
+          "admittedRoutes": 2,
+          "d1": 0,
+          "d7": 1
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "086/680",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "182/281",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "508/805",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "517/715",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "949/949",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "137/731",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 4,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "245/542",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "718/817",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "778/877",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "168/861",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "223/322",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "304/403",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "181/181",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "308/803",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "305/503",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "515/515",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "444/444",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "377/773",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "154/451",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "389/983",
+          "status": "FUERA_TOP10",
+          "rank": 34,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "289/982",
+          "status": "EN_TOP10",
+          "rank": 6,
+          "physicalRoutes": 3,
+          "admittedRoutes": 3,
+          "d1": 4,
+          "d7": 0
+        },
+        {
+          "family": "687/786",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "185/581",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "606/606",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "647/746",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "626/626",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "262/262",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "027/720",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "137/731",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "101/101",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "497/794",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "709/907",
+          "status": "FUERA_TOP10",
+          "rank": 76,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "679/976",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "697/796",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "243/342",
+          "status": "FUERA_TOP10",
+          "rank": 15,
+          "physicalRoutes": 4,
+          "admittedRoutes": 2,
+          "d1": 1,
+          "d7": 1
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "229/922",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "159/951",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "355/553",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "215/512",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "206/602",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "408/804",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "019/910",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "107/701",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "849/948",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "094/490",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "173/371",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "859/958",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "778/877",
+          "status": "EN_TOP3",
+          "rank": 1,
+          "physicalRoutes": 3,
+          "admittedRoutes": 3,
+          "d1": 2,
+          "d7": 0
+        },
+        {
+          "family": "012/210",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "239/932",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": true,
+      "hit10": true
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "556/655",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "768/867",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "151/151",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "293/392",
+          "status": "FUERA_TOP10",
+          "rank": 26,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "167/761",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "848/848",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "094/490",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "687/786",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 4,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "067/760",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "124/421",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "738/837",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "357/753",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "123/321",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "748/847",
+          "status": "FUERA_TOP10",
+          "rank": 19,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "032/230",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "507/705",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "237/732",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "878/878",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "188/881",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "347/743",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "105/501",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "294/492",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "384/483",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 4,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "598/895",
+          "status": "FUERA_TOP10",
+          "rank": 58,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 0,
+          "d7": 1
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "265/562",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "207/702",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "799/997",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "308/803",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "189/981",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "485/584",
+          "status": "FUERA_TOP10",
+          "rank": 62,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "269/962",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "739/937",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "265/562",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "258/852",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "379/973",
+          "status": "FUERA_TOP10",
+          "rank": 21,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "303/303",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "397/793",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "539/935",
+          "status": "EN_TOP3",
+          "rank": 2,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 1,
+          "d7": 1
+        },
+        {
+          "family": "077/770",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": true,
+      "hit10": true
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "828/828",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "557/755",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "729/927",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "263/362",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "197/791",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "125/521",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "798/897",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "466/664",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "075/570",
+          "status": "FUERA_TOP10",
+          "rank": 18,
+          "physicalRoutes": 3,
+          "admittedRoutes": 2,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "006/600",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "313/313",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "799/997",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "155/551",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "686/686",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "288/882",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "499/994",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "328/823",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "343/343",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "313/313",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "979/979",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 3,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "778/877",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "318/813",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "548/845",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "377/773",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "232/232",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "177/771",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "124/421",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "112/211",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "383/383",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "416/614",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "378/873",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "265/562",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "295/592",
+          "status": "EN_TOP10",
+          "rank": 5,
+          "physicalRoutes": 5,
+          "admittedRoutes": 3,
+          "d1": 0,
+          "d7": 1
+        },
+        {
+          "family": "188/881",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "238/832",
+          "status": "EN_TOP10",
+          "rank": 4,
+          "physicalRoutes": 4,
+          "admittedRoutes": 3,
+          "d1": 0,
+          "d7": 1
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "566/665",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "234/432",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "429/924",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 6,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "016/610",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "129/921",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "226/622",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "377/773",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "267/762",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "060/060",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "266/662",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "798/897",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "059/950",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "072/270",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "171/171",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "339/933",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "529/925",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "068/860",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "318/813",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "667/766",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "194/491",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "315/513",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "719/917",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "168/861",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "729/927",
+          "status": "EN_TOP10",
+          "rank": 5,
+          "physicalRoutes": 6,
+          "admittedRoutes": 6,
+          "d1": 3,
+          "d7": 1
+        },
+        {
+          "family": "529/925",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "174/471",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "456/654",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "136/631",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "899/998",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "799/997",
+          "status": "FUERA_TOP10",
+          "rank": 15,
+          "physicalRoutes": 4,
+          "admittedRoutes": 4,
+          "d1": 1,
+          "d7": 2
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "314/413",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "558/855",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "449/944",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "327/723",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "577/775",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "505/505",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "163/361",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "659/956",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "818/818",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "159/951",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "697/796",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "142/241",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "019/910",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "077/770",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "748/847",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "508/805",
+          "status": "FUERA_TOP10",
+          "rank": 49,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "046/640",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "179/971",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "517/715",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "719/917",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "226/622",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 5,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "809/908",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "010/010",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "001/100",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "384/483",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "196/691",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "549/945",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "338/833",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "476/674",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 3,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "081/180",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "566/665",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "758/857",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "191/191",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "019/910",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "617/716",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "189/981",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "063/360",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "015/510",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "147/741",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "218/812",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "448/844",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "646/646",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "108/801",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "356/653",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "747/747",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "428/824",
+          "status": "FUERA_TOP10",
+          "rank": 46,
+          "physicalRoutes": 1,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "162/261",
+          "status": "FUERA_TOP10",
+          "rank": 37,
+          "physicalRoutes": 3,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "677/776",
+          "status": "FUERA_TOP10",
+          "rank": 58,
+          "physicalRoutes": 2,
+          "admittedRoutes": 1,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "144/441",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "778/877",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "175/571",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "579/975",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "387/783",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "103/301",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "152/251",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "218/812",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "103/301",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "405/504",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "556/655",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "486/684",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "599/995",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "006/600",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "567/765",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "457/754",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "448/844",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "179/971",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "346/643",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "008/800",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "316/613",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 2,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "071/170",
+          "status": "EN_TOP10",
+          "rank": 7,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 1,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": true
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "017/710",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 3,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "235/532",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "409/904",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "125/521",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "848/848",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "435/534",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "859/958",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "355/553",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "526/625",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "378/873",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "001/100",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "013/310",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "242/242",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "348/843",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "435/534",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "159/951",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "415/514",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "309/903",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "369/963",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "042/240",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "327/723",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "779/977",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "232/232",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "759/957",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "094/490",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "056/650",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "059/950",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "496/694",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "037/730",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "148/841",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "226/622",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "448/844",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "259/952",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "336/633",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "354/453",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 3,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "families": [
+        {
+          "family": "659/956",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "045/540",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "182/281",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "507/705",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "061/160",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "families": [
+        {
+          "family": "393/393",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "056/650",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "656/656",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "112/211",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "374/473",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "families": [
+        {
+          "family": "245/542",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "819/918",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "297/792",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "848/848",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "051/150",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "families": [
+        {
+          "family": "185/581",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "415/514",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "022/220",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "485/584",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "027/720",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        }
+      ],
+      "hit3": false,
+      "hit10": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "families": [
+        {
+          "family": "324/423",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "456/654",
+          "status": "EN_TOP10",
+          "rank": 5,
+          "physicalRoutes": 2,
+          "admittedRoutes": 2,
+          "d1": 1,
+          "d7": 0
+        },
+        {
+          "family": "044/440",
+          "status": "SIN_FORMACION",
+          "rank": null,
+          "physicalRoutes": 0,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "215/512",
+          "status": "FISICA_SIN_ANCLAJE",
+          "rank": null,
+          "physicalRoutes": 1,
+          "admittedRoutes": 0,
+          "d1": 0,
+          "d7": 0
+        },
+        {
+          "family": "465/564",
+          "status": "EN_TOP3",
+          "rank": 2,
+          "physicalRoutes": 4,
+          "admittedRoutes": 4,
+          "d1": 0,
+          "d7": 1
+        }
+      ],
+      "hit3": true,
+      "hit10": true
+    }
+  ]
+}

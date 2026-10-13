@@ -1,0 +1,223 @@
+{
+  "date": "2026-10-12",
+  "turn": "Nocturno",
+  "queries": {
+    "1615": {
+      "requested": "1615",
+      "family": "516/615",
+      "status": "FUERA_TOP10",
+      "physicalRoutes": 2,
+      "admittedRoutes": 1,
+      "unadmittedRoutes": 1,
+      "physicalSources": 2,
+      "independentRootEvents": 1,
+      "d1Events": 0,
+      "d7Events": 1,
+      "officialRank": 54,
+      "top3": false,
+      "top10": false,
+      "priorityReasons": [
+        {
+          "cutoff": 3,
+          "boundaryFamily": "555/555",
+          "boundaryRank": 3,
+          "decisiveCriterion": "Presencia de bifurcación física propia",
+          "candidateValue": 0,
+          "boundaryValue": 1
+        },
+        {
+          "cutoff": 10,
+          "boundaryFamily": "255/552",
+          "boundaryRank": 10,
+          "decisiveCriterion": "Presencia de bifurcación física propia",
+          "candidateValue": 0,
+          "boundaryValue": 1
+        }
+      ],
+      "routes": [
+        {
+          "source": "Primera",
+          "value": "516",
+          "cells": [
+            "1:1",
+            "2:0",
+            "1:0"
+          ],
+          "physicalKey": "Primera|1:0>2:0>1:1",
+          "admitted": true,
+          "rootEvents": [
+            {
+              "id": "2026-10-05|D−7|Matutino|Santa Fé|3729",
+              "date": "2026-10-05",
+              "period": "D−7",
+              "turn": "Matutino",
+              "jurisdiction": "Santa Fé",
+              "head": "3729",
+              "source": "Primera"
+            }
+          ]
+        },
+        {
+          "source": "Vespertino",
+          "value": "516",
+          "cells": [
+            "4:0",
+            "3:0",
+            "4:1"
+          ],
+          "physicalKey": "Vespertino|4:0>3:0>4:1",
+          "admitted": false,
+          "rootEvents": []
+        }
+      ],
+      "explanation": "Está admitida con respaldo propio, pero su puesto queda fuera de Top10. La prioridad del motor considera primero las bifurcaciones y luego los eventos D−1/D−7, fuentes y bloques.",
+      "rootedBlocks": 1,
+      "branchBlocks": 0
+    },
+    "3264": {
+      "requested": "3264",
+      "family": "264/462",
+      "status": "SIN_FORMACION",
+      "physicalRoutes": 0,
+      "admittedRoutes": 0,
+      "unadmittedRoutes": 0,
+      "physicalSources": 0,
+      "independentRootEvents": 0,
+      "d1Events": 0,
+      "d7Events": 0,
+      "officialRank": null,
+      "top3": false,
+      "top10": false,
+      "priorityReasons": [],
+      "routes": [],
+      "explanation": "La terna no forma ningún camino válido de tres celdas contiguas en las fuentes disponibles para este turno.",
+      "rootedBlocks": 0,
+      "branchBlocks": 0
+    },
+    "7242": {
+      "requested": "7242",
+      "family": "242/242",
+      "status": "FUERA_TOP10",
+      "physicalRoutes": 2,
+      "admittedRoutes": 1,
+      "unadmittedRoutes": 1,
+      "physicalSources": 1,
+      "independentRootEvents": 1,
+      "d1Events": 1,
+      "d7Events": 0,
+      "officialRank": 25,
+      "top3": false,
+      "top10": false,
+      "priorityReasons": [
+        {
+          "cutoff": 3,
+          "boundaryFamily": "555/555",
+          "boundaryRank": 3,
+          "decisiveCriterion": "Presencia de bifurcación física propia",
+          "candidateValue": 0,
+          "boundaryValue": 1
+        },
+        {
+          "cutoff": 10,
+          "boundaryFamily": "255/552",
+          "boundaryRank": 10,
+          "decisiveCriterion": "Presencia de bifurcación física propia",
+          "candidateValue": 0,
+          "boundaryValue": 1
+        }
+      ],
+      "routes": [
+        {
+          "source": "Vespertino",
+          "value": "242",
+          "cells": [
+            "0:0",
+            "1:0",
+            "2:1"
+          ],
+          "physicalKey": "Vespertino|0:0>1:0>2:1",
+          "admitted": false,
+          "rootEvents": []
+        },
+        {
+          "source": "Vespertino",
+          "value": "242",
+          "cells": [
+            "0:0",
+            "1:1",
+            "2:1"
+          ],
+          "physicalKey": "Vespertino|0:0>1:1>2:1",
+          "admitted": true,
+          "rootEvents": [
+            {
+              "id": "2026-10-10|D−1|Nocturno|Santa Fé|6215",
+              "date": "2026-10-10",
+              "period": "D−1",
+              "turn": "Nocturno",
+              "jurisdiction": "Santa Fé",
+              "head": "6215",
+              "source": "Vespertino"
+            }
+          ]
+        }
+      ],
+      "explanation": "Está admitida con respaldo propio, pero su puesto queda fuera de Top10. La prioridad del motor considera primero las bifurcaciones y luego los eventos D−1/D−7, fuentes y bloques.",
+      "rootedBlocks": 1,
+      "branchBlocks": 0
+    },
+    "8290": {
+      "requested": "8290",
+      "family": "092/290",
+      "status": "SIN_FORMACION",
+      "physicalRoutes": 0,
+      "admittedRoutes": 0,
+      "unadmittedRoutes": 0,
+      "physicalSources": 0,
+      "independentRootEvents": 0,
+      "d1Events": 0,
+      "d7Events": 0,
+      "officialRank": null,
+      "top3": false,
+      "top10": false,
+      "priorityReasons": [],
+      "routes": [],
+      "explanation": "La terna no forma ningún camino válido de tres celdas contiguas en las fuentes disponibles para este turno.",
+      "rootedBlocks": 0,
+      "branchBlocks": 0
+    },
+    "9851": {
+      "requested": "9851",
+      "family": "158/851",
+      "status": "FISICA_SIN_ANCLAJE",
+      "physicalRoutes": 1,
+      "admittedRoutes": 0,
+      "unadmittedRoutes": 1,
+      "physicalSources": 1,
+      "independentRootEvents": 0,
+      "d1Events": 0,
+      "d7Events": 0,
+      "officialRank": null,
+      "top3": false,
+      "top10": false,
+      "priorityReasons": [],
+      "routes": [
+        {
+          "source": "Primera",
+          "value": "158",
+          "cells": [
+            "2:0",
+            "1:1",
+            "2:1"
+          ],
+          "physicalKey": "Primera|2:0>1:1>2:1",
+          "admitted": false,
+          "rootEvents": []
+        }
+      ],
+      "explanation": "La familia existe físicamente, pero no fue admitida por Lalo: carece de un traslado/bifurcación con raíz histórica propia comprobada. No tiene puesto oficial; no se le presta respaldo de otra familia.",
+      "rootedBlocks": 0,
+      "branchBlocks": 0
+    }
+  }
+}

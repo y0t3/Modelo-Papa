@@ -1,0 +1,2887 @@
+{
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "officialTop3": [
+        "446/644",
+        "757/757",
+        "157/751"
+      ],
+      "officialTop10": [
+        "446/644",
+        "757/757",
+        "157/751",
+        "779/977",
+        "217/712",
+        "246/642",
+        "719/917",
+        "469/964",
+        "126/621",
+        "129/921"
+      ],
+      "officialPool": 19,
+      "physicallyPossible": 58,
+      "physicallyOnly": 39,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "officialTop3": [
+        "446/644",
+        "757/757",
+        "157/751"
+      ],
+      "officialTop10": [
+        "446/644",
+        "757/757",
+        "157/751",
+        "536/635",
+        "779/977",
+        "217/712",
+        "068/860",
+        "246/642",
+        "365/563",
+        "668/866"
+      ],
+      "officialPool": 29,
+      "physicallyPossible": 100,
+      "physicallyOnly": 71,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "officialTop3": [
+        "446/644",
+        "757/757",
+        "748/847"
+      ],
+      "officialTop10": [
+        "446/644",
+        "757/757",
+        "748/847",
+        "157/751",
+        "488/884",
+        "536/635",
+        "779/977",
+        "487/784",
+        "217/712",
+        "068/860"
+      ],
+      "officialPool": 43,
+      "physicallyPossible": 140,
+      "physicallyOnly": 97,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "748/847",
+        "446/644",
+        "488/884"
+      ],
+      "officialTop10": [
+        "748/847",
+        "446/644",
+        "488/884",
+        "618/816",
+        "046/640",
+        "757/757",
+        "157/751",
+        "536/635",
+        "779/977",
+        "646/646"
+      ],
+      "officialPool": 58,
+      "physicallyPossible": 172,
+      "physicallyOnly": 114,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "748/847",
+        "446/644",
+        "488/884"
+      ],
+      "officialTop10": [
+        "748/847",
+        "446/644",
+        "488/884",
+        "618/816",
+        "046/640",
+        "757/757",
+        "157/751",
+        "536/635",
+        "779/977",
+        "646/646"
+      ],
+      "officialPool": 75,
+      "physicallyPossible": 217,
+      "physicallyOnly": 142,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "officialTop3": [
+        "008/800",
+        "050/050",
+        "058/850"
+      ],
+      "officialTop10": [
+        "008/800",
+        "050/050",
+        "058/850",
+        "097/790",
+        "005/500",
+        "079/970",
+        "080/080",
+        "087/780",
+        "007/700",
+        "030/030"
+      ],
+      "officialPool": 34,
+      "physicallyPossible": 44,
+      "physicallyOnly": 10,
+      "testedCandidates": 22
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "officialTop3": [
+        "008/800",
+        "617/716",
+        "717/717"
+      ],
+      "officialTop10": [
+        "008/800",
+        "617/716",
+        "717/717",
+        "050/050",
+        "058/850",
+        "097/790",
+        "005/500",
+        "079/970",
+        "080/080",
+        "087/780"
+      ],
+      "officialPool": 50,
+      "physicallyPossible": 89,
+      "physicallyOnly": 39,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "officialTop3": [
+        "008/800",
+        "617/716",
+        "717/717"
+      ],
+      "officialTop10": [
+        "008/800",
+        "617/716",
+        "717/717",
+        "739/937",
+        "759/957",
+        "050/050",
+        "058/850",
+        "097/790",
+        "005/500",
+        "079/970"
+      ],
+      "officialPool": 54,
+      "physicallyPossible": 119,
+      "physicallyOnly": 65,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "008/800",
+        "617/716",
+        "717/717"
+      ],
+      "officialTop10": [
+        "008/800",
+        "617/716",
+        "717/717",
+        "739/937",
+        "759/957",
+        "899/998",
+        "050/050",
+        "058/850",
+        "097/790",
+        "005/500"
+      ],
+      "officialPool": 66,
+      "physicallyPossible": 169,
+      "physicallyOnly": 103,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "008/800",
+        "617/716",
+        "717/717"
+      ],
+      "officialTop10": [
+        "008/800",
+        "617/716",
+        "717/717",
+        "739/937",
+        "759/957",
+        "899/998",
+        "050/050",
+        "058/850",
+        "097/790",
+        "005/500"
+      ],
+      "officialPool": 76,
+      "physicallyPossible": 216,
+      "physicallyOnly": 140,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "officialTop3": [
+        "446/644",
+        "464/464",
+        "364/463"
+      ],
+      "officialTop10": [
+        "446/644",
+        "464/464",
+        "364/463",
+        "444/444",
+        "378/873",
+        "488/884",
+        "718/817",
+        "178/871",
+        "437/734",
+        "478/874"
+      ],
+      "officialPool": 33,
+      "physicallyPossible": 48,
+      "physicallyOnly": 15,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "officialTop3": [
+        "446/644",
+        "464/464",
+        "364/463"
+      ],
+      "officialTop10": [
+        "446/644",
+        "464/464",
+        "364/463",
+        "444/444",
+        "378/873",
+        "488/884",
+        "718/817",
+        "178/871",
+        "437/734",
+        "478/874"
+      ],
+      "officialPool": 39,
+      "physicallyPossible": 103,
+      "physicallyOnly": 64,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "officialTop3": [
+        "446/644",
+        "464/464",
+        "364/463"
+      ],
+      "officialTop10": [
+        "446/644",
+        "464/464",
+        "364/463",
+        "444/444",
+        "378/873",
+        "488/884",
+        "718/817",
+        "178/871",
+        "437/734",
+        "478/874"
+      ],
+      "officialPool": 42,
+      "physicallyPossible": 131,
+      "physicallyOnly": 89,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "446/644",
+        "464/464",
+        "364/463"
+      ],
+      "officialTop10": [
+        "446/644",
+        "464/464",
+        "364/463",
+        "444/444",
+        "378/873",
+        "488/884",
+        "718/817",
+        "178/871",
+        "437/734",
+        "478/874"
+      ],
+      "officialPool": 42,
+      "physicallyPossible": 185,
+      "physicallyOnly": 143,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "446/644",
+        "464/464",
+        "364/463"
+      ],
+      "officialTop10": [
+        "446/644",
+        "464/464",
+        "364/463",
+        "228/822",
+        "444/444",
+        "378/873",
+        "488/884",
+        "718/817",
+        "178/871",
+        "437/734"
+      ],
+      "officialPool": 45,
+      "physicallyPossible": 205,
+      "physicallyOnly": 160,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "officialTop3": [
+        "248/842",
+        "273/372",
+        "258/852"
+      ],
+      "officialTop10": [
+        "248/842",
+        "273/372",
+        "258/852",
+        "798/897",
+        "257/752",
+        "498/894",
+        "253/352",
+        "298/892",
+        "487/784",
+        "489/984"
+      ],
+      "officialPool": 68,
+      "physicallyPossible": 74,
+      "physicallyOnly": 6,
+      "testedCandidates": 18
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "officialTop3": [
+        "248/842",
+        "273/372",
+        "173/371"
+      ],
+      "officialTop10": [
+        "248/842",
+        "273/372",
+        "173/371",
+        "258/852",
+        "798/897",
+        "367/763",
+        "257/752",
+        "498/894",
+        "027/720",
+        "253/352"
+      ],
+      "officialPool": 84,
+      "physicallyPossible": 123,
+      "physicallyOnly": 39,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "officialTop3": [
+        "248/842",
+        "273/372",
+        "557/755"
+      ],
+      "officialTop10": [
+        "248/842",
+        "273/372",
+        "557/755",
+        "638/836",
+        "173/371",
+        "258/852",
+        "556/655",
+        "798/897",
+        "367/763",
+        "487/784"
+      ],
+      "officialPool": 95,
+      "physicallyPossible": 147,
+      "physicallyOnly": 52,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "455/554",
+        "248/842",
+        "273/372"
+      ],
+      "officialTop10": [
+        "455/554",
+        "248/842",
+        "273/372",
+        "547/745",
+        "557/755",
+        "638/836",
+        "172/271",
+        "173/371",
+        "205/502",
+        "258/852"
+      ],
+      "officialPool": 107,
+      "physicallyPossible": 178,
+      "physicallyOnly": 71,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "455/554",
+        "248/842",
+        "273/372"
+      ],
+      "officialTop10": [
+        "455/554",
+        "248/842",
+        "273/372",
+        "547/745",
+        "557/755",
+        "638/836",
+        "172/271",
+        "173/371",
+        "205/502",
+        "258/852"
+      ],
+      "officialPool": 117,
+      "physicallyPossible": 212,
+      "physicallyOnly": 95,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "officialTop3": [
+        "085/580",
+        "395/593",
+        "408/804"
+      ],
+      "officialTop10": [
+        "085/580",
+        "395/593",
+        "408/804",
+        "498/894",
+        "536/635",
+        "549/945",
+        "598/895",
+        "359/953",
+        "019/910",
+        "048/840"
+      ],
+      "officialPool": 22,
+      "physicallyPossible": 63,
+      "physicallyOnly": 41,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "officialTop3": [
+        "024/420",
+        "206/602",
+        "085/580"
+      ],
+      "officialTop10": [
+        "024/420",
+        "206/602",
+        "085/580",
+        "094/490",
+        "246/642",
+        "395/593",
+        "408/804",
+        "498/894",
+        "536/635",
+        "549/945"
+      ],
+      "officialPool": 47,
+      "physicallyPossible": 103,
+      "physicallyOnly": 56,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "officialTop3": [
+        "598/895",
+        "558/855",
+        "498/894"
+      ],
+      "officialTop10": [
+        "598/895",
+        "558/855",
+        "498/894",
+        "859/958",
+        "858/858",
+        "024/420",
+        "206/602",
+        "588/885",
+        "085/580",
+        "094/490"
+      ],
+      "officialPool": 59,
+      "physicallyPossible": 119,
+      "physicallyOnly": 60,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "505/505",
+        "598/895",
+        "558/855"
+      ],
+      "officialTop10": [
+        "505/505",
+        "598/895",
+        "558/855",
+        "498/894",
+        "859/958",
+        "858/858",
+        "024/420",
+        "206/602",
+        "588/885",
+        "025/520"
+      ],
+      "officialPool": 62,
+      "physicallyPossible": 140,
+      "physicallyOnly": 78,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "505/505",
+        "598/895",
+        "558/855"
+      ],
+      "officialTop10": [
+        "505/505",
+        "598/895",
+        "558/855",
+        "498/894",
+        "448/844",
+        "859/958",
+        "858/858",
+        "024/420",
+        "206/602",
+        "588/885"
+      ],
+      "officialPool": 71,
+      "physicallyPossible": 169,
+      "physicallyOnly": 98,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "officialTop3": [
+        "202/202",
+        "317/713",
+        "387/783"
+      ],
+      "officialTop10": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "204/402",
+        "206/602",
+        "187/781",
+        "022/220",
+        "226/622",
+        "278/872",
+        "318/813"
+      ],
+      "officialPool": 30,
+      "physicallyPossible": 46,
+      "physicallyOnly": 16,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "officialTop3": [
+        "202/202",
+        "317/713",
+        "387/783"
+      ],
+      "officialTop10": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "335/533",
+        "133/331",
+        "191/191",
+        "204/402",
+        "313/313",
+        "113/311",
+        "193/391"
+      ],
+      "officialPool": 46,
+      "physicallyPossible": 71,
+      "physicallyOnly": 25,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "officialTop3": [
+        "202/202",
+        "317/713",
+        "387/783"
+      ],
+      "officialTop10": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "335/533",
+        "133/331",
+        "191/191",
+        "204/402",
+        "313/313",
+        "113/311",
+        "193/391"
+      ],
+      "officialPool": 60,
+      "physicallyPossible": 103,
+      "physicallyOnly": 43,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "202/202",
+        "317/713",
+        "387/783"
+      ],
+      "officialTop10": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "335/533",
+        "094/490",
+        "133/331",
+        "191/191",
+        "204/402",
+        "313/313",
+        "113/311"
+      ],
+      "officialPool": 82,
+      "physicallyPossible": 150,
+      "physicallyOnly": 68,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "202/202",
+        "317/713",
+        "387/783"
+      ],
+      "officialTop10": [
+        "202/202",
+        "317/713",
+        "387/783",
+        "335/533",
+        "094/490",
+        "133/331",
+        "191/191",
+        "204/402",
+        "313/313",
+        "172/271"
+      ],
+      "officialPool": 91,
+      "physicallyPossible": 183,
+      "physicallyOnly": 92,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "officialTop3": [
+        "408/804",
+        "404/404",
+        "406/604"
+      ],
+      "officialTop10": [
+        "408/804",
+        "404/404",
+        "406/604",
+        "446/644",
+        "417/714",
+        "456/654",
+        "064/460",
+        "044/440",
+        "464/464",
+        "137/731"
+      ],
+      "officialPool": 34,
+      "physicallyPossible": 53,
+      "physicallyOnly": 19,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "officialTop3": [
+        "077/770",
+        "408/804",
+        "404/404"
+      ],
+      "officialTop10": [
+        "077/770",
+        "408/804",
+        "404/404",
+        "406/604",
+        "007/700",
+        "446/644",
+        "417/714",
+        "456/654",
+        "064/460",
+        "044/440"
+      ],
+      "officialPool": 46,
+      "physicallyPossible": 88,
+      "physicallyOnly": 42,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "officialTop3": [
+        "077/770",
+        "408/804",
+        "404/404"
+      ],
+      "officialTop10": [
+        "077/770",
+        "408/804",
+        "404/404",
+        "406/604",
+        "007/700",
+        "355/553",
+        "446/644",
+        "417/714",
+        "456/654",
+        "064/460"
+      ],
+      "officialPool": 50,
+      "physicallyPossible": 130,
+      "physicallyOnly": 80,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "077/770",
+        "408/804",
+        "404/404"
+      ],
+      "officialTop10": [
+        "077/770",
+        "408/804",
+        "404/404",
+        "406/604",
+        "007/700",
+        "355/553",
+        "446/644",
+        "417/714",
+        "456/654",
+        "064/460"
+      ],
+      "officialPool": 50,
+      "physicallyPossible": 163,
+      "physicallyOnly": 113,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "077/770",
+        "408/804",
+        "549/945"
+      ],
+      "officialTop10": [
+        "077/770",
+        "408/804",
+        "549/945",
+        "394/493",
+        "404/404",
+        "406/604",
+        "439/934",
+        "007/700",
+        "355/553",
+        "446/644"
+      ],
+      "officialPool": 63,
+      "physicallyPossible": 171,
+      "physicallyOnly": 108,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "officialTop3": [
+        "182/281",
+        "188/881",
+        "365/563"
+      ],
+      "officialTop10": [
+        "182/281",
+        "188/881",
+        "365/563",
+        "118/811",
+        "128/821",
+        "165/561",
+        "328/823",
+        "528/825",
+        "538/835",
+        "186/681"
+      ],
+      "officialPool": 29,
+      "physicallyPossible": 64,
+      "physicallyOnly": 35,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "officialTop3": [
+        "182/281",
+        "075/570",
+        "297/792"
+      ],
+      "officialTop10": [
+        "182/281",
+        "075/570",
+        "297/792",
+        "027/720",
+        "029/920",
+        "079/970",
+        "092/290",
+        "188/881",
+        "293/392",
+        "839/938"
+      ],
+      "officialPool": 54,
+      "physicallyPossible": 112,
+      "physicallyOnly": 58,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "officialTop3": [
+        "182/281",
+        "075/570",
+        "297/792"
+      ],
+      "officialTop10": [
+        "182/281",
+        "075/570",
+        "297/792",
+        "027/720",
+        "029/920",
+        "079/970",
+        "092/290",
+        "188/881",
+        "293/392",
+        "839/938"
+      ],
+      "officialPool": 54,
+      "physicallyPossible": 174,
+      "physicallyOnly": 120,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "182/281",
+        "075/570",
+        "297/792"
+      ],
+      "officialTop10": [
+        "182/281",
+        "075/570",
+        "297/792",
+        "027/720",
+        "029/920",
+        "079/970",
+        "092/290",
+        "188/881",
+        "293/392",
+        "839/938"
+      ],
+      "officialPool": 54,
+      "physicallyPossible": 216,
+      "physicallyOnly": 162,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "182/281",
+        "075/570",
+        "297/792"
+      ],
+      "officialTop10": [
+        "182/281",
+        "075/570",
+        "297/792",
+        "027/720",
+        "029/920",
+        "079/970",
+        "092/290",
+        "188/881",
+        "293/392",
+        "839/938"
+      ],
+      "officialPool": 54,
+      "physicallyPossible": 243,
+      "physicallyOnly": 189,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "officialTop3": [
+        "139/931",
+        "394/493",
+        "194/491"
+      ],
+      "officialTop10": [
+        "139/931",
+        "394/493",
+        "194/491",
+        "395/593",
+        "159/951",
+        "184/481",
+        "239/932",
+        "419/914",
+        "849/948",
+        "314/413"
+      ],
+      "officialPool": 52,
+      "physicallyPossible": 58,
+      "physicallyOnly": 6,
+      "testedCandidates": 18
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "officialTop3": [
+        "577/775",
+        "139/931",
+        "207/702"
+      ],
+      "officialTop10": [
+        "577/775",
+        "139/931",
+        "207/702",
+        "394/493",
+        "194/491",
+        "395/593",
+        "159/951",
+        "184/481",
+        "205/502",
+        "239/932"
+      ],
+      "officialPool": 61,
+      "physicallyPossible": 92,
+      "physicallyOnly": 31,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "officialTop3": [
+        "366/663",
+        "577/775",
+        "139/931"
+      ],
+      "officialTop10": [
+        "366/663",
+        "577/775",
+        "139/931",
+        "666/666",
+        "207/702",
+        "667/766",
+        "394/493",
+        "194/491",
+        "678/876",
+        "395/593"
+      ],
+      "officialPool": 72,
+      "physicallyPossible": 114,
+      "physicallyOnly": 42,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "366/663",
+        "577/775",
+        "139/931"
+      ],
+      "officialTop10": [
+        "366/663",
+        "577/775",
+        "139/931",
+        "054/450",
+        "666/666",
+        "354/453",
+        "404/404",
+        "207/702",
+        "667/766",
+        "078/870"
+      ],
+      "officialPool": 85,
+      "physicallyPossible": 165,
+      "physicallyOnly": 80,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "366/663",
+        "577/775",
+        "139/931"
+      ],
+      "officialTop10": [
+        "366/663",
+        "577/775",
+        "139/931",
+        "054/450",
+        "666/666",
+        "354/453",
+        "404/404",
+        "207/702",
+        "667/766",
+        "078/870"
+      ],
+      "officialPool": 85,
+      "physicallyPossible": 170,
+      "physicallyOnly": 85,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "officialTop3": [
+        "108/801",
+        "298/892",
+        "228/822"
+      ],
+      "officialTop10": [
+        "108/801",
+        "298/892",
+        "228/822",
+        "081/180",
+        "118/811",
+        "189/981",
+        "192/291",
+        "284/482",
+        "288/882",
+        "508/805"
+      ],
+      "officialPool": 37,
+      "physicallyPossible": 54,
+      "physicallyOnly": 17,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "officialTop3": [
+        "108/801",
+        "298/892",
+        "228/822"
+      ],
+      "officialTop10": [
+        "108/801",
+        "298/892",
+        "228/822",
+        "081/180",
+        "118/811",
+        "009/900",
+        "064/460",
+        "074/470",
+        "094/490",
+        "189/981"
+      ],
+      "officialPool": 54,
+      "physicallyPossible": 91,
+      "physicallyOnly": 37,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "officialTop3": [
+        "108/801",
+        "298/892",
+        "228/822"
+      ],
+      "officialTop10": [
+        "108/801",
+        "298/892",
+        "228/822",
+        "056/650",
+        "081/180",
+        "118/811",
+        "247/742",
+        "009/900",
+        "064/460",
+        "074/470"
+      ],
+      "officialPool": 68,
+      "physicallyPossible": 134,
+      "physicallyOnly": 66,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "454/454",
+        "203/302",
+        "458/854"
+      ],
+      "officialTop10": [
+        "454/454",
+        "203/302",
+        "458/854",
+        "202/202",
+        "108/801",
+        "448/844",
+        "298/892",
+        "228/822",
+        "056/650",
+        "081/180"
+      ],
+      "officialPool": 80,
+      "physicallyPossible": 157,
+      "physicallyOnly": 77,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "454/454",
+        "203/302",
+        "458/854"
+      ],
+      "officialTop10": [
+        "454/454",
+        "203/302",
+        "458/854",
+        "202/202",
+        "108/801",
+        "448/844",
+        "267/762",
+        "298/892",
+        "228/822",
+        "056/650"
+      ],
+      "officialPool": 89,
+      "physicallyPossible": 189,
+      "physicallyOnly": 100,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "officialTop3": [
+        "004/400",
+        "408/804",
+        "042/240"
+      ],
+      "officialTop10": [
+        "004/400",
+        "408/804",
+        "042/240",
+        "002/200",
+        "024/420",
+        "538/835",
+        "138/831",
+        "238/832",
+        "040/040",
+        "053/350"
+      ],
+      "officialPool": 33,
+      "physicallyPossible": 60,
+      "physicallyOnly": 27,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "officialTop3": [
+        "004/400",
+        "017/710",
+        "077/770"
+      ],
+      "officialTop10": [
+        "004/400",
+        "017/710",
+        "077/770",
+        "408/804",
+        "042/240",
+        "002/200",
+        "024/420",
+        "538/835",
+        "138/831",
+        "013/310"
+      ],
+      "officialPool": 43,
+      "physicallyPossible": 93,
+      "physicallyOnly": 50,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "officialTop3": [
+        "004/400",
+        "017/710",
+        "077/770"
+      ],
+      "officialTop10": [
+        "004/400",
+        "017/710",
+        "077/770",
+        "727/727",
+        "728/827",
+        "538/835",
+        "408/804",
+        "042/240",
+        "527/725",
+        "002/200"
+      ],
+      "officialPool": 59,
+      "physicallyPossible": 130,
+      "physicallyOnly": 71,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "004/400",
+        "017/710",
+        "077/770"
+      ],
+      "officialTop10": [
+        "004/400",
+        "017/710",
+        "077/770",
+        "727/727",
+        "728/827",
+        "797/797",
+        "538/835",
+        "408/804",
+        "042/240",
+        "527/725"
+      ],
+      "officialPool": 67,
+      "physicallyPossible": 156,
+      "physicallyOnly": 89,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "004/400",
+        "017/710",
+        "077/770"
+      ],
+      "officialTop10": [
+        "004/400",
+        "017/710",
+        "077/770",
+        "727/727",
+        "728/827",
+        "797/797",
+        "538/835",
+        "408/804",
+        "042/240",
+        "527/725"
+      ],
+      "officialPool": 67,
+      "physicallyPossible": 198,
+      "physicallyOnly": 131,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "officialTop3": [
+        "607/706",
+        "637/736",
+        "307/703"
+      ],
+      "officialTop10": [
+        "607/706",
+        "637/736",
+        "307/703",
+        "799/997",
+        "036/630",
+        "037/730",
+        "062/260",
+        "067/760",
+        "072/270",
+        "076/670"
+      ],
+      "officialPool": 26,
+      "physicallyPossible": 53,
+      "physicallyOnly": 27,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "officialTop3": [
+        "637/736",
+        "607/706",
+        "367/763"
+      ],
+      "officialTop10": [
+        "637/736",
+        "607/706",
+        "367/763",
+        "307/703",
+        "799/997",
+        "369/963",
+        "376/673",
+        "379/973",
+        "769/967",
+        "163/361"
+      ],
+      "officialPool": 47,
+      "physicallyPossible": 94,
+      "physicallyOnly": 47,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "officialTop3": [
+        "637/736",
+        "607/706",
+        "367/763"
+      ],
+      "officialTop10": [
+        "637/736",
+        "607/706",
+        "367/763",
+        "307/703",
+        "799/997",
+        "369/963",
+        "376/673",
+        "379/973",
+        "769/967",
+        "163/361"
+      ],
+      "officialPool": 53,
+      "physicallyPossible": 155,
+      "physicallyOnly": 102,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "637/736",
+        "607/706",
+        "367/763"
+      ],
+      "officialTop10": [
+        "637/736",
+        "607/706",
+        "367/763",
+        "307/703",
+        "799/997",
+        "369/963",
+        "376/673",
+        "379/973",
+        "769/967",
+        "163/361"
+      ],
+      "officialPool": 53,
+      "physicallyPossible": 185,
+      "physicallyOnly": 132,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "637/736",
+        "219/912",
+        "607/706"
+      ],
+      "officialTop10": [
+        "637/736",
+        "219/912",
+        "607/706",
+        "729/927",
+        "929/929",
+        "367/763",
+        "307/703",
+        "799/997",
+        "369/963",
+        "376/673"
+      ],
+      "officialPool": 63,
+      "physicallyPossible": 222,
+      "physicallyOnly": 159,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "officialTop3": [
+        "798/897",
+        "289/982",
+        "597/795"
+      ],
+      "officialTop10": [
+        "798/897",
+        "289/982",
+        "597/795",
+        "799/997",
+        "779/977",
+        "789/987",
+        "879/978",
+        "238/832",
+        "899/998",
+        "538/835"
+      ],
+      "officialPool": 36,
+      "physicallyPossible": 60,
+      "physicallyOnly": 24,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "officialTop3": [
+        "798/897",
+        "289/982",
+        "597/795"
+      ],
+      "officialTop10": [
+        "798/897",
+        "289/982",
+        "597/795",
+        "192/291",
+        "143/341",
+        "243/342",
+        "799/997",
+        "779/977",
+        "789/987",
+        "879/978"
+      ],
+      "officialPool": 56,
+      "physicallyPossible": 93,
+      "physicallyOnly": 37,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "officialTop3": [
+        "545/545",
+        "546/645",
+        "585/585"
+      ],
+      "officialTop10": [
+        "545/545",
+        "546/645",
+        "585/585",
+        "586/685",
+        "798/897",
+        "289/982",
+        "597/795",
+        "485/584",
+        "192/291",
+        "143/341"
+      ],
+      "officialPool": 74,
+      "physicallyPossible": 126,
+      "physicallyOnly": 52,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "799/997",
+        "789/987",
+        "079/970"
+      ],
+      "officialTop10": [
+        "799/997",
+        "789/987",
+        "079/970",
+        "545/545",
+        "546/645",
+        "585/585",
+        "586/685",
+        "729/927",
+        "798/897",
+        "597/795"
+      ],
+      "officialPool": 94,
+      "physicallyPossible": 165,
+      "physicallyOnly": 71,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "799/997",
+        "789/987",
+        "079/970"
+      ],
+      "officialTop10": [
+        "799/997",
+        "789/987",
+        "079/970",
+        "545/545",
+        "546/645",
+        "585/585",
+        "586/685",
+        "729/927",
+        "798/897",
+        "597/795"
+      ],
+      "officialPool": 94,
+      "physicallyPossible": 186,
+      "physicallyOnly": 92,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "officialTop3": [
+        "778/877",
+        "335/533",
+        "337/733"
+      ],
+      "officialTop10": [
+        "778/877",
+        "335/533",
+        "337/733",
+        "708/807",
+        "053/350",
+        "018/810",
+        "187/781",
+        "017/710",
+        "058/850",
+        "073/370"
+      ],
+      "officialPool": 15,
+      "physicallyPossible": 55,
+      "physicallyOnly": 40,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "officialTop3": [
+        "778/877",
+        "337/733",
+        "335/533"
+      ],
+      "officialTop10": [
+        "778/877",
+        "337/733",
+        "335/533",
+        "376/673",
+        "708/807",
+        "053/350",
+        "018/810",
+        "187/781",
+        "304/403",
+        "017/710"
+      ],
+      "officialPool": 26,
+      "physicallyPossible": 113,
+      "physicallyOnly": 87,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "officialTop3": [
+        "778/877",
+        "337/733",
+        "335/533"
+      ],
+      "officialTop10": [
+        "778/877",
+        "337/733",
+        "335/533",
+        "376/673",
+        "708/807",
+        "053/350",
+        "018/810",
+        "187/781",
+        "304/403",
+        "017/710"
+      ],
+      "officialPool": 30,
+      "physicallyPossible": 148,
+      "physicallyOnly": 118,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "778/877",
+        "337/733",
+        "335/533"
+      ],
+      "officialTop10": [
+        "778/877",
+        "337/733",
+        "335/533",
+        "209/902",
+        "259/952",
+        "376/673",
+        "708/807",
+        "809/908",
+        "879/978",
+        "053/350"
+      ],
+      "officialPool": 40,
+      "physicallyPossible": 206,
+      "physicallyOnly": 166,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "778/877",
+        "337/733",
+        "335/533"
+      ],
+      "officialTop10": [
+        "778/877",
+        "337/733",
+        "335/533",
+        "209/902",
+        "259/952",
+        "376/673",
+        "678/876",
+        "679/976",
+        "708/807",
+        "809/908"
+      ],
+      "officialPool": 46,
+      "physicallyPossible": 234,
+      "physicallyOnly": 188,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "officialTop3": [
+        "789/987",
+        "097/790",
+        "509/905"
+      ],
+      "officialTop10": [
+        "789/987",
+        "097/790",
+        "509/905",
+        "519/915",
+        "019/910",
+        "479/974",
+        "489/984",
+        "198/891",
+        "487/784",
+        "879/978"
+      ],
+      "officialPool": 34,
+      "physicallyPossible": 63,
+      "physicallyOnly": 29,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "officialTop3": [
+        "789/987",
+        "097/790",
+        "509/905"
+      ],
+      "officialTop10": [
+        "789/987",
+        "097/790",
+        "509/905",
+        "348/843",
+        "519/915",
+        "638/836",
+        "019/910",
+        "438/834",
+        "479/974",
+        "489/984"
+      ],
+      "officialPool": 48,
+      "physicallyPossible": 110,
+      "physicallyOnly": 62,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "officialTop3": [
+        "489/984",
+        "789/987",
+        "314/413"
+      ],
+      "officialTop10": [
+        "489/984",
+        "789/987",
+        "314/413",
+        "389/983",
+        "364/463",
+        "097/790",
+        "509/905",
+        "316/613",
+        "348/843",
+        "519/915"
+      ],
+      "officialPool": 64,
+      "physicallyPossible": 132,
+      "physicallyOnly": 68,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "489/984",
+        "789/987",
+        "049/940"
+      ],
+      "officialTop10": [
+        "489/984",
+        "789/987",
+        "049/940",
+        "314/413",
+        "389/983",
+        "099/990",
+        "364/463",
+        "097/790",
+        "509/905",
+        "065/560"
+      ],
+      "officialPool": 81,
+      "physicallyPossible": 172,
+      "physicallyOnly": 91,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "091/190",
+        "489/984",
+        "789/987"
+      ],
+      "officialTop10": [
+        "091/190",
+        "489/984",
+        "789/987",
+        "011/110",
+        "049/940",
+        "314/413",
+        "389/983",
+        "099/990",
+        "109/901",
+        "364/463"
+      ],
+      "officialPool": 96,
+      "physicallyPossible": 195,
+      "physicallyOnly": 99,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "officialTop3": [
+        "639/936",
+        "539/935",
+        "637/736"
+      ],
+      "officialTop10": [
+        "639/936",
+        "539/935",
+        "637/736",
+        "057/750",
+        "537/735",
+        "576/675",
+        "657/756",
+        "769/967",
+        "075/570",
+        "607/706"
+      ],
+      "officialPool": 33,
+      "physicallyPossible": 58,
+      "physicallyOnly": 25,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "officialTop3": [
+        "639/936",
+        "048/840",
+        "104/401"
+      ],
+      "officialTop10": [
+        "639/936",
+        "048/840",
+        "104/401",
+        "539/935",
+        "637/736",
+        "019/910",
+        "041/140",
+        "057/750",
+        "084/480",
+        "468/864"
+      ],
+      "officialPool": 46,
+      "physicallyPossible": 104,
+      "physicallyOnly": 58,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "officialTop3": [
+        "637/736",
+        "639/936",
+        "486/684"
+      ],
+      "officialTop10": [
+        "637/736",
+        "639/936",
+        "486/684",
+        "048/840",
+        "104/401",
+        "539/935",
+        "019/910",
+        "041/140",
+        "057/750",
+        "084/480"
+      ],
+      "officialPool": 56,
+      "physicallyPossible": 134,
+      "physicallyOnly": 78,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "637/736",
+        "639/936",
+        "486/684"
+      ],
+      "officialTop10": [
+        "637/736",
+        "639/936",
+        "486/684",
+        "048/840",
+        "104/401",
+        "539/935",
+        "019/910",
+        "041/140",
+        "057/750",
+        "084/480"
+      ],
+      "officialPool": 56,
+      "physicallyPossible": 172,
+      "physicallyOnly": 116,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "637/736",
+        "639/936",
+        "486/684"
+      ],
+      "officialTop10": [
+        "637/736",
+        "639/936",
+        "486/684",
+        "048/840",
+        "104/401",
+        "539/935",
+        "019/910",
+        "041/140",
+        "057/750",
+        "084/480"
+      ],
+      "officialPool": 56,
+      "physicallyPossible": 188,
+      "physicallyOnly": 132,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "officialTop3": [
+        "254/452",
+        "454/454",
+        "354/453"
+      ],
+      "officialTop10": [
+        "254/452",
+        "454/454",
+        "354/453",
+        "435/534",
+        "024/420",
+        "034/430",
+        "102/201",
+        "134/431",
+        "194/491",
+        "344/443"
+      ],
+      "officialPool": 29,
+      "physicallyPossible": 59,
+      "physicallyOnly": 30,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "officialTop3": [
+        "254/452",
+        "454/454",
+        "829/928"
+      ],
+      "officialTop10": [
+        "254/452",
+        "454/454",
+        "829/928",
+        "859/958",
+        "929/929",
+        "354/453",
+        "435/534",
+        "024/420",
+        "034/430",
+        "102/201"
+      ],
+      "officialPool": 54,
+      "physicallyPossible": 91,
+      "physicallyOnly": 37,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "officialTop3": [
+        "258/852",
+        "254/452",
+        "454/454"
+      ],
+      "officialTop10": [
+        "258/852",
+        "254/452",
+        "454/454",
+        "238/832",
+        "295/592",
+        "829/928",
+        "859/958",
+        "929/929",
+        "354/453",
+        "435/534"
+      ],
+      "officialPool": 60,
+      "physicallyPossible": 108,
+      "physicallyOnly": 48,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "258/852",
+        "254/452",
+        "454/454"
+      ],
+      "officialTop10": [
+        "258/852",
+        "254/452",
+        "454/454",
+        "238/832",
+        "295/592",
+        "829/928",
+        "859/958",
+        "929/929",
+        "354/453",
+        "435/534"
+      ],
+      "officialPool": 63,
+      "physicallyPossible": 162,
+      "physicallyOnly": 99,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "258/852",
+        "454/454",
+        "254/452"
+      ],
+      "officialTop10": [
+        "258/852",
+        "454/454",
+        "254/452",
+        "014/410",
+        "238/832",
+        "295/592",
+        "829/928",
+        "859/958",
+        "929/929",
+        "102/201"
+      ],
+      "officialPool": 71,
+      "physicallyPossible": 185,
+      "physicallyOnly": 114,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "officialTop3": [
+        "177/771",
+        "717/717",
+        "777/777"
+      ],
+      "officialTop10": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "338/833",
+        "377/773",
+        "317/713",
+        "738/837",
+        "787/787",
+        "778/877"
+      ],
+      "officialPool": 17,
+      "physicallyPossible": 21,
+      "physicallyOnly": 4,
+      "testedCandidates": 16
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "officialTop3": [
+        "177/771",
+        "717/717",
+        "777/777"
+      ],
+      "officialTop10": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "338/833",
+        "377/773",
+        "428/824",
+        "317/713",
+        "738/837",
+        "787/787"
+      ],
+      "officialPool": 34,
+      "physicallyPossible": 67,
+      "physicallyOnly": 33,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "officialTop3": [
+        "177/771",
+        "717/717",
+        "777/777"
+      ],
+      "officialTop10": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "729/927",
+        "338/833",
+        "377/773",
+        "428/824",
+        "797/797",
+        "317/713"
+      ],
+      "officialPool": 59,
+      "physicallyPossible": 106,
+      "physicallyOnly": 47,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "177/771",
+        "717/717",
+        "777/777"
+      ],
+      "officialTop10": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "729/927",
+        "338/833",
+        "377/773",
+        "428/824",
+        "797/797",
+        "317/713"
+      ],
+      "officialPool": 94,
+      "physicallyPossible": 178,
+      "physicallyOnly": 84,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "177/771",
+        "717/717",
+        "777/777"
+      ],
+      "officialTop10": [
+        "177/771",
+        "717/717",
+        "777/777",
+        "388/883",
+        "729/927",
+        "338/833",
+        "377/773",
+        "428/824",
+        "797/797",
+        "317/713"
+      ],
+      "officialPool": 94,
+      "physicallyPossible": 223,
+      "physicallyOnly": 129,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "officialTop3": [
+        "368/863",
+        "538/835",
+        "658/856"
+      ],
+      "officialTop10": [
+        "368/863",
+        "538/835",
+        "658/856",
+        "386/683",
+        "183/381",
+        "246/642",
+        "356/653",
+        "465/564",
+        "536/635",
+        "556/655"
+      ],
+      "officialPool": 17,
+      "physicallyPossible": 44,
+      "physicallyOnly": 27,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "officialTop3": [
+        "368/863",
+        "538/835",
+        "658/856"
+      ],
+      "officialTop10": [
+        "368/863",
+        "538/835",
+        "658/856",
+        "296/692",
+        "647/746",
+        "386/683",
+        "147/741",
+        "176/671",
+        "183/381",
+        "246/642"
+      ],
+      "officialPool": 26,
+      "physicallyPossible": 85,
+      "physicallyOnly": 59,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "officialTop3": [
+        "538/835",
+        "368/863",
+        "658/856"
+      ],
+      "officialTop10": [
+        "538/835",
+        "368/863",
+        "658/856",
+        "296/692",
+        "647/746",
+        "025/520",
+        "183/381",
+        "018/810",
+        "053/350",
+        "158/851"
+      ],
+      "officialPool": 58,
+      "physicallyPossible": 131,
+      "physicallyOnly": 73,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "538/835",
+        "296/692",
+        "368/863"
+      ],
+      "officialTop10": [
+        "538/835",
+        "296/692",
+        "368/863",
+        "658/856",
+        "647/746",
+        "025/520",
+        "183/381",
+        "018/810",
+        "053/350",
+        "158/851"
+      ],
+      "officialPool": 67,
+      "physicallyPossible": 185,
+      "physicallyOnly": 118,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "538/835",
+        "296/692",
+        "368/863"
+      ],
+      "officialTop10": [
+        "538/835",
+        "296/692",
+        "368/863",
+        "658/856",
+        "122/221",
+        "647/746",
+        "025/520",
+        "183/381",
+        "018/810",
+        "053/350"
+      ],
+      "officialPool": 74,
+      "physicallyPossible": 215,
+      "physicallyOnly": 141,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "officialTop3": [
+        "489/984",
+        "279/972",
+        "479/974"
+      ],
+      "officialTop10": [
+        "489/984",
+        "279/972",
+        "479/974",
+        "064/460",
+        "224/422",
+        "428/824",
+        "469/964",
+        "576/675",
+        "598/895",
+        "798/897"
+      ],
+      "officialPool": 24,
+      "physicallyPossible": 76,
+      "physicallyOnly": 52,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "officialTop3": [
+        "212/212",
+        "012/210",
+        "227/722"
+      ],
+      "officialTop10": [
+        "212/212",
+        "012/210",
+        "227/722",
+        "769/967",
+        "097/790",
+        "102/201",
+        "209/902",
+        "267/762",
+        "022/220",
+        "489/984"
+      ],
+      "officialPool": 48,
+      "physicallyPossible": 113,
+      "physicallyOnly": 65,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "officialTop3": [
+        "012/210",
+        "256/652",
+        "252/252"
+      ],
+      "officialTop10": [
+        "012/210",
+        "256/652",
+        "252/252",
+        "253/352",
+        "212/212",
+        "227/722",
+        "769/967",
+        "071/170",
+        "097/790",
+        "102/201"
+      ],
+      "officialPool": 62,
+      "physicallyPossible": 144,
+      "physicallyOnly": 82,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "012/210",
+        "256/652",
+        "252/252"
+      ],
+      "officialTop10": [
+        "012/210",
+        "256/652",
+        "252/252",
+        "253/352",
+        "485/584",
+        "212/212",
+        "227/722",
+        "769/967",
+        "071/170",
+        "097/790"
+      ],
+      "officialPool": 77,
+      "physicallyPossible": 194,
+      "physicallyOnly": 117,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "858/858",
+        "828/828",
+        "012/210"
+      ],
+      "officialTop10": [
+        "858/858",
+        "828/828",
+        "012/210",
+        "256/652",
+        "252/252",
+        "528/825",
+        "253/352",
+        "485/584",
+        "212/212",
+        "227/722"
+      ],
+      "officialPool": 91,
+      "physicallyPossible": 216,
+      "physicallyOnly": 125,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "officialTop3": [
+        "809/908",
+        "189/981",
+        "098/890"
+      ],
+      "officialTop10": [
+        "809/908",
+        "189/981",
+        "098/890",
+        "134/431",
+        "163/361",
+        "165/561",
+        "208/802",
+        "209/902",
+        "899/998",
+        "131/131"
+      ],
+      "officialPool": 22,
+      "physicallyPossible": 70,
+      "physicallyOnly": 48,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "officialTop3": [
+        "156/651",
+        "809/908",
+        "165/561"
+      ],
+      "officialTop10": [
+        "156/651",
+        "809/908",
+        "165/561",
+        "516/615",
+        "189/981",
+        "098/890",
+        "116/611",
+        "134/431",
+        "142/241",
+        "145/541"
+      ],
+      "officialPool": 44,
+      "physicallyPossible": 105,
+      "physicallyOnly": 61,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "officialTop3": [
+        "659/956",
+        "156/651",
+        "567/765"
+      ],
+      "officialTop10": [
+        "659/956",
+        "156/651",
+        "567/765",
+        "809/908",
+        "165/561",
+        "516/615",
+        "071/170",
+        "117/711",
+        "176/671",
+        "189/981"
+      ],
+      "officialPool": 57,
+      "physicallyPossible": 135,
+      "physicallyOnly": 78,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "145/541",
+        "149/941",
+        "659/956"
+      ],
+      "officialTop10": [
+        "145/541",
+        "149/941",
+        "659/956",
+        "156/651",
+        "567/765",
+        "172/271",
+        "809/908",
+        "165/561",
+        "516/615",
+        "071/170"
+      ],
+      "officialPool": 81,
+      "physicallyPossible": 178,
+      "physicallyOnly": 97,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "145/541",
+        "149/941",
+        "659/956"
+      ],
+      "officialTop10": [
+        "145/541",
+        "149/941",
+        "659/956",
+        "156/651",
+        "567/765",
+        "172/271",
+        "809/908",
+        "165/561",
+        "516/615",
+        "071/170"
+      ],
+      "officialPool": 81,
+      "physicallyPossible": 223,
+      "physicallyOnly": 142,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "officialTop3": [
+        "346/643",
+        "436/634",
+        "438/834"
+      ],
+      "officialTop10": [
+        "346/643",
+        "436/634",
+        "438/834",
+        "687/786",
+        "468/864",
+        "386/683",
+        "046/640",
+        "638/836",
+        "647/746",
+        "074/470"
+      ],
+      "officialPool": 33,
+      "physicallyPossible": 58,
+      "physicallyOnly": 25,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "officialTop3": [
+        "346/643",
+        "436/634",
+        "438/834"
+      ],
+      "officialTop10": [
+        "346/643",
+        "436/634",
+        "438/834",
+        "687/786",
+        "468/864",
+        "386/683",
+        "046/640",
+        "638/836",
+        "647/746",
+        "074/470"
+      ],
+      "officialPool": 33,
+      "physicallyPossible": 95,
+      "physicallyOnly": 62,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "officialTop3": [
+        "346/643",
+        "436/634",
+        "438/834"
+      ],
+      "officialTop10": [
+        "346/643",
+        "436/634",
+        "438/834",
+        "687/786",
+        "468/864",
+        "104/401",
+        "386/683",
+        "046/640",
+        "081/180",
+        "638/836"
+      ],
+      "officialPool": 51,
+      "physicallyPossible": 145,
+      "physicallyOnly": 94,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "388/883",
+        "346/643",
+        "436/634"
+      ],
+      "officialTop10": [
+        "388/883",
+        "346/643",
+        "436/634",
+        "438/834",
+        "687/786",
+        "468/864",
+        "053/350",
+        "104/401",
+        "386/683",
+        "046/640"
+      ],
+      "officialPool": 55,
+      "physicallyPossible": 176,
+      "physicallyOnly": 121,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "388/883",
+        "346/643",
+        "436/634"
+      ],
+      "officialTop10": [
+        "388/883",
+        "346/643",
+        "436/634",
+        "507/705",
+        "438/834",
+        "687/786",
+        "051/150",
+        "415/514",
+        "468/864",
+        "053/350"
+      ],
+      "officialPool": 64,
+      "physicallyPossible": 194,
+      "physicallyOnly": 130,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "officialTop3": [
+        "465/564",
+        "355/553",
+        "456/654"
+      ],
+      "officialTop10": [
+        "465/564",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "346/643",
+        "467/764",
+        "537/735",
+        "647/746",
+        "426/624"
+      ],
+      "officialPool": 13,
+      "physicallyPossible": 51,
+      "physicallyOnly": 38,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "officialTop3": [
+        "465/564",
+        "193/391",
+        "355/553"
+      ],
+      "officialTop10": [
+        "465/564",
+        "193/391",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "139/931",
+        "346/643",
+        "467/764",
+        "537/735"
+      ],
+      "officialPool": 32,
+      "physicallyPossible": 109,
+      "physicallyOnly": 77,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "officialTop3": [
+        "276/672",
+        "465/564",
+        "193/391"
+      ],
+      "officialTop10": [
+        "276/672",
+        "465/564",
+        "193/391",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "467/764",
+        "139/931",
+        "172/271"
+      ],
+      "officialPool": 57,
+      "physicallyPossible": 146,
+      "physicallyOnly": 89,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "officialTop3": [
+        "276/672",
+        "465/564",
+        "193/391"
+      ],
+      "officialTop10": [
+        "276/672",
+        "465/564",
+        "193/391",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "589/985",
+        "467/764",
+        "089/980"
+      ],
+      "officialPool": 69,
+      "physicallyPossible": 194,
+      "physicallyOnly": 125,
+      "testedCandidates": 27
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "officialTop3": [
+        "276/672",
+        "465/564",
+        "193/391"
+      ],
+      "officialTop10": [
+        "276/672",
+        "465/564",
+        "193/391",
+        "355/553",
+        "456/654",
+        "476/674",
+        "536/635",
+        "589/985",
+        "467/764",
+        "089/980"
+      ],
+      "officialPool": 69,
+      "physicallyPossible": 216,
+      "physicallyOnly": 147,
+      "testedCandidates": 27
+    }
+  ],
+  "summary": {
+    "cuts": 115,
+    "tests": 3071,
+    "anchoredChecks": 1380,
+    "physicallyOnlyChecks": 1691,
+    "officialRankingModified": false,
+    "resultLabelsAccessed": false
+  }
+}
