@@ -199,7 +199,11 @@ function predictUnseen(row,book){
   }).map(p=>p.family);
   let ranked=ordered;
   if(method==='FUSION_CONSERVADORA'){
-   ranked=[...row.original.slice(0,2),...ordered.filter(f=>!row.original.slice(0,2).includes(f))];
+   const fixed=row.original.slice(0,2);
+   const third=ordered.find(f=>!fixed.includes(f));
+   ranked=[...fixed,third,
+     ...row.original.filter(f=>!fixed.includes(f)&&f!==third),
+     ...ordered.filter(f=>!fixed.includes(f)&&f!==third&&!row.original.includes(f))];
   }
   full[method]=ranked.slice(0,10);
  }
