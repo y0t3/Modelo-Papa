@@ -1,0 +1,42 @@
+name: VT4 13oct Primera y Matutina reconstruidas
+on:
+  push:
+    branches: [lab-vt4-primeramatutino-13oct2026]
+    paths:
+      - 'scripts/lab-vt4-13oct2026.mjs'
+      - 'PROTOCOLO_VT4_PRIMERA_MATUTINA_13OCT2026.md'
+      - '.github/workflows/lab-vt4-13oct2026.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Reconstruir VT4 únicamente desde las entradas PRE del 13 de octubre
+        run: node scripts/lab-vt4-13oct2026.mjs pre
+      - name: Respaldar la reconstrucción ANTES del cotejo de cabezas
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-13oct2026/RECONSTRUCCION_PRE_VT4.json auditorias/vt4-13oct2026/SELLO.json
+          git commit -m 'audit(VT4): reconstrucción física previa al corte, posterior al sorteo'
+          git push origin HEAD:lab-vt4-primeramatutino-13oct2026
+      - name: Cotejar las cabezas completas de Primera y Matutina de la captura
+        run: node scripts/lab-vt4-13oct2026.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt4-primera-matutina-13oct
+          path: auditorias/vt4-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar POST con causas de admisión y de ranking
+        run: |
+          git add auditorias/vt4-13oct2026/POST_13OCT_VT4.json auditorias/vt4-13oct2026/RESUMEN.json
+          git commit -m 'audit(VT4): cotejo de rutas, madres y ranking de 5485 y 1057'
+          git push origin HEAD:lab-vt4-primeramatutino-13oct2026
