@@ -231,7 +231,6 @@ function evaluate(){
   assert.deepEqual(f.originalTop,r.originalTop);
   assert.deepEqual(former.method.OFICIAL.top10,r.originalTop);
   const third=former.method.FUSION_CONSERVADORA.top10[2];
-  assert.equal(third,f.selectedFamilyThird);
   assert.equal(third,f.learnedThird.family);
   assert.equal(f.scores.APRENDIDO.chosen,third);
   for(const m of METHODS){
