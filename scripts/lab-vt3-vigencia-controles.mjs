@@ -51,19 +51,9 @@ function buildPre(){
  }
  assert.equal(new Set(ranked.OFICIAL).size,ranked.OFICIAL.length);
  assert.deepEqual(ranked.OFICIAL,noct.strategies.A_ORIGINAL.map(x=>x.family));
- const full=new Map(noct.strategies.B_INVENTARIO.map(x=>[x.family,x]));
- const anchors=new Map(noct.strategies.A_ORIGINAL.map(x=>[x.family,x]));
- const targetCodes=['851','615','242','290','264'];
- const watch=targetCodes.map(x=>{
-  const f=family(x),physical=full.get(f),a=anchors.get(f);
-  return {value:x,family:f,physicalPossible:Boolean(physical),anchored:Boolean(a),
-   physicalRank:physical?.rank??null,originalRank:a?.rank??null,
-   roots:a?{d1:a.d1,d7:a.d7,bif:a.bif}:null,
-   ranks:Object.fromEntries(Object.entries(ranked).map(([policy,ordered])=>[policy,ordered.indexOf(f)+1||null]))};
- });
- save('NOCTURNA_VIGENCIA_PRE.json',{note:'12/10 Nocturna: reordenación retrospectiva sin usar cabezas objetivo. NO reemplaza el sello real PRE de GitHub Actions anterior al sorteo.',
-  pastDays:seen, 
-  nocturnaDate:noct.date,turn:noct.turn,profiles:candidates,rankings:ranked,watched:watch});
+ save('NOCTURNA_VIGENCIA_PRE.json',{note:'12/10 Nocturna: reordenación retrospectiva con históricos PRE, sin objetivos. NO reemplaza el sello PRE original anterior al sorteo.',
+  historyDates:Object.fromEntries(Object.entries(seen).map(([window,p])=>[window,p.dates])),
+  nocturnaDate:noct.date,turn:noct.turn,profiles:candidates,rankings:ranked});
  const seal={inputBasePre:sha(read(base+'PRE_115.json')),
   inputVigenciaPre:sha(read(vig+'PRE_115.json')),
   inputNocturnaPre:sha(read(base+'NOCTURNA_SIMULACION.json')),
@@ -71,7 +61,7 @@ function buildPre(){
   nocturnaPre:sha(read(vig+'NOCTURNA_VIGENCIA_PRE.json'))};
  // The sets in 'seen' above serialize as {}, but they are just audit dates; profiles retain correct presence counts.
  save('SELLO_CONTROLES.json',seal);
- console.log('NOCTURNA_VIGENCIA_PRE_OK',JSON.stringify({watch,top10:Object.fromEntries(Object.entries(ranked).map(([k,v])=>[k,v.slice(0,10)])),seal},null,2));
+ console.log('NOCTURNA_VIGENCIA_PRE_OK',JSON.stringify({top10:Object.fromEntries(Object.entries(ranked).map(([k,v])=>[k,v.slice(0,10)])),seal},null,2));
 }
 function negativeControls(){
  const seal=json(vig+'SELLO_CONTROLES.json');
@@ -148,6 +138,17 @@ function negativeControls(){
  const targets=npost.targets;
  assert.equal(targets.length,5);
  const wins=new Set(targets.map(targetFamily));
+ const originalNocturna=json(base+'NOCTURNA_SIMULACION.json').row;
+ const physical=new Map(originalNocturna.strategies.B_INVENTARIO.map(f=>[f.family,f]));
+ const anchored=new Map(originalNocturna.strategies.A_ORIGINAL.map(f=>[f.family,f]));
+ const watched=targets.map(h=>{
+  const f=targetFamily(h),x=physical.get(f),a=anchored.get(f);
+  return {head:h,vt3:h.slice(-3),family:f,physicalPossible:Boolean(x),anchored:Boolean(a),
+   physicalRank:x?.rank??null,originalRank:a?.rank??null,
+   roots:a?{d1:a.d1,d7:a.d7,bif:a.bif}:null,
+   historicalAppearances:noct.profiles.find(p=>p.family===f)?.physicalAppearances??null,
+   ranks:Object.fromEntries(Object.entries(noct.rankings).map(([policy,ordered])=>[policy,ordered.indexOf(f)+1||null]))};
+ });
  const candidates=Object.fromEntries(Object.entries(noct.rankings).map(([m,names])=>{
   const hits=names.filter(x=>wins.has(x));
   return [m,{top3:hits.filter(f=>names.indexOf(f)<3),top5:hits.filter(f=>names.indexOf(f)<5),
@@ -155,7 +156,7 @@ function negativeControls(){
  }));
  save('NOCTURNA_VIGENCIA_POST.json',{date:'2026-10-12',nocturnaTargetHeads:targets,
    names:targets.map(h=>({head:h,vt3:family(h.slice(-3))})),
-   diagnostics:noct.watched,candidates,
+   diagnostics:watched,candidates,
    interpretation:'Diagnóstico retrospectivo de sorteo YA CONOCIDO, no predicción ni nueva validación. Ninguna permutación abre familias sin anclaje.'});
  const summary={date:'2026-10-13',days:23,cuts:115,real,rotations: {count:22, metrics:summarize(rot.map(x=>x.scores))},
    placebo:results,seal,nocturnaPRE:sha(read(vig+'NOCTURNA_VIGENCIA_PRE.json')),
@@ -166,7 +167,7 @@ function negativeControls(){
  console.log('VIGENCIA_CONTROLES_POST_OK',JSON.stringify({real,rotation:summary.rotations.metrics,
   placebo:Object.fromEntries(Object.entries(results).map(([method,rs])=>[method,
    Object.fromEntries(Object.entries(rs.metrics).filter(([k])=>k.includes('NUEVA_7')||k==='ORIGINAL_TOP3'))])),
-  nocturnaTargets:targets,watched:noct.watched,
+  nocturnaTargets:targets,watched,
   nocturnaCandidates:candidates},null,2));
 }
 const mode=process.argv[2];if(mode==='pre')buildPre();else if(mode==='post')negativeControls();else throw Error('Usar pre o post');
