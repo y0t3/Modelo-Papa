@@ -1,0 +1,900 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "tiedCutCount": 62,
+  "group": {
+    "sizes": [
+      5,
+      5,
+      7,
+      3,
+      4,
+      5,
+      5,
+      7,
+      7,
+      14,
+      9,
+      7,
+      9,
+      3,
+      3,
+      3,
+      2,
+      2,
+      4,
+      7,
+      11,
+      14,
+      2,
+      3,
+      5,
+      10,
+      5,
+      5,
+      5,
+      4,
+      3,
+      8,
+      14,
+      14,
+      8,
+      4,
+      6,
+      4,
+      9,
+      11,
+      11,
+      11,
+      6,
+      2,
+      8,
+      12,
+      3,
+      4,
+      5,
+      2,
+      14,
+      7,
+      7,
+      2,
+      2,
+      4,
+      4,
+      3,
+      5,
+      6,
+      7,
+      7
+    ],
+    "minSize": 2,
+    "maxSize": 14,
+    "averageSize": 6.258,
+    "eligibleCompetitorExposures": 334,
+    "sizesByWindow": {
+      "1": 29,
+      "2": 33
+    },
+    "groupContainsWinnerCuts": 4,
+    "totalWinningFamilyExposuresInGroup": 4,
+    "rescueOpportunities": [
+      {
+        "date": "2026-09-15",
+        "turn": "Previa",
+        "winningOutside": [
+          "175/571"
+        ]
+      },
+      {
+        "date": "2026-09-16",
+        "turn": "Matutino",
+        "winningOutside": [
+          "087/780"
+        ]
+      }
+    ],
+    "expectedWinnerFamilyExposuresUnderUniform": 1.276190476190476
+  },
+  "overall": {
+    "ORIGINAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gained": [],
+      "lost": []
+    },
+    "MAS_BLOQUES_ANCLADOS": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gained": [],
+      "lost": []
+    },
+    "MAS_TRAMOS_ANCLADOS": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gained": [],
+      "lost": []
+    },
+    "RAIZ_EN_FUENTE_RECIENTE": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gained": [],
+      "lost": []
+    },
+    "AUSENTE_JORNADA_ANTERIOR": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gained": [],
+      "lost": []
+    },
+    "PROPORCION_ANCLADA": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gained": [],
+      "lost": []
+    },
+    "ALFABETO_INVERSO": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "gained": [
+        "2026-09-16|Matutino"
+      ],
+      "lost": []
+    },
+    "HASH_FIJO": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "gained": [
+        "2026-09-16|Matutino"
+      ],
+      "lost": []
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "ORIGINAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_BLOQUES_ANCLADOS": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_TRAMOS_ANCLADOS": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained": [],
+        "lost": []
+      },
+      "RAIZ_EN_FUENTE_RECIENTE": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained": [],
+        "lost": []
+      },
+      "AUSENTE_JORNADA_ANTERIOR": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained": [],
+        "lost": []
+      },
+      "PROPORCION_ANCLADA": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained": [],
+        "lost": []
+      },
+      "ALFABETO_INVERSO": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "gained": [
+          "2026-09-16|Matutino"
+        ],
+        "lost": []
+      },
+      "HASH_FIJO": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "gained": [
+          "2026-09-16|Matutino"
+        ],
+        "lost": []
+      }
+    },
+    "2026-10": {
+      "ORIGINAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_BLOQUES_ANCLADOS": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_TRAMOS_ANCLADOS": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "RAIZ_EN_FUENTE_RECIENTE": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "AUSENTE_JORNADA_ANTERIOR": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "PROPORCION_ANCLADA": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "ALFABETO_INVERSO": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      },
+      "HASH_FIJO": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained": [],
+        "lost": []
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_BLOQUES_ANCLADOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_TRAMOS_ANCLADOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "RAIZ_EN_FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "AUSENTE_JORNADA_ANTERIOR": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "PROPORCION_ANCLADA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "ALFABETO_INVERSO": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "HASH_FIJO": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Primera": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_BLOQUES_ANCLADOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_TRAMOS_ANCLADOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "RAIZ_EN_FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "AUSENTE_JORNADA_ANTERIOR": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "PROPORCION_ANCLADA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "ALFABETO_INVERSO": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      },
+      "HASH_FIJO": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Matutino": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_BLOQUES_ANCLADOS": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_TRAMOS_ANCLADOS": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained": [],
+        "lost": []
+      },
+      "RAIZ_EN_FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained": [],
+        "lost": []
+      },
+      "AUSENTE_JORNADA_ANTERIOR": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained": [],
+        "lost": []
+      },
+      "PROPORCION_ANCLADA": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained": [],
+        "lost": []
+      },
+      "ALFABETO_INVERSO": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "gained": [
+          "2026-09-16|Matutino"
+        ],
+        "lost": []
+      },
+      "HASH_FIJO": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "gained": [
+          "2026-09-16|Matutino"
+        ],
+        "lost": []
+      }
+    },
+    "Vespertino": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_BLOQUES_ANCLADOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_TRAMOS_ANCLADOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "RAIZ_EN_FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "AUSENTE_JORNADA_ANTERIOR": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "PROPORCION_ANCLADA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "ALFABETO_INVERSO": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      },
+      "HASH_FIJO": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained": [],
+        "lost": []
+      }
+    },
+    "Nocturno": {
+      "ORIGINAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_BLOQUES_ANCLADOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "MAS_TRAMOS_ANCLADOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "RAIZ_EN_FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "AUSENTE_JORNADA_ANTERIOR": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "PROPORCION_ANCLADA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "ALFABETO_INVERSO": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      },
+      "HASH_FIJO": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained": [],
+        "lost": []
+      }
+    }
+  },
+  "randomControl": {
+    "ORIGINAL": {
+      "min": 15,
+      "p05": 15,
+      "median": 16,
+      "p95": 17,
+      "max": 17,
+      "mean": 15.738,
+      "fractionAtLeastAgainst": 1,
+      "histogram": {
+        "15": 785,
+        "16": 954,
+        "17": 261
+      }
+    },
+    "MAS_BLOQUES_ANCLADOS": {
+      "min": 15,
+      "p05": 15,
+      "median": 16,
+      "p95": 17,
+      "max": 17,
+      "mean": 15.738,
+      "fractionAtLeastAgainst": 1,
+      "histogram": {
+        "15": 785,
+        "16": 954,
+        "17": 261
+      }
+    },
+    "MAS_TRAMOS_ANCLADOS": {
+      "min": 15,
+      "p05": 15,
+      "median": 16,
+      "p95": 17,
+      "max": 17,
+      "mean": 15.738,
+      "fractionAtLeastAgainst": 1,
+      "histogram": {
+        "15": 785,
+        "16": 954,
+        "17": 261
+      }
+    },
+    "RAIZ_EN_FUENTE_RECIENTE": {
+      "min": 15,
+      "p05": 15,
+      "median": 16,
+      "p95": 17,
+      "max": 17,
+      "mean": 15.738,
+      "fractionAtLeastAgainst": 1,
+      "histogram": {
+        "15": 785,
+        "16": 954,
+        "17": 261
+      }
+    },
+    "AUSENTE_JORNADA_ANTERIOR": {
+      "min": 15,
+      "p05": 15,
+      "median": 16,
+      "p95": 17,
+      "max": 17,
+      "mean": 15.738,
+      "fractionAtLeastAgainst": 1,
+      "histogram": {
+        "15": 785,
+        "16": 954,
+        "17": 261
+      }
+    },
+    "PROPORCION_ANCLADA": {
+      "min": 15,
+      "p05": 15,
+      "median": 16,
+      "p95": 17,
+      "max": 17,
+      "mean": 15.738,
+      "fractionAtLeastAgainst": 1,
+      "histogram": {
+        "15": 785,
+        "16": 954,
+        "17": 261
+      }
+    },
+    "ALFABETO_INVERSO": {
+      "min": 15,
+      "p05": 15,
+      "median": 16,
+      "p95": 17,
+      "max": 17,
+      "mean": 15.738,
+      "fractionAtLeastAgainst": 0.6075,
+      "histogram": {
+        "15": 785,
+        "16": 954,
+        "17": 261
+      }
+    },
+    "HASH_FIJO": {
+      "min": 15,
+      "p05": 15,
+      "median": 16,
+      "p95": 17,
+      "max": 17,
+      "mean": 15.738,
+      "fractionAtLeastAgainst": 0.6075,
+      "histogram": {
+        "15": 785,
+        "16": 954,
+        "17": 261
+      }
+    }
+  },
+  "randomWinnerExposures": {
+    "min": 0,
+    "p05": 0,
+    "median": 1,
+    "p95": 3,
+    "max": 4,
+    "mean": 1.288,
+    "fractionAtLeastAgainst": null,
+    "histogram": {
+      "0": 418,
+      "1": 793,
+      "2": 597,
+      "3": 179,
+      "4": 13
+    }
+  },
+  "placebos": {
+    "free": {
+      "MAS_BLOQUES_ANCLADOS": {
+        "observedDelta": 0,
+        "nullMean": 0.0906,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 1
+      },
+      "MAS_TRAMOS_ANCLADOS": {
+        "observedDelta": 0,
+        "nullMean": 0.0511,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 0.8967051647417629
+      },
+      "RAIZ_EN_FUENTE_RECIENTE": {
+        "observedDelta": 0,
+        "nullMean": 0.1746,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 0.8524573771311434
+      },
+      "AUSENTE_JORNADA_ANTERIOR": {
+        "observedDelta": 0,
+        "nullMean": 0.0059,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 0.9233538323083845
+      },
+      "PROPORCION_ANCLADA": {
+        "observedDelta": 0,
+        "nullMean": 0.0519,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 0.7997600119994001
+      },
+      "ALFABETO_INVERSO": {
+        "observedDelta": 1,
+        "nullMean": -0.1695,
+        "p05": -2,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 0.22148892555372232
+      },
+      "HASH_FIJO": {
+        "observedDelta": 1,
+        "nullMean": -0.1254,
+        "p05": -2,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 0.2110394480275986
+      }
+    },
+    "sameWeekday": {
+      "MAS_BLOQUES_ANCLADOS": {
+        "observedDelta": 0,
+        "nullMean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "upperTail": 1
+      },
+      "MAS_TRAMOS_ANCLADOS": {
+        "observedDelta": 0,
+        "nullMean": 0.2477,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 1
+      },
+      "RAIZ_EN_FUENTE_RECIENTE": {
+        "observedDelta": 0,
+        "nullMean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "upperTail": 1
+      },
+      "AUSENTE_JORNADA_ANTERIOR": {
+        "observedDelta": 0,
+        "nullMean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "upperTail": 1
+      },
+      "PROPORCION_ANCLADA": {
+        "observedDelta": 0,
+        "nullMean": 0.2528,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 1
+      },
+      "ALFABETO_INVERSO": {
+        "observedDelta": 1,
+        "nullMean": 0.1685,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 0.3140342982850857
+      },
+      "HASH_FIJO": {
+        "observedDelta": 1,
+        "nullMean": -0.081,
+        "p05": -1,
+        "median": 0,
+        "p95": 1,
+        "upperTail": 0.16994150292485377
+      }
+    }
+  },
+  "seal": {
+    "source": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "priorPre": "aefca578e4b2a5da5cdf8784c7538976452cad7b627481ac0bdee2299b7f72ee",
+    "code": "bde21cdf49d42114064869dbdbb9dde89008cee3c53b2e57547b8ee19135f697",
+    "protocol": "74127cf25a9f1dc60a27f47caf31b2920f5021ca3cd7f24d551b561f7b920fe7",
+    "pre": "7308e8ff41e3fe4602fca9c6ee7491ef609b507e84e9f63e2da293e5a93449d0",
+    "randomPre": "254f30b1227712230f37bc48d6abbf73f40b0f5c4c4f2f9df6bb05c635137660"
+  },
+  "sourcePost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "warning": "PRE sellado sin objetivos; diseño e hipótesis inspirados por corpus ya conocido. Sin validación prospectiva de sorteos aleatorios."
+}

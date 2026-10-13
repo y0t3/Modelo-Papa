@@ -1,0 +1,7987 @@
+{
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "3609",
+        "0475",
+        "7175",
+        "6842",
+        "7945"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [
+        "175/571"
+      ],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [
+        "175/571"
+      ],
+      "groupContainsWin": true,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "1205",
+        "1014",
+        "6037",
+        "3576",
+        "3237"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "4563",
+        "1977",
+        "7105",
+        "2935",
+        "8695"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "779/977"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "779/977"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "779/977"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "779/977"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "779/977"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "779/977"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "779/977"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "779/977"
+          ]
+        }
+      },
+      "familyWinnersInTie": [
+        "365/563"
+      ],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [
+        "365/563"
+      ],
+      "groupContainsWin": true,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "4714",
+        "1298",
+        "9565",
+        "3103",
+        "5267"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "1265",
+        "5698",
+        "6696",
+        "6174",
+        "8889"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "3716",
+        "3560",
+        "8956",
+        "6627",
+        "5445"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "tieBoundary": false,
+      "targetHeads": [
+        "4962",
+        "0584",
+        "0486",
+        "0802",
+        "6068"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "9178",
+        "6087",
+        "6445",
+        "6950",
+        "3108"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "087/780"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "087/780"
+          ]
+        }
+      },
+      "familyWinnersInTie": [
+        "087/780"
+      ],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [
+        "087/780"
+      ],
+      "groupContainsWin": true,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "8754",
+        "1764",
+        "4701",
+        "6897",
+        "1574"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "2933",
+        "9135",
+        "4332",
+        "7267",
+        "8070"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "1438",
+        "9446",
+        "6875",
+        "9748",
+        "8869"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "446/644"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "446/644"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "446/644"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "446/644"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "446/644"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "446/644"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "446/644"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "446/644"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "tieBoundary": false,
+      "targetHeads": [
+        "7795",
+        "6267",
+        "6158",
+        "6356",
+        "4132"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "0492",
+        "5198",
+        "6732",
+        "9237",
+        "7461"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "4680",
+        "6111",
+        "9471",
+        "8776",
+        "1240"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "7476",
+        "0438",
+        "6417",
+        "1464",
+        "6721"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "464/464"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "464/464"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "464/464"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "464/464"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "464/464"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "464/464"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "464/464"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "464/464"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "7502",
+        "3294",
+        "3601",
+        "6856",
+        "7922"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "8144",
+        "1054",
+        "3262",
+        "2177",
+        "2938"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "0910",
+        "4194",
+        "9034",
+        "1443",
+        "6716"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "6317",
+        "8280",
+        "7447",
+        "3831",
+        "2735"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "1657",
+        "0828",
+        "9644",
+        "3173",
+        "5798"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "173/371"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "173/371"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "173/371"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "173/371"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "173/371"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "173/371",
+            "798/897"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "173/371",
+            "798/897"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "173/371"
+          ]
+        }
+      },
+      "familyWinnersInTie": [
+        "798/897"
+      ],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [
+        "798/897"
+      ],
+      "groupContainsWin": true,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "6553",
+        "6890",
+        "8318",
+        "2393",
+        "0315"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "5447",
+        "4874",
+        "2078",
+        "4693",
+        "7870"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "9043",
+        "0639",
+        "2544",
+        "6801",
+        "0099"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "6619",
+        "5994",
+        "8533",
+        "1537",
+        "4356"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "2462",
+        "6907",
+        "3626",
+        "2011",
+        "4109"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "7440",
+        "4108",
+        "9302",
+        "4122",
+        "1274"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "8073",
+        "9875",
+        "0556",
+        "9644",
+        "0722"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "1654",
+        "8560",
+        "4984",
+        "0529",
+        "3779"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "9674",
+        "6250",
+        "1306",
+        "5512",
+        "4246"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "7173",
+        "1529",
+        "9153",
+        "4134",
+        "5360"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "0358",
+        "9666",
+        "0596",
+        "8609",
+        "3837"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "0838",
+        "6228",
+        "1654",
+        "3042",
+        "8627"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "456/654"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "456/654"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "456/654"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "456/654"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "456/654"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "456/654"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "456/654"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "456/654"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "1892",
+        "6020",
+        "9344",
+        "2568",
+        "5235"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "1784",
+        "1733",
+        "1128",
+        "7082",
+        "4345"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "0724",
+        "9750",
+        "8207",
+        "6517",
+        "6524"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "3687",
+        "9912",
+        "3379",
+        "7661",
+        "4139"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "tieBoundary": false,
+      "targetHeads": [
+        "7576",
+        "1948",
+        "7619",
+        "8435",
+        "2961"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "0461",
+        "3971",
+        "0410",
+        "8064",
+        "1103"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "2982",
+        "9349",
+        "0940",
+        "3423",
+        "4949"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "1418",
+        "0924",
+        "8480",
+        "5423",
+        "9387"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "4661",
+        "1846",
+        "3159",
+        "3714",
+        "7474"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "159/951"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "159/951"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "159/951"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "159/951"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "159/951"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "159/951"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "159/951"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "159/951"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "tieBoundary": false,
+      "targetHeads": [
+        "9576",
+        "4496",
+        "7955",
+        "9025",
+        "5056"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "1433",
+        "0194",
+        "8123",
+        "2676",
+        "0189"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "194/491"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "194/491"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "194/491"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "194/491"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "194/491"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "194/491"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "194/491"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "194/491"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "9480",
+        "9737",
+        "3828",
+        "4088",
+        "5738"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "7373",
+        "1817",
+        "3418",
+        "4670",
+        "3090"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "3249",
+        "0259",
+        "8953",
+        "7979",
+        "7898"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "1754",
+        "0894",
+        "5365",
+        "6313",
+        "0162"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "6933",
+        "5643",
+        "9237",
+        "6811",
+        "0889"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "118/811"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "118/811"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "118/811"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "118/811"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "118/811"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "118/811"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "118/811"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "118/811"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "1256",
+        "4299",
+        "6708",
+        "2415",
+        "9461"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "5791",
+        "3593",
+        "0429",
+        "5174",
+        "2920"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "1389",
+        "4960",
+        "3326",
+        "3099",
+        "0712"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "3973",
+        "8526",
+        "6147",
+        "7416",
+        "6266"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "1701",
+        "0137",
+        "3466",
+        "1586",
+        "4702"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "9979",
+        "3757",
+        "1003",
+        "1606",
+        "6299"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "4283",
+        "4768",
+        "7065",
+        "5019",
+        "7865"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "4372",
+        "9126",
+        "8158",
+        "7820",
+        "8432"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "8037",
+        "6165",
+        "1104",
+        "8297",
+        "9159"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "2949",
+        "4319",
+        "6107",
+        "8262",
+        "1760"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "1086",
+        "0281",
+        "5508",
+        "2517",
+        "7949"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "5137",
+        "0542",
+        "2817",
+        "8778",
+        "2168"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "3322",
+        "5403",
+        "8181",
+        "5308",
+        "2503"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "tieBoundary": false,
+      "targetHeads": [
+        "3515",
+        "0444",
+        "4773",
+        "0154",
+        "4983"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "7289",
+        "7786",
+        "9581",
+        "2606",
+        "6647"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "289/982"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "289/982"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "289/982"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "289/982"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "289/982"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "289/982"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "289/982"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "289/982"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "1626",
+        "5262",
+        "9720",
+        "8731",
+        "8101"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "8794",
+        "4907",
+        "8976",
+        "5796",
+        "7342"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "6922",
+        "2159",
+        "1553",
+        "3512",
+        "9206"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "2804",
+        "0910",
+        "4107",
+        "2948",
+        "8490"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "6371",
+        "3859",
+        "6778",
+        "2012",
+        "8239"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "778/877"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "778/877"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "778/877"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "778/877"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "778/877"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "778/877"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "778/877"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "778/877"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "6655",
+        "9867",
+        "2768",
+        "3151",
+        "5293"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "6167",
+        "8848",
+        "1490",
+        "4786",
+        "1067"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "5124",
+        "1738",
+        "4357",
+        "8123",
+        "3847"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "tieBoundary": false,
+      "targetHeads": [
+        "8032",
+        "4705",
+        "4732",
+        "3878",
+        "5188"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "3743",
+        "9105",
+        "4294",
+        "8483",
+        "9598"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "9562",
+        "8702",
+        "6799",
+        "2308",
+        "7189"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "4584",
+        "8962",
+        "6739",
+        "8265",
+        "8852"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "0379",
+        "5303",
+        "6397",
+        "8935",
+        "7770"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "539/935"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "539/935"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "539/935"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "539/935"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "539/935"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "539/935"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "539/935"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "539/935"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "5828",
+        "7755",
+        "8927",
+        "1263",
+        "0197"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "5521",
+        "2897",
+        "7466",
+        "4570",
+        "9006"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "4313",
+        "7997",
+        "3155",
+        "3686",
+        "1288"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "8499",
+        "6823",
+        "8343",
+        "9313",
+        "9979"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "4778",
+        "0318",
+        "1548",
+        "8377",
+        "9232"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "4177",
+        "4124",
+        "1211",
+        "0383",
+        "1614"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "8873",
+        "3265",
+        "2592",
+        "7881",
+        "5832"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "238/832",
+            "295/592"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "8566",
+        "2234",
+        "7429",
+        "3610",
+        "6129"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "2622",
+        "1377",
+        "7762",
+        "9060",
+        "4266"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "9798",
+        "8059",
+        "4270",
+        "5171",
+        "7933"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "tieBoundary": false,
+      "targetHeads": [
+        "2925",
+        "4068",
+        "4318",
+        "5766",
+        "0194"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "5513",
+        "1917",
+        "5168",
+        "3729",
+        "0925"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "729/927"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "729/927"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "729/927"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "729/927"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "729/927"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "729/927"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "729/927"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "729/927"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "2174",
+        "1456",
+        "2631",
+        "1899",
+        "8799"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "0413",
+        "4855",
+        "5944",
+        "6327",
+        "5775"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "0505",
+        "5163",
+        "5956",
+        "8818",
+        "8951"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "6697",
+        "3241",
+        "1019",
+        "8770",
+        "0847"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "0508",
+        "8640",
+        "4179",
+        "2715",
+        "1917"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "9226",
+        "8809",
+        "2010",
+        "8001",
+        "8483"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "5196",
+        "0945",
+        "2338",
+        "9476",
+        "2081"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "8566",
+        "6758",
+        "1191",
+        "9910",
+        "1716"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "tieBoundary": false,
+      "targetHeads": [
+        "5189",
+        "9360",
+        "8015",
+        "6741",
+        "4812"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "5448",
+        "9646",
+        "8801",
+        "2653",
+        "5747"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "2428",
+        "0261",
+        "1677",
+        "6441",
+        "9877"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "tieBoundary": false,
+      "targetHeads": [
+        "3571",
+        "8579",
+        "0387",
+        "2103",
+        "7152"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "7218",
+        "4103",
+        "2504",
+        "6655",
+        "3684"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "4599",
+        "1006",
+        "3765",
+        "3754",
+        "3448"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "tieBoundary": false,
+      "targetHeads": [
+        "9179",
+        "9643",
+        "9800",
+        "6316",
+        "7071"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "071/170"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "071/170"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "071/170"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "071/170"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "071/170"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "071/170"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "071/170"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "winningFamilies": [
+            "071/170"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "2710",
+        "9532",
+        "7409",
+        "5125",
+        "0848"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "4534",
+        "6859",
+        "4553",
+        "3625",
+        "6873"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "tieBoundary": true,
+      "targetHeads": [
+        "5001",
+        "7310",
+        "8242",
+        "4843",
+        "0534"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "9159",
+        "3514",
+        "3903",
+        "8369",
+        "2240"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "4327",
+        "3977",
+        "2232",
+        "8759",
+        "1094"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "1056",
+        "4059",
+        "3694",
+        "7730",
+        "7148"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "9226",
+        "6844",
+        "7952",
+        "0336",
+        "7354"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "tieBoundary": false,
+      "targetHeads": [
+        "0956",
+        "2540",
+        "6182",
+        "9507",
+        "0061"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "tieBoundary": true,
+      "targetHeads": [
+        "8393",
+        "4650",
+        "9656",
+        "2211",
+        "2473"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "6542",
+        "5918",
+        "3297",
+        "9848",
+        "5150"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "tieBoundary": true,
+      "targetHeads": [
+        "5185",
+        "5415",
+        "9220",
+        "2584",
+        "0720"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "ALFABETO_INVERSO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        },
+        "HASH_FIJO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "winningFamilies": []
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": false
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "tieBoundary": true,
+      "targetHeads": [
+        "4324",
+        "2654",
+        "1044",
+        "6215",
+        "0564"
+      ],
+      "methods": {
+        "ORIGINAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "MAS_BLOQUES_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "MAS_TRAMOS_ANCLADOS": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "RAIZ_EN_FUENTE_RECIENTE": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "AUSENTE_JORNADA_ANTERIOR": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "PROPORCION_ANCLADA": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "ALFABETO_INVERSO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "HASH_FIJO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "winningFamilies": [
+            "465/564",
+            "456/654"
+          ]
+        }
+      },
+      "familyWinnersInTie": [],
+      "originalChosenWinnersInTie": [],
+      "outsideWinnersInTie": [],
+      "groupContainsWin": false,
+      "unavoidableWin": true
+    }
+  ]
+}
