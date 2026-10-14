@@ -3,6 +3,7 @@ import {View,Text,StyleSheet,useWindowDimensions} from 'react-native';
 import type {DailySheet,SourceId} from '../sheet';
 import type {PanoramaRoute,PanoramaKind} from '../panoramaModel';
 import {strongestKind} from './visualTokens';
+import {describeBoardCell} from '../boardFocus';
 import {useLaloTheme} from './LaloTheme';
 
 const JUR=['Ciudad','Prov.','Córdoba','Santa Fe','E. Ríos','Montevideo'];
@@ -59,12 +60,9 @@ export default function MarkedBoard({columns,routes,activeOwner,highlightRoutes}
     const key=cellKey(col.id,row,side);
     const allKinds=[...(all.get(key)||[])];
     const activeKinds=[...(selected.get(key)||[])];
-    // Siempre conservar las marcas de todos los turnos como contexto tenue.
-    // El filtro sólo define qué trazas se muestran en primer plano.
-    const focus=focusMode&&activeKinds.length>0;
-    const visibleKinds=focus?activeKinds:allKinds;
-    const muted=focusMode&&!focus&&allKinds.length>0;
-    const strongest=strongestKind(visibleKinds);
+    // El filtro nunca borra otras coincidencias, ni siquiera si comparten casillas.
+    const {visibleKinds,emphasisKinds,focus,muted}=describeBoardCell(allKinds,activeKinds,focusMode);
+    const strongest=strongestKind(emphasisKinds);
     const fill=strongest?kinds[strongest].fill:c.cell;
     const cellWidth=colWidth*.435;
     const left=GUTTER+ci*colWidth+(side?colWidth*.745:colWidth*.255)-cellWidth/2;
@@ -75,9 +73,9 @@ export default function MarkedBoard({columns,routes,activeOwner,highlightRoutes}
       backgroundColor:fill,borderWidth:focus?2:1,
       borderColor:focus?(strongest?kinds[strongest].line:c.border):c.border,
       borderRadius:4,opacity:muted?.52:1,justifyContent:'center',alignItems:'center'}}>
-     {visibleKinds.includes('vt2')?<View style={[s.topMarker,{backgroundColor:kinds.vt2.line}]}/>:null}
-     {visibleKinds.includes('vt3')?<View style={[s.leftMarker,{backgroundColor:kinds.vt3.line}]}/>:null}
-     {visibleKinds.includes('vt4')?<View style={[s.bottomMarker,{backgroundColor:kinds.vt4.line}]}/>:null}
+     {visibleKinds.includes('vt2')?<View style={[s.topMarker,{backgroundColor:kinds.vt2.line,opacity:focusMode&&!activeKinds.includes('vt2')?.3:1}]}/>:null}
+     {visibleKinds.includes('vt3')?<View style={[s.leftMarker,{backgroundColor:kinds.vt3.line,opacity:focusMode&&!activeKinds.includes('vt3')?.3:1}]}/>:null}
+     {visibleKinds.includes('vt4')?<View style={[s.bottomMarker,{backgroundColor:kinds.vt4.line,opacity:focusMode&&!activeKinds.includes('vt4')?.3:1}]}/>:null}
      <Text allowFontScaling adjustsFontSizeToFit numberOfLines={1}
       style={{color:c.text,fontSize:colWidth<48?13:17,fontWeight:'900',zIndex:2}}>{n}</Text>
     </View>;
