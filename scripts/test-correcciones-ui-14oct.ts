@@ -12,7 +12,7 @@ assert.equal(clampPanX(+55,2,width),0,'Borde izquierdo limitado');
 assert.equal(clampPanX(-150,1,width),0,'Zoom 100 % no debe permitir arrastre lateral');
 assert.equal(clampPanX(-150,2.5,width),-150);
 assert.equal(pinchAtX(0,1,2,180,width),-180,'El pellizco al centro mantiene su punto de interés');
-assert.equal(pinchAtX(0,1,2,330,width),-300,'El pellizco a derecha se acerca a ese sector');
+assert.equal(pinchAtX(0,1,2,330,width),-330,'El pellizco a derecha se acerca a ese sector');
 assert.equal(pinchAtX(-300,2,1,330,width),0,'Zoom 100 % restablece el desplazamiento lateral');
 assert.equal(clampZoom(1),1);
 assert.equal(defaultZoomLevels().papa,1,'Las claves de Zoom en AsyncStorage se mantienen para no perder preferencias');
