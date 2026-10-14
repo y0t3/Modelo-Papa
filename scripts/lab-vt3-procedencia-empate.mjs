@@ -9,7 +9,7 @@ assert.equal(src.turn,'Nocturno');
 const rev=s=>[...s].reverse().join('');
 const family=s=>[s,rev(s)].sort().join('/');
 const crd=c=>c.row+':'+c.col;
-const cells=v=>v.flatMap((z,r)=>/^\\d{2}$/.test(z)?[{row:r,col:0,digit:z[0]},{row:r,col:1,digit:z[1]}]:[]);
+const cells=v=>v.flatMap((z,r)=>/^\d{2}$/.test(z)?[{row:r,col:0,digit:z[0]},{row:r,col:1,digit:z[1]}]:[]);
 const priority=x=>[Number(x.branchBlocks>0),Math.min(x.branchBlocks,15),Math.min(x.d7,10),Math.min(x.d1,10),x.sources,x.physicalBlocks];
 const oldSort=[...pre.ranks].sort((a,b)=>{
  const A=priority(a),B=priority(b);
@@ -84,5 +84,5 @@ const result={date:'2026-10-13',turn:'Nocturno',status:'RETROSPECTIVO',families:
   rootPaths:groups.reduce((s,x)=>s+x.distinctOldPhysicalRoots,0),
   sameExactRootAs234:siblings.map(x=>x.family)},sourceDocuments:[
  ROOT+'INPUT_PRE_13OCT.json',ROOT+'PRE_13OCT.json']};
-writeFileSync(OUT+'INVENTARIO_PRE_RECONSTRUIDO.json',JSON.stringify(result,null,2)+'\\n');
+writeFileSync(OUT+'INVENTARIO_PRE_RECONSTRUIDO.json',JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify(result.totals));
