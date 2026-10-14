@@ -1,0 +1,57 @@
+name: Cotejar VT3 D1 con Nocturna 13oct completa
+on:
+  push:
+    branches: [lab-vt3-cotejo-nocturna-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-cotejo-nocturna-13oct2026.mjs'
+      - 'PROTOCOLO_VT3_COTEJO_NOCTURNA_13OCT2026.md'
+      - 'auditorias/vt3-cotejo-nocturna-13oct2026/OBJETIVOS_POST_13OCT.json'
+      - '.github/workflows/lab-vt3-cotejo-nocturna-13oct.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Construir los cinco cortes secuenciales con datos ya publicados
+        run: node scripts/lab-vt3-cotejo-nocturna-13oct2026.mjs prepare
+      - name: Ocultar objetivos y fixture de PRE
+        run: |
+          mv auditorias/vt3-cotejo-nocturna-13oct2026/OBJETIVOS_POST_13OCT.json /tmp/vt3-cotejo-13oct-objetivos.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt3-cotejo-13oct-fixture
+          test ! -e auditorias/vt3-cotejo-nocturna-13oct2026/OBJETIVOS_POST_13OCT.json
+      - name: Reconstruir rankings PRE con objetivo oculto y verificar sello Matutino
+        run: node scripts/lab-vt3-cotejo-nocturna-13oct2026.mjs pre
+      - name: Versionar y sellar selección PRE antes de cotejar POST
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-cotejo-nocturna-13oct2026/INPUT_PRE_13OCT.json
+          git add auditorias/vt3-cotejo-nocturna-13oct2026/PRE_13OCT.json
+          git add auditorias/vt3-cotejo-nocturna-13oct2026/SELLO.json
+          git commit -m 'seal(VT3): snapshot retrospectivo sin objetivos del 13oct'
+          git push origin HEAD:lab-vt3-cotejo-nocturna-13oct2026
+      - name: Revelar objetivos y comparar VT3 y cuaternas exactas VT4
+        run: |
+          mv /tmp/vt3-cotejo-13oct-objetivos.json auditorias/vt3-cotejo-nocturna-13oct2026/OBJETIVOS_POST_13OCT.json
+          mv /tmp/vt3-cotejo-13oct-fixture fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt3-cotejo-nocturna-13oct2026.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cotejo-vt3-13oct-25-cabezas
+          path: auditorias/vt3-cotejo-nocturna-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar resultados en rama aislada
+        run: |
+          git add auditorias/vt3-cotejo-nocturna-13oct2026/POST_13OCT.json
+          git add auditorias/vt3-cotejo-nocturna-13oct2026/RESUMEN.json
+          git add auditorias/vt3-cotejo-nocturna-13oct2026/LECTURA.md
+          git commit -m 'data(VT3): cotejo 25 cabezas 13oct hasta Nocturna'
+          git push origin HEAD:lab-vt3-cotejo-nocturna-13oct2026
