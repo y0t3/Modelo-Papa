@@ -31,8 +31,9 @@ assert.equal(vt4.motherVt3,'768/867','La madre VT3 se registra separadamente');
 assert.throws(()=>draftPick(board,'Previa','Previa',pair),/todavía/);
 assert.throws(()=>draftPick(board,'Previa','prevNocturno',[
  {row:0,col:0},{row:2,col:0}]),/contiguas/);
-const copy:PapaPick={...vt3,id:vt3.id+'-otra-forma',cells:vt3.cells};
-const paths=addDraftPick(addDraftPick([vt2,vt3,vt4],vt3),copy);
+const reverseVt3=draftPick(board,'Previa','prevNocturno',[...triple].reverse());
+assert.equal(reverseVt3.family,vt3.family);
+const paths=addDraftPick(addDraftPick([vt2,vt3,vt4],vt3),reverseVt3);
 assert.equal(paths.length,4,'Un camino idéntico no se duplica; otro testigo se conserva');
 assert.equal(uniqueWagers(paths).vt3.size,1,'Dos testigos de la misma familia son una jugada');
 const snapshot=buildPre({date:'2026-10-14',turn:'Previa',picks:paths},board,'2026-10-14T10:00:00Z');
