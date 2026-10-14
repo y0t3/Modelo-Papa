@@ -43,7 +43,7 @@ La Matutina se había **sellado el 13/10 a las 16:52:03 UTC (13:52:03 Argentina)
 
 ## Conclusión
 
-La jornada **no respalda que priorizar D−1 en la tercera plaza produzca una mejora inmediata**. La dificultad principal hoy se observó antes del ranking: 18 cabezas sin formación VT3 física, cuatro cabezas con formación válida pero sin Top10 y una sola ganadora dentro del Top10. En Nocturna las tres cabezas físicamente presentes fueron `1234`, `4625` y `9192`, sin candidatas oficiales Top10.
+La jornada **no respalda que priorizar D−1 en la tercera plaza produzca una mejora inmediata**. La dificultad principal hoy se observó antes del ranking: 18 cabezas sin formación VT3 física, seis cabezas con formación válida pero fuera del Top10 y una sola ganadora dentro del Top10. En Nocturna las tres cabezas físicamente presentes fueron `1234`, `4625` y `9192`, sin candidatas oficiales Top10.
 
 No implementar ningún cambio automático por este día. Mantener la única challenger D−1 congelada para evidencia futura auténtica junto al Top3 oficial y neutral. Revisión posterior sobre geometría/raíces sin transformar en nuevas reglas diseñadas con cabezas conocidas.
 
