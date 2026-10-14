@@ -24,7 +24,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
  target?:Turno;onInfo:()=>void;focusedOwner?:string|null;initialTurn?:Turno
 }){
  const {colors:c,kinds}=useLaloTheme();
- const [active,setActive]=useState<string|null>(null);
+ const [active,setActive]=useState<string|null>(focusedOwner||null);
  const [turn,setTurn]=useState<Turno>(initialTurn||'Previa');
  const [turnOnly,setTurnOnly]=useState(false);
  const [filter,setFilter]=useState<KindFilter>('all');
