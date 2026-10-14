@@ -1,0 +1,995 @@
+{
+  "date": "2026-10-14",
+  "turn": "Previa",
+  "phase": "PRE_POSICIONES_ANTES_CIFRAS",
+  "createdAtUtc": "2026-10-14T06:01:46.441Z",
+  "previousProspectivePre": "a94ac932ae134541d22923fb82022cb5be88fdd5b00811982b43241e16568f01",
+  "previousGenealogyPre": "a12f3567f83d369fa5a0d75c7be57f38495686cac58aab856a58d878dcce96ca",
+  "sources": [
+    {
+      "source": "prevNocturno",
+      "values": [
+        "83",
+        "45",
+        "40",
+        "36",
+        "03",
+        "--"
+      ]
+    }
+  ],
+  "targetHeadsLoaded": 0,
+  "registeredHistoricRootPaths": 5,
+  "uniqueHistoricWinningEvents": 4,
+  "physicalRoutes": 72,
+  "eligiblePositions": 21,
+  "actualLine": {
+    "top3": [
+      "063/360",
+      "036/630",
+      "033/330"
+    ],
+    "top5": [
+      "063/360",
+      "036/630",
+      "033/330",
+      "034/430",
+      "344/443"
+    ],
+    "top10": [
+      "063/360",
+      "036/630",
+      "033/330",
+      "034/430",
+      "344/443",
+      "354/453",
+      "364/463",
+      "405/504",
+      "064/460",
+      "304/403"
+    ]
+  },
+  "paths": [
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "0:0",
+        "1:0",
+        "2:0"
+      ],
+      "geoKey": "prevNocturno|0:0>1:0>2:0",
+      "shape": "-1,0;-1,0",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 0
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "0:0",
+        "1:1",
+        "1:0"
+      ],
+      "geoKey": "prevNocturno|0:0>1:1>1:0",
+      "shape": "0,1;-1,-1",
+      "oldWinningEvents": 1,
+      "far": true,
+      "maxShift": 3
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "0:0",
+        "1:1",
+        "2:0"
+      ],
+      "geoKey": "prevNocturno|0:0>1:1>2:0",
+      "shape": "-1,1;-1,-1",
+      "oldWinningEvents": 1,
+      "far": true,
+      "maxShift": 3
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "0:1",
+        "0:0",
+        "1:0"
+      ],
+      "geoKey": "prevNocturno|0:1>0:0>1:0",
+      "shape": "-1,0;0,1",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 1
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "0:1",
+        "1:1",
+        "1:0"
+      ],
+      "geoKey": "prevNocturno|0:1>1:1>1:0",
+      "shape": "0,1;-1,0",
+      "oldWinningEvents": 1,
+      "far": true,
+      "maxShift": 2
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "0:1",
+        "1:1",
+        "2:1"
+      ],
+      "geoKey": "prevNocturno|0:1>1:1>2:1",
+      "shape": "-1,0;-1,0",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 1
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "1:0",
+        "2:0",
+        "3:0"
+      ],
+      "geoKey": "prevNocturno|1:0>2:0>3:0",
+      "shape": "-1,0;-1,0",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 1
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "1:0",
+        "2:1",
+        "2:0"
+      ],
+      "geoKey": "prevNocturno|1:0>2:1>2:0",
+      "shape": "0,1;-1,-1",
+      "oldWinningEvents": 1,
+      "far": true,
+      "maxShift": 2
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "1:0",
+        "2:1",
+        "3:0"
+      ],
+      "geoKey": "prevNocturno|1:0>2:1>3:0",
+      "shape": "-1,1;-1,-1",
+      "oldWinningEvents": 1,
+      "far": true,
+      "maxShift": 2
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "1:1",
+        "1:0",
+        "2:0"
+      ],
+      "geoKey": "prevNocturno|1:1>1:0>2:0",
+      "shape": "-1,0;0,1",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 0
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "1:1",
+        "2:1",
+        "2:0"
+      ],
+      "geoKey": "prevNocturno|1:1>2:1>2:0",
+      "shape": "0,1;-1,0",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 1
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "1:1",
+        "2:1",
+        "3:1"
+      ],
+      "geoKey": "prevNocturno|1:1>2:1>3:1",
+      "shape": "-1,0;-1,0",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 2
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "2:0",
+        "3:0",
+        "4:0"
+      ],
+      "geoKey": "prevNocturno|2:0>3:0>4:0",
+      "shape": "-1,0;-1,0",
+      "oldWinningEvents": 1,
+      "far": true,
+      "maxShift": 2
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "2:0",
+        "3:1",
+        "3:0"
+      ],
+      "geoKey": "prevNocturno|2:0>3:1>3:0",
+      "shape": "0,1;-1,-1",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 1
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "2:0",
+        "3:1",
+        "4:0"
+      ],
+      "geoKey": "prevNocturno|2:0>3:1>4:0",
+      "shape": "-1,1;-1,-1",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 1
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "2:1",
+        "2:0",
+        "3:0"
+      ],
+      "geoKey": "prevNocturno|2:1>2:0>3:0",
+      "shape": "-1,0;0,1",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 1
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "2:1",
+        "3:1",
+        "3:0"
+      ],
+      "geoKey": "prevNocturno|2:1>3:1>3:0",
+      "shape": "0,1;-1,0",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 0
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "2:1",
+        "3:1",
+        "4:1"
+      ],
+      "geoKey": "prevNocturno|2:1>3:1>4:1",
+      "shape": "-1,0;-1,0",
+      "oldWinningEvents": 1,
+      "far": true,
+      "maxShift": 3
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "3:0",
+        "4:1",
+        "4:0"
+      ],
+      "geoKey": "prevNocturno|3:0>4:1>4:0",
+      "shape": "0,1;-1,-1",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 0
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "3:1",
+        "3:0",
+        "4:0"
+      ],
+      "geoKey": "prevNocturno|3:1>3:0>4:0",
+      "shape": "-1,0;0,1",
+      "oldWinningEvents": 1,
+      "far": true,
+      "maxShift": 2
+    },
+    {
+      "source": "prevNocturno",
+      "cells": [
+        "3:1",
+        "4:1",
+        "4:0"
+      ],
+      "geoKey": "prevNocturno|3:1>4:1>4:0",
+      "shape": "0,1;-1,0",
+      "oldWinningEvents": 1,
+      "far": false,
+      "maxShift": 1
+    }
+  ],
+  "approaches": {
+    "GEO_RAICES": {
+      "top3": [
+        "458/854",
+        "063/360",
+        "354/453"
+      ],
+      "top5": [
+        "458/854",
+        "063/360",
+        "354/453",
+        "404/404",
+        "304/403"
+      ],
+      "top10": [
+        "458/854",
+        "063/360",
+        "354/453",
+        "404/404",
+        "304/403",
+        "034/430",
+        "036/630",
+        "506/605",
+        "384/483",
+        "053/350"
+      ],
+      "chosen": [
+        {
+          "family": "458/854",
+          "value": "854",
+          "source": "prevNocturno",
+          "cells": [
+            "0:0",
+            "1:1",
+            "1:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 3,
+          "geomKey": "prevNocturno|0:0>1:1>1:0"
+        },
+        {
+          "family": "063/360",
+          "value": "063",
+          "source": "prevNocturno",
+          "cells": [
+            "2:1",
+            "3:1",
+            "4:1"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 3,
+          "geomKey": "prevNocturno|2:1>3:1>4:1"
+        },
+        {
+          "family": "354/453",
+          "value": "354",
+          "source": "prevNocturno",
+          "cells": [
+            "0:1",
+            "1:1",
+            "1:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|0:1>1:1>1:0"
+        },
+        {
+          "family": "404/404",
+          "value": "404",
+          "source": "prevNocturno",
+          "cells": [
+            "1:0",
+            "2:1",
+            "2:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|1:0>2:1>2:0"
+        },
+        {
+          "family": "304/403",
+          "value": "403",
+          "source": "prevNocturno",
+          "cells": [
+            "1:0",
+            "2:1",
+            "3:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|1:0>2:1>3:0"
+        },
+        {
+          "family": "034/430",
+          "value": "430",
+          "source": "prevNocturno",
+          "cells": [
+            "2:0",
+            "3:0",
+            "4:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|2:0>3:0>4:0"
+        },
+        {
+          "family": "036/630",
+          "value": "630",
+          "source": "prevNocturno",
+          "cells": [
+            "3:1",
+            "3:0",
+            "4:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|3:1>3:0>4:0"
+        },
+        {
+          "family": "506/605",
+          "value": "506",
+          "source": "prevNocturno",
+          "cells": [
+            "1:1",
+            "2:1",
+            "3:1"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|1:1>2:1>3:1"
+        },
+        {
+          "family": "384/483",
+          "value": "384",
+          "source": "prevNocturno",
+          "cells": [
+            "0:1",
+            "0:0",
+            "1:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|0:1>0:0>1:0"
+        },
+        {
+          "family": "053/350",
+          "value": "350",
+          "source": "prevNocturno",
+          "cells": [
+            "0:1",
+            "1:1",
+            "2:1"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|0:1>1:1>2:1"
+        }
+      ],
+      "strict": {
+        "3": {
+          "paths": [
+            "prevNocturno|0:0>1:1>1:0",
+            "prevNocturno|0:0>1:1>2:0",
+            "prevNocturno|2:1>3:1>4:1"
+          ],
+          "families": [
+            "458/854",
+            "063/360"
+          ]
+        },
+        "5": {
+          "paths": [
+            "prevNocturno|0:0>1:1>1:0",
+            "prevNocturno|0:0>1:1>2:0",
+            "prevNocturno|2:1>3:1>4:1",
+            "prevNocturno|0:1>1:1>1:0",
+            "prevNocturno|1:0>2:1>2:0"
+          ],
+          "families": [
+            "458/854",
+            "063/360",
+            "354/453",
+            "404/404"
+          ]
+        },
+        "10": {
+          "paths": [
+            "prevNocturno|0:0>1:1>1:0",
+            "prevNocturno|0:0>1:1>2:0",
+            "prevNocturno|2:1>3:1>4:1",
+            "prevNocturno|0:1>1:1>1:0",
+            "prevNocturno|1:0>2:1>2:0",
+            "prevNocturno|1:0>2:1>3:0",
+            "prevNocturno|2:0>3:0>4:0",
+            "prevNocturno|3:1>3:0>4:0",
+            "prevNocturno|1:1>2:1>3:1",
+            "prevNocturno|0:1>0:0>1:0"
+          ],
+          "families": [
+            "458/854",
+            "063/360",
+            "354/453",
+            "404/404",
+            "304/403",
+            "034/430",
+            "036/630",
+            "506/605",
+            "384/483"
+          ]
+        }
+      }
+    },
+    "GEO_DESPLAZAMIENTO": {
+      "top3": [
+        "458/854",
+        "063/360",
+        "354/453"
+      ],
+      "top5": [
+        "458/854",
+        "063/360",
+        "354/453",
+        "404/404",
+        "304/403"
+      ],
+      "top10": [
+        "458/854",
+        "063/360",
+        "354/453",
+        "404/404",
+        "304/403",
+        "034/430",
+        "036/630",
+        "506/605",
+        "384/483",
+        "053/350"
+      ],
+      "chosen": [
+        {
+          "family": "458/854",
+          "value": "854",
+          "source": "prevNocturno",
+          "cells": [
+            "0:0",
+            "1:1",
+            "1:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 3,
+          "geomKey": "prevNocturno|0:0>1:1>1:0"
+        },
+        {
+          "family": "063/360",
+          "value": "063",
+          "source": "prevNocturno",
+          "cells": [
+            "2:1",
+            "3:1",
+            "4:1"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 3,
+          "geomKey": "prevNocturno|2:1>3:1>4:1"
+        },
+        {
+          "family": "354/453",
+          "value": "354",
+          "source": "prevNocturno",
+          "cells": [
+            "0:1",
+            "1:1",
+            "1:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|0:1>1:1>1:0"
+        },
+        {
+          "family": "404/404",
+          "value": "404",
+          "source": "prevNocturno",
+          "cells": [
+            "1:0",
+            "2:1",
+            "2:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|1:0>2:1>2:0"
+        },
+        {
+          "family": "304/403",
+          "value": "403",
+          "source": "prevNocturno",
+          "cells": [
+            "1:0",
+            "2:1",
+            "3:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|1:0>2:1>3:0"
+        },
+        {
+          "family": "034/430",
+          "value": "430",
+          "source": "prevNocturno",
+          "cells": [
+            "2:0",
+            "3:0",
+            "4:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|2:0>3:0>4:0"
+        },
+        {
+          "family": "036/630",
+          "value": "630",
+          "source": "prevNocturno",
+          "cells": [
+            "3:1",
+            "3:0",
+            "4:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|3:1>3:0>4:0"
+        },
+        {
+          "family": "506/605",
+          "value": "506",
+          "source": "prevNocturno",
+          "cells": [
+            "1:1",
+            "2:1",
+            "3:1"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|1:1>2:1>3:1"
+        },
+        {
+          "family": "384/483",
+          "value": "384",
+          "source": "prevNocturno",
+          "cells": [
+            "0:1",
+            "0:0",
+            "1:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|0:1>0:0>1:0"
+        },
+        {
+          "family": "053/350",
+          "value": "350",
+          "source": "prevNocturno",
+          "cells": [
+            "0:1",
+            "1:1",
+            "2:1"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|0:1>1:1>2:1"
+        }
+      ],
+      "strict": {
+        "3": {
+          "paths": [
+            "prevNocturno|0:0>1:1>1:0",
+            "prevNocturno|0:0>1:1>2:0",
+            "prevNocturno|2:1>3:1>4:1"
+          ],
+          "families": [
+            "458/854",
+            "063/360"
+          ]
+        },
+        "5": {
+          "paths": [
+            "prevNocturno|0:0>1:1>1:0",
+            "prevNocturno|0:0>1:1>2:0",
+            "prevNocturno|2:1>3:1>4:1",
+            "prevNocturno|0:1>1:1>1:0",
+            "prevNocturno|1:0>2:1>2:0"
+          ],
+          "families": [
+            "458/854",
+            "063/360",
+            "354/453",
+            "404/404"
+          ]
+        },
+        "10": {
+          "paths": [
+            "prevNocturno|0:0>1:1>1:0",
+            "prevNocturno|0:0>1:1>2:0",
+            "prevNocturno|2:1>3:1>4:1",
+            "prevNocturno|0:1>1:1>1:0",
+            "prevNocturno|1:0>2:1>2:0",
+            "prevNocturno|1:0>2:1>3:0",
+            "prevNocturno|2:0>3:0>4:0",
+            "prevNocturno|3:1>3:0>4:0",
+            "prevNocturno|1:1>2:1>3:1",
+            "prevNocturno|0:1>0:0>1:0"
+          ],
+          "families": [
+            "458/854",
+            "063/360",
+            "354/453",
+            "404/404",
+            "304/403",
+            "034/430",
+            "036/630",
+            "506/605",
+            "384/483"
+          ]
+        }
+      }
+    },
+    "HASH_NEUTRO": {
+      "top3": [
+        "364/463",
+        "448/844",
+        "458/854"
+      ],
+      "top5": [
+        "364/463",
+        "448/844",
+        "458/854",
+        "344/443",
+        "063/360"
+      ],
+      "top10": [
+        "364/463",
+        "448/844",
+        "458/854",
+        "344/443",
+        "063/360",
+        "053/350",
+        "405/504",
+        "036/630",
+        "506/605",
+        "064/460"
+      ],
+      "chosen": [
+        {
+          "family": "364/463",
+          "value": "463",
+          "source": "prevNocturno",
+          "cells": [
+            "2:0",
+            "3:1",
+            "3:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|2:0>3:1>3:0"
+        },
+        {
+          "family": "448/844",
+          "value": "844",
+          "source": "prevNocturno",
+          "cells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 0,
+          "geomKey": "prevNocturno|0:0>1:0>2:0"
+        },
+        {
+          "family": "458/854",
+          "value": "854",
+          "source": "prevNocturno",
+          "cells": [
+            "0:0",
+            "1:1",
+            "1:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": true,
+          "maxShift": 3,
+          "geomKey": "prevNocturno|0:0>1:1>1:0"
+        },
+        {
+          "family": "344/443",
+          "value": "443",
+          "source": "prevNocturno",
+          "cells": [
+            "1:0",
+            "2:0",
+            "3:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|1:0>2:0>3:0"
+        },
+        {
+          "family": "063/360",
+          "value": "063",
+          "source": "prevNocturno",
+          "cells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 0,
+          "geomKey": "prevNocturno|2:1>3:1>3:0"
+        },
+        {
+          "family": "053/350",
+          "value": "350",
+          "source": "prevNocturno",
+          "cells": [
+            "0:1",
+            "1:1",
+            "2:1"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|0:1>1:1>2:1"
+        },
+        {
+          "family": "405/504",
+          "value": "504",
+          "source": "prevNocturno",
+          "cells": [
+            "1:1",
+            "2:1",
+            "2:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|1:1>2:1>2:0"
+        },
+        {
+          "family": "036/630",
+          "value": "630",
+          "source": "prevNocturno",
+          "cells": [
+            "3:1",
+            "4:1",
+            "4:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|3:1>4:1>4:0"
+        },
+        {
+          "family": "506/605",
+          "value": "506",
+          "source": "prevNocturno",
+          "cells": [
+            "1:1",
+            "2:1",
+            "3:1"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 2,
+          "geomKey": "prevNocturno|1:1>2:1>3:1"
+        },
+        {
+          "family": "064/460",
+          "value": "460",
+          "source": "prevNocturno",
+          "cells": [
+            "2:0",
+            "3:1",
+            "4:0"
+          ],
+          "sourceHistoryEvents": 1,
+          "far": false,
+          "maxShift": 1,
+          "geomKey": "prevNocturno|2:0>3:1>4:0"
+        }
+      ],
+      "strict": {
+        "3": {
+          "paths": [
+            "prevNocturno|2:0>3:1>3:0",
+            "prevNocturno|0:0>1:0>2:0",
+            "prevNocturno|0:0>1:1>1:0"
+          ],
+          "families": [
+            "364/463",
+            "448/844",
+            "458/854"
+          ]
+        },
+        "5": {
+          "paths": [
+            "prevNocturno|2:0>3:1>3:0",
+            "prevNocturno|0:0>1:0>2:0",
+            "prevNocturno|0:0>1:1>1:0",
+            "prevNocturno|1:0>2:0>3:0",
+            "prevNocturno|2:1>3:1>3:0"
+          ],
+          "families": [
+            "364/463",
+            "448/844",
+            "458/854",
+            "344/443",
+            "063/360"
+          ]
+        },
+        "10": {
+          "paths": [
+            "prevNocturno|2:0>3:1>3:0",
+            "prevNocturno|0:0>1:0>2:0",
+            "prevNocturno|0:0>1:1>1:0",
+            "prevNocturno|1:0>2:0>3:0",
+            "prevNocturno|2:1>3:1>3:0",
+            "prevNocturno|0:1>1:1>2:1",
+            "prevNocturno|1:1>2:1>2:0",
+            "prevNocturno|2:1>3:1>4:1",
+            "prevNocturno|3:1>4:1>4:0",
+            "prevNocturno|1:1>2:1>3:1"
+          ],
+          "families": [
+            "364/463",
+            "448/844",
+            "458/854",
+            "344/443",
+            "063/360",
+            "053/350",
+            "405/504",
+            "036/630",
+            "506/605"
+          ]
+        }
+      }
+    }
+  },
+  "note": "Se ordena por geometría y huellas previas; cifras actuales se leen únicamente para consolidar familias al terminar el orden. No se conoce el resultado del sorteo."
+}

@@ -1,0 +1,13 @@
+{
+  "phase": "PRE_PENDIENTE_SORTEO",
+  "date": "2026-10-14",
+  "turn": "Previa",
+  "createdAtUtc": "2026-10-14T06:01:46.441Z",
+  "sourceOfficialSeal": "bdabdc47b042a71f83f674128ca0d4c9112fdd03e56e22af637515a5615f3b45",
+  "sourceOfficialPre": "a94ac932ae134541d22923fb82022cb5be88fdd5b00811982b43241e16568f01",
+  "sourceGenealogySeal": "805ade9ec432dd15a3868ce4a5d84a687cf55b1ea36345e05b353d890ee3853f",
+  "sourceGenealogyPre": "a12f3567f83d369fa5a0d75c7be57f38495686cac58aab856a58d878dcce96ca",
+  "protocol": "28ef03038c3a9c633d7124f2242c435288d23a6ce12142fab782590a58f0fb0c",
+  "code": "d080fbbabd168451d5541361885540a40e54ad3319a40fedb0e55085e89a25c9",
+  "pre": "dbfadb076f9e779d81288889e93d751e32222e6da226f25b87bf0acb26a57811"
+}
