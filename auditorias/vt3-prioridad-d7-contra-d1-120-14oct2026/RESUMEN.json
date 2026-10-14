@@ -1,0 +1,976 @@
+{
+  "date": "2026-10-14",
+  "cuts": 120,
+  "historical": 115,
+  "case13Cuts": 5,
+  "metrics": {
+    "all": {
+      "OFICIAL": {
+        "cuts": 120,
+        "top3": 5,
+        "top5": 9,
+        "top10": 16,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 120,
+        "top3": 6,
+        "top5": 9,
+        "top10": 13,
+        "gained3": [
+          "2026-10-03|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-10-02|Matutino"
+        ],
+        "lost10": [
+          "2026-09-18|Nocturno",
+          "2026-09-22|Primera",
+          "2026-09-29|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 120,
+        "top3": 6,
+        "top5": 8,
+        "top10": 16,
+        "gained3": [
+          "2026-10-03|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 120,
+        "top3": 5,
+        "top5": 9,
+        "top10": 17,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-10-02|Matutino"
+        ],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 120,
+        "top3": 5,
+        "top5": 9,
+        "top10": 17,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-09-15|Previa"
+        ],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 120,
+        "top3": 5,
+        "top5": 6,
+        "top10": 16,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 120,
+        "top3": 5,
+        "top5": 9,
+        "top10": 16,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    },
+    "historical": {
+      "OFICIAL": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 115,
+        "top3": 6,
+        "top5": 8,
+        "top10": 12,
+        "gained3": [
+          "2026-10-03|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-10-02|Matutino"
+        ],
+        "lost10": [
+          "2026-09-18|Nocturno",
+          "2026-09-22|Primera",
+          "2026-09-29|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 115,
+        "top3": 6,
+        "top5": 8,
+        "top10": 15,
+        "gained3": [
+          "2026-10-03|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-10-02|Matutino"
+        ],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 16,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-09-15|Previa"
+        ],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 6,
+        "top10": 15,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 115,
+        "top3": 5,
+        "top5": 8,
+        "top10": 15,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    },
+    "case13": {
+      "OFICIAL": {
+        "cuts": 5,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 5,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 5,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 5,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 5,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 5,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 5,
+        "top3": 0,
+        "top5": 1,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    }
+  },
+  "cls": {
+    "D7_SOLO": {
+      "observed": 25,
+      "expected": 25.955,
+      "winnerFamilies": 25,
+      "meanFamilies": 22.783333333333335,
+      "meanTerminals": 43.25833333333333
+    },
+    "D1_SOLO": {
+      "observed": 33,
+      "expected": 26.62,
+      "winnerFamilies": 33,
+      "meanFamilies": 23.441666666666666,
+      "meanTerminals": 44.36666666666667
+    },
+    "AMBAS": {
+      "observed": 9,
+      "expected": 10.565,
+      "winnerFamilies": 9,
+      "meanFamilies": 9.258333333333333,
+      "meanTerminals": 17.608333333333334
+    },
+    "NINGUNA": {
+      "observed": 0,
+      "expected": 0,
+      "winnerFamilies": 0,
+      "meanFamilies": 0,
+      "meanTerminals": 0
+    }
+  },
+  "controls": {
+    "d7Third120": {
+      "reps": 2000,
+      "mean": 5.67,
+      "min": 5,
+      "p05": 5,
+      "median": 6,
+      "p95": 7,
+      "max": 8,
+      "observed": 6,
+      "tailAtLeast": 0.551224387806097,
+      "counts": {
+        "5": 898,
+        "6": 875,
+        "7": 216,
+        "8": 11
+      }
+    },
+    "d7Tenth120": {
+      "reps": 2000,
+      "mean": 16.5825,
+      "min": 16,
+      "p05": 16,
+      "median": 16,
+      "p95": 18,
+      "max": 20,
+      "observed": 17,
+      "tailAtLeast": 0.4577711144427786,
+      "counts": {
+        "16": 1085,
+        "17": 688,
+        "18": 205,
+        "19": 21,
+        "20": 1
+      }
+    },
+    "d7Third115": {
+      "reps": 2000,
+      "mean": 5.67,
+      "min": 5,
+      "p05": 5,
+      "median": 6,
+      "p95": 7,
+      "max": 8,
+      "observed": 6,
+      "tailAtLeast": 0.551224387806097,
+      "counts": {
+        "5": 898,
+        "6": 875,
+        "7": 216,
+        "8": 11
+      }
+    },
+    "d7Tenth115": {
+      "reps": 2000,
+      "mean": 15.4915,
+      "min": 15,
+      "p05": 15,
+      "median": 15,
+      "p95": 17,
+      "max": 18,
+      "observed": 16,
+      "tailAtLeast": 0.40879560219890054,
+      "counts": {
+        "15": 1183,
+        "16": 659,
+        "17": 150,
+        "18": 8
+      }
+    }
+  },
+  "casebook": {
+    "head": "1234",
+    "date": "2026-10-13",
+    "turn": "Nocturno",
+    "family": "234/432",
+    "officialRank": 21,
+    "roots": {
+      "d1": 0,
+      "d7": 1
+    },
+    "d7FirstRank": 11,
+    "pool3": {
+      "size": 0,
+      "first12": []
+    },
+    "pool10": {
+      "size": 11,
+      "first12": [
+        "037/730",
+        "234/432",
+        "268/862",
+        "324/423",
+        "428/824",
+        "435/534",
+        "439/934",
+        "548/845",
+        "619/916",
+        "669/966",
+        "768/867"
+      ]
+    },
+    "chosen": {
+      "best3": null,
+      "best10": "037/730",
+      "best10D1": "114/411"
+    },
+    "originalTop10": [
+      "226/622",
+      "101/101",
+      "104/401",
+      "305/503",
+      "699/996",
+      "266/662",
+      "497/794",
+      "629/926",
+      "507/705",
+      "596/695"
+    ],
+    "orderingD7": [
+      "226/622",
+      "101/101",
+      "104/401",
+      "305/503",
+      "699/996",
+      "507/705",
+      "596/695",
+      "036/630",
+      "485/584",
+      "037/730"
+    ],
+    "vt3WinByMethod": {
+      "OFICIAL": null,
+      "D7_ANTES_D1": null,
+      "D7_SOLO_RANGO3": null,
+      "D7_SOLO_RANGO10": null,
+      "D1_SOLO_RANGO10": null,
+      "HASH_D7_RANGO3": null,
+      "HASH_D7_RANGO10": null
+    },
+    "note": "Se conoce la cabeza al diseñar esta prueba; describir sólo, nunca usar como evidencia externa."
+  },
+  "byMonth": {
+    "2026-09": {
+      "OFICIAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 7,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-18|Nocturno",
+          "2026-09-22|Primera",
+          "2026-09-29|Matutino"
+        ]
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 11,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-09-15|Previa"
+        ],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 3,
+        "top10": 10,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    },
+    "2026-10": {
+      "OFICIAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 45,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "gained3": [
+          "2026-10-03|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-10-02|Matutino"
+        ],
+        "lost10": [
+          "2026-10-08|Matutino"
+        ]
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 45,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "gained3": [
+          "2026-10-03|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 6,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-10-02|Matutino"
+        ],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 3,
+        "top10": 5,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 4,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-09-15|Previa"
+        ],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    },
+    "Primera": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-22|Primera"
+        ]
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    },
+    "Matutino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 7,
+        "gained3": [
+          "2026-10-03|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [
+          "2026-10-02|Matutino"
+        ],
+        "lost10": [
+          "2026-09-29|Matutino",
+          "2026-10-08|Matutino"
+        ]
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 8,
+        "gained3": [
+          "2026-10-03|Matutino"
+        ],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 9,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [
+          "2026-10-02|Matutino"
+        ],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 2,
+        "top10": 8,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    },
+    "Vespertino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    },
+    "Nocturno": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_ANTES_D1": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 2,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": [
+          "2026-09-18|Nocturno"
+        ]
+      },
+      "D7_SOLO_RANGO3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D7_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "D1_SOLO_RANGO10": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO3": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      },
+      "HASH_D7_RANGO10": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "gained3": [],
+        "lost3": [],
+        "gained10": [],
+        "lost10": []
+      }
+    }
+  },
+  "seal": {
+    "source": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "livePre": "55f858867bb96ed05e14ac73776ee33edaf21673efce47f630079a651d57a377",
+    "protocol": "51cbf2a8396c8f0eff9256159dffcfd5c9b22413336c0eb254b904ead5b73f21",
+    "script": "b69d632109c6e1a244ad1b3bd8a318c8a41f8455373aaabd2dc66db9c8a4bafa",
+    "pre": "d5f91c0f77cc7471845df0d396e85ffe3140b4faedb53ddb15bf04bc52e8af1a",
+    "neutral": "4ef1ad6aa73aaf24aa326437bf825609f3c913605caf162bbea16d09ca43f224"
+  },
+  "warning": "Investigación post hoc. Exposición uniformemente aleatoria es referencia descriptiva, no validación externa. Todos los rankings de raíz admitida, sin nuevas rutas ni préstamos."
+}
