@@ -3,118 +3,164 @@ import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator
 import {StatusBar} from 'expo-status-bar';
 import DateField from './src/DateField';
 import {descargarCabezas} from './src/cabezas';
-import type {CabezasDia} from './src/domain';
+import type {CabezasDia,Turno} from './src/domain';
 import {JURS,TURNOS} from './src/domain';
-import type {Turno} from './src/domain';
 import {buildSheet} from './src/sheet';
-import type {DailySheet,Match,Hit,SourceId} from './src/sheet';
-import {displayToIso,isoToDisplay,previousDrawDay,shiftDrawDay} from './src/dates';
-import {findPaths} from './src/paths';
-import type {Path} from './src/paths';
-import {buildPredictive,familyRoutes} from './src/predictive';
-import {analyzePredictive} from './src/analysisEngine';
-import type {PredictiveRoute} from './src/predictive';
-import {buildRouteLives,summarizeRouteStates} from './src/routeLife';
+import type {DailySheet} from './src/sheet';
+import {displayToIso,isoToDisplay,shiftDay,shiftDrawDay,previousDrawDay} from './src/dates';
+import {loadPreviousDraws,hasDrawResults} from './src/drawHistory';
+import {buildDailyPanorama,buildPredictivePanorama} from './src/panoramaModel';
+import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
+import type {LaloHistorical} from './src/motorLalo';
+import PanoramaSheet from './src/PanoramaSheet';
+import PredictionSummary from './src/ui/PredictionSummary';
+import Vt3Explainer from './src/ui/Vt3Explainer';
+import HeadsTable from './src/ui/HeadsTable';
+import InfoDashboard from './src/ui/InfoDashboard';
+import TurnStrip from './src/ui/TurnStrip';
+import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 
-type Screen='hoja'|'predictiva'|'cabezas'|'analisis';
-type Kind='vt2'|'vt3'|'vt4';
-type Sel={match:Match;kind:Kind;index:number}|null;
+type Screen='hoja'|'predictiva'|'prediccion'|'cabezas'|'info';
+const nav: {id:Screen;label:string}[]=[
+ {id:'hoja',label:'HOJA'},{id:'predictiva',label:'PREDICTIVA'},
+ {id:'prediccion',label:'PREDICCIÓN'},{id:'cabezas',label:'CABEZAS'},
+ {id:'info',label:'INFO'}
+];
 const today=()=>new Date().toISOString().slice(0,10);
+function LaloApp(){
+ const {mode,colors:c,toggle}=useLaloTheme();
+ const [screen,setScreen]=useState<Screen>('hoja');
+ const [dateText,setDateText]=useState(isoToDisplay(today()));
+ const [data,setData]=useState<CabezasDia|null>(null);
+ const [sheet,setSheet]=useState<DailySheet|null>(null);
+ const [hist,setHist]=useState<LaloHistorical[]>([]);
+ const [busy,setBusy]=useState(false);
+ const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
+ const [focused,setFocused]=useState<string|null>(null);
+ const date=displayToIso(dateText);
+ const target=useMemo<Turno>(()=>selectedTurn||TURNOS.find(t=>
+  !data||JURS.every(j=>!/^\d{4}$/.test(data[t]?.[j]||'')))||'Nocturno',
+  [data,selectedTurn]);
 
-export default function App(){
- const [screen,setScreen]=useState<Screen>('hoja'),[fechaText,setFechaText]=useState(isoToDisplay(today()));
- const [data,setData]=useState<CabezasDia|null>(null),[sheet,setSheet]=useState<DailySheet|null>(null),[d7Sheet,setD7Sheet]=useState<DailySheet|null>(null),[olderSheets,setOlderSheets]=useState<DailySheet[]>([]),[busy,setBusy]=useState(false),[sel,setSel]=useState<Sel>(null),[fontScale,setFontScale]=useState(1),[predRoute,setPredRoute]=useState<PredictiveRoute|null>(null),[showHits,setShowHits]=useState(false),[selectedVt2,setSelectedVt2]=useState<string|null>(null),[showAnalysis,setShowAnalysis]=useState(false),[showLegend,setShowLegend]=useState(false),[analysisOpen,setAnalysisOpen]=useState(false),[targetTurn,setTargetTurn]=useState<Turno|null>(null);
- const iso=displayToIso(fechaText);
- const cargar=async(target?:string)=>{const d=target||iso;if(!d)return Alert.alert('Fecha inválida','Usá DD/MM/AAAA.');
-  try{setBusy(true);setSel(null);setShowHits(false);setSelectedVt2(null);const ago=(days:number)=>new Date(new Date(d+'T12:00:00').getTime()-days*86400000).toISOString().slice(0,10);const d7date=ago(7),d14date=ago(14),d21date=ago(21);const [cur,prev,d7cur,d7prev,d14cur,d14prev,d21cur,d21prev]=await Promise.all([descargarCabezas(d,true),descargarCabezas(previousDrawDay(d)),descargarCabezas(d7date),descargarCabezas(previousDrawDay(d7date)),descargarCabezas(d14date),descargarCabezas(previousDrawDay(d14date)),descargarCabezas(d21date),descargarCabezas(previousDrawDay(d21date))]);setData(cur);setTargetTurn(null);setSheet(buildSheet(cur,prev));setD7Sheet(buildSheet(d7cur,d7prev));setOlderSheets([buildSheet(d14cur,d14prev),buildSheet(d21cur,d21prev)]);setPredRoute(null);setFechaText(isoToDisplay(d));}
-  catch(e:any){Alert.alert('No se pudo cargar',e?.message||String(e));}finally{setBusy(false)}};
- const move=(n:1|-1)=>{if(!iso)return;void cargar(shiftDrawDay(iso,n))};
- const d7=()=>{if(!iso)return;void cargar(new Date(new Date(iso+'T12:00:00').getTime()-7*86400000).toISOString().slice(0,10))};
- const automaticTarget=useMemo<Turno>(()=>TURNOS.find(t=>!data?.[t]||JURS.every(j=>data[t]?.[j]==='----'))||'Nocturno',[data]);
- const effectiveTarget=targetTurn||automaticTarget;
- const predictive=useMemo(()=>sheet&&d7Sheet?buildPredictive(sheet,d7Sheet,effectiveTarget,olderSheets):null,[sheet,d7Sheet,effectiveTarget,olderSheets]);
- const turnAnalysis=useMemo(()=>predictive?analyzePredictive(predictive):null,[predictive]);
- const routeLives=useMemo(()=>d7Sheet?buildRouteLives([d7Sheet,...olderSheets],predictive?.target||'Nocturno'):[],[d7Sheet,olderSheets,predictive?.target]);
- const routeStateStats=useMemo(()=>summarizeRouteStates(routeLives),[routeLives]);
- const validation=useMemo(()=>predictive?{top3:predictive.hotFamilies.slice(0,3).filter(x=>x.hit).length,top5:predictive.hotFamilies.slice(0,5).filter(x=>x.hit).length,hits:predictive.hotFamilies.filter(x=>x.hit).length,hitFamilies:predictive.hotFamilies.filter(x=>x.hit),vt2Families:predictive.hotFamilies.filter(x=>x.vt2Hits.length)}:null,[predictive]);
- const selectedPredRoutes=useMemo(()=>{
-  if(!predictive||!predRoute||!sheet)return predRoute?[predRoute]:[];
-  const values=predRoute.family.split('/');
-  const cols=sheet.columns.slice(0,TURNOS.indexOf(predictive.target)+1);
-  const base=familyRoutes(predictive,predRoute.family);
-  const out=[...base];
-  for(const col of cols)for(const value of values)for(const path of findPaths(col.values,value)){
-   if(out.some(r=>r.sourceId===col.id&&r.value===value&&r.path.map(x=>x.row+','+x.col).join('>')===path.map(x=>x.row+','+x.col).join('>')))continue;
-   out.push({...predRoute,value,sourceId:col.id,sourceTurn:col.sourceLabel,path});
-  }
-  return out;
- },[predictive,predRoute,sheet]);
- const predInCell=(sourceId:SourceId,r:number,col:number)=>selectedPredRoutes.some(pr=>pr.sourceId===sourceId&&pr.path.some(x=>x.row===r&&x.col===col));
- const selectedFamilyVt2=useMemo(()=>{if(!predRoute||!predictive)return [] as string[];const fam=predictive.hotFamilies.find(x=>x.family===predRoute.family);return fam?.vt2Hits.map(x=>x.value)||[]},[predRoute,predictive]);
- const vt2InCell=(sourceId:SourceId,r:number,col:number)=>{if(!predRoute||!sheet||!predictive)return false;const sc=sheet.columns.find(x=>x.id===sourceId);return !!sc&&selectedFamilyVt2.some(v=>findPaths(sc.values,v).some(p=>p.some(x=>x.row===r&&x.col===col))) };
- const predStart=(sourceId:SourceId,r:number,col:number)=>selectedPredRoutes.some(pr=>pr.sourceId===sourceId&&pr.path[0]?.row===r&&pr.path[0]?.col===col);
- const predArrow=(sourceId:SourceId,r:number,col:number)=>{const pr=selectedPredRoutes.find(x=>x.sourceId===sourceId&&x.path.some(p=>p.row===r&&p.col===col));if(!pr)return '';const p=pr.path,i=p.findIndex(x=>x.row===r&&x.col===col);if(i<0||i===p.length-1)return '';const a=p[i],b=p[i+1],dr=b.row-a.row,dc=b.col-a.col;return dr<0?(dc<0?'↖':dc>0?'↗':'↑'):dr>0?(dc<0?'↙':dc>0?'↘':'↓'):(dc<0?'←':'→')};
- const selectedHits=useMemo<Hit[]>(()=>sel?sel.match.hits.filter(h=>h.kind===sel.kind):[],[sel]);
- const familyColor=(family:string)=>{let h=0;for(let i=0;i<family.length;i++)h=(h*31+family.charCodeAt(i))%360;return `hsl(${h},82%,52%)`};
- const predHeat=useMemo(()=>{const m=new Map<string,{families:Set<string>;weight:number}>();if(!predictive)return m;for(const r of predictive.routes){for(const x of r.path){const k=r.sourceId+'|'+x.row+'|'+x.col;const q=m.get(k)||{families:new Set<string>(),weight:0};q.families.add(r.family);q.weight++;m.set(k,q)}}return m},[predictive]);
- const dailyHeat=useMemo(()=>{const m=new Map<string,{families:Set<string>;weight:number}>();if(!sheet)return m;for(const t of TURNOS)for(const mt of sheet.matches[t])for(const h of mt.hits)if(h.kind==='vt3')for(const p of h.paths){const family=(()=>{const v=h.value,r=v.split('').reverse().join('');return v<=r?v+'/'+r:r+'/'+v})();for(const x of p){const k=h.sourceId+'|'+x.row+'|'+x.col;const q=m.get(k)||{families:new Set<string>(),weight:0};q.families.add(family);q.weight++;m.set(k,q)}}return m},[sheet]);
- const heatStyle=(q?:{families:Set<string>;weight:number})=>{if(!q)return null;const w=q.weight;return {backgroundColor:w>=6?'#ef4444':w>=4?'#f97316':w>=2?'#38bdf8':'#2563eb',opacity:w>=6?.92:w>=4?.82:w>=2?.72:.62}};
- const flatRoutes=useMemo(()=>selectedHits.flatMap(hit=>hit.paths.map(path=>({hit,path}))),[selectedHits]);
- const activeRoute=sel&&flatRoutes.length?flatRoutes[Math.min(sel.index,flatRoutes.length-1)]:undefined;
- const hitInCell=(sourceId:SourceId,r:number,col:number)=>selectedHits.some(h=>h.sourceId===sourceId&&h.paths.some(p=>p.some(x=>x.row===r&&x.col===col)));
- const activeInCell=(sourceId:SourceId,r:number,col:number)=>activeRoute?.hit.sourceId===sourceId&&activeRoute.path.some(x=>x.row===r&&x.col===col);
- const predReverseArrow=(sourceId:SourceId,r:number,col:number)=>{const pr=selectedPredRoutes.find(x=>x.sourceId===sourceId&&x.path.some(p=>p.row===r&&p.col===col));if(!pr)return '';const p=[...pr.path].reverse(),i=p.findIndex(x=>x.row===r&&x.col===col);if(i<0||i===p.length-1)return '';const a=p[i],b=p[i+1],dr=b.row-a.row,dc=b.col-a.col;return dr<0?(dc<0?'↖':dc>0?'↗':'↑'):dr>0?(dc<0?'↙':dc>0?'↘':'↓'):(dc<0?'←':'→')};
- const dailyStart=(sourceId:SourceId,r:number,col:number)=>activeRoute?.hit.sourceId===sourceId&&activeRoute.path[0]?.row===r&&activeRoute.path[0]?.col===col;
- const arrowAfter=(sourceId:SourceId,r:number,col:number)=>{if(activeRoute?.hit.sourceId!==sourceId)return '';const p=activeRoute.path,i=p.findIndex(x=>x.row===r&&x.col===col);if(i<0||i===p.length-1)return '';const a=p[i],b=p[i+1],dr=b.row-a.row,dc=b.col-a.col;return dr<0?(dc<0?'↖':dc>0?'↗':'↑'):dr>0?(dc<0?'↙':dc>0?'↘':'↓'):(dc<0?'←':'→')};
- const stat=(m:Match,k:Kind)=>{const hs=m.hits.filter(h=>h.kind===k);return {hits:hs,cols:new Set(hs.map(h=>h.sourceId)).size,paths:hs.reduce((n,h)=>n+h.paths.length,0)}};
+ const cargar=async(requested?:string)=>{
+  const d=requested||date;
+  if(!d){Alert.alert('Fecha inválida','Usá DD/MM/AAAA.');return}
+  try{
+   setBusy(true);
+   const week=shiftDay(d,-7);
+   // Dos jornadas anteriores REALMENTE sorteadas; feriados no cuentan como D−1.
+   const [current,previous,weekly,weekPrevious]=await Promise.all([
+    descargarCabezas(d,true),
+    loadPreviousDraws(d,2,x=>descargarCabezas(x,true)),
+    descargarCabezas(week,true),
+    descargarCabezas(previousDrawDay(week),true)
+   ]);
+   const last=previous[1],beforeLast=previous[0];
+   const currentSheet=buildSheet(current,last.heads);
+   const refs:LaloHistorical[]=[
+    {date:last.date,period:'D−1',sheet:buildSheet(last.heads,beforeLast.heads)}
+   ];
+   if(week<d&&hasDrawResults(weekly))
+    refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
+   setData(current);setSheet(currentSheet);setHist(refs);
+   setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
+  }catch(error:any){
+   Alert.alert('No se pudo cargar',error?.message||String(error));
+  }finally{setBusy(false)}
+ };
+ const move=(n:1|-1)=>{if(date)void cargar(shiftDrawDay(date,n))};
+ const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
+  [sheet,date,target,hist]);
+ const hoja=useMemo(()=>sheet?buildDailyPanorama(sheet,data):null,[sheet,data]);
+ const predictiva=useMemo(()=>motor?buildPredictivePanorama(motor):null,[motor]);
+ const post=useMemo(()=>{
+  if(!motor||!sheet||!sheet.heads[target]?.length)return null;
+  return compareMotorLaloAfterDraw(motor,sheet.heads[target]);
+ },[motor,sheet,target]);
+ const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null)};
+ const showFamily=(id:string)=>{setFocused(id);setScreen('predictiva')};
 
-
- const heads=<ScrollView horizontal><View>{header()}{JURS.map(j=><View key={j} style={s.row}><Text style={[s.cell,s.first,s.bold,{fontSize:14*fontScale}]}>{j}</Text>{TURNOS.map(t=><Text key={t} style={[s.cell,s.value,{fontSize:14*fontScale}]}>{data?.[t]?.[j]||'----'}</Text>)}</View>)}</View></ScrollView>;
- function header(){return <View style={s.row}><Text style={[s.cell,s.first,{fontSize:13*fontScale}]}>Jurisdicción</Text>{TURNOS.map(t=><Text key={t} style={[s.cell,{fontSize:13*fontScale}]}>{t}</Text>)}</View>}
-
- const choose=(m:Match,k:Kind)=>setSel({match:m,kind:k,index:0});
- const paintedHead=(m:Match)=>{const k:Kind=sel?.match===m?sel.kind:(m.hits.some(h=>h.kind==='vt4')?'vt4':m.hits.some(h=>h.kind==='vt3')?'vt3':'vt2');const n=k==='vt4'?4:k==='vt3'?3:2;const cut=4-n;return <Text style={[s.headNum,{fontSize:20*fontScale}]}>{m.cabeza.slice(0,cut)}<Text style={s.mark}>{m.cabeza.slice(cut)}</Text></Text>};
- const matchCard=(m:Match)=><View key={m.jurisdiccion+'-'+m.cabeza} style={s.match}>
-   <Text style={[s.matchJur,{fontSize:10*fontScale}]}>{m.jurisdiccion}</Text>{paintedHead(m)}
-   <View style={s.badges}>{(['vt4','vt3','vt2'] as Kind[]).map(k=>{const x=stat(m,k);return x.hits.length?<Pressable key={k} onPress={()=>choose(m,k)}><Text style={[k==='vt2'?s.badge2:s.badge,{fontSize:10*fontScale}]}>{k.toUpperCase()} · {x.cols} col · {x.paths} rec</Text></Pressable>:null})}</View>
- </View>;
-
- const predictiveBoard=sheet&&predictive&&<><View style={s.predSummary}>
- <Text style={[s.predTitle,{fontSize:18*fontScale}]}>PRONÓSTICO ACTUAL · {predictive.target.toUpperCase()}</Text>
- <Text style={[s.predInfo,{fontSize:14*fontScale}]}>{predictive.families} familias candidatas según recorridos comprobados de semanas anteriores.</Text>
- <Text style={[s.predWarn,{fontSize:11*fontScale}]}>La proyección se recalcula cuando aparecen nuevos resultados del día. Es una señal experimental, no garantiza un resultado.</Text>
- {predictive.hotFamilies.slice(0,5).map((x,i)=><Pressable key={x.family} onPress={()=>{const r=predictive.routes.find(r=>r.family===x.family);if(r){setPredRoute(r);setSelectedVt2(null)}}} style={s.hotLine}><Text style={s.hotRank}>{i+1}</Text><Text style={[s.hotFam,{fontSize:16*fontScale}]}>{x.family}</Text><Text style={[s.hotState,{fontSize:10*fontScale}]}>{x.state} · sostén en {x.support} columna(s) · {x.historyWeeks} semana(s){x.hit?' · ✓ ACIERTO':''}</Text></Pressable>)}
- <View style={s.infoBtns}><Pressable style={s.infoBtn} onPress={()=>setShowLegend(v=>!v)}><Text style={s.infoBtnText}>{showLegend?'OCULTAR LEYENDA':'¿QUÉ SIGNIFICA?'}</Text></Pressable><Pressable style={s.infoBtn} onPress={()=>setShowAnalysis(v=>!v)}><Text style={s.infoBtnText}>{showAnalysis?'OCULTAR ANÁLISIS':'VER ANÁLISIS'}</Text></Pressable></View>
- {showLegend?<View style={s.legendBox}><Text style={s.legendText}>D−7: mismo día de la semana anterior. D−14 y D−21: dos y tres semanas atrás.</Text><Text style={s.legendText}>VT3: recorrido de tres dígitos que coincide con las últimas tres cifras de una cabeza.</Text><Text style={s.legendText}>NACE: primera señal. OBSERVAR: tiene antecedentes. CONFIRMA: recibe sostén adicional. ACTIVA: señal con mayor recurrencia. DECAE: perdió continuidad. MUERE: dejó de sostenerse.</Text><Text style={s.legendText}>La flecha ROSA marca dónde empieza a leerse el recorrido; las siguientes flechas muestran cómo continúa.</Text></View>:null}
- {showAnalysis?<><View style={s.lifeBox}><Text style={[s.lifeTitle,{fontSize:10*fontScale}]}>HISTORIAL DE FORMAS · 1 / 2 / 3 SEMANAS ATRÁS</Text>{routeLives.slice(0,6).map(x=><View key={x.signature} style={s.lifeLine}><Text style={[s.lifeState,{fontSize:9*fontScale}]}>{x.state}</Text><Text style={[s.lifeSig,{fontSize:9*fontScale}]}>forma {x.signature}</Text><Text style={[s.lifeDots,{fontSize:11*fontScale}]}>{x.points.map(p=>p.present?'●':'○').join(' ')}</Text></View>)}</View><View style={s.stateBox}><Text style={[s.lifeTitle,{fontSize:10*fontScale}]}>EVIDENCIA POR ESTADO</Text>{routeStateStats.map(x=><View key={x.state} style={s.stateLine}><Text style={[s.stateName,{fontSize:9*fontScale}]}>{x.state}</Text><Text style={[s.stateNum,{fontSize:9*fontScale}]}>{x.routes} formas</Text><Text style={[s.stateRate,{fontSize:10*fontScale}]}>{Math.round(x.hitRate*100)}% hist.</Text></View>)}</View></>:null}
- {validation&&data?.[predictive.target]&&JURS.some(j=>data[predictive.target]?.[j]!=='----')?<View style={s.valBox}><Text style={[s.valTitle,{fontSize:11*fontScale}]}>COMPROBACIÓN DEL TURNO</Text><Text style={[s.valText,{fontSize:11*fontScale}]}>Entre los 3 primeros: {validation.top3?'sí':'no'} · entre los 5 primeros: {validation.top5?'sí':'no'} · familias acertadas: {validation.hits}</Text><Text style={[s.valText,{fontSize:11*fontScale}]}>Aciertos de 2 cifras: {validation.vt2Families.reduce((n,x)=>n+x.vt2Hits.length,0)}</Text>{validation.vt2Families.flatMap(x=>x.vt2Hits.map(v=><Pressable key={'vt2-'+x.family+'-'+v.value} style={s.vt2HitBtn} onPress={()=>{const r=predictive.routes.find(r=>r.family===x.family);if(r){setPredRoute(r);setSelectedVt2(v.value)}}}><Text style={s.vt2HitText}>{v.value} → {v.heads.join(' / ')}</Text></Pressable>))}{validation.hits>0?<Pressable style={s.hitBtn} onPress={()=>setShowHits(v=>!v)}><Text style={[s.hitBtnText,{fontSize:10*fontScale}]}>{showHits?'OCULTAR ACIERTOS':'VER ACIERTOS'}</Text></Pressable>:null}{showHits?validation.hitFamilies.map(x=><Pressable key={x.family} style={s.hitFamily} onPress={()=>{const r=predictive.routes.find(r=>r.family===x.family);if(r){setPredRoute(r);setSelectedVt2(null)}}}><Text style={[s.hitFamilyText,{fontSize:11*fontScale}]}>{x.family} · cabezas: {x.hitHeads.join(' / ')}</Text></Pressable>):null}</View>:null}
- </View>
- {predRoute?<View style={s.predDetail}><Text style={[s.predDetailTitle,{fontSize:18*fontScale}]}>{predRoute.family} · {predRoute.state}</Text><Text style={[s.predDetailText,{fontSize:12*fontScale}]}>Hoy esta familia aparece en {new Set(selectedPredRoutes.map(r=>r.sourceId)).size} columna(s), mediante {selectedPredRoutes.length} recorrido(s).</Text><Text style={[s.predDetailText,{fontSize:12*fontScale}]}>Lectura seleccionada: {predRoute.value} · origen {predRoute.sourceTurn}</Text><Text style={[s.predDetailText,{fontSize:12*fontScale}]}>ANTECEDENTES COMPROBADOS</Text>{predRoute.antecedents.slice(0,6).map((a,i)=><Text key={i} style={[s.predDetailText,{fontSize:12*fontScale}]}>Hace {a.week} semana(s) · cabeza {a.head} · {a.jurisdiction} · origen {a.sourceTurn} · recorrido de 3 cifras {a.value}</Text>)}<Pressable onPress={()=>setPredRoute(null)}><Text style={[s.predClose,{fontSize:11*fontScale}]}>QUITAR RECORRIDO</Text></Pressable></View>:null}
- <ScrollView horizontal><View style={s.boardRow}><View style={s.rowLabels}><Text style={s.rowLabelSpacer}>Origen</Text>{JURS.map(j=><Text key={j} style={s.rowLabel}>{j}</Text>)}</View>{sheet.columns.slice(0,TURNOS.indexOf(predictive.target)+1).map(col=><View key={'p-'+col.id} style={s.column}><Text style={[s.turn,{fontSize:17*fontScale}]}>{col.turno}</Text><Text style={[s.source,{fontSize:11*fontScale}]}>← {col.sourceLabel}</Text>{JURS.map((j,r)=>{const v=col.values[r];return <View key={j} style={s.gridRow}>{[0,1].map(cc=><View key={cc} style={[s.digit,!predRoute&&predHeat.has(col.id+'|'+r+'|'+cc)&&s.predOverview,predInCell(col.id,r,cc)&&s.predHot,vt2InCell(col.id,r,cc)&&s.vt2Hot]}><Text style={[s.digitText,{fontSize:24*fontScale},predInCell(col.id,r,cc)&&s.hitText]}>{v==='--'?'–':v[cc]}</Text>{predArrow(col.id,r,cc)?<Text style={[s.pathArrow,predStart(col.id,r,cc)&&s.startArrow]}>{predArrow(col.id,r,cc)}</Text>:null}{predRoute&&predReverseArrow(col.id,r,cc)?<Text style={s.reverseArrow}>{predReverseArrow(col.id,r,cc)}</Text>:null}</View>)}</View>})}<Text style={[s.formed,{fontSize:10*fontScale}]}>RECORRIDOS PROPUESTOS</Text><Text style={s.heatHint}>Panorama: se marcan todas las cifras que hoy forman recorridos propuestos. Las superposiciones muestran el núcleo actual; tocá una familia para aislarla.</Text>{[...new Map(predictive.routes.filter(x=>x.sourceId===col.id).map(r=>[r.family,r])).values()].slice(0,8).map((r,i)=><Pressable key={r.family+'-'+i} onPress={()=>setPredRoute(r)} style={s.predRoute}><Text style={[s.predFamily,{fontSize:16*fontScale}]}>{r.family}</Text><Text style={[s.predMeta,{fontSize:10*fontScale}]}>{r.state} · sostén {r.support} col · {r.templates} forma(s)</Text></Pressable>)}</View>)}</View></ScrollView></>
-
- const analysisPanel=<View><Text style={s.section}>ANÁLISIS DEL MOTOR</Text><Text style={s.targetLabel}>Turno a analizar</Text><ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.targetRow}>{TURNOS.map(t=><Pressable key={t} style={[s.targetBtn,effectiveTarget===t&&s.targetOn]} onPress={()=>{setTargetTurn(t);setAnalysisOpen(false);setPredRoute(null)}}><Text style={s.targetText}>{t}</Text></Pressable>)}</ScrollView><Text style={s.analysisIntro}>Interpretación del mismo motor temporal que usa la Hoja Predictiva. Los criterios de fuerza todavía están en validación histórica.</Text><Pressable style={s.analyzeBtn} onPress={()=>setAnalysisOpen(true)} disabled={!turnAnalysis}><Text style={s.analyzeBtnText}>ANALIZAR TURNO ACTUAL</Text></Pressable>{analysisOpen&&turnAnalysis?<View style={s.analysisCard}><View style={s.expBadge}><Text style={s.expText}>EXPERIMENTAL</Text></View><Text style={[s.analysisTarget,{fontSize:20*fontScale}]}>{turnAnalysis.target.toUpperCase()}</Text><Text style={[s.analysisStrength,{fontSize:18*fontScale}]}>Señal: {turnAnalysis.strength}</Text><Text style={[s.analysisDecision,{fontSize:22*fontScale}]}>DECISIÓN: {turnAnalysis.decision}</Text><Text style={[s.analysisReason,{fontSize:12*fontScale}]}>{turnAnalysis.reason}</Text><View style={s.analysisStats}><Text style={s.analysisStat}>Recorridos activos: {turnAnalysis.activeRoutes}</Text><Text style={s.analysisStat}>Confirmados: {turnAnalysis.confirmedRoutes}</Text><Text style={s.analysisStat}>Concentración: {Math.round(turnAnalysis.concentration*100)}%</Text><Text style={s.analysisStat}>Ternas reales: {turnAnalysis.actualTernas}</Text></View><Text style={s.analysisLabel}>FAMILIAS SELECCIONADAS</Text>{turnAnalysis.selected.length?turnAnalysis.selected.map((x,i)=><Pressable key={x.family} style={s.analysisFamily} onPress={()=>{const r=predictive?.routes.find(r=>r.family===x.family);if(r){setPredRoute(r);setSelectedVt2(null);setScreen('predictiva')}}}><Text style={s.analysisRank}>{i+1}</Text><Text style={[s.analysisFamText,{fontSize:18*fontScale}]}>{x.family}</Text><Text style={s.analysisFamMeta}>{x.state} · {x.support} columna(s) · {x.historyWeeks} semana(s)</Text></Pressable>):<Text style={s.analysisNone}>El motor no seleccionó familias para este turno.</Text>}<Text style={s.analysisFoot}>Tocá una familia para verla dibujada en la Hoja Predictiva.</Text></View>:null}</View>;
-
- const board=sheet&&<ScrollView horizontal><View style={s.boardRow}><View style={s.rowLabels}><Text style={s.rowLabelSpacer}>Origen</Text>{JURS.map(j=><Text key={j} style={s.rowLabel}>{j}</Text>)}</View>{sheet.columns.map(col=>{
-  const highlighted=(r:number,c:number)=>hitInCell(col.id,r,c);
-  const active=(r:number,c:number)=>activeInCell(col.id,r,c);
-  return <View key={col.turno} style={s.column}><Text style={[s.turn,{fontSize:17*fontScale}]}>{col.turno}</Text><Text style={[s.source,{fontSize:11*fontScale}]}>← {col.sourceLabel}</Text>
-   {JURS.map((j,r)=>{const v=col.values[r];return <View key={j} style={s.gridRow}>{[0,1].map(c=><View key={c} style={[s.digit,!sel&&heatStyle(dailyHeat.get(col.id+'|'+r+'|'+c)),highlighted(r,c)&&s.hit,active(r,c)&&s.activeHit]}><Text style={[s.digitText,{fontSize:24*fontScale},highlighted(r,c)&&s.hitText]}>{v==='--'?'–':v[c]}</Text>{arrowAfter(col.id,r,c)?<Text style={[s.pathArrow,dailyStart(col.id,r,c)&&s.startArrow]}>{arrowAfter(col.id,r,c)}</Text>:null}</View>)}</View>})}
-   <Text style={[s.formed,{fontSize:10*fontScale}]}>CABEZAS COINCIDENTES</Text><Text style={s.heatHint}>Panorama de cifras que forman recorridos propuestos. Tocá una familia para aislarla. Tocá una cabeza para aislar sus recorridos.</Text>{sheet.matches[col.turno].length?sheet.matches[col.turno].map(matchCard):<Text style={s.none}>—</Text>}
-  </View>})}</View></ScrollView>;
-
- const routeControls=sel&&<View style={s.routeBox}><Text style={[s.routeTitle,{fontSize:16*fontScale}]}>{sel.match.jurisdiccion} · {sel.match.cabeza} · {sel.kind.toUpperCase()}</Text>
-  <Text style={[s.routeText,{fontSize:14*fontScale}]}>{selectedHits.length} columna(s) · {flatRoutes.length} recorrido(s)</Text>{activeRoute?<Text style={[s.origin,{fontSize:14*fontScale}]}>ORIGEN ACTIVO: {activeRoute.hit.sourceTurn} · recorrido {sel.index+1}/{flatRoutes.length}</Text>:null}
-  <View style={s.routeBtns}><Pressable style={s.smallBtn} onPress={()=>setSel({...sel,index:(sel.index-1+flatRoutes.length)%flatRoutes.length})}><Text style={s.btnTxt}>‹</Text></Pressable>
-  <Pressable style={s.smallBtn} onPress={()=>setSel({...sel,index:(sel.index+1)%flatRoutes.length})}><Text style={s.btnTxt}>›</Text></Pressable>
-  <Pressable style={s.clearBtn} onPress={()=>setSel(null)}><Text style={s.btnTxt}>CERRAR</Text></Pressable></View></View>;
-
- return <SafeAreaView style={s.safe}><StatusBar style="light"/><View style={s.nav}>{(['hoja','predictiva','cabezas','analisis'] as Screen[]).map(x=><Pressable key={x} onPress={()=>setScreen(x)} style={[s.navBtn,screen===x&&s.on]}><Text style={s.navText}>{x.toUpperCase()}</Text></Pressable>)}</View>
- <View style={s.floatZoom}><Text style={s.fontLabel}>Tamaño</Text><Pressable style={s.fontBtn} onPress={()=>setFontScale(.78)}><Text style={s.fontTxt}>A−</Text></Pressable><Pressable style={s.fontBtn} onPress={()=>setFontScale(1)}><Text style={s.fontTxt}>A</Text></Pressable><Pressable style={s.fontBtn} onPress={()=>setFontScale(1.35)}><Text style={s.fontTxt}>A+</Text></Pressable></View><ScrollView contentContainerStyle={s.page}><Text style={s.h1}>MODELO LALO</Text><Text style={s.sub}>Hoja diaria · recorridos · flujo temporal</Text>
- <Text style={s.label}>Fecha de consulta</Text><DateField value={fechaText} onChange={v=>{setFechaText(v);setData(null);setSheet(null);setSel(null)}}/>
- <View style={s.quick}><Pressable style={s.qbtn} onPress={()=>move(-1)}><Text style={s.qtxt}>← DÍA</Text></Pressable><Pressable style={s.qbtn} onPress={d7}><Text style={s.qtxt}>D−7</Text></Pressable><Pressable style={s.qbtn} onPress={()=>move(1)}><Text style={s.qtxt}>DÍA →</Text></Pressable></View>
- <Pressable style={s.load} onPress={()=>cargar()} disabled={busy}>{busy?<ActivityIndicator color="#fff"/>:<Text style={s.loadText}>↻ CARGAR HOJA</Text>}</Pressable>
- {screen==='cabezas'?heads:screen==='hoja'?<><Text style={s.section}>HOJA DIARIA · +11</Text>{routeControls}{board}</>:screen==='predictiva'?<><Text style={s.section}>HOJA PREDICTIVA</Text><Text style={s.targetLabel}>Turno a proyectar</Text><ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.targetRow}>{TURNOS.map(t=><Pressable key={t} style={[s.targetBtn,effectiveTarget===t&&s.targetOn]} onPress={()=>{setTargetTurn(t);setPredRoute(null);setAnalysisOpen(false)}}><Text style={s.targetText}>{t}</Text></Pressable>)}</ScrollView>{predictiveBoard}</>:analysisPanel}
- </ScrollView></SafeAreaView>
+ return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar} backgroundColor={c.canvas}/>
+  <View style={s.nav}>{nav.map(x=><Pressable key={x.id} accessibilityRole="tab"
+    accessibilityState={{selected:screen===x.id}}
+    style={[s.tab,screen===x.id&&s.tabOn]}
+    onPress={()=>{setScreen(x.id);if(x.id==='hoja')setFocused(null)}}>
+    <Text style={s.tabText} numberOfLines={1} adjustsFontSizeToFit>{x.label}</Text>
+   </Pressable>)}</View>
+  <ScrollView style={{backgroundColor:c.canvas}} contentContainerStyle={s.content}>
+   <View style={s.header}>
+    <View style={s.headerLeft}/>
+    <View style={{flex:1}}>
+     <Text style={[s.title,{color:c.text}]}>MODELO LALO</Text>
+     <Text style={s.subtitle}>Cuaderno visual +11 · VT2 / VT3 / VT4</Text>
+    </View>
+    <Pressable accessibilityRole="switch" accessibilityLabel="Modo oscuro"
+     accessibilityState={{checked:mode==='dark'}} onPress={toggle}
+     style={[s.modeButton,{backgroundColor:c.card,borderColor:c.border}]}>
+     <Text style={[s.modeLabel,{color:c.text}]}>{mode==='dark'?'☾ Oscuro':'☀ Claro'}</Text>
+    </Pressable>
+   </View>
+   <View style={[s.selector,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
+    <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
+    <DateField value={dateText} onChange={value=>{
+     setDateText(value);setData(null);setSheet(null);setHist([]);setFocused(null);
+    }}/>
+    <View style={s.shortcuts}>
+     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(-1)}><Text style={[s.shortText,{color:c.accent}]}>← Día</Text></Pressable>
+     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>{if(date)void cargar(shiftDay(date,-7))}}><Text style={[s.shortText,{color:c.accent}]}>D−7</Text></Pressable>
+     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(1)}><Text style={[s.shortText,{color:c.accent}]}>Día →</Text></Pressable>
+    </View>
+    <Pressable style={[s.reload,{backgroundColor:c.button}]} onPress={()=>{void cargar()}} disabled={busy}>
+     {busy?<ActivityIndicator color="#fff"/>:<Text style={s.reloadText}>↻ ACTUALIZAR HOJA</Text>}
+    </Pressable>
+   </View>
+   {screen==='hoja'?
+    sheet&&hoja?<PanoramaSheet mode="hoja" sheet={sheet} data={hoja}
+     onInfo={()=>setScreen('info')}/>:
+    <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
+   :screen==='predictiva'?<>
+    <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
+    <TurnStrip value={target} onChange={changeTurn}/>
+    {sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet}
+     data={predictiva} target={target} focusedOwner={focused}
+     onInfo={()=>setScreen('info')}/>:
+     <Text style={[s.empty,{color:c.subtext}]}>Cargá una hoja para ver las rutas que propone el motor Lalo.</Text>}
+   </>:screen==='prediccion'?<>
+    <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
+    <TurnStrip value={target} onChange={changeTurn}/>
+    <PredictionSummary date={dateText} turn={target} view={motor}
+     post={post} onFocus={showFamily}/>
+    <Vt3Explainer sheet={sheet} view={motor} turn={target}
+     heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
+   </>:screen==='cabezas'?
+    <HeadsTable data={data} sheet={sheet}/>:
+    <InfoDashboard turn={target} view={motor}/>}
+  </ScrollView>
+ </SafeAreaView>;
 }
-const topInset=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+8:8;
-const s=StyleSheet.create({safe:{flex:1,backgroundColor:'#09070d',paddingTop:topInset},nav:{flexDirection:'row',gap:6,padding:10,backgroundColor:'#110d17'},navBtn:{flex:1,paddingVertical:12,borderRadius:10},on:{backgroundColor:'#003b73'},navText:{color:'#fff',textAlign:'center',fontSize:12,fontWeight:'900'},fontBar:{flexDirection:'row',justifyContent:'flex-end',alignItems:'center',gap:6},floatZoom:{position:'absolute',right:12,top:topInset+58,zIndex:100,flexDirection:'row',alignItems:'center',gap:6,backgroundColor:'rgba(17,13,23,.94)',padding:6,borderRadius:9,borderWidth:1,borderColor:'#3a2b48'},fontLabel:{color:'#777',fontSize:11},fontBtn:{backgroundColor:'#21182c',paddingHorizontal:11,paddingVertical:7,borderRadius:7},fontTxt:{color:'#fff',fontWeight:'900'},page:{padding:16,paddingBottom:70},h1:{fontSize:29,fontWeight:'900',color:'#fff',textAlign:'center',marginTop:10},sub:{color:'#d4af37',textAlign:'center',marginBottom:16},label:{color:'#ddd',fontWeight:'800',marginBottom:6},quick:{flexDirection:'row',gap:7,marginTop:10},qbtn:{flex:1,backgroundColor:'#21182c',padding:10,borderRadius:9},qtxt:{color:'#c4b5fd',textAlign:'center',fontWeight:'900'},load:{backgroundColor:'#004b8d',padding:14,borderRadius:12,marginVertical:14},loadText:{color:'#fff',fontWeight:'900',textAlign:'center'},section:{color:'#fff',fontSize:20,fontWeight:'900',marginVertical:12},help:{color:'#aaa',lineHeight:20,marginBottom:12},row:{flexDirection:'row',borderBottomWidth:1,borderBottomColor:'#2b2233'},cell:{width:92,paddingVertical:11,paddingHorizontal:5,color:'#ddd',textAlign:'center'},first:{width:115,textAlign:'left'},bold:{fontWeight:'800',color:'#fff'},value:{color:'#c4b5fd',fontWeight:'800'},boardRow:{flexDirection:'row',gap:12,paddingBottom:15},rowLabels:{width:82,paddingTop:10},rowLabelSpacer:{height:49,color:'#777',fontSize:9,paddingTop:26},rowLabel:{height:42,color:'#aaa',fontSize:10,paddingTop:11},column:{width:108,backgroundColor:'#141019',borderWidth:1,borderColor:'#173a5e',borderRadius:14,padding:10},turn:{color:'#fff',fontSize:17,fontWeight:'900',textAlign:'center'},source:{color:'#9277b5',fontSize:11,textAlign:'center',marginBottom:9},gridRow:{flexDirection:'row',alignItems:'center',justifyContent:'center',marginBottom:4},jurMini:{width:103,color:'#aaa',fontSize:11},digit:{width:38,height:38,backgroundColor:'#09070d',borderWidth:1,borderColor:'#3a2b48',alignItems:'center',justifyContent:'center',marginLeft:2,borderRadius:5},digitText:{color:'#fff',fontSize:21,fontWeight:'900'},hit:{backgroundColor:'#d4af37',borderColor:'#fff'},activeHit:{borderWidth:4,borderColor:'#22c55e',backgroundColor:'#86efac'},pathArrow:{position:'absolute',right:-9,top:-11,color:'#00a8ff',fontSize:20,fontWeight:'900',zIndex:20,textShadowColor:'#000',textShadowRadius:2},startArrow:{color:'#ff2d95',fontSize:24,textShadowRadius:4},reverseArrow:{position:'absolute',left:-9,bottom:-11,color:'#f59e0b',fontSize:20,fontWeight:'900',zIndex:19,textShadowColor:'#000',textShadowRadius:2},hitText:{color:'#09070d'},formed:{color:'#a78bfa',fontSize:10,fontWeight:'900',marginTop:12,marginBottom:5},none:{color:'#666',textAlign:'center'},match:{borderTopWidth:1,borderTopColor:'#2d2238',paddingVertical:7},matchJur:{color:'#aaa',fontSize:10},headNum:{color:'#fff',fontSize:20,fontWeight:'900',letterSpacing:2},mark:{backgroundColor:'#f5d90a',color:'#09070d'},badges:{flexDirection:'row',flexWrap:'wrap',gap:4,marginTop:4},badge:{backgroundColor:'#003b73',color:'#fff',paddingHorizontal:6,paddingVertical:3,borderRadius:5,fontSize:10,fontWeight:'900'},badge2:{backgroundColor:'#30253b',color:'#ddd',paddingHorizontal:6,paddingVertical:3,borderRadius:5,fontSize:10,fontWeight:'800'},infoBtns:{flexDirection:'row',gap:7,marginTop:10},infoBtn:{flex:1,backgroundColor:'#30253b',paddingVertical:8,paddingHorizontal:7,borderRadius:7},infoBtnText:{color:'#fff',fontSize:9,fontWeight:'900',textAlign:'center'},legendBox:{backgroundColor:'#18131f',borderRadius:8,padding:9,marginTop:8},legendText:{color:'#ddd',fontSize:11,lineHeight:17,marginBottom:5},targetLabel:{color:'#aaa',fontSize:11,fontWeight:'800',marginBottom:6},targetRow:{gap:6,paddingBottom:9},targetBtn:{backgroundColor:'#21182c',paddingHorizontal:12,paddingVertical:8,borderRadius:8,borderWidth:1,borderColor:'#3a2b48'},targetOn:{backgroundColor:'#5b21b6',borderColor:'#a78bfa'},targetText:{color:'#fff',fontSize:11,fontWeight:'900'},analysisIntro:{color:'#aaa',lineHeight:19,marginBottom:10},analyzeBtn:{backgroundColor:'#5b21b6',padding:14,borderRadius:10,marginBottom:12},analyzeBtnText:{color:'#fff',fontWeight:'900',textAlign:'center'},analysisCard:{backgroundColor:'#101d2c',borderWidth:1,borderColor:'#d4af37',borderRadius:12,padding:12},expBadge:{alignSelf:'flex-start',backgroundColor:'#7c2d12',paddingHorizontal:8,paddingVertical:4,borderRadius:5},expText:{color:'#fff',fontSize:9,fontWeight:'900'},analysisTarget:{color:'#fff',fontWeight:'900',marginTop:9},analysisStrength:{color:'#86efac',fontWeight:'900',marginTop:4},analysisDecision:{color:'#d4af37',fontWeight:'900',marginTop:6},analysisReason:{color:'#ddd',lineHeight:18,marginTop:5},analysisStats:{backgroundColor:'#11131b',padding:9,borderRadius:8,marginTop:10},analysisStat:{color:'#c4b5fd',fontSize:11,marginVertical:2},analysisLabel:{color:'#a78bfa',fontSize:10,fontWeight:'900',marginTop:12,marginBottom:4},analysisFamily:{flexDirection:'row',alignItems:'center',gap:8,borderTopWidth:1,borderTopColor:'#26384a',paddingVertical:8},analysisRank:{color:'#09070d',backgroundColor:'#d4af37',width:22,height:22,borderRadius:11,textAlign:'center',fontWeight:'900',paddingTop:2},analysisFamText:{color:'#fff',fontWeight:'900',width:88},analysisFamMeta:{color:'#86efac',fontSize:10,flex:1},analysisNone:{color:'#aaa',paddingVertical:10},analysisFoot:{color:'#777',fontSize:10,marginTop:8},heatHint:{color:'#777',fontSize:9,lineHeight:13,marginBottom:5},predOverview:{borderColor:'#f59e0b',borderWidth:2,backgroundColor:'#17121d'},predSummary:{backgroundColor:'#101d2c',borderWidth:1,borderColor:'#d4af37',borderRadius:12,padding:12,marginBottom:12},predTitle:{color:'#fff',fontSize:18,fontWeight:'900'},predInfo:{color:'#d4af37',fontWeight:'800',marginTop:4},predWarn:{color:'#999',fontSize:11,marginTop:5},lifeBox:{backgroundColor:'#11131b',borderRadius:8,padding:8,marginTop:9},lifeTitle:{color:'#a78bfa',fontSize:10,fontWeight:'900',marginBottom:4},lifeLine:{flexDirection:'row',alignItems:'center',gap:6,paddingVertical:3},lifeState:{color:'#86efac',fontSize:9,fontWeight:'900',width:62},lifeSig:{color:'#ddd',fontSize:9,flex:1},lifeDots:{color:'#d4af37',fontSize:11,letterSpacing:2},stateBox:{backgroundColor:'#101d2c',borderRadius:8,padding:8,marginTop:8},stateLine:{flexDirection:'row',alignItems:'center',paddingVertical:3},stateName:{color:'#fff',fontSize:9,fontWeight:'900',width:72},stateNum:{color:'#aaa',fontSize:9,flex:1},stateRate:{color:'#d4af37',fontSize:10,fontWeight:'900'},hitBtn:{marginTop:7,backgroundColor:'#5b21b6',paddingVertical:7,paddingHorizontal:10,borderRadius:7,alignSelf:'flex-start'},hitBtnText:{color:'#fff',fontSize:10,fontWeight:'900'},hitFamily:{marginTop:5,backgroundColor:'#1e293b',padding:7,borderRadius:6},hitFamilyText:{color:'#facc15',fontSize:11,fontWeight:'900'},nearText:{color:'#38bdf8',fontSize:10,fontWeight:'800',marginTop:3},vt2HitBtn:{marginTop:4,borderWidth:1,borderColor:'#22d3ee',borderRadius:5,padding:5},vt2HitText:{color:'#67e8f9',fontSize:10,fontWeight:'900'},vt2Hot:{borderColor:'#22d3ee',borderWidth:3},valBox:{backgroundColor:'#0d3323',borderRadius:8,padding:8,marginTop:8},valTitle:{color:'#86efac',fontSize:11,fontWeight:'900'},valText:{color:'#fff',fontSize:11,marginTop:3},hotLine:{flexDirection:'row',alignItems:'center',gap:8,borderTopWidth:1,borderTopColor:'#26384a',paddingTop:7,marginTop:7},hotRank:{color:'#09070d',backgroundColor:'#d4af37',width:22,height:22,borderRadius:11,textAlign:'center',fontWeight:'900',paddingTop:2},hotFam:{color:'#fff',fontSize:16,fontWeight:'900',width:82},hotState:{color:'#86efac',fontSize:10,fontWeight:'800',flex:1},predDetail:{backgroundColor:'#172033',borderRadius:12,padding:12,marginBottom:12,borderLeftWidth:4,borderLeftColor:'#22c55e'},predDetailTitle:{color:'#fff',fontSize:18,fontWeight:'900'},predDetailText:{color:'#c4b5fd',fontSize:12,marginTop:3},predClose:{color:'#d4af37',fontSize:11,fontWeight:'900',marginTop:8},predHot:{backgroundColor:'#d4af37',borderColor:'#22c55e',borderWidth:3},predRoute:{borderTopWidth:1,borderTopColor:'#2d2238',paddingVertical:6},predFamily:{color:'#fff',fontSize:16,fontWeight:'900'},predMeta:{color:'#86efac',fontSize:10,fontWeight:'800'},routeBox:{backgroundColor:'#0d2740',borderRadius:12,padding:12,marginBottom:12},routeTitle:{color:'#fff',fontWeight:'900'},routeText:{color:'#c4b5fd',marginTop:4},origin:{color:'#86efac',fontWeight:'900',marginTop:5},routeBtns:{flexDirection:'row',gap:7,marginTop:8},smallBtn:{width:48,backgroundColor:'#6d28d9',padding:8,borderRadius:8},clearBtn:{backgroundColor:'#3a2b48',padding:8,borderRadius:8},btnTxt:{color:'#fff',textAlign:'center',fontWeight:'900'}});
+export default function App(){return <LaloThemeProvider><LaloApp/></LaloThemeProvider>}
+const insets=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+7:7;
+const s=StyleSheet.create({
+ header:{flexDirection:'row',alignItems:'center',gap:6,marginBottom:11},
+ headerLeft:{width:66},
+ modeButton:{minWidth:66,borderWidth:1,borderRadius:10,paddingHorizontal:5,paddingVertical:8,alignItems:'center'},
+ modeLabel:{fontSize:11,fontWeight:'900'},
+
+ safe:{flex:1,backgroundColor:'#0c0812',paddingTop:insets},
+ nav:{flexDirection:'row',backgroundColor:'#140d20',gap:3,paddingHorizontal:5,paddingVertical:9},
+ tab:{flex:1,alignItems:'center',justifyContent:'center',borderRadius:8,paddingVertical:11},
+ tabOn:{backgroundColor:'#0e4b89'},
+ tabText:{fontSize:10,color:'#fff',fontWeight:'900'},
+ content:{paddingHorizontal:12,paddingTop:7,paddingBottom:70},
+ title:{color:'#fff',fontWeight:'900',fontSize:23,textAlign:'center'},
+ subtitle:{color:'#d6b458',fontSize:11,textAlign:'center',marginBottom:11},
+ selector:{backgroundColor:'#191124',borderRadius:11,padding:10},
+ label:{color:'#e9e0ee',fontSize:11,fontWeight:'800',marginBottom:4},
+ shortcuts:{flexDirection:'row',gap:7,marginTop:8},
+ shortcut:{flex:1,backgroundColor:'#291c39',padding:9,borderRadius:8},
+ shortText:{color:'#d9c1ef',fontSize:11,textAlign:'center',fontWeight:'800'},
+ reload:{marginTop:10,padding:11,backgroundColor:'#005c9d',borderRadius:9},
+ reloadText:{color:'#fff',textAlign:'center',fontWeight:'900'},
+ heading:{fontSize:12,color:'#e2d5ed',fontWeight:'800',marginTop:13,marginBottom:7},
+ empty:{color:'#d0c2d8',padding:16,fontSize:12,lineHeight:19}
+});
