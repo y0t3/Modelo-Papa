@@ -1,0 +1,7482 @@
+{
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "targets": [
+        "3609",
+        "0475",
+        "7175",
+        "6842",
+        "7945"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "175/571",
+          "officialRank": 11,
+          "anchored": true,
+          "score": 0,
+          "flags": {
+            "A": false,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 0
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "targets": [
+        "1205",
+        "1014",
+        "6037",
+        "3576",
+        "3237"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 0
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "targets": [
+        "4563",
+        "1977",
+        "7105",
+        "2935",
+        "8695"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "779/977",
+          "officialRank": 7,
+          "anchored": true,
+          "score": 0,
+          "flags": {
+            "A": false,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "365/563",
+          "officialRank": 12,
+          "anchored": true,
+          "score": 0,
+          "flags": {
+            "A": false,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 0
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ]
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "779/977"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "targets": [
+        "4714",
+        "1298",
+        "9565",
+        "3103",
+        "5267"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "565/565",
+          "officialRank": null,
+          "anchored": false,
+          "score": 0,
+          "flags": {
+            "A": false,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 1
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "targets": [
+        "1265",
+        "5698",
+        "6696",
+        "6174",
+        "8889"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "174/471",
+          "officialRank": 54,
+          "anchored": true,
+          "score": 0,
+          "flags": {
+            "A": false,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "265/562",
+          "officialRank": null,
+          "anchored": false,
+          "score": 0,
+          "flags": {
+            "A": false,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 2
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "targets": [
+        "3716",
+        "3560",
+        "8956",
+        "6627",
+        "5445"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 10
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "targets": [
+        "4962",
+        "0584",
+        "0486",
+        "0802",
+        "6068"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 39
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "targets": [
+        "9178",
+        "6087",
+        "6445",
+        "6950",
+        "3108"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "087/780",
+          "officialRank": 12,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "178/871",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 65
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "targets": [
+        "8754",
+        "1764",
+        "4701",
+        "6897",
+        "1574"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 103
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "targets": [
+        "2933",
+        "9135",
+        "4332",
+        "7267",
+        "8070"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "070/070",
+          "officialRank": 61,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 140
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "targets": [
+        "1438",
+        "9446",
+        "6875",
+        "9748",
+        "8869"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "446/644",
+          "officialRank": 1,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "438/834",
+          "officialRank": 18,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "748/847",
+          "officialRank": 33,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 15
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ]
+        },
+        "HASH_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "446/644"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "targets": [
+        "7795",
+        "6267",
+        "6158",
+        "6356",
+        "4132"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "597/795",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 64
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "targets": [
+        "0492",
+        "5198",
+        "6732",
+        "9237",
+        "7461"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 89
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "targets": [
+        "4680",
+        "6111",
+        "9471",
+        "8776",
+        "1240"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "174/471",
+          "officialRank": 33,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": true,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "086/680",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 143
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "targets": [
+        "7476",
+        "0438",
+        "6417",
+        "1464",
+        "6721"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "464/464",
+          "officialRank": 2,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "438/834",
+          "officialRank": 21,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": true,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "476/674",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "127/721",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "417/714",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 160
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ]
+        },
+        "HASH_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "464/464"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "targets": [
+        "7502",
+        "3294",
+        "3601",
+        "6856",
+        "7922"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "294/492",
+          "officialRank": 46,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 6
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "targets": [
+        "8144",
+        "1054",
+        "3262",
+        "2177",
+        "2938"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 39
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "targets": [
+        "0910",
+        "4194",
+        "9034",
+        "1443",
+        "6716"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "617/716",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 52
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "targets": [
+        "6317",
+        "8280",
+        "7447",
+        "3831",
+        "2735"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "537/735",
+          "officialRank": 83,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "447/744",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 71
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "targets": [
+        "1657",
+        "0828",
+        "9644",
+        "3173",
+        "5798"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "173/371",
+          "officialRank": 8,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "798/897",
+          "officialRank": 13,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "657/756",
+          "officialRank": 90,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "446/644",
+          "officialRank": 112,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 95
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ]
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "173/371"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "targets": [
+        "6553",
+        "6890",
+        "8318",
+        "2393",
+        "0315"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "098/890",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "355/553",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 41
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "targets": [
+        "5447",
+        "4874",
+        "2078",
+        "4693",
+        "7870"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "396/693",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 56
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "targets": [
+        "9043",
+        "0639",
+        "2544",
+        "6801",
+        "0099"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "108/801",
+          "officialRank": 31,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "639/936",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 60
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "targets": [
+        "6619",
+        "5994",
+        "8533",
+        "1537",
+        "4356"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "619/916",
+          "officialRank": 43,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 78
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "targets": [
+        "2462",
+        "6907",
+        "3626",
+        "2011",
+        "4109"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "109/901",
+          "officialRank": 63,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "011/110",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        },
+        {
+          "family": "264/462",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 98
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "targets": [
+        "7440",
+        "4108",
+        "9302",
+        "4122",
+        "1274"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 16
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "targets": [
+        "8073",
+        "9875",
+        "0556",
+        "9644",
+        "0722"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "227/722",
+          "officialRank": null,
+          "anchored": false,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 25
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "targets": [
+        "1654",
+        "8560",
+        "4984",
+        "0529",
+        "3779"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 43
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "targets": [
+        "9674",
+        "6250",
+        "1306",
+        "5512",
+        "4246"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "246/642",
+          "officialRank": 42,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 68
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "targets": [
+        "7173",
+        "1529",
+        "9153",
+        "4134",
+        "5360"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "173/371",
+          "officialRank": 42,
+          "anchored": true,
+          "score": 1,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": false,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 92
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "targets": [
+        "0358",
+        "9666",
+        "0596",
+        "8609",
+        "3837"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 19
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "targets": [
+        "0838",
+        "6228",
+        "1654",
+        "3042",
+        "8627"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "456/654",
+          "officialRank": 8,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "042/240",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 42
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ]
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "456/654"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "targets": [
+        "1892",
+        "6020",
+        "9344",
+        "2568",
+        "5235"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "020/020",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 80
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "targets": [
+        "1784",
+        "1733",
+        "1128",
+        "7082",
+        "4345"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "082/280",
+          "officialRank": 35,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 113
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "targets": [
+        "0724",
+        "9750",
+        "8207",
+        "6517",
+        "6524"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "517/715",
+          "officialRank": 35,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "207/702",
+          "officialRank": 52,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "427/724",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 108
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "targets": [
+        "3687",
+        "9912",
+        "3379",
+        "7661",
+        "4139"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 35
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "targets": [
+        "7576",
+        "1948",
+        "7619",
+        "8435",
+        "2961"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 58
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "targets": [
+        "0461",
+        "3971",
+        "0410",
+        "8064",
+        "1103"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "064/460",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 120
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "targets": [
+        "2982",
+        "9349",
+        "0940",
+        "3423",
+        "4949"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "289/982",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 162
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "targets": [
+        "1418",
+        "0924",
+        "8480",
+        "5423",
+        "9387"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 189
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "targets": [
+        "4661",
+        "1846",
+        "3159",
+        "3714",
+        "7474"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "159/951",
+          "officialRank": 5,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 6
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ]
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "159/951"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "targets": [
+        "9576",
+        "4496",
+        "7955",
+        "9025",
+        "5056"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "025/520",
+          "officialRank": null,
+          "anchored": false,
+          "score": 3,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": true
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 31
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "targets": [
+        "1433",
+        "0194",
+        "8123",
+        "2676",
+        "0189"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "194/491",
+          "officialRank": 8,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "676/676",
+          "officialRank": 20,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "189/981",
+          "officialRank": 28,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 42
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ]
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "194/491"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "targets": [
+        "9480",
+        "9737",
+        "3828",
+        "4088",
+        "5738"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "084/480",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "738/837",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 80
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "targets": [
+        "7373",
+        "1817",
+        "3418",
+        "4670",
+        "3090"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "076/670",
+          "officialRank": 15,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "418/814",
+          "officialRank": 74,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 85
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "targets": [
+        "3249",
+        "0259",
+        "8953",
+        "7979",
+        "7898"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "898/898",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 17
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "targets": [
+        "1754",
+        "0894",
+        "5365",
+        "6313",
+        "0162"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 37
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "targets": [
+        "6933",
+        "5643",
+        "9237",
+        "6811",
+        "0889"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "118/811",
+          "officialRank": 6,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "237/732",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "346/643",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "889/988",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 66
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ]
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "118/811"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "targets": [
+        "1256",
+        "4299",
+        "6708",
+        "2415",
+        "9461"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 77
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "targets": [
+        "5791",
+        "3593",
+        "0429",
+        "5174",
+        "2920"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "429/924",
+          "officialRank": 73,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 100
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "targets": [
+        "1389",
+        "4960",
+        "3326",
+        "3099",
+        "0712"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 27
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "targets": [
+        "3973",
+        "8526",
+        "6147",
+        "7416",
+        "6266"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 50
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "targets": [
+        "1701",
+        "0137",
+        "3466",
+        "1586",
+        "4702"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "107/701",
+          "officialRank": 52,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "137/731",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "207/702",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 71
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "targets": [
+        "9979",
+        "3757",
+        "1003",
+        "1606",
+        "6299"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "757/757",
+          "officialRank": 66,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 89
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "targets": [
+        "4283",
+        "4768",
+        "7065",
+        "5019",
+        "7865"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "283/382",
+          "officialRank": 47,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 131
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "targets": [
+        "4372",
+        "9126",
+        "8158",
+        "7820",
+        "8432"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "273/372",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 27
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "targets": [
+        "8037",
+        "6165",
+        "1104",
+        "8297",
+        "9159"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "037/730",
+          "officialRank": 16,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 47
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "targets": [
+        "2949",
+        "4319",
+        "6107",
+        "8262",
+        "1760"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "067/760",
+          "officialRank": 18,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "319/913",
+          "officialRank": 25,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "107/701",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "949/949",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 102
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "targets": [
+        "1086",
+        "0281",
+        "5508",
+        "2517",
+        "7949"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "508/805",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "517/715",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "949/949",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 132
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "targets": [
+        "5137",
+        "0542",
+        "2817",
+        "8778",
+        "2168"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "718/817",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "137/731",
+          "officialRank": null,
+          "anchored": false,
+          "score": 3,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": true
+          }
+        },
+        {
+          "family": "168/861",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "778/877",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 159
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "targets": [
+        "3322",
+        "5403",
+        "8181",
+        "5308",
+        "2503"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 24
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "targets": [
+        "3515",
+        "0444",
+        "4773",
+        "0154",
+        "4983"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "389/983",
+          "officialRank": 34,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 37
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "targets": [
+        "7289",
+        "7786",
+        "9581",
+        "2606",
+        "6647"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "289/982",
+          "officialRank": 6,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 52
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ]
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "289/982"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "targets": [
+        "1626",
+        "5262",
+        "9720",
+        "8731",
+        "8101"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 71
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "targets": [
+        "8794",
+        "4907",
+        "8976",
+        "5796",
+        "7342"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "243/342",
+          "officialRank": 15,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "709/907",
+          "officialRank": 76,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 92
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "targets": [
+        "6922",
+        "2159",
+        "1553",
+        "3512",
+        "9206"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 40
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "targets": [
+        "2804",
+        "0910",
+        "4107",
+        "2948",
+        "8490"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 87
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "targets": [
+        "6371",
+        "3859",
+        "6778",
+        "2012",
+        "8239"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "778/877",
+          "officialRank": 1,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "173/371",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "859/958",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 118
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ]
+        },
+        "HASH_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "778/877"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "targets": [
+        "6655",
+        "9867",
+        "2768",
+        "3151",
+        "5293"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "293/392",
+          "officialRank": 26,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "151/151",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 166
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "targets": [
+        "6167",
+        "8848",
+        "1490",
+        "4786",
+        "1067"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "067/760",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "687/786",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 188
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "targets": [
+        "5124",
+        "1738",
+        "4357",
+        "8123",
+        "3847"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "748/847",
+          "officialRank": 19,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 29
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "targets": [
+        "8032",
+        "4705",
+        "4732",
+        "3878",
+        "5188"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "507/705",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 62
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "targets": [
+        "3743",
+        "9105",
+        "4294",
+        "8483",
+        "9598"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "598/895",
+          "officialRank": 58,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "384/483",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "105/501",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 68
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "targets": [
+        "9562",
+        "8702",
+        "6799",
+        "2308",
+        "7189"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 91
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "targets": [
+        "4584",
+        "8962",
+        "6739",
+        "8265",
+        "8852"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "485/584",
+          "officialRank": 62,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 99
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "targets": [
+        "0379",
+        "5303",
+        "6397",
+        "8935",
+        "7770"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "539/935",
+          "officialRank": 2,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "379/973",
+          "officialRank": 21,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "397/793",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 25
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ]
+        },
+        "HASH_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "539/935"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "targets": [
+        "5828",
+        "7755",
+        "8927",
+        "1263",
+        "0197"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 58
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "targets": [
+        "5521",
+        "2897",
+        "7466",
+        "4570",
+        "9006"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "075/570",
+          "officialRank": 18,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 78
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "targets": [
+        "4313",
+        "7997",
+        "3155",
+        "3686",
+        "1288"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "686/686",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 116
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "targets": [
+        "8499",
+        "6823",
+        "8343",
+        "9313",
+        "9979"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "979/979",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "328/823",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 132
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "targets": [
+        "4778",
+        "0318",
+        "1548",
+        "8377",
+        "9232"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 30
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "targets": [
+        "4177",
+        "4124",
+        "1211",
+        "0383",
+        "1614"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 37
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "targets": [
+        "8873",
+        "3265",
+        "2592",
+        "7881",
+        "5832"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "295/592",
+          "officialRank": 5,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "238/832",
+          "officialRank": 4,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 48
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "HASH_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "238/832",
+            "295/592"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "targets": [
+        "8566",
+        "2234",
+        "7429",
+        "3610",
+        "6129"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "429/924",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "234/432",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 99
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "targets": [
+        "2622",
+        "1377",
+        "7762",
+        "9060",
+        "4266"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 114
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "targets": [
+        "9798",
+        "8059",
+        "4270",
+        "5171",
+        "7933"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 4
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "targets": [
+        "2925",
+        "4068",
+        "4318",
+        "5766",
+        "0194"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 33
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "targets": [
+        "5513",
+        "1917",
+        "5168",
+        "3729",
+        "0925"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "729/927",
+          "officialRank": 5,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 47
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ]
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "729/927"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "targets": [
+        "2174",
+        "1456",
+        "2631",
+        "1899",
+        "8799"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "799/997",
+          "officialRank": 15,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 84
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "targets": [
+        "0413",
+        "4855",
+        "5944",
+        "6327",
+        "5775"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "577/775",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 129
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "targets": [
+        "0505",
+        "5163",
+        "5956",
+        "8818",
+        "8951"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "163/361",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 27
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "targets": [
+        "6697",
+        "3241",
+        "1019",
+        "8770",
+        "0847"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "697/796",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 59
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "targets": [
+        "0508",
+        "8640",
+        "4179",
+        "2715",
+        "1917"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "508/805",
+          "officialRank": 49,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 73
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "targets": [
+        "9226",
+        "8809",
+        "2010",
+        "8001",
+        "8483"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "226/622",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 118
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "targets": [
+        "5196",
+        "0945",
+        "2338",
+        "9476",
+        "2081"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "476/674",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "081/180",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "196/691",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 141
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "targets": [
+        "8566",
+        "6758",
+        "1191",
+        "9910",
+        "1716"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 52
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "targets": [
+        "5189",
+        "9360",
+        "8015",
+        "6741",
+        "4812"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 65
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "targets": [
+        "5448",
+        "9646",
+        "8801",
+        "2653",
+        "5747"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "356/653",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 82
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "targets": [
+        "2428",
+        "0261",
+        "1677",
+        "6441",
+        "9877"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "162/261",
+          "officialRank": 37,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "428/824",
+          "officialRank": 46,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "677/776",
+          "officialRank": 58,
+          "anchored": true,
+          "score": 3,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": true
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 117
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "targets": [
+        "3571",
+        "8579",
+        "0387",
+        "2103",
+        "7152"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "175/571",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "579/975",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "152/251",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 125
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "175/571"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "targets": [
+        "7218",
+        "4103",
+        "2504",
+        "6655",
+        "3684"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 48
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "targets": [
+        "4599",
+        "1006",
+        "3765",
+        "3754",
+        "3448"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 61
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "targets": [
+        "9179",
+        "9643",
+        "9800",
+        "6316",
+        "7071"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "071/170",
+          "officialRank": 7,
+          "anchored": true,
+          "score": 3,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": true
+          }
+        },
+        {
+          "family": "316/613",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "346/643",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 78
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ]
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": true,
+          "hits": [
+            "071/170"
+          ]
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "targets": [
+        "2710",
+        "9532",
+        "7409",
+        "5125",
+        "0848"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "017/710",
+          "officialRank": null,
+          "anchored": false,
+          "score": 3,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": true
+          }
+        },
+        {
+          "family": "409/904",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 97
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "targets": [
+        "4534",
+        "6859",
+        "4553",
+        "3625",
+        "6873"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "435/534",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 142
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "targets": [
+        "5001",
+        "7310",
+        "8242",
+        "4843",
+        "0534"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "348/843",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 25
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "targets": [
+        "9159",
+        "3514",
+        "3903",
+        "8369",
+        "2240"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 62
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "targets": [
+        "4327",
+        "3977",
+        "2232",
+        "8759",
+        "1094"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 94
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "targets": [
+        "1056",
+        "4059",
+        "3694",
+        "7730",
+        "7148"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "037/730",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "148/841",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 121
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "targets": [
+        "9226",
+        "6844",
+        "7952",
+        "0336",
+        "7354"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "354/453",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 130
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "targets": [
+        "0956",
+        "2540",
+        "6182",
+        "9507",
+        "0061"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 38
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "targets": [
+        "8393",
+        "4650",
+        "9656",
+        "2211",
+        "2473"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "374/473",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 77
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "targets": [
+        "6542",
+        "5918",
+        "3297",
+        "9848",
+        "5150"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "245/542",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "819/918",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 89
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "targets": [
+        "5185",
+        "5415",
+        "9220",
+        "2584",
+        "0720"
+      ],
+      "winningPhysicalFamilies": [],
+      "eligibility": {
+        "third": 8,
+        "tenth": 125
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P3": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": false,
+          "top5": false,
+          "top10": false,
+          "hits": []
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "targets": [
+        "4324",
+        "2654",
+        "1044",
+        "6215",
+        "0564"
+      ],
+      "winningPhysicalFamilies": [
+        {
+          "family": "465/564",
+          "officialRank": 2,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "456/654",
+          "officialRank": 5,
+          "anchored": true,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        },
+        {
+          "family": "215/512",
+          "officialRank": null,
+          "anchored": false,
+          "score": 2,
+          "flags": {
+            "A": true,
+            "B": false,
+            "C": true,
+            "D": false
+          }
+        }
+      ],
+      "eligibility": {
+        "third": 8,
+        "tenth": 147
+      },
+      "outcomes": {
+        "OFICIAL": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "ATLAS_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "ATLAS_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "HASH_P3": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ]
+        },
+        "HASH_P10_ABIERTO": {
+          "top3": true,
+          "top5": true,
+          "top10": true,
+          "hits": [
+            "465/564",
+            "456/654"
+          ]
+        }
+      }
+    }
+  ]
+}

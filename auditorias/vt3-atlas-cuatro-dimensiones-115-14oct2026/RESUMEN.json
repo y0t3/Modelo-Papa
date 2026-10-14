@@ -1,0 +1,211 @@
+{
+  "scope": "Retrospectivo exploratorio, reutiliza 115 cortes; NO representa validación futura",
+  "days": 23,
+  "cuts": 115,
+  "physicalEventCount": 27900,
+  "familyCutRecords": 15273,
+  "signalStats": {
+    "A": {
+      "exposures": 14586,
+      "winners": 137,
+      "anchoredExposures": 6165,
+      "anchoredWinners": 60
+    },
+    "B": {
+      "exposures": 251,
+      "winners": 2,
+      "anchoredExposures": 181,
+      "anchoredWinners": 2
+    },
+    "C": {
+      "exposures": 11396,
+      "winners": 103,
+      "anchoredExposures": 4643,
+      "anchoredWinners": 41
+    },
+    "D": {
+      "exposures": 597,
+      "winners": 5,
+      "anchoredExposures": 208,
+      "anchoredWinners": 2
+    },
+    "ANY": {
+      "exposures": 14591,
+      "winners": 137,
+      "anchoredExposures": 6167,
+      "anchoredWinners": 60
+    },
+    "TWO_PLUS": {
+      "exposures": 11605,
+      "winners": 105,
+      "anchoredExposures": 4744,
+      "anchoredWinners": 43
+    }
+  },
+  "jointSignatures": {
+    "1000": {
+      "exposures": 2981,
+      "winners": 32
+    },
+    "1001": {
+      "exposures": 136,
+      "winners": 0
+    },
+    "1010": {
+      "exposures": 10773,
+      "winners": 98
+    },
+    "1011": {
+      "exposures": 450,
+      "winners": 5
+    },
+    "1100": {
+      "exposures": 73,
+      "winners": 2
+    },
+    "1110": {
+      "exposures": 162,
+      "winners": 0
+    },
+    "1111": {
+      "exposures": 11,
+      "winners": 0
+    },
+    "0000": {
+      "exposures": 682,
+      "winners": 6
+    },
+    "0100": {
+      "exposures": 5,
+      "winners": 0
+    }
+  },
+  "matched": {
+    "A": {
+      "observed": 0,
+      "expected": 0,
+      "mixedBins": 0,
+      "excludedWinningRecords": 143,
+      "excess": 0
+    },
+    "B": {
+      "observed": 2,
+      "expected": 2.75,
+      "mixedBins": 12,
+      "excludedWinningRecords": 131,
+      "excess": -0.75
+    },
+    "C": {
+      "observed": 0,
+      "expected": 0,
+      "mixedBins": 0,
+      "excludedWinningRecords": 143,
+      "excess": 0
+    },
+    "D": {
+      "observed": 5,
+      "expected": 5.2511,
+      "mixedBins": 44,
+      "excludedWinningRecords": 92,
+      "excess": -0.2511
+    },
+    "ANY": {
+      "observed": 0,
+      "expected": 0,
+      "mixedBins": 0,
+      "excludedWinningRecords": 143,
+      "excess": 0
+    },
+    "TWO_PLUS": {
+      "observed": 2,
+      "expected": 2.5567,
+      "mixedBins": 12,
+      "excludedWinningRecords": 130,
+      "excess": -0.5567
+    }
+  },
+  "scorecard": {
+    "OFICIAL": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gains": [],
+      "losses": []
+    },
+    "ATLAS_P3": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gains": [],
+      "losses": []
+    },
+    "ATLAS_P10_ABIERTO": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gains": [],
+      "losses": []
+    },
+    "HASH_P3": {
+      "top3": 6,
+      "top5": 7,
+      "top10": 15,
+      "gains": [],
+      "losses": []
+    },
+    "HASH_P10_ABIERTO": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "gains": [
+        "2026-10-07|Nocturno"
+      ],
+      "losses": []
+    }
+  },
+  "nullComparisons": {
+    "third": {
+      "controls": 2000,
+      "mean": 6.367,
+      "p05": 5,
+      "median": 6,
+      "p95": 8,
+      "max": 11,
+      "observed": 5,
+      "upperTail": 1
+    },
+    "tenth": {
+      "controls": 2000,
+      "mean": 15.8655,
+      "p05": 15,
+      "median": 16,
+      "p95": 18,
+      "max": 20,
+      "observed": 15,
+      "upperTail": 1
+    }
+  },
+  "opportunity": {
+    "cutsWithOpenTenth": 112,
+    "totalOpenTenthCandidates": 8424,
+    "averageOpenTenth": 73.25217391304348,
+    "cutsWhereSelectedThirdChanges": 32
+  },
+  "meaningfulDifferences": [],
+  "seal": {
+    "sourcePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "protocol": "ef03b0fb742d7e96b5c1d92901275a8ea26d289bbd88c53e57470cc4465c6cd4",
+    "code": "4bf31d9c9e1f3ec3e69e99363a488f0b482fc0f4e11629dd17e4f76d722da72b",
+    "routesPre": "c8a22e6692d3a95553f4db9330584aab454f825ac6fced8f3cf2aff6cd58661e",
+    "pre": "7bbeb4fd79258258eec56a027db662c53ed2d668429421090378aeb816df5525"
+  },
+  "sourcePost": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2",
+  "caveats": [
+    "Las firmas A/C son continuidad GEOMÉTRICA PRE, no huellas premiadas: gana una familia nueva por relectura del tablero.",
+    "La misma forma se replica por estructura limitada 6x2; altas tasas de exposición pueden generar asociaciones casuales.",
+    "La familia reversible, no la ruta, es la unidad de acierto por corte; una cabeza puede coincidir con varias familias por jurisdicción.",
+    "El #10 original no acertó en estos 115 cortes; reemplazarlo está sesgado por conocimiento anterior del histórico.",
+    "El selector multidimensional se eligió tras muchas hipótesis anteriores en las mismas 23 jornadas; valores de cola exploratorios, NO p-valores confirmatorios.",
+    "Sin modificar motores oficiales, ni VT4, ni la predicción prospectiva ya sellada."
+  ]
+}
