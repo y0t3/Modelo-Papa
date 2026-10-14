@@ -1,0 +1,968 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "heads": 575,
+  "methods": {
+    "OFICIAL": {
+      "cuts": 115,
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "slot3Winner": 0,
+      "gainedTop3": [],
+      "lostTop3": [],
+      "changedThird": 0
+    },
+    "RANGO5_CONTROL": {
+      "cuts": 115,
+      "top3": 8,
+      "top5": 8,
+      "top10": 15,
+      "slot3Winner": 4,
+      "gainedTop3": [
+        "2026-09-24|Previa",
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino"
+      ],
+      "lostTop3": [],
+      "changedThird": 115
+    },
+    "MAS_D1": {
+      "cuts": 115,
+      "top3": 8,
+      "top5": 9,
+      "top10": 15,
+      "slot3Winner": 3,
+      "gainedTop3": [
+        "2026-09-15|Matutino",
+        "2026-09-29|Matutino",
+        "2026-10-05|Matutino"
+      ],
+      "lostTop3": [],
+      "changedThird": 69
+    },
+    "MAS_D7": {
+      "cuts": 115,
+      "top3": 6,
+      "top5": 6,
+      "top10": 15,
+      "slot3Winner": 1,
+      "gainedTop3": [
+        "2026-10-03|Matutino"
+      ],
+      "lostTop3": [],
+      "changedThird": 66
+    },
+    "EVENTOS_NO_COMPARTIDOS": {
+      "cuts": 115,
+      "top3": 7,
+      "top5": 8,
+      "top10": 15,
+      "slot3Winner": 2,
+      "gainedTop3": [
+        "2026-09-29|Matutino",
+        "2026-10-05|Matutino"
+      ],
+      "lostTop3": [],
+      "changedThird": 79
+    },
+    "FORMAS_DIVERSAS": {
+      "cuts": 115,
+      "top3": 6,
+      "top5": 8,
+      "top10": 15,
+      "slot3Winner": 1,
+      "gainedTop3": [
+        "2026-10-03|Matutino"
+      ],
+      "lostTop3": [],
+      "changedThird": 76
+    },
+    "CONTINUIDAD_DIA": {
+      "cuts": 115,
+      "top3": 6,
+      "top5": 8,
+      "top10": 15,
+      "slot3Winner": 1,
+      "gainedTop3": [
+        "2026-10-03|Matutino"
+      ],
+      "lostTop3": [],
+      "changedThird": 58
+    },
+    "FUENTE_RECIENTE": {
+      "cuts": 115,
+      "top3": 7,
+      "top5": 8,
+      "top10": 15,
+      "slot3Winner": 2,
+      "gainedTop3": [
+        "2026-10-03|Matutino",
+        "2026-10-05|Matutino"
+      ],
+      "lostTop3": [],
+      "changedThird": 60
+    },
+    "HASH_NEUTRAL": {
+      "cuts": 115,
+      "top3": 6,
+      "top5": 7,
+      "top10": 15,
+      "slot3Winner": 1,
+      "gainedTop3": [
+        "2026-10-03|Matutino"
+      ],
+      "lostTop3": [],
+      "changedThird": 98
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "OFICIAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 0
+      },
+      "RANGO5_CONTROL": {
+        "cuts": 70,
+        "top3": 4,
+        "top5": 4,
+        "top10": 10,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-09-24|Previa"
+        ],
+        "lostTop3": [],
+        "changedThird": 70
+      },
+      "MAS_D1": {
+        "cuts": 70,
+        "top3": 5,
+        "top5": 5,
+        "top10": 10,
+        "slot3Winner": 2,
+        "gainedTop3": [
+          "2026-09-15|Matutino",
+          "2026-09-29|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 48
+      },
+      "MAS_D7": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 3,
+        "top10": 10,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 41
+      },
+      "EVENTOS_NO_COMPARTIDOS": {
+        "cuts": 70,
+        "top3": 4,
+        "top5": 4,
+        "top10": 10,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-09-29|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 50
+      },
+      "FORMAS_DIVERSAS": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 50
+      },
+      "CONTINUIDAD_DIA": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 34
+      },
+      "FUENTE_RECIENTE": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 36
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 70,
+        "top3": 3,
+        "top5": 4,
+        "top10": 10,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 59
+      }
+    },
+    "2026-10": {
+      "OFICIAL": {
+        "cuts": 45,
+        "top3": 2,
+        "top5": 4,
+        "top10": 5,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 0
+      },
+      "RANGO5_CONTROL": {
+        "cuts": 45,
+        "top3": 4,
+        "top5": 4,
+        "top10": 5,
+        "slot3Winner": 3,
+        "gainedTop3": [
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 45
+      },
+      "MAS_D1": {
+        "cuts": 45,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-05|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 21
+      },
+      "MAS_D7": {
+        "cuts": 45,
+        "top3": 3,
+        "top5": 3,
+        "top10": 5,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-03|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 25
+      },
+      "EVENTOS_NO_COMPARTIDOS": {
+        "cuts": 45,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-05|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 29
+      },
+      "FORMAS_DIVERSAS": {
+        "cuts": 45,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-03|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 26
+      },
+      "CONTINUIDAD_DIA": {
+        "cuts": 45,
+        "top3": 3,
+        "top5": 4,
+        "top10": 5,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-03|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 24
+      },
+      "FUENTE_RECIENTE": {
+        "cuts": 45,
+        "top3": 4,
+        "top5": 4,
+        "top10": 5,
+        "slot3Winner": 2,
+        "gainedTop3": [
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 24
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 45,
+        "top3": 3,
+        "top5": 3,
+        "top10": 5,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-03|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 39
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 0
+      },
+      "RANGO5_CONTROL": {
+        "cuts": 23,
+        "top3": 3,
+        "top5": 3,
+        "top10": 3,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-09-24|Previa"
+        ],
+        "lostTop3": [],
+        "changedThird": 23
+      },
+      "MAS_D1": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 15
+      },
+      "MAS_D7": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 13
+      },
+      "EVENTOS_NO_COMPARTIDOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 12
+      },
+      "FORMAS_DIVERSAS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 15
+      },
+      "CONTINUIDAD_DIA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 12
+      },
+      "FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 6
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 20
+      }
+    },
+    "Primera": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 0
+      },
+      "RANGO5_CONTROL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 23
+      },
+      "MAS_D1": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 10
+      },
+      "MAS_D7": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 10
+      },
+      "EVENTOS_NO_COMPARTIDOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 12
+      },
+      "FORMAS_DIVERSAS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 15
+      },
+      "CONTINUIDAD_DIA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 13
+      },
+      "FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 12
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 1,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 19
+      }
+    },
+    "Matutino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 1,
+        "top5": 3,
+        "top10": 8,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 0
+      },
+      "RANGO5_CONTROL": {
+        "cuts": 23,
+        "top3": 3,
+        "top5": 3,
+        "top10": 8,
+        "slot3Winner": 2,
+        "gainedTop3": [
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 23
+      },
+      "MAS_D1": {
+        "cuts": 23,
+        "top3": 4,
+        "top5": 5,
+        "top10": 8,
+        "slot3Winner": 3,
+        "gainedTop3": [
+          "2026-09-15|Matutino",
+          "2026-09-29|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 16
+      },
+      "MAS_D7": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 8,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-03|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 15
+      },
+      "EVENTOS_NO_COMPARTIDOS": {
+        "cuts": 23,
+        "top3": 3,
+        "top5": 4,
+        "top10": 8,
+        "slot3Winner": 2,
+        "gainedTop3": [
+          "2026-09-29|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 19
+      },
+      "FORMAS_DIVERSAS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 8,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-03|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 18
+      },
+      "CONTINUIDAD_DIA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 3,
+        "top10": 8,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-03|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 13
+      },
+      "FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 3,
+        "top5": 3,
+        "top10": 8,
+        "slot3Winner": 2,
+        "gainedTop3": [
+          "2026-10-03|Matutino",
+          "2026-10-05|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 11
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 8,
+        "slot3Winner": 1,
+        "gainedTop3": [
+          "2026-10-03|Matutino"
+        ],
+        "lostTop3": [],
+        "changedThird": 21
+      }
+    },
+    "Vespertino": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 0
+      },
+      "RANGO5_CONTROL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 23
+      },
+      "MAS_D1": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 15
+      },
+      "MAS_D7": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 14
+      },
+      "EVENTOS_NO_COMPARTIDOS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 17
+      },
+      "FORMAS_DIVERSAS": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 14
+      },
+      "CONTINUIDAD_DIA": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 11
+      },
+      "FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 14
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 23,
+        "top3": 0,
+        "top5": 0,
+        "top10": 0,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 21
+      }
+    },
+    "Nocturno": {
+      "OFICIAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 0
+      },
+      "RANGO5_CONTROL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 1,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 23
+      },
+      "MAS_D1": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 13
+      },
+      "MAS_D7": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 14
+      },
+      "EVENTOS_NO_COMPARTIDOS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 19
+      },
+      "FORMAS_DIVERSAS": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 14
+      },
+      "CONTINUIDAD_DIA": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 9
+      },
+      "FUENTE_RECIENTE": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 17
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 23,
+        "top3": 2,
+        "top5": 2,
+        "top10": 3,
+        "slot3Winner": 0,
+        "gainedTop3": [],
+        "lostTop3": [],
+        "changedThird": 17
+      }
+    }
+  },
+  "neutral": {
+    "runs": 5000,
+    "mean": 6.3816,
+    "median": 6,
+    "p05": 5,
+    "p95": 8,
+    "min": 5,
+    "max": 11,
+    "distribution": {
+      "5": 1159,
+      "6": 1793,
+      "7": 1271,
+      "8": 576,
+      "9": 165,
+      "10": 31,
+      "11": 5
+    },
+    "tail": {
+      "OFICIAL": 1,
+      "RANGO5_CONTROL": 0.15556888622275544,
+      "MAS_D1": 0.15556888622275544,
+      "MAS_D7": 0.768246350729854,
+      "EVENTOS_NO_COMPARTIDOS": 0.4097180563887223,
+      "FORMAS_DIVERSAS": 0.768246350729854,
+      "CONTINUIDAD_DIA": 0.768246350729854,
+      "FUENTE_RECIENTE": 0.4097180563887223,
+      "HASH_NEUTRAL": 0.768246350729854
+    }
+  },
+  "winningSlots": [
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "eligibleWinners": [
+        {
+          "rank": 7,
+          "family": "779/977"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "eligibleWinners": [
+        {
+          "rank": 8,
+          "family": "173/371"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "eligibleWinners": [
+        {
+          "rank": 8,
+          "family": "456/654"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "eligibleWinners": [
+        {
+          "rank": 5,
+          "family": "159/951"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "eligibleWinners": [
+        {
+          "rank": 8,
+          "family": "194/491"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "eligibleWinners": [
+        {
+          "rank": 6,
+          "family": "118/811"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "eligibleWinners": [
+        {
+          "rank": 6,
+          "family": "289/982"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "eligibleWinners": [
+        {
+          "rank": 4,
+          "family": "238/832"
+        },
+        {
+          "rank": 5,
+          "family": "295/592"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "eligibleWinners": [
+        {
+          "rank": 5,
+          "family": "729/927"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "eligibleWinners": [
+        {
+          "rank": 7,
+          "family": "071/170"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "eligibleWinners": [
+        {
+          "rank": 5,
+          "family": "456/654"
+        }
+      ]
+    }
+  ],
+  "seal": {
+    "input": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "protocol": "b01154ce73b62453e4b3edce98fa1cb3a2157bc318495c4f78e24e586f8374ca",
+    "script": "f367137301c025ae7f336379ca9ccb020868aaffcf0fd9535813e199c52d3b5a",
+    "pre": "31aaa7a5ac0af15db70bab58446d2fbb2a71f416ec0e308845d249cfdce31167",
+    "neutral": "791de6c1ef972dd799087d8865107d8f8f0b3f3af1de8a6f078aef3bef282d87"
+  },
+  "limits": "Mismo inventario del Top10: esto evalúa orden de la plaza #3, NO apertura física ni mejora Top10. Prueba post hoc sobre 115 cortes muchas veces explorados, NO demuestra predicción."
+}
