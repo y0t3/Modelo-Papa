@@ -1,6 +1,8 @@
-import React,{useMemo,useRef,useState} from 'react';
+import React,{useEffect,useMemo,useRef,useState} from 'react';
 import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator,Alert,Platform,StatusBar as RNStatusBar} from 'react-native';
 import {StatusBar} from 'expo-status-bar';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import DateField from './src/DateField';
 import {descargarCabezas} from './src/cabezas';
 import type {CabezasDia,Turno} from './src/domain';
@@ -21,6 +23,8 @@ import HeadsTable from './src/ui/HeadsTable';
 import InfoDashboard from './src/ui/InfoDashboard';
 import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
+import ZoomableTab from './src/ui/ZoomableTab';
+import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './src/tabZoom';
 
 type Screen='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const nav: {id:Screen;label:string}[]=[
@@ -33,6 +37,21 @@ const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+
 function LaloApp(){
  const {mode,colors:c,toggle}=useLaloTheme();
  const [screen,setScreen]=useState<Screen>('hoja');
+ const [zoomLevels,setZoomLevels]=useState(defaultZoomLevels);
+ useEffect(()=>{
+  let alive=true;
+  void AsyncStorage.getItem(ZOOM_STORAGE_KEY).then(raw=>{
+   if(alive)setZoomLevels(decodeTabZoom(raw));
+  }).catch(()=>{});
+  return ()=>{alive=false};
+ },[]);
+ const updateZoom=(next:number)=>{
+  setZoomLevels(previous=>{
+   const updated=applyTabZoom(previous,screen,next);
+   void AsyncStorage.setItem(ZOOM_STORAGE_KEY,JSON.stringify(updated)).catch(()=>{});
+   return updated;
+  });
+ };
  const [dateText,setDateText]=useState(isoToDisplay(today()));
  const [data,setData]=useState<CabezasDia|null>(null);
  const [sheet,setSheet]=useState<DailySheet|null>(null);
@@ -95,7 +114,7 @@ function LaloApp(){
   setHojaTurn(turn);setHojaFocused(id);setScreen('hoja');
  };
  const alignHojaOnReturn=(y:number)=>{
-  if(hojaFocused)scrollRef.current?.scrollTo({y:Math.max(0,y-8),animated:true});
+  if(hojaFocused)scrollRef.current?.scrollTo({y:Math.max(0,(y-8)*zoomLevels.hoja),animated:true});
  };
 
  return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar} backgroundColor={c.canvas}/>
@@ -111,7 +130,19 @@ function LaloApp(){
     }}>
     <Text style={s.tabText} numberOfLines={1} adjustsFontSizeToFit>{x.label}</Text>
    </Pressable>)}</View>
-  <ScrollView ref={scrollRef} style={{backgroundColor:c.canvas}} contentContainerStyle={s.content}>
+  <View style={[s.zoomBar,{backgroundColor:c.canvas,borderBottomColor:c.border}]}>
+   <Text style={[s.zoomHint,{color:c.subtext}]}>Pellizcá con dos dedos para ampliar</Text>
+   <Pressable accessibilityRole="button"
+    accessibilityLabel={'Zoom '+Math.round(zoomLevels[screen]*100)+' por ciento. Restablecer a 100'}
+    onPress={()=>updateZoom(1)}
+    style={[s.zoomButton,{backgroundColor:c.card,borderColor:c.border}]}>
+    <Text style={[s.zoomButtonText,{color:c.accent}]}>
+     {Math.round(zoomLevels[screen]*100)}% · Restablecer
+    </Text>
+   </Pressable>
+  </View>
+  <ZoomableTab key={screen} zoom={zoomLevels[screen]}
+   onZoomChange={updateZoom} scrollRef={scrollRef}>
    <View style={s.header}>
     <View style={s.headerLeft}/>
     <View style={{flex:1}}>
@@ -169,10 +200,10 @@ function LaloApp(){
    </>:screen==='cabezas'?
     <HeadsTable data={data} sheet={sheet} onOpenHead={openHeadInHoja}/>:
     <InfoDashboard turn={target} view={motor}/>}
-  </ScrollView>
+  </ZoomableTab>
  </SafeAreaView>;
 }
-export default function App(){return <LaloThemeProvider><LaloApp/></LaloThemeProvider>}
+export default function App(){return <GestureHandlerRootView style={{flex:1}}><LaloThemeProvider><LaloApp/></LaloThemeProvider></GestureHandlerRootView>}
 const insets=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+7:7;
 const s=StyleSheet.create({
  header:{flexDirection:'row',alignItems:'center',gap:6,marginBottom:11},
@@ -186,6 +217,11 @@ const s=StyleSheet.create({
  tabOn:{backgroundColor:'#0e4b89'},
  tabText:{fontSize:10,color:'#fff',fontWeight:'900'},
  content:{paddingHorizontal:12,paddingTop:7,paddingBottom:70},
+ zoomBar:{minHeight:39,flexDirection:'row',alignItems:'center',justifyContent:'space-between',
+  gap:8,borderBottomWidth:1,paddingHorizontal:11,paddingVertical:4},
+ zoomHint:{fontSize:10,flexShrink:1},
+ zoomButton:{paddingVertical:6,paddingHorizontal:10,borderWidth:1,borderRadius:8},
+ zoomButtonText:{fontSize:10,fontWeight:'900'},
  title:{color:'#fff',fontWeight:'900',fontSize:23,textAlign:'center'},
  subtitle:{color:'#d6b458',fontSize:11,textAlign:'center',marginBottom:11},
  selector:{backgroundColor:'#191124',borderRadius:11,padding:10},
