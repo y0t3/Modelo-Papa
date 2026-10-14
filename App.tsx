@@ -15,6 +15,7 @@ import type {LaloHistorical} from './src/motorLalo';
 import PanoramaSheet from './src/PanoramaSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
 import Vt3Explainer from './src/ui/Vt3Explainer';
+import Vt3Parallel from './src/ui/Vt3Parallel';
 import HeadsTable from './src/ui/HeadsTable';
 import InfoDashboard from './src/ui/InfoDashboard';
 import TurnStrip from './src/ui/TurnStrip';
@@ -77,6 +78,9 @@ function LaloApp(){
   if(!motor||!sheet||!sheet.heads[target]?.length)return null;
   return compareMotorLaloAfterDraw(motor,sheet.heads[target]);
  },[motor,sheet,target]);
+ const fiveHeads=useMemo(()=>JURS.filter(j=>j!=='Montevideo')
+  .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
+  [data,target]);
  const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null)};
  const showFamily=(id:string)=>{setFocused(id);setScreen('predictiva')};
 
@@ -130,6 +134,8 @@ function LaloApp(){
     <TurnStrip value={target} onChange={changeTurn}/>
     <PredictionSummary date={dateText} turn={target} view={motor}
      post={post} onFocus={showFamily}/>
+    <Vt3Parallel date={date||''} turn={target} sheet={sheet} view={motor}
+     historical={hist} heads={fiveHeads}/>
     <Vt3Explainer sheet={sheet} view={motor} turn={target}
      heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
    </>:screen==='cabezas'?
