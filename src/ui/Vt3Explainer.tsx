@@ -83,6 +83,25 @@ export default function Vt3Explainer({sheet,view,turn,heads,onFocus}:{
       <Text style={{fontSize:10,color:c.subtext,fontWeight:'700'}}>{label}</Text>
      </View>)}
     </View>
+    <View style={[s.reason,{borderColor:c.border}]}>
+     <Text style={[s.reasonTitle,{color:c.text}]}>EVOLUCIÓN VT3 · FUENTES DISPONIBLES</Text>
+     <Text style={[s.note,{color:c.subtext}]}>
+      Estado en la fuente recién incorporada: {audit.currentEvent==='INICIAL'?'PRIMERA FUENTE':
+       audit.currentEvent==='NACE'?'NACE FÍSICAMENTE':
+       audit.currentEvent==='SUMA_FUENTE'?'SUMA UNA FUENTE':
+       audit.currentEvent==='SIN_NOVEDAD'?'SIN CAMINOS NUEVOS':'AÚN NO APARECE'}.
+      Las fuentes anteriores siguen disponibles; no hay desaparición entre turnos.
+     </Text>
+     {audit.evolution.map(step=>
+      <View key={step.source} style={{marginTop:7}}>
+       <Text style={[s.note,{color:step.routes?kinds.vt3.line:c.muted}]}>
+        {sourceName[step.source]||step.source}: {step.event.replace(/_/g,' ')}
+        {' · '+step.routes+' camino(s), '+step.admitted+' admitido(s), '+
+          step.rootEvents+' antecedente(s) propios'}
+       </Text>
+      </View>
+     )}
+    </View>
     {audit.priorityReasons.map(r=>
      <View key={r.cutoff} style={[s.reason,{borderColor:c.border}]}>
       <Text style={[s.reasonTitle,{color:c.text}]}>Respecto al Top{r.cutoff}: {r.boundaryFamily} (#{r.boundaryRank})</Text>
