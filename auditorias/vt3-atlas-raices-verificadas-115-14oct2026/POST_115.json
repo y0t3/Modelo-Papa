@@ -1,0 +1,2879 @@
+{
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "157/751",
+      "tenth": "579/975",
+      "eligibleThird": 8,
+      "eligibleTenth": 9
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "157/751",
+      "tenth": "719/917",
+      "eligibleThird": 8,
+      "eligibleTenth": 19
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        }
+      },
+      "third": "748/847",
+      "tenth": "365/563",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "488/884",
+      "tenth": "487/784",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "488/884",
+      "tenth": "487/784",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "097/790",
+      "tenth": "075/570",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "717/717",
+      "tenth": "586/685",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "717/717",
+      "tenth": "080/080",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "717/717",
+      "tenth": "586/685",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "717/717",
+      "tenth": "508/805",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top3": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top10": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        }
+      },
+      "third": "444/444",
+      "tenth": "344/443",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "444/444",
+      "tenth": "344/443",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "444/444",
+      "tenth": "344/443",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "444/444",
+      "tenth": "344/443",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top3": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top10": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        }
+      },
+      "third": "444/444",
+      "tenth": "478/874",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "258/852",
+      "tenth": "275/572",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "173/371",
+      "tenth": "298/892",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "557/755",
+      "tenth": "257/752",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "273/372",
+      "tenth": "556/655",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        }
+      },
+      "third": "273/372",
+      "tenth": "556/655",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "498/894",
+      "tenth": "049/940",
+      "eligibleThird": 8,
+      "eligibleTenth": 12
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "085/580",
+      "tenth": "042/240",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "498/894",
+      "tenth": "549/945",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "558/855",
+      "tenth": "085/580",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "558/855",
+      "tenth": "035/530",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "387/783",
+      "tenth": "224/422",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "387/783",
+      "tenth": "187/781",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "387/783",
+      "tenth": "187/781",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "387/783",
+      "tenth": "187/781",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "387/783",
+      "tenth": "187/781",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "406/604",
+      "tenth": "448/844",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        }
+      },
+      "third": "404/404",
+      "tenth": "464/464",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "404/404",
+      "tenth": "044/440",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "404/404",
+      "tenth": "044/440",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "549/945",
+      "tenth": "417/714",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "365/563",
+      "tenth": "253/352",
+      "eligibleThird": 8,
+      "eligibleTenth": 19
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "293/392",
+      "tenth": "365/563",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "293/392",
+      "tenth": "365/563",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "293/392",
+      "tenth": "365/563",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "293/392",
+      "tenth": "365/563",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": true,
+          "top10": true
+        },
+        "top3": {
+          "top3": false,
+          "top5": true,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": true,
+          "top10": true
+        }
+      },
+      "third": "194/491",
+      "tenth": "319/913",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "207/702",
+      "tenth": "849/948",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        }
+      },
+      "third": "666/666",
+      "tenth": "076/670",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "054/450",
+      "tenth": "394/493",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "054/450",
+      "tenth": "394/493",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "228/822",
+      "tenth": "518/815",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "228/822",
+      "tenth": "192/291",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        }
+      },
+      "third": "228/822",
+      "tenth": "192/291",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "458/854",
+      "tenth": "118/811",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "458/854",
+      "tenth": "118/811",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "042/240",
+      "tenth": "318/813",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "408/804",
+      "tenth": "173/371",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "538/835",
+      "tenth": "024/420",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "538/835",
+      "tenth": "002/200",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "538/835",
+      "tenth": "002/200",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "307/703",
+      "tenth": "479/974",
+      "eligibleThird": 8,
+      "eligibleTenth": 16
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "367/763",
+      "tenth": "193/391",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "367/763",
+      "tenth": "193/391",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "367/763",
+      "tenth": "193/391",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "367/763",
+      "tenth": "163/361",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "597/795",
+      "tenth": "528/825",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "597/795",
+      "tenth": "124/421",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top3": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        }
+      },
+      "third": "289/982",
+      "tenth": "243/342",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "079/970",
+      "tenth": "289/982",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "079/970",
+      "tenth": "289/982",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "337/733",
+      "tenth": "081/180",
+      "eligibleThird": 8,
+      "eligibleTenth": 5
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "335/533",
+      "tenth": "058/850",
+      "eligibleThird": 8,
+      "eligibleTenth": 16
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top3": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top10": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        }
+      },
+      "third": "335/533",
+      "tenth": "058/850",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "335/533",
+      "tenth": "018/810",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "335/533",
+      "tenth": "053/350",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "019/910",
+      "tenth": "798/897",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "019/910",
+      "tenth": "487/784",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "314/413",
+      "tenth": "019/910",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "314/413",
+      "tenth": "096/690",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "789/987",
+      "tenth": "097/790",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top3": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top10": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        }
+      },
+      "third": "769/967",
+      "tenth": "669/966",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "104/401",
+      "tenth": "769/967",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "048/840",
+      "tenth": "369/963",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "048/840",
+      "tenth": "369/963",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "048/840",
+      "tenth": "369/963",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "024/420",
+      "tenth": "425/524",
+      "eligibleThird": 8,
+      "eligibleTenth": 19
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "024/420",
+      "tenth": "194/491",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": true,
+          "top10": true
+        },
+        "top3": {
+          "top3": false,
+          "top5": true,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": true,
+          "top10": true
+        }
+      },
+      "third": "454/454",
+      "tenth": "024/420",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "454/454",
+      "tenth": "329/923",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "254/452",
+      "tenth": "204/402",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "388/883",
+      "tenth": "387/783",
+      "eligibleThird": 8,
+      "eligibleTenth": 7
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "388/883",
+      "tenth": "778/877",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": true,
+          "top10": true
+        },
+        "top3": {
+          "top3": false,
+          "top5": true,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": true,
+          "top10": true
+        }
+      },
+      "third": "388/883",
+      "tenth": "738/837",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "388/883",
+      "tenth": "738/837",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "388/883",
+      "tenth": "738/837",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "183/381",
+      "tenth": "265/562",
+      "eligibleThird": 8,
+      "eligibleTenth": 7
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "296/692",
+      "tenth": "297/792",
+      "eligibleThird": 8,
+      "eligibleTenth": 16
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "296/692",
+      "tenth": "246/642",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "368/863",
+      "tenth": "246/642",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "368/863",
+      "tenth": "158/851",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "479/974",
+      "tenth": "067/760",
+      "eligibleThird": 8,
+      "eligibleTenth": 14
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "227/722",
+      "tenth": "697/796",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "252/252",
+      "tenth": "267/762",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "252/252",
+      "tenth": "267/762",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "252/252",
+      "tenth": "071/170",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "163/361",
+      "tenth": "089/980",
+      "eligibleThird": 8,
+      "eligibleTenth": 12
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "165/561",
+      "tenth": "149/941",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": true
+        }
+      },
+      "third": "809/908",
+      "tenth": "149/941",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "156/651",
+      "tenth": "178/871",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "156/651",
+      "tenth": "178/871",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "438/834",
+      "tenth": "466/664",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "438/834",
+      "tenth": "466/664",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "438/834",
+      "tenth": "466/664",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "436/634",
+      "tenth": "081/180",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "436/634",
+      "tenth": "104/401",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "536/635",
+      "tenth": "556/655",
+      "eligibleThird": 8,
+      "eligibleTenth": 3
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "355/553",
+      "tenth": "647/746",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "355/553",
+      "tenth": "537/735",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "trials": {
+        "official": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top3": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "top10": {
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      },
+      "third": "355/553",
+      "tenth": "537/735",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "trials": {
+        "official": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top3": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "top10": {
+          "top3": true,
+          "top5": true,
+          "top10": true
+        }
+      },
+      "third": "355/553",
+      "tenth": "537/735",
+      "eligibleThird": 8,
+      "eligibleTenth": 20
+    }
+  ]
+}

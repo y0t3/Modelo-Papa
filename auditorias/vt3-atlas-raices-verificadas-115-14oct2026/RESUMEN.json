@@ -1,0 +1,980 @@
+{
+  "scope": "RETROSPECTIVO, NO PREDICTIVO",
+  "cuts": 115,
+  "pre": {
+    "familyCutRecords": 15273,
+    "rootedFamilyCutRecords": 6389,
+    "rootRouteAttributions": 16176,
+    "uniqueRootIds": 582,
+    "recordsWithShapeMutation": 2644
+  },
+  "signals": {
+    "MUTATION": {
+      "exposures": 2644,
+      "winners": 28
+    },
+    "SHIFT_BIG": {
+      "exposures": 3157,
+      "winners": 37
+    },
+    "CHANGE_NUMERIC": {
+      "exposures": 6389,
+      "winners": 64
+    },
+    "D7_BIG": {
+      "exposures": 1685,
+      "winners": 16
+    },
+    "MULTI_ROOT": {
+      "exposures": 1935,
+      "winners": 19
+    }
+  },
+  "winningAnchoredFamilyCutRecords": 64,
+  "winningPhysicalFamilyCutRecords": 143,
+  "matched": {
+    "MUTATION": {
+      "observed": 14,
+      "expected": 16.2673,
+      "mixedBins": 24,
+      "notComparablePositive": 39,
+      "excess": -2.2673
+    },
+    "SHIFT_BIG": {
+      "observed": 32,
+      "expected": 27.5855,
+      "mixedBins": 55,
+      "notComparablePositive": 7,
+      "excess": 4.4145
+    },
+    "CHANGE_NUMERIC": {
+      "observed": 0,
+      "expected": 0,
+      "mixedBins": 0,
+      "notComparablePositive": 64,
+      "excess": 0
+    },
+    "D7_BIG": {
+      "observed": 13,
+      "expected": 11.9295,
+      "mixedBins": 26,
+      "notComparablePositive": 38,
+      "excess": 1.0705
+    },
+    "MULTI_ROOT": {
+      "observed": 10,
+      "expected": 9.6081,
+      "mixedBins": 31,
+      "notComparablePositive": 32,
+      "excess": 0.3919
+    }
+  },
+  "scorecard": {
+    "official": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gains10": [],
+      "losses10": []
+    },
+    "top3": {
+      "top3": 6,
+      "top5": 9,
+      "top10": 15,
+      "gains10": [],
+      "losses10": []
+    },
+    "top10": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "gains10": [],
+      "losses10": []
+    }
+  },
+  "neutral": {
+    "third": {
+      "controls": 2000,
+      "mean": 6.375,
+      "p05": 5,
+      "median": 6,
+      "p95": 8,
+      "observed": 6,
+      "upperTail": 0.769615192403798
+    },
+    "tenth": {
+      "controls": 2000,
+      "mean": 15.61,
+      "p05": 15,
+      "median": 15,
+      "p95": 17,
+      "observed": 15,
+      "upperTail": 1
+    }
+  },
+  "opportunity": {
+    "cutsWithEligibleRootedTenth": 115,
+    "candidateTenthRecords": 2194,
+    "changedThird": 46
+  },
+  "winningExamples": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "family": "175/571",
+      "rank": 11,
+      "score": 1,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "1,0"
+      ],
+      "ancestralFamilies": [
+        "076/670"
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "family": "779/977",
+      "rank": 7,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "-1,0",
+        "-2,0",
+        "0,0",
+        "1,0",
+        "2,0",
+        "3,0"
+      ],
+      "ancestralFamilies": [
+        "076/670",
+        "164/461"
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "family": "365/563",
+      "rank": 12,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "3,0"
+      ],
+      "ancestralFamilies": [
+        "678/876"
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "family": "174/471",
+      "rank": 54,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "3,0"
+      ],
+      "ancestralFamilies": [
+        "535/535"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "family": "087/780",
+      "rank": 12,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "0,0",
+        "2,0"
+      ],
+      "ancestralFamilies": [
+        "314/413",
+        "779/977"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "family": "070/070",
+      "rank": 61,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-2,0"
+      ],
+      "ancestralFamilies": [
+        "168/861"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "family": "446/644",
+      "rank": 1,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "-1,0",
+        "-4,0",
+        "0,0",
+        "1,0"
+      ],
+      "ancestralFamilies": [
+        "043/340",
+        "075/570",
+        "087/780",
+        "104/401"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "family": "438/834",
+      "rank": 18,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "3,0"
+      ],
+      "ancestralFamilies": [
+        "070/070"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "family": "748/847",
+      "rank": 33,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-2,0"
+      ],
+      "ancestralFamilies": [
+        "043/340"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "family": "174/471",
+      "rank": 33,
+      "score": 1,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-1,0"
+      ],
+      "ancestralFamilies": [
+        "043/340"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "family": "464/464",
+      "rank": 2,
+      "score": 4,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "-1,0",
+        "0,0"
+      ],
+      "ancestralFamilies": [
+        "043/340",
+        "070/070",
+        "107/701"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "family": "438/834",
+      "rank": 21,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "3,0"
+      ],
+      "ancestralFamilies": [
+        "070/070"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "family": "294/492",
+      "rank": 46,
+      "score": 1,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "0,0"
+      ],
+      "ancestralFamilies": [
+        "464/464"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "family": "537/735",
+      "rank": 83,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "2,0"
+      ],
+      "ancestralFamilies": [
+        "446/644"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "family": "173/371",
+      "rank": 8,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "2,0"
+      ],
+      "ancestralFamilies": [
+        "476/674"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "family": "798/897",
+      "rank": 13,
+      "score": 4,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "0,0",
+        "0,1"
+      ],
+      "ancestralFamilies": [
+        "464/464"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "family": "657/756",
+      "rank": 90,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-2,0"
+      ],
+      "ancestralFamilies": [
+        "476/674"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "family": "446/644",
+      "rank": 112,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "3,0"
+      ],
+      "ancestralFamilies": [
+        "085/580"
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "family": "108/801",
+      "rank": 31,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "3,-1"
+      ],
+      "ancestralFamilies": [
+        "798/897"
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "family": "619/916",
+      "rank": 43,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-2,0"
+      ],
+      "ancestralFamilies": [
+        "173/371"
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "family": "109/901",
+      "rank": 63,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-2,0"
+      ],
+      "ancestralFamilies": [
+        "126/621"
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "family": "246/642",
+      "rank": 42,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "1,0",
+        "3,0",
+        "4,0"
+      ],
+      "ancestralFamilies": [
+        "098/890",
+        "355/553",
+        "396/693"
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "family": "173/371",
+      "rank": 42,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "-2,0",
+        "-4,0",
+        "0,0",
+        "1,0"
+      ],
+      "ancestralFamilies": [
+        "098/890",
+        "109/901",
+        "355/553",
+        "396/693"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "family": "456/654",
+      "rank": 8,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "-2,0",
+        "1,0"
+      ],
+      "ancestralFamilies": [
+        "173/371",
+        "246/642"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "family": "082/280",
+      "rank": 35,
+      "score": 1,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "0,0"
+      ],
+      "ancestralFamilies": [
+        "365/563"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "family": "517/715",
+      "rank": 35,
+      "score": 4,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "1,0"
+      ],
+      "ancestralFamilies": [
+        "227/722"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "family": "207/702",
+      "rank": 52,
+      "score": 1,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-1,0"
+      ],
+      "ancestralFamilies": [
+        "365/563"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "family": "159/951",
+      "rank": 5,
+      "score": 4,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "0,1",
+        "1,0"
+      ],
+      "ancestralFamilies": [
+        "446/644"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "family": "194/491",
+      "rank": 8,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "1,0",
+        "2,0",
+        "3,0",
+        "4,0"
+      ],
+      "ancestralFamilies": [
+        "446/644",
+        "748/847"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "family": "676/676",
+      "rank": 20,
+      "score": 1,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "1,0"
+      ],
+      "ancestralFamilies": [
+        "064/460"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "family": "189/981",
+      "rank": 28,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "2,0",
+        "4,0"
+      ],
+      "ancestralFamilies": [
+        "438/834",
+        "446/644"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "family": "076/670",
+      "rank": 15,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-2,0"
+      ],
+      "ancestralFamilies": [
+        "476/674"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "family": "418/814",
+      "rank": 74,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "4,0"
+      ],
+      "ancestralFamilies": [
+        "464/464"
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "family": "118/811",
+      "rank": 6,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "-1,0",
+        "3,0"
+      ],
+      "ancestralFamilies": [
+        "189/981",
+        "798/897"
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "family": "429/924",
+      "rank": 73,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-3,0"
+      ],
+      "ancestralFamilies": [
+        "194/491"
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "family": "107/701",
+      "rank": 52,
+      "score": 1,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-1,0"
+      ],
+      "ancestralFamilies": [
+        "264/462"
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "family": "757/757",
+      "rank": 66,
+      "score": 1,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "-1,0"
+      ],
+      "ancestralFamilies": [
+        "109/901"
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "family": "283/382",
+      "rank": 47,
+      "score": 3,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": true
+      },
+      "shifts": [
+        "1,0",
+        "3,0",
+        "4,0"
+      ],
+      "ancestralFamilies": [
+        "098/890",
+        "355/553",
+        "396/693"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "family": "037/730",
+      "rank": 16,
+      "score": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": true,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "2,0",
+        "3,0"
+      ],
+      "ancestralFamilies": [
+        "173/371"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "family": "067/760",
+      "rank": 18,
+      "score": 4,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true,
+        "D7_BIG": false,
+        "MULTI_ROOT": false
+      },
+      "shifts": [
+        "1,0",
+        "2,0"
+      ],
+      "ancestralFamilies": [
+        "227/722"
+      ]
+    }
+  ],
+  "seal": {
+    "preAtlas": "7bbeb4fd79258258eec56a027db662c53ed2d668429421090378aeb816df5525",
+    "preAtlasRoutes": "c8a22e6692d3a95553f4db9330584aab454f825ac6fced8f3cf2aff6cd58661e",
+    "protocol": "42afe682fe0dce1b16368804dfa1f8eae70da2cc5e902eec240358f803e8249d",
+    "code": "9c20e7cefc3679a4039fcb53e71b0a48d0f82f04044d66d0ea91945af7ed7a27",
+    "pre": "673d8ef18e89db85f84165b994f4839cea911102bb7f9f82f04f32996ea62edb"
+  },
+  "warnings": [
+    "Estas raíces antiguas sí están sustentadas por cabezas ganadoras históricas, pero son cientos de recorridos dependientes.",
+    "El mismo rootId puede sostener varias familias y recorridos: su multiplicación no es evidencia independiente.",
+    "115 cortes ya investigados repetidamente, por lo que asociaciones y mejoras son solo exploratorias.",
+    "No se modifica selección oficial, VT4 ni sello de predicción real."
+  ]
+}
