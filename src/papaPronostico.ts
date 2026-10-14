@@ -148,15 +148,16 @@ export function weeklySummary(records:PapaRecord[],date:string){
  const monday=weekStart(date),sunday=weekEnd(monday);
  const list=records.filter(r=>r.snapshot.pre.date>=monday&&r.snapshot.pre.date<=sunday);
  const played=emptyCounter(),hit=emptyCounter(),turnsWon=emptyCounter();
- let checkedTurns=0,headsCompared=0;
+ let checkedTurns=0,headsCompared=0,partialTurns=0;
  for(const record of list){
   const stats=evaluatePapa(record);
   if(stats.jurisdictions){checkedTurns++;headsCompared+=stats.jurisdictions;}
+  if(stats.jurisdictions>0&&stats.jurisdictions<PAPA_JURS.length)partialTurns++;
   for(const k of ['vt2','vt3','vt4'] as PapaKind[]){
    played[k]+=stats.wagers[k];
    hit[k]+=stats.hits[k];turnsWon[k]+=Number(stats.correctTurns[k]);
   }
  }
  return {monday,sunday,records:list.length,checkedTurns,headsCompared,
-  pendingTurns:list.length-checkedTurns,played,hit,turnsWon};
+  pendingTurns:list.length-checkedTurns,partialTurns,played,hit,turnsWon};
 }
