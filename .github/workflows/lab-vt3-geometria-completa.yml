@@ -1,0 +1,47 @@
+name: VT3 geometria completa frente a anclada 115 cortes
+on:
+  push:
+    branches: [lab-vt3-geometria-completa-14oct2026]
+    paths:
+      - 'scripts/lab-vt3-geometria-completa-vs-anclada.mjs'
+      - 'PROTOCOLO_VT3_GEOMETRIA_COMPLETA_VS_ANCLADA_14OCT2026.md'
+      - '.github/workflows/lab-vt3-geometria-completa.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar resultados futuros durante PRE
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/geo-full-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/geo-full-nocturna.json
+      - name: Seleccionar primero recorridos y sellar universo PRE
+        run: node scripts/lab-vt3-geometria-completa-vs-anclada.mjs pre
+      - name: Restaurar objetivos y ejecutar 2000 controles neutrales por universo
+        run: |
+          mv /tmp/geo-full-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/geo-full-nocturna.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          node scripts/lab-vt3-geometria-completa-vs-anclada.mjs post
+      - name: Conservar artefactos reproducibles
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-completa-vs-anclada-115
+          path: auditorias/vt3-geometria-completa-vs-anclada-115-14oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar PRE y POST separados en la rama laboratorio
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-geometria-completa-vs-anclada-115-14oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): medir universo geométrico completo y anclado'
+            git push origin HEAD:lab-vt3-geometria-completa-14oct2026
+          fi
