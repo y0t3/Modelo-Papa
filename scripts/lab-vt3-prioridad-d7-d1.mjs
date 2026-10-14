@@ -66,7 +66,7 @@ function buildRow(date,turn,raw,kind){
  const d7=full.map(x=>x.family);
  assert.deepEqual(full.slice().sort((a,b)=>a.rank-b.rank).map(x=>x.family),profiles.map(x=>x.family));
  assert.equal(uniq(official).length,10);
- const pool3=profiles.slice(2,30).filter(x=>klass(x)==='D7_SOLO');
+ const pool3=profiles.slice(2,10).filter(x=>klass(x)==='D7_SOLO');
  const pool10=profiles.slice(10,30).filter(x=>klass(x)==='D7_SOLO');
  const pool10D1=profiles.slice(10,30).filter(x=>klass(x)==='D1_SOLO');
  const best3=pool3.slice().sort(prefer)[0];
