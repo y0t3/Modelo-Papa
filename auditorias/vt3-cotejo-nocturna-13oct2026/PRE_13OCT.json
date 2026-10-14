@@ -1,0 +1,3998 @@
+{
+  "date": "2026-10-13",
+  "status": "RETROSPECTIVA_EXCEPTO_BASE_MATUTINO_SELLADA_ANTES_DEL_SORTEO",
+  "ruleChallengerDefinedAfterDraw": true,
+  "matutinoPriorSeal": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+  "rows": [
+    {
+      "date": "2026-10-13",
+      "turn": "Previa",
+      "previousDates": [
+        "2026-10-12",
+        "2026-10-06"
+      ],
+      "rootCount": 31,
+      "sourceColumns": [
+        {
+          "source": "prevNocturno",
+          "values": [
+            "62",
+            "26",
+            "53",
+            "01",
+            "75",
+            "--"
+          ]
+        }
+      ],
+      "ranks": [
+        {
+          "family": "226/622",
+          "rank": 1,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 2,
+          "sources": 1,
+          "paths": 4
+        },
+        {
+          "family": "266/662",
+          "rank": 2,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "305/503",
+          "rank": 3,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "326/623",
+          "rank": 4,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "507/705",
+          "rank": 5,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "051/150",
+          "rank": 6,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "056/650",
+          "rank": 7,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "071/170",
+          "rank": 8,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "152/251",
+          "rank": 9,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "225/522",
+          "rank": 10,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "256/652",
+          "rank": 11,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "307/703",
+          "rank": 12,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "325/523",
+          "rank": 13,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "505/505",
+          "rank": 14,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "517/715",
+          "rank": 15,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "031/130",
+          "rank": 16,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "032/230",
+          "rank": 17,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "365/563",
+          "rank": 18,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "566/665",
+          "rank": 19,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        }
+      ],
+      "rankedVt4": [
+        {
+          "family": "2263/6223",
+          "rank": 1,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2263",
+            "6223"
+          ]
+        },
+        {
+          "family": "2265/6225",
+          "rank": 2,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2265",
+            "6225"
+          ]
+        },
+        {
+          "family": "3226/3622",
+          "rank": 3,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "3226",
+            "3622"
+          ]
+        },
+        {
+          "family": "5226/5622",
+          "rank": 4,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "5226",
+            "5622"
+          ]
+        },
+        {
+          "family": "2266/6226",
+          "rank": 5,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6226",
+            "2266"
+          ]
+        },
+        {
+          "family": "6226/6622",
+          "rank": 6,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6622",
+            "6226"
+          ]
+        },
+        {
+          "family": "2663/6623",
+          "rank": 7,
+          "parents": [
+            "266/662"
+          ],
+          "values": [
+            "2663",
+            "6623"
+          ]
+        },
+        {
+          "family": "2665/6625",
+          "rank": 8,
+          "parents": [
+            "266/662"
+          ],
+          "values": [
+            "2665",
+            "6625"
+          ]
+        },
+        {
+          "family": "3266/3662",
+          "rank": 9,
+          "parents": [
+            "266/662"
+          ],
+          "values": [
+            "3266",
+            "3662"
+          ]
+        },
+        {
+          "family": "5266/5662",
+          "rank": 10,
+          "parents": [
+            "266/662"
+          ],
+          "values": [
+            "5266",
+            "5662"
+          ]
+        }
+      ],
+      "decision": {
+        "official": [
+          "226/622",
+          "266/662",
+          "305/503",
+          "326/623",
+          "507/705",
+          "051/150",
+          "056/650",
+          "071/170",
+          "152/251",
+          "225/522"
+        ],
+        "d1": [
+          "226/622",
+          "266/662",
+          "305/503",
+          "326/623",
+          "507/705",
+          "051/150",
+          "056/650",
+          "071/170",
+          "152/251",
+          "225/522"
+        ],
+        "hash": [
+          "226/622",
+          "266/662",
+          "056/650",
+          "305/503",
+          "326/623",
+          "507/705",
+          "051/150",
+          "071/170",
+          "152/251",
+          "225/522"
+        ],
+        "selected": {
+          "family": "305/503",
+          "oldRank": 3,
+          "d1": 1,
+          "d7": 0,
+          "blocks": 2
+        },
+        "neutral": {
+          "family": "056/650",
+          "oldRank": 7
+        }
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "turn": "Primera",
+      "previousDates": [
+        "2026-10-12",
+        "2026-10-06"
+      ],
+      "rootCount": 60,
+      "sourceColumns": [
+        {
+          "source": "prevNocturno",
+          "values": [
+            "62",
+            "26",
+            "53",
+            "01",
+            "75",
+            "--"
+          ]
+        },
+        {
+          "source": "Previa",
+          "values": [
+            "59",
+            "48",
+            "57",
+            "30",
+            "06",
+            "--"
+          ]
+        }
+      ],
+      "ranks": [
+        {
+          "family": "226/622",
+          "rank": 1,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 2,
+          "sources": 1,
+          "paths": 4
+        },
+        {
+          "family": "305/503",
+          "rank": 2,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 3
+        },
+        {
+          "family": "507/705",
+          "rank": 3,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 3
+        },
+        {
+          "family": "036/630",
+          "rank": 4,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "485/584",
+          "rank": 5,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "266/662",
+          "rank": 6,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "326/623",
+          "rank": 7,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "037/730",
+          "rank": 8,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "548/845",
+          "rank": 9,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "063/360",
+          "rank": 10,
+          "roots": 3,
+          "d1": 1,
+          "d7": 2,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "307/703",
+          "rank": 11,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 2,
+          "paths": 2
+        },
+        {
+          "family": "547/745",
+          "rank": 12,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "053/350",
+          "rank": 13,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "458/854",
+          "rank": 14,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "475/574",
+          "rank": 15,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "051/150",
+          "rank": 16,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "056/650",
+          "rank": 17,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "071/170",
+          "rank": 18,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "152/251",
+          "rank": 19,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "225/522",
+          "rank": 20,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "256/652",
+          "rank": 21,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "325/523",
+          "rank": 22,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "505/505",
+          "rank": 23,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "517/715",
+          "rank": 24,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "589/985",
+          "rank": 25,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "006/600",
+          "rank": 26,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "007/700",
+          "rank": 27,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "030/030",
+          "rank": 28,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "031/130",
+          "rank": 29,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "032/230",
+          "rank": 30,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "054/450",
+          "rank": 31,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "060/060",
+          "rank": 32,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "357/753",
+          "rank": 33,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "365/563",
+          "rank": 34,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "378/873",
+          "rank": 35,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "459/954",
+          "rank": 36,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "478/874",
+          "rank": 37,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "489/984",
+          "rank": 38,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "536/635",
+          "rank": 39,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "566/665",
+          "rank": 40,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "578/875",
+          "rank": 41,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "758/857",
+          "rank": 42,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "849/948",
+          "rank": 43,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        }
+      ],
+      "rankedVt4": [
+        {
+          "family": "2263/6223",
+          "rank": 1,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2263",
+            "6223"
+          ]
+        },
+        {
+          "family": "2265/6225",
+          "rank": 2,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2265",
+            "6225"
+          ]
+        },
+        {
+          "family": "3226/3622",
+          "rank": 3,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "3226",
+            "3622"
+          ]
+        },
+        {
+          "family": "5226/5622",
+          "rank": 4,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "5226",
+            "5622"
+          ]
+        },
+        {
+          "family": "2266/6226",
+          "rank": 5,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6226",
+            "2266"
+          ]
+        },
+        {
+          "family": "6226/6622",
+          "rank": 6,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6622",
+            "6226"
+          ]
+        },
+        {
+          "family": "3056/5036",
+          "rank": 7,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "5036",
+            "3056"
+          ]
+        },
+        {
+          "family": "6305/6503",
+          "rank": 8,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "6503",
+            "6305"
+          ]
+        },
+        {
+          "family": "3057/5037",
+          "rank": 9,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "5037",
+            "3057"
+          ]
+        },
+        {
+          "family": "7305/7503",
+          "rank": 10,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "7503",
+            "7305"
+          ]
+        }
+      ],
+      "decision": {
+        "official": [
+          "226/622",
+          "305/503",
+          "507/705",
+          "036/630",
+          "485/584",
+          "266/662",
+          "326/623",
+          "037/730",
+          "548/845",
+          "063/360"
+        ],
+        "d1": [
+          "226/622",
+          "305/503",
+          "063/360",
+          "507/705",
+          "036/630",
+          "485/584",
+          "266/662",
+          "326/623",
+          "037/730",
+          "548/845"
+        ],
+        "hash": [
+          "226/622",
+          "305/503",
+          "485/584",
+          "507/705",
+          "036/630",
+          "266/662",
+          "326/623",
+          "037/730",
+          "548/845",
+          "063/360"
+        ],
+        "selected": {
+          "family": "063/360",
+          "oldRank": 10,
+          "d1": 1,
+          "d7": 2,
+          "blocks": 2
+        },
+        "neutral": {
+          "family": "485/584",
+          "oldRank": 5
+        }
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "turn": "Matutino",
+      "previousDates": [
+        "2026-10-12",
+        "2026-10-06"
+      ],
+      "rootCount": 83,
+      "sourceColumns": [
+        {
+          "source": "prevNocturno",
+          "values": [
+            "62",
+            "26",
+            "53",
+            "01",
+            "75",
+            "--"
+          ]
+        },
+        {
+          "source": "Previa",
+          "values": [
+            "59",
+            "48",
+            "57",
+            "30",
+            "06",
+            "--"
+          ]
+        },
+        {
+          "source": "Primera",
+          "values": [
+            "96",
+            "21",
+            "68",
+            "96",
+            "95",
+            "--"
+          ]
+        }
+      ],
+      "ranks": [
+        {
+          "family": "226/622",
+          "rank": 1,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 2,
+          "sources": 1,
+          "paths": 4
+        },
+        {
+          "family": "305/503",
+          "rank": 2,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 3
+        },
+        {
+          "family": "699/996",
+          "rank": 3,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "266/662",
+          "rank": 4,
+          "roots": 2,
+          "d1": 2,
+          "d7": 0,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 4
+        },
+        {
+          "family": "629/926",
+          "rank": 5,
+          "roots": 2,
+          "d1": 2,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "507/705",
+          "rank": 6,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 3
+        },
+        {
+          "family": "596/695",
+          "rank": 7,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "036/630",
+          "rank": 8,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "485/584",
+          "rank": 9,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "326/623",
+          "rank": 10,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "569/965",
+          "rank": 11,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "618/816",
+          "rank": 12,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "689/986",
+          "rank": 13,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "037/730",
+          "rank": 14,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "548/845",
+          "rank": 15,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "619/916",
+          "rank": 16,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "669/966",
+          "rank": 17,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "162/261",
+          "rank": 18,
+          "roots": 3,
+          "d1": 3,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "698/896",
+          "rank": 19,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "063/360",
+          "rank": 20,
+          "roots": 3,
+          "d1": 1,
+          "d7": 2,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "307/703",
+          "rank": 21,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 2,
+          "paths": 2
+        },
+        {
+          "family": "547/745",
+          "rank": 22,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "053/350",
+          "rank": 23,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "458/854",
+          "rank": 24,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "475/574",
+          "rank": 25,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "051/150",
+          "rank": 26,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "056/650",
+          "rank": 27,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "071/170",
+          "rank": 28,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "152/251",
+          "rank": 29,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "225/522",
+          "rank": 30,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "256/652",
+          "rank": 31,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "325/523",
+          "rank": 32,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "505/505",
+          "rank": 33,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "829/928",
+          "rank": 34,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "126/621",
+          "rank": 35,
+          "roots": 2,
+          "d1": 0,
+          "d7": 2,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "517/715",
+          "rank": 36,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "589/985",
+          "rank": 37,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "006/600",
+          "rank": 38,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "007/700",
+          "rank": 39,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "030/030",
+          "rank": 40,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "031/130",
+          "rank": 41,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "032/230",
+          "rank": 42,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "054/450",
+          "rank": 43,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "060/060",
+          "rank": 44,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "168/861",
+          "rank": 45,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "289/982",
+          "rank": 46,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "296/692",
+          "rank": 47,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "357/753",
+          "rank": 48,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "365/563",
+          "rank": 49,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "378/873",
+          "rank": 50,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "459/954",
+          "rank": 51,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "478/874",
+          "rank": 52,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "489/984",
+          "rank": 53,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "536/635",
+          "rank": 54,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "566/665",
+          "rank": 55,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "578/875",
+          "rank": 56,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "758/857",
+          "rank": 57,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "849/948",
+          "rank": 58,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "869/968",
+          "rank": 59,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        }
+      ],
+      "rankedVt4": [
+        {
+          "family": "2263/6223",
+          "rank": 1,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2263",
+            "6223"
+          ]
+        },
+        {
+          "family": "2265/6225",
+          "rank": 2,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2265",
+            "6225"
+          ]
+        },
+        {
+          "family": "3226/3622",
+          "rank": 3,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "3226",
+            "3622"
+          ]
+        },
+        {
+          "family": "5226/5622",
+          "rank": 4,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "5226",
+            "5622"
+          ]
+        },
+        {
+          "family": "2266/6226",
+          "rank": 5,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6226",
+            "2266"
+          ]
+        },
+        {
+          "family": "6226/6622",
+          "rank": 6,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6622",
+            "6226"
+          ]
+        },
+        {
+          "family": "3056/5036",
+          "rank": 7,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "5036",
+            "3056"
+          ]
+        },
+        {
+          "family": "6305/6503",
+          "rank": 8,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "6503",
+            "6305"
+          ]
+        },
+        {
+          "family": "3057/5037",
+          "rank": 9,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "5037",
+            "3057"
+          ]
+        },
+        {
+          "family": "7305/7503",
+          "rank": 10,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "7503",
+            "7305"
+          ]
+        }
+      ],
+      "decision": {
+        "official": [
+          "226/622",
+          "305/503",
+          "699/996",
+          "266/662",
+          "629/926",
+          "507/705",
+          "596/695",
+          "036/630",
+          "485/584",
+          "326/623"
+        ],
+        "d1": [
+          "226/622",
+          "305/503",
+          "699/996",
+          "266/662",
+          "629/926",
+          "507/705",
+          "596/695",
+          "036/630",
+          "485/584",
+          "326/623"
+        ],
+        "hash": [
+          "226/622",
+          "305/503",
+          "266/662",
+          "699/996",
+          "629/926",
+          "507/705",
+          "596/695",
+          "036/630",
+          "485/584",
+          "326/623"
+        ],
+        "selected": {
+          "family": "699/996",
+          "oldRank": 3,
+          "d1": 2,
+          "d7": 1,
+          "blocks": 2
+        },
+        "neutral": {
+          "family": "266/662",
+          "oldRank": 4
+        }
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "turn": "Vespertino",
+      "previousDates": [
+        "2026-10-12",
+        "2026-10-06"
+      ],
+      "rootCount": 98,
+      "sourceColumns": [
+        {
+          "source": "prevNocturno",
+          "values": [
+            "62",
+            "26",
+            "53",
+            "01",
+            "75",
+            "--"
+          ]
+        },
+        {
+          "source": "Previa",
+          "values": [
+            "59",
+            "48",
+            "57",
+            "30",
+            "06",
+            "--"
+          ]
+        },
+        {
+          "source": "Primera",
+          "values": [
+            "96",
+            "21",
+            "68",
+            "96",
+            "95",
+            "--"
+          ]
+        },
+        {
+          "source": "Matutino",
+          "values": [
+            "87",
+            "68",
+            "24",
+            "34",
+            "95",
+            "--"
+          ]
+        }
+      ],
+      "ranks": [
+        {
+          "family": "226/622",
+          "rank": 1,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 2,
+          "sources": 1,
+          "paths": 4
+        },
+        {
+          "family": "305/503",
+          "rank": 2,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 3
+        },
+        {
+          "family": "699/996",
+          "rank": 3,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "266/662",
+          "rank": 4,
+          "roots": 2,
+          "d1": 2,
+          "d7": 0,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 4
+        },
+        {
+          "family": "629/926",
+          "rank": 5,
+          "roots": 2,
+          "d1": 2,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "507/705",
+          "rank": 6,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 3
+        },
+        {
+          "family": "596/695",
+          "rank": 7,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "036/630",
+          "rank": 8,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "485/584",
+          "rank": 9,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "326/623",
+          "rank": 10,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "569/965",
+          "rank": 11,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "618/816",
+          "rank": 12,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "689/986",
+          "rank": 13,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "037/730",
+          "rank": 14,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "234/432",
+          "rank": 15,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "268/862",
+          "rank": 16,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "324/423",
+          "rank": 17,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "428/824",
+          "rank": 18,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "435/534",
+          "rank": 19,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "439/934",
+          "rank": 20,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "548/845",
+          "rank": 21,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "619/916",
+          "rank": 22,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "669/966",
+          "rank": 23,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "768/867",
+          "rank": 24,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "162/261",
+          "rank": 25,
+          "roots": 3,
+          "d1": 3,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "698/896",
+          "rank": 26,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "063/360",
+          "rank": 27,
+          "roots": 3,
+          "d1": 1,
+          "d7": 2,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "307/703",
+          "rank": 28,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 2,
+          "paths": 2
+        },
+        {
+          "family": "547/745",
+          "rank": 29,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "053/350",
+          "rank": 30,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "458/854",
+          "rank": 31,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "475/574",
+          "rank": 32,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "051/150",
+          "rank": 33,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "056/650",
+          "rank": 34,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "071/170",
+          "rank": 35,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "152/251",
+          "rank": 36,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "225/522",
+          "rank": 37,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "256/652",
+          "rank": 38,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "325/523",
+          "rank": 39,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "505/505",
+          "rank": 40,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "829/928",
+          "rank": 41,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "126/621",
+          "rank": 42,
+          "roots": 2,
+          "d1": 0,
+          "d7": 2,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "517/715",
+          "rank": 43,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "589/985",
+          "rank": 44,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "006/600",
+          "rank": 45,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "007/700",
+          "rank": 46,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "030/030",
+          "rank": 47,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "031/130",
+          "rank": 48,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "032/230",
+          "rank": 49,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "054/450",
+          "rank": 50,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "060/060",
+          "rank": 51,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "168/861",
+          "rank": 52,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "289/982",
+          "rank": 53,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "296/692",
+          "rank": 54,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "357/753",
+          "rank": 55,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "365/563",
+          "rank": 56,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "378/873",
+          "rank": 57,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "394/493",
+          "rank": 58,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "459/954",
+          "rank": 59,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "467/764",
+          "rank": 60,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "478/874",
+          "rank": 61,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "489/984",
+          "rank": 62,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "536/635",
+          "rank": 63,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "566/665",
+          "rank": 64,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "578/875",
+          "rank": 65,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "628/826",
+          "rank": 66,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "687/786",
+          "rank": 67,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "758/857",
+          "rank": 68,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "849/948",
+          "rank": 69,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "869/968",
+          "rank": 70,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        }
+      ],
+      "rankedVt4": [
+        {
+          "family": "2263/6223",
+          "rank": 1,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2263",
+            "6223"
+          ]
+        },
+        {
+          "family": "2265/6225",
+          "rank": 2,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2265",
+            "6225"
+          ]
+        },
+        {
+          "family": "3226/3622",
+          "rank": 3,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "3226",
+            "3622"
+          ]
+        },
+        {
+          "family": "5226/5622",
+          "rank": 4,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "5226",
+            "5622"
+          ]
+        },
+        {
+          "family": "2266/6226",
+          "rank": 5,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6226",
+            "2266"
+          ]
+        },
+        {
+          "family": "6226/6622",
+          "rank": 6,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6622",
+            "6226"
+          ]
+        },
+        {
+          "family": "3056/5036",
+          "rank": 7,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "5036",
+            "3056"
+          ]
+        },
+        {
+          "family": "6305/6503",
+          "rank": 8,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "6503",
+            "6305"
+          ]
+        },
+        {
+          "family": "3057/5037",
+          "rank": 9,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "5037",
+            "3057"
+          ]
+        },
+        {
+          "family": "7305/7503",
+          "rank": 10,
+          "parents": [
+            "305/503"
+          ],
+          "values": [
+            "7503",
+            "7305"
+          ]
+        }
+      ],
+      "decision": {
+        "official": [
+          "226/622",
+          "305/503",
+          "699/996",
+          "266/662",
+          "629/926",
+          "507/705",
+          "596/695",
+          "036/630",
+          "485/584",
+          "326/623"
+        ],
+        "d1": [
+          "226/622",
+          "305/503",
+          "699/996",
+          "266/662",
+          "629/926",
+          "507/705",
+          "596/695",
+          "036/630",
+          "485/584",
+          "326/623"
+        ],
+        "hash": [
+          "226/622",
+          "305/503",
+          "266/662",
+          "699/996",
+          "629/926",
+          "507/705",
+          "596/695",
+          "036/630",
+          "485/584",
+          "326/623"
+        ],
+        "selected": {
+          "family": "699/996",
+          "oldRank": 3,
+          "d1": 2,
+          "d7": 1,
+          "blocks": 2
+        },
+        "neutral": {
+          "family": "266/662",
+          "oldRank": 4
+        }
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "turn": "Nocturno",
+      "previousDates": [
+        "2026-10-12",
+        "2026-10-06"
+      ],
+      "rootCount": 109,
+      "sourceColumns": [
+        {
+          "source": "prevNocturno",
+          "values": [
+            "62",
+            "26",
+            "53",
+            "01",
+            "75",
+            "--"
+          ]
+        },
+        {
+          "source": "Previa",
+          "values": [
+            "59",
+            "48",
+            "57",
+            "30",
+            "06",
+            "--"
+          ]
+        },
+        {
+          "source": "Primera",
+          "values": [
+            "96",
+            "21",
+            "68",
+            "96",
+            "95",
+            "--"
+          ]
+        },
+        {
+          "source": "Matutino",
+          "values": [
+            "87",
+            "68",
+            "24",
+            "34",
+            "95",
+            "--"
+          ]
+        },
+        {
+          "source": "Vespertino",
+          "values": [
+            "48",
+            "99",
+            "47",
+            "01",
+            "11",
+            "--"
+          ]
+        }
+      ],
+      "ranks": [
+        {
+          "family": "226/622",
+          "rank": 1,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 2,
+          "sources": 1,
+          "paths": 4
+        },
+        {
+          "family": "101/101",
+          "rank": 2,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 3,
+          "branchBlocks": 2,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "104/401",
+          "rank": 3,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 3,
+          "branchBlocks": 2,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "305/503",
+          "rank": 4,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 3
+        },
+        {
+          "family": "699/996",
+          "rank": 5,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "266/662",
+          "rank": 6,
+          "roots": 2,
+          "d1": 2,
+          "d7": 0,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 4
+        },
+        {
+          "family": "497/794",
+          "rank": 7,
+          "roots": 2,
+          "d1": 2,
+          "d7": 0,
+          "physicalBlocks": 4,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 4
+        },
+        {
+          "family": "629/926",
+          "rank": 8,
+          "roots": 2,
+          "d1": 2,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "507/705",
+          "rank": 9,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 2,
+          "paths": 3
+        },
+        {
+          "family": "596/695",
+          "rank": 10,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 3,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "036/630",
+          "rank": 11,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "485/584",
+          "rank": 12,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "114/411",
+          "rank": 13,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "149/941",
+          "rank": 14,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "179/971",
+          "rank": 15,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "326/623",
+          "rank": 16,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "569/965",
+          "rank": 17,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "618/816",
+          "rank": 18,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "689/986",
+          "rank": 19,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "037/730",
+          "rank": 20,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "234/432",
+          "rank": 21,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "268/862",
+          "rank": 22,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "324/423",
+          "rank": 23,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "428/824",
+          "rank": 24,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "435/534",
+          "rank": 25,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "439/934",
+          "rank": 26,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "548/845",
+          "rank": 27,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "619/916",
+          "rank": 28,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "669/966",
+          "rank": 29,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 3
+        },
+        {
+          "family": "768/867",
+          "rank": 30,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 1,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "162/261",
+          "rank": 31,
+          "roots": 3,
+          "d1": 3,
+          "d7": 0,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "698/896",
+          "rank": 32,
+          "roots": 3,
+          "d1": 2,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "063/360",
+          "rank": 33,
+          "roots": 3,
+          "d1": 1,
+          "d7": 2,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "307/703",
+          "rank": 34,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 2,
+          "paths": 2
+        },
+        {
+          "family": "547/745",
+          "rank": 35,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "053/350",
+          "rank": 36,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "458/854",
+          "rank": 37,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "475/574",
+          "rank": 38,
+          "roots": 2,
+          "d1": 1,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "041/140",
+          "rank": 39,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "051/150",
+          "rank": 40,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "056/650",
+          "rank": 41,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "071/170",
+          "rank": 42,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "152/251",
+          "rank": 43,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "225/522",
+          "rank": 44,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "256/652",
+          "rank": 45,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "325/523",
+          "rank": 46,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "505/505",
+          "rank": 47,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "829/928",
+          "rank": 48,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "949/949",
+          "rank": 49,
+          "roots": 1,
+          "d1": 1,
+          "d7": 0,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "126/621",
+          "rank": 50,
+          "roots": 2,
+          "d1": 0,
+          "d7": 2,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "517/715",
+          "rank": 51,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "589/985",
+          "rank": 52,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 2,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 2
+        },
+        {
+          "family": "006/600",
+          "rank": 53,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "007/700",
+          "rank": 54,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "030/030",
+          "rank": 55,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "031/130",
+          "rank": 56,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "032/230",
+          "rank": 57,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "054/450",
+          "rank": 58,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "060/060",
+          "rank": 59,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "168/861",
+          "rank": 60,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "289/982",
+          "rank": 61,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "296/692",
+          "rank": 62,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "357/753",
+          "rank": 63,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "365/563",
+          "rank": 64,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "378/873",
+          "rank": 65,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "394/493",
+          "rank": 66,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "459/954",
+          "rank": 67,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "467/764",
+          "rank": 68,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "478/874",
+          "rank": 69,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "489/984",
+          "rank": 70,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "536/635",
+          "rank": 71,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "566/665",
+          "rank": 72,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "578/875",
+          "rank": 73,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "628/826",
+          "rank": 74,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "687/786",
+          "rank": 75,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "758/857",
+          "rank": 76,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "849/948",
+          "rank": 77,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        },
+        {
+          "family": "869/968",
+          "rank": 78,
+          "roots": 1,
+          "d1": 0,
+          "d7": 1,
+          "physicalBlocks": 1,
+          "branchBlocks": 0,
+          "sources": 1,
+          "paths": 1
+        }
+      ],
+      "rankedVt4": [
+        {
+          "family": "2263/6223",
+          "rank": 1,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2263",
+            "6223"
+          ]
+        },
+        {
+          "family": "2265/6225",
+          "rank": 2,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "2265",
+            "6225"
+          ]
+        },
+        {
+          "family": "3226/3622",
+          "rank": 3,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "3226",
+            "3622"
+          ]
+        },
+        {
+          "family": "5226/5622",
+          "rank": 4,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "5226",
+            "5622"
+          ]
+        },
+        {
+          "family": "2266/6226",
+          "rank": 5,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6226",
+            "2266"
+          ]
+        },
+        {
+          "family": "6226/6622",
+          "rank": 6,
+          "parents": [
+            "226/622"
+          ],
+          "values": [
+            "6622",
+            "6226"
+          ]
+        },
+        {
+          "family": "1014",
+          "rank": 7,
+          "parents": [
+            "101/101"
+          ],
+          "values": [
+            "1014"
+          ]
+        },
+        {
+          "family": "1017",
+          "rank": 8,
+          "parents": [
+            "101/101"
+          ],
+          "values": [
+            "1017"
+          ]
+        },
+        {
+          "family": "4101",
+          "rank": 9,
+          "parents": [
+            "101/101"
+          ],
+          "values": [
+            "4101"
+          ]
+        },
+        {
+          "family": "7101",
+          "rank": 10,
+          "parents": [
+            "101/101"
+          ],
+          "values": [
+            "7101"
+          ]
+        }
+      ],
+      "decision": {
+        "official": [
+          "226/622",
+          "101/101",
+          "104/401",
+          "305/503",
+          "699/996",
+          "266/662",
+          "497/794",
+          "629/926",
+          "507/705",
+          "596/695"
+        ],
+        "d1": [
+          "226/622",
+          "101/101",
+          "305/503",
+          "104/401",
+          "699/996",
+          "266/662",
+          "497/794",
+          "629/926",
+          "507/705",
+          "596/695"
+        ],
+        "hash": [
+          "226/622",
+          "101/101",
+          "104/401",
+          "305/503",
+          "699/996",
+          "266/662",
+          "497/794",
+          "629/926",
+          "507/705",
+          "596/695"
+        ],
+        "selected": {
+          "family": "305/503",
+          "oldRank": 4,
+          "d1": 2,
+          "d7": 1,
+          "blocks": 3
+        },
+        "neutral": {
+          "family": "104/401",
+          "oldRank": 3
+        }
+      }
+    }
+  ]
+}
