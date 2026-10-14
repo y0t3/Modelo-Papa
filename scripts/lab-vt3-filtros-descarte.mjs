@@ -205,6 +205,8 @@ function post(){
    eligibleCuts:only.length,eligibleExposures:0,discardedExposures:0,
    winnerExposures:0,winnerDiscarded:0,
    score:{top3:0,top5:0,top10:0},baseline:{top3:0,top5:0,top10:0},
+   topChanges:{top3:0,top5:0,top10:0},removedFromBaselineTop10:0,
+   removedWinningFromBaselineTop10:0,
    gains:{top3:[],top5:[],top10:[]},losses:{top3:[],top5:[],top10:[]}
   };
   for(const i of only){
@@ -213,9 +215,13 @@ function post(){
    obj.discardedExposures+=r.rejected[n].length;
    obj.winnerExposures+=o.wins.length;
    obj.winnerDiscarded+=f.lostWinners.length;
+   const discarded=new Set(r.rejected[n]);
+   obj.removedFromBaselineTop10+=r.baselineTop10.filter(x=>discarded.has(x)).length;
+   obj.removedWinningFromBaselineTop10+=r.baselineTop10.filter(x=>discarded.has(x)&&o.wins.includes(x)).length;
    for(const k of budgets){
     const b='top'+k,t=f['hit'+k];
     obj.score[b]+=Number(t);obj.baseline[b]+=Number(o.baseline[b]);
+    obj.topChanges[b]+=Number(JSON.stringify(r.selected[n].slice(0,k))!==JSON.stringify(r.baselineTop10.slice(0,k)));
     if(t&&!o.baseline[b])obj.gains[b].push(key(r));
     if(!t&&o.baseline[b])obj.losses[b].push(key(r));
    }
