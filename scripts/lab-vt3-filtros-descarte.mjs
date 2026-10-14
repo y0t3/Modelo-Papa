@@ -266,9 +266,9 @@ function post(){
   Object.fromEntries(['top3','top5','top10','lostWinners'].map(field=>{
    const vals=neutral[n][field],mean=+(vals.reduce((a,b)=>a+b,0)/N).toFixed(5);
    const actual=field==='lostWinners'?rules[n].winnerDiscarded:rules[n].score[field];
+   const favorable=vals.filter(v=>field==='lostWinners'?v<=actual:v>=actual).length;
    return [field,{runs:N,mean,...percentile(vals),
-    actual,tailFavorable:+((
-     (vals.filter(v=>field==='lostWinners'?v<=actual:v>=actual).length+1)/(N+1)).toFixed(5)}];
+    actual,tailFavorable:Number(((favorable+1)/(N+1)).toFixed(5))}];
   }))]));
  const highlights=obs.map((o,i)=>({date:o.date,turn:o.turn,actualWinningFamilies:o.wins,
   affected:Object.fromEntries(RULES.filter(n=>rows[i].eligible[n]&&
