@@ -1,0 +1,57 @@
+name: VT3 termas fisicas fuera Top y plazas neutrales 115
+on:
+  push:
+    branches: [lab-vt3-termas-fisicas-fuera-top-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-termas-fisicas-fuera-top.mjs'
+      - 'PROTOCOLO_VT3_TERMAS_FISICAS_FUERA_TOP_13OCT2026.md'
+      - '.github/workflows/lab-vt3-termas-fisicas-fuera-top.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar resultados objetivos del laboratorio VT3
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-termas-post-115.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-termas-nocturna-post.json
+          mv resultados/replay-lalo-115/OBJETIVOS_POST_115.json /tmp/vt3-termas-replay-targets.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt3-termas-fixture.json
+      - name: Generar seleccion fisica PRE y 2000 controles ciegos
+        run: node scripts/lab-vt3-termas-fisicas-fuera-top.mjs pre
+      - name: Comprometer PRE sellado antes de cotejar sorteos
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-termas-fisicas-fuera-top-115-13oct2026/PRE_115.json
+          git add auditorias/vt3-termas-fisicas-fuera-top-115-13oct2026/NEUTRAL_PRE_2000.json
+          git add auditorias/vt3-termas-fisicas-fuera-top-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT3): clasificar ternas fisicas y sellar plazas antes del POST'
+          git push origin HEAD:lab-vt3-termas-fisicas-fuera-top-13oct2026
+      - name: Restaurar POST original y comparar exposición y ranking
+        run: |
+          mv /tmp/vt3-termas-post-115.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/vt3-termas-nocturna-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          mv /tmp/vt3-termas-replay-targets.json resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          mv /tmp/vt3-termas-fixture.json fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt3-termas-fisicas-fuera-top.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-termas-fisicas-115
+          path: auditorias/vt3-termas-fisicas-fuera-top-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar resultados historicos
+        run: |
+          git add auditorias/vt3-termas-fisicas-fuera-top-115-13oct2026/POST_115.json
+          git add auditorias/vt3-termas-fisicas-fuera-top-115-13oct2026/RESUMEN.json
+          git add auditorias/vt3-termas-fisicas-fuera-top-115-13oct2026/LECTURA.md
+          git commit -m 'data(VT3): comparar nacimientos fisicos con controles de bolsa y Top10'
+          git push origin HEAD:lab-vt3-termas-fisicas-fuera-top-13oct2026
