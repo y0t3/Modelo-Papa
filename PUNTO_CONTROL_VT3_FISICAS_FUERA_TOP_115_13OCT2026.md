@@ -50,7 +50,7 @@ Se guardaron/sellaron **2000 conjuntos de 115 decisiones** antes de restaurar la
 
 - Media neutral: **15,8785** cortes Top10.
 - Percentil 5 a 95: **15–18**.
-- Al menos 18: **118/2000** simulaciones, empírico con suavizado **~0,0590**.
+- Al menos 18: **117/2000** simulaciones (5,85 %); empírico con suavizado **118/2001 ≈ 0,0590**.
 - Algunas selecciones neutrales lograron 19–20 cortes.
 
 Por eso **18/115 no demuestra una mejora robusta**, máxime con varios métodos explorados, muchos ensayos previos y sólo 23 jornadas.
