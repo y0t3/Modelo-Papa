@@ -1,17 +1,12 @@
 import React,{useEffect,useMemo,useRef,useState} from 'react';
 import {Animated,ScrollView,StyleSheet,View,useWindowDimensions} from 'react-native';
 import {Gesture,GestureDetector} from 'react-native-gesture-handler';
-import {clampZoom} from '../tabZoom';
+import {clampZoom,clampPanX,pinchAtX} from '../tabZoom';
 
 type Props={
  zoom:number;onZoomChange:(next:number)=>void;
  scrollRef?:React.RefObject<ScrollView|null>;
  children:React.ReactNode;
-};
-
-export const clampPanX=(offset:number,scale:number,viewportWidth:number):number=>{
- const extent=Math.max(0,viewportWidth*clampZoom(scale)-viewportWidth);
- return Math.min(0,Math.max(-extent,offset));
 };
 
 /**
@@ -62,9 +57,8 @@ export default function ZoomableTab({zoom,onZoomChange,scrollRef,children}:Props
   })
   .onUpdate(event=>{
    const next=clampZoom(pinchBase.current*event.scale);
-   const ratio=next/pinchBase.current;
    // El punto entre ambos dedos permanece en el mismo lugar de la pantalla.
-   const x=pinchFocalX.current-(pinchFocalX.current-pinchStartX.current)*ratio;
+   const x=pinchAtX(pinchStartX.current,pinchBase.current,next,pinchFocalX.current,width);
    nextZoom.current=next;
    xOffset.current=clampPanX(x,next,width);
    scale.setValue(next);
