@@ -27,6 +27,7 @@ export type PanoramaData={routes:PanoramaRoute[];groups:PanoramaGroup[]};
 const routeSteps=(p:Path):PanoramaCell[]=>p.map(x=>({row:x.row,col:x.col}));
 const pathText=(p:PanoramaCell[])=>p.map(x=>x.row+':'+x.col).join('>');
 const reverseString=(s:string)=>s.split('').reverse().join('');
+export const routeCellText=(cells:PanoramaCell[])=>cells.map(c=>(c.row+1)+(c.col?'D':'I')).join(' → ');
 export const physicalKey=(kind:PanoramaKind,sourceId:SourceId,cells:PanoramaCell[])=>
  kind+'|'+sourceId+'|'+[pathText(cells),pathText([...cells].reverse())].sort()[0];
 
@@ -94,6 +95,7 @@ export function visualAntecedent(root:RootRef,historical:LaloHistorical[]):Panor
 export function buildPredictivePanorama(view:LaloView,historical:LaloHistorical[]=[]):PanoramaData{
  const routes:PanoramaRoute[]=[],groups:PanoramaGroup[]=[];
  const rootMap=new Map(view.roots.map(r=>[r.id,r]));
+ const antecedentMap=new Map(view.roots.map(r=>[r.id,visualAntecedent(r,historical)]));
  for(const kind of ['vt2','vt3','vt4'] as LaloKind[]){
   for(const family of view.ranks[kind]){
    const id=kind+'|'+family.family,unique=new Map<string,PanoramaRoute>();
@@ -110,7 +112,7 @@ export function buildPredictivePanorama(view:LaloView,historical:LaloHistorical[
       const label=root.period+' · '+root.date+' · '+root.head+
        ' · '+root.jurisdiction+' ('+root.oldTurn+')';
       if(!p.headSources.includes(label))p.headSources.push(label);
-      const ancestor=visualAntecedent(root,historical);
+      const ancestor=antecedentMap.get(rootId);
       if(ancestor&&!p.antecedents?.some(a=>a.id===ancestor.id))p.antecedents?.push(ancestor);
      }
     }
