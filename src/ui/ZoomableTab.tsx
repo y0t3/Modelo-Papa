@@ -9,87 +9,121 @@ type Props={
  children:React.ReactNode;
 };
 
+export const clampPanX=(offset:number,scale:number,viewportWidth:number):number=>{
+ const extent=Math.max(0,viewportWidth*clampZoom(scale)-viewportWidth);
+ return Math.min(0,Math.max(-extent,offset));
+};
+
 /**
- * Pellizco en la superficie de una pestaña. La navegación superior queda fija.
- * Dos ejes desplazables tras ampliar: vertical para leer; horizontal para
- * recorrer el tablero. La altura y ancho escalados mantienen la zona de scroll.
- * La transformación transitoria es Animated (no actualiza toda la app por frame).
+ * Zoom de pestañas: scroll vertical nativo y paneo horizontal con un dedo.
+ *
+ * Antes había dos ScrollView anidados en direcciones diferentes. En Android
+ * el ScrollView interior capturaba el arrastre e impedía recorrer el eje X.
+ * Ahora la navegación lateral usa un gesto Pan de eje X (sin scroll horizontal
+ * anidado) y la lectura vertical conserva su ScrollView normal.
  */
 export default function ZoomableTab({zoom,onZoomChange,scrollRef,children}:Props){
  const {width:windowWidth}=useWindowDimensions();
- const [viewportWidth,setViewportWidth]=useState(windowWidth);
+ const [viewportWidth,setViewportWidth]=useState(Math.round(windowWidth));
  const [contentHeight,setContentHeight]=useState(0);
  const [pinching,setPinching]=useState(false);
- const nativeZoom=useRef(new Animated.Value(clampZoom(zoom))).current;
- const lastZoom=useRef(clampZoom(zoom));
- const pinchBase=useRef(clampZoom(zoom));
- const nextZoom=useRef(clampZoom(zoom));
- const zoomChange=useRef(onZoomChange);
- const horizontal=useRef<ScrollView>(null);
+ const [panning,setPanning]=useState(false);
+ const width=Math.max(1,viewportWidth);
+ const currentZoom=clampZoom(zoom);
+ const scale=useRef(new Animated.Value(currentZoom)).current;
+ const translateX=useRef(new Animated.Value(0)).current;
+ const lastZoom=useRef(currentZoom);
+ const pinchBase=useRef(currentZoom);
+ const nextZoom=useRef(currentZoom);
+ const xOffset=useRef(0);
+ const pinchStartX=useRef(0);
+ const pinchFocalX=useRef(0);
+ const panStartX=useRef(0);
+ const notifyZoom=useRef(onZoomChange);
 
- useEffect(()=>{zoomChange.current=onZoomChange},[onZoomChange]);
+ useEffect(()=>{notifyZoom.current=onZoomChange},[onZoomChange]);
  useEffect(()=>{
-  lastZoom.current=clampZoom(zoom);
-  pinchBase.current=lastZoom.current;
-  nextZoom.current=lastZoom.current;
-  nativeZoom.setValue(lastZoom.current);
-  if(zoom<=1.001)horizontal.current?.scrollTo({x:0,animated:false});
- },[zoom,nativeZoom]);
+  lastZoom.current=currentZoom;
+  pinchBase.current=currentZoom;
+  nextZoom.current=currentZoom;
+  scale.setValue(currentZoom);
+  xOffset.current=clampPanX(xOffset.current,currentZoom,width);
+  translateX.setValue(xOffset.current);
+ },[currentZoom,width,scale,translateX]);
 
  const pinch=useMemo(()=>Gesture.Pinch()
   .runOnJS(true)
-  .onStart(()=>{
+  .onStart(event=>{
    pinchBase.current=lastZoom.current;
    nextZoom.current=lastZoom.current;
+   pinchStartX.current=xOffset.current;
+   pinchFocalX.current=Number.isFinite(event.focalX)?event.focalX:width/2;
    setPinching(true);
   })
   .onUpdate(event=>{
-   const value=clampZoom(pinchBase.current*event.scale);
-   nextZoom.current=value;
-   nativeZoom.setValue(value);
+   const next=clampZoom(pinchBase.current*event.scale);
+   const ratio=next/pinchBase.current;
+   // El punto entre ambos dedos permanece en el mismo lugar de la pantalla.
+   const x=pinchFocalX.current-(pinchFocalX.current-pinchStartX.current)*ratio;
+   nextZoom.current=next;
+   xOffset.current=clampPanX(x,next,width);
+   scale.setValue(next);
+   translateX.setValue(xOffset.current);
   })
   .onFinalize(()=>{
    setPinching(false);
-   const final=clampZoom(nextZoom.current);
-   lastZoom.current=final;
-   zoomChange.current(final);
-   if(final<=1)horizontal.current?.scrollTo({x:0,animated:false});
-  }),[nativeZoom]);
+   const finalZoom=clampZoom(nextZoom.current);
+   lastZoom.current=finalZoom;
+   xOffset.current=clampPanX(xOffset.current,finalZoom,width);
+   translateX.setValue(xOffset.current);
+   notifyZoom.current(finalZoom);
+  }),[scale,translateX,width]);
 
- const naturalWidth=Math.max(1,viewportWidth);
- const extendedWidth=Math.ceil(naturalWidth*zoom);
- const extendedHeight=Math.ceil(Math.max(1,contentHeight)*zoom);
+ const pan=useMemo(()=>Gesture.Pan()
+  .runOnJS(true)
+  .minPointers(1).maxPointers(1)
+  .activeOffsetX([-9,9]).failOffsetY([-14,14])
+  .enabled(currentZoom>1)
+  .onStart(()=>{
+   panStartX.current=xOffset.current;
+   setPanning(true);
+  })
+  .onUpdate(event=>{
+   xOffset.current=clampPanX(panStartX.current+event.translationX,lastZoom.current,width);
+   translateX.setValue(xOffset.current);
+  })
+  .onFinalize(()=>setPanning(false)),[currentZoom,translateX,width]);
+
+ const gesture=useMemo(()=>Gesture.Simultaneous(pinch,pan),[pinch,pan]);
+ const scaledHeight=Math.ceil(Math.max(1,contentHeight)*currentZoom);
  return <View style={s.viewport} onLayout={e=>{
    const measured=Math.round(e.nativeEvent.layout.width);
    if(measured>0&&measured!==viewportWidth)setViewportWidth(measured);
   }}>
-  <ScrollView ref={horizontal} horizontal
-   scrollEnabled={zoom>1&&!pinching}
-   nestedScrollEnabled bounces={false} showsHorizontalScrollIndicator={zoom>1}
-   style={s.viewport} contentContainerStyle={{minWidth:naturalWidth}}>
-   <ScrollView ref={scrollRef}
-    scrollEnabled={!pinching} nestedScrollEnabled
-    showsVerticalScrollIndicator={true} bounces={false}
-    keyboardShouldPersistTaps="handled"
-    style={{width:extendedWidth,flex:1}}
-    contentContainerStyle={{minHeight:extendedHeight}}>
-    <GestureDetector gesture={pinch}>
-     <View collapsable={false} style={{width:extendedWidth,height:extendedHeight}}>
-      <Animated.View style={{
-       width:naturalWidth,
-       transformOrigin:[0,0,0],
-       transform:[{scale:nativeZoom}]
+  <ScrollView ref={scrollRef}
+   scrollEnabled={!pinching&&!panning}
+   nestedScrollEnabled
+   showsVerticalScrollIndicator
+   keyboardShouldPersistTaps="handled"
+   bounces={false}
+   style={s.viewport}
+   contentContainerStyle={{minHeight:scaledHeight}}>
+   <GestureDetector gesture={gesture}>
+    <View collapsable={false} style={{width,height:scaledHeight,overflow:'hidden'}}>
+     <Animated.View style={{
+      width,
+      transformOrigin:[0,0,0],
+      transform:[{translateX},{scale}]
+     }}>
+      <View style={[s.content,{width}]} onLayout={event=>{
+       const measured=Math.ceil(event.nativeEvent.layout.height);
+       if(measured>0&&measured!==contentHeight)setContentHeight(measured);
       }}>
-       <View style={[s.content,{width:naturalWidth}]} onLayout={e=>{
-        const height=Math.ceil(e.nativeEvent.layout.height);
-        if(height>0&&height!==contentHeight)setContentHeight(height);
-       }}>
-        {children}
-       </View>
-      </Animated.View>
-     </View>
-    </GestureDetector>
-   </ScrollView>
+       {children}
+      </View>
+     </Animated.View>
+    </View>
+   </GestureDetector>
   </ScrollView>
  </View>;
 }
