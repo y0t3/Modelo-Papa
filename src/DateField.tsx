@@ -1,5 +1,6 @@
 import React,{useMemo,useState} from 'react';
 import {Modal,Pressable,StyleSheet,Text,TextInput,View} from 'react-native';
+import {useLaloTheme} from './ui/LaloTheme';
 
 const MONTHS=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const DAYS=['L','M','X','J','V','S','D'];
@@ -8,6 +9,7 @@ const parse=(v:string)=>{const m=v.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);if(!m)re
 const fmt=(d:number,m:number,y:number)=>`${String(d).padStart(2,'0')}/${String(m+1).padStart(2,'0')}/${y}`;
 
 export default function DateField({value,onChange}:{value:string,onChange:(v:string)=>void}){
+ const {colors:c}=useLaloTheme();
  const initial=parse(value)||new Date();
  const [open,setOpen]=useState(false),[year,setYear]=useState(initial.getFullYear()),[month,setMonth]=useState(initial.getMonth());
  const selected=parse(value);
@@ -15,14 +17,14 @@ export default function DateField({value,onChange}:{value:string,onChange:(v:str
  const move=(delta:number)=>{let m=month+delta,y=year;if(m<0){m=11;y--}if(m>11){m=0;y++}setMonth(m);setYear(y)};
  const show=()=>{const d=parse(value)||new Date();setYear(d.getFullYear());setMonth(d.getMonth());setOpen(true)};
  return <>
-  <View style={s.fieldRow}><TextInput keyboardType="number-pad" maxLength={10} style={s.input} value={value} onChangeText={v=>onChange(maskDate(v))} placeholder="DD/MM/AAAA" placeholderTextColor="#777"/><Pressable accessibilityLabel="Abrir calendario" style={s.calendarBtn} onPress={show}><Text style={s.calendarIcon}>📅</Text></Pressable></View>
-  <Text style={s.hint}>Formato: DD/MM/AAAA · o tocá el calendario</Text>
+  <View style={s.fieldRow}><TextInput keyboardType="number-pad" maxLength={10} style={[s.input,{backgroundColor:c.card,borderColor:c.border,color:c.text}]} value={value} onChangeText={v=>onChange(maskDate(v))} placeholder="DD/MM/AAAA" placeholderTextColor={c.muted}/><Pressable accessibilityLabel="Abrir calendario" style={s.calendarBtn} onPress={show}><Text style={s.calendarIcon}>📅</Text></Pressable></View>
+  <Text style={[s.hint,{color:c.subtext}]}>Formato: DD/MM/AAAA · o tocá el calendario</Text>
   <Modal visible={open} transparent animationType="fade" onRequestClose={()=>setOpen(false)}>
-   <View style={s.backdrop}><View style={s.modal}>
-    <View style={s.monthRow}><Pressable style={s.arrow} onPress={()=>move(-1)}><Text style={s.arrowTxt}>‹</Text></Pressable><Text style={s.month}>{MONTHS[month]} {year}</Text><Pressable style={s.arrow} onPress={()=>move(1)}><Text style={s.arrowTxt}>›</Text></Pressable></View>
-    <View style={s.week}>{DAYS.map(d=><Text key={d} style={s.dayName}>{d}</Text>)}</View>
-    <View style={s.grid}>{cells.map((d,i)=>{if(!d)return <View key={`e${i}`} style={s.cell}/>;const sunday=new Date(year,month,d,12).getDay()===0;const isSel=!!selected&&selected.getFullYear()===year&&selected.getMonth()===month&&selected.getDate()===d;return <Pressable key={d} style={[s.cell,isSel&&s.selected]} onPress={()=>{onChange(fmt(d,month,year));setOpen(false)}}><Text style={[s.day,isSel&&s.selectedTxt,sunday&&s.sunday]}>{d}</Text></Pressable>})}</View>
-    <View style={s.actions}><Pressable onPress={()=>{const d=new Date();onChange(fmt(d.getDate(),d.getMonth(),d.getFullYear()));setOpen(false)}}><Text style={s.today}>HOY</Text></Pressable><Pressable onPress={()=>setOpen(false)}><Text style={s.close}>CERRAR</Text></Pressable></View>
+   <View style={s.backdrop}><View style={[s.modal,{backgroundColor:c.surface,borderColor:c.border}]}>
+    <View style={s.monthRow}><Pressable style={[s.arrow,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(-1)}><Text style={[s.arrowTxt,{color:c.text}]}>‹</Text></Pressable><Text style={[s.month,{color:c.text}]}>{MONTHS[month]} {year}</Text><Pressable style={[s.arrow,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(1)}><Text style={[s.arrowTxt,{color:c.text}]}>›</Text></Pressable></View>
+    <View style={s.week}>{DAYS.map(d=><Text key={d} style={[s.dayName,{color:c.accent}]}>{d}</Text>)}</View>
+    <View style={s.grid}>{cells.map((d,i)=>{if(!d)return <View key={`e${i}`} style={s.cell}/>;const sunday=new Date(year,month,d,12).getDay()===0;const isSel=!!selected&&selected.getFullYear()===year&&selected.getMonth()===month&&selected.getDate()===d;return <Pressable key={d} style={[s.cell,isSel&&s.selected,{backgroundColor:isSel?c.button:'transparent'}]} onPress={()=>{onChange(fmt(d,month,year));setOpen(false)}}><Text style={[s.day,{color:c.text},sunday&&!isSel&&{color:c.muted},isSel&&{color:c.buttonText,fontWeight:'900'}]}>{d}</Text></Pressable>})}</View>
+    <View style={s.actions}><Pressable onPress={()=>{const d=new Date();onChange(fmt(d.getDate(),d.getMonth(),d.getFullYear()));setOpen(false)}}><Text style={[s.today,{color:c.accent}]}>HOY</Text></Pressable><Pressable onPress={()=>setOpen(false)}><Text style={[s.close,{color:c.subtext}]}>CERRAR</Text></Pressable></View>
    </View></View>
   </Modal>
  </>;
