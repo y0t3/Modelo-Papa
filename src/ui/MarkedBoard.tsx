@@ -28,8 +28,9 @@ const collect=(routes:PanoramaRoute[]):CellMarks=>{
  * Los recorridos completos siguen intactos en PanoramaData, incluidos sentidos
  * y múltiples trayectorias por cabeza/familia.
  */
-export default function MarkedBoard({columns,routes,activeOwner}:{
- columns:DailySheet['columns'];routes:PanoramaRoute[];activeOwner:string|null
+export default function MarkedBoard({columns,routes,activeOwner,highlightRoutes}:{
+ columns:DailySheet['columns'];routes:PanoramaRoute[];activeOwner:string|null;
+ highlightRoutes?:PanoramaRoute[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const {width:windowWidth}=useWindowDimensions();
@@ -37,7 +38,9 @@ export default function MarkedBoard({columns,routes,activeOwner}:{
  const colWidth=(width-GUTTER-2)/Math.max(1,columns.length);
  const height=HEADER+ROW*6+8;
  const all=useMemo(()=>collect(routes),[routes]);
- const selected=useMemo(()=>collect(activeOwner===null?[]:routes.filter(r=>r.ownerId===activeOwner)),[routes,activeOwner]);
+ const focusMode=highlightRoutes!==undefined||activeOwner!==null;
+ const selected=useMemo(()=>collect(highlightRoutes??(activeOwner===null?[]:routes.filter(r=>r.ownerId===activeOwner))),
+  [routes,activeOwner,highlightRoutes]);
  return <View style={[s.card,{backgroundColor:c.board,borderColor:c.border}]}>
   <View style={{width,height,alignSelf:'center',position:'relative'}}>
    {columns.map((col,i)=><React.Fragment key={col.id}>
@@ -56,9 +59,11 @@ export default function MarkedBoard({columns,routes,activeOwner}:{
     const key=cellKey(col.id,row,side);
     const allKinds=[...(all.get(key)||[])];
     const activeKinds=[...(selected.get(key)||[])];
-    const visibleKinds=activeOwner!==null&&activeKinds.length?activeKinds:allKinds;
-    const focus=activeOwner!==null&&activeKinds.length>0;
-    const muted=activeOwner!==null&&!focus&&allKinds.length>0;
+    // Siempre conservar las marcas de todos los turnos como contexto tenue.
+    // El filtro sólo define qué trazas se muestran en primer plano.
+    const focus=focusMode&&activeKinds.length>0;
+    const visibleKinds=focus?activeKinds:allKinds;
+    const muted=focusMode&&!focus&&allKinds.length>0;
     const strongest=strongestKind(visibleKinds);
     const fill=strongest?kinds[strongest].fill:c.cell;
     const cellWidth=colWidth*.435;
