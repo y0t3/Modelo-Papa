@@ -1,0 +1,32 @@
+name: Validar aplicación Lalo unificada
+on:
+  push:
+    branches: [consolidacion-lalo-observabilidad-14oct2026, main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar Expo y TypeScript
+        run: npm install
+      - name: Validar tipos de toda la aplicación
+        run: npx tsc --noEmit
+      - name: Verificar motor Lalo VT2 VT3 VT4 sin modificaciones
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Verificar nueva observabilidad sin fuga POST
+        run: npx --yes tsx scripts/test-consolidacion-lalo.ts
+      - name: Confirmar que no quedan importaciones del predictor retirado
+        run: |
+          if grep -REn "(from ['\"][^'\"]*(predictive|analysisEngine|routeHistory|routeLife)['\"])" App.tsx src/ ; then
+            echo "Importación obsoleta: revisar el código antes de fusionar."
+            exit 1
+          fi
