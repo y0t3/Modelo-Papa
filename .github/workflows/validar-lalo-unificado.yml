@@ -24,6 +24,8 @@ jobs:
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Verificar nueva observabilidad sin fuga POST
         run: npx --yes tsx scripts/test-consolidacion-lalo.ts
+      - name: Validar respaldo visual de raíces históricas VT3
+        run: npx --yes tsx scripts/test-antecedentes-visuales.ts
       - name: Confirmar que no quedan importaciones del predictor retirado
         run: |
           if grep -REn "(from ['\"][^'\"]*(predictive|analysisEngine|routeHistory|routeLife)['\"])" App.tsx src/ ; then
