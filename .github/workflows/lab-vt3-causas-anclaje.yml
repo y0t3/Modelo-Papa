@@ -1,0 +1,56 @@
+name: VT3 causas de admision 13oct y negativos de misma hoja
+on:
+  push:
+    branches: [lab-vt3-causas-anclaje-13oct2026]
+    paths:
+      - 'PROTOCOLO_VT3_CAUSAS_ANCLAJE_13OCT2026.md'
+      - 'scripts/lab-vt3-causas-anclaje.mjs'
+      - '.github/workflows/lab-vt3-causas-anclaje.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar objetivos 13oct de la fase PRE de esta auditoria retrospectiva
+        run: |
+          mv auditorias/vt3-cotejo-nocturna-13oct2026/OBJETIVOS_POST_13OCT.json /tmp/causas-objetivos
+          mv auditorias/vt3-cotejo-nocturna-13oct2026/POST_13OCT.json /tmp/causas-post
+          mv auditorias/vt3-cotejo-nocturna-13oct2026/RESUMEN.json /tmp/causas-resumen
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/causas-fixture
+      - name: Censar TODAS las rutas y familias VT3 sin leer cabezas objetivo
+        run: node scripts/lab-vt3-causas-anclaje.mjs pre
+      - name: Comprometer inventario fisico PRE auditado con SHA
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-causas-anclaje-13oct2026/PRE_5_TURNOS.json
+          git add auditorias/vt3-causas-anclaje-13oct2026/SELLO.json
+          git commit -m 'seal(VT3): censo exhaustivo rutas y contraejemplos antes POST'
+          git push origin HEAD:lab-vt3-causas-anclaje-13oct2026
+      - name: Restaurar objetivos y cotejar causas de admision y rango
+        run: |
+          mv /tmp/causas-objetivos auditorias/vt3-cotejo-nocturna-13oct2026/OBJETIVOS_POST_13OCT.json
+          mv /tmp/causas-post auditorias/vt3-cotejo-nocturna-13oct2026/POST_13OCT.json
+          mv /tmp/causas-resumen auditorias/vt3-cotejo-nocturna-13oct2026/RESUMEN.json
+          mv /tmp/causas-fixture fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt3-causas-anclaje.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-causas-anclaje-13oct
+          path: auditorias/vt3-causas-anclaje-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar informe de causas y controles
+        run: |
+          git add auditorias/vt3-causas-anclaje-13oct2026/POST_13OCT.json
+          git add auditorias/vt3-causas-anclaje-13oct2026/RESUMEN.json
+          git add auditorias/vt3-causas-anclaje-13oct2026/LECTURA.md
+          git commit -m 'data(VT3): explicar 1057 1234 4625 y 9192 vs negativas'
+          git push origin HEAD:lab-vt3-causas-anclaje-13oct2026
