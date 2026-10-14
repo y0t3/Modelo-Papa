@@ -1,20 +1,21 @@
 import React from 'react';
-import {View,Text,ScrollView,StyleSheet} from 'react-native';
+import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {DailySheet} from '../sheet';
-import type {CabezasDia} from '../domain';
+import type {CabezasDia,Turno} from '../domain';
 import {JURS,TURNOS} from '../domain';
 import type {PanoramaKind} from '../panoramaModel';
 import {ColoredDigits} from './HighlightedHead';
 import {useLaloTheme} from './LaloTheme';
 
 /** La tabla de cabezas no es un ranking: muestra también las que no coincidieron. */
-export default function HeadsTable({data,sheet}:{
- data:CabezasDia|null;sheet:DailySheet|null
+export default function HeadsTable({data,sheet,onOpenHead}:{
+ data:CabezasDia|null;sheet:DailySheet|null;
+ onOpenHead:(turn:Turno,jurisdiction:string,head:string)=>void
 }){
  const {colors:c,kinds:vtColors}=useLaloTheme();
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
   <Text style={[s.title,{color:c.text}]}>CABEZAS COMPLETAS</Text>
-  <Text style={[s.note,{color:c.subtext}]}>Los colores señalan únicamente los sufijos que coincidieron físicamente en la hoja +11. Las demás cabezas permanecen visibles pero apagadas.</Text>
+  <Text style={[s.note,{color:c.subtext}]}>Tocá una cabeza resaltada para abrir en Hoja sus recorridos físicos coincidentes (VT2, VT3 y VT4). Las cabezas sin coincidencia permanecen apagadas.</Text>
   <ScrollView horizontal showsHorizontalScrollIndicator>
    <View>
     <View style={[s.row,{borderBottomColor:c.divider}]}>
@@ -28,11 +29,19 @@ export default function HeadsTable({data,sheet}:{
       const hits=sheet?.matches[t]?.filter(m=>m.cabeza===h&&m.jurisdiccion===j)||[];
       const kinds=[...new Set(hits.flatMap(m=>m.hits.map(x=>x.kind)))] as PanoramaKind[];
       const muted=kinds.length===0;
-      return <View key={t} style={[s.value,muted&&s.muted]}>
+      return <Pressable key={t} disabled={muted}
+       accessibilityRole="button"
+       accessibilityLabel={muted?
+        h+' · '+j+' · '+t+' sin recorrido':
+        'Ver '+h+' de '+j+' ('+t+') en Hoja'}
+       accessibilityState={{disabled:muted}}
+       onPress={()=>onOpenHead(t,j,h)}
+       style={[s.value,muted&&s.muted]}>
        <ColoredDigits value={h} kinds={kinds} large/>
        <View style={s.tags}>{(['vt2','vt3','vt4'] as PanoramaKind[]).filter(k=>kinds.includes(k)).map(k=>
         <Text key={k} style={[s.tag,{color:vtColors[k].line}]}>{k.toUpperCase()} </Text>)}</View>
-      </View>;
+       {!muted?<Text style={[s.openHint,{color:c.accent}]}>↗ Ver en hoja</Text>:null}
+      </Pressable>;
      })}
     </View>)}
    </View>
@@ -50,5 +59,6 @@ const s=StyleSheet.create({
  value:{width:102,minHeight:71,padding:7,justifyContent:'center',alignItems:'center'},
  muted:{opacity:.36},
  tags:{flexDirection:'row',flexWrap:'wrap',justifyContent:'center'},
- tag:{fontSize:9,fontWeight:'800'}
+ tag:{fontSize:9,fontWeight:'800'},
+ openHint:{fontSize:9,fontWeight:'900',marginTop:4}
 });

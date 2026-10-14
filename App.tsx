@@ -1,4 +1,4 @@
-import React,{useMemo,useState} from 'react';
+import React,{useMemo,useRef,useState} from 'react';
 import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator,Alert,Platform,StatusBar as RNStatusBar} from 'react-native';
 import {StatusBar} from 'expo-status-bar';
 import DateField from './src/DateField';
@@ -9,7 +9,7 @@ import {buildSheet} from './src/sheet';
 import type {DailySheet} from './src/sheet';
 import {displayToIso,isoToDisplay,shiftDay,shiftDrawDay,previousDrawDay} from './src/dates';
 import {loadPreviousDraws,hasDrawResults} from './src/drawHistory';
-import {buildDailyPanorama,buildPredictivePanorama} from './src/panoramaModel';
+import {buildDailyPanorama,buildPredictivePanorama,dailyHeadOwnerId} from './src/panoramaModel';
 import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
 import type {LaloHistorical} from './src/motorLalo';
 import PanoramaSheet from './src/PanoramaSheet';
@@ -40,6 +40,9 @@ function LaloApp(){
  const [busy,setBusy]=useState(false);
  const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
  const [focused,setFocused]=useState<string|null>(null);
+ const [hojaFocused,setHojaFocused]=useState<string|null>(null);
+ const [hojaTurn,setHojaTurn]=useState<Turno>('Previa');
+ const scrollRef=useRef<ScrollView>(null);
  const date=displayToIso(dateText);
  const target=useMemo<Turno>(()=>selectedTurn||TURNOS.find(t=>
   !data||JURS.every(j=>!/^\d{4}$/.test(data[t]?.[j]||'')))||'Nocturno',
@@ -67,6 +70,7 @@ function LaloApp(){
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
    setData(current);setSheet(currentSheet);setHist(refs);
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
+   setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
    Alert.alert('No se pudo cargar',error?.message||String(error));
   }finally{setBusy(false)}
@@ -85,15 +89,29 @@ function LaloApp(){
   [data,target]);
  const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null)};
  const showFamily=(id:string)=>{setFocused(id);setScreen('predictiva')};
+ const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
+  const id=dailyHeadOwnerId(turn,jurisdiction,head);
+  if(!hoja?.groups.some(group=>group.id===id&&group.routeCount>0))return;
+  setHojaTurn(turn);setHojaFocused(id);setScreen('hoja');
+ };
+ const alignHojaOnReturn=(y:number)=>{
+  if(hojaFocused)scrollRef.current?.scrollTo({y:Math.max(0,y-8),animated:true});
+ };
 
  return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar} backgroundColor={c.canvas}/>
   <View style={s.nav}>{nav.map(x=><Pressable key={x.id} accessibilityRole="tab"
     accessibilityState={{selected:screen===x.id}}
     style={[s.tab,screen===x.id&&s.tabOn]}
-    onPress={()=>{setScreen(x.id);if(x.id==='hoja')setFocused(null)}}>
+    onPress={()=>{
+     setScreen(x.id);
+     if(x.id==='hoja'){
+      setFocused(null);setHojaFocused(null);setHojaTurn('Previa');
+      scrollRef.current?.scrollTo({y:0,animated:true});
+     }
+    }}>
     <Text style={s.tabText} numberOfLines={1} adjustsFontSizeToFit>{x.label}</Text>
    </Pressable>)}</View>
-  <ScrollView style={{backgroundColor:c.canvas}} contentContainerStyle={s.content}>
+  <ScrollView ref={scrollRef} style={{backgroundColor:c.canvas}} contentContainerStyle={s.content}>
    <View style={s.header}>
     <View style={s.headerLeft}/>
     <View style={{flex:1}}>
@@ -110,6 +128,7 @@ function LaloApp(){
     <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
     <DateField value={dateText} onChange={value=>{
      setDateText(value);setData(null);setSheet(null);setHist([]);setFocused(null);
+     setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <View style={s.shortcuts}>
      <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(-1)}><Text style={[s.shortText,{color:c.accent}]}>← Día</Text></Pressable>
@@ -121,8 +140,11 @@ function LaloApp(){
     </Pressable>
    </View>
    {screen==='hoja'?
-    sheet&&hoja?<PanoramaSheet mode="hoja" sheet={sheet} data={hoja}
-     onInfo={()=>setScreen('info')}/>:
+    sheet&&hoja?<View onLayout={e=>alignHojaOnReturn(e.nativeEvent.layout.y)}>
+     <PanoramaSheet mode="hoja" sheet={sheet} data={hoja}
+      initialTurn={hojaTurn} focusedOwner={hojaFocused}
+      onInfo={()=>setScreen('info')}/>
+    </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
    :screen==='predictiva'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
@@ -145,7 +167,7 @@ function LaloApp(){
     <TurnStrip value={target} onChange={changeTurn}/>
     <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
    </>:screen==='cabezas'?
-    <HeadsTable data={data} sheet={sheet}/>:
+    <HeadsTable data={data} sheet={sheet} onOpenHead={openHeadInHoja}/>:
     <InfoDashboard turn={target} view={motor}/>}
   </ScrollView>
  </SafeAreaView>;

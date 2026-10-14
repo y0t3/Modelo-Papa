@@ -28,6 +28,8 @@ jobs:
         run: npx --yes tsx scripts/test-antecedentes-visuales.ts
       - name: Validar pronóstico personal Papá y balance semanal
         run: npx --yes tsx scripts/test-pronostico-papa.ts
+      - name: Verificar filtros de turno y navegación desde Cabezas
+        run: npx --yes tsx scripts/test-hoja-turnos-cabezas.ts
       - name: Confirmar que no quedan importaciones del predictor retirado
         run: |
           if grep -REn "(from ['\"][^'\"]*(predictive|analysisEngine|routeHistory|routeLife)['\"])" App.tsx src/ ; then

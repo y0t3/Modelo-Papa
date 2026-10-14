@@ -3,6 +3,7 @@ import {View,Text,Pressable,ScrollView,Modal,StyleSheet} from 'react-native';
 import type {DailySheet} from './sheet';
 import type {Turno} from './domain';
 import {TURNOS} from './domain';
+import {routesForDailyTurn} from './panoramaModel';
 import type {PanoramaData,PanoramaGroup,PanoramaKind} from './panoramaModel';
 import MarkedBoard from './ui/MarkedBoard';
 import HighlightedHead from './ui/HighlightedHead';
@@ -18,23 +19,24 @@ const detectKind=(id:string|null|undefined):KindFilter=>{
  return prefix==='vt2'||prefix==='vt3'||prefix==='vt4'?prefix:'all';
 };
 
-export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner}:{
+export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner,initialTurn}:{
  sheet:DailySheet;data:PanoramaData;mode:'hoja'|'predictiva';
- target?:Turno;onInfo:()=>void;focusedOwner?:string|null
+ target?:Turno;onInfo:()=>void;focusedOwner?:string|null;initialTurn?:Turno
 }){
  const {colors:c,kinds}=useLaloTheme();
- const [active,setActive]=useState<string|null>(null);
- const [turn,setTurn]=useState<Turno>('Previa');
+ const [active,setActive]=useState<string|null>(focusedOwner||null);
+ const [turn,setTurn]=useState<Turno>(initialTurn||'Previa');
+ const [turnOnly,setTurnOnly]=useState(false);
  const [filter,setFilter]=useState<KindFilter>('all');
  const [topOnly,setTopOnly]=useState(true);
  const [expanded,setExpanded]=useState<Record<PanoramaKind,boolean>>(defaultOpen);
  const [detail,setDetail]=useState(false);
  useEffect(()=>{
   setActive(focusedOwner||null);
-  setTurn('Previa');setDetail(false);
+  setTurn(initialTurn||'Previa');setDetail(false);setTurnOnly(false);
   setFilter(detectKind(focusedOwner));
   setTopOnly(true);setExpanded(defaultOpen);
- },[sheet,data,mode,target,focusedOwner]);
+ },[sheet,data,mode,target,focusedOwner,initialTurn]);
  const columns=mode==='predictiva'
   ?sheet.columns.slice(0,TURNOS.indexOf(target||'Previa')+1):sheet.columns;
  const byKind=useMemo(()=>({
@@ -48,13 +50,22 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
   return ks.flatMap(k=>topOnly?byKind[k].slice(0,10):byKind[k]);
  },[mode,data.groups,turn,filter,topOnly,byKind]);
  const visibleIds=useMemo(()=>new Set(visibleGroups.map(g=>g.id)),[visibleGroups]);
- const boardRoutes=useMemo(()=>mode==='hoja'?data.routes:
-  data.routes.filter(r=>visibleIds.has(r.ownerId)),[mode,data.routes,visibleIds]);
+ const boardRoutes=useMemo(()=>{
+  if(mode==='hoja'){
+   if(active)return data.routes.filter(r=>r.ownerId===active);
+   return turnOnly?routesForDailyTurn(data,turn):data.routes;
+  }
+  return data.routes.filter(r=>visibleIds.has(r.ownerId));
+ },[mode,data,visibleIds,active,turnOnly,turn]);
  const selected=visibleGroups.find(g=>g.id===active)||null;
  const selectedRoutes=useMemo(()=>active?boardRoutes.filter(r=>r.ownerId===active):[],
   [boardRoutes,active]);
  const uniqueRoutes=useMemo(()=>new Set(boardRoutes.map(r=>r.id)).size,[boardRoutes]);
- const select=(id:string)=>{setActive(old=>old===id?null:id);setDetail(false)};
+ const select=(id:string)=>{setActive(old=>old===id?null:id);setTurnOnly(false);setDetail(false)};
+ const changeHojaTurn=(t:Turno)=>{
+  setTurn(t);setTurnOnly(true);setActive(null);setDetail(false);
+ };
+ const showAllHoja=()=>{setActive(null);setTurnOnly(false);setDetail(false)};
  const changeFilter=(next:KindFilter)=>{setFilter(next);setActive(null);setDetail(false)};
  const toggleExpanded=(kind:PanoramaKind)=>setExpanded(prev=>({...prev,[kind]:!prev[kind]}));
  const renderGrid=(items:PanoramaGroup[])=><View style={s.grid}>
@@ -74,6 +85,35 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
     <Text style={[s.actionText,{color:c.accent}]}>ⓘ Info</Text>
    </Pressable>
   </View>
+  {mode==='hoja'?<View style={s.turnFilter}>
+   <Text style={[s.sectionTitle,{color:c.text}]}>RECORRIDOS POR TURNO</Text>
+   <Text style={[s.note,{color:c.subtext}]}>
+    Tocá un turno para ver juntas todas las coincidencias físicas de sus cabezas.
+   </Text>
+   <TurnStrip value={turn} onChange={changeHojaTurn}/>
+   <View style={s.turnActions}>
+    <Pressable accessibilityRole="button"
+     accessibilityLabel="Ver recorridos de todos los turnos"
+     accessibilityState={{selected:!turnOnly&&!active}}
+     onPress={showAllHoja} style={[s.turnChip,{
+      borderColor:!turnOnly&&!active?c.accent:c.border,
+      backgroundColor:!turnOnly&&!active?c.accentFill:c.card}]}>
+     <Text style={[s.turnChipText,{color:!turnOnly&&!active?c.accent:c.subtext}]}>
+      Toda la hoja
+     </Text>
+    </Pressable>
+    <Pressable accessibilityRole="button"
+     accessibilityLabel={'Resaltar todos los recorridos de '+turn}
+     accessibilityState={{selected:turnOnly}}
+     onPress={()=>{setTurnOnly(true);setActive(null);setDetail(false)}}
+     style={[s.turnChip,{borderColor:turnOnly?c.accent:c.border,
+      backgroundColor:turnOnly?c.accentFill:c.card}]}>
+     <Text style={[s.turnChipText,{color:turnOnly?c.accent:c.subtext}]}>
+      {turnOnly?'✓ ':''}Solo {turn}
+     </Text>
+    </Pressable>
+   </View>
+  </View>:null}
   <MarkedBoard columns={columns} routes={boardRoutes} activeOwner={active}/>
   <View style={s.legend}>{KINDS.map(k=><View key={k} style={s.legendItem}>
    <View style={{width:12,height:12,borderRadius:3,borderWidth:2,
@@ -83,7 +123,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
   <View style={s.status}>
    <Text style={[s.count,{color:c.text}]} numberOfLines={2}>{selected?
     selected.label+' · '+selectedRoutes.length+' recorridos':
-    mode==='hoja'?uniqueRoutes+' huellas físicas · tablero completo':
+    mode==='hoja'?turnOnly?turn+' · '+visibleGroups.filter(g=>g.routeCount>0).length+' cabezas con marca · '+uniqueRoutes+' recorridos':uniqueRoutes+' huellas físicas · tablero completo':
     uniqueRoutes+' huellas visibles con el filtro actual'}</Text>
    {selected?<View style={s.actions}>
     <Pressable onPress={()=>setDetail(true)} style={[s.action,{backgroundColor:c.card,borderColor:c.border}]}>
@@ -96,8 +136,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
   </View>
   {mode==='hoja'?<>
    <Text style={[s.sectionTitle,{color:c.text}]}>CABEZAS DEL TURNO</Text>
-   <Text style={[s.note,{color:c.subtext}]}>Deslizá los turnos horizontalmente; la hoja sigue arriba.</Text>
-   <TurnStrip value={turn} onChange={t=>{setTurn(t);setActive(null);setDetail(false)}}/>
+   <Text style={[s.note,{color:c.subtext}]}>Seleccioná una cabeza para aislar sus recorridos o usá el chip de turno para verlos todos juntos.</Text>
    {visibleGroups.length?<ScrollView horizontal showsHorizontalScrollIndicator contentContainerStyle={s.cards}>
     {visibleGroups.map(g=><HighlightedHead key={g.id} group={g}
      active={active===g.id} onPress={()=>select(g.id)} mode="hoja"/>)}
@@ -184,6 +223,10 @@ const s=StyleSheet.create({
  legend:{flexDirection:'row',justifyContent:'center',flexWrap:'wrap',gap:9,marginTop:11,marginBottom:5},
  legendItem:{flexDirection:'row',gap:4,alignItems:'center'},legendText:{fontSize:10,fontWeight:'700'},
  status:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:7,marginVertical:9},
+ turnFilter:{gap:3,marginBottom:7},
+ turnActions:{flexDirection:'row',flexWrap:'wrap',gap:7,marginTop:5,marginBottom:4},
+ turnChip:{minHeight:37,borderWidth:1,borderRadius:20,paddingHorizontal:14,justifyContent:'center'},
+ turnChipText:{fontSize:11,fontWeight:'900'},
  count:{fontSize:11,fontWeight:'700',flexShrink:1},actions:{flexDirection:'row',gap:5},
  sectionTitle:{fontSize:13,fontWeight:'900',marginTop:9},
  cards:{paddingVertical:10,paddingRight:14},
