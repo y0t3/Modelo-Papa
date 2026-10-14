@@ -1,0 +1,204 @@
+{
+  "date": "2026-10-13",
+  "type": "EXPLORATORIO_POSTHOC",
+  "cuts": 115,
+  "drawnHeads": 575,
+  "groups": [
+    {
+      "key": "R1_3",
+      "label": "madres #1–#3",
+      "averageEligibleHeadsPerCut": 44.06,
+      "observedHeads": 1,
+      "expectedHeads": 2.5335,
+      "ratioObsExp": 0.395,
+      "stdDevHeads": 1.588,
+      "pHeadsTwoSided": 0.559535505259285,
+      "pHeadsBonferroni": 1,
+      "observedCuts": 1,
+      "expectedCuts": 2.5099,
+      "pCutsTwoSided": 0.5633381777919486,
+      "pCutsBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "obs": 1,
+          "exp": 1.501,
+          "cuts": 70
+        },
+        "2026-10": {
+          "obs": 0,
+          "exp": 1.0325000000000002,
+          "cuts": 45
+        }
+      }
+    },
+    {
+      "key": "R4_5",
+      "label": "madres #4–#5",
+      "averageEligibleHeadsPerCut": 25.72,
+      "observedHeads": 6,
+      "expectedHeads": 1.479,
+      "ratioObsExp": 4.057,
+      "stdDevHeads": 1.215,
+      "pHeadsTwoSided": 0.008206944496973343,
+      "pHeadsBonferroni": 0.0574486114788134,
+      "observedCuts": 5,
+      "expectedCuts": 1.4711,
+      "pCutsTwoSided": 0.03298831489088455,
+      "pCutsBonferroni": 0.23091820423619186,
+      "byMonth": {
+        "2026-09": {
+          "obs": 1,
+          "exp": 0.8850000000000001,
+          "cuts": 70
+        },
+        "2026-10": {
+          "obs": 5,
+          "exp": 0.5940000000000002,
+          "cuts": 45
+        }
+      }
+    },
+    {
+      "key": "R6_10",
+      "label": "madres #6–#10",
+      "averageEligibleHeadsPerCut": 62.41,
+      "observedHeads": 1,
+      "expectedHeads": 3.5885,
+      "ratioObsExp": 0.279,
+      "stdDevHeads": 1.888,
+      "pHeadsTwoSided": 0.25199730621944383,
+      "pHeadsBonferroni": 1,
+      "observedCuts": 1,
+      "expectedCuts": 3.5427,
+      "pCutsTwoSided": 0.2545691432007299,
+      "pCutsBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "obs": 1,
+          "exp": 2.2255,
+          "cuts": 70
+        },
+        "2026-10": {
+          "obs": 0,
+          "exp": 1.3630000000000002,
+          "cuts": 45
+        }
+      }
+    },
+    {
+      "key": "R11_25",
+      "label": "madres #11–#25",
+      "averageEligibleHeadsPerCut": 200.22,
+      "observedHeads": 10,
+      "expectedHeads": 11.5125,
+      "ratioObsExp": 0.869,
+      "stdDevHeads": 3.357,
+      "pHeadsTwoSided": 0.79702777360026,
+      "pHeadsBonferroni": 1,
+      "observedCuts": 10,
+      "expectedCuts": 11.0412,
+      "pCutsTwoSided": 0.8968064940220126,
+      "pCutsBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "obs": 8,
+          "exp": 7.028999999999999,
+          "cuts": 70
+        },
+        "2026-10": {
+          "obs": 2,
+          "exp": 4.483499999999999,
+          "cuts": 45
+        }
+      }
+    },
+    {
+      "key": "R26_PLUS",
+      "label": "madres #26+ con raíz",
+      "averageEligibleHeadsPerCut": 313.33,
+      "observedHeads": 20,
+      "expectedHeads": 18.0165,
+      "ratioObsExp": 1.11,
+      "stdDevHeads": 4.142,
+      "pHeadsTwoSided": 0.696720057585913,
+      "pHeadsBonferroni": 1,
+      "observedCuts": 19,
+      "expectedCuts": 16.3959,
+      "pCutsTwoSided": 0.5468465434080174,
+      "pCutsBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "obs": 12,
+          "exp": 10.742500000000001,
+          "cuts": 70
+        },
+        "2026-10": {
+          "obs": 8,
+          "exp": 7.274000000000001,
+          "cuts": 45
+        }
+      }
+    },
+    {
+      "key": "FISICA_SIN_RAIZ",
+      "label": "física sin raíz materna",
+      "averageEligibleHeadsPerCut": 596.53,
+      "observedHeads": 29,
+      "expectedHeads": 34.3005,
+      "ratioObsExp": 0.845,
+      "stdDevHeads": 5.592,
+      "pHeadsTwoSided": 0.39406756138785887,
+      "pHeadsBonferroni": 1,
+      "observedCuts": 26,
+      "expectedCuts": 28.8752,
+      "pCutsTwoSided": 0.5927458664025219,
+      "pCutsBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "obs": 11,
+          "exp": 20.613,
+          "cuts": 70
+        },
+        "2026-10": {
+          "obs": 18,
+          "exp": 13.6875,
+          "cuts": 45
+        }
+      }
+    },
+    {
+      "key": "NO_FISICA",
+      "label": "sin ruta VT4 física",
+      "averageEligibleHeadsPerCut": 8757.73,
+      "observedHeads": 508,
+      "expectedHeads": 503.5695,
+      "ratioObsExp": 1.009,
+      "stdDevHeads": 7.787,
+      "pHeadsTwoSided": 0.6217125821429281,
+      "pHeadsBonferroni": 1,
+      "observedCuts": 115,
+      "expectedCuts": 114.9867,
+      "pCutsTwoSided": 1,
+      "pCutsBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "obs": 316,
+          "exp": 307.00399999999996,
+          "cuts": 70
+        },
+        "2026-10": {
+          "obs": 192,
+          "exp": 196.56549999999993,
+          "cuts": 45
+        }
+      }
+    }
+  ],
+  "checks": {
+    "sourcePreHash": "b5a338b7784bf221acd53cbf6ae1ed020361cc0afaf83529cf10219c8726fca7",
+    "mapHash": "acaa068c80ecb3ef267b05ea3e61cd68f31de8c750dbf9e97f1e1732d1b87a94",
+    "sourceMapDataSHA256": "b05d4837d22194de2701f75cb3b85dc9acc661703cd01f9dc29b2da8bd648376",
+    "completePartition": true,
+    "note": "Tests retrospectivos; categorías examinadas luego de estudiar esta muestra, p no valida un pronóstico."
+  }
+}
