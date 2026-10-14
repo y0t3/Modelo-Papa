@@ -221,7 +221,7 @@ function post(){
   for(const h of p.targets)assert.match(h,/^\d{4}$/);
   return new Set(p.targets.map(h=>canonical(h.slice(-3))));
  });
- const keys=['OFICIAL',...MODES,'NEUTRAL_UNIFORME'];
+ const keys=['OFICIAL',...MODES];
  const score=Object.fromEntries(keys.map(k=>[k,{top3:0,top5:0,top10:0}]));
  const strict=Object.fromEntries(MODES.map(k=>[k,{top3:0,top5:0,top10:0,
   sumUnique3:0,sumUnique5:0,sumUnique10:0}]));
