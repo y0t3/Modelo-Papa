@@ -1,0 +1,14 @@
+{
+  "phase": "PRE_SELLADO_NO_SORTEO",
+  "date": "2026-10-14",
+  "turn": "Previa",
+  "createdAtUtc": "2026-10-14T05:39:40.651Z",
+  "originalSeal": "bdabdc47b042a71f83f674128ca0d4c9112fdd03e56e22af637515a5615f3b45",
+  "originalPre": "a94ac932ae134541d22923fb82022cb5be88fdd5b00811982b43241e16568f01",
+  "historicalFixture": "18d5b84103412ea966dbeeb7dcc35715c1a7594f44a6edb7d2b40c86e03a9783",
+  "previous13": "fc280ab1fe9211709586844582de4c39dc5347ce1ddc948ab65a85b55aa19ced",
+  "motor": "e1bb61a6e1933cffaa5784aa5c77539f004bd9320dfd11dbf9726165ed934448",
+  "protocol": "c853097e32385fbd1f80e5989ed8008d20526b15ec91f66e75140ac92ae05b73",
+  "code": "948c46ed1deebcb4f9f05f5a8212b4143761d93cb8494aae365966fe0dc92734",
+  "pre": "a12f3567f83d369fa5a0d75c7be57f38495686cac58aab856a58d878dcce96ca"
+}

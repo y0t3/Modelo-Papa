@@ -1,0 +1,1309 @@
+{
+  "date": "2026-10-14",
+  "turn": "Previa",
+  "phase": "PRE_PROSPECTIVO_GENEALOGIA",
+  "originalPreCreatedAtUtc": "2026-10-14T04:13:31.368Z",
+  "createdAtUtc": "2026-10-14T05:39:40.651Z",
+  "originalPreHash": "a94ac932ae134541d22923fb82022cb5be88fdd5b00811982b43241e16568f01",
+  "knownSource": [
+    "83",
+    "45",
+    "40",
+    "36",
+    "03",
+    "--"
+  ],
+  "targetHeadsLoaded": 0,
+  "rootCount": 22,
+  "ranked": [
+    {
+      "family": "063/360",
+      "rank": 1,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 6,
+      "roots": 2,
+      "routeConnections": 8,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Primera|Provincia|0310|vt3|prevNocturno|2:1>3:1>3:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "0310",
+          "oldFamily": "013/310",
+          "currentFamily": "063/360",
+          "oldCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "deltaRow": 0,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "063/360",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "deltaRow": 2,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "063/360",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "2:1",
+            "3:1",
+            "4:1"
+          ],
+          "deltaRow": 2,
+          "deltaCol": 1,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Primera|Provincia|0310|vt3|prevNocturno|2:1>3:1>3:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "0310",
+          "oldFamily": "013/310",
+          "currentFamily": "063/360",
+          "oldCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "2:1",
+            "3:1",
+            "4:1"
+          ],
+          "deltaRow": 0,
+          "deltaCol": 1,
+          "mutation": true,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Primera|Provincia|0310|vt3|prevNocturno|2:1>3:1>3:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "0310",
+          "oldFamily": "013/310",
+          "currentFamily": "063/360",
+          "oldCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "3:0",
+            "3:1",
+            "4:0"
+          ],
+          "deltaRow": 1,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "063/360",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "3:0",
+            "3:1",
+            "4:0"
+          ],
+          "deltaRow": 3,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "063/360",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "4:0",
+            "3:1",
+            "4:1"
+          ],
+          "deltaRow": 3,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Primera|Provincia|0310|vt3|prevNocturno|2:1>3:1>3:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "0310",
+          "oldFamily": "013/310",
+          "currentFamily": "063/360",
+          "oldCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "4:0",
+            "3:1",
+            "4:1"
+          ],
+          "deltaRow": 1,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "036/630",
+      "rank": 2,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 6,
+      "roots": 2,
+      "routeConnections": 3,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Primera|Provincia|0310|vt3|prevNocturno|2:1>3:1>3:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "0310",
+          "oldFamily": "013/310",
+          "currentFamily": "036/630",
+          "oldCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "3:1",
+            "4:1",
+            "4:0"
+          ],
+          "deltaRow": 1,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|1:1>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "036/630",
+          "oldCells": [
+            "1:1",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "3:1",
+            "3:0",
+            "4:0"
+          ],
+          "deltaRow": 2,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|1:1>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "036/630",
+          "oldCells": [
+            "1:1",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "2:1",
+            "3:0",
+            "3:1"
+          ],
+          "deltaRow": 1,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "033/330",
+      "rank": 3,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 4,
+      "roots": 1,
+      "routeConnections": 2,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Matutino|Provincia|1057|vt3|prevNocturno|3:0>4:1>4:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "1057",
+          "oldFamily": "057/750",
+          "currentFamily": "033/330",
+          "oldCells": [
+            "3:0",
+            "4:1",
+            "4:0"
+          ],
+          "currentCells": [
+            "3:0",
+            "4:1",
+            "4:0"
+          ],
+          "deltaRow": 0,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Matutino|Provincia|1057|vt3|prevNocturno|3:0>4:1>4:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "1057",
+          "oldFamily": "057/750",
+          "currentFamily": "033/330",
+          "oldCells": [
+            "3:0",
+            "4:1",
+            "4:0"
+          ],
+          "currentCells": [
+            "2:1",
+            "3:0",
+            "4:1"
+          ],
+          "deltaRow": -1,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "034/430",
+      "rank": 4,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 6,
+      "roots": 1,
+      "routeConnections": 2,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "034/430",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "2:0",
+            "3:0",
+            "4:0"
+          ],
+          "deltaRow": 2,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "034/430",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "2:0",
+            "3:0",
+            "2:1"
+          ],
+          "deltaRow": 2,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "344/443",
+      "rank": 5,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 4,
+      "roots": 1,
+      "routeConnections": 2,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "344/443",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "1:0",
+            "2:0",
+            "3:0"
+          ],
+          "deltaRow": 1,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "344/443",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "0:1",
+            "1:0",
+            "2:0"
+          ],
+          "deltaRow": 0,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "354/453",
+      "rank": 6,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 6,
+      "roots": 1,
+      "routeConnections": 2,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Primera|Provincia|0310|vt3|prevNocturno|2:1>3:1>3:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "0310",
+          "oldFamily": "013/310",
+          "currentFamily": "354/453",
+          "oldCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "0:1",
+            "1:1",
+            "1:0"
+          ],
+          "deltaRow": -2,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Primera|Provincia|0310|vt3|prevNocturno|2:1>3:1>3:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "0310",
+          "oldFamily": "013/310",
+          "currentFamily": "354/453",
+          "oldCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "0:1",
+            "1:1",
+            "2:0"
+          ],
+          "deltaRow": -2,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "364/463",
+      "rank": 7,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 4,
+      "roots": 1,
+      "routeConnections": 2,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Matutino|Provincia|1057|vt3|prevNocturno|3:0>4:1>4:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "1057",
+          "oldFamily": "057/750",
+          "currentFamily": "364/463",
+          "oldCells": [
+            "3:0",
+            "4:1",
+            "4:0"
+          ],
+          "currentCells": [
+            "2:0",
+            "3:1",
+            "3:0"
+          ],
+          "deltaRow": -1,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Matutino|Provincia|1057|vt3|prevNocturno|3:0>4:1>4:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "1057",
+          "oldFamily": "057/750",
+          "currentFamily": "364/463",
+          "oldCells": [
+            "3:0",
+            "4:1",
+            "4:0"
+          ],
+          "currentCells": [
+            "2:0",
+            "3:1",
+            "4:1"
+          ],
+          "deltaRow": -1,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "405/504",
+      "rank": 8,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 4,
+      "roots": 1,
+      "routeConnections": 2,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Primera|Provincia|0310|vt3|prevNocturno|2:1>3:1>3:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "0310",
+          "oldFamily": "013/310",
+          "currentFamily": "405/504",
+          "oldCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "1:1",
+            "2:1",
+            "2:0"
+          ],
+          "deltaRow": -1,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Primera|Provincia|0310|vt3|prevNocturno|2:1>3:1>3:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "0310",
+          "oldFamily": "013/310",
+          "currentFamily": "405/504",
+          "oldCells": [
+            "2:1",
+            "3:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "1:0",
+            "2:1",
+            "1:1"
+          ],
+          "deltaRow": -1,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "064/460",
+      "rank": 9,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 4,
+      "roots": 1,
+      "routeConnections": 2,
+      "connections": [
+        {
+          "rootId": "2026-10-07|D−7|Vespertino|Ciudad|2428|vt3|prevNocturno|3:0>4:1>5:0",
+          "rootDate": "2026-10-07",
+          "period": "D−7",
+          "source": "prevNocturno",
+          "oldHead": "2428",
+          "oldFamily": "428/824",
+          "currentFamily": "064/460",
+          "oldCells": [
+            "5:0",
+            "4:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "4:0",
+            "3:1",
+            "2:0"
+          ],
+          "deltaRow": -1,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-07|D−7|Vespertino|Ciudad|2428|vt3|prevNocturno|3:0>4:1>5:0",
+          "rootDate": "2026-10-07",
+          "period": "D−7",
+          "source": "prevNocturno",
+          "oldHead": "2428",
+          "oldFamily": "428/824",
+          "currentFamily": "064/460",
+          "oldCells": [
+            "5:0",
+            "4:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "2:0",
+            "3:1",
+            "2:1"
+          ],
+          "deltaRow": -1,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "304/403",
+      "rank": 10,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 6,
+      "roots": 1,
+      "routeConnections": 2,
+      "connections": [
+        {
+          "rootId": "2026-10-07|D−7|Vespertino|Ciudad|2428|vt3|prevNocturno|3:0>4:1>5:0",
+          "rootDate": "2026-10-07",
+          "period": "D−7",
+          "source": "prevNocturno",
+          "oldHead": "2428",
+          "oldFamily": "428/824",
+          "currentFamily": "304/403",
+          "oldCells": [
+            "5:0",
+            "4:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "3:0",
+            "2:1",
+            "1:0"
+          ],
+          "deltaRow": -2,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-07|D−7|Vespertino|Ciudad|2428|vt3|prevNocturno|3:0>4:1>5:0",
+          "rootDate": "2026-10-07",
+          "period": "D−7",
+          "source": "prevNocturno",
+          "oldHead": "2428",
+          "oldFamily": "428/824",
+          "currentFamily": "304/403",
+          "oldCells": [
+            "5:0",
+            "4:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "2:0",
+            "2:1",
+            "3:0"
+          ],
+          "deltaRow": -1,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "458/854",
+      "rank": 11,
+      "flags": {
+        "MUTATION": true,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 6,
+      "roots": 2,
+      "routeConnections": 4,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Matutino|Provincia|1057|vt3|prevNocturno|3:0>4:1>4:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "1057",
+          "oldFamily": "057/750",
+          "currentFamily": "458/854",
+          "oldCells": [
+            "3:0",
+            "4:1",
+            "4:0"
+          ],
+          "currentCells": [
+            "0:0",
+            "1:1",
+            "1:0"
+          ],
+          "deltaRow": -3,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-07|D−7|Vespertino|Ciudad|2428|vt3|prevNocturno|3:0>4:1>5:0",
+          "rootDate": "2026-10-07",
+          "period": "D−7",
+          "source": "prevNocturno",
+          "oldHead": "2428",
+          "oldFamily": "428/824",
+          "currentFamily": "458/854",
+          "oldCells": [
+            "5:0",
+            "4:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "0:0",
+            "1:1",
+            "1:0"
+          ],
+          "deltaRow": -3,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-07|D−7|Vespertino|Ciudad|2428|vt3|prevNocturno|3:0>4:1>5:0",
+          "rootDate": "2026-10-07",
+          "period": "D−7",
+          "source": "prevNocturno",
+          "oldHead": "2428",
+          "oldFamily": "428/824",
+          "currentFamily": "458/854",
+          "oldCells": [
+            "5:0",
+            "4:1",
+            "3:0"
+          ],
+          "currentCells": [
+            "2:0",
+            "1:1",
+            "0:0"
+          ],
+          "deltaRow": -3,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        },
+        {
+          "rootId": "2026-10-13|D−1|Matutino|Provincia|1057|vt3|prevNocturno|3:0>4:1>4:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "1057",
+          "oldFamily": "057/750",
+          "currentFamily": "458/854",
+          "oldCells": [
+            "3:0",
+            "4:1",
+            "4:0"
+          ],
+          "currentCells": [
+            "2:0",
+            "1:1",
+            "0:0"
+          ],
+          "deltaRow": -3,
+          "deltaCol": 0,
+          "mutation": true,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "043/340",
+      "rank": 12,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 1,
+      "roots": 1,
+      "routeConnections": 1,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|1:1>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "043/340",
+          "oldCells": [
+            "1:1",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "2:1",
+            "2:0",
+            "3:0"
+          ],
+          "deltaRow": 1,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "053/350",
+      "rank": 13,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 1,
+      "roots": 1,
+      "routeConnections": 1,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "053/350",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "0:1",
+            "1:1",
+            "2:1"
+          ],
+          "deltaRow": 0,
+          "deltaCol": 1,
+          "mutation": false,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "384/483",
+      "rank": 14,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 1,
+      "roots": 1,
+      "routeConnections": 1,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|1:1>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "384/483",
+          "oldCells": [
+            "1:1",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "0:1",
+            "0:0",
+            "1:0"
+          ],
+          "deltaRow": -1,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "404/404",
+      "rank": 15,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": true,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 3,
+      "roots": 1,
+      "routeConnections": 1,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Matutino|Provincia|1057|vt3|prevNocturno|3:0>4:1>4:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "1057",
+          "oldFamily": "057/750",
+          "currentFamily": "404/404",
+          "oldCells": [
+            "3:0",
+            "4:1",
+            "4:0"
+          ],
+          "currentCells": [
+            "1:0",
+            "2:1",
+            "2:0"
+          ],
+          "deltaRow": -2,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "445/544",
+      "rank": 16,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 1,
+      "roots": 1,
+      "routeConnections": 1,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|1:1>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "445/544",
+          "oldCells": [
+            "1:1",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "1:1",
+            "1:0",
+            "2:0"
+          ],
+          "deltaRow": 0,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "448/844",
+      "rank": 17,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 1,
+      "roots": 1,
+      "routeConnections": 1,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "448/844",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "deltaRow": 0,
+          "deltaCol": 0,
+          "mutation": false,
+          "changedNumeric": true
+        }
+      ]
+    },
+    {
+      "family": "506/605",
+      "rank": 18,
+      "flags": {
+        "MUTATION": false,
+        "SHIFT_BIG": false,
+        "CHANGE_NUMERIC": true
+      },
+      "score": 1,
+      "roots": 1,
+      "routeConnections": 1,
+      "connections": [
+        {
+          "rootId": "2026-10-13|D−1|Nocturno|Santa Fé|4625|vt3|prevNocturno|0:0>1:0>2:0",
+          "rootDate": "2026-10-13",
+          "period": "D−1",
+          "source": "prevNocturno",
+          "oldHead": "4625",
+          "oldFamily": "526/625",
+          "currentFamily": "506/605",
+          "oldCells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "currentCells": [
+            "1:1",
+            "2:1",
+            "3:1"
+          ],
+          "deltaRow": 1,
+          "deltaCol": 1,
+          "mutation": false,
+          "changedNumeric": true
+        }
+      ]
+    }
+  ],
+  "results": {
+    "official": {
+      "top3": [
+        "063/360",
+        "036/630",
+        "033/330"
+      ],
+      "top5": [
+        "063/360",
+        "036/630",
+        "033/330",
+        "034/430",
+        "344/443"
+      ],
+      "top10": [
+        "063/360",
+        "036/630",
+        "033/330",
+        "034/430",
+        "344/443",
+        "354/453",
+        "364/463",
+        "405/504",
+        "064/460",
+        "304/403"
+      ]
+    },
+    "genealogyThird": {
+      "selected": "034/430",
+      "originalRank": 4,
+      "top3": [
+        "063/360",
+        "036/630",
+        "034/430"
+      ],
+      "top5": [
+        "063/360",
+        "036/630",
+        "034/430",
+        "033/330",
+        "344/443"
+      ],
+      "top10": [
+        "063/360",
+        "036/630",
+        "034/430",
+        "033/330",
+        "344/443",
+        "354/453",
+        "364/463",
+        "405/504",
+        "064/460",
+        "304/403"
+      ]
+    },
+    "genealogyTenth": {
+      "selected": "458/854",
+      "originalRank": 11,
+      "top3": [
+        "063/360",
+        "036/630",
+        "033/330"
+      ],
+      "top5": [
+        "063/360",
+        "036/630",
+        "033/330",
+        "034/430",
+        "344/443"
+      ],
+      "top10": [
+        "063/360",
+        "036/630",
+        "033/330",
+        "034/430",
+        "344/443",
+        "354/453",
+        "364/463",
+        "405/504",
+        "064/460",
+        "458/854"
+      ]
+    },
+    "neutralThird": {
+      "selected": "064/460",
+      "originalRank": 9,
+      "top3": [
+        "063/360",
+        "036/630",
+        "064/460"
+      ],
+      "top5": [
+        "063/360",
+        "036/630",
+        "064/460",
+        "033/330",
+        "034/430"
+      ],
+      "top10": [
+        "063/360",
+        "036/630",
+        "064/460",
+        "033/330",
+        "034/430",
+        "344/443",
+        "354/453",
+        "364/463",
+        "405/504",
+        "304/403"
+      ]
+    },
+    "neutralTenth": {
+      "selected": "506/605",
+      "originalRank": 18,
+      "top3": [
+        "063/360",
+        "036/630",
+        "033/330"
+      ],
+      "top5": [
+        "063/360",
+        "036/630",
+        "033/330",
+        "034/430",
+        "344/443"
+      ],
+      "top10": [
+        "063/360",
+        "036/630",
+        "033/330",
+        "034/430",
+        "344/443",
+        "354/453",
+        "364/463",
+        "405/504",
+        "064/460",
+        "506/605"
+      ]
+    }
+  },
+  "eligibility": {
+    "third": [
+      "033/330",
+      "034/430",
+      "344/443",
+      "354/453",
+      "364/463",
+      "405/504",
+      "064/460",
+      "304/403"
+    ],
+    "tenth": [
+      "458/854",
+      "404/404",
+      "043/340",
+      "053/350",
+      "384/483",
+      "445/544",
+      "448/844",
+      "506/605"
+    ]
+  },
+  "note": "PRE paralelo construido de forma independiente del POST. No reescribe el PRE original."
+}
