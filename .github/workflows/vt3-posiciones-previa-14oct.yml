@@ -1,0 +1,38 @@
+name: PRE posiciones geometricas Previa 14oct
+on:
+  push:
+    branches: [prospectivo-vt3-posiciones-previa-14oct2026]
+    paths:
+      - 'scripts/vt3-prospectivo-posiciones-previa-14oct2026.mjs'
+      - 'PROTOCOLO_PRE_VT3_POSICIONES_PREVIA_14OCT2026.md'
+      - '.github/workflows/vt3-posiciones-previa-14oct.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sellar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Elegir rutas y sellar PRE sin cabezas objetivo
+        run: node scripts/vt3-prospectivo-posiciones-previa-14oct2026.mjs pre
+      - name: Publicar resultados PRE
+        uses: actions/upload-artifact@v4
+        with:
+          name: PRE-VT3-posiciones-geometricas-previa-14oct
+          path: auditorias/vt3-posiciones-previa-14oct2026/
+          retention-days: 90
+          if-no-files-found: error
+      - name: Conservar sello original y guardar solo sidecar nuevo
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-posiciones-previa-14oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(PRE): ruta primero, cifras despues; posiciones para Previa 14oct'
+            git push origin HEAD:prospectivo-vt3-posiciones-previa-14oct2026
+          fi
