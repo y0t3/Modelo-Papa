@@ -1,0 +1,34 @@
+name: Sellar VT3 Previa 14oct antes del sorteo
+on:
+  push:
+    branches: [prospectivo-vt3-14oct2026-previa]
+    paths:
+      - '.github/workflows/vt3-prospectivo-previa-14oct2026.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sellar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Generar exclusivamente PRE del 14oct Previa con datos anteriores
+        run: node scripts/vt3-prospectivo-previa-14oct2026.mjs pre
+      - name: Comprometer sello y predicciones sin resultados del 14oct
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-prospectivo-14oct2026-previa/PRE_14OCT_PREVIA.json
+          git add auditorias/vt3-prospectivo-14oct2026-previa/SELLO.json
+          git commit -m 'seal(VT3): PRE genuino Previa 14oct antes de sortear'
+          git push origin HEAD:prospectivo-vt3-14oct2026-previa
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-previa-14oct-pre-sellado
+          path: auditorias/vt3-prospectivo-14oct2026-previa/
+          retention-days: 60
+          if-no-files-found: error
