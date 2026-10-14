@@ -132,7 +132,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
  };
  const freeze=()=>{
   if(!editable||!sheet||!picks.length)return;
-  Alert.alert('Congelar pronóstico Papá',
+  Alert.alert('Congelar pronóstico Lalo',
    'Se guardarán '+Object.values(wagers).reduce((n,a)=>n+a.size,0)+
    ' jugadas distintas del '+date+' · '+turn+
    '. Una vez guardadas no podrás modificar ni agregar candidatas. ¿Confirmás?',
@@ -166,10 +166,10 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
  const showPicks=record?.snapshot.pre.picks||picks;
  return <View style={s.main}>
   <View style={[s.hero,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.title,{color:c.text}]}>PRONÓSTICO DE PAPÁ</Text>
+   <Text style={[s.title,{color:c.text}]}>PRONÓSTICO DE LALO</Text>
    <Text style={[s.small,{color:c.subtext}]}>
-    Interpretación propia de la hoja. Papá elige recorridos; la app lee las cifras,
-    forma VT2 / VT3 / VT4 y conserva sus elecciones por separado del motor Lalo.
+    Lalo elige sus recorridos en la hoja; la app lee las cifras,
+    forma VT2 / VT3 / VT4 y guarda sus pronósticos aparte del ranking automático.
    </Text>
    <View style={s.switches}>
     {(['seleccion','historial'] as const).map(x=><Pressable key={x}
@@ -295,7 +295,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
     </View>:null}
    </View>
   </>:<View style={[s.panel,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.subtitle,{color:c.text}]}>BALANCE SEMANAL · PAPÁ</Text>
+   <Text style={[s.subtitle,{color:c.text}]}>BALANCE SEMANAL · LALO</Text>
    <View style={s.weekBar}>
     <Pressable style={[s.secondary,{borderColor:c.border}]} onPress={()=>setWeek(x=>mondayShift(x,-1))}>
      <Text style={{color:c.accent,fontWeight:'900'}}>← Semana</Text></Pressable>
