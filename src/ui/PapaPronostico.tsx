@@ -267,7 +267,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
     })}
     {editable?<Pressable onPress={freeze} accessibilityRole="button"
      disabled={!picks.length||busy}
-     style={[s.freeze,{backgroundColor:c.button,opacity:!picks.length||busy?.45:1}]}>
+     style={[s.freeze,{backgroundColor:c.button,opacity:(!picks.length||busy)?0.45:1}]}>
      <Text style={{color:c.buttonText,fontWeight:'900',textAlign:'center'}}>
       {busy?'GUARDANDO…':'CONGELAR PRONÓSTICO ANTES DEL SORTEO'}
      </Text>
@@ -329,7 +329,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
    </View>)}
    <Pressable accessibilityRole="button" onPress={()=>{void refreshWeek()}}
     disabled={busy||!weekRecords.length} style={[s.freeze,{
-     backgroundColor:c.button,opacity:busy||!weekRecords.length?.45:1}]}>
+     backgroundColor:c.button,opacity:(busy||!weekRecords.length)?0.45:1}]}>
     <Text style={{color:c.buttonText,fontWeight:'900',textAlign:'center'}}>
      {busy?'CONSULTANDO…':'ACTUALIZAR RESULTADOS DE LA SEMANA'}
     </Text>
