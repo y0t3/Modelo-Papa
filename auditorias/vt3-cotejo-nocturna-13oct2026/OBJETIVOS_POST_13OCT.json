@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-13",
+  "sources": [
+    "https://sigmadiario.com/quiniela",
+    "https://www.jugandoonline.com.ar/Quiniela-Nocturna.aspx/1000",
+    "https://www.quinielanacionaln.com.ar/"
+  ],
+  "jurisdictions": [
+    "Ciudad",
+    "Provincia",
+    "Córdoba",
+    "Santa Fé",
+    "Entre Ríos"
+  ],
+  "turns": {
+    "Previa": [
+      "6448",
+      "6337",
+      "5546",
+      "5119",
+      "1495"
+    ],
+    "Primera": [
+      "5485",
+      "0310",
+      "8857",
+      "3385",
+      "4084"
+    ],
+    "Matutino": [
+      "3376",
+      "1057",
+      "2413",
+      "3723",
+      "2284"
+    ],
+    "Vespertino": [
+      "6137",
+      "7888",
+      "7336",
+      "8190",
+      "6800"
+    ],
+    "Nocturno": [
+      "3072",
+      "1234",
+      "5529",
+      "4625",
+      "9192"
+    ]
+  },
+  "note": "Resultados publicados de los cinco sorteos del 13 de octubre de 2026; reconstrucción después de publicados, salvo PRE oficial Matutino previamente sellado."
+}
