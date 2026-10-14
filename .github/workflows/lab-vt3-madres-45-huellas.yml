@@ -1,0 +1,55 @@
+name: VT3 madres 4-5 huellas y negativos comparables 115
+on:
+  push:
+    branches: [lab-vt3-madres-45-huellas-comparadas-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-madres-45-huellas.mjs'
+      - 'PROTOCOLO_VT3_MADRES_45_HUELLAS_13OCT2026.md'
+      - '.github/workflows/lab-vt3-madres-45-huellas.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  ensayo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar físicamente objetivos y datos con cabezas futuras
+        run: |
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt3-45-post.json
+          mv auditorias/vt3-madres-vt4-cobertura-115-13oct2026/POST_115.json /tmp/vt3-45-otherpost.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt3-45-fixture.b64
+          test ! -e auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+      - name: Seleccionar madres sólo con perfiles y huellas históricas PRE
+        run: node scripts/lab-vt3-madres-45-huellas.mjs pre
+      - name: Sellar PRE por commit antes de cotejo
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-madres-45-huellas-115-13oct2026/PRE_115.json
+          git add auditorias/vt3-madres-45-huellas-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT3): madres 4-5 y controles con rutas PRE'
+          git push origin HEAD:lab-vt3-madres-45-huellas-comparadas-13oct2026
+      - name: Restaurar POST y medir comparación de huellas y madres de control
+        run: |
+          mv /tmp/vt3-45-post.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          mv /tmp/vt3-45-otherpost.json auditorias/vt3-madres-vt4-cobertura-115-13oct2026/POST_115.json
+          mv /tmp/vt3-45-fixture.b64 fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt3-madres-45-huellas.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-madres-45-huellas-115
+          path: auditorias/vt3-madres-45-huellas-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar resultados sin tocar main ni motor
+        run: |
+          git add auditorias/vt3-madres-45-huellas-115-13oct2026/POST_115.json
+          git add auditorias/vt3-madres-45-huellas-115-13oct2026/RESUMEN.json
+          git add auditorias/vt3-madres-45-huellas-115-13oct2026/LECTURA.md
+          git commit -m 'data(VT3): cotejo controlado de madres y huellas físicas'
+          git push origin HEAD:lab-vt3-madres-45-huellas-comparadas-13oct2026
