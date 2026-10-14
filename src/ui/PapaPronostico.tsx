@@ -4,9 +4,9 @@ import type {CabezasDia,Turno} from '../domain';
 import {TURNOS} from '../domain';
 import type {DailySheet,SourceId} from '../sheet';
 import type {PapaCell,PapaPick,PapaRecord} from '../papaPronostico';
-import {addDraftPick,draftPick,evaluatePapa,hasObserved,loadDraft,loadRecords,
- pathText,recordId,saveDraft,savePre,todayLocal,uniqueWagers,updateResults,
- weekEnd,weeklySummary,weekStart} from '../papaPronostico';
+import {addDraftPick,draftPick,evaluatePapa,hasObserved,
+ pathText,recordId,todayLocal,uniqueWagers,weekEnd,weeklySummary,weekStart} from '../papaPronostico';
+import {loadDraft,loadRecords,saveDraft,savePre,updateResults} from '../papaRegistro';
 import {descargarCabezas} from '../cabezas';
 import MarkedBoard from './MarkedBoard';
 import type {PanoramaRoute} from '../panoramaModel';
