@@ -29,7 +29,7 @@ const nav: {id:Screen;label:string}[]=[
  {id:'cabezas',label:'CABEZAS'},
  {id:'info',label:'INFO'}
 ];
-const today=()=>new Date().toISOString().slice(0,10);
+const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
 function LaloApp(){
  const {mode,colors:c,toggle}=useLaloTheme();
  const [screen,setScreen]=useState<Screen>('hoja');
