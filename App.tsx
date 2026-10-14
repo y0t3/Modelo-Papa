@@ -16,15 +16,17 @@ import PanoramaSheet from './src/PanoramaSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
 import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
+import PapaPronostico from './src/ui/PapaPronostico';
 import HeadsTable from './src/ui/HeadsTable';
 import InfoDashboard from './src/ui/InfoDashboard';
 import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 
-type Screen='hoja'|'predictiva'|'prediccion'|'cabezas'|'info';
+type Screen='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const nav: {id:Screen;label:string}[]=[
  {id:'hoja',label:'HOJA'},{id:'predictiva',label:'PREDICTIVA'},
- {id:'prediccion',label:'PREDICCIÓN'},{id:'cabezas',label:'CABEZAS'},
+ {id:'prediccion',label:'PREDICCIÓN'},{id:'papa',label:'PAPÁ'},
+ {id:'cabezas',label:'CABEZAS'},
  {id:'info',label:'INFO'}
 ];
 const today=()=>new Date().toISOString().slice(0,10);
@@ -138,6 +140,10 @@ function LaloApp(){
      historical={hist} heads={fiveHeads}/>
     <Vt3Explainer sheet={sheet} view={motor} turn={target}
      heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
+   </>:screen==='papa'?<>
+    <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico personal</Text>
+    <TurnStrip value={target} onChange={changeTurn}/>
+    <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
    </>:screen==='cabezas'?
     <HeadsTable data={data} sheet={sheet}/>:
     <InfoDashboard turn={target} view={motor}/>}
