@@ -30,13 +30,21 @@ assert.ok(a.ranks.vt2.some(f=>f.family==='47/74'||f.family==='49/94'),'VT2 propi
 assert.ok(a.ranks.vt4.some(f=>f.family==='7492/9472'),
  'VT4 sólo si hay ruta de cuatro celdas');
 const selectedMother='749/947';
-const daughterB='7492/9472',daughterA='2749/2947';
+const daughterB='7492/9472';
 assert.ok(a.ranks.vt4.some(f=>f.family===daughterB&&
  f.paths.some(p=>(p.mothers||[]).includes(selectedMother))),
  'La hija B tiene testigo VT4 propio');
-assert.ok(!a.ranks.vt4.some(f=>f.family===daughterA&&
- f.paths.some(p=>(p.mothers||[]).includes(selectedMother))),
- 'La hija A no puede tomar prestado el recorrido físico de su hermana');
+const motherVt4=a.ranks.vt4.flatMap(f=>f.paths.filter(p=>(p.mothers||[]).includes(selectedMother)));
+assert.ok(motherVt4.length>0);
+for(const p of motherVt4){
+ const value=p.path.map(c=>c.digit).join('');
+ assert.equal(p.value,value,'La hija VT4 debe leerse de su recorrido propio');
+ assert.ok(p.addedDigit);
+ assert.ok(['749','947'].some(m=>
+  value===p.addedDigit+m||value===m+p.addedDigit),
+  'La cifra se agrega a la madre VT3, nunca se invierte la cuaterna');
+ assert.equal(new Set(p.path.map(c=>c.row+':'+c.col)).size,4);
+}
 const future=makeSheet('7492');
 future.columns[2].values=['99','99','99','99','99','99'];
 future.columns[4].values=['11','11','11','11','11','11'];
