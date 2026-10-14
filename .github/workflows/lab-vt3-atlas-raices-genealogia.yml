@@ -1,0 +1,47 @@
+name: VT3 genealogia real huellas ganadoras A B C D
+on:
+  push:
+    branches: [lab-vt3-atlas-cuatro-dimensiones-14oct2026]
+    paths:
+      - 'scripts/lab-vt3-atlas-raices-genealogia.mjs'
+      - 'PROTOCOLO_VT3_ATLAS_RAICES_GENEALOGIA_14OCT2026.md'
+      - '.github/workflows/lab-vt3-atlas-raices-genealogia.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  genealogia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Aislar resultados antes de reconstruir genealogias
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/atlas-raices-targets.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/atlas-raices-noct.json
+      - name: Preparar PRE genealogico y sellar
+        run: node scripts/lab-vt3-atlas-raices-genealogia.mjs pre
+      - name: Confrontar huellas ganadoras y controles sin cambiar ranking
+        run: |
+          mv /tmp/atlas-raices-targets.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/atlas-raices-noct.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          node scripts/lab-vt3-atlas-raices-genealogia.mjs post
+      - name: Publicar auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-genealogia-huellas-premiadas-115
+          path: auditorias/vt3-atlas-raices-verificadas-115-14oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Versionar auditoria en laboratorio independiente
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-atlas-raices-verificadas-115-14oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): genealogia verificada PRE POST con controles de raices'
+            git push origin HEAD:lab-vt3-atlas-cuatro-dimensiones-14oct2026
+          fi
