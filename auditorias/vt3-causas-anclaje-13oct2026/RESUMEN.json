@@ -1,0 +1,640 @@
+{
+  "date": "2026-10-13",
+  "cuts": 5,
+  "heads": 25,
+  "focused": [
+    {
+      "jurisdiction": "Provincia",
+      "head": "1057",
+      "family": "057/750",
+      "category": "FISICA_SIN_RAIZ",
+      "ranking": null,
+      "d1": 0,
+      "d7": 0,
+      "bifurcations": 0,
+      "physicalPaths": 2,
+      "admittedPaths": 0,
+      "sources": [
+        "Previa",
+        "prevNocturno"
+      ],
+      "blocks": 2,
+      "forms": 2,
+      "ownOldRoots": 0,
+      "rootCandidateGeometryCount": 0,
+      "ownFamilyGeomOpportunities": 0,
+      "ownFamilyRoots": 0,
+      "rankWhyTop3": null,
+      "rankWhyTop10": null,
+      "strictMatchedComparables": 1,
+      "strictOtherWinners": 0,
+      "relaxedMatchedComparables": 1,
+      "relaxedOtherWinners": 0,
+      "sameSourceComparables": 2,
+      "comparableNonWinners": [
+        "075/570"
+      ],
+      "paths": [
+        {
+          "source": "prevNocturno",
+          "physicalKey": "prevNocturno|3:0>4:1>4:0",
+          "value": "057",
+          "cells": [
+            "3:0",
+            "4:1",
+            "4:0"
+          ],
+          "shape": "0:0>1:1>1:0",
+          "block": "prevNocturno|3:0,4:0,4:1",
+          "admitted": false,
+          "origin": null,
+          "ownRoots": [],
+          "rootCandidatesSameSource": 6,
+          "geomRootsSameSource": 0,
+          "ownFamilyRootsSameSource": 0,
+          "sameFamilyGeomRoots": 0,
+          "rootedSiblingEdge": []
+        },
+        {
+          "source": "Previa",
+          "physicalKey": "Previa|2:1>2:0>3:1",
+          "value": "750",
+          "cells": [
+            "2:1",
+            "2:0",
+            "3:1"
+          ],
+          "shape": "0:1>0:0>1:1",
+          "block": "Previa|2:0,2:1,3:1",
+          "admitted": false,
+          "origin": null,
+          "ownRoots": [],
+          "rootCandidatesSameSource": 10,
+          "geomRootsSameSource": 0,
+          "ownFamilyRootsSameSource": 0,
+          "sameFamilyGeomRoots": 0,
+          "rootedSiblingEdge": []
+        }
+      ]
+    },
+    {
+      "jurisdiction": "Provincia",
+      "head": "1234",
+      "family": "234/432",
+      "category": "ADMITIDA_11_PLUS",
+      "ranking": 21,
+      "d1": 0,
+      "d7": 1,
+      "bifurcations": 1,
+      "physicalPaths": 2,
+      "admittedPaths": 2,
+      "sources": [
+        "Matutino"
+      ],
+      "blocks": 2,
+      "forms": 2,
+      "ownOldRoots": 0,
+      "rootCandidateGeometryCount": 1,
+      "ownFamilyGeomOpportunities": 0,
+      "ownFamilyRoots": 0,
+      "rankWhyTop3": {
+        "boundary": "104/401",
+        "boundaryRank": 3,
+        "own": "234/432",
+        "ownRank": 21,
+        "criterion": "Bloques bifurcados",
+        "candidateValue": 1,
+        "boundaryValue": 2,
+        "candidateTuple": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          2
+        ],
+        "boundaryTuple": [
+          1,
+          2,
+          1,
+          0,
+          1,
+          3
+        ]
+      },
+      "rankWhyTop10": {
+        "boundary": "596/695",
+        "boundaryRank": 10,
+        "own": "234/432",
+        "ownRank": 21,
+        "criterion": "Antecedentes D−1",
+        "candidateValue": 0,
+        "boundaryValue": 1,
+        "candidateTuple": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          2
+        ],
+        "boundaryTuple": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      "strictMatchedComparables": 6,
+      "strictOtherWinners": 0,
+      "relaxedMatchedComparables": 6,
+      "relaxedOtherWinners": 0,
+      "sameSourceComparables": 8,
+      "comparableNonWinners": [
+        "768/867",
+        "687/786",
+        "428/824",
+        "324/423",
+        "439/934",
+        "435/534"
+      ],
+      "paths": [
+        {
+          "source": "Matutino",
+          "physicalKey": "Matutino|2:0>3:0>2:1",
+          "value": "234",
+          "cells": [
+            "2:0",
+            "3:0",
+            "2:1"
+          ],
+          "shape": "0:0>1:0>0:1",
+          "block": "Matutino|2:0,2:1,3:0",
+          "admitted": true,
+          "origin": "TRASLADO",
+          "ownRoots": [
+            {
+              "period": "D−7",
+              "date": "2026-10-06",
+              "head": "9226",
+              "oldTurn": "Vespertino",
+              "source": "Matutino",
+              "oldCells": [
+                "3:0",
+                "4:0",
+                "3:1"
+              ]
+            }
+          ],
+          "rootCandidatesSameSource": 3,
+          "geomRootsSameSource": 1,
+          "ownFamilyRootsSameSource": 0,
+          "sameFamilyGeomRoots": 0,
+          "rootedSiblingEdge": [
+            "Matutino|2:0>3:0>3:1"
+          ]
+        },
+        {
+          "source": "Matutino",
+          "physicalKey": "Matutino|2:0>3:0>3:1",
+          "value": "234",
+          "cells": [
+            "2:0",
+            "3:0",
+            "3:1"
+          ],
+          "shape": "0:0>1:0>1:1",
+          "block": "Matutino|2:0,3:0,3:1",
+          "admitted": true,
+          "origin": "BIFURCACIÓN",
+          "ownRoots": [
+            {
+              "period": "D−7",
+              "date": "2026-10-06",
+              "head": "9226",
+              "oldTurn": "Vespertino",
+              "source": "Matutino",
+              "oldCells": [
+                "3:0",
+                "4:0",
+                "3:1"
+              ]
+            }
+          ],
+          "rootCandidatesSameSource": 3,
+          "geomRootsSameSource": 0,
+          "ownFamilyRootsSameSource": 0,
+          "sameFamilyGeomRoots": 0,
+          "rootedSiblingEdge": [
+            "Matutino|2:0>3:0>2:1"
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "Santa Fé",
+      "head": "4625",
+      "family": "526/625",
+      "category": "FISICA_SIN_RAIZ",
+      "ranking": null,
+      "d1": 0,
+      "d7": 0,
+      "bifurcations": 0,
+      "physicalPaths": 2,
+      "admittedPaths": 0,
+      "sources": [
+        "prevNocturno"
+      ],
+      "blocks": 2,
+      "forms": 2,
+      "ownOldRoots": 0,
+      "rootCandidateGeometryCount": 0,
+      "ownFamilyGeomOpportunities": 0,
+      "ownFamilyRoots": 0,
+      "rankWhyTop3": null,
+      "rankWhyTop10": null,
+      "strictMatchedComparables": 6,
+      "strictOtherWinners": 0,
+      "relaxedMatchedComparables": 6,
+      "relaxedOtherWinners": 0,
+      "sameSourceComparables": 23,
+      "comparableNonWinners": [
+        "262/262",
+        "265/562",
+        "263/362",
+        "105/501",
+        "315/513",
+        "015/510"
+      ],
+      "paths": [
+        {
+          "source": "prevNocturno",
+          "physicalKey": "prevNocturno|0:0>1:0>2:0",
+          "value": "625",
+          "cells": [
+            "0:0",
+            "1:0",
+            "2:0"
+          ],
+          "shape": "0:0>1:0>2:0",
+          "block": "prevNocturno|0:0,1:0,2:0",
+          "admitted": false,
+          "origin": null,
+          "ownRoots": [],
+          "rootCandidatesSameSource": 6,
+          "geomRootsSameSource": 0,
+          "ownFamilyRootsSameSource": 0,
+          "sameFamilyGeomRoots": 0,
+          "rootedSiblingEdge": []
+        },
+        {
+          "source": "prevNocturno",
+          "physicalKey": "prevNocturno|1:1>1:0>2:0",
+          "value": "625",
+          "cells": [
+            "1:1",
+            "1:0",
+            "2:0"
+          ],
+          "shape": "0:1>0:0>1:0",
+          "block": "prevNocturno|1:0,1:1,2:0",
+          "admitted": false,
+          "origin": null,
+          "ownRoots": [],
+          "rootCandidatesSameSource": 6,
+          "geomRootsSameSource": 0,
+          "ownFamilyRootsSameSource": 0,
+          "sameFamilyGeomRoots": 0,
+          "rootedSiblingEdge": []
+        }
+      ]
+    },
+    {
+      "jurisdiction": "Entre Ríos",
+      "head": "9192",
+      "family": "192/291",
+      "category": "FISICA_SIN_RAIZ",
+      "ranking": null,
+      "d1": 0,
+      "d7": 0,
+      "bifurcations": 0,
+      "physicalPaths": 1,
+      "admittedPaths": 0,
+      "sources": [
+        "Primera"
+      ],
+      "blocks": 1,
+      "forms": 1,
+      "ownOldRoots": 0,
+      "rootCandidateGeometryCount": 0,
+      "ownFamilyGeomOpportunities": 0,
+      "ownFamilyRoots": 0,
+      "rankWhyTop3": null,
+      "rankWhyTop10": null,
+      "strictMatchedComparables": 15,
+      "strictOtherWinners": 0,
+      "relaxedMatchedComparables": 15,
+      "relaxedOtherWinners": 0,
+      "sameSourceComparables": 22,
+      "comparableNonWinners": [
+        "129/921",
+        "219/912",
+        "819/918",
+        "196/691",
+        "616/616",
+        "218/812",
+        "182/281",
+        "128/821",
+        "166/661",
+        "189/981",
+        "686/686",
+        "696/696"
+      ],
+      "paths": [
+        {
+          "source": "Primera",
+          "physicalKey": "Primera|1:0>0:0>1:1",
+          "value": "291",
+          "cells": [
+            "1:0",
+            "0:0",
+            "1:1"
+          ],
+          "shape": "1:0>0:0>1:1",
+          "block": "Primera|0:0,1:0,1:1",
+          "admitted": false,
+          "origin": null,
+          "ownRoots": [],
+          "rootCandidatesSameSource": 7,
+          "geomRootsSameSource": 0,
+          "ownFamilyRootsSameSource": 0,
+          "sameFamilyGeomRoots": 0,
+          "rootedSiblingEdge": []
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "turn": "Previa",
+      "totalPhysicalFamilies": 53,
+      "totalAdmitted": 19,
+      "totalWithoutRoot": 34,
+      "observed": {
+        "ADMITIDA_TOP3": 0,
+        "ADMITIDA_4_10": 0,
+        "ADMITIDA_11_PLUS": 0,
+        "FISICA_SIN_RAIZ": 0,
+        "SIN_FORMACION_FISICA": 5
+      }
+    },
+    {
+      "turn": "Primera",
+      "totalPhysicalFamilies": 102,
+      "totalAdmitted": 43,
+      "totalWithoutRoot": 59,
+      "observed": {
+        "ADMITIDA_TOP3": 0,
+        "ADMITIDA_4_10": 1,
+        "ADMITIDA_11_PLUS": 1,
+        "FISICA_SIN_RAIZ": 1,
+        "SIN_FORMACION_FISICA": 2
+      }
+    },
+    {
+      "turn": "Matutino",
+      "totalPhysicalFamilies": 145,
+      "totalAdmitted": 59,
+      "totalWithoutRoot": 86,
+      "observed": {
+        "ADMITIDA_TOP3": 0,
+        "ADMITIDA_4_10": 0,
+        "ADMITIDA_11_PLUS": 0,
+        "FISICA_SIN_RAIZ": 1,
+        "SIN_FORMACION_FISICA": 4
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "totalPhysicalFamilies": 191,
+      "totalAdmitted": 70,
+      "totalWithoutRoot": 121,
+      "observed": {
+        "ADMITIDA_TOP3": 0,
+        "ADMITIDA_4_10": 0,
+        "ADMITIDA_11_PLUS": 0,
+        "FISICA_SIN_RAIZ": 0,
+        "SIN_FORMACION_FISICA": 5
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "totalPhysicalFamilies": 217,
+      "totalAdmitted": 78,
+      "totalWithoutRoot": 139,
+      "observed": {
+        "ADMITIDA_TOP3": 0,
+        "ADMITIDA_4_10": 0,
+        "ADMITIDA_11_PLUS": 1,
+        "FISICA_SIN_RAIZ": 2,
+        "SIN_FORMACION_FISICA": 2
+      }
+    }
+  ],
+  "allObserved": [
+    {
+      "turn": "Previa",
+      "head": "6448",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Previa",
+      "head": "6337",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Previa",
+      "head": "5546",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Previa",
+      "head": "5119",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Previa",
+      "head": "1495",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Primera",
+      "head": "5485",
+      "category": "ADMITIDA_4_10",
+      "physical": 2,
+      "rank": 5
+    },
+    {
+      "turn": "Primera",
+      "head": "0310",
+      "category": "FISICA_SIN_RAIZ",
+      "physical": 1,
+      "rank": null
+    },
+    {
+      "turn": "Primera",
+      "head": "8857",
+      "category": "ADMITIDA_11_PLUS",
+      "physical": 1,
+      "rank": 42
+    },
+    {
+      "turn": "Primera",
+      "head": "3385",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Primera",
+      "head": "4084",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Matutino",
+      "head": "3376",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Matutino",
+      "head": "1057",
+      "category": "FISICA_SIN_RAIZ",
+      "physical": 2,
+      "rank": null
+    },
+    {
+      "turn": "Matutino",
+      "head": "2413",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Matutino",
+      "head": "3723",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Matutino",
+      "head": "2284",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Vespertino",
+      "head": "6137",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Vespertino",
+      "head": "7888",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Vespertino",
+      "head": "7336",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Vespertino",
+      "head": "8190",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Vespertino",
+      "head": "6800",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Nocturno",
+      "head": "3072",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Nocturno",
+      "head": "1234",
+      "category": "ADMITIDA_11_PLUS",
+      "physical": 2,
+      "rank": 21
+    },
+    {
+      "turn": "Nocturno",
+      "head": "5529",
+      "category": "SIN_FORMACION_FISICA",
+      "physical": 0,
+      "rank": null
+    },
+    {
+      "turn": "Nocturno",
+      "head": "4625",
+      "category": "FISICA_SIN_RAIZ",
+      "physical": 2,
+      "rank": null
+    },
+    {
+      "turn": "Nocturno",
+      "head": "9192",
+      "category": "FISICA_SIN_RAIZ",
+      "physical": 1,
+      "rank": null
+    }
+  ],
+  "totals": {
+    "noPhysical": 18,
+    "physicalRootless": 4,
+    "admittedLow": 2,
+    "admittedTop10": 1
+  },
+  "seal": {
+    "source": "6593a9e4ca3c24905fcb54133194b41ca033fb2579cdd8dc7d5bf41eae0ec685",
+    "oldPre": "55f858867bb96ed05e14ac73776ee33edaf21673efce47f630079a651d57a377",
+    "matutina": "067ec73544ba2f225fbf73818e64c926d5f89c404e932397eced66a6dea51a41",
+    "protocol": "05137aed8da7d8b23c0fb63dc01033da4b72ff7e7b547e71ce4543051ff3784a",
+    "script": "6f50984caa1f328b94fc2fbe334560ac8dc1436c44375abe9f2ec20607acc4f2",
+    "motor": "e1bb61a6e1933cffaa5784aa5c77539f004bd9320dfd11dbf9726165ed934448",
+    "audit": "fa13e2df061eefa5439368f7e1a9dad20ba68af75ccabcc7f1473c0154f81f35",
+    "pre": "6d37cadbf4820e5fffdde57258d64afba0c384ef7be787367eb6be71e2799ea5"
+  },
+  "warning": "Causas mecánicas verificadas en código y hoja; 13/10 ya publicado y muy analizado. Los comparables no son pruebas predictivas."
+}
