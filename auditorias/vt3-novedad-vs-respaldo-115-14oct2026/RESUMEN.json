@@ -1,0 +1,875 @@
+{
+  "scope": "Exploratorio: 115 cortes reutilizados. Acierto de terna en cinco cabezas, NO posicion sorteada.",
+  "days": 23,
+  "cuts": 115,
+  "score": {
+    "OFICIAL": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 15
+    },
+    "GEOMETRIA_COMPLETA_ANTERIOR": {
+      "top3": 8,
+      "top5": 10,
+      "top10": 16
+    },
+    "ACUMULADO": {
+      "top3": 6,
+      "top5": 10,
+      "top10": 13
+    },
+    "NOVEDAD_FUENTE": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 12
+    },
+    "NOVEDAD_RAIZ": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 12
+    }
+  },
+  "profileStats": {
+    "winningPhysicallyPresent": 143,
+    "exposures": 15273,
+    "newSource": {
+      "exposures": 4466,
+      "winners": 38
+    },
+    "newAnchor": {
+      "exposures": 1136,
+      "winners": 10
+    },
+    "birth": {
+      "exposures": 3380,
+      "winners": 27
+    },
+    "converge": {
+      "exposures": 1086,
+      "winners": 11
+    },
+    "stable": {
+      "exposures": 9517,
+      "winners": 89
+    },
+    "initial": {
+      "exposures": 1290,
+      "winners": 16
+    },
+    "byTop": {
+      "OFICIAL": {
+        "top3": {
+          "selectedFresh": 81,
+          "selectedNewAnchor": 67,
+          "winningFamilyExposuresViaFresh": 0,
+          "winningFamilyExposuresViaOther": 5
+        },
+        "top5": {
+          "selectedFresh": 143,
+          "selectedNewAnchor": 121,
+          "winningFamilyExposuresViaFresh": 3,
+          "winningFamilyExposuresViaOther": 7
+        },
+        "top10": {
+          "selectedFresh": 273,
+          "selectedNewAnchor": 221,
+          "winningFamilyExposuresViaFresh": 4,
+          "winningFamilyExposuresViaOther": 13
+        }
+      },
+      "GEOMETRIA_COMPLETA_ANTERIOR": {
+        "top3": {
+          "selectedFresh": 40,
+          "selectedNewAnchor": 19,
+          "winningFamilyExposuresViaFresh": 2,
+          "winningFamilyExposuresViaOther": 6
+        },
+        "top5": {
+          "selectedFresh": 58,
+          "selectedNewAnchor": 28,
+          "winningFamilyExposuresViaFresh": 2,
+          "winningFamilyExposuresViaOther": 10
+        },
+        "top10": {
+          "selectedFresh": 124,
+          "selectedNewAnchor": 57,
+          "winningFamilyExposuresViaFresh": 3,
+          "winningFamilyExposuresViaOther": 18
+        }
+      },
+      "ACUMULADO": {
+        "top3": {
+          "selectedFresh": 81,
+          "selectedNewAnchor": 56,
+          "winningFamilyExposuresViaFresh": 1,
+          "winningFamilyExposuresViaOther": 5
+        },
+        "top5": {
+          "selectedFresh": 146,
+          "selectedNewAnchor": 92,
+          "winningFamilyExposuresViaFresh": 2,
+          "winningFamilyExposuresViaOther": 8
+        },
+        "top10": {
+          "selectedFresh": 276,
+          "selectedNewAnchor": 174,
+          "winningFamilyExposuresViaFresh": 2,
+          "winningFamilyExposuresViaOther": 11
+        }
+      },
+      "NOVEDAD_FUENTE": {
+        "top3": {
+          "selectedFresh": 276,
+          "selectedNewAnchor": 231,
+          "winningFamilyExposuresViaFresh": 4,
+          "winningFamilyExposuresViaOther": 1
+        },
+        "top5": {
+          "selectedFresh": 460,
+          "selectedNewAnchor": 374,
+          "winningFamilyExposuresViaFresh": 5,
+          "winningFamilyExposuresViaOther": 3
+        },
+        "top10": {
+          "selectedFresh": 920,
+          "selectedNewAnchor": 700,
+          "winningFamilyExposuresViaFresh": 10,
+          "winningFamilyExposuresViaOther": 3
+        }
+      },
+      "NOVEDAD_RAIZ": {
+        "top3": {
+          "selectedFresh": 276,
+          "selectedNewAnchor": 231,
+          "winningFamilyExposuresViaFresh": 4,
+          "winningFamilyExposuresViaOther": 1
+        },
+        "top5": {
+          "selectedFresh": 460,
+          "selectedNewAnchor": 374,
+          "winningFamilyExposuresViaFresh": 5,
+          "winningFamilyExposuresViaOther": 3
+        },
+        "top10": {
+          "selectedFresh": 920,
+          "selectedNewAnchor": 700,
+          "winningFamilyExposuresViaFresh": 10,
+          "winningFamilyExposuresViaOther": 3
+        }
+      }
+    }
+  },
+  "changesFromAccumulated": {
+    "NOVEDAD_FUENTE": {
+      "top3": 92,
+      "top5": 92,
+      "top10": 92
+    },
+    "NOVEDAD_RAIZ": {
+      "top3": 92,
+      "top5": 92,
+      "top10": 92
+    }
+  },
+  "turnover": {
+    "OFICIAL": {
+      "intradayTransitions": 92,
+      "same3": 52,
+      "same5": 35,
+      "same10": 25
+    },
+    "GEOMETRIA_COMPLETA_ANTERIOR": {
+      "intradayTransitions": 92,
+      "same3": 84,
+      "same5": 82,
+      "same10": 78
+    },
+    "ACUMULADO": {
+      "intradayTransitions": 92,
+      "same3": 49,
+      "same5": 31,
+      "same10": 18
+    },
+    "NOVEDAD_FUENTE": {
+      "intradayTransitions": 92,
+      "same3": 0,
+      "same5": 0,
+      "same10": 0
+    },
+    "NOVEDAD_RAIZ": {
+      "intradayTransitions": 92,
+      "same3": 0,
+      "same5": 0,
+      "same10": 0
+    }
+  },
+  "paired": {
+    "NOVEDAD_FUENTE": {
+      "ACUMULADO": {
+        "top3": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-21|Nocturno",
+            "2026-09-29|Matutino",
+            "2026-09-30|Matutino"
+          ],
+          "net": -1
+        },
+        "top5": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-21|Nocturno",
+            "2026-09-26|Nocturno",
+            "2026-09-29|Matutino",
+            "2026-09-30|Matutino"
+          ],
+          "net": -2
+        },
+        "top10": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-09-30|Vespertino",
+            "2026-09-30|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-08|Matutino"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-21|Vespertino",
+            "2026-09-21|Nocturno",
+            "2026-09-25|Matutino",
+            "2026-09-26|Nocturno",
+            "2026-09-29|Matutino",
+            "2026-09-30|Matutino"
+          ],
+          "net": -1
+        }
+      },
+      "OFICIAL": {
+        "top3": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "losses": [
+            "2026-09-17|Nocturno",
+            "2026-09-30|Matutino",
+            "2026-10-02|Previa",
+            "2026-10-10|Nocturno"
+          ],
+          "net": 0
+        },
+        "top5": {
+          "gains": [
+            "2026-09-15|Previa",
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-10-02|Nocturno"
+          ],
+          "losses": [
+            "2026-09-17|Nocturno",
+            "2026-09-24|Previa",
+            "2026-09-30|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "net": 0
+        },
+        "top10": {
+          "gains": [
+            "2026-09-15|Previa",
+            "2026-09-15|Nocturno",
+            "2026-09-30|Vespertino",
+            "2026-09-30|Nocturno",
+            "2026-10-02|Nocturno"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-22|Primera",
+            "2026-09-24|Previa",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino",
+            "2026-09-30|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "net": -3
+        }
+      },
+      "GEOMETRIA_COMPLETA_ANTERIOR": {
+        "top3": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "losses": [
+            "2026-09-19|Matutino",
+            "2026-09-21|Vespertino",
+            "2026-09-21|Nocturno",
+            "2026-09-24|Matutino",
+            "2026-09-26|Nocturno",
+            "2026-10-01|Matutino",
+            "2026-10-02|Previa"
+          ],
+          "net": -3
+        },
+        "top5": {
+          "gains": [
+            "2026-09-15|Previa",
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "losses": [
+            "2026-09-17|Nocturno",
+            "2026-09-19|Matutino",
+            "2026-09-21|Vespertino",
+            "2026-09-21|Nocturno",
+            "2026-09-24|Matutino",
+            "2026-09-26|Nocturno",
+            "2026-10-01|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "net": -2
+        },
+        "top10": {
+          "gains": [
+            "2026-09-15|Previa",
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-09-30|Vespertino",
+            "2026-09-30|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino",
+            "2026-10-08|Matutino"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-19|Matutino",
+            "2026-09-21|Vespertino",
+            "2026-09-21|Nocturno",
+            "2026-09-24|Nocturno",
+            "2026-09-26|Nocturno",
+            "2026-09-28|Matutino",
+            "2026-09-28|Vespertino",
+            "2026-09-29|Nocturno",
+            "2026-10-01|Previa",
+            "2026-10-01|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "net": -4
+        }
+      }
+    },
+    "NOVEDAD_RAIZ": {
+      "ACUMULADO": {
+        "top3": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-21|Nocturno",
+            "2026-09-29|Matutino",
+            "2026-09-30|Matutino"
+          ],
+          "net": -1
+        },
+        "top5": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-21|Nocturno",
+            "2026-09-26|Nocturno",
+            "2026-09-29|Matutino",
+            "2026-09-30|Matutino"
+          ],
+          "net": -2
+        },
+        "top10": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-09-30|Vespertino",
+            "2026-09-30|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-08|Matutino"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-21|Vespertino",
+            "2026-09-21|Nocturno",
+            "2026-09-25|Matutino",
+            "2026-09-26|Nocturno",
+            "2026-09-29|Matutino",
+            "2026-09-30|Matutino"
+          ],
+          "net": -1
+        }
+      },
+      "OFICIAL": {
+        "top3": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "losses": [
+            "2026-09-17|Nocturno",
+            "2026-09-30|Matutino",
+            "2026-10-02|Previa",
+            "2026-10-10|Nocturno"
+          ],
+          "net": 0
+        },
+        "top5": {
+          "gains": [
+            "2026-09-15|Previa",
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-10-02|Nocturno"
+          ],
+          "losses": [
+            "2026-09-17|Nocturno",
+            "2026-09-24|Previa",
+            "2026-09-30|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "net": 0
+        },
+        "top10": {
+          "gains": [
+            "2026-09-15|Previa",
+            "2026-09-15|Nocturno",
+            "2026-09-30|Vespertino",
+            "2026-09-30|Nocturno",
+            "2026-10-02|Nocturno"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-22|Primera",
+            "2026-09-24|Previa",
+            "2026-09-25|Matutino",
+            "2026-09-29|Matutino",
+            "2026-09-30|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "net": -3
+        }
+      },
+      "GEOMETRIA_COMPLETA_ANTERIOR": {
+        "top3": {
+          "gains": [
+            "2026-09-15|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "losses": [
+            "2026-09-19|Matutino",
+            "2026-09-21|Vespertino",
+            "2026-09-21|Nocturno",
+            "2026-09-24|Matutino",
+            "2026-09-26|Nocturno",
+            "2026-10-01|Matutino",
+            "2026-10-02|Previa"
+          ],
+          "net": -3
+        },
+        "top5": {
+          "gains": [
+            "2026-09-15|Previa",
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino"
+          ],
+          "losses": [
+            "2026-09-17|Nocturno",
+            "2026-09-19|Matutino",
+            "2026-09-21|Vespertino",
+            "2026-09-21|Nocturno",
+            "2026-09-24|Matutino",
+            "2026-09-26|Nocturno",
+            "2026-10-01|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "net": -2
+        },
+        "top10": {
+          "gains": [
+            "2026-09-15|Previa",
+            "2026-09-15|Nocturno",
+            "2026-09-18|Nocturno",
+            "2026-09-30|Vespertino",
+            "2026-09-30|Nocturno",
+            "2026-10-02|Nocturno",
+            "2026-10-03|Matutino",
+            "2026-10-05|Matutino",
+            "2026-10-08|Matutino"
+          ],
+          "losses": [
+            "2026-09-15|Matutino",
+            "2026-09-17|Nocturno",
+            "2026-09-19|Matutino",
+            "2026-09-21|Vespertino",
+            "2026-09-21|Nocturno",
+            "2026-09-24|Nocturno",
+            "2026-09-26|Nocturno",
+            "2026-09-28|Matutino",
+            "2026-09-28|Vespertino",
+            "2026-09-29|Nocturno",
+            "2026-10-01|Previa",
+            "2026-10-01|Matutino",
+            "2026-10-10|Nocturno"
+          ],
+          "net": -4
+        }
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "cuts": 70,
+      "methods": {
+        "OFICIAL": {
+          "top3": 3,
+          "top5": 4,
+          "top10": 10
+        },
+        "GEOMETRIA_COMPLETA_ANTERIOR": {
+          "top3": 6,
+          "top5": 7,
+          "top10": 12
+        },
+        "ACUMULADO": {
+          "top3": 6,
+          "top5": 8,
+          "top10": 11
+        },
+        "NOVEDAD_FUENTE": {
+          "top3": 2,
+          "top5": 4,
+          "top10": 7
+        },
+        "NOVEDAD_RAIZ": {
+          "top3": 2,
+          "top5": 4,
+          "top10": 7
+        }
+      }
+    },
+    "2026-10": {
+      "cuts": 45,
+      "methods": {
+        "OFICIAL": {
+          "top3": 2,
+          "top5": 4,
+          "top10": 5
+        },
+        "GEOMETRIA_COMPLETA_ANTERIOR": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "ACUMULADO": {
+          "top3": 0,
+          "top5": 2,
+          "top10": 2
+        },
+        "NOVEDAD_FUENTE": {
+          "top3": 3,
+          "top5": 4,
+          "top10": 5
+        },
+        "NOVEDAD_RAIZ": {
+          "top3": 3,
+          "top5": 4,
+          "top10": 5
+        }
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "cuts": 23,
+      "methods": {
+        "OFICIAL": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 3
+        },
+        "GEOMETRIA_COMPLETA_ANTERIOR": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 3
+        },
+        "ACUMULADO": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 3
+        },
+        "NOVEDAD_FUENTE": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 3
+        },
+        "NOVEDAD_RAIZ": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 3
+        }
+      }
+    },
+    "Primera": {
+      "cuts": 23,
+      "methods": {
+        "OFICIAL": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "GEOMETRIA_COMPLETA_ANTERIOR": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "ACUMULADO": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "NOVEDAD_FUENTE": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "NOVEDAD_RAIZ": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      }
+    },
+    "Matutino": {
+      "cuts": 23,
+      "methods": {
+        "OFICIAL": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 8
+        },
+        "GEOMETRIA_COMPLETA_ANTERIOR": {
+          "top3": 3,
+          "top5": 3,
+          "top10": 5
+        },
+        "ACUMULADO": {
+          "top3": 3,
+          "top5": 4,
+          "top10": 6
+        },
+        "NOVEDAD_FUENTE": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 4
+        },
+        "NOVEDAD_RAIZ": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 4
+        }
+      }
+    },
+    "Vespertino": {
+      "cuts": 23,
+      "methods": {
+        "OFICIAL": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "GEOMETRIA_COMPLETA_ANTERIOR": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "ACUMULADO": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "NOVEDAD_FUENTE": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "NOVEDAD_RAIZ": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        }
+      }
+    },
+    "Nocturno": {
+      "cuts": 23,
+      "methods": {
+        "OFICIAL": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 3
+        },
+        "GEOMETRIA_COMPLETA_ANTERIOR": {
+          "top3": 2,
+          "top5": 4,
+          "top10": 6
+        },
+        "ACUMULADO": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 3
+        },
+        "NOVEDAD_FUENTE": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "NOVEDAD_RAIZ": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        }
+      }
+    }
+  },
+  "neutrality": {
+    "TODAS": {
+      "top3": {
+        "runs": 2000,
+        "mean": 3.3735,
+        "p05": 1,
+        "median": 3,
+        "p95": 6,
+        "tails": {
+          "ACUMULADO": 0.11144,
+          "NOVEDAD_FUENTE": 0.24088,
+          "NOVEDAD_RAIZ": 0.24088
+        }
+      },
+      "top5": {
+        "runs": 2000,
+        "mean": 5.5585,
+        "p05": 2,
+        "median": 5,
+        "p95": 10,
+        "tails": {
+          "ACUMULADO": 0.05097,
+          "NOVEDAD_FUENTE": 0.18491,
+          "NOVEDAD_RAIZ": 0.18491
+        }
+      },
+      "top10": {
+        "runs": 2000,
+        "mean": 10.6425,
+        "p05": 6,
+        "median": 10,
+        "p95": 16,
+        "tails": {
+          "ACUMULADO": 0.26287,
+          "NOVEDAD_FUENTE": 0.37031,
+          "NOVEDAD_RAIZ": 0.37031
+        }
+      }
+    },
+    "NOVEDAD": {
+      "top3": {
+        "runs": 2000,
+        "mean": 3.266,
+        "p05": 1,
+        "median": 3,
+        "p95": 6,
+        "tails": {
+          "NOVEDAD_FUENTE": 0.22989,
+          "NOVEDAD_RAIZ": 0.22989
+        }
+      },
+      "top5": {
+        "runs": 2000,
+        "mean": 5.3725,
+        "p05": 2,
+        "median": 5,
+        "p95": 9,
+        "tails": {
+          "NOVEDAD_FUENTE": 0.16842,
+          "NOVEDAD_RAIZ": 0.16842
+        }
+      },
+      "top10": {
+        "runs": 2000,
+        "mean": 10.5755,
+        "p05": 6,
+        "median": 10,
+        "p95": 15,
+        "tails": {
+          "NOVEDAD_FUENTE": 0.37231,
+          "NOVEDAD_RAIZ": 0.37231
+        }
+      }
+    }
+  },
+  "caveats": [
+    "Las columnas viejas no desaparecen dentro del día: presencia acumulada 1→0 es imposible.",
+    "Previa se clasifica como INICIAL, no NACE/SUMA_FUENTE intradía.",
+    "Los nuevos recorridos cuentan una vez por familia y nueva fuente para prioridad, no por multiplicidad de rutas.",
+    "Estas fechas fueron utilizadas para generar numerosas hipótesis: controles neutralizados no prueban pronóstico real.",
+    "No modificar motor oficial, VT4 ni sellos PRE verdaderamente prospectivos."
+  ],
+  "seal": {
+    "transitionsPre": "02a1a4a10de5371c87f2fa2d7fbdbc6a8672642a9664ef2cba0eeefa99613224",
+    "previousGeometryPre": "6c8ab70c57758bec3510f2a2a254b0afc6d689c4eb946cea22b69f252b6e7b46",
+    "originalBasePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "protocol": "1433083c84d9ba27596dcb574435ebe57bbd6f01c792b082b2640c90426ad55d",
+    "script": "78c6631fb3a9519a7a9996c1f8135b81b53fab1e93772dc36b571d287548a719",
+    "pre": "a3834c68d9e7808c106045219c356820290cc7629284d9104b30638f2efeb913"
+  },
+  "postBaseSha": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2"
+}
