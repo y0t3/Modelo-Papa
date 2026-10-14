@@ -1,0 +1,57 @@
+name: VT3 tercer puesto geometria y 5000 controles
+on:
+  push:
+    branches: [lab-vt3-tercer-puesto-geometria-13oct2026]
+    paths:
+      - 'scripts/lab-vt3-tercer-puesto-geometria.mjs'
+      - 'PROTOCOLO_VT3_TERCER_PUESTO_GEOMETRIA_13OCT2026.md'
+      - '.github/workflows/lab-vt3-tercer-puesto-geometria.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar el resultado de los cortes antes del PRE
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/tercer-vt3-post-115.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/tercer-vt3-nocturna-post.json
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/tercer-vt3-targets.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/tercer-vt3-fixture.json
+      - name: Formar el tercer puesto de manera exclusivamente PRE
+        run: node scripts/lab-vt3-tercer-puesto-geometria.mjs pre
+      - name: Comprometer PRE antes de revelar resultados
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-tercer-puesto-geometria-115-13oct2026/PRE_115.json
+          git add auditorias/vt3-tercer-puesto-geometria-115-13oct2026/NEUTRAL_PRE_5000.json
+          git add auditorias/vt3-tercer-puesto-geometria-115-13oct2026/SELLO.json
+          git commit -m 'seal(VT3): congelar el tercer puesto y sus 5000 controles'
+          git push origin HEAD:lab-vt3-tercer-puesto-geometria-13oct2026
+      - name: Restaurar objetivos y realizar evaluación post
+        run: |
+          mv /tmp/tercer-vt3-post-115.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/tercer-vt3-nocturna-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          mv /tmp/tercer-vt3-targets.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          mv /tmp/tercer-vt3-fixture.json fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+          node scripts/lab-vt3-tercer-puesto-geometria.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-tercer-puesto-geometria-115
+          path: auditorias/vt3-tercer-puesto-geometria-115-13oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Respaldar los resultados en la rama experimental
+        run: |
+          git add auditorias/vt3-tercer-puesto-geometria-115-13oct2026/POST_115.json
+          git add auditorias/vt3-tercer-puesto-geometria-115-13oct2026/RESUMEN.json
+          git add auditorias/vt3-tercer-puesto-geometria-115-13oct2026/LECTURA.md
+          git commit -m 'data(VT3): tercer puesto frente a geometria y azar equivalente'
+          git push origin HEAD:lab-vt3-tercer-puesto-geometria-13oct2026
