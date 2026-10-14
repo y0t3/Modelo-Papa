@@ -4,6 +4,8 @@ on:
     branches: [lab-vt3-prioridad-d7-contra-d1-14oct2026]
     paths:
       - '.github/workflows/lab-vt3-prioridad-d7-d1.yml'
+      - 'scripts/lab-vt3-prioridad-d7-d1.mjs'
+      - 'PROTOCOLO_VT3_PRIORIDAD_D7_D1_14OCT2026.md'
   workflow_dispatch:
 permissions:
   contents: write
