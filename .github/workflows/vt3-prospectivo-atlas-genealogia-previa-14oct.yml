@@ -1,0 +1,38 @@
+name: PRE prospectivo VT3 genealogia Previa 14oct
+on:
+  push:
+    branches: [prospectivo-vt3-atlas-genealogia-previa-14oct2026]
+    paths:
+      - 'scripts/vt3-prospectivo-atlas-genealogia-previa-14oct2026.mjs'
+      - 'PROTOCOLO_PRE_VT3_ATLAS_GENEALOGIA_PREVIA_14OCT2026.md'
+      - '.github/workflows/vt3-prospectivo-atlas-genealogia-previa-14oct.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sellar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Preparar PRE paralelo sin acceso a cabezas de 14 de octubre
+        run: node --disable-warning=ExperimentalWarning scripts/vt3-prospectivo-atlas-genealogia-previa-14oct2026.mjs pre
+      - name: Adjuntar PRE nuevo y sello
+        uses: actions/upload-artifact@v4
+        with:
+          name: PRE-vt3-genealogia-14oct-previa
+          path: auditorias/vt3-atlas-genealogia-previa-14oct2026/
+          retention-days: 90
+          if-no-files-found: error
+      - name: Versionar PRE paralelo en rama aislada
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-atlas-genealogia-previa-14oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(PRE): genealogia de Previa 14oct sellada en GitHub'
+            git push origin HEAD:prospectivo-vt3-atlas-genealogia-previa-14oct2026
+          fi
