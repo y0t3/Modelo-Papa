@@ -315,6 +315,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
      {label:'Turnos cotejados',value:summary.checkedTurns},
      {label:'Cabezas cotejadas',value:summary.headsCompared},
      {label:'Turnos pendientes',value:summary.pendingTurns},
+     {label:'Turnos parciales',value:summary.partialTurns},
     ].map(x=><View key={x.label} style={[s.stat,{backgroundColor:c.surfaceAlt}]}>
      <Text style={{color:c.text,fontSize:22,fontWeight:'900'}}>{x.value}</Text>
      <Text style={[s.muted,{color:c.subtext}]}>{x.label}</Text>
