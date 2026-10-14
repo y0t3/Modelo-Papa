@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {DailySheet} from '../sheet';
+import {routeCellText} from '../panoramaModel';
 import type {PanoramaAntecedent,PanoramaRoute} from '../panoramaModel';
-import RouteMiniBoard,{routeCellText} from './RouteMiniBoard';
+import RouteMiniBoard from './RouteMiniBoard';
 import {useLaloTheme} from './LaloTheme';
 
 function HistoricalCard({antecedent,kind}:{
