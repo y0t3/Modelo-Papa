@@ -3,9 +3,6 @@ import {View,Text,StyleSheet} from 'react-native';
 import type {PanoramaCell,PanoramaKind} from '../panoramaModel';
 import {useLaloTheme} from './LaloTheme';
 
-export const routeCellText=(cells:PanoramaCell[])=>cells.map(c=>
- (c.row+1)+(c.col?'D':'I')).join(' → ');
-
 /** El mismo tablero físico 6×2 para ruta actual y antecedente histórico. */
 export default function RouteMiniBoard({values,cells,kind,compact=false}:{
  values:string[];cells:PanoramaCell[];kind:PanoramaKind;compact?:boolean
