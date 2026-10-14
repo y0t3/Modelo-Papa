@@ -1,0 +1,62 @@
+name: VT3 prioridad D7 D1 historico 115 mas 13oct
+on:
+  push:
+    branches: [lab-vt3-prioridad-d7-contra-d1-14oct2026]
+    paths:
+      - '.github/workflows/lab-vt3-prioridad-d7-d1.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  evaluar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar fuentes POST antes del ensayo PRE
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/vt3-d7d1-post
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-d7d1-post/
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-d7d1-post/
+          mv auditorias/vt3-cotejo-nocturna-13oct2026/OBJETIVOS_POST_13OCT.json /tmp/vt3-d7d1-post/
+          mv auditorias/vt3-cotejo-nocturna-13oct2026/POST_13OCT.json /tmp/vt3-d7d1-post/
+          mv auditorias/vt3-cotejo-nocturna-13oct2026/RESUMEN.json /tmp/vt3-d7d1-post/
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt3-d7d1-post/
+      - name: Generar ranking alternativo y dos mil controles PRE
+        run: node scripts/lab-vt3-prioridad-d7-d1.mjs pre
+      - name: Comprometer PRE y sello antes de revelar resultados
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-prioridad-d7-contra-d1-120-14oct2026/PRE_120.json
+          git add auditorias/vt3-prioridad-d7-contra-d1-120-14oct2026/NEUTRAL_PRE_2000.json
+          git add auditorias/vt3-prioridad-d7-contra-d1-120-14oct2026/SELLO.json
+          git commit -m 'seal(VT3): ranking D7 D1 PRE de 120 cortes y controles'
+          git push origin HEAD:lab-vt3-prioridad-d7-contra-d1-14oct2026
+      - name: Restaurar POST y medir sin alterar el PRE
+        run: |
+          mv /tmp/vt3-d7d1-post/POST_115.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/
+          mv /tmp/vt3-d7d1-post/NOCTURNA_POST_DIAGNOSTICO.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/
+          mv /tmp/vt3-d7d1-post/OBJETIVOS_POST_13OCT.json auditorias/vt3-cotejo-nocturna-13oct2026/
+          mv /tmp/vt3-d7d1-post/POST_13OCT.json auditorias/vt3-cotejo-nocturna-13oct2026/
+          mv /tmp/vt3-d7d1-post/RESUMEN.json auditorias/vt3-cotejo-nocturna-13oct2026/
+          mv /tmp/vt3-d7d1-post/cabezas-sept-oct-2026-30-fechas.json.gz.b64 fixtures/
+          node scripts/lab-vt3-prioridad-d7-d1.mjs post
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-prioridad-d7-d1-120
+          path: auditorias/vt3-prioridad-d7-contra-d1-120-14oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar POST y resumen en rama de laboratorio
+        run: |
+          git add auditorias/vt3-prioridad-d7-contra-d1-120-14oct2026/POST_120.json
+          git add auditorias/vt3-prioridad-d7-contra-d1-120-14oct2026/RESUMEN.json
+          git add auditorias/vt3-prioridad-d7-contra-d1-120-14oct2026/LECTURA.md
+          git commit -m 'data(VT3): contrastar D7 y D1 con 115 historicos y 13oct'
+          git push origin HEAD:lab-vt3-prioridad-d7-contra-d1-14oct2026
