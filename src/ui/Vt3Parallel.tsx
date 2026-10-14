@@ -68,12 +68,12 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads}:{
   </View>:
   <Pressable accessibilityRole="button" disabled={busy||!view||!shadow||published}
     onPress={()=>{void freeze()}}
-    style={[s.button,{backgroundColor:c.button,opacity:busy||!view||!shadow||published?.45:1}]}>
+    style={[s.button,{backgroundColor:c.button,opacity:busy||!view||!shadow||published ? 0.45 : 1}]}>
    <Text style={{color:c.buttonText,fontWeight:'900',fontSize:12}}>
     {busy?'GUARDANDO…':published?'PRE NO DISPONIBLE: RESULTADO PUBLICADO':'GUARDAR PRE DE HOY (SIN SOBRESCRITURA)'}
    </Text>
   </Pressable>}
-  {error?<Text style={[s.note,{color:c.danger||c.text}]}>{error}</Text>:null}
+  {error?<Text style={[s.note,{color:c.text}]}>{error}</Text>:null}
   {stored&&result?.available?<View style={[s.saved,{backgroundColor:c.surfaceAlt}]}>
    <Text style={[s.sub,{color:c.text}]}>POST · CABEZAS OBSERVADAS ({result.headCount}/5)</Text>
    {([{label:'Lalo',value:result.official},{label:'Geometría',value:result.geometric}] as const).map(x=>
