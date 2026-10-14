@@ -3,8 +3,7 @@ import {TURNOS} from '../src/domain';
 import type {DailySheet,SheetColumn,Match} from '../src/sheet';
 import type {Path} from '../src/paths';
 import {buildMotorLalo} from '../src/motorLalo';
-import {buildPredictivePanorama,visualAntecedent} from '../src/panoramaModel';
-import {routeCellText} from '../src/ui/RouteMiniBoard';
+import {buildPredictivePanorama,visualAntecedent,routeCellText} from '../src/panoramaModel';
 
 const sources:SheetColumn['id'][]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
 const blank=['--','--','--','--','--','--'];
