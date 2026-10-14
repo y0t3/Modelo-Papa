@@ -73,7 +73,7 @@ function LaloApp(){
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
  const hoja=useMemo(()=>sheet?buildDailyPanorama(sheet,data):null,[sheet,data]);
- const predictiva=useMemo(()=>motor?buildPredictivePanorama(motor):null,[motor]);
+ const predictiva=useMemo(()=>motor?buildPredictivePanorama(motor,hist):null,[motor,hist]);
  const post=useMemo(()=>{
   if(!motor||!sheet||!sheet.heads[target]?.length)return null;
   return compareMotorLaloAfterDraw(motor,sheet.heads[target]);

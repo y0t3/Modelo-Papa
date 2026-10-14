@@ -4,14 +4,20 @@
 import type {DailySheet,SourceId} from './sheet';
 import type {CabezasDia,Turno} from './domain';
 import {JURS,TURNOS} from './domain';
-import type {LaloView,LaloKind} from './motorLalo';
+import type {LaloView,LaloKind,LaloHistorical,RootRef} from './motorLalo';
 import type {Path} from './paths';
 
 export type PanoramaKind='vt2'|'vt3'|'vt4';
 export type PanoramaCell={row:number;col:number};
+export type PanoramaAntecedent={
+ id:string;period:RootRef['period'];date:string;head:string;jurisdiction:string;
+ turn:Turno;sourceId:SourceId;sourceLabel:string;values:string[];
+ cells:PanoramaCell[];reading:string;
+};
 export type PanoramaRoute={
  id:string;ownerId:string;sourceId:SourceId;kind:PanoramaKind;
  cells:PanoramaCell[];readings:string[];headSources:string[];
+ antecedents?:PanoramaAntecedent[];
 };
 export type PanoramaGroup={
  id:string;label:string;subtitle:string;turn?:Turno;head?:string;
@@ -21,6 +27,7 @@ export type PanoramaData={routes:PanoramaRoute[];groups:PanoramaGroup[]};
 const routeSteps=(p:Path):PanoramaCell[]=>p.map(x=>({row:x.row,col:x.col}));
 const pathText=(p:PanoramaCell[])=>p.map(x=>x.row+':'+x.col).join('>');
 const reverseString=(s:string)=>s.split('').reverse().join('');
+export const routeCellText=(cells:PanoramaCell[])=>cells.map(c=>(c.row+1)+(c.col?'D':'I')).join(' → ');
 export const physicalKey=(kind:PanoramaKind,sourceId:SourceId,cells:PanoramaCell[])=>
  kind+'|'+sourceId+'|'+[pathText(cells),pathText([...cells].reverse())].sort()[0];
 
@@ -56,16 +63,46 @@ export function buildDailyPanorama(sheet:DailySheet,heads:CabezasDia|null):Panor
  * Los nombres de madres e hijas se agrupan por modalidad: una familia VT4 no
  * toma prestado el respaldo de la hermana.
  */
-export function buildPredictivePanorama(view:LaloView):PanoramaData{
+/**
+ * Construye exclusivamente una prueba visual de la raíz física que YA admitió
+ * Lalo. No descubre raíces nuevas ni altera ranking o selección.
+ * Las casillas corresponden al recorrido HISTÓRICO, no se proyectan desde la
+ * ruta de hoy. Ante historia incompleta, no se inventa el respaldo.
+ */
+export function visualAntecedent(root:RootRef,historical:LaloHistorical[]):PanoramaAntecedent|null{
+ const entry=historical.find(h=>h.date===root.date&&h.period===root.period);
+ if(!entry)return null;
+ const source=entry.sheet.columns.slice(0,TURNOS.indexOf(root.oldTurn)+1)
+  .find(c=>c.id===root.sourceId);
+ if(!source||!/^\d{4}$/.test(root.head)||![2,3].includes(root.oldCells.length))return null;
+ const cells=root.oldCells.map(raw=>{
+  const m=/^([0-5]):([01])$/.exec(raw);
+  return m?{row:Number(m[1]),col:Number(m[2])}:null;
+ });
+ if(cells.some(c=>c===null))return null;
+ const physical=cells as PanoramaCell[];
+ if(new Set(root.oldCells).size!==root.oldCells.length)return null;
+ for(let i=1;i<physical.length;i++)if(Math.max(
+  Math.abs(physical[i].row-physical[i-1].row),
+  Math.abs(physical[i].col-physical[i-1].col))!==1)return null;
+ const reading=physical.map(c=>source.values[c.row]?.[c.col]||'').join('');
+ if(!/^\d{2,3}$/.test(reading)||!root.head.endsWith(reading))return null;
+ return {id:root.id,period:root.period,date:root.date,head:root.head,
+  jurisdiction:root.jurisdiction,turn:root.oldTurn,sourceId:root.sourceId,
+  sourceLabel:source.sourceLabel,values:[...source.values],cells:physical,reading};
+}
+
+export function buildPredictivePanorama(view:LaloView,historical:LaloHistorical[]=[]):PanoramaData{
  const routes:PanoramaRoute[]=[],groups:PanoramaGroup[]=[];
  const rootMap=new Map(view.roots.map(r=>[r.id,r]));
+ const antecedentMap=new Map(view.roots.map(r=>[r.id,visualAntecedent(r,historical)]));
  for(const kind of ['vt2','vt3','vt4'] as LaloKind[]){
   for(const family of view.ranks[kind]){
    const id=kind+'|'+family.family,unique=new Map<string,PanoramaRoute>();
    for(const r of family.paths){
     const cells=routeSteps(r.path),key=physicalKey(kind,r.sourceId,cells);
     if(!unique.has(key))unique.set(key,{id:key,ownerId:id,kind,sourceId:r.sourceId,
-     cells,readings:[],headSources:[]});
+     cells,readings:[],headSources:[],antecedents:[]});
     const p=unique.get(key)!;
     for(const v of [r.value,reverseString(r.value)])
      if(!p.readings.includes(v))p.readings.push(v);
@@ -75,6 +112,8 @@ export function buildPredictivePanorama(view:LaloView):PanoramaData{
       const label=root.period+' · '+root.date+' · '+root.head+
        ' · '+root.jurisdiction+' ('+root.oldTurn+')';
       if(!p.headSources.includes(label))p.headSources.push(label);
+      const ancestor=antecedentMap.get(rootId);
+      if(ancestor&&!p.antecedents?.some(a=>a.id===ancestor.id))p.antecedents?.push(ancestor);
      }
     }
     for(const mother of r.mothers||[]){
