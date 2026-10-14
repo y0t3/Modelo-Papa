@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-13",
+  "turn": "Nocturno",
+  "status": "POST_RETROSPECTIVO",
+  "heads": [
+    "3072",
+    "1234",
+    "5529",
+    "4625",
+    "9192"
+  ],
+  "winningVT3Families": [
+    "072/270",
+    "234/432",
+    "529/925",
+    "526/625",
+    "192/291"
+  ],
+  "winningInTie": [
+    "234/432"
+  ],
+  "winningFamily": {
+    "family": "234/432",
+    "head": "1234",
+    "originalRank": 21,
+    "d7FirstRank": 11,
+    "historicalEvent": "2026-10-06|D−7|Vespertino|Ciudad|9226",
+    "originalPhysicalPath": [
+      "3:0",
+      "4:0",
+      "3:1"
+    ],
+    "currentPhysicalPath": [
+      "2:0",
+      "3:0",
+      "2:1"
+    ],
+    "shiftRows": -1
+  },
+  "sourceGroups": [
+    {
+      "historicalEvent": "2026-10-06|D−7|Vespertino|Ciudad|9226",
+      "families": [
+        "234/432",
+        "268/862",
+        "324/423",
+        "439/934",
+        "768/867"
+      ],
+      "winningFamilies": [
+        "234/432"
+      ],
+      "members": 5
+    },
+    {
+      "historicalEvent": "2026-10-06|D−7|Matutino|Ciudad|0508",
+      "families": [
+        "619/916",
+        "669/966"
+      ],
+      "winningFamilies": [],
+      "members": 2
+    },
+    {
+      "historicalEvent": "2026-10-06|D−7|Nocturno|Ciudad|5196",
+      "families": [
+        "428/824",
+        "435/534"
+      ],
+      "winningFamilies": [],
+      "members": 2
+    },
+    {
+      "historicalEvent": "2026-10-06|D−7|Nocturno|Santa Fé|9476",
+      "families": [
+        "037/730",
+        "548/845"
+      ],
+      "winningFamilies": [],
+      "members": 2
+    }
+  ],
+  "exactSameOldPathFamilies": [
+    "234/432",
+    "768/867"
+  ],
+  "exactSameOldPathWinners": [
+    "234/432"
+  ],
+  "shiftMinusOneFamilies": [
+    "234/432",
+    "324/423",
+    "619/916"
+  ],
+  "shiftMinusOneWinners": [
+    "234/432"
+  ],
+  "interpretation": "Una cabeza ganadora D7 de 9226 dio cinco familias; incluso la misma huella concreta dio 234/432 y 768/867. Elegir 234 después de conocer el sorteo es sesgo retrospectivo, no una regla predictiva."
+}
