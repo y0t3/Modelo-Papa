@@ -1,0 +1,549 @@
+{
+  "date": "2026-10-13",
+  "turn": "Nocturno",
+  "status": "RECONSTRUCCION_RETROSPECTIVA_SIN_OBJETIVOS",
+  "rule": "D7_ANTES_D1",
+  "priorityTuple": "1|1|1|0|1|2",
+  "rows": [
+    {
+      "family": "037/730",
+      "originalRank": 20,
+      "d7FirstRank": 10,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "037/730",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Nocturno",
+            "jurisdiction": "Santa Fé",
+            "head": "9476"
+          },
+          "source": "Previa",
+          "oldVT3": "476",
+          "newVT3": "037",
+          "oldCells": [
+            "1:1",
+            "1:0",
+            "0:1"
+          ],
+          "newCells": [
+            "3:1",
+            "3:0",
+            "2:1"
+          ],
+          "moves": "0:-1>-1:1",
+          "displacement": {
+            "row": 2,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "234/432",
+      "originalRank": 21,
+      "d7FirstRank": 11,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "234/432",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Vespertino",
+            "jurisdiction": "Ciudad",
+            "head": "9226"
+          },
+          "source": "Matutino",
+          "oldVT3": "226",
+          "newVT3": "234",
+          "oldCells": [
+            "3:0",
+            "4:0",
+            "3:1"
+          ],
+          "newCells": [
+            "2:0",
+            "3:0",
+            "2:1"
+          ],
+          "moves": "1:0>-1:1",
+          "displacement": {
+            "row": -1,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "268/862",
+      "originalRank": 22,
+      "d7FirstRank": 12,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "268/862",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Vespertino",
+            "jurisdiction": "Ciudad",
+            "head": "9226"
+          },
+          "source": "Matutino",
+          "oldVT3": "226",
+          "newVT3": "268",
+          "oldCells": [
+            "4:0",
+            "3:0",
+            "3:1"
+          ],
+          "newCells": [
+            "2:0",
+            "1:0",
+            "1:1"
+          ],
+          "moves": "-1:0>0:1",
+          "displacement": {
+            "row": -2,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "324/423",
+      "originalRank": 23,
+      "d7FirstRank": 13,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "324/423",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Vespertino",
+            "jurisdiction": "Ciudad",
+            "head": "9226"
+          },
+          "source": "Matutino",
+          "oldVT3": "226",
+          "newVT3": "324",
+          "oldCells": [
+            "4:0",
+            "3:0",
+            "3:1"
+          ],
+          "newCells": [
+            "3:0",
+            "2:0",
+            "2:1"
+          ],
+          "moves": "-1:0>0:1",
+          "displacement": {
+            "row": -1,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "428/824",
+      "originalRank": 24,
+      "d7FirstRank": 14,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "428/824",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Nocturno",
+            "jurisdiction": "Ciudad",
+            "head": "5196"
+          },
+          "source": "Matutino",
+          "oldVT3": "196",
+          "newVT3": "824",
+          "oldCells": [
+            "1:1",
+            "2:0",
+            "3:1"
+          ],
+          "newCells": [
+            "1:1",
+            "2:0",
+            "3:1"
+          ],
+          "moves": "1:-1>1:1",
+          "displacement": {
+            "row": 0,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "435/534",
+      "originalRank": 25,
+      "d7FirstRank": 15,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "435/534",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Nocturno",
+            "jurisdiction": "Ciudad",
+            "head": "5196"
+          },
+          "source": "Matutino",
+          "oldVT3": "196",
+          "newVT3": "435",
+          "oldCells": [
+            "1:1",
+            "2:0",
+            "3:1"
+          ],
+          "newCells": [
+            "2:1",
+            "3:0",
+            "4:1"
+          ],
+          "moves": "1:-1>1:1",
+          "displacement": {
+            "row": 1,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "439/934",
+      "originalRank": 26,
+      "d7FirstRank": 16,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "439/934",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Vespertino",
+            "jurisdiction": "Ciudad",
+            "head": "9226"
+          },
+          "source": "Matutino",
+          "oldVT3": "226",
+          "newVT3": "934",
+          "oldCells": [
+            "4:0",
+            "3:0",
+            "3:1"
+          ],
+          "newCells": [
+            "4:0",
+            "3:0",
+            "3:1"
+          ],
+          "moves": "-1:0>0:1",
+          "displacement": {
+            "row": 0,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "548/845",
+      "originalRank": 27,
+      "d7FirstRank": 17,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "548/845",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Nocturno",
+            "jurisdiction": "Santa Fé",
+            "head": "9476"
+          },
+          "source": "Previa",
+          "oldVT3": "476",
+          "newVT3": "845",
+          "oldCells": [
+            "1:1",
+            "1:0",
+            "2:0"
+          ],
+          "newCells": [
+            "1:1",
+            "1:0",
+            "2:0"
+          ],
+          "moves": "0:-1>1:0",
+          "displacement": {
+            "row": 0,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "619/916",
+      "originalRank": 28,
+      "d7FirstRank": 18,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "619/916",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Matutino",
+            "jurisdiction": "Ciudad",
+            "head": "0508"
+          },
+          "source": "Primera",
+          "oldVT3": "508",
+          "newVT3": "916",
+          "oldCells": [
+            "1:0",
+            "2:1",
+            "3:0"
+          ],
+          "newCells": [
+            "0:0",
+            "1:1",
+            "2:0"
+          ],
+          "moves": "1:1>1:-1",
+          "displacement": {
+            "row": -1,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "669/966",
+      "originalRank": 29,
+      "d7FirstRank": 19,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "669/966",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Matutino",
+            "jurisdiction": "Ciudad",
+            "head": "0508"
+          },
+          "source": "Primera",
+          "oldVT3": "508",
+          "newVT3": "669",
+          "oldCells": [
+            "1:0",
+            "2:1",
+            "3:0"
+          ],
+          "newCells": [
+            "2:0",
+            "3:1",
+            "4:0"
+          ],
+          "moves": "1:1>1:-1",
+          "displacement": {
+            "row": 1,
+            "col": 0
+          }
+        }
+      ]
+    },
+    {
+      "family": "768/867",
+      "originalRank": 30,
+      "d7FirstRank": 20,
+      "priority": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        2
+      ],
+      "transfers": [
+        {
+          "family": "768/867",
+          "event": {
+            "date": "2026-10-06",
+            "period": "D−7",
+            "turn": "Vespertino",
+            "jurisdiction": "Ciudad",
+            "head": "9226"
+          },
+          "source": "Matutino",
+          "oldVT3": "226",
+          "newVT3": "867",
+          "oldCells": [
+            "3:0",
+            "4:0",
+            "3:1"
+          ],
+          "newCells": [
+            "0:0",
+            "1:0",
+            "0:1"
+          ],
+          "moves": "1:0>-1:1",
+          "displacement": {
+            "row": -3,
+            "col": 0
+          }
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "event": "2026-10-06|D−7|Vespertino|Ciudad|9226",
+      "families": [
+        "234/432",
+        "268/862",
+        "324/423",
+        "439/934",
+        "768/867"
+      ],
+      "uniqueOldPaths": 2,
+      "paths": [
+        "Matutino|3:0>4:0>3:1",
+        "Matutino|4:0>3:0>3:1"
+      ]
+    },
+    {
+      "event": "2026-10-06|D−7|Matutino|Ciudad|0508",
+      "families": [
+        "619/916",
+        "669/966"
+      ],
+      "uniqueOldPaths": 1,
+      "paths": [
+        "Primera|1:0>2:1>3:0"
+      ]
+    },
+    {
+      "event": "2026-10-06|D−7|Nocturno|Ciudad|5196",
+      "families": [
+        "428/824",
+        "435/534"
+      ],
+      "uniqueOldPaths": 1,
+      "paths": [
+        "Matutino|1:1>2:0>3:1"
+      ]
+    },
+    {
+      "event": "2026-10-06|D−7|Nocturno|Santa Fé|9476",
+      "families": [
+        "037/730",
+        "548/845"
+      ],
+      "uniqueOldPaths": 2,
+      "paths": [
+        "Previa|1:1>1:0>0:1",
+        "Previa|1:1>1:0>2:0"
+      ]
+    }
+  ],
+  "totals": {
+    "tiedFamilies": 11,
+    "historicalWinningHeads": 4,
+    "historicalDistinctPaths": 6,
+    "independentHistoricalEvents": 4,
+    "focusSameOldPhysicalPathNonwinnerFamily": "768/867"
+  },
+  "sources": [
+    "auditorias/vt3-cotejo-nocturna-13oct2026/INPUT_PRE_13OCT.json",
+    "auditorias/vt3-cotejo-nocturna-13oct2026/PRE_13OCT.json"
+  ],
+  "warnings": [
+    "Los cuatro eventos son cabezas pasadas, no cuatro predicciones independientes.",
+    "Una cabeza ganadora D-7 puede respaldar varias familias y varias geometrías; no contar las hijas como nueva evidencia.",
+    "Es reconstrucción hecha después del sorteo objetivo, aunque usa sólo datos PRE para determinar los empates."
+  ]
+}
