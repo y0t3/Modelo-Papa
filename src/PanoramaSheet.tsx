@@ -114,7 +114,10 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
     </Pressable>
    </View>
   </View>:null}
-  <MarkedBoard columns={columns} routes={boardRoutes} activeOwner={active}/>
+  <MarkedBoard columns={columns}
+   routes={mode==='hoja'?data.routes:boardRoutes}
+   highlightRoutes={mode==='hoja'&&(turnOnly||active!==null)?boardRoutes:undefined}
+   activeOwner={mode==='hoja'?null:active}/>
   <View style={s.legend}>{KINDS.map(k=><View key={k} style={s.legendItem}>
    <View style={{width:12,height:12,borderRadius:3,borderWidth:2,
     borderColor:kinds[k].line,backgroundColor:kinds[k].fill}}/>
