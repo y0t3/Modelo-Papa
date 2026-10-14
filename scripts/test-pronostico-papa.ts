@@ -61,6 +61,7 @@ assert.equal(weekEnd('2026-10-12'),'2026-10-18');
 const summary=weeklySummary([actual], '2026-10-14');
 assert.equal(summary.records,1);assert.equal(summary.checkedTurns,1);
 assert.equal(summary.headsCompared,3);
+assert.equal(summary.partialTurns,1);
 assert.equal(summary.hit.vt2,1);assert.equal(summary.hit.vt3,1);
 assert.equal(summary.hit.vt4,1);
 assert.equal(weeklySummary([actual],'2026-10-19').records,0);
