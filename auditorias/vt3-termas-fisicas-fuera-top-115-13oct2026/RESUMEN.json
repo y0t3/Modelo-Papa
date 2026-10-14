@@ -1,0 +1,1820 @@
+{
+  "date": "2026-10-13",
+  "cuts": 115,
+  "heads": 575,
+  "bands": {
+    "A_1_3": {
+      "avgTerminals": 5.583,
+      "observed": 5,
+      "observedCuts": 5,
+      "expected": 3.21,
+      "ratio": 1.558,
+      "pTwoSided": 0.4415401682208005,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 392,
+          "observed": 3,
+          "expected": 1.9600000000000013
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 250,
+          "observed": 2,
+          "expected": 1.2500000000000009
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 130,
+          "observed": 2,
+          "expected": 0.6500000000000004
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 129,
+          "observed": 0,
+          "expected": 0.6450000000000004
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 127,
+          "observed": 1,
+          "expected": 0.6350000000000003
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 128,
+          "observed": 0,
+          "expected": 0.6400000000000003
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 128,
+          "observed": 2,
+          "expected": 0.6400000000000003
+        }
+      }
+    },
+    "A_4_10": {
+      "avgTerminals": 13.47,
+      "observed": 12,
+      "observedCuts": 11,
+      "expected": 7.745,
+      "ratio": 1.549,
+      "pTwoSided": 0.1859131067287127,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 933,
+          "observed": 7,
+          "expected": 4.664999999999998
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 616,
+          "observed": 5,
+          "expected": 3.079999999999998
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 315,
+          "observed": 1,
+          "expected": 1.5750000000000006
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 315,
+          "observed": 1,
+          "expected": 1.5750000000000006
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 312,
+          "observed": 8,
+          "expected": 1.5600000000000005
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 305,
+          "observed": 0,
+          "expected": 1.5250000000000004
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 302,
+          "observed": 2,
+          "expected": 1.5100000000000005
+        }
+      }
+    },
+    "A_11_PLUS": {
+      "avgTerminals": 86.209,
+      "observed": 47,
+      "observedCuts": 37,
+      "expected": 49.57,
+      "ratio": 0.948,
+      "pTwoSided": 0.7696311402172069,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 6124,
+          "observed": 37,
+          "expected": 30.620000000000005
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 3790,
+          "observed": 10,
+          "expected": 18.950000000000006
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 873,
+          "observed": 6,
+          "expected": 4.365000000000001
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 1542,
+          "observed": 2,
+          "expected": 7.71
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 2088,
+          "observed": 11,
+          "expected": 10.440000000000001
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 2564,
+          "observed": 11,
+          "expected": 12.82
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 2847,
+          "observed": 17,
+          "expected": 14.234999999999998
+        }
+      }
+    },
+    "B_NUEVA_MULTI": {
+      "avgTerminals": 0,
+      "observed": 0,
+      "observedCuts": 0,
+      "expected": 0,
+      "ratio": null,
+      "pTwoSided": 1,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        }
+      }
+    },
+    "B_NUEVA_SIMPLE": {
+      "avgTerminals": 39.965,
+      "observed": 19,
+      "observedCuts": 17,
+      "expected": 22.98,
+      "ratio": 0.827,
+      "pTwoSided": 0.4618769806633121,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 2827,
+          "observed": 12,
+          "expected": 14.135
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 1769,
+          "observed": 7,
+          "expected": 8.844999999999997
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 1134,
+          "observed": 4,
+          "expected": 5.67
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 1033,
+          "observed": 6,
+          "expected": 5.164999999999999
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 1428,
+          "observed": 6,
+          "expected": 7.14
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 1001,
+          "observed": 3,
+          "expected": 5.005000000000001
+        }
+      }
+    },
+    "B_PERSIST_MULTI": {
+      "avgTerminals": 13.843,
+      "observed": 6,
+      "observedCuts": 6,
+      "expected": 7.96,
+      "ratio": 0.754,
+      "pTwoSided": 0.6279347475839075,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 1011,
+          "observed": 3,
+          "expected": 5.054999999999999
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 581,
+          "observed": 3,
+          "expected": 2.9050000000000002
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 42,
+          "observed": 0,
+          "expected": 0.21000000000000005
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 200,
+          "observed": 1,
+          "expected": 1
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 500,
+          "observed": 2,
+          "expected": 2.5
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 850,
+          "observed": 3,
+          "expected": 4.25
+        }
+      }
+    },
+    "B_PERSIST_SIMPLE": {
+      "avgTerminals": 80.2,
+      "observed": 47,
+      "observedCuts": 34,
+      "expected": 46.115,
+      "ratio": 1.019,
+      "pTwoSided": 0.935934896390331,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 5427,
+          "observed": 27,
+          "expected": 27.134999999999998
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 3796,
+          "observed": 20,
+          "expected": 18.980000000000004
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 1038,
+          "observed": 4,
+          "expected": 5.19
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 1948,
+          "observed": 14,
+          "expected": 9.740000000000002
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 2609,
+          "observed": 10,
+          "expected": 13.045000000000002
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 3628,
+          "observed": 19,
+          "expected": 18.14
+        }
+      }
+    },
+    "B_PREVIA_MULTI": {
+      "avgTerminals": 0,
+      "observed": 0,
+      "observedCuts": 0,
+      "expected": 0,
+      "ratio": null,
+      "pTwoSided": 1,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        }
+      }
+    },
+    "B_PREVIA_SIMPLE": {
+      "avgTerminals": 9.6,
+      "observed": 7,
+      "observedCuts": 6,
+      "expected": 5.52,
+      "ratio": 1.268,
+      "pTwoSided": 0.6291957901494097,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 592,
+          "observed": 4,
+          "expected": 2.96
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 512,
+          "observed": 3,
+          "expected": 2.5599999999999996
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 1104,
+          "observed": 7,
+          "expected": 5.5200000000000005
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 0,
+          "observed": 0,
+          "expected": 0
+        }
+      }
+    },
+    "NO_FISICA": {
+      "avgTerminals": 751.13,
+      "observed": 432,
+      "observedCuts": 114,
+      "expected": 431.9,
+      "ratio": 1,
+      "pTwoSided": 1,
+      "pBonferroni": 1,
+      "byMonth": {
+        "2026-09": {
+          "cuts": 70,
+          "terminals": 52694,
+          "observed": 257,
+          "expected": 263.4699999999998
+        },
+        "2026-10": {
+          "cuts": 45,
+          "terminals": 33686,
+          "observed": 175,
+          "expected": 168.4300000000001
+        }
+      },
+      "byTurn": {
+        "Previa": {
+          "cuts": 23,
+          "terminals": 20578,
+          "observed": 99,
+          "expected": 102.89
+        },
+        "Primera": {
+          "cuts": 23,
+          "terminals": 18800,
+          "observed": 104,
+          "expected": 93.99999999999999
+        },
+        "Matutino": {
+          "cuts": 23,
+          "terminals": 17292,
+          "observed": 74,
+          "expected": 86.46
+        },
+        "Vespertino": {
+          "cuts": 23,
+          "terminals": 15466,
+          "observed": 86,
+          "expected": 77.33000000000003
+        },
+        "Nocturno": {
+          "cuts": 23,
+          "terminals": 14244,
+          "observed": 69,
+          "expected": 71.21999999999998
+        }
+      }
+    }
+  },
+  "selectors": {
+    "OFICIAL": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "selectedNew": 0,
+      "changedFromOfficial": 0,
+      "gained": [],
+      "lost": [],
+      "selectedWinning": []
+    },
+    "ANCLADA_11": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "selectedNew": 0,
+      "changedFromOfficial": 115,
+      "gained": [
+        "2026-09-15|Previa"
+      ],
+      "lost": [],
+      "selectedWinning": [
+        "2026-09-15|Previa"
+      ]
+    },
+    "FISICA_NUEVA": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "selectedNew": 115,
+      "changedFromOfficial": 115,
+      "gained": [
+        "2026-09-30|Nocturno"
+      ],
+      "lost": [],
+      "selectedWinning": [
+        "2026-09-30|Nocturno"
+      ]
+    },
+    "FISICA_PERSISTE": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 18,
+      "selectedNew": 115,
+      "changedFromOfficial": 115,
+      "gained": [
+        "2026-09-21|Primera",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ],
+      "lost": [],
+      "selectedWinning": [
+        "2026-09-21|Primera",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "FISICA_MAS_FUENTES": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 16,
+      "selectedNew": 115,
+      "changedFromOfficial": 115,
+      "gained": [
+        "2026-10-03|Vespertino"
+      ],
+      "lost": [],
+      "selectedWinning": [
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "FISICA_MAS_FORMAS": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 18,
+      "selectedNew": 115,
+      "changedFromOfficial": 115,
+      "gained": [
+        "2026-09-21|Primera",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ],
+      "lost": [],
+      "selectedWinning": [
+        "2026-09-21|Primera",
+        "2026-10-01|Matutino",
+        "2026-10-03|Vespertino"
+      ]
+    },
+    "FISICA_HASH_NEUTRO": {
+      "top3": 5,
+      "top5": 8,
+      "top10": 15,
+      "selectedNew": 115,
+      "changedFromOfficial": 115,
+      "gained": [],
+      "lost": [],
+      "selectedWinning": []
+    }
+  },
+  "neutral": {
+    "reps": 2000,
+    "mean": 15.8785,
+    "p05": 15,
+    "median": 16,
+    "p95": 18,
+    "min": 15,
+    "max": 20,
+    "distribution": {
+      "15": 844,
+      "16": 698,
+      "17": 341,
+      "18": 97,
+      "19": 14,
+      "20": 6
+    },
+    "tail": {
+      "OFICIAL": 1,
+      "ANCLADA_11": 0.5782108945527237,
+      "FISICA_NUEVA": 0.5782108945527237,
+      "FISICA_PERSISTE": 0.05897051474262868,
+      "FISICA_MAS_FUENTES": 0.5782108945527237,
+      "FISICA_MAS_FORMAS": 0.05897051474262868,
+      "FISICA_HASH_NEUTRO": 1
+    }
+  },
+  "unanchoredWinnerFamilies": 79,
+  "winnersOnly": [
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "head": [
+        "9565"
+      ],
+      "family": "565/565",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "head": [
+        "1265"
+      ],
+      "family": "265/562",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "head": [
+        "9178"
+      ],
+      "family": "178/871",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "head": [
+        "7795"
+      ],
+      "family": "597/795",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "head": [
+        "4680"
+      ],
+      "family": "086/680",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 2,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "head": [
+        "7476"
+      ],
+      "family": "476/674",
+      "band": "B_PERSIST_MULTI",
+      "blocks": 3,
+      "sources": 2,
+      "shapes": 3,
+      "newInDay": false,
+      "physicalPaths": 3
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "head": [
+        "6721"
+      ],
+      "family": "127/721",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "head": [
+        "6417"
+      ],
+      "family": "417/714",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "head": [
+        "6716"
+      ],
+      "family": "617/716",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "head": [
+        "7447"
+      ],
+      "family": "447/744",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "head": [
+        "6890"
+      ],
+      "family": "098/890",
+      "band": "B_PREVIA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "head": [
+        "6553"
+      ],
+      "family": "355/553",
+      "band": "B_PREVIA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "head": [
+        "4693"
+      ],
+      "family": "396/693",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "head": [
+        "0639"
+      ],
+      "family": "639/936",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "head": [
+        "2011"
+      ],
+      "family": "011/110",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "head": [
+        "2462"
+      ],
+      "family": "264/462",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "head": [
+        "0722"
+      ],
+      "family": "227/722",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 3,
+      "sources": 1,
+      "shapes": 4,
+      "newInDay": false,
+      "physicalPaths": 4
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "head": [
+        "3042"
+      ],
+      "family": "042/240",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "head": [
+        "6020"
+      ],
+      "family": "020/020",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "head": [
+        "0724"
+      ],
+      "family": "427/724",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "head": [
+        "8064"
+      ],
+      "family": "064/460",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "head": [
+        "2982"
+      ],
+      "family": "289/982",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "head": [
+        "9025"
+      ],
+      "family": "025/520",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 2,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": true,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "head": [
+        "9480"
+      ],
+      "family": "084/480",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 2,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": true,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "head": [
+        "5738"
+      ],
+      "family": "738/837",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "head": [
+        "7898"
+      ],
+      "family": "898/898",
+      "band": "B_PREVIA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "head": [
+        "9237"
+      ],
+      "family": "237/732",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "head": [
+        "5643"
+      ],
+      "family": "346/643",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "head": [
+        "0889"
+      ],
+      "family": "889/988",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "head": [
+        "0137"
+      ],
+      "family": "137/731",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 4,
+      "sources": 1,
+      "shapes": 4,
+      "newInDay": false,
+      "physicalPaths": 4
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "head": [
+        "4702"
+      ],
+      "family": "207/702",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "head": [
+        "4372"
+      ],
+      "family": "273/372",
+      "band": "B_PREVIA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "head": [
+        "6107"
+      ],
+      "family": "107/701",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "head": [
+        "2949"
+      ],
+      "family": "949/949",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "head": [
+        "5508"
+      ],
+      "family": "508/805",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "head": [
+        "2517"
+      ],
+      "family": "517/715",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "head": [
+        "7949"
+      ],
+      "family": "949/949",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "head": [
+        "2817"
+      ],
+      "family": "718/817",
+      "band": "B_PERSIST_MULTI",
+      "blocks": 2,
+      "sources": 2,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "head": [
+        "5137"
+      ],
+      "family": "137/731",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 4,
+      "sources": 1,
+      "shapes": 4,
+      "newInDay": false,
+      "physicalPaths": 4
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "head": [
+        "2168"
+      ],
+      "family": "168/861",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "head": [
+        "8778"
+      ],
+      "family": "778/877",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "head": [
+        "6371"
+      ],
+      "family": "173/371",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "head": [
+        "3859"
+      ],
+      "family": "859/958",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "head": [
+        "3151"
+      ],
+      "family": "151/151",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 2,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "head": [
+        "1067"
+      ],
+      "family": "067/760",
+      "band": "B_PERSIST_MULTI",
+      "blocks": 2,
+      "sources": 2,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "head": [
+        "4786"
+      ],
+      "family": "687/786",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 4,
+      "sources": 1,
+      "shapes": 4,
+      "newInDay": true,
+      "physicalPaths": 4
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "head": [
+        "4705"
+      ],
+      "family": "507/705",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "head": [
+        "8483"
+      ],
+      "family": "384/483",
+      "band": "B_PERSIST_MULTI",
+      "blocks": 4,
+      "sources": 2,
+      "shapes": 4,
+      "newInDay": false,
+      "physicalPaths": 4
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "head": [
+        "9105"
+      ],
+      "family": "105/501",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "head": [
+        "6397"
+      ],
+      "family": "397/793",
+      "band": "B_PREVIA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "head": [
+        "3686"
+      ],
+      "family": "686/686",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "head": [
+        "9979"
+      ],
+      "family": "979/979",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 3,
+      "sources": 1,
+      "shapes": 3,
+      "newInDay": true,
+      "physicalPaths": 3
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "head": [
+        "6823"
+      ],
+      "family": "328/823",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "head": [
+        "7429"
+      ],
+      "family": "429/924",
+      "band": "B_PERSIST_MULTI",
+      "blocks": 6,
+      "sources": 3,
+      "shapes": 6,
+      "newInDay": false,
+      "physicalPaths": 6
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "head": [
+        "2234"
+      ],
+      "family": "234/432",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "head": [
+        "5775"
+      ],
+      "family": "577/775",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "head": [
+        "5163"
+      ],
+      "family": "163/361",
+      "band": "B_PREVIA_SIMPLE",
+      "blocks": 2,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "head": [
+        "6697"
+      ],
+      "family": "697/796",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 2,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": true,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "head": [
+        "9226"
+      ],
+      "family": "226/622",
+      "band": "B_PERSIST_MULTI",
+      "blocks": 3,
+      "sources": 2,
+      "shapes": 5,
+      "newInDay": false,
+      "physicalPaths": 5
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "head": [
+        "9476"
+      ],
+      "family": "476/674",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 3,
+      "sources": 1,
+      "shapes": 3,
+      "newInDay": false,
+      "physicalPaths": 3
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "head": [
+        "2081"
+      ],
+      "family": "081/180",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "head": [
+        "5196"
+      ],
+      "family": "196/691",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "head": [
+        "2653"
+      ],
+      "family": "356/653",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "head": [
+        "3571"
+      ],
+      "family": "175/571",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 2,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "head": [
+        "8579"
+      ],
+      "family": "579/975",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 2,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "head": [
+        "7152"
+      ],
+      "family": "152/251",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "head": [
+        "6316"
+      ],
+      "family": "316/613",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 2,
+      "sources": 1,
+      "shapes": 2,
+      "newInDay": false,
+      "physicalPaths": 2
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "head": [
+        "9643"
+      ],
+      "family": "346/643",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "head": [
+        "2710"
+      ],
+      "family": "017/710",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 3,
+      "sources": 1,
+      "shapes": 3,
+      "newInDay": false,
+      "physicalPaths": 3
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "head": [
+        "7409"
+      ],
+      "family": "409/904",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "head": [
+        "4534"
+      ],
+      "family": "435/534",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "head": [
+        "4843"
+      ],
+      "family": "348/843",
+      "band": "B_PREVIA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "head": [
+        "7730"
+      ],
+      "family": "037/730",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "head": [
+        "7148"
+      ],
+      "family": "148/841",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "head": [
+        "7354"
+      ],
+      "family": "354/453",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 3,
+      "sources": 1,
+      "shapes": 3,
+      "newInDay": false,
+      "physicalPaths": 3
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "head": [
+        "2473"
+      ],
+      "family": "374/473",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "head": [
+        "6542"
+      ],
+      "family": "245/542",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "head": [
+        "5918"
+      ],
+      "family": "819/918",
+      "band": "B_PERSIST_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": false,
+      "physicalPaths": 1
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "head": [
+        "6215"
+      ],
+      "family": "215/512",
+      "band": "B_NUEVA_SIMPLE",
+      "blocks": 1,
+      "sources": 1,
+      "shapes": 1,
+      "newInDay": true,
+      "physicalPaths": 1
+    }
+  ],
+  "monthSelectors": {
+    "2026-09": {
+      "OFICIAL": 10,
+      "ANCLADA_11": 11,
+      "FISICA_NUEVA": 11,
+      "FISICA_PERSISTE": 11,
+      "FISICA_MAS_FUENTES": 10,
+      "FISICA_MAS_FORMAS": 11,
+      "FISICA_HASH_NEUTRO": 10
+    },
+    "2026-10": {
+      "OFICIAL": 5,
+      "ANCLADA_11": 5,
+      "FISICA_NUEVA": 5,
+      "FISICA_PERSISTE": 7,
+      "FISICA_MAS_FUENTES": 6,
+      "FISICA_MAS_FORMAS": 7,
+      "FISICA_HASH_NEUTRO": 5
+    }
+  },
+  "hashes": {
+    "source": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "protocol": "595f1d97096730a27b0f72f3c16682ad71c3ae6560ff0ec97208546ae65ec3c0",
+    "script": "74947a7a4a29b1e77ac77e33feedbe2c86cdbb732cf175fefefff63dabcb7c54",
+    "pre": "2e813303017f2c60a566d28480c6553eb39f41dcb1bdf227d9c2d1880312867b",
+    "neutral": "dbc699bcff2d9ae62f7574819873a23e21a25af83f018475fdad699e60f00eac"
+  },
+  "caution": "Exploratorio en 115 cortes repetidos; 1000 terminaciones uniformes es solo referencia hipotética y no valida predicción"
+}
