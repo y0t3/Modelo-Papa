@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-14",
+  "status": "VERIFICADO_EN_RELECTURA_RETROSPECTIVA",
+  "executedAs": "Análisis directo de PRE y POST existentes usando el conector GitHub. Sin GitHub Actions nueva.",
+  "cuts": 115,
+  "days": 23,
+  "input": {
+    "pre": "auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/PRE_115.json",
+    "post": "auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json"
+  },
+  "analysisScript": "scripts/lab-vt3-huellas-hermanas-115.mjs",
+  "definition": {
+    "rootGroup": "Cabeza histórica completa (fecha, periodo, turno, jurisdicción, cabeza) + fuente + camino histórico exacto, sin distinguir su reversa.",
+    "directOnly": "Se comprueba la misma secuencia física de casillas trasladada por una distancia constante; rutas bifurcadas que sólo heredan raíz no constituyen otra transferencia directa.",
+    "siblingSuccess": "Se cuenta por grupo de huella; la misma familia ganadora puede dar éxito en varios grupos, NO mide aciertos por sorteo."
+  },
+  "records": {
+    "rankedFamilyPerTurn": 6389,
+    "groupsSameOldRoot": 2168,
+    "groupsWithAtLeastOneWinner": 100,
+    "shift0": {
+      "familyRecords": 1924,
+      "winnerRecords": 16
+    },
+    "shift1": {
+      "familyRecords": 2277,
+      "winnerRecords": 21
+    },
+    "shift2OrMore": {
+      "familyRecords": 2188,
+      "winnerRecords": 27
+    },
+    "dailyPersistentFamilyRecords": 4774,
+    "dailyPersistentWithIdenticalRoute": 4774
+  },
+  "selectionWithinGroups": {
+    "shortestDisplacement": {
+      "groupHits": 18
+    },
+    "longestDisplacement": {
+      "groupHits": 30
+    },
+    "bestOriginalVT3Rank": {
+      "groupHits": 39
+    },
+    "uniformExactExpected": {
+      "groupHits": 22.8917
+    },
+    "neutralStableHash": {
+      "replications": 3000,
+      "mean": 22.7247,
+      "p05": 16,
+      "p50": 23,
+      "p95": 30,
+      "min": 9,
+      "max": 37,
+      "shortestUpperTail": 0.8913695434855048,
+      "longestUpperTail": 0.06164611796067977,
+      "bestRankUpperTail": 0.0003332222592469177
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "groups": 1373,
+      "withWinningFamily": 76,
+      "shortest": 13,
+      "longest": 25,
+      "bestRank": 24,
+      "neutralExpected": 16.7083,
+      "shifts": {
+        "0": [
+          1167,
+          11
+        ],
+        "1": [
+          1407,
+          13
+        ],
+        "2+": [
+          1365,
+          23
+        ]
+      }
+    },
+    "2026-10": {
+      "groups": 795,
+      "withWinningFamily": 24,
+      "shortest": 5,
+      "longest": 5,
+      "bestRank": 15,
+      "neutralExpected": 6.1833,
+      "shifts": {
+        "0": [
+          757,
+          5
+        ],
+        "1": [
+          870,
+          8
+        ],
+        "2+": [
+          823,
+          4
+        ]
+      }
+    }
+  },
+  "example": "13/10 Nocturna: 234/432 y 768/867 son dos hijas de la misma huella antigua 226 de 9226, a -1 y -3 filas respectivamente. Sólo 234/432 coincidió, pero el historial no respalda una regla universal de distancia corta.",
+  "cautions": [
+    "Relectura exploratoria de 115 cortes investigados previamente; ninguna de estas métricas valida pronósticos.",
+    "Grupos y aciertos no independientes entre turnos ni entre raíces; p empírica es condicional a la selección de grupo, sin corrección por búsqueda de estrategias.",
+    "Los indicadores de familia con menor desplazamiento son relativos al mínimo de todas sus raíces directas, no a la raíz ganadora en una retrospectiva.",
+    "Persistencia intradía 4774/4774 implica al menos un camino idéntico conservado, no ausencia de rutas nuevas.",
+    "No se alteró el motor, main, VT4 ni el orden oficial Top3/Top10."
+  ]
+}
