@@ -1,0 +1,372 @@
+{
+  "totals": {
+    "turns": 5,
+    "heads": 25,
+    "official": {
+      "top3": 0,
+      "hitTurns": [],
+      "top5": 1,
+      "top10": 1
+    },
+    "challenger": {
+      "top3": 0,
+      "hitTurns": [],
+      "top5": 0,
+      "top10": 1
+    },
+    "hashNeutral": {
+      "top3": 1,
+      "hitTurns": [
+        "Primera"
+      ]
+    },
+    "physicalHeadCount": 7,
+    "admittedHeadCount": 3,
+    "exactVt4Top10HeadCount": 0
+  },
+  "noFutureLeak": true,
+  "previouslySealedMatutinoOfficial": true,
+  "disclaimer": "Sólo el Top oficial Matutino existía sellado antes del sorteo, challenger D−1 definida después. Todos los cinco challengers y cuatro bases adicionales son retrospectivos.",
+  "sources": [
+    "https://sigmadiario.com/quiniela",
+    "https://www.jugandoonline.com.ar/Quiniela-Nocturna.aspx/1000",
+    "https://www.quinielanacionaln.com.ar/"
+  ],
+  "matrices": [
+    {
+      "turn": "Previa",
+      "officialTop3": [
+        "226/622",
+        "266/662",
+        "305/503"
+      ],
+      "d1Third": {
+        "family": "305/503",
+        "oldRank": 3,
+        "d1": 1,
+        "d7": 0,
+        "blocks": 2
+      },
+      "challengerTop3": [
+        "226/622",
+        "266/662",
+        "305/503"
+      ],
+      "outcomes": [
+        {
+          "head": "6448",
+          "family": "448/844",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "6337",
+          "family": "337/733",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "5546",
+          "family": "546/645",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "5119",
+          "family": "119/911",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "1495",
+          "family": "495/594",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        }
+      ],
+      "official": {
+        "t3": false,
+        "t5": false,
+        "t10": false
+      },
+      "challenger": {
+        "t3": false,
+        "t5": false,
+        "t10": false
+      }
+    },
+    {
+      "turn": "Primera",
+      "officialTop3": [
+        "226/622",
+        "305/503",
+        "507/705"
+      ],
+      "d1Third": {
+        "family": "063/360",
+        "oldRank": 10,
+        "d1": 1,
+        "d7": 2,
+        "blocks": 2
+      },
+      "challengerTop3": [
+        "226/622",
+        "305/503",
+        "063/360"
+      ],
+      "outcomes": [
+        {
+          "head": "5485",
+          "family": "485/584",
+          "rank": 5,
+          "phys": 2,
+          "selectedD1Rank": 6
+        },
+        {
+          "head": "0310",
+          "family": "013/310",
+          "rank": null,
+          "phys": 1,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "8857",
+          "family": "758/857",
+          "rank": 42,
+          "phys": 1,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "3385",
+          "family": "385/583",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "4084",
+          "family": "084/480",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        }
+      ],
+      "official": {
+        "t3": false,
+        "t5": true,
+        "t10": true
+      },
+      "challenger": {
+        "t3": false,
+        "t5": false,
+        "t10": true
+      }
+    },
+    {
+      "turn": "Matutino",
+      "officialTop3": [
+        "226/622",
+        "305/503",
+        "699/996"
+      ],
+      "d1Third": {
+        "family": "699/996",
+        "oldRank": 3,
+        "d1": 2,
+        "d7": 1,
+        "blocks": 2
+      },
+      "challengerTop3": [
+        "226/622",
+        "305/503",
+        "699/996"
+      ],
+      "outcomes": [
+        {
+          "head": "3376",
+          "family": "376/673",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "1057",
+          "family": "057/750",
+          "rank": null,
+          "phys": 2,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "2413",
+          "family": "314/413",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "3723",
+          "family": "327/723",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "2284",
+          "family": "284/482",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        }
+      ],
+      "official": {
+        "t3": false,
+        "t5": false,
+        "t10": false
+      },
+      "challenger": {
+        "t3": false,
+        "t5": false,
+        "t10": false
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "officialTop3": [
+        "226/622",
+        "305/503",
+        "699/996"
+      ],
+      "d1Third": {
+        "family": "699/996",
+        "oldRank": 3,
+        "d1": 2,
+        "d7": 1,
+        "blocks": 2
+      },
+      "challengerTop3": [
+        "226/622",
+        "305/503",
+        "699/996"
+      ],
+      "outcomes": [
+        {
+          "head": "6137",
+          "family": "137/731",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "7888",
+          "family": "888/888",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "7336",
+          "family": "336/633",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "8190",
+          "family": "091/190",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "6800",
+          "family": "008/800",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        }
+      ],
+      "official": {
+        "t3": false,
+        "t5": false,
+        "t10": false
+      },
+      "challenger": {
+        "t3": false,
+        "t5": false,
+        "t10": false
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "officialTop3": [
+        "226/622",
+        "101/101",
+        "104/401"
+      ],
+      "d1Third": {
+        "family": "305/503",
+        "oldRank": 4,
+        "d1": 2,
+        "d7": 1,
+        "blocks": 3
+      },
+      "challengerTop3": [
+        "226/622",
+        "101/101",
+        "305/503"
+      ],
+      "outcomes": [
+        {
+          "head": "3072",
+          "family": "072/270",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "1234",
+          "family": "234/432",
+          "rank": 21,
+          "phys": 2,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "5529",
+          "family": "529/925",
+          "rank": null,
+          "phys": 0,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "4625",
+          "family": "526/625",
+          "rank": null,
+          "phys": 2,
+          "selectedD1Rank": null
+        },
+        {
+          "head": "9192",
+          "family": "192/291",
+          "rank": null,
+          "phys": 1,
+          "selectedD1Rank": null
+        }
+      ],
+      "official": {
+        "t3": false,
+        "t5": false,
+        "t10": false
+      },
+      "challenger": {
+        "t3": false,
+        "t5": false,
+        "t10": false
+      }
+    }
+  ]
+}
