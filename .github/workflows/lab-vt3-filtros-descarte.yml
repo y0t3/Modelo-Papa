@@ -1,0 +1,49 @@
+name: VT3 filtros de descarte - retencion y control neutral
+on:
+  push:
+    branches: [lab-vt3-filtros-descarte-14oct2026]
+    paths:
+      - 'scripts/lab-vt3-filtros-descarte.mjs'
+      - 'PROTOCOLO_VT3_FILTROS_DESCARTE_14OCT2026.md'
+      - '.github/workflows/lab-vt3-filtros-descarte.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  filtros:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ocultar POST del corpus histórico al construir PRE
+        run: |
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-filtros-post.json
+          mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-filtros-noct-post.json
+          mv auditorias/vt3-geometria-completa-vs-anclada-115-14oct2026/POST_115.json /tmp/vt3-filtros-post-geo.json
+      - name: Aplicar filtros y congelar PRE + sello SHA256
+        run: node scripts/lab-vt3-filtros-descarte.mjs pre
+      - name: Restaurar resultados y evaluar POST contra 2000 controles neutrales
+        run: |
+          mv /tmp/vt3-filtros-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
+          mv /tmp/vt3-filtros-noct-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
+          mv /tmp/vt3-filtros-post-geo.json auditorias/vt3-geometria-completa-vs-anclada-115-14oct2026/POST_115.json
+          node scripts/lab-vt3-filtros-descarte.mjs post
+      - name: Exportar artefactos completos
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT3-filtros-descarte-115-14oct
+          path: auditorias/vt3-filtros-descarte-115-14oct2026/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Guardar auditoría solo en rama laboratorio
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt3-filtros-descarte-115-14oct2026/
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(VT3): filtros de descarte, retencion y controles pareados'
+            git push origin HEAD:lab-vt3-filtros-descarte-14oct2026
+          fi
