@@ -3,6 +3,7 @@ import {View,Text,StyleSheet,useWindowDimensions} from 'react-native';
 import type {DailySheet,SourceId} from '../sheet';
 import type {PanoramaRoute,PanoramaKind} from '../panoramaModel';
 import {strongestKind} from './visualTokens';
+import {describeBoardCell} from '../boardFocus';
 import {useLaloTheme} from './LaloTheme';
 
 const JUR=['Ciudad','Prov.','Córdoba','Santa Fe','E. Ríos','Montevideo'];
@@ -28,8 +29,9 @@ const collect=(routes:PanoramaRoute[]):CellMarks=>{
  * Los recorridos completos siguen intactos en PanoramaData, incluidos sentidos
  * y múltiples trayectorias por cabeza/familia.
  */
-export default function MarkedBoard({columns,routes,activeOwner}:{
- columns:DailySheet['columns'];routes:PanoramaRoute[];activeOwner:string|null
+export default function MarkedBoard({columns,routes,activeOwner,highlightRoutes}:{
+ columns:DailySheet['columns'];routes:PanoramaRoute[];activeOwner:string|null;
+ highlightRoutes?:PanoramaRoute[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const {width:windowWidth}=useWindowDimensions();
@@ -37,7 +39,9 @@ export default function MarkedBoard({columns,routes,activeOwner}:{
  const colWidth=(width-GUTTER-2)/Math.max(1,columns.length);
  const height=HEADER+ROW*6+8;
  const all=useMemo(()=>collect(routes),[routes]);
- const selected=useMemo(()=>collect(activeOwner===null?[]:routes.filter(r=>r.ownerId===activeOwner)),[routes,activeOwner]);
+ const focusMode=highlightRoutes!==undefined||activeOwner!==null;
+ const selected=useMemo(()=>collect(highlightRoutes??(activeOwner===null?[]:routes.filter(r=>r.ownerId===activeOwner))),
+  [routes,activeOwner,highlightRoutes]);
  return <View style={[s.card,{backgroundColor:c.board,borderColor:c.border}]}>
   <View style={{width,height,alignSelf:'center',position:'relative'}}>
    {columns.map((col,i)=><React.Fragment key={col.id}>
@@ -56,10 +60,9 @@ export default function MarkedBoard({columns,routes,activeOwner}:{
     const key=cellKey(col.id,row,side);
     const allKinds=[...(all.get(key)||[])];
     const activeKinds=[...(selected.get(key)||[])];
-    const visibleKinds=activeOwner!==null&&activeKinds.length?activeKinds:allKinds;
-    const focus=activeOwner!==null&&activeKinds.length>0;
-    const muted=activeOwner!==null&&!focus&&allKinds.length>0;
-    const strongest=strongestKind(visibleKinds);
+    // El filtro nunca borra otras coincidencias, ni siquiera si comparten casillas.
+    const {visibleKinds,emphasisKinds,focus,muted}=describeBoardCell(allKinds,activeKinds,focusMode);
+    const strongest=strongestKind(emphasisKinds);
     const fill=strongest?kinds[strongest].fill:c.cell;
     const cellWidth=colWidth*.435;
     const left=GUTTER+ci*colWidth+(side?colWidth*.745:colWidth*.255)-cellWidth/2;
@@ -70,9 +73,9 @@ export default function MarkedBoard({columns,routes,activeOwner}:{
       backgroundColor:fill,borderWidth:focus?2:1,
       borderColor:focus?(strongest?kinds[strongest].line:c.border):c.border,
       borderRadius:4,opacity:muted?.52:1,justifyContent:'center',alignItems:'center'}}>
-     {visibleKinds.includes('vt2')?<View style={[s.topMarker,{backgroundColor:kinds.vt2.line}]}/>:null}
-     {visibleKinds.includes('vt3')?<View style={[s.leftMarker,{backgroundColor:kinds.vt3.line}]}/>:null}
-     {visibleKinds.includes('vt4')?<View style={[s.bottomMarker,{backgroundColor:kinds.vt4.line}]}/>:null}
+     {visibleKinds.includes('vt2')?<View style={[s.topMarker,{backgroundColor:kinds.vt2.line,opacity:focusMode&&!activeKinds.includes('vt2')?0.3:1}]}/>:null}
+     {visibleKinds.includes('vt3')?<View style={[s.leftMarker,{backgroundColor:kinds.vt3.line,opacity:focusMode&&!activeKinds.includes('vt3')?0.3:1}]}/>:null}
+     {visibleKinds.includes('vt4')?<View style={[s.bottomMarker,{backgroundColor:kinds.vt4.line,opacity:focusMode&&!activeKinds.includes('vt4')?0.3:1}]}/>:null}
      <Text allowFontScaling adjustsFontSizeToFit numberOfLines={1}
       style={{color:c.text,fontSize:colWidth<48?13:17,fontWeight:'900',zIndex:2}}>{n}</Text>
     </View>;

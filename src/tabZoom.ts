@@ -27,3 +27,17 @@ export function decodeTabZoom(value:string|null):TabZoomLevels{
 export function applyTabZoom(levels:TabZoomLevels,tab:ZoomTab,next:number):TabZoomLevels{
  return {...levels,[tab]:clampZoom(next)};
 }
+
+/** Pan horizontal real del contenido ampliado, acotado a ambos bordes. */
+export function clampPanX(offset:number,scale:number,viewportWidth:number):number{
+ const width=Math.max(1,viewportWidth);
+ const total=width*clampZoom(scale);
+ const maxPan=width-total;
+ if(!Number.isFinite(offset))return 0;
+ return Math.min(0,Math.max(maxPan,offset));
+}
+/** Al pellizcar, el punto bajo los dedos queda en su posición horizontal. */
+export function pinchAtX(startX:number,fromZoom:number,toZoom:number,focalX:number,width:number):number{
+ const ratio=clampZoom(toZoom)/clampZoom(fromZoom);
+ return clampPanX(focalX-(focalX-startX)*ratio,toZoom,width);
+}

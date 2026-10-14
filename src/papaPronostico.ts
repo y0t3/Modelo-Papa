@@ -1,5 +1,5 @@
-// Registro independiente de las elecciones visuales hechas por Papá.
-// No contribuye al score oficial Lalo. La PRE se conserva como captura inalterable
+// Registro independiente de las elecciones visuales hechas por Lalo.
+// No contribuye al score del motor automático Lalo. La PRE se conserva como captura inalterable
 // dentro de la app; SHA256 solo detecta cambios locales, NO acredita hora externa.
 import {JURS,TURNOS} from './domain';
 import type {CabezasDia,Turno} from './domain';

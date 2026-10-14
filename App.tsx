@@ -29,7 +29,7 @@ import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './s
 type Screen='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const nav: {id:Screen;label:string}[]=[
  {id:'hoja',label:'HOJA'},{id:'predictiva',label:'PREDICTIVA'},
- {id:'prediccion',label:'PREDICCIÓN'},{id:'papa',label:'PAPÁ'},
+ {id:'prediccion',label:'PREDICCIÓN'},{id:'papa',label:'LALO'},
  {id:'cabezas',label:'CABEZAS'},
  {id:'info',label:'INFO'}
 ];
@@ -194,7 +194,7 @@ function LaloApp(){
     <Vt3Explainer sheet={sheet} view={motor} turn={target}
      heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
    </>:screen==='papa'?<>
-    <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico personal</Text>
+    <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico de Lalo</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
     <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
    </>:screen==='cabezas'?

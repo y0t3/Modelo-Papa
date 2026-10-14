@@ -1,4 +1,4 @@
-// Persistencia local de borradores, pronósticos PRE y resultados POST de Papá.
+// Persistencia local de borradores, pronósticos PRE y resultados POST de Lalo.
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {buildPre,validateSnapshot,recordId,observedHeads,todayLocal,hasObserved} from './papaPronostico';
 import type {PapaRecord,PapaDraft} from './papaPronostico';
@@ -11,10 +11,10 @@ export async function loadRecords():Promise<PapaRecord[]>{
  const raw=await AsyncStorage.getItem(PRE_KEY);
  if(!raw)return [];
  const records=JSON.parse(raw) as PapaRecord[];
- if(!Array.isArray(records))throw Error('Registro Papá dañado');
+ if(!Array.isArray(records))throw Error('Registro Lalo dañado');
  const keys=new Set<string>();
  for(const record of records){
-  if(!validateSnapshot(record.snapshot))throw Error('Una captura PRE de Papá no coincide con su SHA256');
+  if(!validateSnapshot(record.snapshot))throw Error('Una captura PRE de Lalo no coincide con su SHA256');
   const key=recordId(record.snapshot.pre.date,record.snapshot.pre.turn);
   if(keys.has(key))throw Error('Hay PRE duplicados en el registro');
   keys.add(key);

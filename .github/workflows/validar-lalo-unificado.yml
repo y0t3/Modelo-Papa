@@ -32,6 +32,8 @@ jobs:
         run: npx --yes tsx scripts/test-hoja-turnos-cabezas.ts
       - name: Verificar zoom en las seis pestañas y estado independiente
         run: npx --yes tsx scripts/test-zoom-pestanas.ts
+      - name: Verificar zoom horizontal, fondo tenue y regresiones UI
+        run: npx --yes tsx scripts/test-correcciones-ui-14oct.ts
       - name: Confirmar que no quedan importaciones del predictor retirado
         run: |
           if grep -REn "(from ['\"][^'\"]*(predictive|analysisEngine|routeHistory|routeLife)['\"])" App.tsx src/ ; then
