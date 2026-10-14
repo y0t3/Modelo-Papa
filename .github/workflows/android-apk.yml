@@ -1,6 +1,9 @@
 name: Build Modelo Lalo APK
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - build/modelo-lalo-apk-prueba-14oct2026
 permissions:
   contents: read
 jobs:
@@ -23,6 +26,14 @@ jobs:
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Probar observabilidad VT3
         run: npx --yes tsx scripts/test-consolidacion-lalo.ts
+      - name: Probar nuevo respaldo visual VT3
+        run: npx --yes tsx scripts/test-antecedentes-visuales.ts
+      - name: Probar pronóstico propio Papá
+        run: npx --yes tsx scripts/test-pronostico-papa.ts
+      - name: Probar filtros de turno
+        run: npx --yes tsx scripts/test-hoja-turnos-cabezas.ts
+      - name: Probar zoom por pestaña
+        run: npx --yes tsx scripts/test-zoom-pestanas.ts
       - name: Generate Android project
         env:
           CI: '1'
