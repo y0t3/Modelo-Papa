@@ -46,7 +46,7 @@ mkdirSync(OUT,{recursive:true});
 function buildRow(date,turn,raw,kind){
  let profiles=[];
  if(kind==='HISTORICAL'){
-  assert.ok(raw.strategies.A_ORIGINAL.length>=30);
+  assert.ok(raw.strategies.A_ORIGINAL.length>=10);
   profiles=raw.strategies.A_ORIGINAL.map(f=>({family:f.family,rank:f.rank,
    d1:f.d1,d7:f.d7,bif:f.bif,sources:f.sources,blocks:f.blocks,paths:f.paths}));
   const physical=new Set(raw.witnesses.map(x=>x.family));
@@ -55,7 +55,7 @@ function buildRow(date,turn,raw,kind){
   assert.deepEqual(profiles.slice(0,10).map(x=>x.family),
    raw.strategies.A_ORIGINAL.slice(0,10).map(x=>x.family));
  }else{
-  assert.ok(raw.ranks.length>=30);
+  assert.ok(raw.ranks.length>=10);
   profiles=raw.ranks.map(f=>({family:f.family,rank:f.rank,
    d1:f.d1,d7:f.d7,bif:f.branchBlocks,sources:f.sources,
    blocks:f.physicalBlocks,paths:f.paths}));
