@@ -27,10 +27,10 @@ assert.deepEqual(a,b,'PRE no debe consultar cabezas objetivo ni marcas POST');
 assert.equal(reversibleFamily('729'),'729/927');
 assert.ok(a.ranks.vt3.some(f=>f.family==='749/947'),'VT3 trasladada sin inventar cifra');
 assert.ok(a.ranks.vt2.some(f=>f.family==='47/74'||f.family==='49/94'),'VT2 propia o derivada de una ruta');
-assert.ok(a.ranks.vt4.some(f=>f.family===reversibleFamily('7492')),
+assert.ok(a.ranks.vt4.some(f=>f.family==='7492/9472'),
  'VT4 sólo si hay ruta de cuatro celdas');
 const selectedMother='749/947';
-const daughterB=reversibleFamily('7492'),daughterA=reversibleFamily('2749');
+const daughterB='7492/9472',daughterA='2749/2947';
 assert.ok(a.ranks.vt4.some(f=>f.family===daughterB&&
  f.paths.some(p=>(p.mothers||[]).includes(selectedMother))),
  'La hija B tiene testigo VT4 propio');
