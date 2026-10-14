@@ -74,6 +74,13 @@
         "top5": 8,
         "top10": 11
       },
+      "topChanges": {
+        "top3": 0,
+        "top5": 2,
+        "top10": 4
+      },
+      "removedFromBaselineTop10": 4,
+      "removedWinningFromBaselineTop10": 0,
       "gains": {
         "top3": [],
         "top5": [],
@@ -108,6 +115,13 @@
         "top5": 5,
         "top10": 10
       },
+      "topChanges": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      },
+      "removedFromBaselineTop10": 0,
+      "removedWinningFromBaselineTop10": 0,
       "gains": {
         "top3": [],
         "top5": [],
@@ -142,6 +156,13 @@
         "top5": 8,
         "top10": 11
       },
+      "topChanges": {
+        "top3": 6,
+        "top5": 14,
+        "top10": 38
+      },
+      "removedFromBaselineTop10": 67,
+      "removedWinningFromBaselineTop10": 0,
       "gains": {
         "top3": [],
         "top5": [],
@@ -176,6 +197,13 @@
         "top5": 3,
         "top10": 5
       },
+      "topChanges": {
+        "top3": 7,
+        "top5": 15,
+        "top10": 24
+      },
+      "removedFromBaselineTop10": 48,
+      "removedWinningFromBaselineTop10": 0,
       "gains": {
         "top3": [],
         "top5": [],
@@ -210,6 +238,13 @@
         "top5": 3,
         "top10": 5
       },
+      "topChanges": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      },
+      "removedFromBaselineTop10": 0,
+      "removedWinningFromBaselineTop10": 0,
       "gains": {
         "top3": [],
         "top5": [],
@@ -244,6 +279,13 @@
         "top5": 6,
         "top10": 8
       },
+      "topChanges": {
+        "top3": 4,
+        "top5": 7,
+        "top10": 25
+      },
+      "removedFromBaselineTop10": 41,
+      "removedWinningFromBaselineTop10": 0,
       "gains": {
         "top3": [],
         "top5": [],
@@ -278,6 +320,13 @@
         "top5": 0,
         "top10": 0
       },
+      "topChanges": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      },
+      "removedFromBaselineTop10": 0,
+      "removedWinningFromBaselineTop10": 0,
       "gains": {
         "top3": [],
         "top5": [],
@@ -315,6 +364,13 @@
           "top5": 5,
           "top10": 7
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -349,6 +405,13 @@
           "top5": 2,
           "top10": 6
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -383,6 +446,13 @@
           "top5": 5,
           "top10": 7
         },
+        "topChanges": {
+          "top3": 6,
+          "top5": 10,
+          "top10": 22
+        },
+        "removedFromBaselineTop10": 32,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -417,6 +487,13 @@
           "top5": 0,
           "top10": 1
         },
+        "topChanges": {
+          "top3": 3,
+          "top5": 6,
+          "top10": 8
+        },
+        "removedFromBaselineTop10": 15,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -451,6 +528,13 @@
           "top5": 0,
           "top10": 1
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -485,6 +569,13 @@
           "top5": 4,
           "top10": 6
         },
+        "topChanges": {
+          "top3": 4,
+          "top5": 6,
+          "top10": 15
+        },
+        "removedFromBaselineTop10": 19,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -519,6 +610,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -555,6 +653,13 @@
           "top5": 3,
           "top10": 4
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 2,
+          "top10": 4
+        },
+        "removedFromBaselineTop10": 4,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -589,6 +694,13 @@
           "top5": 3,
           "top10": 4
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -623,6 +735,13 @@
           "top5": 3,
           "top10": 4
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 4,
+          "top10": 16
+        },
+        "removedFromBaselineTop10": 35,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -657,6 +776,13 @@
           "top5": 3,
           "top10": 4
         },
+        "topChanges": {
+          "top3": 4,
+          "top5": 9,
+          "top10": 16
+        },
+        "removedFromBaselineTop10": 33,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -691,6 +817,13 @@
           "top5": 3,
           "top10": 4
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -725,6 +858,13 @@
           "top5": 2,
           "top10": 2
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 10
+        },
+        "removedFromBaselineTop10": 22,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -759,6 +899,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -797,6 +944,13 @@
           "top5": 2,
           "top10": 3
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -831,6 +985,13 @@
           "top5": 1,
           "top10": 2
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -865,6 +1026,13 @@
           "top5": 2,
           "top10": 3
         },
+        "topChanges": {
+          "top3": 1,
+          "top5": 2,
+          "top10": 6
+        },
+        "removedFromBaselineTop10": 9,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -899,6 +1067,13 @@
           "top5": 1,
           "top10": 2
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "removedFromBaselineTop10": 1,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -933,6 +1108,13 @@
           "top5": 1,
           "top10": 2
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -967,6 +1149,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1001,6 +1190,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1037,6 +1233,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 1
+        },
+        "removedFromBaselineTop10": 1,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1071,6 +1274,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1105,6 +1315,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 7
+        },
+        "removedFromBaselineTop10": 12,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1139,6 +1356,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 3
+        },
+        "removedFromBaselineTop10": 5,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1173,6 +1397,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1207,6 +1438,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 1,
+          "top5": 2,
+          "top10": 6
+        },
+        "removedFromBaselineTop10": 9,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1241,6 +1479,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1277,6 +1522,13 @@
           "top5": 3,
           "top10": 3
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 1
+        },
+        "removedFromBaselineTop10": 1,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1311,6 +1563,13 @@
           "top5": 2,
           "top10": 3
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1345,6 +1604,13 @@
           "top5": 3,
           "top10": 3
         },
+        "topChanges": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 7
+        },
+        "removedFromBaselineTop10": 14,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1379,6 +1645,13 @@
           "top5": 1,
           "top10": 1
         },
+        "topChanges": {
+          "top3": 2,
+          "top5": 4,
+          "top10": 6
+        },
+        "removedFromBaselineTop10": 13,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1413,6 +1686,13 @@
           "top5": 1,
           "top10": 1
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1447,6 +1727,13 @@
           "top5": 3,
           "top10": 3
         },
+        "topChanges": {
+          "top3": 1,
+          "top5": 2,
+          "top10": 7
+        },
+        "removedFromBaselineTop10": 11,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1481,6 +1768,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1517,6 +1811,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "removedFromBaselineTop10": 1,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1551,6 +1852,13 @@
           "top5": 0,
           "top10": 1
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1585,6 +1893,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 9
+        },
+        "removedFromBaselineTop10": 15,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1619,6 +1934,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 2,
+          "top5": 5,
+          "top10": 7
+        },
+        "removedFromBaselineTop10": 14,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1653,6 +1975,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1687,6 +2016,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 6
+        },
+        "removedFromBaselineTop10": 10,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1721,6 +2057,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1757,6 +2100,13 @@
           "top5": 3,
           "top10": 5
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "removedFromBaselineTop10": 1,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1791,6 +2141,13 @@
           "top5": 2,
           "top10": 4
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1825,6 +2182,13 @@
           "top5": 3,
           "top10": 5
         },
+        "topChanges": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 9
+        },
+        "removedFromBaselineTop10": 17,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1859,6 +2223,13 @@
           "top5": 1,
           "top10": 2
         },
+        "topChanges": {
+          "top3": 2,
+          "top5": 5,
+          "top10": 7
+        },
+        "removedFromBaselineTop10": 15,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1893,6 +2264,13 @@
           "top5": 1,
           "top10": 2
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1927,6 +2305,13 @@
           "top5": 3,
           "top10": 5
         },
+        "topChanges": {
+          "top3": 1,
+          "top5": 2,
+          "top10": 6
+        },
+        "removedFromBaselineTop10": 11,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -1961,6 +2346,13 @@
           "top5": 0,
           "top10": 0
         },
+        "topChanges": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "removedFromBaselineTop10": 0,
+        "removedWinningFromBaselineTop10": 0,
         "gains": {
           "top3": [],
           "top5": [],
@@ -2765,7 +3157,7 @@
   "seal": {
     "previousGeometryPre": "6c8ab70c57758bec3510f2a2a254b0afc6d689c4eb946cea22b69f252b6e7b46",
     "sourceBasePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
-    "script": "b25efa4067f685ed03dc6714c64d74e6f4a802b90384d3fce0f8207df318eec7",
+    "script": "98ee76fda62c73bed704fc24a7d52bd76deda73ec592e6d8a0e6109b9afe54c0",
     "protocol": "45ca1374623394fb63cf73a9028274906cec74aeff653eb4d11990093508f007",
     "pre": "a2ec6bb0566fe0c3891d92d4e06d784d26830386371de5d00c8dfe8da4146efd"
   },
