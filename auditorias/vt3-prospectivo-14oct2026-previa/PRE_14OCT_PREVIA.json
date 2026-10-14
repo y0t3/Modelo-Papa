@@ -1,0 +1,514 @@
+{
+  "date": "2026-10-14",
+  "turn": "Previa",
+  "status": "PRE_PROSPECTIVO_SIN_CABEZAS_OBJETIVO",
+  "createdAtUtc": "2026-10-14T04:13:31.368Z",
+  "antecedents": [
+    {
+      "date": "2026-10-13",
+      "period": "D−1"
+    },
+    {
+      "date": "2026-10-07",
+      "period": "D−7"
+    }
+  ],
+  "knownSources": [
+    {
+      "source": "prevNocturno",
+      "values": [
+        "83",
+        "45",
+        "40",
+        "36",
+        "03",
+        "--"
+      ]
+    },
+    {
+      "source": "Previa",
+      "values": [
+        "--",
+        "--",
+        "--",
+        "--",
+        "--",
+        "--"
+      ]
+    },
+    {
+      "source": "Primera",
+      "values": [
+        "--",
+        "--",
+        "--",
+        "--",
+        "--",
+        "--"
+      ]
+    },
+    {
+      "source": "Matutino",
+      "values": [
+        "--",
+        "--",
+        "--",
+        "--",
+        "--",
+        "--"
+      ]
+    },
+    {
+      "source": "Vespertino",
+      "values": [
+        "--",
+        "--",
+        "--",
+        "--",
+        "--",
+        "--"
+      ]
+    }
+  ],
+  "historicalRoots": 22,
+  "ranked": [
+    {
+      "family": "063/360",
+      "rank": 1,
+      "d1": 2,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 4,
+      "branchBlocks": 2,
+      "paths": 4,
+      "directRoots": 2,
+      "explanation": "2 raíz/raíces D−1 · 2 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "063"
+        },
+        {
+          "value": "063"
+        },
+        {
+          "value": "360"
+        },
+        {
+          "value": "063"
+        }
+      ]
+    },
+    {
+      "family": "036/630",
+      "rank": 2,
+      "d1": 2,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 3,
+      "branchBlocks": 1,
+      "paths": 3,
+      "directRoots": 2,
+      "explanation": "2 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "630"
+        },
+        {
+          "value": "630"
+        },
+        {
+          "value": "036"
+        }
+      ]
+    },
+    {
+      "family": "033/330",
+      "rank": 3,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 2,
+      "branchBlocks": 1,
+      "paths": 2,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "330"
+        },
+        {
+          "value": "033"
+        }
+      ]
+    },
+    {
+      "family": "034/430",
+      "rank": 4,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 2,
+      "branchBlocks": 1,
+      "paths": 2,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "430"
+        },
+        {
+          "value": "430"
+        }
+      ]
+    },
+    {
+      "family": "344/443",
+      "rank": 5,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 2,
+      "branchBlocks": 1,
+      "paths": 2,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "443"
+        },
+        {
+          "value": "344"
+        }
+      ]
+    },
+    {
+      "family": "354/453",
+      "rank": 6,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 2,
+      "branchBlocks": 1,
+      "paths": 2,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "354"
+        },
+        {
+          "value": "354"
+        }
+      ]
+    },
+    {
+      "family": "364/463",
+      "rank": 7,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 2,
+      "branchBlocks": 1,
+      "paths": 2,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "463"
+        },
+        {
+          "value": "463"
+        }
+      ]
+    },
+    {
+      "family": "405/504",
+      "rank": 8,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 2,
+      "branchBlocks": 1,
+      "paths": 2,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "504"
+        },
+        {
+          "value": "405"
+        }
+      ]
+    },
+    {
+      "family": "064/460",
+      "rank": 9,
+      "d1": 0,
+      "d7": 1,
+      "sources": 1,
+      "physicalBlocks": 2,
+      "branchBlocks": 1,
+      "paths": 2,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−7 · 1 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "064"
+        },
+        {
+          "value": "460"
+        }
+      ]
+    },
+    {
+      "family": "304/403",
+      "rank": 10,
+      "d1": 0,
+      "d7": 1,
+      "sources": 1,
+      "physicalBlocks": 2,
+      "branchBlocks": 1,
+      "paths": 2,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−7 · 1 bifurcación(es) · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "304"
+        },
+        {
+          "value": "403"
+        }
+      ]
+    },
+    {
+      "family": "458/854",
+      "rank": 11,
+      "d1": 1,
+      "d7": 1,
+      "sources": 1,
+      "physicalBlocks": 2,
+      "branchBlocks": 0,
+      "paths": 2,
+      "directRoots": 2,
+      "explanation": "1 raíz/raíces D−7 · 1 raíz/raíces D−1 · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "854"
+        },
+        {
+          "value": "458"
+        }
+      ]
+    },
+    {
+      "family": "043/340",
+      "rank": 12,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 1,
+      "branchBlocks": 0,
+      "paths": 1,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "043"
+        }
+      ]
+    },
+    {
+      "family": "053/350",
+      "rank": 13,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 1,
+      "branchBlocks": 0,
+      "paths": 1,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "350"
+        }
+      ]
+    },
+    {
+      "family": "384/483",
+      "rank": 14,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 1,
+      "branchBlocks": 0,
+      "paths": 1,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "384"
+        }
+      ]
+    },
+    {
+      "family": "404/404",
+      "rank": 15,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 1,
+      "branchBlocks": 0,
+      "paths": 1,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "404"
+        }
+      ]
+    },
+    {
+      "family": "445/544",
+      "rank": 16,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 1,
+      "branchBlocks": 0,
+      "paths": 1,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "544"
+        }
+      ]
+    },
+    {
+      "family": "448/844",
+      "rank": 17,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 1,
+      "branchBlocks": 0,
+      "paths": 1,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "844"
+        }
+      ]
+    },
+    {
+      "family": "506/605",
+      "rank": 18,
+      "d1": 1,
+      "d7": 0,
+      "sources": 1,
+      "physicalBlocks": 1,
+      "branchBlocks": 0,
+      "paths": 1,
+      "directRoots": 1,
+      "explanation": "1 raíz/raíces D−1 · 1 fuente(s)",
+      "witnesses": [
+        {
+          "value": "506"
+        }
+      ]
+    }
+  ],
+  "official": {
+    "top3": [
+      "063/360",
+      "036/630",
+      "033/330"
+    ],
+    "top5": [
+      "063/360",
+      "036/630",
+      "033/330",
+      "034/430",
+      "344/443"
+    ],
+    "top10": [
+      "063/360",
+      "036/630",
+      "033/330",
+      "034/430",
+      "344/443",
+      "354/453",
+      "364/463",
+      "405/504",
+      "064/460",
+      "304/403"
+    ]
+  },
+  "challengerD1": {
+    "selected": {
+      "family": "033/330",
+      "previousRank": 3,
+      "d1": 1,
+      "d7": 0
+    },
+    "top3": [
+      "063/360",
+      "036/630",
+      "033/330"
+    ],
+    "top5": [
+      "063/360",
+      "036/630",
+      "033/330",
+      "034/430",
+      "344/443"
+    ],
+    "top10": [
+      "063/360",
+      "036/630",
+      "033/330",
+      "034/430",
+      "344/443",
+      "354/453",
+      "364/463",
+      "405/504",
+      "064/460",
+      "304/403"
+    ]
+  },
+  "neutralHash": {
+    "selected": {
+      "family": "304/403",
+      "previousRank": 10
+    },
+    "top3": [
+      "063/360",
+      "036/630",
+      "304/403"
+    ],
+    "top5": [
+      "063/360",
+      "036/630",
+      "304/403",
+      "033/330",
+      "034/430"
+    ],
+    "top10": [
+      "063/360",
+      "036/630",
+      "304/403",
+      "033/330",
+      "034/430",
+      "344/443",
+      "354/453",
+      "364/463",
+      "405/504",
+      "064/460"
+    ]
+  },
+  "noTargetLoaded": true,
+  "note": "Exclusivamente Previa: no hay resultados 14/10 ni columnas futuras."
+}

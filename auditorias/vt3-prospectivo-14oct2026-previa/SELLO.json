@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-14",
+  "turn": "Previa",
+  "phase": "PRE_PENDIENTE_SORTEO",
+  "createdAtUtc": "2026-10-14T04:13:31.368Z",
+  "previousResults13": "fc280ab1fe9211709586844582de4c39dc5347ce1ddc948ab65a85b55aa19ced",
+  "fixture": "18d5b84103412ea966dbeeb7dcc35715c1a7594f44a6edb7d2b40c86e03a9783",
+  "protocol": "4352af6cba42c69f9c391f34986b0eda6ddf184ad0e5e8ac8b6c86b99d2b0e19",
+  "script": "7adf3a7afee3f01869f66f2a6c0aa93ebfe31104d140fd8bdcc8ba97b1329cd6",
+  "motor": "e1bb61a6e1933cffaa5784aa5c77539f004bd9320dfd11dbf9726165ed934448",
+  "audit": "fa13e2df061eefa5439368f7e1a9dad20ba68af75ccabcc7f1473c0154f81f35",
+  "pre": "a94ac932ae134541d22923fb82022cb5be88fdd5b00811982b43241e16568f01"
+}
