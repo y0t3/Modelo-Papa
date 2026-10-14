@@ -108,7 +108,7 @@ function LaloApp(){
       setFocused(null);setHojaFocused(null);setHojaTurn('Previa');
       scrollRef.current?.scrollTo({y:0,animated:true});
      }
-    }}> 
+    }}>
     <Text style={s.tabText} numberOfLines={1} adjustsFontSizeToFit>{x.label}</Text>
    </Pressable>)}</View>
   <ScrollView ref={scrollRef} style={{backgroundColor:c.canvas}} contentContainerStyle={s.content}>
