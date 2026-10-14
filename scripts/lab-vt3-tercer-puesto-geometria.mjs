@@ -13,6 +13,7 @@ const METHODS=['OFICIAL','RANGO5_CONTROL','MAS_D1','MAS_D7','EVENTOS_NO_COMPARTI
  'FORMAS_DIVERSAS','CONTINUIDAD_DIA','FUENTE_RECIENTE','HASH_NEUTRAL'];
 const read=p=>readFileSync(p,'utf8'),json=p=>JSON.parse(read(p));
 const sha=x=>createHash('sha256').update(x).digest('hex');
+mkdirSync(OUT,{recursive:true});
 const save=(n,x)=>writeFileSync(OUT+n,JSON.stringify(x,null,2)+'\n');
 const unique=a=>[...new Set(a)];
 const mean=a=>a.reduce((s,x)=>s+x,0)/(a.length||1);
