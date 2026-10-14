@@ -22,7 +22,7 @@ jobs:
         run: |
           mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json /tmp/vt3-termas-post-115.json
           mv auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json /tmp/vt3-termas-nocturna-post.json
-          mv resultados/replay-lalo-115/OBJETIVOS_POST_115.json /tmp/vt3-termas-replay-targets.json
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt3-termas-replay-targets.json
           mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt3-termas-fixture.json
       - name: Generar seleccion fisica PRE y 2000 controles ciegos
         run: node scripts/lab-vt3-termas-fisicas-fuera-top.mjs pre
@@ -39,7 +39,7 @@ jobs:
         run: |
           mv /tmp/vt3-termas-post-115.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/POST_115.json
           mv /tmp/vt3-termas-nocturna-post.json auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/NOCTURNA_POST_DIAGNOSTICO.json
-          mv /tmp/vt3-termas-replay-targets.json resultados/replay-lalo-115/OBJETIVOS_POST_115.json
+          mv /tmp/vt3-termas-replay-targets.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
           mv /tmp/vt3-termas-fixture.json fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
           node scripts/lab-vt3-termas-fisicas-fuera-top.mjs post
       - uses: actions/upload-artifact@v4
