@@ -21,12 +21,17 @@ export type Vt3RankingReason={
  cutoff:3|10;boundaryFamily:string;boundaryRank:number;
  decisiveCriterion:string;candidateValue:number;boundaryValue:number;
 };
+export type Vt3EvolutionStep={
+ source:SourceId;routes:number;admitted:number;rootEvents:number;
+ event:'INICIAL'|'NACE'|'SUMA_FUENTE'|'SIN_NOVEDAD'|'AUN_NO_APARECE';
+};
 export type Vt3FamilyDiagnostic={
  requested:string;family:string;status:Vt3DiagnosticStatus;
  physicalRoutes:number;admittedRoutes:number;unadmittedRoutes:number;
  physicalSources:number;independentRootEvents:number;d1Events:number;d7Events:number;
  officialRank:number|null;top3:boolean;top10:boolean;
  priorityReasons:Vt3RankingReason[];routes:Vt3AuditRoute[];
+ evolution:Vt3EvolutionStep[];currentEvent:Vt3EvolutionStep['event'];
  explanation:string;rootedBlocks:number;branchBlocks:number;
 };
 const crd=(p:{row:number;col:number})=>p.row+':'+p.col;
@@ -111,6 +116,18 @@ export function auditVt3Family(sheet:DailySheet,view:LaloView,target:Turno,input
  const events=new Map<string,Vt3RootEvent>();
  for(const route of all)for(const e of route.rootEvents)events.set(e.id,e);
  const rootList=[...events.values()];
+ let previouslySeen=false;
+ const evolution:Vt3EvolutionStep[]=visible.map((source,i)=>{
+  const own=all.filter(p=>p.source===source.id);
+  const separateEvents=new Set(own.flatMap(p=>p.rootEvents.map(e=>e.id)));
+  const event:Vt3EvolutionStep['event']=i===0?'INICIAL':
+   !own.length?(previouslySeen?'SIN_NOVEDAD':'AUN_NO_APARECE'):
+   previouslySeen?'SUMA_FUENTE':'NACE';
+  previouslySeen||=own.length>0;
+  return {source:source.id,routes:own.length,
+   admitted:own.filter(p=>p.admitted).length,rootEvents:separateEvents.size,event};
+ });
+ const currentEvent=evolution.at(-1)?.event||'INICIAL';
  const officialRank=candidate?.rank??null;
  const priorityReasons:Vt3RankingReason[]=[];
  if(candidate&&candidate.rank>3&&view.ranks.vt3[2])
@@ -145,7 +162,7 @@ export function auditVt3Family(sheet:DailySheet,view:LaloView,target:Turno,input
   d7Events:rootList.filter(r=>r.period==='D−7').length,
   officialRank,top3:officialRank!==null&&officialRank<=3,
   top10:officialRank!==null&&officialRank<=10,
-  priorityReasons,routes:all,
+  priorityReasons,routes:all,evolution,currentEvent,
   explanation,rootedBlocks:candidate?.physicalBlocks??0,branchBlocks:candidate?.branchBlocks??0
  };
 }
