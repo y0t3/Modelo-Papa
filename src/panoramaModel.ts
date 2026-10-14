@@ -73,7 +73,7 @@ export function visualAntecedent(root:RootRef,historical:LaloHistorical[]):Panor
  if(!entry)return null;
  const source=entry.sheet.columns.slice(0,TURNOS.indexOf(root.oldTurn)+1)
   .find(c=>c.id===root.sourceId);
- if(!source||!/^\\d{4}$/.test(root.head)||![2,3].includes(root.oldCells.length))return null;
+ if(!source||!/^\d{4}$/.test(root.head)||![2,3].includes(root.oldCells.length))return null;
  const cells=root.oldCells.map(raw=>{
   const m=/^([0-5]):([01])$/.exec(raw);
   return m?{row:Number(m[1]),col:Number(m[2])}:null;
@@ -85,7 +85,7 @@ export function visualAntecedent(root:RootRef,historical:LaloHistorical[]):Panor
   Math.abs(physical[i].row-physical[i-1].row),
   Math.abs(physical[i].col-physical[i-1].col))!==1)return null;
  const reading=physical.map(c=>source.values[c.row]?.[c.col]||'').join('');
- if(!/^\\d{2,3}$/.test(reading)||!root.head.endsWith(reading))return null;
+ if(!/^\d{2,3}$/.test(reading)||!root.head.endsWith(reading))return null;
  return {id:root.id,period:root.period,date:root.date,head:root.head,
   jurisdiction:root.jurisdiction,turn:root.oldTurn,sourceId:root.sourceId,
   sourceLabel:source.sourceLabel,values:[...source.values],cells:physical,reading};
