@@ -1,0 +1,693 @@
+{
+  "date": "2026-10-13",
+  "scope": "Diagnóstico retrospectivo con PRE sellados",
+  "cuts": 115,
+  "heads": 575,
+  "all": {
+    "BASE_1_2": {
+      "cuts": 115,
+      "heads": 0,
+      "hitsInCuts": 0,
+      "meanEligibleNumbers": 30.504,
+      "expectedHeads": 1.754,
+      "expectedCutHits": 1.74259,
+      "oneSidedHigh": 0.9999999999999997,
+      "pTwoSided": 0.3451692206992017,
+      "pAdjustedBonferroni": 1
+    },
+    "PUESTOS_4_5": {
+      "cuts": 115,
+      "heads": 6,
+      "hitsInCuts": 5,
+      "meanEligibleNumbers": 26.852,
+      "expectedHeads": 1.544,
+      "expectedCutHits": 1.53541,
+      "oneSidedHigh": 0.005034751789608245,
+      "pTwoSided": 0.01006950357921649,
+      "pAdjustedBonferroni": 0.10069503579216489
+    },
+    "D1_PROPIA": {
+      "cuts": 115,
+      "heads": 2,
+      "hitsInCuts": 2,
+      "meanEligibleNumbers": 30.061,
+      "expectedHeads": 1.7285,
+      "expectedCutHits": 1.71758,
+      "oneSidedHigh": 0.515908088543667,
+      "pTwoSided": 1,
+      "pAdjustedBonferroni": 1
+    },
+    "D7_PROPIA": {
+      "cuts": 115,
+      "heads": 2,
+      "hitsInCuts": 2,
+      "meanEligibleNumbers": 30.287,
+      "expectedHeads": 1.7415,
+      "expectedCutHits": 1.73041,
+      "oneSidedHigh": 0.5198940094241223,
+      "pTwoSided": 1,
+      "pAdjustedBonferroni": 1
+    },
+    "DOBLE_RAIZ_PROPIA": {
+      "cuts": 115,
+      "heads": 2,
+      "hitsInCuts": 2,
+      "meanEligibleNumbers": 31.191,
+      "expectedHeads": 1.7935,
+      "expectedCutHits": 1.78178,
+      "oneSidedHigh": 0.5356151176180424,
+      "pTwoSided": 1,
+      "pAdjustedBonferroni": 1
+    },
+    "BLOQUES_VT3": {
+      "cuts": 115,
+      "heads": 0,
+      "hitsInCuts": 0,
+      "meanEligibleNumbers": 30.504,
+      "expectedHeads": 1.754,
+      "expectedCutHits": 1.74261,
+      "oneSidedHigh": 1,
+      "pTwoSided": 0.3451704869648616,
+      "pAdjustedBonferroni": 1
+    },
+    "REUSO_EXACTO_DOS": {
+      "cuts": 115,
+      "heads": 0,
+      "hitsInCuts": 0,
+      "meanEligibleNumbers": 29.122,
+      "expectedHeads": 1.6745,
+      "expectedCutHits": 1.66429,
+      "oneSidedHigh": 1,
+      "pTwoSided": 0.37384287529753546,
+      "pAdjustedBonferroni": 1
+    },
+    "MEMORIA_HIJAS": {
+      "cuts": 115,
+      "heads": 2,
+      "hitsInCuts": 2,
+      "meanEligibleNumbers": 32.443,
+      "expectedHeads": 1.8655,
+      "expectedCutHits": 1.85285,
+      "oneSidedHigh": 0.5567928784147834,
+      "pTwoSided": 1,
+      "pAdjustedBonferroni": 1
+    },
+    "MAS_CUATERNAS_CONTROL": {
+      "cuts": 115,
+      "heads": 2,
+      "hitsInCuts": 2,
+      "meanEligibleNumbers": 34.73,
+      "expectedHeads": 1.997,
+      "expectedCutHits": 1.98276,
+      "oneSidedHigh": 0.5936659139400587,
+      "pTwoSided": 1,
+      "pAdjustedBonferroni": 1
+    },
+    "HASH_NEUTRAL": {
+      "cuts": 115,
+      "heads": 5,
+      "hitsInCuts": 5,
+      "meanEligibleNumbers": 28.896,
+      "expectedHeads": 1.6615,
+      "expectedCutHits": 1.6515,
+      "oneSidedHigh": 0.02701762695319508,
+      "pTwoSided": 0.05403525390639016,
+      "pAdjustedBonferroni": 0.5403525390639017
+    }
+  },
+  "months": {
+    "2026-09": {
+      "BASE_1_2": {
+        "cuts": 70,
+        "heads": 0,
+        "hitsInCuts": 0,
+        "meanEligibleNumbers": 29.7,
+        "expectedHeads": 1.0395,
+        "expectedCutHits": 1.03292,
+        "oneSidedHigh": 0.9999999999999996,
+        "pTwoSided": 0.706094670879642,
+        "pAdjustedBonferroni": 1
+      },
+      "PUESTOS_4_5": {
+        "cuts": 70,
+        "heads": 1,
+        "hitsInCuts": 1,
+        "meanEligibleNumbers": 26.486,
+        "expectedHeads": 0.927,
+        "expectedCutHits": 0.92195,
+        "oneSidedHigh": 0.6047627368081172,
+        "pTwoSided": 1,
+        "pAdjustedBonferroni": 1
+      },
+      "D1_PROPIA": {
+        "cuts": 70,
+        "heads": 1,
+        "hitsInCuts": 1,
+        "meanEligibleNumbers": 28.914,
+        "expectedHeads": 1.012,
+        "expectedCutHits": 1.00585,
+        "oneSidedHigh": 0.6370697774485938,
+        "pTwoSided": 1,
+        "pAdjustedBonferroni": 1
+      },
+      "D7_PROPIA": {
+        "cuts": 70,
+        "heads": 1,
+        "hitsInCuts": 1,
+        "meanEligibleNumbers": 30.2,
+        "expectedHeads": 1.057,
+        "expectedCutHits": 1.05039,
+        "oneSidedHigh": 0.6530803036433598,
+        "pTwoSided": 1,
+        "pAdjustedBonferroni": 1
+      },
+      "DOBLE_RAIZ_PROPIA": {
+        "cuts": 70,
+        "heads": 1,
+        "hitsInCuts": 1,
+        "meanEligibleNumbers": 29.857,
+        "expectedHeads": 1.045,
+        "expectedCutHits": 1.03851,
+        "oneSidedHigh": 0.6488814519647936,
+        "pTwoSided": 1,
+        "pAdjustedBonferroni": 1
+      },
+      "BLOQUES_VT3": {
+        "cuts": 70,
+        "heads": 0,
+        "hitsInCuts": 0,
+        "meanEligibleNumbers": 29.457,
+        "expectedHeads": 1.031,
+        "expectedCutHits": 1.02455,
+        "oneSidedHigh": 0.9999999999999997,
+        "pTwoSided": 0.7121441913024958,
+        "pAdjustedBonferroni": 1
+      },
+      "REUSO_EXACTO_DOS": {
+        "cuts": 70,
+        "heads": 0,
+        "hitsInCuts": 0,
+        "meanEligibleNumbers": 28.043,
+        "expectedHeads": 0.9815,
+        "expectedCutHits": 0.97573,
+        "oneSidedHigh": 1,
+        "pTwoSided": 0.7484119906376082,
+        "pAdjustedBonferroni": 1
+      },
+      "MEMORIA_HIJAS": {
+        "cuts": 70,
+        "heads": 0,
+        "hitsInCuts": 0,
+        "meanEligibleNumbers": 31.186,
+        "expectedHeads": 1.0915,
+        "expectedCutHits": 1.08439,
+        "oneSidedHigh": 1,
+        "pTwoSided": 0.6702264580115848,
+        "pAdjustedBonferroni": 1
+      },
+      "MAS_CUATERNAS_CONTROL": {
+        "cuts": 70,
+        "heads": 1,
+        "hitsInCuts": 1,
+        "meanEligibleNumbers": 34.014,
+        "expectedHeads": 1.1905,
+        "expectedCutHits": 1.18219,
+        "oneSidedHigh": 0.6965653153080492,
+        "pTwoSided": 1,
+        "pAdjustedBonferroni": 1
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 70,
+        "heads": 2,
+        "hitsInCuts": 2,
+        "meanEligibleNumbers": 28.171,
+        "expectedHeads": 0.986,
+        "expectedCutHits": 0.98021,
+        "oneSidedHigh": 0.2590830454701871,
+        "pTwoSided": 0.5181660909403742,
+        "pAdjustedBonferroni": 1
+      }
+    },
+    "2026-10": {
+      "BASE_1_2": {
+        "cuts": 45,
+        "heads": 0,
+        "hitsInCuts": 0,
+        "meanEligibleNumbers": 31.756,
+        "expectedHeads": 0.7145,
+        "expectedCutHits": 0.70967,
+        "oneSidedHigh": 1,
+        "pTwoSided": 0.9776853867745396,
+        "pAdjustedBonferroni": 1
+      },
+      "PUESTOS_4_5": {
+        "cuts": 45,
+        "heads": 5,
+        "hitsInCuts": 4,
+        "meanEligibleNumbers": 27.422,
+        "expectedHeads": 0.617,
+        "expectedCutHits": 0.61347,
+        "oneSidedHigh": 0.000431664774391521,
+        "pTwoSided": 0.000863329548783042,
+        "pAdjustedBonferroni": 0.008633295487830421
+      },
+      "D1_PROPIA": {
+        "cuts": 45,
+        "heads": 1,
+        "hitsInCuts": 1,
+        "meanEligibleNumbers": 31.844,
+        "expectedHeads": 0.7165,
+        "expectedCutHits": 0.71173,
+        "oneSidedHigh": 0.5121267100015268,
+        "pTwoSided": 1,
+        "pAdjustedBonferroni": 1
+      },
+      "D7_PROPIA": {
+        "cuts": 45,
+        "heads": 1,
+        "hitsInCuts": 1,
+        "meanEligibleNumbers": 30.422,
+        "expectedHeads": 0.6845,
+        "expectedCutHits": 0.68003,
+        "oneSidedHigh": 0.49622473859420163,
+        "pTwoSided": 0.9924494771884033,
+        "pAdjustedBonferroni": 1
+      },
+      "DOBLE_RAIZ_PROPIA": {
+        "cuts": 45,
+        "heads": 1,
+        "hitsInCuts": 1,
+        "meanEligibleNumbers": 33.267,
+        "expectedHeads": 0.7485,
+        "expectedCutHits": 0.74327,
+        "oneSidedHigh": 0.5275462822109656,
+        "pTwoSided": 1,
+        "pAdjustedBonferroni": 1
+      },
+      "BLOQUES_VT3": {
+        "cuts": 45,
+        "heads": 0,
+        "hitsInCuts": 0,
+        "meanEligibleNumbers": 32.133,
+        "expectedHeads": 0.723,
+        "expectedCutHits": 0.71806,
+        "oneSidedHigh": 0.9999999999999999,
+        "pTwoSided": 0.9693837039758824,
+        "pAdjustedBonferroni": 1
+      },
+      "REUSO_EXACTO_DOS": {
+        "cuts": 45,
+        "heads": 0,
+        "hitsInCuts": 0,
+        "meanEligibleNumbers": 30.8,
+        "expectedHeads": 0.693,
+        "expectedCutHits": 0.68855,
+        "oneSidedHigh": 0.9999999999999997,
+        "pTwoSided": 0.9990296253245242,
+        "pAdjustedBonferroni": 1
+      },
+      "MEMORIA_HIJAS": {
+        "cuts": 45,
+        "heads": 2,
+        "hitsInCuts": 2,
+        "meanEligibleNumbers": 34.4,
+        "expectedHeads": 0.774,
+        "expectedCutHits": 0.76845,
+        "oneSidedHigh": 0.18174777924724456,
+        "pTwoSided": 0.3634955584944891,
+        "pAdjustedBonferroni": 1
+      },
+      "MAS_CUATERNAS_CONTROL": {
+        "cuts": 45,
+        "heads": 1,
+        "hitsInCuts": 1,
+        "meanEligibleNumbers": 35.844,
+        "expectedHeads": 0.8065,
+        "expectedCutHits": 0.80057,
+        "oneSidedHigh": 0.5542480493397882,
+        "pTwoSided": 1,
+        "pAdjustedBonferroni": 1
+      },
+      "HASH_NEUTRAL": {
+        "cuts": 45,
+        "heads": 3,
+        "hitsInCuts": 3,
+        "meanEligibleNumbers": 30.022,
+        "expectedHeads": 0.6755,
+        "expectedCutHits": 0.67129,
+        "oneSidedHigh": 0.03098790505356332,
+        "pTwoSided": 0.06197581010712664,
+        "pAdjustedBonferroni": 0.6197581010712664
+      }
+    }
+  },
+  "rankSummaries": [
+    {
+      "rank": 1,
+      "cuts": 115,
+      "winningCuts": 0,
+      "winningHeads": 0,
+      "meanExactNumbers": 16.139130434782608,
+      "winnersWithD1": 0,
+      "winnersWithD7": 0,
+      "winnersWithBoth": 0,
+      "allMothersWithD1": 93,
+      "allMothersWithD7": 80,
+      "allMothersWithBoth": 58
+    },
+    {
+      "rank": 2,
+      "cuts": 115,
+      "winningCuts": 0,
+      "winningHeads": 0,
+      "meanExactNumbers": 14.660869565217391,
+      "winnersWithD1": 0,
+      "winnersWithD7": 0,
+      "winnersWithBoth": 0,
+      "allMothersWithD1": 86,
+      "allMothersWithD7": 75,
+      "allMothersWithBoth": 46
+    },
+    {
+      "rank": 3,
+      "cuts": 115,
+      "winningCuts": 1,
+      "winningHeads": 1,
+      "meanExactNumbers": 14.217391304347826,
+      "winnersWithD1": 1,
+      "winnersWithD7": 0,
+      "winnersWithBoth": 0,
+      "allMothersWithD1": 88,
+      "allMothersWithD7": 71,
+      "allMothersWithBoth": 44
+    },
+    {
+      "rank": 4,
+      "cuts": 115,
+      "winningCuts": 1,
+      "winningHeads": 1,
+      "meanExactNumbers": 13.26086956521739,
+      "winnersWithD1": 0,
+      "winnersWithD7": 1,
+      "winnersWithBoth": 0,
+      "allMothersWithD1": 83,
+      "allMothersWithD7": 66,
+      "allMothersWithBoth": 34
+    },
+    {
+      "rank": 5,
+      "cuts": 115,
+      "winningCuts": 5,
+      "winningHeads": 5,
+      "meanExactNumbers": 13.869565217391305,
+      "winnersWithD1": 3,
+      "winnersWithD7": 3,
+      "winnersWithBoth": 1,
+      "allMothersWithD1": 81,
+      "allMothersWithD7": 57,
+      "allMothersWithBoth": 23
+    }
+  ],
+  "matched": [
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "head": [
+        "3159"
+      ],
+      "mother": "159/951",
+      "rank": 5,
+      "winner": {
+        "d1": 0,
+        "d7": 1,
+        "branch": 1,
+        "blocks": 2,
+        "paths": 2,
+        "sourceCount": 1,
+        "eligibleNumbers": 12,
+        "withD1Groups": 0,
+        "withD7Groups": 0,
+        "winningGroups": [
+          {
+            "family": "3159/3951",
+            "values": [
+              "3159",
+              "3951"
+            ],
+            "d1shape": 0,
+            "d7shape": 0,
+            "d1exact": 0,
+            "d7exact": 0
+          }
+        ]
+      },
+      "nearControl": {
+        "rank": 3,
+        "family": "194/491",
+        "d1": 0,
+        "d7": 2,
+        "branch": 1,
+        "blocks": 3,
+        "paths": 3,
+        "eligibleNumbers": 16,
+        "withD1Groups": 0,
+        "withD7Groups": 0
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "head": [
+        "5832"
+      ],
+      "mother": "238/832",
+      "rank": 4,
+      "winner": {
+        "d1": 0,
+        "d7": 1,
+        "branch": 2,
+        "blocks": 3,
+        "paths": 3,
+        "sourceCount": 1,
+        "eligibleNumbers": 12,
+        "withD1Groups": 2,
+        "withD7Groups": 2,
+        "winningGroups": [
+          {
+            "family": "5238/5832",
+            "values": [
+              "5238",
+              "5832"
+            ],
+            "d1shape": 1,
+            "d7shape": 0,
+            "d1exact": 1,
+            "d7exact": 0
+          }
+        ]
+      },
+      "nearControl": {
+        "rank": 3,
+        "family": "454/454",
+        "d1": 1,
+        "d7": 0,
+        "branch": 2,
+        "blocks": 3,
+        "paths": 3,
+        "eligibleNumbers": 12,
+        "withD1Groups": 0,
+        "withD7Groups": 0
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "head": [
+        "2592"
+      ],
+      "mother": "295/592",
+      "rank": 5,
+      "winner": {
+        "d1": 0,
+        "d7": 1,
+        "branch": 2,
+        "blocks": 3,
+        "paths": 3,
+        "sourceCount": 1,
+        "eligibleNumbers": 12,
+        "withD1Groups": 2,
+        "withD7Groups": 2,
+        "winningGroups": [
+          {
+            "family": "2295/2592",
+            "values": [
+              "2295",
+              "2592"
+            ],
+            "d1shape": 0,
+            "d7shape": 1,
+            "d1exact": 0,
+            "d7exact": 0
+          }
+        ]
+      },
+      "nearControl": {
+        "rank": 3,
+        "family": "454/454",
+        "d1": 1,
+        "d7": 0,
+        "branch": 2,
+        "blocks": 3,
+        "paths": 3,
+        "eligibleNumbers": 12,
+        "withD1Groups": 0,
+        "withD7Groups": 0
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "head": [
+        "3729"
+      ],
+      "mother": "729/927",
+      "rank": 5,
+      "winner": {
+        "d1": 3,
+        "d7": 1,
+        "branch": 2,
+        "blocks": 6,
+        "paths": 6,
+        "sourceCount": 1,
+        "eligibleNumbers": 20,
+        "withD1Groups": 4,
+        "withD7Groups": 2,
+        "winningGroups": [
+          {
+            "family": "3729/3927",
+            "values": [
+              "3729",
+              "3927"
+            ],
+            "d1shape": 0,
+            "d7shape": 0,
+            "d1exact": 0,
+            "d7exact": 0
+          }
+        ]
+      },
+      "nearControl": {
+        "rank": 1,
+        "family": "177/771",
+        "d1": 1,
+        "d7": 2,
+        "branch": 4,
+        "blocks": 6,
+        "paths": 9,
+        "eligibleNumbers": 10,
+        "withD1Groups": 0,
+        "withD7Groups": 2
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "head": [
+        "6542"
+      ],
+      "mother": "456/654",
+      "rank": 5,
+      "winner": {
+        "d1": 1,
+        "d7": 0,
+        "branch": 1,
+        "blocks": 2,
+        "paths": 2,
+        "sourceCount": 1,
+        "eligibleNumbers": 14,
+        "withD1Groups": 0,
+        "withD7Groups": 0,
+        "winningGroups": [
+          {
+            "family": "4562/6542",
+            "values": [
+              "4562",
+              "6542"
+            ],
+            "d1shape": 0,
+            "d7shape": 0,
+            "d1exact": 0,
+            "d7exact": 0
+          }
+        ]
+      },
+      "nearControl": {
+        "rank": 3,
+        "family": "193/391",
+        "d1": 1,
+        "d7": 0,
+        "branch": 1,
+        "blocks": 2,
+        "paths": 2,
+        "eligibleNumbers": 16,
+        "withD1Groups": 0,
+        "withD7Groups": 0
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "head": [
+        "2654"
+      ],
+      "mother": "456/654",
+      "rank": 5,
+      "winner": {
+        "d1": 1,
+        "d7": 0,
+        "branch": 1,
+        "blocks": 2,
+        "paths": 2,
+        "sourceCount": 1,
+        "eligibleNumbers": 14,
+        "withD1Groups": 0,
+        "withD7Groups": 0,
+        "winningGroups": [
+          {
+            "family": "2456/2654",
+            "values": [
+              "2456",
+              "2654"
+            ],
+            "d1shape": 0,
+            "d7shape": 0,
+            "d1exact": 0,
+            "d7exact": 0
+          }
+        ]
+      },
+      "nearControl": {
+        "rank": 3,
+        "family": "193/391",
+        "d1": 1,
+        "d7": 0,
+        "branch": 1,
+        "blocks": 2,
+        "paths": 2,
+        "eligibleNumbers": 16,
+        "withD1Groups": 0,
+        "withD7Groups": 0
+      }
+    }
+  ],
+  "integrity": {
+    "sisters": "0dbfa812536f20b4ed1631faba5c7b812c0b6eb2709d79a4de3c29d3ca5e4538",
+    "vigencia": "d5ec68c90905904d39094c91459109cae0a5baefac10769d3d859538f6212c86",
+    "marks": "ab8136f4279420f30cc5706798af9e04d063ce1bb6fd684cebaf85a8da42930b",
+    "maps": "acaa068c80ecb3ef267b05ea3e61cd68f31de8c750dbf9e97f1e1732d1b87a94",
+    "protocol": "e55726d56c44d682c9656881e72c969435e64fca9d6e74c266255363bb934302",
+    "script": "c452654c7d4f8df08bdbb25f067f598a17b9586399c0595330eae651912633bc",
+    "pre": "5b8cdfafcf3f200dca7d6c35f1e68ea26b040b9ca34cf3d95a84f566190968d6"
+  },
+  "warning": "Criterios fijados luego de múltiples análisis de las mismas 115 muestras. No es pronóstico nuevo; cobertura con dos madres no equivale a diez agrupaciones VT4."
+}
