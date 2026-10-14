@@ -1,0 +1,7049 @@
+{
+  "rows": [
+    {
+      "date": "2026-09-15",
+      "turn": "Previa",
+      "wins": [
+        "175/571"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Matutino",
+      "wins": [
+        "365/563",
+        "779/977"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Vespertino",
+      "wins": [
+        "565/565"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "turn": "Nocturno",
+      "wins": [
+        "174/471",
+        "265/562"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Matutino",
+      "wins": [
+        "087/780",
+        "178/871"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Vespertino",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "turn": "Nocturno",
+      "wins": [
+        "070/070"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Previa",
+      "wins": [
+        "446/644",
+        "438/834",
+        "748/847"
+      ],
+      "baseline": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Primera",
+      "wins": [
+        "597/795"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Matutino",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Vespertino",
+      "wins": [
+        "086/680",
+        "174/471"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "turn": "Nocturno",
+      "wins": [
+        "438/834",
+        "464/464",
+        "127/721",
+        "417/714",
+        "476/674"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Previa",
+      "wins": [
+        "294/492"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Matutino",
+      "wins": [
+        "617/716"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "wins": [
+        "537/735",
+        "447/744"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [
+            "447/744"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "turn": "Nocturno",
+      "wins": [
+        "798/897",
+        "446/644",
+        "173/371",
+        "657/756"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Previa",
+      "wins": [
+        "355/553",
+        "098/890"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Primera",
+      "wins": [
+        "396/693"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Matutino",
+      "wins": [
+        "108/801",
+        "639/936"
+      ],
+      "baseline": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Vespertino",
+      "wins": [
+        "619/916"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "turn": "Nocturno",
+      "wins": [
+        "109/901",
+        "264/462",
+        "011/110"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Primera",
+      "wins": [
+        "227/722"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Matutino",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Vespertino",
+      "wins": [
+        "246/642"
+      ],
+      "baseline": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "turn": "Nocturno",
+      "wins": [
+        "173/371"
+      ],
+      "baseline": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Primera",
+      "wins": [
+        "042/240",
+        "456/654"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Matutino",
+      "wins": [
+        "020/020"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Vespertino",
+      "wins": [
+        "082/280"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "turn": "Nocturno",
+      "wins": [
+        "517/715",
+        "207/702",
+        "427/724"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Matutino",
+      "wins": [
+        "064/460"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Vespertino",
+      "wins": [
+        "289/982"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "turn": "Nocturno",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Previa",
+      "wins": [
+        "159/951"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": true,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "wins": [
+        "025/520"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [
+            "025/520"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Matutino",
+      "wins": [
+        "189/981",
+        "194/491",
+        "676/676"
+      ],
+      "baseline": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Vespertino",
+      "wins": [
+        "084/480",
+        "738/837"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Nocturno",
+      "wins": [
+        "418/814",
+        "076/670"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Previa",
+      "wins": [
+        "898/898"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Matutino",
+      "wins": [
+        "118/811",
+        "889/988",
+        "346/643",
+        "237/732"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Vespertino",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "turn": "Nocturno",
+      "wins": [
+        "429/924"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Matutino",
+      "wins": [
+        "107/701",
+        "137/731",
+        "207/702"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Vespertino",
+      "wins": [
+        "757/757"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "turn": "Nocturno",
+      "wins": [
+        "283/382"
+      ],
+      "baseline": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Previa",
+      "wins": [
+        "273/372"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Primera",
+      "wins": [
+        "037/730"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Matutino",
+      "wins": [
+        "949/949",
+        "067/760",
+        "319/913",
+        "107/701"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Vespertino",
+      "wins": [
+        "949/949",
+        "517/715",
+        "508/805"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "turn": "Nocturno",
+      "wins": [
+        "137/731",
+        "168/861",
+        "718/817",
+        "778/877"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Primera",
+      "wins": [
+        "389/983"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Matutino",
+      "wins": [
+        "289/982"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Vespertino",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "turn": "Nocturno",
+      "wins": [
+        "709/907",
+        "243/342"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "wins": [
+        "778/877",
+        "173/371",
+        "859/958"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [
+            "778/877",
+            "859/958"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [
+            "778/877"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Vespertino",
+      "wins": [
+        "151/151",
+        "293/392"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "wins": [
+        "687/786",
+        "067/760"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [
+            "067/760"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Previa",
+      "wins": [
+        "748/847"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "wins": [
+        "507/705"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [
+            "507/705"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [
+            "507/705"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "wins": [
+        "598/895",
+        "105/501",
+        "384/483"
+      ],
+      "baseline": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [
+            "105/501"
+          ],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [
+            "384/483"
+          ],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [
+            "105/501"
+          ],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Vespertino",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Nocturno",
+      "wins": [
+        "485/584"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Previa",
+      "wins": [
+        "539/935",
+        "379/973",
+        "397/793"
+      ],
+      "baseline": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": true,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Matutino",
+      "wins": [
+        "075/570"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Vespertino",
+      "wins": [
+        "686/686"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "turn": "Nocturno",
+      "wins": [
+        "328/823",
+        "979/979"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Matutino",
+      "wins": [
+        "238/832",
+        "295/592"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": true,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Vespertino",
+      "wins": [
+        "429/924",
+        "234/432"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "turn": "Nocturno",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Matutino",
+      "wins": [
+        "729/927"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": true,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Vespertino",
+      "wins": [
+        "799/997"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "turn": "Nocturno",
+      "wins": [
+        "577/775"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Previa",
+      "wins": [
+        "163/361"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Primera",
+      "wins": [
+        "697/796"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Matutino",
+      "wins": [
+        "508/805"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Vespertino",
+      "wins": [
+        "226/622"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "turn": "Nocturno",
+      "wins": [
+        "476/674",
+        "081/180",
+        "196/691"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Matutino",
+      "wins": [
+        "356/653"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "wins": [
+        "677/776",
+        "428/824",
+        "162/261"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [
+            "677/776"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [
+            "677/776"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "wins": [
+        "579/975",
+        "175/571",
+        "152/251"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [
+            "152/251"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "wins": [
+        "316/613",
+        "071/170",
+        "346/643"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [
+            "071/170"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "wins": [
+        "409/904",
+        "017/710"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [
+            "017/710"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [
+            "017/710"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "wins": [
+        "435/534"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [
+            "435/534"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "wins": [
+        "348/843"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [
+            "348/843"
+          ],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Primera",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Matutino",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Vespertino",
+      "wins": [
+        "148/841",
+        "037/730"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Nocturno",
+      "wins": [
+        "354/453"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Previa",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Primera",
+      "wins": [
+        "374/473"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Matutino",
+      "wins": [
+        "245/542",
+        "819/918"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Vespertino",
+      "wins": [],
+      "baseline": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "official": {
+        "top3": false,
+        "top5": false,
+        "top10": false
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": false,
+          "hit10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "turn": "Nocturno",
+      "wins": [
+        "465/564",
+        "456/654",
+        "215/512"
+      ],
+      "baseline": {
+        "top3": false,
+        "top5": true,
+        "top10": true
+      },
+      "official": {
+        "top3": true,
+        "top5": true,
+        "top10": true
+      },
+      "filters": {
+        "REPETIDA_RUTA_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_RUTA_D7": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "REPETIDA_FUENTE_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_RUTA_D7_D14": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        },
+        "PERSISTE_4_SEMANAS": {
+          "lostWinners": [],
+          "hit3": false,
+          "hit5": true,
+          "hit10": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2773 @@
+{
+  "scope": "Estudio retrospectivo exploratorio, 23 días/115 cortes, 5 cabezas por corte. No es validación prospectiva.",
+  "rankingBaseline": {
+    "top3": 8,
+    "top5": 10,
+    "top10": 16
+  },
+  "official": {
+    "top3": 5,
+    "top5": 8,
+    "top10": 15
+  },
+  "universe": {
+    "families": 15273,
+    "filters": {
+      "REPETIDA_RUTA_D1": {
+        "eligibleCuts": 95,
+        "discarded": 41,
+        "eligibleFamilies": 12729,
+        "maxDiscardedPerCut": 7
+      },
+      "REPETIDA_RUTA_D7": {
+        "eligibleCuts": 85,
+        "discarded": 27,
+        "eligibleFamilies": 11396,
+        "maxDiscardedPerCut": 2
+      },
+      "REPETIDA_FUENTE_D1": {
+        "eligibleCuts": 95,
+        "discarded": 1543,
+        "eligibleFamilies": 12729,
+        "maxDiscardedPerCut": 39
+      },
+      "PERSISTE_FAMILIA_D7_D14": {
+        "eligibleCuts": 55,
+        "discarded": 704,
+        "eligibleFamilies": 7412,
+        "maxDiscardedPerCut": 57
+      },
+      "PERSISTE_RUTA_D7_D14": {
+        "eligibleCuts": 55,
+        "discarded": 0,
+        "eligibleFamilies": 7412,
+        "maxDiscardedPerCut": 0
+      },
+      "ESTABLE_INTRADIA_Y_D1": {
+        "eligibleCuts": 76,
+        "discarded": 936,
+        "eligibleFamilies": 11617,
+        "maxDiscardedPerCut": 36
+      },
+      "PERSISTE_4_SEMANAS": {
+        "eligibleCuts": 0,
+        "discarded": 0,
+        "eligibleFamilies": 0,
+        "maxDiscardedPerCut": 0
+      }
+    }
+  },
+  "rules": {
+    "REPETIDA_RUTA_D1": {
+      "eligibleCuts": 95,
+      "eligibleExposures": 12729,
+      "discardedExposures": 41,
+      "winnerExposures": 118,
+      "winnerDiscarded": 0,
+      "score": {
+        "top3": 6,
+        "top5": 8,
+        "top10": 11
+      },
+      "baseline": {
+        "top3": 6,
+        "top5": 8,
+        "top10": 11
+      },
+      "gains": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "losses": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "discardRate": 0.00322,
+      "winnerRetention": 1,
+      "delta": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      }
+    },
+    "REPETIDA_RUTA_D7": {
+      "eligibleCuts": 85,
+      "eligibleExposures": 11396,
+      "discardedExposures": 27,
+      "winnerExposures": 103,
+      "winnerDiscarded": 0,
+      "score": {
+        "top3": 4,
+        "top5": 5,
+        "top10": 10
+      },
+      "baseline": {
+        "top3": 4,
+        "top5": 5,
+        "top10": 10
+      },
+      "gains": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "losses": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "discardRate": 0.00237,
+      "winnerRetention": 1,
+      "delta": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      }
+    },
+    "REPETIDA_FUENTE_D1": {
+      "eligibleCuts": 95,
+      "eligibleExposures": 12729,
+      "discardedExposures": 1543,
+      "winnerExposures": 118,
+      "winnerDiscarded": 10,
+      "score": {
+        "top3": 6,
+        "top5": 8,
+        "top10": 11
+      },
+      "baseline": {
+        "top3": 6,
+        "top5": 8,
+        "top10": 11
+      },
+      "gains": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "losses": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "discardRate": 0.12122,
+      "winnerRetention": 0.91525,
+      "delta": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      }
+    },
+    "PERSISTE_FAMILIA_D7_D14": {
+      "eligibleCuts": 55,
+      "eligibleExposures": 7412,
+      "discardedExposures": 704,
+      "winnerExposures": 61,
+      "winnerDiscarded": 4,
+      "score": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 5
+      },
+      "baseline": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 5
+      },
+      "gains": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "losses": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "discardRate": 0.09498,
+      "winnerRetention": 0.93443,
+      "delta": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      }
+    },
+    "PERSISTE_RUTA_D7_D14": {
+      "eligibleCuts": 55,
+      "eligibleExposures": 7412,
+      "discardedExposures": 0,
+      "winnerExposures": 61,
+      "winnerDiscarded": 0,
+      "score": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 5
+      },
+      "baseline": {
+        "top3": 2,
+        "top5": 3,
+        "top10": 5
+      },
+      "gains": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "losses": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "discardRate": 0,
+      "winnerRetention": 1,
+      "delta": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      }
+    },
+    "ESTABLE_INTRADIA_Y_D1": {
+      "eligibleCuts": 76,
+      "eligibleExposures": 11617,
+      "discardedExposures": 936,
+      "winnerExposures": 104,
+      "winnerDiscarded": 5,
+      "score": {
+        "top3": 4,
+        "top5": 6,
+        "top10": 8
+      },
+      "baseline": {
+        "top3": 4,
+        "top5": 6,
+        "top10": 8
+      },
+      "gains": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "losses": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "discardRate": 0.08057,
+      "winnerRetention": 0.95192,
+      "delta": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      }
+    },
+    "PERSISTE_4_SEMANAS": {
+      "eligibleCuts": 0,
+      "eligibleExposures": 0,
+      "discardedExposures": 0,
+      "winnerExposures": 0,
+      "winnerDiscarded": 0,
+      "score": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      },
+      "baseline": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      },
+      "gains": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "losses": {
+        "top3": [],
+        "top5": [],
+        "top10": []
+      },
+      "discardRate": null,
+      "winnerRetention": null,
+      "delta": {
+        "top3": 0,
+        "top5": 0,
+        "top10": 0
+      }
+    }
+  },
+  "byMonth": {
+    "2026-09": {
+      "REPETIDA_RUTA_D1": {
+        "eligibleCuts": 55,
+        "eligibleExposures": 7298,
+        "discardedExposures": 24,
+        "winnerExposures": 71,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 4,
+          "top5": 5,
+          "top10": 7
+        },
+        "baseline": {
+          "top3": 4,
+          "top5": 5,
+          "top10": 7
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00329,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_RUTA_D7": {
+        "eligibleCuts": 40,
+        "eligibleExposures": 5370,
+        "discardedExposures": 25,
+        "winnerExposures": 53,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 6
+        },
+        "baseline": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 6
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00466,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_FUENTE_D1": {
+        "eligibleCuts": 55,
+        "eligibleExposures": 7298,
+        "discardedExposures": 908,
+        "winnerExposures": 71,
+        "winnerDiscarded": 4,
+        "score": {
+          "top3": 4,
+          "top5": 5,
+          "top10": 7
+        },
+        "baseline": {
+          "top3": 4,
+          "top5": 5,
+          "top10": 7
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.12442,
+        "winnerRetention": 0.94366,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_FAMILIA_D7_D14": {
+        "eligibleCuts": 10,
+        "eligibleExposures": 1386,
+        "discardedExposures": 166,
+        "winnerExposures": 11,
+        "winnerDiscarded": 1,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.11977,
+        "winnerRetention": 0.90909,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_RUTA_D7_D14": {
+        "eligibleCuts": 10,
+        "eligibleExposures": 1386,
+        "discardedExposures": 0,
+        "winnerExposures": 11,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "ESTABLE_INTRADIA_Y_D1": {
+        "eligibleCuts": 44,
+        "eligibleExposures": 6665,
+        "discardedExposures": 527,
+        "winnerExposures": 63,
+        "winnerDiscarded": 1,
+        "score": {
+          "top3": 3,
+          "top5": 4,
+          "top10": 6
+        },
+        "baseline": {
+          "top3": 3,
+          "top5": 4,
+          "top10": 6
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.07907,
+        "winnerRetention": 0.98413,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_4_SEMANAS": {
+        "eligibleCuts": 0,
+        "eligibleExposures": 0,
+        "discardedExposures": 0,
+        "winnerExposures": 0,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": null,
+        "winnerRetention": null,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      }
+    },
+    "2026-10": {
+      "REPETIDA_RUTA_D1": {
+        "eligibleCuts": 40,
+        "eligibleExposures": 5431,
+        "discardedExposures": 17,
+        "winnerExposures": 47,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "baseline": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00313,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_RUTA_D7": {
+        "eligibleCuts": 45,
+        "eligibleExposures": 6026,
+        "discardedExposures": 2,
+        "winnerExposures": 50,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "baseline": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00033,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_FUENTE_D1": {
+        "eligibleCuts": 40,
+        "eligibleExposures": 5431,
+        "discardedExposures": 635,
+        "winnerExposures": 47,
+        "winnerDiscarded": 6,
+        "score": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "baseline": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.11692,
+        "winnerRetention": 0.87234,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_FAMILIA_D7_D14": {
+        "eligibleCuts": 45,
+        "eligibleExposures": 6026,
+        "discardedExposures": 538,
+        "winnerExposures": 50,
+        "winnerDiscarded": 3,
+        "score": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "baseline": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.08928,
+        "winnerRetention": 0.94,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_RUTA_D7_D14": {
+        "eligibleCuts": 45,
+        "eligibleExposures": 6026,
+        "discardedExposures": 0,
+        "winnerExposures": 50,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "baseline": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 4
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "ESTABLE_INTRADIA_Y_D1": {
+        "eligibleCuts": 32,
+        "eligibleExposures": 4952,
+        "discardedExposures": 409,
+        "winnerExposures": 41,
+        "winnerDiscarded": 4,
+        "score": {
+          "top3": 1,
+          "top5": 2,
+          "top10": 2
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 2,
+          "top10": 2
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.08259,
+        "winnerRetention": 0.90244,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_4_SEMANAS": {
+        "eligibleCuts": 0,
+        "eligibleExposures": 0,
+        "discardedExposures": 0,
+        "winnerExposures": 0,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": null,
+        "winnerRetention": null,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      }
+    }
+  },
+  "byTurn": {
+    "Previa": {
+      "REPETIDA_RUTA_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 1112,
+        "discardedExposures": 2,
+        "winnerExposures": 14,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 3
+        },
+        "baseline": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 3
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.0018,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_RUTA_D7": {
+        "eligibleCuts": 17,
+        "eligibleExposures": 957,
+        "discardedExposures": 3,
+        "winnerExposures": 9,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00313,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_FUENTE_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 1112,
+        "discardedExposures": 114,
+        "winnerExposures": 14,
+        "winnerDiscarded": 1,
+        "score": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 3
+        },
+        "baseline": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 3
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.10252,
+        "winnerRetention": 0.92857,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_FAMILIA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 615,
+        "discardedExposures": 7,
+        "winnerExposures": 6,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.01138,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_RUTA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 615,
+        "discardedExposures": 0,
+        "winnerExposures": 6,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "ESTABLE_INTRADIA_Y_D1": {
+        "eligibleCuts": 0,
+        "eligibleExposures": 0,
+        "discardedExposures": 0,
+        "winnerExposures": 0,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": null,
+        "winnerRetention": null,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_4_SEMANAS": {
+        "eligibleCuts": 0,
+        "eligibleExposures": 0,
+        "discardedExposures": 0,
+        "winnerExposures": 0,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": null,
+        "winnerRetention": null,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      }
+    },
+    "Primera": {
+      "REPETIDA_RUTA_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 1912,
+        "discardedExposures": 3,
+        "winnerExposures": 9,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00157,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_RUTA_D7": {
+        "eligibleCuts": 17,
+        "eligibleExposures": 1655,
+        "discardedExposures": 3,
+        "winnerExposures": 8,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00181,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_FUENTE_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 1912,
+        "discardedExposures": 209,
+        "winnerExposures": 9,
+        "winnerDiscarded": 2,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.10931,
+        "winnerRetention": 0.77778,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_FAMILIA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 1085,
+        "discardedExposures": 43,
+        "winnerExposures": 4,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.03963,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_RUTA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 1085,
+        "discardedExposures": 0,
+        "winnerExposures": 4,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "ESTABLE_INTRADIA_Y_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 1912,
+        "discardedExposures": 113,
+        "winnerExposures": 9,
+        "winnerDiscarded": 1,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.0591,
+        "winnerRetention": 0.88889,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_4_SEMANAS": {
+        "eligibleCuts": 0,
+        "eligibleExposures": 0,
+        "discardedExposures": 0,
+        "winnerExposures": 0,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": null,
+        "winnerRetention": null,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      }
+    },
+    "Matutino": {
+      "REPETIDA_RUTA_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 2547,
+        "discardedExposures": 6,
+        "winnerExposures": 34,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 3,
+          "top5": 3,
+          "top10": 3
+        },
+        "baseline": {
+          "top3": 3,
+          "top5": 3,
+          "top10": 3
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00236,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_RUTA_D7": {
+        "eligibleCuts": 17,
+        "eligibleExposures": 2292,
+        "discardedExposures": 5,
+        "winnerExposures": 34,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 3
+        },
+        "baseline": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 3
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00218,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_FUENTE_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 2547,
+        "discardedExposures": 282,
+        "winnerExposures": 34,
+        "winnerDiscarded": 4,
+        "score": {
+          "top3": 3,
+          "top5": 3,
+          "top10": 3
+        },
+        "baseline": {
+          "top3": 3,
+          "top5": 3,
+          "top10": 3
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.11072,
+        "winnerRetention": 0.88235,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_FAMILIA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 1455,
+        "discardedExposures": 116,
+        "winnerExposures": 18,
+        "winnerDiscarded": 1,
+        "score": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 1
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 1
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.07973,
+        "winnerRetention": 0.94444,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_RUTA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 1455,
+        "discardedExposures": 0,
+        "winnerExposures": 18,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 1
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 1
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "ESTABLE_INTRADIA_Y_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 2547,
+        "discardedExposures": 184,
+        "winnerExposures": 34,
+        "winnerDiscarded": 2,
+        "score": {
+          "top3": 3,
+          "top5": 3,
+          "top10": 3
+        },
+        "baseline": {
+          "top3": 3,
+          "top5": 3,
+          "top10": 3
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.07224,
+        "winnerRetention": 0.94118,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_4_SEMANAS": {
+        "eligibleCuts": 0,
+        "eligibleExposures": 0,
+        "discardedExposures": 0,
+        "winnerExposures": 0,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": null,
+        "winnerRetention": null,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      }
+    },
+    "Vespertino": {
+      "REPETIDA_RUTA_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 3333,
+        "discardedExposures": 15,
+        "winnerExposures": 23,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.0045,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_RUTA_D7": {
+        "eligibleCuts": 17,
+        "eligibleExposures": 3024,
+        "discardedExposures": 8,
+        "winnerExposures": 22,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00265,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_FUENTE_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 3333,
+        "discardedExposures": 431,
+        "winnerExposures": 23,
+        "winnerDiscarded": 3,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.12931,
+        "winnerRetention": 0.86957,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_FAMILIA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 1982,
+        "discardedExposures": 217,
+        "winnerExposures": 14,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.10949,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_RUTA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 1982,
+        "discardedExposures": 0,
+        "winnerExposures": 14,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "ESTABLE_INTRADIA_Y_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 3333,
+        "discardedExposures": 260,
+        "winnerExposures": 23,
+        "winnerDiscarded": 2,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.07801,
+        "winnerRetention": 0.91304,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_4_SEMANAS": {
+        "eligibleCuts": 0,
+        "eligibleExposures": 0,
+        "discardedExposures": 0,
+        "winnerExposures": 0,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": null,
+        "winnerRetention": null,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      }
+    },
+    "Nocturno": {
+      "REPETIDA_RUTA_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 3825,
+        "discardedExposures": 15,
+        "winnerExposures": 38,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 5
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 5
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00392,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_RUTA_D7": {
+        "eligibleCuts": 17,
+        "eligibleExposures": 3468,
+        "discardedExposures": 8,
+        "winnerExposures": 30,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 1,
+          "top5": 2,
+          "top10": 4
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 2,
+          "top10": 4
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.00231,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "REPETIDA_FUENTE_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 3825,
+        "discardedExposures": 507,
+        "winnerExposures": 38,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 5
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 5
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.13255,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_FAMILIA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 2275,
+        "discardedExposures": 321,
+        "winnerExposures": 19,
+        "winnerDiscarded": 3,
+        "score": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 2
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 2
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.1411,
+        "winnerRetention": 0.84211,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_RUTA_D7_D14": {
+        "eligibleCuts": 11,
+        "eligibleExposures": 2275,
+        "discardedExposures": 0,
+        "winnerExposures": 19,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 2
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 2
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "ESTABLE_INTRADIA_Y_D1": {
+        "eligibleCuts": 19,
+        "eligibleExposures": 3825,
+        "discardedExposures": 379,
+        "winnerExposures": 38,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 5
+        },
+        "baseline": {
+          "top3": 1,
+          "top5": 3,
+          "top10": 5
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": 0.09908,
+        "winnerRetention": 1,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PERSISTE_4_SEMANAS": {
+        "eligibleCuts": 0,
+        "eligibleExposures": 0,
+        "discardedExposures": 0,
+        "winnerExposures": 0,
+        "winnerDiscarded": 0,
+        "score": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "baseline": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "gains": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "losses": {
+          "top3": [],
+          "top5": [],
+          "top10": []
+        },
+        "discardRate": null,
+        "winnerRetention": null,
+        "delta": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      }
+    }
+  },
+  "neutral": {
+    "REPETIDA_RUTA_D1": {
+      "top3": {
+        "runs": 2000,
+        "mean": 6.0115,
+        "p05": 6,
+        "median": 6,
+        "p95": 6,
+        "actual": 6,
+        "tailFavorable": 1
+      },
+      "top5": {
+        "runs": 2000,
+        "mean": 7.9945,
+        "p05": 8,
+        "median": 8,
+        "p95": 8,
+        "actual": 8,
+        "tailFavorable": 0.9945
+      },
+      "top10": {
+        "runs": 2000,
+        "mean": 10.9945,
+        "p05": 11,
+        "median": 11,
+        "p95": 11,
+        "actual": 11,
+        "tailFavorable": 0.9945
+      },
+      "lostWinners": {
+        "runs": 2000,
+        "mean": 0.325,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "actual": 0,
+        "tailFavorable": 0.71814
+      }
+    },
+    "REPETIDA_RUTA_D7": {
+      "top3": {
+        "runs": 2000,
+        "mean": 3.9945,
+        "p05": 4,
+        "median": 4,
+        "p95": 4,
+        "actual": 4,
+        "tailFavorable": 0.9945
+      },
+      "top5": {
+        "runs": 2000,
+        "mean": 4.9945,
+        "p05": 5,
+        "median": 5,
+        "p95": 5,
+        "actual": 5,
+        "tailFavorable": 0.9945
+      },
+      "top10": {
+        "runs": 2000,
+        "mean": 9.9785,
+        "p05": 10,
+        "median": 10,
+        "p95": 10,
+        "actual": 10,
+        "tailFavorable": 0.97901
+      },
+      "lostWinners": {
+        "runs": 2000,
+        "mean": 0.29,
+        "p05": 0,
+        "median": 0,
+        "p95": 1,
+        "actual": 0,
+        "tailFavorable": 0.74813
+      }
+    },
+    "REPETIDA_FUENTE_D1": {
+      "top3": {
+        "runs": 2000,
+        "mean": 5.734,
+        "p05": 4,
+        "median": 6,
+        "p95": 7,
+        "actual": 6,
+        "tailFavorable": 0.63868
+      },
+      "top5": {
+        "runs": 2000,
+        "mean": 7.407,
+        "p05": 6,
+        "median": 7,
+        "p95": 9,
+        "actual": 8,
+        "tailFavorable": 0.49225
+      },
+      "top10": {
+        "runs": 2000,
+        "mean": 10.0095,
+        "p05": 8,
+        "median": 10,
+        "p95": 11,
+        "actual": 11,
+        "tailFavorable": 0.35082
+      },
+      "lostWinners": {
+        "runs": 2000,
+        "mean": 14.8545,
+        "p05": 9,
+        "median": 15,
+        "p95": 21,
+        "actual": 10,
+        "tailFavorable": 0.11094
+      }
+    },
+    "PERSISTE_FAMILIA_D7_D14": {
+      "top3": {
+        "runs": 2000,
+        "mean": 2.0595,
+        "p05": 1,
+        "median": 2,
+        "p95": 3,
+        "actual": 2,
+        "tailFavorable": 0.92754
+      },
+      "top5": {
+        "runs": 2000,
+        "mean": 2.905,
+        "p05": 2,
+        "median": 3,
+        "p95": 3,
+        "actual": 3,
+        "tailFavorable": 0.86057
+      },
+      "top10": {
+        "runs": 2000,
+        "mean": 4.7155,
+        "p05": 4,
+        "median": 5,
+        "p95": 5,
+        "actual": 5,
+        "tailFavorable": 0.74113
+      },
+      "lostWinners": {
+        "runs": 2000,
+        "mean": 5.8355,
+        "p05": 3,
+        "median": 6,
+        "p95": 10,
+        "actual": 4,
+        "tailFavorable": 0.28886
+      }
+    },
+    "PERSISTE_RUTA_D7_D14": {
+      "top3": {
+        "runs": 2000,
+        "mean": 2,
+        "p05": 2,
+        "median": 2,
+        "p95": 2,
+        "actual": 2,
+        "tailFavorable": 1
+      },
+      "top5": {
+        "runs": 2000,
+        "mean": 3,
+        "p05": 3,
+        "median": 3,
+        "p95": 3,
+        "actual": 3,
+        "tailFavorable": 1
+      },
+      "top10": {
+        "runs": 2000,
+        "mean": 5,
+        "p05": 5,
+        "median": 5,
+        "p95": 5,
+        "actual": 5,
+        "tailFavorable": 1
+      },
+      "lostWinners": {
+        "runs": 2000,
+        "mean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "actual": 0,
+        "tailFavorable": 1
+      }
+    },
+    "ESTABLE_INTRADIA_Y_D1": {
+      "top3": {
+        "runs": 2000,
+        "mean": 3.9165,
+        "p05": 3,
+        "median": 4,
+        "p95": 5,
+        "actual": 4,
+        "tailFavorable": 0.76712
+      },
+      "top5": {
+        "runs": 2000,
+        "mean": 5.5415,
+        "p05": 4,
+        "median": 6,
+        "p95": 6,
+        "actual": 6,
+        "tailFavorable": 0.61019
+      },
+      "top10": {
+        "runs": 2000,
+        "mean": 7.4035,
+        "p05": 6,
+        "median": 8,
+        "p95": 8,
+        "actual": 8,
+        "tailFavorable": 0.52574
+      },
+      "lostWinners": {
+        "runs": 2000,
+        "mean": 9.1125,
+        "p05": 5,
+        "median": 9,
+        "p95": 14,
+        "actual": 5,
+        "tailFavorable": 0.10695
+      }
+    },
+    "PERSISTE_4_SEMANAS": {
+      "top3": {
+        "runs": 2000,
+        "mean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "actual": 0,
+        "tailFavorable": 1
+      },
+      "top5": {
+        "runs": 2000,
+        "mean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "actual": 0,
+        "tailFavorable": 1
+      },
+      "top10": {
+        "runs": 2000,
+        "mean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "actual": 0,
+        "tailFavorable": 1
+      },
+      "lostWinners": {
+        "runs": 2000,
+        "mean": 0,
+        "p05": 0,
+        "median": 0,
+        "p95": 0,
+        "actual": 0,
+        "tailFavorable": 1
+      }
+    }
+  },
+  "notEvaluable": {
+    "PERSISTE_4_SEMANAS": "Ningún corte dispone de D-7,D-14,D-21,D-28 previos completos en este corpus; NO se probó el candidato original de cuatro semanas."
+  },
+  "inspectedCases": [
+    {
+      "date": "2026-09-18",
+      "turn": "Vespertino",
+      "actualWinningFamilies": [
+        "537/735",
+        "447/744"
+      ],
+      "affected": {
+        "REPETIDA_FUENTE_D1": {
+          "discardedWinners": [
+            "447/744"
+          ],
+          "removed": 29,
+          "after": [
+            "498/894",
+            "329/923",
+            "093/390",
+            "309/903",
+            "039/930",
+            "293/392",
+            "239/932",
+            "209/902",
+            "092/290",
+            "029/920"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "turn": "Primera",
+      "actualWinningFamilies": [
+        "025/520"
+      ],
+      "affected": {
+        "REPETIDA_FUENTE_D1": {
+          "discardedWinners": [
+            "025/520"
+          ],
+          "removed": 20,
+          "after": [
+            "189/981",
+            "419/914",
+            "194/491",
+            "149/941",
+            "819/918",
+            "198/891",
+            "148/841",
+            "418/814",
+            "184/481",
+            "489/984"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Matutino",
+      "actualWinningFamilies": [
+        "778/877",
+        "173/371",
+        "859/958"
+      ],
+      "affected": {
+        "REPETIDA_FUENTE_D1": {
+          "discardedWinners": [
+            "778/877",
+            "859/958"
+          ],
+          "removed": 10,
+          "after": [
+            "053/350",
+            "058/850",
+            "018/810",
+            "337/733",
+            "335/533",
+            "587/785",
+            "051/150",
+            "015/510",
+            "085/580",
+            "081/180"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "discardedWinners": [
+            "778/877"
+          ],
+          "removed": 9,
+          "after": [
+            "053/350",
+            "058/850",
+            "018/810",
+            "337/733",
+            "335/533",
+            "587/785",
+            "051/150",
+            "015/510",
+            "085/580",
+            "081/180"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "turn": "Nocturno",
+      "actualWinningFamilies": [
+        "687/786",
+        "067/760"
+      ],
+      "affected": {
+        "PERSISTE_FAMILIA_D7_D14": {
+          "discardedWinners": [
+            "067/760"
+          ],
+          "removed": 54,
+          "after": [
+            "259/952",
+            "209/902",
+            "053/350",
+            "018/810",
+            "337/733",
+            "335/533",
+            "087/780",
+            "051/150",
+            "085/580",
+            "081/180"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Primera",
+      "actualWinningFamilies": [
+        "507/705"
+      ],
+      "affected": {
+        "REPETIDA_FUENTE_D1": {
+          "discardedWinners": [
+            "507/705"
+          ],
+          "removed": 21,
+          "after": [
+            "789/987",
+            "979/979",
+            "598/895",
+            "579/975",
+            "487/784",
+            "489/984",
+            "798/897",
+            "879/978",
+            "748/847",
+            "478/874"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "discardedWinners": [
+            "507/705"
+          ],
+          "removed": 18,
+          "after": [
+            "789/987",
+            "979/979",
+            "598/895",
+            "579/975",
+            "487/784",
+            "489/984",
+            "798/897",
+            "879/978",
+            "748/847",
+            "478/874"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "turn": "Matutino",
+      "actualWinningFamilies": [
+        "598/895",
+        "105/501",
+        "384/483"
+      ],
+      "affected": {
+        "REPETIDA_FUENTE_D1": {
+          "discardedWinners": [
+            "105/501"
+          ],
+          "removed": 21,
+          "after": [
+            "789/987",
+            "979/979",
+            "598/895",
+            "579/975",
+            "487/784",
+            "489/984",
+            "798/897",
+            "879/978",
+            "748/847",
+            "478/874"
+          ],
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "PERSISTE_FAMILIA_D7_D14": {
+          "discardedWinners": [
+            "384/483"
+          ],
+          "removed": 12,
+          "after": [
+            "789/987",
+            "979/979",
+            "598/895",
+            "579/975",
+            "487/784",
+            "489/984",
+            "798/897",
+            "879/978",
+            "748/847",
+            "478/874"
+          ],
+          "top3": true,
+          "top5": true,
+          "top10": true
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "discardedWinners": [
+            "105/501"
+          ],
+          "removed": 18,
+          "after": [
+            "789/987",
+            "979/979",
+            "598/895",
+            "579/975",
+            "487/784",
+            "489/984",
+            "798/897",
+            "879/978",
+            "748/847",
+            "478/874"
+          ],
+          "top3": true,
+          "top5": true,
+          "top10": true
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Vespertino",
+      "actualWinningFamilies": [
+        "677/776",
+        "428/824",
+        "162/261"
+      ],
+      "affected": {
+        "REPETIDA_FUENTE_D1": {
+          "discardedWinners": [
+            "677/776"
+          ],
+          "removed": 21,
+          "after": [
+            "576/675",
+            "498/894",
+            "559/955",
+            "076/670",
+            "067/760",
+            "597/795",
+            "485/584",
+            "054/450",
+            "558/855",
+            "224/422"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "discardedWinners": [
+            "677/776"
+          ],
+          "removed": 17,
+          "after": [
+            "576/675",
+            "498/894",
+            "559/955",
+            "076/670",
+            "067/760",
+            "597/795",
+            "485/584",
+            "054/450",
+            "558/855",
+            "224/422"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "turn": "Nocturno",
+      "actualWinningFamilies": [
+        "579/975",
+        "175/571",
+        "152/251"
+      ],
+      "affected": {
+        "PERSISTE_FAMILIA_D7_D14": {
+          "discardedWinners": [
+            "152/251"
+          ],
+          "removed": 57,
+          "after": [
+            "576/675",
+            "498/894",
+            "559/955",
+            "076/670",
+            "227/722",
+            "229/922",
+            "597/795",
+            "485/584",
+            "054/450",
+            "769/967"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Matutino",
+      "actualWinningFamilies": [
+        "316/613",
+        "071/170",
+        "346/643"
+      ],
+      "affected": {
+        "REPETIDA_FUENTE_D1": {
+          "discardedWinners": [
+            "071/170"
+          ],
+          "removed": 21,
+          "after": [
+            "208/802",
+            "153/351",
+            "516/615",
+            "098/890",
+            "209/902",
+            "356/653",
+            "028/820",
+            "899/998",
+            "809/908",
+            "082/280"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Vespertino",
+      "actualWinningFamilies": [
+        "409/904",
+        "017/710"
+      ],
+      "affected": {
+        "REPETIDA_FUENTE_D1": {
+          "discardedWinners": [
+            "017/710"
+          ],
+          "removed": 37,
+          "after": [
+            "208/802",
+            "153/351",
+            "218/812",
+            "516/615",
+            "628/826",
+            "186/681",
+            "059/950",
+            "098/890",
+            "509/905",
+            "495/594"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        },
+        "ESTABLE_INTRADIA_Y_D1": {
+          "discardedWinners": [
+            "017/710"
+          ],
+          "removed": 21,
+          "after": [
+            "208/802",
+            "153/351",
+            "218/812",
+            "216/612",
+            "516/615",
+            "628/826",
+            "186/681",
+            "059/950",
+            "268/862",
+            "098/890"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "turn": "Nocturno",
+      "actualWinningFamilies": [
+        "435/534"
+      ],
+      "affected": {
+        "PERSISTE_FAMILIA_D7_D14": {
+          "discardedWinners": [
+            "435/534"
+          ],
+          "removed": 27,
+          "after": [
+            "208/802",
+            "153/351",
+            "218/812",
+            "216/612",
+            "516/615",
+            "628/826",
+            "186/681",
+            "059/950",
+            "268/862",
+            "098/890"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "turn": "Previa",
+      "actualWinningFamilies": [
+        "348/843"
+      ],
+      "affected": {
+        "REPETIDA_FUENTE_D1": {
+          "discardedWinners": [
+            "348/843"
+          ],
+          "removed": 5,
+          "after": [
+            "687/786",
+            "475/574",
+            "476/674",
+            "678/876",
+            "468/864",
+            "047/740",
+            "057/750",
+            "405/504",
+            "478/874",
+            "387/783"
+          ],
+          "top3": false,
+          "top5": false,
+          "top10": false
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Un no-acierto constituye la mayoría de familias: medir retención de las ganadoras es esencial.",
+    "Nunca tratar una jornada ausente del corpus como ausencia física real.",
+    "Los filtros operan sobre familias completas, no rutas individuales, y jamás reconstruyen el ranking tras ver POST.",
+    "Control neutral descarta igual número de familias por corte y repone del ranking geométrico original.",
+    "Los mismos 115 cortes ya fueron utilizados numerosas veces. No hay inferencia causal ni ventaja futura demostrada.",
+    "No modificar src/motorLalo.ts, main, VT4, marcaciones o sellos prospectivos ya existentes."
+  ],
+  "seal": {
+    "previousGeometryPre": "6c8ab70c57758bec3510f2a2a254b0afc6d689c4eb946cea22b69f252b6e7b46",
+    "sourceBasePre": "be7649199ad7a133c73ae37f3c102e8d660eb000c74f62f10aa0df7cb9db7612",
+    "script": "b25efa4067f685ed03dc6714c64d74e6f4a802b90384d3fce0f8207df318eec7",
+    "protocol": "45ca1374623394fb63cf73a9028274906cec74aeff653eb4d11990093508f007",
+    "pre": "a2ec6bb0566fe0c3891d92d4e06d784d26830386371de5d00c8dfe8da4146efd"
+  },
+  "postSha": "5b22fe8b0a8b473aa083e3796d00760f9f1e903f34e57aa4b1ac1fd2aecba7a2"
+}
