@@ -31,13 +31,23 @@ export const routeCellText=(cells:PanoramaCell[])=>cells.map(c=>(c.row+1)+(c.col
 export const physicalKey=(kind:PanoramaKind,sourceId:SourceId,cells:PanoramaCell[])=>
  kind+'|'+sourceId+'|'+[pathText(cells),pathText([...cells].reverse())].sort()[0];
 
+/** Identidad estable de una cabeza concreta; la comparten Hoja y Cabezas. */
+export const dailyHeadOwnerId=(turn:Turno,jurisdiction:string,head:string)=>
+ turn+'|'+jurisdiction+'|'+head;
+
+/** Conserva TODOS los caminos VT2/VT3/VT4 de todas las cabezas coincidentes de un turno. */
+export function routesForDailyTurn(data:PanoramaData,turn:Turno):PanoramaRoute[]{
+ const owners=new Set(data.groups.filter(g=>g.turn===turn&&g.routeCount>0).map(g=>g.id));
+ return data.routes.filter(r=>owners.has(r.ownerId));
+}
+
 export function buildDailyPanorama(sheet:DailySheet,heads:CabezasDia|null):PanoramaData{
  const routes:PanoramaRoute[]=[],groups:PanoramaGroup[]=[];
  for(const turn of TURNOS){
   for(const jurisdiction of JURS){
    const head=heads?.[turn]?.[jurisdiction]||'----';
    if(!/^\d{4}$/.test(head))continue;
-   const id=turn+'|'+jurisdiction+'|'+head;
+   const id=dailyHeadOwnerId(turn,jurisdiction,head);
    const matches=sheet.matches[turn].filter(m=>m.jurisdiccion===jurisdiction&&m.cabeza===head);
    const unique=new Map<string,PanoramaRoute>();
    for(const match of matches)for(const hit of match.hits)for(const path of hit.paths){
