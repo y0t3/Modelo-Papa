@@ -1,0 +1,177 @@
+import React,{useEffect,useMemo,useState} from 'react';
+import {Pressable,StyleSheet,Text,View} from 'react-native';
+import type {PanoramaKind} from '../panoramaModel';
+import type {TurnHistory,TurnHistoryFrame} from '../infoTurnHistory';
+import {visibleTurnRoutes} from '../infoTurnHistory';
+import {useLaloTheme} from './LaloTheme';
+
+export type GalleryMode='todos'|'vt2'|'vt3'|'vt4';
+type Props={gallery:TurnHistory;selectedFrameId:string;
+ onSelectFrame:(id:string)=>void;mode:GalleryMode;onMode:(m:GalleryMode)=>void};
+const options:{id:GalleryMode;label:string}[]=[
+ {id:'todos',label:'Todas'},{id:'vt2',label:'2 cifras'},
+ {id:'vt3',label:'3 cifras'},{id:'vt4',label:'4 cifras'}
+];
+const JUR=['Ciudad','Provincia','Córdoba','Santa Fe','Entre Ríos','Montevideo'];
+const HEADER=['Noct. ant.','Previa','Primera','Matutina','Vespertina'];
+function Board({frame,mode,large=false}:{
+ frame:TurnHistoryFrame;mode:GalleryMode;large?:boolean
+}){
+ const {colors:c,kinds}=useLaloTheme();
+ const routes=useMemo(()=>visibleTurnRoutes(frame,mode),[frame,mode]);
+ const marks=useMemo(()=>{
+  const map=new Map<string,Set<PanoramaKind>>();
+  for(const route of routes)for(const p of route.cells){
+   const key=route.sourceId+'|'+p.row+'|'+p.col;
+   const found=map.get(key)||new Set<PanoramaKind>();
+   found.add(route.kind);map.set(key,found);
+  }
+  return map;
+ },[routes]);
+ const w=large?26:11,h=large?29:14;
+ const rowLabel=large?64:28,space=large?2:1;
+ return <View accessibilityLabel={'Hoja de '+frame.dayLabel}
+  style={[s.board,{backgroundColor:c.board,borderColor:c.border}]}>
+  <View style={s.gridRow}>
+   <View style={{width:rowLabel}}/>
+   {frame.sheet.columns.map(col=><Text key={col.id} numberOfLines={1}
+    style={{width:w*2+space*3,textAlign:'center',fontSize:large?9:6,
+     fontWeight:'800',color:c.subtext}}>{HEADER[
+      ['prevNocturno','Previa','Primera','Matutino','Vespertino'].indexOf(col.id)]}</Text>)}
+  </View>
+  {JUR.map((jur,row)=><View key={jur} style={[s.gridRow,{gap:space}]}>
+   <Text numberOfLines={1} style={{width:rowLabel,fontSize:large?9:5.7,
+    color:c.subtext,fontWeight:'700'}}>{large?jur:jur.slice(0,5)}</Text>
+   {frame.sheet.columns.map((source,i)=><View key={source.id}
+    style={{flexDirection:'row',gap:space,paddingHorizontal:space,
+     backgroundColor:i%2?c.boardAlt:c.board}}>
+    {[0,1].map(col=>{
+     const num=source.values[row]||'--';
+     const n=/^\d{2}$/.test(num)?num[col]:'–';
+     const on=[...(marks.get(source.id+'|'+row+'|'+col)||[])];
+     const pick=(['vt4','vt3','vt2'] as PanoramaKind[]).find(k=>on.includes(k));
+     return <View key={col} style={{width:w,height:h,justifyContent:'center',
+      alignItems:'center',borderRadius:large?4:2,borderWidth:1,
+      backgroundColor:pick?kinds[pick].fill:c.cell,
+      borderColor:pick?kinds[pick].line:c.border}}>
+      {on.includes('vt2')?<View style={{position:'absolute',top:0,left:1,right:1,
+       height:large?3:2,backgroundColor:kinds.vt2.line}}/>:null}
+      {on.includes('vt3')?<View style={{position:'absolute',top:1,bottom:1,left:0,
+       width:large?3:2,backgroundColor:kinds.vt3.line}}/>:null}
+      {on.includes('vt4')?<View style={{position:'absolute',bottom:0,left:1,right:1,
+       height:large?3:2,backgroundColor:kinds.vt4.line}}/>:null}
+      <Text style={{fontWeight:'900',fontSize:large?16:10,color:c.text}}>{n}</Text>
+     </View>;
+    })}
+   </View>)}
+  </View>)}
+ </View>;
+}
+const stats=(f:TurnHistoryFrame,count:number)=>f.kind==='historico'?
+ f.markedHeads+' cabezas con marca · '+count+' recorridos':
+ count+' recorridos propuestos';
+export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,mode,onMode}:Props){
+ const {colors:c,kinds}=useLaloTheme();
+ const {frames}=gallery;
+ const [playing,setPlaying]=useState(false);
+ const idx=Math.max(0,frames.findIndex(f=>f.id===selectedFrameId));
+ const active=frames[idx];
+ useEffect(()=>{
+  if(!playing||frames.length<2)return;
+  const handle=setInterval(()=>{
+   const pos=frames.findIndex(f=>f.id===selectedFrameId);
+   onSelectFrame(frames[(Math.max(-1,pos)+1)%frames.length].id);
+  },1800);
+  return ()=>clearInterval(handle);
+ },[playing,selectedFrameId,frames,onSelectFrame]);
+ useEffect(()=>setPlaying(false),[gallery.turn,gallery.frames[0]?.date]);
+ if(!active)return <Text style={{color:c.subtext}}>
+  Actualizá la hoja para comparar este turno con las jornadas anteriores.
+ </Text>;
+ return <View style={s.root}>
+  <Text style={{color:c.text,fontSize:13,lineHeight:19}}>
+   Así se vio el <Text style={{fontWeight:'900'}}>{gallery.turn}</Text> en las últimas jornadas.
+   El último cuadro muestra los recorridos que propone la hoja para este sorteo.
+  </Text>
+  <View style={s.filters}>{options.map(o=><Pressable key={o.id} accessibilityRole="button"
+   accessibilityState={{selected:mode===o.id}} onPress={()=>{setPlaying(false);onMode(o.id)}}
+   style={[s.filter,{borderColor:mode===o.id?c.accent:c.border,
+    backgroundColor:mode===o.id?c.accentFill:c.surfaceAlt}]}>
+   <Text style={{fontSize:11,fontWeight:'800',color:mode===o.id?c.accent:c.text}}>
+    {o.label}</Text>
+  </Pressable>)}</View>
+  <View style={s.legend}>
+   {(['vt2','vt3','vt4'] as const).filter(k=>mode==='todos'||mode===k)
+    .map(k=><View key={k} style={s.legendItem}>
+     <View style={{width:10,height:10,borderRadius:2,backgroundColor:kinds[k].line}}/>
+     <Text style={{fontSize:10,color:c.subtext}}>{kinds[k].label}</Text>
+    </View>)}
+  </View>
+  <View style={s.thumbs}>
+   {frames.map((f,i)=>{
+    const count=visibleTurnRoutes(f,mode).length;
+    return <Pressable key={f.id} accessibilityRole="button"
+     accessibilityState={{selected:idx===i}} onPress={()=>{setPlaying(false);onSelectFrame(f.id)}}
+     style={[s.thumb,{borderColor:idx===i?c.accent:c.border,
+      backgroundColor:idx===i?c.accentFill:c.card}]}>
+     <Text style={[s.thumbTitle,{color:c.text}]}>{f.title}</Text>
+     <Text style={[s.date,{color:c.subtext}]}>{f.dayLabel}</Text>
+     <Board frame={f} mode={mode}/>
+     <Text style={[s.small,{color:c.subtext,textAlign:'center'}]}>{stats(f,count)}</Text>
+    </Pressable>;
+   })}
+  </View>
+  <View style={[s.detail,{backgroundColor:c.surfaceAlt}]}>
+   <Text style={{fontSize:15,fontWeight:'900',color:c.text}}>
+    {active.title} · {active.dayLabel}
+   </Text>
+   <Text style={[s.small,{color:c.text}]}>
+    {active.kind==='historico'?
+     'Estas marcas son coincidencias reales del sorteo de ese día.':
+     'Estas marcas son propuestas calculadas antes del turno, no resultados.'}
+   </Text>
+   <Board frame={active} mode={mode} large/>
+   <Text style={{fontSize:12,color:c.text,fontWeight:'800'}}>
+    {stats(active,visibleTurnRoutes(active,mode).length)}
+   </Text>
+  </View>
+  <View style={s.controls}>
+   <Pressable disabled={idx===0} accessibilityRole="button"
+    onPress={()=>{setPlaying(false);onSelectFrame(frames[Math.max(0,idx-1)].id)}}
+    style={[s.control,{borderColor:c.border,opacity:idx===0?0.4:1}]}>
+    <Text style={{color:c.accent,fontWeight:'900'}}>←</Text>
+   </Pressable>
+   <Pressable accessibilityRole="button" onPress={()=>setPlaying(v=>!v)}
+    style={[s.play,{borderColor:c.accent,backgroundColor:c.accentFill}]}>
+    <Text style={{color:c.accent,fontWeight:'900'}}>
+     {playing?'❚❚ Pausar':'▶ Reproducir'}
+    </Text>
+   </Pressable>
+   <Text style={{fontSize:11,color:c.subtext}}>{idx+1}/{frames.length}</Text>
+   <Pressable disabled={idx===frames.length-1} accessibilityRole="button"
+    onPress={()=>{setPlaying(false);onSelectFrame(frames[Math.min(frames.length-1,idx+1)].id)}}
+    style={[s.control,{borderColor:c.border,opacity:idx===frames.length-1?0.4:1}]}>
+    <Text style={{color:c.accent,fontWeight:'900'}}>→</Text>
+   </Pressable>
+  </View>
+  <Text style={[s.small,{color:c.subtext}]}>{gallery.summary}</Text>
+ </View>;
+}
+const s=StyleSheet.create({
+ root:{gap:11},filters:{flexDirection:'row',flexWrap:'wrap',gap:6},
+ filter:{borderWidth:1,paddingVertical:7,paddingHorizontal:10,borderRadius:8},
+ legend:{flexDirection:'row',flexWrap:'wrap',gap:10},
+ legendItem:{flexDirection:'row',alignItems:'center',gap:4},
+ thumbs:{flexDirection:'row',flexWrap:'wrap',gap:8},
+ thumb:{flexBasis:'47%',flexGrow:1,borderWidth:1,borderRadius:10,
+  padding:7,alignItems:'center',gap:5},
+ thumbTitle:{fontSize:11,fontWeight:'900',textAlign:'center'},
+ date:{fontSize:10,textAlign:'center'},
+ board:{borderWidth:1,borderRadius:6,padding:3,gap:2,alignSelf:'center'},
+ gridRow:{flexDirection:'row',alignItems:'center',gap:1},
+ detail:{borderRadius:10,padding:10,alignItems:'center',gap:9},
+ small:{fontSize:10,lineHeight:16},controls:{flexDirection:'row',
+  justifyContent:'space-between',alignItems:'center',gap:5},
+ control:{borderWidth:1,paddingHorizontal:14,paddingVertical:9,borderRadius:8},
+ play:{borderWidth:1,paddingHorizontal:10,paddingVertical:9,borderRadius:8}
+});
