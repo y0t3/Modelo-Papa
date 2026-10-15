@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {TURNOS,diaVacio} from '../src/domain';
+import {sha256} from '../src/sha256';
 import type {DailySheet,SheetColumn} from '../src/sheet';
 import type {PapaPick,PapaRecord} from '../src/papaPronostico';
 import {addDraftPick,buildPre,draftPick,evaluatePapa,hasObserved,isPhysicalPath,
@@ -39,6 +40,13 @@ assert.equal(uniqueWagers(paths).vt3.size,1,'Dos testigos de la misma familia so
 const snapshot=buildPre({date:'2026-10-14',turn:'Previa',picks:paths},board,'2026-10-14T10:00:00Z');
 assert.ok(validateSnapshot(snapshot));
 assert.equal(snapshot.pre.schema,'PAPA_PRE_V2');
+
+const legacyPre={...snapshot.pre,schema:'PAPA_PRE_V1' as const,
+ picks:snapshot.pre.picks.map(p=>({...p,motherVt3:p.kind==='vt4'?'476/674':p.motherVt3}))};
+const legacySnapshot={pre:legacyPre,sha256:sha256(JSON.stringify(legacyPre))};
+assert.ok(validateSnapshot(legacySnapshot),
+ 'Los PRE anteriores V1 conservan su madre histórica sin invalidar los registros');
+
 
 assert.equal(snapshot.pre.sources.length,1);
 const before=JSON.stringify(snapshot);
