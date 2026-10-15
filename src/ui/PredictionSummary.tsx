@@ -4,6 +4,8 @@ import type {Turno} from '../domain';
 import type {LaloView,LaloKind} from '../motorLalo';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
+import {readableWeekday} from '../infoTurnHistory';
+import {explainFamilyRationale} from '../friendlyExplanations';
 
 type TopCount=3|5|10;
 const defaults:Record<LaloKind,TopCount>={vt2:3,vt3:3,vt4:3};
@@ -20,7 +22,7 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
  useEffect(()=>{setLimits(defaults)},[date,turn]);
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
   <Text style={[s.title,{color:c.text}]}>PREDICCIÓN · MODELO LALO</Text>
-  <Text style={[s.subtitle,{color:c.subtext}]}>{date} · {turn}</Text>
+  <Text style={[s.subtitle,{color:c.subtext}]}>{date.includes('/')?readableWeekday(date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2)).toLowerCase():readableWeekday(date).toLowerCase()} · {turn}</Text>
   <Text style={[s.caution,{color:c.subtext}]}>
    Propuestas experimentales: el puesto no equivale a una probabilidad demostrada.
   </Text>
@@ -32,7 +34,7 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
      <Text style={[s.aux,{color:c.muted}]}>{view?.ranks[kind].length||0} familias</Text>
     </View>
     {kind==='vt4'&&view?<Text style={[s.caution,{color:c.subtext}]}>
-     Orden por rondas: primero la mejor hija de cada madre VT3 con recorrido válido;
+     Se alternan los candidatos de cada familia de 3 cifras con recorrido válido;
      después sus siguientes hijas. No equivale a una probabilidad de acierto.
     </Text>:null}
     <View style={s.tabs}>{([3,5,10] as const).map(n=>
@@ -57,7 +59,7 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
        </Text>
       </View>
       <Text numberOfLines={2} style={[s.detail,{color:c.subtext}]}>
-       {explanation[f.state]} · {f.rationale}
+       {explanation[f.state]} · {explainFamilyRationale(f.rationale)}
       </Text>
       <Text style={[s.open,{color:c.accent}]}>Ver recorrido ›</Text>
      </Pressable>)}
