@@ -31,6 +31,10 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
      <Text style={[s.heading,{color:kinds[kind].line}]}>{kind.toUpperCase()} · {kinds[kind].label}</Text>
      <Text style={[s.aux,{color:c.muted}]}>{view?.ranks[kind].length||0} familias</Text>
     </View>
+    {kind==='vt4'&&view?<Text style={[s.caution,{color:c.subtext}]}>
+     Orden por rondas: primero la mejor hija de cada madre VT3 con recorrido válido;
+     después sus siguientes hijas. No equivale a una probabilidad de acierto.
+    </Text>:null}
     <View style={s.tabs}>{([3,5,10] as const).map(n=>
      <Pressable key={n} accessibilityRole="button" accessibilityState={{selected:limit===n}}
       onPress={()=>setLimits(prev=>({...prev,[kind]:n}))}
