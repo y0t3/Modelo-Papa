@@ -247,10 +247,11 @@ function LaloApp(){
     }}/>
     <View style={s.shortcuts}>
      <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(-1)}><Text style={[s.shortText,{color:c.accent}]}>← Día</Text></Pressable>
-     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>{if(date)void cargar(shiftDay(date,-7))}}><Text style={[s.shortText,{color:c.accent}]}>−7 días</Text></Pressable>
+     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>{const shown=historicalPreview?.day.date||date;
+      if(shown)void cargar(shiftDay(shown,-7))}}><Text style={[s.shortText,{color:c.accent}]}>−7 días</Text></Pressable>
      <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(1)}><Text style={[s.shortText,{color:c.accent}]}>Día →</Text></Pressable>
     </View>
-    <Pressable style={[s.reload,{backgroundColor:c.button}]} onPress={()=>{void cargar()}} disabled={busy}>
+    <Pressable style={[s.reload,{backgroundColor:c.button}]} onPress={()=>{void cargar(historicalPreview?.day.date)}} disabled={busy}>
      {busy?<ActivityIndicator color="#fff"/>:<Text style={s.reloadText}>↻ ACTUALIZAR HOJA</Text>}
     </Pressable>
    </View>
