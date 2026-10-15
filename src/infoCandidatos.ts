@@ -118,8 +118,7 @@ function frameFromView(id:string,label:string,note:string,cut:number,
  }
  return {
   id,label,note,cut,isActual,turn,
-  totalFamilies:Object.fromEntries(MOVEMENT_KINDS.map(kind=>[kind,currentFamilies[kind].length]))
-   as Record<LaloKind,number>,
+  totalFamilies:Object.fromEntries(MOVEMENT_KINDS.map(kind=>[kind,currentFamilies[kind].length])) as Record<LaloKind,number>,
   sources,sourceLeader:strongest(sourceMass) as SourceId|null,
   zoneLeader:strongest(zones),currentFamilies,
   comparison:'',available:sourceMass.size>0
