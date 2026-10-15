@@ -1,4 +1,4 @@
-import React,{useMemo} from 'react';
+import React,{useMemo,useState} from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import type {DailySheet} from '../sheet';
@@ -6,13 +6,16 @@ import type {LaloHistorical,LaloView} from '../motorLalo';
 import {buildInfoReport,sourceLabel} from '../infoInterpretacion';
 import {buildCandidateSequence} from '../infoCandidatos';
 import type {MovementMode} from '../infoCandidatos';
+import type {InfoVisualDay} from '../infoTurnHistory';
+import {buildTurnHistory,readableWeekday} from '../infoTurnHistory';
+import InfoTurnGallery from './InfoTurnGallery';
 import InfoCandidateMovement from './InfoCandidateMovement';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
 
 type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
 type Props={date:string;turn:Turno;data:CabezasDia|null;
- sheet:DailySheet|null;historical:LaloHistorical[];
+ sheet:DailySheet|null;historical:LaloHistorical[];visualDays:InfoVisualDay[];
  view:LaloView|null;onNavigate:(screen:Destination)=>void;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
@@ -49,41 +52,42 @@ function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
   <Text style={{color:c.subtext,fontSize:11,fontWeight:'700'}}>{kind.toUpperCase()} · {kinds[kind].label}</Text>
  </View>;
 }
-export default function InfoDashboard({date,turn,data,sheet,historical,view,onNavigate,
+export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide}:Props){
  const {colors:c,kinds}=useLaloTheme();
+ const [showInternal,setShowInternal]=useState(false);
+ const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
+  [date,turn,sheet,view,visualDays]);
  const report=useMemo(()=>buildInfoReport(date,turn,data,sheet,historical,view),
   [date,turn,data,sheet,historical,view]);
  const sequence=useMemo(()=>buildCandidateSequence(date,turn,data,sheet,historical),
   [date,turn,data,sheet,historical]);
- const final=sequence.frames[sequence.frames.length-1];
  const loaded=report.observed.length;
  const availability=report.availableSources.filter(x=>x.active);
- const displayDate=/^\d{4}-\d{2}-\d{2}$/.test(date)?
-  date.slice(8,10)+'/'+date.slice(5,7)+'/'+date.slice(0,4):'Sin fecha';
+ const displayDate=date?readableWeekday(date):'Sin fecha';
  return <View style={s.root}>
   <View style={[s.hero,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.kicker,{color:c.accent}]}>JORNADA Y GUÍA</Text>
    <Text style={[s.title,{color:c.text}]}>INFO · MODELO LALO</Text>
    <Text style={[s.desc,{color:c.subtext}]}>
-    Entendé el turno cargado, observá cómo cambian los recorridos y consultá el método.
+    Mirá cómo salió el mismo turno en otras jornadas y qué muestra la hoja para el próximo sorteo.
    </Text>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>01 · Estado de la jornada</Text>
+   <Text style={[s.heading,{color:c.text}]}>01 · Información del sorteo</Text>
    <Text style={[s.desc,{color:c.subtext}]}>Fecha: {displayDate} · Turno en foco: {turn}</Text>
    <View style={s.statRow}>
     <View style={[s.stat,{backgroundColor:c.surfaceAlt}]}>
      <Text style={[s.statNumber,{color:c.text}]}>{loaded} / {report.expected.length||'—'}</Text>
-     <Text style={[s.statLabel,{color:c.subtext}]}>Cabezas registradas / habituales</Text>
+     <Text style={[s.statLabel,{color:c.subtext}]}>Resultados publicados / habituales</Text>
     </View>
     <View style={[s.stat,{backgroundColor:c.surfaceAlt}]}>
      <Text style={[s.statNumber,{color:c.text}]}>{availability.length}</Text>
-     <Text style={[s.statLabel,{color:c.subtext}]}>Fuentes con cifras antes del turno</Text>
+     <Text style={[s.statLabel,{color:c.subtext}]}>Columnas disponibles antes del sorteo</Text>
     </View>
    </View>
-   <Text style={[s.microHeader,{color:c.text}]}>Columnas anteriores disponibles</Text>
+   <Text style={[s.microHeader,{color:c.text}]}>Resultados anteriores utilizados</Text>
    <View style={s.pills}>
     {report.availableSources.map(col=><View key={col.id} style={[s.pill,{
      borderColor:col.active?c.accent:c.border,
@@ -114,33 +118,25 @@ export default function InfoDashboard({date,turn,data,sheet,historical,view,onNa
    </Text>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>02 · Panorama del turno</Text>
-   <Text style={[s.desc,{color:c.subtext}]}>
-    Lectura del panorama PRE combinado: VT2, VT3 y VT4 admitidos en los Tops.
+   <Text style={[s.heading,{color:c.text}]}>02 · Cómo viene el {turn}</Text>
+   <Text style={[s.paragraph,{color:c.text}]}>{gallery.summary}</Text>
+   <Text style={[s.note,{color:c.subtext}]}>
+    Se comparan sorteos reales del mismo turno. Lo que ocurrió otros días
+    no asegura que vuelva a repetirse.
    </Text>
-   <Text style={[s.paragraph,{color:c.text}]}>
-    {final?.comparison||'Actualizá la hoja para ver el panorama de candidatos de este turno.'}
-   </Text>
-   {final?.sourceLeader?<Text style={[s.paragraph,{color:c.text}]}>
-    El apoyo más visible en las fuentes corresponde a {final.sources.find(x=>x.id===final.sourceLeader)?.label}.
-    Esto describe respaldos geométricos, no una probabilidad.
-   </Text>:null}
-   <View style={[s.notice,{backgroundColor:c.callout}]}>
-    <Text style={[s.note,{color:c.subtext}]}>
-     Esta lectura compara posiciones observadas; no determina dónde saldrá el próximo número.
-    </Text>
-   </View>
-   <Pressable accessibilityRole="button" onPress={()=>onNavigate('predictiva')}
-    style={[s.goto,{borderColor:c.border}]}>
-    <Text style={{color:c.accent,fontWeight:'800',fontSize:12}}>
-     Ver los recorridos de la Predictiva →
-    </Text>
-   </Pressable>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>03 · Movimiento de candidatos</Text>
-   <InfoCandidateMovement sequence={sequence} selectedFrameId={selectedFrameId}
+   <Text style={[s.heading,{color:c.text}]}>03 · El turno, jornada por jornada</Text>
+   <InfoTurnGallery gallery={gallery} selectedFrameId={selectedFrameId}
     onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}/>
+   <Pressable accessibilityRole="button" onPress={()=>setShowInternal(v=>!v)}
+    style={[s.goto,{borderColor:c.border}]}>
+    <Text style={{color:c.accent,fontWeight:'800',fontSize:11}}>
+     {showInternal?'Ocultar detalle dentro del día −':'Ver cómo cambió la hoja durante el día +'}
+    </Text>
+   </Pressable>
+   {showInternal?<InfoCandidateMovement sequence={sequence} selectedFrameId={selectedFrameId}
+    onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}/>:null}
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.text}]}>04 · Guía del sistema</Text>
