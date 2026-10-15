@@ -196,7 +196,35 @@
         "cap20": 184,
         "all": 584
       },
-      "top10SameAsBaseline": true
+      "top10SameAsBaseline": true,
+      "trace1736": {
+        "physicalPaths": [
+          {
+            "source": "Previa",
+            "cells": "2:0>3:0>4:1>3:1",
+            "segments": [
+              {
+                "side": "prefijo",
+                "reading": "173",
+                "family": "173/371",
+                "motherRank": null,
+                "sameSourceWitnesses": 0,
+                "exactPhysicalMotherWitnesses": 0,
+                "witnessExamples": []
+              },
+              {
+                "side": "sufijo",
+                "reading": "736",
+                "family": "637/736",
+                "motherRank": 17,
+                "sameSourceWitnesses": 0,
+                "exactPhysicalMotherWitnesses": 0,
+                "witnessExamples": []
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "turn": "Nocturno",
