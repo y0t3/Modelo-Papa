@@ -1,6 +1,9 @@
 name: Build Modelo Lalo APK
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - build/modelo-lalo-v033-info-mismo-turno-15oct2026
 permissions:
   contents: read
 jobs:
@@ -23,6 +26,8 @@ jobs:
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Probar observabilidad VT3
         run: npx --yes tsx scripts/test-consolidacion-lalo.ts
+      - name: Validar panorama del mismo turno en jornadas distintas
+        run: npx --yes tsx scripts/test-info-panorama-turnos.ts
       - name: Generate Android project
         env:
           CI: '1'
