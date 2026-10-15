@@ -31,7 +31,7 @@ const view={date:'2026-10-15',target:'Matutino',
   family('112/211','Primera',[
    {row:4,col:0,digit:'1'},{row:4,col:1,digit:'1'},{row:5,col:0,digit:'2'}]),
   family('213/312','Primera',[
-   {row:3,col:0,digit:'2'},{row:4,col:0,digit:'1'},{row:4,col:1,digit:'3'}]),
+   {row:4,col:0,digit:'2'},{row:4,col:1,digit:'1'},{row:5,col:1,digit:'3'}]),
   family('112/211','prevNocturno',previousPaths)
  ],vt4:[]}} as unknown as LaloView;
 
