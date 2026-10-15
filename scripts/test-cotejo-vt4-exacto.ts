@@ -10,7 +10,7 @@ const view={
   vt3:[{family:'749/947'}],
   vt4:[{family:'7492/9472',paths:[{value:'7492'}]}]
  }
-} as LaloView;
+} as unknown as LaloView;
 const literal=compareMotorLaloAfterDraw(view,['7492']);
 assert.deepEqual(literal.vt4,['7492/9472'],'Acierto exacto comprobado por testigo físico');
 assert.deepEqual(literal.vt3,[],'La cabeza 7492 termina 492, no 749');
@@ -20,7 +20,7 @@ const sister=compareMotorLaloAfterDraw(view,['9472']);
 assert.deepEqual(sister.vt4,[],'La hermana sin testigo propio no hereda el acierto');
 const withSister={ranks:{vt2:[],vt3:[],vt4:[
  {family:'7492/9472',paths:[{value:'7492'},{value:'9472'}]}
-]}} as LaloView;
+]}} as unknown as LaloView;
 assert.deepEqual(compareMotorLaloAfterDraw(withSister,['9472']).vt4,['7492/9472'],
  'Hermana válida sólo con su propio recorrido físico');
 assert.deepEqual(compareMotorLaloAfterDraw(view,['0047']).vt2,['47/74'],
