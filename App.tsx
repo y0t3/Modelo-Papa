@@ -266,6 +266,7 @@ function LaloApp(){
     <HeadsTable data={data} sheet={sheet} onOpenHead={openHeadInHoja}/>:
     <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
+      onTurnChange={changeTurn}
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
      movementMode={infoMode} onMovementMode={setInfoMode}
      expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}/>}
