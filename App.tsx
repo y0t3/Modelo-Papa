@@ -14,7 +14,7 @@ import {loadPreviousDraws,hasDrawResults} from './src/drawHistory';
 import {buildDailyPanorama,buildPredictivePanorama,dailyHeadOwnerId} from './src/panoramaModel';
 import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
 import type {LaloHistorical} from './src/motorLalo';
-import type {InfoVisualDay} from './src/infoTurnHistory';
+import type {InfoVisualDay,TurnHistoryFrame} from './src/infoTurnHistory';
 import PanoramaSheet from './src/PanoramaSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
 import Vt3Explainer from './src/ui/Vt3Explainer';
@@ -69,7 +69,8 @@ function LaloApp(){
  const [data,setData]=useState<CabezasDia|null>(null);
  const [sheet,setSheet]=useState<DailySheet|null>(null);
  const [hist,setHist]=useState<LaloHistorical[]>([]);
-  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
+ const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
+ const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
  const [busy,setBusy]=useState(false);
  const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
  const [focused,setFocused]=useState<string|null>(null);
@@ -79,6 +80,7 @@ function LaloApp(){
  const navigateTo=(next:Screen)=>{
   const from=activeScreenRef.current;
   if(from===next)return;
+  if(next!=='hoja')setHistoricalPreview(null);
   historyRef.current=pushNavigation(historyRef.current,{
    screen:from,scrollY:scrollOffsets.current[from],selectedTurn,
    focused,hojaFocused,hojaTurn
@@ -91,6 +93,7 @@ function LaloApp(){
  const goBack=()=>{
   const {entry,remaining}=backNavigation(historyRef.current);
   if(!entry)return false; // sin historial, Android conserva Atrás del sistema
+  setHistoricalPreview(null);
   historyRef.current=remaining;
   activeScreenRef.current=entry.screen;
   setSelectedTurn(entry.selectedTurn);
@@ -148,6 +151,7 @@ function LaloApp(){
    if(week<d&&hasDrawResults(weekly))
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
    resetHistory();
+   setHistoricalPreview(null);
    setData(current);setSheet(currentSheet);setHist(refs);
     setVisualDays([...recentDays,weekDay]);
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
@@ -156,10 +160,16 @@ function LaloApp(){
    Alert.alert('No se pudo cargar',error?.message||String(error));
   }finally{setBusy(false)}
  };
- const move=(n:1|-1)=>{if(date)void cargar(shiftDrawDay(date,n))};
+ const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
+  if(base)void cargar(shiftDrawDay(base,n))};
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
  const hoja=useMemo(()=>sheet?buildDailyPanorama(sheet,data):null,[sheet,data]);
+ const historicalHoja=useMemo(()=>historicalPreview?
+  buildDailyPanorama(historicalPreview.day.sheet,historicalPreview.day.heads):null,
+  [historicalPreview]);
+ const showingSheet=historicalPreview?.day.sheet||sheet;
+ const showingHoja=historicalHoja||hoja;
  const predictiva=useMemo(()=>motor?buildPredictivePanorama(motor,hist):null,[motor,hist]);
  const post=useMemo(()=>{
   if(!motor||!sheet||!sheet.heads[target]?.length)return null;
@@ -168,12 +178,21 @@ function LaloApp(){
  const fiveHeads=useMemo(()=>JURS.filter(j=>j!=='Montevideo')
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
- const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('pre')};
+ const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('proximo')};
  const showFamily=(id:string)=>{navigateTo('predictiva');setFocused(id)};
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);
   if(!hoja?.groups.some(group=>group.id===id&&group.routeCount>0))return;
   navigateTo('hoja');setHojaTurn(turn);setHojaFocused(id);
+ };
+ const openInfoFrame=(frame:TurnHistoryFrame)=>{
+  if(frame.kind==='proximo'){
+   setHistoricalPreview(null);navigateTo('predictiva');setFocused(null);return;
+  }
+  const day=visualDays.find(item=>item.date===frame.date);
+  if(!day){Alert.alert('Hoja no disponible','No se encontró la jornada en la memoria de INFO.');return}
+  navigateTo('hoja');
+  setHistoricalPreview({day,turn:target});setHojaTurn(target);setHojaFocused(null);
  };
  const alignHojaOnReturn=(y:number)=>{
   if(hojaFocused)scrollRef.current?.scrollTo({y:Math.max(0,(y-8)*zoomLevels.hoja),animated:true});
@@ -221,8 +240,8 @@ function LaloApp(){
    </View>
    <View style={[s.selector,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
     <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
-    <DateField value={dateText} onChange={value=>{
-     resetHistory();
+    <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
+     resetHistory();setHistoricalPreview(null);
      setDateText(value);setData(null);setSheet(null);setHist([]);setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
@@ -236,10 +255,19 @@ function LaloApp(){
     </Pressable>
    </View>
    {screen==='hoja'?
-    sheet&&hoja?<View onLayout={e=>alignHojaOnReturn(e.nativeEvent.layout.y)}>
-     <PanoramaSheet mode="hoja" sheet={sheet} data={hoja}
-      initialTurn={hojaTurn} focusedOwner={hojaFocused}
-      onInfo={()=>navigateTo('info')}/>
+    showingSheet&&showingHoja?<View onLayout={e=>alignHojaOnReturn(e.nativeEvent.layout.y)}>
+     {historicalPreview?<View style={[s.previewBanner,{backgroundColor:c.accentFill,borderColor:c.accent}]}>
+      <Text style={{color:c.text,fontWeight:'800',fontSize:12}}>
+       Hoja histórica · {isoToDisplay(historicalPreview.day.date)} · {historicalPreview.turn}
+      </Text>
+      <Pressable onPress={()=>{goBack()}} accessibilityRole="button"
+       style={[s.previewBack,{borderColor:c.accent}]}>
+       <Text style={{color:c.accent,fontWeight:'900',fontSize:12}}>← Volver al panorama</Text>
+      </Pressable>
+     </View>:null}
+     <PanoramaSheet mode="hoja" sheet={showingSheet} data={showingHoja}
+      initialTurn={hojaTurn} initialTurnOnly={!!historicalPreview}
+      focusedOwner={hojaFocused} onInfo={()=>navigateTo('info')}/>
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
    :screen==='predictiva'?<>
@@ -266,7 +294,7 @@ function LaloApp(){
     <HeadsTable data={data} sheet={sheet} onOpenHead={openHeadInHoja}/>:
     <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
-      onTurnChange={changeTurn}
+      onTurnChange={changeTurn} onOpenFrame={openInfoFrame}
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
      movementMode={infoMode} onMovementMode={setInfoMode}
      expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}/>}
@@ -302,5 +330,7 @@ const s=StyleSheet.create({
  reload:{marginTop:10,padding:11,backgroundColor:'#005c9d',borderRadius:9},
  reloadText:{color:'#fff',textAlign:'center',fontWeight:'900'},
  heading:{fontSize:12,color:'#e2d5ed',fontWeight:'800',marginTop:13,marginBottom:7},
- empty:{color:'#d0c2d8',padding:16,fontSize:12,lineHeight:19}
+ empty:{color:'#d0c2d8',padding:16,fontSize:12,lineHeight:19},
+ previewBanner:{borderWidth:1,borderRadius:10,padding:10,marginBottom:9,gap:7},
+ previewBack:{borderWidth:1,borderRadius:7,padding:8,alignSelf:'flex-start'}
 });
