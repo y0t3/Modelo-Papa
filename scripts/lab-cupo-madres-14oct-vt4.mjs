@@ -83,9 +83,34 @@ for(let i=0;i<5;i++){
   limit10:children[10].hits.find(x=>x.head===head).rank,
   limit20:children[20].hits.find(x=>x.head===head).rank,
   unlimited:children[999].hits.find(x=>x.head===head).rank}));
+ let trace1736;
+ if(target==='Vespertino'){
+  const full=modules[999].buildMotorLalo(sheet,'2026-10-14',target,pastViews);
+  const coord=p=>p.map(c=>c.row+':'+c.col).join('>');
+  const rev=s=>s.split('>').reverse().join('>');
+  const canonical=s=>[s,rev(s)].sort()[0];
+  const revNumber=s=>s.split('').reverse().join('');
+  const matchFamily=s=>[s,revNumber(s)].sort().join('/');
+  const physical4=sheet.columns.slice(0,i+1).flatMap(col=>
+   findPaths(col.values,'1736').map(path=>{
+    const segments=[{side:'prefijo',part:path.slice(0,3)},{side:'sufijo',part:path.slice(1,4)}];
+    return {source:col.id,cells:coord(path),segments:segments.map(a=>{
+     const val=a.part.map(c=>c.digit).join(''),fam=matchFamily(val);
+     const f=full.ranks.vt3.find(z=>z.family===fam);
+     const witnesses=(f?.paths||[]).filter(q=>q.sourceId===col.id);
+     const matching=witnesses.filter(q=>canonical(coord(q.path))===canonical(coord(a.part)));
+     return {side:a.side,reading:val,family:fam,
+      motherRank:f?.rank||null,
+      sameSourceWitnesses:witnesses.length,
+      exactPhysicalMotherWitnesses:matching.length,
+      witnessExamples:witnesses.slice(0,5).map(q=>coord(q.path))};
+    })};
+   }));
+  trace1736={physicalPaths:physical4};
+ }
  rows.push({turn:target,availableSources:i+1,eligible,
   sizes:{cap10:children[10].totalVt4Families,cap20:children[20].totalVt4Families,all:children[999].totalVt4Families},
-  top10SameAsBaseline:true});
+  top10SameAsBaseline:true,trace1736});
 }
 const main=rows.find(x=>x.turn==='Vespertino');
 const target1736=main?.eligible.find(x=>x.head==='1736');
