@@ -4,7 +4,9 @@ import type {CabezasDia,Turno} from '../domain';
 import type {DailySheet} from '../sheet';
 import type {LaloHistorical,LaloView} from '../motorLalo';
 import {buildInfoReport,sourceLabel} from '../infoInterpretacion';
-import type {InfoFrame} from '../infoInterpretacion';
+import {buildCandidateSequence} from '../infoCandidatos';
+import type {MovementMode} from '../infoCandidatos';
+import InfoCandidateMovement from './InfoCandidateMovement';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
 
@@ -13,6 +15,7 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;
  sheet:DailySheet|null;historical:LaloHistorical[];
  view:LaloView|null;onNavigate:(screen:Destination)=>void;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
+ movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
  expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void};
 const guides=[
  {key:'tablero',title:'01 · La hoja +11',sub:'De dónde vienen las cifras',content:
@@ -38,26 +41,6 @@ const guides=[
   link:'predictiva' as Destination,label:'Ver un ejemplo'}
 ] as const;
 
-function MotionGrid({frame,compact=false}:{frame:InfoFrame;compact?:boolean}){
- const {colors:c,kinds}=useLaloTheme();
- const max=Math.max(1,...frame.cells.flat());
- return <View accessibilityLabel={'Mapa de 6 filas y 2 columnas, '+frame.label}
-  style={[s.grid,{borderColor:c.border,backgroundColor:c.board}]}>
-  {frame.cells.map((row,r)=><View key={r} style={s.gridRow}>
-   {row.map((weight,col)=>{
-    const ratio=weight/max;
-    const bg=weight===0?c.cell:frame.phase==='PRE'?kinds.vt3.fill:c.accentFill;
-    const fg=frame.phase==='PRE'?kinds.vt3.line:c.accent;
-    return <View key={col} style={[s.gridCell,{
-     width:compact?19:39,height:compact?15:28,borderColor:c.border,backgroundColor:bg,
-     borderWidth:weight>0&&ratio>=0.7?1.5:0.6}]}>
-      <View style={{backgroundColor:fg,opacity:weight?0.22+0.75*ratio:0,
-       width:compact?5:10,height:compact?5:10,borderRadius:6}}/>
-    </View>;
-   })}
-  </View>)}
- </View>;
-}
 function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
  const {colors:c,kinds}=useLaloTheme();
  return <View style={s.legendItem}>
@@ -67,13 +50,14 @@ function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
  </View>;
 }
 export default function InfoDashboard({date,turn,data,sheet,historical,view,onNavigate,
- selectedFrameId,onSelectFrame,expandedGuide,onExpandedGuide}:Props){
+ selectedFrameId,onSelectFrame,movementMode,onMovementMode,
+ expandedGuide,onExpandedGuide}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const report=useMemo(()=>buildInfoReport(date,turn,data,sheet,historical,view),
   [date,turn,data,sheet,historical,view]);
- const matchingIndex=report.frames.findIndex(f=>f.id===selectedFrameId);
- const frameIndex=matchingIndex>=0?matchingIndex:Math.max(0,report.frames.length-1);
- const selected=report.frames[frameIndex];
+ const sequence=useMemo(()=>buildCandidateSequence(date,turn,data,sheet,historical),
+  [date,turn,data,sheet,historical]);
+ const final=sequence.frames[sequence.frames.length-1];
  const loaded=report.observed.length;
  const availability=report.availableSources.filter(x=>x.active);
  const displayDate=/^\d{4}-\d{2}-\d{2}$/.test(date)?
@@ -131,9 +115,16 @@ export default function InfoDashboard({date,turn,data,sheet,historical,view,onNa
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.text}]}>02 · Panorama del turno</Text>
-   <Text style={[s.desc,{color:c.subtext}]}>Lectura descriptiva del Top10 VT3 y los recorridos anteriores.</Text>
-   {report.narrative.map((line,i)=><Text key={i}
-    style={[s.paragraph,{color:c.text}]}>{line}</Text>)}
+   <Text style={[s.desc,{color:c.subtext}]}>
+    Lectura del panorama PRE combinado: VT2, VT3 y VT4 admitidos en los Tops.
+   </Text>
+   <Text style={[s.paragraph,{color:c.text}]}>
+    {final?.comparison||'Actualizá la hoja para ver el panorama de candidatos de este turno.'}
+   </Text>
+   {final?.sourceLeader?<Text style={[s.paragraph,{color:c.text}]}>
+    El apoyo más visible en las fuentes corresponde a {final.sources.find(x=>x.id===final.sourceLeader)?.label}.
+    Esto describe respaldos geométricos, no una probabilidad.
+   </Text>:null}
    <View style={[s.notice,{backgroundColor:c.callout}]}>
     <Text style={[s.note,{color:c.subtext}]}>
      Esta lectura compara posiciones observadas; no determina dónde saldrá el próximo número.
@@ -147,59 +138,9 @@ export default function InfoDashboard({date,turn,data,sheet,historical,view,onNa
    </Pressable>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>03 · Movimiento reciente</Text>
-   <Text style={[s.desc,{color:c.subtext}]}>
-    Secuencia congelada: tocá cada cuadro para seguir la distribución física entre jornadas y turnos.
-   </Text>
-   <View style={s.motionStrip}>
-    {report.frames.map((f,i)=><Pressable key={f.id}
-     onPress={()=>onSelectFrame(f.id)} accessibilityRole="button"
-     accessibilityState={{selected:selected===f}}
-     style={[s.motionThumb,{backgroundColor:selected===f?c.accentFill:c.card,
-      borderColor:selected===f?c.accent:c.border}]}>
-     <MotionGrid frame={f} compact/>
-     <Text numberOfLines={2} style={[s.miniLabel,{color:c.text}]}>{f.label}</Text>
-     <Text style={[s.miniType,{color:c.subtext}]}>{f.context?f.context+' · ':''}{f.phase} · {f.units} aportes</Text>
-    </Pressable>)}
-   </View>
-   <View style={[s.motionDetail,{backgroundColor:c.surfaceAlt}]}>
-    <View style={{flex:1,gap:6}}>
-     <Text style={[s.microHeader,{color:c.text}]}>{selected.label}</Text>
-     {selected.context?<Text style={[s.note,{color:c.subtext}]}>{selected.context}</Text>:null}
-     <Text style={[s.note,{color:c.subtext}]}>
-      {selected.phase==='PRE'?'Familias VT3 Top10 (PRE)':'Coincidencias VT3 de cabezas publicadas (POST)'}
-     </Text>
-     <Text style={[s.note,{color:c.text}]}>Fuente principal: {
-      selected.mainSource?sourceLabel(selected.mainSource as import('../sheet').SourceId):'Sin predominio único'
-     }</Text>
-     <Text style={[s.note,{color:c.text}]}>Sector más recorrido: {
-      selected.mainZone||'Sin predominio único'
-     }</Text>
-     <Text style={[s.note,{color:c.subtext}]}>
-      {selected.available?selected.units+' aportes físicos agrupados':
-       'Sin recorridos VT3 comparables en este corte'}
-     </Text>
-    </View>
-    <MotionGrid frame={selected}/>
-   </View>
-   <View style={s.motionActions}>
-    <Pressable accessibilityRole="button" disabled={frameIndex===0}
-     onPress={()=>onSelectFrame(report.frames[Math.max(0,frameIndex-1)].id)}
-     style={[s.motionButton,{borderColor:c.border,opacity:frameIndex===0?0.4:1}]}>
-     <Text style={{color:c.accent,fontWeight:'800'}}>← Anterior</Text>
-    </Pressable>
-    <Text style={{color:c.subtext,fontSize:11}}>{frameIndex+1} / {report.frames.length}</Text>
-    <Pressable accessibilityRole="button" disabled={frameIndex>=report.frames.length-1}
-     onPress={()=>onSelectFrame(report.frames[Math.min(report.frames.length-1,frameIndex+1)].id)}
-     style={[s.motionButton,{borderColor:c.border,
-      opacity:frameIndex>=report.frames.length-1?0.4:1}]}>
-     <Text style={{color:c.accent,fontWeight:'800'}}>Siguiente →</Text>
-    </Pressable>
-   </View>
-   <Text style={[s.note,{color:c.muted}]}>
-    Los cuadros son fotografías de actividad por casilla, no la trayectoria de una misma cabeza entre jornadas.
-    Más intensidad significa más aportes distintos; no más probabilidad.
-   </Text>
+   <Text style={[s.heading,{color:c.text}]}>03 · Movimiento de candidatos</Text>
+   <InfoCandidateMovement sequence={sequence} selectedFrameId={selectedFrameId}
+    onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}/>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.text}]}>04 · Guía del sistema</Text>
