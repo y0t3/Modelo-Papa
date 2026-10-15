@@ -1,0 +1,49 @@
+name: VT4 A/B 115 · Concentrado versus rondas
+on:
+  push:
+    branches: [lab/vt4-a-b-concentrado-vs-rondas-15oct2026]
+    paths: ['.github/workflows/lab-vt4-ab-115.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cotejar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verificar versión experimental VT4 fuente actual
+        run: |
+          test -f auditorias/vt4-diversidad-madres-top10-115-13oct2026/INPUT_PRE_115.json
+          grep -q 'const ranked4=distributeVt4ByMother(daughtersByPhysicalStrength,selectedMothers);' src/motorLalo.ts
+          node --version
+      - name: Ocultar físicamente objetivos y fixture antes de generar PRE
+        run: |
+          mkdir -p /tmp/vt4-ab-post
+          mv auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json /tmp/vt4-ab-post/OBJETIVOS_POST_115.json
+          mv fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64 /tmp/vt4-ab-post/fixture.b64
+          test ! -f auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          test ! -f fixtures/cabezas-sept-oct-2026-30-fechas.json.gz.b64
+      - name: Crear dos rankings PRE y sellar hash SHA256 sin resultados futuros
+        run: node scripts/lab-vt4-a-b-115.mjs pre
+      - name: Reponer objetivos únicamente para POST y medir Top3 5 10
+        run: |
+          mv /tmp/vt4-ab-post/OBJETIVOS_POST_115.json auditorias/vt4-diversidad-madres-top10-115-13oct2026/OBJETIVOS_POST_115.json
+          node scripts/lab-vt4-a-b-115.mjs post
+      - name: Conservar resultados auditables en rama laboratorio
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/vt4-a-b-concentrado-rondas-15oct2026/
+          git commit -m 'audit(VT4): A/B histórico top3 top5 top10 y diversidad de madres'
+          git push origin HEAD:lab/vt4-a-b-concentrado-vs-rondas-15oct2026
+      - name: Adjuntar datos comparativos
+        uses: actions/upload-artifact@v4
+        with:
+          name: VT4-A-B-115-PRE-POST
+          path: auditorias/vt4-a-b-concentrado-rondas-15oct2026/
+          if-no-files-found: error
+          retention-days: 60
