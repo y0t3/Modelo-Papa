@@ -15,7 +15,7 @@ export type PapaPick={
 };
 export type PapaDraft={date:string;turn:Turno;picks:PapaPick[]};
 export type PapaPre={
- schema:'PAPA_PRE_V1';date:string;turn:Turno;createdAt:string;
+ schema:'PAPA_PRE_V1'|'PAPA_PRE_V2';date:string;turn:Turno;createdAt:string;
  picks:PapaPick[];sources:{id:SourceId;values:string[]}[];
 };
 export type PapaSnapshot={pre:PapaPre;sha256:string};
@@ -44,9 +44,9 @@ export function draftPick(sheet:DailySheet,turn:Turno,
  const value=cells.map(c=>source.values[c.row]?.[c.col]||'').join('');
  if(!new RegExp('^[0-9]{'+cells.length+'}$').test(value))throw Error('Las casillas elegidas no tienen cifras cargadas');
  const kind=('vt'+cells.length) as PapaKind;
- // VT4: jamás invertir el número completo para formar otra madre.
- // La última casilla es la cuarta cifra respecto a la madre (primeras tres).
- const motherVt3=kind==='vt4'?reversibleFamily(value.slice(0,3)):undefined;
+ // VT4: el recorrido físico empieza por la cifra AÑADIDA, seguido de
+ // las tres casillas de la madre original; nunca anexar a su derecha.
+ const motherVt3=kind==='vt4'?reversibleFamily(value.slice(1)):undefined;
  const family=kind==='vt4'?value:reversibleFamily(value);
  const path=cells.map(posKey).join('>');
  return {id:kind+'|'+sourceId+'|'+path,kind,value,family,
@@ -76,12 +76,12 @@ export function buildPre(draft:PapaDraft,sheet:DailySheet,createdAt:string):Papa
     normalized.kind!==p.kind)throw Error('La hoja cambió: revisá los recorridos antes de congelar');
   return normalized;
  });
- const pre:PapaPre={schema:'PAPA_PRE_V1',date:draft.date,turn:draft.turn,
+ const pre:PapaPre={schema:'PAPA_PRE_V2',date:draft.date,turn:draft.turn,
   createdAt,picks:clean,sources:current.map(c=>({id:c.id,values:[...c.values]}))};
  return {pre,sha256:sha256(JSON.stringify(pre))};
 }
 export function validateSnapshot(snapshot:PapaSnapshot):boolean{
- if(snapshot?.pre?.schema!=='PAPA_PRE_V1'||!snapshot?.sha256||
+ if(!['PAPA_PRE_V1','PAPA_PRE_V2'].includes(snapshot?.pre?.schema)||!snapshot?.sha256||
   sha256(JSON.stringify(snapshot.pre))!==snapshot.sha256)return false;
  const p=snapshot.pre;
  if(!/^\d{4}-\d{2}-\d{2}$/.test(p.date)||!TURNOS.includes(p.turn)||
@@ -93,6 +93,11 @@ export function validateSnapshot(snapshot:PapaSnapshot):boolean{
    const calculated=draftPick(sheet,p.turn,x.sourceId,x.cells);
    if(calculated.value!==x.value||calculated.kind!==x.kind||
     calculated.family!==x.family||calculated.id!==x.id)return false;
+   // Las capturas V1 conservan la madre histórica (primeras 3 cifras)
+   // para no perder registros guardados antes de corregir la regla.
+   const oldMother=x.kind==='vt4'?reversibleFamily(x.value.slice(0,3)):undefined;
+   const expectedMother=p.schema==='PAPA_PRE_V1'?oldMother:calculated.motherVt3;
+   if(x.motherVt3!==expectedMother)return false;
   }
   return true;
  }catch{return false;}
