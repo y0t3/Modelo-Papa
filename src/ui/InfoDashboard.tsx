@@ -1,4 +1,4 @@
-import React,{useEffect,useMemo,useState} from 'react';
+import React,{useMemo} from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import type {DailySheet} from '../sheet';
@@ -11,7 +11,9 @@ import {useLaloTheme} from './LaloTheme';
 type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
 type Props={date:string;turn:Turno;data:CabezasDia|null;
  sheet:DailySheet|null;historical:LaloHistorical[];
- view:LaloView|null;onNavigate:(screen:Destination)=>void};
+ view:LaloView|null;onNavigate:(screen:Destination)=>void;
+ selectedFrameId:string;onSelectFrame:(id:string)=>void;
+ expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void};
 const guides=[
  {key:'tablero',title:'01 · La hoja +11',sub:'De dónde vienen las cifras',content:
   'Cada cabeza anterior aporta sus últimas dos cifras más 11 (módulo 100). Se dibujan seis filas con dos columnas por fuente. Los caminos coincidentes se marcan al conocer las cabezas: son explicaciones de resultados ya publicados, no pronósticos previos.',
@@ -64,14 +66,14 @@ function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
   <Text style={{color:c.subtext,fontSize:11,fontWeight:'700'}}>{kind.toUpperCase()} · {kinds[kind].label}</Text>
  </View>;
 }
-export default function InfoDashboard({date,turn,data,sheet,historical,view,onNavigate}:Props){
+export default function InfoDashboard({date,turn,data,sheet,historical,view,onNavigate,
+ selectedFrameId,onSelectFrame,expandedGuide,onExpandedGuide}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const report=useMemo(()=>buildInfoReport(date,turn,data,sheet,historical,view),
   [date,turn,data,sheet,historical,view]);
- const [frameIndex,setFrameIndex]=useState(0);
- const [expanded,setExpanded]=useState<string|null>('tablero');
- useEffect(()=>{setFrameIndex(Math.max(0,report.frames.length-1))},[date,turn,view,report.frames.length]);
- const selected=report.frames[Math.min(frameIndex,report.frames.length-1)];
+ const matchingIndex=report.frames.findIndex(f=>f.id===selectedFrameId);
+ const frameIndex=matchingIndex>=0?matchingIndex:Math.max(0,report.frames.length-1);
+ const selected=report.frames[frameIndex];
  const loaded=report.observed.length;
  const availability=report.availableSources.filter(x=>x.active);
  const displayDate=/^\d{4}-\d{2}-\d{2}$/.test(date)?
@@ -151,18 +153,19 @@ export default function InfoDashboard({date,turn,data,sheet,historical,view,onNa
    </Text>
    <View style={s.motionStrip}>
     {report.frames.map((f,i)=><Pressable key={f.id}
-     onPress={()=>setFrameIndex(i)} accessibilityRole="button"
+     onPress={()=>onSelectFrame(f.id)} accessibilityRole="button"
      accessibilityState={{selected:selected===f}}
      style={[s.motionThumb,{backgroundColor:selected===f?c.accentFill:c.card,
       borderColor:selected===f?c.accent:c.border}]}>
      <MotionGrid frame={f} compact/>
      <Text numberOfLines={2} style={[s.miniLabel,{color:c.text}]}>{f.label}</Text>
-     <Text style={[s.miniType,{color:c.subtext}]}>{f.phase} · {f.units} aportes</Text>
+     <Text style={[s.miniType,{color:c.subtext}]}>{f.context?f.context+' · ':''}{f.phase} · {f.units} aportes</Text>
     </Pressable>)}
    </View>
    <View style={[s.motionDetail,{backgroundColor:c.surfaceAlt}]}>
     <View style={{flex:1,gap:6}}>
      <Text style={[s.microHeader,{color:c.text}]}>{selected.label}</Text>
+     {selected.context?<Text style={[s.note,{color:c.subtext}]}>{selected.context}</Text>:null}
      <Text style={[s.note,{color:c.subtext}]}>
       {selected.phase==='PRE'?'Familias VT3 Top10 (PRE)':'Coincidencias VT3 de cabezas publicadas (POST)'}
      </Text>
@@ -181,13 +184,13 @@ export default function InfoDashboard({date,turn,data,sheet,historical,view,onNa
    </View>
    <View style={s.motionActions}>
     <Pressable accessibilityRole="button" disabled={frameIndex===0}
-     onPress={()=>setFrameIndex(i=>Math.max(0,i-1))}
+     onPress={()=>onSelectFrame(report.frames[Math.max(0,frameIndex-1)].id)}
      style={[s.motionButton,{borderColor:c.border,opacity:frameIndex===0?0.4:1}]}>
      <Text style={{color:c.accent,fontWeight:'800'}}>← Anterior</Text>
     </Pressable>
     <Text style={{color:c.subtext,fontSize:11}}>{frameIndex+1} / {report.frames.length}</Text>
     <Pressable accessibilityRole="button" disabled={frameIndex>=report.frames.length-1}
-     onPress={()=>setFrameIndex(i=>Math.min(report.frames.length-1,i+1))}
+     onPress={()=>onSelectFrame(report.frames[Math.min(report.frames.length-1,frameIndex+1)].id)}
      style={[s.motionButton,{borderColor:c.border,
       opacity:frameIndex>=report.frames.length-1?0.4:1}]}>
      <Text style={{color:c.accent,fontWeight:'800'}}>Siguiente →</Text>
@@ -205,16 +208,16 @@ export default function InfoDashboard({date,turn,data,sheet,historical,view,onNa
     {KINDS.map(k=><LegendColor key={k} kind={k}/>)}
    </View>
    {guides.map(g=><View key={g.key} style={[s.guide,{borderColor:c.divider}]}>
-    <Pressable accessibilityRole="button" accessibilityState={{expanded:expanded===g.key}}
-     onPress={()=>setExpanded(prev=>prev===g.key?null:g.key)}
+    <Pressable accessibilityRole="button" accessibilityState={{expanded:expandedGuide===g.key}}
+     onPress={()=>onExpandedGuide(expandedGuide===g.key?null:g.key)}
      style={s.guideHead}>
      <View style={{flex:1}}>
       <Text style={[s.guideTitle,{color:c.text}]}>{g.title}</Text>
       <Text style={[s.note,{color:c.subtext}]}>{g.sub}</Text>
      </View>
-     <Text style={{color:c.accent,fontSize:18,fontWeight:'900'}}>{expanded===g.key?'−':'+'}</Text>
+     <Text style={{color:c.accent,fontSize:18,fontWeight:'900'}}>{expandedGuide===g.key?'−':'+'}</Text>
     </Pressable>
-    {expanded===g.key&&<View style={s.guideBody}>
+    {expandedGuide===g.key&&<View style={s.guideBody}>
      <Text style={[s.paragraph,{color:c.text}]}>{g.content}</Text>
      <Pressable accessibilityRole="button" style={[s.goto,{borderColor:c.border}]}
       onPress={()=>onNavigate(g.link)}>
