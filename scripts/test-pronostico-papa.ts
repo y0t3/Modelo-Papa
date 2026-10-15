@@ -3,7 +3,7 @@ import {TURNOS,diaVacio} from '../src/domain';
 import {sha256} from '../src/sha256';
 import type {DailySheet,SheetColumn} from '../src/sheet';
 import type {PapaPick,PapaRecord} from '../src/papaPronostico';
-import {addDraftPick,buildPre,draftPick,evaluatePapa,hasObserved,isPhysicalPath,
+import {addDraftPick,buildPre,draftPick,evaluatePapa,expandDownPicks,hasObserved,isPhysicalPath,
  observedHeads,pathText,uniqueWagers,validateSnapshot,weekEnd,weeklySummary,weekStart} from '../src/papaPronostico';
 const names:SheetColumn['id'][]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
 const board:DailySheet={
@@ -29,6 +29,23 @@ assert.equal(vt3.value,'768');assert.equal(vt3.family,'768/867');
 assert.equal(vt4.value,'4768');
 assert.equal(vt4.family,'4768','VT4 antepone la cifra, sin invertir toda la cuaterna');
 assert.equal(vt4.motherVt3,'768/867','La madre VT3 se registra separadamente');
+
+const bajada=expandDownPicks([vt4],true);
+assert.deepEqual(bajada.map(p=>[p.kind,p.value]),[
+ ['vt4','4768'],['vt3','768'],['vt2','68']
+], 'Un solo VT4 baja sus últimas 3 y últimas 2 cifras');
+assert.deepEqual(bajada.slice(1).map(p=>p.family),['768/867','68/86']);
+assert.deepEqual(bajada.slice(1).map(p=>p.cells.map(c=>c.row+':'+c.col)),[
+ triple.map(c=>c.row+':'+c.col),
+ triple.slice(1).map(c=>c.row+':'+c.col)
+],'Las bajadas conservan las casillas físicas del sufijo');
+assert.deepEqual(expandDownPicks([vt4],false).map(p=>p.kind),['vt4'],
+ 'Un PRE anterior nunca activa bajadas retrospectivamente');
+assert.equal(expandDownPicks([vt4,vt3],true).filter(p=>p.kind==='vt3').length,1,
+ 'Una jugada de tres cifras seleccionada manualmente no se duplica');
+const down4Family=expandDownPicks([{...vt4,value:'3044',family:'3044',cells:quadruple}],true);
+assert.deepEqual(down4Family.map(p=>p.value),['3044','044','44']);
+
 assert.throws(()=>draftPick(board,'Previa','Previa',pair),/todavía/);
 assert.throws(()=>draftPick(board,'Previa','prevNocturno',[
  {row:0,col:0},{row:2,col:0}]),/contiguas/);
@@ -39,13 +56,23 @@ assert.equal(paths.length,4,'Un camino idéntico no se duplica; otro testigo se 
 assert.equal(uniqueWagers(paths).vt3.size,1,'Dos testigos de la misma familia son una jugada');
 const snapshot=buildPre({date:'2026-10-14',turn:'Previa',picks:paths},board,'2026-10-14T10:00:00Z');
 assert.ok(validateSnapshot(snapshot));
-assert.equal(snapshot.pre.schema,'PAPA_PRE_V2');
+assert.equal(snapshot.pre.schema,'PAPA_PRE_V3');
 
 const legacyPre={...snapshot.pre,schema:'PAPA_PRE_V1' as const,
  picks:snapshot.pre.picks.map(p=>({...p,motherVt3:p.kind==='vt4'?'476/674':p.motherVt3}))};
 const legacySnapshot={pre:legacyPre,sha256:sha256(JSON.stringify(legacyPre))};
 assert.ok(validateSnapshot(legacySnapshot),
  'Los PRE anteriores V1 conservan su madre histórica sin invalidar los registros');
+const priorPre={...snapshot.pre,schema:'PAPA_PRE_V2' as const};
+const priorSnapshot={pre:priorPre,sha256:sha256(JSON.stringify(priorPre))};
+assert.ok(validateSnapshot(priorSnapshot),'Los PRE V2 son legibles sin ampliar sus apuestas');
+const priorRecord:PapaRecord={snapshot:priorSnapshot,post:{
+ checkedAt:'2026-10-14T15:00:00Z',
+ heads:{Ciudad:'1276',Provincia:'3768',Córdoba:'4768'}}};
+assert.deepEqual(evaluatePapa(priorRecord).wagers,{vt2:1,vt3:1,vt4:1},
+ 'No agregar jugadas ni aciertos a PRE anteriores');
+assert.deepEqual(evaluatePapa(priorRecord).hits,{vt2:1,vt3:2,vt4:1});
+
 
 
 assert.equal(snapshot.pre.sources.length,1);
@@ -62,9 +89,9 @@ const actual:PapaRecord={snapshot,post:{
 assert.equal(evaluatePapa(preRecord).jurisdictions,0);
 const e=evaluatePapa(actual);
 assert.equal(e.jurisdictions,3);
-assert.deepEqual(e.wagers,{vt2:1,vt3:1,vt4:1});
-assert.deepEqual(e.hits,{vt2:1,vt3:2,vt4:1});
-assert.equal(e.winnerDetails.length,4);
+assert.deepEqual(e.wagers,{vt2:2,vt3:1,vt4:1});
+assert.deepEqual(e.hits,{vt2:3,vt3:2,vt4:1});
+assert.equal(e.winnerDetails.length,6);
 assert.equal(e.correctTurns.vt3,true);
 assert.equal(weekStart('2026-10-14'),'2026-10-12');
 assert.equal(weekEnd('2026-10-12'),'2026-10-18');
@@ -72,7 +99,7 @@ const summary=weeklySummary([actual], '2026-10-14');
 assert.equal(summary.records,1);assert.equal(summary.checkedTurns,1);
 assert.equal(summary.headsCompared,3);
 assert.equal(summary.partialTurns,1);
-assert.equal(summary.hit.vt2,1);assert.equal(summary.hit.vt3,2);
+assert.equal(summary.hit.vt2,3);assert.equal(summary.hit.vt3,2);
 assert.equal(summary.hit.vt4,1);
 assert.equal(weeklySummary([actual],'2026-10-19').records,0);
 const heads=diaVacio();

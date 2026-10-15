@@ -12,10 +12,12 @@ export type PapaCell={row:number;col:number};
 export type PapaPick={
  id:string;kind:PapaKind;value:string;family:string;sourceId:SourceId;
  cells:PapaCell[];motherVt3?:string;
+ /** Proveniencia sólo de presentación: no constituye otro recorrido elegido. */
+ autoFrom?:string;
 };
 export type PapaDraft={date:string;turn:Turno;picks:PapaPick[]};
 export type PapaPre={
- schema:'PAPA_PRE_V1'|'PAPA_PRE_V2';date:string;turn:Turno;createdAt:string;
+ schema:'PAPA_PRE_V1'|'PAPA_PRE_V2'|'PAPA_PRE_V3';date:string;turn:Turno;createdAt:string;
  picks:PapaPick[];sources:{id:SourceId;values:string[]}[];
 };
 export type PapaSnapshot={pre:PapaPre;sha256:string};
@@ -56,6 +58,34 @@ export function addDraftPick(picks:PapaPick[],pick:PapaPick):PapaPick[]{
  if(picks.some(p=>p.id===pick.id))return picks;
  return [...picks,pick];
 }
+/**
+ * Bajada literal: un VT4 como 3044 incluye 044 y 44 (NO las orientaciones
+ * inversas 440 ni 04 como boletos reales). En el ranking de familias
+ * VT2/VT3, esas lecturas se agrupan por reversibilidad como siempre.
+ * Los tramos finales son recorridos físicos ya contenidos en la cuaterna.
+ *
+ * El PRE V3 guarda sólo las elecciones originales; las bajadas se derivan
+ * de modo determinista. Los PRE V1/V2 no se reinterpretan retrospectivamente.
+ */
+export function expandDownPicks(picks:PapaPick[],enabled:boolean):PapaPick[]{
+ const out=picks.map(p=>({...p,cells:p.cells.map(c=>({...c}))}));
+ if(!enabled)return out;
+ const seen=new Set(out.map(p=>p.id));
+ for(const parent of picks){
+  if(parent.kind!=='vt4')continue;
+  for(const n of [3,2] as const){
+   const kind=n===3?'vt3':'vt2';
+   const cells=parent.cells.slice(-n);
+   const value=parent.value.slice(-n);
+   const id=kind+'|'+parent.sourceId+'|'+cells.map(posKey).join('>');
+   if(seen.has(id))continue; // También respeta selecciones manuales previas.
+   out.push({id,kind,value,family:reversibleFamily(value),
+    cells:cells.map(c=>({...c})),sourceId:parent.sourceId,autoFrom:parent.id});
+   seen.add(id);
+  }
+ }
+ return out;
+}
 export const uniqueWagers=(picks:PapaPick[])=>{
  const perKind:Record<PapaKind,Set<string>>={vt2:new Set(),vt3:new Set(),vt4:new Set()};
  for(const p of picks)perKind[p.kind].add(p.family);
@@ -76,12 +106,12 @@ export function buildPre(draft:PapaDraft,sheet:DailySheet,createdAt:string):Papa
     normalized.kind!==p.kind)throw Error('La hoja cambió: revisá los recorridos antes de congelar');
   return normalized;
  });
- const pre:PapaPre={schema:'PAPA_PRE_V2',date:draft.date,turn:draft.turn,
+ const pre:PapaPre={schema:'PAPA_PRE_V3',date:draft.date,turn:draft.turn,
   createdAt,picks:clean,sources:current.map(c=>({id:c.id,values:[...c.values]}))};
  return {pre,sha256:sha256(JSON.stringify(pre))};
 }
 export function validateSnapshot(snapshot:PapaSnapshot):boolean{
- if(!['PAPA_PRE_V1','PAPA_PRE_V2'].includes(snapshot?.pre?.schema)||!snapshot?.sha256||
+ if(!['PAPA_PRE_V1','PAPA_PRE_V2','PAPA_PRE_V3'].includes(snapshot?.pre?.schema)||!snapshot?.sha256||
   sha256(JSON.stringify(snapshot.pre))!==snapshot.sha256)return false;
  const p=snapshot.pre;
  if(!/^\d{4}-\d{2}-\d{2}$/.test(p.date)||!TURNOS.includes(p.turn)||
@@ -120,7 +150,8 @@ export type PapaEvaluation={
 const emptyCounter=():Record<PapaKind,number>=>({vt2:0,vt3:0,vt4:0});
 export function evaluatePapa(record:PapaRecord):PapaEvaluation{
  if(!validateSnapshot(record.snapshot))throw Error('Integridad de PRE inválida');
- const wagers=uniqueWagers(record.snapshot.pre.picks);
+ const wagers=uniqueWagers(expandDownPicks(record.snapshot.pre.picks,
+  record.snapshot.pre.schema==='PAPA_PRE_V3'));
  const count=emptyCounter(),hits=emptyCounter();
  const correctTurns:Record<PapaKind,boolean>={vt2:false,vt3:false,vt4:false};
  const winnerDetails:PapaEvaluation['winnerDetails']=[];

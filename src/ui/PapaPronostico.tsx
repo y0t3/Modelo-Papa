@@ -4,7 +4,7 @@ import type {CabezasDia,Turno} from '../domain';
 import {TURNOS} from '../domain';
 import type {DailySheet,SourceId} from '../sheet';
 import type {PapaCell,PapaPick,PapaRecord} from '../papaPronostico';
-import {addDraftPick,draftPick,evaluatePapa,hasObserved,
+import {addDraftPick,draftPick,evaluatePapa,expandDownPicks,hasObserved,
  pathText,recordId,todayLocal,uniqueWagers,weekEnd,weeklySummary,weekStart} from '../papaPronostico';
 import {loadDraft,loadRecords,saveDraft,savePre,updateResults} from '../papaRegistro';
 import {descargarCabezas} from '../cabezas';
@@ -66,7 +66,8 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
  const record=records.find(r=>recordId(r.snapshot.pre.date,r.snapshot.pre.turn)===recordId(date,turn));
  const sealed=Boolean(record),published=hasObserved(heads,turn);
  const editable=!!sheet&&date===todayLocal()&&!sealed&&!published;
- const wagers=useMemo(()=>uniqueWagers(picks),[picks]);
+ const expandedDraft=useMemo(()=>expandDownPicks(picks,true),[picks]);
+ const wagers=useMemo(()=>uniqueWagers(expandedDraft),[expandedDraft]);
  const weekRecords=useMemo(()=>records.filter(r=>weekStart(r.snapshot.pre.date)===week),[records,week]);
  const summary=useMemo(()=>weeklySummary(records,week),[records,week]);
  const detail=record?evaluatePapa(record):null;
@@ -139,7 +140,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
   if(!editable||!sheet||!picks.length)return;
   Alert.alert('Congelar pronóstico Lalo',
    'Se guardarán '+Object.values(wagers).reduce((n,a)=>n+a.size,0)+
-   ' jugadas distintas del '+date+' · '+turn+
+   ' jugadas distintas (incluida bajada VT4→VT3→VT2) del '+date+' · '+turn+
    '. Una vez guardadas no podrás modificar ni agregar candidatas. ¿Confirmás?',
    [{text:'Seguir editando',style:'cancel'},{
     text:'Congelar PRE',onPress:()=>{
@@ -169,6 +170,8 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
   finally{setBusy(false)}
  };
  const showPicks=record?.snapshot.pre.picks||picks;
+ const displayedPicks=expandDownPicks(showPicks,!record||record.snapshot.pre.schema==='PAPA_PRE_V3');
+ const autoCount=displayedPicks.filter(p=>p.autoFrom).length;
  return <View style={s.main}>
   <View style={[s.hero,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.title,{color:c.text}]}>PRONÓSTICO DE LALO</Text>
@@ -194,7 +197,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
      {sealed?'PRE congelado · sus recorridos no pueden alterarse':
       published?'Turno con resultados publicados: no se permite registrar un PRE retroactivo':
       date!==todayLocal()?'Podés revisar esta fecha, pero solo se congelan pronósticos del día en curso':
-      'Borrador personal · elegí 2, 3 o 4 casillas de una sola columna'}
+      'Borrador personal · elegí 2, 3 o 4 casillas de una sola columna. VT4 baja a VT3 y VT2.'}
     </Text>
     {sheet?<MarkedBoard columns={visible} routes={routes} activeOwner={null}/>:
      <Text style={[s.small,{color:c.subtext}]}>Actualizá la hoja para elegir recorridos.</Text>}
@@ -222,6 +225,9 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
        {preview.kind==='vt4'?'Número exacto · madre '+preview.motherVt3:
         'Familia reversible '+preview.family}
       </Text>
+      {preview.kind==='vt4'?<Text style={[s.small,{color:c.text}]}>
+       Bajalo: VT4 {preview.value} + VT3 {preview.value.slice(-3)} + VT2 {preview.value.slice(-2)}
+      </Text>:null}
      </View>:null}
      <View style={s.controls}>
       <Pressable accessibilityRole="button" onPress={()=>setTrail(t=>t.slice(0,-1))}
@@ -240,17 +246,18 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
     </View>:null}
    </View>
    <View style={[s.panel,{backgroundColor:c.surface,borderColor:c.border}]}>
-    <Text style={[s.subtitle,{color:c.text}]}>CANDIDATOS ELEGIDOS · {showPicks.length} recorridos</Text>
+    <Text style={[s.subtitle,{color:c.text}]}>CANDIDATOS ELEGIDOS · {showPicks.length} recorridos · {autoCount} bajadas</Text>
     <Text style={[s.small,{color:c.subtext}]}>
-     Una familia puede tener varios recorridos, pero cuenta como una sola jugada por VT y turno.
-     VT4 siempre antepone una cifra a su madre VT3 física y se coteja como número exacto.
+     Cada VT4 seleccionado incluye sus últimas tres y dos cifras («bajalo»).
+     Una familia cuenta una sola vez por VT y turno, aunque tenga varias rutas.
+     Las jugadas bajadas tienen testigo físico propio dentro del recorrido VT4.
     </Text>
     {types.map(kind=>{
-     const list=showPicks.filter(p=>p.kind===kind);
+     const list=displayedPicks.filter(p=>p.kind===kind);
      const families=new Set(list.map(x=>x.family));
      return <View key={kind} style={[s.kindSection,{borderTopColor:c.divider}]}>
       <Text style={{fontSize:12,fontWeight:'900',color:kinds[kind].line}}>
-       {kind.toUpperCase()} · {families.size} jugada(s) · {list.length} recorrido(s)
+       {kind.toUpperCase()} · {families.size} jugada(s) · {list.length} trayecto(s)
       </Text>
       {list.map(p=><View key={p.id} style={[s.pickRow,{borderColor:c.border}]}>
        <View style={{flex:1}}>
@@ -259,9 +266,10 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
         </Text>
         <Text style={[s.muted,{color:c.subtext}]}>
          {sourceLabels[p.sourceId]} · {p.value} · {pathText(p.cells)}
+         {p.autoFrom?' · ↓ Bajado de VT4':''}
         </Text>
        </View>
-       {editable?<Pressable onPress={()=>void patch(picks.filter(x=>x.id!==p.id))}
+       {editable&&!p.autoFrom?<Pressable onPress={()=>void patch(picks.filter(x=>x.id!==p.id))}
         accessibilityRole="button" accessibilityLabel={'Quitar recorrido '+p.value}
         style={s.delete}>
         <Text style={{color:c.accent,fontWeight:'900'}}>Quitar</Text>
