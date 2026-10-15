@@ -1,0 +1,1573 @@
+{
+  "date": "2026-10-14",
+  "phase": "RECONSTRUCCION_SOLO_PREVIA_SELLADA",
+  "createdAtUtc": "2026-10-15T03:28:51.956Z",
+  "originalPreCreatedAtUtc": "2026-10-14T04:13:31.368Z",
+  "originalPreSha256": "a94ac932ae134541d22923fb82022cb5be88fdd5b00811982b43241e16568f01",
+  "readsTargetHeads": false,
+  "rows": [
+    {
+      "turn": "Previa",
+      "method": "PRE_GENUINO_14OCT",
+      "sealCreatedAtUtc": "2026-10-14T04:13:31.368Z",
+      "knownSources": [
+        {
+          "source": "prevNocturno",
+          "values": [
+            "83",
+            "45",
+            "40",
+            "36",
+            "03",
+            "--"
+          ]
+        }
+      ],
+      "counts": {
+        "vt2": 14,
+        "vt3": 18,
+        "vt4": 90
+      },
+      "ranks": {
+        "vt2": [
+          {
+            "family": "03/30",
+            "rank": 1,
+            "d1": 6,
+            "d7": 5,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "30",
+              "03"
+            ]
+          },
+          {
+            "family": "36/63",
+            "rank": 2,
+            "d1": 6,
+            "d7": 4,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "63",
+              "36"
+            ]
+          },
+          {
+            "family": "04/40",
+            "rank": 3,
+            "d1": 4,
+            "d7": 4,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "04",
+              "40"
+            ]
+          },
+          {
+            "family": "06/60",
+            "rank": 4,
+            "d1": 3,
+            "d7": 4,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "60",
+              "06"
+            ]
+          },
+          {
+            "family": "34/43",
+            "rank": 5,
+            "d1": 3,
+            "d7": 4,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "34",
+              "43"
+            ]
+          },
+          {
+            "family": "45/54",
+            "rank": 6,
+            "d1": 3,
+            "d7": 4,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "54",
+              "45"
+            ]
+          },
+          {
+            "family": "05/50",
+            "rank": 7,
+            "d1": 3,
+            "d7": 3,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "05"
+            ]
+          },
+          {
+            "family": "35/53",
+            "rank": 8,
+            "d1": 3,
+            "d7": 3,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "53"
+            ]
+          },
+          {
+            "family": "44/44",
+            "rank": 9,
+            "d1": 3,
+            "d7": 3,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "44"
+            ]
+          },
+          {
+            "family": "48/84",
+            "rank": 10,
+            "d1": 3,
+            "d7": 3,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "48"
+            ]
+          },
+          {
+            "family": "38/83",
+            "rank": 11,
+            "d1": 3,
+            "d7": 1,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "38"
+            ]
+          },
+          {
+            "family": "46/64",
+            "rank": 12,
+            "d1": 1,
+            "d7": 3,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "46"
+            ]
+          },
+          {
+            "family": "33/33",
+            "rank": 13,
+            "d1": 1,
+            "d7": 3,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "33"
+            ]
+          },
+          {
+            "family": "58/85",
+            "rank": 14,
+            "d1": 1,
+            "d7": 3,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "85"
+            ]
+          }
+        ],
+        "vt3": [
+          {
+            "family": "063/360",
+            "rank": 1,
+            "d1": 2,
+            "d7": 0,
+            "sources": 1,
+            "branch": 2,
+            "blocks": 4,
+            "values": [
+              "063",
+              "360"
+            ]
+          },
+          {
+            "family": "036/630",
+            "rank": 2,
+            "d1": 2,
+            "d7": 0,
+            "sources": 1,
+            "branch": 1,
+            "blocks": 3,
+            "values": [
+              "630",
+              "036"
+            ]
+          },
+          {
+            "family": "033/330",
+            "rank": 3,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 1,
+            "blocks": 2,
+            "values": [
+              "330",
+              "033"
+            ]
+          },
+          {
+            "family": "034/430",
+            "rank": 4,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 1,
+            "blocks": 2,
+            "values": [
+              "430"
+            ]
+          },
+          {
+            "family": "344/443",
+            "rank": 5,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 1,
+            "blocks": 2,
+            "values": [
+              "443",
+              "344"
+            ]
+          },
+          {
+            "family": "354/453",
+            "rank": 6,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 1,
+            "blocks": 2,
+            "values": [
+              "354"
+            ]
+          },
+          {
+            "family": "364/463",
+            "rank": 7,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 1,
+            "blocks": 2,
+            "values": [
+              "463"
+            ]
+          },
+          {
+            "family": "405/504",
+            "rank": 8,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 1,
+            "blocks": 2,
+            "values": [
+              "504",
+              "405"
+            ]
+          },
+          {
+            "family": "064/460",
+            "rank": 9,
+            "d1": 0,
+            "d7": 1,
+            "sources": 1,
+            "branch": 1,
+            "blocks": 2,
+            "values": [
+              "064",
+              "460"
+            ]
+          },
+          {
+            "family": "304/403",
+            "rank": 10,
+            "d1": 0,
+            "d7": 1,
+            "sources": 1,
+            "branch": 1,
+            "blocks": 2,
+            "values": [
+              "304",
+              "403"
+            ]
+          },
+          {
+            "family": "458/854",
+            "rank": 11,
+            "d1": 1,
+            "d7": 1,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "854",
+              "458"
+            ]
+          },
+          {
+            "family": "043/340",
+            "rank": 12,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "043"
+            ]
+          },
+          {
+            "family": "053/350",
+            "rank": 13,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "350"
+            ]
+          },
+          {
+            "family": "384/483",
+            "rank": 14,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "384"
+            ]
+          },
+          {
+            "family": "404/404",
+            "rank": 15,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "404"
+            ]
+          },
+          {
+            "family": "445/544",
+            "rank": 16,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "544"
+            ]
+          },
+          {
+            "family": "448/844",
+            "rank": 17,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "844"
+            ]
+          },
+          {
+            "family": "506/605",
+            "rank": 18,
+            "d1": 1,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "506"
+            ]
+          }
+        ],
+        "vt4": [
+          {
+            "family": "0634/3604",
+            "rank": 1,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 5,
+            "values": [
+              "0634",
+              "3604"
+            ]
+          },
+          {
+            "family": "4063/4360",
+            "rank": 2,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 5,
+            "values": [
+              "4063",
+              "4360"
+            ]
+          },
+          {
+            "family": "0063/0360",
+            "rank": 3,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0360"
+            ]
+          },
+          {
+            "family": "0630/3600",
+            "rank": 4,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0630"
+            ]
+          },
+          {
+            "family": "0633/3603",
+            "rank": 5,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0633",
+              "3603"
+            ]
+          },
+          {
+            "family": "0635/3605",
+            "rank": 6,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3605"
+            ]
+          },
+          {
+            "family": "3063/3360",
+            "rank": 7,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3360",
+              "3063"
+            ]
+          },
+          {
+            "family": "5063/5360",
+            "rank": 8,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "5063"
+            ]
+          },
+          {
+            "family": "0364/6304",
+            "rank": 9,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 4,
+            "values": [
+              "0364",
+              "6304"
+            ]
+          },
+          {
+            "family": "4036/4630",
+            "rank": 10,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 4,
+            "values": [
+              "4630",
+              "4036"
+            ]
+          },
+          {
+            "family": "0036/0630",
+            "rank": 11,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0630"
+            ]
+          },
+          {
+            "family": "0360/6300",
+            "rank": 12,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0360"
+            ]
+          },
+          {
+            "family": "0363/6303",
+            "rank": 13,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "6303",
+              "0363"
+            ]
+          },
+          {
+            "family": "3036/3630",
+            "rank": 14,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3630",
+              "3036"
+            ]
+          },
+          {
+            "family": "0365/6305",
+            "rank": 15,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "6305"
+            ]
+          },
+          {
+            "family": "5036/5630",
+            "rank": 16,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "5036"
+            ]
+          },
+          {
+            "family": "0334/3304",
+            "rank": 17,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "0334",
+              "3304"
+            ]
+          },
+          {
+            "family": "4033/4330",
+            "rank": 18,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "4330",
+              "4033"
+            ]
+          },
+          {
+            "family": "0336/3306",
+            "rank": 19,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3306",
+              "0336"
+            ]
+          },
+          {
+            "family": "6033/6330",
+            "rank": 20,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "6330",
+              "6033"
+            ]
+          },
+          {
+            "family": "0033/0330",
+            "rank": 21,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "0330"
+            ]
+          },
+          {
+            "family": "0330/3300",
+            "rank": 22,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "0330"
+            ]
+          },
+          {
+            "family": "0335/3305",
+            "rank": 23,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "3305"
+            ]
+          },
+          {
+            "family": "5033/5330",
+            "rank": 24,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "5033"
+            ]
+          },
+          {
+            "family": "0344/4304",
+            "rank": 25,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0344",
+              "4304"
+            ]
+          },
+          {
+            "family": "0345/4305",
+            "rank": 26,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0345",
+              "4305"
+            ]
+          },
+          {
+            "family": "0346/4306",
+            "rank": 27,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "4306",
+              "0346"
+            ]
+          },
+          {
+            "family": "4034/4430",
+            "rank": 28,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "4430",
+              "4034"
+            ]
+          },
+          {
+            "family": "5034/5430",
+            "rank": 29,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "5430",
+              "5034"
+            ]
+          },
+          {
+            "family": "6034/6430",
+            "rank": 30,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "6430",
+              "6034"
+            ]
+          },
+          {
+            "family": "0034/0430",
+            "rank": 31,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "0430"
+            ]
+          },
+          {
+            "family": "0340/4300",
+            "rank": 32,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "0340"
+            ]
+          },
+          {
+            "family": "0343/4303",
+            "rank": 33,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "4303"
+            ]
+          },
+          {
+            "family": "3034/3430",
+            "rank": 34,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "3034"
+            ]
+          },
+          {
+            "family": "0344/0443",
+            "rank": 35,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "0443",
+              "0344"
+            ]
+          },
+          {
+            "family": "3440/4430",
+            "rank": 36,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "4430",
+              "3440"
+            ]
+          },
+          {
+            "family": "3344/3443",
+            "rank": 37,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3443",
+              "3344"
+            ]
+          },
+          {
+            "family": "3443/4433",
+            "rank": 38,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "4433",
+              "3443"
+            ]
+          },
+          {
+            "family": "3445/4435",
+            "rank": 39,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3445",
+              "4435"
+            ]
+          },
+          {
+            "family": "3446/4436",
+            "rank": 40,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "4436",
+              "3446"
+            ]
+          },
+          {
+            "family": "3448/4438",
+            "rank": 41,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3448",
+              "4438"
+            ]
+          },
+          {
+            "family": "5344/5443",
+            "rank": 42,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "5443",
+              "5344"
+            ]
+          },
+          {
+            "family": "6344/6443",
+            "rank": 43,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "6344",
+              "6443"
+            ]
+          },
+          {
+            "family": "8344/8443",
+            "rank": 44,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "8443",
+              "8344"
+            ]
+          },
+          {
+            "family": "0354/0453",
+            "rank": 45,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0453"
+            ]
+          },
+          {
+            "family": "3540/4530",
+            "rank": 46,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3540"
+            ]
+          },
+          {
+            "family": "3548/4538",
+            "rank": 47,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3548",
+              "4538"
+            ]
+          },
+          {
+            "family": "8354/8453",
+            "rank": 48,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "8354",
+              "8453"
+            ]
+          },
+          {
+            "family": "3354/3453",
+            "rank": 49,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "3453"
+            ]
+          },
+          {
+            "family": "3543/4533",
+            "rank": 50,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "3543"
+            ]
+          },
+          {
+            "family": "3544/4534",
+            "rank": 51,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "3544",
+              "4534"
+            ]
+          },
+          {
+            "family": "3546/4536",
+            "rank": 52,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "3546"
+            ]
+          },
+          {
+            "family": "4354/4453",
+            "rank": 53,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "4453",
+              "4354"
+            ]
+          },
+          {
+            "family": "6354/6453",
+            "rank": 54,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "6453"
+            ]
+          },
+          {
+            "family": "0364/0463",
+            "rank": 55,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 4,
+            "values": [
+              "0463",
+              "0364"
+            ]
+          },
+          {
+            "family": "3640/4630",
+            "rank": 56,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 4,
+            "values": [
+              "4630",
+              "3640"
+            ]
+          },
+          {
+            "family": "3644/4634",
+            "rank": 57,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3644"
+            ]
+          },
+          {
+            "family": "3645/4635",
+            "rank": 58,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3645"
+            ]
+          },
+          {
+            "family": "4364/4463",
+            "rank": 59,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "4463"
+            ]
+          },
+          {
+            "family": "5364/5463",
+            "rank": 60,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "5463"
+            ]
+          },
+          {
+            "family": "3364/3463",
+            "rank": 61,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "3364",
+              "3463"
+            ]
+          },
+          {
+            "family": "3643/4633",
+            "rank": 62,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "4633",
+              "3643"
+            ]
+          },
+          {
+            "family": "3405/3504",
+            "rank": 63,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "3504",
+              "3405"
+            ]
+          },
+          {
+            "family": "4053/5043",
+            "rank": 64,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "5043",
+              "4053"
+            ]
+          },
+          {
+            "family": "4058/5048",
+            "rank": 65,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "4058",
+              "5048"
+            ]
+          },
+          {
+            "family": "8405/8504",
+            "rank": 66,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "8504",
+              "8405"
+            ]
+          },
+          {
+            "family": "4054/5044",
+            "rank": 67,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "5044",
+              "4054"
+            ]
+          },
+          {
+            "family": "4056/5046",
+            "rank": 68,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "5046"
+            ]
+          },
+          {
+            "family": "4405/4504",
+            "rank": 69,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "4504",
+              "4405"
+            ]
+          },
+          {
+            "family": "6405/6504",
+            "rank": 70,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "6405"
+            ]
+          },
+          {
+            "family": "0643/4603",
+            "rank": 71,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "0643",
+              "4603"
+            ]
+          },
+          {
+            "family": "3064/3460",
+            "rank": 72,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "3064",
+              "3460"
+            ]
+          },
+          {
+            "family": "0644/4604",
+            "rank": 73,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0644",
+              "4604"
+            ]
+          },
+          {
+            "family": "0645/4605",
+            "rank": 74,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0645",
+              "4605"
+            ]
+          },
+          {
+            "family": "4064/4460",
+            "rank": 75,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "4460",
+              "4064"
+            ]
+          },
+          {
+            "family": "5064/5460",
+            "rank": 76,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "5460",
+              "5064"
+            ]
+          },
+          {
+            "family": "0064/0460",
+            "rank": 77,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "0460"
+            ]
+          },
+          {
+            "family": "0640/4600",
+            "rank": 78,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "0640"
+            ]
+          },
+          {
+            "family": "3043/4033",
+            "rank": 79,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "3043",
+              "4033"
+            ]
+          },
+          {
+            "family": "3304/3403",
+            "rank": 80,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 3,
+            "values": [
+              "3304",
+              "3403"
+            ]
+          },
+          {
+            "family": "0304/0403",
+            "rank": 81,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "0304"
+            ]
+          },
+          {
+            "family": "3040/4030",
+            "rank": 82,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "4030"
+            ]
+          },
+          {
+            "family": "3045/4035",
+            "rank": 83,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "3045"
+            ]
+          },
+          {
+            "family": "3046/4036",
+            "rank": 84,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "4036",
+              "3046"
+            ]
+          },
+          {
+            "family": "5304/5403",
+            "rank": 85,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "5403"
+            ]
+          },
+          {
+            "family": "6304/6403",
+            "rank": 86,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 2,
+            "values": [
+              "6304",
+              "6403"
+            ]
+          },
+          {
+            "family": "3044/4034",
+            "rank": 87,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "3044",
+              "4034"
+            ]
+          },
+          {
+            "family": "3048/4038",
+            "rank": 88,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "3048"
+            ]
+          },
+          {
+            "family": "4304/4403",
+            "rank": 89,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "4304",
+              "4403"
+            ]
+          },
+          {
+            "family": "8304/8403",
+            "rank": 90,
+            "d1": 0,
+            "d7": 0,
+            "sources": 1,
+            "branch": 0,
+            "blocks": 1,
+            "values": [
+              "8403"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1788 @@
+{
+  "date": "2026-10-14",
+  "phase": "POST_CON_PREVIA_SELLADA_Y_4_TURNOS_RETROSPECTIVOS",
+  "denominator": 24,
+  "omitted": 1,
+  "sourceIntegrity": {
+    "truePre14Seal": "2026-10-14T04:13:31.368Z",
+    "partialSantaFeNocturna": true,
+    "note": "Otros cuatro turnos reconstruidos DESPUÉS del resultado: análisis descriptivo, no nuevos PRE prospectivos."
+  },
+  "turns": [
+    {
+      "turn": "Previa",
+      "phase": "PRE_SELLADO_ANTES_SORTEO",
+      "knownPreviousTurns": [],
+      "totalHeads": 5,
+      "presentRoots": 22,
+      "ranks": {
+        "vt2": [
+          {
+            "family": "03/30"
+          },
+          {
+            "family": "36/63"
+          },
+          {
+            "family": "04/40"
+          },
+          {
+            "family": "06/60"
+          },
+          {
+            "family": "34/43"
+          },
+          {
+            "family": "45/54"
+          },
+          {
+            "family": "05/50"
+          },
+          {
+            "family": "35/53"
+          },
+          {
+            "family": "44/44"
+          },
+          {
+            "family": "48/84"
+          }
+        ],
+        "vt3": [
+          {
+            "family": "063/360"
+          },
+          {
+            "family": "036/630"
+          },
+          {
+            "family": "033/330"
+          },
+          {
+            "family": "034/430"
+          },
+          {
+            "family": "344/443"
+          },
+          {
+            "family": "354/453"
+          },
+          {
+            "family": "364/463"
+          },
+          {
+            "family": "405/504"
+          },
+          {
+            "family": "064/460"
+          },
+          {
+            "family": "304/403"
+          }
+        ],
+        "vt4": [
+          {
+            "family": "0634/3604",
+            "values": [
+              "0634",
+              "3604"
+            ]
+          },
+          {
+            "family": "4063/4360",
+            "values": [
+              "4063",
+              "4360"
+            ]
+          },
+          {
+            "family": "0063/0360",
+            "values": [
+              "0360"
+            ]
+          },
+          {
+            "family": "0630/3600",
+            "values": [
+              "0630"
+            ]
+          },
+          {
+            "family": "0633/3603",
+            "values": [
+              "0633",
+              "3603"
+            ]
+          },
+          {
+            "family": "0635/3605",
+            "values": [
+              "3605"
+            ]
+          },
+          {
+            "family": "3063/3360",
+            "values": [
+              "3360",
+              "3063"
+            ]
+          },
+          {
+            "family": "5063/5360",
+            "values": [
+              "5063"
+            ]
+          },
+          {
+            "family": "0364/6304",
+            "values": [
+              "0364",
+              "6304"
+            ]
+          },
+          {
+            "family": "4036/4630",
+            "values": [
+              "4630",
+              "4036"
+            ]
+          }
+        ]
+      },
+      "cells": [
+        {
+          "jur": "Ciudad",
+          "head": "0081",
+          "vt2": {
+            "family": "18/81",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "081/180",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "0081",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Provincia",
+          "head": "9229",
+          "vt2": {
+            "family": "29/92",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "229/922",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "9229",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Córdoba",
+          "head": "9799",
+          "vt2": {
+            "family": "99/99",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "799/997",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "9799",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "4065",
+          "vt2": {
+            "family": "56/65",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "065/560",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "4065",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "5992",
+          "vt2": {
+            "family": "29/92",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "299/992",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "5992",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        }
+      ]
+    },
+    {
+      "turn": "Primera",
+      "phase": "PRE_RETROSPECTIVO_SIN_CABEZA_OBJETIVO",
+      "knownPreviousTurns": [
+        "Previa"
+      ],
+      "totalHeads": 5,
+      "presentRoots": 49,
+      "ranks": {
+        "vt2": [
+          {
+            "family": "04/40"
+          },
+          {
+            "family": "03/30"
+          },
+          {
+            "family": "01/10"
+          },
+          {
+            "family": "06/60"
+          },
+          {
+            "family": "36/63"
+          },
+          {
+            "family": "07/70"
+          },
+          {
+            "family": "67/76"
+          },
+          {
+            "family": "29/92"
+          },
+          {
+            "family": "24/42"
+          },
+          {
+            "family": "34/43"
+          }
+        ],
+        "vt3": [
+          {
+            "family": "063/360"
+          },
+          {
+            "family": "036/630"
+          },
+          {
+            "family": "067/760"
+          },
+          {
+            "family": "016/610"
+          },
+          {
+            "family": "033/330"
+          },
+          {
+            "family": "034/430"
+          },
+          {
+            "family": "042/240"
+          },
+          {
+            "family": "344/443"
+          },
+          {
+            "family": "354/453"
+          },
+          {
+            "family": "364/463"
+          }
+        ],
+        "vt4": [
+          {
+            "family": "0634/3604",
+            "values": [
+              "0634",
+              "3604"
+            ]
+          },
+          {
+            "family": "4063/4360",
+            "values": [
+              "4063",
+              "4360"
+            ]
+          },
+          {
+            "family": "0063/0360",
+            "values": [
+              "0360"
+            ]
+          },
+          {
+            "family": "0630/3600",
+            "values": [
+              "0630"
+            ]
+          },
+          {
+            "family": "0633/3603",
+            "values": [
+              "0633",
+              "3603"
+            ]
+          },
+          {
+            "family": "0635/3605",
+            "values": [
+              "3605"
+            ]
+          },
+          {
+            "family": "3063/3360",
+            "values": [
+              "3360",
+              "3063"
+            ]
+          },
+          {
+            "family": "5063/5360",
+            "values": [
+              "5063"
+            ]
+          },
+          {
+            "family": "0364/6304",
+            "values": [
+              "0364",
+              "6304"
+            ]
+          },
+          {
+            "family": "4036/4630",
+            "values": [
+              "4630",
+              "4036"
+            ]
+          }
+        ]
+      },
+      "cells": [
+        {
+          "jur": "Ciudad",
+          "head": "7056",
+          "vt2": {
+            "family": "56/65",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "056/650",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "7056",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Provincia",
+          "head": "9852",
+          "vt2": {
+            "family": "25/52",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "258/852",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "9852",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Córdoba",
+          "head": "8675",
+          "vt2": {
+            "family": "57/75",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "576/675",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "8675",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "9206",
+          "vt2": {
+            "family": "06/60",
+            "physicallyAvailable": true,
+            "physicalPaths": 4,
+            "sources": [
+              "prevNocturno",
+              "Previa"
+            ],
+            "admitted": true,
+            "rank": 4,
+            "top3": false,
+            "top5": true,
+            "top10": true,
+            "diagnostic": "DENTRO_TOP10"
+          },
+          "vt3": {
+            "family": "206/602",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "9206",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "5872",
+          "vt2": {
+            "family": "27/72",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "278/872",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "5872",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        }
+      ]
+    },
+    {
+      "turn": "Matutino",
+      "phase": "PRE_RETROSPECTIVO_SIN_CABEZA_OBJETIVO",
+      "knownPreviousTurns": [
+        "Previa",
+        "Primera"
+      ],
+      "totalHeads": 5,
+      "presentRoots": 63,
+      "ranks": {
+        "vt2": [
+          {
+            "family": "04/40"
+          },
+          {
+            "family": "36/63"
+          },
+          {
+            "family": "03/30"
+          },
+          {
+            "family": "01/10"
+          },
+          {
+            "family": "06/60"
+          },
+          {
+            "family": "67/76"
+          },
+          {
+            "family": "37/73"
+          },
+          {
+            "family": "07/70"
+          },
+          {
+            "family": "29/92"
+          },
+          {
+            "family": "24/42"
+          }
+        ],
+        "vt3": [
+          {
+            "family": "063/360"
+          },
+          {
+            "family": "667/766"
+          },
+          {
+            "family": "036/630"
+          },
+          {
+            "family": "067/760"
+          },
+          {
+            "family": "016/610"
+          },
+          {
+            "family": "033/330"
+          },
+          {
+            "family": "034/430"
+          },
+          {
+            "family": "042/240"
+          },
+          {
+            "family": "318/813"
+          },
+          {
+            "family": "344/443"
+          }
+        ],
+        "vt4": [
+          {
+            "family": "0634/3604",
+            "values": [
+              "0634",
+              "3604"
+            ]
+          },
+          {
+            "family": "4063/4360",
+            "values": [
+              "4063",
+              "4360"
+            ]
+          },
+          {
+            "family": "0063/0360",
+            "values": [
+              "0360"
+            ]
+          },
+          {
+            "family": "0630/3600",
+            "values": [
+              "0630"
+            ]
+          },
+          {
+            "family": "0633/3603",
+            "values": [
+              "0633",
+              "3603"
+            ]
+          },
+          {
+            "family": "0635/3605",
+            "values": [
+              "3605"
+            ]
+          },
+          {
+            "family": "3063/3360",
+            "values": [
+              "3360",
+              "3063"
+            ]
+          },
+          {
+            "family": "5063/5360",
+            "values": [
+              "5063"
+            ]
+          },
+          {
+            "family": "3667/3766",
+            "values": [
+              "3766",
+              "3667"
+            ]
+          },
+          {
+            "family": "6673/7663",
+            "values": [
+              "7663",
+              "6673"
+            ]
+          }
+        ]
+      },
+      "cells": [
+        {
+          "jur": "Ciudad",
+          "head": "3537",
+          "vt2": {
+            "family": "37/73",
+            "physicallyAvailable": true,
+            "physicalPaths": 3,
+            "sources": [
+              "Previa",
+              "Primera"
+            ],
+            "admitted": true,
+            "rank": 7,
+            "top3": false,
+            "top5": false,
+            "top10": true,
+            "diagnostic": "DENTRO_TOP10"
+          },
+          "vt3": {
+            "family": "537/735",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "3537",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Provincia",
+          "head": "5982",
+          "vt2": {
+            "family": "28/82",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "289/982",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "5982",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Córdoba",
+          "head": "5586",
+          "vt2": {
+            "family": "68/86",
+            "physicallyAvailable": true,
+            "physicalPaths": 2,
+            "sources": [
+              "Primera"
+            ],
+            "admitted": true,
+            "rank": 21,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_TOP10"
+          },
+          "vt3": {
+            "family": "586/685",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "5586",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "2431",
+          "vt2": {
+            "family": "13/31",
+            "physicallyAvailable": true,
+            "physicalPaths": 1,
+            "sources": [
+              "Primera"
+            ],
+            "admitted": true,
+            "rank": 31,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_TOP10"
+          },
+          "vt3": {
+            "family": "134/431",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "2431",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "9868",
+          "vt2": {
+            "family": "68/86",
+            "physicallyAvailable": true,
+            "physicalPaths": 2,
+            "sources": [
+              "Primera"
+            ],
+            "admitted": true,
+            "rank": 21,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_TOP10"
+          },
+          "vt3": {
+            "family": "868/868",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "9868",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        }
+      ]
+    },
+    {
+      "turn": "Vespertino",
+      "phase": "PRE_RETROSPECTIVO_SIN_CABEZA_OBJETIVO",
+      "knownPreviousTurns": [
+        "Previa",
+        "Primera",
+        "Matutino"
+      ],
+      "totalHeads": 5,
+      "presentRoots": 79,
+      "ranks": {
+        "vt2": [
+          {
+            "family": "04/40"
+          },
+          {
+            "family": "03/30"
+          },
+          {
+            "family": "36/63"
+          },
+          {
+            "family": "01/10"
+          },
+          {
+            "family": "06/60"
+          },
+          {
+            "family": "67/76"
+          },
+          {
+            "family": "37/73"
+          },
+          {
+            "family": "29/92"
+          },
+          {
+            "family": "24/42"
+          },
+          {
+            "family": "34/43"
+          }
+        ],
+        "vt3": [
+          {
+            "family": "063/360"
+          },
+          {
+            "family": "749/947"
+          },
+          {
+            "family": "729/927"
+          },
+          {
+            "family": "667/766"
+          },
+          {
+            "family": "036/630"
+          },
+          {
+            "family": "067/760"
+          },
+          {
+            "family": "016/610"
+          },
+          {
+            "family": "033/330"
+          },
+          {
+            "family": "034/430"
+          },
+          {
+            "family": "042/240"
+          }
+        ],
+        "vt4": [
+          {
+            "family": "0634/3604",
+            "values": [
+              "0634",
+              "3604"
+            ]
+          },
+          {
+            "family": "4063/4360",
+            "values": [
+              "4063",
+              "4360"
+            ]
+          },
+          {
+            "family": "0063/0360",
+            "values": [
+              "0360"
+            ]
+          },
+          {
+            "family": "0630/3600",
+            "values": [
+              "0630"
+            ]
+          },
+          {
+            "family": "0633/3603",
+            "values": [
+              "0633",
+              "3603"
+            ]
+          },
+          {
+            "family": "0635/3605",
+            "values": [
+              "3605"
+            ]
+          },
+          {
+            "family": "3063/3360",
+            "values": [
+              "3360",
+              "3063"
+            ]
+          },
+          {
+            "family": "5063/5360",
+            "values": [
+              "5063"
+            ]
+          },
+          {
+            "family": "3749/3947",
+            "values": [
+              "3947",
+              "3749"
+            ]
+          },
+          {
+            "family": "7493/9473",
+            "values": [
+              "9473",
+              "7493"
+            ]
+          }
+        ]
+      },
+      "cells": [
+        {
+          "jur": "Ciudad",
+          "head": "7823",
+          "vt2": {
+            "family": "23/32",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "328/823",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "7823",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Provincia",
+          "head": "1130",
+          "vt2": {
+            "family": "03/30",
+            "physicallyAvailable": true,
+            "physicalPaths": 5,
+            "sources": [
+              "prevNocturno",
+              "Previa",
+              "Matutino"
+            ],
+            "admitted": true,
+            "rank": 2,
+            "top3": true,
+            "top5": true,
+            "top10": true,
+            "diagnostic": "DENTRO_TOP10"
+          },
+          "vt3": {
+            "family": "031/130",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "1130",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Córdoba",
+          "head": "1736",
+          "vt2": {
+            "family": "36/63",
+            "physicallyAvailable": true,
+            "physicalPaths": 6,
+            "sources": [
+              "prevNocturno",
+              "Previa",
+              "Primera"
+            ],
+            "admitted": true,
+            "rank": 3,
+            "top3": true,
+            "top5": true,
+            "top10": true,
+            "diagnostic": "DENTRO_TOP10"
+          },
+          "vt3": {
+            "family": "637/736",
+            "physicallyAvailable": true,
+            "physicalPaths": 4,
+            "sources": [
+              "Previa",
+              "Primera"
+            ],
+            "admitted": true,
+            "rank": 17,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_TOP10"
+          },
+          "vt4": {
+            "family": "1736",
+            "physicallyAvailable": true,
+            "physicalPaths": 1,
+            "sources": [
+              "Previa"
+            ],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "NO_ADMITIDA"
+          }
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "0686",
+          "vt2": {
+            "family": "68/86",
+            "physicallyAvailable": true,
+            "physicalPaths": 2,
+            "sources": [
+              "Primera"
+            ],
+            "admitted": true,
+            "rank": 21,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_TOP10"
+          },
+          "vt3": {
+            "family": "686/686",
+            "physicallyAvailable": true,
+            "physicalPaths": 2,
+            "sources": [
+              "Primera"
+            ],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "NO_ADMITIDA"
+          },
+          "vt4": {
+            "family": "0686",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "0531",
+          "vt2": {
+            "family": "13/31",
+            "physicallyAvailable": true,
+            "physicalPaths": 1,
+            "sources": [
+              "Primera"
+            ],
+            "admitted": true,
+            "rank": 36,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_TOP10"
+          },
+          "vt3": {
+            "family": "135/531",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "0531",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        }
+      ]
+    },
+    {
+      "turn": "Nocturno",
+      "phase": "PRE_RETROSPECTIVO_SIN_CABEZA_OBJETIVO",
+      "knownPreviousTurns": [
+        "Previa",
+        "Primera",
+        "Matutino",
+        "Vespertino"
+      ],
+      "totalHeads": 4,
+      "presentRoots": 83,
+      "ranks": {
+        "vt2": [
+          {
+            "family": "04/40"
+          },
+          {
+            "family": "03/30"
+          },
+          {
+            "family": "36/63"
+          },
+          {
+            "family": "01/10"
+          },
+          {
+            "family": "06/60"
+          },
+          {
+            "family": "67/76"
+          },
+          {
+            "family": "37/73"
+          },
+          {
+            "family": "29/92"
+          },
+          {
+            "family": "24/42"
+          },
+          {
+            "family": "34/43"
+          }
+        ],
+        "vt3": [
+          {
+            "family": "063/360"
+          },
+          {
+            "family": "749/947"
+          },
+          {
+            "family": "729/927"
+          },
+          {
+            "family": "667/766"
+          },
+          {
+            "family": "036/630"
+          },
+          {
+            "family": "067/760"
+          },
+          {
+            "family": "016/610"
+          },
+          {
+            "family": "033/330"
+          },
+          {
+            "family": "034/430"
+          },
+          {
+            "family": "042/240"
+          }
+        ],
+        "vt4": [
+          {
+            "family": "0634/3604",
+            "values": [
+              "0634",
+              "3604"
+            ]
+          },
+          {
+            "family": "4063/4360",
+            "values": [
+              "4063",
+              "4360"
+            ]
+          },
+          {
+            "family": "0063/0360",
+            "values": [
+              "0360"
+            ]
+          },
+          {
+            "family": "0630/3600",
+            "values": [
+              "0630"
+            ]
+          },
+          {
+            "family": "0633/3603",
+            "values": [
+              "0633",
+              "3603"
+            ]
+          },
+          {
+            "family": "0635/3605",
+            "values": [
+              "3605"
+            ]
+          },
+          {
+            "family": "3063/3360",
+            "values": [
+              "3360",
+              "3063"
+            ]
+          },
+          {
+            "family": "5063/5360",
+            "values": [
+              "5063"
+            ]
+          },
+          {
+            "family": "3749/3947",
+            "values": [
+              "3947",
+              "3749"
+            ]
+          },
+          {
+            "family": "7493/9473",
+            "values": [
+              "9473",
+              "7493"
+            ]
+          }
+        ]
+      },
+      "cells": [
+        {
+          "jur": "Ciudad",
+          "head": "1856",
+          "vt2": {
+            "family": "56/65",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "658/856",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "1856",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Provincia",
+          "head": "3209",
+          "vt2": {
+            "family": "09/90",
+            "physicallyAvailable": true,
+            "physicalPaths": 2,
+            "sources": [
+              "Previa",
+              "Matutino"
+            ],
+            "admitted": true,
+            "rank": 12,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_TOP10"
+          },
+          "vt3": {
+            "family": "209/902",
+            "physicallyAvailable": true,
+            "physicalPaths": 1,
+            "sources": [
+              "Previa"
+            ],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "NO_ADMITIDA"
+          },
+          "vt4": {
+            "family": "3209",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Córdoba",
+          "head": "2033",
+          "vt2": {
+            "family": "33/33",
+            "physicallyAvailable": true,
+            "physicalPaths": 2,
+            "sources": [
+              "prevNocturno"
+            ],
+            "admitted": true,
+            "rank": 27,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_TOP10"
+          },
+          "vt3": {
+            "family": "033/330",
+            "physicallyAvailable": true,
+            "physicalPaths": 3,
+            "sources": [
+              "prevNocturno"
+            ],
+            "admitted": true,
+            "rank": 8,
+            "top3": false,
+            "top5": false,
+            "top10": true,
+            "diagnostic": "DENTRO_TOP10"
+          },
+          "vt4": {
+            "family": "2033",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "----",
+          "excluded": true
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "5122",
+          "vt2": {
+            "family": "22/22",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt3": {
+            "family": "122/221",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          },
+          "vt4": {
+            "family": "5122",
+            "physicallyAvailable": false,
+            "physicalPaths": 0,
+            "sources": [],
+            "admitted": false,
+            "rank": null,
+            "top3": false,
+            "top5": false,
+            "top10": false,
+            "diagnostic": "FUERA_DE_TABLERO"
+          }
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "vt2": {
+      "heads": 24,
+      "physicallyAvailable": 11,
+      "admitted": 11,
+      "top3": 2,
+      "top5": 3,
+      "top10": 4,
+      "reasons": {
+        "FUERA_DE_TABLERO": 13,
+        "DENTRO_TOP10": 4,
+        "FUERA_TOP10": 7
+      }
+    },
+    "vt3": {
+      "heads": 24,
+      "physicallyAvailable": 4,
+      "admitted": 2,
+      "top3": 0,
+      "top5": 0,
+      "top10": 1,
+      "reasons": {
+        "FUERA_DE_TABLERO": 20,
+        "FUERA_TOP10": 1,
+        "NO_ADMITIDA": 2,
+        "DENTRO_TOP10": 1
+      }
+    },
+    "vt4": {
+      "heads": 24,
+      "physicallyAvailable": 1,
+      "admitted": 0,
+      "top3": 0,
+      "top5": 0,
+      "top10": 0,
+      "reasons": {
+        "FUERA_DE_TABLERO": 23,
+        "NO_ADMITIDA": 1
+      }
+    }
+  }
+}
