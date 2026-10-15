@@ -1,16 +1,15 @@
-import React,{useMemo,useState} from 'react';
+import React,{useMemo} from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import type {DailySheet} from '../sheet';
 import type {LaloHistorical,LaloView} from '../motorLalo';
 import {buildInfoReport,sourceLabel} from '../infoInterpretacion';
-import {buildCandidateSequence} from '../infoCandidatos';
 import type {MovementMode} from '../infoCandidatos';
 import type {InfoVisualDay} from '../infoTurnHistory';
 import {buildTurnHistory,readableWeekday} from '../infoTurnHistory';
+import type {TurnHistoryFrame} from '../infoTurnHistory';
 import InfoTurnGallery from './InfoTurnGallery';
 import TurnStrip from './TurnStrip';
-import InfoCandidateMovement from './InfoCandidateMovement';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
 
@@ -18,7 +17,7 @@ type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
 type Props={date:string;turn:Turno;data:CabezasDia|null;
  sheet:DailySheet|null;historical:LaloHistorical[];visualDays:InfoVisualDay[];
  view:LaloView|null;onNavigate:(screen:Destination)=>void;
- onTurnChange:(turn:Turno)=>void;
+ onTurnChange:(turn:Turno)=>void;onOpenFrame:(frame:TurnHistoryFrame)=>void;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
  expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void};
@@ -54,17 +53,14 @@ function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
   <Text style={{color:c.subtext,fontSize:11,fontWeight:'700'}}>{kind.toUpperCase()} · {kinds[kind].label}</Text>
  </View>;
 }
-export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,onTurnChange,
+export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide}:Props){
  const {colors:c,kinds}=useLaloTheme();
- const [showInternal,setShowInternal]=useState(false);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
  const report=useMemo(()=>buildInfoReport(date,turn,data,sheet,historical,view),
   [date,turn,data,sheet,historical,view]);
- const sequence=useMemo(()=>buildCandidateSequence(date,turn,data,sheet,historical),
-  [date,turn,data,sheet,historical]);
  const loaded=report.observed.length;
  const availability=report.availableSources.filter(x=>x.active);
  const displayDate=date?readableWeekday(date):'Sin fecha';
@@ -134,15 +130,8 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.text}]}>03 · El turno, jornada por jornada</Text>
    <InfoTurnGallery gallery={gallery} selectedFrameId={selectedFrameId}
-    onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}/>
-   <Pressable accessibilityRole="button" onPress={()=>setShowInternal(v=>!v)}
-    style={[s.goto,{borderColor:c.border}]}>
-    <Text style={{color:c.accent,fontWeight:'800',fontSize:11}}>
-     {showInternal?'Ocultar detalle dentro del día −':'Ver cómo cambió la hoja durante el día +'}
-    </Text>
-   </Pressable>
-   {showInternal?<InfoCandidateMovement sequence={sequence} selectedFrameId={selectedFrameId}
-    onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}/>:null}
+    onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}
+    onOpenFrame={onOpenFrame}/>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.text}]}>04 · Guía del sistema</Text>
