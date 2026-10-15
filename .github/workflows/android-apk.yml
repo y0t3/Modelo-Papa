@@ -1,6 +1,9 @@
 name: Build Modelo Lalo APK
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - build/modelo-lalo-v032-info-pre-movimiento-15oct2026
 permissions:
   contents: read
 jobs:
@@ -23,6 +26,18 @@ jobs:
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Probar observabilidad VT3
         run: npx --yes tsx scripts/test-consolidacion-lalo.ts
+      - name: Verificar movimiento INFO PRE por corte y sin fuga
+        run: npx --yes tsx scripts/test-info-movimiento-candidatos.ts
+      - name: Verificar regresiones INFO y botón Atrás
+        run: |
+          npx --yes tsx scripts/test-info-jornada-guia.ts
+          npx --yes tsx scripts/test-info-fechas-atras.ts
+      - name: Verificar candidatos VT4 y pronósticos de Lalo
+        run: |
+          npx --yes tsx scripts/test-vt4-diversidad-madres.ts
+          npx --yes tsx scripts/test-pronostico-papa.ts
+          npx --yes tsx scripts/test-lalo-libro-apuestas.ts
+          npx --yes tsx scripts/test-correcciones-ui-14oct.ts
       - name: Generate Android project
         env:
           CI: '1'
