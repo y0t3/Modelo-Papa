@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-14",
+  "kind": "POST_RESULTADOS_NOCTURNA_PARCIAL",
+  "jurisdictions": [
+    "Ciudad",
+    "Provincia",
+    "Córdoba",
+    "Santa Fé",
+    "Entre Ríos",
+    "Montevideo"
+  ],
+  "turns": {
+    "Previa": [
+      "0081",
+      "9229",
+      "9799",
+      "4065",
+      "5992",
+      "----"
+    ],
+    "Primera": [
+      "7056",
+      "9852",
+      "8675",
+      "9206",
+      "5872",
+      "----"
+    ],
+    "Matutino": [
+      "3537",
+      "5982",
+      "5586",
+      "2431",
+      "9868",
+      "3892"
+    ],
+    "Vespertino": [
+      "7823",
+      "1130",
+      "1736",
+      "0686",
+      "0531",
+      "----"
+    ],
+    "Nocturno": [
+      "1856",
+      "3209",
+      "2033",
+      "----",
+      "5122",
+      "1968"
+    ]
+  },
+  "note": "24 de 25 cabezas objetivo principales conocidas. Santa Fé Nocturna sin cifra publicada en fuente cotejada, excluir del denominador; Montevideo sólo alimenta +11, no integra el objetivo principal.",
+  "sources": [
+    "https://sigmadiario.com/quiniela",
+    "https://m.ruta1000.com.ar/index2008.php?FechaAlMinuto=2026_10_14",
+    "https://quinielanacional1.com.ar/14-10-26",
+    "https://quinieleando.com.ar/quinielas/buenosaires/resultados-del-14-10-2026"
+  ]
+}
