@@ -88,18 +88,23 @@ const selectKind=(families:Map<string,Working>,kind:LaloKind,value:string,source
   origin,rootIds:rootId?[rootId]:[],mother,mothers:mother?[mother]:[],addedDigit:extra});
 };
 
-// VT4 NO invierte la cuaterna completa para definir una familia.
-// Conserva la madre VT3 reversible y la posición de la cifra añadida.
-// Cada variante registrada debe estar sustentada por un camino físico propio.
-const selectVt4Mother=(groups:Map<string,Working>,mother:string,added:string,
- side:'prefix'|'suffix',value:string,source:SourceId,path:Path)=>{
- if(!valid(path,4))return;
+// VT4 siempre nace de [CIFRA AÑADIDA] + [MADRE VT3].
+// Nunca se añade a la derecha: eso desplazaría el tramo de tres cifras
+// y crearía otra madre no respaldada por el recorrido VT3 original.
+// Las orientaciones reversibles de la MADRE sí están permitidas.
+// Ej.: 044/440 + 3 => 3044/3440, jamás 0443/4403.
+export function vt4PrefixFamily(mother:string,added:string):string[]{
  const [a,b]=mother.split('/');
- if(!a||!b||a.length!==3||b.length!==3||rev(a)!==b)return;
- const allowed=side==='prefix'?[added+a,added+b]:[a+added,b+added];
+ if(!a||!b||a.length!==3||b.length!==3||rev(a)!==b||!/^[0-9]$/.test(added))return [];
+ return [...new Set([added+a,added+b])];
+}
+const selectVt4Mother=(groups:Map<string,Working>,mother:string,added:string,
+ value:string,source:SourceId,path:Path)=>{
+ if(!valid(path,4))return;
+ const allowed=vt4PrefixFamily(mother,added);
  if(!allowed.includes(value))return;
- const label=[...new Set(allowed)].join('/');
- const id='vt4|'+mother+'|'+side+'|'+added;
+ const label=allowed.join('/');
+ const id='vt4|'+mother+'|prefix|'+added;
  let candidate=groups.get(id);
  if(!candidate){candidate={kind:'vt4',family:label,paths:new Map()};groups.set(id,candidate)}
  const k=canonical('vt4',source,path);
@@ -159,6 +164,37 @@ const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
  });
  return all.map(({importance,parentRank,...f},i)=>({...f,rank:i+1}));
 };
+
+/**
+ * VT4: primero la mejor hija física de cada madre VT3 (en el orden VT3);
+ * después la segunda hija de cada madre, etc. Dentro de cada madre se
+ * conserva el orden físico ya calculado por rank() (fuentes, bloques).
+ *
+ * Evita que seis extensiones de VT3 #1 ocupen los seis primeros puestos.
+ * No crea hijas ni asigna probabilidades; reordena exclusivamente VT4.
+ */
+export function distributeVt4ByMother(candidates:LaloFamily[],mothers:LaloFamily[]):LaloFamily[]{
+ const positions=new Map(mothers.map((m,i)=>[m.family,i]));
+ const buckets=new Map<string,LaloFamily[]>(mothers.map(m=>[m.family,[]]));
+ const withoutKnownParent:LaloFamily[]=[];
+ for(const child of candidates){
+  const primary=child.parentFamilies
+   .filter(f=>positions.has(f))
+   .sort((a,b)=>(positions.get(a)??999)-(positions.get(b)??999))[0];
+  if(!primary){withoutKnownParent.push(child);continue}
+  buckets.get(primary)!.push(child);
+ }
+ const result:LaloFamily[]=[];
+ const maxRound=Math.max(0,...[...buckets.values()].map(xs=>xs.length));
+ for(let round=0;round<maxRound;round++)
+  for(const mother of mothers){
+   const candidate=buckets.get(mother.family)?.[round];
+   if(candidate)result.push(candidate);
+  }
+ // Defensive: no descartar familias aunque se reciban datos incompletos.
+ result.push(...withoutKnownParent);
+ return result.map((family,index)=>({...family,rank:index+1}));
+}
 
 /** La única entrada PRE del sistema. Altera el pasado disponible, NUNCA el objetivo. */
 export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
@@ -238,16 +274,17 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
   for(const oriented of [parent.path,[...parent.path].reverse()])
    for(const c of cells){
     if(oriented.includes(c))continue;
-    for(const candidate of [[c,...oriented],[...oriented,c]]){
-     if(!valid(candidate,4))continue;
-     const added=c.digit;
-     selectVt4Mother(vt4,mother.family,added,
-      candidate[0]===c?'prefix':'suffix',pathValue(candidate),parent.sourceId,candidate);
-    }
+    // El único hijo VT4 válido antepone físicamente la cuarta cifra
+    // a las TRES celdas consecutivas de esta misma madre y fuente.
+    const candidate=[c,...oriented];
+    if(!valid(candidate,4))continue;
+    selectVt4Mother(vt4,mother.family,c.digit,
+     pathValue(candidate),parent.sourceId,candidate);
    }
  }
  const motherPositions=new Map(vt3.map(x=>[x.family,x.rank]));
- const ranked4=rank(vt4,roots,'vt4',motherPositions);
+ const daughtersByPhysicalStrength=rank(vt4,roots,'vt4',motherPositions);
+ const ranked4=distributeVt4ByMother(daughtersByPhysicalStrength,selectedMothers);
  return {target,date,status:'EXPERIMENTAL_SIN_VALIDACIÓN',
   roots:[...roots.values()],ranks:{vt2:ranked2,vt3,vt4:ranked4}};
 }
@@ -257,6 +294,11 @@ export function compareMotorLaloAfterDraw(view:LaloView,heads:string[]):Record<L
  const actual=heads.filter(h=>/^\d{4}$/.test(h));
  return Object.fromEntries((['vt2','vt3','vt4'] as LaloKind[]).map(k=>{
   const n=Number(k.slice(-1));
+  // VT4 no es la cuaterna reversible: se respeta su madre VT3 y la
+  // cuarta cifra en el extremo físico. Comparar cada valor testigo exacto.
+  if(k==='vt4')return [k,view.ranks.vt4.slice(0,10)
+   .filter(f=>f.paths.some(path=>actual.includes(path.value)))
+   .map(f=>f.family)];
   const observed=new Set(actual.map(h=>reversibleFamily(h.slice(-n))));
   return [k,view.ranks[k].slice(0,10).filter(f=>observed.has(f.family)).map(f=>f.family)];
  })) as Record<LaloKind,string[]>;
