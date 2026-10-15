@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {buildMotorLalo,compareMotorLaloAfterDraw,reversibleFamily} from '../src/motorLalo';
+import {buildMotorLalo,compareMotorLaloAfterDraw,reversibleFamily,vt4PrefixFamily} from '../src/motorLalo';
 import type {DailySheet,SheetColumn,Match} from '../src/sheet';
 import type {Path} from '../src/paths';
 import {TURNOS} from '../src/domain';
@@ -27,13 +27,13 @@ assert.deepEqual(a,b,'PRE no debe consultar cabezas objetivo ni marcas POST');
 assert.equal(reversibleFamily('729'),'729/927');
 assert.ok(a.ranks.vt3.some(f=>f.family==='749/947'),'VT3 trasladada sin inventar cifra');
 assert.ok(a.ranks.vt2.some(f=>f.family==='47/74'||f.family==='49/94'),'VT2 propia o derivada de una ruta');
-assert.ok(a.ranks.vt4.some(f=>f.family==='7492/9472'),
- 'VT4 sólo si hay ruta de cuatro celdas');
+assert.deepEqual(vt4PrefixFamily('044/440','3'),['3044','3440'],
+ 'El 3 siempre se antepone a ambas orientaciones de madre 044/440');
+assert.ok(!vt4PrefixFamily('044/440','3').includes('0443'));
+assert.ok(!vt4PrefixFamily('044/440','3').includes('4403'));
 const selectedMother='749/947';
-const daughterB='7492/9472';
-assert.ok(a.ranks.vt4.some(f=>f.family===daughterB&&
- f.paths.some(p=>(p.mothers||[]).includes(selectedMother))),
- 'La hija B tiene testigo VT4 propio');
+assert.ok(a.ranks.vt4.some(f=>f.paths.some(p=>(p.mothers||[]).includes(selectedMother))),
+ 'La madre 749/947 debe conservar hijos físicos con cifra antepuesta');
 const motherVt4=a.ranks.vt4.flatMap(f=>f.paths.filter(p=>(p.mothers||[]).includes(selectedMother)));
 assert.ok(motherVt4.length>0);
 for(const p of motherVt4){
@@ -41,10 +41,17 @@ for(const p of motherVt4){
  assert.equal(p.value,value,'La hija VT4 debe leerse de su recorrido propio');
  assert.ok(p.addedDigit);
  assert.ok(['749','947'].some(m=>
-  value===p.addedDigit+m||value===m+p.addedDigit),
-  'La cifra se agrega a la madre VT3, nunca se invierte la cuaterna');
+  value===p.addedDigit+m),
+  'VT4 nunca agrega la cifra a la derecha de la madre VT3');
  assert.equal(new Set(p.path.map(c=>c.row+':'+c.col)).size,4);
 }
+assert.ok(a.ranks.vt4.every(f=>f.paths.every(p=>{
+ const end=p.path.slice(1).map(c=>c.digit).join('');
+ const expected=vt4PrefixFamily(p.mother||'',p.path[0].digit);
+ return expected.includes(p.value)&&p.value===p.path[0].digit+end;
+})), 'Todas las hijas del motor deben ser cifra añadida + madre VT3 física');
+assert.ok(!a.ranks.vt4.some(f=>f.parentFamilies.includes(selectedMother)&&
+ f.family==='7492/9472'),'La hija 7492 nace agregando 2 a la derecha y se descarta');
 const future=makeSheet('7492');
 future.columns[2].values=['99','99','99','99','99','99'];
 future.columns[4].values=['11','11','11','11','11','11'];
