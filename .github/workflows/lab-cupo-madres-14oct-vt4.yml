@@ -1,0 +1,31 @@
+name: Ablación madres VT3 para VT4 del 14oct
+on:
+  push:
+    branches: [lab/cotejo-jornada-14oct-cobertura-vt234-15oct2026]
+    paths: ['.github/workflows/lab-cupo-madres-14oct-vt4.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Comparar madres top10 vs top20 y todas
+        run: node scripts/lab-cupo-madres-14oct-vt4.mjs
+      - name: Respaldar diagnóstico en rama experimental
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/cotejo-14oct-vt234-15oct2026/ABLACION_CUPO_MADRES_VT4_14OCT.json
+          git commit -m 'audit(VT4): explorar cupo madres top10 top20 y todas en 14oct'
+          git push origin HEAD:lab/cotejo-jornada-14oct-cobertura-vt234-15oct2026
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ablation-vt4-madres-14oct
+          path: auditorias/cotejo-14oct-vt234-15oct2026/ABLACION_CUPO_MADRES_VT4_14OCT.json
+          if-no-files-found: error
