@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Comparar madres top10 vs top20 y todas
+      - name: Comparar madres top10, top20, todas y tramo físico de 1736
         run: node scripts/lab-cupo-madres-14oct-vt4.mjs
       - name: Respaldar diagnóstico en rama experimental
         run: |
