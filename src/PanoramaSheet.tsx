@@ -19,24 +19,25 @@ const detectKind=(id:string|null|undefined):KindFilter=>{
  return prefix==='vt2'||prefix==='vt3'||prefix==='vt4'?prefix:'all';
 };
 
-export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner,initialTurn}:{
+export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner,initialTurn,initialTurnOnly=false}:{
  sheet:DailySheet;data:PanoramaData;mode:'hoja'|'predictiva';
- target?:Turno;onInfo:()=>void;focusedOwner?:string|null;initialTurn?:Turno
+ target?:Turno;onInfo:()=>void;focusedOwner?:string|null;initialTurn?:Turno;
+ initialTurnOnly?:boolean
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [active,setActive]=useState<string|null>(focusedOwner||null);
  const [turn,setTurn]=useState<Turno>(initialTurn||'Previa');
- const [turnOnly,setTurnOnly]=useState(false);
+ const [turnOnly,setTurnOnly]=useState(initialTurnOnly);
  const [filter,setFilter]=useState<KindFilter>('all');
  const [topOnly,setTopOnly]=useState(true);
  const [expanded,setExpanded]=useState<Record<PanoramaKind,boolean>>(defaultOpen);
  const [detail,setDetail]=useState(false);
  useEffect(()=>{
   setActive(focusedOwner||null);
-  setTurn(initialTurn||'Previa');setDetail(false);setTurnOnly(false);
+  setTurn(initialTurn||'Previa');setDetail(false);setTurnOnly(initialTurnOnly);
   setFilter(detectKind(focusedOwner));
   setTopOnly(true);setExpanded(defaultOpen);
- },[sheet,data,mode,target,focusedOwner,initialTurn]);
+ },[sheet,data,mode,target,focusedOwner,initialTurn,initialTurnOnly]);
  const columns=mode==='predictiva'
   ?sheet.columns.slice(0,TURNOS.indexOf(target||'Previa')+1):sheet.columns;
  const byKind=useMemo(()=>({
