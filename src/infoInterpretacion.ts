@@ -26,7 +26,7 @@ const SOURCE_NAMES:Record<SourceId,string>={
 };
 export const sourceLabel=(id:SourceId)=>SOURCE_NAMES[id];
 export function readableDrawDate(iso:string):string{
- if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(iso))return iso;
+ if(!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(iso))return iso;
  const day=new Date(iso+'T12:00:00Z');
  if(Number.isNaN(day.getTime())||day.toISOString().slice(0,10)!==iso)return iso;
  const weekday=['dom','lun','mar','mié','jue','vie','sáb'][day.getUTCDay()];
