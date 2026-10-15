@@ -1,30 +1,32 @@
 import assert from 'node:assert/strict';
-import {compareMotorLaloAfterDraw} from '../src/motorLalo';
+import {compareMotorLaloAfterDraw,vt4PrefixFamily} from '../src/motorLalo';
 import type {LaloView} from '../src/motorLalo';
 
-// El motor ya seleccionó las hijas que disponen de TESTIGO VT4 real.
-// El POST debe cotejar los valores de esos testigos, no invertir 4 cifras.
+// VT4: hija = cifra nueva + madre VT3. El POST sólo confirma valores
+// exactos que dispongan de camino físico propio.
+assert.deepEqual(vt4PrefixFamily('044/440','3'),['3044','3440']);
 const view={
  ranks:{
   vt2:[{family:'47/74'}],
   vt3:[{family:'749/947'}],
-  vt4:[{family:'7492/9472',paths:[{value:'7492'}]}]
+  vt4:[{family:'2749/2947',paths:[{value:'2749'}]}]
  }
 } as unknown as LaloView;
-const literal=compareMotorLaloAfterDraw(view,['7492']);
-assert.deepEqual(literal.vt4,['7492/9472'],'Acierto exacto comprobado por testigo físico');
-assert.deepEqual(literal.vt3,[],'La cabeza 7492 termina 492, no 749');
-const reversed=compareMotorLaloAfterDraw(view,['2947']);
-assert.deepEqual(reversed.vt4,[],'Invertir toda la cuaterna no genera acierto');
-const sister=compareMotorLaloAfterDraw(view,['9472']);
-assert.deepEqual(sister.vt4,[],'La hermana sin testigo propio no hereda el acierto');
+assert.deepEqual(compareMotorLaloAfterDraw(view,['2749']).vt4,['2749/2947'],
+ 'Acierto exacto 2+749 con testigo físico');
+assert.deepEqual(compareMotorLaloAfterDraw(view,['9472']).vt4,[],
+ 'Agregar 2 a la derecha crea otra VT3 y nunca confirma a 2+749');
+assert.deepEqual(compareMotorLaloAfterDraw(view,['9472']).vt3,[],
+ 'VT3 termina en 472, no 749');
+assert.deepEqual(compareMotorLaloAfterDraw(view,['2947']).vt4,[],
+ 'La orientación alternativa exige su propio testigo físico');
 const withSister={ranks:{vt2:[],vt3:[],vt4:[
- {family:'7492/9472',paths:[{value:'7492'},{value:'9472'}]}
+ {family:'2749/2947',paths:[{value:'2749'},{value:'2947'}]}
 ]}} as unknown as LaloView;
-assert.deepEqual(compareMotorLaloAfterDraw(withSister,['9472']).vt4,['7492/9472'],
- 'Hermana válida sólo con su propio recorrido físico');
+assert.deepEqual(compareMotorLaloAfterDraw(withSister,['2947']).vt4,['2749/2947'],
+ 'Madre invertida válida sólo con su propia extensión física izquierda');
 assert.deepEqual(compareMotorLaloAfterDraw(view,['0047']).vt2,['47/74'],
- 'El cotejo VT2 reversible permanece idéntico');
+ 'VT2 conserva reversibilidad');
 assert.deepEqual(compareMotorLaloAfterDraw(view,['1749']).vt3,['749/947'],
- 'El cotejo VT3 reversible permanece idéntico');
-console.log('COTEJO_VT4_MADRE_FIJA_OK: valor testigo exacto sin inversas inventadas.');
+ 'VT3 conserva reversibilidad');
+console.log('COTEJO_VT4_MADRE_FIJA_OK: familia prefijada y cotejo exacto propio.');

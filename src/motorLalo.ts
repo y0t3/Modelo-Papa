@@ -88,18 +88,23 @@ const selectKind=(families:Map<string,Working>,kind:LaloKind,value:string,source
   origin,rootIds:rootId?[rootId]:[],mother,mothers:mother?[mother]:[],addedDigit:extra});
 };
 
-// VT4 NO invierte la cuaterna completa para definir una familia.
-// Conserva la madre VT3 reversible y la posición de la cifra añadida.
-// Cada variante registrada debe estar sustentada por un camino físico propio.
-const selectVt4Mother=(groups:Map<string,Working>,mother:string,added:string,
- side:'prefix'|'suffix',value:string,source:SourceId,path:Path)=>{
- if(!valid(path,4))return;
+// VT4 siempre nace de [CIFRA AÑADIDA] + [MADRE VT3].
+// Nunca se añade a la derecha: eso desplazaría el tramo de tres cifras
+// y crearía otra madre no respaldada por el recorrido VT3 original.
+// Las orientaciones reversibles de la MADRE sí están permitidas.
+// Ej.: 044/440 + 3 => 3044/3440, jamás 0443/4403.
+export function vt4PrefixFamily(mother:string,added:string):string[]{
  const [a,b]=mother.split('/');
- if(!a||!b||a.length!==3||b.length!==3||rev(a)!==b)return;
- const allowed=side==='prefix'?[added+a,added+b]:[a+added,b+added];
+ if(!a||!b||a.length!==3||b.length!==3||rev(a)!==b||!/^[0-9]$/.test(added))return [];
+ return [...new Set([added+a,added+b])];
+}
+const selectVt4Mother=(groups:Map<string,Working>,mother:string,added:string,
+ value:string,source:SourceId,path:Path)=>{
+ if(!valid(path,4))return;
+ const allowed=vt4PrefixFamily(mother,added);
  if(!allowed.includes(value))return;
- const label=[...new Set(allowed)].join('/');
- const id='vt4|'+mother+'|'+side+'|'+added;
+ const label=allowed.join('/');
+ const id='vt4|'+mother+'|prefix|'+added;
  let candidate=groups.get(id);
  if(!candidate){candidate={kind:'vt4',family:label,paths:new Map()};groups.set(id,candidate)}
  const k=canonical('vt4',source,path);
@@ -238,12 +243,12 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
   for(const oriented of [parent.path,[...parent.path].reverse()])
    for(const c of cells){
     if(oriented.includes(c))continue;
-    for(const candidate of [[c,...oriented],[...oriented,c]]){
-     if(!valid(candidate,4))continue;
-     const added=c.digit;
-     selectVt4Mother(vt4,mother.family,added,
-      candidate[0]===c?'prefix':'suffix',pathValue(candidate),parent.sourceId,candidate);
-    }
+    // El único hijo VT4 válido antepone físicamente la cuarta cifra
+    // a las TRES celdas consecutivas de esta misma madre y fuente.
+    const candidate=[c,...oriented];
+    if(!valid(candidate,4))continue;
+    selectVt4Mother(vt4,mother.family,c.digit,
+     pathValue(candidate),parent.sourceId,candidate);
    }
  }
  const motherPositions=new Map(vt3.map(x=>[x.family,x.rank]));

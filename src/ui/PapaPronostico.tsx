@@ -46,7 +46,7 @@ function MiniSelectableColumn({values,trail,sourceId,onCell,disabled}:{
     </Pressable>;
    }))}
   </View>
-  <Text style={[s.muted,{color:c.subtext}]}>Tocá las casillas en el orden exacto del recorrido.</Text>
+  <Text style={[s.muted,{color:c.subtext}]}>Primero elegí VT3 (tres casillas). Para VT4, tocá la casilla extra que se agrega al inicio de VT3.</Text>
  </View>;
 }
 export default function PapaPronostico({date,turn,sheet,heads}:{
@@ -119,11 +119,16 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
    setError('No reutilices una casilla. Usá «Deshacer» para corregir.');return;
   }
   if(trail.length===4){setError('La máxima longitud es VT4: cuatro casillas.');return;}
-  const last=trail.at(-1);
+  // Las primeras tres pulsaciones forman la madre VT3.
+  // Al elegir la cuarta casilla, ésta se ANTEPONE a esa madre.
+  const last=trail.length===3?trail[0]:trail.at(-1);
   if(last&&Math.max(Math.abs(last.row-cell.row),Math.abs(last.col-cell.col))!==1){
-   setError('El recorrido debe pasar por casillas físicamente vecinas, sin saltos.');return;
+   setError(trail.length===3?
+    'VT4: la cuarta cifra debe unirse al INICIO del recorrido VT3, nunca al final.':
+    'El recorrido debe pasar por casillas físicamente vecinas, sin saltos.');return;
   }
-  setError('');setTrail(t=>[...t,cell]);
+  setError('');
+  setTrail(t=>t.length===3?[cell,...t]:[...t,cell]);
  };
  const add=()=>{
   if(!preview)return;
@@ -238,7 +243,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
     <Text style={[s.subtitle,{color:c.text}]}>CANDIDATOS ELEGIDOS · {showPicks.length} recorridos</Text>
     <Text style={[s.small,{color:c.subtext}]}>
      Una familia puede tener varios recorridos, pero cuenta como una sola jugada por VT y turno.
-     VT4 se coteja como número exacto, sin invertir cuatro cifras.
+     VT4 siempre antepone una cifra a su madre VT3 física y se coteja como número exacto.
     </Text>
     {types.map(kind=>{
      const list=showPicks.filter(p=>p.kind===kind);

@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {TURNOS,diaVacio} from '../src/domain';
+import {sha256} from '../src/sha256';
 import type {DailySheet,SheetColumn} from '../src/sheet';
 import type {PapaPick,PapaRecord} from '../src/papaPronostico';
 import {addDraftPick,buildPre,draftPick,evaluatePapa,hasObserved,isPhysicalPath,
@@ -12,7 +13,7 @@ const board:DailySheet={
 };
 const pair=[{row:0,col:0},{row:0,col:1}];
 const triple=[...pair,{row:1,col:1}];
-const quadruple=[...triple,{row:2,col:1}];
+const quadruple=[{row:1,col:0},...triple];
 assert.ok(isPhysicalPath(pair));
 assert.ok(isPhysicalPath(triple));
 assert.ok(isPhysicalPath(quadruple));
@@ -25,8 +26,8 @@ const vt3=draftPick(board,'Previa','prevNocturno',triple);
 const vt4=draftPick(board,'Previa','prevNocturno',quadruple);
 assert.equal(vt2.value,'76');assert.equal(vt2.family,'67/76');
 assert.equal(vt3.value,'768');assert.equal(vt3.family,'768/867');
-assert.equal(vt4.value,'7683');
-assert.equal(vt4.family,'7683','VT4 nunca invierte la cuaterna completa');
+assert.equal(vt4.value,'4768');
+assert.equal(vt4.family,'4768','VT4 antepone la cifra, sin invertir toda la cuaterna');
 assert.equal(vt4.motherVt3,'768/867','La madre VT3 se registra separadamente');
 assert.throws(()=>draftPick(board,'Previa','Previa',pair),/todavía/);
 assert.throws(()=>draftPick(board,'Previa','prevNocturno',[
@@ -38,6 +39,15 @@ assert.equal(paths.length,4,'Un camino idéntico no se duplica; otro testigo se 
 assert.equal(uniqueWagers(paths).vt3.size,1,'Dos testigos de la misma familia son una jugada');
 const snapshot=buildPre({date:'2026-10-14',turn:'Previa',picks:paths},board,'2026-10-14T10:00:00Z');
 assert.ok(validateSnapshot(snapshot));
+assert.equal(snapshot.pre.schema,'PAPA_PRE_V2');
+
+const legacyPre={...snapshot.pre,schema:'PAPA_PRE_V1' as const,
+ picks:snapshot.pre.picks.map(p=>({...p,motherVt3:p.kind==='vt4'?'476/674':p.motherVt3}))};
+const legacySnapshot={pre:legacyPre,sha256:sha256(JSON.stringify(legacyPre))};
+assert.ok(validateSnapshot(legacySnapshot),
+ 'Los PRE anteriores V1 conservan su madre histórica sin invalidar los registros');
+
+
 assert.equal(snapshot.pre.sources.length,1);
 const before=JSON.stringify(snapshot);
 const observed={...snapshot,pre:{...snapshot.pre,picks:[
@@ -47,14 +57,14 @@ assert.ok(!validateSnapshot(observed),'La mutación de un PRE bloqueado debe det
 const preRecord:PapaRecord={snapshot};
 const actual:PapaRecord={snapshot,post:{
  checkedAt:'2026-10-14T15:00:00Z',
- heads:{Ciudad:'1276',Provincia:'3768',Córdoba:'7683'}
+ heads:{Ciudad:'1276',Provincia:'3768',Córdoba:'4768'}
 }};
 assert.equal(evaluatePapa(preRecord).jurisdictions,0);
 const e=evaluatePapa(actual);
 assert.equal(e.jurisdictions,3);
 assert.deepEqual(e.wagers,{vt2:1,vt3:1,vt4:1});
-assert.deepEqual(e.hits,{vt2:1,vt3:1,vt4:1});
-assert.equal(e.winnerDetails.length,3);
+assert.deepEqual(e.hits,{vt2:1,vt3:2,vt4:1});
+assert.equal(e.winnerDetails.length,4);
 assert.equal(e.correctTurns.vt3,true);
 assert.equal(weekStart('2026-10-14'),'2026-10-12');
 assert.equal(weekEnd('2026-10-12'),'2026-10-18');
@@ -62,7 +72,7 @@ const summary=weeklySummary([actual], '2026-10-14');
 assert.equal(summary.records,1);assert.equal(summary.checkedTurns,1);
 assert.equal(summary.headsCompared,3);
 assert.equal(summary.partialTurns,1);
-assert.equal(summary.hit.vt2,1);assert.equal(summary.hit.vt3,1);
+assert.equal(summary.hit.vt2,1);assert.equal(summary.hit.vt3,2);
 assert.equal(summary.hit.vt4,1);
 assert.equal(weeklySummary([actual],'2026-10-19').records,0);
 const heads=diaVacio();
