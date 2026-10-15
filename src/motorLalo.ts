@@ -165,6 +165,37 @@ const rank=(groups:Map<string,Working>,roots:Map<string,RootRef>,
  return all.map(({importance,parentRank,...f},i)=>({...f,rank:i+1}));
 };
 
+/**
+ * VT4: primero la mejor hija física de cada madre VT3 (en el orden VT3);
+ * después la segunda hija de cada madre, etc. Dentro de cada madre se
+ * conserva el orden físico ya calculado por rank() (fuentes, bloques).
+ *
+ * Evita que seis extensiones de VT3 #1 ocupen los seis primeros puestos.
+ * No crea hijas ni asigna probabilidades; reordena exclusivamente VT4.
+ */
+export function distributeVt4ByMother(candidates:LaloFamily[],mothers:LaloFamily[]):LaloFamily[]{
+ const positions=new Map(mothers.map((m,i)=>[m.family,i]));
+ const buckets=new Map<string,LaloFamily[]>(mothers.map(m=>[m.family,[]]));
+ const withoutKnownParent:LaloFamily[]=[];
+ for(const child of candidates){
+  const primary=child.parentFamilies
+   .filter(f=>positions.has(f))
+   .sort((a,b)=>(positions.get(a)??999)-(positions.get(b)??999))[0];
+  if(!primary){withoutKnownParent.push(child);continue}
+  buckets.get(primary)!.push(child);
+ }
+ const result:LaloFamily[]=[];
+ const maxRound=Math.max(0,...[...buckets.values()].map(xs=>xs.length));
+ for(let round=0;round<maxRound;round++)
+  for(const mother of mothers){
+   const candidate=buckets.get(mother.family)?.[round];
+   if(candidate)result.push(candidate);
+  }
+ // Defensive: no descartar familias aunque se reciban datos incompletos.
+ result.push(...withoutKnownParent);
+ return result.map((family,index)=>({...family,rank:index+1}));
+}
+
 /** La única entrada PRE del sistema. Altera el pasado disponible, NUNCA el objetivo. */
 export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
  historical:LaloHistorical[]):LaloView{
@@ -252,7 +283,8 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
    }
  }
  const motherPositions=new Map(vt3.map(x=>[x.family,x.rank]));
- const ranked4=rank(vt4,roots,'vt4',motherPositions);
+ const daughtersByPhysicalStrength=rank(vt4,roots,'vt4',motherPositions);
+ const ranked4=distributeVt4ByMother(daughtersByPhysicalStrength,selectedMothers);
  return {target,date,status:'EXPERIMENTAL_SIN_VALIDACIÓN',
   roots:[...roots.values()],ranks:{vt2:ranked2,vt3,vt4:ranked4}};
 }
