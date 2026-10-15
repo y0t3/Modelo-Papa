@@ -1,0 +1,242 @@
+{
+  "date": "2026-10-14",
+  "phase": "ABLACION_POSTHOC_CUPO_MADRES_VT4_10_20_TODAS",
+  "note": "Solo diagnóstico retrospectivo, no cambia main ni constituye validación prospectiva; PRE originales preservados.",
+  "result1736": {
+    "head": "1736",
+    "physical": true,
+    "limit10": null,
+    "limit20": null,
+    "unlimited": null
+  },
+  "rows": [
+    {
+      "turn": "Previa",
+      "availableSources": 1,
+      "eligible": [
+        {
+          "head": "0081",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "9229",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "9799",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "4065",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "5992",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        }
+      ],
+      "sizes": {
+        "cap10": 90,
+        "cap20": 154,
+        "all": 154
+      },
+      "top10SameAsBaseline": true
+    },
+    {
+      "turn": "Primera",
+      "availableSources": 2,
+      "eligible": [
+        {
+          "head": "7056",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "9852",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "8675",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "9206",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "5872",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        }
+      ],
+      "sizes": {
+        "cap10": 92,
+        "cap20": 180,
+        "all": 294
+      },
+      "top10SameAsBaseline": true
+    },
+    {
+      "turn": "Matutino",
+      "availableSources": 3,
+      "eligible": [
+        {
+          "head": "3537",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "5982",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "5586",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "2431",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "9868",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        }
+      ],
+      "sizes": {
+        "cap10": 92,
+        "cap20": 186,
+        "all": 406
+      },
+      "top10SameAsBaseline": true
+    },
+    {
+      "turn": "Vespertino",
+      "availableSources": 4,
+      "eligible": [
+        {
+          "head": "7823",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "1130",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "1736",
+          "physical": true,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "0686",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "0531",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        }
+      ],
+      "sizes": {
+        "cap10": 94,
+        "cap20": 184,
+        "all": 584
+      },
+      "top10SameAsBaseline": true
+    },
+    {
+      "turn": "Nocturno",
+      "availableSources": 5,
+      "eligible": [
+        {
+          "head": "1856",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "3209",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "2033",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        },
+        {
+          "head": "5122",
+          "physical": false,
+          "limit10": null,
+          "limit20": null,
+          "unlimited": null
+        }
+      ],
+      "sizes": {
+        "cap10": 94,
+        "cap20": 184,
+        "all": 584
+      },
+      "top10SameAsBaseline": true
+    }
+  ]
+}
