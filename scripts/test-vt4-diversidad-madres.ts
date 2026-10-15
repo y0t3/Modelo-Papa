@@ -38,6 +38,9 @@ assert.deepEqual(gaps.map(x=>x.parentFamilies[0]),
  ['VT3-1','VT3-5','VT3-7','VT3-1'],
  'Madres sin una extensión no gastan puestos');
 assert.deepEqual(distributeVt4ByMother([],mothers),[]);
+assert.deepEqual(distributeVt4ByMother([daughter(1,1),daughter(1,2),
+ daughter(1,3)],mothers).map(f=>f.family),['VT4-1-1','VT4-1-2','VT4-1-3'],
+ 'Si solamente una madre tiene hijas, los lugares restantes sí pueden ocuparse');
 assert.deepEqual(vt4PrefixFamily('044/440','3'),['3044','3440']);
 assert.ok(!vt4PrefixFamily('044/440','3').includes('0443'));
 
@@ -58,13 +61,17 @@ const b=buildMotorLalo(sheet('0000'),'2026-10-12','Primera',history);
 assert.deepEqual(a,b,'La diversidad de madres sólo usa el PRE, nunca la cabeza objetivo');
 const possibleMotherRanks=a.ranks.vt3.slice(0,10).map(f=>f.family);
 const firstByMother=new Set<string>();
+const allMotherKeys=[...new Set(a.ranks.vt4.map(f=>f.parentFamilies[0]))];
 const topGeneration=a.ranks.vt4.slice(0,10);
-for(const f of topGeneration){
+for(let i=0;i<topGeneration.length;i++){
+ const f=topGeneration[i];
  const mother=f.parentFamilies[0];
  assert.ok(possibleMotherRanks.includes(mother),'Toda hija tiene una madre top10 real');
- assert.ok(!firstByMother.has(mother),
-  'Mientras queden madres con hijas, no ocupar dos puestos de la primera ronda');
- firstByMother.add(mother);
+ if(i<allMotherKeys.length){
+  assert.ok(!firstByMother.has(mother),
+   'Antes de la segunda ronda debe entrar la mejor hija de cada madre disponible');
+  firstByMother.add(mother);
+ }
  assert.ok(f.paths.length>0);
  assert.ok(f.paths.every(p=>{
   const digits=p.path.map(c=>c.digit).join('');
