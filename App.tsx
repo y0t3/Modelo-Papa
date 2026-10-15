@@ -14,6 +14,7 @@ import {loadPreviousDraws,hasDrawResults} from './src/drawHistory';
 import {buildDailyPanorama,buildPredictivePanorama,dailyHeadOwnerId} from './src/panoramaModel';
 import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
 import type {LaloHistorical} from './src/motorLalo';
+import type {InfoVisualDay} from './src/infoTurnHistory';
 import PanoramaSheet from './src/PanoramaSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
 import Vt3Explainer from './src/ui/Vt3Explainer';
@@ -46,7 +47,7 @@ function LaloApp(){
   hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
  });
  const [restoreScroll,setRestoreScroll]=useState({token:0,y:0});
- const [infoFrameId,setInfoFrameId]=useState('pre');
+ const [infoFrameId,setInfoFrameId]=useState('proximo');
  const [infoMode,setInfoMode]=useState<MovementMode>('todos');
  const [infoGuide,setInfoGuide]=useState<string|null>('tablero');
  const [zoomLevels,setZoomLevels]=useState(defaultZoomLevels);
@@ -68,6 +69,7 @@ function LaloApp(){
  const [data,setData]=useState<CabezasDia|null>(null);
  const [sheet,setSheet]=useState<DailySheet|null>(null);
  const [hist,setHist]=useState<LaloHistorical[]>([]);
+  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
  const [busy,setBusy]=useState(false);
  const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
  const [focused,setFocused]=useState<string|null>(null);
@@ -111,7 +113,7 @@ function LaloApp(){
   for(const key of Object.keys(scrollOffsets.current) as Screen[])
    scrollOffsets.current[key]=0;
   setRestoreScroll(old=>({token:old.token+1,y:0}));
-  setInfoFrameId('pre');
+  setInfoFrameId('proximo');
   setInfoMode('todos');
   setInfoGuide('tablero');
  };
@@ -126,14 +128,19 @@ function LaloApp(){
   try{
    setBusy(true);
    const week=shiftDay(d,-7);
-   // Dos jornadas anteriores REALMENTE sorteadas; feriados no cuentan como D−1.
+   // Cuatro jornadas reales: tres minihojas y una anterior como base de la tercera.
    const [current,previous,weekly,weekPrevious]=await Promise.all([
     descargarCabezas(d,true),
-    loadPreviousDraws(d,2,x=>descargarCabezas(x,true)),
+    loadPreviousDraws(d,4,x=>descargarCabezas(x,true)),
     descargarCabezas(week,true),
     descargarCabezas(previousDrawDay(week),true)
    ]);
-   const last=previous[1],beforeLast=previous[0];
+   const last=previous[3],beforeLast=previous[2];
+    const recentDays:InfoVisualDay[]=[3,2,1].map(i=>({
+     date:previous[i].date,heads:previous[i].heads,
+     sheet:buildSheet(previous[i].heads,previous[i-1].heads)
+    }));
+    const weekDay:InfoVisualDay={date:week,heads:weekly,sheet:buildSheet(weekly,weekPrevious)};
    const currentSheet=buildSheet(current,last.heads);
    const refs:LaloHistorical[]=[
     {date:last.date,period:'D−1',sheet:buildSheet(last.heads,beforeLast.heads)}
@@ -142,6 +149,7 @@ function LaloApp(){
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
    resetHistory();
    setData(current);setSheet(currentSheet);setHist(refs);
+    setVisualDays([...recentDays,weekDay]);
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
    setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
@@ -215,7 +223,7 @@ function LaloApp(){
     <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
     <DateField value={dateText} onChange={value=>{
      resetHistory();
-     setDateText(value);setData(null);setSheet(null);setHist([]);setFocused(null);
+     setDateText(value);setData(null);setSheet(null);setHist([]);setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <View style={s.shortcuts}>
@@ -257,7 +265,8 @@ function LaloApp(){
    </>:screen==='cabezas'?
     <HeadsTable data={data} sheet={sheet} onOpenHead={openHeadInHoja}/>:
     <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
-     historical={hist} view={motor} onNavigate={navigateTo}
+     historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
+      onTurnChange={changeTurn}
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
      movementMode={infoMode} onMovementMode={setInfoMode}
      expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}/>}

@@ -42,6 +42,8 @@ jobs:
         run: npx --yes tsx scripts/test-info-fechas-atras.ts
       - name: Verificar secuencia PRE de candidaturas físicas antes de cada turno
         run: npx --yes tsx scripts/test-info-movimiento-candidatos.ts
+      - name: Comparar el mismo turno en cuatro jornadas y proteger el próximo sorteo
+        run: npx --yes tsx scripts/test-info-panorama-turnos.ts
       - name: Verificar INFO con panorama y secuencia sin fuga futura
         run: npx --yes tsx scripts/test-info-jornada-guia.ts
       - name: Validar libro de apuestas con importe igual en bajada 4-3-2
