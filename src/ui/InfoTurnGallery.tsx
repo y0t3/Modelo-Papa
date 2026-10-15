@@ -28,8 +28,8 @@ function Board({frame,mode,large=false}:{
   }
   return map;
  },[routes]);
- const w=large?26:11,h=large?29:14;
- const rowLabel=large?64:28,space=large?2:1;
+ const w=large?21:9,h=large?27:13;
+ const rowLabel=large?52:23,space=1;
  return <View accessibilityLabel={'Hoja de '+frame.dayLabel}
   style={[s.board,{backgroundColor:c.board,borderColor:c.border}]}>
   <View style={s.gridRow}>
@@ -67,14 +67,18 @@ function Board({frame,mode,large=false}:{
   </View>)}
  </View>;
 }
-const stats=(f:TurnHistoryFrame,count:number)=>f.kind==='historico'?
- f.markedHeads+' cabezas con marca · '+count+' recorridos':
- count+' recorridos propuestos';
+const stats=(f:TurnHistoryFrame,mode:GalleryMode)=>{
+ const routes=visibleTurnRoutes(f,mode);
+ return f.kind==='historico'?
+  new Set(routes.map(r=>r.ownerId)).size+' cabezas con marca · '+routes.length+' recorridos':
+  routes.length+' recorridos propuestos';
+};
 export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,mode,onMode}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const {frames}=gallery;
  const [playing,setPlaying]=useState(false);
- const idx=Math.max(0,frames.findIndex(f=>f.id===selectedFrameId));
+ const selected=frames.findIndex(f=>f.id===selectedFrameId);
+ const idx=selected<0?frames.length-1:selected;
  const active=frames[idx];
  useEffect(()=>{
   if(!playing||frames.length<2)return;
@@ -109,7 +113,6 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
   </View>
   <View style={s.thumbs}>
    {frames.map((f,i)=>{
-    const count=visibleTurnRoutes(f,mode).length;
     return <Pressable key={f.id} accessibilityRole="button"
      accessibilityState={{selected:idx===i}} onPress={()=>{setPlaying(false);onSelectFrame(f.id)}}
      style={[s.thumb,{borderColor:idx===i?c.accent:c.border,
@@ -117,7 +120,7 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
      <Text style={[s.thumbTitle,{color:c.text}]}>{f.title}</Text>
      <Text style={[s.date,{color:c.subtext}]}>{f.dayLabel}</Text>
      <Board frame={f} mode={mode}/>
-     <Text style={[s.small,{color:c.subtext,textAlign:'center'}]}>{stats(f,count)}</Text>
+     <Text style={[s.small,{color:c.subtext,textAlign:'center'}]}>{stats(f,mode)}</Text>
     </Pressable>;
    })}
   </View>
@@ -132,7 +135,7 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
    </Text>
    <Board frame={active} mode={mode} large/>
    <Text style={{fontSize:12,color:c.text,fontWeight:'800'}}>
-    {stats(active,visibleTurnRoutes(active,mode).length)}
+    {stats(active,mode)}
    </Text>
   </View>
   <View style={s.controls}>
