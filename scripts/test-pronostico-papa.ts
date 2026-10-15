@@ -26,7 +26,7 @@ const vt4=draftPick(board,'Previa','prevNocturno',quadruple);
 assert.equal(vt2.value,'76');assert.equal(vt2.family,'67/76');
 assert.equal(vt3.value,'768');assert.equal(vt3.family,'768/867');
 assert.equal(vt4.value,'4768');
-assert.equal(vt4.family,'7683','VT4 nunca invierte la cuaterna completa');
+assert.equal(vt4.family,'4768','VT4 antepone la cifra, sin invertir toda la cuaterna');
 assert.equal(vt4.motherVt3,'768/867','La madre VT3 se registra separadamente');
 assert.throws(()=>draftPick(board,'Previa','Previa',pair),/todavía/);
 assert.throws(()=>draftPick(board,'Previa','prevNocturno',[
