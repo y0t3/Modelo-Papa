@@ -257,6 +257,11 @@ export function compareMotorLaloAfterDraw(view:LaloView,heads:string[]):Record<L
  const actual=heads.filter(h=>/^\d{4}$/.test(h));
  return Object.fromEntries((['vt2','vt3','vt4'] as LaloKind[]).map(k=>{
   const n=Number(k.slice(-1));
+  // VT4 no es la cuaterna reversible: se respeta su madre VT3 y la
+  // cuarta cifra en el extremo físico. Comparar cada valor testigo exacto.
+  if(k==='vt4')return [k,view.ranks.vt4.slice(0,10)
+   .filter(f=>f.paths.some(path=>actual.includes(path.value)))
+   .map(f=>f.family)];
   const observed=new Set(actual.map(h=>reversibleFamily(h.slice(-n))));
   return [k,view.ranks[k].slice(0,10).filter(f=>observed.has(f.family)).map(f=>f.family)];
  })) as Record<LaloKind,string[]>;
