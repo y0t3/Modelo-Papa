@@ -9,6 +9,7 @@ import type {MovementMode} from '../infoCandidatos';
 import type {InfoVisualDay} from '../infoTurnHistory';
 import {buildTurnHistory,readableWeekday} from '../infoTurnHistory';
 import InfoTurnGallery from './InfoTurnGallery';
+import TurnStrip from './TurnStrip';
 import InfoCandidateMovement from './InfoCandidateMovement';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
@@ -17,6 +18,7 @@ type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
 type Props={date:string;turn:Turno;data:CabezasDia|null;
  sheet:DailySheet|null;historical:LaloHistorical[];visualDays:InfoVisualDay[];
  view:LaloView|null;onNavigate:(screen:Destination)=>void;
+ onTurnChange:(turn:Turno)=>void;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
  expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void};
@@ -52,7 +54,7 @@ function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
   <Text style={{color:c.subtext,fontSize:11,fontWeight:'700'}}>{kind.toUpperCase()} · {kinds[kind].label}</Text>
  </View>;
 }
-export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,
+export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,onTurnChange,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide}:Props){
  const {colors:c,kinds}=useLaloTheme();
@@ -116,6 +118,10 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
    <Text style={[s.note,{color:c.muted}]}>
     Cantidad habitual no equivale a disponibilidad confirmada; Montevideo tiene turnos propios.
    </Text>
+  </View>
+  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
+   <Text style={[s.heading,{color:c.text}]}>Elegí el turno para comparar</Text>
+   <TurnStrip value={turn} onChange={onTurnChange}/>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.text}]}>02 · Cómo viene el {turn}</Text>
