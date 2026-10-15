@@ -6,13 +6,15 @@ import type {CabezasDia,Turno} from './domain';
 import {JURS,TURNOS} from './domain';
 import type {LaloView,LaloKind,LaloHistorical,RootRef} from './motorLalo';
 import type {Path} from './paths';
+import {physicalSupportRelation} from './physicalRelation';
+import type {PhysicalRelation} from './physicalRelation';
 
 export type PanoramaKind='vt2'|'vt3'|'vt4';
 export type PanoramaCell={row:number;col:number};
 export type PanoramaAntecedent={
  id:string;period:RootRef['period'];date:string;head:string;jurisdiction:string;
  turn:Turno;sourceId:SourceId;sourceLabel:string;values:string[];
- cells:PanoramaCell[];reading:string;
+ cells:PanoramaCell[];reading:string;relation?:PhysicalRelation;
 };
 export type PanoramaRoute={
  id:string;ownerId:string;sourceId:SourceId;kind:PanoramaKind;
@@ -123,7 +125,8 @@ export function buildPredictivePanorama(view:LaloView,historical:LaloHistorical[
        ' · '+root.jurisdiction+' ('+root.oldTurn+')';
       if(!p.headSources.includes(label))p.headSources.push(label);
       const ancestor=antecedentMap.get(rootId);
-      if(ancestor&&!p.antecedents?.some(a=>a.id===ancestor.id))p.antecedents?.push(ancestor);
+      if(ancestor&&!p.antecedents?.some(a=>a.id===ancestor.id))
+       p.antecedents?.push({...ancestor,relation:physicalSupportRelation(r,root,family.paths)});
      }
     }
     for(const mother of r.mothers||[]){
