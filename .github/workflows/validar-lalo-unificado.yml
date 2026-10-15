@@ -38,6 +38,8 @@ jobs:
         run: npx --yes tsx scripts/test-vt4-diversidad-madres.ts
       - name: Cotejo POST VT4 por valor físico exacto
         run: npx --yes tsx scripts/test-cotejo-vt4-exacto.ts
+      - name: Validar libro de apuestas con importe igual en bajada 4-3-2
+        run: npx --yes tsx scripts/test-lalo-libro-apuestas.ts
       - name: Confirmar que no quedan importaciones del predictor retirado
         run: |
           if grep -REn "(from ['\"][^'\"]*(predictive|analysisEngine|routeHistory|routeLife)['\"])" App.tsx src/ ; then

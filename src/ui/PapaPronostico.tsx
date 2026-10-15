@@ -11,6 +11,7 @@ import {descargarCabezas} from '../cabezas';
 import MarkedBoard from './MarkedBoard';
 import type {PanoramaRoute} from '../panoramaModel';
 import {useLaloTheme} from './LaloTheme';
+import LaloLibroApuestas from './LaloLibroApuestas';
 
 const types=['vt2','vt3','vt4'] as const;
 const sourceLabels:Record<SourceId,string>={
@@ -60,7 +61,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
  const [busy,setBusy]=useState(false);
  const [error,setError]=useState('');
  const [week,setWeek]=useState(()=>weekStart(todayLocal()));
- const [section,setSection]=useState<'seleccion'|'historial'>('seleccion');
+ const [section,setSection]=useState<'seleccion'|'apuestas'|'historial'>('seleccion');
  const visible=useMemo(()=>sheet?.columns.slice(0,TURNOS.indexOf(turn)+1)||[],[sheet,turn]);
  const selectedColumn=visible.find(x=>x.id===source);
  const record=records.find(r=>recordId(r.snapshot.pre.date,r.snapshot.pre.turn)===recordId(date,turn));
@@ -180,12 +181,12 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
     forma VT2 / VT3 / VT4 y guarda sus pronósticos aparte del ranking automático.
    </Text>
    <View style={s.switches}>
-    {(['seleccion','historial'] as const).map(x=><Pressable key={x}
+    {(['seleccion','apuestas','historial'] as const).map(x=><Pressable key={x}
       accessibilityRole="button" accessibilityState={{selected:section===x}}
       onPress={()=>setSection(x)}
       style={[s.switch,{backgroundColor:section===x?c.accentFill:c.card,borderColor:c.border}]}>
       <Text style={{color:section===x?c.accent:c.subtext,fontWeight:'900',fontSize:12}}>
-       {x==='seleccion'?'MI PRONÓSTICO':'RESUMEN SEMANAL'}
+       {x==='seleccion'?'MI PRONÓSTICO':x==='apuestas'?'APUESTAS':'BALANCE'}
       </Text>
      </Pressable>)}
    </View>
@@ -307,7 +308,9 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
      </Text>)}
     </View>:null}
    </View>
-  </>:<View style={[s.panel,{backgroundColor:c.surface,borderColor:c.border}]}>
+  </>:section==='apuestas'?<LaloLibroApuestas date={date} turn={turn}
+   record={record} records={records} heads={heads} week={week} weekEnd={weekEnd(week)}/>
+   :<View style={[s.panel,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.subtitle,{color:c.text}]}>BALANCE SEMANAL · LALO</Text>
    <View style={s.weekBar}>
     <Pressable style={[s.secondary,{borderColor:c.border}]} onPress={()=>setWeek(x=>mondayShift(x,-1))}>
@@ -360,6 +363,8 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
       </Text>
      </View>;
     }):<Text style={[s.small,{color:c.muted}]}>Todavía no hay pronósticos personales congelados esta semana.</Text>}
+   <LaloLibroApuestas date={date} turn={turn} record={record}
+    records={records} heads={heads} week={week} weekEnd={weekEnd(week)} summaryOnly/>
    <Text style={[s.small,{color:c.subtext}]}>
     Los registros quedan en este dispositivo. Si cambiás de teléfono o borrás los datos de la app,
     pueden perderse. Las estadísticas describen jugadas acertadas; no prueban una ventaja predictiva.
