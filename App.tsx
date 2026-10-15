@@ -1,5 +1,5 @@
 import React,{useEffect,useMemo,useRef,useState} from 'react';
-import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator,Alert,Platform,StatusBar as RNStatusBar} from 'react-native';
+import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator,Alert,BackHandler,Platform,StatusBar as RNStatusBar} from 'react-native';
 import {StatusBar} from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
@@ -25,6 +25,8 @@ import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 import ZoomableTab from './src/ui/ZoomableTab';
 import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './src/tabZoom';
+import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
+import type {NavigationEntry} from './src/tabNavigation';
 
 type Screen='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const nav: {id:Screen;label:string}[]=[
@@ -37,6 +39,14 @@ const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+
 function LaloApp(){
  const {mode,colors:c,toggle}=useLaloTheme();
  const [screen,setScreen]=useState<Screen>('hoja');
+ const activeScreenRef=useRef<Screen>('hoja');
+ const historyRef=useRef<NavigationEntry[]>([]);
+ const scrollOffsets=useRef<Record<Screen,number>>({
+  hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
+ });
+ const [restoreScroll,setRestoreScroll]=useState({token:0,y:0});
+ const [infoFrameId,setInfoFrameId]=useState('pre');
+ const [infoGuide,setInfoGuide]=useState<string|null>('tablero');
  const [zoomLevels,setZoomLevels]=useState(defaultZoomLevels);
  useEffect(()=>{
   let alive=true;
@@ -62,6 +72,46 @@ function LaloApp(){
  const [hojaFocused,setHojaFocused]=useState<string|null>(null);
  const [hojaTurn,setHojaTurn]=useState<Turno>('Previa');
  const scrollRef=useRef<ScrollView>(null);
+ const navigateTo=(next:Screen)=>{
+  const from=activeScreenRef.current;
+  if(from===next)return;
+  historyRef.current=pushNavigation(historyRef.current,{
+   screen:from,scrollY:scrollOffsets.current[from],selectedTurn,
+   focused,hojaFocused,hojaTurn
+  },next);
+  activeScreenRef.current=next;
+  scrollOffsets.current[next]=0;
+  setRestoreScroll(old=>({token:old.token+1,y:0}));
+  setScreen(next);
+ };
+ const goBack=()=>{
+  const {entry,remaining}=backNavigation(historyRef.current);
+  if(!entry)return false; // sin historial, Android conserva Atrás del sistema
+  historyRef.current=remaining;
+  activeScreenRef.current=entry.screen;
+  setSelectedTurn(entry.selectedTurn);
+  setFocused(entry.focused);
+  setHojaFocused(entry.hojaFocused);
+  setHojaTurn(entry.hojaTurn);
+  scrollOffsets.current[entry.screen]=entry.scrollY;
+  setRestoreScroll(old=>({token:old.token+1,y:entry.scrollY}));
+  setScreen(entry.screen);
+  return true;
+ };
+ const backHandlerRef=useRef(goBack);
+ backHandlerRef.current=goBack;
+ useEffect(()=>{
+  const subscription=BackHandler.addEventListener('hardwareBackPress',()=>backHandlerRef.current());
+  return ()=>subscription.remove();
+ },[]);
+ const resetHistory=()=>{
+  historyRef.current=[];
+  for(const key of Object.keys(scrollOffsets.current) as Screen[])
+   scrollOffsets.current[key]=0;
+  setRestoreScroll(old=>({token:old.token+1,y:0}));
+  setInfoFrameId('pre');
+  setInfoGuide('tablero');
+ };
  const date=displayToIso(dateText);
  const target=useMemo<Turno>(()=>selectedTurn||TURNOS.find(t=>
   !data||JURS.every(j=>!/^\d{4}$/.test(data[t]?.[j]||'')))||'Nocturno',
@@ -87,6 +137,7 @@ function LaloApp(){
    ];
    if(week<d&&hasDrawResults(weekly))
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
+   resetHistory();
    setData(current);setSheet(currentSheet);setHist(refs);
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
    setHojaFocused(null);setHojaTurn('Previa');
@@ -106,12 +157,12 @@ function LaloApp(){
  const fiveHeads=useMemo(()=>JURS.filter(j=>j!=='Montevideo')
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
- const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null)};
- const showFamily=(id:string)=>{setFocused(id);setScreen('predictiva')};
+ const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('pre')};
+ const showFamily=(id:string)=>{navigateTo('predictiva');setFocused(id)};
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);
   if(!hoja?.groups.some(group=>group.id===id&&group.routeCount>0))return;
-  setHojaTurn(turn);setHojaFocused(id);setScreen('hoja');
+  navigateTo('hoja');setHojaTurn(turn);setHojaFocused(id);
  };
  const alignHojaOnReturn=(y:number)=>{
   if(hojaFocused)scrollRef.current?.scrollTo({y:Math.max(0,(y-8)*zoomLevels.hoja),animated:true});
@@ -122,10 +173,10 @@ function LaloApp(){
     accessibilityState={{selected:screen===x.id}}
     style={[s.tab,screen===x.id&&s.tabOn]}
     onPress={()=>{
-     setScreen(x.id);
+     if(activeScreenRef.current===x.id)return;
+     navigateTo(x.id);
      if(x.id==='hoja'){
       setFocused(null);setHojaFocused(null);setHojaTurn('Previa');
-      scrollRef.current?.scrollTo({y:0,animated:true});
      }
     }}>
     <Text style={s.tabText} numberOfLines={1} adjustsFontSizeToFit>{x.label}</Text>
@@ -142,7 +193,9 @@ function LaloApp(){
    </Pressable>
   </View>
   <ZoomableTab key={screen} zoom={zoomLevels[screen]}
-   onZoomChange={updateZoom} scrollRef={scrollRef}>
+   onZoomChange={updateZoom} scrollRef={scrollRef}
+   restoreY={restoreScroll.y} restoreToken={restoreScroll.token}
+   onScrollY={y=>{scrollOffsets.current[screen]=safeScrollY(y)}}>
    <View style={s.header}>
     <View style={s.headerLeft}/>
     <View style={{flex:1}}>
@@ -158,6 +211,7 @@ function LaloApp(){
    <View style={[s.selector,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
     <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
     <DateField value={dateText} onChange={value=>{
+     resetHistory();
      setDateText(value);setData(null);setSheet(null);setHist([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
@@ -174,7 +228,7 @@ function LaloApp(){
     sheet&&hoja?<View onLayout={e=>alignHojaOnReturn(e.nativeEvent.layout.y)}>
      <PanoramaSheet mode="hoja" sheet={sheet} data={hoja}
       initialTurn={hojaTurn} focusedOwner={hojaFocused}
-      onInfo={()=>setScreen('info')}/>
+      onInfo={()=>navigateTo('info')}/>
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
    :screen==='predictiva'?<>
@@ -182,7 +236,7 @@ function LaloApp(){
     <TurnStrip value={target} onChange={changeTurn}/>
     {sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet}
      data={predictiva} target={target} focusedOwner={focused}
-     onInfo={()=>setScreen('info')}/>:
+     onInfo={()=>navigateTo('info')}/>:
      <Text style={[s.empty,{color:c.subtext}]}>Cargá una hoja para ver las rutas que propone el motor Lalo.</Text>}
    </>:screen==='prediccion'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
@@ -200,7 +254,9 @@ function LaloApp(){
    </>:screen==='cabezas'?
     <HeadsTable data={data} sheet={sheet} onOpenHead={openHeadInHoja}/>:
     <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
-     historical={hist} view={motor} onNavigate={screen=>setScreen(screen)}/>}
+     historical={hist} view={motor} onNavigate={navigateTo}
+     selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
+     expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}/>}
   </ZoomableTab>
  </SafeAreaView>;
 }
