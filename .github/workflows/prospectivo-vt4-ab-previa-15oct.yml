@@ -1,0 +1,37 @@
+name: Sellar PRE VT4 A/B · Previa 15oct
+on:
+  push:
+    branches: [prospectivo-vt4-a-b-previa-15oct2026]
+    paths: ['.github/workflows/prospectivo-vt4-ab-previa-15oct.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  seal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verificar que la fecha objetivo sea el futuro y no haya PRE anterior
+        run: |
+          test ! -e auditorias/prospectivo-vt4-ab-previa-15oct2026/PRE_15OCT_PREVIA.json
+          test ! -e auditorias/prospectivo-vt4-ab-previa-15oct2026/SELLO_SHA256.json
+          test ! -e auditorias/prospectivo-vt4-ab-previa-15oct2026/POST_15OCT_PREVIA.json
+      - name: Generar selecciones PRE independientes usando exclusivamente jornadas previas
+        run: node scripts/prospectivo-vt4-ab-previa-15oct.mjs
+      - name: Sellar PRE y SHA en GitHub sin posibilidad de reescritura desde esta acción
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/prospectivo-vt4-ab-previa-15oct2026/PRE_15OCT_PREVIA.json
+          git add auditorias/prospectivo-vt4-ab-previa-15oct2026/SELLO_SHA256.json
+          git commit -m 'seal(vt4): PRE concentrado vs rondas 15oct Previa sin resultados'
+          git push origin HEAD:prospectivo-vt4-a-b-previa-15oct2026
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PRE-VT4-A-B-15OCT-PREVIA
+          path: auditorias/prospectivo-vt4-ab-previa-15oct2026/
+          if-no-files-found: error
