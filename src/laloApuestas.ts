@@ -1,6 +1,8 @@
 // Libro personal de apuestas REALES, separado de los pronósticos PRE.
 // Sin tarifas supuestas: coincidencia literal a la cabeza != importe cobrado.
 import {PAPA_JURS,expandDownPicks,validateSnapshot,recordId,todayLocal} from './papaPronostico';
+import {JURS} from './domain';
+import {limpiarJurisdicciones} from './laloJurisdicciones';
 import type {PapaKind,PapaRecord} from './papaPronostico';
 import type {CabezasDia,Turno} from './domain';
 import {sha256} from './sha256';
@@ -57,7 +59,7 @@ export function prepareTicket(record:PapaRecord,selectedKeys:string[],
  const source=record.snapshot;
  if(!validateSnapshot(source))throw Error('PRE dañado');
  if(!integerPesos(stakePerLinePesos))throw Error('Ingresá un importe entero positivo por número');
- if(!PAPA_JURS.includes(jurisdiction as typeof PAPA_JURS[number]))
+ if(!JURS.includes(jurisdiction as typeof JURS[number]))
   throw Error('Elegí una jurisdicción');
  if(!id||!isIso(createdAt))throw Error('Identificador o fecha de apuesta inválidos');
  const candidates=betLinesForPre(record);
@@ -74,11 +76,31 @@ export function prepareTicket(record:PapaRecord,selectedKeys:string[],
  };
  return {pre,sha256:sha256(JSON.stringify(pre))};
 }
+/**
+ * Confirmación de una única apuesta para cada jurisdicción efectivamente jugada.
+ * Los números y el importe unitario son idénticos; se multiplica por el número
+ * de sorteos confirmados, y se conservan tickets individuales para cotejar.
+ */
+export function prepareTickets(record:PapaRecord,selectedKeys:string[],
+ stakePerLinePesos:number,jurisdictions:string[],batchId:string,
+ createdAt:string):BetTicket[]{
+ const normalized=limpiarJurisdicciones(jurisdictions);
+ if(!jurisdictions.length||normalized.length!==new Set(jurisdictions).size)
+  throw Error('Seleccioná jurisdicciones válidas sin repetir ninguna');
+ if(jurisdictions.some(j=>!JURS.includes(j as typeof JURS[number])))
+  throw Error('Jurisdicción desconocida');
+ return normalized.map(jur=>prepareTicket(record,selectedKeys,stakePerLinePesos,
+  jur,batchId+'|'+jur,createdAt));
+}
+export function plannedSpend(stake:number,lines:number,jurisdictions:number):number|null{
+ const total=stake*lines*jurisdictions;
+ return Number.isSafeInteger(total)&&stake>0&&lines>0&&jurisdictions>0?total:null;
+}
 export function validTicket(ticket:BetTicket):boolean{
  const p=ticket?.pre;
  if(!p||p.schema!=='LALO_APUESTA_V1'||p.alcance!=='cabeza'||
   !isDate(p.date)||!isIso(p.createdAt)||!p.id||!p.preSha256||
-  !PAPA_JURS.includes(p.jurisdiction as typeof PAPA_JURS[number])||
+  !JURS.includes(p.jurisdiction as typeof JURS[number])||
   !integerPesos(p.stakePerLinePesos)||!Array.isArray(p.lines)||
   !p.lines.length||p.lines.some(l=>!isLine(l)))return false;
  if(new Set(p.lines.map(l=>l.key)).size!==p.lines.length)return false;
@@ -120,6 +142,24 @@ export function validLedger(ledger:BetLedger):boolean{
  }
  return true;
 }
+export function withTickets(ledger:BetLedger,tickets:BetTicket[]):BetLedger{
+ if(!validLedger(ledger)||!tickets.length||tickets.some(t=>!validTicket(t)))
+  throw Error('Boletas o libro inválidos');
+ const ids=new Set(ledger.tickets.map(t=>t.pre.id));
+ const existing=new Set(ledger.tickets.map(t=>
+  [t.pre.date,t.pre.turn,t.pre.jurisdiction,t.pre.stakePerLinePesos,
+   t.pre.lines.map(l=>l.key).sort().join(';')].join('|')));
+ const batch=new Set<string>();
+ for(const t of tickets){
+  if(ids.has(t.pre.id))throw Error('Boleta ya registrada');
+  const signature=[t.pre.date,t.pre.turn,t.pre.jurisdiction,
+   t.pre.stakePerLinePesos,t.pre.lines.map(l=>l.key).sort().join(';')].join('|');
+  if(existing.has(signature)||batch.has(signature))
+   throw Error('Esta misma apuesta ya se registró en una jurisdicción');
+  ids.add(t.pre.id);batch.add(signature);
+ }
+ return {...ledger,tickets:[...ledger.tickets,...tickets]};
+}
 export function withTicket(ledger:BetLedger,ticket:BetTicket):BetLedger{
  if(!validLedger(ledger)||!validTicket(ticket))throw Error('Apuesta o registro no válidos');
  if(ledger.tickets.some(t=>t.pre.id===ticket.pre.id))throw Error('Identificador de apuesta repetido');
@@ -151,5 +191,5 @@ export function canConfirmBet(record:PapaRecord,date:string,heads:CabezasDia|nul
  const p=record.snapshot.pre;
  if(p.date!==date||date!==todayLocal())return false;
  if(record.post?.heads&&Object.keys(record.post.heads).length>0)return false;
- return !PAPA_JURS.some(j=>/^\d{4}$/.test(heads?.[p.turn]?.[j]||''));
+ return !JURS.some(j=>/^\d{4}$/.test(heads?.[p.turn]?.[j]||''));
 }
