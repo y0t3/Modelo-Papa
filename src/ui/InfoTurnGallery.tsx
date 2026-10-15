@@ -7,7 +7,8 @@ import {useLaloTheme} from './LaloTheme';
 
 export type GalleryMode='todos'|'vt2'|'vt3'|'vt4';
 type Props={gallery:TurnHistory;selectedFrameId:string;
- onSelectFrame:(id:string)=>void;mode:GalleryMode;onMode:(m:GalleryMode)=>void};
+ onSelectFrame:(id:string)=>void;mode:GalleryMode;onMode:(m:GalleryMode)=>void;
+ onOpenFrame:(frame:TurnHistoryFrame)=>void};
 const options:{id:GalleryMode;label:string}[]=[
  {id:'todos',label:'Todas'},{id:'vt2',label:'2 cifras'},
  {id:'vt3',label:'3 cifras'},{id:'vt4',label:'4 cifras'}
@@ -71,9 +72,9 @@ const stats=(f:TurnHistoryFrame,mode:GalleryMode)=>{
  const routes=visibleTurnRoutes(f,mode);
  return f.kind==='historico'?
   new Set(routes.map(r=>r.ownerId)).size+' cabezas con marca · '+routes.length+' recorridos':
-  routes.length+' recorridos propuestos';
+  new Set(routes.map(r=>r.ownerId)).size+' familias principales';
 };
-export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,mode,onMode}:Props){
+export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,mode,onMode,onOpenFrame}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const {frames}=gallery;
  const [playing,setPlaying]=useState(false);
@@ -95,7 +96,7 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
  return <View style={s.root}>
   <Text style={{color:c.text,fontSize:13,lineHeight:19}}>
    Así se vio el <Text style={{fontWeight:'900'}}>{gallery.turn}</Text> en las últimas jornadas.
-   El último cuadro muestra los recorridos que propone la hoja para este sorteo.
+   El último cuadro muestra sólo las tres primeras familias de 2, 3 y 4 cifras.
   </Text>
   <View style={s.filters}>{options.map(o=><Pressable key={o.id} accessibilityRole="button"
    accessibilityState={{selected:mode===o.id}} onPress={()=>{setPlaying(false);onMode(o.id)}}
@@ -131,12 +132,19 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
    <Text style={[s.small,{color:c.text}]}>
     {active.kind==='historico'?
      'Estas marcas son coincidencias reales del sorteo de ese día.':
-     'Estas marcas son propuestas calculadas antes del turno, no resultados.'}
+     'Sólo se muestran las tres familias principales de cada cantidad de cifras. No son resultados.'}
    </Text>
    <Board frame={active} mode={mode} large/>
    <Text style={{fontSize:12,color:c.text,fontWeight:'800'}}>
     {stats(active,mode)}
    </Text>
+   <Pressable accessibilityRole="button"
+    onPress={()=>{setPlaying(false);onOpenFrame(active)}}
+    style={[s.open,{borderColor:c.accent,backgroundColor:c.accentFill}]}>
+    <Text style={{color:c.accent,fontWeight:'900',fontSize:12}}>
+     {active.kind==='historico'?'Abrir este día en HOJA →':'Abrir en PREDICTIVA →'}
+    </Text>
+   </Pressable>
   </View>
   <View style={s.controls}>
    <Pressable disabled={idx===0} accessibilityRole="button"
@@ -176,5 +184,6 @@ const s=StyleSheet.create({
  small:{fontSize:10,lineHeight:16},controls:{flexDirection:'row',
   justifyContent:'space-between',alignItems:'center',gap:5},
  control:{borderWidth:1,paddingHorizontal:14,paddingVertical:9,borderRadius:8},
- play:{borderWidth:1,paddingHorizontal:10,paddingVertical:9,borderRadius:8}
+ play:{borderWidth:1,paddingHorizontal:10,paddingVertical:9,borderRadius:8},
+ open:{borderWidth:1,borderRadius:9,paddingVertical:11,paddingHorizontal:17}
 });
