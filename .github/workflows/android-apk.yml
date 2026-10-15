@@ -1,6 +1,9 @@
 name: Build Modelo Lalo APK
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - build/modelo-lalo-v035-respaldos-explicados-15oct2026
 permissions:
   contents: read
 jobs:
@@ -23,6 +26,8 @@ jobs:
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Probar observabilidad VT3
         run: npx --yes tsx scripts/test-consolidacion-lalo.ts
+      - name: Comprobar caso 033 a 044 y bifurcación 440
+        run: npx --yes tsx scripts/test-respaldos-explicados.ts
       - name: Generate Android project
         env:
           CI: '1'
