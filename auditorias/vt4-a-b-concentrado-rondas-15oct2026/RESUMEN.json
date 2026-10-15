@@ -1,0 +1,757 @@
+{
+  "phase": "POST_DE_PRE_RETROSPECTIVOS",
+  "cuts": 115,
+  "days": 23,
+  "drawnHeads": 575,
+  "preSha256": "0cbec3f253adb1e1835c3a5cf6c7ed0440975e57922293483c310b7b578cd02d",
+  "engineSha256": "bb58ecaf00881e8cb2e157da4283ad47ca7cf5ffdb88eba52d785ae56891c797",
+  "stats": {
+    "concentrado": {
+      "cutsWithTop3": 0,
+      "cutsWithTop5": 0,
+      "cutsWithTop10": 0,
+      "drawnHeadsMatchedTop3": 0,
+      "drawnHeadsMatchedTop5": 0,
+      "drawnHeadsMatchedTop10": 0,
+      "distinctMothersTop3": 115,
+      "distinctMothersTop5": 148,
+      "distinctMothersTop10": 278,
+      "distinctNumbersTop10": 1804
+    },
+    "rondas": {
+      "cutsWithTop3": 0,
+      "cutsWithTop5": 3,
+      "cutsWithTop10": 3,
+      "drawnHeadsMatchedTop3": 0,
+      "drawnHeadsMatchedTop5": 3,
+      "drawnHeadsMatchedTop10": 3,
+      "distinctMothersTop3": 345,
+      "distinctMothersTop5": 575,
+      "distinctMothersTop10": 1150,
+      "distinctNumbersTop10": 2070
+    }
+  },
+  "meanDistinctMothers": {
+    "concentrado": 2.417391304347826,
+    "rondas": 10
+  },
+  "meanDistinctExactNumbers": {
+    "concentrado": 15.68695652173913,
+    "rondas": 18
+  },
+  "paired": {
+    "top3": {
+      "gained": [],
+      "lost": []
+    },
+    "top5": {
+      "gained": [
+        "2026-09-24 Previa",
+        "2026-10-03 Matutino",
+        "2026-10-10 Nocturno"
+      ],
+      "lost": []
+    },
+    "top10": {
+      "gained": [
+        "2026-09-24 Previa",
+        "2026-10-03 Matutino",
+        "2026-10-10 Nocturno"
+      ],
+      "lost": []
+    }
+  },
+  "byDay": [
+    {
+      "date": "2026-09-15",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": true
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": true
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": false
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "rows": [
+        {
+          "turn": "Previa",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Primera",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Matutino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Vespertino",
+          "concentrado": false,
+          "rondas": false
+        },
+        {
+          "turn": "Nocturno",
+          "concentrado": false,
+          "rondas": true
+        }
+      ]
+    }
+  ],
+  "warning": "Exploratorio: los 115 cortes comparten jornadas, el método por rondas fue diseñado después de ver múltiples historiales. No afirmar mejora prospectiva sin sellos futuros."
+}
