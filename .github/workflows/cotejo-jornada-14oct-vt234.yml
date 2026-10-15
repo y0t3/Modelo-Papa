@@ -1,0 +1,40 @@
+name: Cotejo 14oct · cobertura vs ranking VT2 VT3 VT4
+on:
+  push:
+    branches: [lab/cotejo-jornada-14oct-cobertura-vt234-15oct2026]
+    paths: ['.github/workflows/cotejo-jornada-14oct-vt234.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  cotejar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Reconstruir sólo Previa sin acceso a resultados 14oct
+        run: |
+          mv auditorias/cotejo-14oct-vt234-15oct2026/RESULTADOS_14OCT_VERIFICADOS.json /tmp/resultados-14oct-post.json
+          test ! -e auditorias/cotejo-14oct-vt234-15oct2026/RESULTADOS_14OCT_VERIFICADOS.json
+          node scripts/cotejo-jornada-14oct-vt234.mjs pre
+      - name: Cotejar cabezas 14oct con PRE genuino y reconstrucciones descriptivas
+        run: |
+          mv /tmp/resultados-14oct-post.json auditorias/cotejo-14oct-vt234-15oct2026/RESULTADOS_14OCT_VERIFICADOS.json
+          node scripts/cotejo-jornada-14oct-vt234.mjs post
+      - name: Guardar auditoría sin fusionar con main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add auditorias/cotejo-14oct-vt234-15oct2026/RECONSTRUCCION_PRE_5_TURNOS.json
+          git add auditorias/cotejo-14oct-vt234-15oct2026/DIAGNOSTICO_POST_5_TURNOS.json
+          git add auditorias/cotejo-14oct-vt234-15oct2026/RESUMEN.json
+          git commit -m 'audit: corte 14oct VT234 cobertura/admisión/top10 PRE/POST'
+          git push origin HEAD:lab/cotejo-jornada-14oct-cobertura-vt234-15oct2026
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cotejo-14oct-vt234
+          path: auditorias/cotejo-14oct-vt234-15oct2026/
+          if-no-files-found: error
