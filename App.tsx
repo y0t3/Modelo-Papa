@@ -199,7 +199,8 @@ function LaloApp(){
     <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
    </>:screen==='cabezas'?
     <HeadsTable data={data} sheet={sheet} onOpenHead={openHeadInHoja}/>:
-    <InfoDashboard turn={target} view={motor}/>}
+    <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
+     historical={hist} view={motor} onNavigate={screen=>setScreen(screen)}/>}
   </ZoomableTab>
  </SafeAreaView>;
 }
