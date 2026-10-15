@@ -12,6 +12,7 @@ export type TurnHistoryFrame={
  id:string;date:string;dayLabel:string;title:string;
  kind:'historico'|'proximo';sheet:DailySheet;
  routes:PanoramaRoute[];markedHeads:number;routeCount:number;
+ familyCount:number;
 };
 export type TurnHistory={turn:Turno;frames:TurnHistoryFrame[];summary:string};
 
@@ -38,6 +39,7 @@ export function buildTurnHistory(date:string,turn:Turno,
    id:'dia-'+day.date,date:day.date,dayLabel:readableWeekday(day.date),
    title:titles[frames.length],kind:'historico',sheet:day.sheet,
    routes,routeCount:routes.length,
+   familyCount:0,
    markedHeads:panorama.groups.filter(g=>g.turn===turn&&g.routeCount>0).length
   });
  }
@@ -45,11 +47,17 @@ export function buildTurnHistory(date:string,turn:Turno,
   const cut=TURNOS.indexOf(turn);
   const visible=preSheetAtCut(sheet,turn,cut);
   const predictive=buildPredictivePanorama(view);
+  // La galería es un resumen: únicamente las tres primeras familias
+  // de cada modalidad; conservar todos sus caminos físicos legítimos.
+  const selectedFamilies=new Set((['vt2','vt3','vt4'] as const)
+   .flatMap(kind=>view.ranks[kind].slice(0,3).map(f=>kind+'|'+f.family)));
+  const routes=predictive.routes.filter(r=>selectedFamilies.has(r.ownerId)&&
+   visible.columns.some(col=>col.id===r.sourceId));
   frames.push({
    id:'proximo',date,dayLabel:readableWeekday(date),title:'Para el próximo '+turn,
    kind:'proximo',sheet:{...visible,columns:visible.columns.slice(0,cut+1)},
-   routes:predictive.routes.filter(r=>visible.columns.slice(0,cut+1).some(c=>c.id===r.sourceId)),
-   markedHeads:0,routeCount:predictive.routes.length
+   routes,
+   markedHeads:0,routeCount:routes.length,familyCount:selectedFamilies.size
   });
  }
  const past=frames.filter(f=>f.kind==='historico');
