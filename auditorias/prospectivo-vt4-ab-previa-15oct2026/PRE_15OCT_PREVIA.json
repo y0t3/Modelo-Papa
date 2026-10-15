@@ -1,0 +1,2031 @@
+{
+  "date": "2026-10-15",
+  "turn": "Previa",
+  "phase": "PRE_PROSPECTIVO_VT4_A_B_SIN_CABEZAS_OBJETIVO",
+  "generatedAtUtc": "2026-10-15T04:23:34.443Z",
+  "algorithm": "VT4 solo prefijo físico, comparación viejo concentrado vs diversificado por rondas",
+  "engineSha256": "bb58ecaf00881e8cb2e157da4283ad47ca7cf5ffdb88eba52d785ae56891c797",
+  "controlEngineSha256": "469e987dce59e6793bb63cd4ef5247076e0f9a3d33c583d5d6bd2621a5ef7fec",
+  "source14Sha256": "e11583da8ac064dce76d454096bd5693093e32139efc2c30f550ff3e58bc77f8",
+  "source13Sha256": "fc280ab1fe9211709586844582de4c39dc5347ce1ddc948ab65a85b55aa19ced",
+  "previousDayNocturnas": {
+    "Ciudad": "1856",
+    "Provincia": "3209",
+    "Córdoba": "2033",
+    "Santa Fé": "----",
+    "Entre Ríos": "5122",
+    "Montevideo": "1968"
+  },
+  "missingNocturnaSantaFe": true,
+  "historicRefs": [
+    {
+      "date": "2026-10-14",
+      "period": "D−1"
+    },
+    {
+      "date": "2026-10-08",
+      "period": "D−7"
+    }
+  ],
+  "visibleColumns": [
+    {
+      "id": "prevNocturno",
+      "values": [
+        "67",
+        "20",
+        "44",
+        "--",
+        "33",
+        "79"
+      ]
+    }
+  ],
+  "vt3Mothers": [
+    {
+      "family": "397/793",
+      "rank": 1
+    },
+    {
+      "family": "427/724",
+      "rank": 2
+    },
+    {
+      "family": "407/704",
+      "rank": 3
+    },
+    {
+      "family": "426/624",
+      "rank": 4
+    },
+    {
+      "family": "739/937",
+      "rank": 5
+    },
+    {
+      "family": "062/260",
+      "rank": 6
+    },
+    {
+      "family": "424/424",
+      "rank": 7
+    },
+    {
+      "family": "206/602",
+      "rank": 8
+    },
+    {
+      "family": "244/442",
+      "rank": 9
+    },
+    {
+      "family": "042/240",
+      "rank": 10
+    }
+  ],
+  "control": {
+    "totalVt4Families": 22,
+    "top3": [
+      {
+        "rank": 1,
+        "family": "3397/3793",
+        "values": [
+          "3397",
+          "3793"
+        ],
+        "parents": [
+          "397/793"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:1",
+              "5:0",
+              "5:1",
+              "4:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:1",
+              "4:0",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:0",
+              "4:1",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:0",
+              "5:0",
+              "5:1",
+              "4:1"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "family": "0427/0724",
+        "values": [
+          "0427",
+          "0724"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "family": "6427/6724",
+        "values": [
+          "6724"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "6724",
+            "cells": [
+              "0:0",
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "6"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "6724",
+            "cells": [
+              "0:0",
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "427/724",
+            "addedDigit": "6"
+          }
+        ]
+      }
+    ],
+    "top5": [
+      {
+        "rank": 1,
+        "family": "3397/3793",
+        "values": [
+          "3397",
+          "3793"
+        ],
+        "parents": [
+          "397/793"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:1",
+              "5:0",
+              "5:1",
+              "4:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:1",
+              "4:0",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:0",
+              "4:1",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:0",
+              "5:0",
+              "5:1",
+              "4:1"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "family": "0427/0724",
+        "values": [
+          "0427",
+          "0724"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "family": "6427/6724",
+        "values": [
+          "6724"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "6724",
+            "cells": [
+              "0:0",
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "6"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "6724",
+            "cells": [
+              "0:0",
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "427/724",
+            "addedDigit": "6"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "family": "4427/4724",
+        "values": [
+          "4427"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "4427",
+            "cells": [
+              "2:0",
+              "2:1",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "4"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "4427",
+            "cells": [
+              "2:1",
+              "2:0",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "4"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "family": "2407/2704",
+        "values": [
+          "2407",
+          "2704"
+        ],
+        "parents": [
+          "407/704"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:1",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:0"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:0",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          }
+        ]
+      }
+    ],
+    "top10": [
+      {
+        "rank": 1,
+        "family": "3397/3793",
+        "values": [
+          "3397",
+          "3793"
+        ],
+        "parents": [
+          "397/793"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:1",
+              "5:0",
+              "5:1",
+              "4:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:1",
+              "4:0",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:0",
+              "4:1",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:0",
+              "5:0",
+              "5:1",
+              "4:1"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "family": "0427/0724",
+        "values": [
+          "0427",
+          "0724"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "family": "6427/6724",
+        "values": [
+          "6724"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "6724",
+            "cells": [
+              "0:0",
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "6"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "6724",
+            "cells": [
+              "0:0",
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "427/724",
+            "addedDigit": "6"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "family": "4427/4724",
+        "values": [
+          "4427"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "4427",
+            "cells": [
+              "2:0",
+              "2:1",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "4"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "4427",
+            "cells": [
+              "2:1",
+              "2:0",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "4"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "family": "2407/2704",
+        "values": [
+          "2407",
+          "2704"
+        ],
+        "parents": [
+          "407/704"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:1",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:0"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:0",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "family": "6407/6704",
+        "values": [
+          "6704"
+        ],
+        "parents": [
+          "407/704"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "6704",
+            "cells": [
+              "0:0",
+              "0:1",
+              "1:1",
+              "2:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "6"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "6704",
+            "cells": [
+              "0:0",
+              "0:1",
+              "1:1",
+              "2:0"
+            ],
+            "mother": "407/704",
+            "addedDigit": "6"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "family": "4407/4704",
+        "values": [
+          "4407"
+        ],
+        "parents": [
+          "407/704"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "4407",
+            "cells": [
+              "2:0",
+              "2:1",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "4"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "4407",
+            "cells": [
+              "2:1",
+              "2:0",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "4"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "family": "0426/0624",
+        "values": [
+          "0426",
+          "0624"
+        ],
+        "parents": [
+          "426/624"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0426",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "0:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0624",
+            "cells": [
+              "1:1",
+              "0:0",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0624",
+            "cells": [
+              "1:1",
+              "0:0",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0426",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "0:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "family": "7426/7624",
+        "values": [
+          "7624"
+        ],
+        "parents": [
+          "426/624"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "7624",
+            "cells": [
+              "0:1",
+              "0:0",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "7"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "7624",
+            "cells": [
+              "0:1",
+              "0:0",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "426/624",
+            "addedDigit": "7"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "family": "4426/4624",
+        "values": [
+          "4426"
+        ],
+        "parents": [
+          "426/624"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "4426",
+            "cells": [
+              "2:1",
+              "2:0",
+              "1:0",
+              "0:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "4"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "4426",
+            "cells": [
+              "2:0",
+              "2:1",
+              "1:0",
+              "0:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "4"
+          }
+        ]
+      }
+    ],
+    "mothersTop10": [
+      "397/793",
+      "427/724",
+      "407/704",
+      "426/624"
+    ],
+    "exactNumbersTop10": [
+      "0426",
+      "0427",
+      "0624",
+      "0724",
+      "2407",
+      "2704",
+      "3397",
+      "3793",
+      "4407",
+      "4426",
+      "4427",
+      "6704",
+      "6724",
+      "7624"
+    ]
+  },
+  "rounds": {
+    "totalVt4Families": 22,
+    "top3": [
+      {
+        "rank": 1,
+        "family": "3397/3793",
+        "values": [
+          "3397",
+          "3793"
+        ],
+        "parents": [
+          "397/793"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:1",
+              "5:0",
+              "5:1",
+              "4:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:1",
+              "4:0",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:0",
+              "4:1",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:0",
+              "5:0",
+              "5:1",
+              "4:1"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "family": "0427/0724",
+        "values": [
+          "0427",
+          "0724"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "family": "2407/2704",
+        "values": [
+          "2407",
+          "2704"
+        ],
+        "parents": [
+          "407/704"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:1",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:0"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:0",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          }
+        ]
+      }
+    ],
+    "top5": [
+      {
+        "rank": 1,
+        "family": "3397/3793",
+        "values": [
+          "3397",
+          "3793"
+        ],
+        "parents": [
+          "397/793"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:1",
+              "5:0",
+              "5:1",
+              "4:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:1",
+              "4:0",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:0",
+              "4:1",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:0",
+              "5:0",
+              "5:1",
+              "4:1"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "family": "0427/0724",
+        "values": [
+          "0427",
+          "0724"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "family": "2407/2704",
+        "values": [
+          "2407",
+          "2704"
+        ],
+        "parents": [
+          "407/704"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:1",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:0"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:0",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "family": "0426/0624",
+        "values": [
+          "0426",
+          "0624"
+        ],
+        "parents": [
+          "426/624"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0426",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "0:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0624",
+            "cells": [
+              "1:1",
+              "0:0",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0624",
+            "cells": [
+              "1:1",
+              "0:0",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0426",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "0:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "family": "3739/3937",
+        "values": [
+          "3739",
+          "3937"
+        ],
+        "parents": [
+          "739/937"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "3739",
+            "cells": [
+              "4:1",
+              "5:0",
+              "4:0",
+              "5:1"
+            ],
+            "mother": "739/937",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3937",
+            "cells": [
+              "4:1",
+              "5:1",
+              "4:0",
+              "5:0"
+            ],
+            "mother": "739/937",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3739",
+            "cells": [
+              "4:0",
+              "5:0",
+              "4:1",
+              "5:1"
+            ],
+            "mother": "739/937",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3937",
+            "cells": [
+              "4:0",
+              "5:1",
+              "4:1",
+              "5:0"
+            ],
+            "mother": "739/937",
+            "addedDigit": "3"
+          }
+        ]
+      }
+    ],
+    "top10": [
+      {
+        "rank": 1,
+        "family": "3397/3793",
+        "values": [
+          "3397",
+          "3793"
+        ],
+        "parents": [
+          "397/793"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:1",
+              "5:0",
+              "5:1",
+              "4:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:1",
+              "4:0",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3397",
+            "cells": [
+              "4:0",
+              "4:1",
+              "5:1",
+              "5:0"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3793",
+            "cells": [
+              "4:0",
+              "5:0",
+              "5:1",
+              "4:1"
+            ],
+            "mother": "397/793",
+            "addedDigit": "3"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "family": "0427/0724",
+        "values": [
+          "0427",
+          "0724"
+        ],
+        "parents": [
+          "427/724"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0724",
+            "cells": [
+              "1:1",
+              "0:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0427",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "0:1"
+            ],
+            "mother": "427/724",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "family": "2407/2704",
+        "values": [
+          "2407",
+          "2704"
+        ],
+        "parents": [
+          "407/704"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:1",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2704",
+            "cells": [
+              "1:0",
+              "0:1",
+              "1:1",
+              "2:0"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "2407",
+            "cells": [
+              "1:0",
+              "2:0",
+              "1:1",
+              "0:1"
+            ],
+            "mother": "407/704",
+            "addedDigit": "2"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "family": "0426/0624",
+        "values": [
+          "0426",
+          "0624"
+        ],
+        "parents": [
+          "426/624"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0426",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "0:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0624",
+            "cells": [
+              "1:1",
+              "0:0",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0624",
+            "cells": [
+              "1:1",
+              "0:0",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0426",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "0:0"
+            ],
+            "mother": "426/624",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "family": "3739/3937",
+        "values": [
+          "3739",
+          "3937"
+        ],
+        "parents": [
+          "739/937"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "3739",
+            "cells": [
+              "4:1",
+              "5:0",
+              "4:0",
+              "5:1"
+            ],
+            "mother": "739/937",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3937",
+            "cells": [
+              "4:1",
+              "5:1",
+              "4:0",
+              "5:0"
+            ],
+            "mother": "739/937",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3739",
+            "cells": [
+              "4:0",
+              "5:0",
+              "4:1",
+              "5:1"
+            ],
+            "mother": "739/937",
+            "addedDigit": "3"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "3937",
+            "cells": [
+              "4:0",
+              "5:1",
+              "4:1",
+              "5:0"
+            ],
+            "mother": "739/937",
+            "addedDigit": "3"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "family": "4062/4260",
+        "values": [
+          "4062",
+          "4260"
+        ],
+        "parents": [
+          "062/260"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "4260",
+            "cells": [
+              "2:0",
+              "1:0",
+              "0:0",
+              "1:1"
+            ],
+            "mother": "062/260",
+            "addedDigit": "4"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "4260",
+            "cells": [
+              "2:1",
+              "1:0",
+              "0:0",
+              "1:1"
+            ],
+            "mother": "062/260",
+            "addedDigit": "4"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "4062",
+            "cells": [
+              "2:0",
+              "1:1",
+              "0:0",
+              "1:0"
+            ],
+            "mother": "062/260",
+            "addedDigit": "4"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "4062",
+            "cells": [
+              "2:1",
+              "1:1",
+              "0:0",
+              "1:0"
+            ],
+            "mother": "062/260",
+            "addedDigit": "4"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "family": "0424",
+        "values": [
+          "0424"
+        ],
+        "parents": [
+          "424/424"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0424",
+            "cells": [
+              "1:1",
+              "2:0",
+              "1:0",
+              "2:1"
+            ],
+            "mother": "424/424",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0424",
+            "cells": [
+              "1:1",
+              "2:1",
+              "1:0",
+              "2:0"
+            ],
+            "mother": "424/424",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "family": "4206/4602",
+        "values": [
+          "4206"
+        ],
+        "parents": [
+          "206/602"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "4206",
+            "cells": [
+              "2:0",
+              "1:0",
+              "1:1",
+              "0:0"
+            ],
+            "mother": "206/602",
+            "addedDigit": "4"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "4206",
+            "cells": [
+              "2:1",
+              "1:0",
+              "1:1",
+              "0:0"
+            ],
+            "mother": "206/602",
+            "addedDigit": "4"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "family": "0244/0442",
+        "values": [
+          "0244",
+          "0442"
+        ],
+        "parents": [
+          "244/442"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "0442",
+            "cells": [
+              "1:1",
+              "2:0",
+              "2:1",
+              "1:0"
+            ],
+            "mother": "244/442",
+            "addedDigit": "0"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "0244",
+            "cells": [
+              "1:1",
+              "1:0",
+              "2:1",
+              "2:0"
+            ],
+            "mother": "244/442",
+            "addedDigit": "0"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "family": "4042/4240",
+        "values": [
+          "4042",
+          "4240"
+        ],
+        "parents": [
+          "042/240"
+        ],
+        "witnesses": [
+          {
+            "source": "prevNocturno",
+            "value": "4042",
+            "cells": [
+              "2:1",
+              "1:1",
+              "2:0",
+              "1:0"
+            ],
+            "mother": "042/240",
+            "addedDigit": "4"
+          },
+          {
+            "source": "prevNocturno",
+            "value": "4240",
+            "cells": [
+              "2:1",
+              "1:0",
+              "2:0",
+              "1:1"
+            ],
+            "mother": "042/240",
+            "addedDigit": "4"
+          }
+        ]
+      }
+    ],
+    "mothersTop10": [
+      "397/793",
+      "427/724",
+      "407/704",
+      "426/624",
+      "739/937",
+      "062/260",
+      "424/424",
+      "206/602",
+      "244/442",
+      "042/240"
+    ],
+    "exactNumbersTop10": [
+      "0244",
+      "0424",
+      "0426",
+      "0427",
+      "0442",
+      "0624",
+      "0724",
+      "2407",
+      "2704",
+      "3397",
+      "3739",
+      "3793",
+      "3937",
+      "4042",
+      "4062",
+      "4206",
+      "4240",
+      "4260"
+    ]
+  },
+  "warning": "El resultado de la Previa 15/10 NO se leyó; este archivo es la selección guardada antes del sorteo. Santa Fé Nocturna 14/10 incompleta y no inventada."
+}

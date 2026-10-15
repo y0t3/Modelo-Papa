@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-15",
+  "turn": "Previa",
+  "kind": "PRE_PROSPECTIVO",
+  "preSha256": "f251926160d0d0bea9ea4d93a7d88b1c8646c7a304add5e07d206749992c0bb9",
+  "engineSha256": "bb58ecaf00881e8cb2e157da4283ad47ca7cf5ffdb88eba52d785ae56891c797",
+  "sealedAtUtc": "2026-10-15T04:23:34.445Z",
+  "notes": "El sello local se publica con commit inmutable y marca horaria de GitHub Actions."
+}
