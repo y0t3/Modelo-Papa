@@ -11,6 +11,7 @@ import TurnStrip from './ui/TurnStrip';
 import MiniRoutePreview from './ui/MiniRoutePreview';
 import {KINDS} from './ui/visualTokens';
 import {useLaloTheme} from './ui/LaloTheme';
+import {explainFamilyRationale} from './friendlyExplanations';
 
 type KindFilter='all'|PanoramaKind;
 const defaultOpen:Record<PanoramaKind,boolean>={vt2:false,vt3:true,vt4:false};
@@ -192,7 +193,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
      <Text style={[s.empty,{color:c.muted}]}>Sin familias con recorrido físico para esta modalidad.</Text>}
    </View>}
    <Text style={[s.warning,{color:c.subtext,backgroundColor:c.callout}]}>
-    VT2, VT3 y VT4 provienen del único Motor Lalo. Los filtros sólo cambian la vista; no alteran las propuestas.
+    Los filtros muestran recorridos de 2, 3 o 4 cifras. Sólo cambian lo que ves, no las propuestas del motor.
    </Text>
   </>}
   <Modal visible={detail} transparent animationType="slide" onRequestClose={()=>setDetail(false)}>
@@ -203,10 +204,10 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
       <Text style={[s.close,{color:c.accent}]}>Cerrar ×</Text>
      </Pressable>
     </View>
-    <Text style={[s.note,{color:c.subtext}]}>{selected?.subtitle||''} · {selectedRoutes.length} rutas, conservadas por fuente y modalidad</Text>
+    <Text style={[s.note,{color:c.subtext}]}>{selected?(mode==='predictiva'?explainFamilyRationale(selected.subtitle):selected.subtitle):''} · {selectedRoutes.length} caminos en la hoja</Text>
     <ScrollView contentContainerStyle={{paddingBottom:40}}>
      {KINDS.filter(k=>selectedRoutes.some(r=>r.kind===k)).map(k=><View key={k}>
-      <Text style={[s.groupTitle,{color:kinds[k].line}]}>{k.toUpperCase()}</Text>
+      <Text style={[s.groupTitle,{color:kinds[k].line}]}>{kinds[k].label}</Text>
       {selectedRoutes.filter(r=>r.kind===k).map(r=>
        <MiniRoutePreview key={r.id+'-'+r.ownerId} sheet={sheet} route={r}/>)}
      </View>)}
