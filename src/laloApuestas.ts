@@ -85,7 +85,7 @@ export function prepareTickets(record:PapaRecord,selectedKeys:string[],
  stakePerLinePesos:number,jurisdictions:string[],batchId:string,
  createdAt:string):BetTicket[]{
  const normalized=limpiarJurisdicciones(jurisdictions);
- if(!jurisdictions.length||normalized.length!==new Set(jurisdictions).size)
+ if(!jurisdictions.length||normalized.length!==jurisdictions.length)
   throw Error('Seleccioná jurisdicciones válidas sin repetir ninguna');
  if(jurisdictions.some(j=>!JURS.includes(j as typeof JURS[number])))
   throw Error('Jurisdicción desconocida');
