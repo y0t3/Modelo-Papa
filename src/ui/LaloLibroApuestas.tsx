@@ -3,11 +3,13 @@ import {Alert,Pressable,ScrollView,StyleSheet,Text,TextInput,View} from 'react-n
 import type {CabezasDia,Turno} from '../domain';
 import type {PapaRecord} from '../papaPronostico';
 import {PAPA_JURS,recordId} from '../papaPronostico';
+import {JURS} from '../domain';
+import {jurisdiccionesHabituales,montevideoProgramado} from '../laloJurisdicciones';
 import type {BetTicket} from '../laloApuestas';
 import {betEvaluation,betLinesForPre,blankBetLedger,canConfirmBet,pesosEnteros,
- receiptTotal,spentAndCollected,ticketHead} from '../laloApuestas';
+ receiptTotal,spentAndCollected,ticketHead,plannedSpend} from '../laloApuestas';
 import type {BetLedger} from '../laloApuestas';
-import {loadBetLedger,recordActualReceipt,recordRealBet} from '../laloLibroStorage';
+import {loadBetLedger,recordActualReceipt,recordRealBets} from '../laloLibroStorage';
 import {useLaloTheme} from './LaloTheme';
 
 type Props={
@@ -19,7 +21,7 @@ export default function LaloLibroApuestas({date,turn,record,records,heads,week,w
  const {colors:c,kinds}=useLaloTheme();
  const [ledger,setLedger]=useState<BetLedger>(blankBetLedger);
  const [stake,setStake]=useState('');
- const [jurisdiction,setJurisdiction]=useState<string>('Ciudad');
+ const [jurisdictions,setJurisdictions]=useState<string[]>(()=>jurisdiccionesHabituales(date,turn));
  const [chosen,setChosen]=useState<string[]>([]);
  const [receiptInputs,setReceiptInputs]=useState<Record<string,string>>({});
  const [busy,setBusy]=useState(false),[error,setError]=useState('');
@@ -33,21 +35,25 @@ export default function LaloLibroApuestas({date,turn,record,records,heads,week,w
  useEffect(()=>{
   setChosen(available.map(l=>l.key));setStake('');setError('');
  },[record?.snapshot.sha256]);
+ useEffect(()=>{
+  setJurisdictions(jurisdiccionesHabituales(date,turn));
+ },[date,turn]);
  const current=ledger.tickets.filter(t=>t.pre.date===date&&t.pre.turn===turn);
  const weekBalance=spentAndCollected(ledger,t=>t.pre.date>=week&&t.pre.date<=weekEnd);
  const count=available.filter(l=>chosen.includes(l.key)).length;
  const amount=pesosEnteros(stake);
- const cost=amount===null?null:count*amount;
+ const cost=amount===null?null:plannedSpend(amount,count,jurisdictions.length);
  const allowed=!!record&&canConfirmBet(record,date,heads);
  const confirm=()=>{
-  if(!record||!allowed||!chosen.length||amount===null||!Number.isSafeInteger(cost))return;
+  if(!record||!allowed||!chosen.length||!jurisdictions.length||amount===null||cost===null)return;
   Alert.alert('Registrar apuesta real',
-   'Apuesta a la cabeza en '+jurisdiction+' · '+count+' números · '+pesos(amount)+' cada uno'+
+   'A la cabeza · '+jurisdictions.length+' jurisdicción(es): '+jurisdictions.join(', ')+
+   '\n'+count+' número(s) por jurisdicción · '+pesos(amount)+' por cada uno'+
    '\nGasto total: '+pesos(cost||0)+
    '\n\n¿Confirmás que esta apuesta se realizó realmente? Se guardará como comprobante local y no podrá editarse.',
    [{text:'Cancelar',style:'cancel'},{text:'Confirmar apuesta',onPress:()=>{
     setBusy(true);setError('');
-    recordRealBet(record.snapshot.sha256,date,turn,jurisdiction,chosen,amount,heads)
+    recordRealBets(record.snapshot.sha256,date,turn,jurisdictions,chosen,amount,heads)
      .then(setLedger).catch(e=>setError(String(e?.message||e)))
      .finally(()=>setBusy(false));
    }}]);
@@ -113,15 +119,27 @@ export default function LaloLibroApuestas({date,turn,record,records,heads,week,w
       </Pressable>;
     })}</View>
     {allowed?<View style={s.form}>
-     <Text style={[s.subtitle,{color:c.text}]}>Jurisdicción donde se apostó</Text>
+     <Text style={[s.subtitle,{color:c.text}]}>Jurisdicciones donde se apostó</Text>
+     <Text style={[s.muted,{color:c.subtext}]}>
+      Por defecto se incluyen todas las que suelen sortear en este turno. Revisá excepciones o suspensiones antes de confirmar.
+     </Text>
      <ScrollView horizontal contentContainerStyle={s.jurs} showsHorizontalScrollIndicator={false}>
-      {PAPA_JURS.map(j=><Pressable key={j} accessibilityRole="button"
-       accessibilityState={{selected:jurisdiction===j}}
-       onPress={()=>setJurisdiction(j)}
-       style={[s.jur,{borderColor:jurisdiction===j?c.accent:c.border,
-        backgroundColor:jurisdiction===j?c.accentFill:c.card}]}>
-       <Text style={{color:jurisdiction===j?c.accent:c.text,fontSize:10,fontWeight:'900'}}>{j}</Text>
-      </Pressable>)}
+      {JURS.map(j=>{
+       const chosenJur=jurisdictions.includes(j);
+       const habitual=j==='Montevideo'?montevideoProgramado(date,turn):jurisdiccionesHabituales(date,turn).includes(j);
+       return <Pressable key={j} accessibilityRole="checkbox"
+        accessibilityState={{checked:chosenJur}}
+        onPress={()=>setJurisdictions(old=>chosenJur?old.filter(x=>x!==j):JURS.filter(x=>x===j||old.includes(x)))}
+        style={[s.jur,{borderColor:chosenJur?c.accent:c.border,
+         backgroundColor:chosenJur?c.accentFill:c.card}]}>
+        <Text style={{color:chosenJur?c.accent:c.text,fontSize:10,fontWeight:'900'}}>
+         {chosenJur?'☑':'□'} {j}{j==='Montevideo'?' (UY)':''}
+        </Text>
+        {j==='Montevideo'?<Text style={{color:c.subtext,fontSize:9}}>
+         {habitual?'15/21 h según turno':'Sin sorteo habitual'}
+        </Text>:null}
+       </Pressable>;
+      })}
      </ScrollView>
      <Text style={[s.subtitle,{color:c.text}]}>Importe por número (pesos enteros)</Text>
      <TextInput value={stake} onChangeText={setStake}
@@ -130,18 +148,18 @@ export default function LaloLibroApuestas({date,turn,record,records,heads,week,w
       placeholderTextColor={c.muted}
       style={[s.input,{backgroundColor:c.card,borderColor:c.border,color:c.text}]}/>
      <View style={[s.total,{backgroundColor:c.surfaceAlt}]}>
-      <Text style={[s.small,{color:c.subtext}]}>{count} números × {amount===null?'—':pesos(amount)} cada uno</Text>
+      <Text style={[s.small,{color:c.subtext}]}>{count} números × {jurisdictions.length} jurisdicciones × {amount===null?'—':pesos(amount)} cada uno</Text>
       <Text style={[s.monetary,{color:c.text}]}>{cost===null?'Importe pendiente':pesos(cost)}</Text>
      </View>
      <Text style={[s.muted,{color:c.subtext}]}>
       Por ahora, el registro automático verifica únicamente apuestas a la cabeza.
       Para 5, 10 o 20 posiciones se necesitan las extracciones completas y reglas de premios.
      </Text>
-     <Pressable accessibilityRole="button" disabled={busy||!count||amount===null}
+     <Pressable accessibilityRole="button" disabled={busy||!count||!jurisdictions.length||cost===null}
       onPress={confirm}
-      style={[s.button,{backgroundColor:c.button,opacity:busy||!count||amount===null?0.45:1}]}>
+      style={[s.button,{backgroundColor:c.button,opacity:busy||!count||!jurisdictions.length||cost===null?0.45:1}]}>
       <Text style={{color:c.buttonText,fontWeight:'900',textAlign:'center'}}>
-       {busy?'GUARDANDO…':'CONFIRMAR APUESTA REAL'}
+       {busy?'GUARDANDO…':'CONFIRMAR APUESTAS EN '+jurisdictions.length+' JURISDICCIÓN(ES)'}
       </Text>
      </Pressable>
     </View>:<Text style={[s.muted,{color:c.subtext}]}>
