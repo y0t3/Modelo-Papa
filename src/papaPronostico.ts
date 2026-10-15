@@ -134,7 +134,9 @@ export function validateSnapshot(snapshot:PapaSnapshot):boolean{
 }
 export function observedHeads(heads:CabezasDia|null,turn:Turno):Record<string,string>{
  const record:Record<string,string>={};
- for(const j of PAPA_JURS){
+ // Conservar también Montevideo en POST local para cotejar su boleto real.
+ // El resumen predictivo de Lalo continúa midiendo sólo las cinco argentinas.
+ for(const j of JURS){
   const h=heads?.[turn]?.[j]||'';
   if(/^\d{4}$/.test(h))record[j]=h;
  }
