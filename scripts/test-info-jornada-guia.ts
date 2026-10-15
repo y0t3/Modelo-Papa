@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {diaVacio} from '../src/domain';
 import {buildSheet} from '../src/sheet';
+import type {SourceId} from '../src/sheet';
 import {buildInfoReport,postMovementFrame,preMovementFrame,sourceLabel} from '../src/infoInterpretacion';
 import type {LaloHistorical,LaloView} from '../src/motorLalo';
 import type {Path} from '../src/paths';
@@ -24,7 +25,7 @@ const hist:LaloHistorical[]=[
  {period:'D−7',date:'2026-10-08',sheet:older},
  {period:'D−1',date:'2026-10-14',sheet:older}
 ];
-const family=(name:string,src:'prevNocturno'|'Primera',p:Path)=>
+const family=(name:string,src:SourceId,p:Path)=>
  ({family:name,paths:[{sourceId:src,path:p,value:p.map(c=>c.digit).join('')}]});
 const view={date:'2026-10-15',target:'Matutino',
  ranks:{vt2:[],vt3:[
