@@ -21,6 +21,7 @@ import Vt3Parallel from './src/ui/Vt3Parallel';
 import PapaPronostico from './src/ui/PapaPronostico';
 import HeadsTable from './src/ui/HeadsTable';
 import InfoDashboard from './src/ui/InfoDashboard';
+import type {MovementMode} from './src/infoCandidatos';
 import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 import ZoomableTab from './src/ui/ZoomableTab';
@@ -46,6 +47,7 @@ function LaloApp(){
  });
  const [restoreScroll,setRestoreScroll]=useState({token:0,y:0});
  const [infoFrameId,setInfoFrameId]=useState('pre');
+ const [infoMode,setInfoMode]=useState<MovementMode>('todos');
  const [infoGuide,setInfoGuide]=useState<string|null>('tablero');
  const [zoomLevels,setZoomLevels]=useState(defaultZoomLevels);
  useEffect(()=>{
@@ -110,6 +112,7 @@ function LaloApp(){
    scrollOffsets.current[key]=0;
   setRestoreScroll(old=>({token:old.token+1,y:0}));
   setInfoFrameId('pre');
+  setInfoMode('todos');
   setInfoGuide('tablero');
  };
  const date=displayToIso(dateText);
@@ -256,6 +259,7 @@ function LaloApp(){
     <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
      historical={hist} view={motor} onNavigate={navigateTo}
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
+     movementMode={infoMode} onMovementMode={setInfoMode}
      expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}/>}
   </ZoomableTab>
  </SafeAreaView>;
