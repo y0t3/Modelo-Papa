@@ -6,6 +6,8 @@ import {clampZoom,clampPanX,pinchAtX} from '../tabZoom';
 type Props={
  zoom:number;onZoomChange:(next:number)=>void;
  scrollRef?:React.RefObject<ScrollView|null>;
+ restoreY?:number;restoreToken?:number;
+ onScrollY?:(y:number)=>void;
  children:React.ReactNode;
 };
 
@@ -17,7 +19,8 @@ type Props={
  * Ahora la navegación lateral usa un gesto Pan de eje X (sin scroll horizontal
  * anidado) y la lectura vertical conserva su ScrollView normal.
  */
-export default function ZoomableTab({zoom,onZoomChange,scrollRef,children}:Props){
+export default function ZoomableTab({zoom,onZoomChange,scrollRef,
+ restoreY=0,restoreToken=0,onScrollY,children}:Props){
  const {width:windowWidth}=useWindowDimensions();
  const [viewportWidth,setViewportWidth]=useState(Math.round(windowWidth));
  const [contentHeight,setContentHeight]=useState(0);
@@ -35,8 +38,19 @@ export default function ZoomableTab({zoom,onZoomChange,scrollRef,children}:Props
  const pinchFocalX=useRef(0);
  const panStartX=useRef(0);
  const notifyZoom=useRef(onZoomChange);
+ const pendingScrollY=useRef(Math.max(0,restoreY));
+ const notifyScroll=useRef(onScrollY);
 
  useEffect(()=>{notifyZoom.current=onZoomChange},[onZoomChange]);
+ useEffect(()=>{notifyScroll.current=onScrollY},[onScrollY]);
+ useEffect(()=>{
+  pendingScrollY.current=Math.max(0,restoreY);
+  const frame=requestAnimationFrame(()=>{
+   if(pendingScrollY.current>0)
+    scrollRef?.current?.scrollTo({y:pendingScrollY.current,animated:false});
+  });
+  return ()=>cancelAnimationFrame(frame);
+ },[restoreToken,restoreY,scrollRef]);
  useEffect(()=>{
   lastZoom.current=currentZoom;
   pinchBase.current=currentZoom;
@@ -100,6 +114,18 @@ export default function ZoomableTab({zoom,onZoomChange,scrollRef,children}:Props
    showsVerticalScrollIndicator
    keyboardShouldPersistTaps="handled"
    bounces={false}
+   scrollEventThrottle={40}
+   onScroll={event=>{
+    const y=Math.max(0,event.nativeEvent.contentOffset.y);
+    notifyScroll.current?.(y);
+    if(pendingScrollY.current>0&&y>=pendingScrollY.current-5)
+     pendingScrollY.current=0;
+   }}
+   onScrollBeginDrag={()=>{pendingScrollY.current=0}}
+   onContentSizeChange={()=>{
+    if(pendingScrollY.current>0)
+     scrollRef?.current?.scrollTo({y:pendingScrollY.current,animated:false});
+   }}
    style={s.viewport}
    contentContainerStyle={{minHeight:scaledHeight}}>
    <GestureDetector gesture={gesture}>

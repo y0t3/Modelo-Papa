@@ -9,7 +9,7 @@ import {jurisdiccionesHabituales} from './laloJurisdicciones';
 
 export type InfoZone='Superior'|'Central'|'Inferior';
 export type InfoFrame={
- id:string;label:string;phase:'POST'|'PRE';
+ id:string;label:string;context?:string;phase:'POST'|'PRE';
  heads:number;units:number;available:boolean;
  sourceCounts:Record<string,number>;zoneCounts:Record<InfoZone,number>;
  cells:number[][];mainSource:string|null;mainZone:InfoZone|null;
@@ -25,6 +25,14 @@ const SOURCE_NAMES:Record<SourceId,string>={
  Matutino:'Matutina',Vespertino:'Vespertina'
 };
 export const sourceLabel=(id:SourceId)=>SOURCE_NAMES[id];
+export function readableDrawDate(iso:string):string{
+ if(!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(iso))return iso;
+ const day=new Date(iso+'T12:00:00Z');
+ if(Number.isNaN(day.getTime())||day.toISOString().slice(0,10)!==iso)return iso;
+ const weekday=['dom','lun','mar','mié','jue','vie','sáb'][day.getUTCDay()];
+ return weekday+' '+iso.slice(8,10)+'/'+iso.slice(5,7);
+}
+
 const zone=(path:Path):InfoZone=>{
  const avg=path.reduce((n,c)=>n+c.row,0)/path.length;
  return avg<2?'Superior':avg<4?'Central':'Inferior';
@@ -110,7 +118,13 @@ export function buildInfoReport(date:string,turn:Turno,data:CabezasDia|null,
  const frames:InfoFrame[]=[];
  for(const period of ['D−7','D−1'] as const){
   const hist=historical.find(h=>h.period===period&&h.date<date);
-  if(hist)frames.push(postMovementFrame(period,period+' · '+turn,hist.sheet,turn));
+  if(hist){
+   const title=period==='D−7'?'Semana pasada':'Jornada anterior';
+   const frame=postMovementFrame(period,readableDrawDate(hist.date)+' · '+turn,
+    hist.sheet,turn);
+   frame.context=title;
+   frames.push(frame);
+  }
  }
  const targetIdx=TURNOS.indexOf(turn);
  const prior=[...TURNOS.slice(0,targetIdx)].reverse()
