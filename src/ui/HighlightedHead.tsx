@@ -3,6 +3,7 @@ import {Pressable,View,Text,StyleSheet} from 'react-native';
 import type {PanoramaGroup,PanoramaKind} from '../panoramaModel';
 import {KINDS,strongestKind} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
+import {explainFamilyRationale} from '../friendlyExplanations';
 
 export function ColoredDigits({value,kinds,large=false}:{
  value:string;kinds:PanoramaKind[];large?:boolean
@@ -30,11 +31,11 @@ export default function HighlightedHead({group,active,onPress,mode,layout='carou
    layout==='grid'?s.gridCard:s.carouselCard,active&&s.active,empty&&s.faded]}>
   {mode==='hoja'?<ColoredDigits value={group.label} kinds={group.kinds} large/>:
    <Text numberOfLines={1} adjustsFontSizeToFit style={[s.number,{color:c.text}]}>{group.label}</Text>}
-  <Text style={[s.subtitle,{color:c.subtext}]} numberOfLines={2}>{group.subtitle}</Text>
+  <Text style={[s.subtitle,{color:c.subtext}]} numberOfLines={2}>{mode==='predictiva'?explainFamilyRationale(group.subtitle):group.subtitle}</Text>
   {empty?<Text style={[s.empty,{color:c.muted}]}>Sin marca</Text>:
    <View style={s.modes}>{KINDS.filter(k=>group.kinds.includes(k)).map(k=>
     <View key={k} style={[s.kind,{borderColor:kinds[k].line,backgroundColor:kinds[k].fill}]}>
-     <Text style={{fontSize:9,fontWeight:'900',color:kinds[k].text}}>{k.toUpperCase()}</Text>
+     <Text style={{fontSize:9,fontWeight:'900',color:kinds[k].text}}>{kinds[k].label}</Text>
     </View>)}</View>}
   {group.routeCount>0?<Text style={[s.count,{color:c.subtext}]}>{group.routeCount} recorrido(s)</Text>:null}
  </Pressable>;
