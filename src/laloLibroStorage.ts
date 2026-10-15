@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {blankBetLedger,canConfirmBet,prepareTicket,validLedger,withReceipt,withTicket,betEvaluation,ticketHead} from './laloApuestas';
+import {blankBetLedger,canConfirmBet,prepareTicket,validLedger,withReceipt,withTicket,withTickets,prepareTickets,betEvaluation,ticketHead} from './laloApuestas';
 import type {BetLedger} from './laloApuestas';
 import {loadRecords} from './papaRegistro';
 import type {CabezasDia} from './domain';
@@ -14,8 +14,8 @@ export async function loadBetLedger():Promise<BetLedger>{
  if(!validLedger(value))throw Error('Libro de apuestas dañado; no se ha sobrescrito');
  return value;
 }
-export async function recordRealBet(preSha256:string,date:string,turn:string,
- jurisdiction:string,selectedKeys:string[],stakePerLinePesos:number,
+export async function recordRealBets(preSha256:string,date:string,turn:string,
+ jurisdictions:string[],selectedKeys:string[],stakePerLinePesos:number,
  heads:CabezasDia|null):Promise<BetLedger>{
  if(writeLock)throw Error('Hay otra operación guardándose');
  writeLock=true;
@@ -25,12 +25,21 @@ export async function recordRealBet(preSha256:string,date:string,turn:string,
    r.snapshot.pre.date===date&&r.snapshot.pre.turn===turn);
   if(!record)throw Error('Primero congelá el pronóstico de Lalo');
   if(!canConfirmBet(record,date,heads))throw Error('No se admiten apuestas después de publicarse el resultado');
-  const now=new Date().toISOString(),id=now+'|'+Math.random().toString(36).slice(2);
-  const ticket=prepareTicket(record,selectedKeys,stakePerLinePesos,jurisdiction,id,now);
-  const ledger=withTicket(await loadBetLedger(),ticket);
+  const now=new Date().toISOString(),batchId=now+'|'+Math.random().toString(36).slice(2);
+  const tickets=prepareTickets(record,selectedKeys,stakePerLinePesos,jurisdictions,batchId,now);
+  const ledger=withTickets(await loadBetLedger(),tickets);
+  // ÚNICA escritura para todas las jurisdicciones; sin boletas parciales.
   await AsyncStorage.setItem(KEY,JSON.stringify(ledger));
   return ledger;
  }finally{writeLock=false;}
+}
+
+/** Compatibilidad con invocaciones anteriores desde una sola jurisdicción. */
+export async function recordRealBet(preSha256:string,date:string,turn:string,
+ jurisdiction:string,selectedKeys:string[],stakePerLinePesos:number,
+ heads:CabezasDia|null):Promise<BetLedger>{
+ return recordRealBets(preSha256,date,turn,[jurisdiction],selectedKeys,
+  stakePerLinePesos,heads);
 }
 export async function recordActualReceipt(ticketId:string,amountPesos:number,
  currentHeads?:CabezasDia|null):Promise<BetLedger>{
