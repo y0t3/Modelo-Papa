@@ -34,6 +34,8 @@ jobs:
         run: npx --yes tsx scripts/test-zoom-pestanas.ts
       - name: Verificar zoom horizontal, fondo tenue y regresiones UI
         run: npx --yes tsx scripts/test-correcciones-ui-14oct.ts
+      - name: Cotejo POST VT4 por valor físico exacto
+        run: npx --yes tsx scripts/test-cotejo-vt4-exacto.ts
       - name: Confirmar que no quedan importaciones del predictor retirado
         run: |
           if grep -REn "(from ['\"][^'\"]*(predictive|analysisEngine|routeHistory|routeLife)['\"])" App.tsx src/ ; then
