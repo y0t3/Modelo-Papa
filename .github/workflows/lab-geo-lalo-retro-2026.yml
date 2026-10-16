@@ -2,7 +2,7 @@ name: Laboratorio geometría vs Lalo histórico
 on:
   push:
     branches:
-      - lab/geometria-completa-vs-lalo-historico-16oct2026
+      - lab/geo-ablaciones-inercia-hibrido-16oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,5 +26,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: LAB-GEOMETRIA-LALO-HISTORICO-2026
-          path: lab-results/GEOMETRIA_LALO_RETRO_15SEP_15OCT2026.json
+          path: |
+            lab-results/GEOMETRIA_LALO_RETRO_15SEP_15OCT2026.json
+            lab-results/GEOMETRIA_ABLACIONES_15SEP_15OCT2026.json
           if-no-files-found: warn
