@@ -33,9 +33,10 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoV
  const previewOfficial=view?.ranks.vt3.slice(0,10).map(x=>x.family)||[];
  const previewGeometry=shadow?.top.map(x=>x.family)||[];
  const official=snapshotOfficial||previewOfficial,geometric=snapshotGeometry||previewGeometry;
- const newProposal=snapshotTrial||previewTrial;
- const result=useMemo(()=>stored?evaluateFrozen(stored,heads):null,[stored,heads]);
  const published=heads.some(h=>/^\d{4}$/.test(h));
+ // Una propuesta calculada después del sorteo no se hace pasar por PRE.
+ const newProposal=stored?(snapshotTrial||[]):(published?[]:previewTrial);
+ const result=useMemo(()=>stored?evaluateFrozen(stored,heads):null,[stored,heads]);
  const freeze=async()=>{
   if(!view||!shadow)return;
   try{
@@ -59,11 +60,14 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoV
       <Text key={family+'|'+i} style={[s.family,{color:c.text}]}>
        <Text style={{color:c.muted}}>{'#'+(i+1)+' '}</Text>{family}
       </Text>)}
-     {!item.values.length&&<Text style={[s.note,{color:c.muted}]}>Cargá una hoja para generar las familias.</Text>}
+     {!item.values.length&&<Text style={[s.note,{color:c.muted}]}>
+       {stored&&item.label==='NUEVA PRUEBA'?'No se registró en este PRE anterior':
+        published?'Sin PRE registrado':'Cargá una hoja para generar familias.'}
+      </Text>}
     </View>)}
   </View>
   {stored?<View style={[s.saved,{backgroundColor:c.surfaceAlt}]}>
-   <Text style={[s.sub,{color:c.text}]}>PRE GUARDADO LOCALMENTE</Text>
+   <Text style={[s.sub,{color:c.text}]}>PRE REGISTRADO</Text>
    <Text style={[s.note,{color:c.subtext}]}>
     Captura local {new Date(stored.pre.createdAt).toLocaleString()} · No se sobrescribe.
    </Text>
