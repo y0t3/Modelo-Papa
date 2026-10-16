@@ -26,14 +26,18 @@ const band=(n:number)=>n===1?'1':n<=3?'2-3':n<=7?'4-7':'8+';
 const simpleHash=(s:string)=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0};
 const rng=(x:number)=>(Math.imul(x,1664525)+1013904223)>>>0;
 const quantile=(xs:number[],q:number)=>xs[Math.floor(q*(xs.length-1))];
-function matchedDifference(cuts:PairCut[],flag:'repeatsOldShapeOnNewSource'|'hasDD',refineRoots:boolean){
+function matchedDifference(cuts:PairCut[],flag:'repeatsOldShapeOnNewSource'|'hasDD',
+ refineRoots:boolean,refineSpatial=false){
  const byDay=new Map<string,{obs:number;expected:number}>();
  let n=0,flagged=0,winners=0,obs=0,expected=0,matched=0,comparable=0;
  for(const cut of cuts){
   const groups=new Map<string,PairCandidate[]>();
   for(const c of cut.candidates){
    if(flag==='repeatsOldShapeOnNewSource'&&c.state!=='REFUERZO_NUEVA_FUENTE')continue;
+   const fullSources=[...new Set(c.routes.map(r=>r.source))].sort().join(',');
+   const centerRow=Math.floor(meanRow(c)/2);
    const key=[c.origin,c.state,c.sources,band(c.paths),
+    ...(refineSpatial?[fullSources,band(c.shapes),centerRow]:[]),
     ...(flag==='repeatsOldShapeOnNewSource'?[band(c.addedPaths)]:[]),
     ...(refineRoots?[c.d1>0?1:0,c.d7>0?1:0]:[])].join('|');
    if(!groups.has(key))groups.set(key,[]);
@@ -55,7 +59,7 @@ function matchedDifference(cuts:PairCut[],flag:'repeatsOldShapeOnNewSource'|'has
   }
  }
  const days=[...byDay.values()];
- let seed=simpleHash('matching|'+flag+'|'+refineRoots);
+ let seed=simpleHash('matching|'+flag+'|'+refineRoots+'|'+refineSpatial);
  const samples:number[]=[];
  for(let k=0;k<2500;k++){
   let delta=0;
@@ -144,8 +148,10 @@ function analyzePeriod(cuts:PairCut[]){
   controls:{
    repeatedSameShape:matchedDifference(cuts,'repeatsOldShapeOnNewSource',false),
    repeatedSameShapeRootsMatched:matchedDifference(cuts,'repeatsOldShapeOnNewSource',true),
+   repeatedSameShapeStrictSpatial:matchedDifference(cuts,'repeatsOldShapeOnNewSource',true,true),
    doubleDiagonal:matchedDifference(cuts,'hasDD',false),
-   doubleDiagonalRootsMatched:matchedDifference(cuts,'hasDD',true)}
+   doubleDiagonalRootsMatched:matchedDifference(cuts,'hasDD',true),
+   doubleDiagonalStrictSpatial:matchedDifference(cuts,'hasDD',true,true)}
  };
 }
 export function analyzePairedGeometry(cuts:PairCut[]){
