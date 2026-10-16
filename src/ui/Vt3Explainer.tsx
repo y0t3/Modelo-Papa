@@ -106,8 +106,8 @@ export default function Vt3Explainer({sheet,view,turn,heads,onFocus}:{
        </Text>
       </View>
      )}
-    </View>
-    {audit.priorityReasons.map(r=>
+    </View>:null}
+    {details&&audit.priorityReasons.map(r=>
      <View key={r.cutoff} style={[s.reason,{borderColor:c.border}]}>
       <Text style={[s.reasonTitle,{color:c.text}]}>Respecto al Top{r.cutoff}: {r.boundaryFamily} (#{r.boundaryRank})</Text>
       <Text style={[s.note,{color:c.subtext}]}>
