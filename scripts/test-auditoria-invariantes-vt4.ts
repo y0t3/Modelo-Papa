@@ -7,7 +7,7 @@ import type {Path} from '../src/paths';
 
 const cell=(row:number,col:number,digit:string)=>({row,col,digit});
 const p4:Path=[cell(0,0,'3'),cell(0,1,'0'),cell(1,0,'4'),cell(1,1,'4')];
-const p4Sister:Path=[cell(1,0,'3'),cell(1,1,'4'),cell(0,1,'4'),cell(0,0,'0')];
+const p4Sister:Path=[cell(2,0,'3'),cell(2,1,'4'),cell(3,1,'4'),cell(3,0,'0')];
 const p3:Path=[cell(0,1,'0'),cell(1,0,'4'),cell(1,1,'4')];
 const p2:Path=p3.slice(0,2);
 const route=(kind:LaloRoute['kind'],family:string,value:string,path:Path):LaloRoute=>({
@@ -44,7 +44,7 @@ assert.deepEqual(compareMotorLaloAfterDraw(view,['4403']).vt4,[],
  'POST no puede acreditar la inversión inventada');
 assert.deepEqual(compareMotorLaloAfterDraw(view,['3044']).vt4,[daughters.join('/')],
  'POST confirma la hija física propia');
-const sheet=['30','44','--','--','--','--'];
+const sheet=['30','44','34','04','--','--'];
 assert.ok(findPaths(sheet,'3044').length>0,'3044 es un camino real de cuatro contactos');
 // Una hermana de la misma madre solamente se exhibe si existe su propio trazo.
 // En esta prueba su testigo independiente se agrega explícitamente.
