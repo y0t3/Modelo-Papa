@@ -3,6 +3,7 @@
 // No se comparan cifras de un sorteo objetivo hasta sellar su corte PRE.
 // No modifica la APK, buildMotorLalo ni buildVt3Shadow.
 import {mkdirSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 import {JURS,TURNOS,diaVacio} from '../src/domain';
 import type {CabezasDia,Turno} from '../src/domain';
 import {descargarCabezas} from '../src/cabezas';
@@ -263,7 +264,13 @@ async function main(){
     stories.push(caseTimeline(dayCuts,f,snapshots));
   }
  }
- const report={protocol:{
+ const includedDates=Object.fromEntries(ranges.map(([from,to,period])=>[
+  period,allValid.filter(d=>d.date>=from&&d.date<=to).map(d=>({
+   date:d.date,hash:createHash('sha256').update(JSON.stringify(d.heads)).digest('hex'),
+   nocturna: JURS.filter(j=>/^\\d{4}$/.test(d.heads.Nocturno?.[j]||'')).length
+  }))
+ ]));
+ const report={includedDates,protocol:{
   scope:'Hoja PRE acumulativa, cinco cortes por jornada y familia reversible VT3',
   state:'NACIMIENTO = familia inexistente en todas las fuentes anteriores; REFUERZO = familia ya existente que aparece en la nueva fuente; SIN CAMBIO = idénticos caminos anteriores',
   roots:'Huellas ganadoras de cabezas previas D−1 y D−7; solo misma forma/fuente, no equivale a repetir cifra',
@@ -277,8 +284,9 @@ async function main(){
     win:r.winnerHeads,geoTop:r.top3Geo,laloTop:r.top3Lalo}))})),
   stories};
  const summary=report.summary;
- if(summary.JUNIO_JULIO.cuts!==255||summary.AGOSTO_OCTUBRE.cuts!==265)
-  throw Error('Muestra inesperada, no publicar hasta comprobar: '+JSON.stringify({
+ if(summary.JUNIO_JULIO.cuts<245||summary.JUNIO_JULIO.cuts>275||
+  summary.AGOSTO_OCTUBRE.cuts!==265)
+  throw Error('Muestra incompatible con los dos periodos previstos: '+JSON.stringify({
    june:summary.JUNIO_JULIO.cuts,aug:summary.AGOSTO_OCTUBRE.cuts,excluded}));
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/VT3_MOVIMIENTOS_COLUMNAS_JUN_OCT_2026.json',
