@@ -10,6 +10,9 @@ import {reversibleFamily} from '../src/motorLalo';
 import type {LaloHistorical,LaloView,RootRef} from '../src/motorLalo';
 
 const sources:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
+type Ablation='ORIGINAL'|'SIN_MAX_DISTANCIA_AYER'|'TOPE_DISTANCIA_AYER_2'|'SIN_REFERENCIA_AYER';
+const ablations:Ablation[]=['ORIGINAL','SIN_MAX_DISTANCIA_AYER',
+ 'TOPE_DISTANCIA_AYER_2','SIN_REFERENCIA_AYER'];
 type Point={row:number;col:number};
 type Route={source:SourceId;shape:string;cells:string[];value:string;family:string;
  pos:Point;key:string;className:string;zone:string;score:number[];rootCount:number};
@@ -98,6 +101,7 @@ export type ShapeCut={date:string;turn:Turno;period:string;
   sharesTopShapeAndSource:boolean}[];
  physicalRoutes:number;physicalFamilies:number;shapesAvailable:number;
  thirdScoreTiedFamilies:number;firstScoreTiedFamilies:number;
+ ablation:Record<Ablation,{families:string[];headHits:number;doubleDiagonal:number}>;
  sourceWitnesses:Record<string,number>;zoneWitnesses:Record<string,number>;
  routeClasses:Record<string,number>;familyClasses:Record<string,number>};
 export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
@@ -128,6 +132,31 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
    r.cells.join('>')!==expected.cells.join('>'))
    throw Error('Orden F_D1 no reproducido: '+date+' '+turn+' puesto '+(k+1));
  }
+ const scoreFor=(p:Route,mode:Ablation):number[]=>{
+  if(mode==='SIN_MAX_DISTANCIA_AYER')return p.score.filter((_,i)=>i!==1);
+  if(mode==='SIN_REFERENCIA_AYER')return p.score.slice(2);
+  if(mode==='TOPE_DISTANCIA_AYER_2')return p.score.map((v,i)=>i===1?Math.min(v,2):v);
+  return p.score;
+ };
+ const ablation={} as ShapeCut['ablation'];
+ for(const mode of ablations){
+  const ranked=[...pool].sort((a,b)=>compareScore(scoreFor(a,mode),scoreFor(b,mode))||
+   sources.indexOf(a.source)-sources.indexOf(b.source)||
+   a.pos.row-b.pos.row||a.pos.col-b.pos.col||a.key.localeCompare(b.key));
+  const chosen:Route[]=[],seen=new Set<string>();
+  for(const q of ranked){
+   if(seen.has(q.family))continue;
+   seen.add(q.family);
+   chosen.push(q);
+   if(chosen.length===3)break;
+  }
+  if(chosen.length!==3)throw Error('Selección de menos de tres familias');
+  ablation[mode]={families:chosen.map(q=>q.family),
+   headHits:winners.filter(f=>chosen.some(q=>q.family===f)).length,
+   doubleDiagonal:chosen.filter(q=>q.className==='dos diagonales').length};
+ }
+ if(ablation.ORIGINAL.families.join('|')!==geo.top.slice(0,3).map(p=>p.family).join('|'))
+  throw Error('Baseline de ablación se apartó del motor');
  const third=reps[2],first=reps[0];
  if(!third||!first)throw Error('Menos de tres familias físicas');
  const classTop=new Set(reps.slice(0,3).map(r=>r.shape));
@@ -159,7 +188,7 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
    sharesTopShape:all.some(q=>classTop.has(q.shape)),
    sharesTopShapeAndSource:all.some(q=>classTopWithSource.has(groupKey(q)))};
  });
- return {date,turn,period,selected,winningPhysical:winnersPhysical,physicalRoutes:pool.length,
+ return {date,turn,period,selected,ablation,winningPhysical:winnersPhysical,physicalRoutes:pool.length,
   physicalFamilies:reps.length,
   shapesAvailable:new Set(pool.map(p=>p.shape)).size,
   thirdScoreTiedFamilies:reps.filter(p=>compareScore(p.score,third.score)===0).length,
@@ -214,6 +243,28 @@ export function shapeReport(cuts:ShapeCut[]){
     }))).slice(0,20)
   }];
  }));
- return {note:'Familias físicas ganadoras consideradas una vez por cabeza y corte. Las distintas formas posibles de una familia NO son confirmaciones independientes. El empate de score se resuelve por orden de fuente y casillas.',
+ const ablationSummary=Object.fromEntries(allGroups.map(([period,subset])=>[
+  period,Object.fromEntries(ablations.map(method=>{
+   const originalHits=subset.reduce((n,c)=>n+c.ablation.ORIGINAL.headHits,0);
+   return [method,{
+    cuts:subset.length,
+    hits:subset.reduce((n,c)=>n+c.ablation[method].headHits,0),
+    top3Changed:subset.filter(c=>c.ablation[method].families.some(f=>
+     !c.ablation.ORIGINAL.families.includes(f))).length,
+    doubleDiagonalSlots:subset.reduce((n,c)=>n+c.ablation[method].doubleDiagonal,0),
+    gained:subset.filter(c=>c.ablation[method].headHits>c.ablation.ORIGINAL.headHits)
+     .map(c=>({date:c.date,turn:c.turn,
+      before:c.ablation.ORIGINAL.families,after:c.ablation[method].families,
+      won:c.winningPhysical.filter(w=>c.ablation[method].families.includes(w.family)&&
+       !c.ablation.ORIGINAL.families.includes(w.family)).map(w=>w.family)})),
+    lost:subset.filter(c=>c.ablation[method].headHits<c.ablation.ORIGINAL.headHits)
+     .map(c=>({date:c.date,turn:c.turn,
+      before:c.ablation.ORIGINAL.families,after:c.ablation[method].families,
+      lost:c.winningPhysical.filter(w=>!c.ablation[method].families.includes(w.family)&&
+       c.ablation.ORIGINAL.families.includes(w.family)).map(w=>w.family)}))
+   }];
+  }))]
+ ]));
+ return {ablations:ablationSummary,note:'Familias físicas ganadoras consideradas una vez por cabeza y corte. Las distintas formas posibles de una familia NO son confirmaciones independientes. El empate de score se resuelve por orden de fuente y casillas.',
   summary,cuts};
 }
