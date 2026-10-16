@@ -7,7 +7,8 @@ import type {ShadowMother} from '../src/vt3Shadow';
 import {canonicalShape} from './lab-geo-winning-roots';
 
 export type TieMethod='ORIGINAL'|'VECINO_4_MISMA_FORMA'|
- 'VECINO_5_MISMA_FORMA_2_RAICES'|'VECINO_5_MISMA_FUENTE_2_RAICES';
+ 'VECINO_5_MISMA_FORMA_2_RAICES'|'VECINO_5_MISMA_FUENTE_2_RAICES'|
+ 'VECINO_5_MISMA_FUENTE_MAS_2_RAICES';
 const eventKey=(r:RootRef)=>[r.date,r.oldTurn,r.jurisdiction,r.head].join('|');
 type Evidence={family:string;rank:number;source:string;shape:string;
  roots:number;yesterday:number;week:number;events:string[]};
@@ -34,16 +35,17 @@ export function localTieBreak(top:ShadowMother[],view:LaloView){
  result.ORIGINAL=top.slice(0,3).map(x=>x.family);
  reasons.ORIGINAL='Geometría completa sin cambios';
  const methods:TieMethod[]=['VECINO_4_MISMA_FORMA','VECINO_5_MISMA_FORMA_2_RAICES',
-  'VECINO_5_MISMA_FUENTE_2_RAICES'];
+  'VECINO_5_MISMA_FUENTE_2_RAICES','VECINO_5_MISMA_FUENTE_MAS_2_RAICES'];
  for(const mode of methods){
   let replacement:Evidence|undefined;
-  if(third.roots===0){
+  if(third.roots===0||mode==='VECINO_5_MISMA_FUENTE_MAS_2_RAICES'){
    const pool=evidence.slice(3,mode==='VECINO_4_MISMA_FORMA'?4:5);
    replacement=pool.find(x=>{
     const sameSource=x.source===third.source;
     const sameShape=x.shape===third.shape;
     if(mode==='VECINO_4_MISMA_FORMA')return sameSource&&sameShape&&x.roots>=1;
     if(mode==='VECINO_5_MISMA_FORMA_2_RAICES')return sameSource&&sameShape&&x.roots>=2;
+    if(mode==='VECINO_5_MISMA_FUENTE_MAS_2_RAICES')return sameSource&&x.roots>=third.roots+2;
     return sameSource&&x.roots>=2;
    });
   }
