@@ -1,0 +1,30 @@
+name: Laboratorio 265 cortes huellas ganadoras
+on:
+  push:
+    branches:
+      - lab/geo-huellas-ganadoras-265-16oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comprobar TypeScript
+        run: npx tsc --noEmit
+      - name: Reconstruir 265 turnos sin fuga futura
+        run: npx --yes tsx scripts/lab-geo-roots-265.ts
+      - name: Guardar auditoría detallada
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: HUELLAS-GANADORAS-265-CORTES
+          path: lab-results/GEOMETRIA_HUELLAS_GANADORAS_265_CORTES.json
+          if-no-files-found: warn
