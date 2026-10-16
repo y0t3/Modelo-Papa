@@ -22,15 +22,16 @@ export default function Vt3Explainer({sheet,view,turn,heads,onFocus}:{
  const [query,setQuery]=useState('');
  const [selected,setSelected]=useState('');
  const [more,setMore]=useState(false);
- useEffect(()=>{setQuery('');setSelected('');setMore(false)},[view?.date,turn]);
+ const [details,setDetails]=useState(false);
+ useEffect(()=>{setQuery('');setSelected('');setMore(false);setDetails(false)},[view?.date,turn]);
  const audit=useMemo(()=>sheet&&view&&selected?
   auditVt3Family(sheet,view,turn,selected):null,[sheet,view,turn,selected]);
  const invalid=selected!==''&&!audit;
  const select=(value:string)=>{setQuery(value);setSelected(value);setMore(false)};
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
-  <Text style={[s.title,{color:kinds.vt3.line}]}>¿POR QUÉ NO ENTRÓ A VT3?</Text>
+  <Text style={[s.title,{color:kinds.vt3.line}]}>¿Por qué no entró a VT3?</Text>
   <Text style={[s.note,{color:c.subtext}]}>
-   Inspeccioná cualquier terna de la hoja. La consulta no altera el Top3, Top10 ni el motor.
+   Buscá una cabeza o familia. Te mostramos si existe en el tablero y por qué quedó dentro o fuera del Top.
   </Text>
   <View style={s.lookup}>
    <TextInput
@@ -70,7 +71,11 @@ export default function Vt3Explainer({sheet,view,turn,heads,onFocus}:{
      </Text>
     </View>
     <Text style={[s.detail,{color:c.text}]}>{audit.explanation}</Text>
-    <View style={s.metricWrap}>
+    <Pressable accessibilityRole="button" onPress={()=>setDetails(x=>!x)}
+     style={[s.focus,{backgroundColor:c.surfaceAlt}]}>
+     <Text style={{color:c.accent,fontWeight:'900'}}>{details?'Ocultar detalles':'Ver recorridos y detalles ›'}</Text>
+    </Pressable>
+    {details?<View style={s.metricWrap}>
      {[
       'Caminos físicos: '+audit.physicalRoutes,
       'Admitidos: '+audit.admittedRoutes,
@@ -82,8 +87,8 @@ export default function Vt3Explainer({sheet,view,turn,heads,onFocus}:{
      ].map(label=><View key={label} style={[s.metric,{backgroundColor:c.surfaceAlt}]}>
       <Text style={{fontSize:10,color:c.subtext,fontWeight:'700'}}>{label}</Text>
      </View>)}
-    </View>
-    <View style={[s.reason,{borderColor:c.border}]}>
+    </View>:null}
+    {details?<View style={[s.reason,{borderColor:c.border}]}>
      <Text style={[s.reasonTitle,{color:c.text}]}>EVOLUCIÓN VT3 · FUENTES DISPONIBLES</Text>
      <Text style={[s.note,{color:c.subtext}]}>
       Estado en la fuente recién incorporada: {audit.currentEvent==='INICIAL'?'PRIMERA FUENTE':
@@ -101,8 +106,8 @@ export default function Vt3Explainer({sheet,view,turn,heads,onFocus}:{
        </Text>
       </View>
      )}
-    </View>
-    {audit.priorityReasons.map(r=>
+    </View>:null}
+    {details&&audit.priorityReasons.map(r=>
      <View key={r.cutoff} style={[s.reason,{borderColor:c.border}]}>
       <Text style={[s.reasonTitle,{color:c.text}]}>Respecto al Top{r.cutoff}: {r.boundaryFamily} (#{r.boundaryRank})</Text>
       <Text style={[s.note,{color:c.subtext}]}>
@@ -110,7 +115,7 @@ export default function Vt3Explainer({sheet,view,turn,heads,onFocus}:{
        {r.decisiveCriterion.startsWith('Desempate')?'':'. Esta familia: '+r.candidateValue+'; límite: '+r.boundaryValue}.
       </Text>
      </View>)}
-    {!!audit.routes.length&&<View style={{marginTop:12}}>
+    {details&&!!audit.routes.length&&<View style={{marginTop:12}}>
      <Text style={[s.reasonTitle,{color:c.text}]}>Recorridos físicos propios ({audit.physicalRoutes})</Text>
      <Text style={[s.note,{color:c.subtext}]}>
       Cada camino e inverso se cuentan una sola vez. Las raíces se contabilizan por cabeza histórica independiente.

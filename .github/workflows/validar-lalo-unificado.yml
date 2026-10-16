@@ -46,6 +46,8 @@ jobs:
         run: npx --yes tsx scripts/test-historico-sorteos-parciales.ts
       - name: Comprobar fechas naturales y Atrás de Android entre pestañas
         run: npx --yes tsx scripts/test-info-fechas-atras.ts
+      - name: Verificar INFO de semana completa y tercer lector VT3 aislado
+        run: npx --yes tsx scripts/test-info-semana-experimental.ts
       - name: Verificar secuencia PRE de candidaturas físicas antes de cada turno
         run: npx --yes tsx scripts/test-info-movimiento-candidatos.ts
       - name: Comparar el mismo turno en cuatro jornadas y proteger el próximo sorteo

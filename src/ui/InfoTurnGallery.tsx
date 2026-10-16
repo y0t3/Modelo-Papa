@@ -68,6 +68,11 @@ function Board({frame,mode,large=false}:{
   </View>)}
  </View>;
 }
+export const markedHeadsForMode=(f:TurnHistoryFrame,mode:GalleryMode)=>{
+ if(f.kind!=='historico')return [];
+ const owners=new Set(visibleTurnRoutes(f,mode).map(r=>r.ownerId));
+ return f.markedHeadLabels.filter(x=>owners.has(x.id));
+};
 const stats=(f:TurnHistoryFrame,mode:GalleryMode)=>{
  const routes=visibleTurnRoutes(f,mode);
  return f.kind==='historico'?
@@ -95,7 +100,7 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
  </Text>;
  return <View style={s.root}>
   <Text style={{color:c.text,fontSize:13,lineHeight:19}}>
-   Así se vio el <Text style={{fontWeight:'900'}}>{gallery.turn}</Text> en las últimas jornadas.
+   Así se vio el <Text style={{fontWeight:'900'}}>{gallery.turn}</Text> durante la semana anterior.
    El último cuadro muestra sólo las tres primeras familias de 2, 3 y 4 cifras.
   </Text>
   <View style={s.filters}>{options.map(o=><Pressable key={o.id} accessibilityRole="button"
@@ -122,6 +127,10 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
      <Text style={[s.date,{color:c.subtext}]}>{f.dayLabel}</Text>
      <Board frame={f} mode={mode}/>
      <Text style={[s.small,{color:c.subtext,textAlign:'center'}]}>{stats(f,mode)}</Text>
+     {f.kind==='historico'&&markedHeadsForMode(f,mode).length>0?
+      <Text style={[s.small,{color:c.text,textAlign:'center'}]} numberOfLines={2}>
+       {markedHeadsForMode(f,mode).map(x=>x.head).join(' · ')}
+      </Text>:null}
     </Pressable>;
    })}
   </View>
@@ -138,6 +147,14 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
    <Text style={{fontSize:12,color:c.text,fontWeight:'800'}}>
     {stats(active,mode)}
    </Text>
+   {active.kind==='historico'&&markedHeadsForMode(active,mode).length>0?
+    <View style={{flexDirection:'row',flexWrap:'wrap',justifyContent:'center',gap:6}}>
+     {markedHeadsForMode(active,mode).map(x=>
+      <Text key={x.id} style={{color:c.text,backgroundColor:c.card,
+       borderColor:c.border,borderWidth:1,borderRadius:7,padding:7,fontSize:11,fontWeight:'800'}}>
+       {x.jurisdiction}: {x.head}
+      </Text>)}
+    </View>:null}
    <Pressable accessibilityRole="button"
     onPress={()=>{setPlaying(false);onOpenFrame(active)}}
     style={[s.open,{borderColor:c.accent,backgroundColor:c.accentFill}]}>

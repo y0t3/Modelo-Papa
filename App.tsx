@@ -11,6 +11,10 @@ import {buildSheet} from './src/sheet';
 import type {DailySheet} from './src/sheet';
 import {displayToIso,isoToDisplay,shiftDay,shiftDrawDay,previousDrawDay} from './src/dates';
 import {loadPreviousDraws,hasDrawResults} from './src/drawHistory';
+import {buildInfoWeek} from './src/infoWeek';
+import {buildVt3Shadow} from './src/vt3Shadow';
+import {buildVt3Trial} from './src/vt3Trial';
+import {saveFrozen} from './src/vt3Snapshot';
 import {buildDailyPanorama,buildPredictivePanorama,dailyHeadOwnerId} from './src/panoramaModel';
 import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
 import type {LaloHistorical} from './src/motorLalo';
@@ -72,6 +76,9 @@ function LaloApp(){
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
  const [busy,setBusy]=useState(false);
+ const [experimental,setExperimental]=useState(false);
+ const [baseHeads,setBaseHeads]=useState<CabezasDia|null>(null);
+ const [autoVersion,setAutoVersion]=useState(0);
  const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
  const [focused,setFocused]=useState<string|null>(null);
  const [hojaFocused,setHojaFocused]=useState<string|null>(null);
@@ -89,6 +96,7 @@ function LaloApp(){
   scrollOffsets.current[next]=0;
   setRestoreScroll(old=>({token:old.token+1,y:0}));
   setScreen(next);
+  if(next!=='prediccion')setExperimental(false);
  };
  const goBack=()=>{
   const {entry,remaining}=backNavigation(historyRef.current);
@@ -132,18 +140,17 @@ function LaloApp(){
    setBusy(true);
    const week=shiftDay(d,-7);
    // Cuatro jornadas reales: tres minihojas y una anterior como base de la tercera.
-   const [current,previous,weekly,weekPrevious]=await Promise.all([
+   const weekDates=Array.from({length:7},(_,i)=>shiftDay(week,i));
+   const [current,previous,weekData,beforeWeek]=await Promise.all([
     descargarCabezas(d,true),
     loadPreviousDraws(d,4,x=>descargarCabezas(x,true)),
-    descargarCabezas(week,true),
-    descargarCabezas(previousDrawDay(week),true)
+    Promise.all(weekDates.map(day=>descargarCabezas(day,true))),
+    loadPreviousDraws(week,1,x=>descargarCabezas(x,true))
    ]);
+   const weekly=weekData[0],weekPrevious=beforeWeek[0].heads;
    const last=previous[3],beforeLast=previous[2];
-    const recentDays:InfoVisualDay[]=[3,2,1].map(i=>({
-     date:previous[i].date,heads:previous[i].heads,
-     sheet:buildSheet(previous[i].heads,previous[i-1].heads)
-    }));
-    const weekDay:InfoVisualDay={date:week,heads:weekly,sheet:buildSheet(weekly,weekPrevious)};
+   const recentDays=buildInfoWeek(week,d,
+    weekDates.map((day,i)=>({date:day,heads:weekData[i]})),weekPrevious);
    const currentSheet=buildSheet(current,last.heads);
    const refs:LaloHistorical[]=[
     {date:last.date,period:'D−1',sheet:buildSheet(last.heads,beforeLast.heads)}
@@ -152,8 +159,8 @@ function LaloApp(){
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
    resetHistory();
    setHistoricalPreview(null);
-   setData(current);setSheet(currentSheet);setHist(refs);
-    setVisualDays([...recentDays,weekDay]);
+   setData(current);setSheet(currentSheet);setHist(refs);setBaseHeads(last.heads);
+    setVisualDays(recentDays);
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
    setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
@@ -162,6 +169,41 @@ function LaloApp(){
  };
  const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
   if(base)void cargar(shiftDrawDay(base,n))};
+ // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
+ useEffect(()=>{
+  if(!sheet||!data||!hist.length||date!==today()||busy)return;
+  const next=TURNOS.find(t=>!JURS.some(j=>/^\d{4}$/.test(data[t]?.[j]||'')));
+  if(!next)return;
+  let cancelled=false;
+  const capture=async()=>{
+   try{
+    const view=buildMotorLalo(sheet,date,next,hist);
+    const shadow=buildVt3Shadow(sheet,date,next,hist,view);
+    const trial=buildVt3Trial(view,shadow);
+    if(cancelled)return;
+    await saveFrozen(date,next,view,shadow,JURS.map(j=>data[next]?.[j]||''),trial);
+    if(!cancelled)setAutoVersion(v=>v+1);
+   }catch{/* Sin suficientes datos, publicado o PRE existente: nunca inventar. */}
+  };
+  void capture();
+  return ()=>{cancelled=true};
+ },[sheet,data,hist,date,busy]);
+ // Con la app abierta, refrescar sin cambiar pestaña ni desplazar la hoja.
+ useEffect(()=>{
+  if(date!==today()||!baseHeads)return;
+  let loading=false;
+  const update=async()=>{
+   if(loading)return;
+   loading=true;
+   try{
+    const fresh=await descargarCabezas(date,true);
+    setData(fresh);
+    setSheet(buildSheet(fresh,baseHeads));
+   }catch{}finally{loading=false}
+  };
+  const interval=setInterval(()=>{void update()},120000);
+  return ()=>clearInterval(interval);
+ },[date,baseHeads]);
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
  const hoja=useMemo(()=>sheet?buildDailyPanorama(sheet,data):null,[sheet,data]);
@@ -242,7 +284,7 @@ function LaloApp(){
     <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
     <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
      resetHistory();setHistoricalPreview(null);
-     setDateText(value);setData(null);setSheet(null);setHist([]);setVisualDays([]);setFocused(null);
+     setDateText(value);setData(null);setSheet(null);setBaseHeads(null);setHist([]);setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <View style={s.shortcuts}>
@@ -281,12 +323,23 @@ function LaloApp(){
    </>:screen==='prediccion'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
-    <PredictionSummary date={dateText} turn={target} view={motor}
-     post={post} onFocus={showFamily}/>
-    <Vt3Parallel date={date||''} turn={target} sheet={sheet} view={motor}
-     historical={hist} heads={fiveHeads}/>
-    <Vt3Explainer sheet={sheet} view={motor} turn={target}
-     heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
+    {!experimental?<>
+     <PredictionSummary date={dateText} turn={target} view={motor}
+      post={post} onFocus={showFamily}/>
+     <Pressable accessibilityRole="button" onPress={()=>setExperimental(true)}
+      style={[s.reload,{backgroundColor:c.surface,borderWidth:1,borderColor:c.accent,marginTop:12}]}>
+      <Text style={[s.reloadText,{color:c.accent}]}>🧪 Experimental · Comparaciones VT3 →</Text>
+     </Pressable>
+    </>:<>
+     <Pressable accessibilityRole="button" onPress={()=>setExperimental(false)}
+      style={[s.reload,{backgroundColor:c.surfaceAlt,marginTop:12}]}>
+      <Text style={[s.reloadText,{color:c.accent}]}>← Volver a Predicción</Text>
+     </Pressable>
+     <Vt3Parallel date={date||''} turn={target} sheet={sheet} view={motor}
+      historical={hist} heads={fiveHeads} autoVersion={autoVersion}/>
+     <Vt3Explainer sheet={sheet} view={motor} turn={target}
+      heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
+    </>}
    </>:screen==='papa'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico de Lalo</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
