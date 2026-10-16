@@ -109,6 +109,20 @@ export function normalizeCut(
  const orig=all.ORIGINAL.map(p=>p.path.family);
  if(orig.join('|')!==originalTop.join('|'))
   throw Error('Control Top3 cambió el orden original '+date+' '+turn);
+ const ranking=[...scored].sort((a,b)=>
+  (b.pctShape+b.pctPlace)-(a.pctShape+a.pctPlace)||originalCompare(a.path,b.path));
+ const seenCombined=new Set<string>();
+ const rankedCombined=ranking.filter(x=>{
+  if(seenCombined.has(x.path.family))return false;
+  seenCombined.add(x.path.family);return true;
+ }).map((x,i)=>({
+  rank:i+1,family:x.path.family,source:x.path.source,
+  shape:x.path.shape,cells:x.path.cells,score:x.path.score,
+  percentile:(x.pctShape+x.pctPlace)/2
+ }));
+ if(rankedCombined.slice(0,3).map(x=>x.family).join('|')!==
+    all.COMBINADO.map(x=>x.path.family).join('|'))
+  throw Error('Orden completo combinado no reproduce Top3');
  const results=Object.fromEntries(NORMAL_MODES.map(mode=>{
   const selected=all[mode];
   const families=selected.map(s=>s.path.family);
@@ -131,7 +145,7 @@ export function normalizeCut(
    percentileShape:number;percentilePosition:number;
    sourceShapePool:number;sourcePositionPool:number;linkedHistoricShapeEvents:number}[]
  }>;
- return {date,turn,results,strata:{
+ return {date,turn,results,rankedCombined,strata:{
   paths:paths.length,shapeStrata:byShape.size,positionStrata:byPlace.size,
   singletonShapeGroups:[...byShape.values()].filter(g=>g.length===1).length,
   singletonPositionGroups:[...byPlace.values()].filter(g=>g.length===1).length,
