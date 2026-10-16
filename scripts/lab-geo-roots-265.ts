@@ -146,8 +146,12 @@ async function main(){
      ranks:Object.fromEntries(methods.map(m=>[m,rank(top[m],family)])) as Record<Method,number|null>});
    }
    if(!winners.length)continue;
-   if(pool.size<3){
-    exclusions.push({date:day.date,turn,reason:'Menos de 3 familias VT3 físicamente disponibles',physicalFamilies:pool.size});
+   const nocturnaPool=new Set(allPhysicalVt3(pre.columns[0].values)
+    .map(p=>reversibleFamily(p.map(c=>c.digit).join(''))));
+   if(pool.size<3||nocturnaPool.size<3){
+    exclusions.push({date:day.date,turn,
+     reason:nocturnaPool.size<3?'Nocturna anterior no tiene tres familias VT3 físicas':'Hoja PRE con menos de tres familias VT3',
+     physicalFamilies:pool.size});
     continue;
    }
    const shape=inspectShapeCut(day.date,turn,pre,historical,official,
