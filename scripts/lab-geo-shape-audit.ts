@@ -94,7 +94,7 @@ export type ShapeCut={date:string;turn:Turno;period:string;
  winningPhysical:{family:string;win:boolean;representativeRank:number|null;
   bestSource:string;bestClass:string;bestZone:string;bestShape:string;
   bestScore:number[];scoreCompareToThird:'superior'|'igual'|'inferior';
-  routeCount:number;availableClasses:string[];sharesTopShape:boolean;
+  routeCount:number;availableClasses:string[];firstLossFactor:string|null;sharesTopShape:boolean;
   sharesTopShapeAndSource:boolean}[];
  physicalRoutes:number;physicalFamilies:number;shapesAvailable:number;
  thirdScoreTiedFamilies:number;firstScoreTiedFamilies:number;
@@ -138,6 +138,13 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
   sameShapeSourceFamilies:new Set(pool.filter(p=>groupKey(p)===groupKey(r)).map(p=>p.family)).size,
   scoreTieFamilies:reps.filter(p=>compareScore(p.score,r.score)===0).length
  }));
+ const lossNames=['desplazamiento de dos filas respecto de ayer',
+  'distancia máxima de la forma respecto de ayer',
+  'desplazamiento de dos filas respecto de la semana anterior',
+  'distancia máxima respecto de la semana anterior',
+  'desplazamiento de dos filas respecto de raíces ganadoras',
+  'distancia máxima respecto de raíces ganadoras',
+  'cantidad de cabezas históricas independientes'];
  const winnersPhysical=winners.filter(f=>familyFirst.has(f)).map(f=>{
   const p=familyFirst.get(f)!,all=pool.filter(q=>q.family===f);
   const idx=reps.findIndex(q=>q.family===f),scoreComparison=compareScore(p.score,third.score);
@@ -147,6 +154,8 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
    scoreCompareToThird:(scoreComparison<0?'superior':scoreComparison>0?'inferior':'igual') as
     'superior'|'inferior'|'igual',
    routeCount:all.length,availableClasses:[...new Set(all.map(q=>q.className))],
+   firstLossFactor:scoreComparison>0?
+    lossNames[p.score.findIndex((value,i)=>value!==third.score[i])]||'sin identificar':null,
    sharesTopShape:all.some(q=>classTop.has(q.shape)),
    sharesTopShapeAndSource:all.some(q=>classTopWithSource.has(groupKey(q)))};
  });
@@ -173,7 +182,7 @@ export function shapeReport(cuts:ShapeCut[]){
    count=(items:object[],key:string)=>Object.fromEntries(
     [...new Set(items.map(x=>(x as any)[key]))].sort().map(k=>[k,items.filter(x=>(x as any)[key]===k).length]));
   const winTop=winners.filter(w=>w.win),miss=winners.filter(w=>!w.win);
-  const byShape=Object.fromEntries([...new Set(selected.map(r=>r.className))].sort()
+  const byShape=Object.fromEntries([...new Set(subset.flatMap(r=>Object.keys(r.routeClasses)))].sort()
    .map(cls=>[cls,{selected:selected.filter(s=>s.className===cls).length,
     winningSelected:subset.reduce((n,c)=>n+c.selected.filter(s=>s.className===cls&&
      c.winningPhysical.some(w=>w.family===s.family&&w.win)).length,0),
@@ -190,6 +199,7 @@ export function shapeReport(cuts:ShapeCut[]){
    winningBestZone:count(winners,'bestZone'),
    byShape,
    missedByScore:count(miss,'scoreCompareToThird'),
+   missedByFirstPriorityFactor:count(miss.filter(w=>w.firstLossFactor!==null),'firstLossFactor'),
    missedSharingTopShape:miss.filter(w=>w.sharesTopShape).length,
    missedSharingTopShapeSource:miss.filter(w=>w.sharesTopShapeAndSource).length,
    meanTiesAtThird:subset.reduce((n,c)=>n+c.thirdScoreTiedFamilies,0)/Math.max(1,subset.length),
