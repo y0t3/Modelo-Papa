@@ -150,7 +150,7 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
    sharesTopShape:all.some(q=>classTop.has(q.shape)),
    sharesTopShapeAndSource:all.some(q=>classTopWithSource.has(groupKey(q)))};
  });
- return {date,turn,period,selected,winningPhysical,physicalRoutes:pool.length,
+ return {date,turn,period,selected,winningPhysical:winnersPhysical,physicalRoutes:pool.length,
   physicalFamilies:reps.length,
   shapesAvailable:new Set(pool.map(p=>p.shape)).size,
   thirdScoreTiedFamilies:reps.filter(p=>compareScore(p.score,third.score)===0).length,
