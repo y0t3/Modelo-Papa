@@ -46,6 +46,13 @@ assert.deepEqual(compareMotorLaloAfterDraw(view,['3044']).vt4,[daughters.join('/
  'POST confirma la hija física propia');
 const sheet=['30','44','34','04','--','--'];
 assert.ok(findPaths(sheet,'3044').length>0,'3044 es un camino real de cuatro contactos');
+assert.ok(findPaths(sheet,'3440').length>0,
+ 'La hermana 3440 también necesita su propio camino físico en la misma fuente');
+const keys=(p:Path)=>p.map(c=>c.row+':'+c.col).join('>');
+assert.ok(findPaths(sheet,'3044').some(p=>keys(p)===keys(p4)),
+ 'El testigo de 3044 respeta las cifras reales de cada casilla');
+assert.ok(findPaths(sheet,'3440').some(p=>keys(p)===keys(p4Sister)),
+ 'El testigo propio de 3440 respeta las cifras reales de cada casilla');
 // Una hermana de la misma madre solamente se exhibe si existe su propio trazo.
 // En esta prueba su testigo independiente se agrega explícitamente.
 const twoSisters={
