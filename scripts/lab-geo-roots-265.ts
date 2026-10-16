@@ -141,7 +141,7 @@ async function main(){
    if(!winners.length)continue;
    const tie=localTieBreak(geometry.top,official);
    const list=['ORIGINAL','VECINO_4_MISMA_FORMA','VECINO_5_MISMA_FORMA_2_RAICES',
-    'VECINO_5_MISMA_FUENTE_2_RAICES'] as TieMethod[];
+    'VECINO_5_MISMA_FUENTE_2_RAICES','VECINO_5_MISMA_FUENTE_MAS_2_RAICES'] as TieMethod[];
    const tieHits=Object.fromEntries(list.map(method=>[
     method,winners.filter(w=>tie.result[method].includes(w.family)).length
    ])) as Record<TieMethod,number>;
@@ -198,7 +198,7 @@ async function main(){
   august.methods.LALO_OFICIAL.heads!==1||sep.methods.LALO_OFICIAL.heads!==5)
   throw Error('No se reprodujeron exactamente los 265 cortes del baseline');
  const methodsT=['ORIGINAL','VECINO_4_MISMA_FORMA','VECINO_5_MISMA_FORMA_2_RAICES',
-   'VECINO_5_MISMA_FUENTE_2_RAICES'] as TieMethod[];
+   'VECINO_5_MISMA_FUENTE_2_RAICES','VECINO_5_MISMA_FUENTE_MAS_2_RAICES'] as TieMethod[];
  const summarizeTie=(rows:TieRow[])=>Object.fromEntries(methodsT.map(m=>[m,{
   cuts:rows.length,headHits:rows.reduce((n,r)=>n+r.hits[m],0),
   cutsWithHit:rows.filter(r=>r.hits[m]>0).length,
