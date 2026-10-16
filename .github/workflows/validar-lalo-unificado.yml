@@ -40,6 +40,8 @@ jobs:
         run: npx --yes tsx scripts/test-vt4-diversidad-madres.ts
       - name: Cotejo POST VT4 por valor físico exacto
         run: npx --yes tsx scripts/test-cotejo-vt4-exacto.ts
+      - name: Impedir inversión ficticia de VT4 en panorama predictivo
+        run: npx --yes tsx scripts/test-auditoria-invariantes-vt4.ts
       - name: Comprobar fechas naturales y Atrás de Android entre pestañas
         run: npx --yes tsx scripts/test-info-fechas-atras.ts
       - name: Verificar secuencia PRE de candidaturas físicas antes de cada turno
