@@ -2,9 +2,9 @@
 // Se normaliza usando SOLO los caminos físicos disponibles en el PRE actual.
 // No se usan resultados futuros, fechas posteriores ni parámetros calibrados.
 // No modifica src/vt3Shadow.ts ni Modelo Lalo.
-export type NormalMode='ORIGINAL'|'MISMA_FUENTE_FORMA'|'MISMA_FUENTE_POSICION'|'COMBINADO'|'COMBINADO_FUENTES_FIJAS';
+export type NormalMode='ORIGINAL'|'MISMA_FUENTE_FORMA'|'MISMA_FUENTE_POSICION'|'COMBINADO'|'COMBINADO_FUENTES_FIJAS'|'COMBINADO_SOLO_NOCTURNA'|'COMBINADO_2_NOCTURNA_1_OTRA';
 export const NORMAL_MODES:NormalMode[]=[
- 'ORIGINAL','MISMA_FUENTE_FORMA','MISMA_FUENTE_POSICION','COMBINADO','COMBINADO_FUENTES_FIJAS'
+ 'ORIGINAL','MISMA_FUENTE_FORMA','MISMA_FUENTE_POSICION','COMBINADO','COMBINADO_FUENTES_FIJAS','COMBINADO_SOLO_NOCTURNA','COMBINADO_2_NOCTURNA_1_OTRA'
 ];
 export type NormalRoute={
  source:string;shape:string;family:string;cells:string[];
@@ -65,7 +65,28 @@ export function normalizeCut(
    originalCompare(a.path,b.path));
   const selection:typeof scored=[];
   const seen=new Set<string>();
-  if(mode==='COMBINADO_FUENTES_FIJAS'){
+  if(mode==='COMBINADO_SOLO_NOCTURNA'){
+   for(const item of ranking){
+    if(item.path.source!=='prevNocturno'||seen.has(item.path.family))continue;
+    seen.add(item.path.family);selection.push(item);
+    if(selection.length===3)break;
+   }
+  }else if(mode==='COMBINADO_2_NOCTURNA_1_OTRA'){
+   const primary=ranking.filter(p=>p.path.source==='prevNocturno');
+   const other=ranking.filter(p=>p.path.source!=='prevNocturno');
+   for(const item of primary){
+    if(seen.has(item.path.family))continue;
+    seen.add(item.path.family);selection.push(item);
+    if(selection.length===2)break;
+   }
+   const newColumn=other.find(item=>!seen.has(item.path.family));
+   if(newColumn){seen.add(newColumn.path.family);selection.push(newColumn)}
+   else {
+    const third=primary.find(item=>!seen.has(item.path.family));
+    if(!third)throw Error('No existe tercer candidato de Nocturna anterior');
+    seen.add(third.path.family);selection.push(third);
+   }
+  }else if(mode==='COMBINADO_FUENTES_FIJAS'){
    for(const original of baseline){
     const candidate=ranking.find(r=>r.path.source===original.source&&
      !seen.has(r.path.family));
