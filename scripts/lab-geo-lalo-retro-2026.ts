@@ -14,7 +14,7 @@ import type {LaloHistorical} from '../src/motorLalo';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
 import {buildVt3Variant} from './lab-geo-variants';
 import type {GeoVariant} from './lab-geo-variants';
-import {analyzeGeometryMemory,neutralComparison,profileCut} from './lab-geo-matched-control';
+import {analyzeGeometryMemory,neutralComparison,profileCut,frozenPreviaComparison} from './lab-geo-matched-control';
 import type {CutProfile} from './lab-geo-matched-control';
 
 const jurs=JURS.filter(x=>x!=='Montevideo');
@@ -305,6 +305,7 @@ async function main(){
    descriptive95:[sorted[Math.floor(.025*sorted.length)],sorted[Math.floor(.975*sorted.length)]]}];
  }));
  const memory=analyzeGeometryMemory(matchedProfiles);
+ const frozenPrevia=frozenPreviaComparison(matchedProfiles);
  const neutral=neutralComparison(matchedProfiles,2500);
  const byPeriod={
   EXPLORADO:neutralComparison(matchedProfiles.filter(p=>p.date<=sampleBreak),1600),
@@ -324,7 +325,7 @@ async function main(){
  };
  const memoryReport={protocol:'No outcome used in ranking; retrospective, not prospective',
   sample:{days:new Set(matchedProfiles.map(p=>p.date)).size,cuts:matchedProfiles.length},
-  sourceStats,memory,neutral,byPeriod,profiles:matchedProfiles};
+  sourceStats,memory,neutral,byPeriod,frozenPrevia,profiles:matchedProfiles};
  writeFileSync('lab-results/GEOMETRIA_MEMORIA_NEUTRAL_15SEP_15OCT2026.json',
   JSON.stringify(memoryReport,null,2));
  const experimentReport={kind:'EXPERIMENTAL_ABLACIONES_RETROSPECTIVAS',
@@ -359,7 +360,8 @@ async function main(){
   selectedInPrevia:memory.allWinningTop3SelectedInPrevia,
   eligibleInPrevia:memory.allWinningTop3EligibleInPrevia,
   hits:memory.winningTop3,transitions:memory.transitions.slice(0,6)
- },neutral,byPeriod},null,2));
+ },neutral,byPeriod,frozenPrevia:{all:frozenPrevia.all,afterPrevia:frozenPrevia.afterPrevia,
+   explored:frozenPrevia.explored,later:frozenPrevia.later,byTurn:frozenPrevia.byTurn}},null,2));
  console.log('GEO_MEMORIA_NEUTRAL_END');
  console.log('SHA256',createHash('sha256').update(JSON.stringify(report)).digest('hex'));
 }
