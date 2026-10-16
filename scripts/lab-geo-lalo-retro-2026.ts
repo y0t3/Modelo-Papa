@@ -14,6 +14,8 @@ import type {LaloHistorical} from '../src/motorLalo';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
 import {buildVt3Variant} from './lab-geo-variants';
 import type {GeoVariant} from './lab-geo-variants';
+import {analyzeGeometryMemory,neutralComparison,profileCut} from './lab-geo-matched-control';
+import type {CutProfile} from './lab-geo-matched-control';
 
 const jurs=JURS.filter(x=>x!=='Montevideo');
 const start='2026-09-15',end='2026-10-15';
@@ -111,6 +113,7 @@ async function main(){
   newFamilyWinners:string[];previousTop3:string[];selectedGeoNewSource:string[];
   officialAdmittedGeoTop3:number;};
  const experiments:ExperimentCut[]=[];
+ const matchedProfiles:CutProfile[]=[];
  const previousPool=new Map<string,Set<string>>();
  const previousGeoTop3=new Map<string,string[]>();
  const strategies:Strategy[]=['GEOMETRIA','OFICIAL','SIN_AYER','SIN_SEMANA','RAICES_PRIMERO','NUEVA_FUENTE','OFICIAL_2_GEO_1','GEO_2_OFICIAL_1'];
@@ -173,6 +176,7 @@ async function main(){
      physical:pool.has(family)});
    }
    if(!winners.length)continue;
+   matchedProfiles.push(profileCut(current.date,turn,pre,geo.top,winners.map(w=>w.family)));
    const geometryNames=base.map(x=>x.family);
    const officialNames=official.map(x=>x.family);
    const families:Record<Strategy,string[]>={
@@ -300,6 +304,29 @@ async function main(){
   return [m,{difference:summaryExp.all.byMethod[m].headHits-summaryExp.all.byMethod.OFICIAL.headHits,
    descriptive95:[sorted[Math.floor(.025*sorted.length)],sorted[Math.floor(.975*sorted.length)]]}];
  }));
+ const memory=analyzeGeometryMemory(matchedProfiles);
+ const neutral=neutralComparison(matchedProfiles,2500);
+ const byPeriod={
+  EXPLORADO:neutralComparison(matchedProfiles.filter(p=>p.date<=sampleBreak),1600),
+  POSTERIOR:neutralComparison(matchedProfiles.filter(p=>p.date>sampleBreak),1600)
+ };
+ const sourceStats={
+  leaderSources:Object.fromEntries([...new Set(matchedProfiles.flatMap(p=>p.top3.map(t=>t.source)))]
+   .map(source=>[source,matchedProfiles.reduce((n,p)=>n+p.top3.filter(t=>t.source===source).length,0)])),
+  averagePhysicalPerLeader:matchedProfiles.reduce((n,p)=>n+p.pathsPerTop3.reduce((x,y)=>x+y,0),0)
+   /Math.max(1,matchedProfiles.length*3),
+  averageSourcesPerLeader:matchedProfiles.reduce((n,p)=>n+p.sourcesPerTop3.reduce((x,y)=>x+y,0),0)
+   /Math.max(1,matchedProfiles.length*3),
+  meanMatchedShapePool:matchedProfiles.reduce((n,p)=>n+p.top3.reduce((x,t)=>x+t.sameShapeCandidates,0),0)
+   /Math.max(1,matchedProfiles.length*3),
+  shapePoolOneCount:matchedProfiles.reduce((n,p)=>n+p.top3.filter(t=>t.sameShapeCandidates===1).length,0),
+  totalLeaderSlots:matchedProfiles.length*3
+ };
+ const memoryReport={protocol:'No outcome used in ranking; retrospective, not prospective',
+  sample:{days:new Set(matchedProfiles.map(p=>p.date)).size,cuts:matchedProfiles.length},
+  sourceStats,memory,neutral,byPeriod,profiles:matchedProfiles};
+ writeFileSync('lab-results/GEOMETRIA_MEMORIA_NEUTRAL_15SEP_15OCT2026.json',
+  JSON.stringify(memoryReport,null,2));
  const experimentReport={kind:'EXPERIMENTAL_ABLACIONES_RETROSPECTIVAS',
   createdAt:new Date().toISOString(),branch:'lab/geo-ablaciones-inercia-hibrido-16oct2026',
   facts:{days:dates.length,cuts:experiments.length,
@@ -325,6 +352,15 @@ async function main(){
  console.log(JSON.stringify({methods:experimentReport.methods,summary:summaryExp,
   confidence,facts:experimentReport.facts},null,2));
  console.log('GEO_ABLACIONES_END');
+ console.log('GEO_MEMORIA_NEUTRAL_START');
+ console.log(JSON.stringify({sample:memoryReport.sample,sourceStats,memory:{
+  stable:memory.stable,changed:memory.changed,enteredFromNewSource:memory.enteredFromNewSource,
+  changedWitnessForSameFamily:memory.changedWitnessForSameFamily,
+  selectedInPrevia:memory.allWinningTop3SelectedInPrevia,
+  eligibleInPrevia:memory.allWinningTop3EligibleInPrevia,
+  hits:memory.winningTop3,transitions:memory.transitions.slice(0,6)
+ },neutral,byPeriod},null,2));
+ console.log('GEO_MEMORIA_NEUTRAL_END');
  console.log('SHA256',createHash('sha256').update(JSON.stringify(report)).digest('hex'));
 }
 main().catch(e=>{console.error('RETRO_ERROR',e);process.exitCode=1});
