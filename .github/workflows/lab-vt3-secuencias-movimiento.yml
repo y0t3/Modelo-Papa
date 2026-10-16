@@ -2,7 +2,7 @@ name: Laboratorio evolucion fisica VT3
 on:
   push:
     branches:
-      - lab/vt3-secuencias-control-edad-16oct2026
+      - lab/vt3-pares-trazos-morfologia-16oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -29,4 +29,5 @@ jobs:
           path: |
             lab-results/VT3_MOVIMIENTOS_COLUMNAS_JUN_OCT_2026.json
             lab-results/VT3_SECUENCIAS_EMPAREJADAS_520_CORTES.json
+            lab-results/VT3_PARES_MORFOLOGIA_520_CORTES.json
           if-no-files-found: warn
