@@ -94,6 +94,7 @@ async function main(){
  const cuts:Cut[]=[];
  const shapeCuts:ShapeCut[]=[];
  const birthCuts:BirthCut[]=[];
+ const exclusions:{date:string;turn:Turno;reason:string;physicalFamilies:number}[]=[];
  type TieRow={date:string;turn:Turno;period:'JUNIO'|'JULIO';
   winners:string[];methods:Record<TieMethod,string[]>;evidence:ReturnType<typeof localTieBreak>['evidence'];
   reasons:Record<TieMethod,string>;hits:Record<TieMethod,number>};
@@ -145,6 +146,10 @@ async function main(){
      ranks:Object.fromEntries(methods.map(m=>[m,rank(top[m],family)])) as Record<Method,number|null>});
    }
    if(!winners.length)continue;
+   if(pool.size<3){
+    exclusions.push({date:day.date,turn,reason:'Menos de 3 familias VT3 físicamente disponibles',physicalFamilies:pool.size});
+    continue;
+   }
    const shape=inspectShapeCut(day.date,turn,pre,historical,official,
     geometry,winners.map(w=>w.family),day.date<=periodSplit?'JUNIO':'JULIO');
    shapeCuts.push(shape);
@@ -239,6 +244,7 @@ async function main(){
  const report={purpose:'Huella ganadora verificada (D-1 y D-7) frente a tablas completas',
   status:'Regla fijada con agosto-octubre; cotejo histórico junio-julio sin ajustes, no prospectivo',
   sample:{start:from,end:to,days:all.days,cuts:all.cuts,heads:all.heads},
+   excludedIncompleteCuts:exclusions,
   methods:{
    LALO_OFICIAL:'Original sin cambios',
    GEOMETRIA_COMPLETA:'Original: todas las formas posibles de hojas anteriores',
@@ -272,6 +278,7 @@ async function main(){
  console.log('APORTE_COLUMNAS_265_START');
  console.log(JSON.stringify(shapes.columnEntrance.summary,null,2));
  console.log('APORTE_COLUMNAS_265_END');
+ console.log('EXCLUSIONES_PRE_'+JSON.stringify(exclusions));
  console.log('NACIDAS_JUN_JUL_START');
  console.log(JSON.stringify({protocol:newbornWeekly.protocol,summary:newbornWeekly.summary,
   examples:newbornWeekly.examples.slice(0,10)},null,2));
