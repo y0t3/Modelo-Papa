@@ -38,7 +38,7 @@ const tally=(rows:Cut[],kind:'geo'|'off')=>{
   cut3:0,cut5:0,cut10:0};
  for(const r of rows){
   totals.heads+=r.validHeads;
-  totals.top3+=r[kind+'Hit'].top3;totals.top5+=r[kind+'Hit'].top5;totals.top10+=r[kind+'Hit'].top10;
+  totals.top3+=r[kind==='geo'?'geoHit':'offHit'].top3;totals.top5+=r[kind+'Hit'].top5;totals.top10+=r[kind+'Hit'].top10;
   totals.cut3+=Number(r[kind+'Hit'].top3>0);
   totals.cut5+=Number(r[kind+'Hit'].top5>0);
   totals.cut10+=Number(r[kind+'Hit'].top10>0);
