@@ -6,7 +6,7 @@ import {reversibleFamily} from './motorLalo';
 import {sha256} from './sha256';
 import type {TrialSelection} from './vt3Trial';
 export type FrozenFamily={family:string;rank:number;reason:string};
-export type FrozenPre={schema:'VT3_PRE_LOCAL_1'|'VT3_PRE_LOCAL_2';date:string;turn:Turno;createdAt:string;
+export type FrozenPre={schema:'VT3_PRE_LOCAL_1'|'VT3_PRE_LOCAL_2'|'VT3_PRE_LOCAL_3';date:string;turn:Turno;createdAt:string;
  official:FrozenFamily[];geometric:FrozenFamily[];trial?:FrozenFamily[]};
 export type FrozenRecord={pre:FrozenPre;sha256:string};
 const storageKey=(date:string,turn:Turno)=>'modelo-lalo:vt3-pre-v1:'+date+':'+turn;
@@ -16,13 +16,13 @@ export function frozenPayload(date:string,turn:Turno,view:LaloView,shadow:Shadow
  if(view.ranks.vt3.length<3||shadow.top.length<3)throw Error('Sin madres VT3 suficientes');
  const official=view.ranks.vt3.slice(0,10).map(x=>({family:x.family,rank:x.rank,reason:x.directRoots+' raíces · '+x.branchBlocks+' bifurcaciones · '+x.sourceCount+' fuentes'}));
  const geometric=shadow.top.map((x,i)=>({family:x.family,rank:i+1,reason:x.source+' · '+x.cells.join('→')+' · '+x.rootEvents+' raíces geométricas'}));
- return {schema:'VT3_PRE_LOCAL_2',date,turn,createdAt,official,geometric,
+ return {schema:'VT3_PRE_LOCAL_3',date,turn,createdAt,official,geometric,
   trial:trial?.top.map((x,i)=>({family:x.family,rank:i+1,reason:x.reason}))};
 }
 export function stampPre(pre:FrozenPre):FrozenRecord{return {pre,sha256:sha256(JSON.stringify(pre))}}
 const readRecord=(raw:string):FrozenRecord=>{
  const x=JSON.parse(raw) as FrozenRecord;
- if(!['VT3_PRE_LOCAL_1','VT3_PRE_LOCAL_2'].includes(x?.pre?.schema)||x.sha256!==sha256(JSON.stringify(x.pre)))throw Error('Huella PRE alterada');
+ if(!['VT3_PRE_LOCAL_1','VT3_PRE_LOCAL_2','VT3_PRE_LOCAL_3'].includes(x?.pre?.schema)||x.sha256!==sha256(JSON.stringify(x.pre)))throw Error('Huella PRE alterada');
  return x;
 };
 export async function loadFrozen(date:string,turn:Turno):Promise<FrozenRecord|null>{
