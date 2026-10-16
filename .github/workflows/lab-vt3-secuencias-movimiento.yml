@@ -2,7 +2,7 @@ name: Laboratorio evolucion fisica VT3
 on:
   push:
     branches:
-      - lab/vt3-secuencias-columnas-510-16oct2026
+      - lab/revision-520-pre-con-uruguay-verificado-16oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,5 +26,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: LAB-VT3-SECUENCIAS-JUN-OCT-2026
-          path: lab-results/VT3_MOVIMIENTOS_COLUMNAS_JUN_OCT_2026.json
+          path: lab-results/VT3_MOVIMIENTOS_FUENTE_VERIFICADA_JUN_OCT_2026.json
           if-no-files-found: warn
