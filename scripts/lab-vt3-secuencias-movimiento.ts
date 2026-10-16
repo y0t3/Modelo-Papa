@@ -73,7 +73,8 @@ const eventId=(r:RootRef)=>[r.date,r.oldTurn,r.jurisdiction,r.head].join('|');
 const makeRoots=(roots:RootRef[],date:string)=>{
  const out=new Map<string,{d1:Set<string>;d7:Set<string>}>();
  for(const r of roots){
-  if(r.date>=date||r.oldCells.length!==3)throw Error('Raíz futura o inválida');
+  if(r.date>=date)throw Error('Raíz futura');
+  if(r.oldCells.length!==3)continue; // VT2 histórico no es huella VT3
   const k=rootKey(r.sourceId,pathShape(r.oldCells));
   if(!out.has(k))out.set(k,{d1:new Set(),d7:new Set()});
   out.get(k)![r.period==='D−1'?'d1':'d7'].add(eventId(r));
