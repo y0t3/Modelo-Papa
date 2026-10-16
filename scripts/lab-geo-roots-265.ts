@@ -23,7 +23,7 @@ type Cut={date:string;turn:Turno;period:'AGOSTO'|'SEPTIEMBRE_OCTUBRE';
  prev:string;week:string|null;headCount:number;winners:Winner[];
  totalPhysicalFamilies:number;roots:number;rootedPhysicalFamilies:number;
  top:Record<Method,string[]>;hits:Record<Method,{top3:number;top5:number;top10:number}>;
- incomplete:Record<Method,boolean>;rootSamples:any[]};
+ incomplete:Record<Method,boolean>;rootSamples:any[];witnessByMode:Record<ExperimentalMode,any[]>};
 const from='2026-08-15',to='2026-10-15',periodSplit='2026-09-14';
 function dates(start:string,end:string){
  const result:string[]=[];
@@ -155,6 +155,14 @@ async function main(){
     roots:alternatives.HUELLAS_DISTANCIA.rootEvents,
     rootedPhysicalFamilies:alternatives.HUELLAS_DISTANCIA.eligibleAnchoredFamilies,
     top,hits,incomplete:Object.fromEntries(methods.map(m=>[m,top[m].length<3])) as Record<Method,boolean>,
+    witnessByMode:Object.fromEntries(modes.map(mode=>[mode,
+     alternatives[mode].top.slice(0,3).map(t=>({
+      family:t.family,value:t.value,source:t.source,cells:t.cells,
+      rootsYesterday:t.rootsYesterday,rootsWeek:t.rootsWeek,
+      independentRoots:t.independentRoots,
+      historicalEvidence:t.historicalEvidence.slice(0,8)
+     }))
+    ])) as Record<ExperimentalMode,any[]>,
     rootSamples:alternatives.HUELLAS_DISTANCIA.top.slice(0,3).map(t=>({
      family:t.family,source:t.source,rootYesterday:t.rootsYesterday,rootWeek:t.rootsWeek,
      evidence:t.historicalEvidence.slice(0,4)}))
