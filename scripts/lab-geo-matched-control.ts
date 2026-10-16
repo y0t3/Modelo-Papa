@@ -183,8 +183,8 @@ export function frozenPreviaComparison(profiles:CutProfile[]){
   daysWithAnyTop3Change:new Set(arr.filter(r=>!r.unchanged).map(r=>r.date)).size
  });
  return {all:get(rows),afterPrevia:get(rows.filter(r=>r.turn!=='Previa')),
-  explored:get(rows.filter(r=>r.date<='2026-10-10')),
-  later:get(rows.filter(r=>r.date>'2026-10-10')),
+  explored:get(rows.filter(r=>r.date<='2026-08-31')),
+  later:get(rows.filter(r=>r.date>'2026-08-31')),
   byTurn:Object.fromEntries(TURNOS.map(t=>[t,get(rows.filter(r=>r.turn===t))])),rows};
 }
 export function neutralComparison(cuts:CutProfile[],draws=2500){
