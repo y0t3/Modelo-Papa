@@ -8,6 +8,7 @@ import {descargarCabezas} from '../src/cabezas';
 import {buildSheet} from '../src/sheet';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
 import {auditVt3Family} from '../src/vt3Audit';
+import {buildVt3Shadow} from '../src/vt3Shadow';
 
 const date='2026-10-15';
 const jurs=['Ciudad','Provincia','Córdoba','Santa Fé','Entre Ríos'] as const;
@@ -56,11 +57,30 @@ async function main(){
  ];
  const rows:any[]=[];
  const turns:any[]=[];
+ const geometricTurns:any[]=[];
  for(const turn of TURNOS){
   const input=preCut(turn,live15);
   const before=buildSheet(input,prev);
   const view=buildMotorLalo(before,date,turn,historical);
   const after=buildSheet(postCut(turn,live15),prev);
+  const geo=buildVt3Shadow(before,date,turn,historical,view);
+  const geoFamilies=geo.top.map((x,i)=>({...x,rank:i+1}));
+  const winnersGeo=jurs.map(jur=>{
+   const head=official[turn][jur],family=familyOf(head,3);
+   const row=geoFamilies.find(x=>x.family===family);
+   return {jur,head,family,rank:row?.rank??null,
+    source:row?.source??null,cells:row?.cells??null,value:row?.value??null,
+    anchored:row?.anchored??false,d1Distance:row?.d1Distance??null,
+    d7Distance:row?.d7Distance??null,rootEvents:row?.rootEvents??null};
+  });
+  geometricTurns.push({turn,
+   availableFamilies:geo.availableFamilies,allPhysicalRoutes:geo.routes,
+   top3:geoFamilies.slice(0,3),top10:geoFamilies,
+   winners:winnersGeo,
+   matchCounts:{top3:winnersGeo.filter(x=>x.rank!==null&&x.rank<=3).length,
+    top5:winnersGeo.filter(x=>x.rank!==null&&x.rank<=5).length,
+    top10:winnersGeo.filter(x=>x.rank!==null&&x.rank<=10).length}
+  });
   const stats={
    turn,cut:TURNOS.indexOf(turn),totalCandidates:{
     vt2:view.ranks.vt2.length,vt3:view.ranks.vt3.length,vt4:view.ranks.vt4.length},
@@ -143,12 +163,13 @@ async function main(){
    day14Nocturno:Object.fromEntries(jurs.map(j=>[j,prev.Nocturno[j]])),
    day08Nocturno:Object.fromEntries(jurs.map(j=>[j,week.Nocturno[j]]))
   },
-  sealed,turns,rows};
+  sealed,turns,rows,geometricTurns};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/COTEJO_15OCT2026.json',JSON.stringify(report,null,2));
  console.log('COTEJO_15OCT_2026_REPORT_START');
  console.log(JSON.stringify({sourceDifferences:differences,history:report.historicalSample,
   seal:sealed.comparisons,byTurn:turns.map(({heads,...metrics})=>metrics),
+  geometry:geometricTurns,
   vt3HeadDetails:rows.map(({turn,jur,head,physical,families,ranks,rootEvents,vt3SourceCount,vt3BranchBlocks})=>
    ({turn,jur,head,physicalVT3:physical.vt3,actualFamily:families.vt3,rankVT3:ranks.vt3,
     physicalVT4:physical.vt4,rankVT4:ranks.vt4,rootEvents,vt3SourceCount,vt3BranchBlocks}))},null,2));
