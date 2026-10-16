@@ -1,6 +1,10 @@
 name: Build Modelo Lalo APK
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'apk-releases/**'
 permissions:
   contents: read
 jobs:
