@@ -264,7 +264,7 @@ export function shapeReport(cuts:ShapeCut[]){
        c.ablation.ORIGINAL.families.includes(w.family)).map(w=>w.family)}))
    }];
   }))]
- ]));
+ ));
  return {ablations:ablationSummary,note:'Familias físicas ganadoras consideradas una vez por cabeza y corte. Las distintas formas posibles de una familia NO son confirmaciones independientes. El empate de score se resuelve por orden de fuente y casillas.',
   summary,cuts};
 }
