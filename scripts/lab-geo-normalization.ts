@@ -2,9 +2,9 @@
 // Se normaliza usando SOLO los caminos físicos disponibles en el PRE actual.
 // No se usan resultados futuros, fechas posteriores ni parámetros calibrados.
 // No modifica src/vt3Shadow.ts ni Modelo Lalo.
-export type NormalMode='ORIGINAL'|'MISMA_FUENTE_FORMA'|'MISMA_FUENTE_POSICION'|'COMBINADO';
+export type NormalMode='ORIGINAL'|'MISMA_FUENTE_FORMA'|'MISMA_FUENTE_POSICION'|'COMBINADO'|'COMBINADO_FUENTES_FIJAS';
 export const NORMAL_MODES:NormalMode[]=[
- 'ORIGINAL','MISMA_FUENTE_FORMA','MISMA_FUENTE_POSICION','COMBINADO'
+ 'ORIGINAL','MISMA_FUENTE_FORMA','MISMA_FUENTE_POSICION','COMBINADO','COMBINADO_FUENTES_FIJAS'
 ];
 export type NormalRoute={
  source:string;shape:string;family:string;cells:string[];
@@ -48,6 +48,14 @@ export function normalizeCut(
   const pctShape=rankWithin(p,gs),pctPlace=rankWithin(p,gp);
   return {path:p,pctShape,pctPlace,shapePool:gs.length,placePool:gp.length};
  });
+ const baselineRoutes=[...paths].sort(originalCompare);
+ const baseline:NormalRoute[]=[],alreadyBaseline=new Set<string>();
+ for(const p of baselineRoutes){
+  if(alreadyBaseline.has(p.family))continue;
+  alreadyBaseline.add(p.family);baseline.push(p);
+  if(baseline.length===3)break;
+ }
+ if(baseline.length!==3)throw Error('Baseline sin tres recorridos');
  const choose=(mode:NormalMode)=>{
   const scoreOf=(r:typeof scored[number])=>mode==='MISMA_FUENTE_FORMA'?r.pctShape:
    mode==='MISMA_FUENTE_POSICION'?r.pctPlace:
@@ -57,10 +65,19 @@ export function normalizeCut(
    originalCompare(a.path,b.path));
   const selection:typeof scored=[];
   const seen=new Set<string>();
-  for(const item of ranking){
-   if(seen.has(item.path.family))continue;
-   seen.add(item.path.family);selection.push(item);
-   if(selection.length===3)break;
+  if(mode==='COMBINADO_FUENTES_FIJAS'){
+   for(const original of baseline){
+    const candidate=ranking.find(r=>r.path.source===original.source&&
+     !seen.has(r.path.family));
+    if(!candidate)throw Error('Fuente del original sin una alternativa física');
+    seen.add(candidate.path.family);selection.push(candidate);
+   }
+  }else{
+   for(const item of ranking){
+    if(seen.has(item.path.family))continue;
+    seen.add(item.path.family);selection.push(item);
+    if(selection.length===3)break;
+   }
   }
   if(selection.length!==3||new Set(selection.map(p=>p.path.family)).size!==3)
    throw Error('No se pudieron elegir tres familias físicas únicas');
