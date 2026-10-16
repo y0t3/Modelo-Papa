@@ -16,6 +16,8 @@ import {localTieBreak} from './lab-geo-tiebreak';
 import type {TieMethod} from './lab-geo-tiebreak';
 import {inspectShapeCut,shapeReport} from './lab-geo-shape-audit';
 import type {ShapeCut} from './lab-geo-shape-audit';
+import {inspectNewbornRoots,summarizeNewbornRoots} from './lab-geo-newborn-weekly-roots';
+import type {BirthCut} from './lab-geo-newborn-weekly-roots';
 
 type Method='LALO_OFICIAL'|'GEOMETRIA_COMPLETA'|ExperimentalMode;
 const methods:Method[]=['LALO_OFICIAL','GEOMETRIA_COMPLETA',
@@ -91,6 +93,7 @@ async function main(){
  const valid=await download(),byDate=new Map(valid.map(d=>[d.date,d]));
  const cuts:Cut[]=[];
  const shapeCuts:ShapeCut[]=[];
+ const birthCuts:BirthCut[]=[];
  type TieRow={date:string;turn:Turno;period:'AGOSTO'|'SEPTIEMBRE_OCTUBRE';
   winners:string[];methods:Record<TieMethod,string[]>;evidence:ReturnType<typeof localTieBreak>['evidence'];
   reasons:Record<TieMethod,string>;hits:Record<TieMethod,number>};
@@ -142,8 +145,11 @@ async function main(){
      ranks:Object.fromEntries(methods.map(m=>[m,rank(top[m],family)])) as Record<Method,number|null>});
    }
    if(!winners.length)continue;
-   shapeCuts.push(inspectShapeCut(day.date,turn,pre,historical,official,
-    geometry,winners.map(w=>w.family),day.date<=periodSplit?'AGOSTO':'SEPTIEMBRE_OCTUBRE'));
+   const shape=inspectShapeCut(day.date,turn,pre,historical,official,
+    geometry,winners.map(w=>w.family),day.date<=periodSplit?'AGOSTO':'SEPTIEMBRE_OCTUBRE');
+   shapeCuts.push(shape);
+   birthCuts.push(inspectNewbornRoots(day.date,turn,day.date<=periodSplit?'AGOSTO':'SEPTIEMBRE_OCTUBRE',
+    pre,official,shape.normalized,winners.map(w=>w.family)));
    const tie=localTieBreak(geometry.top,official);
    const list=['ORIGINAL','VECINO_4_MISMA_FORMA','VECINO_5_MISMA_FORMA_2_RAICES',
     'VECINO_5_MISMA_FUENTE_2_RAICES','VECINO_5_MISMA_FUENTE_MAS_2_RAICES'] as TieMethod[];
@@ -192,6 +198,7 @@ async function main(){
    });
   }
  }
+ const newbornWeekly=summarizeNewbornRoots(birthCuts);
  const shapes=shapeReport(shapeCuts);
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/GEOMETRIA_FORMAS_POSICION_265_CORTES.json',
@@ -200,6 +207,8 @@ async function main(){
   JSON.stringify(shapes.normalization,null,2)+'\n');
  writeFileSync('lab-results/GEOMETRIA_APORTE_COLUMNAS_265_CORTES.json',
   JSON.stringify(shapes.columnEntrance,null,2)+'\n');
+ writeFileSync('lab-results/VT3_NACIDAS_RAICES_D7_265_CORTES.json',
+  JSON.stringify(newbornWeekly,null,2)+'\n');
  const all=summarize(cuts);
  const august=summarize(cuts.filter(c=>c.period==='AGOSTO'));
  const sep=summarize(cuts.filter(c=>c.period==='SEPTIEMBRE_OCTUBRE'));
@@ -267,6 +276,10 @@ async function main(){
  console.log('APORTE_COLUMNAS_265_START');
  console.log(JSON.stringify(shapes.columnEntrance.summary,null,2));
  console.log('APORTE_COLUMNAS_265_END');
+ console.log('NACIDAS_RAICES_D7_START');
+ console.log(JSON.stringify({protocol:newbornWeekly.protocol,summary:newbornWeekly.summary,
+  examples:newbornWeekly.examples.slice(0,10)},null,2));
+ console.log('NACIDAS_RAICES_D7_END');
  console.log('ROOTS265_SHA256',createHash('sha256').update(JSON.stringify(report)).digest('hex'));
 }
 main().catch(e=>{console.error('ROOTS265_ERROR',e);process.exitCode=1});
