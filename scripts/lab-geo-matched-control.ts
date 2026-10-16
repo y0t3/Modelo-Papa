@@ -154,6 +154,38 @@ export function analyzeGeometryMemory(profiles:CutProfile[]){
   allWinningTop3EligibleInPrevia:winningTop3.filter(t=>t.eligibleSincePrevia).length,
   weeklySnapshots:transitions};
 }
+export function frozenPreviaComparison(profiles:CutProfile[]){
+ const dates=[...new Set(profiles.map(p=>p.date))].sort();
+ const rows:any[]=[];
+ for(const date of dates){
+  const day=profiles.filter(p=>p.date===date).sort((a,b)=>
+   TURNOS.indexOf(a.turn)-TURNOS.indexOf(b.turn));
+  const previa=day.find(p=>p.turn==='Previa');
+  if(!previa)continue;
+  const original=previa.top3.map(t=>t.family);
+  for(const cut of day){
+   const current=cut.top3.map(t=>t.family);
+   const fixedHits=cut.headFamilies.filter(f=>original.includes(f)).length;
+   const dynamicHits=cut.headFamilies.filter(f=>current.includes(f)).length;
+   rows.push({date,turn:cut.turn,original,current,
+    fixedHits,dynamicHits,delta:dynamicHits-fixedHits,
+    unchanged:current.every(x=>original.includes(x)),
+    fixedPresentPhysically:original.every(f=>cut.routes.some(r=>r.family===f))});
+  }
+ }
+ if(rows.some(x=>!x.fixedPresentPhysically))throw Error('Familia inicial desapareció de la hoja posterior');
+ const get=(arr:typeof rows)=>({
+  cuts:arr.length,staticHits:arr.reduce((n,r)=>n+r.fixedHits,0),
+  dynamicHits:arr.reduce((n,r)=>n+r.dynamicHits,0),
+  dynamicImproved:arr.filter(r=>r.delta>0),dynamicWorsened:arr.filter(r=>r.delta<0),
+  dynamicIdenticalHeadHits:arr.filter(r=>r.delta===0).length,
+  daysWithAnyTop3Change:new Set(arr.filter(r=>!r.unchanged).map(r=>r.date)).size
+ });
+ return {all:get(rows),afterPrevia:get(rows.filter(r=>r.turn!=='Previa')),
+  explored:get(rows.filter(r=>r.date<='2026-10-10')),
+  later:get(rows.filter(r=>r.date>'2026-10-10')),
+  byTurn:Object.fromEntries(TURNOS.map(t=>[t,get(rows.filter(r=>r.turn===t))])),rows};
+}
 export function neutralComparison(cuts:CutProfile[],draws=2500){
  const methods:MatchedMethod[]=['MISMA_FUENTE','MISMA_FORMA_Y_FUENTE'];
  const observed=cuts.reduce((n,c)=>n+c.headFamilies.filter(f=>c.top3.some(t=>t.family===f)).length,0);
