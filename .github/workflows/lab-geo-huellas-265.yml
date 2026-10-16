@@ -2,7 +2,7 @@ name: Laboratorio 265 cortes huellas ganadoras
 on:
   push:
     branches:
-      - lab/geo-desempate-huellas-vt3-16oct2026
+      - lab/geo-formas-posiciones-265-16oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -29,4 +29,5 @@ jobs:
           path: |
             lab-results/GEOMETRIA_HUELLAS_GANADORAS_265_CORTES.json
             lab-results/GEOMETRIA_DESEMPATE_HUELLAS_265_CORTES.json
+            lab-results/GEOMETRIA_FORMAS_POSICION_265_CORTES.json
           if-no-files-found: warn
