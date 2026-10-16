@@ -73,7 +73,23 @@ async function main(){
     anchored:row?.anchored??false,d1Distance:row?.d1Distance??null,
     d7Distance:row?.d7Distance??null,rootEvents:row?.rootEvents??null};
   });
-  geometricTurns.push({turn,
+  const geoWinnerEvidence=winnersGeo.filter(w=>w.rank!==null).map(w=>{
+   const family=view.ranks.vt3.find(f=>f.family===w.family);
+   const rootIds=new Set(family?.paths.flatMap(p=>p.rootIds)||[]);
+   return {...w,officialRank:family?.rank??null,
+    officialReasons:family?{d1:family.d1Roots,d7:family.d7Roots,
+      branchBlocks:family.branchBlocks,physicalBlocks:family.physicalBlocks,
+      sources:family.sourceCount}:null,
+    officialPaths:family?.paths.map(p=>({source:p.sourceId,
+      value:p.value,origin:p.origin,coords:p.path.map(c=>c.row+':'+c.col),
+      roots:p.rootIds})),
+    realRootReferences:view.roots.filter(r=>rootIds.has(r.id)).map(r=>({
+      period:r.period,date:r.date,head:r.head,jurisdiction:r.jurisdiction,
+      oldTurn:r.oldTurn,sourceId:r.sourceId,oldCells:r.oldCells
+    }))
+   };
+  });
+  geometricTurns.push({turn,geoWinnerEvidence,
    availableFamilies:geo.availableFamilies,allPhysicalRoutes:geo.routes,
    top3:geoFamilies.slice(0,3),top10:geoFamilies,
    winners:winnersGeo,
