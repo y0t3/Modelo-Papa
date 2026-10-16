@@ -190,8 +190,12 @@ async function main(){
     OFICIAL_2_GEO_1:mergeLimited(officialNames,geometryNames,2),
     GEO_2_OFICIAL_1:mergeLimited(geometryNames,officialNames,2)
    };
-   for(const names of Object.values(families))if(names.length!==3||new Set(names).size!==3)
-    throw Error('Top3 híbrido incompleto o repetido en '+current.date+' '+turn);
+   // En algunas jornadas históricas Lalo no admite tres familias: no fabricar
+   // candidatos para completar su Top. Los controles geométricos sí tienen tres.
+   for(const [method,names] of Object.entries(families)){
+    if(new Set(names).size!==names.length||(method!=='OFICIAL'&&names.length!==3))
+     throw Error('Selección incompleta o repetida en '+current.date+' '+turn+' '+method);
+   }
    const winnersNames=winners.map(w=>w.family);
    const previous=previousPool.get(current.date)||new Set<string>();
    const newFamilyWinners=winners.filter(w=>w.physical&&!previous.has(w.family)).map(w=>w.family);
