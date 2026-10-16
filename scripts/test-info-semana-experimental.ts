@@ -34,7 +34,7 @@ for(const f of gallery.frames){
  assert.equal(f.markedHeads,f.markedHeadLabels.length);
  const owners=new Set(f.routes.map(r=>r.ownerId));
  assert.ok(f.markedHeadLabels.every(x=>owners.has(x.id)));
- assert.ok(f.markedHeadLabels.every(x=>/^\\d{4}$/.test(x.head)));
+ assert.ok(f.markedHeadLabels.every(x=>/^\d{4}$/.test(x.head)));
 }
 const shape=(family:string,sourceId:string)=>({family,
  paths:[{sourceId,kind:'vt3',rootIds:[],path:[],value:family}]});
