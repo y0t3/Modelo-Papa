@@ -66,8 +66,8 @@ export function normalizeCut(
    throw Error('No se pudieron elegir tres familias físicas únicas');
   return selection;
  };
- const all=Object.fromEntries(NORMAL_MODES.map(mode=>[mode,choose(mode)]))
-  as Record<NormalMode,ReturnType<typeof choose>>;
+ const all=Object.fromEntries(NORMAL_MODES.map(mode=>[mode,choose(mode)])) as
+  Record<NormalMode,ReturnType<typeof choose>>;
  const orig=all.ORIGINAL.map(p=>p.path.family);
  if(orig.join('|')!==originalTop.join('|'))
   throw Error('Control Top3 cambió el orden original '+date+' '+turn);
