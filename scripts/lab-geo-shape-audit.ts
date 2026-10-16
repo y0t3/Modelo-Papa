@@ -114,6 +114,7 @@ export type ShapeCut={date:string;turn:Turno;period:string;
   matchedSameSourceAndPosition:{source:string;row:number;col:number;
     bestDoubleDiagonalScore:number[];bestOtherScore:number[];
     ddRootEvents:number;otherRootEvents:number;
+    firstDifferentPriority:string;
     comparison:'mejor'|'igual'|'inferior'}[];
   diagnosticForced:{families:string[];hits:number;entered:string|null;
    displaced:string|null;matchedSource:boolean};
@@ -193,10 +194,16 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
   if(!g){g={source:r.source,row:r.pos.row+1,col:r.pos.col+1,dd:[],other:[]};ddGroup.set(k,g)}
   (r.className==='dos diagonales'?g.dd:g.other).push(r);
  }
+ const scoreLabels=['traslado vertical grande ayer','distancia máxima ayer',
+  'traslado vertical grande misma semana','distancia máxima misma semana',
+  'traslado vertical grande cabezas ganadoras','distancia máxima cabezas ganadoras',
+  'cantidad eventos históricos verificados'];
  const matchedSameSourceAndPosition=[...ddGroup.values()].filter(g=>g.dd.length&&g.other.length)
   .map(g=>({source:g.source,row:g.row,col:g.col,
    bestDoubleDiagonalScore:g.dd[0].score,bestOtherScore:g.other[0].score,
    ddRootEvents:g.dd[0].rootCount,otherRootEvents:g.other[0].rootCount,
+   firstDifferentPriority:scoreLabels[g.dd[0].score.findIndex((v,i)=>
+    v!==g.other[0].score[i])]||'empate de puntaje (desempate posicional)',
    comparison:compareDD(g.dd[0],g.other[0])}));
  const originalTop=reps.slice(0,3).map(r=>r.family);
  const force=(alt:Route|undefined)=>({
@@ -367,7 +374,10 @@ export function shapeReport(cuts:ShapeCut[]){
     ddEqual:pairs.filter(p=>p.comparison==='igual').length,
     ddWorse:pairs.filter(p=>p.comparison==='inferior').length,
     ddHasRoots:pairs.filter(p=>p.ddRootEvents>0).length,
-    otherHasRoots:pairs.filter(p=>p.otherRootEvents>0).length
+    otherHasRoots:pairs.filter(p=>p.otherRootEvents>0).length,
+    ddMoreRoots:pairs.filter(p=>p.ddRootEvents>p.otherRootEvents).length,
+    firstFactor:Object.fromEntries([...new Set(pairs.map(p=>p.firstDifferentPriority))]
+     .map(name=>[name,pairs.filter(p=>p.firstDifferentPriority===name).length]))
    },
    forcedBestDoubleDiagonal:summary('diagnosticForced'),
    sameSourceDoubleDiagonal:summary('diagnosticMatchedSource')
