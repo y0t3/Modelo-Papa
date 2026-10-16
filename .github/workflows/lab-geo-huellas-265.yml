@@ -2,7 +2,7 @@ name: Laboratorio 265 cortes huellas ganadoras
 on:
   push:
     branches:
-      - lab/geo-formas-posiciones-265-16oct2026
+      - lab/geo-ablacion-distancia-ayer-265-16oct2026
   workflow_dispatch:
 permissions:
   contents: read
