@@ -30,7 +30,7 @@ function postCut(target:Turno):CabezasDia{
  for(const jur of jurs)out[target][jur]=official[target][jur];
  return out;
 }
-function familyOf(head:string,n:2|3)=>
+const familyOf=(head:string,n:2|3)=>
  reversibleFamily(head.slice(-n));
 function countHeadAtRank(rank:number|null,top:number){return rank!==null&&rank<=top?1:0;}
 async function main(){
@@ -95,7 +95,7 @@ async function main(){
     if(physical[kind])stats.realPhysical[kind]++;
     for(const cutoff of [3,5,10] as const)
      stats[('rankedTop'+cutoff) as 'rankedTop3'][kind]+=countHeadAtRank(ranks[kind],cutoff);
-    if(ranks[kind]!==null&&ranks[kind]!>10)stats.candidatesOutsideTop10[kind]++;
+    if(ranks[kind]!==null&&(ranks[kind] as number)>10)stats.candidatesOutsideTop10[kind]++;
     if(ranks[kind]===null)stats.withoutCandidate[kind]++;
    }
   }
