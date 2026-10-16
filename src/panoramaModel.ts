@@ -116,7 +116,11 @@ export function buildPredictivePanorama(view:LaloView,historical:LaloHistorical[
     if(!unique.has(key))unique.set(key,{id:key,ownerId:id,kind,sourceId:r.sourceId,
      cells,readings:[],headSources:[],antecedents:[]});
     const p=unique.get(key)!;
-    for(const v of [r.value,reverseString(r.value)])
+    // VT2 y VT3 permiten lectura inversa de la familia en el mismo trazo.
+    // VT4 NO: invertir la cuaterna completa cambiaría la madre VT3.
+    // Cada orientación válida de VT4 debe venir con testigo físico propio.
+    const readings=kind==='vt4'?[r.value]:[r.value,reverseString(r.value)];
+    for(const v of readings)
      if(!p.readings.includes(v))p.readings.push(v);
     for(const rootId of r.rootIds){
      const root=rootMap.get(rootId);
