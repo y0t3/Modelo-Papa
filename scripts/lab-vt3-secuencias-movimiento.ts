@@ -5,6 +5,8 @@
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {examineVt3Sequences} from './lab-vt3-secuencias-emparejadas';
+import {analyzePairedGeometry} from './lab-vt3-pares-trazos';
+import type {PairCut,PairCandidate} from './lab-vt3-pares-trazos';
 import {JURS,TURNOS,diaVacio} from '../src/domain';
 import type {CabezasDia,Turno} from '../src/domain';
 import {descargarCabezas} from '../src/cabezas';
@@ -175,6 +177,7 @@ async function main(){
  const allValid=await download('2026-05-14','2026-10-15');
  const byDate=new Map(allValid.map(d=>[d.date,d]));
  const cuts:Cut[]=[];
+ const pairedCuts:PairCut[]=[];
  const stories:any[]=[];
  const excluded:{date:string;reason:string}[]=[];
  for(const [from,to,period] of ranges){
@@ -215,6 +218,7 @@ async function main(){
     const rankedOfficial=new Set(official.ranks.vt3.slice(0,3).map(x=>x.family));
     const rankedGeo=new Set(geo.top.slice(0,3).map(x=>x.family));
     const rows:RecordRow[]=[];
+    const pairedRows:PairCandidate[]=[];
     for(const f of now.values()){
      const priorFamily=priorSnapshot?.get(f.family);
      if(priorFamily)previousPathsEqual(priorFamily,f);
@@ -233,6 +237,16 @@ async function main(){
       for(const x of refs?.d1||[])evidenceD1.add(x);
       for(const x of refs?.d7||[])evidenceD7.add(x);
      }
+     pairedRows.push({family:f.family,state:status,origin:f.firstSource,
+      paths:f.paths.length,shapes:f.shapes.length,sources:f.sources.length,
+      addedPaths:status==='SIN_CAMBIO'?0:currentColPaths.length,
+      addedShapes:newShapes.length,d1:evidenceD1.size,d7:evidenceD7.size,
+      win:count.get(f.family)||0,geoTop:rankedGeo.has(f.family),
+      laloTop:rankedOfficial.has(f.family),
+      routes:f.paths.map(p=>({source:p.source,shape:p.shape,cells:p.cells,value:p.value})),
+      repeatsOldShapeOnNewSource:status==='REFUERZO_NUEVA_FUENTE'&&
+       currentColPaths.some(p=>earlierShapes.has(p.shape)),
+      addsShapeUnseenBefore:status==='REFUERZO_NUEVA_FUENTE'&&newShapes.length>0});
      rows.push({family:f.family,status,firstSource:f.firstSource,
       sourceCount:f.sources.length,routeCount:f.paths.length,shapeCount:f.shapes.length,
       newPaths:status==='SIN_CAMBIO'?0:currentColPaths.length,newShapes:newShapes.length,
@@ -256,6 +270,7 @@ async function main(){
      geoTop3:geo.top.slice(0,3).map(f=>f.family),
      laloTop3:official.ranks.vt3.slice(0,3).map(f=>f.family)};
     snapshots.push(now);dayCuts.push(cut);cuts.push(cut);
+    pairedCuts.push({date:day.date,period,turn,candidates:pairedRows});
     priorSnapshot=now;
    }
    const winningFamilies=new Set(dayCuts.flatMap(c=>c.winners.filter(w=>w.present).map(w=>w.family)));
@@ -274,6 +289,7 @@ async function main(){
   }))
  ]));
  const matched=examineVt3Sequences(cuts);
+ const pairStudy=analyzePairedGeometry(pairedCuts);
  const report={includedDates,protocol:{
   scope:'Hoja PRE acumulativa, cinco cortes por jornada y familia reversible VT3',
   state:'NACIMIENTO = familia inexistente en todas las fuentes anteriores; REFUERZO = familia ya existente que aparece en la nueva fuente; SIN CAMBIO = idénticos caminos anteriores',
@@ -298,11 +314,18 @@ async function main(){
   JSON.stringify(report,null,2)+'\n');
  writeFileSync('lab-results/VT3_SECUENCIAS_EMPAREJADAS_520_CORTES.json',
   JSON.stringify(matched,null,2)+'\n');
+ writeFileSync('lab-results/VT3_PARES_MORFOLOGIA_520_CORTES.json',
+  JSON.stringify(pairStudy,null,2)+'\n');
  console.log('MOVIMIENTOS_VT3_START');
  console.log(JSON.stringify({summary,excluded,storiesCount:stories.length},null,2));
  console.log('MOVIMIENTOS_VT3_END');
  console.log('VT3_MATCHED_START');
  console.log(JSON.stringify({sections:matched.sections,histories:matched.histories},null,2));
  console.log('VT3_MATCHED_END');
+ console.log('VT3_PARES_START');
+ console.log(JSON.stringify({summary:pairStudy.summary,
+  pairedSummary:{...pairStudy.matchedPairs,pairsTopSimilarity:pairStudy.matchedPairs.pairsTopSimilarity.slice(0,3),
+    pairsLowSimilarity:[]}},null,2));
+ console.log('VT3_PARES_END');
 }
 main().catch(e=>{console.error('MOVIMIENTOS_VT3_ERROR',e);process.exitCode=1});
