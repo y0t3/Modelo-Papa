@@ -18,7 +18,7 @@ const ranges=[['2026-06-01','2026-07-31','JUNIO_JULIO'],
  ['2026-08-15','2026-10-15','AGOSTO_OCTUBRE']] as const;
 const SOURCE:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
 // Fechas sin sorteo; el agregador puede rellenarlas de forma incorrecta.
-const NO_DRAW_DATES=new Set(['2026-06-20','2026-07-09']);
+const VERIFIED_PARTIAL_DATES:Record<string,string>={'2026-06-20':'0963','2026-07-09':'0802'};
 type Stage='BASE_NOCTURNA'|'NUEVA_FAMILIA'|'REFUERZO_NUEVA_FUENTE'|'SIN_CAMBIO';
 type Route={source:SourceId;shape:string;cells:string[];value:string};
 type Family={family:string;firstSource:SourceId;sources:SourceId[];paths:Route[];
@@ -98,7 +98,7 @@ async function download(start:string,end:string){
   }));
   out.push(...chunk);
  }
- return out.filter(d=>!NO_DRAW_DATES.has(d.date)&&hasDrawResults(d.heads)&&hasNocturnoBase(d.heads))
+ return out.filter(d=>hasDrawResults(d.heads)&&hasNocturnoBase(d.heads))
   .sort((a,b)=>a.date.localeCompare(b.date));
 }
 function summarize(cuts:Cut[]){
@@ -172,12 +172,17 @@ function caseTimeline(dayCuts:Cut[],family:string,snapshots:Snapshot[]){
 }
 async function main(){
  const allValid=await download('2026-05-14','2026-10-15');
+ for(const [date,head] of Object.entries(VERIFIED_PARTIAL_DATES))
+  if(allValid.find(d=>d.date===date)?.heads.Nocturno.Montevideo!==head)
+   throw Error('Nocturna confirmada modificada: '+date);
  const byDate=new Map(allValid.map(d=>[d.date,d]));
  const cuts:Cut[]=[];
  const stories:any[]=[];
  const excluded:{date:string;reason:string}[]=[];
  for(const [from,to,period] of ranges){
-  for(const day of allValid.filter(d=>d.date>=from&&d.date<=to)){
+  for(const day of allValid.filter(d=>d.date>=from&&d.date<=to&&
+   TURNOS.some(t=>JURS.some(j=>j!=='Montevideo'&&/^\\d{4}$/.test(d.heads[t][j]))))){
+   // Montevideo es fuente histórica, no objetivo argentino de cinco cabezas.
    const before=allValid.filter(d=>d.date<day.date);
    if(before.length<2){excluded.push({date:day.date,reason:'Falta historia Nocturna previa'});continue}
    const prior=before.at(-1)!,priorPrior=before.at(-2)!;
@@ -272,13 +277,19 @@ async function main(){
    nocturna: JURS.filter(j=>/^\\d{4}$/.test(d.heads.Nocturno?.[j]||'')).length
   }))
  ]));
- const report={includedDates,protocol:{
+ const realBaseForTargets=Object.fromEntries(['2026-06-22','2026-07-10'].map(date=>{
+  const prior=allValid.filter(d=>d.date<date).at(-1);
+  if(!prior)throw Error('Falta base '+date);
+  return [date,{sourceDate:prior.date,night:prior.heads.Nocturno.Montevideo,
+   montevideoPlus11:buildSheet(diaVacio(),prior.heads).columns[0].values[5]}];
+ }));
+ const report={includedDates,realBaseForTargets,protocol:{
   scope:'Hoja PRE acumulativa, cinco cortes por jornada y familia reversible VT3',
   state:'NACIMIENTO = familia inexistente en todas las fuentes anteriores; REFUERZO = familia ya existente que aparece en la nueva fuente; SIN CAMBIO = idénticos caminos anteriores',
   roots:'Huellas ganadoras de cabezas previas D−1 y D−7; solo misma forma/fuente, no equivale a repetir cifra',
   comparison:'Control neutral en corte+fuente de nacimiento+banda de cantidad de caminos (observaciones dependientes, no prueba confirmatoria)',
   caution:'Resultados históricos conocidos. Exposiciones de familia repetidas por jornada. No interpretar como probabilidades de apuesta.',
-  calendarExclusions:[...NO_DRAW_DATES]
+  calendarExclusions:[],verifiedUruguayNightSources:VERIFIED_PARTIAL_DATES
  },summary:summarize(cuts),excluded,storiesCount:stories.length,
   cuts:cuts.map(({rows,...rest})=>({...rest,
    candidates:rows.map(r=>({family:r.family,state:r.status,origin:r.firstSource,
@@ -292,10 +303,10 @@ async function main(){
   throw Error('Muestra incompatible con los dos periodos previstos: '+JSON.stringify({
    june:summary.JUNIO_JULIO.cuts,aug:summary.AGOSTO_OCTUBRE.cuts,excluded}));
  mkdirSync('lab-results',{recursive:true});
- writeFileSync('lab-results/VT3_MOVIMIENTOS_COLUMNAS_JUN_OCT_2026.json',
+ writeFileSync('lab-results/VT3_MOVIMIENTOS_FUENTE_VERIFICADA_JUN_OCT_2026.json',
   JSON.stringify(report,null,2)+'\n');
  console.log('MOVIMIENTOS_VT3_START');
- console.log(JSON.stringify({summary,excluded,storiesCount:stories.length},null,2));
+ console.log(JSON.stringify({summary,excluded,storiesCount:stories.length,realBaseForTargets},null,2));
  console.log('MOVIMIENTOS_VT3_END');
 }
 main().catch(e=>{console.error('MOVIMIENTOS_VT3_ERROR',e);process.exitCode=1});
