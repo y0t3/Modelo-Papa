@@ -17,6 +17,8 @@ import type {LaloHistorical,RootRef} from '../src/motorLalo';
 const ranges=[['2026-06-01','2026-07-31','JUNIO_JULIO'],
  ['2026-08-15','2026-10-15','AGOSTO_OCTUBRE']] as const;
 const SOURCE:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
+// Fechas sin sorteo; el agregador puede rellenarlas de forma incorrecta.
+const NO_DRAW_DATES=new Set(['2026-06-20','2026-07-09']);
 type Stage='BASE_NOCTURNA'|'NUEVA_FAMILIA'|'REFUERZO_NUEVA_FUENTE'|'SIN_CAMBIO';
 type Route={source:SourceId;shape:string;cells:string[];value:string};
 type Family={family:string;firstSource:SourceId;sources:SourceId[];paths:Route[];
@@ -96,7 +98,7 @@ async function download(start:string,end:string){
   }));
   out.push(...chunk);
  }
- return out.filter(d=>hasDrawResults(d.heads)&&hasNocturnoBase(d.heads))
+ return out.filter(d=>!NO_DRAW_DATES.has(d.date)&&hasDrawResults(d.heads)&&hasNocturnoBase(d.heads))
   .sort((a,b)=>a.date.localeCompare(b.date));
 }
 function summarize(cuts:Cut[]){
@@ -275,7 +277,8 @@ async function main(){
   state:'NACIMIENTO = familia inexistente en todas las fuentes anteriores; REFUERZO = familia ya existente que aparece en la nueva fuente; SIN CAMBIO = idénticos caminos anteriores',
   roots:'Huellas ganadoras de cabezas previas D−1 y D−7; solo misma forma/fuente, no equivale a repetir cifra',
   comparison:'Control neutral en corte+fuente de nacimiento+banda de cantidad de caminos (observaciones dependientes, no prueba confirmatoria)',
-  caution:'Resultados históricos conocidos. Exposiciones de familia repetidas por jornada. No interpretar como probabilidades de apuesta.'
+  caution:'Resultados históricos conocidos. Exposiciones de familia repetidas por jornada. No interpretar como probabilidades de apuesta.',
+  calendarExclusions:[...NO_DRAW_DATES]
  },summary:summarize(cuts),excluded,storiesCount:stories.length,
   cuts:cuts.map(({rows,...rest})=>({...rest,
    candidates:rows.map(r=>({family:r.family,state:r.status,origin:r.firstSource,
