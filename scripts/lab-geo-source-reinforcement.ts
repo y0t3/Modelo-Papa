@@ -183,7 +183,7 @@ export function studyIndependentSources(profiles:CutProfile[]){
  const methods:Method[]=['ORIGINAL','PREVIA_FIJA','FUENTES_PRIMERO_TOP10','BONO_UNA_POSICION_TOP10'];
  const byMethod=Object.fromEntries(methods.map(m=>[m,metric(scores,m)]));
  const byPeriod=Object.fromEntries(['EXPLORADO','POSTERIOR'].map(period=>{
-  const test=(date:string)=>period==='EXPLORADO'?date<='2026-10-10':date>'2026-10-10';
+  const test=(date:string)=>period==='EXPLORADO'?date<='2026-08-31':date>'2026-08-31';
   return [period,Object.fromEntries(methods.map(m=>[m,metric(scores.filter(r=>test(r.date)),m)]))];
  }));
  const conditional=Object.fromEntries(TURNOS.slice(1).map(t=>[
