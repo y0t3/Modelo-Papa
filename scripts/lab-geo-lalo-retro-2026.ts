@@ -19,8 +19,8 @@ import type {CutProfile} from './lab-geo-matched-control';
 import {studyIndependentSources} from './lab-geo-source-reinforcement';
 
 const jurs=JURS.filter(x=>x!=='Montevideo');
-const start='2026-09-15',end='2026-10-15';
-const sampleBreak='2026-10-10';
+const start='2026-08-15',end='2026-09-14';
+const sampleBreak='2026-08-31';
 const daysBetween=(first:string,last:string):string[]=>{
  const all:string[]=[];let n=Date.parse(first+'T12:00:00Z');
  const stop=Date.parse(last+'T12:00:00Z');
@@ -85,7 +85,7 @@ const summary=(rows:Cut[])=>{
     .map(w=>({date:r.date,turn:r.turn,...w})))};
 };
 async function loadAll(){
- const dates=daysBetween('2026-09-01',end);
+ const dates=daysBetween('2026-07-20',end);
  const rows:RecordDay[]=[];
  // No reintentar masivamente sobre la fuente y no saturar su API.
  for(let pos=0;pos<dates.length;pos+=6){
@@ -251,11 +251,11 @@ async function main(){
   seal:'NINGUNO: reconstrucción histórica posterior, no validación prospectiva',
   inputCode:{official:'src/motorLalo.ts',geometric:'src/vt3Shadow.ts'},
   frozenPolicy:'Sin calibrar: se usa el código actual con sus reglas idénticas en todos los cortes',
-  range:{start,end,earliestFetched:'2026-09-01',sampleBreak},warnings,
+  range:{start,end,earliestFetched:'2026-07-20',sampleBreak},warnings,
   dayCount:new Set(all.map(r=>r.date)).size,
   total:summary(all),sections,groupedByTurn,byWeek,cuts:all};
  mkdirSync('lab-results',{recursive:true});
- const path='lab-results/GEOMETRIA_LALO_RETRO_15SEP_15OCT2026.json';
+ const path='lab-results/GEOMETRIA_LALO_RETRO_15AGO_14SEP2026.json';
  writeFileSync(path,JSON.stringify(report,null,2));
  // Prueba A/B por bloques de jornada. Selecciones congeladas de antemano; no hay
  // optimización sobre los resultados ni se trasladan los sorteos futuros al PRE.
@@ -307,7 +307,7 @@ async function main(){
  }));
  const reinforcement=studyIndependentSources(matchedProfiles);
  mkdirSync('lab-results',{recursive:true});
- writeFileSync('lab-results/GEOMETRIA_REFUERZO_FUENTES_15SEP_15OCT2026.json',
+ writeFileSync('lab-results/GEOMETRIA_REFUERZO_FUENTES_15AGO_14SEP2026.json',
   JSON.stringify(reinforcement,null,2));
  const memory=analyzeGeometryMemory(matchedProfiles);
  const frozenPrevia=frozenPreviaComparison(matchedProfiles);
@@ -331,10 +331,10 @@ async function main(){
  const memoryReport={protocol:'No outcome used in ranking; retrospective, not prospective',
   sample:{days:new Set(matchedProfiles.map(p=>p.date)).size,cuts:matchedProfiles.length},
   sourceStats,memory,neutral,byPeriod,frozenPrevia,profiles:matchedProfiles};
- writeFileSync('lab-results/GEOMETRIA_MEMORIA_NEUTRAL_15SEP_15OCT2026.json',
+ writeFileSync('lab-results/GEOMETRIA_MEMORIA_NEUTRAL_15AGO_14SEP2026.json',
   JSON.stringify(memoryReport,null,2));
  const experimentReport={kind:'EXPERIMENTAL_ABLACIONES_RETROSPECTIVAS',
-  createdAt:new Date().toISOString(),branch:'lab/geo-ablaciones-inercia-hibrido-16oct2026',
+  createdAt:new Date().toISOString(),branch:'lab/geo-fuentes-verificacion-agosto-16oct2026',
   facts:{days:dates.length,cuts:experiments.length,
    headline:'8 métodos congelados antes de ejecutar este cotejo; NO sello prospectivo',
    cutoffs:'septiembre y octubre ya explorados; 12-15oct posterior descriptivo, no holdout virgen'},
@@ -348,7 +348,7 @@ async function main(){
    OFICIAL_2_GEO_1:'primeras dos del Oficial y primera exclusiva de Geometría',
    GEO_2_OFICIAL_1:'primeras dos de Geometría y primera exclusiva del Oficial'
   },summary:summaryExp,confidence,rows:experiments};
- writeFileSync('lab-results/GEOMETRIA_ABLACIONES_15SEP_15OCT2026.json',JSON.stringify(experimentReport,null,2));
+ writeFileSync('lab-results/GEOMETRIA_ABLACIONES_15AGO_14SEP2026.json',JSON.stringify(experimentReport,null,2));
  const headline={dayCount:report.dayCount,heads:all.reduce((v,r)=>v+r.validHeads,0),
   total:report.total,sections,groupedByTurn,warnings};
  console.log('GEO_LALO_RETRO_START');
