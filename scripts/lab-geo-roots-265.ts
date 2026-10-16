@@ -14,6 +14,8 @@ import {buildWinningRootsGeo} from './lab-geo-winning-roots';
 import type {ExperimentalMode} from './lab-geo-winning-roots';
 import {localTieBreak} from './lab-geo-tiebreak';
 import type {TieMethod} from './lab-geo-tiebreak';
+import {inspectShapeCut,shapeReport} from './lab-geo-shape-audit';
+import type {ShapeCut} from './lab-geo-shape-audit';
 
 type Method='LALO_OFICIAL'|'GEOMETRIA_COMPLETA'|ExperimentalMode;
 const methods:Method[]=['LALO_OFICIAL','GEOMETRIA_COMPLETA',
@@ -88,6 +90,7 @@ function exclusives(cuts:Cut[],other:Method){
 async function main(){
  const valid=await download(),byDate=new Map(valid.map(d=>[d.date,d]));
  const cuts:Cut[]=[];
+ const shapeCuts:ShapeCut[]=[];
  type TieRow={date:string;turn:Turno;period:'AGOSTO'|'SEPTIEMBRE_OCTUBRE';
   winners:string[];methods:Record<TieMethod,string[]>;evidence:ReturnType<typeof localTieBreak>['evidence'];
   reasons:Record<TieMethod,string>;hits:Record<TieMethod,number>};
@@ -139,6 +142,8 @@ async function main(){
      ranks:Object.fromEntries(methods.map(m=>[m,rank(top[m],family)])) as Record<Method,number|null>});
    }
    if(!winners.length)continue;
+   shapeCuts.push(inspectShapeCut(day.date,turn,pre,historical,official,
+    geometry,winners.map(w=>w.family),day.date<=periodSplit?'AGOSTO':'SEPTIEMBRE_OCTUBRE'));
    const tie=localTieBreak(geometry.top,official);
    const list=['ORIGINAL','VECINO_4_MISMA_FORMA','VECINO_5_MISMA_FORMA_2_RAICES',
     'VECINO_5_MISMA_FUENTE_2_RAICES','VECINO_5_MISMA_FUENTE_MAS_2_RAICES'] as TieMethod[];
@@ -187,6 +192,10 @@ async function main(){
    });
   }
  }
+ const shapes=shapeReport(shapeCuts);
+ mkdirSync('lab-results',{recursive:true});
+ writeFileSync('lab-results/GEOMETRIA_FORMAS_POSICION_265_CORTES.json',
+  JSON.stringify(shapes,null,2)+'\n');
  const all=summarize(cuts);
  const august=summarize(cuts.filter(c=>c.period==='AGOSTO'));
  const sep=summarize(cuts.filter(c=>c.period==='SEPTIEMBRE_OCTUBRE'));
@@ -245,6 +254,9 @@ async function main(){
  console.log(JSON.stringify({sample:tiebreak.sample,all:tiebreak.all,
   august:tiebreak.august,septemberOctober:tiebreak.septemberOctober},null,2));
  console.log('TIEBREAK265_END');
+ console.log('GEOMETRIA_FORMAS_265_START');
+ console.log(JSON.stringify(shapes.summary,null,2));
+ console.log('GEOMETRIA_FORMAS_265_END');
  console.log('ROOTS265_SHA256',createHash('sha256').update(JSON.stringify(report)).digest('hex'));
 }
 main().catch(e=>{console.error('ROOTS265_ERROR',e);process.exitCode=1});
