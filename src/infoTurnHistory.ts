@@ -6,12 +6,14 @@ import type {LaloView} from './motorLalo';
 import type {PanoramaRoute} from './panoramaModel';
 import {buildDailyPanorama,buildPredictivePanorama,routesForDailyTurn} from './panoramaModel';
 import {preSheetAtCut} from './infoCandidatos';
+import {shiftDay} from './dates';
 
 export type InfoVisualDay={date:string;heads:CabezasDia;sheet:DailySheet};
 export type TurnHistoryFrame={
  id:string;date:string;dayLabel:string;title:string;
  kind:'historico'|'proximo';sheet:DailySheet;
  routes:PanoramaRoute[];markedHeads:number;routeCount:number;
+ markedHeadLabels:{id:string;head:string;jurisdiction:string}[];
  familyCount:number;
 };
 export type TurnHistory={turn:Turno;frames:TurnHistoryFrame[];summary:string};
@@ -28,19 +30,21 @@ export function readableWeekday(iso:string):string{
 export function buildTurnHistory(date:string,turn:Turno,
  sheet:DailySheet|null,view:LaloView|null,days:InfoVisualDay[]):TurnHistory{
  const frames:TurnHistoryFrame[]=[];
- const titles=['Última jornada','Dos jornadas atrás','Tres jornadas atrás','Hace una semana'];
+ const titles=['Última jornada','Dos jornadas atrás','Tres jornadas atrás','Cuatro jornadas atrás','Cinco jornadas atrás','Seis jornadas atrás','Siete jornadas atrás'];
  const seen=new Set<string>();
- for(const day of days.slice(0,4)){
+ for(const day of days){
   if(day.date>=date||seen.has(day.date))continue;
   seen.add(day.date);
   const panorama=buildDailyPanorama(day.sheet,day.heads);
   const routes=routesForDailyTurn(panorama,turn);
   frames.push({
    id:'dia-'+day.date,date:day.date,dayLabel:readableWeekday(day.date),
-   title:titles[frames.length],kind:'historico',sheet:day.sheet,
+   title:day.date===shiftDay(date,-7)?'Hace una semana':titles[frames.length]||'Jornada anterior',kind:'historico',sheet:day.sheet,
    routes,routeCount:routes.length,
    familyCount:0,
-   markedHeads:panorama.groups.filter(g=>g.turn===turn&&g.routeCount>0).length
+   markedHeads:panorama.groups.filter(g=>g.turn===turn&&g.routeCount>0).length,
+   markedHeadLabels:panorama.groups.filter(g=>g.turn===turn&&g.routeCount>0&&g.head)
+    .map(g=>({id:g.id,head:g.head!,jurisdiction:g.subtitle}))
   });
  }
  if(sheet&&view&&view.target===turn){
@@ -57,7 +61,8 @@ export function buildTurnHistory(date:string,turn:Turno,
    id:'proximo',date,dayLabel:readableWeekday(date),title:'Para el próximo '+turn,
    kind:'proximo',sheet:{...visible,columns:visible.columns.slice(0,cut+1)},
    routes,
-   markedHeads:0,routeCount:routes.length,familyCount:selectedFamilies.size
+   markedHeads:0,routeCount:routes.length,familyCount:selectedFamilies.size,
+   markedHeadLabels:[]
   });
  }
  const past=frames.filter(f=>f.kind==='historico');
