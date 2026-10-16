@@ -287,7 +287,8 @@ async function main(){
  const dates=[...new Set(experiments.map(r=>r.date))].sort();
  const byDay=dates.map(date=>experiments.filter(r=>r.date===date));
  let state=20261016;const rnd=()=>{state^=state<<13;state^=state>>>17;state^=state<<5;return (state>>>0)/4294967296;};
- const differences:Record<Strategy,number[]> = Object.fromEntries(strategies.map(m=>[m,[]])) as Record<Strategy,number[]>;
+ const differences={} as Record<Strategy,number[]>;
+ for(const method of strategies)differences[method]=[];
  for(let b=0;b<12000;b++){
   const sample=Array.from({length:byDay.length},()=>byDay[Math.floor(rnd()*byDay.length)]).flat();
   const officialCount=sample.reduce((n,r)=>n+r.hits.OFICIAL,0);
