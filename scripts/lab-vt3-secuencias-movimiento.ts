@@ -181,7 +181,7 @@ async function main(){
  const excluded:{date:string;reason:string}[]=[];
  for(const [from,to,period] of ranges){
   for(const day of allValid.filter(d=>d.date>=from&&d.date<=to&&
-   TURNOS.some(t=>JURS.some(j=>j!=='Montevideo'&&/^\\d{4}$/.test(d.heads[t][j]))))){
+   TURNOS.some(t=>JURS.some(j=>j!=='Montevideo'&&/^\d{4}$/.test(d.heads[t][j]))))){
    // Montevideo es fuente histórica, no objetivo argentino de cinco cabezas.
    const before=allValid.filter(d=>d.date<day.date);
    if(before.length<2){excluded.push({date:day.date,reason:'Falta historia Nocturna previa'});continue}
