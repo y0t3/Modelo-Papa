@@ -20,14 +20,18 @@ const official:Record<Turno,Record<Jur,string>>={
  Vespertino:{Ciudad:'7654',Provincia:'2073',Córdoba:'4001','Santa Fé':'6076','Entre Ríos':'3897'},
  Nocturno:{Ciudad:'7791',Provincia:'9020',Córdoba:'6204','Santa Fé':'5197','Entre Ríos':'6624'}
 };
-function preCut(target:Turno):CabezasDia{
+function preCut(target:Turno,live:CabezasDia):CabezasDia{
  const out=diaVacio();
- for(const t of TURNOS.slice(0,TURNOS.indexOf(target)))
+ for(const t of TURNOS.slice(0,TURNOS.indexOf(target))){
   for(const jur of jurs)out[t][jur]=official[t][jur];
+  // Montevideo es una fila física. No se puntúa, pero sí influye en la hoja
+  // una vez que el resultado fue publicado antes del turno objetivo.
+  out[t]['Montevideo']=live[t]['Montevideo'];
+ }
  return out;
 }
-function postCut(target:Turno):CabezasDia{
- const out=preCut(target);
+function postCut(target:Turno,live:CabezasDia):CabezasDia{
+ const out=preCut(target,live);
  for(const jur of jurs)out[target][jur]=official[target][jur];
  return out;
 }
@@ -53,10 +57,10 @@ async function main(){
  const rows:any[]=[];
  const turns:any[]=[];
  for(const turn of TURNOS){
-  const input=preCut(turn);
+  const input=preCut(turn,live15);
   const before=buildSheet(input,prev);
   const view=buildMotorLalo(before,date,turn,historical);
-  const after=buildSheet(postCut(turn),prev);
+  const after=buildSheet(postCut(turn,live15),prev);
   const stats={
    turn,cut:TURNOS.indexOf(turn),totalCandidates:{
     vt2:view.ranks.vt2.length,vt3:view.ranks.vt3.length,vt4:view.ranks.vt4.length},
@@ -132,7 +136,7 @@ async function main(){
   vt3Top10:sealedVt3,vt4RoundTop10:sealedRounds,
   vt4ConcentratedTop10:sealedConcentrated,comparisons:srow
  };
- const report={date,source:'Lotería pública validada + VivíTuSuerte históricos para reproducir cortes',
+ const report={date,montevideoFromAppSource:Object.fromEntries(TURNOS.map(t=>[t,live15[t]['Montevideo']])),source:'Lotería pública validada + VivíTuSuerte históricos para reproducir cortes',
   type:'4 replays retrospectivos y 1 sello independiente de Previa; la Previa recreada NO reemplaza el sello',
   priorNocturno:Object.fromEntries(jurs.map(j=>[j,prev.Nocturno[j]])),
   sourceDifferences:differences,historicalSample:{
