@@ -5,7 +5,7 @@
 ## Procedencia y distinción temporal
 - **Previa PRE sellada auténtica:** 15/10 01:23 (Argentina), rama `prospectivo-vt4-a-b-previa-15oct2026`, archivo `PRE_15OCT_PREVIA.json`, hash SHA256 `f251926160d0d0bea9ea4d93a7d88b1c8646c7a304add5e07d206749992c0bb9`. La Nocturna Santa Fe del 14/10 faltaba; conservar el vacío para juzgar el sello.
 - **Cotejos cronológicos reconstruidos:** Previa, Primera, Matutino, Vespertino, Nocturno. Solo usan columnas anteriores al turno, pero fueron calculados después del resultado. **NO son apuestas/pronósticos sellados antes de los sorteos**.
-- Las 25 cabezas principales coinciden entre los valores publicados por Ruta1000 para el 15/10 y la API que consume la aplicación (sin diferencias).
+- Las 25 cabezas principales coinciden entre los valores publicados por Ruta1000 para el 15/10 y la API que consume la aplicación (sin diferencias).\n- **Montevideo se incorpora como dato de la hoja cuando ya se publicó en una jornada anterior al turno objetivo** (Matutino 8312 y Nocturno 7116 según API), pero no se contabiliza como una de las cinco cabezas argentinas del cotejo. Se repitió la prueba después de detectar esta omisión y los recuentos permanecieron iguales.
 - Los antecedentes utilizados en la reconstrucción son 14/10 y 08/10, con sus respectivas jornadas nocturnas previas como origen de las hojas.
 
 ## Resultado sellado Previa
@@ -48,7 +48,7 @@ Top3 VT4 tampoco coincidió en ninguno de los 25 resultados reconstruidos. VT2 t
 3. **Sellar antes de cada turno siguiente** el Top3/Top5/Top10 de VT3 y las hijas exactas VT4, con la cobertura física y la hora, para evitar juzgar como prospectivos los replays.
 
 ### Evidencia
-- Workflow con resultados: https://github.com/y0t3/Modelo-Papa/actions/runs/38844210514
+- Workflow con resultados: https://github.com/y0t3/Modelo-Papa/actions/runs/38844629959
 - Sello PRE independiente: https://github.com/y0t3/Modelo-Papa/blob/prospectivo-vt4-a-b-previa-15oct2026/auditorias/prospectivo-vt4-ab-previa-15oct2026/PRE_15OCT_PREVIA.json
 - Estudio anterior de 115 cortes: `auditorias/vt3-cobertura-bifurcaciones-115-13oct2026/RESUMEN.json` de la rama prospectiva.
 - El workflow publica `COTEJO_15OCT2026.json` como artefacto descargable con el detalle por turno y cada cabeza.
