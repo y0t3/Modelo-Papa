@@ -10,6 +10,8 @@ import {reversibleFamily} from '../src/motorLalo';
 import type {LaloHistorical,LaloView,RootRef} from '../src/motorLalo';
 import {normalizeCut,summarizeNormalization} from './lab-geo-normalization';
 import type {NormalCut} from './lab-geo-normalization';
+import {inspectColumnEntrance,summarizeColumns} from './lab-geo-column-entrance';
+import type {ColumnRecord,CutPools} from './lab-geo-column-entrance';
 
 const sources:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
 type Ablation='ORIGINAL'|'SIN_MAX_DISTANCIA_AYER'|'TOPE_DISTANCIA_AYER_2'|'SIN_REFERENCIA_AYER';
@@ -104,7 +106,7 @@ export type ShapeCut={date:string;turn:Turno;period:string;
  physicalRoutes:number;physicalFamilies:number;shapesAvailable:number;
  thirdScoreTiedFamilies:number;firstScoreTiedFamilies:number;
  ablation:Record<Ablation,{families:string[];headHits:number;doubleDiagonal:number}>;
- normalized:NormalCut;
+ normalized:NormalCut;columnEntry:ColumnRecord;
  sourceWitnesses:Record<string,number>;zoneWitnesses:Record<string,number>;
  routeClasses:Record<string,number>;familyClasses:Record<string,number>;
  doubleDiagonal:{
@@ -153,6 +155,12 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
    throw Error('Orden F_D1 no reproducido: '+date+' '+turn+' puesto '+(k+1));
  }
  const normalized:NormalCut={...normalizeCut(pool,geo.top.slice(0,3).map(t=>t.family),winners,date,turn),period,headFamilies:winners};
+ const sourceFamilies=Object.fromEntries(sources.map(source=>[source,
+  [...new Set(pool.filter(r=>r.source===source).map(r=>r.family))]
+ ])) as CutPools;
+ const columnEntry=inspectColumnEntrance(normalized,sourceFamilies);
+ if(columnEntry.availableFamilies!==geo.availableFamilies)
+  throw Error('Cantidad de familias físicas difiere de Geometría '+date+' '+turn);
  const scoreFor=(p:Route,mode:Ablation):number[]=>{
   if(mode==='SIN_MAX_DISTANCIA_AYER')return p.score.filter((_,i)=>i!==1);
   if(mode==='SIN_REFERENCIA_AYER')return p.score.slice(2);
@@ -261,7 +269,7 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
    sharesTopShape:all.some(q=>classTop.has(q.shape)),
    sharesTopShapeAndSource:all.some(q=>classTopWithSource.has(groupKey(q)))};
  });
- return {date,turn,period,selected,ablation,doubleDiagonal,normalized,winningPhysical:winnersPhysical,physicalRoutes:pool.length,
+ return {date,turn,period,selected,ablation,doubleDiagonal,normalized,columnEntry,winningPhysical:winnersPhysical,physicalRoutes:pool.length,
   physicalFamilies:reps.length,
   shapesAvailable:new Set(pool.map(p=>p.shape)).size,
   thirdScoreTiedFamilies:reps.filter(p=>compareScore(p.score,third.score)===0).length,
@@ -388,6 +396,7 @@ export function shapeReport(cuts:ShapeCut[]){
   }];
  }));
  const normalization=summarizeNormalization(cuts.map(c=>c.normalized));
- return {normalization,doubleDiagonal:ddReport,ablations:ablationSummary,note:'Familias físicas ganadoras consideradas una vez por cabeza y corte. Las distintas formas posibles de una familia NO son confirmaciones independientes. El empate de score se resuelve por orden de fuente y casillas.',
+ const columnEntrance=summarizeColumns(cuts.map(c=>c.columnEntry));
+ return {columnEntrance,normalization,doubleDiagonal:ddReport,ablations:ablationSummary,note:'Familias físicas ganadoras consideradas una vez por cabeza y corte. Las distintas formas posibles de una familia NO son confirmaciones independientes. El empate de score se resuelve por orden de fuente y casillas.',
   summary,cuts};
 }
