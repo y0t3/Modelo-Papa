@@ -1,0 +1,29 @@
+name: Auditoría histórica de cabezas reales
+on:
+  push:
+    branches: [lab/verificacion-historica-jurisdiccion-turno-16oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Verificar TypeScript del proyecto íntegro
+        run: npx tsc --noEmit
+      - name: Auditar respuestas fechadas del proveedor histórico
+        run: npx --yes tsx scripts/lab-auditar-historico-api.ts
+      - name: Guardar huellas SHA y resultados por jurisdicción y turno
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: VERIFICACION-HISTORICA-CABEZAS-2026
+          path: lab-results/AUDITORIA_PROCEDENCIA_CABEZAS_2026.json
+          if-no-files-found: warn
