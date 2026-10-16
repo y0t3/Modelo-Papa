@@ -12,6 +12,8 @@ import {hasDrawResults,hasNocturnoBase} from '../src/drawHistory';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
 import type {LaloHistorical} from '../src/motorLalo';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
+import {buildVt3Variant} from './lab-geo-variants';
+import type {GeoVariant} from './lab-geo-variants';
 
 const jurs=JURS.filter(x=>x!=='Montevideo');
 const start='2026-09-15',end='2026-10-15';
@@ -103,6 +105,25 @@ async function main(){
  const byDate=new Map(valid.map(d=>[d.date,d]));
  const all:Cut[]=[];
  const warnings:string[]=[];
+ type Strategy='GEOMETRIA'|'OFICIAL'|'SIN_AYER'|'SIN_SEMANA'|'RAICES_PRIMERO'|'NUEVA_FUENTE'|'OFICIAL_2_GEO_1'|'GEO_2_OFICIAL_1';
+ type ExperimentCut={date:string;turn:Turno;week:string;set:'EXPLORADO'|'POSTERIOR';
+  families:Record<Strategy,string[]>;hits:Record<Strategy,number>;winnerNames:string[];
+  newFamilyWinners:string[];previousTop3:string[];selectedGeoNewSource:string[];
+  officialAdmittedGeoTop3:number;};
+ const experiments:ExperimentCut[]=[];
+ const previousPool=new Map<string,Set<string>>();
+ const previousGeoTop3=new Map<string,string[]>();
+ const strategies:Strategy[]=['GEOMETRIA','OFICIAL','SIN_AYER','SIN_SEMANA','RAICES_PRIMERO','NUEVA_FUENTE','OFICIAL_2_GEO_1','GEO_2_OFICIAL_1'];
+ const mergeLimited=(first:string[],second:string[],firstSlots:number)=>{
+  const out=[...new Set(first.slice(0,firstSlots))];
+  for(const f of second)if(out.length<3&&!out.includes(f))out.push(f);
+  for(const f of first)if(out.length<3&&!out.includes(f))out.push(f);
+  return out.slice(0,3);
+ };
+ const weekStart=(d:string)=>{const date=new Date(d+'T12:00:00Z');
+  const delta=(date.getUTCDay()+6)%7;
+  return new Date(date.getTime()-delta*86400000).toISOString().slice(0,10);
+ };
  for(const current of valid.filter(d=>d.date>=start&&d.date<=end)){
   const earlier=valid.filter(p=>p.date<current.date);
   if(earlier.length<2){warnings.push('Faltan anteriores para '+current.date);continue}
@@ -126,6 +147,16 @@ async function main(){
    const geo=buildVt3Shadow(pre,current.date,turn,historical,off);
    const base=geo.top.map((x,i)=>({...x,rank:i+1}));
    const official=off.ranks.vt3;
+   // Control estricto: el duplicado experimental BASE debe ser idéntico al motor
+   // Geometría completa que realmente figura en la APK.
+   const duplicate=buildVt3Variant(pre,current.date,turn,historical,off,'BASE');
+   if(JSON.stringify(duplicate.top)!==JSON.stringify(geo.top)||
+      duplicate.availableFamilies!==geo.availableFamilies||
+      duplicate.routes!==geo.routes)
+     throw Error('Divergencia de BASE geométrica en '+current.date+' '+turn);
+   const variants=Object.fromEntries((['SIN_AYER','SIN_SEMANA','RAICES_PRIMERO','NUEVA_FUENTE'] as GeoVariant[])
+    .map(key=>[key,buildVt3Variant(pre,current.date,turn,historical,off,key).top.map(x=>x.family)]))
+    as Record<Exclude<GeoVariant,'BASE'>,string[]>;
    const pool=new Set<string>();
    for(const column of pre.columns.slice(0,TURNOS.indexOf(turn)+1))
     for(const path of allPhysicalVt3(column.values))
@@ -141,6 +172,36 @@ async function main(){
      physical:pool.has(family)});
    }
    if(!winners.length)continue;
+   const geometryNames=base.map(x=>x.family);
+   const officialNames=official.map(x=>x.family);
+   const families:Record<Strategy,string[]>={
+    GEOMETRIA:geometryNames.slice(0,3),
+    OFICIAL:officialNames.slice(0,3),
+    SIN_AYER:variants.SIN_AYER.slice(0,3),
+    SIN_SEMANA:variants.SIN_SEMANA.slice(0,3),
+    RAICES_PRIMERO:variants.RAICES_PRIMERO.slice(0,3),
+    NUEVA_FUENTE:variants.NUEVA_FUENTE.slice(0,3),
+    OFICIAL_2_GEO_1:mergeLimited(officialNames,geometryNames,2),
+    GEO_2_OFICIAL_1:mergeLimited(geometryNames,officialNames,2)
+   };
+   for(const names of Object.values(families))if(names.length!==3||new Set(names).size!==3)
+    throw Error('Top3 híbrido incompleto o repetido en '+current.date+' '+turn);
+   const winnersNames=winners.map(w=>w.family);
+   const previous=previousPool.get(current.date)||new Set<string>();
+   const newFamilyWinners=winners.filter(w=>w.physical&&!previous.has(w.family)).map(w=>w.family);
+   const priorGeo=previousGeoTop3.get(current.date)||[];
+   const newSource=geometryNames.slice(0,3).filter(f=>!previous.has(f));
+   const accepted=new Set(officialNames);
+   const hits=Object.fromEntries(strategies.map(method=>[method,
+    winnersNames.filter(f=>families[method].includes(f)).length])) as Record<Strategy,number>;
+   experiments.push({date:current.date,turn,week:weekStart(current.date),
+    set:current.date<=sampleBreak?'EXPLORADO':'POSTERIOR',
+    families,hits,winnerNames:winnersNames,newFamilyWinners,
+    previousTop3:priorGeo,selectedGeoNewSource:newSource,
+    officialAdmittedGeoTop3:families.GEOMETRIA.filter(f=>accepted.has(f)).length
+   });
+   previousPool.set(current.date,pool);
+   previousGeoTop3.set(current.date,families.GEOMETRIA);
    const geoHit={top3:0,top5:0,top10:0},offHit={top3:0,top5:0,top10:0};
    for(const w of winners){
     for(const n of [3,5,10] as const){
@@ -190,11 +251,78 @@ async function main(){
  mkdirSync('lab-results',{recursive:true});
  const path='lab-results/GEOMETRIA_LALO_RETRO_15SEP_15OCT2026.json';
  writeFileSync(path,JSON.stringify(report,null,2));
+ // Prueba A/B por bloques de jornada. Selecciones congeladas de antemano; no hay
+ // optimización sobre los resultados ni se trasladan los sorteos futuros al PRE.
+ const summarizeStrategies=(rows:ExperimentCut[])=>{
+  const byMethod=Object.fromEntries(strategies.map(name=>[name,{
+   cuts:rows.length,
+   headHits:rows.reduce((n,r)=>n+r.hits[name],0),
+   cutsWithHit:rows.filter(r=>r.hits[name]>0).length
+  }])) as Record<Strategy,{cuts:number;headHits:number;cutsWithHit:number}>;
+  const changes=rows.filter(r=>r.turn!=='Previa').map(r=>{
+   const p=rows.find(x=>x.date===r.date&&TURNOS.indexOf(x.turn)===TURNOS.indexOf(r.turn)-1);
+   return p?{newGeo:r.families.GEOMETRIA.filter(f=>!p.families.GEOMETRIA.includes(f)).length,
+    newOfficial:r.families.OFICIAL.filter(f=>!p.families.OFICIAL.includes(f)).length,
+    newGeoPriority:r.families.NUEVA_FUENTE.filter(f=>!p.families.NUEVA_FUENTE.includes(f)).length,
+    newPhysicalWinner:r.newFamilyWinners.length,date:r.date,turn:r.turn}:null;
+  }).filter((v):v is NonNullable<typeof v>=>!!v);
+  return {byMethod,transitions:{
+   total:changes.length,
+   geoChanges:changes.filter(x=>x.newGeo>0).length,
+   officialChanges:changes.filter(x=>x.newOfficial>0).length,
+   newSourcePriorityChanges:changes.filter(x=>x.newGeoPriority>0).length
+  },newPhysicalWinningFamilies:rows.reduce((n,r)=>n+r.newFamilyWinners.length,0),
+  geoTop3NotAdmitted:rows.reduce((n,r)=>n+3-r.officialAdmittedGeoTop3,0),
+  combinationWins:rows.filter(r=>r.hits.OFICIAL_2_GEO_1>0).map(r=>r.date+'|'+r.turn),
+  geoUniqueTop3Wins:rows.filter(r=>r.hits.GEOMETRIA>0&&!r.hits.OFICIAL).map(r=>({
+   date:r.date,turn:r.turn,families:r.families.GEOMETRIA,heads:r.winnerNames
+  }))};
+ };
+ const exploratory=experiments.filter(r=>r.set==='EXPLORADO');
+ const later=experiments.filter(r=>r.set==='POSTERIOR');
+ const summaryExp={all:summarizeStrategies(experiments),explored:summarizeStrategies(exploratory),
+  later:summarizeStrategies(later)};
+ // Remuestreo pareado por jornadas (no cortes), exclusivamente descriptivo.
+ const dates=[...new Set(experiments.map(r=>r.date))].sort();
+ const byDay=dates.map(date=>experiments.filter(r=>r.date===date));
+ let state=20261016;const rnd=()=>{state^=state<<13;state^=state>>>17;state^=state<<5;return (state>>>0)/4294967296;};
+ const differences:Record<Strategy,number[]> = Object.fromEntries(strategies.map(m=>[m,[]])) as Record<Strategy,number[]>;
+ for(let b=0;b<12000;b++){
+  const sample=Array.from({length:byDay.length},()=>byDay[Math.floor(rnd()*byDay.length)]).flat();
+  const officialCount=sample.reduce((n,r)=>n+r.hits.OFICIAL,0);
+  for(const method of strategies)
+   differences[method].push(sample.reduce((n,r)=>n+r.hits[method],0)-officialCount);
+ }
+ const confidence=Object.fromEntries(strategies.map(m=>{
+  const sorted=differences[m].sort((a,b)=>a-b);
+  return [m,{difference:summaryExp.all.byMethod[m].headHits-summaryExp.all.byMethod.OFICIAL.headHits,
+   descriptive95:[sorted[Math.floor(.025*sorted.length)],sorted[Math.floor(.975*sorted.length)]]}];
+ }));
+ const experimentReport={kind:'EXPERIMENTAL_ABLACIONES_RETROSPECTIVAS',
+  createdAt:new Date().toISOString(),branch:'lab/geo-ablaciones-inercia-hibrido-16oct2026',
+  facts:{days:dates.length,cuts:experiments.length,
+   headline:'8 métodos congelados antes de ejecutar este cotejo; NO sello prospectivo',
+   cutoffs:'septiembre y octubre ya explorados; 12-15oct posterior descriptivo, no holdout virgen'},
+  methods:{
+   GEOMETRIA:'GEO F_D1 sin cambios',
+   OFICIAL:'Motor Lalo VT3 original',
+   SIN_AYER:'sin prioridad de semejanza a jornada anterior',
+   SIN_SEMANA:'sin prioridad de semejanza al mismo día de la semana anterior',
+   RAICES_PRIMERO:'evidencia histórica verificable antes de desplazamiento',
+   NUEVA_FUENTE:'prioriza una nueva columna de turno cuando existe',
+   OFICIAL_2_GEO_1:'primeras dos del Oficial y primera exclusiva de Geometría',
+   GEO_2_OFICIAL_1:'primeras dos de Geometría y primera exclusiva del Oficial'
+  },summary:summaryExp,confidence,rows:experiments};
+ writeFileSync('lab-results/GEOMETRIA_ABLACIONES_15SEP_15OCT2026.json',JSON.stringify(experimentReport,null,2));
  const headline={dayCount:report.dayCount,heads:all.reduce((v,r)=>v+r.validHeads,0),
   total:report.total,sections,groupedByTurn,warnings};
  console.log('GEO_LALO_RETRO_START');
  console.log(JSON.stringify(headline,null,2));
  console.log('GEO_LALO_RETRO_END');
+ console.log('GEO_ABLACIONES_START');
+ console.log(JSON.stringify({methods:experimentReport.methods,summary:summaryExp,
+  confidence,facts:experimentReport.facts},null,2));
+ console.log('GEO_ABLACIONES_END');
  console.log('SHA256',createHash('sha256').update(JSON.stringify(report)).digest('hex'));
 }
 main().catch(e=>{console.error('RETRO_ERROR',e);process.exitCode=1});
