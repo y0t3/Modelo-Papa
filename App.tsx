@@ -172,7 +172,7 @@ function LaloApp(){
  // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
  useEffect(()=>{
   if(!sheet||!data||!hist.length||date!==today()||busy)return;
-  const next=TURNOS.find(t=>!JURS.some(j=>/^\\d{4}$/.test(data[t]?.[j]||'')));
+  const next=TURNOS.find(t=>!JURS.some(j=>/^\d{4}$/.test(data[t]?.[j]||'')));
   if(!next)return;
   let cancelled=false;
   const capture=async()=>{
