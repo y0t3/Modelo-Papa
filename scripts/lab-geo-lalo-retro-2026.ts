@@ -154,9 +154,10 @@ async function main(){
       duplicate.availableFamilies!==geo.availableFamilies||
       duplicate.routes!==geo.routes)
      throw Error('Divergencia de BASE geométrica en '+current.date+' '+turn);
-   const variants=Object.fromEntries((['SIN_AYER','SIN_SEMANA','RAICES_PRIMERO','NUEVA_FUENTE'] as GeoVariant[])
-    .map(key=>[key,buildVt3Variant(pre,current.date,turn,historical,off,key).top.map(x=>x.family)])))
-    as Record<Exclude<GeoVariant,'BASE'>,string[]>;
+   const variantKeys:Exclude<GeoVariant,'BASE'>[]=['SIN_AYER','SIN_SEMANA','RAICES_PRIMERO','NUEVA_FUENTE'];
+   const variants=Object.fromEntries(variantKeys.map(key=>[
+    key,buildVt3Variant(pre,current.date,turn,historical,off,key).top.map(x=>x.family)
+   ])) as Record<Exclude<GeoVariant,'BASE'>,string[]>;
    const pool=new Set<string>();
    for(const column of pre.columns.slice(0,TURNOS.indexOf(turn)+1))
     for(const path of allPhysicalVt3(column.values))
