@@ -1,0 +1,665 @@
+{
+  "sourceDifferences": [],
+  "history": {
+    "day14Nocturno": {
+      "Ciudad": "1856",
+      "Provincia": "3209",
+      "Córdoba": "2033",
+      "Santa Fé": "7393",
+      "Entre Ríos": "5122"
+    },
+    "day08Nocturno": {
+      "Ciudad": "4534",
+      "Provincia": "6859",
+      "Córdoba": "4553",
+      "Santa Fé": "3625",
+      "Entre Ríos": "6873"
+    }
+  },
+  "seal": [
+    {
+      "jur": "Ciudad",
+      "head": "1184",
+      "vt3": "184/481",
+      "vt3Rank": null,
+      "vt4RoundsExact": null,
+      "vt4ConcentratedExact": null
+    },
+    {
+      "jur": "Provincia",
+      "head": "1918",
+      "vt3": "819/918",
+      "vt3Rank": null,
+      "vt4RoundsExact": null,
+      "vt4ConcentratedExact": null
+    },
+    {
+      "jur": "Córdoba",
+      "head": "7563",
+      "vt3": "365/563",
+      "vt3Rank": null,
+      "vt4RoundsExact": null,
+      "vt4ConcentratedExact": null
+    },
+    {
+      "jur": "Santa Fé",
+      "head": "5115",
+      "vt3": "115/511",
+      "vt3Rank": null,
+      "vt4RoundsExact": null,
+      "vt4ConcentratedExact": null
+    },
+    {
+      "jur": "Entre Ríos",
+      "head": "0212",
+      "vt3": "212/212",
+      "vt3Rank": null,
+      "vt4RoundsExact": null,
+      "vt4ConcentratedExact": null
+    }
+  ],
+  "byTurn": [
+    {
+      "turn": "Previa",
+      "cut": 0,
+      "totalCandidates": {
+        "vt2": 15,
+        "vt3": 28,
+        "vt4": 43
+      },
+      "realPhysical": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop3": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop5": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop10": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "candidatesOutsideTop10": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "withoutCandidate": {
+        "vt2": 5,
+        "vt3": 5,
+        "vt4": 5
+      }
+    },
+    {
+      "turn": "Primera",
+      "cut": 1,
+      "totalCandidates": {
+        "vt2": 25,
+        "vt3": 32,
+        "vt4": 46
+      },
+      "realPhysical": {
+        "vt2": 2,
+        "vt3": 1,
+        "vt4": 0
+      },
+      "rankedTop3": {
+        "vt2": 1,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop5": {
+        "vt2": 1,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop10": {
+        "vt2": 1,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "candidatesOutsideTop10": {
+        "vt2": 1,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "withoutCandidate": {
+        "vt2": 3,
+        "vt3": 5,
+        "vt4": 5
+      }
+    },
+    {
+      "turn": "Matutino",
+      "cut": 2,
+      "totalCandidates": {
+        "vt2": 34,
+        "vt3": 55,
+        "vt4": 51
+      },
+      "realPhysical": {
+        "vt2": 4,
+        "vt3": 4,
+        "vt4": 2
+      },
+      "rankedTop3": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop5": {
+        "vt2": 1,
+        "vt3": 1,
+        "vt4": 0
+      },
+      "rankedTop10": {
+        "vt2": 2,
+        "vt3": 2,
+        "vt4": 1
+      },
+      "candidatesOutsideTop10": {
+        "vt2": 2,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "withoutCandidate": {
+        "vt2": 1,
+        "vt3": 3,
+        "vt4": 4
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "cut": 3,
+      "totalCandidates": {
+        "vt2": 38,
+        "vt3": 59,
+        "vt4": 53
+      },
+      "realPhysical": {
+        "vt2": 4,
+        "vt3": 1,
+        "vt4": 0
+      },
+      "rankedTop3": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop5": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop10": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "candidatesOutsideTop10": {
+        "vt2": 4,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "withoutCandidate": {
+        "vt2": 1,
+        "vt3": 5,
+        "vt4": 5
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "cut": 4,
+      "totalCandidates": {
+        "vt2": 43,
+        "vt3": 59,
+        "vt4": 53
+      },
+      "realPhysical": {
+        "vt2": 4,
+        "vt3": 2,
+        "vt4": 1
+      },
+      "rankedTop3": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop5": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "rankedTop10": {
+        "vt2": 1,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "candidatesOutsideTop10": {
+        "vt2": 3,
+        "vt3": 1,
+        "vt4": 0
+      },
+      "withoutCandidate": {
+        "vt2": 1,
+        "vt3": 4,
+        "vt4": 5
+      }
+    }
+  ],
+  "vt3HeadDetails": [
+    {
+      "turn": "Previa",
+      "jur": "Ciudad",
+      "head": "1184",
+      "physicalVT3": false,
+      "actualFamily": "184/481",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Previa",
+      "jur": "Provincia",
+      "head": "1918",
+      "physicalVT3": false,
+      "actualFamily": "819/918",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Previa",
+      "jur": "Córdoba",
+      "head": "7563",
+      "physicalVT3": false,
+      "actualFamily": "365/563",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Previa",
+      "jur": "Santa Fé",
+      "head": "5115",
+      "physicalVT3": false,
+      "actualFamily": "115/511",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Previa",
+      "jur": "Entre Ríos",
+      "head": "0212",
+      "physicalVT3": false,
+      "actualFamily": "212/212",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Primera",
+      "jur": "Ciudad",
+      "head": "0900",
+      "physicalVT3": false,
+      "actualFamily": "009/900",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Primera",
+      "jur": "Provincia",
+      "head": "7595",
+      "physicalVT3": false,
+      "actualFamily": "595/595",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 7,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Primera",
+      "jur": "Córdoba",
+      "head": "8242",
+      "physicalVT3": true,
+      "actualFamily": "242/242",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 15,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Primera",
+      "jur": "Santa Fé",
+      "head": "9101",
+      "physicalVT3": false,
+      "actualFamily": "101/101",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Primera",
+      "jur": "Entre Ríos",
+      "head": "8005",
+      "physicalVT3": false,
+      "actualFamily": "005/500",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Ciudad",
+      "head": "8997",
+      "physicalVT3": true,
+      "actualFamily": "799/997",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 6,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Provincia",
+      "head": "4942",
+      "physicalVT3": true,
+      "actualFamily": "249/942",
+      "rankVT3": 5,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 15,
+        "vt3": 2
+      },
+      "vt3SourceCount": 1,
+      "vt3BranchBlocks": 1
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Córdoba",
+      "head": "4991",
+      "physicalVT3": false,
+      "actualFamily": "199/991",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Santa Fé",
+      "head": "0244",
+      "physicalVT3": true,
+      "actualFamily": "244/442",
+      "rankVT3": 10,
+      "physicalVT4": true,
+      "rankVT4": 10,
+      "rootEvents": {
+        "vt2": 15,
+        "vt3": 1
+      },
+      "vt3SourceCount": 1,
+      "vt3BranchBlocks": 1
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Entre Ríos",
+      "head": "1301",
+      "physicalVT3": true,
+      "actualFamily": "103/301",
+      "rankVT3": null,
+      "physicalVT4": true,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 8,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Ciudad",
+      "head": "7654",
+      "physicalVT3": false,
+      "actualFamily": "456/654",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Provincia",
+      "head": "2073",
+      "physicalVT3": false,
+      "actualFamily": "073/370",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 14,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Córdoba",
+      "head": "4001",
+      "physicalVT3": false,
+      "actualFamily": "001/100",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 8,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Santa Fé",
+      "head": "6076",
+      "physicalVT3": true,
+      "actualFamily": "076/670",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 8,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Entre Ríos",
+      "head": "3897",
+      "physicalVT3": false,
+      "actualFamily": "798/897",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 6,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Ciudad",
+      "head": "7791",
+      "physicalVT3": false,
+      "actualFamily": "197/791",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 0,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Provincia",
+      "head": "9020",
+      "physicalVT3": false,
+      "actualFamily": "020/020",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 5,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Córdoba",
+      "head": "6204",
+      "physicalVT3": true,
+      "actualFamily": "204/402",
+      "rankVT3": null,
+      "physicalVT4": true,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 15,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Santa Fé",
+      "head": "5197",
+      "physicalVT3": false,
+      "actualFamily": "197/791",
+      "rankVT3": null,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 6,
+        "vt3": 0
+      },
+      "vt3SourceCount": 0,
+      "vt3BranchBlocks": 0
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Entre Ríos",
+      "head": "6624",
+      "physicalVT3": true,
+      "actualFamily": "426/624",
+      "rankVT3": 16,
+      "physicalVT4": false,
+      "rankVT4": null,
+      "rootEvents": {
+        "vt2": 15,
+        "vt3": 1
+      },
+      "vt3SourceCount": 1,
+      "vt3BranchBlocks": 1
+    }
+  ],
+  "provenance": {
+    "action": 38844629959,
+    "kind": "RESUMEN_POR_CABEZAS",
+    "note": "Previa con sello separado; demás turnos reconstruidos sin resultado futuro; Montevideo incluido solo como fuente física previa"
+  }
+}
