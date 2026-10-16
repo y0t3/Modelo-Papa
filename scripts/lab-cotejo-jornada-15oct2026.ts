@@ -65,7 +65,7 @@ async function main(){
    rankedTop10:{vt2:0,vt3:0,vt4:0},
    candidatesOutsideTop10:{vt2:0,vt3:0,vt4:0},
    withoutCandidate:{vt2:0,vt3:0,vt4:0},
-   heads:[]
+   heads:[] as any[]
   };
   for(const jur of jurs){
    const head=official[turn][jur];
