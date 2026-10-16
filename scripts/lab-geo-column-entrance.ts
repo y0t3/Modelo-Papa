@@ -24,7 +24,9 @@ export type ColumnRecord={
  }>;
 };
 export function inspectColumnEntrance(c:NormalCut,pools:CutPools):ColumnRecord{
- const idx=TURNOS.indexOf(c.turn);
+ const target=c.turn as Turno;
+ if(!TURNOS.includes(target))throw Error('Turno desconocido '+c.turn);
+ const idx=TURNOS.indexOf(target);
  const available=sources.slice(0,idx+1);
  const latest=available[available.length-1];
  const visited=new Set<string>(),birth=new Map<string,Source>();
@@ -84,7 +86,7 @@ export function inspectColumnEntrance(c:NormalCut,pools:CutPools):ColumnRecord{
   results.COMBINADO.families.join('|')!==results.COMBINADO_SOLO_NOCTURNA.families.join('|')||
   results.COMBINADO.families.join('|')!==results.COMBINADO_2_NOCTURNA_1_OTRA.families.join('|')))
   throw Error('Las fuentes futuras alteraron la Previa '+c.date);
- return {date:c.date,turn:c.turn,period:c.period,justAddedSource:latest,
+ return {date:c.date,turn:target,period:c.period,justAddedSource:latest,
   availableFamilies:visited.size,newFamiliesFromAddedSource,
   reinforcedFamiliesFromAddedSource,
   heads,results};
