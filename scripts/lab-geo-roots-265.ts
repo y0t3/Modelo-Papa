@@ -255,7 +255,7 @@ async function main(){
   august:tiebreak.august,septemberOctober:tiebreak.septemberOctober},null,2));
  console.log('TIEBREAK265_END');
  console.log('GEOMETRIA_FORMAS_265_START');
- console.log(JSON.stringify(shapes.summary,null,2));
+ console.log(JSON.stringify({summary:shapes.summary,ablations:shapes.ablations},null,2));
  console.log('GEOMETRIA_FORMAS_265_END');
  console.log('ROOTS265_SHA256',createHash('sha256').update(JSON.stringify(report)).digest('hex'));
 }
