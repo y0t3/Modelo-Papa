@@ -103,7 +103,23 @@ export type ShapeCut={date:string;turn:Turno;period:string;
  thirdScoreTiedFamilies:number;firstScoreTiedFamilies:number;
  ablation:Record<Ablation,{families:string[];headHits:number;doubleDiagonal:number}>;
  sourceWitnesses:Record<string,number>;zoneWitnesses:Record<string,number>;
- routeClasses:Record<string,number>;familyClasses:Record<string,number>};
+ routeClasses:Record<string,number>;familyClasses:Record<string,number>;
+ doubleDiagonal:{
+  totalRoutes:number;distinctFamilies:number;
+  top3FamiliesWithAnyPhysicalRoute:number;
+  winningHeadsWithAnyRoute:number;winningHeadsWithDoubleDiagonalRepresentative:number;
+  winningHeadsTop3WithAlternativeDoubleDiagonal:number;
+  bestDoubleDiagonal:{family:string;source:string;rank:number;score:number[];
+   comparison:'mejor'|'igual'|'inferior';anchoredEvents:number}|null;
+  matchedSameSourceAndPosition:{source:string;row:number;col:number;
+    bestDoubleDiagonalScore:number[];bestOtherScore:number[];
+    ddRootEvents:number;otherRootEvents:number;
+    comparison:'mejor'|'igual'|'inferior'}[];
+  diagnosticForced:{families:string[];hits:number;entered:string|null;
+   displaced:string|null;matchedSource:boolean};
+  diagnosticMatchedSource:{families:string[];hits:number;entered:string|null;
+   displaced:string|null};
+ };}
 export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
  historical:LaloHistorical[],view:LaloView,geo:ShadowSelection,
  winners:string[],period:string):ShapeCut{
@@ -161,6 +177,52 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
  if(!third||!first)throw Error('Menos de tres familias físicas');
  const classTop=new Set(reps.slice(0,3).map(r=>r.shape));
  const classTopWithSource=new Set(reps.slice(0,3).map(r=>groupKey(r)));
+ const ddRoutes=pool.filter(p=>p.className==='dos diagonales');
+ const ddFamilies=new Set(ddRoutes.map(p=>p.family));
+ const ddPreferred=[...ddRoutes].find(p=>!reps.slice(0,2).some(r=>r.family===p.family));
+ const ddFromThirdSource=ddRoutes.find(p=>p.source===third.source&&
+  !reps.slice(0,2).some(r=>r.family===p.family));
+ const compareDD=(a:Route,b:Route):'mejor'|'igual'|'inferior'=>{
+  const cmp=compareScore(a.score,b.score);
+  return cmp<0?'mejor':cmp>0?'inferior':'igual';
+ };
+ const ddGroup=new Map<string,{source:string;row:number;col:number;dd:Route[];other:Route[]}>();
+ for(const r of pool){
+  const k=[r.source,r.pos.row,r.pos.col].join('|');
+  let g=ddGroup.get(k);
+  if(!g){g={source:r.source,row:r.pos.row+1,col:r.pos.col+1,dd:[],other:[]};ddGroup.set(k,g)}
+  (r.className==='dos diagonales'?g.dd:g.other).push(r);
+ }
+ const matchedSameSourceAndPosition=[...ddGroup.values()].filter(g=>g.dd.length&&g.other.length)
+  .map(g=>({source:g.source,row:g.row,col:g.col,
+   bestDoubleDiagonalScore:g.dd[0].score,bestOtherScore:g.other[0].score,
+   ddRootEvents:g.dd[0].rootCount,otherRootEvents:g.other[0].rootCount,
+   comparison:compareDD(g.dd[0],g.other[0])}));
+ const originalTop=reps.slice(0,3).map(r=>r.family);
+ const force=(alt:Route|undefined)=>({
+  families:alt?[...originalTop.slice(0,2),alt.family]:originalTop,
+  hits:winners.filter(f=>(alt?[...originalTop.slice(0,2),alt.family]:originalTop).includes(f)).length,
+  entered:alt&&alt.family!==originalTop[2]?alt.family:null,
+  displaced:alt&&alt.family!==originalTop[2]?originalTop[2]:null
+ });
+ const forced=force(ddPreferred),sourceForced=force(ddFromThirdSource);
+ const ddFirst=ddRoutes[0];
+ const doubleDiagonal:ShapeCut['doubleDiagonal']={
+  totalRoutes:ddRoutes.length,distinctFamilies:ddFamilies.size,
+  top3FamiliesWithAnyPhysicalRoute:reps.slice(0,3).filter(p=>ddFamilies.has(p.family)).length,
+  winningHeadsWithAnyRoute:winners.filter(f=>ddFamilies.has(f)).length,
+  winningHeadsWithDoubleDiagonalRepresentative:winners.filter(f=>
+   familyFirst.get(f)?.className==='dos diagonales').length,
+  winningHeadsTop3WithAlternativeDoubleDiagonal:winners.filter(f=>
+   originalTop.includes(f)&&ddFamilies.has(f)).length,
+  bestDoubleDiagonal:ddFirst?{
+   family:ddFirst.family,source:ddFirst.source,
+   rank:reps.findIndex(p=>p.family===ddFirst.family)+1,score:ddFirst.score,
+   comparison:compareDD(ddFirst,third),anchoredEvents:ddFirst.rootCount}:null,
+  matchedSameSourceAndPosition,
+  diagnosticForced:{...forced,matchedSource:!!ddPreferred&&ddPreferred.source===third.source},
+  diagnosticMatchedSource:sourceForced
+ };
  const selected=reps.slice(0,3).map(r=>({
   family:r.family,source:r.source,className:r.className,zone:r.zone,row:r.pos.row+1,
   shape:r.shape,score:r.score,rootCount:r.rootCount,
@@ -188,7 +250,7 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
    sharesTopShape:all.some(q=>classTop.has(q.shape)),
    sharesTopShapeAndSource:all.some(q=>classTopWithSource.has(groupKey(q)))};
  });
- return {date,turn,period,selected,ablation,winningPhysical:winnersPhysical,physicalRoutes:pool.length,
+ return {date,turn,period,selected,ablation,doubleDiagonal,winningPhysical:winnersPhysical,physicalRoutes:pool.length,
   physicalFamilies:reps.length,
   shapesAvailable:new Set(pool.map(p=>p.shape)).size,
   thirdScoreTiedFamilies:reps.filter(p=>compareScore(p.score,third.score)===0).length,
@@ -265,6 +327,52 @@ export function shapeReport(cuts:ShapeCut[]){
    }];
   }))]
  ));
- return {ablations:ablationSummary,note:'Familias físicas ganadoras consideradas una vez por cabeza y corte. Las distintas formas posibles de una familia NO son confirmaciones independientes. El empate de score se resuelve por orden de fuente y casillas.',
+ const ddReport=Object.fromEntries(allGroups.map(([period,subset])=>{
+  const pairs=subset.flatMap(c=>c.doubleDiagonal.matchedSameSourceAndPosition);
+  const summary=(field:'diagnosticForced'|'diagnosticMatchedSource')=>{
+   const orig=subset.reduce((n,c)=>n+c.ablation.ORIGINAL.headHits,0);
+   const hits=subset.reduce((n,c)=>n+c.doubleDiagonal[field].hits,0);
+   return {original:orig,hits,delta:hits-orig,
+    changedCuts:subset.filter(c=>c.doubleDiagonal[field].entered!==null).length,
+    gains:subset.filter(c=>c.doubleDiagonal[field].hits>c.ablation.ORIGINAL.headHits)
+     .map(c=>({date:c.date,turn:c.turn,headFamilies:c.winningPhysical.filter(w=>
+       c.doubleDiagonal[field].families.includes(w.family)).map(w=>w.family),
+      entered:c.doubleDiagonal[field].entered,displaced:c.doubleDiagonal[field].displaced})),
+    losses:subset.filter(c=>c.doubleDiagonal[field].hits<c.ablation.ORIGINAL.headHits)
+     .map(c=>({date:c.date,turn:c.turn,headFamilies:c.winningPhysical.filter(w=>
+       c.ablation.ORIGINAL.families.includes(w.family)).map(w=>w.family),
+      entered:c.doubleDiagonal[field].entered,displaced:c.doubleDiagonal[field].displaced}))};
+  };
+  return [period,{
+   cuts:subset.length,
+   ddRoutes:subset.reduce((n,c)=>n+c.doubleDiagonal.totalRoutes,0),
+   ddFamiliesPerCut:subset.reduce((n,c)=>n+c.doubleDiagonal.distinctFamilies,0),
+   top3SlotsThatHaveDoubleDiagonalAlternative:subset.reduce((n,c)=>
+    n+c.doubleDiagonal.top3FamiliesWithAnyPhysicalRoute,0),
+   winningHeadsWithAnyDoubleDiagonalRoute:subset.reduce((n,c)=>
+    n+c.doubleDiagonal.winningHeadsWithAnyRoute,0),
+   winningHeadsWithDoubleDiagonalBestRepresentative:subset.reduce((n,c)=>
+    n+c.doubleDiagonal.winningHeadsWithDoubleDiagonalRepresentative,0),
+   winningTop3ThatHaveDoubleDiagonalAlternative:subset.reduce((n,c)=>
+    n+c.doubleDiagonal.winningHeadsTop3WithAlternativeDoubleDiagonal,0),
+   bestDoubleDiagonalRankTop3:subset.filter(c=>
+    (c.doubleDiagonal.bestDoubleDiagonal?.rank||999)<=3).length,
+   bestDoubleDiagonalComparedToThird:{
+    better:subset.filter(c=>c.doubleDiagonal.bestDoubleDiagonal?.comparison==='mejor').length,
+    equal:subset.filter(c=>c.doubleDiagonal.bestDoubleDiagonal?.comparison==='igual').length,
+    worse:subset.filter(c=>c.doubleDiagonal.bestDoubleDiagonal?.comparison==='inferior').length},
+   matchedExactSourceAndPosition:{
+    groups:pairs.length,
+    ddBetter:pairs.filter(p=>p.comparison==='mejor').length,
+    ddEqual:pairs.filter(p=>p.comparison==='igual').length,
+    ddWorse:pairs.filter(p=>p.comparison==='inferior').length,
+    ddHasRoots:pairs.filter(p=>p.ddRootEvents>0).length,
+    otherHasRoots:pairs.filter(p=>p.otherRootEvents>0).length
+   },
+   forcedBestDoubleDiagonal:summary('diagnosticForced'),
+   sameSourceDoubleDiagonal:summary('diagnosticMatchedSource')
+  }];
+ }));
+ return {doubleDiagonal:ddReport,ablations:ablationSummary,note:'Familias físicas ganadoras consideradas una vez por cabeza y corte. Las distintas formas posibles de una familia NO son confirmaciones independientes. El empate de score se resuelve por orden de fuente y casillas.',
   summary,cuts};
 }
