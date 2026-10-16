@@ -4,6 +4,7 @@
 // No modifica la APK, buildMotorLalo ni buildVt3Shadow.
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {examineVt3Sequences} from './lab-vt3-secuencias-emparejadas';
 import {JURS,TURNOS,diaVacio} from '../src/domain';
 import type {CabezasDia,Turno} from '../src/domain';
 import {descargarCabezas} from '../src/cabezas';
@@ -272,6 +273,7 @@ async function main(){
    nocturna: JURS.filter(j=>/^\\d{4}$/.test(d.heads.Nocturno?.[j]||'')).length
   }))
  ]));
+ const matched=examineVt3Sequences(cuts);
  const report={includedDates,protocol:{
   scope:'Hoja PRE acumulativa, cinco cortes por jornada y familia reversible VT3',
   state:'NACIMIENTO = familia inexistente en todas las fuentes anteriores; REFUERZO = familia ya existente que aparece en la nueva fuente; SIN CAMBIO = idénticos caminos anteriores',
@@ -294,8 +296,13 @@ async function main(){
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/VT3_MOVIMIENTOS_COLUMNAS_JUN_OCT_2026.json',
   JSON.stringify(report,null,2)+'\n');
+ writeFileSync('lab-results/VT3_SECUENCIAS_EMPAREJADAS_520_CORTES.json',
+  JSON.stringify(matched,null,2)+'\n');
  console.log('MOVIMIENTOS_VT3_START');
  console.log(JSON.stringify({summary,excluded,storiesCount:stories.length},null,2));
  console.log('MOVIMIENTOS_VT3_END');
+ console.log('VT3_MATCHED_START');
+ console.log(JSON.stringify({sections:matched.sections,histories:matched.histories},null,2));
+ console.log('VT3_MATCHED_END');
 }
 main().catch(e=>{console.error('MOVIMIENTOS_VT3_ERROR',e);process.exitCode=1});
