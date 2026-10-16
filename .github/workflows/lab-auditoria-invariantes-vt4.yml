@@ -1,0 +1,52 @@
+name: Laboratorio invariantes fundamentales Modelo Lalo
+on:
+  push:
+    branches: [lab/auditoria-invariantes-vt4-16oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  invariantes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comprobar tipos de toda la APK
+        run: npx tsc --noEmit
+      - name: Probar correccion de regresion VT4 en panorama
+        run: npx --yes tsx scripts/test-auditoria-invariantes-vt4.ts
+      - name: Verificar todos los invariantes estables sin cambiar motores
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in \
+            scripts/test-motor-lalo.ts \
+            scripts/test-consolidacion-lalo.ts \
+            scripts/test-respaldos-explicados.ts \
+            scripts/test-antecedentes-visuales.ts \
+            scripts/test-pronostico-papa.ts \
+            scripts/test-hoja-turnos-cabezas.ts \
+            scripts/test-zoom-pestanas.ts \
+            scripts/test-correcciones-ui-14oct.ts \
+            scripts/test-vt4-diversidad-madres.ts \
+            scripts/test-cotejo-vt4-exacto.ts \
+            scripts/test-info-fechas-atras.ts \
+            scripts/test-info-movimiento-candidatos.ts \
+            scripts/test-info-panorama-turnos.ts \
+            scripts/test-info-jornada-guia.ts \
+            scripts/test-lalo-libro-apuestas.ts
+          do
+            echo "CONTROL $file"
+            npx --yes tsx "$file"
+          done
+      - name: Rechazar importaciones de motores retirados
+        run: |
+          if grep -REn "(from ['\"][^'\"]*(predictive|analysisEngine|routeHistory|routeLife)['\"])" App.tsx src/; then
+            echo "Regresión: dependencia de motor retirado"
+            exit 1
+          fi
