@@ -7,6 +7,7 @@ import type {CabezasDia,Turno} from '../src/domain';
 import {descargarCabezas} from '../src/cabezas';
 import {buildSheet} from '../src/sheet';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
+import {auditVt3Family} from '../src/vt3Audit';
 
 const date='2026-10-15';
 const jurs=['Ciudad','Provincia','Córdoba','Santa Fé','Entre Ríos'] as const;
@@ -82,7 +83,14 @@ async function main(){
     vt3:view.ranks.vt3.find(x=>x.family===family3)?.rank||null,
     vt4:view.ranks.vt4.find(x=>x.paths.some(p=>p.value===head))?.rank||null
    };
+   const vt3Audit=auditVt3Family(before,view,turn,head);
    const entry={turn,jur,head,physical,families:ids,ranks,
+    vt3Audit:vt3Audit?{
+     status:vt3Audit.status,physicalRoutes:vt3Audit.physicalRoutes,
+     admittedRoutes:vt3Audit.admittedRoutes,unadmittedRoutes:vt3Audit.unadmittedRoutes,
+     independentRootEvents:vt3Audit.independentRootEvents,
+     priorityReasons:vt3Audit.priorityReasons,
+     explanation:vt3Audit.explanation}:null,
     rootEvents:{
      vt2:view.ranks.vt2.find(x=>x.family===family2)?.directRoots||0,
      vt3:view.ranks.vt3.find(x=>x.family===family3)?.directRoots||0
