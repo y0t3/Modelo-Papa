@@ -38,10 +38,10 @@ const tally=(rows:Cut[],kind:'geo'|'off')=>{
   cut3:0,cut5:0,cut10:0};
  for(const r of rows){
   totals.heads+=r.validHeads;
-  totals.top3+=r[kind==='geo'?'geoHit':'offHit'].top3;totals.top5+=r[kind+'Hit'].top5;totals.top10+=r[kind+'Hit'].top10;
-  totals.cut3+=Number(r[kind+'Hit'].top3>0);
-  totals.cut5+=Number(r[kind+'Hit'].top5>0);
-  totals.cut10+=Number(r[kind+'Hit'].top10>0);
+  totals.top3+=r[kind==='geo'?'geoHit':'offHit'].top3;totals.top5+=r[kind==='geo'?'geoHit':'offHit'].top5;totals.top10+=r[kind==='geo'?'geoHit':'offHit'].top10;
+  totals.cut3+=Number(r[kind==='geo'?'geoHit':'offHit'].top3>0);
+  totals.cut5+=Number(r[kind==='geo'?'geoHit':'offHit'].top5>0);
+  totals.cut10+=Number(r[kind==='geo'?'geoHit':'offHit'].top10>0);
  }
  return totals;
 };
@@ -144,8 +144,8 @@ async function main(){
    const geoHit={top3:0,top5:0,top10:0},offHit={top3:0,top5:0,top10:0};
    for(const w of winners){
     for(const n of [3,5,10] as const){
-     if(w.geometryRank!==null&&w.geometryRank<=n)geoHit['top'+n]++;
-     if(w.officialRank!==null&&w.officialRank<=n)offHit['top'+n]++;
+     if(w.geometryRank!==null&&w.geometryRank<=n)geoHit[('top'+n) as 'top3'|'top5'|'top10']++;
+     if(w.officialRank!==null&&w.officialRank<=n)offHit[('top'+n) as 'top3'|'top5'|'top10']++;
     }
    }
    const winningPhysical=winners.filter(w=>w.physical).length;
@@ -153,8 +153,8 @@ async function main(){
    const expectedNeutralPhysical={top3:0,top5:0,top10:0};
    const expectedNeutralCut={top3:0,top5:0,top10:0};
    for(const n of [3,5,10] as const){
-    expectedNeutralPhysical['top'+n]=winningPhysical*Math.min(n,pool.size)/Math.max(pool.size,1);
-    expectedNeutralCut['top'+n]=unbiasedCutProbability(pool.size,distinctWinnerPhysical,n);
+    expectedNeutralPhysical[('top'+n) as 'top3'|'top5'|'top10']=winningPhysical*Math.min(n,pool.size)/Math.max(pool.size,1);
+    expectedNeutralCut[('top'+n) as 'top3'|'top5'|'top10']=unbiasedCutProbability(pool.size,distinctWinnerPhysical,n);
    }
    all.push({
     date:current.date,turn,set:current.date<=sampleBreak?'EXPLORADO':'POSTERIOR',
