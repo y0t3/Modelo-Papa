@@ -51,7 +51,7 @@ const geo={top:[
 const selection=buildVt3Trial(official,geo);
 assert.deepEqual(selection.top.map(x=>x.family),['123','321','456','555','666']);
 assert.equal(selection.top[2].origin,'nueva');
-assert.equal(new Set(selection.top.map(x=>x.family)).size,3);
+assert.equal(new Set(selection.top.map(x=>x.family)).size,selection.top.length);
 const noNew=buildVt3Trial({
  ranks:{vt3:[shape('123','prevNocturno'),shape('789','prevNocturno')]}
 } as unknown as LaloView,geo);
