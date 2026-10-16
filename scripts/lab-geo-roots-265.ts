@@ -216,6 +216,7 @@ async function main(){
   august:summarizeTie(ties.filter(r=>r.period==='AGOSTO')),
   septemberOctober:summarizeTie(ties.filter(r=>r.period==='SEPTIEMBRE_OCTUBRE')),
   rows:ties};
+ mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/GEOMETRIA_DESEMPATE_HUELLAS_265_CORTES.json',JSON.stringify(tiebreak,null,2)+'\n');
  const report={purpose:'Huella ganadora verificada (D-1 y D-7) frente a tablas completas',
   status:'Retrospectivo sobre historia ya estudiada; no apuesta ni sello prospectivo',
