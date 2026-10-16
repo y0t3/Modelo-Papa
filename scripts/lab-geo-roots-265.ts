@@ -106,10 +106,9 @@ async function main(){
     throw Error('Fuga del resultado en '+day.date+' '+turn);
    const official=buildMotorLalo(pre,day.date,turn,historical);
    const geometry=buildVt3Shadow(pre,day.date,turn,historical,official);
-   const alternatives=Object.fromEntries((['HUELLAS_DISTANCIA',
-     'HUELLAS_EVENTOS','HUELLAS_CON_RAIZ'] as ExperimentalMode[])
-    .map(m=>[m,buildWinningRootsGeo(pre,day.date,turn,official,m)]))
-      as Record<ExperimentalMode,ReturnType<typeof buildWinningRootsGeo>>;
+   const modes:ExperimentalMode[]=['HUELLAS_DISTANCIA','HUELLAS_EVENTOS','HUELLAS_CON_RAIZ'];
+   const alternatives={} as Record<ExperimentalMode,ReturnType<typeof buildWinningRootsGeo>>;
+   for(const mode of modes)alternatives[mode]=buildWinningRootsGeo(pre,day.date,turn,official,mode);
    const basenames=official.ranks.vt3.map(f=>f.family);
    const geoNames=geometry.top.map(f=>f.family);
    const top:Record<Method,string[]>={LALO_OFICIAL:basenames.slice(0,10),
