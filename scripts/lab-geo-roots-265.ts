@@ -196,6 +196,8 @@ async function main(){
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/GEOMETRIA_FORMAS_POSICION_265_CORTES.json',
   JSON.stringify(shapes,null,2)+'\n');
+ writeFileSync('lab-results/GEOMETRIA_NORMALIZACION_265_CORTES.json',
+  JSON.stringify(shapes.normalization,null,2)+'\n');
  const all=summarize(cuts);
  const august=summarize(cuts.filter(c=>c.period==='AGOSTO'));
  const sep=summarize(cuts.filter(c=>c.period==='SEPTIEMBRE_OCTUBRE'));
@@ -257,6 +259,9 @@ async function main(){
  console.log('GEOMETRIA_FORMAS_265_START');
  console.log(JSON.stringify({summary:shapes.summary,ablations:shapes.ablations,doubleDiagonal:shapes.doubleDiagonal},null,2));
  console.log('GEOMETRIA_FORMAS_265_END');
+ console.log('GEOMETRIA_NORMALIZACION_265_START');
+ console.log(JSON.stringify(shapes.normalization.summary,null,2));
+ console.log('GEOMETRIA_NORMALIZACION_265_END');
  console.log('ROOTS265_SHA256',createHash('sha256').update(JSON.stringify(report)).digest('hex'));
 }
 main().catch(e=>{console.error('ROOTS265_ERROR',e);process.exitCode=1});
