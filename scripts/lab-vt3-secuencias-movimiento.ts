@@ -203,7 +203,7 @@ async function main(){
     const root=makeRoots(official.roots,day.date);
     const heads=JURS.filter(j=>j!=='Montevideo')
      .map(j=>({jur:j,head:day.heads[turn]?.[j]}))
-     .filter((x):x is {jur:typeof JURS[number];head:string}=>/^\d{4}$/.test(x.head||''))
+     .filter(x=>/^\d{4}$/.test(x.head||''))
      .map(x=>({...x,family:reversibleFamily(x.head.slice(-3))}));
     const count=new Map<string,number>();
     for(const h of heads)count.set(h.family,(count.get(h.family)||0)+1);
