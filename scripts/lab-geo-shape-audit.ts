@@ -98,7 +98,8 @@ export type ShapeCut={date:string;turn:Turno;period:string;
   sharesTopShapeAndSource:boolean}[];
  physicalRoutes:number;physicalFamilies:number;shapesAvailable:number;
  thirdScoreTiedFamilies:number;firstScoreTiedFamilies:number;
- sourceWitnesses:Record<string,number>;zoneWitnesses:Record<string,number>};
+ sourceWitnesses:Record<string,number>;zoneWitnesses:Record<string,number>;
+ routeClasses:Record<string,number>;familyClasses:Record<string,number>};
 export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
  historical:LaloHistorical[],view:LaloView,geo:ShadowSelection,
  winners:string[],period:string):ShapeCut{
@@ -156,7 +157,11 @@ export function inspectShapeCut(date:string,turn:Turno,pre:DailySheet,
   firstScoreTiedFamilies:reps.filter(p=>compareScore(p.score,first.score)===0).length,
   sourceWitnesses:Object.fromEntries(sources.map(s=>[s,pool.filter(p=>p.source===s).length])),
   zoneWitnesses:Object.fromEntries(['superior','central','inferior']
-   .map(z=>[z,pool.filter(p=>p.zone===z).length]))};
+   .map(z=>[z,pool.filter(p=>p.zone===z).length])),
+  routeClasses:Object.fromEntries([...new Set(pool.map(p=>p.className))]
+   .map(cls=>[cls,pool.filter(p=>p.className===cls).length])),
+  familyClasses:Object.fromEntries([...new Set(pool.map(p=>p.className))]
+   .map(cls=>[cls,new Set(pool.filter(p=>p.className===cls).map(p=>p.family)).size]))};
 }
 export function shapeReport(cuts:ShapeCut[]){
  const periods=[...new Set(cuts.map(c=>c.period))];
@@ -173,7 +178,8 @@ export function shapeReport(cuts:ShapeCut[]){
     winningSelected:subset.reduce((n,c)=>n+c.selected.filter(s=>s.className===cls&&
      c.winningPhysical.some(w=>w.family===s.family&&w.win)).length,0),
     physicalWinningBest:winners.filter(w=>w.bestClass===cls).length,
-    availableRouteDenominator:subset.reduce((n,c)=>n,0)}]));
+    availableRouteDenominator:subset.reduce((n,c)=>n+(c.routeClasses[cls]||0),0),
+    availableFamilyDenominator:subset.reduce((n,c)=>n+(c.familyClasses[cls]||0),0)}]));
   return [label,{
    days:new Set(subset.map(c=>c.date)).size,cuts:subset.length,
    selectedSlots:selected.length,physicalWinningFamilies:winners.length,
