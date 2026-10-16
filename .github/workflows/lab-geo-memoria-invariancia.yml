@@ -1,0 +1,23 @@
+name: Laboratorio invariancia memoria geometrica
+on:
+  push:
+    branches:
+      - lab/geo-invariancia-memoria-posicional-16oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comprobar TypeScript
+        run: npx tsc --noEmit
+      - name: Reemplazar cifras históricas y contrastar ranking
+        run: npx --yes tsx scripts/test-geo-memoria-invariancia.ts
