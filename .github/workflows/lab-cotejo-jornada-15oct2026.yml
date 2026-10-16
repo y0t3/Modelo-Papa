@@ -1,0 +1,30 @@
+name: Cotejo integral 15oct sin fuga
+on:
+  push:
+    branches:
+      - lab/cotejo-integral-jornada-15oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Verificar tipos
+        run: npx tsc --noEmit
+      - name: Ejecutar cotejo sin fuga temporal
+        run: npx --yes tsx scripts/lab-cotejo-jornada-15oct2026.ts
+      - name: Guardar datos del cotejo
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: COTEJO-15OCT2026
+          path: lab-results/COTEJO_15OCT2026.json
+          if-no-files-found: warn
