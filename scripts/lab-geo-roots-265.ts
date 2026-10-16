@@ -12,6 +12,8 @@ import type {LaloHistorical} from '../src/motorLalo';
 import {buildVt3Shadow,allPhysicalVt3} from '../src/vt3Shadow';
 import {buildWinningRootsGeo} from './lab-geo-winning-roots';
 import type {ExperimentalMode} from './lab-geo-winning-roots';
+import {localTieBreak} from './lab-geo-tiebreak';
+import type {TieMethod} from './lab-geo-tiebreak';
 
 type Method='LALO_OFICIAL'|'GEOMETRIA_COMPLETA'|ExperimentalMode;
 const methods:Method[]=['LALO_OFICIAL','GEOMETRIA_COMPLETA',
@@ -86,6 +88,10 @@ function exclusives(cuts:Cut[],other:Method){
 async function main(){
  const valid=await download(),byDate=new Map(valid.map(d=>[d.date,d]));
  const cuts:Cut[]=[];
+ type TieRow={date:string;turn:Turno;period:'AGOSTO'|'SEPTIEMBRE_OCTUBRE';
+  winners:string[];methods:Record<TieMethod,string[]>;evidence:ReturnType<typeof localTieBreak>['evidence'];
+  reasons:Record<TieMethod,string>;hits:Record<TieMethod,number>};
+ const ties:TieRow[]=[];
  for(const day of valid.filter(x=>x.date>=from&&x.date<=to)){
   const before=valid.filter(x=>x.date<day.date);
   if(before.length<2)continue;
@@ -133,6 +139,18 @@ async function main(){
      ranks:Object.fromEntries(methods.map(m=>[m,rank(top[m],family)])) as Record<Method,number|null>});
    }
    if(!winners.length)continue;
+   const tie=localTieBreak(geometry.top,official);
+   const list=['ORIGINAL','VECINO_4_MISMA_FORMA','VECINO_5_MISMA_FORMA_2_RAICES',
+    'VECINO_5_MISMA_FUENTE_2_RAICES'] as TieMethod[];
+   const tieHits=Object.fromEntries(list.map(method=>[
+    method,winners.filter(w=>tie.result[method].includes(w.family)).length
+   ])) as Record<TieMethod,number>;
+   if(tieHits.ORIGINAL!==winners.filter(w=>w.ranks.GEOMETRIA_COMPLETA!==null&&
+     (w.ranks.GEOMETRIA_COMPLETA as number)<=3).length)
+    throw Error('El control de desempate alteró el Top3 original');
+   ties.push({date:day.date,turn,period:day.date<=periodSplit?'AGOSTO':'SEPTIEMBRE_OCTUBRE',
+    winners:winners.map(w=>w.family),methods:tie.result,evidence:tie.evidence,
+    reasons:tie.reasons,hits:tieHits});
    // Las formas/raíces actuales deben coincidir físicamente con la hoja PRE;
    // las antiguas provienen ÚNICAMENTE de raíces ya verificadas por Lalo.
    for(const m of ['HUELLAS_DISTANCIA','HUELLAS_EVENTOS','HUELLAS_CON_RAIZ'] as const)
@@ -179,6 +197,26 @@ async function main(){
  if(august.methods.GEOMETRIA_COMPLETA.heads!==1||sep.methods.GEOMETRIA_COMPLETA.heads!==10||
   august.methods.LALO_OFICIAL.heads!==1||sep.methods.LALO_OFICIAL.heads!==5)
   throw Error('No se reprodujeron exactamente los 265 cortes del baseline');
+ const methodsT=['ORIGINAL','VECINO_4_MISMA_FORMA','VECINO_5_MISMA_FORMA_2_RAICES',
+   'VECINO_5_MISMA_FUENTE_2_RAICES'] as TieMethod[];
+ const summarizeTie=(rows:TieRow[])=>Object.fromEntries(methodsT.map(m=>[m,{
+  cuts:rows.length,headHits:rows.reduce((n,r)=>n+r.hits[m],0),
+  cutsWithHit:rows.filter(r=>r.hits[m]>0).length,
+  changedCuts:rows.filter(r=>r.methods[m][2]!==r.methods.ORIGINAL[2]).length,
+  improved:rows.filter(r=>r.hits[m]>r.hits.ORIGINAL)
+    .map(r=>({date:r.date,turn:r.turn,headGain:r.hits[m]-r.hits.ORIGINAL,
+     replaced:r.methods.ORIGINAL[2],entered:r.methods[m][2],evidence:r.evidence.slice(2)})),
+  worsened:rows.filter(r=>r.hits[m]<r.hits.ORIGINAL)
+    .map(r=>({date:r.date,turn:r.turn,headLoss:r.hits.ORIGINAL-r.hits[m],
+     replaced:r.methods.ORIGINAL[2],entered:r.methods[m][2],evidence:r.evidence.slice(2)}))
+ }]));
+ const tiebreak={protocol:'Intervención limitada a puesto tercero contra cuarto/quinto, mismo testigo físico y respaldo independiente real; retrospectivo',
+  sample:{cuts:ties.length,days:new Set(ties.map(x=>x.date)).size},
+  methods:methodsT,all:summarizeTie(ties),
+  august:summarizeTie(ties.filter(r=>r.period==='AGOSTO')),
+  septemberOctober:summarizeTie(ties.filter(r=>r.period==='SEPTIEMBRE_OCTUBRE')),
+  rows:ties};
+ writeFileSync('lab-results/GEOMETRIA_DESEMPATE_HUELLAS_265_CORTES.json',JSON.stringify(tiebreak,null,2)+'\n');
  const report={purpose:'Huella ganadora verificada (D-1 y D-7) frente a tablas completas',
   status:'Retrospectivo sobre historia ya estudiada; no apuesta ni sello prospectivo',
   sample:{start:from,end:to,days:all.days,cuts:all.cuts,heads:all.heads},
@@ -202,6 +240,10 @@ async function main(){
  console.log(JSON.stringify({sample:report.sample,all,august,sep,
   stability:report.stability,exclusive:report.exclusiveVsOriginal},null,2));
  console.log('ROOTS265_END');
+ console.log('TIEBREAK265_START');
+ console.log(JSON.stringify({sample:tiebreak.sample,all:tiebreak.all,
+  august:tiebreak.august,septemberOctober:tiebreak.septemberOctober},null,2));
+ console.log('TIEBREAK265_END');
  console.log('ROOTS265_SHA256',createHash('sha256').update(JSON.stringify(report)).digest('hex'));
 }
 main().catch(e=>{console.error('ROOTS265_ERROR',e);process.exitCode=1});
