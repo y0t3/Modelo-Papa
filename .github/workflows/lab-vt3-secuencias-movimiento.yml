@@ -1,0 +1,30 @@
+name: Laboratorio evolucion fisica VT3
+on:
+  push:
+    branches:
+      - lab/vt3-secuencias-columnas-510-16oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  movimientos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comprobar tipos TypeScript
+        run: npx tsc --noEmit
+      - name: Reconstruir movimiento fisico PRE de junio a octubre
+        run: npx --yes tsx scripts/lab-vt3-secuencias-movimiento.ts
+      - name: Guardar auditoria y peliculas de recorridos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-VT3-SECUENCIAS-JUN-OCT-2026
+          path: lab-results/VT3_MOVIMIENTOS_COLUMNAS_JUN_OCT_2026.json
+          if-no-files-found: warn
