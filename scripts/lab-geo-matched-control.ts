@@ -13,6 +13,7 @@ export type RouteCandidate={family:string;source:SourceId;shape:string;cells:str
 export type CutProfile={
  date:string;turn:Turno;headFamilies:string[];
  top3:{family:string;source:SourceId;shape:string;cells:string[];sameSourceCandidates:number;sameShapeCandidates:number}[];
+ top10:{family:string;source:SourceId;cells:string[]}[];
  routes:RouteCandidate[];
  distinctFamilyCount:number;
  distinctFamiliesBySource:Record<string,number>;
@@ -60,7 +61,7 @@ export function profileCut(date:string,turn:Turno,sheet:DailySheet,
    r.shape===t.shape&&r.cells.join('>')===t.cells.join('>')))
   throw new Error('La huella elegida no está en la hoja: '+date+' '+turn+' '+t.family);
  return {
-  date,turn,headFamilies,top3:leaders,routes,
+  date,turn,headFamilies,top3:leaders,top10:top.map(t=>({family:t.family,source:t.source,cells:t.cells})),routes,
   distinctFamilyCount:families.size,
   distinctFamiliesBySource:Object.fromEntries([...distinctBySource].map(([k,v])=>[k,v.size])),
   pathsPerTop3:leaders.map(t=>routes.filter(r=>r.family===t.family).length),
