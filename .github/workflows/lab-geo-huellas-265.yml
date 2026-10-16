@@ -2,7 +2,7 @@ name: Laboratorio 265 cortes huellas ganadoras
 on:
   push:
     branches:
-      - lab/geo-normalizacion-espacial-265-16oct2026
+      - lab/geo-aporte-columnas-265-16oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -31,4 +31,5 @@ jobs:
             lab-results/GEOMETRIA_DESEMPATE_HUELLAS_265_CORTES.json
             lab-results/GEOMETRIA_FORMAS_POSICION_265_CORTES.json
             lab-results/GEOMETRIA_NORMALIZACION_265_CORTES.json
+            lab-results/GEOMETRIA_APORTE_COLUMNAS_265_CORTES.json
           if-no-files-found: warn
