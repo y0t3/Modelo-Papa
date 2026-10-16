@@ -16,6 +16,7 @@ import {buildVt3Variant} from './lab-geo-variants';
 import type {GeoVariant} from './lab-geo-variants';
 import {analyzeGeometryMemory,neutralComparison,profileCut,frozenPreviaComparison} from './lab-geo-matched-control';
 import type {CutProfile} from './lab-geo-matched-control';
+import {studyIndependentSources} from './lab-geo-source-reinforcement';
 
 const jurs=JURS.filter(x=>x!=='Montevideo');
 const start='2026-09-15',end='2026-10-15';
@@ -304,6 +305,10 @@ async function main(){
   return [m,{difference:summaryExp.all.byMethod[m].headHits-summaryExp.all.byMethod.OFICIAL.headHits,
    descriptive95:[sorted[Math.floor(.025*sorted.length)],sorted[Math.floor(.975*sorted.length)]]}];
  }));
+ const reinforcement=studyIndependentSources(matchedProfiles);
+ mkdirSync('lab-results',{recursive:true});
+ writeFileSync('lab-results/GEOMETRIA_REFUERZO_FUENTES_15SEP_15OCT2026.json',
+  JSON.stringify(reinforcement,null,2));
  const memory=analyzeGeometryMemory(matchedProfiles);
  const frozenPrevia=frozenPreviaComparison(matchedProfiles);
  const neutral=neutralComparison(matchedProfiles,2500);
@@ -363,6 +368,9 @@ async function main(){
  },neutral,byPeriod,frozenPrevia:{all:frozenPrevia.all,afterPrevia:frozenPrevia.afterPrevia,
    explored:frozenPrevia.explored,later:frozenPrevia.later,byTurn:frozenPrevia.byTurn}},null,2));
  console.log('GEO_MEMORIA_NEUTRAL_END');
+ console.log('GEO_REFUERZO_FUENTES_START');
+ console.log(JSON.stringify(reinforcement.summary,null,2));
+ console.log('GEO_REFUERZO_FUENTES_END');
  console.log('SHA256',createHash('sha256').update(JSON.stringify(report)).digest('hex'));
 }
 main().catch(e=>{console.error('RETRO_ERROR',e);process.exitCode=1});
