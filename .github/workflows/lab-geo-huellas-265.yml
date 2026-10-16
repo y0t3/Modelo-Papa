@@ -1,8 +1,8 @@
-name: Laboratorio 265 cortes huellas ganadoras
+name: Laboratorio huellas ganadoras junio julio
 on:
   push:
     branches:
-      - lab/vt3-nacidas-raices-d7-265-16oct2026
+      - lab/vt3-nacidas-d7-validacion-junio-julio-16oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -27,10 +27,10 @@ jobs:
         with:
           name: HUELLAS-GANADORAS-265-CORTES
           path: |
-            lab-results/GEOMETRIA_HUELLAS_GANADORAS_265_CORTES.json
-            lab-results/GEOMETRIA_DESEMPATE_HUELLAS_265_CORTES.json
-            lab-results/GEOMETRIA_FORMAS_POSICION_265_CORTES.json
-            lab-results/GEOMETRIA_NORMALIZACION_265_CORTES.json
-            lab-results/GEOMETRIA_APORTE_COLUMNAS_265_CORTES.json
-            lab-results/VT3_NACIDAS_RAICES_D7_265_CORTES.json
+            lab-results/GEOMETRIA_HUELLAS_GANADORAS_JUN_JUL_CORTES.json
+            lab-results/GEOMETRIA_DESEMPATE_HUELLAS_JUN_JUL_CORTES.json
+            lab-results/GEOMETRIA_FORMAS_POSICION_JUN_JUL_CORTES.json
+            lab-results/GEOMETRIA_NORMALIZACION_JUN_JUL_CORTES.json
+            lab-results/GEOMETRIA_APORTE_COLUMNAS_JUN_JUL_CORTES.json
+            lab-results/VT3_NACIDAS_RAICES_D7_JUN_JUL_CORTES.json
           if-no-files-found: warn
