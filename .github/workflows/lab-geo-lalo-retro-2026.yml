@@ -1,0 +1,30 @@
+name: Laboratorio geometría vs Lalo histórico
+on:
+  push:
+    branches:
+      - lab/geometria-completa-vs-lalo-historico-16oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Verificar TypeScript
+        run: npx tsc --noEmit
+      - name: Reconstruir PRE anteriores con ambos motores
+        run: npx --yes tsx scripts/lab-geo-lalo-retro-2026.ts
+      - name: Guardar auditoría detallada
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-GEOMETRIA-LALO-HISTORICO-2026
+          path: lab-results/GEOMETRIA_LALO_RETRO_15SEP_15OCT2026.json
+          if-no-files-found: warn
