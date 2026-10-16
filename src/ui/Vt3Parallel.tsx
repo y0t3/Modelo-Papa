@@ -100,7 +100,7 @@ const s=StyleSheet.create({
  title:{fontSize:14,fontWeight:'900'},note:{fontSize:11,lineHeight:17,marginTop:6},
  columns:{flexDirection:'row',gap:5,marginTop:12},
  column:{flex:1,borderWidth:1,borderRadius:9,padding:5,minWidth:0},
- sub:{fontSize:11,fontWeight:'900'},family:{fontSize:10,marginTop:5,fontWeight:'800'}
+ sub:{fontSize:11,fontWeight:'900'},family:{fontSize:10,marginTop:5,fontWeight:'800'},
  saved:{borderRadius:9,padding:10,marginTop:10},
  button:{borderRadius:8,padding:12,marginTop:12,alignItems:'center'}
 });
