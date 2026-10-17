@@ -12,6 +12,7 @@ import {buildSheet} from '../src/sheet';
 import type {SourceId} from '../src/sheet';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
+import {contrastPhysicalFamilies} from './lab-vt3-control-raiz-nacimiento';
 import type {LaloHistorical,RootRef} from '../src/motorLalo';
 
 const ranges=[['2026-06-01','2026-07-31','JUNIO_JULIO'],
@@ -25,8 +26,9 @@ type Family={family:string;firstSource:SourceId;sources:SourceId[];paths:Route[]
  shapes:string[]};
 type Snapshot=Map<string,Family>;
 type RecordRow={family:string;status:Stage;firstSource:SourceId;
- sourceCount:number;routeCount:number;shapeCount:number;newPaths:number;
+ sourceCount:number;routeCount:number;physicalRouteCount:number;shapeCount:number;newPaths:number;
  newShapes:number;sourceIncorporated:SourceId;d1Roots:number;d7Roots:number;
+ directRoots:number;branchBlocks:number;admitted:boolean;officialRank:number|null;
  winnerHeads:number;top3Lalo:boolean;top3Geo:boolean};
 type Cut={date:string;period:string;turn:Turno;sourceIncorporated:SourceId;
  heads:number;physicalWinningHeads:number;physicallyAvailableFamilies:number;
@@ -223,6 +225,9 @@ async function main(){
      const priorFamily=priorSnapshot?.get(f.family);
      if(priorFamily)previousPathsEqual(priorFamily,f);
      const currentColPaths=f.paths.filter(p=>p.source===latest);
+     const officialFamily=official.ranks.vt3.find(x=>x.family===f.family);
+     const physicalRouteCount=new Set(f.paths.map(p=>p.source+'|'+
+      [p.cells.join('>'),[...p.cells].reverse().join('>')].sort()[0])).size;
      const earlierShapes=new Set(priorFamily?.shapes||[]);
      const newShapes=[...new Set(currentColPaths.map(p=>p.shape))]
       .filter(shape=>!earlierShapes.has(shape));
@@ -238,9 +243,11 @@ async function main(){
       for(const x of refs?.d7||[])evidenceD7.add(x);
      }
      rows.push({family:f.family,status,firstSource:f.firstSource,
-      sourceCount:f.sources.length,routeCount:f.paths.length,shapeCount:f.shapes.length,
+      sourceCount:f.sources.length,routeCount:f.paths.length,physicalRouteCount,shapeCount:f.shapes.length,
       newPaths:status==='SIN_CAMBIO'?0:currentColPaths.length,newShapes:newShapes.length,
       sourceIncorporated:latest,d1Roots:evidenceD1.size,d7Roots:evidenceD7.size,
+      directRoots:officialFamily?.directRoots||0,branchBlocks:officialFamily?.branchBlocks||0,
+      admitted:!!officialFamily,officialRank:officialFamily?.rank??null,
       winnerHeads:count.get(f.family)||0,
       top3Lalo:rankedOfficial.has(f.family),top3Geo:rankedGeo.has(f.family)});
     }
@@ -283,7 +290,8 @@ async function main(){
   return [date,{sourceDate:prior.date,night:prior.heads.Nocturno.Montevideo,
    montevideoPlus11:buildSheet(diaVacio(),prior.heads).columns[0].values[5]}];
  }));
- const report={includedDates,realBaseForTargets,protocol:{
+ const controlled=contrastPhysicalFamilies(cuts);
+ const report={includedDates,realBaseForTargets,controlled,protocol:{
   scope:'Hoja PRE acumulativa, cinco cortes por jornada y familia reversible VT3',
   state:'NACIMIENTO = familia inexistente en todas las fuentes anteriores; REFUERZO = familia ya existente que aparece en la nueva fuente; SIN CAMBIO = idénticos caminos anteriores',
   roots:'Huellas ganadoras de cabezas previas D−1 y D−7; solo misma forma/fuente, no equivale a repetir cifra',
@@ -293,11 +301,15 @@ async function main(){
  },summary:summarize(cuts),excluded,storiesCount:stories.length,
   cuts:cuts.map(({rows,...rest})=>({...rest,
    candidates:rows.map(r=>({family:r.family,state:r.status,origin:r.firstSource,
-    sources:r.sourceCount,paths:r.routeCount,shapes:r.shapeCount,
+    sources:r.sourceCount,paths:r.routeCount,physicalPaths:r.physicalRouteCount,
+    admitted:r.admitted,directRoots:r.directRoots,branchBlocks:r.branchBlocks,
+    officialRank:r.officialRank,shapes:r.shapeCount,
     addedPaths:r.newPaths,addedShapes:r.newShapes,d1:r.d1Roots,d7:r.d7Roots,
     win:r.winnerHeads,geoTop:r.top3Geo,laloTop:r.top3Lalo}))})),
   stories};
  const summary=report.summary;
+ if(controlled.sample.cuts!==520||controlled.sample.physicallyAvailableWinners!==654)
+  throw Error('Corpus corregido cambió: '+JSON.stringify(controlled.sample));
  if(summary.JUNIO_JULIO.cuts<245||summary.JUNIO_JULIO.cuts>275||
   summary.AGOSTO_OCTUBRE.cuts!==265)
   throw Error('Muestra incompatible con los dos periodos previstos: '+JSON.stringify({
@@ -305,6 +317,9 @@ async function main(){
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/VT3_MOVIMIENTOS_FUENTE_VERIFICADA_JUN_OCT_2026.json',
   JSON.stringify(report,null,2)+'\n');
+ console.log('CONTROL_GRUPOS_VT3_START');
+ console.log(JSON.stringify({sample:controlled.sample,sections:controlled.sections,byTurn:controlled.byTurn},null,2));
+ console.log('CONTROL_GRUPOS_VT3_END');
  console.log('MOVIMIENTOS_VT3_START');
  console.log(JSON.stringify({summary,excluded,storiesCount:stories.length,realBaseForTargets},null,2));
  console.log('MOVIMIENTOS_VT3_END');
