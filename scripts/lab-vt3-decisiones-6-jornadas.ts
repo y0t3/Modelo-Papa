@@ -12,6 +12,8 @@ import type {SourceId} from '../src/sheet';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
 import type {LaloFamily,LaloHistorical} from '../src/motorLalo';
+import {verifiedShapes,analyzeNonAdmitted,compareFeatures,sumFeatureControls} from './lab-frontera-vt3-figuras-reales';
+import type {NonAdmittedRow,Control,Feature} from './lab-frontera-vt3-figuras-reales';
 
 const targetDates=['2026-10-10','2026-10-12','2026-10-13',
  '2026-10-14','2026-10-15','2026-10-16'];
@@ -113,6 +115,11 @@ async function main(){
  for(let i=1;i<drawDays.length;i++)sheets.set(drawDays[i].date,
   buildSheet(drawDays[i].heads,drawDays[i-1].heads));
  const cuts:Cut[]=[];
+ const borderCuts:{date:string;turn:Turno;rows:NonAdmittedRow[];
+  controls:Record<Feature,Control>;physicalWinnerHeads:number;
+  nonAdmittedWinnerHeads:number;inputSourceDays:string[]}[]=[];
+ const historyMarked=new Map([...sheets.entries()].map(([date,sheet])=>
+  [date,verifiedShapes(sheet,date)]));
  for(const date of targetDates){
   const day=byDate.get(date)!;
   const index=drawIndex.get(date)!;
@@ -163,6 +170,27 @@ async function main(){
       sources:official.sourceCount,blocks:official.physicalBlocks,
       state:official.state}:null});
    }
+   // Comprobaciones PRE estrictas: historia hasta D−1 (6 jornadas reales)
+   // y cabezas del mismo día en turnos ANTERIORES, jamás el turno objetivo.
+   const oldDraws=drawDays.slice(Math.max(0,index-6),index);
+   const history=oldDraws.flatMap(d=>historyMarked.get(d.date)||[]);
+   if(history.some(x=>x.date>=date))throw Error('Fuga de futuro histórico');
+   const earlier=verifiedShapes(pre,date);
+   if(earlier.some(e=>TURNOS.indexOf(e.turn)>=idx))
+    throw Error('Fuga de cabeza actual en marcas previas');
+   const unadmitted=analyzeNonAdmitted({
+    physical,admitted:new Set(model.ranks.vt3.map(f=>f.family)),
+    winnerFamilies:eligibleHeads.filter(h=>!h.admitted).map(h=>h.family),
+    historical:history,earlierToday:earlier,newestSource:sources[idx]});
+   const featureControl=compareFeatures(unadmitted);
+   const absent=eligibleHeads.filter(h=>!h.admitted).length;
+   if(unadmitted.reduce((n,x)=>n+x.hit,0)!==absent)
+    throw Error('Se contaron cabezas no formables o se perdió algún VT3 físico');
+   if(unadmitted.some(x=>x.currentPaths.length===0))
+    throw Error('Candidato VT3 sin testigo físico');
+   borderCuts.push({date,turn,rows:unadmitted,controls:featureControl,
+    physicalWinnerHeads:eligibleHeads.length,
+    nonAdmittedWinnerHeads:absent,inputSourceDays:oldDraws.map(x=>x.date)});
    const hitMap=new Map<string,number>();
    for(const h of eligibleHeads)hitMap.set(h.family,(hitMap.get(h.family)||0)+1);
    const rankedFamilyRows=model.ranks.vt3.map(f=>({
@@ -303,6 +331,55 @@ async function main(){
   };
  };
  const total=totals(cuts);
+ const borderSummary=(records:typeof borderCuts)=>{
+  const controls=sumFeatureControls(records.map(x=>x.controls));
+  return {cuts:records.length,
+   physicalHeads:records.reduce((n,c)=>n+c.physicalWinnerHeads,0),
+   unadmittedPhysicalHeads:records.reduce((n,c)=>n+c.nonAdmittedWinnerHeads,0),
+   unadmittedPhysicalFamilies:records.reduce((n,c)=>n+c.rows.length,0),
+   controls,
+   winningExamples:records.flatMap(c=>c.rows.filter(x=>x.hit>0).map(r=>({
+    date:c.date,turn:c.turn,family:r.family,heads:r.hit,
+    firstSource:r.source,sources:r.sourceCount,physicalRoutes:r.routes,
+    onlyLatestSource:r.onlyLatestSource,
+    previouslyWinningShapeSameSource:r.historySameSource,
+    previouslyWinningShapeOtherSource:r.historyOtherSource,
+    earlierTodayVerifiedShape:r.earlierTodayShape,
+    historicalEvents:r.historicalEventCount,
+    oldWitnesses:r.prevWinningFigures.slice(0,4),
+    presentPaths:r.currentPaths.slice(0,4)
+   })))
+  };
+ };
+ const borderFull={protocol:{
+  exactPeriod:targetDates,
+  admitted:'Fuera del ranking oficial; sólo familias VT3 físicas NO admitidas',
+  control:'Todas las demás familias VT3 no admitidas que también pueden formarse físicamente en cada PRE',
+  evidence:'Figura geométrica previamente marcada por cabezas completas realmente sorteadas, no valores heredados',
+  chronology:'6 jornadas anteriores más marcas reales de turnos previos del día; sin POST objetivo',
+  disclaimer:'Contraste exploratorio retrospectivo, seis jornadas reutilizadas, sin PRE prospectivo sellado'
+ },total:borderSummary(borderCuts),
+  byPeriod:{
+   OCT_10_13:borderSummary(borderCuts.filter(x=>x.date<='2026-10-13')),
+   OCT_14_16:borderSummary(borderCuts.filter(x=>x.date>='2026-10-14'))
+  },
+  byTurn:Object.fromEntries(TURNOS.map(t=>[t,borderSummary(borderCuts.filter(x=>x.turn===t))])),
+  cuts:borderCuts};
+ mkdirSync('lab-results',{recursive:true});
+ writeFileSync('lab-results/FRONTERA_VT3_NO_ADMITIDAS_6_JORNADAS.json',
+  JSON.stringify(borderFull,null,2)+'\n');
+ console.log('FRONTERA_NO_ADMITIDAS_INICIO');
+ console.log(JSON.stringify({
+  protocol:borderFull.protocol,total:borderFull.total,
+  byPeriod:borderFull.byPeriod,
+  byTurn:Object.fromEntries(TURNOS.map(t=>[t,{
+   cuts:borderFull.byTurn[t].cuts,
+   unadmittedPhysicalHeads:borderFull.byTurn[t].unadmittedPhysicalHeads,
+   families:borderFull.byTurn[t].unadmittedPhysicalFamilies,
+   controls:borderFull.byTurn[t].controls
+  }]))
+ },null,2));
+ console.log('FRONTERA_NO_ADMITIDAS_FIN');
  const report={protocol:{
   period:targetDates,mode:'RECONSTRUCCION_HISTORICA_SIN_PRE_SELLADO',
   eligible:'Cabezas con VT3 formado físicamente dentro de columna +11, otras no entran en numerador ni denominador analítico',
