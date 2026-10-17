@@ -252,6 +252,12 @@ async function main(){
  type DerivedScores=Record<DerivedMode,Record<DerivedKind,{
    count:number;top3:number;top5:number;top6:number;top10:number;
    firstFamilies:string[];matchedHeads:{head:string;family:string;position:number}[]}>>;
+ type NightMix='LALO3_CON3'|'CON3_LALO3'|'LALO4_CON2'|'CON4_LALO2';
+ const nightMixes:NightMix[]=['LALO3_CON3','CON3_LALO3','LALO4_CON2','CON4_LALO2'];
+ const nightCuts:{date:string;period:string;heads:string[];
+  official:number;connected:number;both:number;onlyOfficial:number;onlyConnected:number;
+  mix:Record<NightMix,number>;families:{official:string[];connected:string[]};
+  noLongerPhysical:number}[]=[];
  const networkCuts:{date:string;period:string;turn:Turno;
   baseline:{top3:number;top5:number;top6:number;top10:number};
   prefer:{top3:number;top5:number;top6:number;top10:number};
@@ -697,6 +703,36 @@ async function main(){
      findPaths(c.values,h.slice(-2)).length>0)).length;
     const physicalVt4=actualHeads.filter(h=>visibleCols.some(c=>
      findPaths(c.values,h).length>0)).length;
+    if(turn==='Nocturno'){
+     const officialTop=daughterRankings.LALO.vt2.map(x=>x.family);
+     const connectedTop=daughterRankings.CONECTADAS_DERIVADA.vt2.map(x=>x.family);
+     const handoff=(first:string[],a:number,second:string[],b:number)=>{
+      const out:string[]=[];
+      for(const f of first.slice(0,a))if(!out.includes(f))out.push(f);
+      for(const f of second.slice(0,b))if(!out.includes(f))out.push(f);
+      for(const f of [...first,...second])if(out.length<6&&!out.includes(f))out.push(f);
+      return out.slice(0,6);
+     };
+     const score=(families:string[])=>actualHeads.filter(h=>families.includes(
+      reversibleFamily(h.slice(-2)))).length;
+     const isL=(h:string)=>officialTop.slice(0,6).includes(reversibleFamily(h.slice(-2)));
+     const isC=(h:string)=>connectedTop.slice(0,6).includes(reversibleFamily(h.slice(-2)));
+     nightCuts.push({date:day.date,period,heads:actualHeads,
+      official:actualHeads.filter(isL).length,connected:actualHeads.filter(isC).length,
+      both:actualHeads.filter(h=>isL(h)&&isC(h)).length,
+      onlyOfficial:actualHeads.filter(h=>isL(h)&&!isC(h)).length,
+      onlyConnected:actualHeads.filter(h=>!isL(h)&&isC(h)).length,
+      mix:{
+       LALO3_CON3:score(handoff(officialTop,3,connectedTop,3)),
+       CON3_LALO3:score(handoff(connectedTop,3,officialTop,3)),
+       LALO4_CON2:score(handoff(officialTop,4,connectedTop,2)),
+       CON4_LALO2:score(handoff(connectedTop,4,officialTop,2))
+      },
+      families:{official:officialTop.slice(0,6),connected:connectedTop.slice(0,6)},
+      noLongerPhysical:actualHeads.filter(h=>!visibleCols.some(c=>
+       findPaths(c.values,h.slice(-2)).length>0)).length
+     });
+    }
     derivedCuts.push({date:day.date,period,turn,heads:actualHeads,
      physicalVt2,physicalVt4,scores:derivedScores});
     // Sensibilidad temporal: no se ajusta el algoritmo ni se leen cabezas POST.
@@ -903,7 +939,7 @@ async function main(){
    figureIdentity:summarizeFigures(figureCuts.filter(x=>x.turn===t)),
    connected:summarizeConnected(connectedCuts.filter(x=>x.turn===t))}];
  })),episodeComparisons,episodeExamples,checksums:dataHashes,
- cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts,derivedCuts,networkCuts};
+ cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts,derivedCuts,networkCuts,nightCuts};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_'+(extra16?'525':'520')+'.json',
   JSON.stringify(report,null,2)+'\n');
@@ -1174,6 +1210,23 @@ async function main(){
     vt4:{top3:x.scores[mode].vt4.top3,top6:x.scores[mode].vt4.top6,
      families:x.scores[mode].vt4.firstFamilies.slice(0,6)}}]))
   }))}:null;
+ const nocturnaReport=Object.fromEntries(['JUNIO_JULIO','AGOSTO_OCTUBRE','TOTAL'].map(period=>{
+  const xs=nightCuts.filter(x=>period==='TOTAL'||x.period===period);
+  return [period,{
+   cuts:xs.length,heads:xs.reduce((n,x)=>n+x.heads.length,0),
+   official:xs.reduce((n,x)=>n+x.official,0),
+   connected:xs.reduce((n,x)=>n+x.connected,0),
+   overlap:xs.reduce((n,x)=>n+x.both,0),
+   officialOnly:xs.reduce((n,x)=>n+x.onlyOfficial,0),
+   connectedOnly:xs.reduce((n,x)=>n+x.onlyConnected,0),
+   noPhysical:xs.reduce((n,x)=>n+x.noLongerPhysical,0),
+   mix:Object.fromEntries(nightMixes.map(m=>[m,xs.reduce((n,x)=>n+x.mix[m],0)])),
+   exampleOfUniqueConnected:xs.flatMap(x=>x.heads.filter(h=>
+    x.families.connected.includes(reversibleFamily(h.slice(-2)))&&
+    !x.families.official.includes(reversibleFamily(h.slice(-2))))
+     .map(head=>({date:x.date,head,family:reversibleFamily(head.slice(-2))}))).slice(0,9)
+  }];
+ }));
  const networkReport=Object.fromEntries(['JUNIO_JULIO','AGOSTO_OCTUBRE','TOTAL'].map(period=>{
   const v=networkCuts.filter(x=>period==='TOTAL'||x.period===period);
   const stats=(k:'baseline'|'prefer'|'exclusive')=>({
@@ -1199,7 +1252,7 @@ async function main(){
   connectedBaseline:'CONECTADAS_DERIVADA toma los primeros 10 testigos de configuraciones ganadoras solapadas reproducidas en otra fuente.',
   protocol:'Todas las madres se eligen ANTES de conocer la cabeza objetivo; los resultados futuros solo se usan para evaluar.'
  },periods:derivedReport,byTurn:derivedByTurn,byPeriodTurn:derivedByPeriodTurn,
- network:networkReport,singleDay:derivedSingleDay},null,2));
+ network:networkReport,nocturna:nocturnaReport,singleDay:derivedSingleDay},null,2));
  console.log('LAB_CONECTADAS_VT2_VT4_FIN');
  console.log('CONFIGURACIONES_CONECTADAS_INICIO');
  console.log(JSON.stringify({inventory:historicPairInventory,
