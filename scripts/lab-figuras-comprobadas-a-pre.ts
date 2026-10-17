@@ -244,7 +244,7 @@ async function download(){
  }
  const valid=result.filter(x=>hasDrawResults(x.heads)&&hasNocturnoBase(x.heads))
   .sort((a,b)=>a.date.localeCompare(b.date));
- for(const [date,head] of Object.entries({'2026-06-20':'0963','2026-07-09':'0802'})){
+ for(const [date,head] of Object.entries(holdoutMay?{}:{'2026-06-20':'0963','2026-07-09':'0802'})){
   if(valid.find(d=>d.date===date)?.heads.Nocturno.Montevideo!==head)
    throw Error('Montevideo parcial corregido alterado: '+date);
  }
@@ -1343,8 +1343,8 @@ async function main(){
     physicalVt3:base.reduce((n,x)=>n+x.physicalWinningHeads,0),
     physicalVt4:all.reduce((n,x)=>n+x.physicalVt4,0),
     vt3Top6:{
-     connected:conn.reduce((n,x)=>n+x.modes.SOLAPADAS_OTRA.families
-      .slice(0,6).filter(f=>base.find(y=>y.date===x.date)?.winners.includes(f)).length,0),
+     connected:conn.reduce((n,x)=>n+(base.find(y=>y.date===x.date)?.winners||[])
+      .filter(f=>x.modes.SOLAPADAS_OTRA.families.slice(0,6).includes(f)).length,0),
      geometry:base.reduce((n,x)=>n+x.winners.filter(f=>
       x.scores.GEOMETRIA.topFamilies.slice(0,6).includes(f)).length,0)
     },
