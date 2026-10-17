@@ -14,6 +14,8 @@ import type {LaloHistorical} from '../src/motorLalo';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
 import type {Path} from '../src/paths';
 import type {SourceId,DailySheet} from '../src/sheet';
+import {allGeometricShapes,inspectFigure,figureScore,figureModes} from './lab-vt3-figura-identidad';
+import type {FigureMode} from './lab-vt3-figura-identidad';
 import {episodeEvidence,episodeFlag,episodeScore,episodeModes} from './lab-figuras-episodios';
 import type {EpisodeMode} from './lab-figuras-episodios';
 import {sequenceEvidence,sequenceModes,rankSequenceEvidence,flagged} from './lab-figuras-secuencias-reales';
@@ -227,6 +229,15 @@ async function main(){
   histories.set(current.date,{sheet,events:witnessed(sheet,current.date)});
  }
  const cuts:CutResult[]=[];
+ type FigControl={treated:number;control:number;hitT:number;hitC:number;observed:number;expected:number;strata:number};
+ type FigRecord={date:string;turn:Turno;period:string;
+  availableShapes:number;historyShapes:number;shapeNames:string[];
+  modes:Record<FigureMode,{eligibleFamilies:number;top3:number;top5:number;top10:number;
+   topFamilies:string[];topWitnesses:any[]}>;
+  controls:Record<FigureMode,FigControl>};
+ const figureCuts:FigRecord[]=[];
+ const theoreticalShapes=allGeometricShapes();
+ if(theoreticalShapes.length!==19)throw Error('Cambio inesperado en el tablero físico VT3');
  type CohortStats={treated:number;control:number;hitT:number;hitC:number;
   observed:number;expected:number;strata:number};
  type EpisodeCut={date:string;turn:Turno;period:string;
@@ -452,6 +463,76 @@ async function main(){
     }
     episodeCuts.push({date:day.date,turn,period,modes:episodeRanks,
      broad:episodeBroad,tight:episodeTight});
+    const figureSelection={} as FigRecord['modes'];
+    const figureControls={} as FigRecord['controls'];
+    const refs=families.map(f=>({
+     family:f.family,firstSource:f.firstSource,routeCount:f.traces.length,
+     hit:wins.get(f.family)||0,
+     all:f.traces.map(t=>({trace:t,
+      infoByMode:Object.fromEntries(figureModes.map(mode=>[
+       mode,inspectFigure(t,previous,weekly,day.date,mode)])) as
+       Record<FigureMode,ReturnType<typeof inspectFigure>>}))
+    }));
+    for(const mode of figureModes){
+     const chosen=refs.map(f=>{
+      const witnesses=f.all.filter(t=>t.infoByMode[mode].days>0)
+       .sort((a,b)=>compareScore(figureScore(a.infoByMode[mode]),
+        figureScore(b.infoByMode[mode]))||
+        sources.indexOf(a.trace.source)-sources.indexOf(b.trace.source)||
+        positionKey(a.trace.cells).localeCompare(positionKey(b.trace.cells)));
+      const best=witnesses[0];
+      return best?{family:f.family,...best}:null;
+     }).filter((x):x is NonNullable<typeof x>=>x!==null)
+      .sort((a,b)=>compareScore(figureScore(a.infoByMode[mode]),
+       figureScore(b.infoByMode[mode]))||
+       sources.indexOf(a.trace.source)-sources.indexOf(b.trace.source)||
+       positionKey(a.trace.cells).localeCompare(positionKey(b.trace.cells))||
+       a.family.localeCompare(b.family));
+     const rank=chosen.map(x=>x.family);
+     figureSelection[mode]={
+      eligibleFamilies:rank.length,
+      top3:winning.filter(x=>rank.slice(0,3).includes(x.family)).length,
+      top5:winning.filter(x=>rank.slice(0,5).includes(x.family)).length,
+      top10:winning.filter(x=>rank.slice(0,10).includes(x.family)).length,
+      topFamilies:rank.slice(0,10),
+      topWitnesses:chosen.slice(0,3).map(x=>({
+       family:x.family,shape:x.trace.shape,source:x.trace.source,
+       digits:x.trace.value,cells:x.trace.cells,
+       witnesses:x.infoByMode[mode].witnesses.slice(0,8)}))
+     };
+     const groups=new Map<string,{marked:boolean;hit:number}[]>();
+     const band=(n:number)=>n<=1?'1':n===2?'2':n<=5?'3-5':n<=12?'6-12':'13+';
+     for(const f of refs){
+      const active=f.all.filter(t=>t.infoByMode[mode].days>0);
+      const comparable=(active.length?active:f.all).slice().sort((a,b)=>
+       compareScore(figureScore(a.infoByMode[mode]),
+        figureScore(b.infoByMode[mode]))||
+       sources.indexOf(a.trace.source)-sources.indexOf(b.trace.source))[0];
+      if(!comparable)continue;
+      const key=f.firstSource+'|'+comparable.trace.source+'|'+band(f.routeCount);
+      if(!groups.has(key))groups.set(key,[]);
+      groups.get(key)!.push({marked:active.length>0,hit:f.hit});
+     }
+     const stats:FigControl={treated:0,control:0,hitT:0,hitC:0,
+      observed:0,expected:0,strata:0};
+     for(const arr of groups.values()){
+      const a=arr.filter(x=>x.marked),b=arr.filter(x=>!x.marked);
+      if(!a.length||!b.length)continue;
+      const ha=a.reduce((n,x)=>n+x.hit,0),hb=b.reduce((n,x)=>n+x.hit,0);
+      stats.treated+=a.length;stats.control+=b.length;
+      stats.hitT+=ha;stats.hitC+=hb;
+      stats.observed+=ha;stats.expected+=a.length/(a.length+b.length)*(ha+hb);
+      stats.strata++;
+     }
+     figureControls[mode]=stats;
+    }
+    const currentShapes=[...new Set(families.flatMap(f=>f.traces.map(t=>t.shape)))];
+    if(currentShapes.some(sh=>!theoreticalShapes.includes(sh)))
+     throw Error('Figura no pertenece a las 19 VT3 del +11');
+    const historyShapes=new Set(previous.map(e=>e.shape));
+    figureCuts.push({date:day.date,turn,period,
+     availableShapes:currentShapes.length,historyShapes:historyShapes.size,
+     shapeNames:currentShapes,modes:figureSelection,controls:figureControls});
     const memberScores=evidenceByMethod.FIGURA_REITERADA;
     const checks=Object.fromEntries(controls.map(method=>
      [method,controlled(currentRows,method)])) as Record<ControlMethod,ControlLine>;
@@ -528,6 +609,20 @@ async function main(){
   }
   return [mode,r];
  }));
+ const summarizeFigures=(xs:typeof figureCuts)=>Object.fromEntries(figureModes.map(mode=>{
+  const v={cutsWithCandidates:0,cutsWith3:0,totalEligible:0,
+   top3:0,top5:0,top10:0,
+   matched:{treated:0,control:0,hitT:0,hitC:0,observed:0,expected:0,strata:0}};
+  for(const x of xs){
+   const m=x.modes[mode],c=x.controls[mode];
+   v.cutsWithCandidates+=Number(m.eligibleFamilies>0);
+   v.cutsWith3+=Number(m.eligibleFamilies>=3);
+   v.totalEligible+=m.eligibleFamilies;
+   v.top3+=m.top3;v.top5+=m.top5;v.top10+=m.top10;
+   for(const k of Object.keys(c) as (keyof FigControl)[])v.matched[k]+=c[k];
+  }
+  return [mode,v];
+ }));
  const aggregates=(xs:typeof controlByCut)=>{
   return Object.fromEntries(controls.map(k=>[k,xs.reduce((out,c)=>plus(out,c.res[k]),emptyControl())]));
  };
@@ -589,6 +684,7 @@ async function main(){
   const sel=p==='TOTAL'?cuts:cuts.filter(x=>x.period===p);
   const cont=p==='TOTAL'?controlByCut:controlByCut.filter(x=>x.period===p);
   return [p,{...makeTotals(sel),controls:aggregates(cont),
+   figureIdentity:summarizeFigures(figureCuts.filter(x=>p==='TOTAL'||x.period===p)),
    episodes:summarizeEpisodes(episodeCuts.filter(x=>p==='TOTAL'||x.period===p)),
    sequences:seqTotals(seqByCut.filter(x=>p==='TOTAL'||x.period===p)),
    metrics:{avgAvailableFamilies:sel.reduce((n,x)=>n+x.availableFamilies,0)/sel.length,
@@ -598,9 +694,10 @@ async function main(){
   const xs=cuts.filter(x=>x.turn===t);
   return [t,{...makeTotals(xs),controls:aggregates(controlByCut.filter(x=>x.turn===t)),
    sequences:seqTotals(seqByCut.filter(x=>x.turn===t)),
-   episodes:summarizeEpisodes(episodeCuts.filter(x=>x.turn===t))}];
+   episodes:summarizeEpisodes(episodeCuts.filter(x=>x.turn===t)),
+   figureIdentity:summarizeFigures(figureCuts.filter(x=>x.turn===t))}];
  })),episodeComparisons,episodeExamples,checksums:dataHashes,
- cuts,sequenceCuts:seqByCut,episodeCuts};
+ cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json',JSON.stringify(report,null,2)+'\n');
  const traceExamples=seqByCut.filter(x=>
@@ -644,6 +741,31 @@ async function main(){
   byTurn:Object.fromEntries(Object.entries(report.byTurn).map(([p,v])=>[p,v.episodes]))
  },null,2));
  console.log('EPISODIOS_PRE_RESULTADOS_FIN');
+ const figureMatched=Object.fromEntries(figureModes.map(mode=>{
+  const chosen=figureCuts.filter(c=>c.modes[mode].eligibleFamilies>=3);
+  const dates=new Set(chosen.map(c=>c.date+'|'+c.turn));
+  const same=cuts.filter(c=>dates.has(c.date+'|'+c.turn));
+  return [mode,{eligibleCuts:chosen.length,reference:{
+   LALO:makeTotals(same).methods.LALO,
+   GEOMETRIA:makeTotals(same).methods.GEOMETRIA
+  },candidate:{top3:chosen.reduce((n,c)=>n+c.modes[mode].top3,0),
+   top5:chosen.reduce((n,c)=>n+c.modes[mode].top5,0),
+   top10:chosen.reduce((n,c)=>n+c.modes[mode].top10,0)}}];
+ }));
+ const figureSummary={theoreticalShapes:theoreticalShapes.length,
+  seenOnPre:[...new Set(figureCuts.flatMap(c=>c.shapeNames))].length,
+  minOnPre:Math.min(...figureCuts.map(c=>c.availableShapes)),
+  maxOnPre:Math.max(...figureCuts.map(c=>c.availableShapes)),
+  avgOnPre:figureCuts.reduce((n,c)=>n+c.availableShapes,0)/figureCuts.length,
+  medianOnPre:figureCuts.map(c=>c.availableShapes).sort((a,b)=>a-b)[Math.floor(figureCuts.length/2)],
+  preWithAll19:figureCuts.filter(c=>c.availableShapes===19).length,
+  pastAvgUnique:figureCuts.reduce((n,c)=>n+c.historyShapes,0)/figureCuts.length};
+ console.log('FIGURA_IDENTIDAD_INICIO');
+ console.log(JSON.stringify({figureSummary,figureMatched,periods:Object.fromEntries(
+  Object.entries(report.summary).map(([key,value])=>[key,{
+   days:value.days,cuts:value.cuts,reference:value.methods,
+   modes:value.figureIdentity}]))},null,2));
+ console.log('FIGURA_IDENTIDAD_FIN');
  console.log('FIGURAS_PRE_RESULTADOS_INICIO');
  console.log(JSON.stringify({summary:report.summary,byTurn:report.byTurn},null,2));
  console.log('FIGURAS_PRE_RESULTADOS_FIN');
