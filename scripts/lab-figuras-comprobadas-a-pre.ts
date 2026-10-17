@@ -17,6 +17,8 @@ import type {SourceId,DailySheet} from '../src/sheet';
 import {findPaths} from '../src/paths';
 import {deriveFromMothers,vt2Hits,vt4Hits} from './lab-conectadas-derivaciones-vt2-vt4';
 import {reorderDaughtersByNetwork} from './lab-vt4-hija-red';
+import {analyzeNightCut,summarizeNight} from './lab-vt2-nocturna-auditoria';
+import type {NightAudit} from './lab-vt2-nocturna-auditoria';
 import {connectedWinnerPairs,projectVerifiedConfigurations,pairModes} from './lab-vt3-configuraciones-conectadas';
 import type {PairMode,Pair} from './lab-vt3-configuraciones-conectadas';
 import {allGeometricShapes,inspectFigure,figureScore,figureModes} from './lab-vt3-figura-identidad';
@@ -254,6 +256,7 @@ async function main(){
    firstFamilies:string[];matchedHeads:{head:string;family:string;position:number}[]}>>;
  type NightMix='LALO3_CON3'|'CON3_LALO3'|'LALO4_CON2'|'CON4_LALO2';
  const nightMixes:NightMix[]=['LALO3_CON3','CON3_LALO3','LALO4_CON2','CON4_LALO2'];
+ const nightAuditCuts:NightAudit[]=[];
  const nightCuts:{date:string;period:string;heads:string[];
   official:number;connected:number;both:number;onlyOfficial:number;onlyConnected:number;
   mix:Record<NightMix,number>;families:{official:string[];connected:string[]};
@@ -704,6 +707,19 @@ async function main(){
     const physicalVt4=actualHeads.filter(h=>visibleCols.some(c=>
      findPaths(c.values,h).length>0)).length;
     if(turn==='Nocturno'){
+     const audit=analyzeNightCut({
+      date:day.date,period,heads:actualHeads,
+      all:connectedDer.vt2.map(x=>({family:x.family,
+       source:x.source,mother:x.mother})),
+      officialFamilies:official.ranks.vt2.map(x=>x.family),
+      mothers:conMothers.slice(0,10).map((m,i)=>({
+       family:m.family,source:m.source,motherRank:i+1,
+       historySource:m.historySource,historyDays:m.historyDays,
+       priorDate:m.lastDate,shape:m.historicConfiguration,
+       cells:m.cells,historicalHeads:m.pastHeads
+      }))
+     });
+     nightAuditCuts.push(audit);
      const officialTop=daughterRankings.LALO.vt2.map(x=>x.family);
      const connectedTop=daughterRankings.CONECTADAS_DERIVADA.vt2.map(x=>x.family);
      const handoff=(first:string[],a:number,second:string[],b:number)=>{
@@ -939,7 +955,7 @@ async function main(){
    figureIdentity:summarizeFigures(figureCuts.filter(x=>x.turn===t)),
    connected:summarizeConnected(connectedCuts.filter(x=>x.turn===t))}];
  })),episodeComparisons,episodeExamples,checksums:dataHashes,
- cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts,derivedCuts,networkCuts,nightCuts};
+ cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts,derivedCuts,networkCuts,nightCuts,nightAuditCuts};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_'+(extra16?'525':'520')+'.json',
   JSON.stringify(report,null,2)+'\n');
@@ -1210,6 +1226,22 @@ async function main(){
     vt4:{top3:x.scores[mode].vt4.top3,top6:x.scores[mode].vt4.top6,
      families:x.scores[mode].vt4.firstFamilies.slice(0,6)}}]))
   }))}:null;
+ const nightAuditReport=Object.fromEntries(['JUNIO_JULIO','AGOSTO_OCTUBRE','TOTAL'].map(period=>{
+  const selected=nightAuditCuts.filter(x=>period==='TOTAL'||x.period===period);
+  const summary=summarizeNight(selected);
+  const successes=selected.flatMap(cut=>cut.winningCases.filter(w=>
+   w.category==='onlyConnected').map(w=>({
+    date:cut.date,head:w.head,family:w.family,connectedRank:w.connectedRank,
+    officialRank:w.officialRank,
+    source:cut.top6.find(x=>x.family===w.family)?.source,
+    historicSource:w.witness?.historySource,
+    historyDays:w.witness?.historyDays,priorDate:w.witness?.priorDate,
+    historicalHeads:w.witness?.historicalHeads,
+    shape:w.witness?.shape,physicalCells:w.witness?.cells,
+    mother:w.witness?.family
+   })));
+  return [period,{summary,exclusiveExamples:successes.slice(0,12)}];
+ }));
  const nocturnaReport=Object.fromEntries(['JUNIO_JULIO','AGOSTO_OCTUBRE','TOTAL'].map(period=>{
   const xs=nightCuts.filter(x=>period==='TOTAL'||x.period===period);
   return [period,{
@@ -1252,7 +1284,8 @@ async function main(){
   connectedBaseline:'CONECTADAS_DERIVADA toma los primeros 10 testigos de configuraciones ganadoras solapadas reproducidas en otra fuente.',
   protocol:'Todas las madres se eligen ANTES de conocer la cabeza objetivo; los resultados futuros solo se usan para evaluar.'
  },periods:derivedReport,byTurn:derivedByTurn,byPeriodTurn:derivedByPeriodTurn,
- network:networkReport,nocturna:nocturnaReport,singleDay:derivedSingleDay},null,2));
+ network:networkReport,nocturna:nocturnaReport,nocturnaAudit:nightAuditReport,
+ singleDay:derivedSingleDay},null,2));
  console.log('LAB_CONECTADAS_VT2_VT4_FIN');
  console.log('CONFIGURACIONES_CONECTADAS_INICIO');
  console.log(JSON.stringify({inventory:historicPairInventory,
