@@ -275,13 +275,20 @@ async function main(){
      const ranked=scoredCandidates(families,previous,weekly,day.date,method);
      scoreRows.set(method,ranked);rankings[method]=ranked.map(f=>f.family);
     }
-    const memberScores=new Map(scoreRows.get('FIGURA_REITERADA')!.map(r=>[r.family,r.info]));
+    // Para cada prueba usar el testigo que mejor representa ESA propiedad.
+    // No atribuir todos los atributos al primer testigo de un ranking distinto.
+    const evidenceByMethod=Object.fromEntries(methods.map(k=>[
+     k,new Map(scoreRows.get(k)!.map(r=>[r.family,r.info]))
+    ])) as Record<RankingMethod,Map<string,RankedTrace>>;
     const currentRows=families.map(f=>{
-     const seen=memberScores.get(f.family)!;
+     const figure=evidenceByMethod.FIGURA_REITERADA.get(f.family)!;
+     const ownSource=evidenceByMethod.MISMA_FUENTE.get(f.family)!;
+     const migration=evidenceByMethod.CAMBIO_DE_FUENTE.get(f.family)!;
      return {family:f.family,hit:wins.get(f.family)||0,source:f.firstSource,
-      routes:f.traces.length,anyDays:seen.anyDays,sameDays:seen.sameDays,
-      differentSources:seen.differentSources};
+      routes:f.traces.length,anyDays:figure.anyDays,sameDays:ownSource.sameDays,
+      differentSources:migration.differentSources};
     });
+    const memberScores=evidenceByMethod.FIGURA_REITERADA;
     const checks=Object.fromEntries(controls.map(method=>
      [method,controlled(currentRows,method)])) as Record<ControlMethod,ControlLine>;
     controlByCut.push({date:day.date,period,turn,res:checks});
