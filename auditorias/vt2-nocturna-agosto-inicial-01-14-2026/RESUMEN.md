@@ -66,7 +66,7 @@ Estos controles son descriptivos, no una prueba de hipótesis independiente. Sel
 
 ## Ejemplos de familias exclusivas y antecedentes reales
 
-**11/08 Nocturna**: la cabeza **5132**, familia VT2 **23/32**, estaba #? del lector conectado dentro de Top6 y fuera del Top6 de Lalo. La madre VT3 de la hoja PRE era **234/432**. Su configuración histórica estaba comprobada por las cabezas **3871** y **0567**, con origen en **Nocturna anterior**. En la misma jornada, **5186** (familia **68/86**) fue acierto compartido, desde madre VT3 **386/683**.
+**11/08 Nocturna**: la cabeza **5132**, familia VT2 **23/32**, figuró dentro del Top6 conectado y fuera del Top6 de Lalo. La madre VT3 de la hoja PRE era **234/432**. Su configuración histórica estaba comprobada por las cabezas **3871** y **0567**, con origen en **Nocturna anterior**. En la misma jornada, **5186** (familia **68/86**) fue acierto compartido, desde madre VT3 **386/683**.
 
 **13/08 Nocturna**: la cabeza **1896**, familia **69/96**, fue exclusiva de Conectadas, desde madre **269/962**; testigos previos **8397** y **9368** de una configuración ganadora cuya fuente histórica era Previa.
 
