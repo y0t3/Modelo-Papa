@@ -20,7 +20,7 @@ const asDay=(values:Record<MainJur,string[]>,mv:[string,string]):CabezasDia=>{
  const d=diaVacio();
  for(const j of jurs)TURNOS.forEach((t,i)=>{
   const s=values[j][i];
-  if(!/^\\d{4}$/.test(s))throw Error('Cifra argentina inválida '+j+' '+t+' '+s);
+  if(!/^\d{4}$/.test(s))throw Error('Cifra argentina inválida '+j+' '+t+' '+s);
   d[t][j]=s;
  });
  d.Matutino.Montevideo=mv[0].padStart(4,'0');
