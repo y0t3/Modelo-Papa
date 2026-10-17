@@ -760,6 +760,30 @@ async function main(){
   medianOnPre:figureCuts.map(c=>c.availableShapes).sort((a,b)=>a-b)[Math.floor(figureCuts.length/2)],
   preWithAll19:figureCuts.filter(c=>c.availableShapes===19).length,
   pastAvgUnique:figureCuts.reduce((n,c)=>n+c.historyShapes,0)/figureCuts.length};
+ const shiftedCases=figureCuts.flatMap(f=>{
+  const winning=cuts.find(x=>x.date===f.date&&x.turn===f.turn)!;
+  const available=f.modes.DESPLAZADA_2_FILAS.topWitnesses;
+  return available.filter(x=>winning.winners.includes(x.family)).map(x=>({
+   date:f.date,period:f.period,turn:f.turn,family:x.family,
+   winningHeads:winning.heads.filter((h,i)=>winning.winners[i]===x.family),
+   source:x.source,shape:x.shape,newDigits:x.digits,currentCells:x.cells,
+   verifiedOldHeads:x.witnesses.slice(0,5),
+   geometryTop3:winning.scores.GEOMETRIA.topFamilies.slice(0,3),
+   laloTop3:winning.scores.LALO.topFamilies.slice(0,3)
+  }));
+ });
+ const byTurnIdentity=Object.fromEntries(TURNOS.map(t=>{
+  const part=figureCuts.filter(x=>x.turn===t);
+  const base=cuts.filter(x=>x.turn===t);
+  return [t,{shiftTop3:part.reduce((n,x)=>n+x.modes.DESPLAZADA_2_FILAS.top3,0),
+   geoTop3:base.reduce((n,x)=>n+x.scores.GEOMETRIA.top3,0),
+   laloTop3:base.reduce((n,x)=>n+x.scores.LALO.top3,0),
+   shiftedCandidates:part.reduce((n,x)=>n+x.modes.DESPLAZADA_2_FILAS.eligibleFamilies,0),
+   cuts:part.length}];
+ }));
+ console.log('FIGURA_IDENTIDAD_CASOS_INICIO');
+ console.log(JSON.stringify({byTurnIdentity,examples:shiftedCases.slice(0,25)},null,2));
+ console.log('FIGURA_IDENTIDAD_CASOS_FIN');
  console.log('FIGURA_IDENTIDAD_INICIO');
  console.log(JSON.stringify({figureSummary,figureMatched,periods:Object.fromEntries(
   Object.entries(report.summary).map(([key,value])=>[key,{
