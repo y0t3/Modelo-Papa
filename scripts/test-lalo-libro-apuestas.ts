@@ -21,7 +21,7 @@ const vt4={id:'vt4|prevNocturno|1:0>0:0>0:1>1:1',kind:'vt4' as const,
  motherVt3:'768/867'};
 const snap=buildPre({date:'2026-10-15',turn:'Previa',picks:[vt4]},
  sheet,'2026-10-15T01:00:00Z');
-assert.equal(snap.pre.schema,'PAPA_PRE_V3');
+assert.equal(snap.pre.schema,'PAPA_PRE_V4');
 assert.ok(validateSnapshot(snap));
 const rec:PapaRecord={snapshot:snap};
 const list=betLinesForPre(rec);
