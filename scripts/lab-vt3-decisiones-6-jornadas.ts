@@ -75,6 +75,10 @@ type Cut={date:string;turn:Turno;headsPhysical:Head[];
  physicallyAvailableFamilies:number;admittedFamilies:number;admittedNonWinners:number;
  variants:Record<Scheme,{top3:number;top5:number;top6:number;top10:number;
   familiesTop6:string[]}>;geometry:{top3:number;top5:number;top6:number};
+ control:{admitExpectedUniform:number;admitExpectedBySource:number;
+  top6ExpectedWithinAdmitted:number;branchExpectedWithinAdmitted:number;
+  branchObservedHeads:number;branchPhysicalMatched:{strata:number;branchHeads:number;
+   expected:number;branchExposures:number;rootOnlyExposures:number}};
  rankedFamilyRows:{family:string;hit:number;rank:number;rankD1:number;rankRoots:number;
  d1:number;d7:number;roots:number;branches:number;blocks:number;
  sourceCount:number;source:SourceId|null}[];
@@ -176,6 +180,57 @@ async function main(){
     controls[type].families++;
     controls[type].heads+=hitMap.get(f.family)||0;
    }
+   const firstPhysicalSource=(family:string)=>physical.get(family)?.sources[0];
+   const admitSet=new Set(model.ranks.vt3.map(f=>f.family));
+   const physicalBySource=new Map<SourceId,{all:number;admitted:number}>();
+   for(const row of physical.values()){
+    const source=row.sources[0];
+    const v=physicalBySource.get(source)||{all:0,admitted:0};
+    v.all++;
+    if(admitSet.has(row.family))v.admitted++;
+    physicalBySource.set(source,v);
+   }
+   const admitExpectedUniform=physical.size?
+    eligibleHeads.length*model.ranks.vt3.length/physical.size:0;
+   const admitExpectedBySource=eligibleHeads.reduce((n,h)=>{
+    const group=physicalBySource.get(firstPhysicalSource(h.family)!)!;
+    return n+(group.all?group.admitted/group.all:0);
+   },0);
+   const rankAdmitted=eligibleHeads.filter(h=>h.admitted);
+   const top6ExpectedWithinAdmitted=model.ranks.vt3.length?
+    rankAdmitted.length*Math.min(6,model.ranks.vt3.length)/model.ranks.vt3.length:0;
+   const branchFamilies=model.ranks.vt3.filter(x=>x.branchBlocks>0).length;
+   const branchExpectedWithinAdmitted=model.ranks.vt3.length?
+    rankAdmitted.length*branchFamilies/model.ranks.vt3.length:0;
+   const branchObservedHeads=rankAdmitted.filter(h=>
+    (h.familyTraits?.branch||0)>0).length;
+   // Comparación estricta entre ramas/no ramas con las mismas raíces,
+   // fuente física y bandas de caminos; grupos sin ambas clases no cuentan.
+   const match=new Map<string,{branch:boolean;heads:number}[]>();
+   const band=(n:number)=>n<=1?'1':n===2?'2':n<=5?'3-5':'6+';
+   for(const f of model.ranks.vt3){
+    const p=physical.get(f.family);
+    if(!p)throw Error('Familia Lalo no tiene camino físico '+date+' '+turn);
+    const key=p.sources[0]+'|'+Number(f.d1Roots>0)+'|'+Number(f.d7Roots>0)+
+     '|'+band(p.paths.length)+'|'+(f.sourceCount===1?'una':'varias');
+    if(!match.has(key))match.set(key,[]);
+    match.get(key)!.push({branch:f.branchBlocks>0,heads:hitMap.get(f.family)||0});
+   }
+   const branchPhysicalMatched={strata:0,branchHeads:0,expected:0,
+    branchExposures:0,rootOnlyExposures:0};
+   for(const group of match.values()){
+    const branch=group.filter(x=>x.branch),simple=group.filter(x=>!x.branch);
+    if(!branch.length||!simple.length)continue;
+    const wins=group.reduce((n,x)=>n+x.heads,0);
+    branchPhysicalMatched.strata++;
+    branchPhysicalMatched.branchExposures+=branch.length;
+    branchPhysicalMatched.rootOnlyExposures+=simple.length;
+    branchPhysicalMatched.branchHeads+=branch.reduce((n,x)=>n+x.heads,0);
+    branchPhysicalMatched.expected+=branch.length/group.length*wins;
+   }
+   const control={admitExpectedUniform,admitExpectedBySource,
+    top6ExpectedWithinAdmitted,branchExpectedWithinAdmitted,
+    branchObservedHeads,branchPhysicalMatched};
    const variants=Object.fromEntries(schemes.map(s=>{
     const names=alternatives[s].map(x=>x.family);
     const count=(n:number)=>eligibleHeads.filter(x=>names.slice(0,n).includes(x.family)).length;
@@ -188,7 +243,7 @@ async function main(){
     physicallyAvailableFamilies:physical.size,
     admittedFamilies:model.ranks.vt3.length,
     admittedNonWinners:model.ranks.vt3.filter(f=>!hitMap.has(f.family)).length,
-    variants,geometry:{top3:g(3),top5:g(5),top6:g(6)},
+    control,variants,geometry:{top3:g(3),top5:g(5),top6:g(6)},
     rankedFamilyRows,negativeControls:controls});
   }
  }
@@ -214,6 +269,20 @@ async function main(){
   return {cuts:items.length,qualifiedHeads:qualifying.length,
    qualifiedAdmitted:qualifying.filter(x=>x.admitted).length,
    qualifiedNotAdmitted:qualifying.filter(x=>!x.admitted).length,
+   control:{
+    admissionUniformExpected:items.reduce((n,x)=>n+x.control.admitExpectedUniform,0),
+    admissionBySourceExpected:items.reduce((n,x)=>n+x.control.admitExpectedBySource,0),
+    top6AmongAdmittedExpected:items.reduce((n,x)=>n+x.control.top6ExpectedWithinAdmitted,0),
+    branchAmongAdmittedExpected:items.reduce((n,x)=>n+x.control.branchExpectedWithinAdmitted,0),
+    branchAmongAdmittedObserved:items.reduce((n,x)=>n+x.control.branchObservedHeads,0),
+    branchStrictMatched:{
+     strata:items.reduce((n,x)=>n+x.control.branchPhysicalMatched.strata,0),
+     branchHeads:items.reduce((n,x)=>n+x.control.branchPhysicalMatched.branchHeads,0),
+     expected:items.reduce((n,x)=>n+x.control.branchPhysicalMatched.expected,0),
+     branchExposures:items.reduce((n,x)=>n+x.control.branchPhysicalMatched.branchExposures,0),
+     rootOnlyExposures:items.reduce((n,x)=>n+x.control.branchPhysicalMatched.rootOnlyExposures,0)
+    }
+   },
    officialAdmittedFamilies:items.reduce((n,x)=>n+x.admittedFamilies,0),
    physicallyAvailableFamilies:items.reduce((n,x)=>n+x.physicallyAvailableFamilies,0),
    byScenario,geometry:{
@@ -261,7 +330,7 @@ async function main(){
   admittedNonWinnerCount:c.admittedNonWinners,
   competingPhysicalCandidates:c.rankedFamilyRows.filter(f=>
    f.rank<=6||f.rankD1<=6||f.rankRoots<=6),
-  admittedDistribution:c.negativeControls
+  admittedDistribution:c.negativeControls,control:c.control
  }))};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/DECISIONES_VT3_ULTIMAS_6_JORNADAS.json',
