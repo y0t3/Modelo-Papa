@@ -686,6 +686,21 @@ async function main(){
   }
   return [mode,v];
  }));
+ const summarizeConnected=(all:typeof connectedCuts)=>Object.fromEntries(pairModes.map(mode=>{
+  const out={cutsWithCandidates:0,cutsAtLeast3:0,availableFamilies:0,
+   top3:0,top5:0,top10:0,
+   control:{treated:0,control:0,hitT:0,hitC:0,observed:0,expected:0,strata:0}};
+  for(const cut of all){
+   const x=cut.modes[mode],z=cut.controls[mode];
+   out.cutsWithCandidates+=Number(x.candidates>0);
+   out.cutsAtLeast3+=Number(x.candidates>=3);
+   out.availableFamilies+=x.candidates;
+   out.top3+=x.top3;out.top5+=x.top5;out.top10+=x.top10;
+   for(const key of Object.keys(z) as (keyof PairControl)[])
+    out.control[key]+=z[key];
+  }
+  return [mode,out];
+ }));
  const aggregates=(xs:typeof controlByCut)=>{
   return Object.fromEntries(controls.map(k=>[k,xs.reduce((out,c)=>plus(out,c.res[k]),emptyControl())]));
  };
@@ -747,6 +762,7 @@ async function main(){
   const sel=p==='TOTAL'?cuts:cuts.filter(x=>x.period===p);
   const cont=p==='TOTAL'?controlByCut:controlByCut.filter(x=>x.period===p);
   return [p,{...makeTotals(sel),controls:aggregates(cont),
+   connected:summarizeConnected(connectedCuts.filter(x=>p==='TOTAL'||x.period===p)),
    figureIdentity:summarizeFigures(figureCuts.filter(x=>p==='TOTAL'||x.period===p)),
    episodes:summarizeEpisodes(episodeCuts.filter(x=>p==='TOTAL'||x.period===p)),
    sequences:seqTotals(seqByCut.filter(x=>p==='TOTAL'||x.period===p)),
@@ -758,9 +774,10 @@ async function main(){
   return [t,{...makeTotals(xs),controls:aggregates(controlByCut.filter(x=>x.turn===t)),
    sequences:seqTotals(seqByCut.filter(x=>x.turn===t)),
    episodes:summarizeEpisodes(episodeCuts.filter(x=>x.turn===t)),
-   figureIdentity:summarizeFigures(figureCuts.filter(x=>x.turn===t))}];
+   figureIdentity:summarizeFigures(figureCuts.filter(x=>x.turn===t)),
+   connected:summarizeConnected(connectedCuts.filter(x=>x.turn===t))}];
  })),episodeComparisons,episodeExamples,checksums:dataHashes,
- cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts};
+ cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json',JSON.stringify(report,null,2)+'\n');
  const traceExamples=seqByCut.filter(x=>
@@ -860,6 +877,42 @@ async function main(){
    days:value.days,cuts:value.cuts,reference:value.methods,
    modes:value.figureIdentity}]))},null,2));
  console.log('FIGURA_IDENTIDAD_FIN');
+ const connectedMatched=Object.fromEntries(pairModes.map(mode=>{
+  const eligible=connectedCuts.filter(c=>c.modes[mode].candidates>=3);
+  const keys=new Set(eligible.map(x=>x.date+'|'+x.turn));
+  const refCuts=cuts.filter(x=>keys.has(x.date+'|'+x.turn));
+  return [mode,{cuts:eligible.length,official:makeTotals(refCuts).methods.LALO,
+   geometry:makeTotals(refCuts).methods.GEOMETRIA,
+   connected:{top3:eligible.reduce((n,x)=>n+x.modes[mode].top3,0),
+    top5:eligible.reduce((n,x)=>n+x.modes[mode].top5,0),
+    top10:eligible.reduce((n,x)=>n+x.modes[mode].top10,0)}}];
+ }));
+ const connectedExamples=Object.fromEntries(pairModes.map(mode=>{
+  const winners=connectedCuts.flatMap(cut=>{
+   const actual=cuts.find(x=>x.date===cut.date&&x.turn===cut.turn)!;
+   return cut.modes[mode].witnesses.flatMap(w=>{
+    const heads=actual.heads.filter((head,i)=>actual.winners[i]===w.family);
+    return heads.map(head=>({date:cut.date,period:cut.period,turn:cut.turn,
+     head,...w,geometryTop3:actual.scores.GEOMETRIA.topFamilies.slice(0,3)}));
+   });
+  });
+  return [mode,{count:winners.length,examples:[
+   ...winners.filter(x=>x.period==='JUNIO_JULIO').slice(0,3),
+   ...winners.filter(x=>x.period==='AGOSTO_OCTUBRE').slice(0,3)]}];
+ }));
+ const historicPairInventory={
+  total:[...connectedHistory.values()].reduce((n,x)=>n+x.length,0),
+  days:[...connectedHistory.values()].filter(x=>x.length>0).length,
+  types:Object.fromEntries(['COMPARTEN_UNA_CASILLA','COMPARTEN_DOS_CASILLAS','SOLO_ROCE']
+   .map(k=>[k,[...connectedHistory.values()].flat().filter(p=>p.kind===k).length]))
+ };
+ console.log('CONFIGURACIONES_CONECTADAS_INICIO');
+ console.log(JSON.stringify({inventory:historicPairInventory,
+  matched:connectedMatched,examples:connectedExamples,
+  periods:Object.fromEntries(Object.entries(report.summary).map(([p,v])=>[p,{
+   cuts:v.cuts,heads:v.heads,physical:v.physicalWinners,
+   reference:v.methods,connected:v.connected}]))},null,2));
+ console.log('CONFIGURACIONES_CONECTADAS_FIN');
  console.log('FIGURAS_PRE_RESULTADOS_INICIO');
  console.log(JSON.stringify({summary:report.summary,byTurn:report.byTurn},null,2));
  console.log('FIGURAS_PRE_RESULTADOS_FIN');
