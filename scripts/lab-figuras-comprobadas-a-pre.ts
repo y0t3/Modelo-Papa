@@ -23,8 +23,10 @@ import type {EpisodeMode} from './lab-figuras-episodios';
 import {sequenceEvidence,sequenceModes,rankSequenceEvidence,flagged} from './lab-figuras-secuencias-reales';
 import type {SequenceMode,SequenceEvidence} from './lab-figuras-secuencias-reales';
 
+const extra16=process.env.LAB_EVALUAR_16_OCT==='1';
+const endDate=extra16?'2026-10-16':'2026-10-15';
 const periods=[['2026-06-01','2026-07-31','JUNIO_JULIO'],
- ['2026-08-15','2026-10-15','AGOSTO_OCTUBRE']] as const;
+ ['2026-08-15',endDate,'AGOSTO_OCTUBRE']] as const;
 const sources:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
 type Day={date:string;heads:CabezasDia};
 type Verified={date:string;turn:Turno;head:string;jur:string;shape:string;source:SourceId;cells:string[]};
@@ -205,7 +207,7 @@ function makeTotals(rows:CutResult[]){
 }
 async function download(){
  const result:Day[]=[];
- const list=range('2026-05-14','2026-10-15');
+ const list=range('2026-05-14',endDate);
  for(let i=0;i<list.length;i+=8){
   const xs=await Promise.all(list.slice(i,i+8).map(async date=>{
    for(let j=0;j<3;j++)try{return {date,heads:await descargarCabezas(date,true)}}
@@ -668,7 +670,8 @@ async function main(){
    }
   }
  }
- if(cuts.length!==520||cuts.reduce((n,x)=>n+x.physicalWinningHeads,0)!==654)
+ if(cuts.length!==(extra16?525:520)||
+  cuts.reduce((n,x)=>n+x.physicalWinningHeads,0)!==(extra16?657:654))
   throw Error('El histórico corregido dejó de coincidir con 520/654: '+
    cuts.length+'/'+cuts.reduce((n,x)=>n+x.physicalWinningHeads,0));
  const seqTotals=(items:typeof seqByCut)=>Object.fromEntries(sequenceModes.map(mode=>{
@@ -808,7 +811,8 @@ async function main(){
  })),episodeComparisons,episodeExamples,checksums:dataHashes,
  cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts};
  mkdirSync('lab-results',{recursive:true});
- writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json',JSON.stringify(report,null,2)+'\n');
+ writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_'+(extra16?'525':'520')+'.json',
+  JSON.stringify(report,null,2)+'\n');
  const traceExamples=seqByCut.filter(x=>
   x.modes.AABB.top3>0||x.modes.AAB.top3>0).map(x=>{
    const cut=cuts.find(c=>c.date===x.date&&c.turn===x.turn)!;
@@ -1028,6 +1032,35 @@ async function main(){
    cuts:v.cuts,heads:v.heads,physical:v.physicalWinners,
    reference:v.methods,connected:v.connected}]))},null,2));
  console.log('CONFIGURACIONES_CONECTADAS_FIN');
+ if(extra16){
+  const selected=cuts.filter(x=>x.date==='2026-10-16');
+  const checked=selected.map(cut=>{
+   const comp=connectedCuts.find(x=>x.date===cut.date&&x.turn===cut.turn)!;
+   const con=comp.modes.SOLAPADAS_OTRA.families;
+   const geo=cut.scores.GEOMETRIA.topFamilies;
+   return {date:cut.date,turn:cut.turn,heads:cut.heads,
+    headsAndFamilies:cut.heads.map((h,i)=>({head:h,family:cut.winners[i],
+     physicallyAvailable:cut.physicalWinnerDetails.some(x=>x.head===h),
+     geometryTop3:geo.slice(0,3).includes(cut.winners[i]),
+     geometryTop6:geo.slice(0,6).includes(cut.winners[i]),
+     connectedTop3:con.slice(0,3).includes(cut.winners[i]),
+     connectedTop6:con.slice(0,6).includes(cut.winners[i])})),
+    geometryTop6:geo.slice(0,6),
+    connectedTop6:con.slice(0,6),
+    witnesses:comp.modes.SOLAPADAS_OTRA.witnesses
+   };
+  });
+  console.log('CONTROL_RECONSTRUIDO_16_OCT_INICIO');
+  console.log(JSON.stringify({status:'RETROSPECTIVA_NO_SELLADA',
+   date:'2026-10-16',cuts:checked,totals:{
+    physical:checked.reduce((n,x)=>n+x.headsAndFamilies.filter(y=>y.physicallyAvailable).length,0),
+    geometryTop3:checked.reduce((n,x)=>n+x.headsAndFamilies.filter(y=>y.geometryTop3).length,0),
+    connectedTop3:checked.reduce((n,x)=>n+x.headsAndFamilies.filter(y=>y.connectedTop3).length,0),
+    geometryTop6:checked.reduce((n,x)=>n+x.headsAndFamilies.filter(y=>y.geometryTop6).length,0),
+    connectedTop6:checked.reduce((n,x)=>n+x.headsAndFamilies.filter(y=>y.connectedTop6).length,0)
+   }},null,2));
+  console.log('CONTROL_RECONSTRUIDO_16_OCT_FIN');
+ }
  console.log('FIGURAS_PRE_RESULTADOS_INICIO');
  console.log(JSON.stringify({summary:report.summary,byTurn:report.byTurn},null,2));
  console.log('FIGURAS_PRE_RESULTADOS_FIN');
