@@ -16,10 +16,13 @@ jobs:
           node-version: 24
       - run: npm install
       - run: npx tsc --noEmit
+      - run: npx --yes tsx scripts/test-lab-frontera-vt3-figuras-reales.ts
       - run: npx --yes tsx scripts/lab-vt3-decisiones-6-jornadas.ts
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: LAB-DECISIONES-VT3-6-JORNADAS
-          path: lab-results/DECISIONES_VT3_ULTIMAS_6_JORNADAS.json
+          path: |
+            lab-results/DECISIONES_VT3_ULTIMAS_6_JORNADAS.json
+            lab-results/FRONTERA_VT3_NO_ADMITIDAS_6_JORNADAS.json
           if-no-files-found: warn
