@@ -295,9 +295,10 @@ async function main(){
      const f=eligible.get(w.family)!;
      const witness=memberScores.get(w.family)!.trace;
      return {head:w.head,family:w.family,source:witness.source,shape:witness.shape,
-      paths:f.traces.length,ranks:Object.fromEntries((Object.keys(rankings) as MatchMethod[])
-       .map(k=>[k,rankings[k].indexOf(w.family)>=0?rankings[k].indexOf(w.family)+1:null]))
-       as Record<MatchMethod,number|null>};
+      paths:f.traces.length,
+      ranks: Object.fromEntries((Object.keys(rankings) as MatchMethod[]).map(k=>[
+       k, rankings[k].indexOf(w.family)>=0 ? rankings[k].indexOf(w.family)+1 : null
+      ])) as Record<MatchMethod,number|null>};
     });
     cuts.push({date:day.date,turn,period,heads:actualHeads,
      winners:winning.map(w=>w.family),availableFamilies:families.length,
