@@ -32,7 +32,7 @@ assert.equal(reentered.sourceReentry,true);
 const fake=episodeEvidence(path,[event(dates[0],'Matutino'),
  {...event(dates[5],'Matutino'),shape:'forma-irrelevante'}],dates);
 assert.equal(fake.comeback,false,'Una forma distinta no es continuidad');
-assert.deepEqual(episodeModes.filter(m=>episodeFlag(m,multi)),
+assert.deepEqual(episodeModes.filter(m=>episodeFlag(multi,m)),
  ['MULTIFUENTE_AYER','MULTIFUENTE_PERSISTENTE']);
 assert.throws(()=>episodeEvidence(path,[],dates.slice(1)));
 console.log('OK: pausas físicas, cambio de fuente, varias fuentes misma fecha, deduplicación, límites temporales');
