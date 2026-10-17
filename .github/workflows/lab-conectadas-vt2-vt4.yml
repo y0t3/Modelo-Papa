@@ -24,6 +24,10 @@ jobs:
         run: npx --yes tsx scripts/test-lab-vt3-configuraciones-conectadas.ts
       - name: Comparar 520 PRE Lalo Geometría y Conectadas en VT2 VT4
         run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
+      - name: Control adicional VT2 VT4 16oct (reconstrucción no sellada)
+        env:
+          LAB_EVALUAR_16_OCT: '1'
+        run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
       - name: Preservar archivo de 520 cortes y negativos
         if: always()
         uses: actions/upload-artifact@v4
