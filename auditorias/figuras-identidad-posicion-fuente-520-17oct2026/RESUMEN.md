@@ -2,7 +2,7 @@
 
 **17/10/2026 · Investigación histórica concluida sin alterar Modelo Lalo MV1, Geometría Completa, el experimental de la app ni VT4.**
 
-[GitHub Actions — ejecución definitiva y pruebas aprobadas](https://github.com/y0t3/Modelo-Papa/actions/runs/39029586100).
+[GitHub Actions — ejecución definitiva y pruebas aprobadas](https://github.com/y0t3/Modelo-Papa/actions/runs/39029787018).
 
 ## Pregunta central
 
@@ -18,6 +18,8 @@ Enumeración exhaustiva de un tablero +11 de **6 filas por 2 columnas** (casilla
 - Sobre los **520 PRE históricos**, en **518/520** están físicamente disponibles **LAS 19 formas** dentro de alguna columna. En los otros dos cortes especiales con Nocturna uruguaya parcial no hay VT3 disponible; se conservan como cero, no se inventa una base.
 - Promedio de figuras distintas disponibles por PRE: **18,93/19**; mediana **19/19**; se observaron las 19 formas en el histórico.
 - Media de formas con al menos una coincidencia VT3 comprobada dentro de las seis jornadas reales anteriores: **18,38/19**. Es historial de formas ganadoras, **no** reconocimiento de una nueva cabeza ganadora.
+
+**Corrección obligatoria de todas las posiciones físicas:** el primer barrido experimental descartaba una segunda posición si una misma cabeza, forma y fuente poseía más de un recorrido válido. Se corrigió la identidad del recorrido con el conjunto físico de casillas, **sin duplicar eventos independientes de cabeza**. En la base de las hojas históricas quedaron **1.516 testigos físicos** frente a **1.506 registros únicos de cabeza/forma/fuente/turno/fecha**; los **10 recorridos adicionales** permanecen. La repetición elevó el resultado Top3 del método desplazado de 20 a **21**, pero no altera el diagnóstico de inestabilidad temporal. Los resultados del documento son los definitivos **posteriores** a la corrección.
 
 **Conclusión física:** “esta forma reapareció” sin fuente/posición/historia particular distingue muy poco. La geometría permite casi todo y las formas generales tienen muchas oportunidades de coincidir. Esto explica por qué rastrear únicamente un zigzag o un quiebre no alcanza.
 
@@ -45,14 +47,14 @@ Ordenamiento interno por número de **jornadas de marcas ganadoras distintas**, 
 | Forma + misma fuente | 8 | 9 | **17** | 29 | 43 |
 | Forma + misma fuente, fila cercana (±1) | 6 | 8 | **14** | 21 | 48 |
 | Forma + fuente y exactamente mismas casillas | 7 | 8 | **15** | 25 | 49 |
-| **Forma + fuente, desplazada al menos dos filas** | **12** | 8 | **20** | 25 | 56 |
+| **Forma + fuente, desplazada al menos dos filas** | **13** | 8 | **21** | 26 | 57 |
 | Forma en otra fuente | 9 | 2 | **11** | 23 | 43 |
 | **Geometría Completa actual** | 6 | **11** | **17** | 27 | 50 |
 | Modelo Lalo oficial | 7 | 6 | 13 | 29 | 50 |
 
-Los mismos **518 cortes que admiten VT3** sirven de comparación con el motor Geometría. Los dos cortes sin VT3 aportan cero para todos. El aumento global **20 frente a 17** del desplazamiento es exploratorio: **12 vs 6** en junio-julio, pero **8 vs 11** en agosto-octubre. No hubo reproducción de la aparente ventaja en el tramo temporal posterior.
+Los mismos **518 cortes que admiten VT3** sirven de comparación con el motor Geometría. Los dos cortes sin VT3 aportan cero para todos. El aumento global **21 frente a 17** del desplazamiento es exploratorio: **13 vs 6** en junio-julio, pero **8 vs 11** en agosto-octubre. No hubo reproducción de la aparente ventaja en el tramo temporal posterior.
 
-El criterio desplazado tenía **29.038 exposiciones de familias candidatas** en los 520 cortes (~56 por corte con VT3). Es más selectivo que "cualquier figura" pero todavía un conjunto demasiado numeroso para justificar un Top3 sin evidencia adicional.
+El criterio desplazado tenía **29.083 exposiciones de familias candidatas** en los 520 cortes (~56 por corte con VT3). Es más selectivo que "cualquier figura" pero todavía un conjunto demasiado numeroso para justificar un Top3 sin evidencia adicional.
 
 ## Control contra familias negativas equivalentes
 
@@ -62,9 +64,9 @@ Dentro del mismo PRE, se compararon familias elegibles contra familias igualment
 |---|---:|---:|---:|
 | Figura global | 139 | 139,25 | −0,25 |
 | Misma fuente | 329 | 325,19 | +3,81 |
-| Cercanía ±1 fila | 296 | 300,13 | −4,13 |
-| Mismas casillas | 178 | 167,82 | +10,18 |
-| **Desplazada ≥2 filas** | **233** | **233,72** | **−0,72** |
+| Cercanía ±1 fila | 297 | 300,33 | −3,33 |
+| Mismas casillas | 179 | 167,98 | +11,02 |
+| **Desplazada ≥2 filas** | **233** | **233,93** | **−0,93** |
 | Cambio de fuente | 219 | 219,69 | −0,69 |
 
 La aparente ventaja Top3 del desplazamiento **NO** coincide con una ventaja global entre familias equivalentes. Es compatible con un efecto particular de ordenación de candidatos, no con una regla confirmada. El control de casillas exactas tiene exceso retrospectivo en familias, pero **no** generó un Top3 mejor y el corpus fue analizado reiteradamente; no modificar la app por ese indicio.
@@ -75,10 +77,10 @@ La aparente ventaja Top3 del desplazamiento **NO** coincide con una ventaja glob
 |---|---:|---:|
 | Previa | 4 | 3 |
 | Primera | 3 | 2 |
-| Matutina | 5 | 5 |
+| Matutina | 6 | 5 |
 | Vespertina | 5 | 4 |
 | Nocturna | 3 | 3 |
-| **Total** | **20** | **17** |
+| **Total** | **21** | **17** |
 
 No se observó concentración exclusiva en una única modalidad; el problema decisivo sigue siendo **la falta de repetición temporal** de esa ventaja.
 
