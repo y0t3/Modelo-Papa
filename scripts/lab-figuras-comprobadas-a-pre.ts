@@ -906,6 +906,56 @@ async function main(){
    days:value.days,cuts:value.cuts,reference:value.methods,
    modes:value.figureIdentity}]))},null,2));
  console.log('FIGURA_IDENTIDAD_FIN');
+ // Comparación de complementariedad sin crear nuevas familias ni mover MV1:
+ // dos puestos de un lector + uno del otro, siempre con números del PRE.
+ const hybridModes=['GEO2_CON1','GEO1_CON2','CON2_GEO1','CON1_GEO2'] as const;
+ type Hybrid=typeof hybridModes[number];
+ const connectedByKey=new Map(connectedCuts.map(x=>[x.date+'|'+x.turn,x]));
+ const hybridCut=cuts.map(cut=>{
+  const other=connectedByKey.get(cut.date+'|'+cut.turn)!;
+  const geo=cut.scores.GEOMETRIA.topFamilies;
+  const con=other.modes.SOLAPADAS_OTRA.families;
+  const pick=(first:string[],second:string[],a:number,b:number)=>{
+   const result:string[]=[];
+   for(const family of first)if(result.length<a&&!result.includes(family))
+    result.push(family);
+   for(const family of second)if(result.length<a+b&&!result.includes(family))
+    result.push(family);
+   for(const family of [...first,...second])
+    if(result.length<3&&!result.includes(family))result.push(family);
+   return result.slice(0,3);
+  };
+  const lists:Record<Hybrid,string[]>={
+   GEO2_CON1:pick(geo,con,2,1),GEO1_CON2:pick(geo,con,1,2),
+   CON2_GEO1:pick(con,geo,2,1),CON1_GEO2:pick(con,geo,1,2)
+  };
+  const winners=cut.winners;
+  const both=winners.filter(f=>geo.slice(0,3).includes(f)&&con.slice(0,3).includes(f)).length;
+  const geoOnly=winners.filter(f=>geo.slice(0,3).includes(f)&&!con.slice(0,3).includes(f)).length;
+  const connectedOnly=winners.filter(f=>!geo.slice(0,3).includes(f)&&con.slice(0,3).includes(f)).length;
+  return {date:cut.date,period:cut.period,turn:cut.turn,both,geoOnly,connectedOnly,
+   byMode:Object.fromEntries(hybridModes.map(m=>[m,
+    winners.filter(f=>lists[m].includes(f)).length])) as Record<Hybrid,number>,
+   examples:winners.map((f,i)=>({family:f,head:cut.heads[i],
+    geo:geo.slice(0,3).indexOf(f)+1,connected:con.slice(0,3).indexOf(f)+1}))
+    .filter(x=>x.geo===0&&x.connected>0).slice(0,2)
+  };
+ });
+ const hybridReport=Object.fromEntries(['JUNIO_JULIO','AGOSTO_OCTUBRE','TOTAL'].map(period=>{
+  const subset=hybridCut.filter(x=>period==='TOTAL'||x.period===period);
+  const full=cuts.filter(x=>period==='TOTAL'||x.period===period);
+  const con=connectedCuts.filter(x=>period==='TOTAL'||x.period===period);
+  return [period,{cuts:subset.length,
+   geometry:full.reduce((n,x)=>n+x.scores.GEOMETRIA.top3,0),
+   connected:con.reduce((n,x)=>n+x.modes.SOLAPADAS_OTRA.top3,0),
+   both:subset.reduce((n,x)=>n+x.both,0),
+   geometryOnly:subset.reduce((n,x)=>n+x.geoOnly,0),
+   connectedOnly:subset.reduce((n,x)=>n+x.connectedOnly,0),
+   hybrids:Object.fromEntries(hybridModes.map(m=>[m,subset.reduce((n,x)=>n+x.byMode[m],0)])),
+   connectedUniqueExamples:subset.flatMap(x=>x.examples.map(e=>({
+    date:x.date,turn:x.turn,...e}))).slice(0,6)
+  }];
+ }));
  const connectedMatched=Object.fromEntries(pairModes.map(mode=>{
   const eligible=connectedCuts.filter(c=>c.modes[mode].candidates>=3);
   const keys=new Set(eligible.map(x=>x.date+'|'+x.turn));
@@ -953,7 +1003,7 @@ async function main(){
  ]));
  console.log('CONFIGURACIONES_CONECTADAS_INICIO');
  console.log(JSON.stringify({inventory:historicPairInventory,
-  matched:connectedMatched,sensitivity:sensitivityReport,examples:connectedExamples,
+  matched:connectedMatched,sensitivity:sensitivityReport,hybrid:hybridReport,examples:connectedExamples,
   periods:Object.fromEntries(Object.entries(report.summary).map(([p,v])=>[p,{
    cuts:v.cuts,heads:v.heads,physical:v.physicalWinners,
    reference:v.methods,connected:v.connected}]))},null,2));
