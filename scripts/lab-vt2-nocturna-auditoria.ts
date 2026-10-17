@@ -13,6 +13,7 @@ export type NightAudit={
  date:string;period:string;
  observed:{connected:number;official:number;both:number;onlyConnected:number;onlyOfficial:number};
  universe:{families:number;selected:number;winInPool:number;expectedUniform:number;expectedBySource:number};
+ variant:{matutinoFirst:number;matutinoOnly:number;prevNocturnoFirst:number};
  group:Record<string,{pool:number;selected:number;winnerHeadsInPool:number;
   winnerHeadsSelected:number;expected:number}>;
  winningCases:{head:string;family:string;category:'onlyConnected'|'onlyOfficial'|'both'|'neither';
@@ -49,6 +50,19 @@ export function analyzeNightCut(args:{
    winnerHeadsInPool:inPool,winnerHeadsSelected:inSelected,expected};
   sourceExpected+=expected;
  }
+ const firstFromSource=(source:SourceId,only:boolean)=>{
+  const from=all.filter(x=>x.source===source);
+  const others=only?[]:all.filter(x=>x.source!==source);
+  return new Set([...from,...others].slice(0,6).map(x=>x.family));
+ };
+ const matFirst=firstFromSource('Matutino',false);
+ const matOnly=firstFromSource('Matutino',true);
+ const prevFirst=firstFromSource('prevNocturno',false);
+ const variant={
+  matutinoFirst:keys.filter(x=>matFirst.has(x)).length,
+  matutinoOnly:keys.filter(x=>matOnly.has(x)).length,
+  prevNocturnoFirst:keys.filter(x=>prevFirst.has(x)).length
+ };
  const winningCases=heads.map((head,i)=>{
   const family=keys[i],connectedRank=all.findIndex(x=>x.family===family)+1,
    officialRank=officialFamilies.indexOf(family)+1,
@@ -74,7 +88,7 @@ export function analyzeNightCut(args:{
    families:all.length,selected:subset.length,winInPool:found,
    expectedUniform:all.length?Math.min(6,all.length)/all.length*found:0,
    expectedBySource:sourceExpected
-  },group,winningCases,
+  },variant,group,winningCases,
   top6:subset.map(candidate=>{
    const witness=witnesses.get(candidate.mother);
    if(!witness)throw Error('VT2 huérfano de madre comprobada');
@@ -89,6 +103,7 @@ export function summarizeNight(records:NightAudit[]){
   days:records.length,heads:records.length*5,connected:0,official:0,
   both:0,onlyConnected:0,onlyOfficial:0,
   poolSize:0,selectedSize:0,winInPool:0,
+  variant:{matutinoFirst:0,matutinoOnly:0,prevNocturnoFirst:0},
   uniformExpected:0,sourceExpected:0,
   connectedBetterDays:0,officialBetterDays:0,equalDays:0,
   source:{} as Record<string,{pool:number;selected:number;winnersInPool:number;
@@ -105,6 +120,8 @@ export function summarizeNight(records:NightAudit[]){
   totals.poolSize+=v.universe.families;
   totals.selectedSize+=v.universe.selected;
   totals.winInPool+=v.universe.winInPool;
+  for(const k of Object.keys(totals.variant) as (keyof NightAudit['variant'])[])
+   totals.variant[k]+=v.variant[k];
   totals.uniformExpected+=v.universe.expectedUniform;
   totals.sourceExpected+=v.universe.expectedBySource;
   if(v.observed.connected>v.observed.official)totals.connectedBetterDays++;
