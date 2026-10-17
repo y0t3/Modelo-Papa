@@ -6,7 +6,7 @@ const mother:Proposal={
  family:'226/622',source:'prevNocturno',cells:['0:0','1:0','2:0'],digits:'226',
  score:[2,0,1,0],firstDate:'2026-10-13',lastDate:'2026-10-14',
  historicConfiguration:'real',historySource:'Previa',pastHeads:['1234','4567'],
- proof:[['0:0','1:0','2:0'],['2:0','3:0','3:1']],relativeShift:2,historyDays:2
+ proof:[['0:0','1:0','2:0'],['2:0','3:0','3:1']],relativeShift:2,currentOffset:0,historyDays:2
 };
 const outside:Vt4Candidate={family:'8226/8622',mother:mother.family,
  source:'prevNocturno',addedDigit:'8',
