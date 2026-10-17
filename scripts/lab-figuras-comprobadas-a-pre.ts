@@ -14,6 +14,8 @@ import type {LaloHistorical} from '../src/motorLalo';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
 import type {Path} from '../src/paths';
 import type {SourceId,DailySheet} from '../src/sheet';
+import {sequenceEvidence,sequenceModes,rankSequenceEvidence,flagged} from './lab-figuras-secuencias-reales';
+import type {SequenceMode,SequenceEvidence} from './lab-figuras-secuencias-reales';
 
 const periods=[['2026-06-01','2026-07-31','JUNIO_JULIO'],
  ['2026-08-15','2026-10-15','AGOSTO_OCTUBRE']] as const;
@@ -223,6 +225,11 @@ async function main(){
   histories.set(current.date,{sheet,events:witnessed(sheet,current.date)});
  }
  const cuts:CutResult[]=[];
+ const seqByCut:{date:string;period:string;turn:Turno;
+  modes:Record<SequenceMode,{available:number;top3:number;top5:number;top10:number;
+   topFamilies:string[];topWitnesses:any[]}>;
+  control:Record<SequenceMode,{treated:number;control:number;hitsT:number;hitsC:number;
+   expected:number;observed:number;strata:number}>}[]=[];
  const controlByCut:{date:string;period:string;turn:Turno;res:Record<ControlMethod,ControlLine>}[]=[];
  const dataHashes:Object=Object.fromEntries(days.map(d=>
   [d.date,createHash('sha256').update(JSON.stringify(d.heads)).digest('hex')]));
@@ -253,6 +260,9 @@ async function main(){
     if(pre.heads[turn].length||pre.matches[turn].length)
      throw Error('Fuga temporal en '+day.date+' '+turn);
     const families=familyPool(pre,turn);
+    const earlierToday=witnessed(pre,day.date);
+    if(earlierToday.some(e=>TURNOS.indexOf(e.turn)>=idx))throw Error('Fuga POST intradía');
+    const completedDates=lastDays.map(d=>d.date);
     // PRE válido con una sola pareja Nocturna uruguaya: cero VT3, NO eliminar el turno.
     const eligible=new Map(families.map(f=>[f.family,f]));
     const actualHeads=JURS.filter(j=>j!=='Montevideo')
@@ -291,6 +301,71 @@ async function main(){
       routes:f.traces.length,anyDays:figure.anyDays,sameDays:ownSource.sameDays,
       differentSources:migration.differentSources};
     });
+    const historyByFamily=families.map(f=>({
+     family:f.family,firstSource:f.firstSource,traces:f.traces,
+     choices:f.traces.map(trace=>({trace,evidence:sequenceEvidence(trace,
+      previous,completedDates,earlierToday)}))
+    }));
+    const seqModes={} as (typeof seqByCut)[number]['modes'];
+    const seqControls={} as (typeof seqByCut)[number]['control'];
+    for(const mode of sequenceModes){
+     const pool=historyByFamily.map(f=>{
+      const valid=f.choices.filter(c=>flagged(c.evidence,mode))
+       .sort((a,b)=>compareScore(rankSequenceEvidence(a.evidence,mode),
+        rankSequenceEvidence(b.evidence,mode))||
+        sources.indexOf(a.trace.source)-sources.indexOf(b.trace.source)||
+        positionKey(a.trace.cells).localeCompare(positionKey(b.trace.cells)));
+      return valid[0]?{family:f.family,...valid[0]}:null;
+     }).filter((x):x is NonNullable<typeof x>=>x!==null)
+      .sort((a,b)=>compareScore(rankSequenceEvidence(a.evidence,mode),
+       rankSequenceEvidence(b.evidence,mode))||
+       sources.indexOf(a.trace.source)-sources.indexOf(b.trace.source)||
+       positionKey(a.trace.cells).localeCompare(positionKey(b.trace.cells))||
+       a.family.localeCompare(b.family));
+     const familiesRanked=pool.map(x=>x.family);
+     seqModes[mode]={
+      available:pool.length,
+      top3:winning.filter(w=>familiesRanked.slice(0,3).includes(w.family)).length,
+      top5:winning.filter(w=>familiesRanked.slice(0,5).includes(w.family)).length,
+      top10:winning.filter(w=>familiesRanked.slice(0,10).includes(w.family)).length,
+      topFamilies:familiesRanked.slice(0,10),
+      topWitnesses:pool.slice(0,3).map(x=>({
+       family:x.family,source:x.trace.source,shape:x.trace.shape,
+       cells:x.trace.cells,digits:x.trace.value,
+       history:x.evidence.activity,intraday:x.evidence.intradaySame
+      }))
+     };
+     const groups=new Map<string,{marked:boolean;hit:number}[]>();
+     for(const f of historyByFamily){
+      const marked=f.choices.filter(c=>flagged(c.evidence,mode));
+      const base=marked.length?marked:f.choices;
+      const choice=base.slice().sort((a,b)=>compareScore(
+       rankSequenceEvidence(a.evidence,mode),rankSequenceEvidence(b.evidence,mode))||
+       sources.indexOf(a.trace.source)-sources.indexOf(b.trace.source))[0];
+      if(!choice)continue;
+      const band=f.traces.length<=1?'1':f.traces.length<=2?'2':
+       f.traces.length<=5?'3-5':f.traces.length<=12?'6-12':'13+';
+      // El control AAB iguala la cantidad previa de marcas en esa fuente:
+      // estudiar el ORDEN de los hechos, no la mera intensidad histórica.
+      const daysBand=choice.evidence.sourceDays===0?'0':
+       choice.evidence.sourceDays===1?'1':
+       choice.evidence.sourceDays===2?'2':'3+';
+      const key=f.firstSource+'|'+choice.trace.source+'|'+band+'|'+
+       (['DOS_SEGUIDAS','AAB','AABB'].includes(mode)?daysBand:'*');
+      if(!groups.has(key))groups.set(key,[]);
+      groups.get(key)!.push({marked:marked.length>0,hit:wins.get(f.family)||0});
+     }
+     let treated=0,control=0,hitsT=0,hitsC=0,expected=0,observed=0,strata=0;
+     for(const rows of groups.values()){
+      const yes=rows.filter(x=>x.marked),no=rows.filter(x=>!x.marked);
+      if(!yes.length||!no.length)continue;
+      const wy=yes.reduce((n,x)=>n+x.hit,0),wn=no.reduce((n,x)=>n+x.hit,0);
+      treated+=yes.length;control+=no.length;hitsT+=wy;hitsC+=wn;
+      observed+=wy;expected+=yes.length/(yes.length+no.length)*(wy+wn);strata++;
+     }
+     seqControls[mode]={treated,control,hitsT,hitsC,expected,observed,strata};
+    }
+    seqByCut.push({date:day.date,period,turn,modes:seqModes,control:seqControls});
     const memberScores=evidenceByMethod.FIGURA_REITERADA;
     const checks=Object.fromEntries(controls.map(method=>
      [method,controlled(currentRows,method)])) as Record<ControlMethod,ControlLine>;
