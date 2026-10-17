@@ -58,7 +58,7 @@ La prioridad de continuidad de fuente tampoco funciona idénticamente en todos l
 
 ## Dos trayectorias de figura verificable y lectura de nuevos números
 
-### 31/agosto, antes de Primera — cabeza posterior Entre Ríos `9862`
+### 31/agosto, antes de Primera — cabeza posterior `9862`
 
 El lector experimental reconstruyó una figura con forma de dos pasos `0,1 ; -1,-1` en la **columna +11 de Previa actual**, recorrido de celdas `3:0 → 4:1 → 4:0`. Allí **se leen las cifras `268`**. Su familia reversible es **`268/862`**, que coincide con las tres últimas cifras `862` de la cabeza `9862`, publicada después.
 
