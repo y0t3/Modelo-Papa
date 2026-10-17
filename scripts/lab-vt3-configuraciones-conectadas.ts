@@ -93,7 +93,7 @@ const same=(kind:Connection,mode:PairMode)=>
 export type Proposal={family:string;source:SourceId;cells:string[];digits:string;
  score:number[];firstDate:string;lastDate:string;
  historicConfiguration:string;historySource:SourceId;pastHeads:[string,string];
- proof:[string[],string[]];relativeShift:number;historyDays:number};
+ proof:[string[],string[]];relativeShift:number;currentOffset:number;historyDays:number};
 export function projectVerifiedConfigurations(historical:Pair[],
  current:Trace[],date:string,weeklyDate:string|null,mode:PairMode):Proposal[]{
  const traceMap=new Map<string,Trace>();
@@ -147,6 +147,7 @@ export function projectVerifiedConfigurations(historical:Pair[],
     lastDate:uniqueDates.at(-1)!,historicConfiguration:x.pair.id,
     historySource:x.pair.source,pastHeads:x.pair.pastHeads,
     proof:x.pair.members,relativeShift:x.offset-x.pair.minRow,
+    currentOffset:x.offset,
     historyDays:uniqueDates.length};
    const old=result.get(route.family);
    if(!old||compareScore(proposal.score,old.score)<0||
