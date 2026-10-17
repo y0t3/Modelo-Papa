@@ -930,10 +930,22 @@ async function main(){
    CON2_GEO1:pick(con,geo,2,1),CON1_GEO2:pick(con,geo,1,2)
   };
   const winners=cut.winners;
+  // Dos Top3 independientes permiten hasta 6 familias distintas; no debe
+  // contarse una repetición compartida como un candidato adicional.
+  const distinctTop6=[...new Set([...geo.slice(0,3),...con.slice(0,3)])];
+  const six=[...distinctTop6];
+  for(const f of [...geo,...con])if(six.length<6&&!six.includes(f))six.push(f);
+  const sixMetrics={
+   slotsWithoutFill:distinctTop6.length,
+   duoUpToSix:winners.filter(x=>distinctTop6.includes(x)).length,
+   duoSixFilled:winners.filter(x=>six.includes(x)).length,
+   geoSix:winners.filter(x=>geo.slice(0,6).includes(x)).length,
+   connectedSix:winners.filter(x=>con.slice(0,6).includes(x)).length
+  };
   const both=winners.filter(f=>geo.slice(0,3).includes(f)&&con.slice(0,3).includes(f)).length;
   const geoOnly=winners.filter(f=>geo.slice(0,3).includes(f)&&!con.slice(0,3).includes(f)).length;
   const connectedOnly=winners.filter(f=>!geo.slice(0,3).includes(f)&&con.slice(0,3).includes(f)).length;
-  return {date:cut.date,period:cut.period,turn:cut.turn,both,geoOnly,connectedOnly,
+  return {date:cut.date,period:cut.period,turn:cut.turn,both,geoOnly,connectedOnly,sixMetrics,
    byMode:Object.fromEntries(hybridModes.map(m=>[m,
     winners.filter(f=>lists[m].includes(f)).length])) as Record<Hybrid,number>,
    examples:winners.map((f,i)=>({family:f,head:cut.heads[i],
@@ -951,6 +963,14 @@ async function main(){
    both:subset.reduce((n,x)=>n+x.both,0),
    geometryOnly:subset.reduce((n,x)=>n+x.geoOnly,0),
    connectedOnly:subset.reduce((n,x)=>n+x.connectedOnly,0),
+   sixFamilyComparisons:{
+    unionTop3PlusTop3:subset.reduce((n,x)=>n+x.sixMetrics.duoUpToSix,0),
+    unionBackfilledSix:subset.reduce((n,x)=>n+x.sixMetrics.duoSixFilled,0),
+    geometryTop6:subset.reduce((n,x)=>n+x.sixMetrics.geoSix,0),
+    connectedTop6:subset.reduce((n,x)=>n+x.sixMetrics.connectedSix,0),
+    averageUniqueSlots:subset.reduce((n,x)=>n+x.sixMetrics.slotsWithoutFill,0)/
+      Math.max(1,subset.length)
+   },
    hybrids:Object.fromEntries(hybridModes.map(m=>[m,subset.reduce((n,x)=>n+x.byMode[m],0)])),
    connectedUniqueExamples:subset.flatMap(x=>x.examples.map(e=>({
     date:x.date,turn:x.turn,...e}))).slice(0,6)
