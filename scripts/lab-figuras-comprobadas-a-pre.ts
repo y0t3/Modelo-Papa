@@ -531,6 +531,51 @@ async function main(){
  const aggregates=(xs:typeof controlByCut)=>{
   return Object.fromEntries(controls.map(k=>[k,xs.reduce((out,c)=>plus(out,c.res[k]),emptyControl())]));
  };
+ const episodeComparisons=Object.fromEntries(episodeModes.map(mode=>{
+  const matched=episodeCuts.filter(x=>x.modes[mode].candidates>=3);
+  const keys=new Set(matched.map(x=>x.date+'|'+x.turn));
+  const subset=cuts.filter(x=>keys.has(x.date+'|'+x.turn));
+  return [mode,{eligibleCuts:subset.length,
+   experimental:makeTotals(subset).methods,
+   episodeRankings:{
+    top3:matched.reduce((n,x)=>n+x.modes[mode].top3,0),
+    top5:matched.reduce((n,x)=>n+x.modes[mode].top5,0),
+    top10:matched.reduce((n,x)=>n+x.modes[mode].top10,0)},
+   byPeriod:Object.fromEntries(['JUNIO_JULIO','AGOSTO_OCTUBRE'].map(p=>{
+    const ss=subset.filter(x=>x.period===p);
+    const es=matched.filter(x=>x.period===p);
+    return [p,{cuts:ss.length,
+     LALO:makeTotals(ss).methods.LALO,
+     GEOMETRIA:makeTotals(ss).methods.GEOMETRIA,
+     episodes:{top3:es.reduce((n,x)=>n+x.modes[mode].top3,0),
+      top5:es.reduce((n,x)=>n+x.modes[mode].top5,0),
+      top10:es.reduce((n,x)=>n+x.modes[mode].top10,0)}}];
+   }))}];
+ }));
+ const episodeExamples=Object.fromEntries(episodeModes.map(mode=>{
+  const all=episodeCuts.flatMap(x=>{
+   const cut=cuts.find(c=>c.date===x.date&&c.turn===x.turn)!;
+   return x.modes[mode].selectedProofs.flatMap(proof=>{
+    const matching=cut.winners.map((f,i)=>({family:f,head:cut.heads[i]}))
+     .filter(w=>w.family===proof.family);
+    if(!matching.length)return [];
+    const index=byDate.get(x.date)?.i??0;
+    const priorDays=days.slice(Math.max(0,index-6),index);
+    const history=priorDays.flatMap(d=>(histories.get(d.date)?.events||[])
+     .filter(e=>e.shape===proof.shape).map(e=>({
+      date:e.date,turn:e.turn,jur:e.jur,head:e.head,
+      source:e.source,cells:e.cells
+     })));
+    return matching.map(w=>({date:x.date,period:x.period,turn:x.turn,
+     head:w.head,family:w.family,source:proof.source,
+     digits:proof.digits,cells:proof.cells,shape:proof.shape,history}));
+   });
+  });
+  return [mode,{total:all.length,examples:[
+    ...all.filter(x=>x.period==='JUNIO_JULIO').slice(0,3),
+    ...all.filter(x=>x.period==='AGOSTO_OCTUBRE').slice(0,3)
+   ]}];
+ }));
  const report={protocol:{
   sequence:'CABEZA REAL publicada en jornada anterior -> RECORRIDO VT3 exacto en columna +11 -> FIGURA normalizada por pasos -> REAPARICIÓN en +11 PRE de una fecha futura -> LECTURA de tres cifras nuevas -> familia reversible -> evaluación posterior.',
   historicalOnly:'Seis jornadas anteriores con Nocturna real, además del mismo día calendario D−7 cuando existe.',
@@ -554,7 +599,7 @@ async function main(){
   return [t,{...makeTotals(xs),controls:aggregates(controlByCut.filter(x=>x.turn===t)),
    sequences:seqTotals(seqByCut.filter(x=>x.turn===t)),
    episodes:summarizeEpisodes(episodeCuts.filter(x=>x.turn===t))}];
- })),checksums:dataHashes,
+ })),episodeComparisons,episodeExamples,checksums:dataHashes,
  cuts,sequenceCuts:seqByCut,episodeCuts};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json',JSON.stringify(report,null,2)+'\n');
@@ -588,6 +633,9 @@ async function main(){
   byTurn:Object.fromEntries(Object.entries(report.byTurn).map(([k,v])=>[k,v.sequences]))
  },null,2));
  console.log('SECUENCIAS_PRE_FIN');
+ console.log('EPISODIOS_COMPARABLES_INICIO');
+ console.log(JSON.stringify({comparisons:episodeComparisons,examples:episodeExamples},null,2));
+ console.log('EPISODIOS_COMPARABLES_FIN');
  console.log('EPISODIOS_PRE_RESULTADOS_INICIO');
  console.log(JSON.stringify({summary:Object.fromEntries(
   Object.entries(report.summary).map(([p,v])=>[p,{cuts:v.cuts,
