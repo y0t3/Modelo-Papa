@@ -105,6 +105,24 @@ for(const turn of TURNOS){
    vt2:hit('vt2'),vt4:hit('vt4')
   };
   rows.push(row);byTurn.push(row);
+  if(physical.physicalRoutes>0){
+   const familyRecord=view.ranks.vt3.find(x=>x.family===family);
+   console.log('DETALLE_FISICO_16OCT '+JSON.stringify({
+    head,jurisdiction,turn,family,officialRank:physical.officialRank,
+    status:physical.status,
+    explanation:physical.explanation,
+    physicalRoutes:physical.routes,
+    evolution:physical.evolution,
+    priorityReasons:physical.priorityReasons,
+    priority:familyRecord?{branchBlocks:familyRecord.branchBlocks,
+     d1Roots:familyRecord.d1Roots,d7Roots:familyRecord.d7Roots,
+     sourceCount:familyRecord.sourceCount,physicalBlocks:familyRecord.physicalBlocks}:null,
+    cutoffTop3:view.ranks.vt3.slice(0,3).map(x=>({
+      family:x.family,branchBlocks:x.branchBlocks,d1Roots:x.d1Roots,
+      d7Roots:x.d7Roots,sourceCount:x.sourceCount,physicalBlocks:x.physicalBlocks
+    }))
+   }));
+  }
  }
  summary[turn]={
   physical:byTurn.filter(x=>x.physical>0).length,
