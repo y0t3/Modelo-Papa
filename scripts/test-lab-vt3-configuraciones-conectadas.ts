@@ -4,7 +4,7 @@ import type {Mark,Trace} from './lab-vt3-configuraciones-conectadas';
 const mark=(head:string,cells:string[],turn='Previa',source:Mark['source']='prevNocturno'):Mark=>({
  date:'2026-10-14',turn,source,jur:head==='1234'?'Ciudad':'Provincia',head,cells});
 const a=mark('1234',['1:0','2:0','2:1']);
-const b=mark('4356',['2:1','3:0','4:0'],'Matutino');
+const b=mark('4356',['2:1','3:0','3:1'],'Matutino');
 const pairs=connectedWinnerPairs([a,b,{...a,cells:[...a.cells].reverse()}]);
 assert.equal(pairs.length,1);
 assert.equal(pairs[0].events,1,'Inversas de cabeza NO aportan nuevos eventos');
