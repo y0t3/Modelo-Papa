@@ -28,6 +28,20 @@ assert.ok(win.historyOtherSource);
 assert.ok(!win.historySameSource);
 assert.ok(win.earlierTodayShape);
 assert.equal(win.historicalEventCount,1,'Dos rutas de misma cabeza no son dos confirmaciones');
+assert.equal(win.historyExactPosition,false);
+assert.equal(win.historyNearSameSource,false);
+const oldNear={...old,source:'Previa' as const,
+ cells:['1:0','2:0','3:1'],shape:physicalShape(a)};
+const rowsNear=analyzeNonAdmitted({physical:physically,admitted:new Set(['456/654']),
+ winnerFamilies:['123/321'],historical:[oldNear],earlierToday:[],
+ newestSource:'Previa'});
+assert.ok(rowsNear[0].historyNearSameSource);
+assert.ok(!rowsNear[0].historyExactPosition);
+const oldExact={...oldNear,cells:a};
+const rowsExact=analyzeNonAdmitted({physical:physically,admitted:new Set(['456/654']),
+ winnerFamilies:['123/321'],historical:[oldExact],earlierToday:[],
+ newestSource:'Previa'});
+assert.ok(rowsExact[0].historyExactSameSource);
 const neg=rows.find(x=>x.family==='891/198')!;
 assert.equal(neg.hit,0);
 assert.equal(neg.historyAnySource,false);
