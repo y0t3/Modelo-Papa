@@ -546,6 +546,56 @@ async function main(){
     figureCuts.push({date:day.date,turn,period,
      availableShapes:currentShapes.length,historyShapes:historyShapes.size,
      shapeNames:currentShapes,modes:figureSelection,controls:figureControls});
+    // Configuraciones apoyadas en DOS cabezas anteriores independientes.
+    const historicalPairs=lastDays.flatMap(d=>connectedHistory.get(d.date)||[]);
+    if(week&&!lastDays.some(d=>d.date===week.day.date))
+     historicalPairs.push(...(connectedHistory.get(week.day.date)||[]));
+    if(historicalPairs.some(p=>p.date>=day.date))
+     throw Error('Una configuración histórica contiene el sorteo objetivo');
+    const currentTraces=families.flatMap(f=>f.traces);
+    const combined={} as ConnectedCut['modes'];
+    const pairControls={} as ConnectedCut['controls'];
+    for(const mode of pairModes){
+     const ranking=projectVerifiedConfigurations(historicalPairs,currentTraces,
+      day.date,week?.day.date||null,mode);
+     const names=ranking.map(p=>p.family);
+     combined[mode]={
+      candidates:ranking.length,
+      top3:winning.filter(w=>names.slice(0,3).includes(w.family)).length,
+      top5:winning.filter(w=>names.slice(0,5).includes(w.family)).length,
+      top10:winning.filter(w=>names.slice(0,10).includes(w.family)).length,
+      families:names.slice(0,10),
+      witnesses:ranking.slice(0,3).map(p=>({
+       family:p.family,source:p.source,actualDigits:p.digits,actualCells:p.cells,
+       oldHeads:p.pastHeads,oldSource:p.historySource,config:p.historicConfiguration,
+       firstDate:p.firstDate,lastDate:p.lastDate,historyDays:p.historyDays,
+       physicalShift:p.relativeShift
+      }))
+     };
+     const eligible=new Set(names);
+     const strata=new Map<string,{hit:number;yes:boolean}[]>();
+     for(const f of families){
+      const n=f.traces.length;
+      const band=n<=1?'1':n===2?'2':n<=5?'3-5':n<=12?'6-12':'13+';
+      const sourcesN=new Set(f.traces.map(t=>t.source)).size;
+      const key=f.firstSource+'|'+band+'|'+(sourcesN===1?'una':'varias');
+      if(!strata.has(key))strata.set(key,[]);
+      strata.get(key)!.push({hit:wins.get(f.family)||0,yes:eligible.has(f.family)});
+     }
+     const z:PairControl={treated:0,control:0,hitT:0,hitC:0,
+      observed:0,expected:0,strata:0};
+     for(const values of strata.values()){
+      const yes=values.filter(x=>x.yes),no=values.filter(x=>!x.yes);
+      if(!yes.length||!no.length)continue;
+      const hitA=yes.reduce((n,x)=>n+x.hit,0),hitB=no.reduce((n,x)=>n+x.hit,0);
+      z.treated+=yes.length;z.control+=no.length;
+      z.hitT+=hitA;z.hitC+=hitB;z.observed+=hitA;
+      z.expected+=yes.length/values.length*(hitA+hitB);z.strata++;
+     }
+     pairControls[mode]=z;
+    }
+    connectedCuts.push({date:day.date,turn,period,
+     historyPairs:historicalPairs.length,modes:combined,controls:pairControls});
     const memberScores=evidenceByMethod.FIGURA_REITERADA;
     const checks=Object.fromEntries(controls.map(method=>
      [method,controlled(currentRows,method)])) as Record<ControlMethod,ControlLine>;
