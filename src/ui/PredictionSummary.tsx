@@ -2,6 +2,7 @@ import React,{useEffect,useRef,useState} from 'react';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {Turno} from '../domain';
 import type {LaloView,LaloKind} from '../motorLalo';
+import {reversibleFamily} from '../motorLalo';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
 import {readableWeekday} from '../infoTurnHistory';
@@ -18,9 +19,9 @@ const explanation:Record<string,string>={
  * se leen de arriba hacia abajo. Los chips Top3/5/10 amplían esa misma lista.
  * No se modifica la selección, el orden, el cotejo POST ni el acceso al recorrido.
  */
-export default function PredictionSummary({date,turn,view,onFocus,post}:{
+export default function PredictionSummary({date,turn,view,onFocus,post,heads=[]}:{
  date:string;turn:Turno;view:LaloView|null;
- onFocus:(id:string)=>void;post?:Record<LaloKind,string[]>|null
+ onFocus:(id:string)=>void;post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [limits,setLimits]=useState<Record<LaloKind,TopCount>>(defaults);
@@ -90,6 +91,11 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
      const rows=view?.ranks[kind].slice(0,limit)||[];
      const matched=new Set(post?.[kind]||[]);
      const hitRows=rows.filter(f=>matched.has(f.family));
+     const winnerHeads=(family:typeof rows[number])=>heads.filter(head=>{
+      if(!/^[0-9]{4}$/.test(head))return false;
+      if(kind==='vt4')return family.paths.some(path=>path.value===head);
+      return reversibleFamily(head.slice(-Number(kind.slice(-1))))===family.family;
+     });
      return <View key={kind} style={[s.page,{width:pagerWidth||undefined}]}
       onLayout={e=>{
        const height=Math.ceil(e.nativeEvent.layout.height);
@@ -122,7 +128,7 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
         {hitRows.length?'✓ COINCIDENCIAS POST':'POST · SIN COINCIDENCIAS'} · {hitRows.length} en Top{limit}
        </Text>
        <Text style={[s.postInfo,{color:c.subtext}]}>
-        {hitRows.length?hitRows.map(f=>'#'+f.rank+' '+f.family).join('  ·  '):
+        {hitRows.length?hitRows.map(f=>'#'+f.rank+' '+f.family+' ('+winnerHeads(f).join(', ')+')').join('  ·  '):
          'Ninguna familia de este Top coincidió con las cabezas publicadas.'}
        </Text>
       </View>:null}
@@ -139,6 +145,9 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
          {matched.has(f.family)?<Text style={[s.hitLabel,{color:kinds[kind].text}]}>✓ POST</Text>:null}
          <Text style={[s.chevron,{color:c.accent}]}>›</Text>
         </View>
+        {matched.has(f.family)?<Text style={[s.winnerHeads,{color:kinds[kind].text}]}>
+         Cabeza(s): {winnerHeads(f).join(' · ')}
+        </Text>:null}
         <Text style={[s.detail,{color:c.subtext}]}>
          {explanation[f.state]} · {explainFamilyRationale(f.rationale)}
         </Text>
@@ -181,5 +190,6 @@ const s=StyleSheet.create({
  empty:{fontSize:11,lineHeight:17,marginVertical:7},
  postPanel:{borderWidth:1,borderRadius:10,padding:12,marginVertical:10,gap:5},
  postTitle:{fontSize:14,fontWeight:'900'},postInfo:{fontSize:12,lineHeight:18,fontWeight:'700'},
- hitLabel:{fontSize:11,fontWeight:'900'}
+ hitLabel:{fontSize:11,fontWeight:'900'},
+ winnerHeads:{fontSize:12,fontWeight:'900',marginTop:4}
 });
