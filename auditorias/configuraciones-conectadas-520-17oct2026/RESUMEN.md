@@ -2,7 +2,7 @@
 
 **Laboratorio retrospectivo, 17/10/2026. Sin modificar MV1, Geometría Completa, Nueva Prueba, la app ni APK.**
 
-Ejecución final validada: https://github.com/y0t3/Modelo-Papa/actions/runs/39031015822
+Ejecución final validada: https://github.com/y0t3/Modelo-Papa/actions/runs/39031362316
 
 ## Procedimiento y fundamentos conservados
 
@@ -106,19 +106,40 @@ Este ejemplo representa una lectura real de configuración física + cifras nuev
 
 **PRE del 19/08 Vespertina:** la figura reaparece íntegra en la columna **Matutino**, casillas de una terna `1:0 → 2:0 → 2:1`, que ahora contienen **801**, familia **108/801**. Posteriormente sale **0801**. Los números antiguos no se tomaron como candidatos.
 
+## Comprobación cronológica adicional: viernes 16/10/2026
+
+**Reglas experimentales congeladas antes de este contraste; resultados del día no usados para ordenar candidatos.** Sin embargo, el día 16 ya se había examinado en conversaciones previas, de modo que esta revisión NO es una prueba verdaderamente ciega ni equivale a PRE local sellado.
+
+Se procesaron **cinco cortes PRE adicionales** con Nocturna 15/10 como base y turnos reales acumulativos, cada uno sin ver su propia cabeza. Las 25 cabezas argentinas tienen datos disponibles. Solo **tres** cabezas tenían una familia VT3 físicamente trazable en el PRE: Santa Fe Matutina **3253 → 253/352**, Córdoba Nocturna **9132 → 132/231** y Santa Fe Nocturna **5807 → 708/807**.
+
+| Corte retrospectivo del 16/10 | VT3 físico disponible | Geometría Top3 | Geometría Top6 | Conectadas Top3 | Conectadas Top6 |
+|---|---:|---:|---:|---:|---:|
+| Previa | 0 | 0 | 0 | 0 | 0 |
+| Primera | 0 | 0 | 0 | 0 | 0 |
+| Matutina | 1 | 0 | **1** | 0 | 0 |
+| Vespertina | 0 | 0 | 0 | 0 | 0 |
+| Nocturna | 2 | 0 | 0 | 0 | 0 |
+| **Total de 25 cabezas** | **3** | **0** | **1** | **0** | **0** |
+
+El único puesto Top6 acertado fue **253/352**, sexto de Geometría Completa antes de Matutina. Conectadas no recuperó ninguna de las tres familias físicas ganadoras en sus seis primeros lugares.
+
+**Interpretación:** los 47 Top6 retrospectivos en los 520 PRE de desarrollo NO quedan validados por el 16/10. La muestra adicional es demasiado pequeña para establecer si el método generaliza o no, pero refuerza la prohibición de sustituir el lector oficial basándose en los resultados históricos exploratorios. Conservar ambas pruebas separadas.
+
+El código admite este control por la variable de laboratorio `LAB_EVALUAR_16_OCT=1`, que produce 525 cortes totales **sin modificar la ejecución estándar de 520**. Archivo detallado `FIGURAS_COMPROBADAS_A_PRE_525.json` incluido en el artefacto del [GitHub Action definitivo](https://github.com/y0t3/Modelo-Papa/actions/runs/39031362316).
+
 ## Limitaciones y decisión
 
 - Historial **no ciego**, ya examinado reiteradamente; además se compararon varias variantes de conectividad, posición, horizonte y mezcla. Una ventaja retrospectiva puede ser selección accidental de reglas.
 - El ranking produce muchas familias físicamente válidas y necesita validar que su orden resista resultados **no usados para diseñarlo**. Los 20 Top3 / 47 Top6 NO son probabilidades fiables de apostar.
 - Aún no se ha comprobado en dispositivo móvil la representación de configuraciones compuestas ni se ha fusionado nada en `main`.
-- **Recomendación de laboratorio:** conservar esta nueva lectura como experimental AISLADO. Próxima comprobación: auditoría sobre turnos posteriores a 15/10, preservando para cada turno un PRE sellado si existe; si falta sello, etiquetar reconstrucción retrospectiva. No reajustar el criterio al ver resultados.
+- **Recomendación de laboratorio:** conservar esta nueva lectura como experimental AISLADO. El 16/10 ya fue auditado (0 Top6 de Conectadas, 1 Top6 de Geometría). Próxima comprobación válida: cortes nuevos con PRE guardado realmente antes de cada sorteo o fechas históricas nunca utilizadas para desarrollar la regla. No reajustar el criterio tras observar el 16/10.
 - No convertir la unión de dos recorridos en VT4 ni violar la columna única de origen. Las dos ternas pertenecen a la misma fuente histórica, y su reproducción posterior se hace íntegramente dentro de una nueva fuente.
 
 ## Archivos auditables
 
-- [Ejecución final GitHub Actions — TypeScript, pruebas y los 520 PRE](https://github.com/y0t3/Modelo-Papa/actions/runs/39031015822), resultado **success**.
+- [Ejecución final GitHub Actions — TypeScript, pruebas y los 520 PRE](https://github.com/y0t3/Modelo-Papa/actions/runs/39031362316), resultado **success**.
 - `scripts/lab-vt3-configuraciones-conectadas.ts`: detector de cabezas ganadoras independientes, relación física de recorridos y reproducción en PRE.
 - `scripts/test-lab-vt3-configuraciones-conectadas.ts`: validación sin cruces, traslación, ausencia de cabezas futuras, inversión familiar.
 - `scripts/lab-figuras-comprobadas-a-pre.ts`: contraste completo, cinco modalidades de conectividad, negativos y controles de 3/6/12 jornadas y combinaciones Top3/Top6.
-- Artefacto `LAB-CONFIGURACIONES-CONECTADAS-520`: `FIGURAS_COMPROBADAS_A_PRE_520.json`, con 520 cortes, testigos, cifras PRE, candidatos, resultados posteriores y controles.
+- Artefacto `LAB-CONFIGURACIONES-CONECTADAS-520`: `FIGURAS_COMPROBADAS_A_PRE_520.json`, con 520 cortes y, por separado, 525 cortes incluyendo la verificación retrospectiva del 16/10; testigos, cifras PRE, candidatos y controles.
 - Rama: `lab/configuraciones-vt3-conectadas-17oct2026`. Motores oficiales y `main` sin cambios.
