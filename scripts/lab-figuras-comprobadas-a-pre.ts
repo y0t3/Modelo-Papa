@@ -141,11 +141,11 @@ type ControlLine={activeExposures:number;inactiveExposures:number;
 const emptyControl=():ControlLine=>({activeExposures:0,inactiveExposures:0,activeWinners:0,
  inactiveWinners:0,expected:0,observed:0,matchedActive:0,matchedInactive:0,
  matchedActiveHeads:0,matchedInactiveHeads:0,matchedStrata:0});
-type ControlMethod='FORMAS_DOS_JORNADAS'|'MISMA_FUENTE_DOS_JORNADAS'|'MOVIO_FUENTE';
-function controlled(cutRows:{family:string;hit:number;source:SourceId;routes:number;
+type ControlMethod='FORMAS_DOS_JORNADAS'|'MISMA_FUENTE_DOS_JORNADAS'|'MISMA_FUENTE_ESTRICTA'|'MOVIO_FUENTE';
+function controlled(cutRows:{family:string;hit:number;source:SourceId;witnessSource:SourceId;sourceCount:number;routes:number;
  anyDays:number;sameDays:number;differentSources:number}[],name:ControlMethod){
  const metric=(r:typeof cutRows[number])=>name==='FORMAS_DOS_JORNADAS'?r.anyDays>=2:
-  name==='MISMA_FUENTE_DOS_JORNADAS'?r.sameDays>=2:r.differentSources>=2;
+  name.startsWith('MISMA_FUENTE')?r.sameDays>=2:r.differentSources>=2;
  const groups=new Map<string,typeof cutRows>();
  const res=emptyControl();
  for(const r of cutRows){
@@ -155,7 +155,8 @@ function controlled(cutRows:{family:string;hit:number;source:SourceId;routes:num
   // Emparejar sólo dentro del PRE, origen y banda de número de testigos;
   // evita confundir abundancia de familias y repetición por una misma fuente.
   const band=r.routes<=1?'1':r.routes<=2?'2':r.routes<=5?'3-5':r.routes<=12?'6-12':'13+';
-  const key=r.source+'|'+band;
+  const key=r.source+'|'+(name==='MISMA_FUENTE_ESTRICTA'?
+   r.witnessSource+'|'+(r.sourceCount===1?'una':'varias')+'|':'')+band;
   if(!groups.has(key))groups.set(key,[]);
   groups.get(key)!.push(r);
  }
@@ -170,7 +171,7 @@ function controlled(cutRows:{family:string;hit:number;source:SourceId;routes:num
  }
  return res;
 }
-const controls:ControlMethod[]=['FORMAS_DOS_JORNADAS','MISMA_FUENTE_DOS_JORNADAS','MOVIO_FUENTE'];
+const controls:ControlMethod[]=['FORMAS_DOS_JORNADAS','MISMA_FUENTE_DOS_JORNADAS','MISMA_FUENTE_ESTRICTA','MOVIO_FUENTE'];
 const plus=(a:ControlLine,b:ControlLine):ControlLine=>{
  const result=emptyControl();
  for(const k of Object.keys(result) as (keyof ControlLine)[])result[k]=a[k]+b[k];
@@ -285,6 +286,8 @@ async function main(){
      const ownSource=evidenceByMethod.MISMA_FUENTE.get(f.family)!;
      const migration=evidenceByMethod.CAMBIO_DE_FUENTE.get(f.family)!;
      return {family:f.family,hit:wins.get(f.family)||0,source:f.firstSource,
+      witnessSource:ownSource.trace.source,
+      sourceCount:new Set(f.traces.map(t=>t.source)).size,
       routes:f.traces.length,anyDays:figure.anyDays,sameDays:ownSource.sameDays,
       differentSources:migration.differentSources};
     });
@@ -301,7 +304,17 @@ async function main(){
     const physicalWinnerDetails=winning.filter(w=>eligible.has(w.family)).map(w=>{
      const f=eligible.get(w.family)!;
      const witness=memberScores.get(w.family)!.trace;
+     const actualPast=previous.filter(e=>e.shape===witness.shape).map(e=>({
+      date:e.date,turn:e.turn,jur:e.jur,head:e.head,source:e.source,
+      historicalCells:e.cells
+     }));
      return {head:w.head,family:w.family,source:witness.source,shape:witness.shape,
+      currentCells:witness.cells,currentDigits:witness.value,
+      sameSourceHistoricalEvidence:actualPast.filter(e=>e.source===witness.source).slice(0,12),
+      otherSourceHistoricalEvidence:actualPast.filter(e=>e.source!==witness.source).slice(0,12),
+      weeklySameSourceEvidence:weekly.filter(e=>e.shape===witness.shape&&e.source===witness.source)
+       .map(e=>({date:e.date,turn:e.turn,jur:e.jur,head:e.head,source:e.source,
+        historicalCells:e.cells})).slice(0,12),
       paths:f.traces.length,
       ranks: Object.fromEntries((Object.keys(rankings) as MatchMethod[]).map(k=>[
        k, rankings[k].indexOf(w.family)>=0 ? rankings[k].indexOf(w.family)+1 : null
