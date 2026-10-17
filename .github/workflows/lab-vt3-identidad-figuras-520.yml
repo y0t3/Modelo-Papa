@@ -1,0 +1,32 @@
+name: Laboratorio identidad de figuras y posiciones
+on:
+  push:
+    branches:
+      - lab/figuras-identidad-posicion-fuente-17oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  identidad:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comprobar tipos
+        run: npx tsc --noEmit
+      - name: Verificar identidades y evitar POST
+        run: npx --yes tsx scripts/test-lab-vt3-figura-identidad.ts
+      - name: Comparar figura, fuente y posición sobre los 520 PRE
+        run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
+      - name: Guardar detalle de cada figura, familia y corte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-VT3-FIGURA-POSICION-FUENTE-520
+          path: lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json
+          if-no-files-found: warn
