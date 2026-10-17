@@ -876,7 +876,7 @@ async function main(){
    figureIdentity:summarizeFigures(figureCuts.filter(x=>x.turn===t)),
    connected:summarizeConnected(connectedCuts.filter(x=>x.turn===t))}];
  })),episodeComparisons,episodeExamples,checksums:dataHashes,
- cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts};
+ cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts,derivedCuts};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_'+(extra16?'525':'520')+'.json',
   JSON.stringify(report,null,2)+'\n');
@@ -1092,6 +1092,47 @@ async function main(){
       source,sub.filter(x=>x.methods[mode].source===source).length]))}];
   }))
  ]));
+ // Cortes y tasas honestas VT2 y VT4: cobertura física, no aciertos
+ // VT4 familiares ficticios por invertir el número completo.
+ const derivedReport=Object.fromEntries(['JUNIO_JULIO','AGOSTO_OCTUBRE','TOTAL'].map(period=>{
+  const subset=derivedCuts.filter(x=>period==='TOTAL'||x.period===period);
+  const summaries=Object.fromEntries(derivedModes.map(mode=>[
+   mode,Object.fromEntries((['vt2','vt4'] as DerivedKind[]).map(kind=>[
+    kind,{top3:subset.reduce((n,x)=>n+x.scores[mode][kind].top3,0),
+     top5:subset.reduce((n,x)=>n+x.scores[mode][kind].top5,0),
+     top6:subset.reduce((n,x)=>n+x.scores[mode][kind].top6,0),
+     top10:subset.reduce((n,x)=>n+x.scores[mode][kind].top10,0),
+     avgCandidates:subset.reduce((n,x)=>n+x.scores[mode][kind].count,0)/
+      Math.max(1,subset.length),
+     cutsWithSix:subset.filter(x=>x.scores[mode][kind].count>=6).length,
+     examples:subset.flatMap(x=>x.scores[mode][kind].matchedHeads
+      .filter(h=>h.position<=6).map(h=>({date:x.date,turn:x.turn,...h}))).slice(0,6)}
+   ]))
+  ]));
+  return [period,{days:new Set(subset.map(x=>x.date)).size,cuts:subset.length,
+   heads:subset.reduce((n,x)=>n+x.heads.length,0),
+   physicalVt2:subset.reduce((n,x)=>n+x.physicalVt2,0),
+   physicalVt4:subset.reduce((n,x)=>n+x.physicalVt4,0),
+   modes:summaries}];
+ }));
+ const derivedByTurn=Object.fromEntries(TURNOS.map(turn=>{
+  const subset=derivedCuts.filter(x=>x.turn===turn);
+  return [turn,{heads:subset.reduce((n,x)=>n+x.heads.length,0),
+   physicalVt2:subset.reduce((n,x)=>n+x.physicalVt2,0),
+   physicalVt4:subset.reduce((n,x)=>n+x.physicalVt4,0),
+   results:Object.fromEntries(derivedModes.map(mode=>[mode,{
+    vt2:subset.reduce((n,x)=>n+x.scores[mode].vt2.top6,0),
+    vt4:subset.reduce((n,x)=>n+x.scores[mode].vt4.top6,0)}]))}];
+ }));
+ console.log('LAB_CONECTADAS_VT2_VT4_INICIO');
+ console.log(JSON.stringify({notes:{
+  derivation:'VT2 dos parejas físicas de madre VT3; VT4 cuarta cifra antepuesta por roce físico a VT3 madre o su inversa.',
+  fourDigits:'Acierto VT4 exacto: cabeza cuatro cifras igual a una ruta física del PRE; nunca inversión completa.',
+  geometryBaseline:'GEOMETRIA_DERIVADA es un laboratorio VT2/VT4 obtenido de madres VT3 de Geometría Completa, no un ranking independiente preexistente.',
+  connectedBaseline:'CONECTADAS_DERIVADA toma los primeros 10 testigos de configuraciones ganadoras solapadas reproducidas en otra fuente.',
+  protocol:'Todas las madres se eligen ANTES de conocer la cabeza objetivo; los resultados futuros solo se usan para evaluar.'
+ },periods:derivedReport,byTurn:derivedByTurn},null,2));
+ console.log('LAB_CONECTADAS_VT2_VT4_FIN');
  console.log('CONFIGURACIONES_CONECTADAS_INICIO');
  console.log(JSON.stringify({inventory:historicPairInventory,
   matched:connectedMatched,sensitivity:sensitivityReport,hybrid:hybridReport,examples:connectedExamples,
