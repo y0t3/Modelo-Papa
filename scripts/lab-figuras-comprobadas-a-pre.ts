@@ -28,11 +28,15 @@ import type {EpisodeMode} from './lab-figuras-episodios';
 import {sequenceEvidence,sequenceModes,rankSequenceEvidence,flagged} from './lab-figuras-secuencias-reales';
 import type {SequenceMode,SequenceEvidence} from './lab-figuras-secuencias-reales';
 
+const holdoutMay=process.env.LAB_MAYO_18_30==='1';
 const holdoutAug=process.env.LAB_AGOSTO_01_14==='1';
 const extra16=process.env.LAB_EVALUAR_16_OCT==='1';
-if(holdoutAug&&extra16)throw Error('Bloque agosto y 16oct deben ejecutarse por separado');
-const endDate=extra16?'2026-10-16':'2026-10-15';
-const periods=holdoutAug?
+if([holdoutMay,holdoutAug,extra16].filter(Boolean).length>1)
+ throw Error('Los controles históricos se ejecutan por separado');
+const endDate=holdoutMay?'2026-05-30':extra16?'2026-10-16':'2026-10-15';
+const periods=holdoutMay?
+ ([['2026-05-18','2026-05-30','MAYO_18_30']] as const):
+ holdoutAug?
  ([['2026-08-01','2026-08-14','AGOSTO_01_14']] as const):
  ([['2026-06-01','2026-07-31','JUNIO_JULIO'],
   ['2026-08-15',endDate,'AGOSTO_OCTUBRE']] as const);
@@ -216,7 +220,7 @@ function makeTotals(rows:CutResult[]){
 }
 async function download(){
  const result:Day[]=[];
- const list=range('2026-05-14',endDate);
+ const list=range(holdoutMay?'2026-05-01':'2026-05-14',endDate);
  for(let i=0;i<list.length;i+=8){
   const xs=await Promise.all(list.slice(i,i+8).map(async date=>{
    for(let j=0;j<3;j++)try{return {date,heads:await descargarCabezas(date,true)}}
@@ -224,6 +228,19 @@ async function download(){
    throw Error('Sin resultados: '+date);
   }));
   result.push(...xs);
+ }
+ if(holdoutMay){
+  const may=result.filter(x=>x.date>='2026-05-18'&&x.date<='2026-05-30');
+  const argentina=JURS.filter(j=>j!=='Montevideo');
+  const calendar=may.map(day=>{
+   const missing=TURNOS.flatMap(t=>argentina.filter(j=>
+    !/^\d{4}$/.test(day.heads[t][j])).map(j=>t+':'+j));
+   return {date:day.date,heads:25-missing.length,missing};
+  });
+  const partial=calendar.filter(x=>x.heads!==0&&x.heads!==25);
+  if(partial.length)throw Error('Jornada histórica parcial en mayo: '+JSON.stringify(partial));
+  console.log('MAYO_FECHAS_COMPROBADAS '+JSON.stringify(calendar.map(x=>({
+   date:x.date,complete:x.heads===25,withoutArgentineDraws:x.heads===0}))));
  }
  const valid=result.filter(x=>hasDrawResults(x.heads)&&hasNocturnoBase(x.heads))
   .sort((a,b)=>a.date.localeCompare(b.date));
@@ -820,7 +837,14 @@ async function main(){
    }
   }
  }
- if(holdoutAug){
+ if(holdoutMay){
+  const dates=new Set(cuts.map(x=>x.date));
+  if(dates.size<9||dates.size>12||cuts.length!==dates.size*5||
+   nightAuditCuts.length!==dates.size)
+   throw Error('Jornadas históricas completas de mayo insuficientes '+dates.size);
+  for(const cut of cuts)if(cut.heads.length!==5)
+   throw Error('Faltan cabezas argentinas en mayo '+cut.date+' '+cut.turn);
+ }else if(holdoutAug){
    if(cuts.length!==60||nightAuditCuts.length!==12||
     new Set(cuts.map(x=>x.date)).size!==12)
     throw Error('El bloque 01–14 agosto no contiene las 12 jornadas completas');
@@ -967,7 +991,7 @@ async function main(){
  })),episodeComparisons,episodeExamples,checksums:dataHashes,
  cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts,derivedCuts,networkCuts,nightCuts,nightAuditCuts};
  mkdirSync('lab-results',{recursive:true});
- writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_'+(holdoutAug?'AGOSTO_01_14':extra16?'525':'520')+'.json',
+ writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_'+(holdoutMay?'MAYO_18_30':holdoutAug?'AGOSTO_01_14':extra16?'525':'520')+'.json',
   JSON.stringify(report,null,2)+'\n');
  const traceExamples=seqByCut.filter(x=>
   x.modes.AABB.top3>0||x.modes.AAB.top3>0).map(x=>{
@@ -1286,6 +1310,53 @@ async function main(){
     .map(y=>({date:x.date,turn:x.turn,...y}))).slice(0,10)
   }];
  }));
+ if(holdoutMay){
+  const records=nightAuditCuts;
+  const total=summarizeNight(records);
+  const nights=derivedCuts.filter(x=>x.turn==='Nocturno');
+  const comparable=records.map(x=>{
+   const cut=nights.find(v=>v.date===x.date)!;
+   return {date:x.date,headCount:x.winningCases.length,
+    physicalVt2:cut.physicalVt2,physicalVt4:cut.physicalVt4,
+    officialVt2:x.observed.official,
+    connectedVt2:x.observed.connected,
+    geometryVt2:cut.scores.GEOMETRIA_DERIVADA.vt2.top6,
+    conectadasFromMatutino:x.group.Matutino?.winnerHeadsSelected||0,
+    neutralBySource:x.universe.expectedBySource,
+    motherHistory:x.top6.map(v=>({family:v.family,
+     motherRank:v.motherRank,historyDays:v.historyDays,source:v.source})),
+    hits:x.winningCases.filter(h=>h.category!=='neither').map(h=>({
+     head:h.head,family:h.family,which:h.category,
+     historicalHeads:h.witness?.historicalHeads,
+     historicalSource:h.witness?.historySource
+    }))}
+  });
+  const perTurn=Object.fromEntries(TURNOS.map(turn=>{
+   const all=derivedCuts.filter(x=>x.turn===turn);
+   const top=Object.fromEntries(derivedModes.map(mode=>[mode,{
+    vt2Top6:all.reduce((n,x)=>n+x.scores[mode].vt2.top6,0),
+    vt4Top6:all.reduce((n,x)=>n+x.scores[mode].vt4.top6,0)
+   }]));
+   const base=cuts.filter(x=>x.turn===turn),conn=connectedCuts.filter(x=>x.turn===turn);
+   return [turn,{heads:all.reduce((n,x)=>n+x.heads.length,0),
+    physicalVt2:all.reduce((n,x)=>n+x.physicalVt2,0),
+    physicalVt3:base.reduce((n,x)=>n+x.physicalWinningHeads,0),
+    physicalVt4:all.reduce((n,x)=>n+x.physicalVt4,0),
+    vt3Top6:{
+     connected:conn.reduce((n,x)=>n+x.modes.SOLAPADAS_OTRA.families
+      .slice(0,6).filter(f=>base.find(y=>y.date===x.date)?.winners.includes(f)).length,0),
+     geometry:base.reduce((n,x)=>n+x.winners.filter(f=>
+      x.scores.GEOMETRIA.topFamilies.slice(0,6).includes(f)).length,0)
+    },
+    top}];
+  }));
+  console.log('CONTRASTE_MAYO_18_30_INICIO');
+  console.log(JSON.stringify({status:'RECONSTRUCCION_HISTORICA_NO_SELLADA',
+   interval:'2026-05-18 a 2026-05-30',
+   dates:records.map(x=>x.date),days:total.days,heads:total.heads,
+   summary:total,byTurn:perTurn,nightly:comparable},null,2));
+  console.log('CONTRASTE_MAYO_18_30_FIN');
+ }
  if(holdoutAug){
   const h=nightAuditCuts;
   const summary=summarizeNight(h);
