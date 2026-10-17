@@ -14,6 +14,8 @@ import type {LaloHistorical} from '../src/motorLalo';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
 import type {Path} from '../src/paths';
 import type {SourceId,DailySheet} from '../src/sheet';
+import {connectedWinnerPairs,projectVerifiedConfigurations,pairModes} from './lab-vt3-configuraciones-conectadas';
+import type {PairMode,Pair} from './lab-vt3-configuraciones-conectadas';
 import {allGeometricShapes,inspectFigure,figureScore,figureModes} from './lab-vt3-figura-identidad';
 import type {FigureMode} from './lab-vt3-figura-identidad';
 import {episodeEvidence,episodeFlag,episodeScore,episodeModes} from './lab-figuras-episodios';
@@ -229,6 +231,16 @@ async function main(){
   const sheet=buildSheet(current.heads,older.heads);
   histories.set(current.date,{sheet,events:witnessed(sheet,current.date)});
  }
+ const connectedHistory=new Map<string,Pair[]>();
+ for(const [date,record] of histories)
+  connectedHistory.set(date,connectedWinnerPairs(record.events));
+ type PairControl={treated:number;control:number;hitT:number;hitC:number;
+  observed:number;expected:number;strata:number};
+ type ConnectedCut={date:string;turn:Turno;period:string;historyPairs:number;
+  modes:Record<PairMode,{candidates:number;top3:number;top5:number;top10:number;
+   families:string[];witnesses:any[]}>;
+  controls:Record<PairMode,PairControl>};
+ const connectedCuts:ConnectedCut[]=[];
  const cuts:CutResult[]=[];
  type FigControl={treated:number;control:number;hitT:number;hitC:number;observed:number;expected:number;strata:number};
  type FigRecord={date:string;turn:Turno;period:string;
