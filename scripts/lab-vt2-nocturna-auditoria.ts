@@ -4,7 +4,7 @@
 import {reversibleFamily} from '../src/motorLalo';
 import type {SourceId} from '../src/sheet';
 export type FamilyWitness={
- family:string;source:SourceId;mother:string;motherRank:number;
+ family:string;source:SourceId;motherRank:number;
  historySource:SourceId;historyDays:number;priorDate:string;
  shape:string;cells:string[];historicalHeads:[string,string];
 };
@@ -53,7 +53,8 @@ export function analyzeNightCut(args:{
   const family=keys[i],connectedRank=all.findIndex(x=>x.family===family)+1,
    officialRank=officialFamilies.indexOf(family)+1,
    c=top.has(family),o=officialTop.has(family);
-  const category=c?(o?'both':'onlyConnected'):(o?'onlyOfficial':'neither');
+  const category:NightAudit['winningCases'][number]['category']=
+   c?(o?'both':'onlyConnected'):(o?'onlyOfficial':'neither');
   const selected=all.find(x=>x.family===family);
   return {head,family,category,connectedRank,officialRank,
    witness:selected?witnesses.get(selected.mother):undefined};
