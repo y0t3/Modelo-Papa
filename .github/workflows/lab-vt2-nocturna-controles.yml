@@ -29,6 +29,10 @@ jobs:
         env:
           LAB_EVALUAR_16_OCT: '1'
         run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
+      - name: Contraste aislado 01–14 agosto con jornadas completas
+        env:
+          LAB_AGOSTO_01_14: '1'
+        run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
       - name: Conservar cada PRE y los controles
         if: always()
         uses: actions/upload-artifact@v4
