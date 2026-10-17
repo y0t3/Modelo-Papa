@@ -455,6 +455,28 @@ async function main(){
  cuts,sequenceCuts:seqByCut};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json',JSON.stringify(report,null,2)+'\n');
+ const traceExamples=seqByCut.filter(x=>
+  x.modes.AABB.top3>0||x.modes.AAB.top3>0).map(x=>{
+   const cut=cuts.find(c=>c.date===x.date&&c.turn===x.turn)!;
+   const result=(['AAB','AABB'] as SequenceMode[]).flatMap(mode=>{
+    const top=x.modes[mode].topWitnesses;
+    return top.filter(w=>cut.winners.includes(w.family)).map(w=>{
+     const headIndex=cut.winners.findIndex((family,i)=>family===w.family);
+     const olderDates=days.filter(d=>d.date<x.date).slice(-6).map(d=>d.date);
+     const confirmed=olderDates.flatMap(d=>
+      (histories.get(d)?.events||[]).filter(e=>e.shape===w.shape)
+       .map(e=>({date:e.date,turn:e.turn,jur:e.jur,head:e.head,
+        source:e.source,cells:e.cells})));
+     return {date:x.date,turn:x.turn,mode,head:cut.heads[headIndex],
+      family:w.family,currentSource:w.source,currentDigits:w.digits,
+      currentCells:w.cells,shape:w.shape,verifiedTimeline:confirmed};
+    });
+   });
+   return result;
+  }).flat();
+ console.log('SECUENCIAS_CASOS_INICIO');
+ console.log(JSON.stringify(traceExamples.slice(0,20),null,2));
+ console.log('SECUENCIAS_CASOS_FIN');
  console.log('SECUENCIAS_PRE_INICIO');
  console.log(JSON.stringify({periods:Object.fromEntries(
   Object.entries(report.summary).map(([p,v])=>[p,{
