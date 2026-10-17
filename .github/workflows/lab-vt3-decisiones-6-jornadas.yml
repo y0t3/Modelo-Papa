@@ -1,7 +1,7 @@
-name: 'Auditoria VT3 seis jornadas'
+name: 'Auditoria frontera VT3 fisica seis jornadas'
 on:
   push:
-    branches: [lab/auditoria-decisiones-vt3-10a16oct2026]
+    branches: [lab/frontera-vt3-fisica-10a16oct2026]
   workflow_dispatch:
 permissions:
   contents: read
