@@ -969,7 +969,9 @@ async function main(){
   noLeak:'Ninguna cabeza del turno objetivo o posterior se entrega al lector; no se alteran hojas anteriores.',
   ranking:'FIGURA_REITERADA por días distintos de coincidencia real; MISMA_FUENTE por días con la misma figura y columna; CAMBIO_DE_FUENTE por figura confirmada en más de una fuente. Desempate físico determinista, no escogido mirando resultados.',
   controls:'Dentro de cada PRE + primera fuente física y banda de rutas, comparar familias con figura ganadora repetida contra otras familias geométricamente disponibles; no confundir rutas con cabezas.',
-  sample:'104 jornadas, 520 PRE históricos corregidos y 2600 cabezas argentinas, Montevideo solo fuente física.'
+  sample:holdoutMay?'Bloque mayo 18–30: solo jornadas argentinas completas; ejecución histórica reconstruida no sellada.':
+  holdoutAug?'Bloque agosto 01–14: 12 jornadas completas, muestra no sellada.':
+  '104 jornadas, 520 PRE históricos corregidos y 2600 cabezas argentinas, Montevideo solo fuente física.'
  },summary:Object.fromEntries([...periods.map(x=>x[2]),'TOTAL'].map(p=>{
   const sel=p==='TOTAL'?cuts:cuts.filter(x=>x.period===p);
   const cont=p==='TOTAL'?controlByCut:controlByCut.filter(x=>x.period===p);
