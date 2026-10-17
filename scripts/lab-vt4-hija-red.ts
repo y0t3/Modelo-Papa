@@ -9,15 +9,13 @@ const shift=(path:string[],n:number)=>path.map(c=>{
 });
 export function configurationCurrentCells(mother:Proposal):Set<string>{
  const pool=mother.proof;
- const matches:number[]=[];
- for(let row=0;row<6;row++){
-  const projected=pool.map(p=>shift(p,row));
-  if(projected.some(p=>p.some(c=>Number(c.split(':')[0])>=6)))continue;
-  if(projected.some(p=>canon(p)===canon(mother.cells)))matches.push(row);
- }
- if(!matches.length)throw Error('La madre elegida no pertenece a sus dos recorridos comprobados');
- if(matches.length!==1)throw Error('Ubicación ambigua de la configuración');
- return new Set(pool.flatMap(p=>shift(p,matches[0])));
+ const row=mother.currentOffset;
+ if(!Number.isInteger(row)||row<0||row>=6)throw Error('Desplazamiento físico inválido');
+ const projected=pool.map(p=>shift(p,row));
+ if(projected.some(p=>p.some(c=>Number(c.split(':')[0])>=6))||
+  !projected.some(p=>canon(p)===canon(mother.cells)))
+  throw Error('La madre elegida no pertenece a la configuración en su desplazamiento concreto');
+ return new Set(projected.flat());
 }
 export function networkSupport(candidate:Vt4Candidate,mother:Proposal):number{
  if(candidate.mother!==mother.family||candidate.source!==mother.source)return 0;
