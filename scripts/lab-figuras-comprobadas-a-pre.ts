@@ -70,7 +70,8 @@ function witnessed(sheet:DailySheet,date:string):Verified[]{
     for(const route of hit.paths){
      const t=pathTrace(route,hit.sourceId);
      if(t.value!==hit.value)throw Error('Celdas no coinciden con cabeza real');
-     const key=[date,turn,match.jurisdiccion,match.cabeza,t.source,t.shape].join('|');
+     const key=[date,turn,match.jurisdiccion,match.cabeza,t.source,t.shape,
+       positionKey(t.cells)].join('|');
      if(seen.has(key))continue;seen.add(key);
      events.push({date,turn,head:match.cabeza,jur:match.jurisdiccion,
       source:t.source,shape:t.shape,cells:t.cells});
@@ -752,7 +753,14 @@ async function main(){
    top5:chosen.reduce((n,c)=>n+c.modes[mode].top5,0),
    top10:chosen.reduce((n,c)=>n+c.modes[mode].top10,0)}}];
  }));
- const figureSummary={theoreticalShapes:theoreticalShapes.length,
+ const oldProofs=[...histories.values()].flatMap(x=>x.events);
+ const physicalVerifiedPathCount=oldProofs.length;
+ const distinctHistoricalHeads=new Set(oldProofs.map(x=>
+  [x.date,x.turn,x.jur,x.head,x.source,x.shape].join('|'))).size;
+ const multiplePhysicalRoutes=physicalVerifiedPathCount-distinctHistoricalHeads;
+ if(multiplePhysicalRoutes<0)throw Error('Conteo de testigos físicos inconsistente');
+ const figureSummary={physicalVerifiedPathCount,distinctHistoricalHeads,
+  multiplePhysicalRoutes,theoreticalShapes:theoreticalShapes.length,
   seenOnPre:[...new Set(figureCuts.flatMap(c=>c.shapeNames))].length,
   minOnPre:Math.min(...figureCuts.map(c=>c.availableShapes)),
   maxOnPre:Math.max(...figureCuts.map(c=>c.availableShapes)),
