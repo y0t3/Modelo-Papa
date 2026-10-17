@@ -23,10 +23,14 @@ jobs:
         run: npx --yes tsx scripts/test-lab-vt3-configuraciones-conectadas.ts
       - name: Barrer los 520 PRE con controles de figuras conectadas
         run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
+      - name: Evaluar 16oct posterior al corpus sin alterar reglas experimentales
+        env:
+          LAB_EVALUAR_16_OCT: '1'
+        run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
       - name: Guardar históricos positivos y negativos de los 520 cortes
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: LAB-CONFIGURACIONES-CONECTADAS-520
-          path: lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json
+          path: lab-results/FIGURAS_COMPROBADAS_A_PRE_*.json
           if-no-files-found: warn
