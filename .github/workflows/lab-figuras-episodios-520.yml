@@ -1,0 +1,32 @@
+name: Laboratorio figuras pausa y fuentes simultáneas
+on:
+  push:
+    branches:
+      - lab/figuras-pausas-multifuente-17oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  episodios:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Validar código
+        run: npx tsc --noEmit
+      - name: Probar casos de episodios y multifuente
+        run: npx --yes tsx scripts/test-lab-figuras-episodios.ts
+      - name: Auditar 520 PRE con negativos y episodios históricos
+        run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
+      - name: Guardar historial detallado
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-EPISODIOS-FIGURAS-520
+          path: lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json
+          if-no-files-found: warn
