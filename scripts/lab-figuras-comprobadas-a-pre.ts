@@ -1102,6 +1102,7 @@ async function main(){
      top5:subset.reduce((n,x)=>n+x.scores[mode][kind].top5,0),
      top6:subset.reduce((n,x)=>n+x.scores[mode][kind].top6,0),
      top10:subset.reduce((n,x)=>n+x.scores[mode][kind].top10,0),
+     allCandidateHits:subset.reduce((n,x)=>n+x.scores[mode][kind].matchedHeads.length,0),
      avgCandidates:subset.reduce((n,x)=>n+x.scores[mode][kind].count,0)/
       Math.max(1,subset.length),
      cutsWithSix:subset.filter(x=>x.scores[mode][kind].count>=6).length,
@@ -1124,6 +1125,28 @@ async function main(){
     vt2:subset.reduce((n,x)=>n+x.scores[mode].vt2.top6,0),
     vt4:subset.reduce((n,x)=>n+x.scores[mode].vt4.top6,0)}]))}];
  }));
+ const derivedByPeriodTurn=Object.fromEntries(['JUNIO_JULIO','AGOSTO_OCTUBRE'].map(period=>
+  [period,Object.fromEntries(TURNOS.map(turn=>{
+   const subset=derivedCuts.filter(x=>x.period===period&&x.turn===turn);
+   return [turn,{heads:subset.reduce((n,x)=>n+x.heads.length,0),
+    physicalVt2:subset.reduce((n,x)=>n+x.physicalVt2,0),
+    physicalVt4:subset.reduce((n,x)=>n+x.physicalVt4,0),
+    methods:Object.fromEntries(derivedModes.map(mode=>[mode,{
+     vt2Top6:subset.reduce((n,x)=>n+x.scores[mode].vt2.top6,0),
+     vt4Top6:subset.reduce((n,x)=>n+x.scores[mode].vt4.top6,0)
+    }]))}];
+  }))]));
+ const derivedSingleDay=extra16?{
+  status:'RECONSTRUCCIÓN HISTÓRICA SIN PRE SELLADO',
+  date:'2026-10-16',cuts:derivedCuts.filter(x=>x.date==='2026-10-16').map(x=>({
+   turn:x.turn,heads:x.heads,physicalVt2:x.physicalVt2,
+   physicalVt4:x.physicalVt4,
+   methods:Object.fromEntries(derivedModes.map(mode=>[mode,{
+    vt2:{top3:x.scores[mode].vt2.top3,top6:x.scores[mode].vt2.top6,
+     families:x.scores[mode].vt2.firstFamilies.slice(0,6)},
+    vt4:{top3:x.scores[mode].vt4.top3,top6:x.scores[mode].vt4.top6,
+     families:x.scores[mode].vt4.firstFamilies.slice(0,6)}}]))
+  }))}:null;
  console.log('LAB_CONECTADAS_VT2_VT4_INICIO');
  console.log(JSON.stringify({notes:{
   derivation:'VT2 dos parejas físicas de madre VT3; VT4 cuarta cifra antepuesta por roce físico a VT3 madre o su inversa.',
@@ -1131,7 +1154,8 @@ async function main(){
   geometryBaseline:'GEOMETRIA_DERIVADA es un laboratorio VT2/VT4 obtenido de madres VT3 de Geometría Completa, no un ranking independiente preexistente.',
   connectedBaseline:'CONECTADAS_DERIVADA toma los primeros 10 testigos de configuraciones ganadoras solapadas reproducidas en otra fuente.',
   protocol:'Todas las madres se eligen ANTES de conocer la cabeza objetivo; los resultados futuros solo se usan para evaluar.'
- },periods:derivedReport,byTurn:derivedByTurn},null,2));
+ },periods:derivedReport,byTurn:derivedByTurn,byPeriodTurn:derivedByPeriodTurn,
+ singleDay:derivedSingleDay},null,2));
  console.log('LAB_CONECTADAS_VT2_VT4_FIN');
  console.log('CONFIGURACIONES_CONECTADAS_INICIO');
  console.log(JSON.stringify({inventory:historicPairInventory,
