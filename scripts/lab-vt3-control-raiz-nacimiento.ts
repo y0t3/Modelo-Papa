@@ -4,7 +4,7 @@
 import {TURNOS} from '../src/domain';
 import type {Turno} from '../src/domain';
 type PhysicalRow={
- firstSource:string;status:string;routeCount:number;sourceCount:number;
+ firstSource:string;status:string;routeCount:number;physicalRouteCount:number;sourceCount:number;
  directRoots:number;branchBlocks:number;winnerHeads:number;admitted:boolean;
 };
 type PhysicalCut={date:string;period:string;turn:Turno;rows:PhysicalRow[]};
@@ -28,26 +28,26 @@ const comparisons:Comparison[]=[
   hypothesis:'Dentro del mismo PRE + columna de nacimiento + banda de rutas + cantidad de fuentes; no premiar automáticamente raíz única.',
   first:x=>x.directRoots===1&&x.branchBlocks===0&&x.admitted,
   second:x=>x.directRoots===0&&x.branchBlocks===0,
-  bucket:x=>x.firstSource+'|'+band(x.routeCount)+'|'+(x.sourceCount===1?'una':'varias')},
+  bucket:x=>x.firstSource+'|'+band(x.physicalRouteCount)+'|'+(x.sourceCount===1?'una':'varias')},
  {id:'A_BIFURCADA_RAIZ_PROPIA',label:'Con raíz propia: sin bifurcación vs con bifurcación',
   hypothesis:'Comparar dentro del mismo PRE + columna de nacimiento + banda de rutas + cantidad de fuentes, exclusivamente familias ancladas.',
   first:x=>x.directRoots>=1&&x.branchBlocks===0&&x.admitted,
   second:x=>x.directRoots>=1&&x.branchBlocks>0&&x.admitted,
-  bucket:x=>x.firstSource+'|'+band(x.routeCount)+'|'+(x.sourceCount===1?'una':'varias')},
+  bucket:x=>x.firstSource+'|'+band(x.physicalRouteCount)+'|'+(x.sourceCount===1?'una':'varias')},
  {id:'B_NACE_DURANTE_DIA_SIN_RAIZ',label:'Familia no anclada que nace ahora vs familia intradía previa no anclada',
   hypothesis:'Dentro del mismo PRE y banda de rutas, solo familias intradía de una fuente y sin raíz. Control por edad, no por origen de columna.',
   first:x=>x.firstSource!=='prevNocturno'&&x.status==='NUEVA_FAMILIA'&&
    x.directRoots===0&&x.branchBlocks===0&&!x.admitted&&x.sourceCount===1,
   second:x=>x.firstSource!=='prevNocturno'&&x.status==='SIN_CAMBIO'&&
    x.directRoots===0&&x.branchBlocks===0&&!x.admitted&&x.sourceCount===1,
-  bucket:x=>band(x.routeCount)},
+  bucket:x=>band(x.physicalRouteCount)},
  {id:'B_NACE_VS_NOCTURNA_SIN_RAIZ',label:'Nacimiento intradía sin raíz vs Nocturna anterior sin raíz',
   hypothesis:'Mismo PRE, rutas y solo una fuente. Comparación descriptiva: origen fuente/antigüedad difieren.',
   first:x=>x.firstSource!=='prevNocturno'&&x.status==='NUEVA_FAMILIA'&&
    x.directRoots===0&&x.branchBlocks===0&&!x.admitted&&x.sourceCount===1,
   second:x=>x.firstSource==='prevNocturno'&&x.directRoots===0&&
    x.branchBlocks===0&&!x.admitted&&x.sourceCount===1,
-  bucket:x=>band(x.routeCount)}
+  bucket:x=>band(x.physicalRouteCount)}
 ];
 function compare(cuts:PhysicalCut[],choice:Comparison){
  const first:{date:string;row:PhysicalRow}[]=[];
