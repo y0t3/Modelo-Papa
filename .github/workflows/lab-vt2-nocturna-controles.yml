@@ -1,4 +1,4 @@
-name: Laboratorio VT2 Nocturna: fuentes y controles
+name: 'Laboratorio VT2 Nocturna: fuentes y controles'
 on:
   push:
     branches:
