@@ -412,6 +412,21 @@ async function main(){
  if(cuts.length!==520||cuts.reduce((n,x)=>n+x.physicalWinningHeads,0)!==654)
   throw Error('El histórico corregido dejó de coincidir con 520/654: '+
    cuts.length+'/'+cuts.reduce((n,x)=>n+x.physicalWinningHeads,0));
+ const seqTotals=(items:typeof seqByCut)=>Object.fromEntries(sequenceModes.map(mode=>{
+  const x={top3:0,top5:0,top10:0,cutsWithCandidates:0,cutsWithAtLeast3:0,
+   qualifiedSlots:0,treated:0,control:0,hitsT:0,hitsC:0,expected:0,observed:0,strata:0};
+  for(const item of items){
+   const m=item.modes[mode],c=item.control[mode];
+   x.top3+=m.top3;x.top5+=m.top5;x.top10+=m.top10;
+   x.cutsWithCandidates+=Number(m.available>0);
+   x.cutsWithAtLeast3+=Number(m.available>=3);
+   x.qualifiedSlots+=Math.min(3,m.available);
+   x.treated+=c.treated;x.control+=c.control;
+   x.hitsT+=c.hitsT;x.hitsC+=c.hitsC;
+   x.expected+=c.expected;x.observed+=c.observed;x.strata+=c.strata;
+  }
+  return [mode,x];
+ }));
  const aggregates=(xs:typeof controlByCut)=>{
   return Object.fromEntries(controls.map(k=>[k,xs.reduce((out,c)=>plus(out,c.res[k]),emptyControl())]));
  };
@@ -428,16 +443,26 @@ async function main(){
   const sel=p==='TOTAL'?cuts:cuts.filter(x=>x.period===p);
   const cont=p==='TOTAL'?controlByCut:controlByCut.filter(x=>x.period===p);
   return [p,{...makeTotals(sel),controls:aggregates(cont),
+   sequences:seqTotals(seqByCut.filter(x=>p==='TOTAL'||x.period===p)),
    metrics:{avgAvailableFamilies:sel.reduce((n,x)=>n+x.availableFamilies,0)/sel.length,
     avgActiveShapes:sel.reduce((n,x)=>n+x.distinctActiveShapes,0)/sel.length,
     avgHistoryEvents:sel.reduce((n,x)=>n+x.verifiedEventCount,0)/sel.length}}];
  })),byTurn:Object.fromEntries(TURNOS.map(t=>{
   const xs=cuts.filter(x=>x.turn===t);
-  return [t,{...makeTotals(xs),controls:aggregates(controlByCut.filter(x=>x.turn===t))}];
+  return [t,{...makeTotals(xs),controls:aggregates(controlByCut.filter(x=>x.turn===t)),
+   sequences:seqTotals(seqByCut.filter(x=>x.turn===t))}];
  })),checksums:dataHashes,
- cuts};
+ cuts,sequenceCuts:seqByCut};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json',JSON.stringify(report,null,2)+'\n');
+ console.log('SECUENCIAS_PRE_INICIO');
+ console.log(JSON.stringify({periods:Object.fromEntries(
+  Object.entries(report.summary).map(([p,v])=>[p,{
+   days:v.days,cuts:v.cuts,physicalWinners:v.physicalWinners,
+   baseline:v.methods,sequences:v.sequences}])),
+  byTurn:Object.fromEntries(Object.entries(report.byTurn).map(([k,v])=>[k,v.sequences]))
+ },null,2));
+ console.log('SECUENCIAS_PRE_FIN');
  console.log('FIGURAS_PRE_RESULTADOS_INICIO');
  console.log(JSON.stringify({summary:report.summary,byTurn:report.byTurn},null,2));
  console.log('FIGURAS_PRE_RESULTADOS_FIN');
