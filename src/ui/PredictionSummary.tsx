@@ -26,6 +26,7 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
  const [limits,setLimits]=useState<Record<LaloKind,TopCount>>(defaults);
  const [active,setActive]=useState<LaloKind>('vt2');
  const [pagerWidth,setPagerWidth]=useState(0);
+ const [pageHeights,setPageHeights]=useState<Partial<Record<LaloKind,number>>>({});
  const pager=useRef<ScrollView>(null);
 
  useEffect(()=>{
@@ -76,6 +77,8 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
   }}>
    <ScrollView ref={pager} horizontal pagingEnabled nestedScrollEnabled
     scrollEnabled={pagerWidth>0} showsHorizontalScrollIndicator={false}
+    style={pageHeights[active]?{height:pageHeights[active]}:undefined}
+    contentContainerStyle={s.pages}
     onMomentumScrollEnd={e=>{
      if(!pagerWidth)return;
      const index=Math.max(0,Math.min(KINDS.length-1,
@@ -85,7 +88,11 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
     {KINDS.map(kind=>{
      const limit=limits[kind];
      const rows=view?.ranks[kind].slice(0,limit)||[];
-     return <View key={kind} style={[s.page,{width:pagerWidth||undefined}]}>
+     return <View key={kind} style={[s.page,{width:pagerWidth||undefined}]}
+      onLayout={e=>{
+       const height=Math.ceil(e.nativeEvent.layout.height);
+       if(height>0)setPageHeights(prev=>prev[kind]===height?prev:{...prev,[kind]:height});
+      }}>
       <View style={s.headingRow}>
        <Text style={[s.heading,{color:kinds[kind].line}]}>
         {kind.toUpperCase()} · {kinds[kind].label}
@@ -144,6 +151,7 @@ const s=StyleSheet.create({
  kindTabText:{fontSize:13,fontWeight:'900'},
  hint:{fontSize:10,lineHeight:15,marginTop:7,marginBottom:3},
  pager:{width:'100%',overflow:'hidden'},
+ pages:{alignItems:'flex-start'},
  page:{paddingTop:9,paddingBottom:8},
  headingRow:{flexDirection:'row',justifyContent:'space-between',alignItems:'center',gap:8},
  heading:{fontSize:15,fontWeight:'900'},aux:{fontSize:10,fontWeight:'700'},
