@@ -1,0 +1,36 @@
+name: 'Laboratorio histórico completo mayo: VT2 VT3 VT4'
+on:
+  push:
+    branches:
+      - lab/contraste-mayo-completo-17oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mayo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Verificar TypeScript
+        run: npx tsc --noEmit
+      - name: Probar el contador de controles VT2
+        run: npx --yes tsx scripts/test-lab-vt2-nocturna-auditoria.ts
+      - name: Comprobar VT4 fisico sin invertir cuaterna
+        run: npx --yes tsx scripts/test-lab-conectadas-vt2-vt4.ts
+      - name: Analizar solo jornadas cerradas mayo 18 al 30
+        env:
+          LAB_MAYO_18_30: '1'
+        run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
+      - name: Preservar evidencia completa y negativos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-MAYO-18-30-PRE-COMPLETOS
+          path: lab-results/FIGURAS_COMPROBADAS_A_PRE_MAYO_18_30.json
+          if-no-files-found: warn
