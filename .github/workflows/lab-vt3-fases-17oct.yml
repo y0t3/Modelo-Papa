@@ -1,0 +1,30 @@
+name: Laboratorio secuencias de figuras comprobadas AAB y AABB
+on:
+  push:
+    branches:
+      - lab/secuencias-figuras-aabb-intradia-17oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  trayectoria:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Verificar TypeScript
+        run: npx tsc --noEmit
+      - name: Ejecutar historia de figuras ganadoras y fases de fuente
+        run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
+      - name: Conservar los 520 PRE con candidatos, negativos y secuencias
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-FIGURAS-FASES-AAB-AABB-520
+          path: lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json
+          if-no-files-found: warn
