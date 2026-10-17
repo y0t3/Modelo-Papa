@@ -328,7 +328,7 @@ function LaloApp(){
     <TurnStrip value={target} onChange={changeTurn}/>
     {!experimental?<>
      <PredictionSummary date={dateText} turn={target} view={motor}
-      post={post} onFocus={showFamily}/>
+      post={post} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
      <Pressable accessibilityRole="button" onPress={()=>setExperimental(true)}
       style={[s.reload,{backgroundColor:c.surface,borderWidth:1,borderColor:c.accent,marginTop:12}]}>
       <Text style={[s.reloadText,{color:c.accent}]}>🧪 Experimental · Comparaciones VT3 →</Text>
