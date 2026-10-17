@@ -67,7 +67,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
  const record=records.find(r=>recordId(r.snapshot.pre.date,r.snapshot.pre.turn)===recordId(date,turn));
  const sealed=Boolean(record),published=hasObserved(heads,turn);
  const editable=!!sheet&&date===todayLocal()&&!sealed&&!published;
- const expandedDraft=useMemo(()=>expandDownPicks(picks,true),[picks]);
+ const expandedDraft=useMemo(()=>expandDownPicks(picks,true,true),[picks]);
  const wagers=useMemo(()=>uniqueWagers(expandedDraft),[expandedDraft]);
  const weekRecords=useMemo(()=>records.filter(r=>weekStart(r.snapshot.pre.date)===week),[records,week]);
  const summary=useMemo(()=>weeklySummary(records,week),[records,week]);
@@ -141,7 +141,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
   if(!editable||!sheet||!picks.length)return;
   Alert.alert('Congelar pronóstico Lalo',
    'Se guardarán '+Object.values(wagers).reduce((n,a)=>n+a.size,0)+
-   ' jugadas distintas (incluida bajada VT4→VT3→VT2) del '+date+' · '+turn+
+   ' jugadas distintas (bajada VT4→VT3→VT2 y VT3→VT2) del '+date+' · '+turn+
    '. Una vez guardadas no podrás modificar ni agregar candidatas. ¿Confirmás?',
    [{text:'Seguir editando',style:'cancel'},{
     text:'Congelar PRE',onPress:()=>{
@@ -171,7 +171,8 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
   finally{setBusy(false)}
  };
  const showPicks=record?.snapshot.pre.picks||picks;
- const displayedPicks=expandDownPicks(showPicks,!record||record.snapshot.pre.schema==='PAPA_PRE_V3');
+ const displayedPicks=expandDownPicks(showPicks,!record||['PAPA_PRE_V3','PAPA_PRE_V4'].includes(record.snapshot.pre.schema),
+   !record||record.snapshot.pre.schema==='PAPA_PRE_V4');
  const autoCount=displayedPicks.filter(p=>p.autoFrom).length;
  return <View style={s.main}>
   <View style={[s.hero,{backgroundColor:c.surface,borderColor:c.border}]}>
@@ -226,8 +227,9 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
        {preview.kind==='vt4'?'Número exacto · madre '+preview.motherVt3:
         'Familia reversible '+preview.family}
       </Text>
-      {preview.kind==='vt4'?<Text style={[s.small,{color:c.text}]}>
-       Bajalo: VT4 {preview.value} + VT3 {preview.value.slice(-3)} + VT2 {preview.value.slice(-2)}
+      {(preview.kind==='vt4'||preview.kind==='vt3')?<Text style={[s.small,{color:c.text}]}>
+       {preview.kind==='vt4'?'Bajalo: VT4 '+preview.value+' + VT3 '+preview.value.slice(-3)+' + VT2 '+preview.value.slice(-2):
+        'Bajalo: VT3 '+preview.value+' + VT2 '+preview.value.slice(-2)}
       </Text>:null}
      </View>:null}
      <View style={s.controls}>
@@ -249,7 +251,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
    <View style={[s.panel,{backgroundColor:c.surface,borderColor:c.border}]}>
     <Text style={[s.subtitle,{color:c.text}]}>CANDIDATOS ELEGIDOS · {showPicks.length} recorridos · {autoCount} bajadas</Text>
     <Text style={[s.small,{color:c.subtext}]}>
-     Cada VT4 seleccionado incluye sus últimas tres y dos cifras («bajalo»).
+     Cada VT4 baja a VT3 y VT2; cada VT3 baja a VT2 («bajalo»).
      Una familia cuenta una sola vez por VT y turno, aunque tenga varias rutas.
      Las jugadas bajadas tienen testigo físico propio dentro del recorrido VT4.
     </Text>
@@ -267,7 +269,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
         </Text>
         <Text style={[s.muted,{color:c.subtext}]}>
          {sourceLabels[p.sourceId]} · {p.value} · {pathText(p.cells)}
-         {p.autoFrom?' · ↓ Bajado de VT4':''}
+         {p.autoFrom?' · ↓ Bajado automáticamente':''}
         </Text>
        </View>
        {editable&&!p.autoFrom?<Pressable onPress={()=>void patch(picks.filter(x=>x.id!==p.id))}
