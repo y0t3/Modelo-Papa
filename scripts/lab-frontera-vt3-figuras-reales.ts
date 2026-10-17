@@ -45,11 +45,14 @@ export function verifiedShapes(sheet:DailySheet,date:string):MarkedShape[]{
 export type NonAdmittedRow={
  family:string;hit:number;source:SourceId;sourceCount:number;routes:number;
  onlyLatestSource:boolean;historySameSource:boolean;historyOtherSource:boolean;
+ historyExactPosition:boolean;historyExactSameSource:boolean;
+ historyNearSameSource:boolean;
  historyAnySource:boolean;earlierTodayShape:boolean;historicalEventCount:number;
  prevWinningFigures:{date:string;turn:Turno;head:string;source:SourceId;
   cells:string[];shape:string}[];currentPaths:PhysicalPath[];
 };
 export const featureNames=['onlyLatestSource','historySameSource','historyOtherSource',
+ 'historyExactPosition','historyExactSameSource','historyNearSameSource',
  'historyAnySource','earlierTodayShape'] as const;
 export type Feature=typeof featureNames[number];
 export function analyzeNonAdmitted(args:{
@@ -71,6 +74,21 @@ export function analyzeNonAdmitted(args:{
     old.shape===physicalShape(path.cells)));
   const other=witnesses.some(old=>f.paths.some(path=>old.source!==path.source&&
     old.shape===physicalShape(path.cells)));
+  const matched=(old:MarkedShape,path:PhysicalPath)=>
+   old.shape===physicalShape(path.cells);
+  const samePlace=(old:MarkedShape,path:PhysicalPath)=>
+   matched(old,path)&&poskey(old.cells)===poskey(path.cells);
+  const nearPlace=(old:MarkedShape,path:PhysicalPath)=>{
+   if(!matched(old,path))return false;
+   const ca=old.cells.map(p),cb=path.cells.map(p);
+   return Math.min(...ca.map(q=>q[1]))===Math.min(...cb.map(q=>q[1]))&&
+    Math.abs(Math.min(...ca.map(q=>q[0]))-Math.min(...cb.map(q=>q[0])))<=1;
+  };
+  const exact=witnesses.some(old=>f.paths.some(path=>samePlace(old,path)));
+  const exactOwn=witnesses.some(old=>f.paths.some(path=>
+   old.source===path.source&&samePlace(old,path)));
+  const nearOwn=witnesses.some(old=>f.paths.some(path=>
+   old.source===path.source&&nearPlace(old,path)));
   const events=new Set(witnesses.map(w=>[w.date,w.turn,w.jur,w.head].join('|')));
   const noDuplicateWitnesses=new Map<string,MarkedShape>();
   for(const w of witnesses)noDuplicateWitnesses.set([w.date,w.turn,w.jur,w.head,
@@ -80,6 +98,8 @@ export function analyzeNonAdmitted(args:{
    source:f.sources[0],sourceCount:f.sources.length,routes:f.paths.length,
    onlyLatestSource:f.sources.length===1&&f.sources[0]===newestSource,
    historySameSource:same,historyOtherSource:other,
+   historyExactPosition:exact,historyExactSameSource:exactOwn,
+   historyNearSameSource:nearOwn,
    historyAnySource:same||other,earlierTodayShape:intra,
    historicalEventCount:events.size,
    prevWinningFigures:[...noDuplicateWitnesses.values()].slice(0,12).map(w=>({
