@@ -20,10 +20,10 @@ const cut=analyzeNightCut({date:'2026-10-13',period:'JUNIO_JULIO',
  heads:['0012','0067','0078','0012','0056'],
  all,officialFamilies:['78/87','23/32','01/10','12/21','34/43','45/54'],mothers});
 assert.equal(cut.observed.connected,4);
-assert.equal(cut.observed.official,2);
+assert.equal(cut.observed.official,3);
 assert.equal(cut.observed.both,2);
 assert.equal(cut.observed.onlyConnected,2);
-assert.equal(cut.observed.onlyOfficial,0);
+assert.equal(cut.observed.onlyOfficial,1);
 assert.equal(cut.universe.winInPool,5);
 assert.equal(cut.universe.expectedUniform,3.75);
 assert.equal(cut.universe.expectedBySource,3.75);
