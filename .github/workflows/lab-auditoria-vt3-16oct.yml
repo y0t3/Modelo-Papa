@@ -1,0 +1,22 @@
+name: Laboratorio VT3 jornada 16 octubre
+on:
+  push:
+    branches: [lab/auditoria-vt3-viernes-16oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Validar TypeScript
+        run: npx tsc --noEmit
+      - name: Auditar 25 cabezas VT3, origen físico, Lalo, Geometría y Nueva Prueba
+        run: npx --yes tsx scripts/lab-auditoria-vt3-16oct.ts
