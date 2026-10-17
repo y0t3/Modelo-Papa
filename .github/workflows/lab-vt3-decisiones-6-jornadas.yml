@@ -1,0 +1,25 @@
+name: 'Auditoria VT3 seis jornadas'
+on:
+  push:
+    branches: [lab/auditoria-decisiones-vt3-10a16oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - run: npx tsc --noEmit
+      - run: npx --yes tsx scripts/lab-vt3-decisiones-6-jornadas.ts
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-DECISIONES-VT3-6-JORNADAS
+          path: lab-results/DECISIONES_VT3_ULTIMAS_6_JORNADAS.json
+          if-no-files-found: warn
