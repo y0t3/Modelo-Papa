@@ -39,6 +39,11 @@ assert.deepEqual(bajada.slice(1).map(p=>p.cells.map(c=>c.row+':'+c.col)),[
  triple.map(c=>c.row+':'+c.col),
  triple.slice(1).map(c=>c.row+':'+c.col)
 ],'Las bajadas conservan las casillas físicas del sufijo');
+assert.deepEqual(expandDownPicks([vt3],true,true).map(p=>[p.kind,p.value]),[
+ ['vt3','768'],['vt2','68']
+], 'Un VT3 elegido baja a su sufijo VT2 exacto en PRE V4');
+assert.deepEqual(expandDownPicks([vt3],true,false).map(p=>p.kind),['vt3'],
+ 'Las selecciones V3 antiguas mantienen el comportamiento histórico');
 assert.deepEqual(expandDownPicks([vt4],false).map(p=>p.kind),['vt4'],
  'Un PRE anterior nunca activa bajadas retrospectivamente');
 assert.equal(expandDownPicks([vt4,vt3],true).filter(p=>p.kind==='vt3').length,1,
@@ -56,7 +61,7 @@ assert.equal(paths.length,4,'Un camino idéntico no se duplica; otro testigo se 
 assert.equal(uniqueWagers(paths).vt3.size,1,'Dos testigos de la misma familia son una jugada');
 const snapshot=buildPre({date:'2026-10-14',turn:'Previa',picks:paths},board,'2026-10-14T10:00:00Z');
 assert.ok(validateSnapshot(snapshot));
-assert.equal(snapshot.pre.schema,'PAPA_PRE_V3');
+assert.equal(snapshot.pre.schema,'PAPA_PRE_V4');
 
 const legacyPre={...snapshot.pre,schema:'PAPA_PRE_V1' as const,
  picks:snapshot.pre.picks.map(p=>({...p,motherVt3:p.kind==='vt4'?'476/674':p.motherVt3}))};
