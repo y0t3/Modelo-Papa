@@ -28,10 +28,14 @@ import type {EpisodeMode} from './lab-figuras-episodios';
 import {sequenceEvidence,sequenceModes,rankSequenceEvidence,flagged} from './lab-figuras-secuencias-reales';
 import type {SequenceMode,SequenceEvidence} from './lab-figuras-secuencias-reales';
 
+const holdoutAug=process.env.LAB_AGOSTO_01_14==='1';
 const extra16=process.env.LAB_EVALUAR_16_OCT==='1';
+if(holdoutAug&&extra16)throw Error('Bloque agosto y 16oct deben ejecutarse por separado');
 const endDate=extra16?'2026-10-16':'2026-10-15';
-const periods=[['2026-06-01','2026-07-31','JUNIO_JULIO'],
- ['2026-08-15',endDate,'AGOSTO_OCTUBRE']] as const;
+const periods=holdoutAug?
+ ([['2026-08-01','2026-08-14','AGOSTO_01_14']] as const):
+ ([['2026-06-01','2026-07-31','JUNIO_JULIO'],
+  ['2026-08-15',endDate,'AGOSTO_OCTUBRE']] as const);
 const sources:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
 type Day={date:string;heads:CabezasDia};
 type Verified={date:string;turn:Turno;head:string;jur:string;shape:string;source:SourceId;cells:string[]};
@@ -816,7 +820,13 @@ async function main(){
    }
   }
  }
- if(cuts.length!==(extra16?525:520)||
+ if(holdoutAug){
+   if(cuts.length!==60||nightAuditCuts.length!==12||
+    new Set(cuts.map(x=>x.date)).size!==12)
+    throw Error('El bloque 01–14 agosto no contiene las 12 jornadas completas');
+   for(const cut of cuts)if(cut.heads.length!==5)
+    throw Error('Cabezas incompletas en agosto '+cut.date+' '+cut.turn);
+  }else if(cuts.length!==(extra16?525:520)||
   cuts.reduce((n,x)=>n+x.physicalWinningHeads,0)!==(extra16?657:654))
   throw Error('El histórico corregido dejó de coincidir con 520/654: '+
    cuts.length+'/'+cuts.reduce((n,x)=>n+x.physicalWinningHeads,0));
@@ -957,7 +967,7 @@ async function main(){
  })),episodeComparisons,episodeExamples,checksums:dataHashes,
  cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts,derivedCuts,networkCuts,nightCuts,nightAuditCuts};
  mkdirSync('lab-results',{recursive:true});
- writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_'+(extra16?'525':'520')+'.json',
+ writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_'+(holdoutAug?'AGOSTO_01_14':extra16?'525':'520')+'.json',
   JSON.stringify(report,null,2)+'\n');
  const traceExamples=seqByCut.filter(x=>
   x.modes.AABB.top3>0||x.modes.AAB.top3>0).map(x=>{
@@ -1276,6 +1286,33 @@ async function main(){
     .map(y=>({date:x.date,turn:x.turn,...y}))).slice(0,10)
   }];
  }));
+ if(holdoutAug){
+  const h=nightAuditCuts;
+  const summary=summarizeNight(h);
+  const full=derivedCuts.filter(x=>x.turn==='Nocturno');
+  const breakdown=h.map(cut=>{
+   const f=full.find(x=>x.date===cut.date)!;
+   return {date:cut.date,
+    official:cut.observed.official,connected:cut.observed.connected,
+    geometryDerived:f.scores.GEOMETRIA_DERIVADA.vt2.top6,
+    physicalHeads:f.physicalVt2,
+    matFirst:cut.variant.matutinoFirst,
+    prevFirst:cut.variant.prevNocturnoFirst,
+    sourceExpected:cut.universe.expectedBySource,
+    connectedFamilies:cut.top6.map(x=>x.family),
+    winningHeads:cut.winningCases.filter(x=>x.category!=='neither').map(w=>({
+     head:w.head,family:w.family,category:w.category,
+     physicalMother:w.witness?.family,
+     historicalHeads:w.witness?.historicalHeads,
+     historicalSource:w.witness?.historySource
+    }))};
+  });
+  console.log('HOLDOUT_AGOSTO_01_14_INICIO');
+  console.log(JSON.stringify({status:'CONTRASTE_HISTORICO_NO_SELLADO',
+   period:'2026-08-01/2026-08-14',completeDates:summary.days,
+   heads:summary.heads,summary,breakdown},null,2));
+  console.log('HOLDOUT_AGOSTO_01_14_FIN');
+ }
  console.log('LAB_CONECTADAS_VT2_VT4_INICIO');
  console.log(JSON.stringify({notes:{
   derivation:'VT2 dos parejas físicas de madre VT3; VT4 cuarta cifra antepuesta por roce físico a VT3 madre o su inversa.',
