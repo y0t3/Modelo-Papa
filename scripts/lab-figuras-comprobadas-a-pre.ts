@@ -14,6 +14,8 @@ import type {LaloHistorical} from '../src/motorLalo';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
 import type {Path} from '../src/paths';
 import type {SourceId,DailySheet} from '../src/sheet';
+import {episodeEvidence,episodeFlag,episodeScore,episodeModes} from './lab-figuras-episodios';
+import type {EpisodeMode} from './lab-figuras-episodios';
 import {sequenceEvidence,sequenceModes,rankSequenceEvidence,flagged} from './lab-figuras-secuencias-reales';
 import type {SequenceMode,SequenceEvidence} from './lab-figuras-secuencias-reales';
 
@@ -225,6 +227,13 @@ async function main(){
   histories.set(current.date,{sheet,events:witnessed(sheet,current.date)});
  }
  const cuts:CutResult[]=[];
+ type CohortStats={treated:number;control:number;hitT:number;hitC:number;
+  observed:number;expected:number;strata:number};
+ type EpisodeCut={date:string;turn:Turno;period:string;
+  modes:Record<EpisodeMode,{candidates:number;top3:number;top5:number;top10:number;
+   topFamilies:string[];selectedProofs:any[]}>;
+  broad:Record<EpisodeMode,CohortStats>;tight:Record<EpisodeMode,CohortStats>};
+ const episodeCuts:EpisodeCut[]=[];
  const seqByCut:{date:string;period:string;turn:Turno;
   modes:Record<SequenceMode,{available:number;top3:number;top5:number;top10:number;
    topFamilies:string[];topWitnesses:any[]}>;
@@ -366,6 +375,83 @@ async function main(){
      seqControls[mode]={treated,control,hitsT,hitsC,expected,observed,strata};
     }
     seqByCut.push({date:day.date,period,turn,modes:seqModes,control:seqControls});
+    // Solo cabezas ANTERIORES y recorridos del PRE objetivo, no resultados POST.
+    const episodeRanks={} as EpisodeCut['modes'];
+    const episodeBroad={} as EpisodeCut['broad'];
+    const episodeTight={} as EpisodeCut['tight'];
+    const episodeRows=families.map(f=>({
+     family:f.family,origin:f.firstSource,routes:f.traces.length,
+     sources:new Set(f.traces.map(t=>t.source)).size,
+     hit:wins.get(f.family)||0,
+     choices:f.traces.map(trace=>({trace,evidence:episodeEvidence(trace,previous,
+      lastDays.map(d=>d.date))}))
+    }));
+    for(const mode of episodeModes){
+     const ranked=episodeRows.map(f=>{
+      const options=f.choices.filter(c=>episodeFlag(c.evidence,mode))
+       .sort((a,b)=>compareScore(episodeScore(a.evidence,mode),
+        episodeScore(b.evidence,mode))||
+        sources.indexOf(a.trace.source)-sources.indexOf(b.trace.source)||
+        positionKey(a.trace.cells).localeCompare(positionKey(b.trace.cells)));
+      return options[0]?{family:f.family,trace:options[0].trace,
+       evidence:options[0].evidence}:null;
+     }).filter((x):x is NonNullable<typeof x>=>x!==null)
+      .sort((a,b)=>compareScore(episodeScore(a.evidence,mode),
+       episodeScore(b.evidence,mode))||
+       sources.indexOf(a.trace.source)-sources.indexOf(b.trace.source)||
+       positionKey(a.trace.cells).localeCompare(positionKey(b.trace.cells))||
+       a.family.localeCompare(b.family));
+     const top=ranked.map(x=>x.family);
+     episodeRanks[mode]={
+      candidates:ranked.length,
+      top3:winning.filter(w=>top.slice(0,3).includes(w.family)).length,
+      top5:winning.filter(w=>top.slice(0,5).includes(w.family)).length,
+      top10:winning.filter(w=>top.slice(0,10).includes(w.family)).length,
+      topFamilies:top.slice(0,10),
+      selectedProofs:ranked.slice(0,3).map(x=>({
+       family:x.family,shape:x.trace.shape,source:x.trace.source,
+       digits:x.trace.value,cells:x.trace.cells,days:x.evidence.history
+      }))
+     };
+     // Un testigo por familia PRE, con comparadores del mismo PRE y fuente.
+     const base=episodeRows.map(f=>{
+      const positive=f.choices.filter(c=>episodeFlag(c.evidence,mode));
+      const choice=(positive.length?positive:f.choices).slice()
+       .sort((a,b)=>compareScore(episodeScore(a.evidence,mode),
+        episodeScore(b.evidence,mode))||
+        sources.indexOf(a.trace.source)-sources.indexOf(b.trace.source)||
+        positionKey(a.trace.cells).localeCompare(positionKey(b.trace.cells)))[0];
+      return choice?{...f,active:positive.length>0,choice}:null;
+     }).filter((x):x is NonNullable<typeof x>=>x!==null);
+     const pair=(tight:boolean):CohortStats=>{
+      const groups=new Map<string,typeof base>();
+      const band=(n:number)=>n<=1?'1':n===2?'2':n<=5?'3-5':n<=12?'6-12':'13+';
+      const hist=(n:number)=>n===0?'0':n===1?'1':n===2?'2':'3+';
+      for(const x of base){
+       const h=x.choice.evidence;
+       const key=x.origin+'|'+x.choice.trace.source+'|'+band(x.routes)+'|'+
+        (x.sources===1?'una':'varias')+
+        (tight?'|'+hist(h.shapeDays)+'|'+hist(h.sourceDays)+
+         '|'+hist(h.distinctSources):'');
+       if(!groups.has(key))groups.set(key,[]);
+       groups.get(key)!.push(x);
+      }
+      const out:CohortStats={treated:0,control:0,hitT:0,hitC:0,observed:0,
+       expected:0,strata:0};
+      for(const xs of groups.values()){
+       const a=xs.filter(x=>x.active),b=xs.filter(x=>!x.active);
+       if(!a.length||!b.length)continue;
+       const ha=a.reduce((n,x)=>n+x.hit,0),hb=b.reduce((n,x)=>n+x.hit,0);
+       out.treated+=a.length;out.control+=b.length;out.hitT+=ha;out.hitC+=hb;
+       out.observed+=ha;out.expected+=a.length/(a.length+b.length)*(ha+hb);
+       out.strata++;
+      }
+      return out;
+     };
+     episodeBroad[mode]=pair(false);episodeTight[mode]=pair(true);
+    }
+    episodeCuts.push({date:day.date,turn,period,modes:episodeRanks,
+     broad:episodeBroad,tight:episodeTight});
     const memberScores=evidenceByMethod.FIGURA_REITERADA;
     const checks=Object.fromEntries(controls.map(method=>
      [method,controlled(currentRows,method)])) as Record<ControlMethod,ControlLine>;
@@ -427,6 +513,21 @@ async function main(){
   }
   return [mode,x];
  }));
+ const summarizeEpisodes=(xs:typeof episodeCuts)=>Object.fromEntries(episodeModes.map(mode=>{
+  const r={cutsWithCandidates:0,cutsAtLeast3:0,top3:0,top5:0,top10:0,
+   eligibleFamilies:0,broad:{treated:0,control:0,hitT:0,hitC:0,observed:0,expected:0,strata:0},
+   tight:{treated:0,control:0,hitT:0,hitC:0,observed:0,expected:0,strata:0}};
+  for(const cut of xs){
+   const a=cut.modes[mode];r.cutsWithCandidates+=Number(a.candidates>0);
+   r.cutsAtLeast3+=Number(a.candidates>=3);r.eligibleFamilies+=a.candidates;
+   r.top3+=a.top3;r.top5+=a.top5;r.top10+=a.top10;
+   for(const key of ['broad','tight'] as const){
+    const t=cut[key][mode];
+    for(const k of Object.keys(t) as (keyof CohortStats)[])r[key][k]+=t[k];
+   }
+  }
+  return [mode,r];
+ }));
  const aggregates=(xs:typeof controlByCut)=>{
   return Object.fromEntries(controls.map(k=>[k,xs.reduce((out,c)=>plus(out,c.res[k]),emptyControl())]));
  };
@@ -443,6 +544,7 @@ async function main(){
   const sel=p==='TOTAL'?cuts:cuts.filter(x=>x.period===p);
   const cont=p==='TOTAL'?controlByCut:controlByCut.filter(x=>x.period===p);
   return [p,{...makeTotals(sel),controls:aggregates(cont),
+   episodes:summarizeEpisodes(episodeCuts.filter(x=>p==='TOTAL'||x.period===p)),
    sequences:seqTotals(seqByCut.filter(x=>p==='TOTAL'||x.period===p)),
    metrics:{avgAvailableFamilies:sel.reduce((n,x)=>n+x.availableFamilies,0)/sel.length,
     avgActiveShapes:sel.reduce((n,x)=>n+x.distinctActiveShapes,0)/sel.length,
@@ -450,9 +552,10 @@ async function main(){
  })),byTurn:Object.fromEntries(TURNOS.map(t=>{
   const xs=cuts.filter(x=>x.turn===t);
   return [t,{...makeTotals(xs),controls:aggregates(controlByCut.filter(x=>x.turn===t)),
-   sequences:seqTotals(seqByCut.filter(x=>x.turn===t))}];
+   sequences:seqTotals(seqByCut.filter(x=>x.turn===t)),
+   episodes:summarizeEpisodes(episodeCuts.filter(x=>x.turn===t))}];
  })),checksums:dataHashes,
- cuts,sequenceCuts:seqByCut};
+ cuts,sequenceCuts:seqByCut,episodeCuts};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json',JSON.stringify(report,null,2)+'\n');
  const traceExamples=seqByCut.filter(x=>
@@ -485,6 +588,14 @@ async function main(){
   byTurn:Object.fromEntries(Object.entries(report.byTurn).map(([k,v])=>[k,v.sequences]))
  },null,2));
  console.log('SECUENCIAS_PRE_FIN');
+ console.log('EPISODIOS_PRE_RESULTADOS_INICIO');
+ console.log(JSON.stringify({summary:Object.fromEntries(
+  Object.entries(report.summary).map(([p,v])=>[p,{cuts:v.cuts,
+   heads:v.heads,physicalWinners:v.physicalWinners,baselines:v.methods,
+   episodes:v.episodes}])),
+  byTurn:Object.fromEntries(Object.entries(report.byTurn).map(([p,v])=>[p,v.episodes]))
+ },null,2));
+ console.log('EPISODIOS_PRE_RESULTADOS_FIN');
  console.log('FIGURAS_PRE_RESULTADOS_INICIO');
  console.log(JSON.stringify({summary:report.summary,byTurn:report.byTurn},null,2));
  console.log('FIGURAS_PRE_RESULTADOS_FIN');
