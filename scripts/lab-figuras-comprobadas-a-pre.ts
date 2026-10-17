@@ -14,6 +14,8 @@ import type {LaloHistorical} from '../src/motorLalo';
 import {allPhysicalVt3,buildVt3Shadow} from '../src/vt3Shadow';
 import type {Path} from '../src/paths';
 import type {SourceId,DailySheet} from '../src/sheet';
+import {findPaths} from '../src/paths';
+import {deriveFromMothers,vt2Hits,vt4Hits} from './lab-conectadas-derivaciones-vt2-vt4';
 import {connectedWinnerPairs,projectVerifiedConfigurations,pairModes} from './lab-vt3-configuraciones-conectadas';
 import type {PairMode,Pair} from './lab-vt3-configuraciones-conectadas';
 import {allGeometricShapes,inspectFigure,figureScore,figureModes} from './lab-vt3-figura-identidad';
@@ -243,6 +245,15 @@ async function main(){
    families:string[];witnesses:any[]}>;
   controls:Record<PairMode,PairControl>};
  const connectedCuts:ConnectedCut[]=[];
+ type DerivedKind='vt2'|'vt4';
+ type DerivedMode='LALO'|'GEOMETRIA_DERIVADA'|'CONECTADAS_DERIVADA';
+ const derivedModes:DerivedMode[]=['LALO','GEOMETRIA_DERIVADA','CONECTADAS_DERIVADA'];
+ type DerivedScores=Record<DerivedMode,Record<DerivedKind,{
+   count:number;top3:number;top5:number;top6:number;top10:number;
+   firstFamilies:string[];matchedHeads:{head:string;family:string;position:number}[]}>>;
+ const derivedCuts:{date:string;period:string;turn:Turno;heads:string[];
+  physicalVt2:number;physicalVt4:number;scores:DerivedScores}[]=[];
+
  type Sensitivity='ULTIMAS_3'|'ULTIMAS_6'|'ULTIMAS_6_D7'|
   'ANTIGUAS_7_A_12'|'SOLO_D7';
  const sensitivityNames:Sensitivity[]=['ULTIMAS_3','ULTIMAS_6',
@@ -605,6 +616,62 @@ async function main(){
     }
     connectedCuts.push({date:day.date,turn,period,
      historyPairs:historicalPairs.length,modes:combined,controls:pairControls});
+    const conMothers=projectVerifiedConfigurations(
+     historicalPairs,currentTraces,day.date,week?.day.date||null,'SOLAPADAS_OTRA');
+    const visibleCols=pre.columns.slice(0,idx+1);
+    const geoder=deriveFromMothers(geo.top.map(p=>({
+     family:p.family,source:p.source,cells:p.cells,value:p.value
+    })),visibleCols,10);
+    const connectedDer=deriveFromMothers(conMothers.map(p=>({
+     family:p.family,source:p.source,cells:p.cells,value:p.digits
+    })),visibleCols,10);
+    const daughterRankings:Record<DerivedMode,Record<DerivedKind,{
+     family:string;values:string[]}[]>>={
+     LALO:{
+      vt2:official.ranks.vt2.map(f=>({family:f.family,
+       values:[...new Set(f.paths.map(p=>p.value))]})),
+      vt4:official.ranks.vt4.map(f=>({family:f.family,
+       values:[...new Set(f.paths.map(p=>p.value))]}))
+     },
+     GEOMETRIA_DERIVADA:{
+      vt2:geoder.vt2.map(f=>({family:f.family,values:f.values})),
+      vt4:geoder.vt4.map(f=>({family:f.family,
+       values:[...new Set(f.paths.map(x=>x.value))]}))
+     },
+     CONECTADAS_DERIVADA:{
+      vt2:connectedDer.vt2.map(f=>({family:f.family,values:f.values})),
+      vt4:connectedDer.vt4.map(f=>({family:f.family,
+       values:[...new Set(f.paths.map(x=>x.value))]}))
+     }
+    };
+    const derivedScores={} as DerivedScores;
+    for(const mode of derivedModes){
+     derivedScores[mode]={} as DerivedScores[DerivedMode];
+     for(const kind of ['vt2','vt4'] as const){
+      const available=daughterRankings[mode][kind];
+      const matches=(n:number)=>actualHeads.filter(h=>available.slice(0,n)
+       .some(f=>kind==='vt2'?
+        f.family===reversibleFamily(h.slice(-2)):f.values.includes(h))).length;
+      derivedScores[mode][kind]={
+       count:available.length,top3:matches(3),top5:matches(5),
+       top6:matches(6),top10:matches(10),
+       firstFamilies:available.slice(0,10).map(f=>f.family),
+       matchedHeads:actualHeads.flatMap(h=>{
+        const pos=available.findIndex(f=>kind==='vt2'?
+         f.family===reversibleFamily(h.slice(-2)):f.values.includes(h));
+        return pos<0?[]:[{head:h,family:available[pos].family,position:pos+1}];
+       })
+      };
+     }
+    }
+    // Cobertura física TOTAL (no confundir acierto de ranking con
+    // existencia de dos / cuatro casillas en la hoja predictiva).
+    const physicalVt2=actualHeads.filter(h=>visibleCols.some(c=>
+     findPaths(c.values,h.slice(-2)).length>0)).length;
+    const physicalVt4=actualHeads.filter(h=>visibleCols.some(c=>
+     findPaths(c.values,h).length>0)).length;
+    derivedCuts.push({date:day.date,period,turn,heads:actualHeads,
+     physicalVt2,physicalVt4,scores:derivedScores});
     // Sensibilidad temporal: no se ajusta el algoritmo ni se leen cabezas POST.
     // Control con el mismo horizonte de seis jornadas, pero más antiguo.
     const historicalSets:Record<Sensitivity,Pair[]>={
