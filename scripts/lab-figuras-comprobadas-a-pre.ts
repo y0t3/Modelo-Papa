@@ -252,7 +252,7 @@ async function main(){
     if(pre.heads[turn].length||pre.matches[turn].length)
      throw Error('Fuga temporal en '+day.date+' '+turn);
     const families=familyPool(pre,turn);
-    if(!families.length)continue;
+    // PRE válido con una sola pareja Nocturna uruguaya: cero VT3, NO eliminar el turno.
     const eligible=new Map(families.map(f=>[f.family,f]));
     const actualHeads=JURS.filter(j=>j!=='Montevideo')
      .map(j=>day.heads[turn][j]).filter(h=>/^\d{4}$/.test(h));
@@ -307,9 +307,9 @@ async function main(){
      shapeAvailability:controls.map(m=>({name:m,qualifiedFamilies:checks[m].activeExposures,
       qualifiedWinningHeads:checks[m].activeWinners})),
      scores,
-     neutral:{top3:physicalWinningHeads*Math.min(3,families.length)/families.length,
-      top5:physicalWinningHeads*Math.min(5,families.length)/families.length,
-      top10:physicalWinningHeads*Math.min(10,families.length)/families.length},
+     neutral:{top3:physicalWinningHeads*Math.min(3,families.length)/Math.max(families.length,1),
+      top5:physicalWinningHeads*Math.min(5,families.length)/Math.max(families.length,1),
+      top10:physicalWinningHeads*Math.min(10,families.length)/Math.max(families.length,1)},
      physicalWinnerDetails});
    }
   }
