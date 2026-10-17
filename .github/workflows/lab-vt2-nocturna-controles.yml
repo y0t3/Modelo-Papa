@@ -1,0 +1,38 @@
+name: Laboratorio VT2 Nocturna: fuentes y controles
+on:
+  push:
+    branches:
+      - lab/vt2-nocturna-controles-17oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  discriminacion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Verificar código
+        run: npx tsc --noEmit
+      - name: Comprobar casos VT2 Nocturna y controles de fuentes
+        run: npx --yes tsx scripts/test-lab-vt2-nocturna-auditoria.ts
+      - name: Comprobar que VT4 no crea madres por inversión
+        run: npx --yes tsx scripts/test-lab-conectadas-vt2-vt4.ts
+      - name: Ejecutar 520 PRE y controles VT2 Nocturna
+        run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
+      - name: Reconstruir 16 octubre aparte sin PRE sellado
+        env:
+          LAB_EVALUAR_16_OCT: '1'
+        run: npx --yes tsx scripts/lab-figuras-comprobadas-a-pre.ts
+      - name: Conservar cada PRE y los controles
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-VT2-NOCTURNA-CONTROLES-520
+          path: lab-results/FIGURAS_COMPROBADAS_A_PRE_*.json
+          if-no-files-found: warn
