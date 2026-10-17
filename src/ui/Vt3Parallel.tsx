@@ -11,15 +11,18 @@ import {buildVt3Trial} from '../vt3Trial';
 import {loadFrozen,saveFrozen,evaluateFrozen} from '../vt3Snapshot';
 import type {FrozenRecord} from '../vt3Snapshot';
 import {useLaloTheme} from './LaloTheme';
+import {buildConnectedVt3} from '../connectedVt3';
+import type {ConnectedDay} from '../connectedVt3';
+import {reversibleFamily} from '../motorLalo';
 
 type TopCount=3|5|10;
 const localToday=()=>{
  const d=new Date();
  return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
 };
-export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoVersion=0}:{
+export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoVersion=0,visualDays=[]}:{
  date:string;turn:Turno;sheet:DailySheet|null;view:LaloView|null;
- historical:LaloHistorical[];heads:string[];autoVersion?:number;
+ historical:LaloHistorical[];heads:string[];autoVersion?:number;visualDays?:ConnectedDay[];
 }){
  const {colors:c}=useLaloTheme();
  const [stored,setStored]=useState<FrozenRecord|null>(null);
@@ -37,6 +40,9 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoV
   [safeSheet,date,turn,historical,safeView]);
  const trial=useMemo(()=>safeView&&shadow?buildVt3Trial(safeView,shadow):null,
   [safeView,shadow]);
+ const connected=useMemo(()=>safeSheet&&date?
+  buildConnectedVt3(safeSheet,date,turn,[...visualDays,...historical]):null,
+  [safeSheet,date,turn,visualDays,historical]);
  useEffect(()=>{
   let active=true;setStored(null);setError('');setLimit(3);
   loadFrozen(date,turn).then(x=>{if(active)setStored(x)})
@@ -47,37 +53,50 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoV
   heads.some(h=>/^\d{4}$/.test(h));
  const historicalDate=date!==localToday();
  const snapshotTrial=stored?.pre.trial?.map(x=>x.family);
- const official=stored?.pre.official.map(x=>x.family)||
-  safeView?.ranks.vt3.slice(0,10).map(x=>x.family)||[];
  const geometric=stored?.pre.geometric.map(x=>x.family)||
   shadow?.top.map(x=>x.family)||[];
  // PRE V1/V2 queda intacto: la tercera selección se muestra igualmente
  // como estudio retrospectivo, pero jamás se evalúa como pronóstico guardado.
  const newProposal=snapshotTrial||trial?.top.map(x=>x.family)||[];
  const trialIsReconstructed=!snapshotTrial?.length;
+ const connectedSaved=stored?.pre.connected?.map(x=>x.family);
+ const connectedFamilies=connectedSaved||connected?.top.map(x=>x.family)||[];
  const retrospective=!stored&&(historicalDate||published);
  const result=useMemo(()=>stored?evaluateFrozen(stored,heads):null,[stored,heads]);
  const freeze=async()=>{
-  if(!safeView||!shadow||!trial)return;
+  if(!safeView||!shadow||!trial||!connected)return;
   try{
    setBusy(true);setError('');
    // Incluye Montevideo para bloquear PRE si una sola jurisdicción ya publicó.
-   const record=await saveFrozen(date,turn,safeView,shadow,sheet?.heads[turn]||heads,trial);
+   const record=await saveFrozen(date,turn,safeView,shadow,sheet?.heads[turn]||heads,trial,connected);
    setStored(record);
   }catch(e:any){setError(String(e?.message||e))}
   finally{setBusy(false)}
  };
  const sections=[
-  {label:'LALO',values:official},
-  {label:'GEOMETRÍA',values:geometric},
-  {label:'NUEVA PRUEBA',values:newProposal}
+  {label:'GEOMETRÍA COMPLETA',values:geometric,saved:!!stored},
+  {label:'NUEVA PRUEBA',values:newProposal,saved:!!snapshotTrial?.length},
+  {label:'CONFIGURACIONES CONECTADAS',values:connectedFamilies,saved:!!connectedSaved}
  ];
+ const observed=heads.filter(x=>/^[0-9]{4}$/.test(x));
+ const winnerHeads=new Map<string,string[]>();
+ for(const head of observed){
+  const f=reversibleFamily(head.slice(-3));
+  winnerHeads.set(f,[...(winnerHeads.get(f)||[]),head]);
+ }
+ const comparison=sections.map(section=>{
+  const matches=section.values.slice(0,limit).map((family,index)=>({
+   family,rank:index+1,heads:winnerHeads.get(family)||[]
+  })).filter(x=>x.heads.length>0);
+  return {...section,matches};
+ });
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
-  <Text style={[s.title,{color:c.text}]}>VT3 · COMPARACIÓN DE TRES LECTORES</Text>
+  <Text style={[s.title,{color:c.text}]}>VT3 · TRES LECTORES EXPERIMENTALES</Text>
   <Text style={[s.note,{color:c.subtext}]}>
-   Lalo sigue siendo el oficial. Nueva Prueba toma dos familias de Geometría y,
-   cuando aparece una familia nueva válida del día, la incluye en el tercer puesto.
-   Ninguna prueba cambia VT4.
+   Geometría Completa · Nueva Prueba · Configuraciones Conectadas. Lalo MV1
+   continúa disponible en Predicción oficial. Las configuraciones exigen dos
+   cabezas ganadoras independientes y trasladan figuras físicas a otra fuente PRE.
+   Estos ensayos no modifican VT4 ni el ranking oficial.
   </Text>
   <View style={s.tabs}>{([3,5,10] as const).map(n=>
    <Pressable key={n} accessibilityRole="button"
@@ -89,31 +108,64 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoV
      Top {n}
     </Text>
    </Pressable>)}</View>
-  <View style={s.columns}>
-   {sections.map(item=>
-    <View key={item.label} style={[s.column,{borderColor:c.border,backgroundColor:c.card}]}>
-     <Text style={[s.sub,{color:c.accent}]}>{item.label}</Text>
-     {item.values.slice(0,limit).map((family,i)=>
-      <Text key={family+'|'+i} style={[s.family,{color:c.text}]}>
-       <Text style={{color:c.muted}}>{'#'+(i+1)+' '}</Text>{family}
-      </Text>)}
-     {!item.values.length?<Text style={[s.note,{color:c.muted}]}>
-      {safeView?'Sin familias para este lector.':'Primero actualizá la hoja.'}
+  {observed.length?<View style={[s.resultBox,{borderColor:c.accent,backgroundColor:c.accentFill}]}>
+   <Text style={[s.resultTitle,{color:c.text}]}>COINCIDENCIAS POST · TOP {limit}</Text>
+   <Text style={[s.note,{color:c.subtext}]}>
+    {observed.length} cabezas publicadas · Comparación por familia VT3 reversible
+   </Text>
+   <View style={s.summaryRow}>{comparison.map(item=>
+    <View key={item.label} style={[s.summary,{backgroundColor:c.card,borderColor:c.border}]}>
+     <Text style={[s.summaryName,{color:c.text}]}>{item.label}</Text>
+     <Text style={[s.summaryCount,{color:item.matches.length?c.accent:c.muted}]}>
+      {item.matches.length} {item.matches.length===1?'familia':'familias'}
+     </Text>
+     <Text style={[s.summaryMini,{color:c.subtext}]}>
+      {item.matches.map(x=>'#'+x.rank+' '+x.family).join(' · ')||'Sin coincidencias'}
+     </Text>
+    </View>)}</View>
+  </View>:<View style={[s.saved,{backgroundColor:c.surfaceAlt}]}>
+   <Text style={[s.note,{color:c.subtext}]}>
+    POST pendiente · todavía no hay cabezas del turno para comparar.
+   </Text>
+  </View>}
+  {comparison.map(item=><View key={item.label}
+   style={[s.reader,{backgroundColor:c.card,borderColor:c.border}]}>
+   <Text style={[s.readerTitle,{color:c.accent}]}>{item.label}</Text>
+   {observed.length?<Text style={[s.resultText,{color:item.matches.length?c.accent:c.subtext}]}>
+    {item.matches.length?'✓ '+item.matches.length+' familias coincidieron en Top '+limit:
+     'Sin coincidencias en Top '+limit}
+   </Text>:null}
+   {item.values.slice(0,limit).map((family,i)=>{
+    const hits=winnerHeads.get(family)||[];
+    return <View key={family+'|'+i} style={[s.familyRow,{
+     borderColor:hits.length?c.accent:c.border,
+     backgroundColor:hits.length?c.accentFill:c.surface,
+     borderWidth:hits.length?2:1}]}>
+     <Text style={[s.family,{color:c.text}]}>
+      <Text style={{color:c.muted}}>{'#'+(i+1)+'  '}</Text>{family}
+     </Text>
+     {hits.length?<Text style={[s.hitText,{color:c.accent}]}>
+      ✓ POST · {hits.join(' · ')}
      </Text>:null}
-     {item.label==='NUEVA PRUEBA'&&snapshotTrial?.length===3&&limit>3?
-      <Text style={[s.note,{color:c.subtext}]}>
-       Este PRE anterior guardó sólo Top3; no se le agregan puestos después.
-      </Text>:null}
-    </View>)}
-  </View>
+    </View>;
+   })}
+   {!item.values.length?<Text style={[s.note,{color:c.muted}]}>
+    {safeView?'Sin configuraciones admitidas para este corte PRE.':
+     'Primero actualizá la hoja.'}
+   </Text>:null}
+   {stored&&!item.saved?<Text style={[s.note,{color:c.subtext}]}>
+    Este lector no figuraba en la captura PRE antigua. Su lista es una
+    reconstrucción de estudio; no se acredita como acierto anticipado.
+   </Text>:null}
+  </View>)}
   {stored?<View style={[s.saved,{backgroundColor:c.surfaceAlt}]}>
    <Text style={[s.sub,{color:c.text}]}>PRE GUARDADO</Text>
    <Text style={[s.note,{color:c.subtext}]}>
     {new Date(stored.pre.createdAt).toLocaleString()} · Conservado sin sobrescribir.
    </Text>
    {trialIsReconstructed?<Text style={[s.note,{color:c.subtext}]}>
-    Nueva Prueba: reconstrucción de estudio. No formó parte de este PRE antiguo
-    y no se contará como acierto anticipado.
+    Nueva Prueba: reconstrucción de estudio cuando no figuraba en el PRE anterior.
+    No se contabiliza como acierto anticipado.
    </Text>:null}
   </View>:retrospective?<View style={[s.saved,{backgroundColor:c.surfaceAlt}]}>
    <Text style={[s.sub,{color:c.text}]}>RECONSTRUCCIÓN HISTÓRICA</Text>
@@ -138,15 +190,12 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoV
     </Text>
    </Pressable>:null}
   {error?<Text style={[s.note,{color:c.text}]}>{error}</Text>:null}
-  {stored&&result?.available?<View style={[s.saved,{backgroundColor:c.surfaceAlt}]}>
-   <Text style={[s.sub,{color:c.text}]}>RESULTADOS COMPARADOS CON EL PRE GUARDADO</Text>
-   {([{label:'Lalo',value:result.official},{label:'Geometría',value:result.geometric},
-     ...(result.trial?[{label:'Nueva prueba',value:result.trial}]:[])]).map(x=>
-    <Text key={x.label} style={[s.note,{color:c.text}]}>
-     {x.label}: Top3 {x.value.top3?'Sí':'No'} · Top5 {x.value.top5?'Sí':'No'} ·
-     Top10 {x.value.top10?'Sí':'No'}
-    </Text>)}
-  </View>:null}
+  {stored&&result?.available?<Text style={[s.note,{color:c.subtext}]}>
+   Solo los lectores presentes en el PRE guardado cuentan como cotejo prospectivo:
+   Geometría {result.geometric.matches.length} ·
+   Nueva Prueba {result.trial?.matches.length??'sin PRE'} ·
+   Conectadas {result.connected?.matches.length??'sin PRE'}.
+  </Text>:null}
  </View>;
 }
 const s=StyleSheet.create({
@@ -154,9 +203,21 @@ const s=StyleSheet.create({
  title:{fontSize:14,fontWeight:'900'},note:{fontSize:11,lineHeight:17,marginTop:6},
  tabs:{flexDirection:'row',gap:7,marginTop:12},
  tab:{flex:1,borderWidth:1,borderRadius:8,alignItems:'center',paddingVertical:8},
- columns:{flexDirection:'row',gap:5,marginTop:12},
- column:{flex:1,borderWidth:1,borderRadius:9,padding:5,minWidth:0},
- sub:{fontSize:10,fontWeight:'900'},family:{fontSize:10,marginTop:6,fontWeight:'800'},
+ resultBox:{borderWidth:1,borderRadius:12,padding:11,marginTop:12,gap:7},
+ resultTitle:{fontSize:15,fontWeight:'900'},
+ summaryRow:{flexDirection:'row',gap:5},
+ summary:{flex:1,minWidth:0,borderWidth:1,borderRadius:8,padding:6,gap:4},
+ summaryName:{fontSize:9,fontWeight:'900'},
+ summaryCount:{fontSize:15,fontWeight:'900'},
+ summaryMini:{fontSize:9,lineHeight:13},
+ reader:{borderWidth:1,borderRadius:10,padding:10,gap:6,marginTop:11},
+ readerTitle:{fontSize:14,fontWeight:'900'},
+ resultText:{fontSize:12,fontWeight:'900'},
+ familyRow:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',
+  gap:9,borderRadius:8,padding:9},
+ family:{fontSize:14,fontWeight:'900',flexShrink:1},
+ hitText:{fontSize:11,fontWeight:'900',flexShrink:1,textAlign:'right'},
+ sub:{fontSize:10,fontWeight:'900'},
  saved:{borderRadius:9,padding:10,marginTop:10},
  button:{borderRadius:8,padding:12,marginTop:12,alignItems:'center'}
 });
