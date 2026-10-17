@@ -20,6 +20,8 @@ jobs:
         run: npx tsc --noEmit
       - name: Probar VT2 VT4 sin crear madres nuevas
         run: npx --yes tsx scripts/test-lab-conectadas-vt2-vt4.ts
+      - name: Verificar extensión VT4 que completa una rama conectada
+        run: npx --yes tsx scripts/test-lab-vt4-hija-red.ts
       - name: Reprobar figuras conectadas
         run: npx --yes tsx scripts/test-lab-vt3-configuraciones-conectadas.ts
       - name: Comparar 520 PRE Lalo Geometría y Conectadas en VT2 VT4
