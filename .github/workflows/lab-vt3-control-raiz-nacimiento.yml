@@ -1,0 +1,30 @@
+name: Laboratorio VT3 raíces sin bifurcación y nacimientos
+on:
+  push:
+    branches:
+      - lab/control-grupos-raiz-unica-nacimiento-17oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contrastes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comprobar tipos
+        run: npx tsc --noEmit
+      - name: Comparar 520 cortes PRE con grupos físicos y controles
+        run: npx --yes tsx scripts/lab-vt3-secuencias-movimiento.ts
+      - name: Archivar todas las exposiciones y controles
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-VT3-CONTROL-RAICES-NACIMIENTOS-520
+          path: lab-results/VT3_MOVIMIENTOS_FUENTE_VERIFICADA_JUN_OCT_2026.json
+          if-no-files-found: warn
