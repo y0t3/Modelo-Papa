@@ -241,6 +241,13 @@ async function main(){
    families:string[];witnesses:any[]}>;
   controls:Record<PairMode,PairControl>};
  const connectedCuts:ConnectedCut[]=[];
+ type Sensitivity='ULTIMAS_3'|'ULTIMAS_6'|'ULTIMAS_6_D7'|
+  'ANTIGUAS_7_A_12'|'SOLO_D7';
+ const sensitivityNames:Sensitivity[]=['ULTIMAS_3','ULTIMAS_6',
+  'ULTIMAS_6_D7','ANTIGUAS_7_A_12','SOLO_D7'];
+ const sensitivityCuts:{date:string;period:string;turn:Turno;
+  methods:Record<Sensitivity,{eligible:number;top3:number;top5:number;top10:number;
+   top3Families:string[];source:string|null}>}[]=[];
  const cuts:CutResult[]=[];
  type FigControl={treated:number;control:number;hitT:number;hitC:number;observed:number;expected:number;strata:number};
  type FigRecord={date:string;turn:Turno;period:string;
@@ -596,6 +603,28 @@ async function main(){
     }
     connectedCuts.push({date:day.date,turn,period,
      historyPairs:historicalPairs.length,modes:combined,controls:pairControls});
+    // Sensibilidad temporal: no se ajusta el algoritmo ni se leen cabezas POST.
+    // Control con el mismo horizonte de seis jornadas, pero más antiguo.
+    const historicalSets:Record<Sensitivity,Pair[]>={
+     ULTIMAS_3:days.slice(index-3,index).flatMap(d=>connectedHistory.get(d.date)||[]),
+     ULTIMAS_6:days.slice(index-6,index).flatMap(d=>connectedHistory.get(d.date)||[]),
+     ULTIMAS_6_D7:historicalPairs,
+     ANTIGUAS_7_A_12:days.slice(Math.max(0,index-12),index-6)
+      .flatMap(d=>connectedHistory.get(d.date)||[]),
+     SOLO_D7:week?(connectedHistory.get(week.day.date)||[]):[]
+    };
+    const sensitivityResults={} as (typeof sensitivityCuts)[number]['methods'];
+    for(const key of sensitivityNames){
+     const proposals=projectVerifiedConfigurations(historicalSets[key],currentTraces,
+      day.date,week?.day.date||null,'SOLAPADAS_OTRA');
+     const top=proposals.map(p=>p.family);
+     sensitivityResults[key]={eligible:proposals.length,
+      top3:winning.filter(w=>top.slice(0,3).includes(w.family)).length,
+      top5:winning.filter(w=>top.slice(0,5).includes(w.family)).length,
+      top10:winning.filter(w=>top.slice(0,10).includes(w.family)).length,
+      top3Families:top.slice(0,3),source:proposals[0]?.historySource||null};
+    }
+    sensitivityCuts.push({date:day.date,period,turn,methods:sensitivityResults});
     const memberScores=evidenceByMethod.FIGURA_REITERADA;
     const checks=Object.fromEntries(controls.map(method=>
      [method,controlled(currentRows,method)])) as Record<ControlMethod,ControlLine>;
@@ -777,7 +806,7 @@ async function main(){
    figureIdentity:summarizeFigures(figureCuts.filter(x=>x.turn===t)),
    connected:summarizeConnected(connectedCuts.filter(x=>x.turn===t))}];
  })),episodeComparisons,episodeExamples,checksums:dataHashes,
- cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts};
+ cuts,sequenceCuts:seqByCut,episodeCuts,figureCuts,connectedCuts,sensitivityCuts};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/FIGURAS_COMPROBADAS_A_PRE_520.json',JSON.stringify(report,null,2)+'\n');
  const traceExamples=seqByCut.filter(x=>
@@ -906,9 +935,25 @@ async function main(){
   types:Object.fromEntries(['COMPARTEN_UNA_CASILLA','COMPARTEN_DOS_CASILLAS','SOLO_ROCE']
    .map(k=>[k,[...connectedHistory.values()].flat().filter(p=>p.kind===k).length]))
  };
+ const sensitivityReport=Object.fromEntries(['JUNIO_JULIO','AGOSTO_OCTUBRE','TOTAL'].map(period=>[
+  period,Object.fromEntries(sensitivityNames.map(mode=>{
+   const sub=sensitivityCuts.filter(x=>period==='TOTAL'||x.period===period);
+   const withSlots=sub.filter(x=>x.methods[mode].eligible>=3);
+   const keys=new Set(withSlots.map(x=>x.date+'|'+x.turn));
+   const same=cuts.filter(x=>keys.has(x.date+'|'+x.turn));
+   return [mode,{eligibleCuts:withSlots.length,
+    candidates:sub.reduce((n,x)=>n+x.methods[mode].eligible,0),
+    top3:sub.reduce((n,x)=>n+x.methods[mode].top3,0),
+    top5:sub.reduce((n,x)=>n+x.methods[mode].top5,0),
+    top10:sub.reduce((n,x)=>n+x.methods[mode].top10,0),
+    geometryInSameCuts:makeTotals(same).methods.GEOMETRIA.top3,
+    top1HistoricalSources:Object.fromEntries(sources.map(source=>[
+      source,sub.filter(x=>x.methods[mode].source===source).length]))}];
+  }))
+ ]));
  console.log('CONFIGURACIONES_CONECTADAS_INICIO');
  console.log(JSON.stringify({inventory:historicPairInventory,
-  matched:connectedMatched,examples:connectedExamples,
+  matched:connectedMatched,sensitivity:sensitivityReport,examples:connectedExamples,
   periods:Object.fromEntries(Object.entries(report.summary).map(([p,v])=>[p,{
    cuts:v.cuts,heads:v.heads,physical:v.physicalWinners,
    reference:v.methods,connected:v.connected}]))},null,2));
