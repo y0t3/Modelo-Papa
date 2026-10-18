@@ -53,7 +53,7 @@ function LaloApp(){
   hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
  });
  const [restoreScroll,setRestoreScroll]=useState({token:0,y:0});
- const [infoFrameId,setInfoFrameId]=useState('proximo');
+ const [infoFrameId,setInfoFrameId]=useState('inicio');
  const [infoMode,setInfoMode]=useState<MovementMode>('todos');
  const [infoGuide,setInfoGuide]=useState<string|null>('tablero');
  const [zoomLevels,setZoomLevels]=useState(defaultZoomLevels);
@@ -126,7 +126,7 @@ function LaloApp(){
   for(const key of Object.keys(scrollOffsets.current) as Screen[])
    scrollOffsets.current[key]=0;
   setRestoreScroll(old=>({token:old.token+1,y:0}));
-  setInfoFrameId('proximo');
+  setInfoFrameId('inicio');
   setInfoMode('todos');
   setInfoGuide('tablero');
  };
@@ -223,7 +223,7 @@ function LaloApp(){
  const fiveHeads=useMemo(()=>JURS.filter(j=>j!=='Montevideo')
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
- const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('proximo')};
+ const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
  const showFamily=(id:string)=>{navigateTo('predictiva');setFocused(id)};
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);

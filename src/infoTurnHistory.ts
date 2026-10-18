@@ -31,15 +31,19 @@ export function buildTurnHistory(date:string,turn:Turno,
  sheet:DailySheet|null,view:LaloView|null,days:InfoVisualDay[]):TurnHistory{
  const frames:TurnHistoryFrame[]=[];
  const titles=['Última jornada','Dos jornadas atrás','Tres jornadas atrás','Cuatro jornadas atrás','Cinco jornadas atrás','Seis jornadas atrás','Siete jornadas atrás'];
- const seen=new Set<string>();
+ // Orden cronológico estable, aunque un llamador entregue la memoria en orden inverso.
+ const seen=new Set<string>(),previous:InfoVisualDay[]=[];
  for(const day of days){
   if(day.date>=date||seen.has(day.date))continue;
-  seen.add(day.date);
+  seen.add(day.date);previous.push(day);
+ }
+ previous.sort((a,b)=>a.date.localeCompare(b.date));
+ for(const [i,day] of previous.entries()){
   const panorama=buildDailyPanorama(day.sheet,day.heads);
   const routes=routesForDailyTurn(panorama,turn);
   frames.push({
    id:'dia-'+day.date,date:day.date,dayLabel:readableWeekday(day.date),
-   title:day.date===shiftDay(date,-7)?'Hace una semana':titles[frames.length]||'Jornada anterior',kind:'historico',sheet:day.sheet,
+   title:day.date===shiftDay(date,-7)?'Hace una semana':titles[previous.length-1-i]||'Jornada anterior',kind:'historico',sheet:day.sheet,
    routes,routeCount:routes.length,
    familyCount:0,
    markedHeads:panorama.groups.filter(g=>g.turn===turn&&g.routeCount>0).length,

@@ -27,13 +27,15 @@ const week=buildInfoWeek('2026-10-09','2026-10-16',[
  {date:'2026-10-13',heads:tue},{date:'2026-10-14',heads:wed},
  {date:'2026-10-15',heads:thu}],night);
 assert.deepEqual(week.map(x=>x.date),[
- '2026-10-15','2026-10-14','2026-10-13',
- '2026-10-12','2026-10-10','2026-10-09']);
+ '2026-10-09','2026-10-10','2026-10-12',
+ '2026-10-13','2026-10-14','2026-10-15'],
+ 'Solo jornadas con sorteos reales, ordenadas desde la semana anterior hasta ayer');
 assert.equal(week.find(x=>x.date==='2026-10-13')?.sheet.columns[0].values[5],'15',
  'La Nocturna válida de Montevideo no debe borrarse al construir +11');
 const gallery=buildTurnHistory('2026-10-16','Previa',null,null,week);
 assert.equal(gallery.frames.length,6);
-assert.equal(gallery.frames.at(-1)?.title,'Hace una semana');
+assert.equal(gallery.frames[0]?.title,'Hace una semana');
+assert.equal(gallery.frames.at(-1)?.title,'Última jornada');
 for(const f of gallery.frames){
  assert.equal(f.markedHeads,f.markedHeadLabels.length);
  const owners=new Set(f.routes.map(r=>r.ownerId));
