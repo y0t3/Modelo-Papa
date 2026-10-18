@@ -26,11 +26,15 @@ const date='2026-10-15';
 const view=buildMotorLalo(full,date,'Vespertino',[]);
 const gallery=buildTurnHistory(date,'Vespertino',full,view,visuals);
 assert.deepEqual(gallery.frames.map(f=>f.id),
- dates.map(d=>'dia-'+d).concat(['proximo']));
+ [...dates].reverse().map(d=>'dia-'+d).concat(['proximo']),
+ 'Las minihojas recorren la semana desde la más antigua a la más reciente');
 assert.deepEqual(gallery.frames.map(f=>f.title),[
- 'Última jornada','Dos jornadas atrás','Tres jornadas atrás','Hace una semana',
+ 'Hace una semana','Tres jornadas atrás','Dos jornadas atrás','Última jornada',
  'Para el próximo Vespertino'
 ]);
+const alreadySorted=buildTurnHistory(date,'Vespertino',full,view,[...visuals].reverse());
+assert.deepEqual(alreadySorted.frames.map(f=>f.id),gallery.frames.map(f=>f.id),
+ 'El orden de minihojas no depende del orden de llegada de la memoria');
 assert.equal(readableWeekday('2026-10-08'),'Jueves 08/10');
 assert.equal(readableWeekday('2026-10-14'),'Miércoles 14/10');
 assert.ok(gallery.frames.slice(0,4).every(f=>
