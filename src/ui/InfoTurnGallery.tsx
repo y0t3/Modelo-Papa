@@ -84,7 +84,8 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
  const {frames}=gallery;
  const [playing,setPlaying]=useState(false);
  const selected=frames.findIndex(f=>f.id===selectedFrameId);
- const idx=selected<0?frames.length-1:selected;
+ // Si todavía no se eligió una minihoja, iniciar por la más antigua.
+ const idx=selected<0?0:selected;
  const active=frames[idx];
  useEffect(()=>{
   if(!playing||frames.length<2)return;
@@ -100,8 +101,9 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
  </Text>;
  return <View style={s.root}>
   <Text style={{color:c.text,fontSize:13,lineHeight:19}}>
-   Así se vio el <Text style={{fontWeight:'900'}}>{gallery.turn}</Text> durante la semana anterior.
-   El último cuadro muestra sólo las tres primeras familias de 2, 3 y 4 cifras.
+   Evolución cronológica del <Text style={{fontWeight:'900'}}>{gallery.turn}</Text>:
+   desde la semana anterior hasta el corte actual.
+   El último cuadro PRE muestra sólo las tres primeras familias de 2, 3 y 4 cifras.
   </Text>
   <View style={s.filters}>{options.map(o=><Pressable key={o.id} accessibilityRole="button"
    accessibilityState={{selected:mode===o.id}} onPress={()=>{setPlaying(false);onMode(o.id)}}
