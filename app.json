@@ -2,12 +2,12 @@
   "expo": {
     "name": "Modelo Lalo",
     "slug": "modelo-papa",
-    "version": "0.3.8",
+    "version": "0.3.9",
     "orientation": "default",
     "userInterfaceStyle": "dark",
     "android": {
       "package": "com.y0t3.modelopapa",
-      "versionCode": 14
+      "versionCode": 15
     }
   }
 }
