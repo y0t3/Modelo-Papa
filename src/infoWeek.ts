@@ -15,5 +15,7 @@ export function buildInfoWeek(start:string,endExclusive:string,
    result.push({date:day.date,heads:day.heads,sheet:buildSheet(day.heads,base)});
   if(hasNocturnoBase(day.heads))base=day.heads;
  }
- return result.reverse();
+ // La galería avanza desde D−7 hacia la jornada más reciente.
+ // Se construyen las hojas en este mismo orden para mantener la Nocturna base.
+ return result;
 }
