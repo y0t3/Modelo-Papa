@@ -22,6 +22,8 @@ jobs:
         run: npx tsc --noEmit
       - name: Verificar motor Lalo VT2 VT3 VT4 sin modificaciones
         run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Validar Configuraciones Conectadas contra testigos originales
+        run: npx --yes tsx scripts/test-connected-vt3.ts
       - name: Verificar nueva observabilidad sin fuga POST
         run: npx --yes tsx scripts/test-consolidacion-lalo.ts
       - name: Confirmar relación física directa o bifurcada con el ejemplo 033 y 440

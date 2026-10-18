@@ -14,6 +14,8 @@ import {loadPreviousDraws,hasDrawResults} from './src/drawHistory';
 import {buildInfoWeek} from './src/infoWeek';
 import {buildVt3Shadow} from './src/vt3Shadow';
 import {buildVt3Trial} from './src/vt3Trial';
+import {buildConnectedVt3} from './src/connectedVt3';
+import {preSheetAtCut} from './src/infoCandidatos';
 import {saveFrozen} from './src/vt3Snapshot';
 import {buildDailyPanorama,buildPredictivePanorama,dailyHeadOwnerId} from './src/panoramaModel';
 import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
@@ -180,14 +182,15 @@ function LaloApp(){
     const view=buildMotorLalo(sheet,date,next,hist);
     const shadow=buildVt3Shadow(sheet,date,next,hist,view);
     const trial=buildVt3Trial(view,shadow);
+    const connected=buildConnectedVt3(preSheetAtCut(sheet,next,TURNOS.indexOf(next)),date,next,[...visualDays,...hist]);
     if(cancelled)return;
-    await saveFrozen(date,next,view,shadow,JURS.map(j=>data[next]?.[j]||''),trial);
+    await saveFrozen(date,next,view,shadow,JURS.map(j=>data[next]?.[j]||''),trial,connected);
     if(!cancelled)setAutoVersion(v=>v+1);
    }catch{/* Sin suficientes datos, publicado o PRE existente: nunca inventar. */}
   };
   void capture();
   return ()=>{cancelled=true};
- },[sheet,data,hist,date,busy]);
+ },[sheet,data,hist,date,busy,visualDays]);
  // Con la app abierta, refrescar sin cambiar pestaña ni desplazar la hoja.
  useEffect(()=>{
   if(date!==today()||!baseHeads)return;
@@ -325,7 +328,7 @@ function LaloApp(){
     <TurnStrip value={target} onChange={changeTurn}/>
     {!experimental?<>
      <PredictionSummary date={dateText} turn={target} view={motor}
-      post={post} onFocus={showFamily}/>
+      post={post} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
      <Pressable accessibilityRole="button" onPress={()=>setExperimental(true)}
       style={[s.reload,{backgroundColor:c.surface,borderWidth:1,borderColor:c.accent,marginTop:12}]}>
       <Text style={[s.reloadText,{color:c.accent}]}>🧪 Experimental · Comparaciones VT3 →</Text>
@@ -336,7 +339,8 @@ function LaloApp(){
       <Text style={[s.reloadText,{color:c.accent}]}>← Volver a Predicción</Text>
      </Pressable>
      <Vt3Parallel date={date||''} turn={target} sheet={sheet} view={motor}
-      historical={hist} heads={fiveHeads} autoVersion={autoVersion}/>
+      historical={hist} heads={fiveHeads} autoVersion={autoVersion}
+       visualDays={visualDays}/>
      <Vt3Explainer sheet={sheet} view={motor} turn={target}
       heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
     </>}

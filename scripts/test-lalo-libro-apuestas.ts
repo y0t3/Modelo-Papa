@@ -21,13 +21,24 @@ const vt4={id:'vt4|prevNocturno|1:0>0:0>0:1>1:1',kind:'vt4' as const,
  motherVt3:'768/867'};
 const snap=buildPre({date:'2026-10-15',turn:'Previa',picks:[vt4]},
  sheet,'2026-10-15T01:00:00Z');
-assert.equal(snap.pre.schema,'PAPA_PRE_V3');
+assert.equal(snap.pre.schema,'PAPA_PRE_V4');
 assert.ok(validateSnapshot(snap));
 const rec:PapaRecord={snapshot:snap};
 const list=betLinesForPre(rec);
 assert.deepEqual(list.map(l=>l.kind+' '+l.value),['vt4 4768','vt3 768','vt2 68']);
 assert.equal(new Set(list.map(l=>l.key)).size,3);
 assert.equal(list.filter(l=>l.autoFrom).length,2);
+const vt3Only={id:'vt3|prevNocturno|0:0>0:1>1:1',kind:'vt3' as const,
+ value:'768',family:'768/867',sourceId:'prevNocturno' as const,
+ cells:[{row:0,col:0},{row:0,col:1},{row:1,col:1}]};
+const only3=buildPre({date:'2026-10-15',turn:'Previa',picks:[vt3Only]},
+ sheet,'2026-10-15T01:00:00Z');
+assert.deepEqual(betLinesForPre({snapshot:only3}).map(l=>l.kind+' '+l.value),
+ ['vt3 768','vt2 68'],'La terna manual habilita su pareja literal para apostar');
+const old3={...only3.pre,schema:'PAPA_PRE_V3' as const};
+assert.deepEqual(betLinesForPre({snapshot:{pre:old3,sha256:sha256(JSON.stringify(old3))}})
+ .map(l=>l.value),['768'],'Un PRE V3 antiguo NO genera bajada nueva retroactiva');
+
 assert.equal(pesosEnteros('1000'),1000);
 assert.equal(pesosEnteros('1.000'),1000);
 assert.equal(pesosEnteros('2.500'),2500);

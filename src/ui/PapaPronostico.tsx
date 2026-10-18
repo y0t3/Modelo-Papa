@@ -12,6 +12,7 @@ import MarkedBoard from './MarkedBoard';
 import type {PanoramaRoute} from '../panoramaModel';
 import {useLaloTheme} from './LaloTheme';
 import LaloLibroApuestas from './LaloLibroApuestas';
+import {clearPersonalDraft,resetPersonalWeek} from '../laloReset';
 
 const types=['vt2','vt3','vt4'] as const;
 const sourceLabels:Record<SourceId,string>={
@@ -60,6 +61,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
  const [trail,setTrail]=useState<PapaCell[]>([]);
  const [busy,setBusy]=useState(false);
  const [error,setError]=useState('');
+ const [resetRevision,setResetRevision]=useState(0);
  const [week,setWeek]=useState(()=>weekStart(todayLocal()));
  const [section,setSection]=useState<'seleccion'|'apuestas'|'historial'>('seleccion');
  const visible=useMemo(()=>sheet?.columns.slice(0,TURNOS.indexOf(turn)+1)||[],[sheet,turn]);
@@ -67,7 +69,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
  const record=records.find(r=>recordId(r.snapshot.pre.date,r.snapshot.pre.turn)===recordId(date,turn));
  const sealed=Boolean(record),published=hasObserved(heads,turn);
  const editable=!!sheet&&date===todayLocal()&&!sealed&&!published;
- const expandedDraft=useMemo(()=>expandDownPicks(picks,true),[picks]);
+ const expandedDraft=useMemo(()=>expandDownPicks(picks,true,true),[picks]);
  const wagers=useMemo(()=>uniqueWagers(expandedDraft),[expandedDraft]);
  const weekRecords=useMemo(()=>records.filter(r=>weekStart(r.snapshot.pre.date)===week),[records,week]);
  const summary=useMemo(()=>weeklySummary(records,week),[records,week]);
@@ -141,7 +143,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
   if(!editable||!sheet||!picks.length)return;
   Alert.alert('Congelar pronóstico Lalo',
    'Se guardarán '+Object.values(wagers).reduce((n,a)=>n+a.size,0)+
-   ' jugadas distintas (incluida bajada VT4→VT3→VT2) del '+date+' · '+turn+
+   ' jugadas distintas (bajada VT4→VT3→VT2 y VT3→VT2) del '+date+' · '+turn+
    '. Una vez guardadas no podrás modificar ni agregar candidatas. ¿Confirmás?',
    [{text:'Seguir editando',style:'cancel'},{
     text:'Congelar PRE',onPress:()=>{
@@ -170,8 +172,45 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
   }catch(e:any){setError('No se pudieron consultar todos los resultados: '+(e?.message||String(e)))}
   finally{setBusy(false)}
  };
+ const resetWeek=()=>{
+  if(busy)return;
+  const monday=week,end=weekEnd(monday);
+  Alert.alert('Reiniciar semana de pruebas',
+   'Semana '+monday+' al '+end+
+   '. Se borrarán TODOS los pronósticos personales, borradores, boletas y cobros locales de esta semana. Otras semanas y los motores no se tocan. Esta acción no puede deshacerse.',
+   [{text:'Cancelar',style:'cancel'},{text:'Continuar',style:'destructive',onPress:()=>{
+    Alert.alert('Confirmar eliminación definitiva',
+     'Los importes y premios de boletas reales también desaparecerán del balance semanal. Confirmá solo si estos registros eran pruebas.',
+     [{text:'Conservar registros',style:'cancel'},{text:'BORRAR ESTA SEMANA',style:'destructive',onPress:()=>{
+      setBusy(true);setError('');
+      resetPersonalWeek(monday).then(async outcome=>{
+       setRecords(await loadRecords());
+       const updated=await loadDraft(date,turn);
+       setPicks(updated.picks);setTrail([]);
+       setResetRevision(x=>x+1);
+       Alert.alert('Semana reiniciada',
+        outcome.pronosticos+' pronósticos · '+outcome.boletas+
+        ' boletas · '+outcome.cobros+' cobros eliminados de esta semana.');
+      }).catch(e=>setError('No pudo reiniciarse la semana: '+String(e?.message||e)))
+       .finally(()=>setBusy(false));
+     }}]);
+   }}]);
+ };
+ const clearDraft=()=>{
+  if(!editable||!picks.length)return;
+  Alert.alert('Limpiar borrador',
+   'Se quitarán los recorridos todavía NO congelados de '+date+' · '+turn+
+   '. No se borrarán pronósticos ni apuestas ya confirmadas.',
+   [{text:'Cancelar',style:'cancel'},{text:'Limpiar borrador',style:'destructive',
+    onPress:()=>{
+     setBusy(true);
+     clearPersonalDraft(date,turn).then(()=>{setPicks([]);setTrail([]);setError('')})
+      .catch(e=>setError(String(e?.message||e))).finally(()=>setBusy(false));
+    }}]);
+ };
  const showPicks=record?.snapshot.pre.picks||picks;
- const displayedPicks=expandDownPicks(showPicks,!record||record.snapshot.pre.schema==='PAPA_PRE_V3');
+ const displayedPicks=expandDownPicks(showPicks,!record||['PAPA_PRE_V3','PAPA_PRE_V4'].includes(record.snapshot.pre.schema),
+   !record||record.snapshot.pre.schema==='PAPA_PRE_V4');
  const autoCount=displayedPicks.filter(p=>p.autoFrom).length;
  return <View style={s.main}>
   <View style={[s.hero,{backgroundColor:c.surface,borderColor:c.border}]}>
@@ -226,8 +265,9 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
        {preview.kind==='vt4'?'Número exacto · madre '+preview.motherVt3:
         'Familia reversible '+preview.family}
       </Text>
-      {preview.kind==='vt4'?<Text style={[s.small,{color:c.text}]}>
-       Bajalo: VT4 {preview.value} + VT3 {preview.value.slice(-3)} + VT2 {preview.value.slice(-2)}
+      {(preview.kind==='vt4'||preview.kind==='vt3')?<Text style={[s.small,{color:c.text}]}>
+       {preview.kind==='vt4'?'Bajalo: VT4 '+preview.value+' + VT3 '+preview.value.slice(-3)+' + VT2 '+preview.value.slice(-2):
+        'Bajalo: VT3 '+preview.value+' + VT2 '+preview.value.slice(-2)}
       </Text>:null}
      </View>:null}
      <View style={s.controls}>
@@ -249,7 +289,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
    <View style={[s.panel,{backgroundColor:c.surface,borderColor:c.border}]}>
     <Text style={[s.subtitle,{color:c.text}]}>CANDIDATOS ELEGIDOS · {showPicks.length} recorridos · {autoCount} bajadas</Text>
     <Text style={[s.small,{color:c.subtext}]}>
-     Cada VT4 seleccionado incluye sus últimas tres y dos cifras («bajalo»).
+     Cada VT4 baja a VT3 y VT2; cada VT3 baja a VT2 («bajalo»).
      Una familia cuenta una sola vez por VT y turno, aunque tenga varias rutas.
      Las jugadas bajadas tienen testigo físico propio dentro del recorrido VT4.
     </Text>
@@ -267,7 +307,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
         </Text>
         <Text style={[s.muted,{color:c.subtext}]}>
          {sourceLabels[p.sourceId]} · {p.value} · {pathText(p.cells)}
-         {p.autoFrom?' · ↓ Bajado de VT4':''}
+         {p.autoFrom?' · ↓ Bajado automáticamente':''}
         </Text>
        </View>
        {editable&&!p.autoFrom?<Pressable onPress={()=>void patch(picks.filter(x=>x.id!==p.id))}
@@ -279,6 +319,11 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
       {!list.length?<Text style={[s.muted,{color:c.muted}]}>Sin recorridos {kind.toUpperCase()}.</Text>:null}
      </View>;
     })}
+    {editable&&picks.length?<Pressable accessibilityRole="button"
+     onPress={clearDraft} disabled={busy}
+     style={[s.secondary,{borderColor:c.border,marginTop:10}]}>
+     <Text style={{color:c.accent,fontWeight:'900',textAlign:'center'}}>↶ LIMPIAR BORRADOR SIN CONGELAR</Text>
+    </Pressable>:null}
     {editable?<Pressable onPress={freeze} accessibilityRole="button"
      disabled={!picks.length||busy}
      style={[s.freeze,{backgroundColor:c.button,opacity:(!picks.length||busy)?0.45:1}]}>
@@ -308,7 +353,7 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
      </Text>)}
     </View>:null}
    </View>
-  </>:section==='apuestas'?<LaloLibroApuestas date={date} turn={turn}
+  </>:section==='apuestas'?<LaloLibroApuestas key={'apuestas-'+resetRevision} date={date} turn={turn}
    record={record} records={records} heads={heads} week={week} weekEnd={weekEnd(week)}/>
    :<View style={[s.panel,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.subtitle,{color:c.text}]}>BALANCE SEMANAL · LALO</Text>
@@ -363,11 +408,21 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
       </Text>
      </View>;
     }):<Text style={[s.small,{color:c.muted}]}>Todavía no hay pronósticos personales congelados esta semana.</Text>}
-   <LaloLibroApuestas date={date} turn={turn} record={record}
+   <LaloLibroApuestas key={'resumen-'+resetRevision} date={date} turn={turn} record={record}
     records={records} heads={heads} week={week} weekEnd={weekEnd(week)} summaryOnly/>
    <Text style={[s.small,{color:c.subtext}]}>
     Los registros quedan en este dispositivo. Si cambiás de teléfono o borrás los datos de la app,
     pueden perderse. Las estadísticas describen jugadas acertadas; no prueban una ventaja predictiva.
+   </Text>
+   <Pressable accessibilityRole="button" onPress={resetWeek} disabled={busy}
+    style={[s.secondary,{borderColor:c.accent,marginTop:15,padding:12}]}>
+    <Text style={{color:c.accent,fontWeight:'900',textAlign:'center'}}>
+     REINICIAR PRONÓSTICOS Y APUESTAS DE ESTA SEMANA
+    </Text>
+   </Pressable>
+   <Text style={[s.small,{color:c.subtext}]}>
+    Para borrar pruebas: requiere dos confirmaciones. Borra pronósticos, boletas y cobros
+    locales solo de la semana mostrada; el historial de otras semanas queda intacto.
    </Text>
   </View>}
   {error?<Text style={[s.error,{color:c.text,backgroundColor:c.callout}]}>{error}</Text>:null}

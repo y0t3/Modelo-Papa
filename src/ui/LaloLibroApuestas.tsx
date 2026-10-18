@@ -101,7 +101,7 @@ export default function LaloLibroApuestas({date,turn,record,records,heads,week,w
    </Text>:<>
     <Text style={[s.subtitle,{color:c.text}]}>Números del pronóstico</Text>
     <Text style={[s.muted,{color:c.subtext}]}>
-     Se incluye «bajalo»: una VT4, su terminación VT3 y su VT2. Cada número literal
+     Se incluye «bajalo»: VT4→VT3→VT2 y VT3→VT2. Cada número literal
      se cobra y se apuesta por separado: 044 y 440 no son la misma boleta.
     </Text>
     <View style={s.lineGrid}>{available.map(line=>{

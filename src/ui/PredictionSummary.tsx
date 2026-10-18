@@ -2,6 +2,7 @@ import React,{useEffect,useRef,useState} from 'react';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {Turno} from '../domain';
 import type {LaloView,LaloKind} from '../motorLalo';
+import {reversibleFamily} from '../motorLalo';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
 import {readableWeekday} from '../infoTurnHistory';
@@ -18,9 +19,9 @@ const explanation:Record<string,string>={
  * se leen de arriba hacia abajo. Los chips Top3/5/10 amplían esa misma lista.
  * No se modifica la selección, el orden, el cotejo POST ni el acceso al recorrido.
  */
-export default function PredictionSummary({date,turn,view,onFocus,post}:{
+export default function PredictionSummary({date,turn,view,onFocus,post,heads=[]}:{
  date:string;turn:Turno;view:LaloView|null;
- onFocus:(id:string)=>void;post?:Record<LaloKind,string[]>|null
+ onFocus:(id:string)=>void;post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [limits,setLimits]=useState<Record<LaloKind,TopCount>>(defaults);
@@ -88,6 +89,13 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
     {KINDS.map(kind=>{
      const limit=limits[kind];
      const rows=view?.ranks[kind].slice(0,limit)||[];
+     const matched=new Set(post?.[kind]||[]);
+     const hitRows=rows.filter(f=>matched.has(f.family));
+     const winnerHeads=(family:typeof rows[number])=>heads.filter(head=>{
+      if(!/^[0-9]{4}$/.test(head))return false;
+      if(kind==='vt4')return family.paths.some(path=>path.value===head);
+      return reversibleFamily(head.slice(-Number(kind.slice(-1))))===family.family;
+     });
      return <View key={kind} style={[s.page,{width:pagerWidth||undefined}]}
       onLayout={e=>{
        const height=Math.ceil(e.nativeEvent.layout.height);
@@ -114,16 +122,32 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
          Top {n}
         </Text>
        </Pressable>)}</View>
+      {post&&view?<View style={[s.postPanel,{backgroundColor:hitRows.length?kinds[kind].fill:c.surfaceAlt,
+       borderColor:hitRows.length?kinds[kind].line:c.border}]}>
+       <Text style={[s.postTitle,{color:hitRows.length?kinds[kind].text:c.text}]}>
+        {hitRows.length?'✓ COINCIDENCIAS POST':'POST · SIN COINCIDENCIAS'} · {hitRows.length} en Top{limit}
+       </Text>
+       <Text style={[s.postInfo,{color:c.subtext}]}>
+        {hitRows.length?hitRows.map(f=>'#'+f.rank+' '+f.family+' ('+winnerHeads(f).join(', ')+')').join('  ·  '):
+         'Ninguna familia de este Top coincidió con las cabezas publicadas.'}
+       </Text>
+      </View>:null}
       {rows.length?<View style={s.families}>
        {rows.map(f=><Pressable key={f.family} accessibilityRole="button"
         accessibilityLabel={kind.toUpperCase()+', puesto '+f.rank+', familia '+f.family}
         onPress={()=>onFocus(kind+'|'+f.family)}
-        style={[s.family,{backgroundColor:c.card,borderColor:c.border}]}>
+        style={[s.family,{backgroundColor:matched.has(f.family)?kinds[kind].fill:c.card,
+         borderColor:matched.has(f.family)?kinds[kind].line:c.border,
+         borderWidth:matched.has(f.family)?2:1}]}>
         <View style={s.familyTitle}>
          <Text style={[s.rank,{color:kinds[kind].line}]}>#{f.rank}</Text>
          <Text style={[s.familyName,{color:c.text}]}>{f.family}</Text>
+         {matched.has(f.family)?<Text style={[s.hitLabel,{color:kinds[kind].text}]}>✓ POST</Text>:null}
          <Text style={[s.chevron,{color:c.accent}]}>›</Text>
         </View>
+        {matched.has(f.family)?<Text style={[s.winnerHeads,{color:kinds[kind].text}]}>
+         Cabeza(s): {winnerHeads(f).join(' · ')}
+        </Text>:null}
         <Text style={[s.detail,{color:c.subtext}]}>
          {explanation[f.state]} · {explainFamilyRationale(f.rationale)}
         </Text>
@@ -133,9 +157,7 @@ export default function PredictionSummary({date,turn,view,onFocus,post}:{
        {!view?'Cargá una hoja para generar candidatos.':
         'Sin candidatos con recorrido físico válido para esta modalidad.'}
       </Text>}
-      {post&&view?<Text style={[s.post,{backgroundColor:c.callout,color:c.subtext}]}>
-       POST (Top 10): {post[kind].length?post[kind].join(' · '):'sin coincidencias'}.
-      </Text>:null}
+
      </View>;
     })}
    </ScrollView>
@@ -166,5 +188,8 @@ const s=StyleSheet.create({
  detail:{fontSize:11,lineHeight:15,marginTop:3},
  open:{fontSize:10,fontWeight:'900',marginTop:5,alignSelf:'flex-end'},
  empty:{fontSize:11,lineHeight:17,marginVertical:7},
- post:{fontSize:10,borderRadius:7,padding:8,marginTop:9}
+ postPanel:{borderWidth:1,borderRadius:10,padding:12,marginVertical:10,gap:5},
+ postTitle:{fontSize:14,fontWeight:'900'},postInfo:{fontSize:12,lineHeight:18,fontWeight:'700'},
+ hitLabel:{fontSize:11,fontWeight:'900'},
+ winnerHeads:{fontSize:12,fontWeight:'900',marginTop:4}
 });

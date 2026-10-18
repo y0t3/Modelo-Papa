@@ -25,9 +25,10 @@ export const betLineKey=(kind:LaloBetKind,value:string)=>kind+'|'+value;
 /** Números literales, no familias reversibles: 044 y 440 son apuestas distintas. */
 export function betLinesForPre(record:PapaRecord):BetLine[]{
  if(!validateSnapshot(record.snapshot))throw Error('Pronóstico congelado inválido');
- const canLower=record.snapshot.pre.schema==='PAPA_PRE_V3';
+ const canLower=['PAPA_PRE_V3','PAPA_PRE_V4'].includes(record.snapshot.pre.schema);
  const seen=new Map<string,BetLine>();
- for(const p of expandDownPicks(record.snapshot.pre.picks,canLower)){
+ for(const p of expandDownPicks(record.snapshot.pre.picks,canLower,
+  record.snapshot.pre.schema==='PAPA_PRE_V4')){
   const key=betLineKey(p.kind,p.value);
   const prior=seen.get(key);
   if(prior){

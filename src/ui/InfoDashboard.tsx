@@ -35,7 +35,7 @@ const guides=[
   'HOJA resalta recorridos que coincidieron con sorteos publicados (POST). PREDICTIVA dibuja recorridos candidatos antes del turno (PRE). PREDICCIÓN explica por qué las familias entran a los Tops. CABEZAS muestra los resultados completos disponibles por jurisdicción y turno.',
   link:'cabezas' as Destination,label:'Consultar cabezas'},
  {key:'lalo',title:'05 · Pronóstico personal de Lalo',sub:'Elegir, bajar y congelar',content:
-  'Lalo marca sus propios recorridos físicos y congela la elección antes de que se conozca el resultado. Una VT4 como 3044 baja automáticamente a 044 (VT3) y 44 (VT2). Congelar el PRE conserva lo realmente elegido. Las selecciones antiguas no se reescriben con reglas nuevas.',
+  'Lalo marca sus propios recorridos físicos y congela la elección antes de que se conozca el resultado. Una VT4 como 3044 baja a 044 (VT3) y 44 (VT2); una VT3 como 768 baja a 68 (VT2). Congelar el PRE conserva lo realmente elegido. Las selecciones antiguas no se reescriben con reglas nuevas.',
   link:'papa' as Destination,label:'Abrir Lalo'},
  {key:'dinero',title:'06 · Apuestas y balance',sub:'Dinero real, no aciertos supuestos',content:
   'Seleccionar un candidato no significa haber apostado. Una boleta real se confirma aparte: cada 4, 3 y 2 cifras bajadas recibe el mismo importe, repetido en las jurisdicciones elegidas. Se juega a la cabeza. Una familia reversible sirve para analizar, pero al cobrar importan las cifras exactas. Sólo se contabiliza como ingreso el premio realmente cobrado.',
