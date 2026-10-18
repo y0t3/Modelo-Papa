@@ -91,7 +91,8 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
   if(!playing||frames.length<2)return;
   const handle=setInterval(()=>{
    const pos=frames.findIndex(f=>f.id===selectedFrameId);
-   onSelectFrame(frames[(Math.max(-1,pos)+1)%frames.length].id);
+   // En el inicio por defecto ya se ve la primera jornada: el primer tick avanza.
+   onSelectFrame(frames[(pos<0?1:pos+1)%frames.length].id);
   },1800);
   return ()=>clearInterval(handle);
  },[playing,selectedFrameId,frames,onSelectFrame]);
@@ -103,7 +104,7 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
   <Text style={{color:c.text,fontSize:13,lineHeight:19}}>
    Evolución cronológica del <Text style={{fontWeight:'900'}}>{gallery.turn}</Text>:
    desde la semana anterior hasta el corte actual.
-   El último cuadro PRE muestra sólo las tres primeras familias de 2, 3 y 4 cifras.
+   Cuando hay cuadro PRE al final, muestra sólo las tres primeras familias de 2, 3 y 4 cifras.
   </Text>
   <View style={s.filters}>{options.map(o=><Pressable key={o.id} accessibilityRole="button"
    accessibilityState={{selected:mode===o.id}} onPress={()=>{setPlaying(false);onMode(o.id)}}
