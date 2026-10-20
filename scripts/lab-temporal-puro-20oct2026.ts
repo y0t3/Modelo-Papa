@@ -198,7 +198,8 @@ function evaluatePairs(days:Day[]){
  }
  const stages=['EXPLORACION','VALIDACION','RESERVA'].map(stage=>aggregate(cuts,stage,100));
  const test=shuffledCheck(cuts);
- return {stages,test,definition:'55 familias reversibles VT2, mismo calendario, objetivos y resguardo temporal que VT3',
+ const testMonth=shuffledCheck(cuts,800,true);
+ return {stages,test,testMonth,definition:'55 familias reversibles VT2, mismo calendario, objetivos y resguardo temporal que VT3',
   latest:cuts.filter(c=>c.date==='2026-10-19').map(c=>({turn:c.turn,
    top5:Object.fromEntries(c.choices.map(p=>[p.method,p.top5]))}))};
 }
@@ -241,22 +242,26 @@ function aggregate(cuts:Cut[],stage:string,space=1000){
  });
  return {phase:stage,cuts:x.length,heads,results};
 }
-function shuffledCheck(cuts:Cut[],reps=500){
- const x=cuts.filter(c=>c.phase==='RESERVA'),byTurn=new Map<Turno,Cut[]>();
- for(const t of TURNOS)byTurn.set(t,x.filter(c=>c.turn===t));
- const alt=METHODS.filter(x=>x!=='ALEATORIO_FIJO');
- const obs=Object.fromEntries(METHODS.map(m=>[m,x.reduce((n,c)=>n+c.families.filter(f=>
+function shuffledCheck(cuts:Cut[],reps=800,monthly=false){
+ const x=cuts.filter(c=>c.phase==='RESERVA');
+ const groups=new Map<string,Cut[]>();
+ for(const c of x){
+  const key=c.turn+(monthly?'|'+c.date.slice(0,7):'');
+  const arr=groups.get(key)||[];arr.push(c);groups.set(key,arr);
+ }
+ const alternative=METHODS.filter(m=>m!=='ALEATORIO_FIJO');
+ const observed=Object.fromEntries(METHODS.map(m=>[m,x.reduce((n,c)=>n+c.families.filter(f=>
   c.choices.find(z=>z.method===m)!.top5.includes(f)).length,0)])) as Record<Method,number>;
- const bestObserved=Math.max(...alt.map(m=>obs[m]));
- let exceed=0,bestExceed=0;
- const hits=Object.fromEntries(METHODS.map(m=>[m,0])) as Record<Method,number>;
- let seed=0x1550c0de;
+ const nullScores=Object.fromEntries(METHODS.map(m=>[m,[] as number[]])) as Record<Method,number[]>;
+ let seed=monthly?0x13579bdf:0x1550c0de;
  const random=()=>{seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return(seed>>>0)/4294967296;};
  for(let r=0;r<reps;r++){
   const perm=new Map<Cut,Cut>();
-  for(const items of byTurn.values()){
+  for(const items of groups.values()){
    const shuffled=[...items];
-   for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
+   for(let i=shuffled.length-1;i>0;i--){
+    const j=Math.floor(random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];
+   }
    for(let i=0;i<items.length;i++)perm.set(items[i],shuffled[i]);
   }
   const score=Object.fromEntries(METHODS.map(m=>[m,0])) as Record<Method,number>;
@@ -265,14 +270,30 @@ function shuffledCheck(cuts:Cut[],reps=500){
    for(const selection of c.choices)
     score[selection.method]+=outcomes.filter(f=>selection.top5.includes(f)).length;
   }
-  for(const m of METHODS)if(score[m]>=obs[m])hits[m]++;
-  if(score.ALEATORIO_FIJO>=obs.ALEATORIO_FIJO)exceed++;
-  if(Math.max(...alt.map(m=>score[m]))>=bestObserved)bestExceed++;
+  for(const m of METHODS)nullScores[m].push(score[m]);
  }
- return {replications:reps,observed:obs,
-  permutationUpperTail:Object.fromEntries(METHODS.map(m=>[m,(hits[m]+1)/(reps+1)])),
-  bestOfFour:{observed:bestObserved,adjustedP:(bestExceed+1)/(reps+1)},
-  note:'Permutar cabezas COMPLETAS dentro del mismo turno en RESERVA; no optimiza Tops.'};
+ const mean=Object.fromEntries(METHODS.map(m=>[m,
+  nullScores[m].reduce((a,b)=>a+b,0)/reps])) as Record<Method,number>;
+ const sd=Object.fromEntries(METHODS.map(m=>{
+  const variance=nullScores[m].reduce((a,b)=>a+(b-mean[m])**2,0)/reps;
+  return [m,Math.sqrt(variance)||1];
+ })) as Record<Method,number>;
+ const obsZ=Object.fromEntries(METHODS.map(m=>[m,(observed[m]-mean[m])/sd[m]])) as Record<Method,number>;
+ const maxObserved=Math.max(...alternative.map(m=>obsZ[m]));
+ let adjustedCount=0;
+ for(let i=0;i<reps;i++){
+  const maxPerm=Math.max(...alternative.map(m=>(nullScores[m][i]-mean[m])/sd[m]));
+  if(maxPerm>=maxObserved)adjustedCount++;
+ }
+ return {replications:reps,withinMonth:monthly,observed,
+  permutationMean:mean,observedStandardizedExcess:obsZ,
+  permutationUpperTail:Object.fromEntries(METHODS.map(m=>[m,
+   (1+nullScores[m].filter(n=>n>=observed[m]).length)/(reps+1)])),
+  bestOfFour:{standardizedExcess:maxObserved,
+   familyWisePermutationP:(1+adjustedCount)/(reps+1)},
+  note:'Permuta las cabezas dentro del mismo turno'+
+   (monthly?' y mismo mes':' durante toda la reserva')+
+   '; corrección de búsqueda entre cuatro selectores vía máximo exceso normalizado.'};
 }
 async function main(){
  const dataset=await download();
@@ -295,6 +316,7 @@ async function main(){
  }
  const stages=['EXPLORACION','VALIDACION','RESERVA'].map(stage=>aggregate(cuts,stage));
  const test=shuffledCheck(cuts);
+ const testMonth=shuffledCheck(cuts,800,true);
  const byMonth=[...new Set(cuts.map(x=>x.date.slice(0,7)))].map(month=>{
   const x=cuts.filter(c=>c.date.startsWith(month));
   return {month,cuts:x.length,
@@ -312,7 +334,7 @@ async function main(){
    methodology:'hipótesis fijadas antes de ejecutar; reserva retrospectiva, NO sellada prospectiva'},
   vt2,
   download:{totalDates:dataset.totalDates,actualDays:days.length,errors:dataset.errors,
-   validDays:days.map(x=>x.date)},stages,byMonth,test,
+   validDays:days.map(x=>x.date)},stages,byMonth,test,testMonth,
   latest:cuts.filter(x=>x.date==='2026-10-19').map(x=>({
    turn:x.turn,heads:x.heads,top5:Object.fromEntries(x.choices.map(c=>[c.method,c.top5]))})),
   cuts:cuts.map(x=>({date:x.date,turn:x.turn,phase:x.phase,
@@ -321,7 +343,7 @@ async function main(){
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/temporal-puro-2026.json',JSON.stringify(report,null,2));
  console.log('RESULTADO_VT2',JSON.stringify(vt2));
- console.log('RESULTADO_TEMPORAL',JSON.stringify({stages,byMonth,test,latest:report.latest,
+ console.log('RESULTADO_TEMPORAL',JSON.stringify({stages,byMonth,test,testMonth,latest:report.latest,
   downloads:{calendarDays:dataset.totalDates,drawDays:days.length,errors:dataset.errors.length}}));
 }
 void main().catch(e=>{console.error('LAB_TEMPORAL_ERROR',e);process.exitCode=1});
