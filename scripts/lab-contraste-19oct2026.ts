@@ -91,7 +91,7 @@ for(const turn of TURNOS){
    }
    rank[name]=n||null;
    for(const limit of [3,5,10] as const)
-    if(n>0&&n<=limit)totals[name]['top'+limit]++;
+    if(n>0&&n<=limit)totals[name][('top'+limit) as 'top3'|'top5'|'top10']++;
   }
   items.push({jur,head,physical,rank});
  }
