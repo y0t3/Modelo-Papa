@@ -189,13 +189,14 @@ async function main(){
   cfgTop6:snapshots.reduce((s,x)=>s+x.cfgTop6,0),
   breadthTop6:snapshots.reduce((s,x)=>s+x.breadthTop6,0),
   targetMisses:misses.length};
- const summary={dates:valid,targets:misses,totals:total,byDay:Object.entries(
-  Object.groupBy(snapshots,x=>x.date)).map(([date,x])=>({date,
-   physical:x!.reduce((n,i)=>n+i.physicalHeads,0),
-   official6:x!.reduce((n,i)=>n+i.officialTop6,0),
-   geo6:x!.reduce((n,i)=>n+i.geoTop6,0),
-   cfg6:x!.reduce((n,i)=>n+i.cfgTop6,0),
-   breadth6:x!.reduce((n,i)=>n+i.breadthTop6,0)}))};
+ const summary={dates:valid,targets:misses,totals:total,byDay:[...new Set(snapshots.map(x=>x.date))].map(date=>{
+  const x=snapshots.filter(x=>x.date===date);
+  return {date,physical:x.reduce((n,i)=>n+i.physicalHeads,0),
+   official6:x.reduce((n,i)=>n+i.officialTop6,0),
+   geo6:x.reduce((n,i)=>n+i.geoTop6,0),
+   cfg6:x.reduce((n,i)=>n+i.cfgTop6,0),
+   breadth6:x.reduce((n,i)=>n+i.breadthTop6,0)};
+ })};
  console.log('RESUMEN_FRONTERA',JSON.stringify(summary));
 }
 void main().catch(e=>{console.error('ERROR_FRONTERA',e);process.exitCode=1});
