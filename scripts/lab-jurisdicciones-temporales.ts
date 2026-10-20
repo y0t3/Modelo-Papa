@@ -128,9 +128,21 @@ function crossSync(draws:Draw[],year:string,reps=999){
   pFamilyWise:(1+series.filter(x=>Math.max(...x.map((v,i)=>Math.abs(z(v,i))))>=
    Math.abs(z(n,k))).length)/(reps+1)
  })).sort((a,b)=>Math.abs(b.z)-Math.abs(a.z));
+ const foco=complete.flatMap((d,i)=>{
+  const provincia=heads[i][JUR.indexOf('Provincia')],cordoba=heads[i][JUR.indexOf('Córdoba')];
+  if(provincia.slice(-2)!==cordoba.slice(-2))return [];
+  return [{date:d.date,turn:d.turn,provincia,cordoba,sufijo:provincia.slice(-2)}];
+ });
+ const summary=(key:'month'|'turn')=>Object.entries(foco.reduce((m,x)=>{
+  const k=key==='month'?x.date.slice(0,7):x.turn;
+  return {...m,[k]:(m[k]||0)+1};
+ },{} as Record<string,number>)).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
  return {year,cuts:complete.length,headPairs:complete.length*pairs.length,
   null:'se permutan las fechas independientemente por jurisdicción dentro de cada mes y turno',
-  tests:ranked,correctedMax:ranked[0]?.pFamilyWise};
+  tests:ranked,correctedMax:ranked[0]?.pFamilyWise,
+  focoProvinciaCordoba:{byMonth:summary('month'),byTurn:summary('turn'),
+   fullHeadIdentical:foco.filter(x=>x.provincia===x.cordoba).length,
+   episodes:foco}};
 }
 function scoreOf(history:Daily[],jur:J,turn:Turno,kind:Kind){
  const pools:Record<'global'|'local'|'strict',Map<string,number>>={
