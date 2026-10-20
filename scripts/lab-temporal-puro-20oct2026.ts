@@ -14,6 +14,7 @@ const METHODS:Method[]=['ALEATORIO_FIJO','FRECUENCIA','ECO_TEMPORAL','RED_TRANSI
 const JUR=JURS.filter(x=>x!=='Montevideo');
 const family=(x:string)=>[x,[...x].reverse().join('')].sort().join('/');
 const candidateFamilies=[...new Set(Array.from({length:1000},(_,n)=>family(String(n).padStart(3,'0'))))].sort();
+const candidatePairs=[...new Set(Array.from({length:100},(_,n)=>family(String(n).padStart(2,'0'))))].sort();
 const forms=(f:string)=>[...new Set(f.split('/'))];
 const valid=(h:string)=>/^\d{4}$/.test(h);
 const scoreMap=()=>new Map<string,number>();
@@ -126,6 +127,82 @@ function rankCandidates(date:string,turn:Turno,historical:Day[],todayBefore:Reco
  }
  return ranks;
 }
+// Segundo contraste independiente: parejas VT2, suficiente frecuencia para observar
+// desviaciones que quedarían ocultas con unas pocas cabezas VT3.
+function rankPairs(date:string,turn:Turno,historical:Day[],todayBefore:RecordHead[]):Choice[]{
+ const prior6=lookback(historical,6),prior60=lookback(historical,60);
+ const seen=[...prior6.flatMap(x=>x.events),...todayBefore];
+ const counts=scoreMap(),recent=scoreMap(),digit=scoreMap();
+ const weights=new Map(prior6.map((d,i)=>[d.date,1/(1+prior6.length-i)]));
+ for(const e of seen){
+  const w=e.date===date?1.3:weights.get(e.date)||0;
+  add(recent,family(e.last2),w*(e.turn===turn?1.25:1));
+  for(const d of e.last2)add(digit,d,w);
+ }
+ for(const [i,d] of prior60.entries()){
+  const w=Math.exp(-(prior60.length-i-1)/20);
+  for(const e of d.events)add(counts,family(e.last2),w);
+ }
+ for(const e of todayBefore)add(counts,family(e.last2),1.2);
+ const hist=lookback(historical,90),pairs=scoreMap(),total=scoreMap();
+ for(let i=0;i<hist.length;i++){
+  const day=hist[i],weight=Math.exp(-(hist.length-1-i)/30);
+  for(let t=0;t<TURNOS.length;t++){
+   const current=day.events.filter(x=>x.turn===TURNOS[t]);
+   const context=t===0?i>0?hist[i-1].events.filter(x=>x.turn==='Nocturno'):[]:
+    day.events.filter(x=>x.turn===TURNOS[t-1]);
+   if(!context.length||!current.length)continue;
+   for(const a of context)for(const b of current){
+    const w=weight/context.length;
+    add(pairs,a.last2+'|'+family(b.last2),w);
+    add(total,a.last2,w);
+   }
+  }
+ }
+ const t=TURNOS.indexOf(turn);
+ const priorContext=t===0?(historical.at(-1)?.events.filter(x=>x.turn==='Nocturno')||[]):
+   todayBefore.filter(x=>x.turn===TURNOS[t-1]);
+ const ranked:Choice[]=[];
+ for(const method of METHODS){
+  const scores=candidatePairs.map(f=>{
+   const base=counts.get(f)||0,echo=recent.get(f)||0;
+   const conditional=priorContext.length?priorContext.reduce((s,e)=>
+    s+(pairs.get(e.last2+'|'+f)||0)/(total.get(e.last2)||1),0)/priorContext.length:0;
+   const recombination=Math.max(...forms(f).map(v=>(digit.get(v[0])||0)*(digit.get(v[1])||0)));
+   const score=method==='ALEATORIO_FIJO'?noise(date,turn,method,f):
+    method==='FRECUENCIA'?base:
+    method==='ECO_TEMPORAL'?echo+base*0.01:
+    method==='RED_TRANSICIONES'?conditional+base*0.0001:
+    recombination+base*0.001;
+   return {family:f,score};
+  }).sort((a,b)=>b.score-a.score||noise(date,turn,method,b.family)-noise(date,turn,method,a.family));
+  ranked.push({method,top3:scores.slice(0,3).map(x=>x.family),
+   top5:scores.slice(0,5).map(x=>x.family),top10:scores.slice(0,10).map(x=>x.family),
+   scores:scores.slice(0,10)});
+ }
+ return ranked;
+}
+function evaluatePairs(days:Day[]){
+ const cuts:Cut[]=[],historical:Day[]=[];
+ for(const day of days){
+  const before:RecordHead[]=[];
+  for(const turn of TURNOS){
+   const heads=day.events.filter(e=>e.turn===turn);
+   if(historical.length>=30&&heads.length>=4)
+    cuts.push({date:day.date,turn,phase:phase(day.date),
+     heads:heads.map(e=>e.head),families:heads.map(e=>family(e.last2)),
+     choices:rankPairs(day.date,turn,historical,before)});
+   before.push(...heads);
+  }
+  historical.push(day);
+ }
+ const stages=['EXPLORACION','VALIDACION','RESERVA'].map(stage=>aggregate(cuts,stage,100));
+ const test=shuffledCheck(cuts);
+ return {stages,test,definition:'55 familias reversibles VT2, mismo calendario, objetivos y resguardo temporal que VT3',
+  latest:cuts.filter(c=>c.date==='2026-10-19').map(c=>({turn:c.turn,
+   top5:Object.fromEntries(c.choices.map(p=>[p.method,p.top5]))}))};
+}
+
 async function download(){
  const dates=range('2026-01-01','2026-10-19');
  const outputs:(Day|null)[]=Array(dates.length).fill(null);
@@ -143,7 +220,7 @@ async function download(){
  await Promise.all(Array.from({length:8},()=>worker()));
  return {days:outputs.filter((x):x is Day=>!!x&&x.events.length>0),errors,totalDates:dates.length};
 }
-function aggregate(cuts:Cut[],stage:string){
+function aggregate(cuts:Cut[],stage:string,space=1000){
  const x=cuts.filter(x=>x.phase===stage),heads=x.reduce((s,c)=>s+c.heads.length,0);
  const results=METHODS.map(method=>{
   const out:any={method,cuts:x.length,heads};
@@ -156,7 +233,7 @@ function aggregate(cuts:Cut[],stage:string){
     const n=cut.families.filter(f=>set.has(f)).length;
     matchedHeads+=n;if(n)matchedCuts++;
     const values=new Set(chosen.flatMap(forms));
-    expectedHeads+=cut.heads.length*values.size/1000;
+    expectedHeads+=cut.heads.length*values.size/space;
    }
    out['top'+k]={matchedHeads,matchedCuts,expectedHeads:Number(expectedHeads.toFixed(2))};
   }
@@ -224,6 +301,7 @@ async function main(){
    hits:Object.fromEntries(METHODS.map(method=>[method,x.reduce((n,c)=>n+c.families.filter(f=>
     c.choices.find(z=>z.method===method)!.top5.includes(f)).length,0)]))};
  });
+ const vt2=evaluatePairs(days);
  const report={definition:{dataset:'Cabezas RAW de Viví tu Suerte; sin +11 ni hoja',
    endDate:'2026-10-19',headJurisdictions:JUR,models:METHODS,
    experiment:'enero-junio',validation:'julio-agosto',holdout:'septiembre-19 octubre',
@@ -232,6 +310,7 @@ async function main(){
    windows:'frecuencia 60 jornadas; eco/recombinación 6; condicional 90',
    metric:'aciertos de cabeza en Top3/5/10, no ganancia monetaria',
    methodology:'hipótesis fijadas antes de ejecutar; reserva retrospectiva, NO sellada prospectiva'},
+  vt2,
   download:{totalDates:dataset.totalDates,actualDays:days.length,errors:dataset.errors,
    validDays:days.map(x=>x.date)},stages,byMonth,test,
   latest:cuts.filter(x=>x.date==='2026-10-19').map(x=>({
@@ -241,6 +320,7 @@ async function main(){
    choices:Object.fromEntries(x.choices.map(c=>[c.method,{top3:c.top3,top5:c.top5,top10:c.top10}]))}))};
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/temporal-puro-2026.json',JSON.stringify(report,null,2));
+ console.log('RESULTADO_VT2',JSON.stringify(vt2));
  console.log('RESULTADO_TEMPORAL',JSON.stringify({stages,byMonth,test,latest:report.latest,
   downloads:{calendarDays:dataset.totalDates,drawDays:days.length,errors:dataset.errors.length}}));
 }
