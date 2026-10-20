@@ -1,0 +1,29 @@
+name: Laboratorio Jurisdicciones Temporales RAW
+on:
+  push:
+    branches: [lab/jurisdicciones-temporales-20oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  jurisdicciones:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Validar tipado completo
+        run: npx tsc --noEmit
+      - name: Auditar jurisdicciones 2025 exploracion y 2026 contraste
+        run: npx --yes tsx scripts/lab-jurisdicciones-temporales.ts
+      - name: Guardar informe y resultados sin alterar main
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-JURISDICCIONES-TEMPORALES
+          path: lab-results/jurisdicciones-temporal-2025-2026.json
+          if-no-files-found: warn
