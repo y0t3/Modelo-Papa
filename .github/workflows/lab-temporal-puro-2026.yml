@@ -19,9 +19,11 @@ jobs:
         run: npx tsc --noEmit
       - name: Reconstruir PRE secuenciales sin hoja ni +11 y cotejar reservas
         run: npx --yes tsx scripts/lab-temporal-puro-20oct2026.ts
+      - name: Replicar los mismos selectores en 2025 sin reentrenar reglas
+        run: npx --yes tsx scripts/lab-temporal-puro-2025.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: LAB-MODELO-TEMPORAL-PURO-2026
-          path: lab-results/temporal-puro-2026.json
+          path: lab-results/temporal-puro-*.json
           if-no-files-found: warn
