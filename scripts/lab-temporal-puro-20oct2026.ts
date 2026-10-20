@@ -41,7 +41,8 @@ const condScore=(historical:Day[],prevContext:RecordHead[],prevNight:RecordHead[
  // Solo jornadas ANTERIORES; el corte objetivo no está presente.
  const prior=lookback(historical,90);
  const coF=scoreMap(),coP=scoreMap(),coD=scoreMap(),totals=scoreMap();
- let beforeNight=prevNight;
+ // La primera jornada de entrenamiento no puede ver la Nocturna del futuro.
+ let beforeNight:RecordHead[]=[];
  for(let i=0;i<prior.length;i++){
   const day=prior[i],prev=prior[i-1];
   const w=Math.exp(-(prior.length-1-i)/30);
@@ -203,15 +204,15 @@ async function main(){
  const days=dataset.days,history:Day[]=[],cuts:Cut[]=[];
  for(const day of days){
   const earlier:RecordHead[]=[];
-  if(history.length>=30){
-   for(const turn of TURNOS){
-    const heads=day.events.filter(e=>e.turn===turn);
-    if(heads.length<4)continue;
+  for(const turn of TURNOS){
+   const heads=day.events.filter(e=>e.turn===turn);
+   if(history.length>=30&&heads.length>=4){
     const choices=rankCandidates(day.date,turn,history,earlier);
     cuts.push({date:day.date,turn,phase:phase(day.date),
      heads:heads.map(e=>e.head),families:heads.map(e=>e.family),choices});
-    earlier.push(...heads);
    }
+   // Las cabezas de turnos incompletos también forman parte del PRE siguiente.
+   earlier.push(...heads);
   }
   history.push(day);
  }
