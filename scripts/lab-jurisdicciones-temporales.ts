@@ -144,6 +144,52 @@ function crossSync(draws:Draw[],year:string,reps=999){
    fullHeadIdentical:foco.filter(x=>x.provincia===x.cordoba).length,
    episodes:foco}};
 }
+function crossTurn(days:Daily[],year:string,reps=799){
+ // Transiciones entre dos turnos ADYACENTES del mismo día.
+ // La fuente proviene del turno ya ocurrido y el objetivo del siguiente.
+ const rows=days.filter(d=>d.date.startsWith(year)).flatMap(day=>
+  TURNOS.slice(1).flatMap((turn,index)=>{
+   const previous=day.draws[index],next=day.draws[index+1];
+   if(previous.heads.length!==5||next.heads.length!==5)return [];
+   const source=JUR.map(j=>previous.heads.find(h=>h.jur===j)!.head.slice(-2));
+   const target=JUR.map(j=>next.heads.find(h=>h.jur===j)!.head.slice(-2));
+   return [{date:day.date,turn,month:day.date.slice(0,7),source,target}];
+  }));
+ const pairs=JUR.flatMap((source,i)=>JUR.map((target,j)=>({source,target,i,j})));
+ const calc=(target:string[][])=>pairs.map(({i,j})=>rows.reduce((n,r,index)=>
+  n+Number(r.source[i]===target[index][j]),0));
+ const realTargets=rows.map(x=>x.target),observed=calc(realTargets);
+ const sets=new Map<string,number[]>();
+ for(let i=0;i<rows.length;i++){
+  const k=rows[i].month+'|'+rows[i].turn,ls=sets.get(k)||[];
+  ls.push(i);sets.set(k,ls);
+ }
+ const random=rng(0x34a89210+Number(year));
+ const nulls:number[][]=[];
+ for(let rep=0;rep<reps;rep++){
+  const shuffled=realTargets.map(x=>[...x]);
+  for(let jur=0;jur<5;jur++)for(const indices of sets.values()){
+   const vals=indices.map(i=>realTargets[i][jur]);
+   for(let k=vals.length-1;k>0;k--){const other=Math.floor(random()*(k+1));
+    [vals[k],vals[other]]=[vals[other],vals[k]];}
+   for(let k=0;k<indices.length;k++)shuffled[indices[k]][jur]=vals[k];
+  }
+  nulls.push(calc(shuffled));
+ }
+ const stats=observed.map((_,i)=>oneStd(nulls.map(x=>x[i])));
+ const z=(x:number,i)=>(x-stats[i].mean)/(stats[i].sd||1);
+ const scored=pairs.map((p,i)=>({
+  from:p.source,to:p.target,headMatches:observed[i],
+  nullMean:Number(stats[i].mean.toFixed(2)),
+  z:Number(z(observed[i],i).toFixed(2)),
+  adjustedP:(1+nulls.filter(vals=>Math.max(...vals.map((v,j)=>Math.abs(z(v,j))))>=
+   Math.abs(z(observed[i],i))).length)/(reps+1)
+ })).sort((a,b)=>Math.abs(b.z)-Math.abs(a.z));
+ return {year,transitions:rows.length,comparisons:25,
+  null:'objetivos reordenados independientemente en cada mes, turno y jurisdicción',
+  strongest:scored.slice(0,8),bestFamilyWiseP:scored[0]?.adjustedP,
+  sameJur:scored.filter(x=>x.from===x.to)};
+}
 function scoreOf(history:Daily[],jur:J,turn:Turno,kind:Kind){
  const pools:Record<'global'|'local'|'strict',Map<string,number>>={
   global:new Map(),local:new Map(),strict:new Map()};
@@ -265,9 +311,11 @@ async function main(){
   const sub=draws.filter(d=>d.date.startsWith(year));
   const dist=distribution(sub,year);
   const sync=crossSync(sub,year);
-  evidence.push({year,dist,sync});
+  const turns=crossTurn(dataset.days,year);
+  evidence.push({year,dist,sync,turns});
   console.log('DISTRIBUCION_JUR',JSON.stringify(dist));
   console.log('SINCRONIAS_JUR',JSON.stringify(sync));
+  console.log('TRANSICIONES_CRUZADAS_JUR',JSON.stringify(turns));
  }
  const tests=predictive(dataset.days);
  const scored=['2025','2026'].flatMap(y=>(['vt2','vt3'] as Kind[])
@@ -289,9 +337,9 @@ async function main(){
  console.log('RESUMEN_JUR',JSON.stringify({
   draws:draws.length,days:dataset.days.length,
   2025:evidence[0]&&{distribution:evidence[0].dist.results.map((x:any)=>x.maxAdjustedP),
-   sync:evidence[0].sync.correctedMax},
+   sync:evidence[0].sync.correctedMax,crossTurn:evidence[0].turns.bestFamilyWiseP},
   2026:evidence[1]&&{distribution:evidence[1].dist.results.map((x:any)=>x.maxAdjustedP),
-   sync:evidence[1].sync.correctedMax},
+   sync:evidence[1].sync.correctedMax,crossTurn:evidence[1].turns.bestFamilyWiseP},
   prediction:scored.map(x=>({year:x.year,kind:x.kind,heads:x.heads,
    totals:x.totals,p:x.overallBestOfThreeAdjustedP,
    deltas:x.deltaAgainstGlobal}))}));
