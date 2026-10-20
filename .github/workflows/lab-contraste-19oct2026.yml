@@ -18,6 +18,8 @@ jobs:
       - run: npx tsc --noEmit
       - name: Comparar 5 cortes PRE con las cabezas de la fuente de la app
         run: npx --yes tsx scripts/lab-contraste-19oct2026.ts
+      - name: Diagnosticar frontera VT3 de 19oct y control histórico
+        run: npx --yes tsx scripts/lab-frontera-vt3-19oct2026.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:
