@@ -16,6 +16,7 @@ import {findPaths} from '../src/paths';
 import {hasDrawResults,hasNocturnoBase} from '../src/drawHistory';
 const dates=['2026-10-09','2026-10-10','2026-10-12','2026-10-13',
  '2026-10-14','2026-10-15','2026-10-16','2026-10-17','2026-10-19'];
+async function main(){
 const data=new Map<string,CabezasDia>(),errors:Record<string,string>={};
 for(const date of dates){
  try {
@@ -109,3 +110,6 @@ mkdirSync('lab-results',{recursive:true});
 writeFileSync('lab-results/contraste-19oct2026.json',JSON.stringify(report,null,2));
 console.log('RESUMEN_FINAL_19OCT',JSON.stringify({complete:report.complete,
  completeness,previous,refs:report.refs,totals,errors}));
+
+}
+void main().catch(e=>{console.error('FALLO_COTEJO',e);process.exitCode=1});
