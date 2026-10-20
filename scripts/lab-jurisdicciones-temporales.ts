@@ -177,7 +177,7 @@ function crossTurn(days:Daily[],year:string,reps=799){
   nulls.push(calc(shuffled));
  }
  const stats=observed.map((_,i)=>oneStd(nulls.map(x=>x[i])));
- const z=(x:number,i)=>(x-stats[i].mean)/(stats[i].sd||1);
+ const z=(x:number,i:number)=>(x-stats[i].mean)/(stats[i].sd||1);
  const scored=pairs.map((p,i)=>({
   from:p.source,to:p.target,headMatches:observed[i],
   nullMean:Number(stats[i].mean.toFixed(2)),
