@@ -1,0 +1,27 @@
+name: Laboratorio Modelo Temporal Puro 2026
+on:
+  push:
+    branches: [lab/modelo-temporal-puro-20oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  temporal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Validar TypeScript del laboratorio y app
+        run: npx tsc --noEmit
+      - name: Reconstruir PRE secuenciales sin hoja ni +11 y cotejar reservas
+        run: npx --yes tsx scripts/lab-temporal-puro-20oct2026.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-MODELO-TEMPORAL-PURO-2026
+          path: lab-results/temporal-puro-2026.json
+          if-no-files-found: warn
