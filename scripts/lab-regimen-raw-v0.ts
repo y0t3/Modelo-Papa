@@ -23,7 +23,7 @@ type Label={id:string;position:number;jur:string|null};
 type Scan={label:string;cutDate:string;cutIndex:number;n:number;stat:number;
  leadingDigits:{digit:number;before:number;after:number;delta:number}[]};
 type Prediction={date:string;group:string;position:number;observed:number;
- base:number;local:number;pooled:number};
+ base:number;local:number;pooled:number;uniform:number;conservative:number};
 const JUR=JURS.filter(j=>j!=='Montevideo');
 const LABELS:Label[]=[...Array.from({length:3},(_,pos)=>({id:'GLOBAL:'+pos,
  position:pos,jur:null as string|null})),
@@ -131,7 +131,7 @@ function evaluation(all:Obs[],year:'2025'|'2026'){
     const poolHistory=globalPrevious.slice(-300);
     for(let p=0;p<3;p++){
      const truth=Number(r.head.slice(-3)[p]);
-     const base=normalize(counts[p],1);
+     const base=normalize(counts[p],1),conservative=normalize(counts[p],25);
      const localDigits=Array(10).fill(0) as number[];
      const poolDigits=Array(10).fill(0) as number[];
      for(const prev of localHistory)localDigits[prev[p]]++;
@@ -140,7 +140,8 @@ function evaluation(all:Obs[],year:'2025'|'2026'){
      scores.push({date:r.date,group,position:p,observed:truth,
       base:-Math.log(base[truth]),
       local:-Math.log(0.8*base[truth]+0.2*l[truth]),
-      pooled:-Math.log(0.8*base[truth]+0.2*g[truth])});
+      pooled:-Math.log(0.8*base[truth]+0.2*g[truth]),
+      uniform:Math.log(10),conservative:-Math.log(conservative[truth])});
     }
    }
   }
@@ -160,7 +161,7 @@ function evaluation(all:Obs[],year:'2025'|'2026'){
  return scores;
 }
 function forecastScores(scores:Prediction[],year:string,rep=1499){
- const models=['base','local','pooled'] as const;
+ const models=['uniform','conservative','base','local','pooled'] as const;
  const overall=Object.fromEntries(models.map(m=>[m,
   Number((scores.reduce((s,x)=>s+x[m],0)/scores.length).toFixed(5))]));
  const byPosition=[0,1,2].map(p=>{
@@ -172,22 +173,27 @@ function forecastScores(scores:Prediction[],year:string,rep=1499){
  const delta=dates.map(d=>{
   const v=scores.filter(x=>x.date===d);
   return [v.reduce((s,x)=>s+x.base-x.local,0),
-   v.reduce((s,x)=>s+x.base-x.pooled,0)] as const;
+   v.reduce((s,x)=>s+x.base-x.pooled,0),
+   v.reduce((s,x)=>s+x.uniform-x.local,0),
+   v.reduce((s,x)=>s+x.uniform-x.pooled,0),
+   v.reduce((s,x)=>s+x.conservative-x.local,0),
+   v.reduce((s,x)=>s+x.conservative-x.pooled,0)];
  });
  const random=seeded('bootstrap/regimes/'+year);
  const total=scores.length;
  const estimates:Array<number[]>=[];
  for(let i=0;i<rep;i++){
-  const x=[0,0];
+  const x=Array(6).fill(0) as number[];
   for(let k=0;k<dates.length;k++){
    const row=delta[Math.floor(random()*dates.length)];
-   x[0]+=row[0];x[1]+=row[1];
+   for(let i=0;i<6;i++)x[i]+=row[i];
   }
   estimates.push(x.map(n=>n/total));
  }
- const intervals=[0,1].map(index=>{
+ const names=['local_vs_base','pooled_vs_base','local_vs_uniform','pooled_vs_uniform','local_vs_conservative','pooled_vs_conservative'];
+ const intervals=names.map((name,index)=>{
   const vals=estimates.map(v=>v[index]).sort((a,b)=>a-b);
-  return {model:index===0?'local':'pooled',improvement:
+  return {model:name,improvement:
    delta.reduce((s,v)=>s+v[index],0)/total,
    ci95:[vals[Math.floor(rep*.025)],vals[Math.floor(rep*.975)]]};
  });
@@ -231,6 +237,7 @@ async function main(){
   parameters:{labels:LABELS.map(x=>x.id),split:'25%-75%',
    null:'499 permutaciones conjuntas dentro de j+turn; máximo de 18 pruebas',
    model:'probabilidades RAW de unidades, decenas, centenas; blend 80% baseline+20% memoria',
+   references:'uniforme exacto 10% por cifra y baseline fuerte con alfa de Dirichlet=25 por cifra',
    baseline:'2025 fijo para 2026; enero-junio 2025 para validación segundo semestre',
    localWindow:30,globalWindow:300,alphaBaseline:1,alphaRecent:2},
   scans,forecast:tests,downloadErrors:errors};
