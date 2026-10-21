@@ -10,6 +10,7 @@ import {auxiliaryBoard,auxFamily,findAuxPaths,findAuxFamily,serializeAuxPath}
 import type {AuxiliaryHeads,AuxCell,AuxPath} from '../auxSantiagoNeuquen';
 import type {LaloView} from '../motorLalo';
 import {useLaloTheme} from './LaloTheme';
+import WithinDayFamilyTimeline from './WithinDayFamilyTimeline';
 type SelectMode='exacta'|'familia';
 export default function AuxiliarySheetPanel({
  turn,aux,heads,view,plus,date
@@ -20,8 +21,10 @@ export default function AuxiliarySheetPanel({
  const [selection,setSelection]=useState<SelectMode>('familia');
  const [kind,setKind]=useState<2|3|4>(3);
  const [overview,setOverview]=useState(true);
+ const [timeline,setTimeline]=useState(false);
  const [enabled,setEnabled]=useState<Record<MarkKind,boolean>>({vt2:true,vt3:true,vt4:true});
- useEffect(()=>{setQuery('');setSelection('familia');setKind(3);setOverview(true)},[turn]);
+ useEffect(()=>{setQuery('');setSelection('familia')},[turn]);
+ useEffect(()=>{setTimeline(false);setOverview(true);setQuery('');setKind(3)},[date]);
  const board=useMemo(()=>aux?auxiliaryBoard(aux,turn):null,[aux,turn]);
  const selected=useMemo(()=>{
   if(!board||!/^\d{2,4}$/.test(query))return {paths:[] as AuxPath[],
@@ -72,19 +75,19 @@ export default function AuxiliarySheetPanel({
      const enabled=visible.includes((['Previa','Primera','Matutino'] as const)[group]);
      const hot=selectedCells.get(row+':'+col)||0;
      const multi=overview?overlay[row+':'+col]:null;
-     const active=overview?(multi?.routes||0)>0:hot>0;
+     const active=overview&&!timeline?(multi?.routes||0)>0:hot>0;
      const chosenColor=kinds['vt'+kind as MarkKind];
      return <View key={row+':'+col} style={[s.digit,{
-      backgroundColor:active&&!overview?chosenColor.fill:cell?c.cell:c.surfaceAlt,
-      borderColor:active?(overview?c.accent:chosenColor.line):col%4===0?c.accent:border,
+      backgroundColor:active&&(!overview||timeline)?chosenColor.fill:cell?c.cell:c.surfaceAlt,
+      borderColor:active?(overview&&!timeline?c.accent:chosenColor.line):col%4===0?c.accent:border,
       borderWidth:active?2:col%4===0?1.5:1,
       opacity:enabled?1:0.4
      }]}>
       <Text style={{fontSize:13,fontWeight:active?'900':'700',
-       color:!overview&&active?chosenColor.text:cell?c.text:c.muted}}>
+       color:(!overview||timeline)&&active?chosenColor.text:cell?c.text:c.muted}}>
        {cell?.digit||'·'}
       </Text>
-      {overview&&multi?.kinds.length?<View style={s.marks}>
+      {overview&&!timeline&&multi?.kinds.length?<View style={s.marks}>
        {(['vt2','vt3','vt4'] as MarkKind[]).filter(k=>multi.kinds.includes(k)).map(k=>
         <View key={k} style={[s.bar,{backgroundColor:kinds[k].line}]}/>)}
       </View>:null}
@@ -99,20 +102,30 @@ export default function AuxiliarySheetPanel({
    </Text>
    <View style={s.separator}/>
    <View style={s.wrap}>
-    <Pressable accessibilityRole="button" accessibilityState={{selected:overview}}
-     onPress={()=>setOverview(true)}
-     style={[s.chip,{backgroundColor:overview?c.accentFill:c.surfaceAlt,
-      borderColor:overview?c.accent:c.border}]}>
+    <Pressable accessibilityRole="button" accessibilityState={{selected:overview&&!timeline}}
+     onPress={()=>{setOverview(true);setTimeline(false)}}
+     style={[s.chip,{backgroundColor:overview&&!timeline?c.accentFill:c.surfaceAlt,
+      borderColor:overview&&!timeline?c.accent:c.border}]}>
      <Text style={[{fontWeight:'800'},textStyle]}>Todas las marcas ganadoras</Text>
     </Pressable>
-    <Pressable accessibilityRole="button" accessibilityState={{selected:!overview}}
-     onPress={()=>setOverview(false)}
-     style={[s.chip,{backgroundColor:!overview?c.accentFill:c.surfaceAlt,
-      borderColor:!overview?c.accent:c.border}]}>
+    <Pressable accessibilityRole="button" accessibilityState={{selected:!overview&&!timeline}}
+     onPress={()=>{setOverview(false);setTimeline(false)}}
+     style={[s.chip,{backgroundColor:!overview&&!timeline?c.accentFill:c.surfaceAlt,
+      borderColor:!overview&&!timeline?c.accent:c.border}]}>
      <Text style={[{fontWeight:'800'},textStyle]}>Seguir familia</Text>
     </Pressable>
+    <Pressable accessibilityRole="button" accessibilityState={{selected:timeline}}
+     onPress={()=>{setTimeline(true);setOverview(false)}}
+     style={[s.chip,{backgroundColor:timeline?c.accentFill:c.surfaceAlt,
+      borderColor:timeline?c.accent:c.border}]}>
+     <Text style={[{fontWeight:'800'},textStyle]}>Historia de familias · PRE / POST</Text>
+    </Pressable>
    </View>
-   {overview?<View style={{gap:6}}>
+   {timeline&&aux&&heads&&plus?
+    <WithinDayFamilyTimeline date={date} through={turn} draws={heads}
+     plus={plus} aux={aux} kind={kind} onKindChange={setKind}
+     onFamily={(value,n)=>{setKind(n);select(value,n===4?'exacta':'familia')}}/>
+   :overview?<View style={{gap:6}}>
     <Text style={[s.hint,mutedStyle]}>
      POST: únicamente cabezas ya sorteadas hasta {turn}. Cada raya de color indica
      una modalidad con recorrido exacto; no se pintan candidatos aún no salidos.
