@@ -7,7 +7,7 @@
  * intervalos son descriptivos y visibles por variante.
  */
 import {readFileSync,writeFileSync} from 'node:fs';
-const YEAR=process.env.LAB_YEAR==='2025'?'2025':'2026';
+const YEAR=process.env.LAB_YEAR==='2024'?'2024':process.env.LAB_YEAR==='2025'?'2025':'2026';
 const file='lab-results/aux-memoria-marcas-'+YEAR+'.json';
 const raw=JSON.parse(readFileSync(file,'utf-8'));
 type Method='AUX_MARCAS'|'AUX_DENSIDAD'|'AUX_RANDOM'|'LALO'|'LALO_RERANK_MARCAS';
