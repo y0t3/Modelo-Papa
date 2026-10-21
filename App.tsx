@@ -27,6 +27,9 @@ import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
 import PapaPronostico from './src/ui/PapaPronostico';
 import HeadsTable from './src/ui/HeadsTable';
+import AuxiliarySheetPanel from './src/ui/AuxiliarySheetPanel';
+import {fetchAuxiliaryHeads} from './src/auxSantiagoSource';
+import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import InfoDashboard from './src/ui/InfoDashboard';
 import type {MovementMode} from './src/infoCandidatos';
 import TurnStrip from './src/ui/TurnStrip';
@@ -36,9 +39,10 @@ import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './s
 import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
 import type {NavigationEntry} from './src/tabNavigation';
 
-type Screen='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
+type Screen='hoja'|'auxiliar'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const nav: {id:Screen;label:string}[]=[
- {id:'hoja',label:'HOJA'},{id:'predictiva',label:'PREDICTIVA'},
+ {id:'hoja',label:'HOJA'},{id:'auxiliar',label:'AUX'},
+ {id:'predictiva',label:'PREDICTIVA'},
  {id:'prediccion',label:'PREDICCIÓN'},{id:'papa',label:'LALO'},
  {id:'cabezas',label:'CABEZAS'},
  {id:'info',label:'INFO'}
@@ -50,7 +54,7 @@ function LaloApp(){
  const activeScreenRef=useRef<Screen>('hoja');
  const historyRef=useRef<NavigationEntry[]>([]);
  const scrollOffsets=useRef<Record<Screen,number>>({
-  hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
+  hoja:0,auxiliar:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
  });
  const [restoreScroll,setRestoreScroll]=useState({token:0,y:0});
  const [infoFrameId,setInfoFrameId]=useState('inicio');
@@ -73,6 +77,7 @@ function LaloApp(){
  };
  const [dateText,setDateText]=useState(isoToDisplay(today()));
  const [data,setData]=useState<CabezasDia|null>(null);
+ const [auxHeads,setAuxHeads]=useState<AuxiliaryHeads|null>(null);
  const [sheet,setSheet]=useState<DailySheet|null>(null);
  const [hist,setHist]=useState<LaloHistorical[]>([]);
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
@@ -143,11 +148,12 @@ function LaloApp(){
    const week=shiftDay(d,-7);
    // Cuatro jornadas reales: tres minihojas y una anterior como base de la tercera.
    const weekDates=Array.from({length:7},(_,i)=>shiftDay(week,i));
-   const [current,previous,weekData,beforeWeek]=await Promise.all([
+   const [current,previous,weekData,beforeWeek,auxResult]=await Promise.all([
     descargarCabezas(d,true),
     loadPreviousDraws(d,4,x=>descargarCabezas(x,true)),
     Promise.all(weekDates.map(day=>descargarCabezas(day,true))),
-    loadPreviousDraws(week,1,x=>descargarCabezas(x,true))
+    loadPreviousDraws(week,1,x=>descargarCabezas(x,true)),
+    fetchAuxiliaryHeads(d).catch(()=>null)
    ]);
    const weekly=weekData[0],weekPrevious=beforeWeek[0].heads;
    const last=previous[3],beforeLast=previous[2];
@@ -161,7 +167,8 @@ function LaloApp(){
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
    resetHistory();
    setHistoricalPreview(null);
-   setData(current);setSheet(currentSheet);setHist(refs);setBaseHeads(last.heads);
+   setData(current);setAuxHeads(auxResult?.heads||null);
+   setSheet(currentSheet);setHist(refs);setBaseHeads(last.heads);
     setVisualDays(recentDays);
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
    setHojaFocused(null);setHojaTurn('Previa');
@@ -199,8 +206,11 @@ function LaloApp(){
    if(loading)return;
    loading=true;
    try{
-    const fresh=await descargarCabezas(date,true);
+    const [fresh,auxNow]=await Promise.all([
+     descargarCabezas(date,true),fetchAuxiliaryHeads(date).catch(()=>null)
+    ]);
     setData(fresh);
+    if(auxNow)setAuxHeads(auxNow.heads);
     setSheet(buildSheet(fresh,baseHeads));
    }catch{}finally{loading=false}
   };
@@ -275,7 +285,7 @@ function LaloApp(){
     <View style={s.headerLeft}/>
     <View style={{flex:1}}>
      <Text style={[s.title,{color:c.text}]}>MODELO LALO</Text>
-     <Text style={s.subtitle}>Cuaderno visual +11 · VT2 / VT3 / VT4</Text>
+     <Text style={s.subtitle}>Cuaderno visual +11 y hoja auxiliar · VT2 / VT3 / VT4</Text>
     </View>
     <Pressable accessibilityRole="switch" accessibilityLabel="Modo oscuro"
      accessibilityState={{checked:mode==='dark'}} onPress={toggle}
@@ -287,7 +297,7 @@ function LaloApp(){
     <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
     <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
      resetHistory();setHistoricalPreview(null);
-     setDateText(value);setData(null);setSheet(null);setBaseHeads(null);setHist([]);setVisualDays([]);setFocused(null);
+     setDateText(value);setData(null);setAuxHeads(null);setSheet(null);setBaseHeads(null);setHist([]);setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <View style={s.shortcuts}>
@@ -316,7 +326,11 @@ function LaloApp(){
       focusedOwner={hojaFocused} onInfo={()=>navigateTo('info')}/>
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
-   :screen==='predictiva'?<>
+   :screen==='auxiliar'?<>
+    <Text style={[s.heading,{color:c.text}]}>Turno objetivo · segunda hoja</Text>
+    <TurnStrip value={target} onChange={changeTurn}/>
+    <AuxiliarySheetPanel turn={target} aux={auxHeads} heads={data} view={motor}/>
+   </>:screen==='predictiva'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
     {sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet}
