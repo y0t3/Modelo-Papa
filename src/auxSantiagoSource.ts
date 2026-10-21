@@ -1,50 +1,63 @@
 /**
- * Adapter SOLO LAB del JSON usado por la app.
+ * Adaptador del proveedor Vivitusuerte de la app para la hoja auxiliar.
  *
- * Importante: id10 Santiago carece habitualmente de Primera en la pizarra
- * consultada: 20/10/26 momento_1 = 6142 se verifica como MATUTINO,
- * momento_2 = 9634 como VESPERTINO. NO atribuir momento_1 a Primera.
- * id11 Neuquén sí sigue el mapa ordinario: 5 previa, 1 primera, 2 mat.
+ * Corrección verificada en Vivitusuerte por el usuario, 20/10/2026:
+ * Santiago: Previa=8067, Primera=6142, Matutino=9634.
+ * Neuquén: Previa=0469, Primera=0245, Matutino=0210.
  *
- * No incorporar aquí Mendoza ni otros; únicamente las dos filas auxiliares.
+ * Ambas jurisdicciones siguen el MISMO mapa:
+ * momento_5=Previa, momento_1=Primera, momento_2=Matutino.
+ * No imponer vacíos ni desplazar sorteos desde otras webs.
+ *
+ * Los turnos ausentes en la respuesta real se mantienen '----'.
+ * Exclusivamente laboratorio, sin modificar src/cabezas.ts.
  */
 import {FUENTE} from './cabezas';
 import {emptyAuxiliaryHeads} from './auxSantiagoNeuquen';
 import type {AuxiliaryHeads} from './auxSantiagoNeuquen';
-const numeric=(x:any)=>{
+
+const numeric=(x:unknown):string=>{
  if(x===undefined||x===null||x==='----'||x==='')return '----';
- const v=typeof x==='object'?(x?.cabeza??x?.numero??x?.resultado??x?.valor??''):x;
- const m=String(v).match(/^\d{1,5}$/);
- return m?m[0].slice(-4).padStart(4,'0'):'----';
+ const v=typeof x==='object'&&x!==null?
+  ((x as Record<string,unknown>).cabeza??
+   (x as Record<string,unknown>).numero??
+   (x as Record<string,unknown>).resultado??
+   (x as Record<string,unknown>).valor??''):x;
+ if(!/^\d{1,5}$/.test(String(v)))return '----';
+ return String(v).slice(-4).padStart(4,'0');
 };
-export type AuxSourceObservation={date:string;heads:AuxiliaryHeads;
- mapping:'PROVEEDOR_ID_10_11_NORMALIZADO';rawSantiago:{
- previa:string;matutino:string;vespertino:string};
- rawNeuquen:{previa:string;primera:string;matutino:string}};
-export async function fetchAuxiliaryHeads(date:string):Promise<AuxSourceObservation>{
- const response=await fetch(FUENTE+'?fecha='+encodeURIComponent(date)+'&_='+Date.now(),{
-  headers:{Accept:'application/json','Cache-Control':'no-cache'}
- });
- if(!response.ok)throw Error('Aux: proveedor respondió '+response.status);
- const json:any=await response.json();
- const raw=json?.datos;
+export type AuxSourceObservation={
+ date:string;heads:AuxiliaryHeads;
+ mapping:'VIVITUSUERTE_ID10_SANTIAGO_ID11_NEUQUEN';
+ rawSantiago:{previa:string;primera:string;matutino:string};
+ rawNeuquen:{previa:string;primera:string;matutino:string};
+};
+export function parseAuxiliaryHeads(date:string,json:unknown):AuxSourceObservation{
+ const raw=(json as {datos?:Record<string,Record<string,unknown>>}|null)?.datos;
  if(!raw||typeof raw!=='object')throw Error('Aux: datos no encontrados '+date);
  const s=raw['10']||{},n=raw['11']||{};
  const heads=emptyAuxiliaryHeads();
  const Santiago={
-  previa:numeric(s.momento_5),matutino:numeric(s.momento_1),
-  vespertino:numeric(s.momento_2)
+  previa:numeric(s.momento_5),primera:numeric(s.momento_1),
+  matutino:numeric(s.momento_2)
  };
  const Neuquen={
   previa:numeric(n.momento_5),primera:numeric(n.momento_1),
   matutino:numeric(n.momento_2)
  };
  heads.Previa.Santiago=Santiago.previa;
- heads.Primera.Santiago='----'; // no inferir datos futuros de la etiqueta del proveedor
+ heads.Primera.Santiago=Santiago.primera;
  heads.Matutino.Santiago=Santiago.matutino;
  heads.Previa.Neuquen=Neuquen.previa;
  heads.Primera.Neuquen=Neuquen.primera;
  heads.Matutino.Neuquen=Neuquen.matutino;
- return {date,heads,mapping:'PROVEEDOR_ID_10_11_NORMALIZADO',
+ return {date,heads,mapping:'VIVITUSUERTE_ID10_SANTIAGO_ID11_NEUQUEN',
   rawSantiago:Santiago,rawNeuquen:Neuquen};
+}
+export async function fetchAuxiliaryHeads(date:string):Promise<AuxSourceObservation>{
+ const response=await fetch(FUENTE+'?fecha='+encodeURIComponent(date)+'&_='+Date.now(),{
+  headers:{Accept:'application/json','Cache-Control':'no-cache'}
+ });
+ if(!response.ok)throw Error('Aux: proveedor respondió '+response.status);
+ return parseAuxiliaryHeads(date,await response.json());
 }
