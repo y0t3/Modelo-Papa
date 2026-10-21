@@ -1,0 +1,34 @@
+name: LAB Lalo Tres Modalidades 2024-2026
+on:
+  push:
+    branches: [lab/lalo-vt2-vt3-vt4-unificados-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tres-modalidades:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: TypeScript de todo el proyecto
+        run: npx tsc --noEmit
+      - name: Validacion previa de geometria auxiliar y mapeo Santiago
+        run: |
+          npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+          npx --yes tsx scripts/lab-aux-memoria-test.ts
+      - name: Evaluar VT2 VT3 VT4 y presupuesto por familias
+        run: npx --yes tsx scripts/lab-lalo-triple-modalidad.ts
+      - name: Conservar resultados
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-LALO-TRES-MODALIDADES
+          path: lab-results/lalo-triple-modalidad-*.json
+          if-no-files-found: warn
