@@ -108,40 +108,54 @@ const normalize=(count:number[],alpha=1)=>{const s=count.reduce((a,b)=>a+b,0)+10
  return count.map(x=>(x+alpha)/s);};
 function evaluation(all:Obs[],year:'2025'|'2026'){
  const histories=new Map<string,number[][]>();
- const baseCount=new Map<string,number[]>();
+ const baseCount=new Map<string,number[][]>();
  const globalPrevious:Obs[]=[];
  const scores:Prediction[]=[];
  const trainingEnd=year==='2026'?'2026-01-01':'2025-07-01';
  const start=trainingEnd,end=year==='2026'?'2026-10-21':'2026-01-01';
  const available=all.filter(x=>x.date<end);
- for(const r of available){
-  const group=r.jur+'|'+r.turn;
-  const history=histories.get(group)||[];
-  const counts=baseCount.get(group)||Array.from({length:3},()=>Array(10).fill(0));
-  // Para 2025 baseline Jan-Jun; para 2026 baseline año 2025 completo.
-  if(r.date<start&&r.date>='2025-01-01')
-   for(let p=0;p<3;p++)counts[p][Number(r.head.slice(-3)[p])]++;
-  if(r.date>=start){
-   const localHistory=history.slice(-30);
-   const poolHistory=globalPrevious.slice(-300);
-   for(let p=0;p<3;p++){
-    const truth=Number(r.head.slice(-3)[p]);
-    const base=normalize(counts[p],1);
-    const localDigits=Array(10).fill(0) as number[];
-    const poolDigits=Array(10).fill(0) as number[];
-    for(const prev of localHistory)localDigits[prev[p]]++;
-    for(const prev of poolHistory)poolDigits[Number(prev.head.slice(-3)[p])]++;
-    const l=normalize(localDigits,2),g=normalize(poolDigits,2);
-    scores.push({date:r.date,group,position:p,observed:truth,
-     base:-Math.log(base[truth]),
-     local:-Math.log(0.8*base[truth]+0.2*l[truth]),
-     pooled:-Math.log(0.8*base[truth]+0.2*g[truth])});
+ // Una unidad PRE es el turno completo: NO actualizar las fuentes con cabezas
+ // de la misma tanda todavía no sorteada, ni siquiera de otra jurisdicción.
+ const byDraw=new Map<string,Obs[]>();
+ for(const e of available){
+  const key=e.date+'|'+e.turn,items=byDraw.get(key)||[];
+  items.push(e);byDraw.set(key,items);
+ }
+ for(const block of byDraw.values()){
+  for(const r of block){
+   const group=r.jur+'|'+r.turn;
+   const history=histories.get(group)||[];
+   const counts=baseCount.get(group)||Array.from({length:3},()=>Array(10).fill(0));
+   if(r.date>=start){
+    const localHistory=history.slice(-30);
+    const poolHistory=globalPrevious.slice(-300);
+    for(let p=0;p<3;p++){
+     const truth=Number(r.head.slice(-3)[p]);
+     const base=normalize(counts[p],1);
+     const localDigits=Array(10).fill(0) as number[];
+     const poolDigits=Array(10).fill(0) as number[];
+     for(const prev of localHistory)localDigits[prev[p]]++;
+     for(const prev of poolHistory)poolDigits[Number(prev.head.slice(-3)[p])]++;
+     const l=normalize(localDigits,2),g=normalize(poolDigits,2);
+     scores.push({date:r.date,group,position:p,observed:truth,
+      base:-Math.log(base[truth]),
+      local:-Math.log(0.8*base[truth]+0.2*l[truth]),
+      pooled:-Math.log(0.8*base[truth]+0.2*g[truth])});
+    }
    }
   }
-  history.push([Number(r.head[1]),Number(r.head[2]),Number(r.head[3])]);
-  histories.set(group,history);
-  baseCount.set(group,counts);
-  globalPrevious.push(r);
+  // La tanda recién pasa a ser dato histórico una vez evaluadas las cinco cabezas.
+  for(const r of block){
+   const group=r.jur+'|'+r.turn;
+   const history=histories.get(group)||[];
+   const counts=baseCount.get(group)||Array.from({length:3},()=>Array(10).fill(0));
+   if(r.date<start&&r.date>='2025-01-01')
+    for(let p=0;p<3;p++)counts[p][Number(r.head.slice(-3)[p])]++;
+   history.push([Number(r.head[1]),Number(r.head[2]),Number(r.head[3])]);
+   histories.set(group,history);
+   baseCount.set(group,counts);
+   globalPrevious.push(r);
+  }
  }
  return scores;
 }
