@@ -112,11 +112,11 @@ async function main(){
  if(!oct20)throw Error('Falta hoja auxiliar 20oct');
  if(oct20.heads.Previa.Santiago!=='8067'||
   oct20.heads.Previa.Neuquen!=='0469'||
-  oct20.heads.Primera.Santiago!=='----'||
+  oct20.heads.Primera.Santiago!=='6142'||
   oct20.heads.Primera.Neuquen!=='0245'||
-  oct20.heads.Matutino.Santiago!=='6142'||
+  oct20.heads.Matutino.Santiago!=='9634'||
   oct20.heads.Matutino.Neuquen!=='0210')
-  throw Error('No coincide con cabezas cotejadas externamente '+JSON.stringify(oct20));
+  throw Error('Fuente Vivitusuerte no coincide con seis cabezas verificadas por usuario '+JSON.stringify(oct20));
  const sheets=new Map<string,DailySheet>();
  for(let i=1;i<good.length;i++)sheets.set(good[i],
   buildSheet(fetched.get(good[i])!,fetched.get(good[i-1])!));
@@ -211,7 +211,7 @@ async function main(){
   title:'Dos filas, hasta tres turnos reales, sin +11, contacto entre columnas permitido',
   validation:'PRE retrospectivo sin datos del turno objetivo; no equivale a Tops históricos sellados',
   extraSource:'Viví tu Suerte API ID10 Santiago, ID11 Neuquén',
-  caveat:'Santiago no registra Primera en fuente contrastada: momento_1 de ID10 es Matutina. Se deja blanco. Nunca adelantar Matutino a Primera.',
+  sourceMapping:'Vivitusuerte ID10 Santiago e ID11 Neuquén: momento_5 Previa, momento_1 Primera, momento_2 Matutino; seis cabezas del 20/10 verificadas por usuario.',
   source20Oct:oct20,errors,byDay,
   total:stat(cuts),lastDay:stat(cuts.filter(c=>c.date===TARGET)),
   september:stat(september),october:stat(october),recent12to20:stat(recent),
