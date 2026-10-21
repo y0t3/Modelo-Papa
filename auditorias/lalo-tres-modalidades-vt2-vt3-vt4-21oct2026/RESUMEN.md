@@ -1,6 +1,6 @@
 # Auditoría unificada Lalo: VT2, VT3 y VT4 como modalidades con aciertos propios
 
-**21/10/2026 · laboratorio:** \`lab/lalo-vt2-vt3-vt4-unificados-21oct2026\`. No cambia MV1, el motor oficial ni la APK.
+**21/10/2026 · laboratorio:** `lab/lalo-vt2-vt3-vt4-unificados-21oct2026`. No cambia MV1, el motor oficial ni la APK.
 
 ## Corrección de la prioridad de investigación
 
@@ -94,7 +94,7 @@ La intersección de ambas listas fue pequeña (en 2026, 12 cabezas cubiertas con
 
 Con apuestas efectivamente registradas, la liquidación sería:
 
-\`resultado neto = premios cobrados en VT2 + premios cobrados en VT3 + premios cobrados en VT4 - importes apostados en VT2, VT3 y VT4\`.
+`resultado neto = premios cobrados en VT2 + premios cobrados en VT3 + premios cobrados en VT4 - importes apostados en VT2, VT3 y VT4`.
 
 Los resultados presentes son reconstrucciones PRE sobre histórico, no boletos jugados ni ingresos realizados. Los sorteos están diseñados para ser aleatorios y un método geométrico no asegura una ventaja.
 
@@ -108,7 +108,7 @@ Los resultados presentes son reconstrucciones PRE sobre histórico, no boletos j
 
 ### Reproducibilidad
 
-- Geometría histórica: \`src/auxSantiagoNeuquen.ts\`, \`src/auxWinningMemory.ts\`.
-- Comparador triple: \`scripts/lab-lalo-triple-modalidad.ts\`
-- Control de turnos comparables, apuesta bruta por terminación y solapamientos: \`scripts/lab-lalo-comparar-exposicion.ts\`
+- Geometría histórica: `src/auxSantiagoNeuquen.ts`, `src/auxWinningMemory.ts`.
+- Comparador triple: `scripts/lab-lalo-triple-modalidad.ts`
+- Control de turnos comparables, apuesta bruta por terminación y solapamientos: `scripts/lab-lalo-comparar-exposicion.ts`
 - [Ejecución completa aprobada](https://github.com/y0t3/Modelo-Papa/actions/runs/39650575308).
