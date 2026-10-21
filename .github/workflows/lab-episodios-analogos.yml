@@ -1,0 +1,29 @@
+name: LAB Motor Episodios Analogos RAW 2025-2026
+on:
+  push:
+    branches: [lab/motor-episodios-analogos-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analogos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Dependencias
+        run: npm install
+      - name: TypeScript completo
+        run: npx tsc --noEmit
+      - name: Comparar analogias RAW con frecuencia y controles 2025-2026
+        run: npx --yes tsx scripts/lab-motor-episodios-analogos.ts
+      - name: Guardar informe PRE retrospectivo
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-MOTOR-EPISODIOS-ANALOGOS
+          path: lab-results/motor-episodios-analogos-v0.json
+          if-no-files-found: warn
