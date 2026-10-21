@@ -19,10 +19,13 @@ import {preSheetAtCut} from './src/infoCandidatos';
 import {saveFrozen} from './src/vt3Snapshot';
 import {buildDailyPanorama,buildPredictivePanorama,dailyHeadOwnerId} from './src/panoramaModel';
 import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
+import {buildMotorLaloIntegral,extractIntegralAuxHistory} from './src/motorLaloIntegral';
+import type {IntegralPast} from './src/motorLaloIntegral';
 import type {LaloHistorical} from './src/motorLalo';
 import type {InfoVisualDay,TurnHistoryFrame} from './src/infoTurnHistory';
 import PanoramaSheet from './src/PanoramaSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
+import ParallelPredictionCompare from './src/ui/ParallelPredictionCompare';
 import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
 import PapaPronostico from './src/ui/PapaPronostico';
@@ -80,6 +83,10 @@ function LaloApp(){
  const [auxHeads,setAuxHeads]=useState<AuxiliaryHeads|null>(null);
  const [sheet,setSheet]=useState<DailySheet|null>(null);
  const [hist,setHist]=useState<LaloHistorical[]>([]);
+ const [integralPast,setIntegralPast]=useState<IntegralPast[]>([]);
+ const [integralError,setIntegralError]=useState<string|null>(null);
+ const [predictionMode,setPredictionMode]=useState<'lalo'|'integral'>('lalo');
+ const [showComparison,setShowComparison]=useState(false);
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
  const [busy,setBusy]=useState(false);
@@ -165,12 +172,33 @@ function LaloApp(){
    ];
    if(week<d&&hasDrawResults(weekly))
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
+   // El integral requiere las cabezas RAW reales de las MISMAS
+   // jornadas antiguas que MV1. Sin datos, nunca inventar raíces auxiliares.
+   let integralHistory:IntegralPast[]=[];
+   let auxWarning:string|null=null;
+   if(!auxResult){
+    auxWarning='No se recibieron las cabezas actuales de Santiago–Neuquén.';
+   }else{
+    try{
+     integralHistory=await Promise.all(refs.map(async ref=>{
+      const heads=ref.date===last.date?last.heads:weekly;
+      const observation=await fetchAuxiliaryHeads(ref.date);
+      return {date:ref.date,period:ref.period,plus11:ref.sheet,
+       aux:extractIntegralAuxHistory(ref.date,observation.heads,heads)};
+     }));
+    }catch(error:any){
+     auxWarning='No se pudieron completar las raíces históricas AUX: '+
+      (error?.message||String(error));
+    }
+   }
    resetHistory();
    setHistoricalPreview(null);
    setData(current);setAuxHeads(auxResult?.heads||null);
    setSheet(currentSheet);setHist(refs);setBaseHeads(last.heads);
+   setIntegralPast(integralHistory);setIntegralError(auxWarning);
     setVisualDays(recentDays);
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
+   setShowComparison(false);
    setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
    Alert.alert('No se pudo cargar',error?.message||String(error));
@@ -219,6 +247,17 @@ function LaloApp(){
  },[date,baseHeads]);
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
+ // Calcula el motor separado solo cuando se abre Predicción; su Top
+ // jamás modifica la instancia original MV1.
+ const integral=useMemo(()=>{
+  if(screen!=='prediccion'||!sheet||!date||!auxHeads||
+   integralPast.length!==hist.length||!integralPast.length)return null;
+  return buildMotorLaloIntegral(date,target,
+   preSheetAtCut(sheet,target,TURNOS.indexOf(target)),auxHeads,integralPast);
+ },[screen,sheet,date,target,auxHeads,integralPast,hist]);
+ const headEvents=useMemo(()=>JURS.map(jur=>({
+  jur,head:data?.[target]?.[jur]||''
+ })).filter(x=>/^\d{4}$/.test(x.head)),[data,target]);
  const hoja=useMemo(()=>sheet?buildDailyPanorama(sheet,data):null,[sheet,data]);
  const historicalHoja=useMemo(()=>historicalPreview?
   buildDailyPanorama(historicalPreview.day.sheet,historicalPreview.day.heads):null,
@@ -297,7 +336,9 @@ function LaloApp(){
     <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
     <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
      resetHistory();setHistoricalPreview(null);
-     setDateText(value);setData(null);setAuxHeads(null);setSheet(null);setBaseHeads(null);setHist([]);setVisualDays([]);setFocused(null);
+     setDateText(value);setData(null);setAuxHeads(null);setSheet(null);setBaseHeads(null);setHist([]);
+     setIntegralPast([]);setIntegralError(null);setShowComparison(false);
+     setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <View style={s.shortcuts}>
@@ -340,13 +381,50 @@ function LaloApp(){
    </>:screen==='prediccion'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
+    <View style={[s.predictorOptions,{borderColor:c.border}]}>
+     {([{id:'lalo',label:'MODELO LALO'},{id:'integral',label:'LALO INTEGRAL'}] as const)
+      .map(item=><Pressable key={item.id} accessibilityRole="button"
+       accessibilityState={{selected:predictionMode===item.id}}
+       onPress={()=>{setPredictionMode(item.id);setExperimental(false)}}
+       style={[s.predictorButton,{
+        borderColor:predictionMode===item.id?c.accent:c.border,
+        backgroundColor:predictionMode===item.id?c.accentFill:c.surfaceAlt}]}>
+       <Text style={[s.predictorLabel,{color:c.text}]}>{item.label}</Text>
+      </Pressable>)}
+    </View>
     {!experimental?<>
-     <PredictionSummary date={dateText} turn={target} view={motor}
-      post={post} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
-     <Pressable accessibilityRole="button" onPress={()=>setExperimental(true)}
+     {predictionMode==='lalo'?
+      <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
+       integral={integral} post={post} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
+      integral?<PredictionSummary model="integral" date={dateText} turn={target} view={motor}
+       integral={integral} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
+      <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+       <Text style={{color:c.text,fontWeight:'800'}}>Modelo Lalo Integral no disponible para este corte.</Text>
+       <Text style={{color:c.subtext,marginTop:5}}>
+        {integralError||'Cargá la fecha para obtener la hoja auxiliar y los antecedentes D−1 y D−7.'}
+       </Text>
+       <Text style={{color:c.subtext,marginTop:5}}>
+        Los Tops originales de Lalo siguen disponibles sin modificaciones.
+       </Text>
+      </View>}
+     <Pressable accessibilityRole="button"
+      accessibilityState={{expanded:showComparison}}
+      onPress={()=>setShowComparison(v=>!v)}
+      style={[s.reload,{backgroundColor:c.surface,borderWidth:1,
+       borderColor:c.accent,marginTop:12}]}>
+      <Text style={[s.reloadText,{color:c.accent}]}>
+       {showComparison?'Ocultar coincidencias ↑':'⇄ Comparar familias y cabezas de ambos motores ↓'}
+      </Text>
+     </Pressable>
+     {showComparison&&motor&&integral?
+      <ParallelPredictionCompare lalo={motor} integral={integral} heads={headEvents}/>:
+      showComparison?<Text style={[s.empty,{color:c.subtext}]}>
+       La comparación necesita ambos motores. {integralError||'Actualizá la hoja para cargar AUX.'}
+      </Text>:null}
+     {predictionMode==='lalo'?<Pressable accessibilityRole="button" onPress={()=>setExperimental(true)}
       style={[s.reload,{backgroundColor:c.surface,borderWidth:1,borderColor:c.accent,marginTop:12}]}>
       <Text style={[s.reloadText,{color:c.accent}]}>🧪 Experimental · Comparaciones VT3 →</Text>
-     </Pressable>
+     </Pressable>:null}
     </>:<>
      <Pressable accessibilityRole="button" onPress={()=>setExperimental(false)}
       style={[s.reload,{backgroundColor:c.surfaceAlt,marginTop:12}]}>
@@ -377,6 +455,9 @@ export default function App(){return <GestureHandlerRootView style={{flex:1}}><L
 const insets=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+7:7;
 const s=StyleSheet.create({
  header:{flexDirection:'row',alignItems:'center',gap:6,marginBottom:11},
+ predictorOptions:{flexDirection:'row',gap:8,marginTop:10,padding:6,borderWidth:1,borderRadius:11},
+ predictorButton:{flex:1,borderWidth:1,borderRadius:9,paddingVertical:12,alignItems:'center'},
+ predictorLabel:{fontSize:12,fontWeight:'900'},
  headerLeft:{width:66},
  modeButton:{minWidth:66,borderWidth:1,borderRadius:10,paddingHorizontal:5,paddingVertical:8,alignItems:'center'},
  modeLabel:{fontSize:11,fontWeight:'900'},
