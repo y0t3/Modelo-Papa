@@ -31,8 +31,8 @@ import {reversibleFamily} from '../src/motorLalo';
 const WARMUP='2026-09-05',FIRST='2026-09-23',LAST='2026-10-20';
 const KINDS:IntegralKind[]=[2,3,4];
 const TARGETS=TURNOS.slice(1);
-const METHODS=['MV1','AUX','INTEGRAL','CONTROL'] as const;
-type Method=typeof METHODS[number];
+const METHODS=['MV1','AUX','INTEGRAL'] as const;
+type Method=typeof METHODS[number]|'CONTROL';
 type Candidate={family:string;values:string[];sources?:string;
  score?:number;mother?:string|null;roots?:number;rank?:number;
  rankLalo?:number|null;rankAux?:number|null};
@@ -141,6 +141,28 @@ function summarize(cuts:Cut[]){
    };
   }
  }
+ const controls:Record<string,any>={};
+ for(const kind of KINDS)for(const k of [3,5] as const)
+ for(const mode of ['TOP','IGUAL_PRESUPUESTO'] as const){
+  const seeds=Array.from({length:49},(_,i)=>{
+   let hits=0,expected=0,tickets=0;
+   for(const cut of cuts){
+    const r=cut.ranking.filter(x=>x.kind===kind&&x.k===k&&
+     x.method==='CONTROL'&&x.mode===mode)[i];
+    if(!r)continue;
+    hits+=r.result.hits;expected+=r.result.expected;
+    tickets+=r.result.ticketUnits;
+   }
+   return {hits,expected,tickets};
+  });
+  controls['vt'+kind+'|top'+k+'|'+mode]={
+   meanHits:Number((seeds.reduce((n,x)=>n+x.hits,0)/49).toFixed(3)),
+   minHits:Math.min(...seeds.map(x=>x.hits)),
+   maxHits:Math.max(...seeds.map(x=>x.hits)),
+   meanExpected:Number((seeds.reduce((n,x)=>n+x.expected,0)/49).toFixed(3)),
+   meanTickets:Number((seeds.reduce((n,x)=>n+x.tickets,0)/49).toFixed(1))
+  };
+ }
  const coverage:Record<string,any>={};
  for(const mode of ['TOP','IGUAL_PRESUPUESTO'] as const)
  for(const k of [3,5] as const)
@@ -158,7 +180,7 @@ function summarize(cuts:Cut[]){
    headsOnce:uniq,modalityHits:occ,numberSelections:raw};
  }
  return {days:new Set(cuts.map(c=>c.date)).size,cuts:cuts.length,
-  heads:cuts.reduce((n,c)=>n+c.heads.length,0),kinds,coverage};
+  heads:cuts.reduce((n,c)=>n+c.heads.length,0),kinds,controls,coverage};
 }
 async function main(){
  const dates=dateRange(WARMUP,LAST);
