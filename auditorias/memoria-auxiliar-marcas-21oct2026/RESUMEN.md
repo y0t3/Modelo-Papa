@@ -1,7 +1,7 @@
 # Modelo Lalo · memoria de marcas ganadoras de la hoja auxiliar
 ## Laboratorio independiente · resultado 2024, 2025 y 2026
 
-**Fecha:** 21 de octubre de 2026. **Repositorio:** \`y0t3/Modelo-Papa\`, rama \`lab/memoria-auxiliar-marcas-21oct2026\`. El motor oficial **MV1 no fue modificado**. Ninguna APK fue publicada.
+**Fecha:** 21 de octubre de 2026. **Repositorio:** `y0t3/Modelo-Papa`, rama `lab/memoria-auxiliar-marcas-21oct2026`. El motor oficial **MV1 no fue modificado**. Ninguna APK fue publicada.
 
 ### Qué se probó
 
@@ -94,9 +94,9 @@ En 2024, un reranking por **formas históricas aleatorias** también obtuvo 16 a
 
 ### Referencias reproducibles
 
-- Código de marcas y traslado: \`src/auxWinningMemory.ts\`
-- Suite sintética de no fuga y contactos: \`scripts/lab-aux-memoria-test.ts\`
-- Estudio cronológico: \`scripts/lab-aux-memoria-marcas-2026.ts\` (variable \`LAB_YEAR=2024|2025|2026\`)
-- Comparaciones pareadas por jornada: \`scripts/lab-aux-memoria-estadistica.ts\`
-- Auditoría combinada de 2025/2026: \`scripts/lab-aux-memoria-bienio.ts\`
+- Código de marcas y traslado: `src/auxWinningMemory.ts`
+- Suite sintética de no fuga y contactos: `scripts/lab-aux-memoria-test.ts`
+- Estudio cronológico: `scripts/lab-aux-memoria-marcas-2026.ts` (variable `LAB_YEAR=2024|2025|2026`)
+- Comparaciones pareadas por jornada: `scripts/lab-aux-memoria-estadistica.ts`
+- Auditoría combinada de 2025/2026: `scripts/lab-aux-memoria-bienio.ts`
 - [Ejecución final aprobada, incluyendo 2024](https://github.com/y0t3/Modelo-Papa/actions/runs/39648132239).
