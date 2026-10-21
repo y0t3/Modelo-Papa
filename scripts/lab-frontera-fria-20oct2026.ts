@@ -114,10 +114,42 @@ async function main(){
    selected:cut.nextCold2,options:cut.cold2.slice(0,12).map(x=>({
     family:x.family,sources:x.sources,blocks:x.blocks
    }))}));
+ // Segundo diagnóstico VISUAL: primera aparición de una segunda fuente,
+ // no su permanencia sin cambios de columnas en turnos siguientes.
+ // Es análisis post hoc motivado por el 8568; nunca interpretar acierto 20
+ // como prueba independiente. Cada corte compara dos PRE del MISMO día.
+ const fresh:S[]=[];const freshByCut:any[]=[];
+ for(const cut of cuts){
+  const index=TURNOS.indexOf(cut.turn);
+  const previous=index?cuts.find(x=>x.date===cut.date&&x.turn===TURNOS[index-1]):undefined;
+  const older=new Set((previous?.cold2||[]).map(x=>x.family));
+  const newTwo=cut.cold2.filter(x=>!older.has(x.family));
+  const caught=newTwo.filter(x=>cut.actual.includes(x.family));
+  const selected=newTwo[0]?.family||null;
+  freshByCut.push({date:cut.date,turn:cut.turn,count:newTwo.length,
+   chosen:selected,headsCaught:caught.map(x=>x.family),
+   top1Hit:Number(selected!==null&&cut.actual.includes(selected)),
+   chosenSources:newTwo[0]?.sources||[],
+   winnersRank:caught.map(x=>({family:x.family,
+    rank:newTwo.findIndex(y=>y.family===x.family)+1})),
+   candidates:newTwo.slice(0,8).map(x=>({family:x.family,
+    sources:x.sources,blocks:x.blocks}))});
+ }
+ const summarizeFresh=(period:string)=>{
+  const x=freshByCut.filter(x=>period==='control'?x.date<'2026-10-20':x.date==='2026-10-20');
+  return {period,cuts:x.length,eligibleCuts:x.filter(x=>x.count>0).length,
+   totalFresh:x.reduce((n,x)=>n+x.count,0),
+   winnerHeads:x.reduce((n,x)=>n+x.headsCaught.length,0),
+   firstSelectedHits:x.reduce((n,x)=>n+x.top1Hit,0),
+   detailWinners:x.filter(x=>x.headsCaught.length),
+   day20:x.filter(x=>x.date==='2026-10-20')};
+ };
+ const freshReport=[summarizeFresh('control'),summarizeFresh('20oct')];
+ console.log('RESUMEN_SEGUNDA_FUENTE',JSON.stringify(freshReport));
  const report={date:'2026-10-20',hypothesis:'Sin raíces, más de una fuente física',
   caveat:'Hipótesis sugerida tras observar la cabeza 8568 del 20oct: NO considerar el 20 como prueba ciega.',
   selection:'Top6 con intercambio único del puesto sexto y prioridad por fuentes distintas, bloques físicos, familia alfabética',
-  reports,byDay,errors,cuts};
+  reports,byDay,segundaFuente:freshReport,freshByCut,errors,cuts};
  console.log('RESUMEN_FRIOS',JSON.stringify({reports,byDay}));
  mkdirSync('lab-results',{recursive:true});
  writeFileSync('lab-results/frontera-fria-lalo-20oct2026.json',JSON.stringify(report,null,2));
