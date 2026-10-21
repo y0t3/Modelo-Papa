@@ -77,6 +77,9 @@ type Cut={
  familyCounts:Record<Kind,Record<Mode,number>>;
  ranks:Record<Kind,Record<Mode,{family:string;values:string[];roots:number;
   d1:number;d7:number;blocks:number;crossing:boolean}[]>>;
+ auxPhysicalSupport:Record<Kind,Record<string,{sourceTurns:string[];
+  crossTurn:boolean;newSecondSource:boolean;justAddedSources:string[];
+  hadEarlier:boolean;physicalPaths:number}>>;
  outcomes:Record<Kind,Record<Mode,{hits:Record<string,number>;
   expectedUniform:Record<string,number>;rawSelections:Record<string,number>;
   uniqueHeadHits:Record<string,number>}>>;
@@ -263,9 +266,12 @@ async function analyze(year:string){
     throw Error('FUGA columnas futuras AUX');
    const official=buildMotorLalo(pre,date,turn,mainHistory);
    const ranks={} as Cut['ranks'];
+   const auxPhysicalSupport={} as Cut['auxPhysicalSupport'];
    const outcomes={} as Cut['outcomes'];
    const historicRootEvents={} as Record<Kind,number>;
    const familyCounts={} as Cut['familyCounts'];
+   const preceding=TURNOS.indexOf(turn)>0?
+    auxiliaryBoard(aux.get(date)!.heads,TURNOS[TURNOS.indexOf(turn)-1]):null;
    const heads=JURS.flatMap(jur=>{
     const head=current[turn]?.[jur]||'';
     return valid(head)?[{jur,head}]:[];
@@ -289,6 +295,26 @@ async function analyze(year:string){
      calculate(proposed[mode],heads,kind)])) as Cut['outcomes'][Kind];
     familyCounts[kind]=Object.fromEntries(MODES.map(mode=>
      [mode,proposed[mode].length])) as Record<Mode,number>;
+    const selectedFamilies=new Set([...proposed.LALO_MV1.slice(0,10),
+     ...proposed.AUX_RAICES.slice(0,10)].map(f=>f.family));
+    auxPhysicalSupport[kind]={};
+    for(const family of selectedFamilies){
+     const now=physical.get(family);
+     if(!now)continue;
+     const currentSources=new Set(now.paths.flatMap(p=>p.map(c=>c.source)));
+     const prevSources=new Set<string>();
+     if(preceding)for(const value of now.values)
+      for(const path of findAuxPaths(preceding,value))
+       for(const c of path)prevSources.add(c.source);
+     const sourceTurns=[...currentSources].sort();
+     const justAddedSources=sourceTurns.filter(x=>!prevSources.has(x));
+     auxPhysicalSupport[kind][family]={
+      sourceTurns,crossTurn:now.crossing,
+      newSecondSource:currentSources.size>=2&&prevSources.size<2,
+      justAddedSources,hadEarlier:prevSources.size>0,
+      physicalPaths:now.paths.length
+     };
+    }
    }
    const combined={} as Cut['combined'];
    for(const mode of MODES){
@@ -297,7 +323,7 @@ async function analyze(year:string){
      rawEntriesTop3:k3.entries,rawEntriesTop5:k5.entries};
    }
    cuts.push({year,date,turn,heads,cells:board.cells.length,
-    historicRootEvents,familyCounts,ranks,outcomes,combined});
+    historicRootEvents,familyCounts,ranks,auxPhysicalSupport,outcomes,combined});
    if(date===year+'-10-20')console.log('TRIPLE_CORTE',JSON.stringify({
     year,turn,cells:board.cells.length,roots:historicRootEvents,
     familyCounts,main:KINDS.map(kind=>({kind,
