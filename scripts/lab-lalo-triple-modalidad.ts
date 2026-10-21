@@ -85,7 +85,7 @@ type Cut={
   rawEntriesTop3:number;rawEntriesTop5:number}>;
 };
 function marksOf(date:string,aux:AuxiliaryHeads,outcomes:CabezasDia):HistDay{
- const marks=Object.fromEntries(KINDS.map(n=>[n,[]])) as HistDay['marks'];
+ const marks:HistDay['marks']={2:[],3:[],4:[]};
  for(const turn of TURNOS){
   const board=auxiliaryBoard(aux,turn);
   for(const jur of JURS){
