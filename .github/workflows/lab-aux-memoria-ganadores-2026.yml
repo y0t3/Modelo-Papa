@@ -1,0 +1,31 @@
+name: LAB Memoria Ganadora Auxiliar 2026
+on:
+  push:
+    branches: [lab/memoria-auxiliar-marcas-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  memoria:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: TypeScript
+        run: npx tsc --noEmit
+      - name: Verificar marcas y transferencias
+        run: npx --yes tsx scripts/lab-aux-memoria-test.ts
+      - name: Cotejar 2026 con D1 y D7 y geometría de control
+        run: npx --yes tsx scripts/lab-aux-memoria-marcas-2026.ts
+      - name: Archivar detalle de los cortes
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-MEMORIA-AUXILIAR-MARCAS-2026
+          path: lab-results/aux-memoria-marcas-2026.json
+          if-no-files-found: warn
