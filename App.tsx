@@ -329,7 +329,7 @@ function LaloApp(){
    :screen==='auxiliar'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno objetivo · segunda hoja</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
-    <AuxiliarySheetPanel turn={target} aux={auxHeads} heads={data} view={motor}/>
+    <AuxiliarySheetPanel turn={target} aux={auxHeads} heads={data} view={motor} plus={sheet} date={date}/>
    </>:screen==='predictiva'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
