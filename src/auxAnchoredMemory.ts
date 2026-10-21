@@ -93,18 +93,28 @@ export function anchorPath(now:AuxiliaryBoard,original:AuxPath):AuxPath|null{
 }
 const sourceMask=(p:AuxPath)=>
  [...new Set(p.map(c=>c.source))].sort().join('+');
+const nullPoolCache=new WeakMap<WitnessDay,Map<string,{
+ paths:AuxPath[];fallback:boolean
+}>>();
 const randomControl=(day:WitnessDay,root:RootEvent,path:AuxPath,index:number,seed:number)=>{
- const pool=day.pools[root.kind][root.target]||[];
- if(!pool.length)return {path:null as AuxPath|null,fallback:true};
- const forbidden=day.winningCoordinates[root.kind][root.target]||new Set<string>();
- const candidate=pool.filter(x=>!forbidden.has(auxCanonicalPath(x)));
- const source=sourceMask(path);
- let admissible=candidate.filter(p=>sourceMask(p)===source);
- let fallback=false;
- if(!admissible.length){fallback=true;admissible=candidate;}
- if(!admissible.length){fallback=true;admissible=pool;}
- if(!admissible.length)return {path:null as AuxPath|null,fallback:true};
- return {path:admissible[hash(root.id+'|'+index+'|'+seed)%admissible.length],fallback};
+ let cache=nullPoolCache.get(day);
+ if(!cache){cache=new Map();nullPoolCache.set(day,cache);}
+ const key=root.kind+'|'+root.target+'|'+sourceMask(path);
+ let eligible=cache.get(key);
+ if(!eligible){
+  const pool=day.pools[root.kind][root.target]||[];
+  const forbidden=day.winningCoordinates[root.kind][root.target]||new Set<string>();
+  const candidate=pool.filter(x=>!forbidden.has(auxCanonicalPath(x)));
+  let admissible=candidate.filter(p=>sourceMask(p)===sourceMask(path));
+  let fallback=false;
+  if(!admissible.length){fallback=true;admissible=candidate;}
+  if(!admissible.length){fallback=true;admissible=pool;}
+  eligible={paths:admissible,fallback};
+  cache.set(key,eligible);
+ }
+ if(!eligible.paths.length)return {path:null as AuxPath|null,fallback:true};
+ return {path:eligible.paths[hash(root.id+'|'+index+'|'+seed)%eligible.paths.length],
+  fallback:eligible.fallback};
 };
 export function evaluateAnchors(now:AuxiliaryBoard,
  refs:{period:Period;day:WitnessDay}[],kind:Length,
