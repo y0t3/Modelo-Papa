@@ -34,6 +34,14 @@ jobs:
           LAB_YEAR: '2025'
       - name: Cobertura uniforme y prueba pareada de ambos años
         run: npx --yes tsx scripts/lab-aux-memoria-bienio.ts
+      - name: Prueba adicional 2024 sin ajustar parámetros
+        run: npx --yes tsx scripts/lab-aux-memoria-marcas-2026.ts
+        env:
+          LAB_YEAR: '2024'
+      - name: Incertidumbre prueba 2024
+        run: npx --yes tsx scripts/lab-aux-memoria-estadistica.ts
+        env:
+          LAB_YEAR: '2024'
       - name: Archivar detalle de los cortes
         uses: actions/upload-artifact@v4
         if: always()
@@ -45,4 +53,6 @@ jobs:
             lab-results/aux-memoria-marcas-2025.json
             lab-results/aux-memoria-estadistica-2025.json
             lab-results/aux-memoria-bienio-2025-2026.json
+            lab-results/aux-memoria-marcas-2024.json
+            lab-results/aux-memoria-estadistica-2024.json
           if-no-files-found: warn
