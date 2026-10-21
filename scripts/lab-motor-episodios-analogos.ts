@@ -153,53 +153,53 @@ function count(cuts:Cut[],kind:Kind):Metric[]{
    5*c.results[kind][method].top5.flatMap(forms).length/size,0).toFixed(2))
  }));
 }
-function permutation(cuts:Cut[],kind:Kind,reps=699){
- // Embaraja resultados dentro del mismo mes y turno; preserva el número
- // de sorteos, la composición de familias y su distribución por período.
- const groups=new Map<string,number[]>();
- for(let i=0;i<cuts.length;i++){
-  const key=cuts[i].date.slice(0,7)+'|'+cuts[i].turn;
-  const arr=groups.get(key)||[];arr.push(i);groups.set(key,arr);
- }
- const actual=Object.fromEntries(METHODS.map(m=>[m,0])) as Record<Method,number>;
- for(const c of cuts)for(const m of METHODS)actual[m]+=hits(c,kind,m,5);
- const shuffled=Object.fromEntries(METHODS.map(m=>[m,[] as number[]])) as Record<Method,number[]>;
- let seed=hash(kind+'|semilla-perm-2026');
- const random=()=>{seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return (seed>>>0)/4294967296;};
- const answer=cuts.map(c=>c.heads.map(h=>family(h.slice(-Number(kind.slice(-1))))));
+function pairedTest(cuts:Cut[],kind:Kind,baseline:'FRECUENCIA_90'|'RECIENTES_12',reps=1999){
+ // Comparación causalmente segura: todos los selectores se cotejan contra las
+ // MISMAS cabezas reales, sin reordenar el pasado y los pronósticos. El
+ // remuestreo preserva el bloque de jornada completa (hasta cinco turnos).
+ const dates=[...new Set(cuts.map(x=>x.date))];
+ const variants=ANALOGS;
+ const days=dates.map(date=>{
+  const group=cuts.filter(x=>x.date===date);
+  return variants.map(m=>group.reduce((sum,c)=>sum+
+   hits(c,kind,m,5)-hits(c,kind,baseline,5),0));
+ });
+ const totals=variants.map((_,i)=>days.reduce((sum,row)=>sum+row[i],0));
+ let seed=hash(['paired',kind,baseline,dates.at(-1)||''].join('|'));
+ const random=()=>{seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return(seed>>>0)/4294967296;};
+ const samples:number[][]=[],nulls:number[][]=[];
  for(let rep=0;rep<reps;rep++){
-  const perm=[...answer];
-  for(const ids of groups.values()){
-   const values=ids.map(i=>answer[i]);
-   for(let j=values.length-1;j>0;j--){const other=Math.floor(random()*(j+1));
-    [values[j],values[other]]=[values[other],values[j]];}
-   for(let j=0;j<ids.length;j++)perm[ids[j]]=values[j];
-  }
-  const totals=Object.fromEntries(METHODS.map(m=>[m,0])) as Record<Method,number>;
-  for(let i=0;i<cuts.length;i++)
-   for(const m of METHODS){
-    const chosen=new Set(cuts[i].results[kind][m].top5);
-    totals[m]+=perm[i].filter(f=>chosen.has(f)).length;
+  const bootstrap=Array(variants.length).fill(0),nullrow=Array(variants.length).fill(0);
+  for(let i=0;i<days.length;i++){
+   const sampled=days[Math.floor(random()*days.length)],sign=random()<0.5?-1:1;
+   for(let j=0;j<variants.length;j++){
+    bootstrap[j]+=sampled[j];nullrow[j]+=sign*days[i][j];
    }
-  for(const m of METHODS)shuffled[m].push(totals[m]);
+  }
+  samples.push(bootstrap);nulls.push(nullrow);
  }
- const stat=Object.fromEntries(METHODS.map(m=>{
-  const vals=shuffled[m],mu=vals.reduce((a,b)=>a+b,0)/reps;
-  const sd=Math.sqrt(vals.reduce((s,x)=>s+(x-mu)**2,0)/reps)||1;
-  return [m,{observed:actual[m],nullMean:Number(mu.toFixed(3)),sd:Number(sd.toFixed(3)),
-   z:(actual[m]-mu)/sd,p:(1+vals.filter(x=>x>=actual[m]).length)/(reps+1)}];
- })) as Record<Method,{observed:number;nullMean:number;sd:number;z:number;p:number}>;
- const largest=Math.max(...ANALOGS.map(m=>stat[m].z));
- const pAdj=(1+Array.from({length:reps},(_,i)=>Math.max(...ANALOGS.map(m=>
-  (shuffled[m][i]-stat[m].nullMean)/stat[m].sd))).filter(v=>v>=largest).length)/(reps+1);
- return {replications:reps,tests:stat,bestOfTwoZ:largest,bestOfTwoAdjustedP:pAdj,
-  randomization:'sorteos intercambiados dentro del mismo mes y turno; max-Z corrige dos analogías'};
+ const maximum=Math.max(...totals);
+ return {baseline,block:'jornada real: muestra completa de los cinco turnos',
+  days:days.length,replications:reps,
+  comparisons:variants.map((method,j)=>{
+   const ordered=samples.map(x=>x[j]).sort((a,b)=>a-b);
+   return {method,deltaTotal:totals[j],ci95:[
+    ordered[Math.floor(reps*0.025)],ordered[Math.floor(reps*0.975)]],
+    favorableDays:days.filter(x=>x[j]>0).length,
+    unfavorableDays:days.filter(x=>x[j]<0).length};
+  }),
+  bestOfTwoOneSidedP:(1+nulls.filter(row=>Math.max(...row)>=maximum).length)/(reps+1),
+  warning:'Remuestreo retrospectivo y prueba de cambio de signo por jornada; no sustituye una validación prospectiva'};
 }
 function report(cuts:Cut[],phase:string){
  const selected=cuts.filter(x=>x.phase===phase);
  return {phase,cuts:selected.length,heads:selected.length*5,
-  vt2:{metrics:count(selected,'vt2'),test:permutation(selected,'vt2')},
-  vt3:{metrics:count(selected,'vt3'),test:permutation(selected,'vt3')}};
+  vt2:{metrics:count(selected,'vt2'),
+   pairedAgainstFrequency:pairedTest(selected,'vt2','FRECUENCIA_90'),
+   pairedAgainstRecent:pairedTest(selected,'vt2','RECIENTES_12')},
+  vt3:{metrics:count(selected,'vt3'),
+   pairedAgainstFrequency:pairedTest(selected,'vt3','FRECUENCIA_90'),
+   pairedAgainstRecent:pairedTest(selected,'vt3','RECIENTES_12')}};
 }
 function verifyNoLeakage(cuts:Cut[]){
  for(const c of cuts)for(const kind of ['vt2','vt3'] as Kind[]){
@@ -242,7 +242,7 @@ async function main(){
    outputs:'Candidatas VT2/VT3 a partir de las cabezas de los episodios históricos vecinos',
    scoring:'votos de 5 cabezas por episodio; peso 1/(1+distancia); top familia reversible',
    baseline:'12 episodios recientes y frecuencia acumulada de 90 episodios del mismo turno',
-   checks:'PRE sin fugas; permutación por mes y turno y ajuste por dos distancias'},
+   checks:'PRE sin fugas; cotejo pareado de jornadas y bootstrap por bloque temporal'},
   results,examples,cuts:cuts.map(c=>({date:c.date,turn:c.turn,phase:c.phase,heads:c.heads,
    vt2:Object.fromEntries(METHODS.map(m=>[m,c.results.vt2[m].top10])),
    vt3:Object.fromEntries(METHODS.map(m=>[m,c.results.vt3[m].top10]))}))};
