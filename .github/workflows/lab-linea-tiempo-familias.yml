@@ -1,0 +1,26 @@
+name: LAB Linea Tiempo Familias
+on:
+  push:
+    branches: [lab/linea-tiempo-familias-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  timeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Compilar todos los tipos incluyendo UI
+        run: npx tsc --noEmit
+      - name: Validar hoja y continuidad original
+        run: |
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+          npx --yes tsx scripts/lab-intrajornada-test.ts
+      - name: Validar linea de tiempo y no fuga
+        run: npx --yes tsx scripts/lab-linea-tiempo-test.ts
