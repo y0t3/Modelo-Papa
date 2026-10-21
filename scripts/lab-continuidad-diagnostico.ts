@@ -13,16 +13,17 @@ type Cut={date:string;turn:string;heads:{jur:string;head:string}[];
  byLength:Record<Kind,{methods:{ANCLADO:M;LALO:M;GEOMETRIA:M};
   nulls:M[];anchored:{candidates:number;roots:number;fallback:number};
   winningHeads:Case[]}>};
-const years=['2024','2025','2026'];
+const WINDOW=process.env.LAB_WINDOW==='early'?'early':'late';
+const years=(process.env.LAB_YEARS||'2024,2025,2026').split(',');
 const kinds:Kind[]=[2,3,4];
 let state=0xa8713bbf;
 const rand=()=>{state^=state<<13;state^=state>>>17;state^=state<<5;
  return (state>>>0)/4294967296};
-const report:any={diagnostic:'concentración temporal y comparaciones parejas',
+const report:any={window:WINDOW,diagnostic:'concentración temporal y comparaciones parejas',
  bootstrapUnit:'jornada completa, cortes del mismo día juntos',
  bootstrapReps:2999,years:[]};
 for(const year of years){
- const raw=JSON.parse(readFileSync('lab-results/continuidad-posicional-'+year+'.json','utf8'));
+ const raw=JSON.parse(readFileSync('lab-results/continuidad-posicional-'+WINDOW+'-'+year+'.json','utf8'));
  const cuts=raw.cuts as Cut[];
  const period:any={year,modalities:[]};
  for(const kind of kinds){
@@ -105,11 +106,11 @@ for(const year of years){
  }
  report.years.push(period);
  console.log('ANCLA_DIAGNOSTICO',JSON.stringify({
-  year,modalities:period.modalities.map((m:any)=>({
+  year,window:WINDOW,modalities:period.modalities.map((m:any)=>({
    kind:m.kind,metrics:m.byMetric,
    top3Cases:m.anchorHitCases.slice(0,25)
   }))
  }).slice(0,25000));
 }
-writeFileSync('lab-results/continuidad-diagnostico-tres-anios.json',
+writeFileSync('lab-results/continuidad-diagnostico-'+WINDOW+'.json',
  JSON.stringify(report,null,2));
