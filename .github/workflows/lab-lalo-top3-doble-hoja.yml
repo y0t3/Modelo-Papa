@@ -1,0 +1,37 @@
+name: LAB Lalo Top3 Doble Hoja
+on:
+  push:
+    branches: [lab/lalo-top3-doble-hoja-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contraste:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Preparar dependencias
+        run: npm install
+      - name: TypeScript y pruebas geométricas
+        run: |
+          npx tsc --noEmit
+          npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+          npx --yes tsx scripts/lab-aux-memoria-test.ts
+      - name: Reconstruir PRE con soporte de doble hoja en 2024-2026
+        run: npx --yes tsx scripts/lab-lalo-triple-modalidad.ts
+      - name: Analizar Top3 compacto con presupuesto de terminaciones
+        run: npx --yes tsx scripts/lab-lalo-top3-doble-hoja.ts
+      - name: Archivar resultados auditables
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-TOP3-DOBLE-HOJA
+          path: |
+            lab-results/lalo-triple-modalidad-*.json
+            lab-results/lalo-top3-doble-hoja.json
+          if-no-files-found: warn
