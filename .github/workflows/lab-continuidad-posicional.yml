@@ -26,6 +26,16 @@ jobs:
         run: npx --yes tsx scripts/lab-continuidad-posicional.ts
       - name: Auditar fechas ganadoras e intervalos pareados
         run: npx --yes tsx scripts/lab-continuidad-diagnostico.ts
+      - name: Replica de febrero a mayo 2025 y 2026
+        run: npx --yes tsx scripts/lab-continuidad-posicional.ts
+        env:
+          LAB_WINDOW: early
+          LAB_YEARS: 2025,2026
+      - name: Analisis independiente del bloque temprano
+        run: npx --yes tsx scripts/lab-continuidad-diagnostico.ts
+        env:
+          LAB_WINDOW: early
+          LAB_YEARS: 2025,2026
       - name: Guardar los cortes auditables
         uses: actions/upload-artifact@v4
         if: always()
@@ -33,5 +43,5 @@ jobs:
           name: LAB-CONTINUIDAD-POSICIONAL
           path: |
             lab-results/continuidad-posicional-*.json
-            lab-results/continuidad-diagnostico-tres-anios.json
+            lab-results/continuidad-diagnostico-*.json
           if-no-files-found: warn
