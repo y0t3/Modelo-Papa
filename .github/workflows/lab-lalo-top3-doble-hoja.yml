@@ -26,6 +26,8 @@ jobs:
         run: npx --yes tsx scripts/lab-lalo-triple-modalidad.ts
       - name: Analizar Top3 compacto con presupuesto de terminaciones
         run: npx --yes tsx scripts/lab-lalo-top3-doble-hoja.ts
+      - name: Contrastar con 399 selecciones aleatorias de igual presupuesto
+        run: npx --yes tsx scripts/lab-lalo-top3-controles-azar.ts
       - name: Archivar resultados auditables
         uses: actions/upload-artifact@v4
         if: always()
@@ -34,4 +36,5 @@ jobs:
           path: |
             lab-results/lalo-triple-modalidad-*.json
             lab-results/lalo-top3-doble-hoja.json
+            lab-results/lalo-top3-controles-azar.json
           if-no-files-found: warn
