@@ -76,18 +76,29 @@ export function projectAuxShape(board:AuxiliaryBoard,shape:AuxPath):AuxPath[]{
  }
  return out;
 }
+const randomPathPools=new Map<string,AuxPath[]>();
 export function randomizedRootShape(root:AuxMark,historicalAux:AuxiliaryHeads,
  index:number,seed:number):AuxPath{
- const board=auxiliaryBoard(historicalAux,root.turn);
- const all=enumerateAuxPaths(board,3);
- if(!all.length)throw Error('Histórico sin caminos al sortear '+root.id);
+ const key=root.date+'|'+root.turn;
+ let pool=randomPathPools.get(key);
+ if(!pool){
+  pool=enumerateAuxPaths(auxiliaryBoard(historicalAux,root.turn),3);
+  randomPathPools.set(key,pool);
+ }
+ if(!pool.length)throw Error('Histórico sin caminos al sortear '+root.id);
  const hash=(s:string)=>{let h=2166136261;for(const c of s){
   h^=c.charCodeAt(0);h=Math.imul(h,16777619);
  }return h>>>0;};
  const original=new Set(root.paths.map(p=>auxCanonicalPath(p)));
- const control=all.filter(p=>!original.has(auxCanonicalPath(p)));
- const pool=control.length?control:all;
- return pool[hash(root.id+'|'+index+'|'+seed)%pool.length];
+ let i=hash(root.id+'|'+index+'|'+seed)%pool.length;
+ // Elegir otro RECORRIDO de la misma cuadrícula; nunca transportar un
+ // antiguo recorrido ganador en el control si hay alguna alternativa.
+ for(let probe=0;probe<pool.length;probe++){
+  const path=pool[i];
+  if(!original.has(auxCanonicalPath(path)))return path;
+  i=(i+1)%pool.length;
+ }
+ return pool[i];
 }
 export function replayMemory(board:AuxiliaryBoard,
  references:Array<{day:AuxMemoryDay;period:'D−1'|'D−7'}>,
