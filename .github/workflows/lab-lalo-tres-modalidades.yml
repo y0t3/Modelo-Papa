@@ -25,10 +25,14 @@ jobs:
           npx --yes tsx scripts/lab-aux-memoria-test.ts
       - name: Evaluar VT2 VT3 VT4 y presupuesto por familias
         run: npx --yes tsx scripts/lab-lalo-triple-modalidad.ts
+      - name: Comparar cortes comunes y costo de cubrir cada terminacion
+        run: npx --yes tsx scripts/lab-lalo-comparar-exposicion.ts
       - name: Conservar resultados
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: LAB-LALO-TRES-MODALIDADES
-          path: lab-results/lalo-triple-modalidad-*.json
+          path: |
+            lab-results/lalo-triple-modalidad-*.json
+            lab-results/lalo-triple-comparacion.json
           if-no-files-found: warn
