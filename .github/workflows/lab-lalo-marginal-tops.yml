@@ -1,0 +1,37 @@
+name: LAB Lalo Marginal Top 1 a 6
+on:
+  push:
+    branches: [lab/marginal-top1-top6-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  marginal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Tipado y pruebas de geometria
+        run: |
+          npx tsc --noEmit
+          npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+          npx --yes tsx scripts/lab-aux-memoria-test.ts
+      - name: Reconstruir tops PRE 2024-2026 sin modificar reglas
+        run: npx --yes tsx scripts/lab-lalo-triple-modalidad.ts
+      - name: Medir aporte de cada rango y exposicion
+        run: npx --yes tsx scripts/lab-lalo-marginal-tops.ts
+      - name: Guardar resultados auditables
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-LALO-MARGINAL-TOP1-TOP6
+          path: |
+            lab-results/lalo-triple-modalidad-*.json
+            lab-results/lalo-marginal-top1-top6.json
+          if-no-files-found: warn
