@@ -38,7 +38,7 @@ const KINDS:MarkKind[]=['vt2','vt3','vt4'];
 const total=Object.fromEntries(KINDS.map(k=>[k,{
   observedHeads:0,formableAux:0,formablePlus11:0,both:0,onlyAux:0,
   onlyPlus11:0,neither:0,auxCrossTurnHeads:0,auxPaths:0,plusPaths:0
-}])) as Record<MarkKind,Record<string,number>>;
+}])) as unknown as Record<MarkKind,Record<string,number>>;
 const byDay:any[]=[],byTurn:Record<Turno,any>=Object.fromEntries(TURNOS.map(t=>[t,{
  cutCount:0,postedHeads:0,newSecondSource:{vt2:0,vt3:0,vt4:0},
  newFamilies:{vt2:0,vt3:0,vt4:0}
