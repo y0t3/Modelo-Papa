@@ -20,10 +20,14 @@ jobs:
         run: npx tsc --noEmit
       - name: Reproducir cinco cortes PRE y comparar 19-20 octubre
         run: npx --yes tsx scripts/lab-cotejo-lalo-20oct2026.ts
+      - name: Comparar control histórico de familias sin raíces y multifuente
+        run: npx --yes tsx scripts/lab-frontera-fria-20oct2026.ts
       - name: Archivar resultados
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: LAB-LALO-20OCT2026
-          path: lab-results/cotejo-lalo-20oct2026.json
+          path: |
+            lab-results/cotejo-lalo-20oct2026.json
+            lab-results/frontera-fria-lalo-20oct2026.json
           if-no-files-found: warn
