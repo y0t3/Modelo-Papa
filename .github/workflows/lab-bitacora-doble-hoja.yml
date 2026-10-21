@@ -1,0 +1,33 @@
+name: LAB Bitacora Dos Hojas
+on:
+  push:
+    branches: [lab/registro-marcas-doble-hoja-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  marcas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Validar codigo y marcas POST
+        run: |
+          npx tsc --noEmit
+          npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+          npx --yes tsx scripts/lab-aux-bitacora-test.ts
+      - name: Cotejo historico de marcas y fuentes
+        run: npx --yes tsx scripts/lab-aux-bitacora-historica.ts
+      - name: Guardar auditoria
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: LAB-BITACORA-DOBLE-HOJA
+          path: lab-results/bitacora-doble-hoja-2026.json
+          if-no-files-found: warn
