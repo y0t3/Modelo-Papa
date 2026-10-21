@@ -4,7 +4,7 @@
  * Separa:
  * - memoria anclada a posiciones: raíces que explicaron una cabeza POST real,
  * - control de rutas POST no ganadoras, mismas franjas, misma raíz y cantidad
- *   de rutas, 19 semillas fijas;
+ *   de rutas, 99 semillas fijas;
  * - geometría completa PRE sin saber cuáles figuras fueron ganadoras,
  * - Lalo MV1 con raíces +11, sin alterar ranking.
  *
@@ -35,7 +35,7 @@ import type {Length,AnchoredFamily,WitnessDay,Period} from '../src/auxAnchoredMe
 const YEARS=['2024','2025','2026'] as const;
 const KINDS:Length[]=[2,3,4];
 const CUTS=TURNOS.slice(1);
-const SEEDS=19;
+const SEEDS=99;
 const ranges=(year:string)=>{
  const dates:string[]=[];
  for(let ms=Date.parse(year+'-07-15T12:00:00Z');
@@ -203,7 +203,8 @@ async function yearRun(year:string){
     });
     byLength[kind]={anchored:{
      candidates:anchored.candidates,roots:anchored.rootEvents,
-     validPaths:anchored.positionedPaths,fallback:0
+     validPaths:anchored.positionedPaths,
+     fallback:nulls.reduce((n,x)=>n+x.nullFallbackPaths,0)
     },methods:{
      ANCLADO:compact(anchored.ranked,actual,kind),
      GEOMETRIA:compact(density,actual,kind),
@@ -229,7 +230,7 @@ async function yearRun(year:string){
  const result={year,period:{start:year+'-08-01',end:year+'-10-20'},
   daysDownloaded:good.length,
   protocol:'misma celda absoluta PRE de una raíz POST anterior D−1 o D−7',
-  controls:'19 formas no ganadoras por raíz, turno, número de caminos y franjas físicas iguales',
+  controls:'99 formas no ganadoras por raíz, turno, número de caminos y franjas físicas iguales',
   warning:'todas las evaluaciones son retroactivas; fechas inspeccionadas en estudios previos',
   errors,summary,
   byTurn:CUTS.map(t=>({turn:t,stats:aggregate(cuts.filter(c=>c.turn===t))})),
