@@ -1,0 +1,29 @@
+name: LAB Cambios Regimen RAW 2025-2026
+on:
+  push:
+    branches: [lab/cambios-regimen-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regimen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: TypeScript
+        run: npx tsc --noEmit
+      - name: Estudiar cambios RAW y pronósticos adaptativos PRE
+        run: npx --yes tsx scripts/lab-regimen-raw-v0.ts
+      - name: Guardar resultados auditables
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-CAMBIOS-REGIMEN-RAW
+          path: lab-results/cambios-regimen-raw-v0.json
+          if-no-files-found: warn
