@@ -131,8 +131,23 @@ function auxiliaryRanks(board:AuxiliaryBoard,history:IntegralPast[],
   a.family.localeCompare(b.family));
  return ranked.map((a,i)=>({...a,rank:i+1}));
 }
-const sourcesPlus=(v:LaloView,kind:LaloKind,family:string)=>
- v.ranks[kind].find(x=>x.family===family);
+
+/** Lector AUX independiente, sin mezclar los rankings de Lalo. */
+export function buildAuxIndependent(date:string,target:Turno,
+ auxHeads:AuxiliaryHeads,history:IntegralPast[]):
+ Record<IntegralKind,AuxRank[]>{
+ if(history.some(h=>h.date>=date))throw Error('Fuga en lectura AUX');
+ const board=auxiliaryBoard(auxHeads,target);
+ const result={} as Record<IntegralKind,AuxRank[]>;
+ const vt3=auxiliaryRanks(board,history,3);
+ const mothers=new Set(vt3.slice(0,10).map(x=>x.family));
+ result[3]=vt3;result[2]=auxiliaryRanks(board,history,2);
+ result[4]=auxiliaryRanks(board,history,4)
+  .filter(x=>x.mother!==null&&mothers.has(x.mother))
+  .map((x,i)=>({...x,rank:i+1}));
+ return result;
+}
+
 export function buildMotorLaloIntegral(date:string,target:Turno,
  maskedPlus11:DailySheet,auxHeads:AuxiliaryHeads,
  history:IntegralPast[]):IntegralPrediction{
