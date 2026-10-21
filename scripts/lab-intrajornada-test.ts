@@ -29,7 +29,7 @@ assert(first.newAuxSources.includes('Previa'),'aux aparece recién después de l
 assert.equal(first.becameDualSheet,true);
 assert(first.values.includes('10'));
 const later=frames[2].rooted[2].find(x=>x.family===key);
-assert(later?.rootEvents>=2,'la cabeza Primera suma evento POST comprobado');
+assert(later&&later.rootEvents>=2,'la cabeza Primera suma evento POST comprobado');
 assert.equal(later?.newPlusSources.includes('Primera'),false,'fuente distinta se atribuye solo si hay ruta');
 const end=frames[4].rooted[2].find(x=>x.family===key);
 assert(end);
