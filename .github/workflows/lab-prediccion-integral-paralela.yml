@@ -1,0 +1,29 @@
+name: LAB Prediccion Lalo Integral Paralelo
+on:
+  push:
+    branches: [lab/prediccion-integral-paralela-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prediccion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Dependencias
+        run: npm install
+      - name: Compilar interfaz completa TypeScript
+        run: npx tsc --noEmit
+      - name: Validar motores y geometria
+        run: |
+          npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+          npx --yes tsx scripts/lab-integral-test.ts
+      - name: Comparar interfaz y POST sin alterar TOPS
+        run: npx --yes tsx scripts/lab-prediccion-paralela-test.ts
+      - name: Auditar cabezas reales de octubre
+        run: npx --yes tsx scripts/lab-linea-tiempo-20oct.ts
