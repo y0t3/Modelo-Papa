@@ -24,3 +24,5 @@ jobs:
           npx --yes tsx scripts/lab-intrajornada-test.ts
       - name: Validar linea de tiempo y no fuga
         run: npx --yes tsx scripts/lab-linea-tiempo-test.ts
+      - name: Revisar linea temporal con datos reales 20 octubre
+        run: npx --yes tsx scripts/lab-linea-tiempo-20oct.ts
