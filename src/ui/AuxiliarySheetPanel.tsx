@@ -14,7 +14,8 @@ export default function AuxiliarySheetPanel({
  const {colors:c,kinds}=useLaloTheme();
  const [query,setQuery]=useState('');
  const [selection,setSelection]=useState<SelectMode>('familia');
- useEffect(()=>{setQuery('');setSelection('familia')},[turn]);
+ const [kind,setKind]=useState<2|3|4>(3);
+ useEffect(()=>{setQuery('');setSelection('familia');setKind(3)},[turn]);
  const board=useMemo(()=>aux?auxiliaryBoard(aux,turn):null,[aux,turn]);
  const selected=useMemo(()=>{
   if(!board||!/^\d{2,4}$/.test(query))return {paths:[] as AuxPath[],
@@ -80,21 +81,28 @@ export default function AuxiliarySheetPanel({
    </Text>
    <View style={s.separator}/>
    <Text style={[s.subtitle,textStyle]}>Seguir cifras o familia</Text>
+   <View style={s.wrap}>{([2,3,4] as const).map(n=><Pressable
+     key={n} accessibilityRole="button" accessibilityState={{selected:kind===n}}
+     onPress={()=>{setKind(n);setQuery('');setSelection(n===4?'exacta':'familia')}}
+     style={[s.chip,{backgroundColor:kind===n?kinds['vt'+n as 'vt2'|'vt3'|'vt4'].fill:c.surfaceAlt,
+      borderColor:kind===n?kinds['vt'+n as 'vt2'|'vt3'|'vt4'].line:c.border}]}>
+     <Text style={{color:c.text,fontWeight:'800'}}>VT{n}</Text>
+    </Pressable>)}</View>
    <TextInput value={query} onChangeText={v=>select(v.replace(/\D/g,'').slice(0,4),'familia')}
     keyboardType="number-pad" maxLength={4}
-    placeholder="Ej. 354" placeholderTextColor={c.muted}
+    placeholder={kind===2?'Ej. 54':kind===3?'Ej. 354':'Ej. 1354'} placeholderTextColor={c.muted}
     style={[s.input,{color:c.text,borderColor:c.border,backgroundColor:c.cell}]}/>
    <Text style={[s.hint,mutedStyle]}>
     {query?selected.family+' · '+selected.paths.length+' recorrido(s) físico(s) · '+
       selected.cross+' cruzando turnos':
-      'Ingresá 2 o 3 cifras para ver la familia (ambos sentidos). Cuatro cifras se buscan exactas.'}
+      'Ingresá VT2/VT3 para ver la familia (ambos sentidos) o VT4 exacta. La cabeza seleccionada no crea candidatos nuevos.'}
    </Text>
    <Text style={[s.subtitle,textStyle]}>Familias VT3 Top6 de Lalo</Text>
    <View style={s.wrap}>{familyRanking.map(f=>{
     const parts=f.family.split('/');
     const supported=board&&findAuxFamily(board,parts[0]).paths.length>0;
     return <Pressable accessibilityRole="button" key={f.family}
-     onPress={()=>select(parts[0],'familia')}
+     onPress={()=>{setKind(3);select(parts[0],'familia')}}
      style={[s.chip,{borderColor:supported?kinds.vt3.line:c.border,
       backgroundColor:supported?kinds.vt3.fill:c.surfaceAlt}]}>
      <Text style={{color:c.text,fontWeight:'700',fontSize:11}}>
@@ -105,7 +113,7 @@ export default function AuxiliarySheetPanel({
    <Text style={[s.subtitle,textStyle]}>Cabezas publicadas del turno · buscar recorrido exacto</Text>
    <View style={s.wrap}>{targetHeads.map(x=><Pressable
     accessibilityRole="button" key={x.jur}
-    onPress={()=>select(x.head.slice(-3),'exacta')}
+    onPress={()=>select(x.head.slice(-kind),kind===4?'exacta':'familia')}
     style={[s.chip,{borderColor:c.border,backgroundColor:c.surfaceAlt}]}>
     <Text style={[{fontSize:11,fontWeight:'700'},textStyle]}>
      {x.jur} {x.head}
