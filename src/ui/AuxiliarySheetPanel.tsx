@@ -113,7 +113,7 @@ export default function AuxiliarySheetPanel({
    <Text style={[s.subtitle,textStyle]}>Cabezas publicadas del turno · buscar recorrido exacto</Text>
    <View style={s.wrap}>{targetHeads.map(x=><Pressable
     accessibilityRole="button" key={x.jur}
-    onPress={()=>select(x.head.slice(-kind),kind===4?'exacta':'familia')}
+    onPress={()=>select(x.head.slice(-kind),'exacta')}
     style={[s.chip,{borderColor:c.border,backgroundColor:c.surfaceAlt}]}>
     <Text style={[{fontSize:11,fontWeight:'700'},textStyle]}>
      {x.jur} {x.head}
