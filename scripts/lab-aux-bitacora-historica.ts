@@ -13,6 +13,7 @@ import {buildSheet} from '../src/sheet';
 import {hasDrawResults,hasNocturnoBase} from '../src/drawHistory';
 import {buildAuxPostLedger} from '../src/auxMarkLedger';
 import type {MarkKind} from '../src/auxMarkLedger';
+async function main(){
 const START='2026-08-29',END='2026-10-20';
 const dates:string[]=[];
 for(let ms=Date.parse(START+'T12:00:00Z');ms<=Date.parse(END+'T12:00:00Z');ms+=86400000)
@@ -92,3 +93,6 @@ console.log('BITACORA_RESUMEN',JSON.stringify({
  days:result.days,cuts:result.cuts,total,byTurn,errors
 }));
 console.log('BITACORA_20OCT',JSON.stringify(day20));
+
+}
+void main().catch(err=>{console.error('BITACORA_ERROR',err);process.exitCode=1});
