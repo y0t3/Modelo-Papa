@@ -163,8 +163,8 @@ async function main(){
       auxPaths:aux3.slice(0,25).map(serializeAuxPath)},
      vt4:{plusExact:plus4.length,auxExact:aux4.length,
       auxCrossTurn:aux4.filter(path=>new Set(path.map(c=>c.source)).size>1).length},
-     admittedLalo:lalоHas(lalo.ranks.vt3.map(x=>x.family),f3),
-     rankLalo:lalоRank(lalo.ranks.vt3.map(x=>x.family),f3)}];
+     admittedLalo:laloHas(lalo.ranks.vt3.map(x=>x.family),f3),
+     rankLalo:laloRank(lalo.ranks.vt3.map(x=>x.family),f3)}];
    });
    const both=[...plus3].filter(f=>family3.has(f)).length;
    const item:Cut={date,turn,sourceHeads:input,
@@ -191,8 +191,8 @@ async function main(){
    }));
   }
  }
- function lalоHas(names:string[],f:string){return names.includes(f)}
- function lalоRank(names:string[],f:string){const n=names.indexOf(f);return n<0?null:n+1}
+ function laloHas(names:string[],f:string){return names.includes(f)}
+ function laloRank(names:string[],f:string){const n=names.indexOf(f);return n<0?null:n+1}
  const dates=[...new Set(cuts.map(c=>c.date))];
  const byDay=dates.map(date=>({date,stats:stat(cuts.filter(c=>c.date===date))}));
  const report={name:'Segunda Hoja Santiago/Neuquen · Lalo · laboratorio 21oct',
@@ -200,7 +200,7 @@ async function main(){
   validation:'PRE retrospectivo sin datos del turno objetivo; no equivale a Tops históricos sellados',
   extraSource:'Viví tu Suerte API ID10 Santiago, ID11 Neuquén',
   caveat:'Santiago no registra Primera en fuente contrastada: momento_1 de ID10 es Matutina. Se deja blanco. Nunca adelantar Matutino a Primera.',
-  20oct:oct20,errors,byDay,
+  source20Oct:oct20,errors,byDay,
   total:stat(cuts),lastDay:stat(cuts.filter(c=>c.date===TARGET)),
   cuts};
  console.log('AUX_RESUMEN',JSON.stringify({
