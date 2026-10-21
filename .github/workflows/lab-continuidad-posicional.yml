@@ -1,0 +1,33 @@
+name: LAB Continuidad Posicional Ganadora
+on:
+  push:
+    branches: [lab/continuidad-posicional-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  continuidad:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Validar TypeScript y contactos físicos
+        run: |
+          npx tsc --noEmit
+          npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+          npx --yes tsx scripts/lab-ancla-rutas-test.ts
+      - name: Probar memoria de posiciones PRE 2024 a 2026
+        run: npx --yes tsx scripts/lab-continuidad-posicional.ts
+      - name: Guardar los cortes auditables
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-CONTINUIDAD-POSICIONAL
+          path: lab-results/continuidad-posicional-*.json
+          if-no-files-found: warn
