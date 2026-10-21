@@ -1,0 +1,33 @@
+name: LAB Hoja Auxiliar Santiago Neuquen
+on:
+  push:
+    branches: [lab/hoja-auxiliar-santiago-neuquen-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comprobar TypeScript
+        run: npx tsc --noEmit
+      - name: Descubrir fila de Santiago y Neuquen en proveedor
+        run: npx --yes tsx scripts/lab-aux-diagnostico-fuente.ts
+      - name: Probar tablero geometrico auxiliar
+        run: npx --yes tsx scripts/lab-aux-geometria-test.ts
+      - name: Reconstruir y comparar jornadas Lalo con segundo tablero
+        run: npx --yes tsx scripts/lab-aux-cotejo-2026.ts
+      - name: Archivar auditoria
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-HOJA-AUXILIAR-21OCT
+          path: lab-results/
+          if-no-files-found: warn
