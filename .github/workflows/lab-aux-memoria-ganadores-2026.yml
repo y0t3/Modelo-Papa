@@ -22,10 +22,14 @@ jobs:
         run: npx --yes tsx scripts/lab-aux-memoria-test.ts
       - name: Cotejar 2026 con D1 y D7 y geometría de control
         run: npx --yes tsx scripts/lab-aux-memoria-marcas-2026.ts
+      - name: Incertidumbre por jornada frente a controles
+        run: npx --yes tsx scripts/lab-aux-memoria-estadistica.ts
       - name: Archivar detalle de los cortes
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: LAB-MEMORIA-AUXILIAR-MARCAS-2026
-          path: lab-results/aux-memoria-marcas-2026.json
+          path: |
+            lab-results/aux-memoria-marcas-2026.json
+            lab-results/aux-memoria-estadistica-2026.json
           if-no-files-found: warn
