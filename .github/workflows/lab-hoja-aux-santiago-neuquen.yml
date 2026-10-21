@@ -20,6 +20,8 @@ jobs:
         run: npx tsc --noEmit
       - name: Descubrir fila de Santiago y Neuquen en proveedor
         run: npx --yes tsx scripts/lab-aux-diagnostico-fuente.ts
+      - name: Verificar mapeo Vivitusuerte corregido 20oct
+        run: npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
       - name: Probar tablero geometrico auxiliar
         run: npx --yes tsx scripts/lab-aux-geometria-test.ts
       - name: Reconstruir y comparar jornadas Lalo con segundo tablero
