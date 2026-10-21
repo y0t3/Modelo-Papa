@@ -56,9 +56,50 @@ Antes de Primera hay 8 celdas llenas. Antes de Matutino hay 12; antes de Vespert
 - `scripts/lab-aux-geometria-test.ts`: 14 casos de regresión de rutas horizontales/diagonales entre turnos, faltantes, control de PRE y prohibición de saltear/reutilizar.
 - `scripts/lab-aux-cotejo-2026.ts`: cotejo físico reconstruido **12–20 octubre 2026**, separa familias físicamente formables y las realmente seleccionadas por MV1, utilizando la misma fuente de resultados de la app.
 
+## Ampliación posterior del cotejo: 1 de septiembre a 20 de octubre
+
+Tras mantener intactas las definiciones físicas y el control PRE, extendimos la reconstrucción a **43 jornadas** (26 septiembre + 17 octubre), **215 cortes PRE** y **1.152 cabezas** de las seis jurisdicciones de destino. Se descargaron las fuentes de la app y del tablero auxiliar desde 20/08 como preparación histórica; errores de descarga: **cero**.
+
+### Cobertura real y comparación por modalidad
+
+| Modalidad física | Hoja +11 | Hoja auxiliar exacta | Unión de ambas | Nuevas cabezas de la auxiliar |
+|---|---:|---:|---:|---:|
+| VT2 | 703 | 316 | **794** | **+91** |
+| VT3 | 294 | 95 | **361** | **+67** |
+| VT4 (4 cifras exactas) | 93 | 25 | **116** | **+23** |
+
+Sobre 1.152 cabezas, la cobertura física de VT3 pasa de 25,52% en +11 a **31,34% en la unión**. El 5,82% adicional del total proviene de cabezas que se forman solo en la hoja auxiliar. No se trata de acertar un pronóstico sellado: **la cobertura es un cotejo retrospectivo de cabeza observada frente a una geometría PRE**.
+
+Detalle VT3 sobre cabezas observadas:
+
+| Situación | 1–30 septiembre | 1–20 octubre | Total |
+|---|---:|---:|---:|
+| Ambas hojas | 21 | 7 | **28** |
+| Solo +11 | 163 | 103 | **266** |
+| Solo auxiliar | 36 | 31 | **67** |
+| Ninguna | 478 | 313 | **791** |
+| Total | 698 | 454 | **1.152** |
+
+**Cruces físicos reales:** 12 cabezas VT3 se pudieron trazar exactamente en la auxiliar mediante al menos un recorrido que cruzaba el límite de turnos; en VT4 hubo cinco cabezas con algún cruce exacto. Es evidencia de funcionamiento de la geometría, no de capacidad predictiva.
+
+### Contraste contra los candidatos ya seleccionados por Lalo
+
+En los 215 cortes evaluados hubo **1.284 apariciones de familias Top6 VT3** de Lalo (no 1.284 familias diferentes). De esas:
+
+- **90** tenían además formación física en la hoja auxiliar, y esas apariciones tuvieron **1** cabeza ganadora.
+- **1.194** no tenían formación auxiliar, y esas apariciones tuvieron **16** cabezas ganadoras.
+
+La comparación es exploratoria, con exposición y composición heterogénea. **No aparece una ventaja estable de la doble formación para las familias ya admitidas en Top6**. Tampoco hay fundamento para penalizarlas: el motor oficial selecciona previamente por otra mecánica y los grupos son muy diferentes.
+
+Conclusión de la ampliación: la hoja auxiliar **sí recupera resultados geométricos que +11 no explica**; el refuerzo predictivo de los Tops de Lalo todavía **no está validado**.
+
+Ejecución ampliada: https://github.com/y0t3/Modelo-Papa/actions/runs/39643078874
+
+---
+
 ## Primera prueba histórica
 
-Ocho jornadas con sorteos (12, 13, 14, 15, 16, 17, 19 y 20 de octubre), **40 cortes PRE** y **213 cabezas publicadas en las seis jurisdicciones originales**.
+**Corte inicial preservado (subconjunto de la ampliación).** Ocho jornadas con sorteos (12, 13, 14, 15, 16, 17, 19 y 20 de octubre), **40 cortes PRE** y **213 cabezas publicadas en las seis jurisdicciones originales**.
 
 ### Cobertura física VT3 de las cabezas salidas, por familia reversible
 
