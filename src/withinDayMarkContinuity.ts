@@ -37,7 +37,7 @@ const groupName=(n:N,v:string)=>familyFor(n,v);
 const key=(a:{row:number;col:number})=>a.row+':'+a.col;
 function walks(cells:Cell[],n:N):Path[]{
  const out:Path[]=[];
- function rec(path:Path[]){
+ function rec(path:Path){
   const at=path[path.length-1];
   if(path.length===n){out.push([...path]);return;}
   for(const c of cells)if(!path.some(p=>key(p)===key(c))&&
