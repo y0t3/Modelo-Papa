@@ -108,6 +108,12 @@ async function main(){
  }));
  const byDay=[...new Set(cuts.map(x=>x.date))].map(date=>({date,
   ...summarized(cuts.filter(x=>x.date===date))}));
+ for(const cut of cuts.filter(x=>x.date<'2026-10-20'&&x.cold2Winner.length))
+  console.log('FRIOS_CONTROL_GANADOR',JSON.stringify({date:cut.date,turn:cut.turn,
+   winners:cut.cold2Winner,ranks:cut.cold2RankForWinner,
+   selected:cut.nextCold2,options:cut.cold2.slice(0,12).map(x=>({
+    family:x.family,sources:x.sources,blocks:x.blocks
+   }))}));
  const report={date:'2026-10-20',hypothesis:'Sin raíces, más de una fuente física',
   caveat:'Hipótesis sugerida tras observar la cabeza 8568 del 20oct: NO considerar el 20 como prueba ciega.',
   selection:'Top6 con intercambio único del puesto sexto y prioridad por fuentes distintas, bloques físicos, familia alfabética',
