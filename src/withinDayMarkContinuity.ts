@@ -31,7 +31,7 @@ export type PriorFamily={family:string;values:string[];rootEvents:number;
 export type TurnFrame={target:Turno;index:number;
  visiblePlus:string[];visibleAux:string[];
  physical:Record<N,Physical[]>;roots:Record<N,HistoricalMark[]>;
- rooted:Record<N,PriorFamily[]>};
+ rooted:Record<N,PriorFamily[]>;post:Record<N,HistoricalMark[]>};
 const letters=(s:string)=>[...s].reverse().join('');
 const groupName=(n:N,v:string)=>familyFor(n,v);
 const key=(a:{row:number;col:number})=>a.row+':'+a.col;
@@ -99,11 +99,13 @@ function prove(plus:DailySheet,board:AuxiliaryBoard,target:Turno,head:string,n:N
   auxExample:auxPaths.length?auxPaths[0].map(p=>p.source+':'+key(p)).join('>'):null};
 }
 export function sameDaySequence(date:string,draws:CabezasDia,
- plus:DailySheet,aux:AuxiliaryHeads):TurnFrame[]{
+ plus:DailySheet,aux:AuxiliaryHeads,through:Turno='Nocturno'):TurnFrame[]{
  const frames:TurnFrame[]=[];
  const rooted:Record<N,HistoricalMark[]>={2:[],3:[],4:[]};
  let previous:Record<N,Map<string,Physical>>={2:new Map(),3:new Map(),4:new Map()};
- for(let idx=0;idx<TURNOS.length;idx++){
+ const last=TURNOS.indexOf(through);
+ if(last<0)throw Error('Corte de línea de tiempo inválido');
+ for(let idx=0;idx<=last;idx++){
   const target=TURNOS[idx],board=auxiliaryBoard(aux,target);
   const now=geometryAt(plus,aux,target);
   const frame:TurnFrame={
@@ -113,7 +115,7 @@ export function sameDaySequence(date:string,draws:CabezasDia,
    physical:{2:[...now[2].values()],3:[...now[3].values()],
     4:[...now[4].values()]},
    roots:{2:[...rooted[2]],3:[...rooted[3]],4:[...rooted[4]]},
-   rooted:{2:[],3:[],4:[]}
+   rooted:{2:[],3:[],4:[]},post:{2:[],3:[],4:[]}
   };
   for(const n of MODALITIES){
    const groups=new Map<string,HistoricalMark[]>();
@@ -156,13 +158,15 @@ export function sameDaySequence(date:string,draws:CabezasDia,
     const witness=prove(plus,board,target,head,n);
     if(!witness.plusPaths&&!witness.auxPaths)
      throw Error('Familia sin recorrido exacto: '+head);
-    rooted[n].push({
+    const mark:HistoricalMark={
      key:[date,target,jur,head,'VT'+n].join('|'),date,turn:target,jur,
      head,length:n,family,exact,
      boards:[...(witness.plusPaths?['PLUS' as const]:[]),
       ...(witness.auxPaths?['AUX' as const]:[])],
      ...witness
-    });
+    };
+    rooted[n].push(mark);
+    frame.post[n].push(mark);
    }
   }
   previous=now;
