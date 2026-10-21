@@ -176,6 +176,10 @@ async function main(){
     familyOverlaps:{both,onlyPlus:plus3.size-both,onlyAux:vt3.length-both},
     auxCrossTurnFamilies3:vt3.filter(f=>f.crossTurnPaths).length,top6,winnerHits};
    cuts.push(item);
+   if(date==='2026-10-17')for(const h of winnerHits.filter(x=>x.vt3.auxCrossTurn>0))
+    console.log('AUX_CRUCE_GANADOR_17OCT',JSON.stringify({
+     turn,jur:h.jur,head:h.head,family:h.vt3.family,
+     witnesses:h.vt3.auxPaths.filter((p:any)=>p.crossesTurn)}));
    if(date===TARGET)console.log('AUX_CORTE_20OCT',JSON.stringify({
     turn,sources:item.sourceHeads,visible:item.availableAuxTurns,auxCells:item.auxCells,
     vt3Families:{plus:item.plusFamilies3,aux:item.auxFamilies3,...item.familyOverlaps,
