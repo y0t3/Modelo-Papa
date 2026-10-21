@@ -32,14 +32,18 @@ import {
 } from '../src/auxAnchoredMemory';
 import type {Length,AnchoredFamily,WitnessDay,Period} from '../src/auxAnchoredMemory';
 
-const YEARS=['2024','2025','2026'] as const;
+const WINDOW=process.env.LAB_WINDOW==='early'?'early':'late';
+const YEARS=(process.env.LAB_YEARS||'2024,2025,2026').split(',');
 const KINDS:Length[]=[2,3,4];
 const CUTS=TURNOS.slice(1);
 const SEEDS=99;
+const initial=(year:string)=>year+(WINDOW==='early'?'-01-15':'-07-15');
+const finalDay=(year:string)=>year+(WINDOW==='early'?'-05-31':'-10-20');
+const firstEvaluation=(year:string)=>year+(WINDOW==='early'?'-02-01':'-08-01');
 const ranges=(year:string)=>{
  const dates:string[]=[];
- for(let ms=Date.parse(year+'-07-15T12:00:00Z');
- ms<=Date.parse(year+'-10-20T12:00:00Z');ms+=86400000)
+ for(let ms=Date.parse(initial(year)+'T12:00:00Z');
+ ms<=Date.parse(finalDay(year)+'T12:00:00Z');ms+=86400000)
  dates.push(new Date(ms).toISOString().slice(0,10));
  return dates;
 };
@@ -157,7 +161,7 @@ async function yearRun(year:string){
  }
  const cuts:Cut[]=[];
  for(let i=2;i<good.length;i++){
-  const date=good[i];if(date<year+'-08-01')continue;
+  const date=good[i];if(date<firstEvaluation(year))continue;
   const previous=good[i-1],week=minus7(date);
   const refs:[{period:Period;day:WitnessDay},...{period:Period;day:WitnessDay}[]]=[
    {period:'D−1',day:dayMarks.get(previous)!},
@@ -216,7 +220,7 @@ async function yearRun(year:string){
    }
    const cut:Cut={date,turn,heads:actual,sourceCells:current.cells.length,byLength};
    cuts.push(cut);
-   if(date===year+'-10-20')console.log('ANCLA_CORTE_FINAL',JSON.stringify({
+   if(date===finalDay(year))console.log('ANCLA_CORTE_FINAL',JSON.stringify({
     date,turn,available:current.cells.length,
     outcomes:KINDS.map(kind=>({kind,
      methods:cut.byLength[kind].methods,
@@ -227,7 +231,7 @@ async function yearRun(year:string){
   }
  }
  const summary=aggregate(cuts);
- const result={year,period:{start:year+'-08-01',end:year+'-10-20'},
+ const result={year,window:WINDOW,period:{start:firstEvaluation(year),end:finalDay(year)},
   daysDownloaded:good.length,
   protocol:'misma celda absoluta PRE de una raíz POST anterior D−1 o D−7',
   controls:'99 formas no ganadoras por raíz, turno, número de caminos y franjas físicas iguales',
@@ -236,10 +240,10 @@ async function yearRun(year:string){
   byTurn:CUTS.map(t=>({turn:t,stats:aggregate(cuts.filter(c=>c.turn===t))})),
   cuts};
  mkdirSync('lab-results',{recursive:true});
- writeFileSync('lab-results/continuidad-posicional-'+year+'.json',
+ writeFileSync('lab-results/continuidad-posicional-'+WINDOW+'-'+year+'.json',
   JSON.stringify(result,null,2));
  console.log('ANCLA_RESUMEN',JSON.stringify({
-  year,summary,downloadErrors:errors,
+  year,window:WINDOW,summary,downloadErrors:errors,
   byTurn:result.byTurn.map(x=>({turn:x.turn,modalities:Object.fromEntries(
    KINDS.map(n=>['vt'+n,{
     ANCLADO:x.stats.modalities['vt'+n].methods.ANCLADO,
