@@ -206,7 +206,7 @@ async function main(){
   try{fetched[i]=await descargarCabezas(date,true);}
   catch(e){errors.push({date,message:String(e)})}
  }}
- await Promise.all(Array.from({length:9},worker()));
+ await Promise.all(Array.from({length:9},()=>worker()));
  const observations:Obs[]=calendar.flatMap((date,index)=>{
   const item=fetched[index];if(!item)return [];
   return TURNOS.flatMap(turn=>JUR.flatMap(jur=>{
