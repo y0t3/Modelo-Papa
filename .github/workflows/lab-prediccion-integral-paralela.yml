@@ -27,3 +27,5 @@ jobs:
         run: npx --yes tsx scripts/lab-prediccion-paralela-test.ts
       - name: Auditar cabezas reales de octubre
         run: npx --yes tsx scripts/lab-linea-tiempo-20oct.ts
+      - name: Verificar ambos motores con datos 20 octubre
+        run: npx --yes tsx scripts/lab-prediccion-paralela-20oct.ts
