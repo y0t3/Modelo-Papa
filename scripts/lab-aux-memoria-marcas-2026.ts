@@ -26,7 +26,8 @@ import {
 } from '../src/auxWinningMemory';
 import type {AuxMemoryDay,AuxTransfer} from '../src/auxWinningMemory';
 
-const MIN_DAY='2026-07-15',MAX_DAY='2026-10-20',FIRST='2026-08-01';
+const YEAR=process.env.LAB_YEAR==='2025'?'2025':'2026';
+const MIN_DAY=YEAR+'-07-15',MAX_DAY=YEAR+'-10-20',FIRST=YEAR+'-08-01';
 const valid=(s:string)=>/^\d{4}$/.test(s);
 const range=(start:string,end:string)=>{
  const days:string[]=[];for(let d=Date.parse(start+'T12:00:00Z');
@@ -110,7 +111,7 @@ async function main(){
  const good=dates.filter(d=>base.has(d)&&aux.has(d)&&hasDrawResults(base.get(d)!)&&
   hasNocturnoBase(base.get(d)!));
  const d20=aux.get('2026-10-20')?.heads;
- if(!d20||d20.Primera.Santiago!=='6142'||d20.Matutino.Santiago!=='9634')
+ if(YEAR==='2026'&&(!d20||d20.Primera.Santiago!=='6142'||d20.Matutino.Santiago!=='9634'))
   throw Error('Corta: fuente de Santiago 20/oct incorrecta');
  if(Object.keys(errors).length>10)throw Error('Demasiados fallos de fuente');
  const sheets=new Map<string,DailySheet>();
@@ -215,7 +216,7 @@ async function main(){
        route:p.map(c=>[c.row,c.col,c.digit,c.source])}))
     }));
    }
-   if(date==='2026-10-20')console.log('MEMORIA_20OCT',JSON.stringify({
+   if(date===YEAR+'-10-20')console.log('MEMORIA_CORTE_FINAL',JSON.stringify({year:YEAR,
     turn,availableCells:cut.availableCells,historical:cut.historical,
     memoryFamilies:cut.memoryFamilies,
     top5:Object.fromEntries(METHODS.map(m=>[m,candidates[m].slice(0,5)])),
@@ -228,15 +229,15 @@ async function main(){
   month,stats:summarize(cuts.filter(c=>c.date.startsWith(month)))
  }));
  const byTurn=TURNOS.map(turn=>({turn,stats:summarize(cuts.filter(x=>x.turn===turn))}));
- console.log('MEMORIA_RESUMEN',JSON.stringify({whole,months,byTurn,downloadErrors:errors,
+ console.log('MEMORIA_RESUMEN',JSON.stringify({year:YEAR,whole,months,byTurn,downloadErrors:errors,
   daysDownloaded:good.length,first:good[0],last:good.at(-1)}));
- const out={name:'Memoria ganadora hoja auxiliar V0',created:'2026-10-21',
+ const out={name:'Memoria ganadora hoja auxiliar V0',year:YEAR,created:'2026-10-21',
   dateRange:{first:FIRST,last:MAX_DAY,downloaded:good.length},
   protocol:'Marcas POST estrictas; proyectar únicamente geometría de esas marcas al PRE futuro',
   nullControl:'Reemplazar formas ganadoras por formas válidas no ganadoras del mismo tablero pasado, con 9 semillas fijas',
   caveat:'Prueba retrospectiva y múltiples enfoques ya investigados; NO equivale a pronósticos sellados',
   errors,whole,months,byTurn,cuts};
  mkdirSync('lab-results',{recursive:true});
- writeFileSync('lab-results/aux-memoria-marcas-2026.json',JSON.stringify(out,null,2));
+ writeFileSync('lab-results/aux-memoria-marcas-'+YEAR+'.json',JSON.stringify(out,null,2));
 }
 void main().catch(e=>{console.error('MEMORIA_ERROR',e);process.exitCode=1});
