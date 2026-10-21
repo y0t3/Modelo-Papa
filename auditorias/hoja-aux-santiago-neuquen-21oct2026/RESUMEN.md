@@ -99,7 +99,7 @@ La cantidad de familias crece cuando se agrega una franja real, y se mantiene de
 1. **Vespertino, Entre Ríos: 4066**, VT3 `066/660`. No tiene camino VT3 en +11 y sí **dos caminos exactos `066` en Previa auxiliar**; además tiene camino VT4 exacto `4066`.
 2. **Nocturno, Ciudad: 2697**, VT3 `697/796`. No tiene camino VT3 en +11 y sí **dos caminos exactos `697` en Previa auxiliar**.
 
-Esas formaciones no exigen forzar un cruce; pueden darse dentro de una franja. Los cruces entre turnos están permitidos y fueron efectivamente detectados por el motor. Existe al menos una cabeza ganadora VT3 auxiliada por recorrido cruzado en el 17/10.
+Esas formaciones no exigen forzar un cruce; pueden darse dentro de una franja. Los cruces entre turnos están permitidos y fueron efectivamente detectados por el motor. Existe al menos una cabeza ganadora VT3 auxiliada por recorrido cruzado en el 17/10. **Caso comprobado**: Matutino de Ciudad, cabeza **7016**, VT3 exacto **016**; camino `Neuquén Primera posición 1 (0) → Neuquén Previa posición 4 (1) → Santiago Previa posición 3 (6)`. Coordenadas absolutas `(1,4)→(1,3)→(0,2)`, tomando filas 0=Santiago, 1=Neuquén y columnas desde 0. El camino atraviesa Primera→Previa por contacto horizontal, luego una diagonal contigua. No salta ni reutiliza celdas.
 
 El caso `8568` (Santa Fe Primera) **NO** recibe refuerzo auxiliar al corte PRE Primera: antes de ese sorteo solo están habilitadas las cabezas auxiliares de Previa. Este no-acierto del respaldo es parte del balance y no se debe reinterpretar una vez vistas las columnas posteriores.
 
