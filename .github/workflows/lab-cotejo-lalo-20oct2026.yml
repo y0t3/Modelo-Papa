@@ -1,0 +1,29 @@
+name: LAB Cotejo Lalo 20oct2026
+on:
+  push:
+    branches: [lab/cotejo-lalo-20oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  auditoria:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Verificar TypeScript
+        run: npx tsc --noEmit
+      - name: Reproducir cinco cortes PRE y comparar 19-20 octubre
+        run: npx --yes tsx scripts/lab-cotejo-lalo-20oct2026.ts
+      - name: Archivar resultados
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-LALO-20OCT2026
+          path: lab-results/cotejo-lalo-20oct2026.json
+          if-no-files-found: warn
