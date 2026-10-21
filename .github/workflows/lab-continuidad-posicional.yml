@@ -24,10 +24,14 @@ jobs:
           npx --yes tsx scripts/lab-ancla-rutas-test.ts
       - name: Probar memoria de posiciones PRE 2024 a 2026
         run: npx --yes tsx scripts/lab-continuidad-posicional.ts
+      - name: Auditar fechas ganadoras e intervalos pareados
+        run: npx --yes tsx scripts/lab-continuidad-diagnostico.ts
       - name: Guardar los cortes auditables
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: LAB-CONTINUIDAD-POSICIONAL
-          path: lab-results/continuidad-posicional-*.json
+          path: |
+            lab-results/continuidad-posicional-*.json
+            lab-results/continuidad-diagnostico-tres-anios.json
           if-no-files-found: warn
