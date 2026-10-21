@@ -7,7 +7,8 @@
  * intervalos son descriptivos y visibles por variante.
  */
 import {readFileSync,writeFileSync} from 'node:fs';
-const file='lab-results/aux-memoria-marcas-2026.json';
+const YEAR=process.env.LAB_YEAR==='2025'?'2025':'2026';
+const file='lab-results/aux-memoria-marcas-'+YEAR+'.json';
 const raw=JSON.parse(readFileSync(file,'utf-8'));
 type Method='AUX_MARCAS'|'AUX_DENSIDAD'|'AUX_RANDOM'|'LALO'|'LALO_RERANK_MARCAS';
 type Cut={date:string;turn:string;
@@ -56,10 +57,10 @@ const cases=cuts.flatMap(c=>c.winnerCases.map(x=>({...x,date:c.date,turn:c.turn}
  .filter(x=>x.rankAux!==null&&x.rankAux<=5)
  .map(x=>({date:x.date,turn:x.turn,head:x.head,family:x.family,
   auxRank:x.rankAux,laloRank:x.rankLalo,historicalRootEvents:x.markedRootCount}));
-const summary={test:'paired day-level uncertainty (retrospectivo)',
+const summary={year:YEAR,test:'paired day-level uncertainty (retrospectivo)',
  days:days.length,cuts:cuts.length,bootstrapReplications:reps,
  reference:'Los deltas en cabezas se interpretan como root marks menos control; >0 favorece memoria',
  methods:metrics,rootTop5Heads:cases,
  warning:'Se han comparado numerosos modelos en estas fechas; no interpretar P sin corrección global ni pruebas prospectivas.'};
 console.log('MEMORIA_ESTADISTICA',JSON.stringify(summary));
-writeFileSync('lab-results/aux-memoria-estadistica-2026.json',JSON.stringify(summary,null,2));
+writeFileSync('lab-results/aux-memoria-estadistica-'+YEAR+'.json',JSON.stringify(summary,null,2));
