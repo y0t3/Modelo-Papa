@@ -2,6 +2,9 @@ import React,{useEffect,useMemo,useState} from 'react';
 import {View,Text,Pressable,TextInput,StyleSheet} from 'react-native';
 import {JURS} from '../domain';
 import type {CabezasDia,Turno} from '../domain';
+import type {DailySheet} from '../sheet';
+import {buildAuxPostLedger,highlightAuxMarks,groupAuxMarks} from '../auxMarkLedger';
+import type {MarkKind} from '../auxMarkLedger';
 import {auxiliaryBoard,auxFamily,findAuxPaths,findAuxFamily,serializeAuxPath}
  from '../auxSantiagoNeuquen';
 import type {AuxiliaryHeads,AuxCell,AuxPath} from '../auxSantiagoNeuquen';
@@ -9,13 +12,16 @@ import type {LaloView} from '../motorLalo';
 import {useLaloTheme} from './LaloTheme';
 type SelectMode='exacta'|'familia';
 export default function AuxiliarySheetPanel({
- turn,aux,heads,view
-}:{turn:Turno;aux:AuxiliaryHeads|null;heads:CabezasDia|null;view:LaloView|null}){
+ turn,aux,heads,view,plus,date
+}:{turn:Turno;aux:AuxiliaryHeads|null;heads:CabezasDia|null;view:LaloView|null;
+ plus:DailySheet|null;date:string}){
  const {colors:c,kinds}=useLaloTheme();
  const [query,setQuery]=useState('');
  const [selection,setSelection]=useState<SelectMode>('familia');
  const [kind,setKind]=useState<2|3|4>(3);
- useEffect(()=>{setQuery('');setSelection('familia');setKind(3)},[turn]);
+ const [overview,setOverview]=useState(true);
+ const [enabled,setEnabled]=useState<Record<MarkKind,boolean>>({vt2:true,vt3:true,vt4:true});
+ useEffect(()=>{setQuery('');setSelection('familia');setKind(3);setOverview(true)},[turn]);
  const board=useMemo(()=>aux?auxiliaryBoard(aux,turn):null,[aux,turn]);
  const selected=useMemo(()=>{
   if(!board||!/^\d{2,4}$/.test(query))return {paths:[] as AuxPath[],
@@ -28,6 +34,11 @@ export default function AuxiliarySheetPanel({
   return {paths:p,family:query,
    cross:p.filter(path=>new Set(path.map(x=>x.source)).size>=2).length};
  },[board,query,selection]);
+ const ledger=useMemo(()=>aux&&heads&&plus?buildAuxPostLedger(date,aux,heads,plus,turn):null,
+  [date,aux,heads,plus,turn]);
+ const markedKinds=(['vt2','vt3','vt4'] as MarkKind[]).filter(k=>enabled[k]);
+ const overlay=useMemo(()=>ledger?highlightAuxMarks(ledger,markedKinds):{},
+  [ledger,enabled]);
  const selectedCells=useMemo(()=>new Map<string,number>(
   [...new Set(selected.paths.flatMap(path=>path.map(cell=>cell.row+':'+cell.col)))].map(k=>[
    k,selected.paths.filter(path=>path.some(c=>c.row+':'+c.col===k)).length])
@@ -60,16 +71,23 @@ export default function AuxiliarySheetPanel({
      const group=Math.floor(col/4);
      const enabled=visible.includes((['Previa','Primera','Matutino'] as const)[group]);
      const hot=selectedCells.get(row+':'+col)||0;
+     const multi=overview?overlay[row+':'+col]:null;
+     const active=overview?(multi?.routes||0)>0:hot>0;
+     const chosenColor=kinds['vt'+kind as MarkKind];
      return <View key={row+':'+col} style={[s.digit,{
-      backgroundColor:hot?kinds.vt3.fill:cell?c.cell:c.surfaceAlt,
-      borderColor:hot?kinds.vt3.line:col%4===0?c.accent:border,
-      borderWidth:hot?2:col%4===0?1.5:1,
+      backgroundColor:active&&!overview?chosenColor.fill:cell?c.cell:c.surfaceAlt,
+      borderColor:active?(overview?c.accent:chosenColor.line):col%4===0?c.accent:border,
+      borderWidth:active?2:col%4===0?1.5:1,
       opacity:enabled?1:0.4
      }]}>
-      <Text style={{fontSize:13,fontWeight:hot?'900':'700',
-       color:hot?kinds.vt3.text:cell?c.text:c.muted}}>
+      <Text style={{fontSize:13,fontWeight:active?'900':'700',
+       color:!overview&&active?chosenColor.text:cell?c.text:c.muted}}>
        {cell?.digit||'·'}
       </Text>
+      {overview&&multi?.kinds.length?<View style={s.marks}>
+       {(['vt2','vt3','vt4'] as MarkKind[]).filter(k=>multi.kinds.includes(k)).map(k=>
+        <View key={k} style={[s.bar,{backgroundColor:kinds[k].line}]}/>)}
+      </View>:null}
      </View>
     })}
    </View>)}
@@ -80,7 +98,64 @@ export default function AuxiliarySheetPanel({
     {board.cells.length} celdas válidas
    </Text>
    <View style={s.separator}/>
-   <Text style={[s.subtitle,textStyle]}>Seguir cifras o familia</Text>
+   <View style={s.wrap}>
+    <Pressable accessibilityRole="button" accessibilityState={{selected:overview}}
+     onPress={()=>setOverview(true)}
+     style={[s.chip,{backgroundColor:overview?c.accentFill:c.surfaceAlt,
+      borderColor:overview?c.accent:c.border}]}>
+     <Text style={[{fontWeight:'800'},textStyle]}>Todas las marcas ganadoras</Text>
+    </Pressable>
+    <Pressable accessibilityRole="button" accessibilityState={{selected:!overview}}
+     onPress={()=>setOverview(false)}
+     style={[s.chip,{backgroundColor:!overview?c.accentFill:c.surfaceAlt,
+      borderColor:!overview?c.accent:c.border}]}>
+     <Text style={[{fontWeight:'800'},textStyle]}>Seguir familia</Text>
+    </Pressable>
+   </View>
+   {overview?<View style={{gap:6}}>
+    <Text style={[s.hint,mutedStyle]}>
+     POST: únicamente cabezas ya sorteadas hasta {turn}. Cada raya de color indica
+     una modalidad con recorrido exacto; no se pintan candidatos aún no salidos.
+    </Text>
+    <View style={s.wrap}>{(['vt2','vt3','vt4'] as MarkKind[]).map(k=>
+     <Pressable key={k} accessibilityRole="checkbox"
+      accessibilityState={{checked:enabled[k]}}
+      onPress={()=>setEnabled(prev=>({...prev,[k]:!prev[k]}))}
+      style={[s.chip,{borderColor:enabled[k]?kinds[k].line:c.border,
+       backgroundColor:enabled[k]?kinds[k].fill:c.surfaceAlt}]}>
+      <Text style={{color:enabled[k]?kinds[k].text:c.subtext,fontWeight:'800'}}>
+       {enabled[k]?'●':'○'} {k.toUpperCase()}
+      </Text>
+     </Pressable>)}</View>
+    {ledger?<>
+     <Text style={[s.subtitle,textStyle]}>Cabezas comprobadas y rutas en ambas hojas</Text>
+     {(['vt2','vt3','vt4'] as MarkKind[]).filter(k=>enabled[k]).map(k=>{
+      const ss=ledger.summary[k],headRecords=groupAuxMarks(ledger,k);
+      return <View key={k} style={{gap:4}}>
+       <Text style={{color:kinds[k].line,fontWeight:'900'}}>
+        {k.toUpperCase()} · +11 {ss.formablePlus11} · auxiliar {ss.formableAux}
+        {' · '}solo auxiliar {ss.onlyAux} · ambas {ss.both}
+       </Text>
+       <View style={s.wrap}>{headRecords.map(item=>
+        <Pressable key={item.key} accessibilityRole="button"
+         onPress={()=>{setKind(Number(k.slice(-1)) as 2|3|4);
+          select(item.exact,'exacta');setOverview(false)}}
+         style={[s.chip,{backgroundColor:c.surfaceAlt,borderColor:kinds[k].line}]}>
+         <Text style={[{fontSize:11,fontWeight:'700'},textStyle]}>
+          {item.turn} {item.jur} {item.head} · {item.paths} ruta(s)
+          {item.crossing?' ↗':''}{item.alsoPlus?' +11':''}
+         </Text>
+        </Pressable>)}</View>
+      </View>;
+     })}
+     <Text style={[s.subtitle,textStyle]}>Cómo creció la hoja durante el día</Text>
+     {ledger.stages.map(st=><Text key={st.target} style={[s.path,mutedStyle]}>
+      Antes de {st.target}: {st.auxCells} cifras ·
+      {markedKinds.map(k=>' '+k.toUpperCase()+' nuevas '+st.firstAvailable[k]+
+       ', segunda fuente '+st.newSecondSource[k]).join(' ·')}
+     </Text>)}
+    </>:null}
+   </View>:<><Text style={[s.subtitle,textStyle]}>Seguir cifras o familia</Text>
    <View style={s.wrap}>{([2,3,4] as const).map(n=><Pressable
      key={n} accessibilityRole="button" accessibilityState={{selected:kind===n}}
      onPress={()=>{setKind(n);setQuery('');setSelection(n===4?'exacta':'familia')}}
@@ -102,7 +177,7 @@ export default function AuxiliarySheetPanel({
     const parts=f.family.split('/');
     const supported=board&&findAuxFamily(board,parts[0]).paths.length>0;
     return <Pressable accessibilityRole="button" key={f.family}
-     onPress={()=>{setKind(3);select(parts[0],'familia')}}
+     onPress={()=>{setKind(3);select(parts[0],'familia');setOverview(false)}}
      style={[s.chip,{borderColor:supported?kinds.vt3.line:c.border,
       backgroundColor:supported?kinds.vt3.fill:c.surfaceAlt}]}>
      <Text style={{color:c.text,fontWeight:'700',fontSize:11}}>
@@ -113,7 +188,7 @@ export default function AuxiliarySheetPanel({
    <Text style={[s.subtitle,textStyle]}>Cabezas publicadas del turno · buscar recorrido exacto</Text>
    <View style={s.wrap}>{targetHeads.map(x=><Pressable
     accessibilityRole="button" key={x.jur}
-    onPress={()=>select(x.head.slice(-kind),'exacta')}
+    onPress={()=>{select(x.head.slice(-kind),'exacta');setOverview(false)}}
     style={[s.chip,{borderColor:c.border,backgroundColor:c.surfaceAlt}]}>
     <Text style={[{fontSize:11,fontWeight:'700'},textStyle]}>
      {x.jur} {x.head}
@@ -134,9 +209,9 @@ export default function AuxiliarySheetPanel({
     </Text>:null}
    </View>:null}
    <Text style={[s.hint,mutedStyle]}>
-    Una marca física no es un pronóstico acertado ni equivale a una raíz ganadora.
-    La comparación con +11 se mantiene independiente.
-   </Text>
+    Los recorridos elegidos son una consulta de figuras posibles, no marcas ganadoras
+    si no coinciden exactamente con cabezas sorteadas.
+   </Text></>}
   </>}
  </View>;
 }
@@ -157,5 +232,7 @@ const s=StyleSheet.create({
  chip:{padding:7,borderWidth:1,borderRadius:8,marginRight:5,marginBottom:5},
  wrap:{flexDirection:'row',flexWrap:'wrap'},
  detail:{borderWidth:1,borderRadius:9,padding:9,gap:3},
- path:{fontSize:10,lineHeight:15}
+ path:{fontSize:10,lineHeight:15},
+ marks:{position:'absolute',bottom:1,left:1,right:1,flexDirection:'row',gap:1,height:3},
+ bar:{flex:1,height:3,borderRadius:2}
 });
