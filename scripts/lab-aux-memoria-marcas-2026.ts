@@ -197,6 +197,24 @@ async function main(){
     hits,winnerCases,
     controlRandomTop5:controlRanks.map(names=>topNumbers(names,observed).top5)};
    cuts.push(cut);
+   if(date==='2026-10-20'&&turn==='Nocturno'){
+    const witness=mem.get('697/796');
+    console.log('MEMORIA_TESTIGO_697',JSON.stringify({
+     date,turn,winningHead:'2697',family:'697/796',
+     rank:candidates.AUX_MARCAS.indexOf('697/796')+1,
+     roots:witness?.rootIds.map(id=>{
+      const older=prevData.flatMap(x=>x.day.marks.map(m=>({
+       ...m,referenceDate:x.day.date,referencePeriod:x.period}))).find(x=>x.id===id);
+      return older?{referenceDate:older.referenceDate,period:older.referencePeriod,
+       oldTargetTurn:older.turn,jur:older.jur,oldHead:older.head,
+       oldEnding:older.head.slice(-3),originalPaths:older.paths.length}: {id};
+     }),
+     currentPathWitnesses:witness?.currentPaths
+      .filter(p=>p.map(c=>c.digit).join('')==='697'||p.map(c=>c.digit).join('')==='796')
+      .slice(0,12).map(p=>({value:p.map(c=>c.digit).join(''),
+       route:p.map(c=>[c.row,c.col,c.digit,c.source])}))
+    }));
+   }
    if(date==='2026-10-20')console.log('MEMORIA_20OCT',JSON.stringify({
     turn,availableCells:cut.availableCells,historical:cut.historical,
     memoryFamilies:cut.memoryFamilies,
