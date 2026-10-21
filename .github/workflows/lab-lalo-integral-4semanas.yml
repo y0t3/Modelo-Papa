@@ -24,10 +24,14 @@ jobs:
           npx --yes tsx scripts/lab-integral-test.ts
       - name: Comparar cuatro semanas completas PRE 2026
         run: npx --yes tsx scripts/lab-integral-4semanas.ts
+      - name: Auditar aciertos ganados y perdidos por modalidad
+        run: npx --yes tsx scripts/lab-integral-diagnostico.ts
       - name: Guardar resultados
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: LAB-MODELO-LALO-INTEGRAL-4SEMANAS
-          path: lab-results/modelo-lalo-integral-4semanas.json
+          path: |
+            lab-results/modelo-lalo-integral-4semanas.json
+            lab-results/modelo-lalo-integral-diagnostico.json
           if-no-files-found: warn
