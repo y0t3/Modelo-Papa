@@ -26,7 +26,7 @@ import {
 } from '../src/auxWinningMemory';
 import type {AuxMemoryDay,AuxTransfer} from '../src/auxWinningMemory';
 
-const YEAR=process.env.LAB_YEAR==='2025'?'2025':'2026';
+const YEAR=process.env.LAB_YEAR==='2024'?'2024':process.env.LAB_YEAR==='2025'?'2025':'2026';
 const MIN_DAY=YEAR+'-07-15',MAX_DAY=YEAR+'-10-20',FIRST=YEAR+'-08-01';
 const valid=(s:string)=>/^\d{4}$/.test(s);
 const range=(start:string,end:string)=>{
