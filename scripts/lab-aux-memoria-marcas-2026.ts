@@ -147,8 +147,14 @@ async function main(){
    const available=new Map(collectAuxFamilies(board,3).map(x=>[x.family,x]));
    const mem=replayMemory(board,prevData);
    const memoryRanking=sortMemoryRanks(date,turn,mem,'ROOTS');
-   const densityRank=sortMemoryRanks(date,turn,mem,'DENSITY');
-   const randomRank=sortMemoryRanks(date,turn,mem,'RANDOM');
+   // Controles de geometría sin memoria: universo completo de familias
+   // físicamente presentes. NO restringir controles a las trasladas.
+   const physical=new Map([...available].map(([family,x])=>[family,{
+    family,currentPaths:x.paths,rootIds:[],d1Events:0,d7Events:0,
+    fromPastMarkedPaths:0,crossTurnPaths:x.crossTurnPaths
+   }]));
+   const densityRank=sortMemoryRanks(date,turn,physical,'DENSITY');
+   const randomRank=sortMemoryRanks(date,turn,physical,'RANDOM');
    const official=buildMotorLalo(pre,date,turn,hist).ranks.vt3.map(x=>x.family);
    const controlRanks=Array.from({length:9},(_,seed)=>{
     const roots=replayMemory(board,prevData,seed);
