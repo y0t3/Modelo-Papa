@@ -1,6 +1,6 @@
 # Modelo Lalo · estudio marginal Top1–Top6 en VT2/VT3/VT4
 
-**21/10/2026 · rama experimental** \`lab/marginal-top1-top6-21oct2026\`.
+**21/10/2026 · rama experimental** `lab/marginal-top1-top6-21oct2026`.
 **Estado: ejecución correcta y auditada. Modelo oficial MV1 y APK sin cambios.**
 
 ## Pregunta
@@ -20,8 +20,8 @@ Esto reduce la exposición VT4 del lector auxiliar respecto al backtest previo y
 - Los resultados de 2024, 2025 y 2026, **del 1 de agosto al 20 de octubre**, 69 jornadas por año; cada una PRE reconstruida en su propio día. Fuente oficial de la app Vivitusuerte y mapeo corregido de Santiago/Neuquén.
 - **Primera a Nocturno** para una comparación igualitaria: Previa carece todavía de tablero auxiliar. **276 cortes por año; 828 cortes totales; 4.507 cabezas de destino** de las seis jurisdicciones, 1.503/1.502/1.502 por año.
 - Cada **familia** es una unidad de ranking, pero una familia puede cubrir dos **terminaciones exactas** o una sola si palíndroma. Se eliminan duplicados.
-- **Apuesta hipotética de control**: apostar exactamente cada terminación seleccionada en cada jurisdicción con sorteo publicado en el corte, **solo sobre la primera cabeza**, una unidad por terminación×jurisdicción. Por tanto, \`apuestas-unidad = Σ(k números exactos únicos por corte × jurisdicciones disponibles)\`. **No representa dinero realmente jugado.**
-- Esperanza bajo n cifras uniformes: \`apuestas-unidad / 10^n\`. Es un control fijo por exposición, no tasa de éxito inferida.
+- **Apuesta hipotética de control**: apostar exactamente cada terminación seleccionada en cada jurisdicción con sorteo publicado en el corte, **solo sobre la primera cabeza**, una unidad por terminación×jurisdicción. Por tanto, `apuestas-unidad = Σ(k números exactos únicos por corte × jurisdicciones disponibles)`. **No representa dinero realmente jugado.**
+- Esperanza bajo n cifras uniformes: `apuestas-unidad / 10^n`. Es un control fijo por exposición, no tasa de éxito inferida.
 - Se computan **Top1, Top2, Top3, Top4, Top5 y Top6**, con su acierto marginal por puesto, número adicional de terminaciones, apuestas-unidad y comparación contra azar uniforme.
 - Una cabeza puede acertar VT2 y VT3 simultáneamente; esto es dos *eventos por modalidad*, pero **una sola cabeza distinta** cubierta. Un evento VT2 solo significaría premio cobrado si se hubiera apostado explícitamente esa terminación VT2.
 
@@ -68,7 +68,7 @@ Esto reduce la exposición VT4 del lector auxiliar respecto al backtest previo y
 | VT4 Lalo | 24.203 | 1 | 40.141 | 3 |
 | VT4 auxiliar | 13.481 | 0 | 21.415 | 3 |
 
-El **mínimo multiplicador de premio bruto para cubrir costo** en esta simulación simplificada (mismas unidades por jurisdicción, premio pagado sobre la primera cabeza, sin impuestos y cero comisiones) sería \`apuestas-unidad / hits\`.
+El **mínimo multiplicador de premio bruto para cubrir costo** en esta simulación simplificada (mismas unidades por jurisdicción, premio pagado sobre la primera cabeza, sin impuestos y cero comisiones) sería `apuestas-unidad / hits`.
 
 Ejemplos 2026:
 
@@ -110,6 +110,6 @@ Comparación retrospectiva de asignaciones predefinidas para 2026. Se mantienen 
 
 ## Reproducibilidad
 
-- Generador de replays triples: \`scripts/lab-lalo-triple-modalidad.ts\`
-- Evaluación marginal auditada: \`scripts/lab-lalo-marginal-tops.ts\`
+- Generador de replays triples: `scripts/lab-lalo-triple-modalidad.ts`
+- Evaluación marginal auditada: `scripts/lab-lalo-marginal-tops.ts`
 - [Ejecución correcta con replay y auditoría](https://github.com/y0t3/Modelo-Papa/actions/runs/39652663071).
