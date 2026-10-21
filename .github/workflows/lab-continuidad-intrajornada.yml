@@ -1,0 +1,43 @@
+name: LAB Continuidad Intrajornada
+on:
+  push:
+    branches: [lab/continuidad-intrajornada-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Dependencias
+        run: npm install
+      - name: Tipos, contactos y no fuga temporal
+        run: |
+          npx tsc --noEmit
+          npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+          npx --yes tsx scripts/lab-intrajornada-test.ts
+      - name: Replicar continuidad intrajornada 2024
+        run: npx --yes tsx scripts/lab-intrajornada-historica.ts
+        env:
+          LAB_YEAR: '2024'
+      - name: Replicar continuidad intrajornada 2025
+        run: npx --yes tsx scripts/lab-intrajornada-historica.ts
+        env:
+          LAB_YEAR: '2025'
+      - name: Evaluar continuidad intrajornada 2026
+        run: npx --yes tsx scripts/lab-intrajornada-historica.ts
+        env:
+          LAB_YEAR: '2026'
+      - name: Archivar datos completos
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: LAB-CONTINUIDAD-INTRAJORNADA
+          path: lab-results/intrajornada-*.json
+          if-no-files-found: warn
