@@ -125,7 +125,7 @@ function collectCandidates(board:ReturnType<typeof auxiliaryBoard>,
     for(const projected of projectAuxShape(board,path))
      add(projected,mark.id,period);
  return new Map([...groups].map(([family,g])=>[family,{
-  family,values:numbersInFamily(family),paths:[...g.paths.values()],
+  family,values:kind===4?[...new Set([...g.paths.values()].map(p=>p.map(c=>c.digit).join('')))]:numbersInFamily(family),paths:[...g.paths.values()],
   blocks:new Set([...g.paths.values()].map(pathBlock)).size,
   crossing:[...g.paths.values()].some(p=>new Set(p.map(c=>c.source)).size>1),
   rootEvents:g.rootEvents.size,d1:g.d1.size,d7:g.d7.size
