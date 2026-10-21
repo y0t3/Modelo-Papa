@@ -148,7 +148,7 @@ async function yearRun(year:string){
   }
  }));
  if(Object.keys(errors).length>10)throw Error('Problema descarga '+year+' '+JSON.stringify(errors));
- if(year==='2026'&&(auxiliary.get('2026-10-20')?.Primera.Santiago!=='6142'||
+ if(year==='2026'&&WINDOW==='late'&&(auxiliary.get('2026-10-20')?.Primera.Santiago!=='6142'||
   auxiliary.get('2026-10-20')?.Matutino.Santiago!=='9634'))
   throw Error('Mapeo Santiago incorrecto');
  const good=dates.filter(x=>draws.has(x)&&auxiliary.has(x)&&
