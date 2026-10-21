@@ -27,9 +27,10 @@ import {fetchAuxiliaryHeads} from '../src/auxSantiagoSource';
 import type {AuxSourceObservation} from '../src/auxSantiagoSource';
 import {hasDrawResults,hasNocturnoBase} from '../src/drawHistory';
 
-const DATES=['02','03','05','06','07','08','09','10','12','13','14','15','16','17','19','20']
- .map(d=>'2026-10-'+d);
-const CONTROL_FROM='2026-10-12',TARGET='2026-10-20';
+const DATES:string[]=[];
+for(let ms=Date.parse('2026-08-20T12:00:00Z');ms<=Date.parse('2026-10-20T12:00:00Z');ms+=86400000)
+ DATES.push(new Date(ms).toISOString().slice(0,10));
+const CONTROL_FROM='2026-09-01',TARGET='2026-10-20';
 const valid=(s:string)=>/^\d{4}$/.test(s);
 const rev=(s:string)=>[...s].reverse().join('');
 const coord=(c:{row:number;col:number})=>c.row+':'+c.col;
@@ -94,11 +95,15 @@ async function main(){
  const fetched=new Map<string,CabezasDia>();
  const aux=new Map<string,AuxSourceObservation>();
  const errors:Record<string,string>={};
- await Promise.all(DATES.map(async date=>{
-  try{
-   const [base,other]=await Promise.all([descargarCabezas(date,true),fetchAuxiliaryHeads(date)]);
-   fetched.set(date,base);aux.set(date,other);
-  }catch(e){errors[date]=String(e);}
+ let pointer=0;
+ await Promise.all(Array.from({length:8},async()=>{
+  while(pointer<DATES.length){
+   const date=DATES[pointer++];
+   try{
+    const [base,other]=await Promise.all([descargarCabezas(date,true),fetchAuxiliaryHeads(date)]);
+    fetched.set(date,base);aux.set(date,other);
+   }catch(e){errors[date]=String(e);}
+  }
  }));
  const good=DATES.filter(d=>fetched.has(d)&&aux.has(d)&&
   hasDrawResults(fetched.get(d)!)&&hasNocturnoBase(fetched.get(d)!));
@@ -199,6 +204,9 @@ async function main(){
  function laloRank(names:string[],f:string){const n=names.indexOf(f);return n<0?null:n+1}
  const dates=[...new Set(cuts.map(c=>c.date))];
  const byDay=dates.map(date=>({date,stats:stat(cuts.filter(c=>c.date===date))}));
+ const recent=cuts.filter(c=>c.date>='2026-10-12');
+ const september=cuts.filter(c=>c.date<'2026-10-01');
+ const october=cuts.filter(c=>c.date>='2026-10-01');
  const report={name:'Segunda Hoja Santiago/Neuquen · Lalo · laboratorio 21oct',
   title:'Dos filas, hasta tres turnos reales, sin +11, contacto entre columnas permitido',
   validation:'PRE retrospectivo sin datos del turno objetivo; no equivale a Tops históricos sellados',
@@ -206,9 +214,12 @@ async function main(){
   caveat:'Santiago no registra Primera en fuente contrastada: momento_1 de ID10 es Matutina. Se deja blanco. Nunca adelantar Matutino a Primera.',
   source20Oct:oct20,errors,byDay,
   total:stat(cuts),lastDay:stat(cuts.filter(c=>c.date===TARGET)),
+  september:stat(september),october:stat(october),recent12to20:stat(recent),
   cuts};
  console.log('AUX_RESUMEN',JSON.stringify({
-  total:report.total,lastDay:report.lastDay,byDay:report.byDay,
+  total:report.total,lastDay:report.lastDay,
+  september:report.september,october:report.october,
+  recent12to20:report.recent12to20,byDay:report.byDay,
   missingHeads:errors,source20:oct20.heads
  }));
  mkdirSync('lab-results',{recursive:true});
