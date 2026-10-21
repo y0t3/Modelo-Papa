@@ -123,7 +123,9 @@ export default function AuxiliarySheetPanel({
    </View>
    {timeline&&aux&&heads&&plus?
     <WithinDayFamilyTimeline date={date} through={turn} draws={heads}
-     plus={plus} aux={aux} kind={kind} onKindChange={setKind}
+     plus={plus} aux={aux} kind={kind} onKindChange={n=>{
+      setKind(n);setQuery('');setSelection(n===4?'exacta':'familia')
+     }}
      onFamily={(value,n)=>{setKind(n);select(value,n===4?'exacta':'familia')}}/>
    :overview?<View style={{gap:6}}>
     <Text style={[s.hint,mutedStyle]}>
