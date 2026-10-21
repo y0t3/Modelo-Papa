@@ -198,7 +198,7 @@ const out={hypothesis:'Mismo Top3 y límite de terminaciones exactas que MV1, si
 mkdirSync('lab-results',{recursive:true});
 writeFileSync('lab-results/lalo-top3-doble-hoja.json',JSON.stringify(out,null,2));
 for(const data of byYear)console.log('PUENTE_ANO',JSON.stringify({year:data.year,
- results:data.modalidades.map(x=>({kind:x.kind,
+ results:data.modalities.map(x=>({kind:x.kind,
   methods:x.byMethod.map(m=>({method:m.method,open:m.open,budget:m.budget}))}))}));
 console.log('PUENTE_TOTAL',JSON.stringify({results:global,uncertainty:confidence}));
 console.log('PUENTE_20OCT',JSON.stringify(day20));
