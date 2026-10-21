@@ -48,7 +48,7 @@ for(let i=1;i<good.length;i++){
  const sheet=buildSheet(data.get(date)!,data.get(good[i-1])!);
  const ledger=buildAuxPostLedger(date,aux.get(date)!,data.get(date)!,sheet,'Nocturno');
  for(const kind of KINDS)for(const key of Object.keys(total[kind]))
-  total[kind][key]+=ledger.summary[kind][key]||0;
+  total[kind][key]+=(ledger.summary[kind] as unknown as Record<string,number>)[key]||0;
  for(const s of ledger.stages){
   const v=byTurn[s.target];v.cutCount++;
   v.postedHeads+=ledger.marks.filter(m=>m.turn===s.target).length;
