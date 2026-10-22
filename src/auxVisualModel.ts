@@ -9,7 +9,8 @@ import {dailyHeadOwnerId} from './panoramaModel';
 export type AuxVisualKind=MarkKind;
 export type AuxVisualAntecedent={
  id:string;date:string;period:'D−1'|'D−7';turn:Turno;jur:string;
- head:string;reading:string;path:AuxPath;relation:string
+ head:string;reading:string;path:AuxPath;relation:string;
+ board:AuxiliaryBoard|null
 };
 export type AuxVisualRoute={
  id:string;ownerId:string;kind:AuxVisualKind;cells:AuxPath;
