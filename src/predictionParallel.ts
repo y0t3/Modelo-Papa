@@ -1,84 +1,88 @@
 /**
- * Presentador PURO para dos motores independientes. Sólo usa Tops PRE y
- * comprueba resultados publicados POST (no altera ni reordena candidatos).
+ * Presentador PURO: MV1 (solo +11) vs AUX (solo Santiago–Neuquén).
+ * Comparador de familias coincidentes SIN crear nuevos candidatos
+ * ni alterar ninguno de los dos rankings PRE.
  */
 import type {LaloView,LaloKind} from './motorLalo';
-import type {IntegralPrediction,IntegralKind} from './motorLaloIntegral';
-import type {Turno} from './domain';
-export type ModelChoice='lalo'|'integral';
+import type {AuxiliarView} from './motorLaloAuxiliar';
+import type {IntegralKind} from './motorLaloIntegral';
+export type ModelChoice='lalo'|'auxiliar';
 export type HeadEvent={jur:string;head:string};
 export type RankedFamily={
  kind:LaloKind;family:string;key:string;rank:number;values:string[];
- source:string;details:string[];
- canFocusPlus:boolean
+ source:string;details:string[];canFocusPlus:boolean
 };
 const kinds:LaloKind[]=['vt2','vt3','vt4'];
-const intKind=(k:LaloKind)=>Number(k.slice(-1)) as IntegralKind;
-export function familyKey(label:string):string{
- return [...new Set(label.split('/'))].sort().join('/');
+const asN=(kind:LaloKind)=>Number(kind.slice(-1)) as IntegralKind;
+export function familyKey(family:string):string{
+ return [...new Set(family.split('/'))].sort().join('/');
 }
-function valuesFromLabel(label:string):string[]{
+function labelMembers(label:string):string[]{
  return [...new Set(label.split('/'))].sort();
 }
-export function rowsForModel(
- model:ModelChoice,kind:LaloKind,lalo:LaloView|null,
- integral:IntegralPrediction|null
-):RankedFamily[]{
- if(model==='lalo')return (lalo?.ranks[kind]||[]).map(x=>({
-  kind,family:x.family,key:familyKey(x.family),rank:x.rank,
-  values:kind==='vt4'?[...new Set(x.paths.map(p=>p.value))]:valuesFromLabel(x.family),
-  source:'Lalo MV1 (+11)',
+export function rowsForModel(model:ModelChoice,kind:LaloKind,
+ lalo:LaloView|null,aux:AuxiliarView|null):RankedFamily[]{
+ if(model==='lalo')return (lalo?.ranks[kind]||[]).map(f=>({
+  kind,family:f.family,key:familyKey(f.family),rank:f.rank,
+  values:kind==='vt4'?[...new Set(f.paths.map(p=>p.value))]:labelMembers(f.family),
+  source:'Modelo Lalo · +11',
   details:[
-   'Fuentes +11: '+[...new Set(x.paths.map(p=>p.sourceId))].join(', '),
-   'Antecedentes D−1: '+x.d1Roots+' · D−7: '+x.d7Roots,
-   x.rationale
+   'Fuentes +11: '+[...new Set(f.paths.map(p=>p.sourceId))].join(', '),
+   'Antecedentes D−1: '+f.d1Roots+' · D−7: '+f.d7Roots,
+   f.rationale
   ],canFocusPlus:true
  }));
- return (integral?.ranks[intKind(kind)]||[]).map(x=>({
-  kind,family:x.family,key:familyKey(x.family),rank:x.rank,values:x.values,
-  source:x.evidence==='DOS_HOJAS'?'Ambas hojas':
-   x.evidence==='AUX'?'Santiago–Neuquén':'Hoja +11',
+ return (aux?.ranks[asN(kind)]||[]).map(f=>({
+  kind,family:f.family,key:familyKey(f.family),rank:f.rank,
+  values:f.values,source:'Lalo Auxiliar · Santiago–Neuquén',
   details:[
-   'Lalo #'+(x.laloRank??'—')+' · Auxiliar #'+(x.auxRank??'—'),
-   'Fuentes +11: '+(x.plus11Sources.join(', ')||'ninguna'),
-   'Fuentes AUX: '+(x.auxSources.join(', ')||'ninguna')+
-    (x.auxCrossTurn?' · con cruce legal de turnos':''),
-   'Raíces ganadoras históricas AUX: '+x.rootEvents+
-    ' (D−1: '+x.d1Roots+'; D−7: '+x.d7Roots+')',
-   'Terminaciones exactas: '+x.values.join(' / ')
-  ],canFocusPlus:x.laloRank!==null
+   'Hoja auxiliar RAW, sin +11',
+   'Fuentes AUX: '+(f.sources.join(', ')||'ninguna')+
+    (f.crossing?' · recorrido con cruce legal entre turnos':''),
+   'Raíces ganadoras históricas: '+f.roots+
+    ' · D−1: '+f.d1+' · D−7: '+f.d7,
+   'Recorridos físicos válidos: '+f.paths,
+   ...(kind==='vt4'&&f.mother?['Madre VT3 auxiliar: '+f.mother]:[]),
+   'Terminaciones físicas: '+f.values.join(' / ')
+  ],canFocusPlus:false
  }));
 }
-export function publishedHeadEvents(heads:HeadEvent[]):HeadEvent[]{
- return heads.filter(x=>/^[0-9]{4}$/.test(x.head));
-}
+export const publishedHeadEvents=(heads:HeadEvent[])=>heads.filter(x=>/^\d{4}$/.test(x.head));
 export function hitsForFamily(f:RankedFamily,heads:HeadEvent[]):HeadEvent[]{
- const n=intKind(f.kind),allowed=new Set(f.values);
- return publishedHeadEvents(heads).filter(h=>
-  allowed.has(h.head.slice(-n)));
+ const n=asN(f.kind),values=new Set(f.values);
+ return publishedHeadEvents(heads).filter(x=>values.has(x.head.slice(-n)));
 }
-export function comparePrediction(lalo:LaloView|null,
- integral:IntegralPrediction|null,heads:HeadEvent[],limit:3|5|10){
+export function comparePrediction(lalo:LaloView|null,aux:AuxiliarView|null,
+ heads:HeadEvent[],limit:3|5|10){
  return kinds.map(kind=>{
-  const mv=rowsForModel('lalo',kind,lalo,integral).slice(0,limit);
-  const it=rowsForModel('integral',kind,lalo,integral).slice(0,limit);
-  const original=new Map(mv.map(f=>[f.key,f]));
-  const combined=new Map(it.map(f=>[f.key,f]));
-  const both=[...original].filter(([key])=>combined.has(key))
-   .map(([key,f])=>({family:f.family,lalo:f.rank,
-    integral:combined.get(key)!.rank,heads:hitsForFamily(f,heads)}));
-  const onlyOriginal=[...original].filter(([key])=>!combined.has(key))
-   .map(([,f])=>f);
-  const onlyIntegral=[...combined].filter(([key])=>!original.has(key))
-   .map(([,f])=>f);
-  const winning=publishedHeadEvents(heads).map(head=>{
-   const ending=head.head.slice(-intKind(kind));
-   const l=mv.find(f=>f.values.includes(ending));
-   const i=it.find(f=>f.values.includes(ending));
-   return {...head,lalo:l?.rank||null,integral:i?.rank||null,
-    kind};
-  }).filter(h=>h.lalo!==null||h.integral!==null);
-  return {kind,shared:both,onlyOriginal,onlyIntegral,winning,
-   laloCount:mv.length,integralCount:it.length};
+  const l=rowsForModel('lalo',kind,lalo,aux).slice(0,limit);
+  const a=rowsForModel('auxiliar',kind,lalo,aux).slice(0,limit);
+  const left=new Map(l.map(f=>[f.key,f]));
+  const right=new Map(a.map(f=>[f.key,f]));
+  // El Top general de coincidencias es la INTERSECCIÓN de los Tops
+  // independientes. No se inventa una tercera predicción.
+  const shared=[...left].filter(([key])=>right.has(key))
+   .map(([key,f])=>{
+    const auxFamily=right.get(key)!;
+    const matchingExact=new Set(auxFamily.values);
+    const commonValues=f.values.filter(v=>matchingExact.has(v));
+    const bothHeads=publishedHeadEvents(heads).filter(h=>
+     commonValues.includes(h.head.slice(-asN(kind))));
+    return {family:f.family,lalo:f.rank,auxiliar:auxFamily.rank,
+     valuesInBoth:commonValues,heads:bothHeads};
+   })
+   .sort((x,y)=>(x.lalo+x.auxiliar)-(y.lalo+y.auxiliar)||
+    Math.max(x.lalo,x.auxiliar)-Math.max(y.lalo,y.auxiliar)||
+    familyKey(x.family).localeCompare(familyKey(y.family)));
+  const onlyOriginal=l.filter(f=>!right.has(f.key));
+  const onlyAuxiliar=a.filter(f=>!left.has(f.key));
+  const winning=publishedHeadEvents(heads).map(h=>{
+   const value=h.head.slice(-asN(kind));
+   const lf=l.find(f=>f.values.includes(value));
+   const af=a.find(f=>f.values.includes(value));
+   return {...h,kind,lalo:lf?.rank||null,auxiliar:af?.rank||null};
+  }).filter(h=>h.lalo!==null||h.auxiliar!==null);
+  return {kind,shared,onlyOriginal,onlyAuxiliar,winning,
+   laloCount:l.length,auxiliarCount:a.length};
  });
 }
