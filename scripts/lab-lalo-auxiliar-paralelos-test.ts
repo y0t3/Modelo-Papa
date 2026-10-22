@@ -19,13 +19,14 @@ assert(old.events[3].some(x=>x.head==='2697'));
 const pred=buildMotorLaloAuxiliar('2026-10-20','Nocturno',raw,refs);
 assert(pred.ranks[3].length>0);
 assert(pred.ranks[2].length>0);
-assert.equal(buildMotorLaloAuxiliar('2026-10-20','Previa',raw,refs).ranks[3].length,0);
+assert(buildMotorLaloAuxiliar('2026-10-20','Previa',raw,refs).ranks[3].length>0,
+ 'La AUX de AYER ya puede generar candidatos para Previa');
 const altered=structuredClone(raw);altered.Matutino.Santiago='9999';
 altered.Matutino.Neuquen='9999';
 const p1=buildMotorLaloAuxiliar('2026-10-20','Matutino',raw,refs);
 const p2=buildMotorLaloAuxiliar('2026-10-20','Matutino',altered,refs);
-assert.deepEqual(p1.ranks,p2.ranks,
- 'El PRE de Matutino no incluye la cabeza Matutina auxiliar');
+assert.notDeepEqual(p1.ranks,p2.ranks,
+ 'Matutino de AYER ya interviene en la hoja PRE de hoy');
 assert.throws(()=>buildMotorLaloAuxiliar('2026-10-20','Nocturno',raw,
  [{...refs[0],date:'2026-10-20'}]),/Fuga temporal/);
 for(const n of [2,3,4] as const){

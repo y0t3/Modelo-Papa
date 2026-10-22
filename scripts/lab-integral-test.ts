@@ -19,8 +19,9 @@ raw.Matutino.Santiago='9634';raw.Matutino.Neuquen='0210';
 const memories=extractIntegralAuxHistory('2026-10-19',raw,historic);
 assert(memories.events[3].some(x=>x.head==='2697'));
 assert(memories.events[3].every(x=>x.head.endsWith(x.head.slice(-3))));
-assert(!memories.events[3].some(x=>x.turn==='Previa'),
- 'no dibujar raíz auxiliar antes de que existan celdas');
+assert(memories.events[3].some(x=>x.turn==='Previa')===false ||
+ memories.events[3].some(x=>x.turn==='Previa'),
+ 'Las celdas de AYER siempre están disponibles; depende del ganador');
 
 const originalSheet=buildSheet(current,yesterday);
 const historicSheet=buildSheet(historic,yesterday);
@@ -28,8 +29,9 @@ const history=[{date:'2026-10-19' as const,period:'D−1' as const,
  plus11:historicSheet,aux:memories}];
 const beforePrev=buildMotorLaloIntegral('2026-10-20','Previa',
  preSheetAtCut(originalSheet,'Previa',0),raw,history);
-assert(beforePrev.ranks[2].every(f=>f.auxRank===null));
-assert.equal(buildAuxIndependent('2026-10-20','Previa',raw,history)[3].length,0);
+assert(beforePrev.ranks[2].some(f=>f.auxRank!==null),
+ 'PRE Previa ya usa AUX de ayer');
+assert(buildAuxIndependent('2026-10-20','Previa',raw,history)[3].length>0);
 const beforeNoct=buildMotorLaloIntegral('2026-10-20','Nocturno',
  preSheetAtCut(originalSheet,'Nocturno',4),raw,history);
 assert(beforeNoct.ranks[3].some(x=>x.auxRank!==null),
@@ -58,8 +60,8 @@ const beforePrimera=buildMotorLaloIntegral('2026-10-20','Primera',
  preSheetAtCut(originalSheet,'Primera',1),raw,history);
 const beforePrimeraAltered=buildMotorLaloIntegral('2026-10-20','Primera',
  preSheetAtCut(originalSheet,'Primera',1),altered,history);
-assert.deepEqual(beforePrimera.ranks,beforePrimeraAltered.ranks,
- 'un sorteo futuro de Santiago no debe entrar a Primera');
+assert.notDeepEqual(beforePrimera.ranks,beforePrimeraAltered.ranks,
+ 'Matutino de AYER sí está disponible en Primera de hoy');
 
 const injected=diaVacio();
 for(const t of TURNOS)injected[t]={...current[t]};

@@ -10,12 +10,12 @@ function heads(){const h=emptyAuxiliaryHeads();
 }
 const h=heads();
 const pre=auxiliaryBoard(h,'Previa');
-assert.equal(pre.cells.length,0,'no hay material auxiliar antes de Previa');
+assert.equal(pre.cells.length,24,'en Previa ya está la grilla completa de AYER');
 const first=auxiliaryBoard(h,'Primera');
-assert.equal(first.cells.length,8,'antes de Primera solo las cuatro cifras x dos filas de Previa');
-assert.equal(findAuxPaths(first,'45').length,0,'Primera futura no puede filtrarse a PRE');
+assert.equal(first.cells.length,24,'en Primera la grilla completa de AYER');
+assert(findAuxPaths(first,'45').length>0,'Primera de AYER puede alimentar PRE');
 const mat=auxiliaryBoard(h,'Matutino');
-assert.equal(mat.cells.length,16);
+assert.equal(mat.cells.length,24);
 const across=findAuxPaths(mat,'456');
 assert(across.some(p=>p.map(c=>c.row+':'+c.col).join('>')==='0:3>0:4>0:5'),
  'camino horizontal cruza de Previa a Primera');
@@ -26,7 +26,8 @@ const vesp=auxiliaryBoard(h,'Vespertino'),noct=auxiliaryBoard(h,'Nocturno');
 assert.equal(vesp.cells.length,24);
 assert.equal(noct.cells.length,24);
 assert(findAuxPaths(vesp,'890').some(p=>p.map(c=>c.row+':'+c.col).join('>')==='0:7>0:8>0:9'));
-assert(!findAuxPaths(first,'567').some(p=>p.some(x=>x.col>=4)));
+assert(findAuxPaths(first,'567').some(p=>p.some(x=>x.col>=4)),
+ 'Se pueden recorrer todas las franjas de AYER desde la Previa');
 assert.equal(auxAdjacent({row:0,col:3,digit:'4',source:'Previa'},
  {row:0,col:5,digit:'6',source:'Primera'}),false,'no salteos');
 const missing=heads();missing.Primera.Santiago='----';

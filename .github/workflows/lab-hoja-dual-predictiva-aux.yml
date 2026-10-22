@@ -28,6 +28,10 @@ jobs:
         run: |
           npx --yes tsx scripts/lab-cabezas-duales-ui-test.ts
           npx --yes tsx scripts/test-zoom-pestanas.ts
+      - name: Regresión PRE de ayer y marcas históricas AUX
+        run: |
+          npx --yes tsx scripts/lab-aux-bitacora-test.ts
+          npx --yes tsx scripts/lab-aux-memoria-test.ts
       - name: Motor auxiliar y comparación de Tops independientes
         run: npx --yes tsx scripts/lab-lalo-auxiliar-paralelos-test.ts
       - name: Replay del 20 octubre

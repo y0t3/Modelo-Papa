@@ -10,25 +10,28 @@ import {comparePrediction} from '../src/predictionParallel';
 
 async function main(){
  const date='2026-10-20',prior='2026-10-19',week='2026-10-13';
- const [today,previous,weekly,beforeLast,beforeWeek,auxToday,auxPrior,auxWeek]=await Promise.all([
+ const [today,previous,weekly,beforeLast,beforeWeek,auxToday,auxPrior,auxBeforePrior,auxBeforeWeek]=await Promise.all([
   descargarCabezas(date,true),descargarCabezas(prior,true),descargarCabezas(week,true),
   descargarCabezas('2026-10-17',true),descargarCabezas('2026-10-12',true),
-  fetchAuxiliaryHeads(date),fetchAuxiliaryHeads(prior),fetchAuxiliaryHeads(week)
+  fetchAuxiliaryHeads(date),fetchAuxiliaryHeads(prior),
+  fetchAuxiliaryHeads('2026-10-17'),fetchAuxiliaryHeads('2026-10-12')
  ]);
- const raw=auxToday.heads;
+ const raw=auxPrior.heads; // AUX de 20/10 se construye con cifras del 19/10.
  assert.deepEqual(
-  [raw.Previa.Santiago,raw.Primera.Santiago,raw.Matutino.Santiago,
-   raw.Previa.Neuquen,raw.Primera.Neuquen,raw.Matutino.Neuquen],
+  [auxToday.heads.Previa.Santiago,auxToday.heads.Primera.Santiago,auxToday.heads.Matutino.Santiago,
+   auxToday.heads.Previa.Neuquen,auxToday.heads.Primera.Neuquen,auxToday.heads.Matutino.Neuquen],
   ['8067','6142','9634','0469','0245','0210'],
-  'Datos Santiago-Neuquén tal como fueron verificados');
+  'Los datos del 20/10 son fuente AUX del 21/10, no del 20/10');
  const sheet=buildSheet(today,previous);
  const mvHistory=[
   {date:prior,period:'D−1' as const,sheet:buildSheet(previous,beforeLast)},
   {date:week,period:'D−7' as const,sheet:buildSheet(weekly,beforeWeek)}
  ];
  const auxHistory=[
-  {date:prior,period:'D−1' as const,aux:extractAuxiliarHistory(prior,auxPrior.heads,previous)},
-  {date:week,period:'D−7' as const,aux:extractAuxiliarHistory(week,auxWeek.heads,weekly)}
+  {date:prior,period:'D−1' as const,sourceDate:'2026-10-17',heads:auxBeforePrior.heads,
+   aux:extractAuxiliarHistory(prior,auxBeforePrior.heads,previous)},
+  {date:week,period:'D−7' as const,sourceDate:'2026-10-12',heads:auxBeforeWeek.heads,
+   aux:extractAuxiliarHistory(week,auxBeforeWeek.heads,weekly)}
  ];
  const details:any[]=[];
  for(const target of TURNOS){
@@ -37,7 +40,7 @@ async function main(){
   const aux=buildMotorLaloAuxiliar(date,target,raw,auxHistory);
   assert.equal(JSON.stringify(original.ranks),snapshot,'No se alteran Tops MV1');
   if(target==='Previa')
-   assert([2,3,4].every(n=>aux.ranks[n as 2|3|4].length===0));
+   assert([2,3,4].some(n=>aux.ranks[n as 2|3|4].length>0));
   const heads=JURS.map(jur=>({jur,head:today[target]?.[jur]||''}));
   const report=comparePrediction(original,aux,heads,3);
   details.push({turn:target,
@@ -51,6 +54,6 @@ async function main(){
   assert.equal(JSON.stringify(original.ranks),snapshot,
    'El comparador POST no modifica ni reordena MV1');
  }
- console.log('PREDICCION_AUX_20OCT_OK',JSON.stringify({date,details}));
+ console.log('PREDICCION_AUX_20OCT_OK',JSON.stringify({date,sourceDate:prior,details}));
 }
 void main().catch(error=>{console.error('PREDICCION_AUX_ERROR',error);process.exitCode=1});

@@ -14,8 +14,8 @@ aux.Previa.Neuquen='1234';
 const yesterday=diaVacio();
 yesterday.Nocturno.Ciudad='0000'; // +11 contiene 11, no 5440.
 const today=diaVacio();
-today.Previa.Provincia='5440'; // El turno todavía no tiene cifras AUX.
-today.Matutino['Córdoba']='5440'; // AUX Previa publicada antes de Matutino.
+today.Previa.Provincia='5440'; // Ya existe la AUX de AYER.
+today.Matutino['Córdoba']='5440'; // Misma AUX de AYER.
 today.Primera.Ciudad='3311'; // Ejemplo con coincidencia exclusiva del +11.
 today.Matutino.Provincia='9999'; // Sin formación en las dos hojas.
 const sheet=buildSheet(today,yesterday);
@@ -25,8 +25,8 @@ const get=(turn:'Previa'|'Primera'|'Matutino',jur:string,head:string)=>
 assert.deepEqual(get('Matutino','Córdoba','5440').plusKinds,[]);
 assert(get('Matutino','Córdoba','5440').auxKinds.includes('vt4'));
 assert(get('Matutino','Córdoba','5440').kinds.includes('vt2'));
-assert.equal(get('Previa','Provincia','5440').kinds.length,0,
- 'No revelar la Previa AUX antes del sorteo Previa');
+assert(get('Previa','Provincia','5440').auxKinds.includes('vt4'),
+ 'En Previa ya está disponible toda la hoja AUX de AYER');
 assert(get('Primera','Ciudad','3311').plusKinds.includes('vt2'));
 assert.equal(get('Primera','Ciudad','3311').auxKinds.length,0);
 assert.equal(get('Matutino','Provincia','9999').kinds.length,0);
@@ -47,4 +47,4 @@ const family:RankedFamily={kind:'vt2',family:'79/97',key:'79/97',
 const otherTop10=new Map([['79/97',10]]);
 assert.equal(otherTop10.has(family.key),true);
 assert.equal(hitsForFamily(family,[{jur:'Córdoba',head:'5440'}]).length,0);
-console.log('CABEZAS_DUALES_UI_OK: AUX-only 5440, +11-only, doble hoja, turno PRE y POST vs Tops.');
+console.log('CABEZAS_DUALES_UI_OK: AUX-only 5440, +11-only, doble hoja, base AYER en Previa y POST vs Tops.');
