@@ -186,7 +186,7 @@ function LaloApp(){
      auxiliarHistory=await Promise.all(refs.map(async ref=>{
       const heads=ref.date===last.date?last.heads:weekly;
       const observation=await fetchAuxiliaryHeads(ref.date);
-      return {date:ref.date,period:ref.period,
+      return {date:ref.date,period:ref.period,heads:observation.heads,
        aux:extractAuxiliarHistory(ref.date,observation.heads,heads)};
      }));
     }catch(error:any){
