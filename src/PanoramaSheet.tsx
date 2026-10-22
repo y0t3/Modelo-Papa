@@ -7,6 +7,7 @@ import {auxiliaryBoard} from './auxSantiagoNeuquen';
 import {buildAuxPostLedger} from './auxMarkLedger';
 import {buildAuxDailyVisual} from './auxVisualModel';
 import AuxMarkedBoard from './ui/AuxMarkedBoard';
+import AuxRouteMiniPreview from './ui/AuxRouteMiniPreview';
 import {TURNOS} from './domain';
 import {routesForDailyTurn} from './panoramaModel';
 import type {PanoramaData,PanoramaGroup,PanoramaKind} from './panoramaModel';
@@ -252,6 +253,8 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
        {auxVisual.routes.filter(r=>r.ownerId===selected.id).length} recorridos AUX
        contiguos que forman los sufijos exactos de la cabeza publicada.
       </Text>
+      {auxVisual.routes.filter(r=>r.ownerId===selected.id).map(route=>
+       <AuxRouteMiniPreview key={route.id} board={auxBoard} route={route}/>)}
      </View>:null}
      {KINDS.filter(k=>selectedRoutes.some(r=>r.kind===k)).map(k=><View key={k}>
       <Text style={[s.groupTitle,{color:kinds[k].line}]}>{kinds[k].label}</Text>
