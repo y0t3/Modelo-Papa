@@ -70,7 +70,7 @@ async function run(){
    // Cotejo POST: recién aquí se leen cabezas del turno que se evalúa.
    for(const jur of JURS){
     const head=today.heads[turn]?.[jur];
-    if(!head||!/^\\d{4}$/.test(head))continue;
+    if(!head||!/^\d{4}$/.test(head))continue;
     const hits:any={};
     for(const n of kinds){
      hits[n]={};
@@ -85,6 +85,7 @@ async function run(){
   }
   console.log('AUX_AB_DIA',date,entries.filter(x=>x.date===date).length);
  }
+ if(entries.length===0)throw Error('No se encontraron cabezas: revisar parsing/fechas');
  const summary:any[]=[];
  for(const n of kinds)for(const top of tops)for(const mode of modes){
   const hit=entries.filter(x=>x.hits[n][mode][top]);
