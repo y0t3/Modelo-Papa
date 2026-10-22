@@ -1,22 +1,22 @@
 import React,{useState} from 'react';
 import {View,Text,Pressable,StyleSheet} from 'react-native';
 import type {LaloView} from '../motorLalo';
-import type {IntegralPrediction} from '../motorLaloIntegral';
+import type {AuxiliarView} from '../motorLaloAuxiliar';
 import type {HeadEvent} from '../predictionParallel';
 import {comparePrediction} from '../predictionParallel';
 import {useLaloTheme} from './LaloTheme';
 type Count=3|5|10;
 /** Solo coteja salidas PRE independientes; cabezas POST nunca reordenan Tops. */
-export default function ParallelPredictionCompare({lalo,integral,heads}:{
- lalo:LaloView;integral:IntegralPrediction;heads:HeadEvent[]
+export default function ParallelPredictionCompare({lalo,auxiliar,heads}:{
+ lalo:LaloView;auxiliar:AuxiliarPrediction;heads:HeadEvent[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [limit,setLimit]=useState<Count>(3);
- const compared=comparePrediction(lalo,integral,heads,limit);
+ const compared=comparePrediction(lalo,auxiliar,heads,limit);
  return <View style={[s.panel,{backgroundColor:c.surface,borderColor:c.border}]}>
-  <Text style={[s.title,{color:c.text}]}>FAMILIAS Y CABEZAS COINCIDENTES</Text>
+  <Text style={[s.title,{color:c.text}]}>TOP GENERAL · FAMILIAS COINCIDENTES</Text>
   <Text style={[s.note,{color:c.subtext}]}>
-   Coincidencia de motores = misma familia en los dos Tops visibles.
+   Coincidencia = una familia aparece en el Top seleccionado de ambos motores. El orden muestra la suma de sus posiciones, sin cambiar ninguno de los Tops.
    Acierto POST = terminación de una cabeza realmente publicada; no
    implica que se haya jugado ni cobrado una apuesta.
   </Text>
@@ -38,7 +38,7 @@ export default function ParallelPredictionCompare({lalo,integral,heads}:{
      style={[s.shared,{borderColor:kinds[section.kind].line,
       backgroundColor:kinds[section.kind].fill}]}>
      <Text style={{color:kinds[section.kind].text,fontWeight:'900'}}>
-      ⇄ {f.family} · Lalo #{f.lalo} / Integral #{f.integral}
+      ⇄ {f.family} · Lalo #{f.lalo} / Auxiliar #{f.auxiliar}
      </Text>
      {f.heads.length?<Text style={[s.small,{color:kinds[section.kind].text}]}>
       ✓ POST: {f.heads.map(x=>(x.jur?x.jur+' ':'')+x.head).join(' · ')}
@@ -47,20 +47,20 @@ export default function ParallelPredictionCompare({lalo,integral,heads}:{
      Ninguna familia compartida dentro del Top{limit} de ambos motores.
     </Text>}
    <Text style={[s.small,{color:c.subtext}]}>
-    Exclusivas Top{limit}: Lalo {section.onlyOriginal.length} · Integral {section.onlyIntegral.length}
+    Solo Lalo {section.onlyOriginal.length} · solo Auxiliar {section.onlyAuxiliar.length} (Top{limit})
    </Text>
    {section.winning.length?<View style={{gap:4,marginTop:4}}>
     <Text style={[s.small,{color:c.text,fontWeight:'900'}]}>
      Cabezas publicadas cubiertas por algún Top{limit}
     </Text>
     {section.winning.map((h,i)=><Text key={h.jur+'|'+h.head+'|'+i}
-     style={[s.small,{color:h.lalo&&h.integral?
+     style={[s.small,{color:h.lalo&&h.auxiliar?
       kinds[section.kind].line:c.text}]}>
-     {h.lalo&&h.integral?'✓ AMBOS':h.lalo?'✓ LALO':'✓ INTEGRAL'} ·
+     {h.lalo&&h.auxiliar?'✓ AMBOS':h.lalo?'✓ LALO':'✓ AUXILIAR'} ·
      {' '}{h.jur} {h.head}
      {' · '}{h.lalo?'Lalo #'+h.lalo:''}
-     {h.lalo&&h.integral?' / ':''}
-     {h.integral?'Integral #'+h.integral:''}
+     {h.lalo&&h.auxiliar?' / ':''}
+     {h.auxiliar?'Auxiliar #'+h.auxiliar:''}
     </Text>)}
    </View>:<Text style={[s.small,{color:c.muted}]}>
     {heads.some(x=>/^\d{4}$/.test(x.head))?
