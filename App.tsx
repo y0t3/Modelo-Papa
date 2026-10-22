@@ -284,20 +284,45 @@ function LaloApp(){
  },[date,baseHeads]);
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
- // MV1 y AUX elaboran sus candidatos por separado. El lector AUX
- // solo usa Santiago-Neuquén, jamás los Tops ni las celdas de +11.
+ // Cada modo conserva su ranking y memoria propios. Nunca mezclamos
+ // los Tops ni la geometría con Modelo Lalo MV1.
+ const activeAuxHeads=auxMode==='intrajornada'?auxToday:auxHeads;
+ const activeAuxHistory=auxMode==='intrajornada'?auxTodayPast:auxiliarPast;
+ const activeAuxError=auxMode==='intrajornada'?auxTodayError:auxiliarError;
+ const activeAuxDate=auxMode==='intrajornada'?date:auxSourceDate;
  const auxiliar=useMemo(()=>{
-  if((screen!=='prediccion'&&screen!=='predictiva')||!date||!auxHeads||
-   auxiliarPast.length!==hist.length||!auxiliarPast.length)return null;
-  return buildMotorLaloAuxiliar(date,target,auxHeads,auxiliarPast);
- },[screen,date,target,auxHeads,auxiliarPast,hist]);
+  if((screen!=='prediccion'&&screen!=='predictiva')||!date||!activeAuxHeads||
+   activeAuxHistory.length!==hist.length||!activeAuxHistory.length)return null;
+  const input=auxAtCut(activeAuxHeads,target,auxMode);
+  return buildMotorLaloAuxiliar(date,target,input,activeAuxHistory);
+ },[screen,date,target,activeAuxHeads,activeAuxHistory,hist,auxMode]);
  const headEvents=useMemo(()=>JURS.map(jur=>({
   jur,head:data?.[target]?.[jur]||''
  })).filter(x=>/^\d{4}$/.test(x.head)),[data,target]);
  const hoja=useMemo(()=>sheet?buildDailyPanorama(sheet,data):null,[sheet,data]);
- // CABEZAS y navegación comparten exactamente las marcas +11 / AUX por corte.
- const headHighlights=useMemo(()=>buildHeadHighlights(data,sheet,auxHeads),
+ // Las marcas de CABEZAS se comprueban en ambos modos, sin suponer
+ // que un candidato salió. Cada cabeza conserva su terminación exacta.
+ const marksAnterior=useMemo(()=>buildHeadHighlights(data,sheet,auxHeads,'anterior'),
   [data,sheet,auxHeads]);
+ const marksHoy=useMemo(()=>buildHeadHighlights(data,sheet,auxToday,'intrajornada'),
+  [data,sheet,auxToday]);
+ const headHighlights=useMemo(()=>{
+  const merged:Record<string,HeadHighlight>={};
+  const labels:Record<string,'HOY'|'AYER'|'AMBAS'>={};
+  for(const id of new Set([...Object.keys(marksAnterior),...Object.keys(marksHoy)])){
+   const previous=marksAnterior[id],today=marksHoy[id];
+   const a=!!previous?.auxKinds.length,b=!!today?.auxKinds.length;
+   if(a||b)labels[id]=a&&b?'AMBAS':a?'AYER':'HOY';
+   merged[id]={
+    kinds:(['vt2','vt3','vt4'] as const).filter(k=>
+     previous?.kinds.includes(k)||today?.kinds.includes(k)),
+    plusKinds:previous?.plusKinds||today?.plusKinds||[],
+    auxKinds:(['vt2','vt3','vt4'] as const).filter(k=>
+     previous?.auxKinds.includes(k)||today?.auxKinds.includes(k))
+   };
+  }
+  return {merged,labels};
+ },[marksAnterior,marksHoy]);
  const historicalHoja=useMemo(()=>historicalPreview?
   buildDailyPanorama(historicalPreview.day.sheet,historicalPreview.day.heads):null,
   [historicalPreview]);
@@ -318,7 +343,13 @@ function LaloApp(){
  };
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);
-  if(!headHighlights[id]?.kinds.length)return;
+  if(!headHighlights.merged[id]?.kinds.length)return;
+  const selected=auxMode==='intrajornada'?marksHoy[id]:marksAnterior[id];
+  // Si hay marca únicamente en el otro modo, saltar a la hoja correcta.
+  if(!selected?.kinds.length){
+   const other=auxMode==='intrajornada'?marksAnterior[id]:marksHoy[id];
+   if(other?.auxKinds.length)setAuxMode(auxMode==='intrajornada'?'anterior':'intrajornada');
+  }
   navigateTo('hoja');setHojaTurn(turn);setHojaFocused(id);
  };
  const openInfoFrame=(frame:TurnHistoryFrame)=>{
@@ -328,7 +359,16 @@ function LaloApp(){
   const day=visualDays.find(item=>item.date===frame.date);
   if(!day){Alert.alert('Hoja no disponible','No se encontró la jornada en la memoria de INFO.');return}
   navigateTo('hoja');
-  setHistoricalPreview({day,turn:target});setHojaTurn(target);setHojaFocused(null);
+  setHistoricalPreview({day,turn:target});setHistoricalAux(null);
+  setHojaTurn(target);setHojaFocused(null);
+  // Recuperar el tablero que realmente correspondía a la fecha de INFO.
+  void Promise.all([
+   fetchAuxiliaryBaseForDate(day.date).catch(()=>null),
+   fetchAuxiliaryHeads(day.date).catch(()=>null)
+  ]).then(([previous,live])=>setHistoricalAux({
+   date:day.date,previous:previous?.heads||null,
+   sourceDate:previous?.sourceDate||null,today:live?.heads||null
+  })).catch(()=>{});
  };
  const alignHojaOnReturn=(y:number)=>{
   if(hojaFocused)scrollRef.current?.scrollTo({y:Math.max(0,(y-8)*zoomLevels.hoja),animated:true});
