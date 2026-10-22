@@ -112,7 +112,10 @@ export function buildAuxPredictiveVisual(date:string,turn:Turno,
    const ownerId=kind+'|'+f.family;
    const candidates=[...buckets.get(ownerId)!.values()];
    routes.push(...candidates);
-   groups.push({id:ownerId,family:f.family,routeCount:candidates.length,
+   groups.push({id:ownerId,
+    // VT4: no anunciar orientaciones sin un recorrido físico proyectado.
+    family:kind==='vt4'?f.values.join(' / '):f.family,
+    routeCount:candidates.length,
     kinds:candidates.length?[kind]:[],
     subtitle:'Puesto #'+f.rank+' · raíces '+f.roots+
      ' (D−1 '+f.d1+' / D−7 '+f.d7+')'});

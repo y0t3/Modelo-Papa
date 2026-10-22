@@ -119,7 +119,10 @@ export default function AuxiliaryPredictiveSheet({
    onRequestClose={()=>setDetail(false)}>
    <View style={s.backdrop}><View style={[s.modal,{backgroundColor:c.surface}]}>
     <View style={s.modalTop}>
-     <Text style={[s.title,{color:c.text}]}>Familia {selected?.split('|')[1]||''}</Text>
+     <Text style={[s.title,{color:c.text}]}>
+      {selected?.startsWith('vt4|')?'VT4 físico':'Familia'}{' '}
+      {visual.groups.find(g=>g.id===selected)?.family||selected?.split('|')[1]||''}
+     </Text>
      <Pressable accessibilityRole="button" onPress={()=>setDetail(false)}>
       <Text style={{color:c.accent,fontWeight:'900'}}>Cerrar ×</Text>
      </Pressable>

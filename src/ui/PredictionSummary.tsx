@@ -96,15 +96,11 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,pos
     {KINDS.map(kind=>{
      const limit=limits[kind];
      const rows=rowsForModel(model,kind,view,auxiliar||null).slice(0,limit);
-     const other=rowsForModel(model==='lalo'?'auxiliar':'lalo',kind,view,auxiliar||null)
-       .slice(0,10);
-     const peers=new Map(other.map(x=>[x.key,x.rank]));
      const winners:HeadEvent[]=heads.map(head=>({jur:'',head}));
      const winnerHeads=(family:typeof rows[number])=>hitsForFamily(family,winners)
        .map(x=>x.head);
      const matched=new Set(rows.filter(f=>winnerHeads(f).length>0).map(f=>f.key));
      const hitRows=rows.filter(f=>matched.has(f.key));
-     const sharedRows=rows.filter(f=>peers.has(f.key));
      return <View key={kind} style={[s.page,{width:pagerWidth||undefined}]}
       onLayout={e=>{
        const height=Math.ceil(e.nativeEvent.layout.height);
@@ -140,9 +136,6 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,pos
         {hitRows.length?hitRows.map(f=>'#'+f.rank+' '+f.family+' ('+winnerHeads(f).join(', ')+')').join('  ·  '):
          'Ninguna familia de este Top acertó una terminación publicada.'}
        </Text>
-       <Text style={[s.postInfo,{color:c.accent}]}>
-        ⇄ {sharedRows.length} familia(s) en ambos motores (otro Top10). No son aciertos POST.
-       </Text>
       </View>:null}
       {rows.length?<View style={s.families}>
        {rows.map(f=><Pressable key={f.family} accessibilityRole="button"
@@ -151,16 +144,17 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,pos
          if(model==='auxiliar')setExpanded(old=>old===f.key?null:f.key);
          else onFocus(kind+'|'+f.family);
         }}
-        style={[s.family,{backgroundColor:matched.has(f.key)?kinds[kind].fill:peers.has(f.key)?c.accentFill:c.card,
-         borderColor:matched.has(f.key)?kinds[kind].line:peers.has(f.key)?c.accent:c.border,
-         borderWidth:matched.has(f.key)||peers.has(f.key)?2:1}]}>
+        style={[s.family,{backgroundColor:matched.has(f.key)?kinds[kind].fill:c.card,
+         borderColor:matched.has(f.key)?kinds[kind].line:c.border,
+         borderWidth:matched.has(f.key)?2:1}]}>
         <View style={s.familyTitle}>
          <Text style={[s.rank,{color:kinds[kind].line}]}>#{f.rank}</Text>
-         <Text style={[s.familyName,{color:c.text}]}>{f.family}</Text>
+         <Text style={[s.familyName,{color:c.text}]}>
+          {model==='auxiliar'&&kind==='vt4'?f.values.join(' / '):f.family}
+         </Text>
          {matched.has(f.key)?<Text style={[s.hitLabel,{color:kinds[kind].text}]}>✓ POST</Text>:null}
          <Text style={[s.chevron,{color:c.accent}]}>›</Text>
         </View>
-        {peers.has(f.key)?<Text style={[s.winnerHeads,{color:c.accent}]}>⇄ Familia en ambos motores · otro Top10 #{peers.get(f.key)} · no es acierto POST</Text>:null}
         {matched.has(f.key)?<Text style={[s.winnerHeads,{color:kinds[kind].text}]}>
          Cabeza(s): {winnerHeads(f).join(' · ')}
         </Text>:null}
