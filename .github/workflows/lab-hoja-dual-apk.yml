@@ -3,6 +3,11 @@ on:
   workflow_dispatch:
   push:
     branches: [lab/hoja-dual-predictiva-aux-21oct2026]
+    paths:
+      - 'App.tsx'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
 permissions:
   contents: read
 jobs:
