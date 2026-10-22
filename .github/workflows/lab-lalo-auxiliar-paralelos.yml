@@ -1,0 +1,26 @@
+name: LAB Prediccion Lalo vs Auxiliar Independiente
+on:
+  push:
+    branches: [lab/prediccion-lalo-auxiliar-paralelos-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Dependencias
+        run: npm install
+      - name: Compilar React Native y TypeScript
+        run: npx tsc --noEmit
+      - name: Probar geometria y mapeo AUX
+        run: |
+          npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+      - name: Probar motores separados y coincidencias
+        run: npx --yes tsx scripts/lab-lalo-auxiliar-paralelos-test.ts
