@@ -19,8 +19,8 @@ import {preSheetAtCut} from './src/infoCandidatos';
 import {saveFrozen} from './src/vt3Snapshot';
 import {buildDailyPanorama,buildPredictivePanorama,dailyHeadOwnerId} from './src/panoramaModel';
 import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
-import {buildMotorLaloIntegral,extractIntegralAuxHistory} from './src/motorLaloIntegral';
-import type {IntegralPast} from './src/motorLaloIntegral';
+import {buildMotorLaloAuxiliar,extractAuxiliarHistory} from './src/motorLaloAuxiliar';
+import type {AuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {LaloHistorical} from './src/motorLalo';
 import type {InfoVisualDay,TurnHistoryFrame} from './src/infoTurnHistory';
 import PanoramaSheet from './src/PanoramaSheet';
@@ -83,10 +83,10 @@ function LaloApp(){
  const [auxHeads,setAuxHeads]=useState<AuxiliaryHeads|null>(null);
  const [sheet,setSheet]=useState<DailySheet|null>(null);
  const [hist,setHist]=useState<LaloHistorical[]>([]);
- const [integralPast,setIntegralPast]=useState<IntegralPast[]>([]);
- const [integralError,setIntegralError]=useState<string|null>(null);
- const [predictionMode,setPredictionMode]=useState<'lalo'|'integral'>('lalo');
- const [showComparison,setShowComparison]=useState(false);
+ const [auxiliarPast,setAuxiliarPast]=useState<AuxiliarHistory[]>([]);
+ const [auxiliarError,setAuxiliarError]=useState<string|null>(null);
+ const [predictionMode,setPredictionMode]=useState<'lalo'|'auxiliar'>('lalo');
+
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
  const [busy,setBusy]=useState(false);
@@ -174,17 +174,17 @@ function LaloApp(){
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
    // El integral requiere las cabezas RAW reales de las MISMAS
    // jornadas antiguas que MV1. Sin datos, nunca inventar raíces auxiliares.
-   let integralHistory:IntegralPast[]=[];
+   let auxiliarHistory:AuxiliarPast[]=[];
    let auxWarning:string|null=null;
    if(!auxResult){
     auxWarning='No se recibieron las cabezas actuales de Santiago–Neuquén.';
    }else{
     try{
-     integralHistory=await Promise.all(refs.map(async ref=>{
+     auxiliarHistory=await Promise.all(refs.map(async ref=>{
       const heads=ref.date===last.date?last.heads:weekly;
       const observation=await fetchAuxiliaryHeads(ref.date);
-      return {date:ref.date,period:ref.period,plus11:ref.sheet,
-       aux:extractIntegralAuxHistory(ref.date,observation.heads,heads)};
+      return {date:ref.date,period:ref.period,
+       aux:extractAuxiliarHistory(ref.date,observation.heads,heads)};
      }));
     }catch(error:any){
      auxWarning='No se pudieron completar las raíces históricas AUX: '+
@@ -195,10 +195,10 @@ function LaloApp(){
    setHistoricalPreview(null);
    setData(current);setAuxHeads(auxResult?.heads||null);
    setSheet(currentSheet);setHist(refs);setBaseHeads(last.heads);
-   setIntegralPast(integralHistory);setIntegralError(auxWarning);
+   setAuxiliarPast(auxiliarHistory);setAuxiliarError(auxWarning);
     setVisualDays(recentDays);
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
-   setShowComparison(false);
+   
    setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
    Alert.alert('No se pudo cargar',error?.message||String(error));
@@ -247,14 +247,13 @@ function LaloApp(){
  },[date,baseHeads]);
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
- // Calcula el motor separado solo cuando se abre Predicción; su Top
- // jamás modifica la instancia original MV1.
- const integral=useMemo(()=>{
-  if(screen!=='prediccion'||!sheet||!date||!auxHeads||
-   integralPast.length!==hist.length||!integralPast.length)return null;
-  return buildMotorLaloIntegral(date,target,
-   preSheetAtCut(sheet,target,TURNOS.indexOf(target)),auxHeads,integralPast);
- },[screen,sheet,date,target,auxHeads,integralPast,hist]);
+ // MV1 y AUX elaboran sus candidatos por separado. El lector AUX
+ // solo usa Santiago-Neuquén, jamás los Tops ni las celdas de +11.
+ const auxiliar=useMemo(()=>{
+  if(screen!=='prediccion'||!date||!auxHeads||
+   auxiliarPast.length!==hist.length||!auxiliarPast.length)return null;
+  return buildMotorLaloAuxiliar(date,target,auxHeads,auxiliarPast);
+ },[screen,date,target,auxHeads,auxiliarPast,hist]);
  const headEvents=useMemo(()=>JURS.map(jur=>({
   jur,head:data?.[target]?.[jur]||''
  })).filter(x=>/^\d{4}$/.test(x.head)),[data,target]);
@@ -337,7 +336,7 @@ function LaloApp(){
     <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
      resetHistory();setHistoricalPreview(null);
      setDateText(value);setData(null);setAuxHeads(null);setSheet(null);setBaseHeads(null);setHist([]);
-     setIntegralPast([]);setIntegralError(null);setShowComparison(false);
+     setAuxiliarPast([]);setAuxiliarError(null);
      setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
@@ -382,7 +381,7 @@ function LaloApp(){
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
     <View style={[s.predictorOptions,{borderColor:c.border}]}>
-     {([{id:'lalo',label:'MODELO LALO'},{id:'integral',label:'LALO INTEGRAL'}] as const)
+     {([{id:'lalo',label:'MODELO LALO'},{id:'auxiliar',label:'LALO AUXILIAR'}] as const)
       .map(item=><Pressable key={item.id} accessibilityRole="button"
        accessibilityState={{selected:predictionMode===item.id}}
        onPress={()=>{setPredictionMode(item.id);setExperimental(false)}}
@@ -395,32 +394,26 @@ function LaloApp(){
     {!experimental?<>
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
-       integral={integral} post={post} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
-      integral?<PredictionSummary model="integral" date={dateText} turn={target} view={motor}
-       integral={integral} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
+       auxiliar={auxiliar} post={post} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
+      auxiliar?<PredictionSummary model="auxiliar" date={dateText} turn={target} view={motor}
+       auxiliar={auxiliar} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
       <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
-       <Text style={{color:c.text,fontWeight:'800'}}>Modelo Lalo Integral no disponible para este corte.</Text>
+       <Text style={{color:c.text,fontWeight:'800'}}>Modelo Lalo Auxiliar no disponible para este corte.</Text>
        <Text style={{color:c.subtext,marginTop:5}}>
-        {integralError||'Cargá la fecha para obtener la hoja auxiliar y los antecedentes D−1 y D−7.'}
+        {auxiliarError||'Cargá la fecha para obtener la hoja auxiliar y los antecedentes D−1 y D−7.'}
        </Text>
        <Text style={{color:c.subtext,marginTop:5}}>
         Los Tops originales de Lalo siguen disponibles sin modificaciones.
        </Text>
       </View>}
-     <Pressable accessibilityRole="button"
-      accessibilityState={{expanded:showComparison}}
-      onPress={()=>setShowComparison(v=>!v)}
-      style={[s.reload,{backgroundColor:c.surface,borderWidth:1,
-       borderColor:c.accent,marginTop:12}]}>
-      <Text style={[s.reloadText,{color:c.accent}]}>
-       {showComparison?'Ocultar coincidencias ↑':'⇄ Comparar familias y cabezas de ambos motores ↓'}
-      </Text>
-     </Pressable>
-     {showComparison&&motor&&integral?
-      <ParallelPredictionCompare lalo={motor} integral={integral} heads={headEvents}/>:
-      showComparison?<Text style={[s.empty,{color:c.subtext}]}>
-       La comparación necesita ambos motores. {integralError||'Actualizá la hoja para cargar AUX.'}
-      </Text>:null}
+     {motor&&auxiliar?
+      <ParallelPredictionCompare lalo={motor} auxiliar={auxiliar} heads={headEvents}/>:
+      <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border,marginTop:12}]}>
+       <Text style={{color:c.text,fontWeight:'800'}}>TOP GENERAL · Familias coincidentes</Text>
+       <Text style={{color:c.subtext,marginTop:5}}>
+        {auxiliarError||'Cargá ambas fuentes para comparar los Tops independientes.'}
+       </Text>
+      </View>}
      {predictionMode==='lalo'?<Pressable accessibilityRole="button" onPress={()=>setExperimental(true)}
       style={[s.reload,{backgroundColor:c.surface,borderWidth:1,borderColor:c.accent,marginTop:12}]}>
       <Text style={[s.reloadText,{color:c.accent}]}>🧪 Experimental · Comparaciones VT3 →</Text>
