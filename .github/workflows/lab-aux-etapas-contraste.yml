@@ -1,0 +1,23 @@
+name: LAB AUX Etapas contraste azar
+on:
+  push:
+    branches: [lab/comparativa-aux-anterior-intrajornada-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contrasts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Comparacion VT3 por etapas y nulo permutado
+        run: npx --yes tsx scripts/lab-aux-etapas-01al20oct.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aux-etapas-azar-y-cortes
+          path: auditorias/aux-temporal-ab-21oct2026/resultados
+          if-no-files-found: warn

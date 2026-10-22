@@ -175,6 +175,81 @@ async function run(){
  console.log('AUX_AB_VT3_EVENTOS',JSON.stringify(vt3));
  console.log('AUX_AB_VT3_FISICOS',JSON.stringify(physicalSummary));
  console.log('AUX_AB_VT3_POR_TURNO',JSON.stringify(vt3ByTurn));
+
+ // Referencia nula: sin reajustar Tops, permutar terminaciones observadas
+ // ENTRE jornadas/jurisdicciones dentro del mismo turno objetivo. Se mantiene
+ // cuántas cabezas reales se publicaron en cada turno y los mismos cupos.
+ const names=[...modes] as Mode[];
+ const k3=[3,5,10] as const;
+ const cutMap=new Map(sealed.map(s=>[s.date+'|'+s.turn,s]));
+ const caches=new Map<string,Set<string>>();
+ function setFor(row:any,mode:Mode,top:3|5|10):Set<string>{
+  const key=row.date+'|'+row.turn+'|'+mode+'|'+top;
+  const hit=caches.get(key);if(hit)return hit;
+  const record:any=cutMap.get(row.date+'|'+row.turn);
+  if(!record)throw Error('Corte no sellado: '+key);
+  const all=new Set<string>(record.ranks[3][mode].slice(0,top)
+   .flatMap((f:any)=>f.values));
+  caches.set(key,all);
+  return all;
+ }
+ const nullMatrix:any[]=[];
+ const seed=20261021;
+ let rng=seed>>>0;
+ function random(){rng=(Math.imul(1664525,rng)+1013904223)>>>0;return rng/4294967296;}
+ const turnGroups=TURNOS.map(turn=>entries.map((row,i)=>row.turn===turn?i:-1).filter(i=>i>=0));
+ const actual=entries.map(e=>e.head.slice(-3));
+ const trials=3000;
+ const counters:any={};
+ for(const top of k3)for(const mode of names){
+  const tag=mode+'|'+top;
+  const selected=entries.map(e=>setFor(e,mode,top));
+  const observed=entries.filter(e=>e.hits[3][mode][top]).length;
+  const distinctExposure=selected.reduce((s,vals)=>s+vals.size,0);
+  counters[tag]={top,mode,observed,expectedUniform:+(distinctExposure/1000).toFixed(3),
+   sims:[],selected};
+ }
+ for(let trial=0;trial<trials;trial++){
+  const scrambled=actual.slice();
+  for(const group of turnGroups){
+   const values=group.map(i=>actual[i]);
+   for(let i=values.length-1;i>0;i--){
+    const j=Math.floor(random()*(i+1));
+    [values[i],values[j]]=[values[j],values[i]];
+   }
+   group.forEach((id,i)=>{scrambled[id]=values[i]});
+  }
+  for(const key of Object.keys(counters)){
+   const test=counters[key];
+   let count=0;
+   for(let i=0;i<scrambled.length;i++)
+    if(test.selected[i].has(scrambled[i]))count++;
+   test.sims.push(count);
+  }
+ }
+ for(const key of Object.keys(counters)){
+  const x=counters[key];
+  x.sims.sort((a:number,b:number)=>a-b);
+  const mean=x.sims.reduce((sum:number,v:number)=>sum+v,0)/trials;
+  const p=(1+x.sims.filter((v:number)=>v>=x.observed).length)/(trials+1);
+  nullMatrix.push({mode:x.mode,top:x.top,observed:x.observed,
+   meanPermutation:+mean.toFixed(3),expectedUniform:x.expectedUniform,
+   ci90:[x.sims[Math.floor(.05*(trials-1))],x.sims[Math.floor(.95*(trials-1))]],
+   pAtLeastObserved:+p.toFixed(4)});
+ }
+ const halves=[
+  {name:'01-10oct',dates:dates.filter(d=>d<='2026-10-10')},
+  {name:'12-20oct',dates:dates.filter(d=>d>='2026-10-12')}
+ ];
+ const split=halves.flatMap(period=>k3.flatMap(top=>names.map(mode=>{
+  const sample=entries.filter(e=>period.dates.includes(e.date));
+  return {period:period.name,top,mode,heads:sample.length,
+   hits:sample.filter(e=>e.hits[3][mode][top]).length};
+ })));
+ fs.writeFileSync(root+'/contraste-azar-y-mitades.json',
+  JSON.stringify({trials,nullMatrix,split},null,2));
+ console.log('AUX_ETAPAS_AZAR',JSON.stringify({trials,nullMatrix}));
+ console.log('AUX_ETAPAS_MITADES',JSON.stringify(split));
  console.log('AUX_ETAPAS_DATOS',JSON.stringify({days:dates.length,heads:entries.length,
   stageStats:stageStats.filter(x=>x.kind==='VT3'&&x.top===10),
   turnStats:turnStats.filter(x=>x.kind==='VT3'&&x.top===10),
