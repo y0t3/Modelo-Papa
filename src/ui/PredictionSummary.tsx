@@ -21,10 +21,11 @@ const explanation:Record<string,string>={
  * se leen de arriba hacia abajo. Los chips Top3/5/10 amplían esa misma lista.
  * No se modifica la selección, el orden, el cotejo POST ni el acceso al recorrido.
  */
-export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],model='lalo',auxiliar}:{
+export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,post,heads=[],model='lalo',auxiliar}:{
  date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
  auxiliar?:AuxiliarView|null;
- onFocus:(id:string)=>void;post?:Record<LaloKind,string[]>|null;heads?:string[]
+ onFocus:(id:string)=>void;onAuxFocus?:(id:string)=>void;
+ post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [limits,setLimits]=useState<Record<LaloKind,TopCount>>(defaults);
@@ -167,6 +168,10 @@ export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],
         </Text>
         {model==='auxiliar'&&expanded===f.key?<View style={{gap:5,marginTop:8}}>
          {f.details.map((line,i)=><Text key={i} style={[s.detail,{color:c.text}]}>{line}</Text>)}
+         {!f.canFocusPlus&&onAuxFocus?<Pressable accessibilityRole="button"
+          onPress={()=>onAuxFocus(kind+'|'+f.family)}>
+          <Text style={[s.open,{color:c.accent}]}>Ver recorridos AUX y mini captura ›</Text>
+         </Pressable>:null}
          {f.canFocusPlus?<Pressable accessibilityRole="button"
           onPress={()=>onFocus(kind+'|'+f.family)}>
           <Text style={[s.open,{color:c.accent}]}>Ver recorrido +11 ›</Text>
