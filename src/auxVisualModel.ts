@@ -84,7 +84,7 @@ export function buildAuxPredictiveVisual(date:string,turn:Turno,
        route.rootEvents.push({
         id:event.id,date:old.date,period,turn:event.turn,jur:event.jur,
         head:event.head,reading:former.map(c=>c.digit).join(''),
-        path:former,
+        path:former,board:old.heads?auxiliaryBoard(old.heads,event.turn):null,
         relation:'La cabeza '+event.head+' formó '+former.map(c=>c.digit).join('')+
         ' en '+event.turn+'. Conservamos los desplazamientos de esas casillas '+
         'y los aplicamos sobre cifras actuales visibles: '+reading+'.'
