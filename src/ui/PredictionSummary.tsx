@@ -104,6 +104,7 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,pos
        .map(x=>x.head);
      const matched=new Set(rows.filter(f=>winnerHeads(f).length>0).map(f=>f.key));
      const hitRows=rows.filter(f=>matched.has(f.key));
+     const sharedRows=rows.filter(f=>peers.has(f.key));
      return <View key={kind} style={[s.page,{width:pagerWidth||undefined}]}
       onLayout={e=>{
        const height=Math.ceil(e.nativeEvent.layout.height);
@@ -133,11 +134,14 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,pos
       {heads.some(x=>/^[0-9]{4}$/.test(x))&&(view||auxiliar)?<View style={[s.postPanel,{backgroundColor:hitRows.length?kinds[kind].fill:c.surfaceAlt,
        borderColor:hitRows.length?kinds[kind].line:c.border}]}>
        <Text style={[s.postTitle,{color:hitRows.length?kinds[kind].text:c.text}]}>
-        {hitRows.length?'✓ COINCIDENCIAS POST':'POST · SIN COINCIDENCIAS'} · {hitRows.length} en Top{limit}
+        POST · {hitRows.length} acierto(s) en Top{limit}
        </Text>
        <Text style={[s.postInfo,{color:c.subtext}]}>
         {hitRows.length?hitRows.map(f=>'#'+f.rank+' '+f.family+' ('+winnerHeads(f).join(', ')+')').join('  ·  '):
-         'Ninguna familia de este Top coincidió con las cabezas publicadas.'}
+         'Ninguna familia de este Top acertó una terminación publicada.'}
+       </Text>
+       <Text style={[s.postInfo,{color:c.accent}]}>
+        ⇄ {sharedRows.length} familia(s) en ambos motores (otro Top10). No son aciertos POST.
        </Text>
       </View>:null}
       {rows.length?<View style={s.families}>
@@ -156,7 +160,7 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,pos
          {matched.has(f.key)?<Text style={[s.hitLabel,{color:kinds[kind].text}]}>✓ POST</Text>:null}
          <Text style={[s.chevron,{color:c.accent}]}>›</Text>
         </View>
-        {peers.has(f.key)?<Text style={[s.winnerHeads,{color:c.accent}]}>⇄ Familia compartida · otro Top10 #{peers.get(f.key)}</Text>:null}
+        {peers.has(f.key)?<Text style={[s.winnerHeads,{color:c.accent}]}>⇄ Familia en ambos motores · otro Top10 #{peers.get(f.key)} · no es acierto POST</Text>:null}
         {matched.has(f.key)?<Text style={[s.winnerHeads,{color:kinds[kind].text}]}>
          Cabeza(s): {winnerHeads(f).join(' · ')}
         </Text>:null}

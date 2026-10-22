@@ -24,6 +24,10 @@ jobs:
           npx --yes tsx scripts/lab-aux-geometria-test.ts
       - name: Probar Hoja dual y detalle Auxiliar PRE-POST
         run: npx --yes tsx scripts/lab-hoja-dual-predictiva-test.ts
+      - name: Regresión CABEZAS dual, coincidencias y seis pestañas
+        run: |
+          npx --yes tsx scripts/lab-cabezas-duales-ui-test.ts
+          npx --yes tsx scripts/test-zoom-pestanas.ts
       - name: Motor auxiliar y comparación de Tops independientes
         run: npx --yes tsx scripts/lab-lalo-auxiliar-paralelos-test.ts
       - name: Replay del 20 octubre

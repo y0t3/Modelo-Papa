@@ -1,21 +1,22 @@
 import React from 'react';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
-import type {DailySheet} from '../sheet';
 import type {CabezasDia,Turno} from '../domain';
 import {JURS,TURNOS} from '../domain';
+import {dailyHeadOwnerId} from '../panoramaModel';
 import type {PanoramaKind} from '../panoramaModel';
+import type {HeadHighlight} from '../headHighlights';
 import {ColoredDigits} from './HighlightedHead';
 import {useLaloTheme} from './LaloTheme';
 
 /** La tabla de cabezas no es un ranking: muestra también las que no coincidieron. */
-export default function HeadsTable({data,sheet,onOpenHead}:{
- data:CabezasDia|null;sheet:DailySheet|null;
+export default function HeadsTable({data,highlights,onOpenHead}:{
+ data:CabezasDia|null;highlights:Record<string,HeadHighlight>;
  onOpenHead:(turn:Turno,jurisdiction:string,head:string)=>void
 }){
  const {colors:c,kinds:vtColors}=useLaloTheme();
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
   <Text style={[s.title,{color:c.text}]}>CABEZAS COMPLETAS</Text>
-  <Text style={[s.note,{color:c.subtext}]}>Tocá una cabeza resaltada para abrir en Hoja sus recorridos físicos coincidentes (VT2, VT3 y VT4). Las cabezas sin coincidencia permanecen apagadas.</Text>
+  <Text style={[s.note,{color:c.subtext}]}>Tocá una cabeza resaltada para ver sus recorridos físicos en +11 y/o Santiago–Neuquén. Las cabezas sin marcas exactas permanecen apagadas.</Text>
   <ScrollView horizontal showsHorizontalScrollIndicator>
    <View>
     <View style={[s.row,{borderBottomColor:c.divider}]}>
@@ -26,9 +27,10 @@ export default function HeadsTable({data,sheet,onOpenHead}:{
      <Text style={[s.first,s.jur,{color:c.text}]}>{j}</Text>
      {TURNOS.map(t=>{
       const h=data?.[t]?.[j]||'----';
-      const hits=sheet?.matches[t]?.filter(m=>m.cabeza===h&&m.jurisdiccion===j)||[];
-      const kinds=[...new Set(hits.flatMap(m=>m.hits.map(x=>x.kind)))] as PanoramaKind[];
+      const mark=highlights[dailyHeadOwnerId(t,j,h)];
+      const kinds=mark?.kinds||[];
       const muted=kinds.length===0;
+      const onlyAux=!!mark?.auxKinds.length&&!mark.plusKinds.length;
       return <Pressable key={t} disabled={muted}
        accessibilityRole="button"
        accessibilityLabel={muted?
@@ -40,6 +42,7 @@ export default function HeadsTable({data,sheet,onOpenHead}:{
        <ColoredDigits value={h} kinds={kinds} large/>
        <View style={s.tags}>{(['vt2','vt3','vt4'] as PanoramaKind[]).filter(k=>kinds.includes(k)).map(k=>
         <Text key={k} style={[s.tag,{color:vtColors[k].line}]}>{k.toUpperCase()} </Text>)}</View>
+       {onlyAux?<Text style={[s.openHint,{color:c.accent}]}>AUX · recorrido válido</Text>:null}
        {!muted?<Text style={[s.openHint,{color:c.accent}]}>↗ Ver en hoja</Text>:null}
       </Pressable>;
      })}

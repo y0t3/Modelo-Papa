@@ -31,10 +31,9 @@ import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
 import PapaPronostico from './src/ui/PapaPronostico';
 import HeadsTable from './src/ui/HeadsTable';
-import AuxiliarySheetPanel from './src/ui/AuxiliarySheetPanel';
 import {fetchAuxiliaryHeads} from './src/auxSantiagoSource';
 import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
-import {buildAuxPostLedger} from './src/auxMarkLedger';
+import {buildHeadHighlights} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
 import type {MovementMode} from './src/infoCandidatos';
 import TurnStrip from './src/ui/TurnStrip';
@@ -44,9 +43,9 @@ import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './s
 import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
 import type {NavigationEntry} from './src/tabNavigation';
 
-type Screen='hoja'|'auxiliar'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
+type Screen='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const nav: {id:Screen;label:string}[]=[
- {id:'hoja',label:'HOJA'},{id:'auxiliar',label:'AUX'},
+ {id:'hoja',label:'HOJA'},
  {id:'predictiva',label:'PREDICTIVA'},
  {id:'prediccion',label:'PREDICCIÓN'},{id:'papa',label:'LALO'},
  {id:'cabezas',label:'CABEZAS'},
@@ -59,7 +58,7 @@ function LaloApp(){
  const activeScreenRef=useRef<Screen>('hoja');
  const historyRef=useRef<NavigationEntry[]>([]);
  const scrollOffsets=useRef<Record<Screen,number>>({
-  hoja:0,auxiliar:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
+  hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
  });
  const [restoreScroll,setRestoreScroll]=useState({token:0,y:0});
  const [infoFrameId,setInfoFrameId]=useState('inicio');
@@ -261,6 +260,9 @@ function LaloApp(){
   jur,head:data?.[target]?.[jur]||''
  })).filter(x=>/^\d{4}$/.test(x.head)),[data,target]);
  const hoja=useMemo(()=>sheet?buildDailyPanorama(sheet,data):null,[sheet,data]);
+ // CABEZAS y navegación comparten exactamente las marcas +11 / AUX por corte.
+ const headHighlights=useMemo(()=>buildHeadHighlights(data,sheet,auxHeads),
+  [data,sheet,auxHeads]);
  const historicalHoja=useMemo(()=>historicalPreview?
   buildDailyPanorama(historicalPreview.day.sheet,historicalPreview.day.heads):null,
   [historicalPreview]);
@@ -281,13 +283,7 @@ function LaloApp(){
  };
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);
-  const foundInPlus=hoja?.groups.some(group=>group.id===id&&group.routeCount>0);
-  const auxLedger=auxHeads&&sheet&&data?
-   buildAuxPostLedger(date||'',auxHeads,data,sheet,'Nocturno'):null;
-  const hasAux=auxLedger?.marks.some(mark=>mark.turn===turn&&
-   mark.jur===jurisdiction&&mark.head===head&&
-   (['vt2','vt3','vt4'] as const).some(k=>mark.modalities[k].aux.length>0));
-  if(!foundInPlus&&!hasAux)return;
+  if(!headHighlights[id]?.kinds.length)return;
   navigateTo('hoja');setHojaTurn(turn);setHojaFocused(id);
  };
  const openInfoFrame=(frame:TurnHistoryFrame)=>{
@@ -381,11 +377,7 @@ function LaloApp(){
       date={historicalPreview?.day.date||date||''}/>
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
-   :screen==='auxiliar'?<>
-    <Text style={[s.heading,{color:c.text}]}>Turno objetivo · segunda hoja</Text>
-    <TurnStrip value={target} onChange={changeTurn}/>
-    <AuxiliarySheetPanel turn={target} aux={auxHeads} heads={data} view={motor} plus={sheet} date={date||''}/>
-   </>:screen==='predictiva'?<>
+   :screen==='predictiva'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
     <View style={[s.predictorOptions,{borderColor:c.border}]}>
@@ -469,7 +461,7 @@ function LaloApp(){
     <TurnStrip value={target} onChange={changeTurn}/>
     <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
    </>:screen==='cabezas'?
-    <HeadsTable data={data} sheet={sheet} onOpenHead={openHeadInHoja}/>:
+    <HeadsTable data={data} highlights={headHighlights} onOpenHead={openHeadInHoja}/>:
     <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
       onTurnChange={changeTurn} onOpenFrame={openInfoFrame}
