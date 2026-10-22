@@ -13,7 +13,7 @@ import type {AuxiliaryHeads} from './auxSantiagoNeuquen';
 import type {AuxSourceTurn} from './auxSantiagoNeuquen';
 import {buildAuxIndependent,extractIntegralAuxHistory} from './motorLaloIntegral';
 import type {AuxiliaryHistorical,IntegralKind} from './motorLaloIntegral';
-export type AuxiliarHistory=AuxiliaryHistorical;
+export type AuxiliarHistory=AuxiliaryHistorical & {heads?:AuxiliaryHeads};
 export type AuxiliarFamily={
  family:string;mother:string|null;rank:number;values:string[];
  roots:number;d1:number;d7:number;paths:number;crossing:boolean;
