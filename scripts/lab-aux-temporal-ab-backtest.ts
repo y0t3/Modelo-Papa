@@ -5,7 +5,8 @@ import {previousDrawDay,shiftDay} from '../src/dates';
 import {TURNOS,JURS} from '../src/domain';
 import type {CabezasDia} from '../src/domain';
 import type {AuxiliaryHeads} from '../src/auxSantiagoNeuquen';
-import {predictMode,extractHistoryMode} from '../src/auxTemporalModes';
+import {predictMode,extractHistoryMode,auxAtCut} from '../src/auxTemporalModes';
+import {auxiliaryBoard,findAuxPaths} from '../src/auxSantiagoNeuquen';
 import type {AuxTemporalMode} from '../src/auxTemporalModes';
 import type {AuxiliarHistory,AuxiliarView,AuxiliarFamily} from '../src/motorLaloAuxiliar';
 const dates=['2026-10-12','2026-10-13','2026-10-14','2026-10-15',
@@ -67,6 +68,10 @@ async function run(){
    }
    sealed.push({date,turn,sourceAnterior:previousDrawDay(date),
     sourceIntrajornada:date,ranks});
+   const physical={
+    anterior:auxiliaryBoard(auxAtCut(old.aux,turn,'anterior'),turn),
+    intrajornada:auxiliaryBoard(auxAtCut(today.aux,turn,'intrajornada'),turn)
+   };
    // Cotejo POST: recién aquí se leen cabezas del turno que se evalúa.
    for(const jur of JURS){
     const head=today.heads[turn]?.[jur];
@@ -80,7 +85,11 @@ async function run(){
        .some(f=>f.values.includes(head.slice(-n)));
      }
     }
-    entries.push({date,turn,jur,head,hits});
+    const formed={
+     anterior:findAuxPaths(physical.anterior,head.slice(-3)).length>0,
+     intrajornada:findAuxPaths(physical.intrajornada,head.slice(-3)).length>0
+    };
+    entries.push({date,turn,jur,head,hits,formed});
    }
   }
   console.log('AUX_AB_DIA',date,entries.filter(x=>x.date===date).length);
@@ -104,6 +113,18 @@ async function run(){
  fs.writeFileSync(root+'/tops-antes-de-cada-sorteo.json',JSON.stringify(sealed,null,2));
  fs.writeFileSync(root+'/resultado-por-cabeza.json',JSON.stringify(entries,null,2));
  fs.writeFileSync(root+'/resumen.json',JSON.stringify({dates,summary,comparison},null,2));
+ const vt3=entries.filter(x=>x.hits[3].anterior[10]||x.hits[3].intrajornada[10])
+  .map(x=>({date:x.date,turn:x.turn,jur:x.jur,head:x.head,
+   top10Anterior:x.hits[3].anterior[10],top10Intrajornada:x.hits[3].intrajornada[10],formed:x.formed}));
+ const physicalSummary={anterior:entries.filter(x=>x.formed.anterior).length,
+  intrajornada:entries.filter(x=>x.formed.intrajornada).length,
+  ambos:entries.filter(x=>x.formed.anterior&&x.formed.intrajornada).length};
+ const vt3ByTurn=TURNOS.map(turn=>({turn,
+  anterior:entries.filter(x=>x.turn===turn&&x.hits[3].anterior[10]).length,
+  intrajornada:entries.filter(x=>x.turn===turn&&x.hits[3].intrajornada[10]).length}));
+ console.log('AUX_AB_VT3_EVENTOS',JSON.stringify(vt3));
+ console.log('AUX_AB_VT3_FISICOS',JSON.stringify(physicalSummary));
+ console.log('AUX_AB_VT3_POR_TURNO',JSON.stringify(vt3ByTurn));
  console.log('AUX_AB_RESULT',JSON.stringify({summary,comparison}));
 }
 void run().catch(e=>{console.error('AUX_AB_ERROR',e);process.exitCode=1});
