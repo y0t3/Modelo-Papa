@@ -9,8 +9,9 @@ import {ColoredDigits} from './HighlightedHead';
 import {useLaloTheme} from './LaloTheme';
 
 /** La tabla de cabezas no es un ranking: muestra también las que no coincidieron. */
-export default function HeadsTable({data,highlights,onOpenHead}:{
+export default function HeadsTable({data,highlights,onOpenHead,sourceLabels={}}:{
  data:CabezasDia|null;highlights:Record<string,HeadHighlight>;
+ sourceLabels?:Record<string,'HOY'|'AYER'|'AMBAS'>;
  onOpenHead:(turn:Turno,jurisdiction:string,head:string)=>void
 }){
  const {colors:c,kinds:vtColors}=useLaloTheme();
@@ -27,7 +28,9 @@ export default function HeadsTable({data,highlights,onOpenHead}:{
      <Text style={[s.first,s.jur,{color:c.text}]}>{j}</Text>
      {TURNOS.map(t=>{
       const h=data?.[t]?.[j]||'----';
-      const mark=highlights[dailyHeadOwnerId(t,j,h)];
+      const id=dailyHeadOwnerId(t,j,h);
+      const mark=highlights[id];
+      const sourceLabel=sourceLabels[id];
       const kinds=mark?.kinds||[];
       const muted=kinds.length===0;
       const onlyAux=!!mark?.auxKinds.length&&!mark.plusKinds.length;
@@ -42,7 +45,9 @@ export default function HeadsTable({data,highlights,onOpenHead}:{
        <ColoredDigits value={h} kinds={kinds} large/>
        <View style={s.tags}>{(['vt2','vt3','vt4'] as PanoramaKind[]).filter(k=>kinds.includes(k)).map(k=>
         <Text key={k} style={[s.tag,{color:vtColors[k].line}]}>{k.toUpperCase()} </Text>)}</View>
-       {onlyAux?<Text style={[s.openHint,{color:c.accent}]}>AUX · recorrido válido</Text>:null}
+       {sourceLabel?<Text style={[s.openHint,{color:c.accent}]}>
+        AUX {sourceLabel} · marca comprobada</Text>:null}
+       {onlyAux&&!sourceLabel?<Text style={[s.openHint,{color:c.accent}]}>AUX · recorrido válido</Text>:null}
        {!muted?<Text style={[s.openHint,{color:c.accent}]}>↗ Ver en hoja</Text>:null}
       </Pressable>;
      })}

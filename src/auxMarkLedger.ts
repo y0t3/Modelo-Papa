@@ -16,6 +16,8 @@ import {findPaths} from './paths';
 import {auxiliaryBoard,findAuxPaths,collectAuxFamilies,auxFamily,enumerateAuxPaths}
  from './auxSantiagoNeuquen';
 import type {AuxiliaryHeads,AuxPath,AuxSourceTurn} from './auxSantiagoNeuquen';
+import {auxAtCut} from './auxTemporalModes';
+import type {AuxMode} from './auxTemporalModes';
 
 export type MarkKind='vt2'|'vt3'|'vt4';
 export type MarkBoard='plus11'|'aux';
@@ -50,7 +52,8 @@ const familyOf=(value:string,kind:MarkKind)=>{
 const canonical=(cells:{row:number;col:number;digit:string}[])=>
  cells.map(c=>c.row+':'+c.col).join('>');
 export function buildAuxPostLedger(date:string,aux:AuxiliaryHeads,
- current:CabezasDia,plus:DailySheet,reviewThrough:Turno):MarkLedger{
+ current:CabezasDia,plus:DailySheet,reviewThrough:Turno,
+ mode:AuxMode='anterior'):MarkLedger{
  const latest=indexOf(reviewThrough);
  if(latest<0)throw Error('Turno de revisión inválido');
  const marks:DrawMark[]=[];
@@ -60,7 +63,7 @@ export function buildAuxPostLedger(date:string,aux:AuxiliaryHeads,
   auxCrossTurnHeads:0,auxPaths:0,plusPaths:0
  }])) as MarkLedger['summary'];
  for(let targetIdx=0;targetIdx<=latest;targetIdx++){
-  const turn=TURNOS[targetIdx],board=auxiliaryBoard(aux,turn);
+  const turn=TURNOS[targetIdx],board=auxiliaryBoard(auxAtCut(aux,turn,mode),turn);
   const visible=plus.columns.slice(0,targetIdx+1);
   for(const jur of JURS){
    const head=current[turn]?.[jur]||'';
@@ -107,7 +110,7 @@ export function buildAuxPostLedger(date:string,aux:AuxiliaryHeads,
  };
  for(const target of TURNOS){
   if(indexOf(target)>latest)break;
-  const board=auxiliaryBoard(aux,target);
+  const board=auxiliaryBoard(auxAtCut(aux,target,mode),target);
   const actual:Record<MarkKind,Map<string,Set<string>>>={
    vt2:new Map(),vt3:new Map(),vt4:new Map()
   };

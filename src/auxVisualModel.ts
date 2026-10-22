@@ -4,6 +4,8 @@ import type {AuxiliarView,AuxiliarHistory} from './motorLaloAuxiliar';
 import type {AuxiliaryBoard,AuxPath,AuxSourceTurn} from './auxSantiagoNeuquen';
 import {auxiliaryBoard,auxCanonicalPath} from './auxSantiagoNeuquen';
 import {projectAuxShape} from './auxWinningMemory';
+import {auxAtCut} from './auxTemporalModes';
+import type {AuxMode} from './auxTemporalModes';
 import {dailyHeadOwnerId} from './panoramaModel';
 
 export type AuxVisualKind=MarkKind;
@@ -58,7 +60,7 @@ export function buildAuxDailyVisual(ledger:MarkLedger,board:AuxiliaryBoard):AuxV
  */
 export function buildAuxPredictiveVisual(date:string,turn:Turno,
  aux:AuxiliaryBoard,view:AuxiliarView,
- history:AuxiliarHistory[]):AuxVisualData{
+ history:AuxiliarHistory[],mode:AuxMode='anterior'):AuxVisualData{
  if(view.date!==date||view.turn!==turn)throw Error('Vista AUX de otro corte');
  if(history.some(h=>h.date>=date))throw Error('No usar histórico futuro');
  const routes:AuxVisualRoute[]=[],groups:AuxVisualGroup[]=[];
@@ -93,10 +95,12 @@ export function buildAuxPredictiveVisual(date:string,turn:Turno,
       route.rootEvents.push({
        id:event.id,date:old.date,sourceDate,period,turn:event.turn,jur:event.jur,
        head:event.head,reading:oldValue,path:former,
-       board:oldHeads?auxiliaryBoard(oldHeads,event.turn):null,
+       board:oldHeads?auxiliaryBoard(auxAtCut(oldHeads,event.turn,mode),event.turn):null,
        relation:'La cabeza '+event.head+' formó '+oldValue+
-        ' en '+event.turn+' con la hoja del día anterior'+
-        (sourceDate?' ('+sourceDate+')':'')+'. Conservamos exactamente los movimientos '+
+        ' en '+event.turn+(mode==='anterior'?
+        ' con la hoja ANTERIOR'+(sourceDate?' ('+sourceDate+')':''):
+        ' con cifras de esa misma jornada ya disponibles antes del turno')+
+        '. Conservamos exactamente los movimientos '+
         'entre esas casillas y los colocamos sobre las cifras visibles '+
         'del corte actual: '+reading+'.'
       });

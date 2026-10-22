@@ -4,6 +4,8 @@ import type {Turno} from '../domain';
 import type {AuxiliarView,AuxiliarHistory} from '../motorLaloAuxiliar';
 import type {AuxiliaryHeads} from '../auxSantiagoNeuquen';
 import {auxiliaryBoard} from '../auxSantiagoNeuquen';
+import {auxAtCut} from '../auxTemporalModes';
+import type {AuxMode} from '../auxTemporalModes';
 import {buildAuxPredictiveVisual} from '../auxVisualModel';
 import type {AuxVisualKind,AuxVisualGroup} from '../auxVisualModel';
 import AuxMarkedBoard from './AuxMarkedBoard';
@@ -13,9 +15,9 @@ import {useLaloTheme} from './LaloTheme';
 type Filter='all'|AuxVisualKind;
 const ALL:AuxVisualKind[]=['vt2','vt3','vt4'];
 export default function AuxiliaryPredictiveSheet({
- date,sourceDate,turn,heads,view,history,focusedOwner
+ date,sourceDate,turn,heads,view,history,focusedOwner,auxMode='anterior'
 }:{
- date:string;sourceDate:string;turn:Turno;heads:AuxiliaryHeads;
+ date:string;sourceDate:string;turn:Turno;heads:AuxiliaryHeads;auxMode?:AuxMode;
  view:AuxiliarView;history:AuxiliarHistory[];focusedOwner?:string|null
 }){
  const {colors:c,kinds}=useLaloTheme();
@@ -26,9 +28,9 @@ export default function AuxiliaryPredictiveSheet({
   vt2:false,vt3:true,vt4:false
  });
  const [detail,setDetail]=useState(false);
- const board=useMemo(()=>auxiliaryBoard(heads,turn),[heads,turn]);
- const visual=useMemo(()=>buildAuxPredictiveVisual(date,turn,board,view,history),
-  [date,turn,board,view,history]);
+ const board=useMemo(()=>auxiliaryBoard(auxAtCut(heads,turn,auxMode),turn),[heads,turn,auxMode]);
+ const visual=useMemo(()=>buildAuxPredictiveVisual(date,turn,board,view,history,auxMode),
+  [date,turn,board,view,history,auxMode]);
  useEffect(()=>{
   setSelected(focusedOwner||null);setDetail(false);
   const m=/^(vt2|vt3|vt4)\|/.exec(focusedOwner||'');
@@ -61,7 +63,7 @@ export default function AuxiliaryPredictiveSheet({
  return <View style={[s.surface,{borderColor:c.border,backgroundColor:c.surface}]}>
   <Text style={[s.title,{color:c.text}]}>HOJA PREDICTIVA · LALO AUXILIAR</Text>
   <Text style={[s.note,{color:c.subtext}]}>
-   {turn} · Santiago–Neuquén de AYER{sourceDate?' ('+sourceDate+')':''}, sin +11.
+   {turn} · Santiago–Neuquén {auxMode==='intrajornada'?'de HOY (solo cifras disponibles antes de este turno)':'de AYER'}{sourceDate?' ('+sourceDate+')':''}, sin +11.
    Las familias y posiciones proceden de marcas ganadoras históricas.
   </Text>
   <AuxMarkedBoard board={board} routes={routes}

@@ -4,6 +4,9 @@ import type {DailySheet} from './sheet';
 import type {CabezasDia,Turno} from './domain';
 import type {AuxiliaryHeads} from './auxSantiagoNeuquen';
 import {auxiliaryBoard} from './auxSantiagoNeuquen';
+import {auxAtCut} from './auxTemporalModes';
+import type {AuxMode} from './auxTemporalModes';
+import AuxModeSwitch from './ui/AuxModeSwitch';
 import {buildAuxPostLedger} from './auxMarkLedger';
 import {buildAuxDailyVisual} from './auxVisualModel';
 import AuxMarkedBoard from './ui/AuxMarkedBoard';
@@ -27,10 +30,12 @@ const detectKind=(id:string|null|undefined):KindFilter=>{
 };
 
 export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner,initialTurn,
- initialTurnOnly=false,auxHeads,auxSourceDate,drawHeads,date=''}:{
+ initialTurnOnly=false,auxHeads,auxSourceDate,drawHeads,date='',
+ auxMode='anterior',onAuxModeChange}:{
  sheet:DailySheet;data:PanoramaData;mode:'hoja'|'predictiva';
  target?:Turno;onInfo:()=>void;focusedOwner?:string|null;initialTurn?:Turno;
- initialTurnOnly?:boolean;auxHeads?:AuxiliaryHeads|null;auxSourceDate?:string|null;drawHeads?:CabezasDia|null;date?:string
+ initialTurnOnly?:boolean;auxHeads?:AuxiliaryHeads|null;auxSourceDate?:string|null;drawHeads?:CabezasDia|null;date?:string;
+ auxMode?:AuxMode;onAuxModeChange?:(mode:AuxMode)=>void
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [active,setActive]=useState<string|null>(focusedOwner||null);
@@ -47,9 +52,13 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
   setTopOnly(true);setExpanded(defaultOpen);
  },[sheet,data,mode,target,focusedOwner,initialTurn,initialTurnOnly]);
  const ledger=useMemo(()=>mode==='hoja'&&auxHeads&&drawHeads?
-  buildAuxPostLedger(date,auxHeads,drawHeads,sheet,'Nocturno'):null,
-  [mode,auxHeads,drawHeads,sheet,date]);
- const auxBoard=useMemo(()=>auxHeads?auxiliaryBoard(auxHeads,'Nocturno'):null,[auxHeads]);
+  buildAuxPostLedger(date,auxHeads,drawHeads,sheet,'Nocturno',auxMode):null,
+  [mode,auxHeads,drawHeads,sheet,date,auxMode]);
+ const auxBoard=useMemo(()=>{
+  if(!auxHeads)return null;
+  const cut=mode==='hoja'&&auxMode==='intrajornada'&&(turnOnly||active)?turn:'Nocturno';
+  return auxiliaryBoard(auxAtCut(auxHeads,cut,auxMode),cut);
+ },[auxHeads,mode,auxMode,turnOnly,active,turn]);
  const auxVisual=useMemo(()=>ledger&&auxBoard?buildAuxDailyVisual(ledger,auxBoard):null,
   [ledger,auxBoard]);
  const combinedGroups=useMemo(()=>{
@@ -92,7 +101,11 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
  const selectedRoutes=useMemo(()=>active?boardRoutes.filter(r=>r.ownerId===active):[],
   [boardRoutes,active]);
  const uniqueRoutes=useMemo(()=>new Set(boardRoutes.map(r=>r.id)).size,[boardRoutes]);
- const select=(id:string)=>{setActive(old=>old===id?null:id);setTurnOnly(false);setDetail(false)};
+ const select=(id:string)=>{
+  const owner=combinedGroups.find(g=>g.id===id);
+  if(owner?.turn)setTurn(owner.turn);
+  setActive(old=>old===id?null:id);setTurnOnly(false);setDetail(false)
+ };
  const changeHojaTurn=(t:Turno)=>{
   setTurn(t);setTurnOnly(true);setActive(null);setDetail(false);
  };
@@ -149,9 +162,14 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
    routes={mode==='hoja'?data.routes:boardRoutes}
    highlightRoutes={mode==='hoja'&&(turnOnly||active!==null)?boardRoutes:undefined}
    activeOwner={mode==='hoja'?null:active}/>
-  {mode==='hoja'&&auxBoard&&auxVisual?<View style={{marginTop:13,gap:7}}>
+  {mode==='hoja'?<View style={{marginTop:13,gap:7}}>
+   {onAuxModeChange?<AuxModeSwitch value={auxMode} onChange={onAuxModeChange}/>:null}
+   {auxBoard&&auxVisual?<>
    <Text style={[s.title,{color:c.text}]}>HOJA SANTIAGO–NEUQUÉN</Text>
-   <Text style={[s.note,{color:c.subtext}]}>Base de AYER{auxSourceDate?' · '+auxSourceDate:''} · disponible desde Previa.</Text>
+   <Text style={[s.note,{color:c.subtext}]}>
+    {auxMode==='intrajornada'? 'HOY · '+date+' · se incorporan las franjas al publicarse sus sorteos.':
+     'AYER · '+(auxSourceDate||'jornada anterior')+' · grilla completa desde Previa.'}
+   </Text>
    <AuxMarkedBoard board={auxBoard} routes={auxVisual.routes}
     focusRoutes={turnOnly||active!==null?auxHighlighted:undefined}
     focus={turnOnly||active!==null}/>
@@ -159,6 +177,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
     La selección de una cabeza resalta TODOS sus recorridos exactos en ambas
     hojas simultáneamente. Las rutas que cruzan franjas pertenecen solo a AUX.
    </Text>
+   </>:<Text style={[s.note,{color:c.muted}]}>No hay cifras AUX disponibles para este modo y fecha.</Text>}
   </View>:null}
   <View style={s.legend}>{KINDS.map(k=><View key={k} style={s.legendItem}>
    <View style={{width:12,height:12,borderRadius:3,borderWidth:2,

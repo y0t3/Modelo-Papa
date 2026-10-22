@@ -8,6 +8,8 @@ import type {CabezasDia} from './domain';
 import type {DailySheet} from './sheet';
 import type {AuxiliaryHeads} from './auxSantiagoNeuquen';
 import {auxiliaryBoard,findAuxPaths} from './auxSantiagoNeuquen';
+import {auxAtCut} from './auxTemporalModes';
+import type {AuxMode} from './auxTemporalModes';
 import {dailyHeadOwnerId} from './panoramaModel';
 import type {PanoramaKind} from './panoramaModel';
 
@@ -16,11 +18,11 @@ export type HeadHighlight={
  kinds:PanoramaKind[];plusKinds:PanoramaKind[];auxKinds:PanoramaKind[]
 };
 export function buildHeadHighlights(data:CabezasDia|null,sheet:DailySheet|null,
- aux:AuxiliaryHeads|null):Record<string,HeadHighlight>{
+ aux:AuxiliaryHeads|null,mode:AuxMode='anterior'):Record<string,HeadHighlight>{
  const highlights:Record<string,HeadHighlight>={};
  if(!data)return highlights;
  for(const turn of TURNOS){
-  const board=aux?auxiliaryBoard(aux,turn):null;
+  const board=aux?auxiliaryBoard(auxAtCut(aux,turn,mode),turn):null;
   for(const jur of JURS){
    const head=data[turn]?.[jur]||'';
    if(!/^\d{4}$/.test(head))continue;
