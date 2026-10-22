@@ -3,11 +3,6 @@ on:
   workflow_dispatch:
   push:
     branches: [lab/app-aux-hoy-ayer-22oct2026]
-    paths:
-      - 'App.tsx'
-      - 'src/**'
-      - 'package.json'
-      - 'package-lock.json'
 permissions:
   contents: read
 jobs:
