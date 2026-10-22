@@ -1,7 +1,12 @@
 import React,{useEffect,useMemo,useState} from 'react';
 import {View,Text,Pressable,ScrollView,Modal,StyleSheet} from 'react-native';
 import type {DailySheet} from './sheet';
-import type {Turno} from './domain';
+import type {CabezasDia,Turno} from './domain';
+import type {AuxiliaryHeads} from './auxSantiagoNeuquen';
+import {auxiliaryBoard} from './auxSantiagoNeuquen';
+import {buildAuxPostLedger} from './auxMarkLedger';
+import {buildAuxDailyVisual} from './auxVisualModel';
+import AuxMarkedBoard from './ui/AuxMarkedBoard';
 import {TURNOS} from './domain';
 import {routesForDailyTurn} from './panoramaModel';
 import type {PanoramaData,PanoramaGroup,PanoramaKind} from './panoramaModel';
@@ -20,10 +25,11 @@ const detectKind=(id:string|null|undefined):KindFilter=>{
  return prefix==='vt2'||prefix==='vt3'||prefix==='vt4'?prefix:'all';
 };
 
-export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner,initialTurn,initialTurnOnly=false}:{
+export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner,initialTurn,
+ initialTurnOnly=false,auxHeads,drawHeads,date=''}:{
  sheet:DailySheet;data:PanoramaData;mode:'hoja'|'predictiva';
  target?:Turno;onInfo:()=>void;focusedOwner?:string|null;initialTurn?:Turno;
- initialTurnOnly?:boolean
+ initialTurnOnly?:boolean;auxHeads?:AuxiliaryHeads|null;drawHeads?:CabezasDia|null;date?:string
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [active,setActive]=useState<string|null>(focusedOwner||null);
@@ -39,6 +45,21 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
   setFilter(detectKind(focusedOwner));
   setTopOnly(true);setExpanded(defaultOpen);
  },[sheet,data,mode,target,focusedOwner,initialTurn,initialTurnOnly]);
+ const ledger=useMemo(()=>mode==='hoja'&&auxHeads&&drawHeads?
+  buildAuxPostLedger(date,auxHeads,drawHeads,sheet,'Nocturno'):null,
+  [mode,auxHeads,drawHeads,sheet,date]);
+ const auxBoard=useMemo(()=>auxHeads?auxiliaryBoard(auxHeads,'Nocturno'):null,[auxHeads]);
+ const auxVisual=useMemo(()=>ledger&&auxBoard?buildAuxDailyVisual(ledger,auxBoard):null,
+  [ledger,auxBoard]);
+ const combinedGroups=useMemo(()=>{
+  if(mode!=='hoja'||!auxVisual)return data.groups;
+  const added=new Map(auxVisual.groups.map(g=>[g.id,g]));
+  return data.groups.map(g=>{
+   const extra=added.get(g.id);if(!extra)return g;
+   return {...g,routeCount:g.routeCount+extra.routeCount,
+    kinds:[...new Set([...g.kinds,...extra.kinds])],subtitle:g.subtitle};
+  });
+ },[mode,data.groups,auxVisual]);
  const columns=mode==='predictiva'
   ?sheet.columns.slice(0,TURNOS.indexOf(target||'Previa')+1):sheet.columns;
  const byKind=useMemo(()=>({
@@ -47,10 +68,10 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
   vt4:data.groups.filter(g=>g.id.startsWith('vt4|'))
  }),[data.groups]);
  const visibleGroups=useMemo(()=>{
-  if(mode==='hoja')return data.groups.filter(g=>g.turn===turn);
+  if(mode==='hoja')return combinedGroups.filter(g=>g.turn===turn);
   const ks=filter==='all'?KINDS:[filter];
   return ks.flatMap(k=>topOnly?byKind[k].slice(0,10):byKind[k]);
- },[mode,data.groups,turn,filter,topOnly,byKind]);
+ },[mode,data.groups,combinedGroups,turn,filter,topOnly,byKind]);
  const visibleIds=useMemo(()=>new Set(visibleGroups.map(g=>g.id)),[visibleGroups]);
  const boardRoutes=useMemo(()=>{
   if(mode==='hoja'){
@@ -59,7 +80,14 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
   }
   return data.routes.filter(r=>visibleIds.has(r.ownerId));
  },[mode,data,visibleIds,active,turnOnly,turn]);
- const selected=visibleGroups.find(g=>g.id===active)||null;
+ const auxHighlighted=useMemo(()=>{
+  if(!auxVisual)return [];
+  if(active)return auxVisual.routes.filter(r=>r.ownerId===active);
+  if(turnOnly)return auxVisual.routes.filter(r=>auxVisual.groups.some(g=>
+   g.turn===turn&&g.id===r.ownerId));
+  return auxVisual.routes;
+ },[auxVisual,active,turnOnly,turn]);
+ const selected=combinedGroups.find(g=>g.id===active)||null;
  const selectedRoutes=useMemo(()=>active?boardRoutes.filter(r=>r.ownerId===active):[],
   [boardRoutes,active]);
  const uniqueRoutes=useMemo(()=>new Set(boardRoutes.map(r=>r.id)).size,[boardRoutes]);
@@ -120,6 +148,16 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
    routes={mode==='hoja'?data.routes:boardRoutes}
    highlightRoutes={mode==='hoja'&&(turnOnly||active!==null)?boardRoutes:undefined}
    activeOwner={mode==='hoja'?null:active}/>
+  {mode==='hoja'&&auxBoard&&auxVisual?<View style={{marginTop:13,gap:7}}>
+   <Text style={[s.title,{color:c.text}]}>HOJA SANTIAGO–NEUQUÉN</Text>
+   <AuxMarkedBoard board={auxBoard} routes={auxVisual.routes}
+    focusRoutes={turnOnly||active!==null?auxHighlighted:undefined}
+    focus={turnOnly||active!==null}/>
+   <Text style={[s.note,{color:c.subtext}]}>
+    La selección de una cabeza resalta TODOS sus recorridos exactos en ambas
+    hojas simultáneamente. Las rutas que cruzan franjas pertenecen solo a AUX.
+   </Text>
+  </View>:null}
   <View style={s.legend}>{KINDS.map(k=><View key={k} style={s.legendItem}>
    <View style={{width:12,height:12,borderRadius:3,borderWidth:2,
     borderColor:kinds[k].line,backgroundColor:kinds[k].fill}}/>
@@ -127,7 +165,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
   </View>)}</View>
   <View style={s.status}>
    <Text style={[s.count,{color:c.text}]} numberOfLines={2}>{selected?
-    selected.label+' · '+selectedRoutes.length+' recorridos':
+    selected.label+' · '+(selectedRoutes.length+(auxVisual?.routes.filter(r=>r.ownerId===selected.id).length||0))+' recorridos en ambas hojas':
     mode==='hoja'?turnOnly?turn+' · '+visibleGroups.filter(g=>g.routeCount>0).length+' cabezas con marca · '+uniqueRoutes+' recorridos':uniqueRoutes+' huellas físicas · tablero completo':
     uniqueRoutes+' huellas visibles con el filtro actual'}</Text>
    {selected?<View style={s.actions}>
@@ -206,6 +244,15 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
     </View>
     <Text style={[s.note,{color:c.subtext}]}>{selected?(mode==='predictiva'?explainFamilyRationale(selected.subtitle):selected.subtitle):''} · {selectedRoutes.length} caminos en la hoja</Text>
     <ScrollView contentContainerStyle={{paddingBottom:40}}>
+     {mode==='hoja'&&auxVisual&&auxBoard&&selected?<View style={{gap:5}}>
+      <Text style={[s.groupTitle,{color:c.text}]}>Recorridos de la hoja auxiliar</Text>
+      <AuxMarkedBoard board={auxBoard} routes={auxVisual.routes}
+       focusRoutes={auxVisual.routes.filter(r=>r.ownerId===selected.id)} focus/>
+      <Text style={[s.note,{color:c.subtext}]}>
+       {auxVisual.routes.filter(r=>r.ownerId===selected.id).length} recorridos AUX
+       contiguos que forman los sufijos exactos de la cabeza publicada.
+      </Text>
+     </View>:null}
      {KINDS.filter(k=>selectedRoutes.some(r=>r.kind===k)).map(k=><View key={k}>
       <Text style={[s.groupTitle,{color:kinds[k].line}]}>{kinds[k].label}</Text>
       {selectedRoutes.filter(r=>r.kind===k).map(r=>
