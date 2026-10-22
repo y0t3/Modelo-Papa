@@ -1,0 +1,30 @@
+name: LAB Hoja Dual y Predictiva Auxiliar
+on:
+  push:
+    branches: [lab/hoja-dual-predictiva-aux-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  visu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar paquetes
+        run: npm install
+      - name: Compilar interfaz completa
+        run: npx tsc --noEmit
+      - name: Confirmar geometria de ambas hojas
+        run: |
+          npx --yes tsx scripts/lab-aux-mapeo-fuente-test.ts
+          npx --yes tsx scripts/lab-aux-geometria-test.ts
+      - name: Probar Hoja dual y detalle Auxiliar PRE-POST
+        run: npx --yes tsx scripts/lab-hoja-dual-predictiva-test.ts
+      - name: Motor auxiliar y comparación de Tops independientes
+        run: npx --yes tsx scripts/lab-lalo-auxiliar-paralelos-test.ts
+      - name: Replay del 20 octubre
+        run: npx --yes tsx scripts/lab-prediccion-paralela-20oct.ts
