@@ -172,9 +172,9 @@ function LaloApp(){
    ];
    if(week<d&&hasDrawResults(weekly))
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
-   // El integral requiere las cabezas RAW reales de las MISMAS
-   // jornadas antiguas que MV1. Sin datos, nunca inventar raíces auxiliares.
-   let auxiliarHistory:AuxiliarPast[]=[];
+   // El motor auxiliar requiere solamente raíces RAW anteriores de
+   // Santiago-Neuquén. Se usan las fechas D−1/D−7, nunca la hoja +11.
+   let auxiliarHistory:AuxiliarHistory[]=[];
    let auxWarning:string|null=null;
    if(!auxResult){
     auxWarning='No se recibieron las cabezas actuales de Santiago–Neuquén.';
