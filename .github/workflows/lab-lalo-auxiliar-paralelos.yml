@@ -24,3 +24,5 @@ jobs:
           npx --yes tsx scripts/lab-aux-geometria-test.ts
       - name: Probar motores separados y coincidencias
         run: npx --yes tsx scripts/lab-lalo-auxiliar-paralelos-test.ts
+      - name: Auditar 20 octubre ambos motores independientes
+        run: npx --yes tsx scripts/lab-prediccion-paralela-20oct.ts
