@@ -14,7 +14,7 @@ heads.Matutino.Santiago='9634';
 heads.Matutino.Neuquen='0210';
 
 const outcomes=diaVacio();
-outcomes.Primera['Santa Fé']='8568'; // puede formarse desde las 3 franjas de AYER
+outcomes.Primera['Santa Fé']='8568'; // no se forma físicamente, aun con las 3 franjas
 outcomes.Vespertino['Entre Ríos']='4066'; // sí 066 en Previa aux
 outcomes.Nocturno.Ciudad='2697'; // sí 697 y cruza franjas
 outcomes.Nocturno.Provincia='7310'; // sí 310 en Matutino
@@ -22,7 +22,7 @@ outcomes.Previa.Provincia='8067'; // puede formar desde AUX de AYER
 
 const day=extractWinningMarks('2026-10-20',heads,outcomes);
 const id=(head:string)=>day.marks.find(m=>m.head===head);
-assert(id('8568'),'Primera de hoy puede usar las 3 franjas de AYER');
+assert(!id('8568'),'Sin recorrido válido no se inventa una marca, ni con hoja completa');
 assert(id('8067'),'AUX de AYER disponible al sortear Previa');
 assert.equal(id('4066')?.family,'066/660');
 assert.equal(id('2697')?.family,'697/796');

@@ -19,9 +19,8 @@ raw.Matutino.Santiago='9634';raw.Matutino.Neuquen='0210';
 const memories=extractIntegralAuxHistory('2026-10-19',raw,historic);
 assert(memories.events[3].some(x=>x.head==='2697'));
 assert(memories.events[3].every(x=>x.head.endsWith(x.head.slice(-3))));
-assert(memories.events[3].some(x=>x.turn==='Previa')===false ||
- memories.events[3].some(x=>x.turn==='Previa'),
- 'Las celdas de AYER siempre están disponibles; depende del ganador');
+assert(memories.events[3].every(x=>x.turn==='Nocturno'),
+ 'El histórico de la prueba publica una única cabeza Nocturna');
 
 const originalSheet=buildSheet(current,yesterday);
 const historicSheet=buildSheet(historic,yesterday);

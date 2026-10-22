@@ -32,6 +32,8 @@ jobs:
         run: |
           npx --yes tsx scripts/lab-aux-bitacora-test.ts
           npx --yes tsx scripts/lab-aux-memoria-test.ts
+      - name: Probar el tablero mañana 22 con fuente de hoy 21
+        run: npx --yes tsx scripts/lab-hoja-siguiente-22oct-test.ts
       - name: Motor auxiliar y comparación de Tops independientes
         run: npx --yes tsx scripts/lab-lalo-auxiliar-paralelos-test.ts
       - name: Replay del 20 octubre
