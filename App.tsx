@@ -23,6 +23,7 @@ import {buildMotorLaloAuxiliar,extractAuxiliarHistory} from './src/motorLaloAuxi
 import type {AuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {LaloHistorical} from './src/motorLalo';
 import type {InfoVisualDay,TurnHistoryFrame} from './src/infoTurnHistory';
+import type {AuxGalleryDay} from './src/infoAuxGallery';
 import PanoramaSheet from './src/PanoramaSheet';
 import AuxiliaryPredictiveSheet from './src/ui/AuxiliaryPredictiveSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
@@ -101,6 +102,8 @@ function LaloApp(){
  const [predictiveMode,setPredictiveMode]=useState<'lalo'|'auxiliar'>('lalo');
 
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
+ const [infoAuxDays,setInfoAuxDays]=useState<AuxGalleryDay[]>([]);
+ const auxInfoRequest=useRef(0);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
  const [busy,setBusy]=useState(false);
  const [experimental,setExperimental]=useState(false);
@@ -163,6 +166,8 @@ function LaloApp(){
  const cargar=async(requested?:string)=>{
   const d=requested||date;
   if(!d){Alert.alert('Fecha inválida','Usá DD/MM/AAAA.');return}
+  const request=++auxInfoRequest.current;
+  setInfoAuxDays([]);
   try{
    setBusy(true);
    const week=shiftDay(d,-7);
@@ -233,6 +238,19 @@ function LaloApp(){
    setAuxiliarPast(auxiliarHistory);setAuxiliarError(auxWarning);
    setAuxTodayPast(todayHistory);setAuxTodayError(todayWarning);
     setVisualDays(recentDays);
+   // INFO: cargar la semana AUX en paralelo sin bloquear la hoja diaria.
+   // El identificador de solicitud evita reutilizar minihojas de otra fecha.
+   void Promise.all(recentDays.map(async day=>{
+    const [yesterday,todayAux]=await Promise.all([
+     fetchAuxiliaryBaseForDate(day.date).catch(()=>null),
+     fetchAuxiliaryHeads(day.date).catch(()=>null)
+    ]);
+    return {date:day.date,heads:day.heads,
+     yesterday:yesterday?.heads||null,today:todayAux?.heads||null,
+     sourceDate:yesterday?.sourceDate||null};
+   })).then(days=>{
+    if(auxInfoRequest.current===request)setInfoAuxDays(days);
+   }).catch(()=>{if(auxInfoRequest.current===request)setInfoAuxDays([])});
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
    
    setHojaFocused(null);setHojaTurn('Previa');
@@ -423,7 +441,8 @@ function LaloApp(){
      setAuxSourceDate(null);setHistoricalAux(null);setSheet(null);setBaseHeads(null);setHist([]);
      setAuxiliarPast([]);setAuxiliarError(null);
      setAuxTodayPast([]);setAuxTodayError(null);
-     setVisualDays([]);setFocused(null);
+     ++auxInfoRequest.current;
+     setInfoAuxDays([]);setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <View style={s.shortcuts}>
@@ -559,6 +578,19 @@ function LaloApp(){
    </>:
     <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
+     auxDays={infoAuxDays}
+     currentAux={data&&date?{
+      date,heads:data,yesterday:auxHeads,today:auxToday,sourceDate:auxSourceDate
+     }:null}
+     auxMode={auxMode} onAuxMode={changeAuxMode}
+     onOpenAuxDay={dayDate=>{
+      const day=visualDays.find(x=>x.date===dayDate);
+      if(day)openInfoFrame({
+       id:'dia-'+day.date,date:day.date,dayLabel:day.date,
+       title:'Hoja auxiliar',kind:'historico',sheet:day.sheet,
+       routes:[],markedHeads:0,routeCount:0,markedHeadLabels:[],familyCount:0
+      });
+     }}
       onTurnChange={changeTurn} onOpenFrame={openInfoFrame}
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
      movementMode={infoMode} onMovementMode={setInfoMode}

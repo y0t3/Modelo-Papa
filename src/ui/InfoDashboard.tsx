@@ -9,6 +9,9 @@ import type {InfoVisualDay} from '../infoTurnHistory';
 import {buildTurnHistory,readableWeekday} from '../infoTurnHistory';
 import type {TurnHistoryFrame} from '../infoTurnHistory';
 import InfoTurnGallery from './InfoTurnGallery';
+import InfoAuxGallery from './InfoAuxGallery';
+import type {AuxGalleryDay} from '../infoAuxGallery';
+import type {AuxMode} from '../auxTemporalModes';
 import TurnStrip from './TurnStrip';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
@@ -17,6 +20,9 @@ type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
 type Props={date:string;turn:Turno;data:CabezasDia|null;
  sheet:DailySheet|null;historical:LaloHistorical[];visualDays:InfoVisualDay[];
  view:LaloView|null;onNavigate:(screen:Destination)=>void;
+ auxDays:AuxGalleryDay[];currentAux:AuxGalleryDay|null;
+ auxMode:AuxMode;onAuxMode:(mode:AuxMode)=>void;
+ onOpenAuxDay:(date:string)=>void;
  onTurnChange:(turn:Turno)=>void;onOpenFrame:(frame:TurnHistoryFrame)=>void;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
@@ -55,7 +61,7 @@ function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
 }
 export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
- expandedGuide,onExpandedGuide}:Props){
+ expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,onOpenAuxDay}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
@@ -134,7 +140,12 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
     onOpenFrame={onOpenFrame}/>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>04 · Guía del sistema</Text>
+   <Text style={[s.heading,{color:c.text}]}>04 · Minihojas Santiago–Neuquén · semana previa</Text>
+   <InfoAuxGallery days={auxDays} current={currentAux} turn={turn}
+    mode={auxMode} onMode={onAuxMode} onOpenDay={onOpenAuxDay}/>
+  </View>
+  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
+   <Text style={[s.heading,{color:c.text}]}>05 · Guía del sistema</Text>
    <Text style={[s.desc,{color:c.subtext}]}>Abrí únicamente lo que quieras consultar.</Text>
    <View style={s.legend}>
     {KINDS.map(k=><LegendColor key={k} kind={k}/>)}
