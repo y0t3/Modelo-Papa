@@ -1,0 +1,26 @@
+name: LAB AUX Anterior vs Intrajornada
+on:
+  push:
+    branches: [lab/comparativa-aux-anterior-intrajornada-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparativa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - run: npx tsc --noEmit
+      - run: npx --yes tsx scripts/lab-aux-temporal-modes-test.ts
+      - run: npx --yes tsx scripts/lab-aux-temporal-ab-backtest.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: comparativa-aux-anterior-intrajornada
+          path: auditorias/aux-temporal-ab-21oct2026/resultados
+          if-no-files-found: warn
