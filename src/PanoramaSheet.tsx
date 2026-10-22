@@ -27,10 +27,10 @@ const detectKind=(id:string|null|undefined):KindFilter=>{
 };
 
 export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner,initialTurn,
- initialTurnOnly=false,auxHeads,drawHeads,date=''}:{
+ initialTurnOnly=false,auxHeads,auxSourceDate,drawHeads,date=''}:{
  sheet:DailySheet;data:PanoramaData;mode:'hoja'|'predictiva';
  target?:Turno;onInfo:()=>void;focusedOwner?:string|null;initialTurn?:Turno;
- initialTurnOnly?:boolean;auxHeads?:AuxiliaryHeads|null;drawHeads?:CabezasDia|null;date?:string
+ initialTurnOnly?:boolean;auxHeads?:AuxiliaryHeads|null;auxSourceDate?:string|null;drawHeads?:CabezasDia|null;date?:string
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [active,setActive]=useState<string|null>(focusedOwner||null);
@@ -151,6 +151,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
    activeOwner={mode==='hoja'?null:active}/>
   {mode==='hoja'&&auxBoard&&auxVisual?<View style={{marginTop:13,gap:7}}>
    <Text style={[s.title,{color:c.text}]}>HOJA SANTIAGO–NEUQUÉN</Text>
+   <Text style={[s.note,{color:c.subtext}]}>Base de AYER{auxSourceDate?' · '+auxSourceDate:''} · disponible desde Previa.</Text>
    <AuxMarkedBoard board={auxBoard} routes={auxVisual.routes}
     focusRoutes={turnOnly||active!==null?auxHighlighted:undefined}
     focus={turnOnly||active!==null}/>

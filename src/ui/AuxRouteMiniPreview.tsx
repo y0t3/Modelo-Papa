@@ -57,6 +57,7 @@ function HistoricalShape({event,kind}:{
  return <View style={[s.history,{backgroundColor:c.card,borderColor:c.border}]}>
   <Text style={[s.head,{color:c.text}]}>
    {event.period} · {event.date} · {event.jur}
+    {event.sourceDate?' · base '+event.sourceDate:''}
   </Text>
   <Text style={[s.hint,{color:c.subtext}]}>
    {event.turn}: salió {event.head}, terminación marcada {event.reading}.

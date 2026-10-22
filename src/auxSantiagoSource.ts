@@ -13,6 +13,7 @@
  * Exclusivamente laboratorio, sin modificar src/cabezas.ts.
  */
 import {FUENTE} from './cabezas';
+import {previousDrawDay} from './dates';
 import {emptyAuxiliaryHeads} from './auxSantiagoNeuquen';
 import type {AuxiliaryHeads} from './auxSantiagoNeuquen';
 
@@ -60,4 +61,14 @@ export async function fetchAuxiliaryHeads(date:string):Promise<AuxSourceObservat
  });
  if(!response.ok)throw Error('Aux: proveedor respondió '+response.status);
  return parseAuxiliaryHeads(date,await response.json());
+}
+
+/** La hoja AUX del día D usa la jornada sorteable anterior, nunca D. */
+export const auxiliarySourceDate=(targetDate:string)=>previousDrawDay(targetDate);
+export type AuxiliaryDailyBase=AuxSourceObservation & {sourceDate:string};
+export async function fetchAuxiliaryBaseForDate(targetDate:string):Promise<AuxiliaryDailyBase>{
+ const sourceDate=auxiliarySourceDate(targetDate);
+ if(sourceDate>=targetDate)throw Error('AUX: fecha base no anterior al objetivo');
+ const observation=await fetchAuxiliaryHeads(sourceDate);
+ return {...observation,sourceDate,date:targetDate};
 }

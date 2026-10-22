@@ -8,7 +8,7 @@ import {dailyHeadOwnerId} from './panoramaModel';
 
 export type AuxVisualKind=MarkKind;
 export type AuxVisualAntecedent={
- id:string;date:string;period:'D−1'|'D−7';turn:Turno;jur:string;
+ id:string;date:string;sourceDate?:string;period:'D−1'|'D−7';turn:Turno;jur:string;
  head:string;reading:string;path:AuxPath;relation:string;
  board:AuxiliaryBoard|null
 };
@@ -74,7 +74,7 @@ export function buildAuxPredictiveVisual(date:string,turn:Turno,
    buckets.set(ownerId,new Map());
    for(const value of f.values)byValue.set(value,ownerId);
   }
-  for(const {period,aux:old,heads:oldHeads} of history){
+  for(const {period,aux:old,heads:oldHeads,sourceDate} of history){
    for(const event of old.events[length])for(const former of event.paths){
     for(const current of projectAuxShape(aux,former)){
      const reading=current.map(c=>c.digit).join('');
@@ -91,11 +91,12 @@ export function buildAuxPredictiveVisual(date:string,turn:Turno,
      if(!route.rootEvents.some(a=>a.id===event.id)){
       const oldValue=former.map(c=>c.digit).join('');
       route.rootEvents.push({
-       id:event.id,date:old.date,period,turn:event.turn,jur:event.jur,
+       id:event.id,date:old.date,sourceDate,period,turn:event.turn,jur:event.jur,
        head:event.head,reading:oldValue,path:former,
        board:oldHeads?auxiliaryBoard(oldHeads,event.turn):null,
        relation:'La cabeza '+event.head+' formó '+oldValue+
-        ' en '+event.turn+'. Conservamos exactamente los movimientos '+
+        ' en '+event.turn+' con la hoja del día anterior'+
+        (sourceDate?' ('+sourceDate+')':'')+'. Conservamos exactamente los movimientos '+
         'entre esas casillas y los colocamos sobre las cifras visibles '+
         'del corte actual: '+reading+'.'
       });

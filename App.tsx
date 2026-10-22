@@ -31,7 +31,7 @@ import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
 import PapaPronostico from './src/ui/PapaPronostico';
 import HeadsTable from './src/ui/HeadsTable';
-import {fetchAuxiliaryHeads} from './src/auxSantiagoSource';
+import {fetchAuxiliaryBaseForDate} from './src/auxSantiagoSource';
 import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import {buildHeadHighlights} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
@@ -82,6 +82,7 @@ function LaloApp(){
  const [dateText,setDateText]=useState(isoToDisplay(today()));
  const [data,setData]=useState<CabezasDia|null>(null);
  const [auxHeads,setAuxHeads]=useState<AuxiliaryHeads|null>(null);
+ const [auxSourceDate,setAuxSourceDate]=useState<string|null>(null);
  const [sheet,setSheet]=useState<DailySheet|null>(null);
  const [hist,setHist]=useState<LaloHistorical[]>([]);
  const [auxiliarPast,setAuxiliarPast]=useState<AuxiliarHistory[]>([]);
@@ -162,7 +163,7 @@ function LaloApp(){
     loadPreviousDraws(d,4,x=>descargarCabezas(x,true)),
     Promise.all(weekDates.map(day=>descargarCabezas(day,true))),
     loadPreviousDraws(week,1,x=>descargarCabezas(x,true)),
-    fetchAuxiliaryHeads(d).catch(()=>null)
+    fetchAuxiliaryBaseForDate(d).catch(()=>null)
    ]);
    const weekly=weekData[0],weekPrevious=beforeWeek[0].heads;
    const last=previous[3],beforeLast=previous[2];
@@ -175,17 +176,19 @@ function LaloApp(){
    if(week<d&&hasDrawResults(weekly))
     refs.push({date:week,period:'D−7',sheet:buildSheet(weekly,weekPrevious)});
    // El motor auxiliar requiere solamente raíces RAW anteriores de
-   // Santiago-Neuquén. Se usan las fechas D−1/D−7, nunca la hoja +11.
+   // Santiago-Neuquén DE LA JORNADA ANTERIOR a cada fecha D−1/D−7.
+   // El tablero actual también viene de AYER, nunca de los sorteos de hoy.
    let auxiliarHistory:AuxiliarHistory[]=[];
    let auxWarning:string|null=null;
    if(!auxResult){
-    auxWarning='No se recibieron las cabezas actuales de Santiago–Neuquén.';
+    auxWarning='No se recibieron las cabezas de Santiago–Neuquén de la jornada anterior.';
    }else{
     try{
      auxiliarHistory=await Promise.all(refs.map(async ref=>{
       const heads=ref.date===last.date?last.heads:weekly;
-      const observation=await fetchAuxiliaryHeads(ref.date);
-      return {date:ref.date,period:ref.period,heads:observation.heads,
+      const observation=await fetchAuxiliaryBaseForDate(ref.date);
+      return {date:ref.date,period:ref.period,
+       sourceDate:observation.sourceDate,heads:observation.heads,
        aux:extractAuxiliarHistory(ref.date,observation.heads,heads)};
      }));
     }catch(error:any){
@@ -196,6 +199,7 @@ function LaloApp(){
    resetHistory();
    setHistoricalPreview(null);
    setData(current);setAuxHeads(auxResult?.heads||null);
+   setAuxSourceDate(auxResult?.sourceDate||null);
    setSheet(currentSheet);setHist(refs);setBaseHeads(last.heads);
    setAuxiliarPast(auxiliarHistory);setAuxiliarError(auxWarning);
     setVisualDays(recentDays);
@@ -236,11 +240,9 @@ function LaloApp(){
    if(loading)return;
    loading=true;
    try{
-    const [fresh,auxNow]=await Promise.all([
-     descargarCabezas(date,true),fetchAuxiliaryHeads(date).catch(()=>null)
-    ]);
+    const fresh=await descargarCabezas(date,true);
     setData(fresh);
-    if(auxNow)setAuxHeads(auxNow.heads);
+    // Refrescar hoy no cambia la base AUX de ayer.
     setSheet(buildSheet(fresh,baseHeads));
    }catch{}finally{loading=false}
   };
@@ -343,7 +345,7 @@ function LaloApp(){
     <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
     <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
      resetHistory();setHistoricalPreview(null);
-     setDateText(value);setData(null);setAuxHeads(null);setSheet(null);setBaseHeads(null);setHist([]);
+     setDateText(value);setData(null);setAuxHeads(null);setAuxSourceDate(null);setSheet(null);setBaseHeads(null);setHist([]);
      setAuxiliarPast([]);setAuxiliarError(null);
      setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
@@ -373,6 +375,7 @@ function LaloApp(){
       initialTurn={hojaTurn} initialTurnOnly={!!historicalPreview}
       focusedOwner={hojaFocused} onInfo={()=>navigateTo('info')}
       auxHeads={historicalPreview?null:auxHeads}
+      auxSourceDate={historicalPreview?null:auxSourceDate}
       drawHeads={historicalPreview?null:data}
       date={historicalPreview?.day.date||date||''}/>
     </View>:
@@ -397,10 +400,11 @@ function LaloApp(){
       onInfo={()=>navigateTo('info')}/>:
       <Text style={[s.empty,{color:c.subtext}]}>Cargá la hoja para consultar Lalo +11.</Text>:
      auxHeads&&auxiliar?
-      <AuxiliaryPredictiveSheet date={date||''} turn={target} heads={auxHeads}
+      <AuxiliaryPredictiveSheet date={date||''} sourceDate={auxSourceDate||''}
+       turn={target} heads={auxHeads}
        view={auxiliar} history={auxiliarPast} focusedOwner={focused}/>:
       <Text style={[s.empty,{color:c.subtext}]}>
-       Cargá Santiago–Neuquén y sus antecedentes para mostrar la Predictiva Auxiliar.
+       Cargá Santiago–Neuquén de la jornada anterior y sus antecedentes para mostrar la Predictiva Auxiliar.
        {auxiliarError?' '+auxiliarError:''}
       </Text>}
    </>:screen==='prediccion'?<>

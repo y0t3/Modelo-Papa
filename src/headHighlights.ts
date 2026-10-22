@@ -1,7 +1,7 @@
 /**
  * Índice POST compartido por CABEZAS y el salto a HOJA.
- * +11 mantiene sus recorridos en columnas; AUX usa solamente celdas RAW
- * publicadas ANTES del turno de la cabeza. No consulta rankings PRE.
+ * +11 mantiene recorridos por columna; AUX utiliza RAW de la jornada
+ * anterior, disponible antes de cada turno de la jornada objetivo. No consulta rankings PRE.
  */
 import {JURS,TURNOS} from './domain';
 import type {CabezasDia} from './domain';

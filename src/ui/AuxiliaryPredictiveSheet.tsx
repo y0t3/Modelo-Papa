@@ -13,9 +13,9 @@ import {useLaloTheme} from './LaloTheme';
 type Filter='all'|AuxVisualKind;
 const ALL:AuxVisualKind[]=['vt2','vt3','vt4'];
 export default function AuxiliaryPredictiveSheet({
- date,turn,heads,view,history,focusedOwner
+ date,sourceDate,turn,heads,view,history,focusedOwner
 }:{
- date:string;turn:Turno;heads:AuxiliaryHeads;
+ date:string;sourceDate:string;turn:Turno;heads:AuxiliaryHeads;
  view:AuxiliarView;history:AuxiliarHistory[];focusedOwner?:string|null
 }){
  const {colors:c,kinds}=useLaloTheme();
@@ -61,8 +61,8 @@ export default function AuxiliaryPredictiveSheet({
  return <View style={[s.surface,{borderColor:c.border,backgroundColor:c.surface}]}>
   <Text style={[s.title,{color:c.text}]}>HOJA PREDICTIVA · LALO AUXILIAR</Text>
   <Text style={[s.note,{color:c.subtext}]}>
-   {turn} · Santiago–Neuquén sin +11. Las familias y posiciones proceden
-   exclusivamente de marcas ganadoras anteriores del auxiliar.
+   {turn} · Santiago–Neuquén de AYER{sourceDate?' ('+sourceDate+')':''}, sin +11.
+   Las familias y posiciones proceden de marcas ganadoras históricas.
   </Text>
   <AuxMarkedBoard board={board} routes={routes}
    focusRoutes={selected?selectedRoutes:undefined} focus={!!selected}/>

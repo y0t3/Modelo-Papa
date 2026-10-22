@@ -5,15 +5,15 @@
  * auxiliares POST de D−1 y D−7 (sin ninguna hoja +11).
  * Sus familias, rutas y Tops no dependen de Lalo MV1 ni del Integral 65/35.
  *
- * Antes de Primera no existe hoja auxiliar; el corte temporal se aplica
- * dentro de auxiliaryBoard. VT4 conserva madre VT3 del propio AUX.
+ * La hoja AUX ya existe completa antes de Previa del día objetivo.
+ * VT4 conserva madre VT3 del propio AUX.
  */
 import type {Turno,CabezasDia} from './domain';
 import type {AuxiliaryHeads} from './auxSantiagoNeuquen';
 import type {AuxSourceTurn} from './auxSantiagoNeuquen';
 import {buildAuxIndependent,extractIntegralAuxHistory} from './motorLaloIntegral';
 import type {AuxiliaryHistorical,IntegralKind} from './motorLaloIntegral';
-export type AuxiliarHistory=AuxiliaryHistorical & {heads?:AuxiliaryHeads};
+export type AuxiliarHistory=AuxiliaryHistorical & {heads?:AuxiliaryHeads;sourceDate?:string};
 export type AuxiliarFamily={
  family:string;mother:string|null;rank:number;values:string[];
  roots:number;d1:number;d7:number;paths:number;crossing:boolean;
@@ -27,7 +27,8 @@ export type AuxiliarView={
 export const extractAuxiliarHistory=extractIntegralAuxHistory;
 export function buildMotorLaloAuxiliar(date:string,turn:Turno,
  aux:AuxiliaryHeads,history:AuxiliarHistory[]):AuxiliarView{
- if(history.some(h=>h.date>=date||h.aux.date!==h.date))
+ if(history.some(h=>h.date>=date||h.aux.date!==h.date||
+  (h.sourceDate!==undefined&&h.sourceDate>=h.date)))
   throw Error('Fuga temporal AUX: la memoria debe ser anterior a la fecha objetivo');
  const ranked=buildAuxIndependent(date,turn,aux,history);
  return {date,turn,status:'LABORATORIO',

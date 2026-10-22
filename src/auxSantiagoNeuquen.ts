@@ -8,7 +8,8 @@
  * Vacíos no tienen celdas: ni puentes invisibles ni saltos.
  *
  * Ninguna cabeza de Ciudad/Provincia/etc. genera tablero. Solamente las
- * cabezas reales y publicadas de Santiago/Neuquén alimentan sus dos filas.
+ * cabezas reales de Santiago/Neuquén de AYER alimentan sus filas.
+ * Las tres franjas están disponibles antes de Previa del día objetivo.
  * El cotejo POST marca los recorridos que explican las cabezas de las seis
  * jurisdicciones observadas (Ciudad/Provincia/Córdoba/Santa Fe/Entre Ríos/
  * Montevideo). El cálculo PRE no recibe cabeza objetivo.
@@ -42,10 +43,9 @@ const valid=(v:string)=>/^\d{4}$/.test(v);
 const reverse=(x:string)=>[...x].reverse().join('');
 export const auxFamily=(x:string)=>[x,reverse(x)].sort().join('/');
 export function auxiliaryBefore(target:Turno):AuxSourceTurn[]{
- const targetIndex=TURNOS.indexOf(target);
- if(targetIndex<0)throw Error('Turno objetivo inválido');
- const n=Math.min(targetIndex,AUX_SOURCE_TURNS.length);
- return AUX_SOURCE_TURNS.slice(0,n);
+ if(!TURNOS.includes(target))throw Error('Turno objetivo inválido');
+ // Las tres franjas vienen de AYER, no de sorteos pendientes de hoy.
+ return [...AUX_SOURCE_TURNS];
 }
 export function auxiliaryBoard(heads:AuxiliaryHeads,target:Turno):AuxiliaryBoard{
  const allowed=auxiliaryBefore(target),cells:AuxCell[]=[];
