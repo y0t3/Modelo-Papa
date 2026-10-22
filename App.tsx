@@ -253,7 +253,7 @@ function LaloApp(){
  // MV1 y AUX elaboran sus candidatos por separado. El lector AUX
  // solo usa Santiago-Neuquén, jamás los Tops ni las celdas de +11.
  const auxiliar=useMemo(()=>{
-  if(screen!=='prediccion'||!date||!auxHeads||
+  if((screen!=='prediccion'&&screen!=='predictiva')||!date||!auxHeads||
    auxiliarPast.length!==hist.length||!auxiliarPast.length)return null;
   return buildMotorLaloAuxiliar(date,target,auxHeads,auxiliarPast);
  },[screen,date,target,auxHeads,auxiliarPast,hist]);
