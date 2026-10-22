@@ -36,6 +36,8 @@ export type IntegralAuxHistory={date:string;
  events:Record<IntegralKind,AuxWinningEvent[]>};
 export type IntegralPast={date:string;period:'D−1'|'D−7';
  plus11:DailySheet;aux:IntegralAuxHistory};
+/** Entrada mínima suficiente para seleccionar exclusivamente desde AUX. */
+export type AuxiliaryHistorical=Pick<IntegralPast,'date'|'period'|'aux'>;
 export type IntegralFamily={
  kind:IntegralKind;family:string;mother:string|null;rank:number;
  values:string[];score:number;
@@ -63,7 +65,7 @@ const members=(family:string)=>[...new Set(family.split('/'))];
 type AuxGroup={family:string;mother:string|null;values:Set<string>;
  roots:Set<string>;d1:Set<string>;d7:Set<string>;paths:Map<string,AuxPath>;
  crossing:boolean;sources:Set<AuxSourceTurn>};
-type AuxRank={family:string;mother:string|null;rank:number;values:string[];
+export type AuxRank={family:string;mother:string|null;rank:number;values:string[];
  roots:number;d1:number;d7:number;paths:AuxPath[];crossing:boolean;
  sources:AuxSourceTurn[]};
 export function extractIntegralAuxHistory(date:string,aux:AuxiliaryHeads,
@@ -89,7 +91,7 @@ export function extractIntegralAuxHistory(date:string,aux:AuxiliaryHeads,
  return {date,events};
 }
 /** Traslada solamente la FORMA (contactos) de ganadoras anteriores. */
-function auxiliaryRanks(board:AuxiliaryBoard,history:IntegralPast[],
+function auxiliaryRanks(board:AuxiliaryBoard,history:AuxiliaryHistorical[],
  length:IntegralKind):AuxRank[]{
  const groups=new Map<string,AuxGroup>();
  for(const record of history){
@@ -134,7 +136,7 @@ function auxiliaryRanks(board:AuxiliaryBoard,history:IntegralPast[],
 
 /** Lector AUX independiente, sin mezclar los rankings de Lalo. */
 export function buildAuxIndependent(date:string,target:Turno,
- auxHeads:AuxiliaryHeads,history:IntegralPast[]):
+ auxHeads:AuxiliaryHeads,history:AuxiliaryHistorical[]):
  Record<IntegralKind,AuxRank[]>{
  if(history.some(h=>h.date>=date))throw Error('Fuga en lectura AUX');
  const board=auxiliaryBoard(auxHeads,target);
