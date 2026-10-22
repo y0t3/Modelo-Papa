@@ -68,7 +68,7 @@ export function buildAuxPredictiveVisual(date:string,turn:Turno,
    const ownerId=kind+'|'+family.family;
    const members=new Set(family.values);
    const byPath=new Map<string,AuxVisualRoute>();
-   for(const {period,aux:old} of history){
+   for(const {period,aux:old,heads:oldHeads} of history){
     for(const event of old.events[length])for(const former of event.paths){
      for(const current of projectAuxShape(aux,former)){
       const reading=current.map(c=>c.digit).join('');
