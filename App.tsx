@@ -24,6 +24,7 @@ import type {AuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {LaloHistorical} from './src/motorLalo';
 import type {InfoVisualDay,TurnHistoryFrame} from './src/infoTurnHistory';
 import PanoramaSheet from './src/PanoramaSheet';
+import AuxiliaryPredictiveSheet from './src/ui/AuxiliaryPredictiveSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
 import ParallelPredictionCompare from './src/ui/ParallelPredictionCompare';
 import Vt3Explainer from './src/ui/Vt3Explainer';
@@ -33,6 +34,7 @@ import HeadsTable from './src/ui/HeadsTable';
 import AuxiliarySheetPanel from './src/ui/AuxiliarySheetPanel';
 import {fetchAuxiliaryHeads} from './src/auxSantiagoSource';
 import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
+import {buildAuxPostLedger} from './src/auxMarkLedger';
 import InfoDashboard from './src/ui/InfoDashboard';
 import type {MovementMode} from './src/infoCandidatos';
 import TurnStrip from './src/ui/TurnStrip';
@@ -86,6 +88,7 @@ function LaloApp(){
  const [auxiliarPast,setAuxiliarPast]=useState<AuxiliarHistory[]>([]);
  const [auxiliarError,setAuxiliarError]=useState<string|null>(null);
  const [predictionMode,setPredictionMode]=useState<'lalo'|'auxiliar'>('lalo');
+ const [predictiveMode,setPredictiveMode]=useState<'lalo'|'auxiliar'>('lalo');
 
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
@@ -272,10 +275,19 @@ function LaloApp(){
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
  const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
- const showFamily=(id:string)=>{navigateTo('predictiva');setFocused(id)};
+ const showFamily=(id:string)=>{setPredictiveMode('lalo');navigateTo('predictiva');setFocused(id)};
+ const showAuxFamily=(id:string)=>{
+  setPredictiveMode('auxiliar');navigateTo('predictiva');setFocused(id);
+ };
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);
-  if(!hoja?.groups.some(group=>group.id===id&&group.routeCount>0))return;
+  const foundInPlus=hoja?.groups.some(group=>group.id===id&&group.routeCount>0);
+  const auxLedger=auxHeads&&sheet&&data?
+   buildAuxPostLedger(date||'',auxHeads,data,sheet,'Nocturno'):null;
+  const hasAux=auxLedger?.marks.some(mark=>mark.turn===turn&&
+   mark.jur===jurisdiction&&mark.head===head&&
+   (['vt2','vt3','vt4'] as const).some(k=>mark.modalities[k].aux.length>0));
+  if(!foundInPlus&&!hasAux)return;
   navigateTo('hoja');setHojaTurn(turn);setHojaFocused(id);
  };
  const openInfoFrame=(frame:TurnHistoryFrame)=>{
@@ -363,7 +375,10 @@ function LaloApp(){
      </View>:null}
      <PanoramaSheet mode="hoja" sheet={showingSheet} data={showingHoja}
       initialTurn={hojaTurn} initialTurnOnly={!!historicalPreview}
-      focusedOwner={hojaFocused} onInfo={()=>navigateTo('info')}/>
+      focusedOwner={hojaFocused} onInfo={()=>navigateTo('info')}
+      auxHeads={historicalPreview?null:auxHeads}
+      drawHeads={historicalPreview?null:data}
+      date={historicalPreview?.day.date||date||''}/>
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
    :screen==='auxiliar'?<>
@@ -373,10 +388,29 @@ function LaloApp(){
    </>:screen==='predictiva'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
-    {sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet}
-     data={predictiva} target={target} focusedOwner={focused}
-     onInfo={()=>navigateTo('info')}/>:
-     <Text style={[s.empty,{color:c.subtext}]}>Cargá una hoja para ver las rutas que propone el motor Lalo.</Text>}
+    <View style={[s.predictorOptions,{borderColor:c.border}]}>
+     {([{id:'lalo',label:'PREDICTIVA LALO'},{id:'auxiliar',label:'PREDICTIVA AUXILIAR'}] as const)
+      .map(item=><Pressable key={item.id} accessibilityRole="button"
+       accessibilityState={{selected:predictiveMode===item.id}}
+       onPress={()=>{setPredictiveMode(item.id);setFocused(null)}}
+       style={[s.predictorButton,{
+        borderColor:predictiveMode===item.id?c.accent:c.border,
+        backgroundColor:predictiveMode===item.id?c.accentFill:c.surfaceAlt}]}>
+       <Text style={[s.predictorLabel,{color:c.text}]}>{item.label}</Text>
+      </Pressable>)}
+    </View>
+    {predictiveMode==='lalo'?
+     sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet}
+      data={predictiva} target={target} focusedOwner={focused}
+      onInfo={()=>navigateTo('info')}/>:
+      <Text style={[s.empty,{color:c.subtext}]}>Cargá la hoja para consultar Lalo +11.</Text>:
+     auxHeads&&auxiliar?
+      <AuxiliaryPredictiveSheet date={date||''} turn={target} heads={auxHeads}
+       view={auxiliar} history={auxiliarPast} focusedOwner={focused}/>:
+      <Text style={[s.empty,{color:c.subtext}]}>
+       Cargá Santiago–Neuquén y sus antecedentes para mostrar la Predictiva Auxiliar.
+       {auxiliarError?' '+auxiliarError:''}
+      </Text>}
    </>:screen==='prediccion'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
@@ -396,7 +430,8 @@ function LaloApp(){
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
        auxiliar={auxiliar} post={post} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
       auxiliar?<PredictionSummary model="auxiliar" date={dateText} turn={target} view={motor}
-       auxiliar={auxiliar} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
+       auxiliar={auxiliar} heads={sheet?.heads[target]||[]}
+       onFocus={showFamily} onAuxFocus={showAuxFamily}/>:
       <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
        <Text style={{color:c.text,fontWeight:'800'}}>Modelo Lalo Auxiliar no disponible para este corte.</Text>
        <Text style={{color:c.subtext,marginTop:5}}>
