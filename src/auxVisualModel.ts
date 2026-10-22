@@ -64,41 +64,53 @@ export function buildAuxPredictiveVisual(date:string,turn:Turno,
  const routes:AuxVisualRoute[]=[],groups:AuxVisualGroup[]=[];
  for(const kind of KINDS){
   const length=Number(kind.slice(-1)) as 2|3|4;
-  for(const family of view.ranks[length]){
-   const ownerId=kind+'|'+family.family;
-   const members=new Set(family.values);
-   const byPath=new Map<string,AuxVisualRoute>();
-   for(const {period,aux:old,heads:oldHeads} of history){
-    for(const event of old.events[length])for(const former of event.paths){
-     for(const current of projectAuxShape(aux,former)){
-      const reading=current.map(c=>c.digit).join('');
-      if(!members.has(reading))continue;
-      const key=physicalKey(kind,current);
-      let route=byPath.get(key);
-      if(!route){
-       route={id:ownerId+'|'+key,ownerId,kind,cells:current,
-        reading,rootEvents:[]};
-       byPath.set(key,route);
-      }
-      if(!route.rootEvents.some(a=>a.id===event.id)){
-       route.rootEvents.push({
-        id:event.id,date:old.date,period,turn:event.turn,jur:event.jur,
-        head:event.head,reading:former.map(c=>c.digit).join(''),
-        path:former,board:oldHeads?auxiliaryBoard(oldHeads,event.turn):null,
-        relation:'La cabeza '+event.head+' formó '+former.map(c=>c.digit).join('')+
-        ' en '+event.turn+'. Conservamos los desplazamientos de esas casillas '+
-        'y los aplicamos sobre cifras actuales visibles: '+reading+'.'
-       });
-      }
+  const families=view.ranks[length];
+  // Cada figura histórica se traslada SOLO UNA VEZ. Luego se atribuye
+  // por terminación física al ranking inmutable, sin crear candidatas.
+  const byValue=new Map<string,string>();
+  const buckets=new Map<string,Map<string,AuxVisualRoute>>();
+  for(const f of families){
+   const ownerId=kind+'|'+f.family;
+   buckets.set(ownerId,new Map());
+   for(const value of f.values)byValue.set(value,ownerId);
+  }
+  for(const {period,aux:old,heads:oldHeads} of history){
+   for(const event of old.events[length])for(const former of event.paths){
+    for(const current of projectAuxShape(aux,former)){
+     const reading=current.map(c=>c.digit).join('');
+     const ownerId=byValue.get(reading);
+     if(!ownerId)continue;
+     const local=buckets.get(ownerId)!;
+     const key=physicalKey(kind,current);
+     let route=local.get(key);
+     if(!route){
+      route={id:ownerId+'|'+key,ownerId,kind,cells:current,
+       reading,rootEvents:[]};
+      local.set(key,route);
+     }
+     if(!route.rootEvents.some(a=>a.id===event.id)){
+      const oldValue=former.map(c=>c.digit).join('');
+      route.rootEvents.push({
+       id:event.id,date:old.date,period,turn:event.turn,jur:event.jur,
+       head:event.head,reading:oldValue,path:former,
+       board:oldHeads?auxiliaryBoard(oldHeads,event.turn):null,
+       relation:'La cabeza '+event.head+' formó '+oldValue+
+        ' en '+event.turn+'. Conservamos exactamente los movimientos '+
+        'entre esas casillas y los colocamos sobre las cifras visibles '+
+        'del corte actual: '+reading+'.'
+      });
      }
     }
    }
-   const candidates=[...byPath.values()];
+  }
+  for(const f of families){
+   const ownerId=kind+'|'+f.family;
+   const candidates=[...buckets.get(ownerId)!.values()];
    routes.push(...candidates);
-   groups.push({id:ownerId,family:family.family,routeCount:candidates.length,
+   groups.push({id:ownerId,family:f.family,routeCount:candidates.length,
     kinds:candidates.length?[kind]:[],
-    subtitle:'Puesto #'+family.rank+' · raíces '+family.roots+
-     ' (D−1 '+family.d1+' / D−7 '+family.d7+')'});
+    subtitle:'Puesto #'+f.rank+' · raíces '+f.roots+
+     ' (D−1 '+f.d1+' / D−7 '+f.d7+')'});
   }
  }
  return {routes,groups};
