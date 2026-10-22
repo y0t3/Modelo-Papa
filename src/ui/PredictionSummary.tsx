@@ -2,7 +2,7 @@ import React,{useEffect,useRef,useState} from 'react';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {Turno} from '../domain';
 import type {LaloView,LaloKind} from '../motorLalo';
-import type {IntegralPrediction} from '../motorLaloIntegral';
+import type {AuxiliarView} from '../motorLaloAuxiliar';
 import {familyKey,rowsForModel,hitsForFamily} from '../predictionParallel';
 import type {HeadEvent,ModelChoice} from '../predictionParallel';
 import {KINDS} from './visualTokens';
@@ -21,9 +21,9 @@ const explanation:Record<string,string>={
  * se leen de arriba hacia abajo. Los chips Top3/5/10 amplían esa misma lista.
  * No se modifica la selección, el orden, el cotejo POST ni el acceso al recorrido.
  */
-export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],model='lalo',integral}:{
+export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],model='lalo',auxiliar}:{
  date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
- integral?:IntegralPrediction|null;
+ auxiliar?:AuxiliarPrediction|null;
  onFocus:(id:string)=>void;post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
@@ -55,13 +55,13 @@ export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],
  };
 
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
-  <Text style={[s.title,{color:c.text}]}>{model==='integral'?'PREDICCIÓN · LALO INTEGRAL':'PREDICCIÓN · MODELO LALO'}</Text>
+  <Text style={[s.title,{color:c.text}]}>{model==='auxiliar'?'PREDICCIÓN · LALO AUXILIAR':'PREDICCIÓN · MODELO LALO'}</Text>
   <Text style={[s.subtitle,{color:c.subtext}]}>
    {date.includes('/')?readableWeekday(date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2)).toLowerCase():readableWeekday(date).toLowerCase()} · {turn}
   </Text>
   <Text style={[s.caution,{color:c.subtext}]}>
    Propuestas experimentales: el puesto no equivale a una probabilidad demostrada.
-   {model==='integral'?' Ambas hojas participan del selector; los Tops de MV1 no cambian.':''}
+   {model==='auxiliar'?' Solo utiliza la hoja Santiago–Neuquén; el Top de MV1 es independiente.':''}
   </Text>
   <View style={s.kindTabs}>
    {KINDS.map(kind=><Pressable key={kind} accessibilityRole="tab"
@@ -94,8 +94,8 @@ export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],
     }}>
     {KINDS.map(kind=>{
      const limit=limits[kind];
-     const rows=rowsForModel(model,kind,view,integral||null).slice(0,limit);
-     const other=rowsForModel(model==='lalo'?'integral':'lalo',kind,view,integral||null)
+     const rows=rowsForModel(model,kind,view,auxiliar||null).slice(0,limit);
+     const other=rowsForModel(model==='lalo'?'auxiliar':'lalo',kind,view,auxiliar||null)
        .slice(0,10);
      const peers=new Map(other.map(x=>[x.key,x.rank]));
      const winners:HeadEvent[]=heads.map(head=>({jur:'',head}));
@@ -112,9 +112,9 @@ export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],
        <Text style={[s.heading,{color:kinds[kind].line}]}>
         {kind.toUpperCase()} · {kinds[kind].label}
        </Text>
-       <Text style={[s.aux,{color:c.muted}]}>{rowsForModel(model,kind,view,integral||null).length} familias</Text>
+       <Text style={[s.aux,{color:c.muted}]}>{rowsForModel(model,kind,view,auxiliar||null).length} familias</Text>
       </View>
-      {kind==='vt4'&&(view||integral)?<Text style={[s.caution,{color:c.subtext}]}>
+      {kind==='vt4'&&(view||auxiliar)?<Text style={[s.caution,{color:c.subtext}]}>
        Se alternan los candidatos de cada familia de 3 cifras con recorrido válido;
        después sus siguientes hijas. No equivale a una probabilidad de acierto.
       </Text>:null}
@@ -129,7 +129,7 @@ export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],
          Top {n}
         </Text>
        </Pressable>)}</View>
-      {heads.some(x=>/^[0-9]{4}$/.test(x))&&(view||integral)?<View style={[s.postPanel,{backgroundColor:hitRows.length?kinds[kind].fill:c.surfaceAlt,
+      {heads.some(x=>/^[0-9]{4}$/.test(x))&&(view||auxiliar)?<View style={[s.postPanel,{backgroundColor:hitRows.length?kinds[kind].fill:c.surfaceAlt,
        borderColor:hitRows.length?kinds[kind].line:c.border}]}>
        <Text style={[s.postTitle,{color:hitRows.length?kinds[kind].text:c.text}]}>
         {hitRows.length?'✓ COINCIDENCIAS POST':'POST · SIN COINCIDENCIAS'} · {hitRows.length} en Top{limit}
@@ -143,7 +143,7 @@ export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],
        {rows.map(f=><Pressable key={f.family} accessibilityRole="button"
         accessibilityLabel={kind.toUpperCase()+', puesto '+f.rank+', familia '+f.family}
         onPress={()=>{
-         if(model==='integral')setExpanded(old=>old===f.key?null:f.key);
+         if(model==='auxiliar')setExpanded(old=>old===f.key?null:f.key);
          else onFocus(kind+'|'+f.family);
         }}
         style={[s.family,{backgroundColor:matched.has(f.key)?kinds[kind].fill:peers.has(f.key)?c.accentFill:c.card,
@@ -155,29 +155,29 @@ export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],
          {matched.has(f.key)?<Text style={[s.hitLabel,{color:kinds[kind].text}]}>✓ POST</Text>:null}
          <Text style={[s.chevron,{color:c.accent}]}>›</Text>
         </View>
-        {peers.has(f.key)?<Text style={[s.winnerHeads,{color:c.accent}]}>⇄ En ambos motores · otro Top10 #{peers.get(f.key)}</Text>:null}
+        {peers.has(f.key)?<Text style={[s.winnerHeads,{color:c.accent}]}>⇄ Familia compartida · otro Top10 #{peers.get(f.key)}</Text>:null}
         {matched.has(f.key)?<Text style={[s.winnerHeads,{color:kinds[kind].text}]}>
          Cabeza(s): {winnerHeads(f).join(' · ')}
         </Text>:null}
         <Text style={[s.detail,{color:c.subtext}]}>
-         {model==='integral'?f.source:
+         {model==='auxiliar'?f.source:
           view?.ranks[kind].find(x=>familyKey(x.family)===f.key)?.rationale?
           explainFamilyRationale(view.ranks[kind].find(x=>familyKey(x.family)===f.key)!.rationale):
           'Familia con recorridos físicos'} · {f.values.join(' / ')}
         </Text>
-        {model==='integral'&&expanded===f.key?<View style={{gap:5,marginTop:8}}>
+        {model==='auxiliar'&&expanded===f.key?<View style={{gap:5,marginTop:8}}>
          {f.details.map((line,i)=><Text key={i} style={[s.detail,{color:c.text}]}>{line}</Text>)}
          {f.canFocusPlus?<Pressable accessibilityRole="button"
           onPress={()=>onFocus(kind+'|'+f.family)}>
-          <Text style={[s.open,{color:c.accent}]}>Ver respaldo +11 ›</Text>
+          <Text style={[s.open,{color:c.accent}]}>Ver recorrido +11 ›</Text>
          </Pressable>:null}
         </View>:null}
         <Text style={[s.open,{color:c.accent}]}>
-         {model==='integral'?'Ver respaldo de ambas hojas ›':'Ver recorrido ›'}
+         {model==='auxiliar'?'Ver recorridos auxiliares ›':'Ver recorrido ›'}
         </Text>
        </Pressable>)}
       </View>:<Text style={[s.empty,{color:c.muted}]}>
-       {!(model==='integral'?integral:view)?'Cargá las fuentes para generar candidatos.':
+       {!(model==='auxiliar'?auxiliar:view)?'Cargá las fuentes para generar candidatos.':
         'Sin candidatos con recorrido físico válido para esta modalidad.'}
       </Text>}
 
