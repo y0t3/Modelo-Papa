@@ -48,8 +48,8 @@ function HistoricalShape({event,kind}:{
  event:AuxVisualAntecedent;kind:AuxVisualKind
 }){
  const {colors:c}=useLaloTheme();
- const old={target:event.turn,visibleTurns:AUX_SOURCE_TURNS,
-  input:null as never,cells:[] as AuxPath,columns:[]};
+ const old:AuxiliaryBoard={target:event.turn,visibleTurns:[...AUX_SOURCE_TURNS],
+  input:emptyAuxiliaryHeads(),cells:[] as AuxPath,columns:[]};
  // Solo la forma y sus cifras comprobadas; no presentar tablero antiguo
  // completo si las otras celdas no están disponibles en el testigo.
  const seen=new Map(event.path.map(cell=>[cellId(cell),cell]));
