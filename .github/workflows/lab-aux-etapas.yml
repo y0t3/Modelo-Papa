@@ -1,0 +1,31 @@
+name: LAB AUX por Etapas 01-20oct
+on:
+  push:
+    branches: [lab/comparativa-aux-anterior-intrajornada-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  estudiar-etapas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comprobar código y cronología
+        run: |
+          npx tsc --noEmit
+          npx --yes tsx scripts/lab-aux-temporal-modes-test.ts
+      - name: Comparar motores por turno, VT y top
+        run: npx --yes tsx scripts/lab-aux-etapas-01al20oct.ts
+      - name: Guardar Tops antes de sorteos y resultados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: comparativa-aux-etapas-01al20oct
+          path: auditorias/aux-temporal-ab-21oct2026/resultados
+          if-no-files-found: warn
