@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {AuxiliaryBoard,AuxPath} from '../auxSantiagoNeuquen';
+import {emptyAuxiliaryHeads} from '../auxSantiagoNeuquen';
 import type {AuxVisualRoute,AuxVisualKind,AuxVisualAntecedent} from '../auxVisualModel';
 import {AUX_SOURCE_TURNS} from '../auxSantiagoNeuquen';
 import {useLaloTheme} from './LaloTheme';
