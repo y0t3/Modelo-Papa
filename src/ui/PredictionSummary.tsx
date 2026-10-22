@@ -23,7 +23,7 @@ const explanation:Record<string,string>={
  */
 export default function PredictionSummary({date,turn,view,onFocus,post,heads=[],model='lalo',auxiliar}:{
  date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
- auxiliar?:AuxiliarPrediction|null;
+ auxiliar?:AuxiliarView|null;
  onFocus:(id:string)=>void;post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
