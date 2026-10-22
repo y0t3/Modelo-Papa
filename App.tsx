@@ -31,9 +31,13 @@ import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
 import PapaPronostico from './src/ui/PapaPronostico';
 import HeadsTable from './src/ui/HeadsTable';
-import {fetchAuxiliaryBaseForDate} from './src/auxSantiagoSource';
+import {fetchAuxiliaryBaseForDate,fetchAuxiliaryHeads} from './src/auxSantiagoSource';
+import {auxAtCut,extractAuxHistoryMode} from './src/auxTemporalModes';
+import type {AuxMode} from './src/auxTemporalModes';
+import AuxModeSwitch from './src/ui/AuxModeSwitch';
 import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import {buildHeadHighlights} from './src/headHighlights';
+import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
 import type {MovementMode} from './src/infoCandidatos';
 import TurnStrip from './src/ui/TurnStrip';
@@ -83,10 +87,16 @@ function LaloApp(){
  const [data,setData]=useState<CabezasDia|null>(null);
  const [auxHeads,setAuxHeads]=useState<AuxiliaryHeads|null>(null);
  const [auxSourceDate,setAuxSourceDate]=useState<string|null>(null);
+ const [auxToday,setAuxToday]=useState<AuxiliaryHeads|null>(null);
+ const [auxMode,setAuxMode]=useState<AuxMode>('intrajornada');
+ const [historicalAux,setHistoricalAux]=useState<{date:string;
+  previous:AuxiliaryHeads|null;sourceDate:string|null;today:AuxiliaryHeads|null}|null>(null);
  const [sheet,setSheet]=useState<DailySheet|null>(null);
  const [hist,setHist]=useState<LaloHistorical[]>([]);
  const [auxiliarPast,setAuxiliarPast]=useState<AuxiliarHistory[]>([]);
  const [auxiliarError,setAuxiliarError]=useState<string|null>(null);
+ const [auxTodayPast,setAuxTodayPast]=useState<AuxiliarHistory[]>([]);
+ const [auxTodayError,setAuxTodayError]=useState<string|null>(null);
  const [predictionMode,setPredictionMode]=useState<'lalo'|'auxiliar'>('lalo');
  const [predictiveMode,setPredictiveMode]=useState<'lalo'|'auxiliar'>('lalo');
 
@@ -104,7 +114,7 @@ function LaloApp(){
  const navigateTo=(next:Screen)=>{
   const from=activeScreenRef.current;
   if(from===next)return;
-  if(next!=='hoja')setHistoricalPreview(null);
+  if(next!=='hoja'){setHistoricalPreview(null);setHistoricalAux(null);}
   historyRef.current=pushNavigation(historyRef.current,{
    screen:from,scrollY:scrollOffsets.current[from],selectedTurn,
    focused,hojaFocused,hojaTurn
@@ -118,7 +128,7 @@ function LaloApp(){
  const goBack=()=>{
   const {entry,remaining}=backNavigation(historyRef.current);
   if(!entry)return false; // sin historial, Android conserva Atrás del sistema
-  setHistoricalPreview(null);
+  setHistoricalPreview(null);setHistoricalAux(null);
   historyRef.current=remaining;
   activeScreenRef.current=entry.screen;
   setSelectedTurn(entry.selectedTurn);
@@ -158,12 +168,13 @@ function LaloApp(){
    const week=shiftDay(d,-7);
    // Cuatro jornadas reales: tres minihojas y una anterior como base de la tercera.
    const weekDates=Array.from({length:7},(_,i)=>shiftDay(week,i));
-   const [current,previous,weekData,beforeWeek,auxResult]=await Promise.all([
+   const [current,previous,weekData,beforeWeek,auxResult,auxLive]=await Promise.all([
     descargarCabezas(d,true),
     loadPreviousDraws(d,4,x=>descargarCabezas(x,true)),
     Promise.all(weekDates.map(day=>descargarCabezas(day,true))),
     loadPreviousDraws(week,1,x=>descargarCabezas(x,true)),
-    fetchAuxiliaryBaseForDate(d).catch(()=>null)
+    fetchAuxiliaryBaseForDate(d).catch(()=>null),
+    fetchAuxiliaryHeads(d).catch(()=>null)
    ]);
    const weekly=weekData[0],weekPrevious=beforeWeek[0].heads;
    const last=previous[3],beforeLast=previous[2];
@@ -196,12 +207,31 @@ function LaloApp(){
       (error?.message||String(error));
     }
    }
+   let todayHistory:AuxiliarHistory[]=[];
+   let todayWarning:string|null=null;
+   if(!auxLive){
+    todayWarning='No se pudieron leer las cifras Santiago–Neuquén del día seleccionado.';
+   }else{
+    try{
+     todayHistory=await Promise.all(refs.map(async ref=>{
+      const observed=ref.date===last.date?last.heads:weekly;
+      const source=await fetchAuxiliaryHeads(ref.date);
+      return {date:ref.date,period:ref.period,heads:source.heads,
+       aux:extractAuxHistoryMode(ref.date,source.heads,observed,'intrajornada')};
+     }));
+    }catch(error:any){
+     todayWarning='No se pudieron completar las raíces INTRAJORNADA: '+
+      (error?.message||String(error));
+    }
+   }
    resetHistory();
-   setHistoricalPreview(null);
+   setHistoricalPreview(null);setHistoricalAux(null);
    setData(current);setAuxHeads(auxResult?.heads||null);
    setAuxSourceDate(auxResult?.sourceDate||null);
+   setAuxToday(auxLive?.heads||null);
    setSheet(currentSheet);setHist(refs);setBaseHeads(last.heads);
    setAuxiliarPast(auxiliarHistory);setAuxiliarError(auxWarning);
+   setAuxTodayPast(todayHistory);setAuxTodayError(todayWarning);
     setVisualDays(recentDays);
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
    
@@ -240,9 +270,12 @@ function LaloApp(){
    if(loading)return;
    loading=true;
    try{
-    const fresh=await descargarCabezas(date,true);
+    const [fresh,live]=await Promise.all([
+     descargarCabezas(date,true),fetchAuxiliaryHeads(date).catch(()=>null)
+    ]);
     setData(fresh);
-    // Refrescar hoy no cambia la base AUX de ayer.
+    // HOY incorpora nuevas cabezas; AYER permanece fija.
+    if(live)setAuxToday(live.heads);
     setSheet(buildSheet(fresh,baseHeads));
    }catch{}finally{loading=false}
   };
@@ -345,8 +378,10 @@ function LaloApp(){
     <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
     <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
      resetHistory();setHistoricalPreview(null);
-     setDateText(value);setData(null);setAuxHeads(null);setAuxSourceDate(null);setSheet(null);setBaseHeads(null);setHist([]);
+     setDateText(value);setData(null);setAuxHeads(null);setAuxToday(null);
+     setAuxSourceDate(null);setHistoricalAux(null);setSheet(null);setBaseHeads(null);setHist([]);
      setAuxiliarPast([]);setAuxiliarError(null);
+     setAuxTodayPast([]);setAuxTodayError(null);
      setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
