@@ -337,6 +337,7 @@ function LaloApp(){
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
  const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
+ const changeAuxMode=(next:AuxMode)=>{setAuxMode(next);setFocused(null)};
  const showFamily=(id:string)=>{setPredictiveMode('lalo');navigateTo('predictiva');setFocused(id)};
  const showAuxFamily=(id:string)=>{
   setPredictiveMode('auxiliar');navigateTo('predictiva');setFocused(id);
@@ -449,9 +450,15 @@ function LaloApp(){
      <PanoramaSheet mode="hoja" sheet={showingSheet} data={showingHoja}
       initialTurn={hojaTurn} initialTurnOnly={!!historicalPreview}
       focusedOwner={hojaFocused} onInfo={()=>navigateTo('info')}
-      auxHeads={historicalPreview?null:auxHeads}
-      auxSourceDate={historicalPreview?null:auxSourceDate}
-      drawHeads={historicalPreview?null:data}
+      auxHeads={historicalPreview?
+       (historicalAux?.date===historicalPreview.day.date?
+        (auxMode==='intrajornada'?historicalAux.today:historicalAux.previous):null):
+       activeAuxHeads}
+      auxSourceDate={historicalPreview?
+       (auxMode==='intrajornada'?historicalPreview.day.date:historicalAux?.sourceDate||null):
+       activeAuxDate}
+      auxMode={auxMode} onAuxModeChange={changeAuxMode}
+      drawHeads={historicalPreview?historicalPreview.day.heads:data}
       date={historicalPreview?.day.date||date||''}/>
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
@@ -469,18 +476,22 @@ function LaloApp(){
        <Text style={[s.predictorLabel,{color:c.text}]}>{item.label}</Text>
       </Pressable>)}
     </View>
+    {predictiveMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
     {predictiveMode==='lalo'?
      sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet}
       data={predictiva} target={target} focusedOwner={focused}
       onInfo={()=>navigateTo('info')}/>:
       <Text style={[s.empty,{color:c.subtext}]}>Cargá la hoja para consultar Lalo +11.</Text>:
-     auxHeads&&auxiliar?
-      <AuxiliaryPredictiveSheet date={date||''} sourceDate={auxSourceDate||''}
-       turn={target} heads={auxHeads}
-       view={auxiliar} history={auxiliarPast} focusedOwner={focused}/>:
+     activeAuxHeads&&auxiliar?
+      <AuxiliaryPredictiveSheet key={auxMode+'-'+target+'-'+date}
+       date={date||''} sourceDate={activeAuxDate||''}
+       auxMode={auxMode} turn={target} heads={activeAuxHeads}
+       view={auxiliar} history={activeAuxHistory} focusedOwner={focused}/>:
       <Text style={[s.empty,{color:c.subtext}]}>
-       Cargá Santiago–Neuquén de la jornada anterior y sus antecedentes para mostrar la Predictiva Auxiliar.
-       {auxiliarError?' '+auxiliarError:''}
+       {auxMode==='intrajornada'?
+        'HOY incorpora las cifras publicadas durante el día. Antes de Previa no tiene celdas ni candidatos.':
+        'AYER requiere la hoja anterior y las raíces históricas D−1/D−7.'}
+       {activeAuxError?' '+activeAuxError:''}
       </Text>}
    </>:screen==='prediccion'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
@@ -496,17 +507,19 @@ function LaloApp(){
        <Text style={[s.predictorLabel,{color:c.text}]}>{item.label}</Text>
       </Pressable>)}
     </View>
+    {predictionMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
     {!experimental?<>
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
        auxiliar={auxiliar} post={post} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
-      auxiliar?<PredictionSummary model="auxiliar" date={dateText} turn={target} view={motor}
+      auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
+       date={dateText} turn={target} view={motor}
        auxiliar={auxiliar} heads={sheet?.heads[target]||[]}
        onFocus={showFamily} onAuxFocus={showAuxFamily}/>:
       <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
        <Text style={{color:c.text,fontWeight:'800'}}>Modelo Lalo Auxiliar no disponible para este corte.</Text>
        <Text style={{color:c.subtext,marginTop:5}}>
-        {auxiliarError||'Cargá la fecha para obtener la hoja auxiliar y los antecedentes D−1 y D−7.'}
+        {activeAuxError||'Cargá el modo elegido y sus raíces históricas D−1/D−7.'}
        </Text>
        <Text style={{color:c.subtext,marginTop:5}}>
         Los Tops originales de Lalo siguen disponibles sin modificaciones.
@@ -517,7 +530,7 @@ function LaloApp(){
       <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border,marginTop:12}]}>
        <Text style={{color:c.text,fontWeight:'800'}}>TOP GENERAL · Familias coincidentes</Text>
        <Text style={{color:c.subtext,marginTop:5}}>
-        {auxiliarError||'Cargá ambas fuentes para comparar los Tops independientes.'}
+        {activeAuxError||'Cargá ambas fuentes para comparar los Tops independientes.'}
        </Text>
       </View>}
      {predictionMode==='lalo'?<Pressable accessibilityRole="button" onPress={()=>setExperimental(true)}
@@ -539,8 +552,11 @@ function LaloApp(){
     <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico de Lalo</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
     <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
-   </>:screen==='cabezas'?
-    <HeadsTable data={data} highlights={headHighlights} onOpenHead={openHeadInHoja}/>:
+   </>:screen==='cabezas'?<>
+    <AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>
+    <HeadsTable data={data} highlights={headHighlights.merged}
+     sourceLabels={headHighlights.labels} onOpenHead={openHeadInHoja}/>
+   </>:
     <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
       onTurnChange={changeTurn} onOpenFrame={openInfoFrame}
