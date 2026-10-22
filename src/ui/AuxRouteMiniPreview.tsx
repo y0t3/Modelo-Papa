@@ -60,7 +60,7 @@ function HistoricalShape({event,kind}:{
   <Text style={[s.hint,{color:c.subtext}]}>
    {event.turn}: salió {event.head}, terminación marcada {event.reading}.
   </Text>
-  <AuxMiniBoard board={pathBoard} path={event.path} kind={kind} compact/>
+  <AuxMiniBoard board={event.board||pathBoard} path={event.path} kind={kind} compact/>
   <Text style={[s.hint,{color:c.text}]}>{event.relation}</Text>
  </View>;
 }
