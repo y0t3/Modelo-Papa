@@ -25,6 +25,7 @@ jobs:
       - name: Pruebas de ambos AUX y pestañas
         run: |
           npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
+          npx --yes tsx scripts/test-aux-correcciones-info-vt4.ts
           npx --yes tsx scripts/lab-cabezas-duales-ui-test.ts
           npx --yes tsx scripts/test-zoom-pestanas.ts
       - name: Pruebas motor Lalo VT2 VT3 VT4
