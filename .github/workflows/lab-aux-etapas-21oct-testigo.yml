@@ -1,0 +1,17 @@
+name: LAB AUX 21oct fecha testigo
+on:
+  push:
+    branches: [lab/comparativa-aux-anterior-intrajornada-21oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  testigo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Corte independiente 21oct sin recalibrar
+        run: npx --yes tsx scripts/lab-aux-etapas-21oct-testigo.ts
