@@ -1,0 +1,29 @@
+name: TEST Modelo Lalo AUX Hoy-Ayer
+on:
+  push:
+    branches: [lab/app-aux-hoy-ayer-22oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Instalar dependencias
+        run: npm install
+      - name: Compilar TypeScript de la app
+        run: npx tsc --noEmit
+      - name: Regresión de la hoja doble
+        run: |
+          npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
+          npx --yes tsx scripts/lab-cabezas-duales-ui-test.ts
+          npx --yes tsx scripts/lab-hoja-dual-predictiva-test.ts
+          npx --yes tsx scripts/test-zoom-pestanas.ts
+      - name: Asegurar motor MV1 intacto
+        run: |
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-consolidacion-lalo.ts
