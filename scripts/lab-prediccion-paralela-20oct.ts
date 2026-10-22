@@ -1,61 +1,56 @@
+/** Auditoría real 20/10: Lalo +11 vs Auxiliar RAW, sin mezcla de Tops. */
 import {strict as assert} from 'node:assert';
 import {descargarCabezas} from '../src/cabezas';
 import {fetchAuxiliaryHeads} from '../src/auxSantiagoSource';
 import {buildSheet} from '../src/sheet';
-import {preSheetAtCut} from '../src/infoCandidatos';
 import {buildMotorLalo} from '../src/motorLalo';
-import {buildMotorLaloIntegral,extractIntegralAuxHistory} from '../src/motorLaloIntegral';
+import {buildMotorLaloAuxiliar,extractAuxiliarHistory} from '../src/motorLaloAuxiliar';
 import {TURNOS,JURS} from '../src/domain';
 import {comparePrediction} from '../src/predictionParallel';
 
 async function main(){
- const day='2026-10-20',previous='2026-10-19',week='2026-10-13';
- const [heads,last,weekHeads,beforeLast,beforeWeek,nowAux,lastAux,weekAux]=await Promise.all([
-  descargarCabezas(day,true),descargarCabezas(previous,true),
-  descargarCabezas(week,true),descargarCabezas('2026-10-17',true),
-  descargarCabezas('2026-10-12',true),fetchAuxiliaryHeads(day),
-  fetchAuxiliaryHeads(previous),fetchAuxiliaryHeads(week)
+ const date='2026-10-20',prior='2026-10-19',week='2026-10-13';
+ const [today,previous,weekly,beforeLast,beforeWeek,auxToday,auxPrior,auxWeek]=await Promise.all([
+  descargarCabezas(date,true),descargarCabezas(prior,true),descargarCabezas(week,true),
+  descargarCabezas('2026-10-17',true),descargarCabezas('2026-10-12',true),
+  fetchAuxiliaryHeads(date),fetchAuxiliaryHeads(prior),fetchAuxiliaryHeads(week)
  ]);
- const source=nowAux.heads;
- assert.equal(source.Previa.Santiago,'8067');
- assert.equal(source.Primera.Santiago,'6142');
- assert.equal(source.Matutino.Santiago,'9634');
- assert.equal(source.Previa.Neuquen,'0469');
- assert.equal(source.Primera.Neuquen,'0245');
- assert.equal(source.Matutino.Neuquen,'0210');
- // 17/10 es sábado, único Nocturno; 19/10 toma esa base en +11.
- const current=buildSheet(heads,last);
- const historic=[
-  {date:previous,period:'D−1' as const,sheet:buildSheet(last,beforeLast)},
-  {date:week,period:'D−7' as const,sheet:buildSheet(weekHeads,beforeWeek)}
+ const raw=auxToday.heads;
+ assert.deepEqual(
+  [raw.Previa.Santiago,raw.Primera.Santiago,raw.Matutino.Santiago,
+   raw.Previa.Neuquen,raw.Primera.Neuquen,raw.Matutino.Neuquen],
+  ['8067','6142','9634','0469','0245','0210'],
+  'Datos Santiago-Neuquén tal como fueron verificados');
+ const sheet=buildSheet(today,previous);
+ const mvHistory=[
+  {date:prior,period:'D−1' as const,sheet:buildSheet(previous,beforeLast)},
+  {date:week,period:'D−7' as const,sheet:buildSheet(weekly,beforeWeek)}
  ];
- const integralHistory=[
-  {date:previous,period:'D−1' as const,plus11:historic[0].sheet,
-   aux:extractIntegralAuxHistory(previous,lastAux.heads,last)},
-  {date:week,period:'D−7' as const,plus11:historic[1].sheet,
-   aux:extractIntegralAuxHistory(week,weekAux.heads,weekHeads)}
+ const auxHistory=[
+  {date:prior,period:'D−1' as const,aux:extractAuxiliarHistory(prior,auxPrior.heads,previous)},
+  {date:week,period:'D−7' as const,aux:extractAuxiliarHistory(week,auxWeek.heads,weekly)}
  ];
- const cases:any[]=[];
- for(const turn of TURNOS){
-  const pure=buildMotorLalo(current,day,turn,historic);
-  const mixed=buildMotorLaloIntegral(day,turn,
-   preSheetAtCut(current,turn,TURNOS.indexOf(turn)),source,integralHistory);
-  assert.deepEqual(mixed.baseline.ranks,pure.ranks,
-   'MV1 no debe cambiar al encender el Integral');
-  const actual=JURS.map(jur=>({jur,head:heads[turn]?.[jur]||''}));
-  const comparison=comparePrediction(pure,mixed,actual,3);
-  if(turn==='Previa')assert(mixed.ranks[3].every(x=>x.auxRank===null));
-  cases.push({turn,headCount:actual.filter(x=>/^\d{4}$/.test(x.head)).length,
-   counts:comparison.map(r=>({kind:r.kind,
-    shared:r.shared.map(x=>x.family),
-    postBoth:r.winning.filter(x=>x.lalo&&x.integral).map(x=>x.head),
-    postLalo:r.winning.filter(x=>x.lalo&&!x.integral).map(x=>x.head),
-    postIntegral:r.winning.filter(x=>!x.lalo&&x.integral).map(x=>x.head)
-   }))});
+ const details:any[]=[];
+ for(const target of TURNOS){
+  const original=buildMotorLalo(sheet,date,target,mvHistory);
+  const snapshot=JSON.stringify(original.ranks);
+  const aux=buildMotorLaloAuxiliar(date,target,raw,auxHistory);
+  assert.equal(JSON.stringify(original.ranks),snapshot,'No se alteran Tops MV1');
+  if(target==='Previa')
+   assert([2,3,4].every(n=>aux.ranks[n as 2|3|4].length===0));
+  const heads=JURS.map(jur=>({jur,head:today[target]?.[jur]||''}));
+  const report=comparePrediction(original,aux,heads,3);
+  details.push({turn:target,
+   modalities:report.map(s=>({kind:s.kind,
+    shared:s.shared.map(x=>({family:x.family,lalo:x.lalo,auxiliar:x.auxiliar})),
+    headsLalo:s.winning.filter(x=>x.lalo!==null).map(x=>x.head),
+    headsAuxiliar:s.winning.filter(x=>x.auxiliar!==null).map(x=>x.head),
+    headsAmbos:s.winning.filter(x=>x.lalo!==null&&x.auxiliar!==null).map(x=>x.head)
+   }))
+  });
+  assert.equal(JSON.stringify(original.ranks),snapshot,
+   'El comparador POST no modifica ni reordena MV1');
  }
- console.log('PREDICCION_APP_20OCT_OK',JSON.stringify({date:day,
-  independentMain:true,rendered:cases,
-  note:'POST comprobado después de generar PRE para cada turno; no se modificó MV1.'
- }));
+ console.log('PREDICCION_AUX_20OCT_OK',JSON.stringify({date,details}));
 }
-void main().catch(x=>{console.error('PREDICCION_APP_ERROR',x);process.exitCode=1});
+void main().catch(error=>{console.error('PREDICCION_AUX_ERROR',error);process.exitCode=1});
