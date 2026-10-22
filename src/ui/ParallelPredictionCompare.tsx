@@ -8,7 +8,7 @@ import {useLaloTheme} from './LaloTheme';
 type Count=3|5|10;
 /** Solo coteja salidas PRE independientes; cabezas POST nunca reordenan Tops. */
 export default function ParallelPredictionCompare({lalo,auxiliar,heads}:{
- lalo:LaloView;auxiliar:AuxiliarPrediction;heads:HeadEvent[]
+ lalo:LaloView;auxiliar:AuxiliarView;heads:HeadEvent[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [limit,setLimit]=useState<Count>(3);
