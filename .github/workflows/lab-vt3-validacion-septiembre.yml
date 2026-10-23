@@ -1,0 +1,24 @@
+name: LAB VT3 Septiembre Validacion
+on:
+  push:
+    branches: [lab/auditoria-22oct2026-motores]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validacion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Re-evaluar selectores inmutables sobre septiembre 15-30
+        run: npx --yes tsx scripts/lab-vt3-validacion-septiembre.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vt3-validacion-septiembre
+          path: auditorias/22oct2026-motores/validacion-septiembre
+          if-no-files-found: warn
