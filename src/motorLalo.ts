@@ -274,9 +274,14 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
    [...rankD1(originalVt3.slice(0,10)),...originalVt3.slice(10)]:
    rankD1(originalVt3)).map((f,i)=>({...f,rank:i+1}));
  const selectedMothers=vt3.slice(0,10);
+ // En el ensayo "VT4 estable" las diez madres SON LAS MISMAS, pero
+ // para las derivaciones VT2 y VT4 se conserva el orden original exacto.
+ // Esto evita cambios de orientación cuando dos madres comparten un bloque.
+ const stableDerivatives=vt3Priority==='BIFURCACION_LUEGO_D1_TOP10_VT4_ESTABLE';
+ const derivativeMothers=stableDerivatives?originalVt3.slice(0,10):selectedMothers;
  const vt2=base.vt2;
  // La VT2 derivada SIEMPRE tiene dos casilleros físicos consecutivos de la VT3.
- for(const mother of selectedMothers)for(const p of mother.paths)
+ for(const mother of derivativeMothers)for(const p of mother.paths)
   for(const segment of [p.path.slice(0,2),p.path.slice(1,3)]){
    if(segment.length!==2)continue;
    selectKind(vt2,'vt2',pathValue(segment),p.sourceId,segment,'DESDE_VT3',
@@ -285,7 +290,7 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
  const ranked2=rank(vt2,roots,'vt2');
  const vt4=new Map<string,Working>();
  // Cada hija tiene SU testigo de cuatro celdas (no se prestan testigos entre hermanas).
- for(const mother of selectedMothers)for(const parent of mother.paths){
+ for(const mother of derivativeMothers)for(const parent of mother.paths){
   const column=visible.find(c=>c.id===parent.sourceId);
   if(!column)continue;
   const cells=cellsFromPlus11(column.values);
@@ -303,8 +308,7 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
  // Prioridad de VT4 puede conservar la genealogía madre original sin
  // inventar un motor nuevo; el conjunto de madres sigue siendo EXACTAMENTE
  // el Top10 VT3 actual en el modo acotado.
- const stableVt4Order=vt3Priority==='BIFURCACION_LUEGO_D1_TOP10_VT4_ESTABLE';
- const vt4Mothers=stableVt4Order?originalVt3.slice(0,10):selectedMothers;
+ const vt4Mothers=derivativeMothers;
  const motherPositions=new Map(vt4Mothers.map(x=>[x.family,x.rank]));
  const daughtersByPhysicalStrength=rank(vt4,roots,'vt4',motherPositions);
  const ranked4=distributeVt4ByMother(daughtersByPhysicalStrength,vt4Mothers);
