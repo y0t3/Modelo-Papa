@@ -1,0 +1,26 @@
+name: LAB VT3 control septiembre temprano
+on:
+  push:
+    branches: [lab/validacion-vt3-septiembre-temprano-23oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  earlier-control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Dependencias
+        run: npm install
+      - name: Evaluacion predefinida 01-14 septiembre
+        run: npx --yes tsx scripts/lab-vt3-validacion-01al14sept.ts
+      - name: Guardar cabezas PRE y resultados POST
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vt3-prioridad-control-01a14sep
+          path: auditorias/22oct2026-motores/holdout-septiembre-temprano
+          if-no-files-found: warn
