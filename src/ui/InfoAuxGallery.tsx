@@ -2,6 +2,7 @@ import React,{useMemo,useState} from 'react';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {Turno} from '../domain';
 import type {AuxMode} from '../auxTemporalModes';
+import type {AuxiliarHistory,AuxiliarView} from '../motorLaloAuxiliar';
 import type {AuxGalleryDay,AuxGalleryFrame} from '../infoAuxGallery';
 import {buildInfoAuxFrames} from '../infoAuxGallery';
 import {AUX_SOURCE_TURNS,AUX_ROWS} from '../auxSantiagoNeuquen';
@@ -11,7 +12,8 @@ import {useLaloTheme} from './LaloTheme';
 import type {PanoramaKind} from '../panoramaModel';
 
 type Props={days:AuxGalleryDay[];current:AuxGalleryDay|null;turn:Turno;
- mode:AuxMode;onMode:(next:AuxMode)=>void;onOpenDay?:(date:string)=>void};
+ mode:AuxMode;onMode:(next:AuxMode)=>void;onOpenDay?:(date:string)=>void;
+ prediction:AuxiliarView|null;history:AuxiliarHistory[]};
 const kinds:PanoramaKind[]=['vt2','vt3','vt4'];
 function AuxFrameBoard({frame,large=false}:{
  frame:AuxGalleryFrame;large?:boolean
@@ -58,10 +60,11 @@ function AuxFrameBoard({frame,large=false}:{
   </View>)}
  </View>;
 }
-export default function InfoAuxGallery({days,current,turn,mode,onMode,onOpenDay}:Props){
+export default function InfoAuxGallery({days,current,turn,mode,onMode,onOpenDay,
+ prediction,history}:Props){
  const {colors:c,kinds:vtColors}=useLaloTheme();
- const frames=useMemo(()=>buildInfoAuxFrames(days,current,turn,mode),
-  [days,current,turn,mode]);
+ const frames=useMemo(()=>buildInfoAuxFrames(days,current,turn,mode,prediction,history),
+  [days,current,turn,mode,prediction,history]);
  const [chosen,setChosen]=useState<string|null>(null);
  const index=frames.findIndex(x=>x.date===chosen);
  const active=frames[index<0?0:index],position=index<0?0:index;
@@ -70,7 +73,7 @@ export default function InfoAuxGallery({days,current,turn,mode,onMode,onOpenDay}
   <Text style={{color:c.subtext,fontSize:11,lineHeight:17}}>
    La misma semana previa, reconstruida sobre Santiago–Neuquén.
    Las marcas de días anteriores explican cabezas publicadas;
-   la última minihoja muestra el tablero previo al turno actual.
+   la última minihoja muestra los Top3 PRE VT2, VT3 y VT4 del turno en foco.
   </Text>
   <AuxModeSwitch value={mode} onChange={next=>{onMode(next);setChosen(null)}}/>
   <View style={{flexDirection:'row',flexWrap:'wrap',gap:9}}>
@@ -92,7 +95,7 @@ export default function InfoAuxGallery({days,current,turn,mode,onMode,onOpenDay}
      </Text>
      <AuxFrameBoard frame={frame}/>
      <Text style={{color:c.subtext,fontSize:10,textAlign:'center'}}>
-      {frame.isCurrent?'Corte PRE · sin ganador':
+      {frame.isCurrent?'Top3 PRE · '+frame.marks.length+' recorridos':
        frame.matchedHeads.length+' cabezas · '+frame.marks.length+' caminos'}
      </Text>
     </Pressable>)}
@@ -111,11 +114,21 @@ export default function InfoAuxGallery({days,current,turn,mode,onMode,onOpenDay}
     </ScrollView>
     <Text style={{color:c.text,fontSize:11,fontWeight:'800'}}>
      {active.isCurrent?
-      'PRE: no se colorean resultados que aún queremos anticipar.':
+      'PRE: recorridos de los Top3 AUX para '+turn+' · '+active.marks.length+' rutas físicas. No son resultados.':
       active.matchedHeads.length+' cabezas con recorridos exactos · '+
        active.marks.length+' rutas físicas'}
     </Text>
-    {active.matchedHeads.length?<View style={s.badges}>
+    {active.isCurrent?<View style={{alignSelf:'stretch',gap:5}}>
+     {active.top3.length?active.top3.map(x=><Text key={x.kind+'|'+x.rank}
+      style={{color:c.text,fontWeight:'800',fontSize:11}}>
+      {x.kind.toUpperCase()} · #{x.rank} {x.family} · {x.routes} rutas
+     </Text>):<Text style={{color:c.subtext,fontSize:11,lineHeight:17}}>
+      {mode==='intrajornada'&&active.board?.cells.length===0?
+       'HOY todavía no tiene cifras antes de este turno. Elegí AYER · BASE para ver sus Top3.':
+       'Sin candidatos AUX Top3 con recorridos disponibles para este turno. Revisá la carga de fuentes históricas.'}
+     </Text>}
+    </View>:null}
+    {active.matchedHeads.length&&!active.isCurrent?<View style={s.badges}>
      {active.matchedHeads.map(h=><Text key={h} style={{
       color:c.text,backgroundColor:c.card,borderRadius:6,padding:6,
       fontWeight:'800',fontSize:10}}>{h}</Text>)}

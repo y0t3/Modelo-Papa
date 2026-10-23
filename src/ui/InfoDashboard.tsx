@@ -12,6 +12,7 @@ import InfoTurnGallery from './InfoTurnGallery';
 import InfoAuxGallery from './InfoAuxGallery';
 import type {AuxGalleryDay} from '../infoAuxGallery';
 import type {AuxMode} from '../auxTemporalModes';
+import type {AuxiliarHistory,AuxiliarView} from '../motorLaloAuxiliar';
 import TurnStrip from './TurnStrip';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
@@ -22,6 +23,7 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;
  view:LaloView|null;onNavigate:(screen:Destination)=>void;
  auxDays:AuxGalleryDay[];currentAux:AuxGalleryDay|null;
  auxMode:AuxMode;onAuxMode:(mode:AuxMode)=>void;
+ auxPrediction:AuxiliarView|null;auxHistory:AuxiliarHistory[];
  onOpenAuxDay:(date:string)=>void;
  onTurnChange:(turn:Turno)=>void;onOpenFrame:(frame:TurnHistoryFrame)=>void;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
@@ -61,7 +63,8 @@ function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
 }
 export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
- expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,onOpenAuxDay}:Props){
+ expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
+ auxPrediction,auxHistory,onOpenAuxDay}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
@@ -142,7 +145,8 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.text}]}>04 · Minihojas Santiago–Neuquén · semana previa</Text>
    <InfoAuxGallery days={auxDays} current={currentAux} turn={turn}
-    mode={auxMode} onMode={onAuxMode} onOpenDay={onOpenAuxDay}/>
+    mode={auxMode} onMode={onAuxMode} onOpenDay={onOpenAuxDay}
+    prediction={auxPrediction} history={auxHistory}/>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.text}]}>05 · Guía del sistema</Text>

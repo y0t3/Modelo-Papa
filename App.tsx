@@ -309,7 +309,7 @@ function LaloApp(){
  const activeAuxError=auxMode==='intrajornada'?auxTodayError:auxiliarError;
  const activeAuxDate=auxMode==='intrajornada'?date:auxSourceDate;
  const auxiliar=useMemo(()=>{
-  if((screen!=='prediccion'&&screen!=='predictiva')||!date||!activeAuxHeads||
+  if((screen!=='prediccion'&&screen!=='predictiva'&&screen!=='info')||!date||!activeAuxHeads||
    activeAuxHistory.length!==hist.length||!activeAuxHistory.length)return null;
   const input=auxAtCut(activeAuxHeads,target,auxMode);
   return buildMotorLaloAuxiliar(date,target,input,activeAuxHistory);
@@ -583,6 +583,7 @@ function LaloApp(){
       date,heads:data,yesterday:auxHeads,today:auxToday,sourceDate:auxSourceDate
      }:null}
      auxMode={auxMode} onAuxMode={changeAuxMode}
+     auxPrediction={auxiliar} auxHistory={activeAuxHistory}
      onOpenAuxDay={dayDate=>{
       const day=visualDays.find(x=>x.date===dayDate);
       if(day)openInfoFrame({
