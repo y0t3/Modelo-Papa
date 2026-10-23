@@ -1,0 +1,24 @@
+name: LAB Lalo VT3 control agosto sin reajustes
+on:
+  push:
+    branches: [lab/lalo-vt3-comprobacion-agosto-23oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  august-control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Evaluar agosto sin recalibrar preferencias
+        run: npx --yes tsx scripts/lab-selector-lalo-agosto-control.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lalo-vt3-control-agosto
+          path: auditorias/lalo-selector-agosto-control-23oct/resultados
+          if-no-files-found: warn
