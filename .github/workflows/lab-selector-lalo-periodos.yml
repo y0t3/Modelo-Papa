@@ -1,0 +1,26 @@
+name: LAB Lalo ranking VT3 por periodos
+on:
+  push:
+    branches: [lab/selector-lalo-vt3-periodos-23oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  historical-ranking:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Instalar dependencias
+        run: npm install
+      - name: Evaluar selector Lalo VT2 VT3 septiembre-octubre
+        run: npx --yes tsx scripts/lab-selector-lalo-periodos.ts
+      - name: Guardar resultados PRE POST y candidatos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: labo-selector-lalo-vt3-septiembre-octubre
+          path: auditorias/lalo-selector-periodos-23oct/resultados
+          if-no-files-found: warn
