@@ -1,0 +1,26 @@
+name: LAB Auditoria 22oct Modelos
+on:
+  push:
+    branches: [lab/auditoria-22oct2026-motores]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Dependencias
+        run: npm install
+      - name: Replay 22/10 PRE turno a turno
+        run: npx --yes tsx scripts/lab-auditoria-22oct2026.ts
+      - name: Reporte y tops pre-sorteo reconstruidos
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: auditoria-22oct-motores
+          path: auditorias/22oct2026-motores/resultados
+          if-no-files-found: warn
