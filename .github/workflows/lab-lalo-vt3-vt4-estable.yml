@@ -1,0 +1,26 @@
+name: LAB Lalo VT3 flexible VT4 estable
+on:
+  push:
+    branches: [lab/selector-lalo-vt3-periodos-23oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preserved-mothers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Probar VT3 Top10 acotado con jerarquia VT4 independiente
+        run: |
+          npx --yes tsx scripts/lab-lalo-vt3-vt4-estable.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: labo-lalo-vt3-top10-vt4-invariable
+          path: auditorias/lalo-selector-periodos-23oct/integrado-top10-vt4-estable
+          if-no-files-found: warn

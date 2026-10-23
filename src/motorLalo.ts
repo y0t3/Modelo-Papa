@@ -199,7 +199,7 @@ export function distributeVt4ByMother(candidates:LaloFamily[],mothers:LaloFamily
 /** La única entrada PRE del sistema. Altera el pasado disponible, NUNCA el objetivo. */
 export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
  historical:LaloHistorical[],
- vt3Priority:'ORIGINAL'|'BIFURCACION_LUEGO_D1'|'BIFURCACION_LUEGO_D1_TOP10'='ORIGINAL'):LaloView{
+ vt3Priority:'ORIGINAL'|'BIFURCACION_LUEGO_D1'|'BIFURCACION_LUEGO_D1_TOP10'|'BIFURCACION_LUEGO_D1_TOP10_VT4_ESTABLE'='ORIGINAL'):LaloView{
  const targetIdx=TURNOS.indexOf(target);
  if(targetIdx<0)throw Error('Turno inválido');
  const visible=current.columns.slice(0,targetIdx+1);
@@ -269,7 +269,7 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
    return a.rank-b.rank;
   });
  const vt3=vt3Priority==='ORIGINAL'?originalVt3:
-  (vt3Priority==='BIFURCACION_LUEGO_D1_TOP10'?
+  ((vt3Priority==='BIFURCACION_LUEGO_D1_TOP10'||vt3Priority==='BIFURCACION_LUEGO_D1_TOP10_VT4_ESTABLE')?
    // Mantener exactamente las diez madres: solo permutar ese subconjunto.
    [...rankD1(originalVt3.slice(0,10)),...originalVt3.slice(10)]:
    rankD1(originalVt3)).map((f,i)=>({...f,rank:i+1}));
@@ -300,9 +300,14 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
      pathValue(candidate),parent.sourceId,candidate);
    }
  }
- const motherPositions=new Map(vt3.map(x=>[x.family,x.rank]));
+ // Prioridad de VT4 puede conservar la genealogía madre original sin
+ // inventar un motor nuevo; el conjunto de madres sigue siendo EXACTAMENTE
+ // el Top10 VT3 actual en el modo acotado.
+ const stableVt4Order=vt3Priority==='BIFURCACION_LUEGO_D1_TOP10_VT4_ESTABLE';
+ const vt4Mothers=stableVt4Order?originalVt3.slice(0,10):selectedMothers;
+ const motherPositions=new Map(vt4Mothers.map(x=>[x.family,x.rank]));
  const daughtersByPhysicalStrength=rank(vt4,roots,'vt4',motherPositions);
- const ranked4=distributeVt4ByMother(daughtersByPhysicalStrength,selectedMothers);
+ const ranked4=distributeVt4ByMother(daughtersByPhysicalStrength,vt4Mothers);
  return {target,date,status:'EXPERIMENTAL_SIN_VALIDACIÓN',
   roots:[...roots.values()],ranks:{vt2:ranked2,vt3,vt4:ranked4}};
 }
