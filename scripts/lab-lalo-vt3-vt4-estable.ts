@@ -50,6 +50,21 @@ async function main(){
    const sheet=buildSheet(pre(current,turn),previous);
    const original=buildMotorLalo(sheet,date,turn,history,'ORIGINAL');
    const changed=buildMotorLalo(sheet,date,turn,history,'BIFURCACION_LUEGO_D1_TOP10_VT4_ESTABLE');
+   // Una prioridad limitada a VT3 NO puede alterar el Top ni los caminos
+   // de las dos modalidades complementarias. Invariante físico/semántico.
+   const fingerprint=(r:LaloFamily[])=>JSON.stringify(r.map(f=>({
+    rank:f.rank,family:f.family,values:f.paths.map(p=>
+     p.sourceId+'|'+p.value+'|'+p.path.map(c=>c.row+':'+c.col).join('>')
+    ).sort()
+   })));
+   for(const kind of ['vt2','vt4'] as LaloKind[])
+    if(fingerprint(original.ranks[kind])!==fingerprint(changed.ranks[kind]))
+     throw Error('La prioridad VT3 modificó '+kind+' '+date+' '+turn);
+   const originalMothers=new Set(original.ranks.vt3.slice(0,10).map(x=>x.family));
+   const changedMothers=new Set(changed.ranks.vt3.slice(0,10).map(x=>x.family));
+   if(originalMothers.size!==changedMothers.size||
+    [...originalMothers].some(x=>!changedMothers.has(x)))
+    throw Error('La prioridad VT3 cambió madres físicas '+date+' '+turn);
    // Ninguna variante puede inventar VT3 ni modificar la geometría física.
    const names=(r:LaloFamily[])=>r.map(x=>x.family).sort();
    if(JSON.stringify(names(original.ranks.vt3))!==
