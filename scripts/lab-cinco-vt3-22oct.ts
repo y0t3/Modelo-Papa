@@ -163,10 +163,10 @@ async function main(){
  const targetStats=summary.map(s=>{
   const rows=target.filter(e=>e.mode===s.mode);
   return {mode:s.mode,strategy:s.strategy,
-   total:rows.length,t3:rows.filter(e=>e.matches[s.strategy]<=3).length,
-   t5:rows.filter(e=>e.matches[s.strategy]<=5).length,
-   t10:rows.filter(e=>e.matches[s.strategy]<=10).length,
-   physicalT10:rows.filter(e=>e.exactRoutes>0&&e.matches[s.strategy]<=10).length};
+   total:rows.length,t3:rows.filter(e=>e.matches[s.strategy]!==null&&e.matches[s.strategy]<=3).length,
+   t5:rows.filter(e=>e.matches[s.strategy]!==null&&e.matches[s.strategy]<=5).length,
+   t10:rows.filter(e=>e.matches[s.strategy]!==null&&e.matches[s.strategy]<=10).length,
+   physicalT10:rows.filter(e=>e.exactRoutes>0&&e.matches[s.strategy]!==null&&e.matches[s.strategy]<=10).length};
  });
  const out='auditorias/22oct2026-motores/profundizacion';
  fs.mkdirSync(out,{recursive:true});
