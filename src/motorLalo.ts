@@ -199,7 +199,7 @@ export function distributeVt4ByMother(candidates:LaloFamily[],mothers:LaloFamily
 /** La única entrada PRE del sistema. Altera el pasado disponible, NUNCA el objetivo. */
 export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
  historical:LaloHistorical[],
- vt3Priority:'ORIGINAL'|'BIFURCACION_LUEGO_D1'='ORIGINAL'):LaloView{
+ vt3Priority:'ORIGINAL'|'BIFURCACION_LUEGO_D1'|'BIFURCACION_LUEGO_D1_TOP10'='ORIGINAL'):LaloView{
  const targetIdx=TURNOS.indexOf(target);
  if(targetIdx<0)throw Error('Turno inválido');
  const visible=current.columns.slice(0,targetIdx+1);
@@ -258,7 +258,7 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
  const originalVt3=rank(base.vt3,roots,'vt3');
  // LABORATORIO: reordenar las MISMAS familias, antes de las derivadas VT2/VT4.
  // Nunca modifica MV1 sin parámetro ni crea nuevas trayectorias.
- const vt3=vt3Priority==='ORIGINAL'?originalVt3:[...originalVt3]
+ const rankD1=(pool:LaloFamily[])=>[...pool]
   .sort((a,b)=>{
    const weight=(f:LaloFamily)=>[
     Number(f.branchBlocks>0),f.d1Roots,f.branchBlocks,
@@ -267,7 +267,12 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
    const x=weight(a),y=weight(b);
    for(let i=0;i<x.length;i++)if(x[i]!==y[i])return y[i]-x[i];
    return a.rank-b.rank;
-  }).map((f,i)=>({...f,rank:i+1}));
+  });
+ const vt3=vt3Priority==='ORIGINAL'?originalVt3:
+  (vt3Priority==='BIFURCACION_LUEGO_D1_TOP10'?
+   // Mantener exactamente las diez madres: solo permutar ese subconjunto.
+   [...rankD1(originalVt3.slice(0,10)),...originalVt3.slice(10)]:
+   rankD1(originalVt3)).map((f,i)=>({...f,rank:i+1}));
  const selectedMothers=vt3.slice(0,10);
  const vt2=base.vt2;
  // La VT2 derivada SIEMPRE tiene dos casilleros físicos consecutivos de la VT3.

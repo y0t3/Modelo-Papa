@@ -1,0 +1,27 @@
+name: LAB Lalo TOP10 acotado y genealogia VT4
+on:
+  push:
+    branches: [lab/selector-lalo-vt3-periodos-23oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Mantener las 10 madres y reranquear los tres VT completos
+        run: |
+          npx --yes tsx scripts/lab-lalo-vt3-top10-acotado.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Guardar evaluacion
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: labo-lalo-reranking-acotado-top10
+          path: auditorias/lalo-selector-periodos-23oct/integrado-top10
+          if-no-files-found: warn
