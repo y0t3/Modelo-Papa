@@ -21,6 +21,7 @@ jobs:
         run: |
           npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
           npx --yes tsx scripts/test-aux-correcciones-info-vt4.ts
+          npx --yes tsx scripts/test-info-aux-predictiva-top3.ts
           npx --yes tsx scripts/lab-cabezas-duales-ui-test.ts
           npx --yes tsx scripts/lab-hoja-dual-predictiva-test.ts
           npx --yes tsx scripts/test-zoom-pestanas.ts
