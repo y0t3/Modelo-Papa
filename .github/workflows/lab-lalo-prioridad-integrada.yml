@@ -1,0 +1,28 @@
+name: LAB Lalo selector integrado VT3 VT2 VT4
+on:
+  push:
+    branches: [lab/selector-lalo-vt3-periodos-23oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integrated:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Instalar
+        run: npm install
+      - name: Probar motor completo con y sin prioridad D1
+        run: |
+          npx --yes tsx scripts/lab-lalo-prioridad-integrada.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Salvar resultados
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: labo-lalo-VT3-VT2-VT4-integrado
+          path: auditorias/lalo-selector-periodos-23oct/integrado
+          if-no-files-found: warn
