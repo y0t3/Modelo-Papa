@@ -375,18 +375,14 @@ async function main(){
    permSeed^=permSeed<<5;return (permSeed>>>0)/4294967296};
   const permPools=permutations.map(item=>({
    ...item,
-   totals:Object.fromEntries(METRICS.map(metric=>
-    [metric,item.all.reduce((n,x)=>n+x[metric],0)]))
-    as Record<typeof METRICS[number],number>
+   totals:(Object.fromEntries(METRICS.map(metric=>
+    [metric,item.all.reduce((n,x)=>n+x[metric],0)]))) as Record<typeof METRICS[number],number>
   }));
-  const actualDifferences=Object.fromEntries(METRICS.map(metric=>
-   [metric,sums[metric].diff/Math.max(1,qualifiedCuts)]))
-   as Record<typeof METRICS[number],number>;
-  const extreme=Object.fromEntries(METRICS.map(metric=>[metric,0]))
-   as Record<typeof METRICS[number],number>;
+  const actualDifferences=(Object.fromEntries(METRICS.map(metric=>
+   [metric,sums[metric].diff/Math.max(1,qualifiedCuts)]))) as Record<typeof METRICS[number],number>;
+  const extreme=(Object.fromEntries(METRICS.map(metric=>[metric,0]))) as Record<typeof METRICS[number],number>;
   for(let draw=0;draw<nSim;draw++){
-   const accum=Object.fromEntries(METRICS.map(metric=>[metric,0]))
-    as Record<typeof METRICS[number],number>;
+   const accum=(Object.fromEntries(METRICS.map(metric=>[metric,0]))) as Record<typeof METRICS[number],number>;
    for(const item of permPools){
     const indexes=new Set<number>();
     while(indexes.size<item.winCount)indexes.add(Math.floor(permRandom()*item.all.length));
