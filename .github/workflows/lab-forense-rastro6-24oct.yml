@@ -1,0 +1,25 @@
+name: LAB VT34 sabado rastros seis dias
+on:
+  push:
+    branches: [lab/lalo-forense-vt34-rastro6-24oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Contar testigos y competidoras de seis jornadas antes de sortear
+        run: npx --yes tsx scripts/lab-forense-rastro6-24oct.ts
+      - name: Proteger MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: forense-24oct-rastro6-vt3
+          path: auditorias/lalo-forense-rastro6-24oct/resultados
+          if-no-files-found: error
