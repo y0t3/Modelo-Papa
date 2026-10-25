@@ -1,0 +1,27 @@
+name: LAB Lalo raices historicas Nocturna real
+on:
+  push:
+    branches: [lab/lalo-raices-historicas-nocturna-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contrast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Auditar raices historicas VT3 sin usar resultados futuros
+        run: npx --yes tsx scripts/lab-raices-historicas-nocturna-vt3.ts
+      - name: Control invariantes MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Control feriados y Nocturna real por jurisdiccion
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: laboratorio-raices-historicas-nocturna-vt3
+          path: auditorias/lalo-raices-historicas-25oct/resultados/
+          if-no-files-found: error
