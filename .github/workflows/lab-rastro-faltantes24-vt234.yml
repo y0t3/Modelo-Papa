@@ -1,0 +1,25 @@
+name: LAB rastro VT3 y madre VT4 sabado 24 octubre
+on:
+  push:
+    branches: [lab/lalo-vt234-rastro-faltantes-24oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificar reconocimiento y madre fisica por corte
+        run: npx --yes tsx scripts/lab-rastro-faltantes24-vt234.ts
+      - name: Regresion MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: analisis-rastro24-VT3-VT4
+          path: auditorias/lalo-retro-sabado24-vt234/rastro-faltantes-24oct.json
+          if-no-files-found: error
