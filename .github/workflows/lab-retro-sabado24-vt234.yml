@@ -1,0 +1,29 @@
+name: LAB retrospectivo sabado 24 octubre VT234
+on:
+  push:
+    branches: [lab/lalo-retro-24oct-vt234-pulso]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Reconstruir estrictamente PRE cada corte de sabado 24/10
+        run: npx --yes tsx scripts/lab-retro-pre-24oct-vt234.ts
+      - name: POST separado contra resultados publicados sabado
+        run: npx --yes tsx scripts/lab-retro-post-24oct-vt234.ts
+      - name: Regresion MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Regresion Nocturnas reales
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: retro-sabado24-vt234-pulso-pre-post
+          path: auditorias/lalo-retro-sabado24-vt234/resultados
+          if-no-files-found: error
