@@ -1,0 +1,26 @@
+name: LAB Lalo VT3 secuencias con desplazamientos
+on:
+  push:
+    branches: [lab/lalo-vt3-secuencias-desplazadas-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  shift-patterns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Estudiar secuencias de figuras desplazadas 1 o 2 filas
+        run: |
+          npx --yes tsx scripts/lab-lalo-secuencias-desplazadas.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: labo-lalo-vt3-secuencias-desplazadas
+          path: auditorias/lalo-vt3-secuencias-fisicas-25oct/desplazamientos
+          if-no-files-found: warn
