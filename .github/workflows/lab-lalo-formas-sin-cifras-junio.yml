@@ -1,0 +1,26 @@
+name: LAB Lalo formas sin cifras control junio
+on:
+  push:
+    branches: [lab/lalo-figuras-sin-cifra-control-junio-24oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  june:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Aplicar reglas geometricas fijas en junio
+        run: |
+          npx --yes tsx scripts/lab-lalo-formas-sin-cifras-junio.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: labo-lalo-formas-control-junio
+          path: auditorias/lalo-figuras-transiciones-24oct/control-junio
+          if-no-files-found: warn
