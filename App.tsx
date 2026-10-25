@@ -11,7 +11,8 @@ import {buildSheet} from './src/sheet';
 import type {DailySheet} from './src/sheet';
 import {displayToIso,isoToDisplay,shiftDay,shiftDrawDay,previousDrawDay} from './src/dates';
 import {loadPreviousDraws,hasDrawResults} from './src/drawHistory';
-import {buildInfoWeek} from './src/infoWeek';
+import {buildInfoWeekPorJur} from './src/infoWeek';
+import {nocturnaAnteriorPorJur} from './src/nocturnaAnteriorPorJur';
 import {buildVt3Shadow} from './src/vt3Shadow';
 import {buildVt3Trial} from './src/vt3Trial';
 import {buildConnectedVt3} from './src/connectedVt3';
@@ -173,19 +174,21 @@ function LaloApp(){
    const week=shiftDay(d,-7);
    // Cuatro jornadas reales: tres minihojas y una anterior como base de la tercera.
    const weekDates=Array.from({length:7},(_,i)=>shiftDay(week,i));
-   const [current,previous,weekData,beforeWeek,auxResult,auxLive]=await Promise.all([
+   const [current,previous,weekData,beforeWeek,nocturnaBase,weekBase,auxResult,auxLive]=await Promise.all([
     descargarCabezas(d,true),
     loadPreviousDraws(d,4,x=>descargarCabezas(x,true)),
     Promise.all(weekDates.map(day=>descargarCabezas(day,true))),
     loadPreviousDraws(week,1,x=>descargarCabezas(x,true)),
+    nocturnaAnteriorPorJur(d,x=>descargarCabezas(x,true)),
+    nocturnaAnteriorPorJur(week,x=>descargarCabezas(x,true)),
     fetchAuxiliaryBaseForDate(d).catch(()=>null),
     fetchAuxiliaryHeads(d).catch(()=>null)
    ]);
    const weekly=weekData[0],weekPrevious=beforeWeek[0].heads;
    const last=previous[3],beforeLast=previous[2];
-   const recentDays=buildInfoWeek(week,d,
-    weekDates.map((day,i)=>({date:day,heads:weekData[i]})),weekPrevious);
-   const currentSheet=buildSheet(current,last.heads);
+   const recentDays=buildInfoWeekPorJur(week,d,
+    weekDates.map((day,i)=>({date:day,heads:weekData[i]})),weekBase.heads);
+   const currentSheet=buildSheet(current,nocturnaBase.heads);
    const refs:LaloHistorical[]=[
     {date:last.date,period:'D−1',sheet:buildSheet(last.heads,beforeLast.heads)}
    ];
@@ -234,7 +237,7 @@ function LaloApp(){
    setData(current);setAuxHeads(auxResult?.heads||null);
    setAuxSourceDate(auxResult?.sourceDate||null);
    setAuxToday(auxLive?.heads||null);
-   setSheet(currentSheet);setHist(refs);setBaseHeads(last.heads);
+   setSheet(currentSheet);setHist(refs);setBaseHeads(nocturnaBase.heads);
    setAuxiliarPast(auxiliarHistory);setAuxiliarError(auxWarning);
    setAuxTodayPast(todayHistory);setAuxTodayError(todayWarning);
     setVisualDays(recentDays);
