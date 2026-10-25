@@ -228,7 +228,7 @@ function unmatchedClass(
    }else if(matchingShape)shapeOther++;
    if((sameSource&&matched>=1)||matchingShape){
     if(witness.length<6)witness.push({
-     rootDate:prior.date,turn:prior.turn,jur:prior.jur,
+     rootDate:prior.date,lag:prior.dayLag,turn:prior.turn,jur:prior.jur,
      head:prior.head,source:prior.source,
      currentSource:current.source,
      overlap:matched,shapeSame:matchingShape
