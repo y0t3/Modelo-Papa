@@ -1,0 +1,27 @@
+name: LAB VT3 embudo de rastro seis jornadas
+on:
+  push:
+    branches: [lab/lalo-vt3-embudo-rastro-6j-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Causas de VT3 no reconocidos y dos contrastes PRE
+        run: npx --yes tsx scripts/lab-vt3-embudo-rastro-6j.ts
+      - name: Proteccion de reglas MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Proteccion de Nocturnas reales
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-embudo-rastro-seis-jornadas
+          path: auditorias/lalo-embudo-rastro6-25oct/resultados
+          if-no-files-found: error
