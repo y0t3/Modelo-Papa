@@ -1,0 +1,27 @@
+name: LAB VT3 cadenas consecutivas PRE seis jornadas
+on:
+  push:
+    branches: [lab/lalo-vt3-cadenas-activadas-6j-25oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Ejecutar dos testigos consecutivos y control aleatorio
+        run: npx --yes tsx scripts/lab-vt3-cadenas-activadas.ts
+      - name: Verificar invariantes MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Comprobar Nocturnas por jurisdiccion
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: laboratorio-vt3-cadenas-consecutivas
+          path: auditorias/lalo-cadenas-activadas-25oct/resultados
+          if-no-files-found: error
