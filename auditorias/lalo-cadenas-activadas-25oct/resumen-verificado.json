@@ -1,0 +1,422 @@
+{
+  "hypothesis": "Two real winner activations on CONSECUTIVE preceding draw days, same undirected 3-cell shape, anchor steps <=1, source steps <=1. CHAINS: all; VERTICAL: all sources same + constant signed anchor shift; RIGHT: source moves +1 each step. Only missing families physically formable, one replacement of #10.",
+  "sample": {
+    "days": 124,
+    "cuts": 620
+  },
+  "saturdayFive": [
+    {
+      "turn": "Primera",
+      "head": "9379",
+      "family": "379/973",
+      "signature": {
+        "CHAINS": 0,
+        "VERTICAL": 0,
+        "RIGHT": 0,
+        "freshDaysBack": 7,
+        "recentEvents": 0
+      },
+      "eligiblePoolSizes": {
+        "CHAINS": 9,
+        "VERTICAL": 1,
+        "RIGHT": 0
+      },
+      "matchedModes": [],
+      "selectedModes": []
+    },
+    {
+      "turn": "Primera",
+      "head": "1573",
+      "family": "375/573",
+      "signature": {
+        "CHAINS": 0,
+        "VERTICAL": 0,
+        "RIGHT": 0,
+        "freshDaysBack": 7,
+        "recentEvents": 0
+      },
+      "eligiblePoolSizes": {
+        "CHAINS": 9,
+        "VERTICAL": 1,
+        "RIGHT": 0
+      },
+      "matchedModes": [],
+      "selectedModes": []
+    },
+    {
+      "turn": "Matutino",
+      "head": "9321",
+      "family": "123/321",
+      "signature": {
+        "CHAINS": 0,
+        "VERTICAL": 0,
+        "RIGHT": 0,
+        "freshDaysBack": 7,
+        "recentEvents": 0
+      },
+      "eligiblePoolSizes": {
+        "CHAINS": 9,
+        "VERTICAL": 1,
+        "RIGHT": 0
+      },
+      "matchedModes": [],
+      "selectedModes": []
+    },
+    {
+      "turn": "Vespertino",
+      "head": "5693",
+      "family": "396/693",
+      "signature": {
+        "CHAINS": 0,
+        "VERTICAL": 0,
+        "RIGHT": 0,
+        "freshDaysBack": 7,
+        "recentEvents": 0
+      },
+      "eligiblePoolSizes": {
+        "CHAINS": 9,
+        "VERTICAL": 1,
+        "RIGHT": 0
+      },
+      "matchedModes": [],
+      "selectedModes": []
+    },
+    {
+      "turn": "Nocturno",
+      "head": "5739",
+      "family": "739/937",
+      "signature": {
+        "CHAINS": 0,
+        "VERTICAL": 0,
+        "RIGHT": 0,
+        "freshDaysBack": 7,
+        "recentEvents": 0
+      },
+      "eligiblePoolSizes": {
+        "CHAINS": 9,
+        "VERTICAL": 1,
+        "RIGHT": 0
+      },
+      "matchedModes": [],
+      "selectedModes": []
+    }
+  ],
+  "saturdayCuts": [
+    {
+      "turn": "Previa",
+      "unrecognized": 30,
+      "physical": 52,
+      "byMode": {
+        "CHAINS": {
+          "poolSize": 2,
+          "chosen": "198/891",
+          "headHits": 0
+        },
+        "VERTICAL": {
+          "poolSize": 1,
+          "chosen": "198/891",
+          "headHits": 0
+        },
+        "RIGHT": {
+          "poolSize": 0,
+          "chosen": "083/380",
+          "headHits": 0
+        }
+      }
+    },
+    {
+      "turn": "Primera",
+      "unrecognized": 85,
+      "physical": 113,
+      "byMode": {
+        "CHAINS": {
+          "poolSize": 9,
+          "chosen": "135/531",
+          "headHits": 0
+        },
+        "VERTICAL": {
+          "poolSize": 1,
+          "chosen": "198/891",
+          "headHits": 0
+        },
+        "RIGHT": {
+          "poolSize": 0,
+          "chosen": "083/380",
+          "headHits": 0
+        }
+      }
+    },
+    {
+      "turn": "Matutino",
+      "unrecognized": 103,
+      "physical": 149,
+      "byMode": {
+        "CHAINS": {
+          "poolSize": 9,
+          "chosen": "135/531",
+          "headHits": 0
+        },
+        "VERTICAL": {
+          "poolSize": 1,
+          "chosen": "198/891",
+          "headHits": 0
+        },
+        "RIGHT": {
+          "poolSize": 0,
+          "chosen": "029/920",
+          "headHits": 0
+        }
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "unrecognized": 120,
+      "physical": 169,
+      "byMode": {
+        "CHAINS": {
+          "poolSize": 9,
+          "chosen": "135/531",
+          "headHits": 0
+        },
+        "VERTICAL": {
+          "poolSize": 1,
+          "chosen": "198/891",
+          "headHits": 0
+        },
+        "RIGHT": {
+          "poolSize": 0,
+          "chosen": "388/883",
+          "headHits": 0
+        }
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "unrecognized": 149,
+      "physical": 198,
+      "byMode": {
+        "CHAINS": {
+          "poolSize": 9,
+          "chosen": "135/531",
+          "headHits": 0
+        },
+        "VERTICAL": {
+          "poolSize": 1,
+          "chosen": "198/891",
+          "headHits": 0
+        },
+        "RIGHT": {
+          "poolSize": 0,
+          "chosen": "388/883",
+          "headHits": 0
+        }
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "period": "JUN_JUL",
+      "cuts": 255,
+      "methods": {
+        "CHAINS": {
+          "gained": 3,
+          "lost": 1,
+          "base3": 8,
+          "base5": 14,
+          "base10": 24,
+          "modified10": 26,
+          "net": 2,
+          "withPool": 247,
+          "meanPoolSize": 16.5668016194332,
+          "poolWinnerHeads": 45,
+          "randomizedMeanGains": 2.287,
+          "randomizedP95": 5,
+          "randomizedAtLeastObserved": 0.4056
+        },
+        "VERTICAL": {
+          "gained": 3,
+          "lost": 0,
+          "base3": 8,
+          "base5": 14,
+          "base10": 24,
+          "modified10": 27,
+          "net": 3,
+          "withPool": 114,
+          "meanPoolSize": 2.3421052631578947,
+          "poolWinnerHeads": 5,
+          "randomizedMeanGains": 1.1759,
+          "randomizedP95": 3,
+          "randomizedAtLeastObserved": 0.0769
+        },
+        "RIGHT": {
+          "gained": 1,
+          "lost": 0,
+          "base3": 8,
+          "base5": 14,
+          "base10": 24,
+          "modified10": 25,
+          "net": 1,
+          "withPool": 115,
+          "meanPoolSize": 4.043478260869565,
+          "poolWinnerHeads": 5,
+          "randomizedMeanGains": 1.9758,
+          "randomizedP95": 3,
+          "randomizedAtLeastObserved": 1
+        }
+      }
+    },
+    {
+      "period": "AGO_SEP",
+      "cuts": 260,
+      "methods": {
+        "CHAINS": {
+          "gained": 0,
+          "lost": 0,
+          "base3": 7,
+          "base5": 10,
+          "base10": 20,
+          "modified10": 20,
+          "net": 0,
+          "withPool": 256,
+          "meanPoolSize": 19.02734375,
+          "poolWinnerHeads": 57,
+          "randomizedMeanGains": 2.9798,
+          "randomizedP95": 6,
+          "randomizedAtLeastObserved": 1
+        },
+        "VERTICAL": {
+          "gained": 0,
+          "lost": 0,
+          "base3": 7,
+          "base5": 10,
+          "base10": 20,
+          "modified10": 20,
+          "net": 0,
+          "withPool": 145,
+          "meanPoolSize": 1.5310344827586206,
+          "poolWinnerHeads": 4,
+          "randomizedMeanGains": 2.0118,
+          "randomizedP95": 4,
+          "randomizedAtLeastObserved": 1
+        },
+        "RIGHT": {
+          "gained": 0,
+          "lost": 0,
+          "base3": 7,
+          "base5": 10,
+          "base10": 20,
+          "modified10": 20,
+          "net": 0,
+          "withPool": 131,
+          "meanPoolSize": 6.557251908396947,
+          "poolWinnerHeads": 6,
+          "randomizedMeanGains": 0.5592,
+          "randomizedP95": 2,
+          "randomizedAtLeastObserved": 1
+        }
+      }
+    },
+    {
+      "period": "OCT",
+      "cuts": 105,
+      "methods": {
+        "CHAINS": {
+          "gained": 0,
+          "lost": 2,
+          "base3": 2,
+          "base5": 11,
+          "base10": 15,
+          "modified10": 13,
+          "net": -2,
+          "withPool": 102,
+          "meanPoolSize": 18.205882352941178,
+          "poolWinnerHeads": 16,
+          "randomizedMeanGains": 0.6014,
+          "randomizedP95": 2,
+          "randomizedAtLeastObserved": 1
+        },
+        "VERTICAL": {
+          "gained": 2,
+          "lost": 1,
+          "base3": 2,
+          "base5": 11,
+          "base10": 15,
+          "modified10": 16,
+          "net": 1,
+          "withPool": 72,
+          "meanPoolSize": 1.6388888888888888,
+          "poolWinnerHeads": 2,
+          "randomizedMeanGains": 1.512,
+          "randomizedP95": 2,
+          "randomizedAtLeastObserved": 0.512
+        },
+        "RIGHT": {
+          "gained": 0,
+          "lost": 1,
+          "base3": 2,
+          "base5": 11,
+          "base10": 15,
+          "modified10": 14,
+          "net": -1,
+          "withPool": 34,
+          "meanPoolSize": 5,
+          "poolWinnerHeads": 1,
+          "randomizedMeanGains": 0.495,
+          "randomizedP95": 1,
+          "randomizedAtLeastObserved": 1
+        }
+      }
+    },
+    {
+      "period": "TOTAL",
+      "cuts": 620,
+      "methods": {
+        "CHAINS": {
+          "gained": 3,
+          "lost": 3,
+          "base3": 17,
+          "base5": 35,
+          "base10": 59,
+          "modified10": 59,
+          "net": 0,
+          "withPool": 605,
+          "meanPoolSize": 17.884297520661157,
+          "poolWinnerHeads": 118,
+          "randomizedMeanGains": 5.8603,
+          "randomizedP95": 10,
+          "randomizedAtLeastObserved": 0.9419
+        },
+        "VERTICAL": {
+          "gained": 5,
+          "lost": 1,
+          "base3": 17,
+          "base5": 35,
+          "base10": 59,
+          "modified10": 63,
+          "net": 4,
+          "withPool": 331,
+          "meanPoolSize": 1.8338368580060422,
+          "poolWinnerHeads": 11,
+          "randomizedMeanGains": 4.6514,
+          "randomizedP95": 7,
+          "randomizedAtLeastObserved": 0.5279
+        },
+        "RIGHT": {
+          "gained": 1,
+          "lost": 1,
+          "base3": 17,
+          "base5": 35,
+          "base10": 59,
+          "modified10": 59,
+          "net": 0,
+          "withPool": 280,
+          "meanPoolSize": 5.335714285714285,
+          "poolWinnerHeads": 12,
+          "randomizedMeanGains": 3.0142,
+          "randomizedP95": 5,
+          "randomizedAtLeastObserved": 1
+        }
+      }
+    }
+  ]
+}
