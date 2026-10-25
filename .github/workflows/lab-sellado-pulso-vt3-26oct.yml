@@ -1,0 +1,27 @@
+name: PRE sellado pulso VT3 lunes 26 octubre
+on:
+  push:
+    branches: [lab/lalo-pulso-vt3-sellado-26oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  seal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Sellar PRE lunes 26 antes del dia objetivo
+        run: npx --yes tsx scripts/lab-sellado-pulso-vt3-previa-26oct.ts
+      - name: Pruebas MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Nocturna real por jurisdiccion
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sello-pre-pulso-2026-10-26-Previa
+          path: auditorias/lalo-pulso-vt3-sellado-26oct/resultados/
+          if-no-files-found: error
