@@ -1,0 +1,277 @@
+{
+  "sealedAtUtc": "2026-10-25T10:13:57.326Z",
+  "stampType": "PROSPECTIVE_PRE_BEFORE_TARGET_DATE",
+  "expiryGuardUtc": "2026-10-26T03:00:00.000Z",
+  "date": "2026-10-26",
+  "turn": "Previa",
+  "rule": "PULSO_TOP10: binary 1-0-1 in six completed draw days, same source, same undirected shape, anchor delta <=2; tie original rank",
+  "base": [
+    {
+      "rank": 1,
+      "family": "205/502",
+      "physicalRoutes": 7,
+      "signal": 0,
+      "activationDaysRecentToOld": "000011",
+      "sourceCount": 1,
+      "same6": 3
+    },
+    {
+      "rank": 2,
+      "family": "025/520",
+      "physicalRoutes": 6,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011",
+      "sourceCount": 1,
+      "same6": 4
+    },
+    {
+      "rank": 3,
+      "family": "255/552",
+      "physicalRoutes": 6,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011",
+      "sourceCount": 1,
+      "same6": 3
+    },
+    {
+      "rank": 4,
+      "family": "026/620",
+      "physicalRoutes": 3,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011",
+      "sourceCount": 1,
+      "same6": 3
+    },
+    {
+      "rank": 5,
+      "family": "056/650",
+      "physicalRoutes": 4,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011",
+      "sourceCount": 1,
+      "same6": 3
+    },
+    {
+      "rank": 6,
+      "family": "065/560",
+      "physicalRoutes": 3,
+      "signal": 0,
+      "activationDaysRecentToOld": "000001",
+      "sourceCount": 1,
+      "same6": 1
+    },
+    {
+      "rank": 7,
+      "family": "505/505",
+      "physicalRoutes": 3,
+      "signal": 0,
+      "activationDaysRecentToOld": "000001",
+      "sourceCount": 1,
+      "same6": 1
+    },
+    {
+      "rank": 8,
+      "family": "052/250",
+      "physicalRoutes": 5,
+      "signal": 0,
+      "activationDaysRecentToOld": "011101",
+      "sourceCount": 1,
+      "same6": 4
+    },
+    {
+      "rank": 9,
+      "family": "075/570",
+      "physicalRoutes": 2,
+      "signal": 0,
+      "activationDaysRecentToOld": "000001",
+      "sourceCount": 1,
+      "same6": 1
+    },
+    {
+      "rank": 10,
+      "family": "275/572",
+      "physicalRoutes": 2,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011",
+      "sourceCount": 1,
+      "same6": 3
+    }
+  ],
+  "pulse": [
+    {
+      "rank": 1,
+      "family": "205/502",
+      "originalRank": 1,
+      "signal": 0,
+      "activationDaysRecentToOld": "000011"
+    },
+    {
+      "rank": 2,
+      "family": "025/520",
+      "originalRank": 2,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011"
+    },
+    {
+      "rank": 3,
+      "family": "255/552",
+      "originalRank": 3,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011"
+    },
+    {
+      "rank": 4,
+      "family": "026/620",
+      "originalRank": 4,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011"
+    },
+    {
+      "rank": 5,
+      "family": "056/650",
+      "originalRank": 5,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011"
+    },
+    {
+      "rank": 6,
+      "family": "065/560",
+      "originalRank": 6,
+      "signal": 0,
+      "activationDaysRecentToOld": "000001"
+    },
+    {
+      "rank": 7,
+      "family": "505/505",
+      "originalRank": 7,
+      "signal": 0,
+      "activationDaysRecentToOld": "000001"
+    },
+    {
+      "rank": 8,
+      "family": "052/250",
+      "originalRank": 8,
+      "signal": 0,
+      "activationDaysRecentToOld": "011101"
+    },
+    {
+      "rank": 9,
+      "family": "075/570",
+      "originalRank": 9,
+      "signal": 0,
+      "activationDaysRecentToOld": "000001"
+    },
+    {
+      "rank": 10,
+      "family": "275/572",
+      "originalRank": 10,
+      "signal": 0,
+      "activationDaysRecentToOld": "001011"
+    }
+  ],
+  "top3Lalo": [
+    "205/502",
+    "025/520",
+    "255/552"
+  ],
+  "top3Pulso": [
+    "205/502",
+    "025/520",
+    "255/552"
+  ],
+  "top5Lalo": [
+    "205/502",
+    "025/520",
+    "255/552",
+    "026/620",
+    "056/650"
+  ],
+  "top5Pulso": [
+    "205/502",
+    "025/520",
+    "255/552",
+    "026/620",
+    "056/650"
+  ],
+  "top10Lalo": [
+    "205/502",
+    "025/520",
+    "255/552",
+    "026/620",
+    "056/650",
+    "065/560",
+    "505/505",
+    "052/250",
+    "075/570",
+    "275/572"
+  ],
+  "top10Pulso": [
+    "205/502",
+    "025/520",
+    "255/552",
+    "026/620",
+    "056/650",
+    "065/560",
+    "505/505",
+    "052/250",
+    "075/570",
+    "275/572"
+  ],
+  "inputDigestSha256": "ab6b02a4bf7e8814ac0d1b4ebd92137f9d38ec470eb11e493729ac82cb094135",
+  "inputDates": [
+    "2026-10-17",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24"
+  ],
+  "latestNocturnaRows": {
+    "Ciudad": {
+      "head": "0795",
+      "sourceDate": "2026-10-24"
+    },
+    "Provincia": {
+      "head": "8014",
+      "sourceDate": "2026-10-24"
+    },
+    "Córdoba": {
+      "head": "5739",
+      "sourceDate": "2026-10-24"
+    },
+    "Santa Fé": {
+      "head": "6614",
+      "sourceDate": "2026-10-24"
+    },
+    "Entre Ríos": {
+      "head": "2065",
+      "sourceDate": "2026-10-24"
+    },
+    "Montevideo": {
+      "head": "0439",
+      "sourceDate": "2026-10-24"
+    }
+  },
+  "historicalSixDays": [
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24"
+  ],
+  "historicsD1D7": [
+    {
+      "date": "2026-10-24",
+      "period": "D−1"
+    },
+    {
+      "date": "2026-10-19",
+      "period": "D−7"
+    }
+  ],
+  "currentDrawHeadsIncluded": 0,
+  "targetHeadCount": 0,
+  "payloadSha256": "3d4c8bc10b24f8f23290c2f41b7692aef9a1897163c1cb1d684c6609b00f8771"
+}
