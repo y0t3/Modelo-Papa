@@ -178,7 +178,7 @@ const cases:any[]=[],cuts:Cut[]=[];
  * geométrica calculada PRE con seis jornadas previas y hoja por corte.
  * No se permite usar la cabeza objetivo para construir la columna.
  */
-const cases=[
+const targetsPost=[
  {turn:'Primera',jur:'Provincia',head:'9379'},
  {turn:'Primera',jur:'Córdoba',head:'1573'},
  {turn:'Matutino',jur:'Ciudad',head:'9321'},
@@ -195,7 +195,7 @@ async function main(){
  if(base.missing.length)throw Error('Base nocturna incompleta');
  const weekly=shiftDay(date,-7);
  const observed:any[]=[];
- for(const test of cases){
+ for(const test of targetsPost){
   if(today[test.turn]?.[test.jur]!==test.head)
    throw Error('El resultado seleccionado POST no coincide '+test.turn+' '+test.jur);
   const idx=TURNOS.indexOf(test.turn as any);
