@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-24",
+  "status": "RETROSPECTIVE_REPLAY_NO_PROSPECTIVE_CLAIM",
+  "historicalRootDates": [
+    {
+      "date": "2026-10-23",
+      "period": "D−1"
+    },
+    {
+      "date": "2026-10-17",
+      "period": "D−7"
+    }
+  ],
+  "totalHeads": 26,
+  "vt3Cases": [
+    {
+      "turn": "Primera",
+      "jur": "Provincia",
+      "head": "9379",
+      "vt3Family": "379/973",
+      "paths": 1,
+      "status": "FORMABLE_NO_RECONOCIDA",
+      "motorRank": null,
+      "rootsSameSourceShape": 0,
+      "rootsOtherSourceShape": 1,
+      "motorBreakdown": null
+    },
+    {
+      "turn": "Primera",
+      "jur": "Córdoba",
+      "head": "1573",
+      "vt3Family": "375/573",
+      "paths": 1,
+      "status": "FORMABLE_NO_RECONOCIDA",
+      "motorRank": null,
+      "rootsSameSourceShape": 0,
+      "rootsOtherSourceShape": 0,
+      "motorBreakdown": null
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Ciudad",
+      "head": "9321",
+      "vt3Family": "123/321",
+      "paths": 1,
+      "status": "FORMABLE_NO_RECONOCIDA",
+      "motorRank": null,
+      "rootsSameSourceShape": 0,
+      "rootsOtherSourceShape": 0,
+      "motorBreakdown": null
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Provincia",
+      "head": "5693",
+      "vt3Family": "396/693",
+      "paths": 2,
+      "status": "FORMABLE_NO_RECONOCIDA",
+      "motorRank": null,
+      "rootsSameSourceShape": 0,
+      "rootsOtherSourceShape": 1,
+      "motorBreakdown": null
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Córdoba",
+      "head": "5739",
+      "vt3Family": "739/937",
+      "paths": 2,
+      "status": "FORMABLE_NO_RECONOCIDA",
+      "motorRank": null,
+      "rootsSameSourceShape": 0,
+      "rootsOtherSourceShape": 1,
+      "motorBreakdown": null
+    }
+  ],
+  "vt4Cases": [
+    {
+      "turn": "Primera",
+      "jur": "Córdoba",
+      "head": "1573",
+      "paths": 1,
+      "status": "FORMABLE_SIN_HIJA_GENERADA",
+      "engineRank": null,
+      "mothers": [
+        {
+          "source": "Previa",
+          "head": "1573",
+          "physicalPath": "1:1>2:0>3:0>4:1",
+          "mother": "375/573",
+          "addedDigit": "1",
+          "motherRecognizedRank": null,
+          "motherTop10": false,
+          "motherHasCorrectSourcePath": false,
+          "vt4GeneratedByEngine": false
+        }
+      ]
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Córdoba",
+      "head": "5739",
+      "paths": 1,
+      "status": "FORMABLE_SIN_HIJA_GENERADA",
+      "engineRank": null,
+      "mothers": [
+        {
+          "source": "Previa",
+          "head": "5739",
+          "physicalPath": "2:0>3:0>4:1>4:0",
+          "mother": "739/937",
+          "addedDigit": "5",
+          "motherRecognizedRank": null,
+          "motherTop10": false,
+          "motherHasCorrectSourcePath": false,
+          "vt4GeneratedByEngine": false
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "vt3Formable": 5,
+    "vt3NotRecognized": 5,
+    "vt3RecognizedOutside10": 0,
+    "vt4Formable": 2,
+    "vt4NotGenerated": 2,
+    "vt4GeneratedOutside10": 0
+  }
+}
