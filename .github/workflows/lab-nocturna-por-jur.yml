@@ -1,0 +1,28 @@
+name: LAB Nocturna anterior por jurisdiccion
+on:
+  push:
+    branches: [lab/lalo-nocturna-por-jur-validacion-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Probar feriados, sábados y conservación de ceros
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - name: Comparar app real contra hoja por jurisdicción sin cambiar raíces
+        run: |
+          npx --yes tsx scripts/lab-nocturna-por-jur-app.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lalo-nocturna-por-jur-validada
+          path: auditorias/lalo-nocturna-por-jur-validacion-25oct/resultados
+          if-no-files-found: warn
