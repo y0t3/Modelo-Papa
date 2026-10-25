@@ -117,7 +117,7 @@ async function main(){
   if(changed)console.log('FERIADO_FECHA',date,JSON.stringify({
    scheduled:priorScheduled,scheduledHeads:count(old),
    completed:priorComplete,validHeads:count(prevComplete),
-   sample:dayInfo.turns.map(x=>({turn:x.turn,kindCounts:x.kindCounts.vt3,
+   sample:dayInfo.turns.map((x:any)=>({turn:x.turn,kindCounts:x.kindCounts.vt3,
     recovered:x.newFamilies.soloD1.length,
     withBoard:x.newFamilies.todo.length}))
   }));
