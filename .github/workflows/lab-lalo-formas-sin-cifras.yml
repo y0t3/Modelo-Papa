@@ -1,0 +1,26 @@
+name: LAB Lalo formas sin cifras
+on:
+  push:
+    branches: [lab/lalo-movimiento-forma-sin-cifra-24oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  shapes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Evaluar ecos y caminatas geométricas de distintas familias
+        run: |
+          npx --yes tsx scripts/lab-lalo-formas-sin-cifras.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: labo-formas-sin-cifras
+          path: auditorias/lalo-figuras-transiciones-24oct/formas-sin-cifras
+          if-no-files-found: warn
