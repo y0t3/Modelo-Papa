@@ -211,6 +211,7 @@ function unmatchedClass(
  paths:Array<{source:SourceId;cells:string[]}>,past:Root[]
 ){
  let exact=0,twoUnjoined=0,one=0,
+  sameOrdered=0,reordered=0,
   shapeSame=0,shapeOther=0,anySameSource=0;
  const witness:any[]=[];
  for(const current of paths){
@@ -221,7 +222,14 @@ function unmatchedClass(
    const matchingShape=signatureNow===signature(prior.coords);
    if(sameSource){
     anySameSource++;
-    if(matched===3)exact++;
+    if(matched===3){
+     exact++;
+     const currentOrder=current.cells.join('>');
+     const prevOrder=prior.coords.join('>');
+     const reversed=[...prior.coords].reverse().join('>');
+     if(currentOrder===prevOrder||currentOrder===reversed)sameOrdered++;
+     else reordered++;
+    }
     if(matched===2&&!sharedBorder(cs,prior.coordKeys))twoUnjoined++;
     if(matched===1)one++;
     if(matchingShape)shapeSame++;
@@ -242,7 +250,7 @@ function unmatchedClass(
   one?'CONTACTO_UNA_CELDA':
   shapeOther?'FORMA_EN_OTRA_FUENTE':
   anySameSource?'OTRA_ESTRUCTURA':'SIN_RAICES_EN_FUENTE';
- return {category,exact,twoUnjoined,one,shapeSame,shapeOther,
+ return {category,exact,sameOrdered,reordered,twoUnjoined,one,shapeSame,shapeOther,
   rootsFromSameSource:anySameSource,witness};
 }
 const sharedCells=(a:Set<string>,b:Set<string>)=>{
@@ -309,6 +317,7 @@ async function main(){
      return {family,category:z.category,
       nearest:Math.min(99,...z.witness.map(w=>w.lag||99)),
       witnesses:z.witness.length,
+      sameOrdered:z.sameOrdered>0,reordered:z.reordered>0,
       routes:paths.length,
       sources:new Set(paths.map(p=>p.source)).size,
       detail:z.witness.slice(0,2)};
@@ -318,11 +327,16 @@ async function main(){
     FORMA_OTRA_FUENTE:'FORMA_EN_OTRA_FUENTE',
     FORMA_OTRO_SITIO:'MISMA_FORMA_OTRO_SITIO',
     MISMAS_TRES:'COPIA_TRES',
+    TRES_MISMO_ORDEN:'TRES_MISMO_ORDEN',
+    TRES_REORDENADO:'TRES_REORDENADO',
     CUALQUIERA:'ALL'
    };
    const picksU:any={},poolsU:any={};
    for(const [mode,category] of Object.entries(modalities)){
-    const group=unclassified.filter(x=>category==='ALL'||x.category===category);
+    const group=unclassified.filter(x=>category==='ALL'||
+     (category==='TRES_MISMO_ORDEN'?x.category==='COPIA_TRES'&&x.sameOrdered:
+      category==='TRES_REORDENADO'?x.category==='COPIA_TRES'&&x.reordered:
+      x.category===category));
     group.sort((a,b)=>a.nearest-b.nearest||b.sources-a.sources||
      b.witnesses-a.witnesses||b.routes-a.routes||a.family.localeCompare(b.family));
     picksU[mode]=group[0]||null;
@@ -455,7 +469,7 @@ async function main(){
   countByCut.set(id,counts);
  }
  const modesU=['CONTACTO_UNA','FORMA_OTRA_FUENTE',
-  'FORMA_OTRO_SITIO','MISMAS_TRES','CUALQUIERA'];
+  'FORMA_OTRO_SITIO','MISMAS_TRES','TRES_MISMO_ORDEN','TRES_REORDENADO','CUALQUIERA'];
  const randomDisc=rng(20261026),discReport:any[]=[];
  for(const mode of modesU){
   const allMode=discontinuityPools.filter(x=>x.mode===mode);
