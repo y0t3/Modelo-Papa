@@ -1,0 +1,27 @@
+name: LAB VT3 velocidad constante seis jornadas
+on:
+  push:
+    branches: [lab/lalo-vt3-direccion-velocidad-6j-25oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contrast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Evaluar paso reciente y vector temporal PRE
+        run: npx --yes tsx scripts/lab-vt3-velocidad6.ts
+      - name: Verificar regresion MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Comprobar Nocturnas historicas autenticas
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: laboratorio-vt3-velocidad
+          path: auditorias/lalo-vt3-velocidad6-25oct/resultados
+          if-no-files-found: error
