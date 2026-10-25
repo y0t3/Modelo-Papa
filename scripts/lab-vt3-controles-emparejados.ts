@@ -343,8 +343,7 @@ async function main(){
  const matched:any[]=[];
  for(const period of ['JUN_JUL','AGO_SEP','OCT','TOTAL']){
   const rows=cuts.filter(c=>period==='TOTAL'||c.block===period);
-  const sums=Object.fromEntries(METRICS.map(k=>[k,{win:0,nonwin:0,diff:0}])) as
-   Record<typeof METRICS[number],{win:number;nonwin:number;diff:number}>;
+  const sums=(Object.fromEntries(METRICS.map(k=>[k,{win:0,nonwin:0,diff:0}]))) as Record<typeof METRICS[number],{win:number;nonwin:number;diff:number}>;
   let qualifiedCuts=0,winFamilies=0,lossFamilies=0,headHits=0;
   const examples:any[]=[];
   for(const cut of rows){
