@@ -74,7 +74,9 @@ function enumerate(cols:DailySheet['columns']):Map<string,Route[]>{
   const dfs=(p:Path)=>{
    if(p.length===3){
     const val=p.map(x=>x.digit).join(''),family=reversibleFamily(val);
-    const geom=col.id+'|'+keyCells(p);
+    // Una misma terna de celdas puede permitir órdenes distintos:
+    // agrupar por familia además de posiciones (nunca perder VT3 válidas).
+    const geom=col.id+'|'+family+'|'+keyCells(p);
     if(seen.has(geom))return;
     seen.add(geom);
     const item:Route={source:col.id,value:val,family,
