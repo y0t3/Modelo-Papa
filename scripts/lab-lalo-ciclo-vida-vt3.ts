@@ -43,7 +43,7 @@ const shape=(p:Path)=>{
  return [f,b].sort()[0];
 };
 const sourceRow=(p:Path)=>Math.min(...p.map(x=>x.row));
-type Evidence={source:SourceId;minRow:number;turn:string;jur:string;head:string};
+type Evidence={sig:string;source:SourceId;minRow:number;turn:string;jur:string;head:string};
 type Completed={date:string;validHeads:number;sheet:DailySheet;
  active:Map<string,Evidence[]>;uniqueEvents:number};
 const validHeads=(draws:CabezasDia)=>
@@ -68,7 +68,7 @@ async function completed(date:string):Promise<Completed>{
       if(events.has(event))continue;
       events.add(event);
       const key=shape(p),v=active.get(key)||[];
-      v.push({source:hit.sourceId,minRow:sourceRow(p),
+      v.push({sig:key,source:hit.sourceId,minRow:sourceRow(p),
        turn:t,jur:m.jurisdiccion,head:m.cabeza});
       active.set(key,v);
      }
@@ -118,13 +118,13 @@ function life(f:LaloFamily,history:Completed[]):Life{
  const firstObserved=day1&&!active.slice(1).some(Boolean);
  const recent=byDay[0]||[];
  const sameSource=paths.some(p=>recent.some(r=>r.source===p.sourceId&&
-  [...sigs].has(shape(p.path))));
+  r.sig===shape(p.path))));
  const movedRight=paths.some(p=>recent.some(r=>
   sourceOrder.indexOf(p.sourceId)===sourceOrder.indexOf(r.source)+1&&
-  shape(p.path)===shapeOfHistoricalEvent(r,history[0])&&
+  shape(p.path)===r.sig&&
   Math.abs(sourceRow(p.path)-r.minRow)<=2));
  const rowWalk=paths.some(p=>recent.some(r=>r.source===p.sourceId&&
-  shape(p.path)===shapeOfHistoricalEvent(r,history[0])&&
+  shape(p.path)===r.sig&&
   Math.abs(sourceRow(p.path)-r.minRow)>=1&&
   Math.abs(sourceRow(p.path)-r.minRow)<=2));
  const state=daysActive===0?'SIN_ACTIVACIONES':
@@ -137,12 +137,6 @@ function life(f:LaloFamily,history:Completed[]):Life{
   consecutive,reactivated,firstObserved,sameSource,movedRight,rowWalk,
   previousEvidence:recent.slice(0,4).map(x=>x.turn+' '+x.jur+' '+x.head+' '+x.source),
   byDay:byDay.map(x=>x.length)};
-}
-// Para el movimiento NO comparar la familia numérica sino la geometría
-// que figuró en el evento histórico; guardar esa firma en la evidencia.
-function shapeOfHistoricalEvent(r:Evidence,c:Completed){
- for(const [sig,ls] of c.active.entries())if(ls.includes(r))return sig;
- return '';
 }
 function rerank(original:LaloFamily[],method:Method,hist:Completed[]){
  if(method==='BASE')return original;
@@ -171,7 +165,7 @@ function rerank(original:LaloFamily[],method:Method,hist:Completed[]){
 function block(date:string){
  if(date<='2026-07-31')return 'JUN_JUL';
  if(date<='2026-09-30')return 'AGO_SEP';
- return 'OCT_HOLDOUT';
+ return 'OCT_REFERENCIA';
 }
 async function main(){
  const candidates:any[]=[],heads:any[]=[],daily:any[]=[];
@@ -225,7 +219,7 @@ async function main(){
   console.log('CICLO_DIA',date);
  }
  const report:any[]=[];
- const periods=['JUN_JUL','AGO_SEP','OCT_HOLDOUT','TOTAL'];
+ const periods=['JUN_JUL','AGO_SEP','OCT_REFERENCIA','TOTAL'];
  for(const p of periods)for(const m of METHODS){
   const rows=heads.filter(x=>p==='TOTAL'||x.block===p);
   const won=(method:Method,k:number)=>rows.filter(x=>
