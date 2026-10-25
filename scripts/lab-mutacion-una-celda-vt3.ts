@@ -264,7 +264,7 @@ async function main(){
  const dates:string[]=[];
  for(let d='2026-06-01';d<='2026-10-24';d=shiftDay(d,1))
   if(new Date(d+'T12:00:00').getDay()!==0)dates.push(d);
- const heads:any[]=[],cuts:any[]=[],families:any[]=[],snapshots:Snapshot[]=[],unmatched:any[]=[],discontinuityPools:any[]=[],discontinuityHeads:any[]=[];
+ const heads:any[]=[],cuts:any[]=[],families:any[]=[],snapshots:Snapshot[]=[],unmatched:any[]=[],discontinuityPools:any[]=[],discontinuityHeads:any[]=[],orderCases:any[]=[];
  for(const date of dates){
   const actual=await get(date),valid=nHeads(actual);
   if(valid<20){console.log('MUTACION_OMITIDA',date,valid);continue}
@@ -372,9 +372,32 @@ async function main(){
     const officialRank=official.ranks.vt3.find(x=>x.family===family)?.rank||null;
     const shadow=mutation.find(x=>x.family===family);
     const residual=unclassified.find(x=>x.family===family);
-    if(exactPaths.length>0&&officialRank===null&&residual)
+    if(exactPaths.length>0&&officialRank===null&&residual){
      discontinuityHeads.push({date,turn,jur:h.jur,head:h.head,
       family,category:residual.category,witness:residual.detail});
+     if(residual.category==='COPIA_TRES'){
+      const matches:any[]=[];
+      for(const path of exactPaths){
+       const loc=new Set(path.cells);
+       for(const root of past){
+        if(root.source!==path.source||sharedCells(loc,root.coordKeys)!==3)continue;
+        const forward=path.cells.join('>');
+        const prior=root.coords.join('>');
+        const oldReverse=[...root.coords].reverse().join('>');
+        matches.push({rootDate:root.date,daysBack:root.dayLag,
+         oldWinner:root.head,oldJur:root.jur,oldTurn:root.turn,
+         source:root.source,oldVT3:root.pathValue,
+         newVT3:value,oldCells:root.coords,newCells:path.cells,
+         orderStatus:forward===prior?'MISMO_SENTIDO':
+          forward===oldReverse?'INVERTIDO':'ORDEN_DISTINTO'});
+       }
+      }
+      orderCases.push({date,turn,jur:h.jur,head:h.head,family,
+       physicalPaths:exactPaths.length,
+       tripleMatches:matches.length,
+       matches:matches.slice(0,80)});
+     }
+    }
     if(exactPaths.length>0&&officialRank===null&&!shadow){
      unmatched.push({date,turn,jur:h.jur,head:h.head,value,family,
       ...unmatchedClass(exactPaths,past)});
@@ -521,6 +544,7 @@ async function main(){
  fs.writeFileSync(out+'/cortes.json',JSON.stringify(cuts,null,2));
  fs.writeFileSync(out+'/familias-testigos.json',JSON.stringify(families,null,2));
  fs.writeFileSync(out+'/control-aleatorio.json',JSON.stringify(controls,null,2));
+ fs.writeFileSync(out+'/mismas-tres-celdas.json',JSON.stringify(orderCases,null,2));
  fs.writeFileSync(out+'/discontinuidades.json',
   JSON.stringify({discReport,exposureByTurn,discontinuityHeads},null,2));
  fs.writeFileSync(out+'/discontinuidades-por-corte.json',
@@ -538,6 +562,10 @@ async function main(){
  console.log('DISCONTINUIDADES_RESUMEN',JSON.stringify(discReport));
  console.log('DISCONTINUIDADES_TURNOS',JSON.stringify(exposureByTurn));
  console.log('DISCONTINUIDADES_CASOS',JSON.stringify(discontinuityHeads));
+ console.log('DISCONTINUIDADES_MISMAS_TRES',JSON.stringify(orderCases.map(x=>({
+  date:x.date,turn:x.turn,head:x.head,
+  matches:x.tripleMatches,examples:x.matches.slice(0,8)
+ }))));
  console.log('MUTACION_NO_CUBIERTAS',JSON.stringify({
   count:unmatched.length,
   byTurn:Object.fromEntries(TURNOS.map(t=>[t,unmatched.filter(x=>x.turn===t).length])),
