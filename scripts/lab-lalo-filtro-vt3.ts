@@ -20,7 +20,7 @@ import type {Path} from '../src/paths';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
 import type {LaloHistorical} from '../src/motorLalo';
 
-const MODES=['BASE','SHADOW_D1','SHADOW_ANY','SHADOW_BOTH'] as const;
+const MODES=['BASE','SHADOW_D1','SHADOW_ANY','SHADOW_BOTH','SHADOW_CONVERGENCE'] as const;
 type Mode=typeof MODES[number];
 type Root={period:'D−1'|'D−7';source:SourceId;coords:Set<string>;
  event:string;shape:string;anchor:number};
@@ -130,6 +130,9 @@ function shadowRoutes(cols:DailySheet['columns'],roots:Root[],baseFamilies:Set<s
  return candidates;
 }
 function score(c:Candidate,mode:Mode):number[]{
+ if(mode==='SHADOW_CONVERGENCE')
+  return [c.sourceCount,c.d1.size+c.d7.size,
+   c.d1.size,c.routeCount];
  if(mode==='SHADOW_BOTH')
   return [Number(c.d1.size>0&&c.d7.size>0),c.d1.size+c.d7.size,
    c.d1.size,c.sourceCount,c.routeCount];
@@ -141,6 +144,8 @@ function score(c:Candidate,mode:Mode):number[]{
 function bestShadow(xs:Candidate[],mode:Mode):Candidate|null{
  const qualified=xs.filter(x=>mode==='SHADOW_D1'?x.d1.size>0:
   mode==='SHADOW_BOTH'?x.d1.size>0&&x.d7.size>0:
+  mode==='SHADOW_CONVERGENCE'?x.sourceCount>=2&&
+    x.d1.size+x.d7.size>0:
   x.d1.size+x.d7.size>0);
  qualified.sort((a,b)=>{
   const x=score(a,mode),y=score(b,mode);
@@ -178,7 +183,7 @@ async function main(){
    const picks=Object.fromEntries(MODES.slice(1).map(m=>
     [m,bestShadow(shadow,m)])) as Record<Exclude<Mode,'BASE'>,Candidate|null>;
    const ranks:Record<Mode,string[]>={BASE:view.ranks.vt3.slice(0,10)
-    .map(x=>x.family),SHADOW_D1:[],SHADOW_ANY:[],SHADOW_BOTH:[]};
+    .map(x=>x.family),SHADOW_D1:[],SHADOW_ANY:[],SHADOW_BOTH:[],SHADOW_CONVERGENCE:[]};
    for(const m of MODES.slice(1)){
     const base=[...ranks.BASE];
     const alternate=picks[m];
@@ -205,7 +210,9 @@ async function main(){
       .reduce((map,f)=>map.set(f,(map.get(f)||0)+1),new Map<string,number>())),
     poolD1:shadow.filter(x=>x.d1.size>0).map(x=>x.family),
     poolAny:shadow.filter(x=>x.d1.size+x.d7.size>0).map(x=>x.family),
-    poolBoth:shadow.filter(x=>x.d1.size>0&&x.d7.size>0).map(x=>x.family)});
+    poolBoth:shadow.filter(x=>x.d1.size>0&&x.d7.size>0).map(x=>x.family),
+    poolConvergence:shadow.filter(x=>x.sourceCount>=2&&
+     x.d1.size+x.d7.size>0).map(x=>x.family)});
    for(const jur of JURS){
     const head=today[turn]?.[jur]||'';
     if(!/^\d{4}$/.test(head))continue;
@@ -273,7 +280,8 @@ async function main(){
  const rand=seeded(20261025);
  const randomControl:any={};
  for(const mode of MODES.slice(1)){
-  const key=mode==='SHADOW_D1'?'poolD1':mode==='SHADOW_ANY'?'poolAny':'poolBoth';
+  const key=mode==='SHADOW_D1'?'poolD1':mode==='SHADOW_ANY'?'poolAny':
+   mode==='SHADOW_BOTH'?'poolBoth':'poolConvergence';
   const observed=wins[mode].gained.length;
   const losses=wins[mode].lost.length;
   const draws=15000;
