@@ -1,0 +1,28 @@
+name: LAB Lalo VT3 holdout julio y 23oct
+on:
+  push:
+    branches: [lab/lalo-vt3-holdout-julio-23oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  july-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comparar fechas no usadas para construir el selector
+        run: |
+          npx --yes tsx scripts/lab-holdout-lalo-julio-23oct.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Conservar reporte cronológico detallado
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lalo-vt3-holdout-julio-23oct
+          path: auditorias/lalo-selector-periodos-23oct/holdout-julio-23oct
+          if-no-files-found: warn
