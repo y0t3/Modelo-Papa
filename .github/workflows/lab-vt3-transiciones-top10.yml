@@ -1,0 +1,25 @@
+name: LAB VT3 transiciones ordenan solo TOP10
+on:
+  push:
+    branches: [lab/lalo-vt3-transiciones-top10-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Reordenar top diez por pulsos y marcha de figuras
+        run: npx --yes tsx scripts/lab-vt3-transiciones-orden-top10.ts
+      - name: Control MV1 congelado
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-top10-pulsos-marcha
+          path: auditorias/lalo-vt3-transiciones-top10-25oct/resultados
+          if-no-files-found: error
