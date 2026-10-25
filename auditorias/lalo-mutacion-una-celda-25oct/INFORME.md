@@ -108,7 +108,7 @@ Ejemplos para diagnóstico posterior:
 - Santa Fe Nocturno 16/10, `5807`: historia anterior de tres
   posiciones que merece inspección de fuentes y antigüedad.
 - Ciudad Nocturno 05/06, `9496`: misma forma comprobada en otra fuente.
-- Córdoba Matutino 24/10, `1573`: VT3 físicamente válido, sin
+- Córdoba Primera 24/10, `1573`: VT3 físicamente válido, sin
   selección satisfactoria en Top10.
 
 ## Decisión y siguiente paso
