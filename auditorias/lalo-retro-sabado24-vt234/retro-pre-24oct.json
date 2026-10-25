@@ -1,0 +1,3383 @@
+{
+  "kind": "RETROSPECTIVE_CUTOFF_REPLAY_NOT_PROSPECTIVE",
+  "performedAtUtc": "2026-10-25T10:31:08.544Z",
+  "targetDate": "2026-10-24",
+  "noTruePreDrawTimestamp": true,
+  "protocol": "Target 24/10 data loaded only as already published earlier turns for each as-of cutoff. Predictions do not receive heads from target turn or later. Outcomes compared by separate script.",
+  "historyDates": [
+    "2026-10-17",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23"
+  ],
+  "historicalRoots": [
+    {
+      "date": "2026-10-23",
+      "period": "D−1"
+    },
+    {
+      "date": "2026-10-17",
+      "period": "D−7"
+    }
+  ],
+  "nocturnaBasePerJur": {
+    "Ciudad": "2026-10-23",
+    "Provincia": "2026-10-23",
+    "Córdoba": "2026-10-23",
+    "Santa Fé": "2026-10-23",
+    "Entre Ríos": "2026-10-23",
+    "Montevideo": "2026-10-23"
+  },
+  "rows": [
+    {
+      "date": "2026-10-24",
+      "turn": "Previa",
+      "asOf": "BEFORE_Previa",
+      "retrospective": true,
+      "usedCurrentDateTurnRows": [],
+      "usedEarlierHeads": {},
+      "knownSourceColumns": [
+        {
+          "id": "prevNocturno",
+          "values": [
+            "91",
+            "83",
+            "30",
+            "32",
+            "09",
+            "28"
+          ]
+        }
+      ],
+      "basic": {
+        "vt2": [
+          {
+            "rank": 1,
+            "family": "03/30",
+            "physicalValues": [
+              "03",
+              "30"
+            ],
+            "motherFamilies": [
+              "033/330",
+              "039/930",
+              "203/302",
+              "303/303"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "02/20",
+            "physicalValues": [
+              "02",
+              "20"
+            ],
+            "motherFamilies": [
+              "023/320",
+              "029/920",
+              "203/302",
+              "208/802"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "29/92",
+            "physicalValues": [
+              "29",
+              "92"
+            ],
+            "motherFamilies": [
+              "029/920",
+              "092/290",
+              "298/892"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "33/33",
+            "physicalValues": [
+              "33"
+            ],
+            "motherFamilies": [
+              "033/330"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "38/83",
+            "physicalValues": [
+              "83"
+            ],
+            "motherFamilies": [
+              "083/380"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "89/98",
+            "physicalValues": [
+              "98"
+            ],
+            "motherFamilies": [
+              "298/892"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "13/31",
+            "physicalValues": [
+              "13"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "23/32",
+            "physicalValues": [
+              "32"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "08/80",
+            "physicalValues": [
+              "08",
+              "80"
+            ],
+            "motherFamilies": [
+              "083/380",
+              "208/802"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "39/93",
+            "physicalValues": [
+              "39",
+              "93"
+            ],
+            "motherFamilies": [
+              "039/930"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ],
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "029/920",
+            "physicalValues": [
+              "029",
+              "920"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "033/330",
+            "physicalValues": [
+              "033",
+              "330"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "039/930",
+            "physicalValues": [
+              "039",
+              "930"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "208/802",
+            "physicalValues": [
+              "208",
+              "802"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "298/892",
+            "physicalValues": [
+              "298"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "083/380",
+            "physicalValues": [
+              "083",
+              "380"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ],
+        "vt4": [
+          {
+            "rank": 1,
+            "family": "3023/3320",
+            "physicalValues": [
+              "3023",
+              "3320"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "9303",
+            "physicalValues": [
+              "9303"
+            ],
+            "motherFamilies": [
+              "303/303"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "9203/9302",
+            "physicalValues": [
+              "9203",
+              "9302"
+            ],
+            "motherFamilies": [
+              "203/302"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "3092/3290",
+            "physicalValues": [
+              "3092",
+              "3290"
+            ],
+            "motherFamilies": [
+              "092/290"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "3029/3920",
+            "physicalValues": [
+              "3029",
+              "3920"
+            ],
+            "motherFamilies": [
+              "029/920"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "2033/2330",
+            "physicalValues": [
+              "2033",
+              "2330"
+            ],
+            "motherFamilies": [
+              "033/330"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "2039/2930",
+            "physicalValues": [
+              "2039",
+              "2930"
+            ],
+            "motherFamilies": [
+              "039/930"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "3208/3802",
+            "physicalValues": [
+              "3208",
+              "3802"
+            ],
+            "motherFamilies": [
+              "208/802"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "0298/0892",
+            "physicalValues": [
+              "0298",
+              "0892"
+            ],
+            "motherFamilies": [
+              "298/892"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "3083/3380",
+            "physicalValues": [
+              "3083",
+              "3380"
+            ],
+            "motherFamilies": [
+              "083/380"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ]
+      },
+      "pulse": {
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "029/920",
+            "physicalValues": [
+              "029",
+              "920"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "033/330",
+            "physicalValues": [
+              "033",
+              "330"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "039/930",
+            "physicalValues": [
+              "039",
+              "930"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "208/802",
+            "physicalValues": [
+              "208",
+              "802"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "298/892",
+            "physicalValues": [
+              "298"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "083/380",
+            "physicalValues": [
+              "083",
+              "380"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ]
+      },
+      "pulseFlags": [
+        {
+          "family": "023/320",
+          "baselineRank": 1,
+          "signal": 1,
+          "activationDaysRecentFirst": "100101",
+          "historyEvents": 3
+        },
+        {
+          "family": "303/303",
+          "baselineRank": 2,
+          "signal": 0,
+          "activationDaysRecentFirst": "000100",
+          "historyEvents": 1
+        },
+        {
+          "family": "203/302",
+          "baselineRank": 3,
+          "signal": 0,
+          "activationDaysRecentFirst": "010111",
+          "historyEvents": 6
+        },
+        {
+          "family": "092/290",
+          "baselineRank": 4,
+          "signal": 1,
+          "activationDaysRecentFirst": "100001",
+          "historyEvents": 2
+        },
+        {
+          "family": "029/920",
+          "baselineRank": 5,
+          "signal": 0,
+          "activationDaysRecentFirst": "000011",
+          "historyEvents": 4
+        },
+        {
+          "family": "033/330",
+          "baselineRank": 6,
+          "signal": 0,
+          "activationDaysRecentFirst": "011111",
+          "historyEvents": 10
+        },
+        {
+          "family": "039/930",
+          "baselineRank": 7,
+          "signal": 0,
+          "activationDaysRecentFirst": "000011",
+          "historyEvents": 3
+        },
+        {
+          "family": "208/802",
+          "baselineRank": 8,
+          "signal": 0,
+          "activationDaysRecentFirst": "000011",
+          "historyEvents": 3
+        },
+        {
+          "family": "298/892",
+          "baselineRank": 9,
+          "signal": 0,
+          "activationDaysRecentFirst": "000011",
+          "historyEvents": 2
+        },
+        {
+          "family": "083/380",
+          "baselineRank": 10,
+          "signal": 0,
+          "activationDaysRecentFirst": "000001",
+          "historyEvents": 1
+        }
+      ],
+      "rankingCounts": {
+        "vt2": 14,
+        "vt3": 22,
+        "vt4": 47
+      }
+    },
+    {
+      "date": "2026-10-24",
+      "turn": "Primera",
+      "asOf": "BEFORE_Primera",
+      "retrospective": true,
+      "usedCurrentDateTurnRows": [
+        "Previa"
+      ],
+      "usedEarlierHeads": {
+        "Previa": {
+          "Ciudad": "6531",
+          "Provincia": "3520",
+          "Córdoba": "2947",
+          "Santa Fé": "6659",
+          "Entre Ríos": "1682",
+          "Montevideo": "----"
+        }
+      },
+      "knownSourceColumns": [
+        {
+          "id": "prevNocturno",
+          "values": [
+            "91",
+            "83",
+            "30",
+            "32",
+            "09",
+            "28"
+          ]
+        },
+        {
+          "id": "Previa",
+          "values": [
+            "42",
+            "31",
+            "58",
+            "70",
+            "93",
+            "--"
+          ]
+        }
+      ],
+      "basic": {
+        "vt2": [
+          {
+            "rank": 1,
+            "family": "03/30",
+            "physicalValues": [
+              "03",
+              "30"
+            ],
+            "motherFamilies": [
+              "033/330",
+              "039/930",
+              "203/302",
+              "303/303"
+            ],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "13/31",
+            "physicalValues": [
+              "13",
+              "31"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "02/20",
+            "physicalValues": [
+              "02",
+              "20"
+            ],
+            "motherFamilies": [
+              "023/320",
+              "029/920",
+              "203/302",
+              "208/802"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "29/92",
+            "physicalValues": [
+              "29",
+              "92"
+            ],
+            "motherFamilies": [
+              "029/920",
+              "092/290",
+              "298/892"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "33/33",
+            "physicalValues": [
+              "33"
+            ],
+            "motherFamilies": [
+              "033/330"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "38/83",
+            "physicalValues": [
+              "38",
+              "83"
+            ],
+            "motherFamilies": [
+              "083/380"
+            ],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "23/32",
+            "physicalValues": [
+              "32"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "39/93",
+            "physicalValues": [
+              "39",
+              "93"
+            ],
+            "motherFamilies": [
+              "039/930"
+            ],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "89/98",
+            "physicalValues": [
+              "98"
+            ],
+            "motherFamilies": [
+              "298/892"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "08/80",
+            "physicalValues": [
+              "08",
+              "80"
+            ],
+            "motherFamilies": [
+              "083/380",
+              "208/802"
+            ],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          }
+        ],
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "029/920",
+            "physicalValues": [
+              "029",
+              "920"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "033/330",
+            "physicalValues": [
+              "033",
+              "330"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "039/930",
+            "physicalValues": [
+              "039",
+              "930"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "208/802",
+            "physicalValues": [
+              "208",
+              "802"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "298/892",
+            "physicalValues": [
+              "298"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "083/380",
+            "physicalValues": [
+              "083",
+              "380"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ],
+        "vt4": [
+          {
+            "rank": 1,
+            "family": "3023/3320",
+            "physicalValues": [
+              "3023",
+              "3320"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "9303",
+            "physicalValues": [
+              "9303"
+            ],
+            "motherFamilies": [
+              "303/303"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "9203/9302",
+            "physicalValues": [
+              "9203",
+              "9302"
+            ],
+            "motherFamilies": [
+              "203/302"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "3092/3290",
+            "physicalValues": [
+              "3092",
+              "3290"
+            ],
+            "motherFamilies": [
+              "092/290"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "3029/3920",
+            "physicalValues": [
+              "3029",
+              "3920"
+            ],
+            "motherFamilies": [
+              "029/920"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "2033/2330",
+            "physicalValues": [
+              "2033",
+              "2330"
+            ],
+            "motherFamilies": [
+              "033/330"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "2039/2930",
+            "physicalValues": [
+              "2039",
+              "2930"
+            ],
+            "motherFamilies": [
+              "039/930"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "3208/3802",
+            "physicalValues": [
+              "3208",
+              "3802"
+            ],
+            "motherFamilies": [
+              "208/802"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "0298/0892",
+            "physicalValues": [
+              "0298",
+              "0892"
+            ],
+            "motherFamilies": [
+              "298/892"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "3083/3380",
+            "physicalValues": [
+              "3083",
+              "3380"
+            ],
+            "motherFamilies": [
+              "083/380"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ]
+      },
+      "pulse": {
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "029/920",
+            "physicalValues": [
+              "029",
+              "920"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "033/330",
+            "physicalValues": [
+              "033",
+              "330"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "039/930",
+            "physicalValues": [
+              "039",
+              "930"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "208/802",
+            "physicalValues": [
+              "208",
+              "802"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "298/892",
+            "physicalValues": [
+              "298"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "083/380",
+            "physicalValues": [
+              "083",
+              "380"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ]
+      },
+      "pulseFlags": [
+        {
+          "family": "023/320",
+          "baselineRank": 1,
+          "signal": 1,
+          "activationDaysRecentFirst": "100101",
+          "historyEvents": 3
+        },
+        {
+          "family": "303/303",
+          "baselineRank": 2,
+          "signal": 0,
+          "activationDaysRecentFirst": "000100",
+          "historyEvents": 1
+        },
+        {
+          "family": "203/302",
+          "baselineRank": 3,
+          "signal": 0,
+          "activationDaysRecentFirst": "010111",
+          "historyEvents": 6
+        },
+        {
+          "family": "092/290",
+          "baselineRank": 4,
+          "signal": 1,
+          "activationDaysRecentFirst": "100001",
+          "historyEvents": 2
+        },
+        {
+          "family": "029/920",
+          "baselineRank": 5,
+          "signal": 0,
+          "activationDaysRecentFirst": "000011",
+          "historyEvents": 4
+        },
+        {
+          "family": "033/330",
+          "baselineRank": 6,
+          "signal": 0,
+          "activationDaysRecentFirst": "011111",
+          "historyEvents": 10
+        },
+        {
+          "family": "039/930",
+          "baselineRank": 7,
+          "signal": 0,
+          "activationDaysRecentFirst": "000111",
+          "historyEvents": 4
+        },
+        {
+          "family": "208/802",
+          "baselineRank": 8,
+          "signal": 0,
+          "activationDaysRecentFirst": "000011",
+          "historyEvents": 3
+        },
+        {
+          "family": "298/892",
+          "baselineRank": 9,
+          "signal": 0,
+          "activationDaysRecentFirst": "000011",
+          "historyEvents": 2
+        },
+        {
+          "family": "083/380",
+          "baselineRank": 10,
+          "signal": 0,
+          "activationDaysRecentFirst": "000001",
+          "historyEvents": 1
+        }
+      ],
+      "rankingCounts": {
+        "vt2": 27,
+        "vt3": 28,
+        "vt4": 47
+      }
+    },
+    {
+      "date": "2026-10-24",
+      "turn": "Matutino",
+      "asOf": "BEFORE_Matutino",
+      "retrospective": true,
+      "usedCurrentDateTurnRows": [
+        "Previa",
+        "Primera"
+      ],
+      "usedEarlierHeads": {
+        "Previa": {
+          "Ciudad": "6531",
+          "Provincia": "3520",
+          "Córdoba": "2947",
+          "Santa Fé": "6659",
+          "Entre Ríos": "1682",
+          "Montevideo": "----"
+        },
+        "Primera": {
+          "Ciudad": "7249",
+          "Provincia": "9379",
+          "Córdoba": "1573",
+          "Santa Fé": "7777",
+          "Entre Ríos": "7652",
+          "Montevideo": "----"
+        }
+      },
+      "knownSourceColumns": [
+        {
+          "id": "prevNocturno",
+          "values": [
+            "91",
+            "83",
+            "30",
+            "32",
+            "09",
+            "28"
+          ]
+        },
+        {
+          "id": "Previa",
+          "values": [
+            "42",
+            "31",
+            "58",
+            "70",
+            "93",
+            "--"
+          ]
+        },
+        {
+          "id": "Primera",
+          "values": [
+            "60",
+            "90",
+            "84",
+            "88",
+            "63",
+            "--"
+          ]
+        }
+      ],
+      "basic": {
+        "vt2": [
+          {
+            "rank": 1,
+            "family": "03/30",
+            "physicalValues": [
+              "03",
+              "30"
+            ],
+            "motherFamilies": [
+              "203/302",
+              "303/303"
+            ],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "38/83",
+            "physicalValues": [
+              "38",
+              "83"
+            ],
+            "motherFamilies": [
+              "388/883"
+            ],
+            "physicalSources": [
+              "Previa",
+              "Primera",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "13/31",
+            "physicalValues": [
+              "13",
+              "31"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "02/20",
+            "physicalValues": [
+              "02",
+              "20"
+            ],
+            "motherFamilies": [
+              "023/320",
+              "029/920",
+              "203/302"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "29/92",
+            "physicalValues": [
+              "29",
+              "92"
+            ],
+            "motherFamilies": [
+              "029/920",
+              "092/290"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "33/33",
+            "physicalValues": [
+              "33"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "89/98",
+            "physicalValues": [
+              "98"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "09/90",
+            "physicalValues": [
+              "09",
+              "90"
+            ],
+            "motherFamilies": [
+              "092/290",
+              "094/490"
+            ],
+            "physicalSources": [
+              "Previa",
+              "Primera",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "23/32",
+            "physicalValues": [
+              "32"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "39/93",
+            "physicalValues": [
+              "39",
+              "93"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          }
+        ],
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "488/884",
+            "physicalValues": [
+              "488",
+              "884"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "849/948",
+            "physicalValues": [
+              "849",
+              "948"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "048/840",
+            "physicalValues": [
+              "048",
+              "840"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "094/490",
+            "physicalValues": [
+              "094",
+              "490"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "388/883",
+            "physicalValues": [
+              "388",
+              "883"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "029/920",
+            "physicalValues": [
+              "029",
+              "920"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ],
+        "vt4": [
+          {
+            "rank": 1,
+            "family": "0488/0884",
+            "physicalValues": [
+              "0488",
+              "0884"
+            ],
+            "motherFamilies": [
+              "488/884"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "3023/3320",
+            "physicalValues": [
+              "3023",
+              "3320"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "9303",
+            "physicalValues": [
+              "9303"
+            ],
+            "motherFamilies": [
+              "303/303"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "0849/0948",
+            "physicalValues": [
+              "0849",
+              "0948"
+            ],
+            "motherFamilies": [
+              "849/948"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "9203/9302",
+            "physicalValues": [
+              "9203",
+              "9302"
+            ],
+            "motherFamilies": [
+              "203/302"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "6048/6840",
+            "physicalValues": [
+              "6048",
+              "6840"
+            ],
+            "motherFamilies": [
+              "048/840"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "3092/3290",
+            "physicalValues": [
+              "3092",
+              "3290"
+            ],
+            "motherFamilies": [
+              "092/290"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "8094/8490",
+            "physicalValues": [
+              "8094",
+              "8490"
+            ],
+            "motherFamilies": [
+              "094/490"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "4388/4883",
+            "physicalValues": [
+              "4883"
+            ],
+            "motherFamilies": [
+              "388/883"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "3029/3920",
+            "physicalValues": [
+              "3029",
+              "3920"
+            ],
+            "motherFamilies": [
+              "029/920"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ]
+      },
+      "pulse": {
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "488/884",
+            "physicalValues": [
+              "488",
+              "884"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "048/840",
+            "physicalValues": [
+              "048",
+              "840"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "849/948",
+            "physicalValues": [
+              "849",
+              "948"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "094/490",
+            "physicalValues": [
+              "094",
+              "490"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "388/883",
+            "physicalValues": [
+              "388",
+              "883"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "029/920",
+            "physicalValues": [
+              "029",
+              "920"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          }
+        ]
+      },
+      "pulseFlags": [
+        {
+          "family": "488/884",
+          "baselineRank": 1,
+          "signal": 1,
+          "activationDaysRecentFirst": "101001",
+          "historyEvents": 4
+        },
+        {
+          "family": "023/320",
+          "baselineRank": 2,
+          "signal": 1,
+          "activationDaysRecentFirst": "100101",
+          "historyEvents": 3
+        },
+        {
+          "family": "303/303",
+          "baselineRank": 3,
+          "signal": 0,
+          "activationDaysRecentFirst": "000100",
+          "historyEvents": 1
+        },
+        {
+          "family": "849/948",
+          "baselineRank": 4,
+          "signal": 0,
+          "activationDaysRecentFirst": "110000",
+          "historyEvents": 3
+        },
+        {
+          "family": "203/302",
+          "baselineRank": 5,
+          "signal": 0,
+          "activationDaysRecentFirst": "010111",
+          "historyEvents": 6
+        },
+        {
+          "family": "048/840",
+          "baselineRank": 6,
+          "signal": 1,
+          "activationDaysRecentFirst": "101001",
+          "historyEvents": 3
+        },
+        {
+          "family": "092/290",
+          "baselineRank": 7,
+          "signal": 1,
+          "activationDaysRecentFirst": "100001",
+          "historyEvents": 2
+        },
+        {
+          "family": "094/490",
+          "baselineRank": 8,
+          "signal": 0,
+          "activationDaysRecentFirst": "100000",
+          "historyEvents": 1
+        },
+        {
+          "family": "388/883",
+          "baselineRank": 9,
+          "signal": 0,
+          "activationDaysRecentFirst": "110000",
+          "historyEvents": 3
+        },
+        {
+          "family": "029/920",
+          "baselineRank": 10,
+          "signal": 0,
+          "activationDaysRecentFirst": "000011",
+          "historyEvents": 4
+        }
+      ],
+      "rankingCounts": {
+        "vt2": 36,
+        "vt3": 46,
+        "vt4": 47
+      }
+    },
+    {
+      "date": "2026-10-24",
+      "turn": "Vespertino",
+      "asOf": "BEFORE_Vespertino",
+      "retrospective": true,
+      "usedCurrentDateTurnRows": [
+        "Previa",
+        "Primera",
+        "Matutino"
+      ],
+      "usedEarlierHeads": {
+        "Previa": {
+          "Ciudad": "6531",
+          "Provincia": "3520",
+          "Córdoba": "2947",
+          "Santa Fé": "6659",
+          "Entre Ríos": "1682",
+          "Montevideo": "----"
+        },
+        "Primera": {
+          "Ciudad": "7249",
+          "Provincia": "9379",
+          "Córdoba": "1573",
+          "Santa Fé": "7777",
+          "Entre Ríos": "7652",
+          "Montevideo": "----"
+        },
+        "Matutino": {
+          "Ciudad": "9321",
+          "Provincia": "9019",
+          "Córdoba": "0728",
+          "Santa Fé": "9365",
+          "Entre Ríos": "9452",
+          "Montevideo": "----"
+        }
+      },
+      "knownSourceColumns": [
+        {
+          "id": "prevNocturno",
+          "values": [
+            "91",
+            "83",
+            "30",
+            "32",
+            "09",
+            "28"
+          ]
+        },
+        {
+          "id": "Previa",
+          "values": [
+            "42",
+            "31",
+            "58",
+            "70",
+            "93",
+            "--"
+          ]
+        },
+        {
+          "id": "Primera",
+          "values": [
+            "60",
+            "90",
+            "84",
+            "88",
+            "63",
+            "--"
+          ]
+        },
+        {
+          "id": "Matutino",
+          "values": [
+            "32",
+            "30",
+            "39",
+            "76",
+            "63",
+            "--"
+          ]
+        }
+      ],
+      "basic": {
+        "vt2": [
+          {
+            "rank": 1,
+            "family": "03/30",
+            "physicalValues": [
+              "03",
+              "30"
+            ],
+            "motherFamilies": [
+              "203/302",
+              "303/303"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "23/32",
+            "physicalValues": [
+              "23",
+              "32"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "39/93",
+            "physicalValues": [
+              "39",
+              "93"
+            ],
+            "motherFamilies": [
+              "093/390"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "38/83",
+            "physicalValues": [
+              "38",
+              "83"
+            ],
+            "motherFamilies": [
+              "388/883"
+            ],
+            "physicalSources": [
+              "Previa",
+              "Primera",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "13/31",
+            "physicalValues": [
+              "13",
+              "31"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "36/63",
+            "physicalValues": [
+              "36",
+              "63"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino",
+              "Primera"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "02/20",
+            "physicalValues": [
+              "02",
+              "20"
+            ],
+            "motherFamilies": [
+              "023/320",
+              "203/302"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "29/92",
+            "physicalValues": [
+              "29",
+              "92"
+            ],
+            "motherFamilies": [
+              "092/290"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "33/33",
+            "physicalValues": [
+              "33"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "89/98",
+            "physicalValues": [
+              "98"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera",
+              "prevNocturno"
+            ]
+          }
+        ],
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "488/884",
+            "physicalValues": [
+              "488",
+              "884"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "849/948",
+            "physicalValues": [
+              "849",
+              "948"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "048/840",
+            "physicalValues": [
+              "048",
+              "840"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "093/390",
+            "physicalValues": [
+              "093",
+              "390"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "094/490",
+            "physicalValues": [
+              "094",
+              "490"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "388/883",
+            "physicalValues": [
+              "388",
+              "883"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          }
+        ],
+        "vt4": [
+          {
+            "rank": 1,
+            "family": "3203/3302",
+            "physicalValues": [
+              "3203",
+              "3302"
+            ],
+            "motherFamilies": [
+              "203/302"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "0488/0884",
+            "physicalValues": [
+              "0488",
+              "0884"
+            ],
+            "motherFamilies": [
+              "488/884"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "3023/3320",
+            "physicalValues": [
+              "3023",
+              "3320"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "9303",
+            "physicalValues": [
+              "9303"
+            ],
+            "motherFamilies": [
+              "303/303"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "0849/0948",
+            "physicalValues": [
+              "0849",
+              "0948"
+            ],
+            "motherFamilies": [
+              "849/948"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "6048/6840",
+            "physicalValues": [
+              "6048",
+              "6840"
+            ],
+            "motherFamilies": [
+              "048/840"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "3092/3290",
+            "physicalValues": [
+              "3092",
+              "3290"
+            ],
+            "motherFamilies": [
+              "092/290"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "3093/3390",
+            "physicalValues": [
+              "3093",
+              "3390"
+            ],
+            "motherFamilies": [
+              "093/390"
+            ],
+            "physicalSources": [
+              "Matutino"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "8094/8490",
+            "physicalValues": [
+              "8094",
+              "8490"
+            ],
+            "motherFamilies": [
+              "094/490"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "4388/4883",
+            "physicalValues": [
+              "4883"
+            ],
+            "motherFamilies": [
+              "388/883"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          }
+        ]
+      },
+      "pulse": {
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "488/884",
+            "physicalValues": [
+              "488",
+              "884"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "048/840",
+            "physicalValues": [
+              "048",
+              "840"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "849/948",
+            "physicalValues": [
+              "849",
+              "948"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "093/390",
+            "physicalValues": [
+              "093",
+              "390"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "094/490",
+            "physicalValues": [
+              "094",
+              "490"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "388/883",
+            "physicalValues": [
+              "388",
+              "883"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          }
+        ]
+      },
+      "pulseFlags": [
+        {
+          "family": "203/302",
+          "baselineRank": 1,
+          "signal": 0,
+          "activationDaysRecentFirst": "010111",
+          "historyEvents": 6
+        },
+        {
+          "family": "488/884",
+          "baselineRank": 2,
+          "signal": 1,
+          "activationDaysRecentFirst": "101001",
+          "historyEvents": 4
+        },
+        {
+          "family": "023/320",
+          "baselineRank": 3,
+          "signal": 1,
+          "activationDaysRecentFirst": "100101",
+          "historyEvents": 3
+        },
+        {
+          "family": "303/303",
+          "baselineRank": 4,
+          "signal": 0,
+          "activationDaysRecentFirst": "001100",
+          "historyEvents": 2
+        },
+        {
+          "family": "849/948",
+          "baselineRank": 5,
+          "signal": 0,
+          "activationDaysRecentFirst": "110000",
+          "historyEvents": 3
+        },
+        {
+          "family": "048/840",
+          "baselineRank": 6,
+          "signal": 1,
+          "activationDaysRecentFirst": "101001",
+          "historyEvents": 3
+        },
+        {
+          "family": "092/290",
+          "baselineRank": 7,
+          "signal": 1,
+          "activationDaysRecentFirst": "100001",
+          "historyEvents": 2
+        },
+        {
+          "family": "093/390",
+          "baselineRank": 8,
+          "signal": 0,
+          "activationDaysRecentFirst": "000000",
+          "historyEvents": 0
+        },
+        {
+          "family": "094/490",
+          "baselineRank": 9,
+          "signal": 0,
+          "activationDaysRecentFirst": "100000",
+          "historyEvents": 1
+        },
+        {
+          "family": "388/883",
+          "baselineRank": 10,
+          "signal": 0,
+          "activationDaysRecentFirst": "110000",
+          "historyEvents": 3
+        }
+      ],
+      "rankingCounts": {
+        "vt2": 38,
+        "vt3": 49,
+        "vt4": 49
+      }
+    },
+    {
+      "date": "2026-10-24",
+      "turn": "Nocturno",
+      "asOf": "BEFORE_Nocturno",
+      "retrospective": true,
+      "usedCurrentDateTurnRows": [
+        "Previa",
+        "Primera",
+        "Matutino",
+        "Vespertino"
+      ],
+      "usedEarlierHeads": {
+        "Previa": {
+          "Ciudad": "6531",
+          "Provincia": "3520",
+          "Córdoba": "2947",
+          "Santa Fé": "6659",
+          "Entre Ríos": "1682",
+          "Montevideo": "----"
+        },
+        "Primera": {
+          "Ciudad": "7249",
+          "Provincia": "9379",
+          "Córdoba": "1573",
+          "Santa Fé": "7777",
+          "Entre Ríos": "7652",
+          "Montevideo": "----"
+        },
+        "Matutino": {
+          "Ciudad": "9321",
+          "Provincia": "9019",
+          "Córdoba": "0728",
+          "Santa Fé": "9365",
+          "Entre Ríos": "9452",
+          "Montevideo": "----"
+        },
+        "Vespertino": {
+          "Ciudad": "7949",
+          "Provincia": "5693",
+          "Córdoba": "7223",
+          "Santa Fé": "7821",
+          "Entre Ríos": "7260",
+          "Montevideo": "----"
+        }
+      },
+      "knownSourceColumns": [
+        {
+          "id": "prevNocturno",
+          "values": [
+            "91",
+            "83",
+            "30",
+            "32",
+            "09",
+            "28"
+          ]
+        },
+        {
+          "id": "Previa",
+          "values": [
+            "42",
+            "31",
+            "58",
+            "70",
+            "93",
+            "--"
+          ]
+        },
+        {
+          "id": "Primera",
+          "values": [
+            "60",
+            "90",
+            "84",
+            "88",
+            "63",
+            "--"
+          ]
+        },
+        {
+          "id": "Matutino",
+          "values": [
+            "32",
+            "30",
+            "39",
+            "76",
+            "63",
+            "--"
+          ]
+        },
+        {
+          "id": "Vespertino",
+          "values": [
+            "60",
+            "04",
+            "34",
+            "32",
+            "71",
+            "--"
+          ]
+        }
+      ],
+      "basic": {
+        "vt2": [
+          {
+            "rank": 1,
+            "family": "03/30",
+            "physicalValues": [
+              "03",
+              "30"
+            ],
+            "motherFamilies": [
+              "203/302",
+              "303/303"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "Previa",
+              "Vespertino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "23/32",
+            "physicalValues": [
+              "23",
+              "32"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "39/93",
+            "physicalValues": [
+              "39",
+              "93"
+            ],
+            "motherFamilies": [
+              "093/390"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "38/83",
+            "physicalValues": [
+              "38",
+              "83"
+            ],
+            "motherFamilies": [
+              "388/883"
+            ],
+            "physicalSources": [
+              "Previa",
+              "Primera",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "13/31",
+            "physicalValues": [
+              "13",
+              "31"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Previa",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "33/33",
+            "physicalValues": [
+              "33"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Vespertino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "36/63",
+            "physicalValues": [
+              "36",
+              "63"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino",
+              "Primera"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "02/20",
+            "physicalValues": [
+              "02",
+              "20"
+            ],
+            "motherFamilies": [
+              "023/320",
+              "203/302"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "29/92",
+            "physicalValues": [
+              "29",
+              "92"
+            ],
+            "motherFamilies": [
+              "092/290"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "06/60",
+            "physicalValues": [
+              "06",
+              "60"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera",
+              "Vespertino"
+            ]
+          }
+        ],
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "488/884",
+            "physicalValues": [
+              "488",
+              "884"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "849/948",
+            "physicalValues": [
+              "849",
+              "948"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "048/840",
+            "physicalValues": [
+              "048",
+              "840"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "093/390",
+            "physicalValues": [
+              "093",
+              "390"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "094/490",
+            "physicalValues": [
+              "094",
+              "490"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "388/883",
+            "physicalValues": [
+              "388",
+              "883"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          }
+        ],
+        "vt4": [
+          {
+            "rank": 1,
+            "family": "3203/3302",
+            "physicalValues": [
+              "3203",
+              "3302"
+            ],
+            "motherFamilies": [
+              "203/302"
+            ],
+            "physicalSources": [
+              "Matutino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "0488/0884",
+            "physicalValues": [
+              "0488",
+              "0884"
+            ],
+            "motherFamilies": [
+              "488/884"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "3023/3320",
+            "physicalValues": [
+              "3023",
+              "3320"
+            ],
+            "motherFamilies": [
+              "023/320"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "9303",
+            "physicalValues": [
+              "9303"
+            ],
+            "motherFamilies": [
+              "303/303"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "0849/0948",
+            "physicalValues": [
+              "0849",
+              "0948"
+            ],
+            "motherFamilies": [
+              "849/948"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "6048/6840",
+            "physicalValues": [
+              "6048",
+              "6840"
+            ],
+            "motherFamilies": [
+              "048/840"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "3092/3290",
+            "physicalValues": [
+              "3092",
+              "3290"
+            ],
+            "motherFamilies": [
+              "092/290"
+            ],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "3093/3390",
+            "physicalValues": [
+              "3093",
+              "3390"
+            ],
+            "motherFamilies": [
+              "093/390"
+            ],
+            "physicalSources": [
+              "Matutino"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "8094/8490",
+            "physicalValues": [
+              "8094",
+              "8490"
+            ],
+            "motherFamilies": [
+              "094/490"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "4388/4883",
+            "physicalValues": [
+              "4883"
+            ],
+            "motherFamilies": [
+              "388/883"
+            ],
+            "physicalSources": [
+              "Primera"
+            ]
+          }
+        ]
+      },
+      "pulse": {
+        "vt3": [
+          {
+            "rank": 1,
+            "family": "488/884",
+            "physicalValues": [
+              "488",
+              "884"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 2,
+            "family": "023/320",
+            "physicalValues": [
+              "320"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 3,
+            "family": "048/840",
+            "physicalValues": [
+              "048",
+              "840"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 4,
+            "family": "092/290",
+            "physicalValues": [
+              "092"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 5,
+            "family": "203/302",
+            "physicalValues": [
+              "203",
+              "302"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino",
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 6,
+            "family": "303/303",
+            "physicalValues": [
+              "303"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "prevNocturno"
+            ]
+          },
+          {
+            "rank": 7,
+            "family": "849/948",
+            "physicalValues": [
+              "849",
+              "948"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 8,
+            "family": "093/390",
+            "physicalValues": [
+              "093",
+              "390"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Matutino"
+            ]
+          },
+          {
+            "rank": 9,
+            "family": "094/490",
+            "physicalValues": [
+              "094",
+              "490"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          },
+          {
+            "rank": 10,
+            "family": "388/883",
+            "physicalValues": [
+              "388",
+              "883"
+            ],
+            "motherFamilies": [],
+            "physicalSources": [
+              "Primera"
+            ]
+          }
+        ]
+      },
+      "pulseFlags": [
+        {
+          "family": "203/302",
+          "baselineRank": 1,
+          "signal": 0,
+          "activationDaysRecentFirst": "010111",
+          "historyEvents": 6
+        },
+        {
+          "family": "488/884",
+          "baselineRank": 2,
+          "signal": 1,
+          "activationDaysRecentFirst": "101001",
+          "historyEvents": 4
+        },
+        {
+          "family": "023/320",
+          "baselineRank": 3,
+          "signal": 1,
+          "activationDaysRecentFirst": "100101",
+          "historyEvents": 3
+        },
+        {
+          "family": "303/303",
+          "baselineRank": 4,
+          "signal": 0,
+          "activationDaysRecentFirst": "001100",
+          "historyEvents": 2
+        },
+        {
+          "family": "849/948",
+          "baselineRank": 5,
+          "signal": 0,
+          "activationDaysRecentFirst": "110000",
+          "historyEvents": 3
+        },
+        {
+          "family": "048/840",
+          "baselineRank": 6,
+          "signal": 1,
+          "activationDaysRecentFirst": "101001",
+          "historyEvents": 3
+        },
+        {
+          "family": "092/290",
+          "baselineRank": 7,
+          "signal": 1,
+          "activationDaysRecentFirst": "100001",
+          "historyEvents": 2
+        },
+        {
+          "family": "093/390",
+          "baselineRank": 8,
+          "signal": 0,
+          "activationDaysRecentFirst": "000000",
+          "historyEvents": 0
+        },
+        {
+          "family": "094/490",
+          "baselineRank": 9,
+          "signal": 0,
+          "activationDaysRecentFirst": "100000",
+          "historyEvents": 1
+        },
+        {
+          "family": "388/883",
+          "baselineRank": 10,
+          "signal": 0,
+          "activationDaysRecentFirst": "110000",
+          "historyEvents": 3
+        }
+      ],
+      "rankingCounts": {
+        "vt2": 40,
+        "vt3": 49,
+        "vt4": 49
+      }
+    }
+  ]
+}
