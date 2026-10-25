@@ -242,8 +242,8 @@ async function main(){
    rank=new Map(view.ranks.vt3.map(f=>[f.family,f.rank]));
   const pools:Record<string,string[]>={
    ANY:[...physical.keys()].filter(f=>!rank.has(f)),
-   SAME_6:[],NEIGHBOR_3:[],NEIGHBOR_6:[],OVERLAP_6:[],
-   OTHER_SHAPE_6:[]
+   SAME_6:[],NEIGHBOR_3:[],NEIGHBOR_6:[],SAME_OR_NEIGHBOR_6:[],
+   OVERLAP_6:[],OTHER_SHAPE_6:[]
   };
   const all:Record<string,Features>={};
   for(const [family,paths] of physical){
@@ -252,6 +252,7 @@ async function main(){
    if(f.same6>0)pools.SAME_6.push(family);
    if(f.neighbor3>0)pools.NEIGHBOR_3.push(family);
    if(f.neighbor6>0)pools.NEIGHBOR_6.push(family);
+   if(f.same6>0||f.neighbor6>0)pools.SAME_OR_NEIGHBOR_6.push(family);
    if(f.overlap6>0)pools.OVERLAP_6.push(family);
    if(f.anyRoots6>0)pools.OTHER_SHAPE_6.push(family);
   }
