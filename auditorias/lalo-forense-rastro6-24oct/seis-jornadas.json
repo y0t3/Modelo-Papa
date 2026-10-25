@@ -22,6 +22,7 @@
         "SAME_6": 17,
         "NEIGHBOR_3": 8,
         "NEIGHBOR_6": 10,
+        "SAME_OR_NEIGHBOR_6": 24,
         "OVERLAP_6": 30,
         "OTHER_SHAPE_6": 26
       },
@@ -31,6 +32,7 @@
         "SAME_6": [],
         "NEIGHBOR_3": [],
         "NEIGHBOR_6": [],
+        "SAME_OR_NEIGHBOR_6": [],
         "OVERLAP_6": [],
         "OTHER_SHAPE_6": []
       }
@@ -46,6 +48,7 @@
         "SAME_6": 39,
         "NEIGHBOR_3": 32,
         "NEIGHBOR_6": 52,
+        "SAME_OR_NEIGHBOR_6": 75,
         "OVERLAP_6": 84,
         "OTHER_SHAPE_6": 80
       },
@@ -89,6 +92,16 @@
             "head": "1573"
           }
         ],
+        "SAME_OR_NEIGHBOR_6": [
+          {
+            "jur": "Provincia",
+            "head": "9379"
+          },
+          {
+            "jur": "Córdoba",
+            "head": "1573"
+          }
+        ],
         "OVERLAP_6": [
           {
             "jur": "Provincia",
@@ -122,6 +135,7 @@
         "SAME_6": 40,
         "NEIGHBOR_3": 40,
         "NEIGHBOR_6": 62,
+        "SAME_OR_NEIGHBOR_6": 84,
         "OVERLAP_6": 101,
         "OTHER_SHAPE_6": 98
       },
@@ -147,6 +161,12 @@
         ],
         "NEIGHBOR_3": [],
         "NEIGHBOR_6": [],
+        "SAME_OR_NEIGHBOR_6": [
+          {
+            "jur": "Ciudad",
+            "head": "9321"
+          }
+        ],
         "OVERLAP_6": [
           {
             "jur": "Ciudad",
@@ -172,6 +192,7 @@
         "SAME_6": 42,
         "NEIGHBOR_3": 52,
         "NEIGHBOR_6": 76,
+        "SAME_OR_NEIGHBOR_6": 97,
         "OVERLAP_6": 113,
         "OTHER_SHAPE_6": 116
       },
@@ -202,6 +223,12 @@
             "head": "5693"
           }
         ],
+        "SAME_OR_NEIGHBOR_6": [
+          {
+            "jur": "Provincia",
+            "head": "5693"
+          }
+        ],
         "OVERLAP_6": [
           {
             "jur": "Provincia",
@@ -227,6 +254,7 @@
         "SAME_6": 53,
         "NEIGHBOR_3": 57,
         "NEIGHBOR_6": 81,
+        "SAME_OR_NEIGHBOR_6": 109,
         "OVERLAP_6": 138,
         "OTHER_SHAPE_6": 145
       },
@@ -252,6 +280,12 @@
           }
         ],
         "NEIGHBOR_6": [
+          {
+            "jur": "Córdoba",
+            "head": "5739"
+          }
+        ],
+        "SAME_OR_NEIGHBOR_6": [
           {
             "jur": "Córdoba",
             "head": "5739"
@@ -295,6 +329,7 @@
         "SAME_6": true,
         "NEIGHBOR_3": false,
         "NEIGHBOR_6": true,
+        "SAME_OR_NEIGHBOR_6": true,
         "OVERLAP_6": true,
         "OTHER_SHAPE_6": true
       },
@@ -303,6 +338,7 @@
         "SAME_6": 39,
         "NEIGHBOR_3": 32,
         "NEIGHBOR_6": 52,
+        "SAME_OR_NEIGHBOR_6": 75,
         "OVERLAP_6": 84,
         "OTHER_SHAPE_6": 80
       },
@@ -361,6 +397,7 @@
         "SAME_6": false,
         "NEIGHBOR_3": false,
         "NEIGHBOR_6": true,
+        "SAME_OR_NEIGHBOR_6": true,
         "OVERLAP_6": true,
         "OTHER_SHAPE_6": true
       },
@@ -369,6 +406,7 @@
         "SAME_6": 39,
         "NEIGHBOR_3": 32,
         "NEIGHBOR_6": 52,
+        "SAME_OR_NEIGHBOR_6": 75,
         "OVERLAP_6": 84,
         "OTHER_SHAPE_6": 80
       },
@@ -412,6 +450,7 @@
         "SAME_6": true,
         "NEIGHBOR_3": false,
         "NEIGHBOR_6": false,
+        "SAME_OR_NEIGHBOR_6": true,
         "OVERLAP_6": true,
         "OTHER_SHAPE_6": true
       },
@@ -420,6 +459,7 @@
         "SAME_6": 40,
         "NEIGHBOR_3": 40,
         "NEIGHBOR_6": 62,
+        "SAME_OR_NEIGHBOR_6": 84,
         "OVERLAP_6": 101,
         "OTHER_SHAPE_6": 98
       },
@@ -463,6 +503,7 @@
         "SAME_6": false,
         "NEIGHBOR_3": true,
         "NEIGHBOR_6": true,
+        "SAME_OR_NEIGHBOR_6": true,
         "OVERLAP_6": true,
         "OTHER_SHAPE_6": true
       },
@@ -471,6 +512,7 @@
         "SAME_6": 42,
         "NEIGHBOR_3": 52,
         "NEIGHBOR_6": 76,
+        "SAME_OR_NEIGHBOR_6": 97,
         "OVERLAP_6": 113,
         "OTHER_SHAPE_6": 116
       },
@@ -575,6 +617,7 @@
         "SAME_6": false,
         "NEIGHBOR_3": true,
         "NEIGHBOR_6": true,
+        "SAME_OR_NEIGHBOR_6": true,
         "OVERLAP_6": true,
         "OTHER_SHAPE_6": true
       },
@@ -583,6 +626,7 @@
         "SAME_6": 53,
         "NEIGHBOR_3": 57,
         "NEIGHBOR_6": 81,
+        "SAME_OR_NEIGHBOR_6": 109,
         "OVERLAP_6": 138,
         "OTHER_SHAPE_6": 145
       },
