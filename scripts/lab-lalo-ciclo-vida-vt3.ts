@@ -118,7 +118,7 @@ function life(f:LaloFamily,history:Completed[]):Life{
  const firstObserved=day1&&!active.slice(1).some(Boolean);
  const recent=byDay[0]||[];
  const sameSource=paths.some(p=>recent.some(r=>r.source===p.sourceId&&
-  r.sig===shape(p.path))));
+  r.sig===shape(p.path)));
  const movedRight=paths.some(p=>recent.some(r=>
   sourceOrder.indexOf(p.sourceId)===sourceOrder.indexOf(r.source)+1&&
   shape(p.path)===r.sig&&
