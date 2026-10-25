@@ -196,6 +196,59 @@ function replace10(base:string[],candidate:string|null){
  }
  return list;
 }
+/**
+ * Diagnóstico de los recorridos exactos cuyo par de celdas no se
+ * vincula con ganadores de seis jornadas anteriores. NO prioriza.
+ */
+function signature(coords:string[]):string{
+ const q=coords.map(s=>s.split(':').map(Number));
+ const mr=Math.min(...q.map(x=>x[0])),mc=Math.min(...q.map(x=>x[1]));
+ const direct=q.map(x=>(x[0]-mr)+':'+(x[1]-mc)).join('>');
+ const reverse=[...q].reverse().map(x=>(x[0]-mr)+':'+(x[1]-mc)).join('>');
+ return [direct,reverse].sort()[0];
+}
+function unmatchedClass(
+ paths:Array<{source:SourceId;cells:string[]}>,past:Root[]
+){
+ let exact=0,twoUnjoined=0,one=0,
+  shapeSame=0,shapeOther=0,anySameSource=0;
+ const witness:any[]=[];
+ for(const current of paths){
+  const cs=new Set(current.cells),signatureNow=signature(current.cells);
+  for(const prior of past){
+   const matched=sharedCells(cs,prior.coordKeys);
+   const sameSource=prior.source===current.source;
+   const matchingShape=signatureNow===signature(prior.coords);
+   if(sameSource){
+    anySameSource++;
+    if(matched===3)exact++;
+    if(matched===2&&!sharedBorder(cs,prior.coordKeys))twoUnjoined++;
+    if(matched===1)one++;
+    if(matchingShape)shapeSame++;
+   }else if(matchingShape)shapeOther++;
+   if((sameSource&&matched>=1)||matchingShape){
+    if(witness.length<6)witness.push({
+     rootDate:prior.date,turn:prior.turn,jur:prior.jur,
+     head:prior.head,source:prior.source,
+     currentSource:current.source,
+     overlap:matched,shapeSame:matchingShape
+    });
+   }
+  }
+ }
+ const category=exact?'COPIA_TRES':
+  twoUnjoined?'DOS_SIN_BORDE':
+  shapeSame?'MISMA_FORMA_OTRO_SITIO':
+  one?'CONTACTO_UNA_CELDA':
+  shapeOther?'FORMA_EN_OTRA_FUENTE':
+  anySameSource?'OTRA_ESTRUCTURA':'SIN_RAICES_EN_FUENTE';
+ return {category,exact,twoUnjoined,one,shapeSame,shapeOther,
+  rootsFromSameSource:anySameSource,witness};
+}
+const sharedCells=(a:Set<string>,b:Set<string>)=>{
+ let count=0;for(const v of a)if(b.has(v))count++;
+ return count;
+};
 function period(date:string){
  return date<='2026-07-31'?'JUN_JUL':
   date<='2026-09-30'?'AGO_SEP':
@@ -211,7 +264,7 @@ async function main(){
  const dates:string[]=[];
  for(let d='2026-06-01';d<='2026-10-24';d=shiftDay(d,1))
   if(new Date(d+'T12:00:00').getDay()!==0)dates.push(d);
- const heads:any[]=[],cuts:any[]=[],families:any[]=[],snapshots:Snapshot[]=[];
+ const heads:any[]=[],cuts:any[]=[],families:any[]=[],snapshots:Snapshot[]=[],unmatched:any[]=[];
  for(const date of dates){
   const actual=await get(date),valid=nHeads(actual);
   if(valid<20){console.log('MUTACION_OMITIDA',date,valid);continue}
@@ -280,6 +333,10 @@ async function main(){
     })));
     const officialRank=official.ranks.vt3.find(x=>x.family===family)?.rank||null;
     const shadow=mutation.find(x=>x.family===family);
+    if(exactPaths.length>0&&officialRank===null&&!shadow){
+     unmatched.push({date,turn,jur:h.jur,head:h.head,value,family,
+      ...unmatchedClass(exactPaths,past)});
+    }
     heads.push({date,turn,jur:h.jur,head:h.head,value,family,
      period:period(date),physicalExact:exactPaths.length>0,
      physicalPaths:exactPaths,officialRank,
@@ -357,6 +414,7 @@ async function main(){
  fs.writeFileSync(out+'/cortes.json',JSON.stringify(cuts,null,2));
  fs.writeFileSync(out+'/familias-testigos.json',JSON.stringify(families,null,2));
  fs.writeFileSync(out+'/control-aleatorio.json',JSON.stringify(controls,null,2));
+ fs.writeFileSync(out+'/familias-sin-mutacion.json',JSON.stringify(unmatched,null,2));
  console.log('MUTACION_RESULTADOS',JSON.stringify(report.map(x=>({
   period:x.period,mode:x.mode,heads:x.heads,possible:x.physicallyPossible,
   noRecognized:x.notRecognized,eligible:witnessed(x),
@@ -364,6 +422,16 @@ async function main(){
   lost:x.lost,exactGains:x.exactNew
  }))));
  console.log('MUTACION_AZAR',JSON.stringify(controls));
+ console.log('MUTACION_NO_CUBIERTAS',JSON.stringify({
+  count:unmatched.length,
+  byTurn:Object.fromEntries(TURNOS.map(t=>[t,unmatched.filter(x=>x.turn===t).length])),
+  categories:Object.fromEntries([...new Set(unmatched.map(x=>x.category))]
+   .map(k=>[k,unmatched.filter(x=>x.category===k).length])),
+  examples:unmatched.slice(0,18).map(x=>({
+   date:x.date,turn:x.turn,jur:x.jur,head:x.head,
+   category:x.category,witness:x.witness.slice(0,2)
+  }))
+ }));
  console.log('MUTACION_CASOS',JSON.stringify(report.filter(x=>x.period==='TOTAL')
   .map(x=>({mode:x.mode,gains:x.gains,losses:x.losses}))));
  console.log('MUTACION_CORTES',JSON.stringify({days:[...new Set(cuts.map(x=>x.date))].length,
