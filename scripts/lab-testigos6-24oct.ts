@@ -206,8 +206,10 @@ async function main(){
   if(sheet.heads[test.turn].length||sheet.matches[test.turn].length)
    throw Error('FUGA temporal');
   const candidateValue=test.head.slice(-3),candidateFamily=reversibleFamily(candidateValue);
-  const currentPaths=(routes(sheet.columns.slice(0,idx+1))
-   .get(candidateFamily)||[]).filter(p=>p.value===candidateValue);
+  const currentPaths:Route[]=sheet.columns.slice(0,idx+1).flatMap(col=>
+   findPaths(col.values,candidateValue).map(p=>({source:col.id,
+    shape:geometry(p),anchor:anchor(p),coords:p.map(coord),
+    value:candidateValue,family:candidateFamily})));
   if(!currentPaths.length)throw Error('El caso no es formable '+test.head);
   const signals=features(currentPaths,roots,prev[5].date,weekly);
   const matched=roots.filter(r=>currentPaths.some(p=>
