@@ -237,7 +237,9 @@ function chainsFor(paths:Route[],rootsByShape:Map<string,ShapeRoot[]>):Signature
     oldAnchor:older.anchor,recentAnchor:newer.anchor,targetAnchor:p.anchor,
     events:[older.event,newer.event],shape:p.shape
    };
-   const k=pair.id+'|'+p.source+'|'+p.anchor;
+   // Dos cabezas reales en dos jornadas son una sola pareja testigo;
+   // no multiplicar votos por recorridos equivalentes o posiciones.
+   const k=older.event+'>'+newer.event;
    found.CHAINS.set(k,witness);
    recent.add(newer.event);
    s.freshDaysBack=Math.min(s.freshDaysBack,newer.daysBack);
