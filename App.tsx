@@ -171,16 +171,28 @@ function LaloApp(){
   setInfoAuxDays([]);
   try{
    setBusy(true);
+   // Una carga = una versión de cada fecha: evitar llamadas repetidas al
+   // proveedor mientras se arma la hoja, INFO y el historial Lalo.
+   // La recarga posterior inicia una caché nueva, nunca congela datos.
+   const requestCache=new Map<string,Promise<CabezasDia>>();
+   const readDay=(day:string):Promise<CabezasDia>=>{
+    let pending=requestCache.get(day);
+    if(!pending){
+     pending=descargarCabezas(day,true);
+     requestCache.set(day,pending);
+    }
+    return pending;
+   };
    const week=shiftDay(d,-7);
    // Cuatro jornadas reales: tres minihojas y una anterior como base de la tercera.
    const weekDates=Array.from({length:7},(_,i)=>shiftDay(week,i));
    const [current,previous,weekData,beforeWeek,nocturnaBase,weekBase,auxResult,auxLive]=await Promise.all([
-    descargarCabezas(d,true),
-    loadPreviousDraws(d,4,x=>descargarCabezas(x,true)),
-    Promise.all(weekDates.map(day=>descargarCabezas(day,true))),
-    loadPreviousDraws(week,1,x=>descargarCabezas(x,true)),
-    nocturnaAnteriorPorJur(d,x=>descargarCabezas(x,true)),
-    nocturnaAnteriorPorJur(week,x=>descargarCabezas(x,true)),
+    readDay(d),
+    loadPreviousDraws(d,4,readDay),
+    Promise.all(weekDates.map(day=>readDay(day))),
+    loadPreviousDraws(week,1,readDay),
+    nocturnaAnteriorPorJur(d,readDay),
+    nocturnaAnteriorPorJur(week,readDay),
     fetchAuxiliaryBaseForDate(d).catch(()=>null),
     fetchAuxiliaryHeads(d).catch(()=>null)
    ]);
