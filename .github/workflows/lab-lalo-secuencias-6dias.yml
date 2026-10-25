@@ -1,0 +1,27 @@
+name: LAB Lalo seis jornadas secuencias de figuras
+on:
+  push:
+    branches: [lab/lalo-vt3-secuencias-fisicas-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sequences:
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Reconstruir secuencias físicas VT3 de seis días
+        run: |
+          npx --yes tsx scripts/lab-lalo-secuencias-6dias.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Guardar candidatos, bases PRE y controles aleatorios
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: labo-lalo-vt3-secuencias-seis-dias
+          path: auditorias/lalo-vt3-secuencias-fisicas-25oct/resultados
+          if-no-files-found: warn
