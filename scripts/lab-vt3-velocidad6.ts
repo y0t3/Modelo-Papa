@@ -437,6 +437,21 @@ async function main(){
    });
   }
  }
+ // Diagnóstico del sábado 24/10. POST únicamente etiqueta las
+ // familias ganadoras para cuantificar si pasaban cada filtro.
+ const saturday=cuts.filter(c=>c.date==='2026-10-24').map(c=>({
+  turn:c.turn,baseTop10:c.base,
+  winningFamiliesFromPublishedHeads:[...new Set(c.heads)],
+  missingWinningFamilies:[...new Set(c.heads)].filter(f=>
+   !!c.familyInfo[f]&&!c.base.includes(f)),
+  alternatives:Object.fromEntries(MODES.slice(1).map(mode=>[
+   mode,{eligibleCount:c.pool[mode].length,
+    winnerEligible:[...new Set(c.heads)].filter(f=>c.pool[mode].includes(f)),
+    chosen:c.picks[mode].filter(f=>!c.base.includes(f)),
+    chosenRank:c.picks[mode].length
+   }])),
+ }));
+ console.log('VELOCIDAD_SABADO',JSON.stringify(saturday));
  const total=summaries.find(x=>x.period==='TOTAL');
  if(!total||total.total!==3321)throw Error('Muestra distinta de 3321');
  if(total.countByStage.FORMABLE_NO_RECONOCIDA!==542)
