@@ -345,12 +345,14 @@ async function main(){
   const sums=(Object.fromEntries(METRICS.map(k=>[k,{win:0,nonwin:0,diff:0}]))) as Record<typeof METRICS[number],{win:number;nonwin:number;diff:number}>;
   let qualifiedCuts=0,winFamilies=0,lossFamilies=0,headHits=0;
   const examples:any[]=[];
+  const permutations:{all:Features[];winCount:number}[]=[];
   for(const cut of rows){
    const eligible=cut.pool.MISMA_6;
    const winners=eligible.filter(f=>cut.heads.includes(f)),
     losers=eligible.filter(f=>!cut.heads.includes(f));
    if(!winners.length||!losers.length)continue;
    qualifiedCuts++;winFamilies+=winners.length;lossFamilies+=losers.length;
+   permutations.push({all:eligible.map(f=>cut.familyInfo[f]),winCount:winners.length});
    headHits+=cut.heads.filter(f=>winners.includes(f)).length;
    const metrics:any={};
    for(const metric of METRICS){
@@ -362,7 +364,49 @@ async function main(){
    if(examples.length<8)examples.push({date:cut.date,turn:cut.turn,
     winner:winners.slice(0,4),pool:eligible.length,diffs:metrics});
   }
+  // Test condicional de permutación: exactamente el mismo número de
+  // familias ganadoras en cada corte, pero asignadas al azar entre las
+  // familias elegibles. No se usa para ordenar candidatos PRE.
+  // Reportamos contraste BILATERAL para evitar seleccionar a posteriori
+  // qué dirección (más/menos) parecía prometedora.
+  const nSim=4000;
+  let permSeed=20261025+({JUN_JUL:1,AGO_SEP:2,OCT:3,TOTAL:4} as Record<string,number>)[period];
+  const permRandom=()=>{permSeed^=permSeed<<13;permSeed^=permSeed>>>17;
+   permSeed^=permSeed<<5;return (permSeed>>>0)/4294967296};
+  const permPools=permutations.map(item=>({
+   ...item,
+   totals:Object.fromEntries(METRICS.map(metric=>
+    [metric,item.all.reduce((n,x)=>n+x[metric],0)]))
+    as Record<typeof METRICS[number],number>
+  }));
+  const actualDifferences=Object.fromEntries(METRICS.map(metric=>
+   [metric,sums[metric].diff/Math.max(1,qualifiedCuts)]))
+   as Record<typeof METRICS[number],number>;
+  const extreme=Object.fromEntries(METRICS.map(metric=>[metric,0]))
+   as Record<typeof METRICS[number],number>;
+  for(let draw=0;draw<nSim;draw++){
+   const accum=Object.fromEntries(METRICS.map(metric=>[metric,0]))
+    as Record<typeof METRICS[number],number>;
+   for(const item of permPools){
+    const indexes=new Set<number>();
+    while(indexes.size<item.winCount)indexes.add(Math.floor(permRandom()*item.all.length));
+    for(const metric of METRICS){
+     let sumWin=0;
+     for(const idx of indexes)sumWin+=item.all[idx][metric];
+     const sumRest=item.totals[metric]-sumWin;
+     accum[metric]+=sumWin/item.winCount-sumRest/(item.all.length-item.winCount);
+    }
+   }
+   for(const metric of METRICS){
+    if(Math.abs(accum[metric]/Math.max(1,qualifiedCuts))>=
+       Math.abs(actualDifferences[metric])-1e-12)extreme[metric]++;
+   }
+  }
+  const permutationTwoSided=Object.fromEntries(METRICS.map(metric=>[
+   metric,Number(((extreme[metric]+1)/(nSim+1)).toFixed(5))
+  ]));
   matched.push({period,cuts:rows.length,matchedCuts:qualifiedCuts,
+   permutationDraws:nSim,permutationTwoSided,
    distinctWinnerFamilies:winFamilies,nonwinnerFamiliesWithinMatchedCuts:lossFamilies,
    winnerHeadOccurrences:headHits,
    meanWithinCut:Object.fromEntries(METRICS.map(metric=>[
