@@ -264,7 +264,7 @@ async function main(){
  const dates:string[]=[];
  for(let d='2026-06-01';d<='2026-10-24';d=shiftDay(d,1))
   if(new Date(d+'T12:00:00').getDay()!==0)dates.push(d);
- const heads:any[]=[],cuts:any[]=[],families:any[]=[],snapshots:Snapshot[]=[],unmatched:any[]=[];
+ const heads:any[]=[],cuts:any[]=[],families:any[]=[],snapshots:Snapshot[]=[],unmatched:any[]=[],discontinuityPools:any[]=[],discontinuityHeads:any[]=[];
  for(const date of dates){
   const actual=await get(date),valid=nHeads(actual);
   if(valid<20){console.log('MUTACION_OMITIDA',date,valid);continue}
@@ -298,6 +298,44 @@ async function main(){
    }
    const picks:Record<Mode,Candidate|null>=Object.fromEntries(
     MODES.map(m=>[m,choice(mutation,m)])) as Record<Mode,Candidate|null>;
+   // Clasificar TODAS las familias posibles PRE fuera de la categoría
+   // 2/3 borde, no solo las que resultarán ganadoras POST.
+   const mutatedFamilies=new Set(mutation.map(x=>x.family));
+   const unclassified=[...all.entries()]
+    .filter(([f])=>!excluded.has(f)&&!mutatedFamilies.has(f))
+    .map(([family,paths])=>{
+     const z=unmatchedClass(paths.map(p=>({
+      source:p.source,cells:p.coords})),past);
+     return {family,category:z.category,
+      nearest:Math.min(99,...z.witness.map(w=>w.lag||99)),
+      witnesses:z.witness.length,
+      routes:paths.length,
+      sources:new Set(paths.map(p=>p.source)).size,
+      detail:z.witness.slice(0,2)};
+    });
+   const modalities={
+    CONTACTO_UNA:'CONTACTO_UNA_CELDA',
+    FORMA_OTRA_FUENTE:'FORMA_EN_OTRA_FUENTE',
+    FORMA_OTRO_SITIO:'MISMA_FORMA_OTRO_SITIO',
+    MISMAS_TRES:'COPIA_TRES',
+    CUALQUIERA:'ALL'
+   };
+   const picksU:any={},poolsU:any={};
+   for(const [mode,category] of Object.entries(modalities)){
+    const group=unclassified.filter(x=>category==='ALL'||x.category===category);
+    group.sort((a,b)=>a.nearest-b.nearest||b.sources-a.sources||
+     b.witnesses-a.witnesses||b.routes-a.routes||a.family.localeCompare(b.family));
+    picksU[mode]=group[0]||null;
+    poolsU[mode]=group.map(x=>x.family);
+   }
+   // Las familias se seleccionaron exclusivamente con trazos PRE.
+   // Los resultados de las seis jurisdicciones SOLO puntúan después.
+   for(const [mode,pool] of Object.entries(poolsU)){
+    const chosen=picksU[mode];
+    discontinuityPools.push({date,turn,mode,pool,
+     chosen:chosen?.family||null,chosenCategory:chosen?.category||null,
+     witness:chosen?.detail||[],originalRank10:base[9]||null});
+   }
    const preRankings=Object.fromEntries(MODES.map(m=>[
     m,replace10(base,picks[m]?.family||null)
    ])) as Record<Mode,string[]>;
@@ -333,6 +371,10 @@ async function main(){
     })));
     const officialRank=official.ranks.vt3.find(x=>x.family===family)?.rank||null;
     const shadow=mutation.find(x=>x.family===family);
+    const residual=unclassified.find(x=>x.family===family);
+    if(exactPaths.length>0&&officialRank===null&&residual)
+     discontinuityHeads.push({date,turn,jur:h.jur,head:h.head,
+      family,category:residual.category,witness:residual.detail});
     if(exactPaths.length>0&&officialRank===null&&!shadow){
      unmatched.push({date,turn,jur:h.jur,head:h.head,value,family,
       ...unmatchedClass(exactPaths,past)});
@@ -381,6 +423,71 @@ async function main(){
    });
   }
  }
+ const countByCut=new Map<string,Record<string,number>>();
+ const byDatePeriod=(date:string)=>period(date);
+ for(const x of heads){
+  const id=x.date+'|'+x.turn;
+  const counts=countByCut.get(id)||{};
+  counts[x.family]=(counts[x.family]||0)+1;
+  countByCut.set(id,counts);
+ }
+ const modesU=['CONTACTO_UNA','FORMA_OTRA_FUENTE',
+  'FORMA_OTRO_SITIO','MISMAS_TRES','CUALQUIERA'];
+ const randomDisc=rng(20261026),discReport:any[]=[];
+ for(const mode of modesU){
+  const allMode=discontinuityPools.filter(x=>x.mode===mode);
+  const eligible=allMode.filter(x=>x.chosen!==null);
+  const gain=eligible.reduce((n,x)=>n+(countByCut.get(x.date+'|'+x.turn)?.[x.chosen]||0),0);
+  const loss=eligible.reduce((n,x)=>n+(x.originalRank10?
+   (countByCut.get(x.date+'|'+x.turn)?.[x.originalRank10]||0):0),0);
+  const samples:number[]=[];
+  for(let rep=0;rep<12000;rep++){
+   let won=0;
+   for(const cut of eligible){
+    const selected=cut.pool[Math.floor(randomDisc()*cut.pool.length)];
+    won+=countByCut.get(cut.date+'|'+cut.turn)?.[selected]||0;
+   }
+   samples.push(won);
+  }
+  samples.sort((a,b)=>a-b);
+  const mean=samples.reduce((a,b)=>a+b,0)/samples.length;
+  const periods=['JUN_JUL','AGO_SEP','OCT_01_23','24_OCT'];
+  discReport.push({mode,exposures:allMode.reduce((a,x)=>a+x.pool.length,0),
+   eligibleCuts:eligible.length,
+   meanPoolSize:allMode.reduce((a,x)=>a+x.pool.length,0)/Math.max(1,eligible.length),
+   gained:gain,lost:loss,net:gain-loss,
+   randomMean:mean,randomP95:samples[Math.floor(samples.length*.95)],
+   randomAtLeastObserved:samples.filter(x=>x>=gain).length/samples.length,
+   byPeriod:periods.map(k=>{
+    const group=eligible.filter(x=>byDatePeriod(x.date)===k);
+    return {period:k,cuts:group.length,
+     gained:group.reduce((a,x)=>a+(countByCut.get(x.date+'|'+x.turn)?.[x.chosen]||0),0),
+     lost:group.reduce((a,x)=>a+(x.originalRank10?
+      (countByCut.get(x.date+'|'+x.turn)?.[x.originalRank10]||0):0),0)};
+   })});
+ }
+ const categories=['CONTACTO_UNA_CELDA','FORMA_EN_OTRA_FUENTE',
+  'MISMA_FORMA_OTRO_SITIO','COPIA_TRES','SIN_RAICES_EN_FUENTE',
+  'OTRA_ESTRUCTURA','DOS_SIN_BORDE'];
+ const typesToModes:any={
+  CONTACTO_UNA_CELDA:'CONTACTO_UNA',
+  FORMA_EN_OTRA_FUENTE:'FORMA_OTRA_FUENTE',
+  MISMA_FORMA_OTRO_SITIO:'FORMA_OTRO_SITIO',
+  COPIA_TRES:'MISMAS_TRES'
+ };
+ const exposureByTurn=TURNOS.map(turn=>{
+  const xs=discontinuityPools.filter(x=>x.turn===turn);
+  const wins=discontinuityHeads.filter(x=>x.turn===turn);
+  return {turn,cuts:xs.filter(x=>x.mode==='CUALQUIERA').length,
+   exposures:xs.filter(x=>x.mode==='CUALQUIERA')
+    .reduce((a,x)=>a+x.pool.length,0),
+   winners:wins.length,
+   categories:Object.fromEntries(categories.map(c=>[
+    c,{exposures:xs.filter(x=>x.mode===typesToModes[c])
+      .reduce((a,x)=>a+x.pool.length,0),
+     winners:wins.filter(x=>x.category===c).length}
+   ]))};
+ });
  const simulations=15000,random=rng(randomSeed),controls:any[]=[];
  for(const m of MODES){
   const s=snapshots.filter(x=>x.mode===m);
@@ -407,13 +514,19 @@ async function main(){
    meanPoolSize:s.reduce((n,x)=>n+x.pool.length,0)/
     Math.max(1,s.filter(x=>x.pool.length>0).length)});
  }
- const out='auditorias/lalo-mutacion-una-celda-25oct/resultados';
+ const out='auditorias/lalo-vt3-discontinuidades-42-25oct/resultados';
  fs.mkdirSync(out,{recursive:true});
  fs.writeFileSync(out+'/resumen.json',JSON.stringify({report,controls},null,2));
  fs.writeFileSync(out+'/cabezas.json',JSON.stringify(heads,null,2));
  fs.writeFileSync(out+'/cortes.json',JSON.stringify(cuts,null,2));
  fs.writeFileSync(out+'/familias-testigos.json',JSON.stringify(families,null,2));
  fs.writeFileSync(out+'/control-aleatorio.json',JSON.stringify(controls,null,2));
+ fs.writeFileSync(out+'/discontinuidades.json',
+  JSON.stringify({discReport,exposureByTurn,discontinuityHeads},null,2));
+ fs.writeFileSync(out+'/discontinuidades-por-corte.json',
+  JSON.stringify(discontinuityPools.map(x=>({
+   ...x,poolSize:x.pool.length,pool:undefined
+  })),null,2));
  fs.writeFileSync(out+'/familias-sin-mutacion.json',JSON.stringify(unmatched,null,2));
  console.log('MUTACION_RESULTADOS',JSON.stringify(report.map(x=>({
   period:x.period,mode:x.mode,heads:x.heads,possible:x.physicallyPossible,
@@ -422,6 +535,9 @@ async function main(){
   lost:x.lost,exactGains:x.exactNew
  }))));
  console.log('MUTACION_AZAR',JSON.stringify(controls));
+ console.log('DISCONTINUIDADES_RESUMEN',JSON.stringify(discReport));
+ console.log('DISCONTINUIDADES_TURNOS',JSON.stringify(exposureByTurn));
+ console.log('DISCONTINUIDADES_CASOS',JSON.stringify(discontinuityHeads));
  console.log('MUTACION_NO_CUBIERTAS',JSON.stringify({
   count:unmatched.length,
   byTurn:Object.fromEntries(TURNOS.map(t=>[t,unmatched.filter(x=>x.turn===t).length])),

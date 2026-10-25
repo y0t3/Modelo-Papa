@@ -1,0 +1,26 @@
+name: LAB Lalo VT3 discontinuidades 42 denominadores
+on:
+  push:
+    branches: [lab/lalo-vt3-discontinuidades-42-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Contrastar 42 casos con todos los candidatos PRE posibles
+        run: |
+          npx --yes tsx scripts/lab-mutacion-una-celda-vt3.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lalo-vt3-discontinuidades-42
+          path: auditorias/lalo-vt3-discontinuidades-42-25oct/resultados
+          if-no-files-found: warn
