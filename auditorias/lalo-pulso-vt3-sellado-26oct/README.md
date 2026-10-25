@@ -49,9 +49,9 @@ Una familia VT3 de Lalo es prioritaria solo si hay una **misma figura y fuente**
 
 ## Comparación POST (preparada, no ejecutada)
 
-Se prepararon `scripts/lab-comparar-sellado-previa-26oct.ts` y el workflow **manual** `.github/workflows/lab-post-sellado-previa-26oct.yml`.
+Se prepararon `scripts/lab-comparar-sellado-previa-26oct.ts` y el workflow `.github/workflows/lab-post-sellado-previa-26oct.yml`.
 
-**Ejecutar solo después de que se publiquen las cinco cabezas de Previa de Argentina**. El evaluador se niega a producir un balance con la jornada parcial o antes del día objetivo; compara VT3 de manera reversible en Top3, Top5 y Top10, y NO recalcula candidatos usando cabezas publicadas después del sello.
+**Ejecutar solo después de que se publiquen las cinco cabezas de Previa de Argentina**: crear en ese momento la rama de cotejo `lab/lalo-pulso-vt3-post-26oct2026` a partir de esta rama sellada para disparar la comparación, sin tocar `main` ni modificar el archivo PRE. El evaluador se niega a producir un balance con la jornada parcial o antes del día objetivo; compara VT3 de manera reversible en Top3, Top5 y Top10, y NO recalcula candidatos usando cabezas publicadas después del sello.
 
 Mientras ambos Top3 sean idénticos, este corte no puede distinguir entre reglas de priorización: una coincidencia o ausencia será atribuible al mismo grupo, no a una ventaja del pulso.
 
