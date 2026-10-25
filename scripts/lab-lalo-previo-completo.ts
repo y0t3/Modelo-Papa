@@ -57,7 +57,17 @@ async function main(){
   const rootFixed:LaloHistorical={date:priorComplete,period:'D−1',
    sheet:buildSheet(prevComplete,completePrev)};
   const changed=priorScheduled!==priorComplete;
-  if(changed)changedDates++;
+  if(changed){
+   console.log('FERIADO_DATOS',JSON.stringify({
+    date,holiday:priorScheduled,lastComplete:priorComplete,
+    holidayHeads:Object.fromEntries(TURNOS.map(t=>[t,
+     JURS.filter(j=>/^\d{4}$/.test(old[t]?.[j]||''))
+      .map(j=>({jur:j,head:old[t][j]}))])),
+    holidayNocturna:Object.fromEntries(JURS.map(j=>[j,old.Nocturno?.[j]||'----'])),
+    lastCompleteNocturna:Object.fromEntries(JURS.map(j=>[j,prevComplete.Nocturno?.[j]||'----']))
+   }));
+   changedDates++;
+  }
   dates++;
   const dayInfo:any={date,heads:count(today),priorScheduled,
    scheduledHeads:count(old),priorComplete,completeHeads:count(prevComplete),
