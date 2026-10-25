@@ -1,0 +1,28 @@
+name: LAB Lalo ciclo vida 6 jornadas VT3
+on:
+  push:
+    branches: [lab/lalo-vt3-ciclo-vida-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  life-cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Instalar dependencias
+        run: npm install
+      - name: Evaluar figuras activadas en seis jornadas, sin datos POST objetivo
+        run: |
+          npx --yes tsx scripts/lab-lalo-ciclo-vida-vt3.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Resguardar informes y trazas de cada corte
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: labo-lalo-ciclo-vida-vt3
+          path: auditorias/lalo-ciclo-vida-figuras-25oct/resultados
+          if-no-files-found: warn
