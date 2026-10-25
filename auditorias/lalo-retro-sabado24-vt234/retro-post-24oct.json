@@ -1,0 +1,1109 @@
+{
+  "kind": "RETROSPECTIVE_REPLAY_POST_NOT_PRE_SALED",
+  "target": "2026-10-24",
+  "actualTotal": 26,
+  "publishedHeadsByTurn": [
+    {
+      "turn": "Previa",
+      "number": 5,
+      "heads": [
+        {
+          "jur": "Ciudad",
+          "head": "6531"
+        },
+        {
+          "jur": "Provincia",
+          "head": "3520"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "2947"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "6659"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "1682"
+        }
+      ]
+    },
+    {
+      "turn": "Primera",
+      "number": 5,
+      "heads": [
+        {
+          "jur": "Ciudad",
+          "head": "7249"
+        },
+        {
+          "jur": "Provincia",
+          "head": "9379"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "1573"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "7777"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "7652"
+        }
+      ]
+    },
+    {
+      "turn": "Matutino",
+      "number": 5,
+      "heads": [
+        {
+          "jur": "Ciudad",
+          "head": "9321"
+        },
+        {
+          "jur": "Provincia",
+          "head": "9019"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "0728"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "9365"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "9452"
+        }
+      ]
+    },
+    {
+      "turn": "Vespertino",
+      "number": 5,
+      "heads": [
+        {
+          "jur": "Ciudad",
+          "head": "7949"
+        },
+        {
+          "jur": "Provincia",
+          "head": "5693"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "7223"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "7821"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "7260"
+        }
+      ]
+    },
+    {
+      "turn": "Nocturno",
+      "number": 6,
+      "heads": [
+        {
+          "jur": "Ciudad",
+          "head": "0795"
+        },
+        {
+          "jur": "Provincia",
+          "head": "8014"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "5739"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "6614"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "2065"
+        },
+        {
+          "jur": "Montevideo",
+          "head": "0439"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "vt2": {
+      "top3": {
+        "headsWon": 5,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 1
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 2
+          },
+          {
+            "turn": "Nocturno",
+            "won": 2
+          }
+        ]
+      },
+      "top5": {
+        "headsWon": 5,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 1
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 2
+          },
+          {
+            "turn": "Nocturno",
+            "won": 2
+          }
+        ]
+      },
+      "top10": {
+        "headsWon": 6,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 2
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 2
+          },
+          {
+            "turn": "Nocturno",
+            "won": 2
+          }
+        ]
+      }
+    },
+    "vt3": {
+      "top3": {
+        "headsWon": 0,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 0
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 0
+          },
+          {
+            "turn": "Nocturno",
+            "won": 0
+          }
+        ]
+      },
+      "top5": {
+        "headsWon": 0,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 0
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 0
+          },
+          {
+            "turn": "Nocturno",
+            "won": 0
+          }
+        ]
+      },
+      "top10": {
+        "headsWon": 0,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 0
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 0
+          },
+          {
+            "turn": "Nocturno",
+            "won": 0
+          }
+        ]
+      }
+    },
+    "vt4": {
+      "top3": {
+        "headsWon": 0,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 0
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 0
+          },
+          {
+            "turn": "Nocturno",
+            "won": 0
+          }
+        ]
+      },
+      "top5": {
+        "headsWon": 0,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 0
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 0
+          },
+          {
+            "turn": "Nocturno",
+            "won": 0
+          }
+        ]
+      },
+      "top10": {
+        "headsWon": 0,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 0
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 0
+          },
+          {
+            "turn": "Nocturno",
+            "won": 0
+          }
+        ]
+      }
+    },
+    "pulso": {
+      "top3": {
+        "headsWon": 0,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 0
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 0
+          },
+          {
+            "turn": "Nocturno",
+            "won": 0
+          }
+        ]
+      },
+      "top5": {
+        "headsWon": 0,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 0
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 0
+          },
+          {
+            "turn": "Nocturno",
+            "won": 0
+          }
+        ]
+      },
+      "top10": {
+        "headsWon": 0,
+        "byTurn": [
+          {
+            "turn": "Previa",
+            "won": 0
+          },
+          {
+            "turn": "Primera",
+            "won": 0
+          },
+          {
+            "turn": "Matutino",
+            "won": 0
+          },
+          {
+            "turn": "Vespertino",
+            "won": 0
+          },
+          {
+            "turn": "Nocturno",
+            "won": 0
+          }
+        ]
+      }
+    }
+  },
+  "rows": [
+    {
+      "turn": "Previa",
+      "actual": [
+        {
+          "jur": "Ciudad",
+          "head": "6531"
+        },
+        {
+          "jur": "Provincia",
+          "head": "3520"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "2947"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "6659"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "1682"
+        }
+      ],
+      "availableHeads": 5,
+      "montevideoTurnIncluded": false,
+      "scores": {
+        "vt2": {
+          "top3": {
+            "hits": [
+              {
+                "jur": "Provincia",
+                "head": "3520",
+                "kind": "vt2",
+                "family": "02/20",
+                "rank": 2,
+                "motherFamilies": [
+                  "023/320",
+                  "029/920",
+                  "203/302",
+                  "208/802"
+                ]
+              }
+            ],
+            "headsWon": 1
+          },
+          "top5": {
+            "hits": [
+              {
+                "jur": "Provincia",
+                "head": "3520",
+                "kind": "vt2",
+                "family": "02/20",
+                "rank": 2,
+                "motherFamilies": [
+                  "023/320",
+                  "029/920",
+                  "203/302",
+                  "208/802"
+                ]
+              }
+            ],
+            "headsWon": 1
+          },
+          "top10": {
+            "hits": [
+              {
+                "jur": "Ciudad",
+                "head": "6531",
+                "kind": "vt2",
+                "family": "13/31",
+                "rank": 7,
+                "motherFamilies": []
+              },
+              {
+                "jur": "Provincia",
+                "head": "3520",
+                "kind": "vt2",
+                "family": "02/20",
+                "rank": 2,
+                "motherFamilies": [
+                  "023/320",
+                  "029/920",
+                  "203/302",
+                  "208/802"
+                ]
+              }
+            ],
+            "headsWon": 2
+          }
+        },
+        "vt3": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "vt4": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "pulso": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        }
+      },
+      "formedCovers": {
+        "vt2": 2,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "targetBeforePreviousSourcedOnly": []
+    },
+    {
+      "turn": "Primera",
+      "actual": [
+        {
+          "jur": "Ciudad",
+          "head": "7249"
+        },
+        {
+          "jur": "Provincia",
+          "head": "9379"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "1573"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "7777"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "7652"
+        }
+      ],
+      "availableHeads": 5,
+      "montevideoTurnIncluded": false,
+      "scores": {
+        "vt2": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "vt3": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "vt4": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "pulso": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        }
+      },
+      "formedCovers": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "targetBeforePreviousSourcedOnly": [
+        "Previa"
+      ]
+    },
+    {
+      "turn": "Matutino",
+      "actual": [
+        {
+          "jur": "Ciudad",
+          "head": "9321"
+        },
+        {
+          "jur": "Provincia",
+          "head": "9019"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "0728"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "9365"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "9452"
+        }
+      ],
+      "availableHeads": 5,
+      "montevideoTurnIncluded": false,
+      "scores": {
+        "vt2": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "vt3": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "vt4": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "pulso": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        }
+      },
+      "formedCovers": {
+        "vt2": 0,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "targetBeforePreviousSourcedOnly": [
+        "Previa",
+        "Primera"
+      ]
+    },
+    {
+      "turn": "Vespertino",
+      "actual": [
+        {
+          "jur": "Ciudad",
+          "head": "7949"
+        },
+        {
+          "jur": "Provincia",
+          "head": "5693"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "7223"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "7821"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "7260"
+        }
+      ],
+      "availableHeads": 5,
+      "montevideoTurnIncluded": false,
+      "scores": {
+        "vt2": {
+          "top3": {
+            "hits": [
+              {
+                "jur": "Provincia",
+                "head": "5693",
+                "kind": "vt2",
+                "family": "39/93",
+                "rank": 3,
+                "motherFamilies": [
+                  "093/390"
+                ]
+              },
+              {
+                "jur": "Córdoba",
+                "head": "7223",
+                "kind": "vt2",
+                "family": "23/32",
+                "rank": 2,
+                "motherFamilies": [
+                  "023/320"
+                ]
+              }
+            ],
+            "headsWon": 2
+          },
+          "top5": {
+            "hits": [
+              {
+                "jur": "Provincia",
+                "head": "5693",
+                "kind": "vt2",
+                "family": "39/93",
+                "rank": 3,
+                "motherFamilies": [
+                  "093/390"
+                ]
+              },
+              {
+                "jur": "Córdoba",
+                "head": "7223",
+                "kind": "vt2",
+                "family": "23/32",
+                "rank": 2,
+                "motherFamilies": [
+                  "023/320"
+                ]
+              }
+            ],
+            "headsWon": 2
+          },
+          "top10": {
+            "hits": [
+              {
+                "jur": "Provincia",
+                "head": "5693",
+                "kind": "vt2",
+                "family": "39/93",
+                "rank": 3,
+                "motherFamilies": [
+                  "093/390"
+                ]
+              },
+              {
+                "jur": "Córdoba",
+                "head": "7223",
+                "kind": "vt2",
+                "family": "23/32",
+                "rank": 2,
+                "motherFamilies": [
+                  "023/320"
+                ]
+              }
+            ],
+            "headsWon": 2
+          }
+        },
+        "vt3": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "vt4": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "pulso": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        }
+      },
+      "formedCovers": {
+        "vt2": 2,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "targetBeforePreviousSourcedOnly": [
+        "Previa",
+        "Primera",
+        "Matutino"
+      ]
+    },
+    {
+      "turn": "Nocturno",
+      "actual": [
+        {
+          "jur": "Ciudad",
+          "head": "0795"
+        },
+        {
+          "jur": "Provincia",
+          "head": "8014"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "5739"
+        },
+        {
+          "jur": "Santa Fé",
+          "head": "6614"
+        },
+        {
+          "jur": "Entre Ríos",
+          "head": "2065"
+        },
+        {
+          "jur": "Montevideo",
+          "head": "0439"
+        }
+      ],
+      "availableHeads": 6,
+      "montevideoTurnIncluded": true,
+      "scores": {
+        "vt2": {
+          "top3": {
+            "hits": [
+              {
+                "jur": "Córdoba",
+                "head": "5739",
+                "kind": "vt2",
+                "family": "39/93",
+                "rank": 3,
+                "motherFamilies": [
+                  "093/390"
+                ]
+              },
+              {
+                "jur": "Montevideo",
+                "head": "0439",
+                "kind": "vt2",
+                "family": "39/93",
+                "rank": 3,
+                "motherFamilies": [
+                  "093/390"
+                ]
+              }
+            ],
+            "headsWon": 2
+          },
+          "top5": {
+            "hits": [
+              {
+                "jur": "Córdoba",
+                "head": "5739",
+                "kind": "vt2",
+                "family": "39/93",
+                "rank": 3,
+                "motherFamilies": [
+                  "093/390"
+                ]
+              },
+              {
+                "jur": "Montevideo",
+                "head": "0439",
+                "kind": "vt2",
+                "family": "39/93",
+                "rank": 3,
+                "motherFamilies": [
+                  "093/390"
+                ]
+              }
+            ],
+            "headsWon": 2
+          },
+          "top10": {
+            "hits": [
+              {
+                "jur": "Córdoba",
+                "head": "5739",
+                "kind": "vt2",
+                "family": "39/93",
+                "rank": 3,
+                "motherFamilies": [
+                  "093/390"
+                ]
+              },
+              {
+                "jur": "Montevideo",
+                "head": "0439",
+                "kind": "vt2",
+                "family": "39/93",
+                "rank": 3,
+                "motherFamilies": [
+                  "093/390"
+                ]
+              }
+            ],
+            "headsWon": 2
+          }
+        },
+        "vt3": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "vt4": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        },
+        "pulso": {
+          "top3": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top5": {
+            "hits": [],
+            "headsWon": 0
+          },
+          "top10": {
+            "hits": [],
+            "headsWon": 0
+          }
+        }
+      },
+      "formedCovers": {
+        "vt2": 2,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "targetBeforePreviousSourcedOnly": [
+        "Previa",
+        "Primera",
+        "Matutino",
+        "Vespertino"
+      ]
+    }
+  ],
+  "explanations": [
+    "Saturday: Montevideo has only Nocturno, not Previa/Primera/Matutino/Vespertino.",
+    "VT2 suffix last two, exact reversible family; VT3 suffix last three, exact reversible family.",
+    "VT4 full four digits must match actual physical path.value of ranked mother, no full four reversal.",
+    "Counts separate per modality; one head can contribute to VT2 VT3 and VT4 independently.",
+    "Pulse only reorders identical VT3 Top10; VT2 and VT4 unaltered official priorities."
+  ]
+}
