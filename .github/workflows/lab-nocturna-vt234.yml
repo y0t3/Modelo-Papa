@@ -1,0 +1,27 @@
+name: LAB Nocturna por jurisdiccion VT2 VT3 VT4
+on:
+  push:
+    branches: [lab/lalo-nocturna-vt234-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Control de Nocturna real y huecos
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - name: Auditar VT2, VT3 y VT4 sin fuga temporal
+        run: npx --yes tsx scripts/lab-nocturna-tres-modalidades.ts
+      - name: Proteger MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-nocturna-vt234-25oct
+          path: auditorias/lalo-nocturna-vt234-25oct/resultados/
+          if-no-files-found: error
