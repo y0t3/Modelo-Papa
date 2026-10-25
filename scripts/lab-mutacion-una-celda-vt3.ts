@@ -243,8 +243,8 @@ async function main(){
     if(cols.some(c=>findPaths(c.values,v).length>0))
      orientedCounts[family]=(orientedCounts[family]||0)+1;
    }
-   const picks=Object.fromEntries(MODES.map(m=>[m,choice(mutation,m)]))
-    as Record<Mode,Candidate|null>;
+   const picks:Record<Mode,Candidate|null>=Object.fromEntries(
+    MODES.map(m=>[m,choice(mutation,m)])) as Record<Mode,Candidate|null>;
    const preRankings=Object.fromEntries(MODES.map(m=>[
     m,replace10(base,picks[m]?.family||null)
    ])) as Record<Mode,string[]>;
