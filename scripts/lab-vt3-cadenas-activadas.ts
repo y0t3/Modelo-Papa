@@ -17,8 +17,7 @@ import type {Path} from '../src/paths';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
 import type {LaloHistorical} from '../src/motorLalo';
 
-type Mode='BASE'|'PULSO_TOP10'|'RACHA_TOP10'|'DERECHA_TOP10';
-const MODES:Mode[]=['BASE','PULSO_TOP10','RACHA_TOP10','DERECHA_TOP10'];
+// Tipos de selección declarados en el bloque de cadenas PRE.
 const order:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
 const valid=(x:string)=>/^\d{4}$/.test(x);
 const cache=new Map<string,Promise<CabezasDia>>();
@@ -311,8 +310,7 @@ async function main(){
    const pool=Object.fromEntries(MODES.map(mode=>[
     mode,missing.filter(([f])=>signature[f][mode]>0).map(([f])=>f)
    ])) as Record<Mode,string[]>;
-   const pick=Object.fromEntries(MODES.map(mode=>[mode,[...baseTop]]))
-    as Record<Mode,string[]>;
+   const pick=(Object.fromEntries(MODES.map(mode=>[mode,[...baseTop]]))) as Record<Mode,string[]>;
    for(const mode of MODES){
     const candidates=[...pool[mode]].sort((a,b)=>{
      const sa=signature[a],sb=signature[b];
