@@ -1,7 +1,7 @@
 name: PRE sellado pulso VT3 lunes 26 octubre
+# Sellado puntual: queda fijado el resultado de la primera ejecución.
+# No regenerar automáticamente sellos por cada commit de documentación.
 on:
-  push:
-    branches: [lab/lalo-pulso-vt3-sellado-26oct2026]
   workflow_dispatch:
 permissions:
   contents: read
