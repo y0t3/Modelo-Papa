@@ -1,0 +1,23 @@
+name: LAB controles negativos formas VT3 sabado 24oct
+on:
+  push:
+    branches: [lab/lalo-vt234-rastro-faltantes-24oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - run: npx --yes tsx scripts/lab-universo-testigos6-24oct.ts
+      - run: npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: universo-candidatos-testigos6-24oct
+          path: auditorias/lalo-retro-sabado24-vt234/universo-testigos6-24oct.json
+          if-no-files-found: error
