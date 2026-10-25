@@ -1,0 +1,27 @@
+name: LAB forense VT3 VT4 sabado 24 octubre
+on:
+  push:
+    branches: [lab/lalo-forense-vt34-sabado24oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  forensic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Clasificar VT3 VT4 fisicos en cinco cortes PRE
+        run: npx --yes tsx scripts/lab-forense-vt34-sabado24oct.ts
+      - name: Verificar MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Verificar Nocturnas por jurisdiccion
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: laboratorio-forense-vt34-24oct
+          path: auditorias/lalo-forense-24oct-vt34/resultados/
+          if-no-files-found: error
