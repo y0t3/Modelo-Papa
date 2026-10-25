@@ -198,7 +198,14 @@ async function main(){
     supportedAny:shadow.filter(x=>x.d1.size+x.d7.size>0).length,
     supportedBoth:shadow.filter(x=>x.d1.size>0&&x.d7.size>0).length,
     chosen:Object.fromEntries(MODES.slice(1).map(m=>[m,picks[m]?.family||null])),
-    originalRank10:ranks.BASE[9]||null});
+    originalRank10:ranks.BASE[9]||null,
+    publishedFamilyCounts:Object.fromEntries(JURS.map(j=>today[turn]?.[j]||'')
+      .filter(h=>/^\d{4}$/.test(h))
+      .map(h=>reversibleFamily(h.slice(-3)))
+      .reduce((map,f)=>map.set(f,(map.get(f)||0)+1),new Map<string,number>())),
+    poolD1:shadow.filter(x=>x.d1.size>0).map(x=>x.family),
+    poolAny:shadow.filter(x=>x.d1.size+x.d7.size>0).map(x=>x.family),
+    poolBoth:shadow.filter(x=>x.d1.size>0&&x.d7.size>0).map(x=>x.family)});
    for(const jur of JURS){
     const head=today[turn]?.[jur]||'';
     if(!/^\d{4}$/.test(head))continue;
@@ -255,17 +262,59 @@ async function main(){
    x.alternativeRanks[m]===null)
    .map(x=>({date:x.date,turn:x.turn,jur:x.jur,head:x.head,family:x.family}));
  }
+ // Control aleatorio CONDICIONAL a los mismos conjuntos de familias
+ // formables. No implica predicción aleatoria de la quiniela:
+ // compara solo criterio de selección dentro de la oportunidad geométrica.
+ const seeded=(value:number)=>{
+  let state=value|0;
+  return ()=>{state^=state<<13;state^=state>>>17;state^=state<<5;
+   return (state>>>0)/4294967296};
+ };
+ const rand=seeded(20261025);
+ const randomControl:any={};
+ for(const mode of MODES.slice(1)){
+  const key=mode==='SHADOW_D1'?'poolD1':mode==='SHADOW_ANY'?'poolAny':'poolBoth';
+  const observed=wins[mode].gained.length;
+  const losses=wins[mode].lost.length;
+  const draws=15000;
+  const simulated:number[]=[];
+  for(let iteration=0;iteration<draws;iteration++){
+   let successes=0;
+   for(const cut of cutAudit){
+    const pool=(cut as any)[key] as string[];
+    if(!pool.length)continue;
+    const chosen=pool[Math.floor(rand()*pool.length)];
+    successes+=(cut.publishedFamilyCounts[chosen]||0);
+   }
+   simulated.push(successes);
+  }
+  simulated.sort((a,b)=>a-b);
+  const mean=simulated.reduce((a,b)=>a+b,0)/draws;
+  const tail=simulated.filter(x=>x>=observed).length/draws;
+  randomControl[mode]={observedGained:observed,
+   observedLost:losses,net:observed-losses,
+   simulations:draws,averageRandomGains:mean,
+   medianRandomGains:simulated[Math.floor(draws/2)],
+   randomP95:simulated[Math.floor(draws*.95)],
+   randomAtLeastObserved:tail,
+   cutsWithChoice:cutAudit.filter(c=>(c as any)[key].length>0).length,
+   averagePoolSize:cutAudit.reduce((n,c)=>n+(c as any)[key].length,0)/
+    Math.max(1,cutAudit.filter(c=>(c as any)[key].length>0).length)};
+ }
  const out='auditorias/lalo-filtro-vt3-25oct/resultados';
  fs.mkdirSync(out,{recursive:true});
  fs.writeFileSync(out+'/resumen.json',JSON.stringify({distribution,wins},null,2));
  fs.writeFileSync(out+'/cabezas.json',JSON.stringify(results,null,2));
  fs.writeFileSync(out+'/cortes-y-testigos.json',JSON.stringify(cutAudit,null,2));
  fs.writeFileSync(out+'/jornadas.json',JSON.stringify(dayAudit,null,2));
+ fs.writeFileSync(out+'/control-aleatorio-condicional.json',
+  JSON.stringify(randomControl,null,2));
  console.log('FILTRO_DISTRIBUCION',JSON.stringify(distribution));
  console.log('FILTRO_SHADOW_DIFF',JSON.stringify(Object.fromEntries(
   MODES.slice(1).map(m=>[m,{gains:wins[m].gained.length,
    losses:wins[m].lost.length,exampleGains:wins[m].gained.slice(0,15),
    exampleLosses:wins[m].lost.slice(0,15)}]))));
+ console.log('FILTRO_RANDOM_CONTROL',JSON.stringify(randomControl));
  console.log('FILTRO_CORTES',JSON.stringify({days:dayAudit.length,
   cuts:cutAudit.length,heads:results.length,
   avgUnrecognizedStrict:cutAudit.reduce((n,x)=>n+x.supportedD1,0)/cutAudit.length,
