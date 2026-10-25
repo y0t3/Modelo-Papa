@@ -1,0 +1,671 @@
+{
+  "conductedAt": "2026-10-25",
+  "branch": "lab/lalo-vt3-direccion-velocidad-6j-25oct",
+  "execution": "https://github.com/y0t3/Modelo-Papa/actions/runs/40233012716",
+  "baseline": [
+    {
+      "period": "JUN_JUL",
+      "total": 1367,
+      "countByStage": {
+        "NO_FORMABLE": 1012,
+        "FORMABLE_NO_RECONOCIDA": 218,
+        "RECONOCIDA_FUERA_TOP10": 113,
+        "TOP6_10": 10,
+        "TOP4_5": 6,
+        "TOP1_3": 8
+      },
+      "noRecognizedByTrace": {
+        "FORMA_MISMA_FUENTE_D1D7": 0,
+        "FORMA_MISMA_FUENTE_6": 105,
+        "FORMA_FUENTE_VECINA_3": 50,
+        "FORMA_FUENTE_VECINA_6": 25,
+        "ROCE_DOS_CELDAS_6": 33,
+        "FORMA_OTRA_FUENTE_6": 5,
+        "SIN_TESTIGO_6": 0
+      },
+      "candidatesWithUnrecognizedWitness": 213,
+      "byMode": {
+        "BASE": {
+          "top3": 8,
+          "top5": 14,
+          "top10": 24
+        },
+        "PASO_RECIENTE": {
+          "top3": 8,
+          "top5": 14,
+          "top10": 28
+        },
+        "VECTOR_CONTINUO": {
+          "top3": 8,
+          "top5": 14,
+          "top10": 25
+        }
+      }
+    },
+    {
+      "period": "AGO_SEP",
+      "total": 1393,
+      "countByStage": {
+        "NO_FORMABLE": 1022,
+        "FORMABLE_NO_RECONOCIDA": 237,
+        "RECONOCIDA_FUERA_TOP10": 114,
+        "TOP6_10": 10,
+        "TOP4_5": 3,
+        "TOP1_3": 7
+      },
+      "noRecognizedByTrace": {
+        "FORMA_MISMA_FUENTE_D1D7": 0,
+        "FORMA_MISMA_FUENTE_6": 117,
+        "FORMA_FUENTE_VECINA_3": 56,
+        "FORMA_FUENTE_VECINA_6": 23,
+        "ROCE_DOS_CELDAS_6": 35,
+        "FORMA_OTRA_FUENTE_6": 6,
+        "SIN_TESTIGO_6": 0
+      },
+      "candidatesWithUnrecognizedWitness": 231,
+      "byMode": {
+        "BASE": {
+          "top3": 7,
+          "top5": 10,
+          "top10": 20
+        },
+        "PASO_RECIENTE": {
+          "top3": 7,
+          "top5": 10,
+          "top10": 24
+        },
+        "VECTOR_CONTINUO": {
+          "top3": 7,
+          "top5": 10,
+          "top10": 20
+        }
+      }
+    },
+    {
+      "period": "OCT",
+      "total": 561,
+      "countByStage": {
+        "NO_FORMABLE": 428,
+        "FORMABLE_NO_RECONOCIDA": 87,
+        "RECONOCIDA_FUERA_TOP10": 31,
+        "TOP6_10": 4,
+        "TOP4_5": 9,
+        "TOP1_3": 2
+      },
+      "noRecognizedByTrace": {
+        "FORMA_MISMA_FUENTE_D1D7": 0,
+        "FORMA_MISMA_FUENTE_6": 39,
+        "FORMA_FUENTE_VECINA_3": 19,
+        "FORMA_FUENTE_VECINA_6": 12,
+        "ROCE_DOS_CELDAS_6": 11,
+        "FORMA_OTRA_FUENTE_6": 5,
+        "SIN_TESTIGO_6": 1
+      },
+      "candidatesWithUnrecognizedWitness": 81,
+      "byMode": {
+        "BASE": {
+          "top3": 2,
+          "top5": 11,
+          "top10": 15
+        },
+        "PASO_RECIENTE": {
+          "top3": 2,
+          "top5": 11,
+          "top10": 13
+        },
+        "VECTOR_CONTINUO": {
+          "top3": 2,
+          "top5": 11,
+          "top10": 14
+        }
+      }
+    },
+    {
+      "period": "TOTAL",
+      "total": 3321,
+      "countByStage": {
+        "NO_FORMABLE": 2462,
+        "FORMABLE_NO_RECONOCIDA": 542,
+        "RECONOCIDA_FUERA_TOP10": 258,
+        "TOP6_10": 24,
+        "TOP4_5": 18,
+        "TOP1_3": 17
+      },
+      "noRecognizedByTrace": {
+        "FORMA_MISMA_FUENTE_D1D7": 0,
+        "FORMA_MISMA_FUENTE_6": 261,
+        "FORMA_FUENTE_VECINA_3": 125,
+        "FORMA_FUENTE_VECINA_6": 60,
+        "ROCE_DOS_CELDAS_6": 79,
+        "FORMA_OTRA_FUENTE_6": 16,
+        "SIN_TESTIGO_6": 1
+      },
+      "candidatesWithUnrecognizedWitness": 525,
+      "byMode": {
+        "BASE": {
+          "top3": 17,
+          "top5": 35,
+          "top10": 59
+        },
+        "PASO_RECIENTE": {
+          "top3": 17,
+          "top5": 35,
+          "top10": 65
+        },
+        "VECTOR_CONTINUO": {
+          "top3": 17,
+          "top5": 35,
+          "top10": 59
+        }
+      }
+    }
+  ],
+  "simulation": [
+    {
+      "mode": "PASO_RECIENTE",
+      "period": "JUN_JUL",
+      "cuts": 255,
+      "withChoice": 203,
+      "meanPoolSize": 17.374384236453203,
+      "observedGain": 4,
+      "lost": 0,
+      "net": 4,
+      "randomMean": 1.7111,
+      "randomP95": 4,
+      "randomAtLeastObserved": 0.0901
+    },
+    {
+      "mode": "PASO_RECIENTE",
+      "period": "AGO_SEP",
+      "cuts": 260,
+      "withChoice": 207,
+      "meanPoolSize": 19.565217391304348,
+      "observedGain": 4,
+      "lost": 0,
+      "net": 4,
+      "randomMean": 2.1889,
+      "randomP95": 5,
+      "randomAtLeastObserved": 0.1724
+    },
+    {
+      "mode": "PASO_RECIENTE",
+      "period": "OCT",
+      "cuts": 105,
+      "withChoice": 83,
+      "meanPoolSize": 17.89156626506024,
+      "observedGain": 0,
+      "lost": 2,
+      "net": -2,
+      "randomMean": 0.6463,
+      "randomP95": 2,
+      "randomAtLeastObserved": 1
+    },
+    {
+      "mode": "PASO_RECIENTE",
+      "period": "TOTAL",
+      "cuts": 620,
+      "withChoice": 493,
+      "meanPoolSize": 18.38133874239351,
+      "observedGain": 8,
+      "lost": 2,
+      "net": 6,
+      "randomMean": 4.5274,
+      "randomP95": 8,
+      "randomAtLeastObserved": 0.0808
+    },
+    {
+      "mode": "VECTOR_CONTINUO",
+      "period": "JUN_JUL",
+      "cuts": 255,
+      "withChoice": 45,
+      "meanPoolSize": 1.1777777777777778,
+      "observedGain": 1,
+      "lost": 0,
+      "net": 1,
+      "randomMean": 1,
+      "randomP95": 1,
+      "randomAtLeastObserved": 1
+    },
+    {
+      "mode": "VECTOR_CONTINUO",
+      "period": "AGO_SEP",
+      "cuts": 260,
+      "withChoice": 66,
+      "meanPoolSize": 1.7424242424242424,
+      "observedGain": 0,
+      "lost": 0,
+      "net": 0,
+      "randomMean": 0.3339,
+      "randomP95": 1,
+      "randomAtLeastObserved": 1
+    },
+    {
+      "mode": "VECTOR_CONTINUO",
+      "period": "OCT",
+      "cuts": 105,
+      "withChoice": 8,
+      "meanPoolSize": 1.25,
+      "observedGain": 0,
+      "lost": 1,
+      "net": -1,
+      "randomMean": 0,
+      "randomP95": 0,
+      "randomAtLeastObserved": 1
+    },
+    {
+      "mode": "VECTOR_CONTINUO",
+      "period": "TOTAL",
+      "cuts": 620,
+      "withChoice": 119,
+      "meanPoolSize": 1.495798319327731,
+      "observedGain": 1,
+      "lost": 1,
+      "net": 0,
+      "randomMean": 1.3379,
+      "randomP95": 2,
+      "randomAtLeastObserved": 1
+    }
+  ],
+  "matchedControls": [
+    {
+      "period": "JUN_JUL",
+      "mode": "PASO_RECIENTE",
+      "cuts": 255,
+      "familyExposures": 3527,
+      "winningExposures": 34,
+      "nonWinningExposures": 3493,
+      "cutsWithChoice": 203,
+      "meanCandidatesPerEligibleCut": 17.374384236453203,
+      "matchedCuts": 179,
+      "observedWithinCutDelta": 0.005572323864003367,
+      "randomTwoSidedFraction": 0.7995
+    },
+    {
+      "period": "JUN_JUL",
+      "mode": "VECTOR_CONTINUO",
+      "cuts": 255,
+      "familyExposures": 53,
+      "winningExposures": 1,
+      "nonWinningExposures": 52,
+      "cutsWithChoice": 45,
+      "meanCandidatesPerEligibleCut": 1.1777777777777778,
+      "matchedCuts": 179,
+      "observedWithinCutDelta": 0.0006907018710906958,
+      "randomTwoSidedFraction": 0.805
+    },
+    {
+      "period": "AGO_SEP",
+      "mode": "PASO_RECIENTE",
+      "cuts": 260,
+      "familyExposures": 4050,
+      "winningExposures": 45,
+      "nonWinningExposures": 4005,
+      "cutsWithChoice": 207,
+      "meanCandidatesPerEligibleCut": 19.565217391304348,
+      "matchedCuts": 189,
+      "observedWithinCutDelta": 0.028542114898469518,
+      "randomTwoSidedFraction": 0.1905
+    },
+    {
+      "period": "AGO_SEP",
+      "mode": "VECTOR_CONTINUO",
+      "cuts": 260,
+      "familyExposures": 115,
+      "winningExposures": 1,
+      "nonWinningExposures": 114,
+      "cutsWithChoice": 66,
+      "meanCandidatesPerEligibleCut": 1.7424242424242424,
+      "matchedCuts": 189,
+      "observedWithinCutDelta": 0.0010470794453993953,
+      "randomTwoSidedFraction": 0.886
+    },
+    {
+      "period": "OCT",
+      "mode": "PASO_RECIENTE",
+      "cuts": 105,
+      "familyExposures": 1485,
+      "winningExposures": 13,
+      "nonWinningExposures": 1472,
+      "cutsWithChoice": 83,
+      "meanCandidatesPerEligibleCut": 17.89156626506024,
+      "matchedCuts": 69,
+      "observedWithinCutDelta": -0.034860646529147395,
+      "randomTwoSidedFraction": 0.3475
+    },
+    {
+      "period": "OCT",
+      "mode": "VECTOR_CONTINUO",
+      "cuts": 105,
+      "familyExposures": 10,
+      "winningExposures": 0,
+      "nonWinningExposures": 10,
+      "cutsWithChoice": 8,
+      "meanCandidatesPerEligibleCut": 1.25,
+      "matchedCuts": 69,
+      "observedWithinCutDelta": -0.0011718269473098683,
+      "randomTwoSidedFraction": 1
+    },
+    {
+      "period": "TOTAL",
+      "mode": "PASO_RECIENTE",
+      "cuts": 620,
+      "familyExposures": 9062,
+      "winningExposures": 92,
+      "nonWinningExposures": 8970,
+      "cutsWithChoice": 493,
+      "meanCandidatesPerEligibleCut": 18.38133874239351,
+      "matchedCuts": 437,
+      "observedWithinCutDelta": 0.009122473860311602,
+      "randomTwoSidedFraction": 0.511
+    },
+    {
+      "period": "TOTAL",
+      "mode": "VECTOR_CONTINUO",
+      "cuts": 620,
+      "familyExposures": 178,
+      "winningExposures": 2,
+      "nonWinningExposures": 176,
+      "cutsWithChoice": 119,
+      "meanCandidatesPerEligibleCut": 1.495798319327731,
+      "matchedCuts": 437,
+      "observedWithinCutDelta": 0.000550749635563706,
+      "randomTwoSidedFraction": 0.8405
+    }
+  ],
+  "saturday": [
+    {
+      "turn": "Previa",
+      "baseTop10": [
+        "023/320",
+        "303/303",
+        "203/302",
+        "092/290",
+        "029/920",
+        "033/330",
+        "039/930",
+        "208/802",
+        "298/892",
+        "083/380"
+      ],
+      "winningFamiliesFromPublishedHeads": [
+        "135/531",
+        "025/520",
+        "749/947",
+        "659/956",
+        "286/682"
+      ],
+      "missingWinningFamilies": [],
+      "alternatives": {
+        "PASO_RECIENTE": {
+          "eligibleCount": 0,
+          "winnerEligible": [],
+          "chosen": [],
+          "chosenRank": 10
+        },
+        "VECTOR_CONTINUO": {
+          "eligibleCount": 0,
+          "winnerEligible": [],
+          "chosen": [],
+          "chosenRank": 10
+        }
+      }
+    },
+    {
+      "turn": "Primera",
+      "baseTop10": [
+        "023/320",
+        "303/303",
+        "203/302",
+        "092/290",
+        "029/920",
+        "033/330",
+        "039/930",
+        "208/802",
+        "298/892",
+        "083/380"
+      ],
+      "winningFamiliesFromPublishedHeads": [
+        "249/942",
+        "379/973",
+        "375/573",
+        "777/777",
+        "256/652"
+      ],
+      "missingWinningFamilies": [
+        "379/973",
+        "375/573"
+      ],
+      "alternatives": {
+        "PASO_RECIENTE": {
+          "eligibleCount": 9,
+          "winnerEligible": [],
+          "chosen": [
+            "078/870"
+          ],
+          "chosenRank": 10
+        },
+        "VECTOR_CONTINUO": {
+          "eligibleCount": 0,
+          "winnerEligible": [],
+          "chosen": [],
+          "chosenRank": 10
+        }
+      }
+    },
+    {
+      "turn": "Matutino",
+      "baseTop10": [
+        "488/884",
+        "023/320",
+        "303/303",
+        "849/948",
+        "203/302",
+        "048/840",
+        "092/290",
+        "094/490",
+        "388/883",
+        "029/920"
+      ],
+      "winningFamiliesFromPublishedHeads": [
+        "123/321",
+        "019/910",
+        "728/827",
+        "365/563",
+        "254/452"
+      ],
+      "missingWinningFamilies": [
+        "123/321"
+      ],
+      "alternatives": {
+        "PASO_RECIENTE": {
+          "eligibleCount": 15,
+          "winnerEligible": [],
+          "chosen": [
+            "088/880"
+          ],
+          "chosenRank": 10
+        },
+        "VECTOR_CONTINUO": {
+          "eligibleCount": 0,
+          "winnerEligible": [],
+          "chosen": [],
+          "chosenRank": 10
+        }
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "baseTop10": [
+        "203/302",
+        "488/884",
+        "023/320",
+        "303/303",
+        "849/948",
+        "048/840",
+        "092/290",
+        "093/390",
+        "094/490",
+        "388/883"
+      ],
+      "winningFamiliesFromPublishedHeads": [
+        "949/949",
+        "396/693",
+        "223/322",
+        "128/821",
+        "062/260"
+      ],
+      "missingWinningFamilies": [
+        "396/693"
+      ],
+      "alternatives": {
+        "PASO_RECIENTE": {
+          "eligibleCount": 19,
+          "winnerEligible": [
+            "396/693"
+          ],
+          "chosen": [
+            "088/880"
+          ],
+          "chosenRank": 10
+        },
+        "VECTOR_CONTINUO": {
+          "eligibleCount": 0,
+          "winnerEligible": [],
+          "chosen": [],
+          "chosenRank": 10
+        }
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "baseTop10": [
+        "203/302",
+        "488/884",
+        "023/320",
+        "303/303",
+        "849/948",
+        "048/840",
+        "092/290",
+        "093/390",
+        "094/490",
+        "388/883"
+      ],
+      "winningFamiliesFromPublishedHeads": [
+        "597/795",
+        "014/410",
+        "739/937",
+        "416/614",
+        "065/560",
+        "439/934"
+      ],
+      "missingWinningFamilies": [
+        "739/937"
+      ],
+      "alternatives": {
+        "PASO_RECIENTE": {
+          "eligibleCount": 20,
+          "winnerEligible": [],
+          "chosen": [
+            "088/880"
+          ],
+          "chosenRank": 10
+        },
+        "VECTOR_CONTINUO": {
+          "eligibleCount": 0,
+          "winnerEligible": [],
+          "chosen": [],
+          "chosenRank": 10
+        }
+      }
+    }
+  ],
+  "differences": [
+    {
+      "mode": "PASO_RECIENTE",
+      "gained": 8,
+      "lost": 2,
+      "net": 6,
+      "sampleGained": [
+        {
+          "date": "2026-06-08",
+          "turn": "Nocturno",
+          "jur": "Montevideo",
+          "head": "8011",
+          "traceClass": "FORMA_MISMA_FUENTE_6"
+        },
+        {
+          "date": "2026-07-14",
+          "turn": "Vespertino",
+          "jur": "Ciudad",
+          "head": "9837",
+          "traceClass": "FORMA_MISMA_FUENTE_6"
+        },
+        {
+          "date": "2026-07-27",
+          "turn": "Matutino",
+          "jur": "Ciudad",
+          "head": "7137",
+          "traceClass": "FORMA_FUENTE_VECINA_3"
+        },
+        {
+          "date": "2026-07-29",
+          "turn": "Primera",
+          "jur": "Entre Ríos",
+          "head": "7865",
+          "traceClass": "FORMA_FUENTE_VECINA_3"
+        },
+        {
+          "date": "2026-08-05",
+          "turn": "Matutino",
+          "jur": "Montevideo",
+          "head": "1842",
+          "traceClass": "FORMA_FUENTE_VECINA_3"
+        },
+        {
+          "date": "2026-08-21",
+          "turn": "Primera",
+          "jur": "Ciudad",
+          "head": "0450",
+          "traceClass": "FORMA_FUENTE_VECINA_3"
+        }
+      ],
+      "sampleLost": [
+        {
+          "date": "2026-10-14",
+          "turn": "Nocturno",
+          "jur": "Córdoba",
+          "head": "2033"
+        },
+        {
+          "date": "2026-10-15",
+          "turn": "Matutino",
+          "jur": "Santa Fé",
+          "head": "0244"
+        }
+      ]
+    },
+    {
+      "mode": "VECTOR_CONTINUO",
+      "gained": 1,
+      "lost": 1,
+      "net": 0,
+      "sampleGained": [
+        {
+          "date": "2026-06-09",
+          "turn": "Matutino",
+          "jur": "Córdoba",
+          "head": "3325",
+          "traceClass": "FORMA_MISMA_FUENTE_6"
+        }
+      ],
+      "sampleLost": [
+        {
+          "date": "2026-10-14",
+          "turn": "Nocturno",
+          "jur": "Córdoba",
+          "head": "2033"
+        }
+      ]
+    }
+  ]
+}
