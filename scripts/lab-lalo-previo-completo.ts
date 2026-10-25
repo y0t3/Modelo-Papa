@@ -72,7 +72,7 @@ async function main(){
    const restoreBoth=buildMotorLalo(boardFixed,date,turn,[rootFixed,historicWeek]);
    const views={ORIGINAL:original,D1_CORREGIDO:restoreD1,
     HOJA_Y_D1_CORREGIDOS:restoreBoth};
-   const tops:any={},newFam:any={};
+   const tops:any={};let newFam:any={};
    for(const kind of ['vt2','vt3','vt4'] as LaloKind[]){
     tops[kind]=Object.fromEntries(Object.entries(views).map(([k,v])=>
      [k,v.ranks[kind].slice(0,10).map(x=>x.family)]));
