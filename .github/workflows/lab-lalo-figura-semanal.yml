@@ -1,0 +1,26 @@
+name: LAB Lalo figura camina derecha semanal
+on:
+  push:
+    branches: [lab/lalo-figuras-caminan-entre-semanas-24oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  weekMovement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificar figura de la semana anterior desplazada a derecha
+        run: |
+          npx --yes tsx scripts/lab-lalo-figura-semana-derecha.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lalo-figura-semanal-derecha
+          path: auditorias/lalo-figuras-transiciones-24oct/semanas
+          if-no-files-found: warn
