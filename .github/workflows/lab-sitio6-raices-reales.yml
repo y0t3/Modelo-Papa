@@ -1,0 +1,25 @@
+name: LAB Sitio seis jornadas con Nocturnas reales
+on:
+  push:
+    branches: [lab/lalo-vt3-sitio6-raices-reales-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Reordenar mismas diez familias por sitio seis jornadas
+        run: npx --yes tsx scripts/lab-sitio6-raices-reales-vt3.ts
+      - name: Verificar motor inalterado
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sitio6-raices-reales-vt3
+          path: auditorias/lalo-sitio6-raices-reales-25oct/resultados
+          if-no-files-found: error
