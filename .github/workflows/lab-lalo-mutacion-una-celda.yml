@@ -1,0 +1,28 @@
+name: LAB Lalo mutación VT3 una celda
+on:
+  push:
+    branches: [lab/lalo-vt3-mutacion-una-celda-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mutation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - name: Instalar
+        run: npm install
+      - name: Control histórico y aleatorio de transformaciones físicas 2/3
+        run: |
+          npx --yes tsx scripts/lab-mutacion-una-celda-vt3.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Archivar resultados y testigos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: labo-lalo-vt3-mutacion-una-celda
+          path: auditorias/lalo-mutacion-una-celda-25oct/resultados
+          if-no-files-found: warn
