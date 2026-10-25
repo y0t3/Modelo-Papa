@@ -1,0 +1,533 @@
+{
+  "method": "strict single-column contiguous ordered suffix path before each target turn, no repeated cell, 2/3/4 digits exact; out-of-Top10 may be ranked >10 or unrecognized",
+  "date": "2026-10-24",
+  "totals": {
+    "heads": 26,
+    "physical": {
+      "vt2": 17,
+      "vt3": 5,
+      "vt4": 2
+    },
+    "physicallyFormableButOutsideTop10": {
+      "vt2": 11,
+      "vt3": 5,
+      "vt4": 2
+    }
+  },
+  "byTurn": [
+    {
+      "turn": "Previa",
+      "heads": 5,
+      "physical": {
+        "vt2": 3,
+        "vt3": 0,
+        "vt4": 0
+      },
+      "physicalButOutsideTop10": {
+        "vt2": 1,
+        "vt3": 0,
+        "vt4": 0
+      }
+    },
+    {
+      "turn": "Primera",
+      "heads": 5,
+      "physical": {
+        "vt2": 2,
+        "vt3": 2,
+        "vt4": 1
+      },
+      "physicalButOutsideTop10": {
+        "vt2": 2,
+        "vt3": 2,
+        "vt4": 1
+      }
+    },
+    {
+      "turn": "Matutino",
+      "heads": 5,
+      "physical": {
+        "vt2": 3,
+        "vt3": 1,
+        "vt4": 0
+      },
+      "physicalButOutsideTop10": {
+        "vt2": 3,
+        "vt3": 1,
+        "vt4": 0
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "heads": 5,
+      "physical": {
+        "vt2": 5,
+        "vt3": 1,
+        "vt4": 0
+      },
+      "physicalButOutsideTop10": {
+        "vt2": 3,
+        "vt3": 1,
+        "vt4": 0
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "heads": 6,
+      "physical": {
+        "vt2": 4,
+        "vt3": 1,
+        "vt4": 1
+      },
+      "physicalButOutsideTop10": {
+        "vt2": 2,
+        "vt3": 1,
+        "vt4": 1
+      }
+    }
+  ],
+  "cases": [
+    {
+      "turn": "Previa",
+      "jur": "Ciudad",
+      "head": "6531",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": true
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Previa",
+      "jur": "Provincia",
+      "head": "3520",
+      "vt2": {
+        "physicalPaths": 3,
+        "top10": true
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Previa",
+      "jur": "Córdoba",
+      "head": "2947",
+      "vt2": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Previa",
+      "jur": "Santa Fé",
+      "head": "6659",
+      "vt2": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Previa",
+      "jur": "Entre Ríos",
+      "head": "1682",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Primera",
+      "jur": "Ciudad",
+      "head": "7249",
+      "vt2": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Primera",
+      "jur": "Provincia",
+      "head": "9379",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Primera",
+      "jur": "Córdoba",
+      "head": "1573",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 1,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Primera",
+      "jur": "Santa Fé",
+      "head": "7777",
+      "vt2": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Primera",
+      "jur": "Entre Ríos",
+      "head": "7652",
+      "vt2": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Ciudad",
+      "head": "9321",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Provincia",
+      "head": "9019",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Córdoba",
+      "head": "0728",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Santa Fé",
+      "head": "9365",
+      "vt2": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Entre Ríos",
+      "head": "9452",
+      "vt2": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Ciudad",
+      "head": "7949",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Provincia",
+      "head": "5693",
+      "vt2": {
+        "physicalPaths": 5,
+        "top10": true
+      },
+      "vt3": {
+        "physicalPaths": 2,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Córdoba",
+      "head": "7223",
+      "vt2": {
+        "physicalPaths": 5,
+        "top10": true
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Santa Fé",
+      "head": "7821",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Entre Ríos",
+      "head": "7260",
+      "vt2": {
+        "physicalPaths": 2,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Ciudad",
+      "head": "0795",
+      "vt2": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Provincia",
+      "head": "8014",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Córdoba",
+      "head": "5739",
+      "vt2": {
+        "physicalPaths": 5,
+        "top10": true
+      },
+      "vt3": {
+        "physicalPaths": 2,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 1,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Santa Fé",
+      "head": "6614",
+      "vt2": {
+        "physicalPaths": 1,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Entre Ríos",
+      "head": "2065",
+      "vt2": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Montevideo",
+      "head": "0439",
+      "vt2": {
+        "physicalPaths": 5,
+        "top10": true
+      },
+      "vt3": {
+        "physicalPaths": 0,
+        "top10": false
+      },
+      "vt4": {
+        "physicalPaths": 0,
+        "top10": false
+      }
+    }
+  ]
+}
