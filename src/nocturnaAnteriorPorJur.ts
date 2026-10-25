@@ -45,3 +45,14 @@ export async function nocturnaAnteriorPorJur(
  // Si alguna jurisdicción carece de historia, no inventar cifras.
  return {target,heads,dates,missing:[...missing],checked};
 }
+
+/** En la galería INFO una noche parcial actualiza solo lo realmente salido. */
+export function fusionarNocturnasPorJur(previous:CabezasDia,published:CabezasDia):CabezasDia{
+ const next=diaVacio();
+ for(const jur of JURS){
+  const n=published.Nocturno?.[jur]||'----';
+  const p=previous.Nocturno?.[jur]||'----';
+  next.Nocturno[jur]=/^\d{4}$/.test(n)?n:/^\d{4}$/.test(p)?p:'----';
+ }
+ return next;
+}

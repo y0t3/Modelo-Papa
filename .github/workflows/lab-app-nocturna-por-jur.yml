@@ -1,0 +1,24 @@
+name: LAB App integra Nocturna por jurisdiccion
+on:
+  push:
+    branches: [lab/lalo-integra-nocturna-por-jur-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  app:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificar nocturnas de jornadas parciales
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - name: Verificar minihojas INFO
+        run: npx --yes tsx scripts/test-info-week-nocturna-por-jur.ts
+      - name: Preservar reglas físicas MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Comprobar tipos de la app
+        run: npx tsc --noEmit
