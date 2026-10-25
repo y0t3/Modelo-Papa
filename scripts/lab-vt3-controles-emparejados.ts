@@ -235,8 +235,7 @@ async function main(){
     });
     return xs[0]??null;
    };
-   const picks=Object.fromEntries(MODES.map(m=>[m,[...baseTop]]))
-    as Record<Mode,string[]>;
+   const picks=(Object.fromEntries(MODES.map(m=>[m,[...baseTop]]))) as Record<Mode,string[]>;
    for(const mode of MODES.slice(1)){
     const candidate=choice(mode);
     if(candidate){
