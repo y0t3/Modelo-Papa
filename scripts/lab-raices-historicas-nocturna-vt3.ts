@@ -101,8 +101,7 @@ async function main(){
    for(const {jur,head} of headList){
     const suffix=head.slice(-3),family=reversibleFamily(suffix);
     const exactPhysical=columns.some(col=>findPaths(col.values,suffix).length>0);
-    const rank=Object.fromEntries(MODES.map(m=>[m,ranks[m].get(family)??null]))
-     as Record<Mode,number|null>;
+    const rank=(Object.fromEntries(MODES.map(m=>[m,ranks[m].get(family)??null]))) as Record<Mode,number|null>;
     cases.push({date,turn,jur,head,family,exactPhysical,rank});
    }
   }
