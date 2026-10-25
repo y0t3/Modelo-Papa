@@ -1,0 +1,26 @@
+name: LAB Lalo memoria D1 en feriados
+on:
+  push:
+    branches: [lab/lalo-control-feriados-d1-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Comparar D1 cronológico con última jornada realmente completa
+        run: |
+          npx --yes tsx scripts/lab-lalo-previo-completo.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: labo-lalo-huecos-d1
+          path: auditorias/lalo-vt3-feriados-d1-25oct/resultados
+          if-no-files-found: warn
