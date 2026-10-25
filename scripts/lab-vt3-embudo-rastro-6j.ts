@@ -45,6 +45,11 @@ const geometry=(p:Path)=>{
 };
 const coord=(x:Path[number])=>x.row+':'+x.col;
 const block=(p:Path)=>p.map(coord).sort().join(',');
+const sequenceKey=(p:Path)=>{
+ const forward=p.map(coord).join('>');
+ const backward=[...p].reverse().map(coord).join('>');
+ return [forward,backward].sort()[0];
+};
 const anchor=(p:Path)=>Math.min(...p.map(x=>x.row));
 type Route={source:SourceId;shape:string;anchor:number;coords:string[];
  value:string;family:string;};
@@ -62,7 +67,7 @@ async function completed(date:string){
     if(hit.kind!=='vt3'||!m.cabeza.endsWith(hit.value))continue;
     for(const p of hit.paths){
      const event=[date,t,m.jurisdiccion,m.cabeza].join('|');
-     const key=event+'|'+hit.sourceId+'|'+block(p);
+     const key=event+'|'+hit.sourceId+'|'+sequenceKey(p);
      if(seen.has(key))continue;
      seen.add(key);
      roots.push({date,daysBack:0,event,source:hit.sourceId,
@@ -82,7 +87,7 @@ function routes(columns:DailySheet['columns']){
   const seen=new Set<string>();
   const walk=(path:Path)=>{
    if(path.length===3){
-    const bk=block(path);if(seen.has(bk))return;
+    const bk=sequenceKey(path);if(seen.has(bk))return;
     seen.add(bk);
     const value=path.map(x=>x.digit).join(''),
       family=reversibleFamily(value);
