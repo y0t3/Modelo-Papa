@@ -1,0 +1,23 @@
+name: POST cotejar sello Previa 26 octubre
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificar hash PRE sin resultados objetivo
+        run: npx --yes tsx scripts/lab-comparar-sellado-previa-26oct.ts --validar
+      - name: Comprobar cabezas publicadas sin recalcular tops
+        run: npx --yes tsx scripts/lab-comparar-sellado-previa-26oct.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: post-sello-vt3-previa-2026-10-26
+          path: auditorias/lalo-pulso-vt3-sellado-26oct/resultado-posterior
+          if-no-files-found: error
