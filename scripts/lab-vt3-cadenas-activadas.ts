@@ -331,8 +331,10 @@ async function main(){
      baseTop.slice(0,Math.min(9,baseTop.length)).join('|'))
      throw Error('Los primeros 9 cambiaron');
    }
-   const heads=JURS.filter(j=>j!=='Montevideo'||turn==='Nocturno')
-    .map(j=>today[turn]?.[j]||'').filter(valid).map(h=>reversibleFamily(h.slice(-3)));
+   // Respetar disponibilidad real por turno y jurisdicción: Montevideo
+   // puede tener Matutino y Nocturno en días hábiles, no solo Nocturno.
+   const heads=JURS.map(j=>today[turn]?.[j]||'')
+    .filter(valid).map(h=>reversibleFamily(h.slice(-3)));
    allCuts.push({date,turn,block:date<='2026-07-31'?'JUN_JUL':
     date<='2026-09-30'?'AGO_SEP':'OCT',
     heads,base:baseTop,pool,pick,signature,
@@ -341,6 +343,9 @@ async function main(){
   console.log('CADENAS_DIA',date);
  }
  if(allCuts.length!==620)throw Error('No son 620 cortes: '+allCuts.length);
+ const base10=allCuts.reduce((n,c)=>n+c.heads.filter(f=>c.base.includes(f)).length,0);
+ const base3=allCuts.reduce((n,c)=>n+c.heads.filter(f=>c.base.slice(0,3).includes(f)).length,0);
+ if(base10!==59||base3!==17)throw Error('Base MV1 no replicada '+base10+'/'+base3);
  const p='2026-10-24',octCuts=allCuts.filter(c=>c.date===p);
  const wanted=[
   {turn:'Primera',head:'9379'},
