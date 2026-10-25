@@ -1,0 +1,27 @@
+name: LAB VT3 transiciones reales seis jornadas
+on:
+  push:
+    branches: [lab/lalo-vt3-transiciones-6j-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Analizar pulsos y traslado cronologico de figuras VT3
+        run: npx --yes tsx scripts/lab-vt3-transiciones6.ts
+      - name: Regresion MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Regresion Nocturna real por jurisdiccion
+        run: npx --yes tsx scripts/test-nocturna-anterior-por-jur.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt3-transiciones-seis-jornadas
+          path: auditorias/lalo-vt3-transiciones6-25oct/resultados
+          if-no-files-found: error
