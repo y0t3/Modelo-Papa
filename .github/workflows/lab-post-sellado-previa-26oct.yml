@@ -1,5 +1,9 @@
 name: POST cotejar sello Previa 26 octubre
+# La rama exclusiva de contraste POST se crea SOLO después del sorteo.
+# No necesita instalar un workflow en main ni tocar el sello original.
 on:
+  push:
+    branches: [lab/lalo-pulso-vt3-post-26oct2026]
   workflow_dispatch:
 permissions:
   contents: read
