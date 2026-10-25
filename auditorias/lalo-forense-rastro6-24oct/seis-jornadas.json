@@ -1,0 +1,653 @@
+{
+  "date": "2026-10-24",
+  "method": "RETROSPECTIVE_AS_OF_PRE_6_HISTORIC_DRAWS",
+  "drawDaysNewestFirst": [
+    "2026-10-23",
+    "2026-10-22",
+    "2026-10-21",
+    "2026-10-20",
+    "2026-10-19",
+    "2026-10-17"
+  ],
+  "note": "Witnesses only from actual winning figures on preceding dates. A family may be physically formable without historic witness; pool counts are PRE candidates, not selected by POST.",
+  "stats": [
+    {
+      "turn": "Previa",
+      "heads": 5,
+      "totalPhysicalFamilies": 52,
+      "engineRecognizedFamilies": 22,
+      "unrecognizedFamilies": 30,
+      "poolCounts": {
+        "ANY": 30,
+        "SAME_6": 17,
+        "NEIGHBOR_3": 8,
+        "NEIGHBOR_6": 10,
+        "OVERLAP_6": 30,
+        "OTHER_SHAPE_6": 26
+      },
+      "actualUnrecognizedWinners": [],
+      "conditionalWinnerPools": {
+        "ANY": [],
+        "SAME_6": [],
+        "NEIGHBOR_3": [],
+        "NEIGHBOR_6": [],
+        "OVERLAP_6": [],
+        "OTHER_SHAPE_6": []
+      }
+    },
+    {
+      "turn": "Primera",
+      "heads": 5,
+      "totalPhysicalFamilies": 113,
+      "engineRecognizedFamilies": 28,
+      "unrecognizedFamilies": 85,
+      "poolCounts": {
+        "ANY": 85,
+        "SAME_6": 39,
+        "NEIGHBOR_3": 32,
+        "NEIGHBOR_6": 52,
+        "OVERLAP_6": 84,
+        "OTHER_SHAPE_6": 80
+      },
+      "actualUnrecognizedWinners": [
+        {
+          "jur": "Provincia",
+          "head": "9379",
+          "family": "379/973"
+        },
+        {
+          "jur": "Córdoba",
+          "head": "1573",
+          "family": "375/573"
+        }
+      ],
+      "conditionalWinnerPools": {
+        "ANY": [
+          {
+            "jur": "Provincia",
+            "head": "9379"
+          },
+          {
+            "jur": "Córdoba",
+            "head": "1573"
+          }
+        ],
+        "SAME_6": [
+          {
+            "jur": "Provincia",
+            "head": "9379"
+          }
+        ],
+        "NEIGHBOR_3": [],
+        "NEIGHBOR_6": [
+          {
+            "jur": "Provincia",
+            "head": "9379"
+          },
+          {
+            "jur": "Córdoba",
+            "head": "1573"
+          }
+        ],
+        "OVERLAP_6": [
+          {
+            "jur": "Provincia",
+            "head": "9379"
+          },
+          {
+            "jur": "Córdoba",
+            "head": "1573"
+          }
+        ],
+        "OTHER_SHAPE_6": [
+          {
+            "jur": "Provincia",
+            "head": "9379"
+          },
+          {
+            "jur": "Córdoba",
+            "head": "1573"
+          }
+        ]
+      }
+    },
+    {
+      "turn": "Matutino",
+      "heads": 5,
+      "totalPhysicalFamilies": 149,
+      "engineRecognizedFamilies": 46,
+      "unrecognizedFamilies": 103,
+      "poolCounts": {
+        "ANY": 103,
+        "SAME_6": 40,
+        "NEIGHBOR_3": 40,
+        "NEIGHBOR_6": 62,
+        "OVERLAP_6": 101,
+        "OTHER_SHAPE_6": 98
+      },
+      "actualUnrecognizedWinners": [
+        {
+          "jur": "Ciudad",
+          "head": "9321",
+          "family": "123/321"
+        }
+      ],
+      "conditionalWinnerPools": {
+        "ANY": [
+          {
+            "jur": "Ciudad",
+            "head": "9321"
+          }
+        ],
+        "SAME_6": [
+          {
+            "jur": "Ciudad",
+            "head": "9321"
+          }
+        ],
+        "NEIGHBOR_3": [],
+        "NEIGHBOR_6": [],
+        "OVERLAP_6": [
+          {
+            "jur": "Ciudad",
+            "head": "9321"
+          }
+        ],
+        "OTHER_SHAPE_6": [
+          {
+            "jur": "Ciudad",
+            "head": "9321"
+          }
+        ]
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "heads": 5,
+      "totalPhysicalFamilies": 169,
+      "engineRecognizedFamilies": 49,
+      "unrecognizedFamilies": 120,
+      "poolCounts": {
+        "ANY": 120,
+        "SAME_6": 42,
+        "NEIGHBOR_3": 52,
+        "NEIGHBOR_6": 76,
+        "OVERLAP_6": 113,
+        "OTHER_SHAPE_6": 116
+      },
+      "actualUnrecognizedWinners": [
+        {
+          "jur": "Provincia",
+          "head": "5693",
+          "family": "396/693"
+        }
+      ],
+      "conditionalWinnerPools": {
+        "ANY": [
+          {
+            "jur": "Provincia",
+            "head": "5693"
+          }
+        ],
+        "SAME_6": [],
+        "NEIGHBOR_3": [
+          {
+            "jur": "Provincia",
+            "head": "5693"
+          }
+        ],
+        "NEIGHBOR_6": [
+          {
+            "jur": "Provincia",
+            "head": "5693"
+          }
+        ],
+        "OVERLAP_6": [
+          {
+            "jur": "Provincia",
+            "head": "5693"
+          }
+        ],
+        "OTHER_SHAPE_6": [
+          {
+            "jur": "Provincia",
+            "head": "5693"
+          }
+        ]
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "heads": 6,
+      "totalPhysicalFamilies": 198,
+      "engineRecognizedFamilies": 49,
+      "unrecognizedFamilies": 149,
+      "poolCounts": {
+        "ANY": 149,
+        "SAME_6": 53,
+        "NEIGHBOR_3": 57,
+        "NEIGHBOR_6": 81,
+        "OVERLAP_6": 138,
+        "OTHER_SHAPE_6": 145
+      },
+      "actualUnrecognizedWinners": [
+        {
+          "jur": "Córdoba",
+          "head": "5739",
+          "family": "739/937"
+        }
+      ],
+      "conditionalWinnerPools": {
+        "ANY": [
+          {
+            "jur": "Córdoba",
+            "head": "5739"
+          }
+        ],
+        "SAME_6": [],
+        "NEIGHBOR_3": [
+          {
+            "jur": "Córdoba",
+            "head": "5739"
+          }
+        ],
+        "NEIGHBOR_6": [
+          {
+            "jur": "Córdoba",
+            "head": "5739"
+          }
+        ],
+        "OVERLAP_6": [
+          {
+            "jur": "Córdoba",
+            "head": "5739"
+          }
+        ],
+        "OTHER_SHAPE_6": [
+          {
+            "jur": "Córdoba",
+            "head": "5739"
+          }
+        ]
+      }
+    }
+  ],
+  "targetEvents": [
+    {
+      "turn": "Primera",
+      "jur": "Provincia",
+      "head": "9379",
+      "family": "379/973",
+      "sources": [
+        "Previa"
+      ],
+      "physicalPaths": 1,
+      "rootsD1D7SameShapeSameSource": 0,
+      "sameSourceRootEventsSix": 1,
+      "activeDaysLast6": 1,
+      "neighbourRootEventsLast3": 0,
+      "neighbourRootEventsSix": 1,
+      "overlapRootEventsSix": 3,
+      "anyShapeRootsSix": 2,
+      "patternNewestFirst": "010000",
+      "poolsContainingFamily": {
+        "ANY": true,
+        "SAME_6": true,
+        "NEIGHBOR_3": false,
+        "NEIGHBOR_6": true,
+        "OVERLAP_6": true,
+        "OTHER_SHAPE_6": true
+      },
+      "eligibleCountsAtOwnCut": {
+        "ANY": 85,
+        "SAME_6": 39,
+        "NEIGHBOR_3": 32,
+        "NEIGHBOR_6": 52,
+        "OVERLAP_6": 84,
+        "OTHER_SHAPE_6": 80
+      },
+      "matchedWinningRootExamples": [
+        {
+          "rootDate": "2026-10-22",
+          "daysBack": 2,
+          "rootSource": "Previa",
+          "targetSource": "Previa",
+          "rootTurn": "Primera",
+          "rootJur": "Ciudad",
+          "oldHead": "8578",
+          "oldFamily": "578/875",
+          "oldValue": "578",
+          "newValue": "973",
+          "anchorShift": 0,
+          "sameSource": true,
+          "sourceDistance": 0
+        },
+        {
+          "rootDate": "2026-10-17",
+          "daysBack": 6,
+          "rootSource": "prevNocturno",
+          "targetSource": "Previa",
+          "rootTurn": "Matutino",
+          "rootJur": "Santa Fé",
+          "oldHead": "7344",
+          "oldFamily": "344/443",
+          "oldValue": "344",
+          "newValue": "973",
+          "anchorShift": 2,
+          "sameSource": false,
+          "sourceDistance": 1
+        }
+      ]
+    },
+    {
+      "turn": "Primera",
+      "jur": "Córdoba",
+      "head": "1573",
+      "family": "375/573",
+      "sources": [
+        "Previa"
+      ],
+      "physicalPaths": 1,
+      "rootsD1D7SameShapeSameSource": 0,
+      "sameSourceRootEventsSix": 0,
+      "activeDaysLast6": 0,
+      "neighbourRootEventsLast3": 0,
+      "neighbourRootEventsSix": 1,
+      "overlapRootEventsSix": 4,
+      "anyShapeRootsSix": 1,
+      "patternNewestFirst": "000000",
+      "poolsContainingFamily": {
+        "ANY": true,
+        "SAME_6": false,
+        "NEIGHBOR_3": false,
+        "NEIGHBOR_6": true,
+        "OVERLAP_6": true,
+        "OTHER_SHAPE_6": true
+      },
+      "eligibleCountsAtOwnCut": {
+        "ANY": 85,
+        "SAME_6": 39,
+        "NEIGHBOR_3": 32,
+        "NEIGHBOR_6": 52,
+        "OVERLAP_6": 84,
+        "OTHER_SHAPE_6": 80
+      },
+      "matchedWinningRootExamples": [
+        {
+          "rootDate": "2026-10-19",
+          "daysBack": 5,
+          "rootSource": "prevNocturno",
+          "targetSource": "Previa",
+          "rootTurn": "Previa",
+          "rootJur": "Córdoba",
+          "oldHead": "2099",
+          "oldFamily": "099/990",
+          "oldValue": "099",
+          "newValue": "573",
+          "anchorShift": 0,
+          "sameSource": false,
+          "sourceDistance": 1
+        }
+      ]
+    },
+    {
+      "turn": "Matutino",
+      "jur": "Ciudad",
+      "head": "9321",
+      "family": "123/321",
+      "sources": [
+        "Previa"
+      ],
+      "physicalPaths": 1,
+      "rootsD1D7SameShapeSameSource": 0,
+      "sameSourceRootEventsSix": 1,
+      "activeDaysLast6": 1,
+      "neighbourRootEventsLast3": 0,
+      "neighbourRootEventsSix": 0,
+      "overlapRootEventsSix": 2,
+      "anyShapeRootsSix": 1,
+      "patternNewestFirst": "000100",
+      "poolsContainingFamily": {
+        "ANY": true,
+        "SAME_6": true,
+        "NEIGHBOR_3": false,
+        "NEIGHBOR_6": false,
+        "OVERLAP_6": true,
+        "OTHER_SHAPE_6": true
+      },
+      "eligibleCountsAtOwnCut": {
+        "ANY": 103,
+        "SAME_6": 40,
+        "NEIGHBOR_3": 40,
+        "NEIGHBOR_6": 62,
+        "OVERLAP_6": 101,
+        "OTHER_SHAPE_6": 98
+      },
+      "matchedWinningRootExamples": [
+        {
+          "rootDate": "2026-10-20",
+          "daysBack": 4,
+          "rootSource": "Previa",
+          "targetSource": "Previa",
+          "rootTurn": "Primera",
+          "rootJur": "Santa Fé",
+          "oldHead": "8568",
+          "oldFamily": "568/865",
+          "oldValue": "568",
+          "newValue": "321",
+          "anchorShift": -1,
+          "sameSource": true,
+          "sourceDistance": 0
+        }
+      ]
+    },
+    {
+      "turn": "Vespertino",
+      "jur": "Provincia",
+      "head": "5693",
+      "family": "396/693",
+      "sources": [
+        "Matutino"
+      ],
+      "physicalPaths": 2,
+      "rootsD1D7SameShapeSameSource": 0,
+      "sameSourceRootEventsSix": 0,
+      "activeDaysLast6": 0,
+      "neighbourRootEventsLast3": 2,
+      "neighbourRootEventsSix": 2,
+      "overlapRootEventsSix": 1,
+      "anyShapeRootsSix": 4,
+      "patternNewestFirst": "000000",
+      "poolsContainingFamily": {
+        "ANY": true,
+        "SAME_6": false,
+        "NEIGHBOR_3": true,
+        "NEIGHBOR_6": true,
+        "OVERLAP_6": true,
+        "OTHER_SHAPE_6": true
+      },
+      "eligibleCountsAtOwnCut": {
+        "ANY": 120,
+        "SAME_6": 42,
+        "NEIGHBOR_3": 52,
+        "NEIGHBOR_6": 76,
+        "OVERLAP_6": 113,
+        "OTHER_SHAPE_6": 116
+      },
+      "matchedWinningRootExamples": [
+        {
+          "rootDate": "2026-10-22",
+          "daysBack": 2,
+          "rootSource": "Primera",
+          "targetSource": "Matutino",
+          "rootTurn": "Nocturno",
+          "rootJur": "Ciudad",
+          "oldHead": "9760",
+          "oldFamily": "067/760",
+          "oldValue": "760",
+          "newValue": "396",
+          "anchorShift": -1,
+          "sameSource": false,
+          "sourceDistance": 1
+        },
+        {
+          "rootDate": "2026-10-22",
+          "daysBack": 2,
+          "rootSource": "Primera",
+          "targetSource": "Matutino",
+          "rootTurn": "Nocturno",
+          "rootJur": "Entre Ríos",
+          "oldHead": "8067",
+          "oldFamily": "067/760",
+          "oldValue": "067",
+          "newValue": "396",
+          "anchorShift": -1,
+          "sameSource": false,
+          "sourceDistance": 1
+        },
+        {
+          "rootDate": "2026-10-19",
+          "daysBack": 5,
+          "rootSource": "prevNocturno",
+          "targetSource": "Matutino",
+          "rootTurn": "Vespertino",
+          "rootJur": "Entre Ríos",
+          "oldHead": "3019",
+          "oldFamily": "019/910",
+          "oldValue": "019",
+          "newValue": "396",
+          "anchorShift": -1,
+          "sameSource": false,
+          "sourceDistance": 3
+        },
+        {
+          "rootDate": "2026-10-19",
+          "daysBack": 5,
+          "rootSource": "prevNocturno",
+          "targetSource": "Matutino",
+          "rootTurn": "Vespertino",
+          "rootJur": "Entre Ríos",
+          "oldHead": "3019",
+          "oldFamily": "019/910",
+          "oldValue": "019",
+          "newValue": "396",
+          "anchorShift": -1,
+          "sameSource": false,
+          "sourceDistance": 3
+        },
+        {
+          "rootDate": "2026-10-17",
+          "daysBack": 6,
+          "rootSource": "prevNocturno",
+          "targetSource": "Matutino",
+          "rootTurn": "Matutino",
+          "rootJur": "Provincia",
+          "oldHead": "9361",
+          "oldFamily": "163/361",
+          "oldValue": "361",
+          "newValue": "396",
+          "anchorShift": -2,
+          "sameSource": false,
+          "sourceDistance": 3
+        }
+      ]
+    },
+    {
+      "turn": "Nocturno",
+      "jur": "Córdoba",
+      "head": "5739",
+      "family": "739/937",
+      "sources": [
+        "Previa",
+        "Matutino"
+      ],
+      "physicalPaths": 2,
+      "rootsD1D7SameShapeSameSource": 0,
+      "sameSourceRootEventsSix": 0,
+      "activeDaysLast6": 0,
+      "neighbourRootEventsLast3": 1,
+      "neighbourRootEventsSix": 2,
+      "overlapRootEventsSix": 3,
+      "anyShapeRootsSix": 4,
+      "patternNewestFirst": "000000",
+      "poolsContainingFamily": {
+        "ANY": true,
+        "SAME_6": false,
+        "NEIGHBOR_3": true,
+        "NEIGHBOR_6": true,
+        "OVERLAP_6": true,
+        "OTHER_SHAPE_6": true
+      },
+      "eligibleCountsAtOwnCut": {
+        "ANY": 149,
+        "SAME_6": 53,
+        "NEIGHBOR_3": 57,
+        "NEIGHBOR_6": 81,
+        "OVERLAP_6": 138,
+        "OTHER_SHAPE_6": 145
+      },
+      "matchedWinningRootExamples": [
+        {
+          "rootDate": "2026-10-22",
+          "daysBack": 2,
+          "rootSource": "prevNocturno",
+          "targetSource": "Matutino",
+          "rootTurn": "Primera",
+          "rootJur": "Córdoba",
+          "oldHead": "7967",
+          "oldFamily": "769/967",
+          "oldValue": "967",
+          "newValue": "937",
+          "anchorShift": 2,
+          "sameSource": false,
+          "sourceDistance": 3
+        },
+        {
+          "rootDate": "2026-10-21",
+          "daysBack": 3,
+          "rootSource": "prevNocturno",
+          "targetSource": "Matutino",
+          "rootTurn": "Previa",
+          "rootJur": "Ciudad",
+          "oldHead": "6802",
+          "oldFamily": "208/802",
+          "oldValue": "802",
+          "newValue": "937",
+          "anchorShift": 2,
+          "sameSource": false,
+          "sourceDistance": 3
+        },
+        {
+          "rootDate": "2026-10-21",
+          "daysBack": 3,
+          "rootSource": "Primera",
+          "targetSource": "Matutino",
+          "rootTurn": "Nocturno",
+          "rootJur": "Córdoba",
+          "oldHead": "1746",
+          "oldFamily": "647/746",
+          "oldValue": "746",
+          "newValue": "937",
+          "anchorShift": -1,
+          "sameSource": false,
+          "sourceDistance": 1
+        },
+        {
+          "rootDate": "2026-10-20",
+          "daysBack": 4,
+          "rootSource": "Vespertino",
+          "targetSource": "Matutino",
+          "rootTurn": "Nocturno",
+          "rootJur": "Córdoba",
+          "oldHead": "2647",
+          "oldFamily": "647/746",
+          "oldValue": "647",
+          "newValue": "937",
+          "anchorShift": -1,
+          "sameSource": false,
+          "sourceDistance": 1
+        }
+      ]
+    }
+  ]
+}
