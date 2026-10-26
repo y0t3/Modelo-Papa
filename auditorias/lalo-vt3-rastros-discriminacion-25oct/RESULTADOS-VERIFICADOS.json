@@ -1,0 +1,366 @@
+{
+  "kind": "Observacional historico pre/post controlado, no sellado prospectivo",
+  "range": "2026-06-01..2026-10-24",
+  "run_id": 40259981829,
+  "signalDefinition": {
+    "DOS_DIAS": ">=2 dias efectivos historicos activados, misma forma VT3, fuente igual/vecina, ancla ±2",
+    "DOS_MISMA": ">=2 dias efectivos historicos activados, misma forma VT3, misma columna y ancla ±1",
+    "CADENA": "dos fechas con figura activada, fuentes s-2,s-1, candidato s, memoria 6j, ancla ±2"
+  },
+  "comparison": [
+    {
+      "period": "JUN_JUL",
+      "flag": "DOS_DIAS",
+      "cuts": 255,
+      "candidateExposures": 21416,
+      "candidatesWithFlag": 11407,
+      "notWinningExposures": 11294,
+      "physicalWinnerFamilies": 217,
+      "winningFamiliesWithFlag": 113,
+      "expectedWinningFamiliesRandom": 114.02188920840163,
+      "randomAverage": 114.0232,
+      "pRandomAtLeastObserved": 0.5866,
+      "gainOverRandom": -1.0218892084016318,
+      "matchedCutCount": 133,
+      "meanWithinCutWinnerRateDelta": -0.0017862527535971126,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "JUN_JUL",
+      "flag": "DOS_MISMA",
+      "cuts": 255,
+      "candidateExposures": 21416,
+      "candidatesWithFlag": 1866,
+      "notWinningExposures": 1842,
+      "physicalWinnerFamilies": 217,
+      "winningFamiliesWithFlag": 24,
+      "expectedWinningFamiliesRandom": 17.611877878535253,
+      "randomAverage": 17.7454,
+      "pRandomAtLeastObserved": 0.073,
+      "gainOverRandom": 6.388122121464747,
+      "matchedCutCount": 127,
+      "meanWithinCutWinnerRateDelta": 0.008219412806287862,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "JUN_JUL",
+      "flag": "CADENA",
+      "cuts": 255,
+      "candidateExposures": 21416,
+      "candidatesWithFlag": 1066,
+      "notWinningExposures": 1056,
+      "physicalWinnerFamilies": 217,
+      "winningFamiliesWithFlag": 10,
+      "expectedWinningFamiliesRandom": 10.108853500314105,
+      "randomAverage": 10.1968,
+      "pRandomAtLeastObserved": 0.5684,
+      "gainOverRandom": -0.10885350031410468,
+      "matchedCutCount": 97,
+      "meanWithinCutWinnerRateDelta": 0.001420970306904189,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "AGO_SEP",
+      "flag": "DOS_DIAS",
+      "cuts": 260,
+      "candidateExposures": 22277,
+      "candidatesWithFlag": 12600,
+      "notWinningExposures": 12461,
+      "physicalWinnerFamilies": 236,
+      "winningFamiliesWithFlag": 139,
+      "expectedWinningFamiliesRandom": 134.95423131405744,
+      "randomAverage": 134.854,
+      "pRandomAtLeastObserved": 0.31,
+      "gainOverRandom": 4.045768685942562,
+      "matchedCutCount": 145,
+      "meanWithinCutWinnerRateDelta": 0.0057626529101842796,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "AGO_SEP",
+      "flag": "DOS_MISMA",
+      "cuts": 260,
+      "candidateExposures": 22277,
+      "candidatesWithFlag": 1839,
+      "notWinningExposures": 1811,
+      "physicalWinnerFamilies": 236,
+      "winningFamiliesWithFlag": 28,
+      "expectedWinningFamiliesRandom": 20.539548726384442,
+      "randomAverage": 20.6062,
+      "pRandomAtLeastObserved": 0.0564,
+      "gainOverRandom": 7.460451273615558,
+      "matchedCutCount": 146,
+      "meanWithinCutWinnerRateDelta": 0.0033896618743022118,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "AGO_SEP",
+      "flag": "CADENA",
+      "cuts": 260,
+      "candidateExposures": 22277,
+      "candidatesWithFlag": 1458,
+      "notWinningExposures": 1441,
+      "physicalWinnerFamilies": 236,
+      "winningFamiliesWithFlag": 17,
+      "expectedWinningFamiliesRandom": 14.88122418446948,
+      "randomAverage": 14.8746,
+      "pRandomAtLeastObserved": 0.312,
+      "gainOverRandom": 2.1187758155305207,
+      "matchedCutCount": 97,
+      "meanWithinCutWinnerRateDelta": 0.000828815960692223,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "OCT",
+      "flag": "DOS_DIAS",
+      "cuts": 105,
+      "candidateExposures": 8844,
+      "candidatesWithFlag": 4639,
+      "notWinningExposures": 4596,
+      "physicalWinnerFamilies": 86,
+      "winningFamiliesWithFlag": 43,
+      "expectedWinningFamiliesRandom": 44.840434243557944,
+      "randomAverage": 44.877,
+      "pRandomAtLeastObserved": 0.7014,
+      "gainOverRandom": -1.8404342435579437,
+      "matchedCutCount": 60,
+      "meanWithinCutWinnerRateDelta": -0.0027434473801352523,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "OCT",
+      "flag": "DOS_MISMA",
+      "cuts": 105,
+      "candidateExposures": 8844,
+      "candidatesWithFlag": 760,
+      "notWinningExposures": 753,
+      "physicalWinnerFamilies": 86,
+      "winningFamiliesWithFlag": 7,
+      "expectedWinningFamiliesRandom": 7.558194436214786,
+      "randomAverage": 7.6056,
+      "pRandomAtLeastObserved": 0.6482,
+      "gainOverRandom": -0.5581944362147864,
+      "matchedCutCount": 59,
+      "meanWithinCutWinnerRateDelta": -0.0020747864653485612,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "OCT",
+      "flag": "CADENA",
+      "cuts": 105,
+      "candidateExposures": 8844,
+      "candidatesWithFlag": 395,
+      "notWinningExposures": 392,
+      "physicalWinnerFamilies": 86,
+      "winningFamiliesWithFlag": 3,
+      "expectedWinningFamiliesRandom": 3.9172071931466967,
+      "randomAverage": 3.9148,
+      "pRandomAtLeastObserved": 0.7628,
+      "gainOverRandom": -0.9172071931466967,
+      "matchedCutCount": 39,
+      "meanWithinCutWinnerRateDelta": -0.0004061222702379928,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "TOTAL",
+      "flag": "DOS_DIAS",
+      "cuts": 620,
+      "candidateExposures": 52537,
+      "candidatesWithFlag": 28646,
+      "notWinningExposures": 28351,
+      "physicalWinnerFamilies": 539,
+      "winningFamiliesWithFlag": 295,
+      "expectedWinningFamiliesRandom": 293.8165547660169,
+      "randomAverage": 293.9122,
+      "pRandomAtLeastObserved": 0.479,
+      "gainOverRandom": 1.1834452339830932,
+      "matchedCutCount": 338,
+      "meanWithinCutWinnerRateDelta": 0.0012822669021899092,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "TOTAL",
+      "flag": "DOS_MISMA",
+      "cuts": 620,
+      "candidateExposures": 52537,
+      "candidatesWithFlag": 4465,
+      "notWinningExposures": 4406,
+      "physicalWinnerFamilies": 539,
+      "winningFamiliesWithFlag": 59,
+      "expectedWinningFamiliesRandom": 45.709621041134504,
+      "randomAverage": 45.821,
+      "pRandomAtLeastObserved": 0.0254,
+      "gainOverRandom": 13.290378958865496,
+      "matchedCutCount": 332,
+      "meanWithinCutWinnerRateDelta": 0.004266095357202166,
+      "testedPreRankChange": false
+    },
+    {
+      "period": "TOTAL",
+      "flag": "CADENA",
+      "cuts": 620,
+      "candidateExposures": 52537,
+      "candidatesWithFlag": 2919,
+      "notWinningExposures": 2889,
+      "physicalWinnerFamilies": 539,
+      "winningFamiliesWithFlag": 30,
+      "expectedWinningFamiliesRandom": 28.907284877930262,
+      "randomAverage": 28.8752,
+      "pRandomAtLeastObserved": 0.447,
+      "gainOverRandom": 1.0927151220697375,
+      "matchedCutCount": 233,
+      "meanWithinCutWinnerRateDelta": 0.0008686287528651089,
+      "testedPreRankChange": false
+    }
+  ],
+  "saturday": [
+    {
+      "turn": "Previa",
+      "winners": [],
+      "missingCandidates": 30,
+      "signals": {
+        "DOS_DIAS": {
+          "eligible": 6,
+          "winning": 0
+        },
+        "DOS_MISMA": {
+          "eligible": 3,
+          "winning": 0
+        },
+        "CADENA": {
+          "eligible": 0,
+          "winning": 0
+        }
+      }
+    },
+    {
+      "turn": "Primera",
+      "winners": [
+        {
+          "family": "375/573",
+          "dates": 1,
+          "marks": 1,
+          "dosDias": false,
+          "dosMisma": false,
+          "cadena": false
+        },
+        {
+          "family": "379/973",
+          "dates": 2,
+          "marks": 2,
+          "dosDias": true,
+          "dosMisma": false,
+          "cadena": false
+        }
+      ],
+      "missingCandidates": 85,
+      "signals": {
+        "DOS_DIAS": {
+          "eligible": 30,
+          "winning": 1
+        },
+        "DOS_MISMA": {
+          "eligible": 3,
+          "winning": 0
+        },
+        "CADENA": {
+          "eligible": 0,
+          "winning": 0
+        }
+      }
+    },
+    {
+      "turn": "Matutino",
+      "winners": [
+        {
+          "family": "123/321",
+          "dates": 1,
+          "marks": 1,
+          "dosDias": false,
+          "dosMisma": false,
+          "cadena": false
+        }
+      ],
+      "missingCandidates": 103,
+      "signals": {
+        "DOS_DIAS": {
+          "eligible": 34,
+          "winning": 0
+        },
+        "DOS_MISMA": {
+          "eligible": 3,
+          "winning": 0
+        },
+        "CADENA": {
+          "eligible": 2,
+          "winning": 0
+        }
+      }
+    },
+    {
+      "turn": "Vespertino",
+      "winners": [
+        {
+          "family": "396/693",
+          "dates": 1,
+          "marks": 2,
+          "dosDias": false,
+          "dosMisma": false,
+          "cadena": false
+        }
+      ],
+      "missingCandidates": 120,
+      "signals": {
+        "DOS_DIAS": {
+          "eligible": 47,
+          "winning": 0
+        },
+        "DOS_MISMA": {
+          "eligible": 3,
+          "winning": 0
+        },
+        "CADENA": {
+          "eligible": 7,
+          "winning": 0
+        }
+      }
+    },
+    {
+      "turn": "Nocturno",
+      "winners": [
+        {
+          "family": "739/937",
+          "dates": 2,
+          "marks": 2,
+          "dosDias": true,
+          "dosMisma": false,
+          "cadena": false
+        }
+      ],
+      "missingCandidates": 149,
+      "signals": {
+        "DOS_DIAS": {
+          "eligible": 50,
+          "winning": 1
+        },
+        "DOS_MISMA": {
+          "eligible": 4,
+          "winning": 0
+        },
+        "CADENA": {
+          "eligible": 7,
+          "winning": 0
+        }
+      }
+    }
+  ],
+  "invariants": {
+    "cuts": 620,
+    "heads": 3321,
+    "top3": 17,
+    "top5": 35,
+    "top10": 59,
+    "noRankChanges": true
+  },
+  "note": "Exposiciones son familias por corte PRE y no premios. Etiquetas de ganadoras se usan POST. p aleatoria no confirmatoria tras varias hipotesis."
+}
