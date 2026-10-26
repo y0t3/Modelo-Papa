@@ -30,7 +30,7 @@ export type FigureAntecedent=FigureRoute&{
  verticalShift:number;sourceShift:number;currentRoute:FigureRoute;
 };
 export type AuxFigureStatus={
- available:boolean;formable:boolean;pathCount:number;
+ available:boolean;rankingAvailable:boolean;formable:boolean;pathCount:number;
  recognized:boolean;rank:number|null;top3:boolean;top10:boolean;
  sourceTurns:AuxSourceTurn[];
 };
@@ -104,7 +104,7 @@ function historicRoots(date:string,days:InfoVisualDay[]):{dates:string[];roots:H
  return {dates:dates.map(d=>d.date),roots};
 }
 const emptyAux=():AuxFigureStatus=>({
- available:false,formable:false,pathCount:0,recognized:false,
+ available:false,rankingAvailable:false,formable:false,pathCount:0,recognized:false,
  rank:null,top3:false,top10:false,sourceTurns:[]
 });
 function auxPresence(family:string,target:Turno,input?:TrackingAuxInput):AuxFigureStatus{
@@ -114,7 +114,7 @@ function auxPresence(family:string,target:Turno,input?:TrackingAuxInput):AuxFigu
  const members=[...new Set(family.split('/'))];
  const paths=members.flatMap(v=>findAuxPaths(board,v));
  const ranked=input.view?.ranks[3]?.find(x=>x.family===family);
- return {available:true,formable:paths.length>0,pathCount:paths.length,
+ return {available:true,rankingAvailable:!!input.view,formable:paths.length>0,pathCount:paths.length,
   recognized:!!ranked,rank:ranked?.rank??null,top3:!!ranked&&ranked.rank<=3,
   top10:!!ranked&&ranked.rank<=10,
   sourceTurns:[...new Set(paths.flatMap(p=>p.map(c=>c.source)))]};
