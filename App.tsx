@@ -22,6 +22,7 @@ import {buildDailyPanorama,buildPredictivePanorama,dailyHeadOwnerId} from './src
 import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
 import {buildMotorLaloAuxiliar,extractAuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {AuxiliarHistory} from './src/motorLaloAuxiliar';
+import type {TrackingAuxInput} from './src/figureTracking';
 import type {LaloHistorical} from './src/motorLalo';
 import type {InfoVisualDay,TurnHistoryFrame} from './src/infoTurnHistory';
 import type {AuxGalleryDay} from './src/infoAuxGallery';
@@ -99,6 +100,7 @@ function LaloApp(){
  const [auxiliarError,setAuxiliarError]=useState<string|null>(null);
  const [auxTodayPast,setAuxTodayPast]=useState<AuxiliarHistory[]>([]);
  const [auxTodayError,setAuxTodayError]=useState<string|null>(null);
+ const [figureFocus,setFigureFocus]=useState<string|null>(null);
  const [predictionMode,setPredictionMode]=useState<'lalo'|'auxiliar'>('lalo');
  const [predictiveMode,setPredictiveMode]=useState<'lalo'|'auxiliar'>('lalo');
 
@@ -266,7 +268,7 @@ function LaloApp(){
    })).then(days=>{
     if(auxInfoRequest.current===request)setInfoAuxDays(days);
    }).catch(()=>{if(auxInfoRequest.current===request)setInfoAuxDays([])});
-   setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);
+   setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);setFigureFocus(null);
    
    setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
@@ -329,6 +331,22 @@ function LaloApp(){
   const input=auxAtCut(activeAuxHeads,target,auxMode);
   return buildMotorLaloAuxiliar(date,target,input,activeAuxHistory);
  },[screen,date,target,activeAuxHeads,activeAuxHistory,hist,auxMode]);
+ // Presencias independientes del seguimiento. Cada uno conserva el
+ // origen PRE y sus propias raíces; jamás se mezclan con MV1.
+ const trackingAyerView=useMemo(()=>screen==='info'&&date&&auxHeads&&
+  auxiliarPast.length===hist.length&&auxiliarPast.length?
+  buildMotorLaloAuxiliar(date,target,auxAtCut(auxHeads,target,'anterior'),auxiliarPast):null,
+  [screen,date,target,auxHeads,auxiliarPast,hist]);
+ const trackingHoyView=useMemo(()=>screen==='info'&&date&&auxToday&&
+  auxTodayPast.length===hist.length&&auxTodayPast.length?
+  buildMotorLaloAuxiliar(date,target,auxAtCut(auxToday,target,'intrajornada'),auxTodayPast):null,
+  [screen,date,target,auxToday,auxTodayPast,hist]);
+ const trackingAyer:TrackingAuxInput=useMemo(()=>({
+  heads:auxHeads,view:trackingAyerView,mode:'anterior'
+ }),[auxHeads,trackingAyerView]);
+ const trackingHoy:TrackingAuxInput=useMemo(()=>({
+  heads:auxToday,view:trackingHoyView,mode:'intrajornada'
+ }),[auxToday,trackingHoyView]);
  const headEvents=useMemo(()=>JURS.map(jur=>({
   jur,head:data?.[target]?.[jur]||''
  })).filter(x=>/^\d{4}$/.test(x.head)),[data,target]);
@@ -372,6 +390,13 @@ function LaloApp(){
  const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
  const changeAuxMode=(next:AuxMode)=>{setAuxMode(next);setFocused(null)};
  const showFamily=(id:string)=>{setPredictiveMode('lalo');navigateTo('predictiva');setFocused(id)};
+ const trackFigure=(family:string)=>{
+  setFigureFocus('vt3|'+family);navigateTo('info');
+ };
+ const openFigureAux=(family:string,mode:'anterior'|'intrajornada')=>{
+  setAuxMode(mode);setPredictiveMode('auxiliar');
+  navigateTo('predictiva');setFocused('vt3|'+family);
+ };
  const showAuxFamily=(id:string)=>{
   setPredictiveMode('auxiliar');navigateTo('predictiva');setFocused(id);
  };
@@ -545,7 +570,8 @@ function LaloApp(){
     {!experimental?<>
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
-       auxiliar={auxiliar} post={post} heads={sheet?.heads[target]||[]} onFocus={showFamily}/>:
+       auxiliar={auxiliar} post={post} heads={sheet?.heads[target]||[]}
+       onFocus={showFamily} onTrackFamily={trackFigure}/>: 
       auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
        date={dateText} turn={target} view={motor}
        auxiliar={auxiliar} heads={sheet?.heads[target]||[]}
@@ -599,6 +625,9 @@ function LaloApp(){
      }:null}
      auxMode={auxMode} onAuxMode={changeAuxMode}
      auxPrediction={auxiliar} auxHistory={activeAuxHistory}
+     trackingAyer={trackingAyer} trackingHoy={trackingHoy}
+     figureFocus={figureFocus} onFigureLalo={family=>showFamily('vt3|'+family)}
+     onFigureAux={openFigureAux}
      onOpenAuxDay={dayDate=>{
       const day=visualDays.find(x=>x.date===dayDate);
       if(day)openInfoFrame({
