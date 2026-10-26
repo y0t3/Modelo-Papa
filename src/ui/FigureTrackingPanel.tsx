@@ -85,14 +85,14 @@ function AuxMini({data,mode,turn,family}:{
   {!paths.length?<Text style={[styles.small,{color:c.muted}]}>Esta familia no tiene recorrido físico AUX en el corte elegido.</Text>:null}
  </View>;
 }
-function StatusLine({name,formable,rank,available}:{
- name:string;formable:boolean;rank:number|null;available:boolean
+function StatusLine({name,formable,rank,available,rankingAvailable=true}:{
+ name:string;formable:boolean;rank:number|null;available:boolean;rankingAvailable?:boolean
 }){
  const {colors:c}=useLaloTheme();
  return <View style={styles.statusRow}>
   <Text style={[styles.small,{fontWeight:'800',color:c.text,flex:1}]}>{name}</Text>
   <Text style={[styles.small,{color:c.subtext,textAlign:'right',flex:1}]}>
-   {!available?'Sin datos':rank!==null?'Reconocida · #'+rank:
+   {!available?'Sin datos':!rankingAvailable?'Hoja lista · ranking no disponible':rank!==null?'Reconocida · #'+rank:
     formable?'Formable · no reconocida':'No formable'}
   </Text>
  </View>;
@@ -201,8 +201,10 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
     </Text>
     <StatusLine name="Modelo Lalo +11" available formable rank={current.rank}/>
     <StatusLine name="AUX AYER" available={current.auxYesterday.available}
+     rankingAvailable={current.auxYesterday.rankingAvailable}
      formable={current.auxYesterday.formable} rank={current.auxYesterday.rank}/>
     <StatusLine name="AUX HOY" available={current.auxToday.available}
+     rankingAvailable={current.auxToday.rankingAvailable}
      formable={current.auxToday.formable} rank={current.auxToday.rank}/>
     <View style={styles.miniLine}>
      <FigureMini route={active} source={currentColumn(active)}
