@@ -15,7 +15,7 @@ jobs:
         with: {node-version: 24}
       - run: npm install
       - name: Comprobacion de TypeScript
-        run: npx tsc --noEmit
+        run: npx tsc --noEmit -p tsconfig.seguimiento.json
       - name: Seguimiento sin lectura de futuro
         run: npx --yes tsx scripts/test-figure-tracking.ts
       - name: Motor Lalo congelado
