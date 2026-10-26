@@ -167,13 +167,6 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
         </Text>
         {model==='auxiliar'&&expanded===f.key?<View style={{gap:5,marginTop:8}}>
          {f.details.map((line,i)=><Text key={i} style={[s.detail,{color:c.text}]}>{line}</Text>)}
-          {kind==='vt3'&&model==='lalo'&&onTrackFamily?<Pressable
-           accessibilityRole="button" onPress={()=>onTrackFamily(f.family)}
-           style={{paddingVertical:8}}>
-           <Text style={{color:c.accent,fontWeight:'900',fontSize:12}}>
-            Seguir esta figura en Info →
-           </Text>
-          </Pressable>:null}
          {!f.canFocusPlus&&onAuxFocus?<Pressable accessibilityRole="button"
           onPress={()=>onAuxFocus(kind+'|'+f.family)}>
           <Text style={[s.open,{color:c.accent}]}>Ver recorridos AUX y mini captura ›</Text>
@@ -183,6 +176,11 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
           <Text style={[s.open,{color:c.accent}]}>Ver recorrido +11 ›</Text>
          </Pressable>:null}
         </View>:null}
+        {kind==='vt3'&&model==='lalo'&&onTrackFamily?<Pressable
+         accessibilityRole="button" onPress={()=>onTrackFamily(f.family)}
+         style={{paddingVertical:8}}>
+         <Text style={{color:c.accent,fontWeight:'900',fontSize:12}}>Seguir esta figura en Info →</Text>
+        </Pressable>:null}
         <Text style={[s.open,{color:c.accent}]}>
          {model==='auxiliar'?'Ver recorridos auxiliares ›':'Ver recorrido ›'}
         </Text>
