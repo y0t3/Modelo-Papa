@@ -1,0 +1,153 @@
+{
+  "fromRun": 40261013181,
+  "executed": "2026-10-25",
+  "source": "historic PRE reconstruction; not actual device snapshots",
+  "type": "RETROSPECTIVE_PRE_RECONSTRUCTION_NOT_SEALED",
+  "start": "2026-10-01",
+  "end": "2026-10-24",
+  "days": 21,
+  "cuts": 105,
+  "heads": 561,
+  "aggregate": {
+    "LALO": {
+      "top": {
+        "top3": 2,
+        "top5": 11,
+        "top10": 15
+      },
+      "cutsWithCandidates": 105,
+      "cutsWithThree": 105,
+      "cutsWithTen": 105,
+      "meanCandidates": 10,
+      "uniqueToReaderTop3Heads": 0,
+      "sharedWithLaloTop3": 315
+    },
+    "GEOMETRIA": {
+      "top": {
+        "top3": 3,
+        "top5": 4,
+        "top10": 9
+      },
+      "cutsWithCandidates": 105,
+      "cutsWithThree": 105,
+      "cutsWithTen": 105,
+      "meanCandidates": 10,
+      "uniqueToReaderTop3Heads": 2,
+      "sharedWithLaloTop3": 28
+    },
+    "NUEVA_PRUEBA": {
+      "top": {
+        "top3": 3,
+        "top5": 5,
+        "top10": 10
+      },
+      "cutsWithCandidates": 105,
+      "cutsWithThree": 105,
+      "cutsWithTen": 105,
+      "meanCandidates": 10,
+      "uniqueToReaderTop3Heads": 2,
+      "sharedWithLaloTop3": 71
+    },
+    "CONECTADAS": {
+      "top": {
+        "top3": 3,
+        "top5": 3,
+        "top10": 9
+      },
+      "cutsWithCandidates": 105,
+      "cutsWithThree": 105,
+      "cutsWithTen": 105,
+      "meanCandidates": 10,
+      "uniqueToReaderTop3Heads": 3,
+      "sharedWithLaloTop3": 12
+    }
+  },
+  "periods": [
+    {
+      "from": "2026-10-01",
+      "until": "2026-10-10",
+      "results": {
+        "LALO": {
+          "top3": 2,
+          "top5": 6,
+          "top10": 8
+        },
+        "GEOMETRIA": {
+          "top3": 2,
+          "top5": 3,
+          "top10": 5
+        },
+        "NUEVA_PRUEBA": {
+          "top3": 2,
+          "top5": 4,
+          "top10": 6
+        },
+        "CONECTADAS": {
+          "top3": 2,
+          "top5": 2,
+          "top10": 5
+        }
+      }
+    },
+    {
+      "from": "2026-10-11",
+      "until": "2026-10-17",
+      "results": {
+        "LALO": {
+          "top3": 0,
+          "top5": 4,
+          "top10": 6
+        },
+        "GEOMETRIA": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 4
+        },
+        "NUEVA_PRUEBA": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 4
+        },
+        "CONECTADAS": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 3
+        }
+      }
+    },
+    {
+      "from": "2026-10-18",
+      "until": "2026-10-24",
+      "results": {
+        "LALO": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 1
+        },
+        "GEOMETRIA": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "NUEVA_PRUEBA": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "CONECTADAS": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        }
+      }
+    }
+  ],
+  "postResultsNeverUsedToRank": true,
+  "snapshotAvailabilityNotKnown": true,
+  "notes": [
+    "All readers compared with same PRE cut and heads, but no genuine device snapshot is claimed.",
+    "Local AsyncStorage PRE records are not available from GitHub and cannot be counted here.",
+    "No addition or change of official MV1 ranking or stored PRE.",
+    "ZERO wins need to be distinguished from zero candidates in connected configurations."
+  ]
+}
