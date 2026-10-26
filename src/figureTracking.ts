@@ -27,7 +27,7 @@ export type FigureRoute={
 export type FigureAntecedent=FigureRoute&{
  date:string;turn:Turno;jurisdiction:string;head:string;
  daysAgo:number;relation:'MISMA_FUENTE'|'VECINA'|'OTRA_FUENTE';
- verticalShift:number;sourceShift:number;
+ verticalShift:number;sourceShift:number;currentRoute:FigureRoute;
 };
 export type AuxFigureStatus={
  available:boolean;formable:boolean;pathCount:number;
@@ -147,7 +147,8 @@ export function buildFigureTracking(
     old.source,p.source,old.shape].join('|');
    if(!matches.has(key))matches.set(key,{...old,
     daysAgo:history.dates.length-history.dates.indexOf(old.date),
-    relation,verticalShift:p.anchor-old.anchor,sourceShift:ds});
+    relation,verticalShift:p.anchor-old.anchor,sourceShift:ds,
+    currentRoute:{...p,cells:p.cells.map(c=>({...c}))}});
   }
   const evidence=[...matches.values()].sort((a,b)=>
    b.date.localeCompare(a.date)||
