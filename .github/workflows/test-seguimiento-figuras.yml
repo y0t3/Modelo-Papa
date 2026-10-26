@@ -1,0 +1,28 @@
+name: Seguimiento de figuras - pruebas y compilacion
+on:
+  push:
+    branches: [feature/seguimiento-figuras-info-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Comprobacion de TypeScript
+        run: npx tsc --noEmit
+      - name: Seguimiento sin lectura de futuro
+        run: npx --yes tsx scripts/test-figure-tracking.ts
+      - name: Motor Lalo congelado
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Ambas variantes AUX
+        run: npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
+      - name: Minihojas y comparadores
+        run: |
+          npx --yes tsx scripts/test-info-aux-predictiva-top3.ts
+          npx --yes tsx scripts/lab-prediccion-paralela-test.ts
