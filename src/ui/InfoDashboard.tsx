@@ -14,6 +14,8 @@ import type {AuxGalleryDay} from '../infoAuxGallery';
 import type {AuxMode} from '../auxTemporalModes';
 import type {AuxiliarHistory,AuxiliarView} from '../motorLaloAuxiliar';
 import TurnStrip from './TurnStrip';
+import FigureTrackingPanel from './FigureTrackingPanel';
+import type {TrackingAuxInput} from '../figureTracking';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
 
@@ -24,6 +26,9 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;
  auxDays:AuxGalleryDay[];currentAux:AuxGalleryDay|null;
  auxMode:AuxMode;onAuxMode:(mode:AuxMode)=>void;
  auxPrediction:AuxiliarView|null;auxHistory:AuxiliarHistory[];
+ trackingAyer:TrackingAuxInput;trackingHoy:TrackingAuxInput;
+ figureFocus:string|null;onFigureLalo:(family:string)=>void;
+ onFigureAux:(family:string,mode:AuxMode)=>void;
  onOpenAuxDay:(date:string)=>void;
  onTurnChange:(turn:Turno)=>void;onOpenFrame:(frame:TurnHistoryFrame)=>void;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
@@ -64,7 +69,8 @@ function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
 export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
- auxPrediction,auxHistory,onOpenAuxDay}:Props){
+ auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
+ figureFocus,onFigureLalo,onFigureAux}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
@@ -149,7 +155,18 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
     prediction={auxPrediction} history={auxHistory}/>
   </View>
   <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>05 · Guía del sistema</Text>
+   <Text style={[s.heading,{color:c.text}]}>05 · Seguimiento de figuras</Text>
+   <Text style={[s.desc,{color:c.subtext}]}>
+    Analizá figuras físicamente presentes, marcas ganadoras históricas y
+    reconocimiento en ambos motores. No crea nuevas predicciones.
+   </Text>
+   <FigureTrackingPanel date={date} turn={turn} sheet={sheet}
+    history={visualDays} view={view} ayer={trackingAyer} hoy={trackingHoy}
+    focusRequest={figureFocus} onOpenLalo={onFigureLalo}
+    onOpenAux={onFigureAux}/>
+  </View>
+  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
+   <Text style={[s.heading,{color:c.text}]}>06 · Guía del sistema</Text>
    <Text style={[s.desc,{color:c.subtext}]}>Abrí únicamente lo que quieras consultar.</Text>
    <View style={s.legend}>
     {KINDS.map(k=><LegendColor key={k} kind={k}/>)}
