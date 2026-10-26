@@ -1,0 +1,27 @@
+name: LAB Auditoria de tres lectores experimentales
+on:
+  push:
+    branches: [lab/auditoria-tres-experimentales-25oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Reconstruccion PRE y contraste historico 1-24 octubre
+        run: npx --yes tsx scripts/lab-auditar-tres-experimentales.ts
+      - name: Regresion motor Lalo MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Cadenas configuraciones conectadas
+        run: npx --yes tsx scripts/test-connected-vt3.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: laboratorio-tres-lectores-vt3-octubre
+          path: auditorias/tres-experimentales-25oct/resultados
+          if-no-files-found: error
