@@ -21,10 +21,11 @@ const explanation:Record<string,string>={
  * se leen de arriba hacia abajo. Los chips Top3/5/10 amplían esa misma lista.
  * No se modifica la selección, el orden, el cotejo POST ni el acceso al recorrido.
  */
-export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,post,heads=[],model='lalo',auxiliar}:{
+export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onTrackFamily,post,heads=[],model='lalo',auxiliar}:{
  date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
  auxiliar?:AuxiliarView|null;
  onFocus:(id:string)=>void;onAuxFocus?:(id:string)=>void;
+ onTrackFamily?:(family:string)=>void;
  post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
@@ -166,6 +167,13 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,pos
         </Text>
         {model==='auxiliar'&&expanded===f.key?<View style={{gap:5,marginTop:8}}>
          {f.details.map((line,i)=><Text key={i} style={[s.detail,{color:c.text}]}>{line}</Text>)}
+          {kind==='vt3'&&model==='lalo'&&onTrackFamily?<Pressable
+           accessibilityRole="button" onPress={()=>onTrackFamily(f.family)}
+           style={{paddingVertical:8}}>
+           <Text style={{color:c.accent,fontWeight:'900',fontSize:12}}>
+            Seguir esta figura en Info →
+           </Text>
+          </Pressable>:null}
          {!f.canFocusPlus&&onAuxFocus?<Pressable accessibilityRole="button"
           onPress={()=>onAuxFocus(kind+'|'+f.family)}>
           <Text style={[s.open,{color:c.accent}]}>Ver recorridos AUX y mini captura ›</Text>
