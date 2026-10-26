@@ -336,8 +336,9 @@ async function main(){
    const missing=[...physical].filter(([family])=>!recognized.has(family));
    const tracks=missing.map(([family,paths])=>track(family,paths,allRoots));
    const trackMap=new Map(tracks.map(r=>[r.family,r]));
-   const eligible=Object.fromEntries(FLAGS.map(f=>[f,tracks.filter(x=>keyOf(x,f)).length]))
-    as Record<Flag,number>;
+   const eligible:Record<Flag,number>=Object.fromEntries(
+    FLAGS.map(f=>[f,tracks.filter(x=>keyOf(x,f)).length])
+   );
 
    // Etiquetas POST: solamente después de fijar físicamente el conjunto PRE.
    const actual=JURS.map(jur=>({jur,head:today[turn]?.[jur]||''}))
