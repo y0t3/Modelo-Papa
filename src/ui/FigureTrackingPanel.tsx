@@ -122,7 +122,7 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
   (!query.trim()||f.family.includes(query.trim())||
    f.family.split('/').some(x=>x.includes(query.trim()))));
  const current=tracking?.records.find(x=>x.family===selected)||filtered[0]||null;
- const active=current?.current[0]||null;
+ const active=current?.antecedents[0]?.currentRoute||current?.current[0]||null;
  const shown=filtered.slice(0,limit);
  const previous=history.filter(day=>day.date<date);
  const oldColumn=(root:FigureAntecedent)=>{
