@@ -177,7 +177,7 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
          </Pressable>:null}
         </View>:null}
         {kind==='vt3'&&model==='lalo'&&onTrackFamily?<Pressable
-         accessibilityRole="button" onPress={()=>onTrackFamily(f.family)}
+         accessibilityRole="button" onPress={e=>{e.stopPropagation();onTrackFamily(f.family)}}
          style={{paddingVertical:8}}>
          <Text style={{color:c.accent,fontWeight:'900',fontSize:12}}>Seguir esta figura en Info →</Text>
         </Pressable>:null}
