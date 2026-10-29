@@ -16,7 +16,7 @@ Se utilizó la misma base Nocturna de seis jurisdicciones, por fila, y las raíc
 - Hubo **140 coincidencias VT2 Top10 nocturnas**: **86 (61,4 %)** cayeron en puestos libres y **54 (38,6 %)** en puestos usados.
 - Elegir solo puestos libres habría supuesto **6,54 candidatos por noche** en promedio, pero **perder 54/140 aciertos** de los que sí estaban en el Top10.
 - Densidad descriptiva: 86/830 = **10,4 %** de cabeza coincidente por puesto libre / noche vs. 54/440 = **12,3 %** por puesto usado / noche. No son probabilidades de ganar por apuesta.
-- Monte Carlo: 20.000 permutaciones de la **máscara de puestos usados** entre jornadas del mismo **mes y día de semana**, conservando fijos los rangos y resultados reales de Nocturna, además de la cantidad de puestos que habían acertado previamente en cada jornada. Se esperaban **89,2** aciertos en puestos libres (percentiles 95 % **[79,99]**), frente a los **86** observados; p unilateral de **más** aciertos en puestos libres ≈ **0,771**. No favorece la hipótesis.
+- Monte Carlo: 20.000 permutaciones de la **máscara de puestos usados** entre jornadas del mismo **mes y día de semana**, conservando fijos los rangos y resultados reales de Nocturna, y preservando dentro de cada estrato la distribución de máscaras de puestos usados. **No** se conserva el número de puestos usados de cada fecha individual, porque las máscaras se intercambian entre fechas. Se esperaban **89,2** aciertos en puestos libres (percentiles 95 % **[79,99]**), frente a los **86** observados; p unilateral de **más** aciertos en puestos libres ≈ **0,771**. No favorece la hipótesis.
 
 | Período | Puestos libres entre disponibles | Aciertos nocturnos en puestos libres | Total aciertos nocturnos |
 |---|---:|---:|---:|
