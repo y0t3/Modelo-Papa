@@ -537,8 +537,8 @@ function LaloApp(){
     </View>
     {predictiveMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
     {predictiveMode==='lalo'?
-     sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet}
-      data={predictiva} target={target} focusedOwner={focused}
+     sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet} date={date||''}
+      data={predictiva} target={target} focusedOwner={focused} visualDays={visualDays}
       onInfo={()=>navigateTo('info')}/>:
       <Text style={[s.empty,{color:c.subtext}]}>Cargá la hoja para consultar Lalo +11.</Text>:
      activeAuxHeads&&auxiliar?
@@ -596,7 +596,7 @@ function LaloApp(){
       </View>}
      {predictionMode==='lalo'?<Pressable accessibilityRole="button" onPress={()=>setExperimental(true)}
       style={[s.reload,{backgroundColor:c.surface,borderWidth:1,borderColor:c.accent,marginTop:12}]}>
-      <Text style={[s.reloadText,{color:c.accent}]}>🧪 Experimental · Comparaciones VT3 →</Text>
+      <Text style={[s.reloadText,{color:c.accent}]}>🧪 Experimental · Figuras VT2 y VT3 →</Text>
      </Pressable>:null}
     </>:<>
      <Pressable accessibilityRole="button" onPress={()=>setExperimental(false)}
