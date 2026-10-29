@@ -571,6 +571,7 @@ function LaloApp(){
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
        auxiliar={auxiliar} post={post} heads={sheet?.heads[target]||[]}
+       sheet={sheet} visualDays={visualDays}
        onFocus={showFamily} onTrackFamily={trackFigure}/>: 
       auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
        date={dateText} turn={target} view={motor}
