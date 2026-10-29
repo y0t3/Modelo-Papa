@@ -1,86 +1,163 @@
 import React from 'react';
-import {Pressable,StyleSheet,Text,View,useWindowDimensions} from 'react-native';
-import Svg,{Defs,LinearGradient,RadialGradient,Stop,Rect,Circle,Path,G,Text as SvgText,Ellipse} from 'react-native-svg';
+import {Pressable,StyleSheet,Text,View} from 'react-native';
+import Svg,{
+ Defs,LinearGradient,RadialGradient,Stop,Rect,Circle,Path,G,Text as SvgText,Ellipse
+} from 'react-native-svg';
 import type {ThemeMode} from './LaloTheme';
 
-/** Arte vectorial del encabezado: quiniela 70 % · Boca 30 %.
- * Decorativo, no interfiere con recorridos, tablas ni colores de VT. */
+/**
+ * Header de identidad de Lalo, con el escudo tradicional CABJ como referencia:
+ * silueta de hombros, letras doradas y estrellas. Recreación vectorial propia.
+ * La composición reserva tres zonas que nunca se superponen:
+ * bolillas x=0..88 · título x=109..277 · escudo x=303..389.
+ */
+const star=(cx:number,cy:number,r=2.7)=>{
+ let d='';
+ for(let j=0;j<10;j++){
+  const a=-Math.PI/2+j*Math.PI/5;
+  const rad=j%2===0?r:r*.43;
+  d+=(j===0?'M':'L')+(cx+Math.cos(a)*rad).toFixed(2)+' '+
+   (cy+Math.sin(a)*rad).toFixed(2);
+ }
+ return d+'Z';
+};
+const stars=[
+ {y:40,x:[327,337,347,357,367,377]},
+ {y:49,x:[325,335,345,355,365,375]},
+ {y:58,x:[326,336,346,356,366,376]},
+ {y:67,x:[329,339,349,359,369,379]},
+ {y:104,x:[330,340,350,360,370,379]},
+ {y:113,x:[335,345,355,365,375]},
+ {y:122,x:[341,351,361,371]},
+ {y:130,x:[347,357]},
+] as const;
+function LotteryBall({
+ x,y,r,n,theme
+}:{x:number;y:number;r:number;n:string;theme:'cream'|'gold'|'blue'}){
+ const bg=theme==='cream'?'url(#pearl)':
+  theme==='gold'?'url(#ballGold)':'url(#ballBlue)';
+ const numberColor=theme==='blue'?'#FFF5D6':'#062655';
+ return <G>
+  <Ellipse cx={x+2} cy={y+r*.78} rx={r*.78} ry={r*.34}
+   fill="#000B25" opacity=".48"/>
+  <Circle cx={x} cy={y} r={r+2.5} fill="#0E2C55"
+   stroke="#E7B447" strokeWidth="2.7"/>
+  <Circle cx={x} cy={y} r={r-1.5} fill={bg} stroke="#FFF0C3" strokeWidth="1.3"/>
+  <Circle cx={x} cy={y} r={r*.66} fill={theme==='blue'?'#183C72':'#F5F0D6'}
+   stroke={theme==='blue'?'#EED194':'#C49B51'} strokeWidth="1.2"/>
+  <SvgText x={x} y={y+r*.22} fontSize={r*.79} fontWeight="900"
+   fill={numberColor} textAnchor="middle">{n}</SvgText>
+  <Ellipse cx={x-r*.29} cy={y-r*.40} rx={r*.27} ry={r*.14}
+   fill="#FFFFFF" opacity=".74" transform={'rotate(-30 '+(x-r*.29)+' '+(y-r*.4)+')'}/>
+  <Path d={'M'+(x-r*.68)+' '+(y+r*.22)+' Q'+(x-r*.54)+' '+
+   (y+r*.69)+' '+(x-r*.14)+' '+(y+r*.76)}
+   fill="none" stroke="#FFFFFF" strokeWidth="1.5" opacity=".41"/>
+ </G>;
+}
+
 export default function BrandHero({mode,onToggle}:{mode:ThemeMode;onToggle:()=>void}){
- const {width}=useWindowDimensions();
- const tight=width<380;
  return <View style={s.outer}>
   <View style={s.hero}>
-   <Svg width="100%" height="100%" viewBox="0 0 390 166" preserveAspectRatio="none"
-    style={StyleSheet.absoluteFill}>
+   <Svg width="100%" height="100%" viewBox="0 0 390 166"
+    preserveAspectRatio="xMidYMid meet" style={StyleSheet.absoluteFill}
+    accessible={false}>
     <Defs>
-     <LinearGradient id="ocean" x1="0" y1="0" x2="1" y2="1">
-      <Stop offset="0" stopColor="#061832"/><Stop offset=".53" stopColor="#0A326C"/>
-      <Stop offset="1" stopColor="#051329"/>
+     <LinearGradient id="night" x1="0" y1="0" x2="1" y2="1">
+      <Stop offset="0" stopColor="#061B39"/>
+      <Stop offset=".5" stopColor="#0B3265"/>
+      <Stop offset="1" stopColor="#05152F"/>
      </LinearGradient>
-     <LinearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <Stop offset="0" stopColor="#FFF1B9"/><Stop offset=".49" stopColor="#F6C24E"/>
-      <Stop offset="1" stopColor="#AD701A"/>
+     <LinearGradient id="letterGold" x1="0" y1="0" x2=".2" y2="1">
+      <Stop offset="0" stopColor="#FFF5CB"/>
+      <Stop offset=".37" stopColor="#FFCE55"/>
+      <Stop offset=".69" stopColor="#EAAA2A"/>
+      <Stop offset="1" stopColor="#B37B24"/>
      </LinearGradient>
-     <LinearGradient id="blueBall" x1="0" y1="0" x2="1" y2="1">
-      <Stop offset="0" stopColor="#6DA2E5"/><Stop offset=".45" stopColor="#173C80"/>
-      <Stop offset="1" stopColor="#05183C"/>
+     <LinearGradient id="ribbonGold" x1="0" y1="0" x2="0" y2="1">
+      <Stop offset="0" stopColor="#FFE8A4"/>
+      <Stop offset=".55" stopColor="#F5C14F"/>
+      <Stop offset="1" stopColor="#C68C2E"/>
      </LinearGradient>
-     <RadialGradient id="shine" cx=".2" cy=".18" r=".9">
-      <Stop offset="0" stopColor="#FFFFFF" stopOpacity=".62"/>
-      <Stop offset=".33" stopColor="#FFFFFF" stopOpacity=".04"/>
-      <Stop offset="1" stopColor="#FFFFFF" stopOpacity="0"/>
+     <LinearGradient id="crestBlue" x1="0" y1="0" x2=".7" y2="1">
+      <Stop offset="0" stopColor="#14529C"/>
+      <Stop offset=".5" stopColor="#093568"/>
+      <Stop offset="1" stopColor="#041B41"/>
+     </LinearGradient>
+     <RadialGradient id="pearl" cx=".24" cy=".15" rx=".75" ry=".87">
+      <Stop offset="0" stopColor="#FFFFFF"/>
+      <Stop offset=".51" stopColor="#F4F1E4"/>
+      <Stop offset="1" stopColor="#B8C5D6"/>
+     </RadialGradient>
+     <RadialGradient id="ballGold" cx=".26" cy=".15" rx=".86" ry=".9">
+      <Stop offset="0" stopColor="#FFF4CA"/>
+      <Stop offset=".5" stopColor="#F4C65B"/>
+      <Stop offset="1" stopColor="#B77F27"/>
+     </RadialGradient>
+     <RadialGradient id="ballBlue" cx=".24" cy=".17" rx=".8" ry=".9">
+      <Stop offset="0" stopColor="#73A6E0"/>
+      <Stop offset=".5" stopColor="#205696"/>
+      <Stop offset="1" stopColor="#06234D"/>
      </RadialGradient>
     </Defs>
-    <Rect width="390" height="166" fill="url(#ocean)"/>
-    <Path d="M0 28L115 0 320 0 390 32M0 126L122 166H390" stroke="#285B9C"
-     strokeWidth="18" opacity=".3"/>
-    <Path d="M0 0L390 166M0 34L390 145M0 166L390 45"
-     stroke="#6B92C4" strokeWidth="1" opacity=".15"/>
-    <Path d="M0 152Q100 106 210 146T390 142" stroke="#E9B648"
-     strokeWidth="4" fill="none" opacity=".77"/>
-    <Path d="M0 160Q90 133 210 152T390 154" stroke="#F2C965"
-     strokeWidth="1.5" fill="none" opacity=".5"/>
-    {Array.from({length:44},(_,i)=><Circle key={'shine'+i}
-     cx={(i*71+13)%390} cy={(i*47+19)%166}
-     r={(i%5===0)?1.7:.75} fill="#EAB44C" opacity={i%3===0?.56:.18}/>)}
-    <G opacity=".98">
-     <Path d="M320 12L378 27 377 93Q366 119 349 130 330 119 320 93Z"
-      fill="#09285A" stroke="#F0B842" strokeWidth="4"/>
-     <Path d="M327 21L371 32 371 91Q361 110 349 120 336 109 327 91Z"
-      fill="none" stroke="#D5A23B" strokeWidth="1.4"/>
-     {Array.from({length:19},(_,i)=><Circle key={'star'+i}
-      cx={332+(i%5)*8.4} cy={38+Math.floor(i/5)*10}
-      r="1.5" fill="#E9BB53"/>)}
-     <Rect x="326" y="80" width="46" height="23" fill="url(#gold)" rx="3"/>
-     <SvgText x="349" y="96" fill="#09234B" fontSize="13" fontWeight="900"
-      textAnchor="middle">CABJ</SvgText>
+    <Rect x="0" y="0" width="390" height="166" fill="url(#night)"/>
+    <Path d="M-12 40Q72 9 140-2L390 32M-15 78Q140 5 410 71"
+     fill="none" stroke="#416C9B" strokeWidth="11" opacity=".18"/>
+    <Path d="M-12 112L187 9M19 176L295 7M183 175L390 73"
+     stroke="#6090B7" strokeWidth=".85" opacity=".18"/>
+    {/* Curva de cartel quinielero, pero bajo el título y las cifras. */}
+    <Path d="M-8 160Q81 126 154 144T391 141" fill="none"
+     stroke="#D59B33" strokeWidth="7" opacity=".65"/>
+    <Path d="M-5 154Q86 118 175 140T397 137" fill="none"
+     stroke="#FFE29A" strokeWidth="1.7" opacity=".66"/>
+    {Array.from({length:30},(_,i)=><Circle key={'spark'+i}
+     cx={(i*89+13)%390} cy={(i*49+17)%166}
+     r={i%6===0?1.65:.8} fill="#F0C360" opacity={i%4===0?.59:.28}/>)}
+    {/* Escudo clásico: borde dorado, concavidad superior, letras CABJ sin franja. */}
+    <Path d="M310 41L330 16Q340 25 349 25Q360 25 370 16L389 41
+     L386 79Q381 112 350 147Q319 116 313 79Z"
+     fill="#03234D" stroke="#F5C457" strokeWidth="5.5" strokeLinejoin="round"/>
+    <Path d="M317 44L332 24Q341 31 349 31Q360 31 367 24L382 44
+     L379 79Q374 109 350 137Q324 109 320 79Z"
+     fill="url(#crestBlue)" stroke="#A87828" strokeWidth="1.6"
+     strokeLinejoin="round"/>
+    {stars.flatMap((row,i)=>row.x.map((x,j)=><Path
+     key={'crest'+i+'-'+j} d={star(x,row.y,2.65)}
+     fill="#FFD15D" opacity=".94"/>))}
+    <SvgText x="351" y="91" fontSize="27" fontWeight="900"
+     textAnchor="middle" letterSpacing="-1.5" fill="#041732">CABJ</SvgText>
+    <SvgText x="350" y="89" fontSize="27" fontWeight="900"
+     textAnchor="middle" letterSpacing="-1.5" fill="#FFD264">CABJ</SvgText>
+    {/* Bolillas de quiniela a la izquierda: ningún círculo llega al texto. */}
+    <LotteryBall x={36} y={109} r={29} n="11" theme="blue"/>
+    <LotteryBall x={57} y={61} r={23} n="23" theme="cream"/>
+    <LotteryBall x={72} y={140} r={13} n="48" theme="gold"/>
+    <LotteryBall x={13} y={149} r={14} n="72" theme="gold"/>
+    {/* Letras de cartel, inclinación, relieve y brillo oro. */}
+    <G transform="rotate(-3 113 48)">
+     <SvgText x="113" y="49" fontSize="22" fontWeight="800"
+      fontStyle="italic" letterSpacing="-.5" fill="#03142F"
+      opacity=".93">La posta de</SvgText>
+     <SvgText x="112" y="47" fontSize="22" fontWeight="800"
+      fontStyle="italic" letterSpacing="-.5" fill="#FFFFFF">La posta de</SvgText>
     </G>
-    <G transform="rotate(-19 50 104)">
-     <Circle cx="43" cy="105" r="36" fill="url(#blueBall)" stroke="#E4B04C" strokeWidth="4"/>
-     <Circle cx="43" cy="105" r="26" fill="#122F65" stroke="#D9BB78" strokeWidth="1"/>
-     <SvgText x="43" y="114" fontSize="25" textAnchor="middle"
-      fill="#F6EAC7" fontWeight="900">11</SvgText>
-     <Circle cx="23" cy="89" r="9" fill="url(#shine)"/>
+    <G transform="rotate(-7 120 108)">
+     <SvgText x="120" y="109" fontSize="63" fontWeight="900"
+      fontStyle="italic" letterSpacing="-3" fill="#02122C"
+      opacity=".9">Lalo</SvgText>
+     <SvgText x="117" y="105" fontSize="63" fontWeight="900"
+      fontStyle="italic" letterSpacing="-3" fill="url(#letterGold)">Lalo</SvgText>
     </G>
-    <G transform="rotate(12 94 74)">
-     <Circle cx="93" cy="73" r="29" fill="url(#gold)" stroke="#FFF1B6" strokeWidth="3.4"/>
-     <Circle cx="93" cy="73" r="21" fill="#0C2F61" stroke="#B88631" strokeWidth="2"/>
-     <SvgText x="93" y="81" fontSize="19" fill="#FFF4D2"
-      fontWeight="900" textAnchor="middle">23</SvgText>
-    </G>
-    <G>
-     <Circle cx="18" cy="148" r="18" fill="url(#gold)" stroke="#FFF0B3" strokeWidth="2.5"/>
-     <SvgText x="18" y="154" fontSize="13" fill="#12315A" fontWeight="900"
-      textAnchor="middle">72</SvgText>
-    </G>
+    <Path d="M115 110Q177 121 270 108" fill="none"
+     stroke="#EAAE37" strokeWidth="2.5" strokeLinecap="round"/>
+    {/* La frase de Lalo: sello y no simple leyenda. */}
+    <Path d="M109 121L268 121L275 133L268 148L109 148L116 135Z"
+     fill="#092852" stroke="#F4C35E" strokeWidth="1.7"/>
+    <Path d="M116 124L261 124" stroke="#F1CB75" strokeWidth=".8" opacity=".55"/>
+    <SvgText x="192" y="140.5" fontSize="14.6" textAnchor="middle"
+     fontWeight="900" letterSpacing=".9" fill="#FFF0B6">TOMAA GIILL!!</SvgText>
    </Svg>
-   <View style={[s.wordmark,{paddingLeft:tight?92:105,paddingRight:tight?44:54}]}>
-    <Text numberOfLines={1} adjustsFontSizeToFit
-     style={[s.title,{fontSize:tight?24:27}]}>La posta de</Text>
-    <Text style={[s.lalo,{fontSize:tight?39:45}]}>Lalo</Text>
-    <Text numberOfLines={1} adjustsFontSizeToFit style={s.catchphrase}>TOMAA GIILL!!</Text>
-   </View>
-   <Pressable accessibilityRole="switch" accessibilityLabel="Cambiar modo claro u oscuro"
+   <Pressable accessibilityRole="switch"
+    accessibilityLabel="Cambiar modo claro u oscuro"
     accessibilityState={{checked:mode==='dark'}} onPress={onToggle}
     style={s.mode}>
     <Text style={s.modeText}>{mode==='dark'?'☾':'☀'}</Text>
@@ -90,19 +167,12 @@ export default function BrandHero({mode,onToggle}:{mode:ThemeMode;onToggle:()=>v
 }
 const s=StyleSheet.create({
  outer:{paddingHorizontal:9,paddingTop:6,paddingBottom:7,backgroundColor:'#061832'},
- hero:{height:159,borderRadius:15,borderWidth:1.5,borderColor:'#EDB84E',
+ hero:{height:159,borderRadius:15,borderWidth:1.7,borderColor:'#EDB84E',
   overflow:'hidden',backgroundColor:'#071D45',justifyContent:'center',
-  elevation:4,shadowColor:'#F3BA48',shadowOpacity:.19,shadowRadius:8,shadowOffset:{width:0,height:2}},
- wordmark:{flex:1,justifyContent:'center',alignItems:'flex-start',zIndex:1,paddingTop:0},
- title:{color:'#FFF7E8',fontWeight:'900',fontStyle:'italic',
-  textShadowColor:'#031025',textShadowOffset:{width:2,height:2},textShadowRadius:3},
- lalo:{color:'#F7C054',fontWeight:'900',fontStyle:'italic',marginTop:-8,
-  textShadowColor:'#001129',textShadowOffset:{width:2,height:3},textShadowRadius:4},
- catchphrase:{color:'#F9E5AF',fontSize:13,letterSpacing:1.45,fontWeight:'900',
-  marginTop:2,backgroundColor:'rgba(5,25,54,0.66)',paddingHorizontal:6,
-  paddingVertical:3,borderRadius:6},
- mode:{position:'absolute',right:8,bottom:7,width:33,height:30,borderRadius:9,
-  backgroundColor:'rgba(3,21,47,0.9)',borderWidth:1,borderColor:'#E5B04B',
-  alignItems:'center',justifyContent:'center',zIndex:2},
+  elevation:4,shadowColor:'#F3BA48',shadowOpacity:.19,shadowRadius:8,
+  shadowOffset:{width:0,height:2}},
+ mode:{position:'absolute',right:76,bottom:8,width:30,height:29,
+  borderRadius:9,backgroundColor:'rgba(4,22,48,.94)',borderWidth:1,
+  borderColor:'#E8B649',alignItems:'center',justifyContent:'center',zIndex:2},
  modeText:{fontSize:18,color:'#FBE4A0',fontWeight:'900'}
 });
