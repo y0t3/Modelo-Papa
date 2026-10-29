@@ -679,11 +679,11 @@ const s=StyleSheet.create({
  shortcuts:{flexDirection:'row',gap:6,marginTop:6},
  shortcut:{flex:1,paddingVertical:6,paddingHorizontal:3,borderRadius:9,minHeight:32,
   justifyContent:'center'},
- shortText:{color:'#d9c1ef',fontSize:11,textAlign:'center',fontWeight:'800'},
- reload:{marginTop:7,paddingVertical:9,backgroundColor:'#1560AB',borderRadius:10,
+ shortText:{color:'#F5F1E6',fontSize:11,textAlign:'center',fontWeight:'800'},
+ reload:{marginTop:7,paddingVertical:9,backgroundColor:'#1560AB',borderRadius:10},
  reloadText:{color:'#fff',textAlign:'center',fontWeight:'900'},
- heading:{fontSize:12,color:'#e2d5ed',fontWeight:'800',marginTop:13,marginBottom:7},
- empty:{color:'#d0c2d8',padding:16,fontSize:12,lineHeight:19},
+ heading:{fontSize:12,color:'#F2C660',fontWeight:'800',marginTop:13,marginBottom:7},
+ empty:{color:'#C7D7ED',padding:16,fontSize:12,lineHeight:19},
  previewBanner:{borderWidth:1,borderRadius:10,padding:10,marginBottom:9,gap:7},
  previewBack:{borderWidth:1,borderRadius:7,padding:8,alignSelf:'flex-start'}
 });
