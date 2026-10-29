@@ -1,4 +1,5 @@
 import React from 'react';
+import BosteroWatermark from './BosteroWatermark';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import {JURS,TURNOS} from '../domain';
@@ -15,9 +16,14 @@ export default function HeadsTable({data,highlights,onOpenHead,sourceLabels={}}:
  onOpenHead:(turn:Turno,jurisdiction:string,head:string)=>void
 }){
  const {colors:c,kinds:vtColors}=useLaloTheme();
- return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
-  <Text style={[s.title,{color:c.text}]}>CABEZAS COMPLETAS</Text>
-  <Text style={[s.note,{color:c.subtext}]}>Tocá una cabeza resaltada para ver sus recorridos físicos en +11 y/o Santiago–Neuquén. Las cabezas sin marcas exactas permanecen apagadas.</Text>
+ return <View style={[s.surface,{backgroundColor:c.surface,borderColor:'#B9903F',borderWidth:1.3}]}>
+  <View style={{position:'relative',overflow:'hidden',minHeight:88,
+   paddingVertical:8,paddingRight:66}}>
+   <BosteroWatermark opacity={0.22}/>
+   <Text style={[s.title,{color:c.accent}]}>CABEZAS COMPLETAS</Text>
+   <Text style={[s.note,{color:c.subtext}]}>Tocá una cabeza marcada para ver
+    todos sus recorridos en la hoja. Las demás siguen visibles.</Text>
+  </View>
   <ScrollView horizontal showsHorizontalScrollIndicator>
    <View>
     <View style={[s.row,{borderBottomColor:c.divider}]}>
@@ -57,10 +63,10 @@ export default function HeadsTable({data,highlights,onOpenHead,sourceLabels={}}:
  </View>;
 }
 const s=StyleSheet.create({
- surface:{backgroundColor:'#f7f4f8',borderRadius:13,padding:11,marginTop:10},
- title:{fontSize:17,fontWeight:'900',color:'#352743'},
+ surface:{borderRadius:13,padding:11,marginTop:10},
+ title:{fontSize:19,fontWeight:'900',fontStyle:'italic'},
  note:{color:'#786982',fontSize:11,marginTop:6,marginBottom:12,lineHeight:16},
- row:{flexDirection:'row',borderBottomWidth:1,borderBottomColor:'#e7e0ea',alignItems:'center'},
+ row:{flexDirection:'row',borderBottomWidth:1,alignItems:'center'},
  first:{width:104,padding:7},header:{fontSize:11,color:'#57456a',fontWeight:'800'},
  cell:{width:102,padding:7,textAlign:'center'},
  jur:{fontSize:11,fontWeight:'800',color:'#352743'},
