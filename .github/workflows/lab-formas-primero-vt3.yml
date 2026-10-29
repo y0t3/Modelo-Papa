@@ -1,0 +1,46 @@
+name: Lab Formas Primero VT3 - comparacion PRE contra MV1
+on:
+  push:
+    branches: [lab/motor-formas-primero-vt3-29oct2026]
+    paths:
+      - 'src/motorFormasPrimero.ts'
+      - 'src/ui/FormasPrimeroPanel.tsx'
+      - 'src/ui/Vt3Parallel.tsx'
+      - 'scripts/test-motor-formas-primero.ts'
+      - 'scripts/lab-formas-primero-vt3-comparar.ts'
+      - '.github/workflows/lab-formas-primero-vt3.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Verificar tipos de la aplicacion
+        run: npx tsc --noEmit -p tsconfig.ui-check.json
+      - name: Figuras pre antes de numero y aislamiento de POST
+        run: npx --yes tsx scripts/test-motor-formas-primero.ts
+      - name: Regresion de Lalo
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+  retrospectivo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Replay historico cortes PRE con resultados POST independientes
+        run: npx --yes tsx scripts/lab-formas-primero-vt3-comparar.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Formas-Primero-VT3-vs-Lalo
+          path: auditorias/formas-primero-vt3/*.json
+          if-no-files-found: warn

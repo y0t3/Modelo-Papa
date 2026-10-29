@@ -1,0 +1,38 @@
+name: Lab Formas Primero - bloques historicos independientes
+on:
+  push:
+    branches: [lab/motor-formas-primero-vt3-29oct2026]
+    paths:
+      - '.github/workflows/lab-formas-primero-periodos.yml'
+      - 'scripts/lab-formas-primero-vt3-periodos.ts'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  historico:
+    strategy:
+      fail-fast: false
+      matrix:
+        period:
+          - {label: jun-jul, from: '2026-06-01', through: '2026-07-31'}
+          - {label: ago-sep, from: '2026-08-01', through: '2026-09-30'}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Replay cronologico sin ajuste de reglas
+        env:
+          FORMAS_FROM: ${{ matrix.period.from }}
+          FORMAS_THROUGH: ${{ matrix.period.through }}
+          FORMAS_PERIOD: ${{ matrix.period.label }}
+        run: npx --yes tsx scripts/lab-formas-primero-vt3-periodos.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Formas-vs-Lalo-${{ matrix.period.label }}
+          path: auditorias/formas-primero-vt3/*-${{ matrix.period.label }}.json
+          if-no-files-found: warn
