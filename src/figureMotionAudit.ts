@@ -14,7 +14,7 @@ export type FigureMotion={
  exactEvents:number;verticalEvents:number;sourceChangeEvents:number;
  /** A root can match more than one category? No, source/anchor partition is strict. */
  exactDays:number;verticalDays:number;sourceChangeDays:number;
- verticalOffsets:number[];sourceOffsets:number[];
+ verticalOffsets:number[];sourceOffsets:string[];
  categories:('MISMA_POSICION'|'DESPLAZAMIENTO_VERTICAL'|'CAMBIO_FUENTE')[];
  predominant:'MISMA_POSICION'|'DESPLAZAMIENTO_VERTICAL'|'CAMBIO_FUENTE'|'SIN_TESTIGO';
 };
