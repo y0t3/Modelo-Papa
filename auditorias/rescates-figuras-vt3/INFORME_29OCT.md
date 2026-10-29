@@ -24,6 +24,8 @@ Cada una de las 4.643 propuestas VT3 por figura **fuera del Top10 de Lalo** cuen
 | Oct 12–28 | 621 | 3 | 3,68 | 5,66 |
 | **TOTAL** | **4.643** | **45** | **45,21** | **44,19** |
 
+Como control adicional de estabilidad, se hizo remuestreo por **jornadas completas** (118 bloques; 12.000 repeticiones; semilla 20261029), sumando por bloque la diferencia cabezas observadas menos la expectativa de figura+fuente. Resultado observado **−0,21**; intervalo descriptivo percentil 95% **[−9,65; +9,48]**. Cruza cero holgadamente y no permite concluir ventaja.
+
 Los controles son expectativas descriptivas, **no** una prueba de significación con exposición idéntica. El primero selecciona alternativamente familias físicas de la misma silueta y fuente del candidato, excluidas las que ya estaban en Top10 de Lalo. El segundo elige entre todas las familias físicas que Lalo excluyó, manteniendo el mismo número de propuestas. No se atribuye capacidad predictiva a una diferencia de centésimas o décimas.
 
 ### Subgrupos descriptivos (PRE, NO configuraciones validadas)
