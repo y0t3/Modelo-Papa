@@ -8,6 +8,7 @@ import {classifyFigureMotion,exactActivationTimeline} from '../figureMotionAudit
 import type {InfoVisualDay} from '../infoTurnHistory';
 import {readableWeekday} from '../infoTurnHistory';
 import {buildFigureRescueAudit} from '../figureRescueAudit';
+import type {AuditedLaloOnly} from '../figureRescueAudit';
 import {useLaloTheme} from './LaloTheme';
 import RouteMiniBoard from './RouteMiniBoard';
 type Filter='RESCATE'|'COMPARTIDO'|'LALO';
@@ -48,10 +49,11 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
   </Text>
   {items.map(item=>{
    const choice='choice' in item?item.choice:null;
-   const family=choice?choice.family:item.family;
+   const family='choice' in item?item.choice.family:item.family;
    const key=filter+'|'+family;
    const active=selected===key;
    const roots=choice?.support.roots||[];
+   const officialOnly='routes' in item?item as AuditedLaloOnly:null;
    const hits=item.published;
    const motion=choice?classifyFigureMotion(choice):null;
    const timeline=choice?exactActivationTimeline(choice,forms?.rootDays||[]):null;
@@ -61,7 +63,7 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
     <Pressable accessibilityRole="button" accessibilityState={{expanded:active}}
      onPress={()=>setSelected(active?null:key)} style={s.tap}>
      <Text style={{color:c.text,fontWeight:'900',fontSize:13}}>
-      {active?'▾':'▸'} #{choice?.rank??item.rank} · {family}
+      {active?'▾':'▸'} #{choice?.rank??officialOnly?.rank} · {family}
       {hits.length?' · ✓ Salió':''}
      </Text>
      <Text style={[s.note,{color:c.subtext}]}>
@@ -98,7 +100,7 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
         {col?<RouteMiniBoard values={col.values} cells={r.cells} kind={kind}
          compact/>:<Text style={[s.note,{color:c.muted}]}>Sin minihoja</Text>}
        </View>
-      }):item.routes.map((r,i)=>{
+      }):officialOnly?.routes.map((r,i)=>{
        const col=pre?.columns.find(x=>x.id===r.sourceId);
        return <View key={r.sourceId+'|'+i}
         style={[s.mini,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
