@@ -1,0 +1,29 @@
+name: LAB Embudo fisico VT3 26-28 y controles
+on:
+  push:
+    branches: [lab/seguimiento-vt3-26a28oct-controles]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificar rutas VT3 exactas y controles emparejados
+        run: npx --yes tsx scripts/lab-rastros-26a28oct-controles.ts
+      - name: Motor Lalo congelado
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Rutas conectadas validas
+        run: npx --yes tsx scripts/test-connected-vt3.ts
+      - name: Seguimiento PRE sin resultados futuros
+        run: npx --yes tsx scripts/test-figure-tracking.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rastros-vt3-exactos-26a28oct
+          path: auditorias/rastros-26a28oct/*.json
+          if-no-files-found: error
