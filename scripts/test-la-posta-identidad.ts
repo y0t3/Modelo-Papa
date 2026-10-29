@@ -9,9 +9,9 @@ const heads=read('src/ui/HeadsTable.tsx');
 const movements=read('src/ui/Vt3Parallel.tsx');
 assert(hero.includes('TOMAA GIILL!!'),'La frase de Lalo debe estar literal');
 assert(hero.includes('La posta de'),'El título público se perdió');
-assert(hero.includes('BocaShieldImage')&&
+assert(hero.includes("require('../../assets/la-posta-header-banner.jpg')")&&
  read('src/ui/BosteroWatermark.tsx').includes('BocaShieldImage'),
- 'El emblema y las marcas de agua deben compartir el escudo real de Boca');
+ 'El encabezado debe utilizar el banner original y las marcas de agua conservar el escudo real');
 assert(app.includes('<BrandHero mode={mode} onToggle={toggle}/>'),'El hero debe quedar antes de los tabs');
 assert(app.indexOf('<BrandHero')<app.indexOf('<View style={s.nav}'),'Debe ir encima del menú');
 assert(sheet.includes('BosteroWatermark'),'Falta marca de agua discreta en Hoja');
