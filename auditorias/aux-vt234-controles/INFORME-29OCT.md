@@ -57,6 +57,23 @@ En el primer caso, el motor sí proyectó una **hija diferente de la misma madre
 
 [Prueba de tres casos y rutas en GitHub Actions](https://github.com/y0t3/Modelo-Papa/actions/runs/40845566809).
 
+## Control negativo: ¿qué ocurriría al incorporar todas las VT4 físicas con madre Top10?
+
+Sin modificar los motores, se enumeraron los **valores completos distintos** de cada corte con recorrido continuo válido y madre VT3 dentro del Top10, y se retiraron los valores VT4 ya reconocidos. Luego, usando exclusivamente el POST para el cotejo, se contó qué parte de esas nuevas candidatas realmente salió.
+
+| Modo | Exposiciones valor×corte adicionales | Valores que coincidieron | Exposiciones sin coincidencia |
+|---|---:|---:|---:|
+| AUX AYER | **5.425** | **2** | **5.423** |
+| AUX HOY | **4.023** | **1** | **4.022** |
+
+Esto corresponde a **75 cortes por modalidad**, no a 5.425 números globalmente distintos ni apuestas reales. Un valor con varios caminos **cuenta una sola vez en cada corte**. Las dos modalidades comparten cabezas observadas y NO pueden sumarse como confirmaciones independientes.
+
+El control negativo incluye exactamente los tres casos físicos anteriormente inspeccionados (4942, 2697, 4862) distribuidos en sus respectivos modos. Las restantes miles de exposiciones habrían añadido números que no coincidieron. Las familias que sí salieron se identificaron solo POST: no es legítimo seleccionarlas retrospectivamente y después atribuirles poder de pronóstico.
+
+**Decisión:** no incorporar por defecto todas las hijas VT4 de madres Top10. La formación física de cuatro cifras sigue siendo condición necesaria para nuestras representaciones, pero no sirve por sí sola para priorizar. Cualquier nuevo filtro debe medirse en las **no ganadoras** de manera simétrica y congelarse para controles futuros.
+
+[Ejecución de universo negativo validada](https://github.com/y0t3/Modelo-Papa/actions/runs/40847123722). El JSON por corte deja los denominadores `negativeVt4` y el agregado `negativeControl`.
+
 ## Próximo paso de interfaz
 
 Agregar al **Info Auxiliar**, previa verificación de diseño, el historial de cada raíz ganadora al tocarla: minihoja de su fecha real y minihoja del corte actual, con modo AYER/HOY, columnas realmente disponibles, orden de recorrido y fuente. Mostrar por separado el reconocimiento/puesto de VT3 y el motivo de exclusión de su VT4 física. No pintar rutas inventadas ni mezclar los movimientos AUX con los de +11. Conservar el Top10 fijo y los aciertos POST ya implementados.
