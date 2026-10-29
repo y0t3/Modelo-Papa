@@ -605,7 +605,9 @@ function LaloApp(){
      </Pressable>
      <Vt3Parallel date={date||''} turn={target} sheet={sheet} view={motor}
       historical={hist} heads={fiveHeads}
-       publishedHeads={headEvents.filter(x=>x.jur!=='Montevideo')}
+       publishedHeads={JURS.filter(j=>j!=='Montevideo')
+        .map(jur=>({jur,head:data?.[target]?.[jur]||''}))
+        .filter(x=>/^\d{4,5}$/.test(x.head))}
        autoVersion={autoVersion}
        visualDays={visualDays}/>
      <Vt3Explainer sheet={sheet} view={motor} turn={target}
