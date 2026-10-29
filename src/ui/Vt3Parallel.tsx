@@ -19,6 +19,9 @@ import FormasPrimeroPanel from './FormasPrimeroPanel';
 import FigureRescueAuditPanel from './FigureRescueAuditPanel';
 import {buildFormFirstMotor,buildFormFirstVt2} from '../motorFormasPrimero';
 import type {InfoVisualDay} from '../infoTurnHistory';
+import {makeDualPre,saveDualFrozen,loadDualFrozen} from '../dualPreSnapshot';
+import type {DualFrozenRecord} from '../dualPreSnapshot';
+import DualSealedPrePanel from './DualSealedPrePanel';
 
 const localToday=()=>{
  const d=new Date();
@@ -31,6 +34,9 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
 }){
  const {colors:c}=useLaloTheme();
  const [stored,setStored]=useState<FrozenRecord|null>(null);
+ const [dualStored,setDualStored]=useState<DualFrozenRecord|null>(null);
+ const [dualBusy,setDualBusy]=useState(false);
+ const [dualError,setDualError]=useState('');
  const [busy,setBusy]=useState(false);
  const [error,setError]=useState('');
  // Los rankings consultados en jornadas históricas parten sólo de las
@@ -59,8 +65,30 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
    .catch(e=>{if(active)setError(String(e?.message||e))});
   return ()=>{active=false};
  },[date,turn,autoVersion]);
- const published=(sheet?.heads[turn]||[]).some(h=>/^\d{4}$/.test(h))||
-  heads.some(h=>/^\d{4}$/.test(h));
+ useEffect(()=>{
+  let active=true;
+  setDualStored(null);setDualError('');
+  loadDualFrozen(date,turn).then(r=>{if(active)setDualStored(r)})
+   .catch(e=>{if(active)setDualError(String(e?.message||e))});
+  return ()=>{active=false};
+ },[date,turn,autoVersion]);
+ const guardHeads=TURNOS.slice(TURNOS.indexOf(turn)).flatMap(t=>
+  sheet?.heads[t]||[]).concat(publishedHeads.map(h=>h.head));
+ const dualPublished=guardHeads.some(x=>/^\d{4,5}$/.test(x));
+ const dualFreeze=async()=>{
+  if(!safeSheet||!safeView||!formsFirstVt2||!formsFirst)return;
+  try{
+   setDualBusy(true);setDualError('');
+   const days=visualDays.filter(d=>d.date<date);
+   const pre=makeDualPre(date,turn,safeSheet,safeView,
+    formsFirstVt2,formsFirst,days,new Date().toISOString());
+   const r=await saveDualFrozen(pre,guardHeads);
+   setDualStored(r);
+  }catch(e:any){setDualError(String(e?.message||e))}
+  finally{setDualBusy(false)}
+ };
+ const published=(sheet?.heads[turn]||[]).some(h=>/^\d{4,5}$/.test(h))||
+  heads.some(h=>/^\d{4,5}$/.test(h))||publishedHeads.some(h=>/^\d{4,5}$/.test(h.head));
  const historicalDate=date!==localToday();
  const geometric=stored?.pre.geometric.map(x=>x.family)||
   shadow?.top.map(x=>x.family)||[];
@@ -97,6 +125,24 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
   return {...section,matches};
  });
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
+  {dualStored?<DualSealedPrePanel record={dualStored} published={publishedHeads}/>:<>
+   <Text style={[s.title,{color:c.text}]}>PRE CONGELADO · VT2 + VT3</Text>
+   <Text style={[s.note,{color:c.subtext}]}>
+    No existe un PRE doble guardado en esta instalación para este turno.
+    Las listas inferiores son reconstrucciones de laboratorio, no aciertos
+    sellados antes del sorteo.
+   </Text>
+   <Pressable accessibilityRole="button"
+    disabled={dualBusy||!safeView||!formsFirstVt2||!formsFirst||dualPublished||historicalDate}
+    onPress={()=>{void dualFreeze()}}
+    style={[s.button,{backgroundColor:c.button,opacity:
+     dualBusy||!safeView||!formsFirstVt2||!formsFirst||dualPublished||historicalDate?0.45:1}]}>
+    <Text style={{color:c.buttonText,fontWeight:'900',fontSize:12}}>
+     {dualBusy?'GUARDANDO DOS MOTORES…':'GUARDAR PRE FÍSICO VT2 + VT3'}
+    </Text>
+   </Pressable>
+  </>}
+  {dualError?<Text style={[s.note,{color:c.text}]}>{dualError}</Text>:null}
   <Text style={[s.title,{color:c.text}]}>DOS AUDITORÍAS FÍSICAS · VT2 Y VT3</Text>
   <Text style={[s.note,{color:c.subtext}]}>
    Las mismas pruebas de recorridos, movimientos y cabezas ganadoras se
