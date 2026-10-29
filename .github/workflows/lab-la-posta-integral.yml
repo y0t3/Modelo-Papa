@@ -5,6 +5,7 @@ on:
     paths:
       - 'App.tsx'
       - 'package.json'
+      - 'scripts/test-la-posta-identidad.ts'
       - 'src/PanoramaSheet.tsx'
       - 'src/ui/**'
       - 'src/DateField.tsx'
