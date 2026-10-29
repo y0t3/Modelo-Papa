@@ -86,6 +86,7 @@ export function historicalFormRoots(date:string,days:InfoVisualDay[]):{
      }
     }
    }
+  }
  }
  return {dates:recent.map(d=>d.date),roots};
 }
