@@ -64,11 +64,29 @@ En **VT3**:
 
 Las clases de movimiento **pueden superponerse** por la diversidad de testigos históricos. Las oscilaciones tampoco muestran un sentido estable al dividir junio–julio, agosto–septiembre y octubre. Las combinaciones son exploratorias y no se deben convertir a filtros predictivos mirando el mismo histórico.
 
+## Secuencia exacta: activada, inactiva, reaparecida
+
+Esta prueba adicional se hizo **para ambos VT2 y VT3** sobre la misma ventana de seis jornadas anteriores, con resultados de cabezas ganadoras confirmadas. Para cada figura seleccionada se observa **únicamente su posición exacta**, registrando ● cuando una cabeza real se explicó por esa ruta y ○ cuando no existe una activación ganadora confirmada. **○ no equivale a que la figura física desapareció**.
+
+Los estados predefinidos son: sin activaciones exactas; activación única en la última jornada; actividad repetida hasta la última; reaparición en la última tras uno o más días inactivos; y antecedente más antiguo sin activación en la última jornada. Ninguno cambia prioridades.
+
+| Situación | VT2 exposiciones | VT2 cabezas / control | VT3 exposiciones | VT3 cabezas / control |
+|---|---:|---:|---:|---:|
+| Activación única de la última jornada | 114 | 6 / 7,97 | 778 | 5 / 6,45 |
+| Activación repetida hasta la última | 87 | 7 / 8,39 | 22 | 1 / 0,83 |
+| **Reaparición tras una pausa** | **632** | **61 / 56,78** | **130** | **2 / 1,58** |
+| Sin activación ganadora en la última, con antecedente exacto | 1.783 | 159 / 161,24 | 1.800 | 22 / 17,74 |
+| Sin antecedentes ganadores de esa posición exacta | 368 | 24 / 31,29 | 1.913 | 15 / 18,60 |
+
+En VT2, "reapareció" tuvo un pequeño exceso acumulado: 61 frente a 56,78 esperadas; **pero en octubre fue 2 frente a 3,2**, y por lo tanto no mostró continuidad temporal. En VT3 apenas hubo **dos coincidencias** en 130 candidatos con ese patrón; esa muestra no permite establecer una señal.
+
+Estas categorías y sus controles son exploratorios (se han examinado múltiples subgrupos), con exposiciones relacionadas dentro de cada jornada. **No** avalan añadir un ranking de reapariciones ni apostar de manera preferente a esos casos.
+
 ## Qué cambia en la app
 
 En **Experimental** aparecen **dos paneles de Auditoría de figuras**, VT2 y VT3, con igual estructura y funciones: rescates, compartidos, sólo Lalo, minihoja PRE seleccionada, testigos ganadores anteriores, clasificación geométrica de movimiento, POST y todos los caminos válidos de cada cabeza.
 
-El botón de cada candidata muestra cantidades de antecedentes **distintos por evento ganador** y movimientos de fuente/altura. Los resultados POST sólo se interpretan como coincidencias por terminación y recorridos formables, nunca como demostración del mecanismo físico del sorteo.
+El botón de cada candidata muestra cantidades de antecedentes **distintos por evento ganador**, movimientos de fuente/altura/lado y una **línea temporal ●/○ de activaciones ganadoras en la misma posición**. Los resultados POST sólo se interpretan como coincidencias por terminación y recorridos formables, nunca como demostración del mecanismo físico del sorteo.
 
 ## Decisiones y próximo estudio
 
