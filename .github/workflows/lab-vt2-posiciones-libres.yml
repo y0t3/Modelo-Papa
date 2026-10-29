@@ -18,6 +18,8 @@ jobs:
       - run: npm install
       - name: Test PRE cronologico y posiciones VT2
         run: npx --yes tsx scripts/lab-vt2-posiciones-libres.ts
+      - name: Validacion sin recalibrar pares de puestos por turno
+        run: npx --yes tsx scripts/lab-vt2-congelar-puestos.ts
       - name: Regression MV1 sin cambios
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - uses: actions/upload-artifact@v4
