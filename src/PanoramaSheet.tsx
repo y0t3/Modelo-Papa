@@ -1,4 +1,5 @@
 import React,{useEffect,useMemo,useState} from 'react';
+import BosteroWatermark from './ui/BosteroWatermark';
 import {View,Text,Pressable,ScrollView,Modal,StyleSheet} from 'react-native';
 import type {DailySheet} from './sheet';
 import type {CabezasDia,Turno} from './domain';
@@ -117,10 +118,11 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
   {items.map(g=><HighlightedHead key={g.id} group={g} active={active===g.id}
    onPress={()=>select(g.id)} mode="predictiva" layout="grid"/>)}
  </View>;
- return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
-  <View style={s.top}>
+ return <View style={[s.surface,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
+  <View style={[s.top,{position:'relative',overflow:'hidden',minHeight:93,paddingVertical:8}]}>
+   <BosteroWatermark opacity={0.3}/>
    <View style={{flex:1}}>
-    <Text style={[s.title,{color:c.text}]}>{mode==='hoja'?'HOJA +11':'HOJA PREDICTIVA'}</Text>
+    <Text style={[s.title,{color:c.accent}]}>{mode==='hoja'?'HOJA +11':'HOJA PREDICTIVA'}</Text>
     <Text style={[s.note,{color:c.subtext}]}>{mode==='hoja'?
      'Marcas reales: cabezas publicadas y rutas verificadas':
      'Propuestas físicas del Motor Lalo · '+(target||'')}</Text>
@@ -292,9 +294,9 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
  </View>;
 }
 const s=StyleSheet.create({
- surface:{borderRadius:13,padding:10,marginTop:9,marginBottom:12,borderWidth:1},
+ surface:{borderRadius:14,padding:10,marginTop:9,marginBottom:12,borderWidth:1.3},
  top:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginBottom:9,gap:8},
- title:{fontSize:17,fontWeight:'900'},note:{fontSize:11,lineHeight:17,marginVertical:4},
+ title:{fontSize:20,fontWeight:'900',fontStyle:'italic'},note:{fontSize:11,lineHeight:17,marginVertical:4},
  action:{borderRadius:8,borderWidth:1,paddingHorizontal:9,paddingVertical:7},
  actionText:{fontSize:11,fontWeight:'800'},
  legend:{flexDirection:'row',justifyContent:'center',flexWrap:'wrap',gap:9,marginTop:11,marginBottom:5},
