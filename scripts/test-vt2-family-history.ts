@@ -25,7 +25,6 @@ const visualDays:InfoVisualDay[]=[
  {date:'2026-10-30',heads:historic,sheet:historicalSheet}
 ];
 const preFirst=buildVt2FamilyWitnesses('2026-10-29','Primera',family,sheet,visualDays);
-console.log('DEBUG_VT2_FAMILY',JSON.stringify({family,prevColumn:sheet.columns[0],prevMatches:sheet.matches.Previa,preFirst},null,2));
 assert.ok(preFirst.some(x=>x.scope==='HOY'&&x.turn==='Previa'&&x.head==='0045'));
 assert.ok(preFirst.some(x=>x.scope==='ANTERIOR'&&x.turn==='Vespertino'&&x.head==='0045'));
 assert.ok(!preFirst.some(x=>x.scope==='HOY'&&x.turn==='Primera'));
