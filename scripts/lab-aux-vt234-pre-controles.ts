@@ -29,7 +29,7 @@ type Candidate={
 type Outcome={
  jur:string;head:string;kind:Kind;exactSuffix:string;family:string;
  formableExact:boolean;recognizedRank:number|null;top10Rank:number|null;
- wasWinnerEarlierToday:boolean;
+ wasWinnerEarlierToday:boolean;vt4MotherRank:number|null;
 };
 type Row={
  date:string;turn:Turno;mode:AuxMode;
@@ -88,6 +88,9 @@ function groupedSummary(rows:Row[]){
      hitTop2SameDaySelector:total(rs,repeatedTwo),
      hitTop2Prev6Presence:total(rs,persistentTwo),
      hitTop10WithEarlierWinToday:total(rs,r=>captured(r).filter(o=>o.wasWinnerEarlierToday).length),
+     vt4FormableMotherTop10:total(rs,r=>observations(r).filter(o=>o.formableExact&&kind===4&&o.vt4MotherRank!==null&&o.vt4MotherRank<=10).length),
+     vt4FormableMotherBelow10:total(rs,r=>observations(r).filter(o=>o.formableExact&&kind===4&&o.vt4MotherRank!==null&&o.vt4MotherRank>10).length),
+     vt4FormableMotherAbsent:total(rs,r=>observations(r).filter(o=>o.formableExact&&kind===4&&o.vt4MotherRank===null).length),
      hitTop10PreviouslyRanked6:total(rs,r=>captured(r).filter(o=>
       candidates(r).some(c=>match(kind,c,o.exactSuffix)&&c.prior6Top10>0)).length),
      formableButUnrecognized:total(rs,r=>observations(r).filter(o=>
@@ -168,11 +171,14 @@ async function main(){
       const idx=view.ranks[kind].findIndex(f=>match(kind,f,exactSuffix));
       const rank=idx<0?null:idx+1;
       const formableExact=findAuxPaths(board,exactSuffix).length>0;
+      const motherPos=kind===4?view.ranks[3].findIndex(f=>
+       f.family===reversibleFamily(exactSuffix.slice(1))):-1;
+      const vt4MotherRank=motherPos<0?null:motherPos+1;
       if(rank!==null&&!formableExact)
        throw Error('Candidata sin recorrido exacto: '+date+' '+mode+' '+turn+' '+jur+' VT'+kind);
       outcomes.push({jur,head,kind,exactSuffix,family,formableExact,
        recognizedRank:rank,top10Rank:rank!==null&&rank<=10?rank:null,
-       wasWinnerEarlierToday:winners[kind].has(family)});
+       wasWinnerEarlierToday:winners[kind].has(family),vt4MotherRank});
      }
     }
     records.push({date,mode,turn,ranks,outcomes,boardCells:board.cells.length,
@@ -188,9 +194,15 @@ async function main(){
  if(days<8)throw Error('Muestra insuficiente '+days+' jornadas; '+failures.join(' | '));
  const byPeriod=Object.fromEntries(['OCT_12_20','OCT_21_28','ALL'].map(p=>
   [p,groupedSummary(records.filter(r=>p==='ALL'||period(r.date)===p))]));
+ const provisionalHeads=records.filter(r=>r.date==='2026-10-28'&&r.turn==='Nocturno'&&r.mode==='anterior')
+  .flatMap(r=>r.outcomes.filter(o=>o.jur==='Santa Fé'&&o.kind===4).map(o=>o.head));
+ const withoutProvisional=records.map(r=>({...r,outcomes:r.outcomes.filter(o=>
+  !(r.date==='2026-10-28'&&r.turn==='Nocturno'&&o.jur==='Santa Fé'&&o.head==='6666'))}));
+ const byPeriodWithoutProvisional=Object.fromEntries(['OCT_12_20','OCT_21_28','ALL'].map(p=>
+  [p,groupedSummary(withoutProvisional.filter(r=>p==='ALL'||period(r.date)===p))]));
  const result={study:'AUX_VT234_PRE_RECONSTRUIDO_POST_COTEJADO_NO_PROSPECTIVO',
   dates:{from:'2026-10-12',to:'2026-10-28'},days,cuts:records.length,
-  failures,byPeriod,records,
+  failures,provisionalHeads,byPeriod,byPeriodWithoutProvisional,records,
   rules:[
    'AY​ER usa Santiago y Neuquen RAW de la ultima jornada sorteable anterior; HOY solo columnas anteriores al turno objetivo.',
    'VT2/VT3 se cotejan como familia reversible; VT4 por valor exacto proyectado, sin invertir cuatro cifras.',
@@ -199,12 +211,14 @@ async function main(){
    'La persistencia seis jornadas usa solamente rankings de cortes anteriores del mismo turno/modo.',
    'Aciertos cuentan cabezas reales publicadas, no familias ni ganancias; selectors de Top2 son ensayos retrospectivos.',
    'La ventana de quince jornadas no valida mejoras y las reconstrucciones PRE no equivalen a sellos prospectivos.',
+   'Comparar tambien byPeriodWithoutProvisional: Santa Fe Nocturno 28/10 6666 carecia de corroboracion independiente.',
+   'vt4MotherRank distingue madre VT3 en Top10, por debajo del puesto 10 o ausente: nunca crea una hija sin ruta exacta.',
    'No compartir geometria, raices ni votos entre AUX AYER, AUX HOY y Lalo +11.'
   ]};
  const dir='auditorias/aux-vt234-controles';
  fs.mkdirSync(dir,{recursive:true});
  fs.writeFileSync(dir+'/resultados.json',JSON.stringify(result,null,2)+'\n');
  console.log('AUX_VT234_SUMMARY',JSON.stringify({
-  days,cuts:records.length,failures,byPeriod}));
+  days,cuts:records.length,failures,provisionalHeads,byPeriod,byPeriodWithoutProvisional}));
 }
 main().catch(e=>{console.error('AUX_VT234_ERROR',e);process.exitCode=1});
