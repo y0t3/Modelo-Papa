@@ -14,10 +14,10 @@ export type ConnectedSelection={target:Turno;top:Proposal[];availableFamilies:nu
 const coord=(c:{row:number;col:number})=>c.row+':'+c.col;
 const canon=(cs:string[])=>[cs.join('>'),[...cs].reverse().join('>')].sort()[0];
 
-export function verifiedMarks(day:ConnectedDay):Mark[]{
+export function verifiedMarks(day:ConnectedDay,montevideoHistoricalMarks=false):Mark[]{
  const out:Mark[]=[],seen=new Set<string>();
  for(const turn of TURNOS)for(const m of day.sheet.matches[turn]||[]){
-  if(m.jurisdiccion==='Montevideo'||!/^[0-9]{4}$/.test(m.cabeza))continue;
+  if((!montevideoHistoricalMarks&&m.jurisdiccion==='Montevideo')||!/^[0-9]{4}$/.test(m.cabeza))continue;
   for(const hit of m.hits){
    if(hit.kind!=='vt3'||!m.cabeza.endsWith(hit.value))continue;
    for(const route of hit.paths){
@@ -33,7 +33,7 @@ export function verifiedMarks(day:ConnectedDay):Mark[]{
  return out;
 }
 export function buildConnectedVt3(pre:DailySheet,date:string,target:Turno,
- days:ConnectedDay[]):ConnectedSelection{
+ days:ConnectedDay[],montevideoHistoricalMarks=false):ConnectedSelection{
  const distinct=new Map<string,ConnectedDay>();
  for(const day of days){
   if(day.date>=date)throw Error('Conectadas: datos históricos del objetivo o del futuro');
@@ -43,7 +43,7 @@ export function buildConnectedVt3(pre:DailySheet,date:string,target:Turno,
  // en la ventana; jamás añadimos jornadas antiguas para fabricar respaldo.
  const previous=[...distinct.values()].sort((a,b)=>b.date.localeCompare(a.date))
   .filter(day=>TURNOS.some(t=>(day.sheet.heads[t]||[]).length>0)).slice(0,6);
- const historical=connectedWinnerPairs(previous.flatMap(verifiedMarks));
+ const historical=connectedWinnerPairs(previous.flatMap(day=>verifiedMarks(day,montevideoHistoricalMarks)));
  const traces:Trace[]=[];
  const seen=new Set<string>();
  for(const col of pre.columns.slice(0,TURNOS.indexOf(target)+1)){
