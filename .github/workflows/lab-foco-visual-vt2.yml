@@ -1,0 +1,33 @@
+name: LAB Foco visual VT2 — 1 o 2 zonas
+on:
+  push:
+    branches: [lab/foco-visual-vt2-29oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  foco:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Validaciones de foco y geometria PRE
+        run: npx --yes tsx scripts/test-foco-visual-vt2.ts
+      - name: Prueba VT2 a VT3 existente
+        run: npx --yes tsx scripts/test-lab-vt2-vt3-29oct.ts
+      - name: Motor MV1 oficial intacto
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Regresion AUX
+        run: npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
+      - name: 140 cortes con focos visuales y controles
+        run: npx --yes tsx scripts/lab-foco-visual-vt2-historico.ts
+      - name: Resultados auditables
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: foco-visual-vt2-140-cortes
+          path: auditorias/foco-visual-vt2/*.json
+          if-no-files-found: warn
