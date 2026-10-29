@@ -4,6 +4,7 @@ on:
     branches:
       - lab/vt2-posiciones-libres-intradia-29oct2026
       - lab/vt2-transiciones-familias-cinco-dias-29oct2026
+      - lab/vt2-trayectorias-rank-movimiento-29oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -25,6 +26,8 @@ jobs:
         run: npx --yes tsx scripts/lab-vt2-relaciones-familias.ts
       - name: Comparación VT2 de hasta dos familias con testigos del mismo día
         run: npx --yes tsx scripts/lab-vt2-dos-familias.ts
+      - name: Trayectorias rango VT2 y ventanas de cinco seis dias
+        run: npx --yes tsx scripts/lab-vt2-trayectorias-familias.ts
       - name: Regression MV1 sin cambios
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - uses: actions/upload-artifact@v4
@@ -36,4 +39,9 @@ jobs:
         with:
           name: vt2-relaciones-familias-intradia
           path: auditorias/vt2-relaciones-familias/*.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt2-trayectorias-rank-movimiento
+          path: auditorias/vt2-trayectorias/*.json
           if-no-files-found: error
