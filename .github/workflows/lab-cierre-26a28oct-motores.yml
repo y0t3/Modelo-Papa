@@ -1,0 +1,29 @@
+name: LAB Cierre 26-28 octubre todos los motores
+on:
+  push:
+    branches: [lab/auditoria-26a28oct-todos-motores]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Reproduccion 26-28 octubre por cortes PRE
+        run: npx --yes tsx scripts/lab-cierre-26a28oct-motores.ts
+      - name: Motor Lalo MV1 sin alteraciones
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: AUX dos cronologias
+        run: npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
+      - name: Conectadas sin saltos ni fuga
+        run: npx --yes tsx scripts/test-connected-vt3.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cierre-26-28oct-Lalo-AUX-Experimental
+          path: auditorias/cierre-26a28oct/*.json
+          if-no-files-found: error
