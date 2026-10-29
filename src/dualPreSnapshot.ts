@@ -123,7 +123,8 @@ export function makeDualPre(
  const pre=preSheetAtCut(sheet,turn,idx);
  const columns=pre.columns.slice(0,idx+1).map(c=>({...c,values:[...c.values]}));
  if(columns.length!==idx+1||columns.some(c=>c.values.length!==6||
-  c.values.some(v=>!/^\d{2}$/.test(v))))
+  c.values.some(v=>!/^(?:\d{2}|--)$/.test(v))||
+  !c.values.some(v=>/^\d{2}$/.test(v))))
   throw Error('PRE doble: columnas +11 incompletas');
  if(!vt2.top.length||!vt3.top.length)throw Error('PRE doble: un motor sin figuras elegibles');
  if(!Number.isFinite(Date.parse(createdAt)))throw Error('Fecha de captura inválida');
@@ -144,8 +145,9 @@ export function verifyDualRecord(record:DualFrozenRecord):DualFrozenRecord{
   throw Error('PRE doble alterado o incompatible');
  return record;
 }
-export async function loadDualFrozen(date:string,turn:Turno):Promise<DualFrozenRecord|null>{
- const raw=await AsyncStorage.getItem(storageKey(date,turn));
+export type PreStorage={getItem(key:string):Promise<string|null>;setItem(key:string,value:string):Promise<void>};
+export async function loadDualFrozen(date:string,turn:Turno,store:PreStorage=AsyncStorage):Promise<DualFrozenRecord|null>{
+ const raw=await store.getItem(storageKey(date,turn));
  if(!raw)return null;
  const result=verifyDualRecord(JSON.parse(raw) as DualFrozenRecord);
  if(result.pre.date!==date||result.pre.turn!==turn)
@@ -159,13 +161,13 @@ const pending=new Map<string,Promise<DualFrozenRecord>>();
  * NO constituye certificación externa del instante.
  */
 export async function saveDualFrozen(
- pre:DualPre,publishedTargetAndLater:string[],now:Date=new Date()
+ pre:DualPre,publishedTargetAndLater:string[],now:Date=new Date(),store:PreStorage=AsyncStorage
 ):Promise<DualFrozenRecord>{
  const key=storageKey(pre.date,pre.turn);
  const running=pending.get(key);
  if(running)return running;
  const operation=(async()=>{
-  const existing=await loadDualFrozen(pre.date,pre.turn);
+  const existing=await loadDualFrozen(pre.date,pre.turn,store);
   if(existing)return existing;
   if(localIso(now)!==pre.date)throw Error('PRE doble: sólo fecha actual');
   if(publishedTargetAndLater.some(validHead))
@@ -173,8 +175,8 @@ export async function saveDualFrozen(
   if(Date.parse(pre.createdAt)>now.getTime()+60000)
    throw Error('PRE doble con hora futura');
   const saved=sealDualPayload(pre);
-  await AsyncStorage.setItem(key,JSON.stringify(saved));
-  const verified=await loadDualFrozen(pre.date,pre.turn);
+  await store.setItem(key,JSON.stringify(saved));
+  const verified=await loadDualFrozen(pre.date,pre.turn,store);
   if(!verified)throw Error('No pudo verificarse el guardado doble');
   return verified;
  })();
