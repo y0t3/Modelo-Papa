@@ -11,22 +11,22 @@ export type LaloColors={
  button:string;buttonText:string;divider:string;statusBar:'light'|'dark';
 };
 const LIGHT:LaloColors={
- canvas:'#F2F5F9',nav:'#0D2F66',navActive:'#164D95',
- surface:'#FFFFFF',surfaceAlt:'#EDF3FA',card:'#FFFFFF',
- board:'#FDFBFF',boardAlt:'#F6F1F8',cell:'#FFFFFF',
- text:'#282039',subtext:'#665A73',muted:'#72657C',
- border:'#DCD3E3',accent:'#603E83',accentFill:'#EDE1F6',
- selected:'#F1E6FA',callout:'#EEE5F4',button:'#18578A',
- buttonText:'#FFFFFF',divider:'#E4DBE9',statusBar:'dark'
+ canvas:'#EEF3FA',nav:'#071D42',navActive:'#1754A1',
+ surface:'#FFFFFF',surfaceAlt:'#F4F7FC',card:'#FFFFFF',
+ board:'#F9FBFF',boardAlt:'#EFF3F9',cell:'#FFFFFF',
+ text:'#10274D',subtext:'#4B6180',muted:'#667997',
+ border:'#C5D3E6',accent:'#AD7618',accentFill:'#FFF0CC',
+ selected:'#E6F0FF',callout:'#EFF5FE',button:'#1463B0',
+ buttonText:'#FFFFFF',divider:'#D6E0ED',statusBar:'dark'
 };
 const DARK:LaloColors={
- canvas:'#07142D',nav:'#081D42',navActive:'#164B90',
- surface:'#101E39',surfaceAlt:'#142749',card:'#1B2C4E',
- board:'#191722',boardAlt:'#211C2C',cell:'#2C2639',
- text:'#F8F3FF',subtext:'#C8BDD7',muted:'#B8ADCB',
- border:'#405274',accent:'#C9A6FF',accentFill:'#3D2C56',
- selected:'#372A4C',callout:'#30263E',button:'#28669D',
- buttonText:'#FFFFFF',divider:'#42384F',statusBar:'light'
+ canvas:'#05152F',nav:'#061C3E',navActive:'#1457A6',
+ surface:'#091D3D',surfaceAlt:'#102A50',card:'#102347',
+ board:'#0A1933',boardAlt:'#10254B',cell:'#1A2945',
+ text:'#F8F5EA',subtext:'#BDCEE4',muted:'#8EA4C3',
+ border:'#28548A',accent:'#F3C251',accentFill:'#233B61',
+ selected:'#113D72',callout:'#0E315E',button:'#0864B7',
+ buttonText:'#FFFFFF',divider:'#244673',statusBar:'light'
 };
 export const paletteFor=(mode:ThemeMode):LaloColors=>mode==='dark'?DARK:LIGHT;
 export type KindColor={line:string;fill:string;text:string;label:string};
@@ -44,7 +44,7 @@ type ThemeContextValue={mode:ThemeMode;colors:LaloColors;kinds:Record<PanoramaKi
  toggle:()=>void;setTheme:(next:ThemeMode)=>void};
 const ThemeContext=createContext<ThemeContextValue|null>(null);
 export function LaloThemeProvider({children}:{children:React.ReactNode}){
- const [mode,setMode]=useState<ThemeMode>('light');
+ const [mode,setMode]=useState<ThemeMode>('dark');
  useEffect(()=>{let alive=true;void AsyncStorage.getItem(STORE).then(value=>{
   if(alive&&(value==='dark'||value==='light'))setMode(value);
  }).catch(()=>{});return()=>{alive=false}},[]);
