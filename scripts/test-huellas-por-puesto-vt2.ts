@@ -16,7 +16,7 @@ assert.equal(shapeOf(horiz),'HORIZONTAL');
 assert.equal(shapeOf(diagA),'DIAGONAL_A');
 assert.equal(shapeOf(diagB),'DIAGONAL_B');
 assert.equal(cellSite('Previa',horiz as any),cellSite('Previa',[...horiz].reverse() as any));
-const x=make('45/54',horiz),y=make('10/01',[
+const x=make('45/54',horiz),y=make('01/10',[
  {row:0,col:0,digit:'1'},{row:0,col:1,digit:'0'}]);
 const a=footprintsOf(x),b=footprintsOf(y);
 assert.equal(a[0].signature,b[0].signature,
