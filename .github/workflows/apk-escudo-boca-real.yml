@@ -1,0 +1,90 @@
+name: APK La posta de Lalo 0.3.19 - escudo real sin deformaciones
+on:
+  push:
+    branches: [lab/escudo-boca-real-imagen-29oct2026]
+    paths:
+      - '.github/workflows/apk-escudo-boca-real.yml'
+      - 'src/**'
+      - 'package.json'
+      - 'scripts/test-la-posta-identidad.ts'
+      - 'scripts/test-hero-composition.ts'
+      - 'assets/la-posta-de-lalo.svg'
+      - '.github/scripts/icon-modelo-lalo.sh'
+      - 'scripts/test-vt2-experimental-post.ts'
+      - 'App.tsx'
+      - 'app.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Instalar dependencias
+        run: npm install
+      - name: Tipos de Android y componentes INFO
+        run: npx tsc --noEmit --project tsconfig.ui-check.json
+      - name: Proteger color de los motores e identidad de Lalo
+        run: npx --yes tsx scripts/test-la-posta-identidad.ts
+      - name: Verificar escudo real en marca de agua y encabezado
+        run: npx --yes tsx scripts/test-hero-composition.ts
+      - name: Regresiones de motores y minihojas PRE/POST
+        run: |
+          npx --yes tsx scripts/test-info-aux-trazas-visuales.ts
+          npx --yes tsx scripts/test-info-aux-predictiva-top3.ts
+          npx --yes tsx scripts/test-aux-correcciones-info-vt4.ts
+          npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
+          npx --yes tsx scripts/test-figure-tracking.ts
+          npx --yes tsx scripts/test-vt2-formas-experimental.ts
+          npx --yes tsx scripts/test-vt2-experimental-post.ts
+          npx --yes tsx scripts/test-motor-formas-primero.ts
+          npx --yes tsx scripts/test-figure-rescue-audit.ts
+          npx --yes tsx scripts/test-motor-formas-primero-vt2.ts
+          npx --yes tsx scripts/test-figure-motion-vt2-vt3.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-consolidacion-lalo.ts
+      - name: Nombre e identificador de prueba - no reemplaza la app estable
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = 'app.json';
+          const app = JSON.parse(fs.readFileSync(path, 'utf8'));
+          app.expo.name = 'La posta de Lalo';
+          app.expo.version = '0.3.19';
+          app.expo.android.package = 'com.y0t3.modelopapa.formasprimero';
+          app.expo.android.versionCode = 25;
+          fs.writeFileSync(path, JSON.stringify(app, null, 2) + '\n');
+          console.log('APK de prueba independiente:', app.expo.name, app.expo.android.package);
+          NODE
+      - name: Generar proyecto Android
+        env:
+          CI: '1'
+        run: npx expo prebuild --platform android --clean
+      - name: Crear icono de quiniela azul y oro sin letras
+        run: bash .github/scripts/icon-modelo-lalo.sh
+      - name: Compilar APK independiente
+        working-directory: android
+        env:
+          NODE_ENV: production
+        run: ./gradlew assembleRelease --no-daemon
+      - name: Comprobar que existe el APK
+        run: |
+          test -s android/app/build/outputs/apk/release/app-release.apk
+          ls -lh android/app/build/outputs/apk/release/app-release.apk
+          sha256sum android/app/build/outputs/apk/release/app-release.apk
+      - name: Publicar instalador de prueba
+        uses: actions/upload-artifact@v4
+        with:
+          name: La-Posta-de-Lalo-Escudo-REAL-APK-0.3.19
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 30
