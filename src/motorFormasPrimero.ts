@@ -19,6 +19,7 @@ import {reversibleFamily} from './motorLalo';
 import type {InfoVisualDay} from './infoTurnHistory';
 
 export const FORM_SOURCES:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
+export type FormKind='vt2'|'vt3';
 export type FormCell={row:number;col:number};
 export type FormRoot={
  date:string;turn:Turno;jurisdiction:string;head:string;
@@ -35,7 +36,7 @@ export type FormChoice=FormLocation&{
  rank:number;value:string;family:string
 };
 export type FormMotorView={
- date:string;turn:Turno;method:'FORMA_ANCLA_PRE_6J';
+ date:string;turn:Turno;method:'FORMA_ANCLA_PRE_6J';kind:FormKind;
  rootDays:string[];validRoots:number;physicalPositions:number;
  selectedPositions:number;availableFamilies:number;top:FormChoice[];
 };
@@ -51,11 +52,11 @@ const cellKey=(p:FormCell)=>p.row+':'+p.col;
 const pathKey=(p:FormCell[])=>
  [p.map(cellKey).join('>'),[...p].reverse().map(cellKey).join('>')].sort()[0];
 const anchor=(p:FormCell[])=>Math.min(...p.map(c=>c.row));
-const physical=(p:FormCell[],sourceValues:string[])=>p.length===3&&
+const physical=(p:FormCell[],sourceValues:string[],length:2|3=3)=>p.length===length&&
  new Set(p.map(cellKey)).size===3&&p.every((c,i)=>c.row>=0&&c.row<6&&
   (c.col===0||c.col===1)&&/^[0-9]$/.test(sourceValues[c.row]?.[c.col]||'')&&
   (!i||Math.max(Math.abs(c.row-p[i-1].row),Math.abs(c.col-p[i-1].col))===1));
-export function historicalFormRoots(date:string,days:InfoVisualDay[]):{
+export function historicalFormRoots(date:string,days:InfoVisualDay[],kind:FormKind='vt3'):{
  dates:string[];roots:FormRoot[]
 }{
  if(!/^\d{4}-\d{2}-\d{2}$/.test(date))throw Error('Fecha de corte inválida');
@@ -68,13 +69,13 @@ export function historicalFormRoots(date:string,days:InfoVisualDay[]):{
    for(const mark of day.sheet.matches[turn]||[]){
     if(mark.jurisdiccion==='Montevideo'||!/^\d{4,5}$/.test(mark.cabeza))continue;
     for(const hit of mark.hits){
-     if(hit.kind!=='vt3'||!mark.cabeza.endsWith(hit.value))continue;
+     if(hit.kind!==kind||!mark.cabeza.endsWith(hit.value))continue;
      if(FORM_SOURCES.indexOf(hit.sourceId)>TURNOS.indexOf(turn))continue;
      const col=day.sheet.columns.find(c=>c.id===hit.sourceId);
      if(!col)continue;
      for(const route of hit.paths){
       const cells=route.map(c=>({row:c.row,col:c.col}));
-      if(!physical(cells,col.values))continue;
+      if(!physical(cells,col.values,kind==='vt2'?2:3))continue;
       const reading=cells.map(c=>col.values[c.row][c.col]).join('');
       if(reading!==hit.value)continue;
       const event=[day.date,turn,mark.jurisdiccion,mark.cabeza].join('|');
@@ -90,7 +91,7 @@ export function historicalFormRoots(date:string,days:InfoVisualDay[]):{
  }
  return {dates:recent.map(d=>d.date),roots};
 }
-export function formPositions(pre:DailySheet,target:Turno):FormLocation[]{
+export function formPositions(pre:DailySheet,target:Turno,kind:FormKind='vt3'):FormLocation[]{
  const index=TURNOS.indexOf(target);
  if(index<0)throw Error('Turno de forma desconocido');
  const found:FormLocation[]=[];
@@ -98,9 +99,9 @@ export function formPositions(pre:DailySheet,target:Turno):FormLocation[]{
   const cells=cellsFromPlus11(col.values);
   const visited=new Set<string>();
   const go=(p:Path)=>{
-   if(p.length===3){
+   if(p.length===(kind==='vt2'?2:3)){
     const steps=p.map(x=>({row:x.row,col:x.col}));
-    if(!physical(steps,col.values))return;
+    if(!physical(steps,col.values,kind==='vt2'?2:3))return;
     const key=pathKey(steps);
     if(visited.has(key))return;
     visited.add(key);
@@ -174,10 +175,11 @@ export function rankFormLocations(
  return selected.slice(0,limit);
 }
 export function buildFormFirstMotor(
- pre:DailySheet,date:string,target:Turno,days:InfoVisualDay[],topLimit=10
+ pre:DailySheet,date:string,target:Turno,days:InfoVisualDay[],topLimit=10,
+ kind:FormKind='vt3'
 ):FormMotorView{
- const historical=historicalFormRoots(date,days);
- const locations=formPositions(pre,target);
+ const historical=historicalFormRoots(date,days,kind);
+ const locations=formPositions(pre,target,kind);
  // Rank enough *physical* positions for de-duplicating numerical readings later.
  const ranked=rankFormLocations(locations,historical.roots,historical.dates,locations.length,date);
  const availableFamilies=new Set<string>(),top:FormChoice[]=[];
@@ -189,7 +191,12 @@ export function buildFormFirstMotor(
   if(top.length>=topLimit||top.some(x=>x.family===family))continue;
   top.push({...position,rank:top.length+1,value,family});
  }
- return {date,turn:target,method:'FORMA_ANCLA_PRE_6J',rootDays:historical.dates,
+ return {date,turn:target,method:'FORMA_ANCLA_PRE_6J',kind,rootDays:historical.dates,
   validRoots:historical.roots.length,physicalPositions:locations.length,
   selectedPositions:ranked.length,availableFamilies:availableFamilies.size,top};
 }
+
+/** VT2 hace exactamente la misma selección de FIGURAS que VT3, sin heredar prioridades de familias. */
+export const buildFormFirstVt2=(pre:DailySheet,date:string,target:Turno,
+ days:InfoVisualDay[],topLimit=10):FormMotorView=>
+ buildFormFirstMotor(pre,date,target,days,topLimit,'vt2');
