@@ -4,6 +4,9 @@ import type {DailySheet,SourceId} from '../sheet';
 import {readableWeekday} from '../infoTurnHistory';
 import type {PanoramaAntecedent,PanoramaRoute,PanoramaCell} from '../panoramaModel';
 import RouteMiniBoard from './RouteMiniBoard';
+import PhysicalShapeHistory from './PhysicalShapeHistory';
+import type {Turno} from '../domain';
+import type {InfoVisualDay} from '../infoTurnHistory';
 import {useLaloTheme} from './LaloTheme';
 
 const sourceName=(id:SourceId)=>({
@@ -60,8 +63,8 @@ function HistoricalCard({antecedent,kind,currentValues}:{
  </View>;
 }
 
-export default function MiniRoutePreview({sheet,route}:{
- sheet:DailySheet;route:PanoramaRoute
+export default function MiniRoutePreview({sheet,route,date='',turn,days=[]}:{
+ sheet:DailySheet;route:PanoramaRoute;date?:string;turn?:Turno;days?:InfoVisualDay[]
 }){
  const {colors:c}=useLaloTheme();
  const [expanded,setExpanded]=useState(false);
@@ -77,6 +80,15 @@ export default function MiniRoutePreview({sheet,route}:{
   <Text style={[s.caption,{color:c.subtext}]}>
    Forma {route.readings.join(' o ')}. Camino: {walk(route.cells)}.
   </Text>
+  {date&&turn?<PhysicalShapeHistory key={route.id+'|'+route.ownerId}
+   route={route} sheet={sheet} date={date} turn={turn} days={days}/>:null}
+  <Text style={[s.heading,{color:c.text,marginTop:12}]}>
+   2 · RAÍCES QUE EL MOTOR REALMENTE USÓ
+  </Text>
+  <Text style={[s.hint,{color:c.subtext}]}>
+   Estos antecedentes sí pertenecen al respaldo de este candidato.
+   No deben confundirse con otras veces que se dio la misma silueta.
+  </Text>
   {antecedents.length>0?<View style={{marginTop:12}}>
    <Pressable accessibilityRole="button"
     accessibilityLabel={'Ver cómo se relacionan '+antecedents.length+' recorridos anteriores'}
@@ -84,7 +96,7 @@ export default function MiniRoutePreview({sheet,route}:{
     onPress={()=>setExpanded(x=>!x)}
     style={[s.toggle,{backgroundColor:c.card,borderColor:c.border}]}>
     <Text style={[s.toggleLabel,{color:c.accent}]}>
-     {expanded?'▾':'▸'} ¿De dónde viene este recorrido? ({antecedents.length})
+     {expanded?'▾':'▸'} Ver raíces ganadoras de este recorrido ({antecedents.length})
     </Text>
     <Text style={[s.toggleHint,{color:c.subtext}]}>
      {expanded?'Ocultar':'Ver'}
