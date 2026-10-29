@@ -17,5 +17,7 @@ jobs:
         run: npm install
       - name: Comprobar tipos de la app
         run: npx tsc --noEmit --project tsconfig.ui-check.json
+      - name: Verificar VT2 historiales sin fugas de sorteo
+        run: npx --yes tsx scripts/test-vt2-family-history.ts
       - name: Regresión Lalo principal
         run: npx --yes tsx scripts/test-motor-lalo.ts
