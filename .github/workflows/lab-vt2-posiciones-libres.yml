@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - lab/vt2-posiciones-libres-intradia-29oct2026
+      - lab/vt2-transiciones-familias-cinco-dias-29oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -20,10 +21,17 @@ jobs:
         run: npx --yes tsx scripts/lab-vt2-posiciones-libres.ts
       - name: Validacion sin recalibrar pares de puestos por turno
         run: npx --yes tsx scripts/lab-vt2-congelar-puestos.ts
+      - name: Seguimiento de familias entre turnos y seis dias
+        run: npx --yes tsx scripts/lab-vt2-relaciones-familias.ts
       - name: Regression MV1 sin cambios
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - uses: actions/upload-artifact@v4
         with:
           name: vt2-posiciones-intradia-635-cortes
           path: auditorias/vt2-posiciones-libres/*.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt2-relaciones-familias-intradia
+          path: auditorias/vt2-relaciones-familias/*.json
           if-no-files-found: error
