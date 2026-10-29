@@ -1,5 +1,5 @@
 import React,{useEffect,useMemo,useState} from 'react';
-import {Pressable,StyleSheet,Text,TextInput,View} from 'react-native';
+import {Modal,Pressable,ScrollView,StyleSheet,Text,TextInput,View} from 'react-native';
 import type {DailySheet,SourceId} from '../sheet';
 import type {Turno} from '../domain';
 import type {InfoVisualDay} from '../infoTurnHistory';
@@ -106,6 +106,7 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
  const [limit,setLimit]=useState(12);
  const [selected,setSelected]=useState<string|null>(null);
  const [showAux,setShowAux]=useState<AuxMode|null>(null);
+ const [openAntecedent,setOpenAntecedent]=useState<FigureAntecedent|null>(null);
  const tracking=useMemo(()=>sheet&&date&&expanded?
   buildFigureTracking(date,turn,sheet,history,view,ayer,hoy):null,
   [sheet,date,turn,history,view,ayer,hoy,expanded]);
@@ -115,7 +116,7 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
   setExpanded(true);setFilter('todas');setQuery(family);
   setSelected(family);setLimit(12);
  },[focusRequest]);
- useEffect(()=>{setSelected(null);setShowAux(null);setLimit(12);},[date,turn]);
+ useEffect(()=>{setSelected(null);setShowAux(null);setOpenAntecedent(null);setLimit(12);},[date,turn]);
  const filtered=(tracking?.records||[]).filter(f=>
   (filter==='todas'||filter==='top'&&f.top10||
    filter==='sin'&&!f.recognized&&f.antecedents.length>0)&&
@@ -219,18 +220,21 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
     <Text style={[styles.small,{color:c.subtext}]}>Ruta actual: {place(active)}</Text>
     <Text style={{fontWeight:'900',color:c.text,marginTop:5}}>Antecedentes ganadores reales</Text>
     {current.antecedents.length?current.antecedents.slice(0,6).map((root,i)=>
-     <View key={[root.date,root.turn,root.jurisdiction,root.head,root.source,i].join('|')}
-       style={[styles.rootRow,{borderTopColor:c.border}]}>
-      <Text style={{color:c.text,fontWeight:'700',fontSize:11}}>
-       {root.date.slice(8,10)+'/'+root.date.slice(5,7)} · {root.turn} · {root.jurisdiction} {root.head}
-      </Text>
+     <Pressable key={[root.date,root.turn,root.jurisdiction,root.head,root.source,i].join('|')}
+      accessibilityRole="button"
+      accessibilityLabel={'Ver minihoja de '+root.date+' '+root.turn+' '+root.jurisdiction+' '+root.head}
+      onPress={()=>setOpenAntecedent(root)}
+      style={[styles.rootRow,{borderTopColor:c.border}]}>
+      <View style={styles.rootTitleRow}>
+       <Text style={{color:c.text,fontWeight:'700',fontSize:11,flex:1}}>
+        {root.date.slice(8,10)+'/'+root.date.slice(5,7)} · {root.turn} · {root.jurisdiction} {root.head}
+       </Text>
+       <Text style={{color:c.accent,fontSize:10,fontWeight:'900'}}>Ver minihoja ›</Text>
+      </View>
       <Text style={[styles.small,{color:c.subtext}]}>
-       Figura {root.digits} · {sourceName[root.source]} →
-       {sourceName[active.source]} · {root.relation==='MISMA_FUENTE'?'misma fuente':
-        root.relation==='VECINA'?'fuente vecina':'otra fuente'} ·
-       traslado vertical {root.verticalShift===0?'0':root.verticalShift>0?'+'+root.verticalShift:String(root.verticalShift)} filas
+       Figura {root.digits} · {sourceName[root.source]} → {sourceName[root.currentRoute.source]}
       </Text>
-     </View>):<Text style={[styles.small,{color:c.subtext}]}>
+     </Pressable>):<Text style={[styles.small,{color:c.subtext}]}>
       No se registraron figuras ganadoras de esta silueta en las jornadas cargadas.
      </Text>}
     {current.antecedents.length>6?<Text style={[styles.small,{color:c.muted}]}>
@@ -266,6 +270,43 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
     No hay familias que cumplan este filtro en el corte seleccionado.
    </Text>}
   </>:null}
+  <Modal visible={!!openAntecedent} transparent animationType="fade"
+   onRequestClose={()=>setOpenAntecedent(null)}>
+   <View style={styles.modalBackdrop}>
+    <View style={[styles.modalCard,{backgroundColor:c.surface,borderColor:c.border}]}>
+     <ScrollView contentContainerStyle={{gap:12}}>
+      <Text style={[styles.heading,{color:c.text}]}>Cómo se movió la figura</Text>
+      {openAntecedent?<>
+       <Text style={[styles.small,{color:c.subtext}]}>
+        {openAntecedent.date.slice(8,10)+'/'+openAntecedent.date.slice(5,7)} ·
+        {openAntecedent.turn} · {openAntecedent.jurisdiction} {openAntecedent.head}
+       </Text>
+       <View style={styles.miniLine}>
+        <FigureMini route={openAntecedent} source={oldColumn(openAntecedent)}
+         title={'ANTES · '+sourceName[openAntecedent.source]}/>
+        <Text style={{fontSize:17,color:c.accent}}>→</Text>
+        <FigureMini route={openAntecedent.currentRoute} source={currentColumn(openAntecedent.currentRoute)}
+         title={'AHORA · '+sourceName[openAntecedent.currentRoute.source]}/>
+       </View>
+       <Text style={[styles.small,{color:c.subtext}]}>
+        Los números de las casillas muestran el orden del recorrido. Las dos
+        minihojas comparan la figura ganadora anterior con la formación actual.
+       </Text>
+      </>:null}
+     </ScrollView>
+     <View style={styles.actions}>
+      {current?.recognized?<Pressable accessibilityRole="button" style={[styles.action,{borderColor:c.accent}]}
+       onPress={()=>{setOpenAntecedent(null);onOpenLalo(current.family)}}>
+       <Text style={{color:c.accent,fontWeight:'800'}}>Ver recorrido actual</Text>
+      </Pressable>:null}
+      <Pressable accessibilityRole="button" onPress={()=>setOpenAntecedent(null)}
+       style={[styles.action,{borderColor:c.border}]}>
+       <Text style={{color:c.text,fontWeight:'800'}}>Cerrar</Text>
+      </Pressable>
+     </View>
+    </View>
+   </View>
+  </Modal>
  </View>;
 }
 const styles=StyleSheet.create({
@@ -289,7 +330,10 @@ const styles=StyleSheet.create({
  miniCell:{width:33,height:25,borderWidth:1,borderRadius:3,alignItems:'center',justifyContent:'center'},
  order:{position:'absolute',fontWeight:'900',fontSize:8,top:0,right:1},
  miniFooter:{fontSize:9,fontWeight:'700'},
- rootRow:{borderTopWidth:1,paddingTop:7,gap:3},
+ rootRow:{borderTopWidth:1,paddingTop:9,paddingBottom:8,gap:4},
+ rootTitleRow:{flexDirection:'row',alignItems:'center',gap:6},
+ modalBackdrop:{flex:1,justifyContent:'center',alignItems:'center',padding:16,backgroundColor:'rgba(0,0,0,0.73)'},
+ modalCard:{width:'100%',maxWidth:480,maxHeight:'88%',borderWidth:1,borderRadius:14,padding:15,gap:12},
  actions:{flexDirection:'row',flexWrap:'wrap',gap:7},
  action:{paddingHorizontal:9,paddingVertical:8,borderRadius:8,borderWidth:1},
  auxGrid:{borderWidth:1,padding:4,borderRadius:8,gap:2},
