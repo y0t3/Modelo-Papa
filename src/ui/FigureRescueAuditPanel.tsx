@@ -4,7 +4,7 @@ import type {DailySheet,SourceId} from '../sheet';
 import type {Turno} from '../domain';
 import type {LaloView} from '../motorLalo';
 import type {FormMotorView,FormCell,FormKind} from '../motorFormasPrimero';
-import {classifyFigureMotion} from '../figureMotionAudit';
+import {classifyFigureMotion,exactActivationTimeline} from '../figureMotionAudit';
 import type {InfoVisualDay} from '../infoTurnHistory';
 import {readableWeekday} from '../infoTurnHistory';
 import {buildFigureRescueAudit} from '../figureRescueAudit';
@@ -40,6 +40,7 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
  const current=chosen?pre?.columns.find(col=>col.id===chosen.choice.source):null;
  const roots=chosen?.choice.support.roots||[];
  const motion=chosen?classifyFigureMotion(chosen.choice):null;
+ const timeline=chosen?exactActivationTimeline(chosen.choice,forms?.rootDays||[]):null;
  const groupedRoots=roots.filter((r,i)=>roots.findIndex(q=>q.event===r.event&&q.source===r.source&&
   q.cells.map(c=>c.row+':'+c.col).join('>')===r.cells.map(c=>c.row+':'+c.col).join('>'))===i);
  const shownRoots=showAllRoots?groupedRoots:groupedRoots.slice(0,8);
@@ -161,6 +162,23 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
       'Cambios de fuente: '+motion.sourceOffsets.join(', ')+'. ':''}
      Una posición puede tener varias clases de antecedentes ganadores.
      Estas cifras describen movimientos, no cambian el orden del Top.
+    </Text>
+   </View>:null}
+   {timeline?<View style={[s.summary,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+    <Text style={[s.emphasis,{color:c.text}]}>SECUENCIA DE ACTIVACIONES REALES · MISMA POSICIÓN</Text>
+    <Text style={[s.note,{color:c.subtext}]}>
+     {timeline.dates.map((d,i)=>d.slice(5).replace('-','/')+
+      ' '+(timeline.activated[i]?'●':'○')).join('   ')}
+    </Text>
+    <Text style={[s.note,{color:c.subtext}]}>
+     {timeline.days} jornadas con cabeza ganadora en esta ruta exacta;
+     {' '}{timeline.currentStreak} jornada(s) consecutiva(s) hasta la última;
+     {' '}{timeline.state.replaceAll('_',' ').toLowerCase()}.
+    </Text>
+    <Text style={[s.note,{color:c.muted}]}>
+     ● = esa ruta explicó una cabeza real; ○ = no se verificó una cabeza
+     ganadora en ella. ○ NO significa que la figura haya desaparecido
+     físicamente de la hoja.
     </Text>
    </View>:null}
    <Text style={[s.emphasis,{color:c.text}]}>
