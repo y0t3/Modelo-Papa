@@ -1,7 +1,7 @@
 name: Validar geometria VT2 y seguimiento visual por formas
 on:
   push:
-    branches: [feature/experimental-vt2-formas-30oct2026]
+    branches: [feature/experimental-vt2-formas-30oct2026, fix/vt2-post-figuras-29oct2026]
   workflow_dispatch:
 permissions:
   contents: read
@@ -18,6 +18,8 @@ jobs:
         run: npx tsc --noEmit --project tsconfig.ui-check.json
       - name: VT2 forma antes que numero
         run: npx --yes tsx scripts/test-vt2-formas-experimental.ts
+      - name: Comparacion POST VT2 con las dos listas PRE
+        run: npx --yes tsx scripts/test-vt2-experimental-post.ts
       - name: Regresion visual figuras y motor
         run: |
           npx --yes tsx scripts/test-figure-tracking.ts
