@@ -1,0 +1,48 @@
+name: LAB figuras ganadoras D-7 VT2 VT3
+on:
+  push:
+    branches: [lab/huellas-ganadoras-semana-vt2-vt3-29oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: junio-julio
+            from: '2026-06-01'
+            through: '2026-07-31'
+          - label: agosto-septiembre
+            from: '2026-08-01'
+            through: '2026-09-30'
+          - label: octubre
+            from: '2026-10-12'
+            through: '2026-10-28'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Test invariante figura antes de leer cifras
+        run: npx --yes tsx scripts/test-winning-footprint-transfer.ts
+      - name: Motor Lalo original intacto
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Test de figuras preexistentes
+        run: npx --yes tsx scripts/test-huellas-por-puesto-vt2.ts
+      - name: Replay figuras D-7, VT2 y VT3, vs control comparable
+        env:
+          FIG_LABEL: ${{ matrix.label }}
+          FIG_FROM: ${{ matrix.from }}
+          FIG_TO: ${{ matrix.through }}
+        run: npx --yes tsx scripts/lab-winning-figure-week-transfer.ts
+      - name: Guardar resultados físicos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: winning-figures-${{ matrix.label }}
+          path: auditorias/figuras-ganadoras-d7/*.json
+          if-no-files-found: warn
