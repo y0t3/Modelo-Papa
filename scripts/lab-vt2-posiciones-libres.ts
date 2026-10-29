@@ -45,6 +45,7 @@ function period(date:string){
  if(date<='2026-10-24')return 'OCT_1_24';
  return 'OCT_26_28';
 }
+async function main(){
 let days=0;
 for(let date='2026-06-01';date<='2026-10-28';date=shiftDay(date,1)){
  if(new Date(date+'T12:00:00Z').getUTCDay()===0)continue;
@@ -206,3 +207,6 @@ fs.writeFileSync(out+'/resultados.json',JSON.stringify(result,null,2)+'\n');
 const brief={days,cuts:rows.length,heads,baselineTop:result.baselineTop,byPosition,night,permutation};
 fs.writeFileSync(out+'/resumen.json',JSON.stringify(brief,null,2)+'\n');
 console.log('VT2_SLOTS_SUMMARY',JSON.stringify(brief));
+
+}
+main().catch(error=>{console.error('VT2_POSICIONES_ERROR',error);process.exitCode=1});
