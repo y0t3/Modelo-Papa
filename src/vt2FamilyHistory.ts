@@ -32,6 +32,8 @@ export function buildVt2FamilyWitnesses(
   for(let i=0;i<until;i++){
    const turn=TURNOS[i];
    for(const mark of sheet.matches[turn]||[]){
+    // Montevideo no es raíz histórica de Lalo MV1; sus POST siguen en Hoja.
+    if(scope==='ANTERIOR'&&mark.jurisdiccion==='Montevideo')continue;
     if(!/^\d{4}$/.test(mark.cabeza)||
       vt2FamilyKey(mark.cabeza.slice(-2))!==family)continue;
     for(const hit of mark.hits){
@@ -55,7 +57,8 @@ export function buildVt2FamilyWitnesses(
    }
   }
  };
- const historic=[...new Map(days.filter(d=>d.date<date)
+ const historic=[...new Map(days.filter(d=>d.date<date&&
+  TURNOS.some(t=>(d.sheet.heads[t]||[]).length>0))
   .map(d=>[d.date,d])).values()]
   .sort((a,b)=>a.date.localeCompare(b.date)).slice(-6);
  for(const d of historic)append(d.date,d.sheet,'ANTERIOR',TURNOS.length);
