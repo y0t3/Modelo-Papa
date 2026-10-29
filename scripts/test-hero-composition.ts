@@ -6,10 +6,21 @@ const app=fs.readFileSync('App.tsx','utf8');
 assert(hero.includes('TOMAA GIILL!!'),'No debe perderse la frase literal de Lalo');
 assert(hero.includes('La posta de')&&hero.includes('Lalo'),
  'El título debe seguir siendo La posta de Lalo');
-assert(hero.includes('CABJ')&&hero.includes('const stars='),
- 'El escudo clásico debe llevar CABJ y estrellas, no puntos decorativos');
-assert(!hero.includes('<Rect x="326" y="80" width="46"'),
- 'No debe volver la franja con sigla del escudo anterior');
+const watermark=fs.readFileSync('src/ui/BosteroWatermark.tsx','utf8');
+const crest=fs.readFileSync('src/ui/BocaShieldImage.tsx','utf8');
+assert(hero.includes("import BocaShieldImage from './BocaShieldImage'")&&
+ hero.includes('<BocaShieldImage width={78} height={96}/>'),
+ 'El encabezado tiene que usar la IMAGEN REAL del escudo, no dibujarlo');
+assert(watermark.includes("import BocaShieldImage from './BocaShieldImage'")&&
+ watermark.includes('<BocaShieldImage width={83} height={99}/>'),
+ 'La marca de agua debe utilizar exactamente el mismo escudo real');
+assert(crest.includes('SvgXml')&&crest.includes('BOCA_REAL_SHIELD_SVG'),
+ 'El escudo debe estar incorporado localmente como imagen vectorial offline');
+const originalLogo=(crest.match(/<path /g)||[]).length;
+assert(originalLogo===3,'No modificar el dibujo original del logo SVG');
+assert(!hero.includes('const stars=')&&!hero.includes('<SvgText x="351"')&&
+ !watermark.includes('<SvgText x="132"'),
+ 'No deben quedar escudos artificiales en las pantallas');
 for(const n of ['11','23','72','48']){
  assert(hero.includes('n="'+n+'"'),'Falta bolilla de quiniela '+n);
 }
@@ -20,8 +31,8 @@ assert(ballPos.every(b=>b.x+b.r+3<109),
  'Ninguna bolilla debe tocar la zona del título (x>=109)');
 const crestMin=310,wordmarkMax=275;
 assert(wordmarkMax<crestMin,'Título y escudo deben tener áreas independientes');
-assert(hero.includes('right:76')&&!hero.includes('right:8,bottom'),
- 'Botón oscuro/Claro debe quedar a la izquierda del escudo');
+assert(hero.includes('right:8,bottom:7')&&hero.includes('top:9,width:78,height:96'),
+ 'Modo y escudo deben tener lugares independientes');
 assert(app.includes('<BrandHero mode={mode} onToggle={toggle}/>'),
  'No se reemplazó el encabezado principal de la app');
 for(const marker of [
