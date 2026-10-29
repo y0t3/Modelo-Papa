@@ -96,4 +96,23 @@ assert(m.verticalEvents>=1);
 assert(m.sourceChangeEvents>=1);
 assert(m.categories.includes('MISMA_POSICION')&&
  m.categories.includes('DESPLAZAMIENTO_VERTICAL')&&m.categories.includes('CAMBIO_FUENTE'));
+// A two-cell upright shape can slide LEFT/RIGHT without any row change.
+const v2=buildFormFirstVt2(today,date,'Previa',days).top[0];
+const left=[{row:0,col:0},{row:1,col:0}],right=[{row:0,col:1},{row:1,col:1}];
+const horizontalCase={...v2,source:'prevNocturno' as const,
+ shape:'0:0>1:0',anchor:0,cells:right,
+ support:{...v2.support,roots:[
+  {...v2.support.roots[0],source:'prevNocturno' as const,
+   shape:'0:0>1:0',anchor:0,cells:left,event:'H'},
+  {...v2.support.roots[0],source:'prevNocturno' as const,
+   shape:'0:0>1:0',anchor:1,cells:[
+    {row:1,col:0},{row:2,col:0}],event:'D'}
+ ]}};
+const hm=classifyFigureMotion(horizontalCase);
+assert.equal(hm.exactEvents,0);
+assert.equal(hm.horizontalEvents,1,'Mover sólo una columna no es desplazamiento vertical');
+assert.equal(hm.verticalEvents,0);
+assert.equal(hm.diagonalEvents,1,'Mover fila y columna es diagonal');
+assert(hm.categories.includes('DESPLAZAMIENTO_HORIZONTAL')&&
+ hm.categories.includes('DESPLAZAMIENTO_DIAGONAL'));
 console.log('TEST_MOVIMIENTOS_DOBLE_OK');
