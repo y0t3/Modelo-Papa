@@ -4,6 +4,7 @@ import Svg,{
  Defs,LinearGradient,RadialGradient,Stop,Rect,Circle,Path,G,Text as SvgText,Ellipse
 } from 'react-native-svg';
 import type {ThemeMode} from './LaloTheme';
+import BocaShieldImage from './BocaShieldImage';
 
 /**
  * Header de identidad de Lalo, con el escudo tradicional CABJ como referencia:
@@ -11,26 +12,6 @@ import type {ThemeMode} from './LaloTheme';
  * La composición reserva tres zonas que nunca se superponen:
  * bolillas x=0..88 · título x=109..277 · escudo x=303..389.
  */
-const star=(cx:number,cy:number,r=2.7)=>{
- let d='';
- for(let j=0;j<10;j++){
-  const a=-Math.PI/2+j*Math.PI/5;
-  const rad=j%2===0?r:r*.43;
-  d+=(j===0?'M':'L')+(cx+Math.cos(a)*rad).toFixed(2)+' '+
-   (cy+Math.sin(a)*rad).toFixed(2);
- }
- return d+'Z';
-};
-const stars=[
- {y:40,x:[327,337,347,357,367,377]},
- {y:49,x:[325,335,345,355,365,375]},
- {y:58,x:[326,336,346,356,366,376]},
- {y:67,x:[329,339,349,359,369,379]},
- {y:104,x:[330,340,350,360,370,379]},
- {y:113,x:[335,345,355,365,375]},
- {y:122,x:[341,351,361,371]},
- {y:130,x:[347,357]},
-] as const;
 function LotteryBall({
  x,y,r,n,theme
 }:{x:number;y:number;r:number;n:string;theme:'cream'|'gold'|'blue'}){
@@ -112,21 +93,6 @@ export default function BrandHero({mode,onToggle}:{mode:ThemeMode;onToggle:()=>v
     {Array.from({length:30},(_,i)=><Circle key={'spark'+i}
      cx={(i*89+13)%390} cy={(i*49+17)%166}
      r={i%6===0?1.65:.8} fill="#F0C360" opacity={i%4===0?.59:.28}/>)}
-    {/* Escudo clásico: borde dorado, concavidad superior, letras CABJ sin franja. */}
-    <Path d="M310 41L330 16Q340 25 349 25Q360 25 370 16L389 41
-     L386 79Q381 112 350 147Q319 116 313 79Z"
-     fill="#03234D" stroke="#F5C457" strokeWidth="5.5" strokeLinejoin="round"/>
-    <Path d="M317 44L332 24Q341 31 349 31Q360 31 367 24L382 44
-     L379 79Q374 109 350 137Q324 109 320 79Z"
-     fill="url(#crestBlue)" stroke="#A87828" strokeWidth="1.6"
-     strokeLinejoin="round"/>
-    {stars.flatMap((row,i)=>row.x.map((x,j)=><Path
-     key={'crest'+i+'-'+j} d={star(x,row.y,2.65)}
-     fill="#FFD15D" opacity=".94"/>))}
-    <SvgText x="351" y="91" fontSize="27" fontWeight="900"
-     textAnchor="middle" letterSpacing="-1.5" fill="#041732">CABJ</SvgText>
-    <SvgText x="350" y="89" fontSize="27" fontWeight="900"
-     textAnchor="middle" letterSpacing="-1.5" fill="#FFD264">CABJ</SvgText>
     {/* Bolillas de quiniela a la izquierda: ningún círculo llega al texto. */}
     <LotteryBall x={36} y={109} r={29} n="11" theme="blue"/>
     <LotteryBall x={57} y={61} r={23} n="23" theme="cream"/>
@@ -156,6 +122,10 @@ export default function BrandHero({mode,onToggle}:{mode:ThemeMode;onToggle:()=>v
     <SvgText x="192" y="140.5" fontSize="14.6" textAnchor="middle"
      fontWeight="900" letterSpacing=".9" fill="#FFF0B6">TOMAA GIILL!!</SvgText>
    </Svg>
+   {/* Escudo CABJ REAL desde el recurso de imagen, sin reproducirlo con paths. */}
+   <View pointerEvents="none" style={s.crest}>
+    <BocaShieldImage width={78} height={96}/>
+   </View>
    <Pressable accessibilityRole="switch"
     accessibilityLabel="Cambiar modo claro u oscuro"
     accessibilityState={{checked:mode==='dark'}} onPress={onToggle}
@@ -171,7 +141,9 @@ const s=StyleSheet.create({
   overflow:'hidden',backgroundColor:'#071D45',justifyContent:'center',
   elevation:4,shadowColor:'#F3BA48',shadowOpacity:.19,shadowRadius:8,
   shadowOffset:{width:0,height:2}},
- mode:{position:'absolute',right:76,bottom:8,width:30,height:29,
+ crest:{position:'absolute',right:11,top:9,width:78,height:96,zIndex:1,
+  alignItems:'center',justifyContent:'center'},
+ mode:{position:'absolute',right:8,bottom:7,width:30,height:29,
   borderRadius:9,backgroundColor:'rgba(4,22,48,.94)',borderWidth:1,
   borderColor:'#E8B649',alignItems:'center',justifyContent:'center',zIndex:2},
  modeText:{fontSize:18,color:'#FBE4A0',fontWeight:'900'}
