@@ -1,5 +1,5 @@
 /**
- * Auditoría descriptiva de RESCATES VT3.
+ * Auditoría descriptiva de RESCATES VT2 y VT3.
  * PRE (Formas / Lalo) y POST (cabezas publicadas) se mantienen separados.
  * No altera rankings, no aprende del POST ni confunde la coincidencia de
  * familia con evidencia independiente del éxito de una figura.
@@ -9,7 +9,7 @@ import type {Turno} from './domain';
 import type {DailySheet,SourceId} from './sheet';
 import {preSheetAtCut} from './infoCandidatos';
 import {formPositions} from './motorFormasPrimero';
-import type {FormCell,FormChoice,FormMotorView} from './motorFormasPrimero';
+import type {FormCell,FormChoice,FormMotorView,FormKind} from './motorFormasPrimero';
 import type {LaloRoute,LaloView} from './motorLalo';
 import {reversibleFamily} from './motorLalo';
 
@@ -31,7 +31,7 @@ export type AuditedLaloOnly={
  published:AuditedHead[];
 };
 export type FigureRescueAudit={
- date:string;turn:Turno;mode:'RECONSTRUCCION_PRE_NO_SELLADA';
+ date:string;turn:Turno;kind:FormKind;mode:'RECONSTRUCCION_PRE_NO_SELLADA';
  publicationCount:number;physicalRoutes:number;physicalFamilies:number;
  rescueCount:number;sharedCount:number;laloOnlyCount:number;
  rescueHeadHits:number;sharedHeadHits:number;laloOnlyHeadHits:number;
@@ -43,13 +43,15 @@ export function buildFigureRescueAudit(
  published:AuditPublishedHead[]
 ):FigureRescueAudit{
  const idx=TURNOS.indexOf(turn);
- if(idx<0||forms.kind!=='vt3'||forms.date!==date||forms.turn!==turn||
+ if(idx<0||!(['vt2','vt3'] as string[]).includes(forms.kind)||forms.date!==date||forms.turn!==turn||
   lalo.date!==date||lalo.target!==turn)
   throw Error('Auditoría PRE de figuras: fechas, tipo o turnos no coinciden');
  // Mask future and target matches even if an external caller passes a full sheet.
  const safe=preSheetAtCut(pre,turn,idx);
- const paths=formPositions(safe,turn,'vt3');
- const ranked=new Map(lalo.ranks.vt3.slice(0,10).map(f=>[f.family,f]));
+ const kind=forms.kind;
+ const size=kind==='vt2'?2:3;
+ const paths=formPositions(safe,turn,kind);
+ const ranked=new Map(lalo.ranks[kind].slice(0,10).map(f=>[f.family,f]));
  const formSet=new Set(forms.top.map(f=>f.family));
  const valid=published.filter(h=>h.jur!=='Montevideo'&&
   /^\d{4,5}$/.test(h.head)&&!!h.jur);
@@ -57,7 +59,7 @@ export function buildFigureRescueAudit(
  for(const path of paths){
   const column=safe.columns.find(c=>c.id===path.source)!;
   const reading=path.cells.map(c=>column.values[c.row]?.[c.col]||'').join('');
-  if(!/^\d{3}$/.test(reading))continue;
+  if(reading.length!==size||!/^[0-9]+$/.test(reading))continue;
   const f=reversibleFamily(reading);
   const list=allByFamily.get(f)||[];
   // Route appears once (the reverse orientation is derived on demand).
@@ -66,8 +68,8 @@ export function buildFigureRescueAudit(
   allByFamily.set(f,list);
  }
  const matches=(family:string,chosen?:FormChoice):AuditedHead[]=>
-  valid.filter(x=>reversibleFamily(x.head.slice(-3))===family).map(x=>{
-   const suffix=x.head.slice(-3);
+  valid.filter(x=>reversibleFamily(x.head.slice(-size))===family).map(x=>{
+   const suffix=x.head.slice(-size);
    const physicalPaths=(allByFamily.get(family)||[]).map(p=>{
     if(p.reading===suffix)return p;
     if([...p.reading].reverse().join('')===suffix)return{
@@ -86,7 +88,7 @@ export function buildFigureRescueAudit(
    laloRank:official?.rank??null,
    published:matches(choice.family,choice)};
  });
- const laloOnly:AuditedLaloOnly[]=lalo.ranks.vt3.slice(0,10)
+ const laloOnly:AuditedLaloOnly[]=lalo.ranks[kind].slice(0,10)
   .filter(f=>!formSet.has(f.family))
   .map(f=>({family:f.family,rank:f.rank,routes:f.paths,
    published:matches(f.family)}));
@@ -94,7 +96,7 @@ export function buildFigureRescueAudit(
  const shared=auditedForms.filter(f=>f.kind==='COMPARTIDO');
  const count=(records:{published:AuditedHead[]}[])=>
   records.reduce((n,x)=>n+x.published.length,0);
- return {date,turn,mode:'RECONSTRUCCION_PRE_NO_SELLADA',
+ return {date,turn,kind,mode:'RECONSTRUCCION_PRE_NO_SELLADA',
   publicationCount:valid.length,physicalRoutes:paths.length,
   physicalFamilies:allByFamily.size,
   rescueCount:rescues.length,sharedCount:shared.length,

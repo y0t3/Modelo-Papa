@@ -17,7 +17,7 @@ import {reversibleFamily} from '../motorLalo';
 import Vt2ExperimentalPanel from './Vt2ExperimentalPanel';
 import FormasPrimeroPanel from './FormasPrimeroPanel';
 import FigureRescueAuditPanel from './FigureRescueAuditPanel';
-import {buildFormFirstMotor} from '../motorFormasPrimero';
+import {buildFormFirstMotor,buildFormFirstVt2} from '../motorFormasPrimero';
 import type {InfoVisualDay} from '../infoTurnHistory';
 
 const localToday=()=>{
@@ -41,6 +41,9 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
   buildMotorLalo(safeSheet,date,turn,historical):null,[safeSheet,date,turn,historical]);
  const formsFirst=useMemo(()=>safeSheet&&date?
   buildFormFirstMotor(safeSheet,date,turn,visualDays.filter(d=>d.date<date)):null,
+  [safeSheet,date,turn,visualDays]);
+ const formsFirstVt2=useMemo(()=>safeSheet&&date?
+  buildFormFirstVt2(safeSheet,date,turn,visualDays.filter(d=>d.date<date)):null,
   [safeSheet,date,turn,visualDays]);
  const shadow=useMemo(()=>safeSheet&&safeView?
   buildVt3Shadow(safeSheet,date,turn,historical,safeView):null,
@@ -94,9 +97,17 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
   return {...section,matches};
  });
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
+  <Text style={[s.title,{color:c.text}]}>DOS AUDITORÍAS FÍSICAS · VT2 Y VT3</Text>
+  <Text style={[s.note,{color:c.subtext}]}>
+   Las mismas pruebas de recorridos, movimientos y cabezas ganadoras se
+   aplican a las dos longitudes; ninguna modifica el Top oficial.
+  </Text>
+  <FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
+   forms={formsFirstVt2} lalo={safeView} days={visualDays}
+   published={publishedHeads} kind="vt2"/>
   <FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
    forms={formsFirst} lalo={safeView} days={visualDays}
-   published={publishedHeads}/>
+   published={publishedHeads} kind="vt3"/>
   <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
    days={visualDays} lalo={safeView} heads={publishedHeads.map(x=>x.head)}
    kind="vt2"/>

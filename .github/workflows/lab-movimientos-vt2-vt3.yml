@@ -1,0 +1,61 @@
+name: Movimientos de figuras VT2 y VT3 - comparacion paralela
+on:
+  push:
+    branches: [lab/movimientos-figuras-vt2-vt3-29oct2026]
+    paths:
+      - '.github/workflows/lab-movimientos-vt2-vt3.yml'
+      - 'src/figureRescueAudit.ts'
+      - 'src/figureMotionAudit.ts'
+      - 'src/ui/FigureRescueAuditPanel.tsx'
+      - 'src/ui/Vt3Parallel.tsx'
+      - 'scripts/test-figure-motion-vt2-vt3.ts'
+      - 'scripts/lab-movimientos-figuras-vt2-vt3.ts'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Tipos UI
+        run: npx tsc --noEmit -p tsconfig.ui-check.json
+      - name: Movimientos y fisica VT2 y VT3
+        run: npx --yes tsx scripts/test-figure-motion-vt2-vt3.ts
+      - name: Verificar Lalo MV1 y motores anteriores
+        run: |
+          npx --yes tsx scripts/test-figure-rescue-audit.ts
+          npx --yes tsx scripts/test-motor-formas-primero-vt2.ts
+          npx --yes tsx scripts/test-motor-formas-primero.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+  periodos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    strategy:
+      fail-fast: false
+      matrix:
+        period:
+          - {label: jun-jul, from: '2026-06-01', through: '2026-07-31'}
+          - {label: ago-sep, from: '2026-08-01', through: '2026-09-30'}
+          - {label: oct, from: '2026-10-12', through: '2026-10-28'}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Misma ventana y reglas VT2 VT3
+        env:
+          FORMAS_FROM: ${{ matrix.period.from }}
+          FORMAS_THROUGH: ${{ matrix.period.through }}
+          FORMAS_PERIOD: ${{ matrix.period.label }}
+        run: npx --yes tsx scripts/lab-movimientos-figuras-vt2-vt3.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Movimientos-VT2-VT3-${{ matrix.period.label }}
+          path: auditorias/movimientos-figuras-vt2-vt3/*-${{ matrix.period.label }}.json
+          if-no-files-found: warn
