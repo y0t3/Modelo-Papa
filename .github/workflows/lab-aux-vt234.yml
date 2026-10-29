@@ -1,0 +1,36 @@
+name: LAB Auxiliar VT2 VT3 VT4 controles PRE 29oct
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - lab/aux-vt234-pre-controles-29oct2026
+    paths:
+      - scripts/lab-aux-vt234-pre-controles.ts
+      - .github/workflows/lab-aux-vt234.yml
+      - auditorias/aux-vt234-controles/**
+permissions:
+  contents: read
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Regresion de motores AUX y MV1
+        run: |
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-info-aux-predictiva-top3.ts
+          npx --yes tsx scripts/test-aux-correcciones-info-vt4.ts
+      - name: Reconstruir PRE y cotejar POST real de AUX AYER y HOY
+        run: npx --yes tsx scripts/lab-aux-vt234-pre-controles.ts
+      - name: Guardar muestra auditada
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auxiliar-vt234-pre-ayer-hoy-29oct
+          path: auditorias/aux-vt234-controles/resultados.json
+          if-no-files-found: warn
