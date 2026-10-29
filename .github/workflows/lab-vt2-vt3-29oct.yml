@@ -22,6 +22,15 @@ jobs:
         run: npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
       - name: Reconstruir 15 cortes PRE 26 a 28 octubre
         run: npx --yes tsx scripts/lab-vt2-hacia-vt3-29oct.ts
+      - name: Replay historico en semanas junio, julio, agosto, septiembre y octubre
+        run: npx --yes tsx scripts/lab-vt2-hacia-vt3-historico.ts
+      - name: Guardar resultados historicos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lab-vt2-a-vt3-historico
+          path: auditorias/vt2-hacia-vt3-historico/*.json
+          if-no-files-found: warn
       - name: Guardar resultados de laboratorio
         if: always()
         uses: actions/upload-artifact@v4
