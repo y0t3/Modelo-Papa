@@ -26,7 +26,7 @@ export function buildVt2FamilyWitnesses(
  currentSheet:DailySheet|null,days:InfoVisualDay[]
 ):Vt2Witness[]{
  const targetIndex=TURNOS.indexOf(target);
- if(targetIndex<0||!/^\\d{4}-\\d{2}-\\d{2}$/.test(date))return [];
+ if(targetIndex<0||!/^\d{4}-\d{2}-\d{2}$/.test(date))return [];
  const results:Vt2Witness[]=[],seen=new Set<string>();
  const append=(day:string,sheet:DailySheet,scope:'HOY'|'ANTERIOR',until:number)=>{
   for(let i=0;i<until;i++){
