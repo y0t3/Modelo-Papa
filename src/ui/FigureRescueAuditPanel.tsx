@@ -141,6 +141,9 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
      Misma posición: {motion.exactEvents} evento(s) ganadores, en
      {' '}{motion.exactDays} jornada(s). Desplazamiento vertical:
      {' '}{motion.verticalEvents} evento(s), en {motion.verticalDays} jornada(s).
+     Traslado horizontal: {motion.horizontalEvents} evento(s), en
+     {' '}{motion.horizontalDays} jornada(s). Traslado diagonal:
+     {' '}{motion.diagonalEvents} evento(s), en {motion.diagonalDays} jornada(s).
      Cambio de fuente: {motion.sourceChangeEvents} evento(s), en
      {' '}{motion.sourceChangeDays} jornada(s).
     </Text>
@@ -148,6 +151,12 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
      {motion.verticalOffsets.length?
       'Traslados desde antecedentes: '+motion.verticalOffsets.map(v=>
        (v>0?'+':'')+v+' fila(s)').join(', ')+'. ':''}
+     {motion.horizontalOffsets.length?
+      'Movimientos horizontales: '+motion.horizontalOffsets.map(v=>
+       (v>0?'+':'')+v+' columna(s)').join(', ')+'. ':''}
+     {motion.diagonalOffsets.length?
+      'Movimientos diagonales: '+motion.diagonalOffsets.map(v=>
+       'fila '+(v.row>0?'+':'')+v.row+', columna '+(v.col>0?'+':'')+v.col).join('; ')+'. ':''}
      {motion.sourceOffsets.length?
       'Cambios de fuente: '+motion.sourceOffsets.join(', ')+'. ':''}
      Una posición puede tener varias clases de antecedentes ganadores.
