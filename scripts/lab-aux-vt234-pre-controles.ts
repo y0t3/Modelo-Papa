@@ -170,10 +170,23 @@ async function main(){
       const family=familyOf(kind,exactSuffix);
       const idx=view.ranks[kind].findIndex(f=>match(kind,f,exactSuffix));
       const rank=idx<0?null:idx+1;
-      const formableExact=findAuxPaths(board,exactSuffix).length>0;
+      const physicalPaths=findAuxPaths(board,exactSuffix);
+      const formableExact=physicalPaths.length>0;
       const motherPos=kind===4?view.ranks[3].findIndex(f=>
        f.family===reversibleFamily(exactSuffix.slice(1))):-1;
       const vt4MotherRank=motherPos<0?null:motherPos+1;
+      if(kind===4&&formableExact&&vt4MotherRank!==null&&vt4MotherRank<=10){
+       const mother=reversibleFamily(exactSuffix.slice(1));
+       const siblings=view.ranks[4].filter(f=>f.mother===mother);
+       console.log('AUX_VT4_MOTHER_CASE',JSON.stringify({
+        date,mode,turn,jur,head,exactSuffix,mother,vt4MotherRank,
+        routesFound:physicalPaths.length,
+        firstRoute:physicalPaths[0].map(c=>({row:c.row,col:c.col,source:c.source,digit:c.digit})),
+        rankedSiblings:siblings.slice(0,12).map(f=>({rank:f.rank,family:f.family,
+         values:f.values,roots:f.roots,d1:f.d1,d7:f.d7,paths:f.paths})),
+        numberOfRankedSiblings:siblings.length
+       }));
+      }
       if(rank!==null&&!formableExact)
        throw Error('Candidata sin recorrido exacto: '+date+' '+mode+' '+turn+' '+jur+' VT'+kind);
       outcomes.push({jur,head,kind,exactSuffix,family,formableExact,
