@@ -18,7 +18,7 @@ import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
 import type {LaloHistorical} from '../src/motorLalo';
 import {buildFormFirstMotor,buildFormFirstVt2,formPositions} from '../src/motorFormasPrimero';
 import type {FormKind} from '../src/motorFormasPrimero';
-import {classifyFigureMotion} from '../src/figureMotionAudit';
+import {classifyFigureMotion,exactActivationTimeline} from '../src/figureMotionAudit';
 import type {InfoVisualDay} from '../src/infoTurnHistory';
 import {buildFigureRescueAudit} from '../src/figureRescueAudit';
 
@@ -51,6 +51,8 @@ type Cut={kind:FormKind;date:string;turn:string;period:string;heads:{jur:string;
  formRoots:number;formPositions:number;formCandidates:number;formSourceDays:number};
 type RescueCase={
  kind:FormKind;movement:string;movementCategories:string[];
+ timelineState:string;exactActivatedDays:number;latestExactDate:string|null;
+ consecutiveExact:number;
  exactEvents:number;verticalEvents:number;horizontalEvents:number;
  diagonalEvents:number;sourceChangeEvents:number;
  verticalOffsets:number[];horizontalOffsets:number[];
@@ -148,7 +150,10 @@ async function main(){
     if(r.published.some(h=>!h.selectedPositionMatches||!h.physicalPaths.length))
      throw Error('Coincidencia numérica sin ruta válida '+date+' '+turn);
     const movement=classifyFigureMotion(f);
+    const timeline=exactActivationTimeline(f,forms.rootDays);
     rescues.push({kind,movement:movement.predominant,
+     timelineState:timeline.state,exactActivatedDays:timeline.days,
+     latestExactDate:timeline.lastWinDate,consecutiveExact:timeline.currentStreak,
      movementCategories:movement.categories,
      exactEvents:movement.exactEvents,verticalEvents:movement.verticalEvents,
      horizontalEvents:movement.horizontalEvents,diagonalEvents:movement.diagonalEvents,
@@ -230,6 +235,11 @@ async function main(){
   };
   return [
    group('EXACTA_ACTIVADA',x=>x.exactEvents>0),
+   group('SECUENCIA_NUEVA',x=>x.timelineState==='ACTIVACION_NUEVA'),
+   group('SECUENCIA_REPETIDA',x=>x.timelineState==='ACTIVA_REPETIDA'),
+   group('SECUENCIA_REAPARECE',x=>x.timelineState==='REAPARECIO_TRAS_PAUSA'),
+   group('SECUENCIA_DORMIDA',x=>x.timelineState==='SIN_ACTIVACION_RECIENTE'),
+   group('SECUENCIA_SIN_RUTA',x=>x.timelineState==='SIN_ACTIVACION_EXACTA'),
    group('SIN_EXACTA',x=>x.exactEvents===0),
    group('DESPLAZO_VERTICAL',x=>x.verticalEvents>0),
    group('DESPLAZO_HORIZONTAL',x=>x.horizontalEvents>0),
