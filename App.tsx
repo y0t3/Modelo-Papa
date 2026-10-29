@@ -461,20 +461,26 @@ function LaloApp(){
    onZoomChange={updateZoom} scrollRef={scrollRef}
    restoreY={restoreScroll.y} restoreToken={restoreScroll.token}
    onScrollY={y=>{scrollOffsets.current[screen]=safeScrollY(y)}}>
-   <View style={s.header}>
-    <View style={s.headerLeft}/>
-    <View style={{flex:1}}>
-     <Text style={[s.title,{color:c.text}]}>MODELO LALO</Text>
-     <Text style={s.subtitle}>Cuaderno visual +11 y hoja auxiliar · VT2 / VT3 / VT4</Text>
+   <View style={[s.header,{backgroundColor:mode==='dark'?'#0C2A57':'#E6EFFA',borderColor:'#B58732'}]}>
+    <View style={s.brandMark} accessibilityLabel="Escudo de bolillas de quiniela de Lalo">
+     <View style={[s.brandBall,s.brandBallBack]}><Text style={s.brandBallText}>2</Text></View>
+     <View style={[s.brandBall,s.brandBallLeft]}><Text style={s.brandBallText}>7</Text></View>
+     <View style={[s.brandBall,s.brandBallRight]}><Text style={[s.brandBallText,{color:'#13315E'}]}>11</Text></View>
     </View>
-    <Pressable accessibilityRole="switch" accessibilityLabel="Modo oscuro"
+    <View style={s.brandText}>
+     <Text numberOfLines={1} adjustsFontSizeToFit style={[s.title,{color:mode==='dark'?'#F8F4ED':'#11305A'}]}>
+      La posta de <Text style={{color:'#E5B54B'}}>Lalo</Text>
+     </Text>
+     <Text style={[s.subtitle,{color:mode==='dark'?'#E0B85D':'#93681D'}]}>Su quiniela, sus figuras, su historia</Text>
+    </View>
+    <Pressable accessibilityRole="switch" accessibilityLabel="Cambiar modo claro u oscuro"
      accessibilityState={{checked:mode==='dark'}} onPress={toggle}
-     style={[s.modeButton,{backgroundColor:c.card,borderColor:c.border}]}>
-     <Text style={[s.modeLabel,{color:c.text}]}>{mode==='dark'?'☾ Oscuro':'☀ Claro'}</Text>
+     style={[s.modeButton,{backgroundColor:mode==='dark'?'#15294B':'#F8FBFF',borderColor:'#987333'}]}>
+     <Text style={[s.modeLabel,{color:c.text}]}>{mode==='dark'?'☾':'☀'}</Text>
     </Pressable>
    </View>
-   <View style={[s.selector,{backgroundColor:c.surface,borderColor:c.border,borderWidth:1}]}>
-    <Text style={[s.label,{color:c.text}]}>Fecha del tablero</Text>
+   <View style={[s.selector,{backgroundColor:c.surface,borderColor:mode==='dark'?'#9B793A':'#C1A572',borderWidth:1}]}>
+    <Text style={[s.label,{color:mode==='dark'?'#ECC56F':'#99691D'}]}>LA HOJA DEL DÍA</Text>
     <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
      resetHistory();setHistoricalPreview(null);
      setDateText(value);setData(null);setAuxHeads(null);setAuxToday(null);
@@ -486,12 +492,12 @@ function LaloApp(){
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <View style={s.shortcuts}>
-     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(-1)}><Text style={[s.shortText,{color:c.accent}]}>← Día</Text></Pressable>
+     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(-1)}><Text style={[s.shortText,{color:c.text}]}>‹ Día</Text></Pressable>
      <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>{const shown=historicalPreview?.day.date||date;
-      if(shown)void cargar(shiftDay(shown,-7))}}><Text style={[s.shortText,{color:c.accent}]}>−7 días</Text></Pressable>
-     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(1)}><Text style={[s.shortText,{color:c.accent}]}>Día →</Text></Pressable>
+      if(shown)void cargar(shiftDay(shown,-7))}}><Text style={[s.shortText,{color:c.text}]}>−7 días</Text></Pressable>
+     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(1)}><Text style={[s.shortText,{color:c.text}]}>Día ›</Text></Pressable>
     </View>
-    <Pressable style={[s.reload,{backgroundColor:c.button}]} onPress={()=>{void cargar(historicalPreview?.day.date)}} disabled={busy}>
+    <Pressable style={[s.reload,{backgroundColor:'#195DA6'}]} onPress={()=>{void cargar(historicalPreview?.day.date)}} disabled={busy}>
      {busy?<ActivityIndicator color="#fff"/>:<Text style={s.reloadText}>↻ ACTUALIZAR HOJA</Text>}
     </Pressable>
    </View>
@@ -651,33 +657,45 @@ function LaloApp(){
 export default function App(){return <GestureHandlerRootView style={{flex:1}}><LaloThemeProvider><LaloApp/></LaloThemeProvider></GestureHandlerRootView>}
 const insets=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+7:7;
 const s=StyleSheet.create({
- header:{flexDirection:'row',alignItems:'center',gap:6,marginBottom:11},
+ header:{flexDirection:'row',alignItems:'center',gap:10,marginBottom:9,
+  borderWidth:1,borderRadius:15,paddingHorizontal:11,paddingVertical:9},
  predictorOptions:{flexDirection:'row',gap:8,marginTop:10,padding:6,borderWidth:1,borderRadius:11},
  predictorButton:{flex:1,borderWidth:1,borderRadius:9,paddingVertical:12,alignItems:'center'},
  predictorLabel:{fontSize:12,fontWeight:'900'},
- headerLeft:{width:66},
- modeButton:{minWidth:66,borderWidth:1,borderRadius:10,paddingHorizontal:5,paddingVertical:8,alignItems:'center'},
- modeLabel:{fontSize:11,fontWeight:'900'},
+ brandMark:{width:48,height:48,borderWidth:2,borderColor:'#E2B34B',borderRadius:15,
+  backgroundColor:'#071F47',overflow:'hidden',position:'relative'},
+ brandBall:{position:'absolute',borderRadius:20,alignItems:'center',justifyContent:'center',
+  borderWidth:2,borderColor:'#F5DB8D'},
+ brandBallBack:{width:25,height:25,left:12,top:2,backgroundColor:'#DEA539'},
+ brandBallLeft:{width:27,height:27,left:3,top:18,backgroundColor:'#DAA443'},
+ brandBallRight:{width:27,height:27,right:2,top:18,backgroundColor:'#F4E3B0'},
+ brandBallText:{fontWeight:'900',fontSize:12,color:'#0A2C64'},
+ brandText:{flex:1,minWidth:0},
+ modeButton:{width:36,height:36,borderWidth:1,borderRadius:10,alignItems:'center',
+  justifyContent:'center'},
+ modeLabel:{fontSize:17,fontWeight:'900'},
 
  safe:{flex:1,backgroundColor:'#0c0812',paddingTop:insets},
- nav:{flexDirection:'row',backgroundColor:'#140d20',gap:3,paddingHorizontal:5,paddingVertical:9},
+ nav:{flexDirection:'row',backgroundColor:'#081A3D',gap:3,
+  paddingHorizontal:5,paddingVertical:8,borderBottomWidth:1,borderBottomColor:'#B58A37'},
  tab:{flex:1,alignItems:'center',justifyContent:'center',borderRadius:8,paddingVertical:11},
- tabOn:{backgroundColor:'#0e4b89'},
+ tabOn:{backgroundColor:'#17549B',borderBottomWidth:2,borderBottomColor:'#E4B54E'},
  tabText:{fontSize:10,color:'#fff',fontWeight:'900'},
- content:{paddingHorizontal:12,paddingTop:7,paddingBottom:70},
+ content:{paddingHorizontal:11,paddingTop:9,paddingBottom:70},
  zoomBar:{minHeight:39,flexDirection:'row',alignItems:'center',justifyContent:'space-between',
   gap:8,borderBottomWidth:1,paddingHorizontal:11,paddingVertical:4},
  zoomHint:{fontSize:10,flexShrink:1},
  zoomButton:{paddingVertical:6,paddingHorizontal:10,borderWidth:1,borderRadius:8},
  zoomButtonText:{fontSize:10,fontWeight:'900'},
- title:{color:'#fff',fontWeight:'900',fontSize:23,textAlign:'center'},
- subtitle:{color:'#d6b458',fontSize:11,textAlign:'center',marginBottom:11},
- selector:{backgroundColor:'#191124',borderRadius:11,padding:10},
- label:{color:'#e9e0ee',fontSize:11,fontWeight:'800',marginBottom:4},
- shortcuts:{flexDirection:'row',gap:7,marginTop:8},
- shortcut:{flex:1,backgroundColor:'#291c39',padding:9,borderRadius:8},
+ title:{color:'#fff',fontWeight:'900',fontSize:23,textAlign:'left',letterSpacing:-0.6},
+ subtitle:{fontSize:10,textAlign:'left',marginTop:2,fontWeight:'700'},
+ selector:{borderRadius:12,padding:9},
+ label:{fontSize:10,fontWeight:'900',letterSpacing:0.8,marginBottom:5},
+ shortcuts:{flexDirection:'row',gap:6,marginTop:6},
+ shortcut:{flex:1,paddingVertical:7,paddingHorizontal:3,borderRadius:8,minHeight:34,
+  justifyContent:'center'},
  shortText:{color:'#d9c1ef',fontSize:11,textAlign:'center',fontWeight:'800'},
- reload:{marginTop:10,padding:11,backgroundColor:'#005c9d',borderRadius:9},
+ reload:{marginTop:7,paddingVertical:10,backgroundColor:'#175AA2',borderRadius:9},
  reloadText:{color:'#fff',textAlign:'center',fontWeight:'900'},
  heading:{fontSize:12,color:'#e2d5ed',fontWeight:'800',marginTop:13,marginBottom:7},
  empty:{color:'#d0c2d8',padding:16,fontSize:12,lineHeight:19},

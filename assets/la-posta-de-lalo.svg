@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+ <radialGradient id="sky" cx="48%" cy="31%" r="74%"><stop stop-color="#123974"/><stop offset="1" stop-color="#07142D"/></radialGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFE39B"/><stop offset=".55" stop-color="#E9AD31"/><stop offset="1" stop-color="#B98023"/></linearGradient>
+ <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF9E9"/><stop offset="1" stop-color="#BCCCE0"/></linearGradient>
+</defs>
+<rect width="1024" height="1024" fill="url(#sky)"/>
+<g stroke="#2B5D95" stroke-width="7" opacity=".45">
+ <path d="M512 460L12 170M512 460L190 0M512 460L512 0M512 460L838 0M512 460L1020 175M512 460L1024 530"/>
+</g>
+<path d="M512 88L820 170 827 525Q809 738 512 921Q215 738 197 525L204 170Z" fill="#092757" stroke="url(#gold)" stroke-width="27" stroke-linejoin="round"/>
+<path d="M512 133L784 208 785 517Q766 710 512 870Q258 710 239 517L240 208Z" fill="none" stroke="#A87528" stroke-width="6"/>
+<g fill="#F0C45F"><path d="M516 170l6 14 15 1-11 10 3 15-13-7-14 7 3-15-11-10 16-1Z"/><path d="M338 240l5 11 12 1-9 9 3 12-11-6-11 6 2-12-9-9 13-1Z"/><path d="M670 245l5 11 12 1-10 9 3 12-10-6-11 6 2-12-9-9 13-1Z"/></g>
+<g transform="rotate(-11 512 510)">
+ <rect x="350" y="334" width="324" height="352" rx="28" fill="url(#gold)" stroke="#FFF2C0" stroke-width="8"/>
+ <rect x="375" y="365" width="274" height="289" rx="17" fill="#103566"/>
+ <path d="M399 412H626M399 475H626M399 538H626M399 601H626" stroke="#CEA75A" stroke-width="8" opacity=".8"/>
+</g>
+<circle cx="548" cy="383" r="117" fill="url(#gold)" stroke="#FFE6AA" stroke-width="13"/>
+<circle cx="407" cy="547" r="151" fill="url(#gold)" stroke="#FFE6AA" stroke-width="14"/>
+<circle cx="627" cy="558" r="132" fill="url(#silver)" stroke="#FFE6AA" stroke-width="13"/>
+<g fill="#0B315F" stroke="#F0C96B" stroke-width="6"><circle cx="548" cy="383" r="53"/><circle cx="407" cy="547" r="65"/><circle cx="627" cy="558" r="62"/></g>
+<g fill="#FFF2CE" font-family="DejaVu Sans, sans-serif" font-weight="bold" text-anchor="middle">
+ <text x="548" y="410" font-size="75">2</text><text x="407" y="580" font-size="103">7</text><text x="627" y="586" font-size="82">11</text>
+</g>
+<g fill="#FFFFFF" opacity=".75"><circle cx="500" cy="328" r="18"/><circle cx="356" cy="479" r="20"/><circle cx="586" cy="506" r="16"/></g>
+</svg>

@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
-# Icono de Modelo Lalo: azul oscuro + dorado, conservado para futuras compilaciones.
+# Icono ilustrado de La posta de Lalo. Azul y oro, sin alterar colores de rutas.
 set -euo pipefail
 sudo apt-get update -qq
-sudo apt-get install -y -qq imagemagick
+sudo apt-get install -y -qq imagemagick librsvg2-bin
 mkdir -p /tmp/modelo-lalo-icon
-icon_label="${MODELO_LALO_ICON_LABEL:-PRUEBA}"
-convert -size 1024x1024 xc:'#10274A' -gravity center \
-  -fill '#F6D36D' -font DejaVu-Sans-Bold -pointsize 285 \
-  -annotate +0-60 'ML' -pointsize 93 -annotate +0+265 "$icon_label" \
-  /tmp/modelo-lalo-icon/icon.png
+# Emblema ilustrado de bolillas (no letras ni escudo oficial de un club).
+rsvg-convert --width 1024 --height 1024 assets/la-posta-de-lalo.svg \
+  --output /tmp/modelo-lalo-icon/icon.png
 for spec in 'mipmap-mdpi 48' 'mipmap-hdpi 72' 'mipmap-xhdpi 96' 'mipmap-xxhdpi 144' 'mipmap-xxxhdpi 192'; do
   set -- $spec
   dir=$1
