@@ -27,7 +27,7 @@ export default function HighlightedHead({group,active,onPress,mode,layout='carou
  return <Pressable onPress={onPress} accessibilityRole="button"
   accessibilityLabel={group.label+(empty?', sin coincidencia':', '+group.kinds.join(', '))}
   accessibilityState={{selected:active}}
-  style={[s.card,{backgroundColor:active?c.selected:c.card,borderColor:active?c.accent:c.border},
+  style={[s.card,{backgroundColor:active?c.selected:c.card,borderColor:active?'#F3C251':c.border},
    layout==='grid'?s.gridCard:s.carouselCard,active&&s.active,empty&&s.faded]}>
   {mode==='hoja'?<ColoredDigits value={group.label} kinds={group.kinds} large/>:
    <Text numberOfLines={1} adjustsFontSizeToFit style={[s.number,{color:c.text}]}>{group.label}</Text>}
@@ -44,7 +44,7 @@ const s=StyleSheet.create({
  card:{minHeight:106,borderWidth:1,borderRadius:11,padding:10,justifyContent:'flex-start'},
  carouselCard:{width:116,marginRight:8},
  gridCard:{width:'48.3%',marginBottom:8},
- active:{borderWidth:2},
+ active:{borderWidth:2,elevation:3},
  faded:{opacity:.55},
  number:{fontSize:20,fontWeight:'900',letterSpacing:.5},
  subtitle:{fontSize:10,marginTop:5,lineHeight:14},
