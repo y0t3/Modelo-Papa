@@ -4,9 +4,10 @@ set -euo pipefail
 sudo apt-get update -qq
 sudo apt-get install -y -qq imagemagick
 mkdir -p /tmp/modelo-lalo-icon
+icon_label="${MODELO_LALO_ICON_LABEL:-PRUEBA}"
 convert -size 1024x1024 xc:'#10274A' -gravity center \
   -fill '#F6D36D' -font DejaVu-Sans-Bold -pointsize 285 \
-  -annotate +0-60 'ML' -pointsize 93 -annotate +0+265 'PRUEBA' \
+  -annotate +0-60 'ML' -pointsize 93 -annotate +0+265 "$icon_label" \
   /tmp/modelo-lalo-icon/icon.png
 for spec in 'mipmap-mdpi 48' 'mipmap-hdpi 72' 'mipmap-xhdpi 96' 'mipmap-xxhdpi 144' 'mipmap-xxxhdpi 192'; do
   set -- $spec
