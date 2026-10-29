@@ -16,6 +16,8 @@ import type {ConnectedDay} from '../connectedVt3';
 import {reversibleFamily} from '../motorLalo';
 import Vt2ExperimentalPanel from './Vt2ExperimentalPanel';
 import FormasPrimeroPanel from './FormasPrimeroPanel';
+import FigureRescueAuditPanel from './FigureRescueAuditPanel';
+import {buildFormFirstMotor} from '../motorFormasPrimero';
 import type {InfoVisualDay} from '../infoTurnHistory';
 
 const localToday=()=>{
@@ -37,6 +39,9 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
   [sheet,turn]);
  const safeView=useMemo(()=>safeSheet&&date?
   buildMotorLalo(safeSheet,date,turn,historical):null,[safeSheet,date,turn,historical]);
+ const formsFirst=useMemo(()=>safeSheet&&date?
+  buildFormFirstMotor(safeSheet,date,turn,visualDays.filter(d=>d.date<date)):null,
+  [safeSheet,date,turn,visualDays]);
  const shadow=useMemo(()=>safeSheet&&safeView?
   buildVt3Shadow(safeSheet,date,turn,historical,safeView):null,
   [safeSheet,date,turn,historical,safeView]);
@@ -89,6 +94,9 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
   return {...section,matches};
  });
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
+  <FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
+   forms={formsFirst} lalo={safeView} days={visualDays}
+   published={publishedHeads}/>
   <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
    days={visualDays} lalo={safeView} heads={publishedHeads.map(x=>x.head)}
    kind="vt2"/>
