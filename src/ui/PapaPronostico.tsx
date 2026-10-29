@@ -1,4 +1,5 @@
 import React,{useEffect,useMemo,useState} from 'react';
+import BosteroWatermark from './BosteroWatermark';
 import {Alert,Pressable,ScrollView,StyleSheet,Text,View} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import {TURNOS} from '../domain';
@@ -213,8 +214,10 @@ export default function PapaPronostico({date,turn,sheet,heads}:{
    !record||record.snapshot.pre.schema==='PAPA_PRE_V4');
  const autoCount=displayedPicks.filter(p=>p.autoFrom).length;
  return <View style={s.main}>
-  <View style={[s.hero,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.title,{color:c.text}]}>PRONÓSTICO DE LALO</Text>
+  <View style={[s.hero,{backgroundColor:c.surface,borderColor:'#B9903F',
+   overflow:'hidden'}]}>
+   <BosteroWatermark opacity={0.18}/>
+   <Text style={[s.title,{color:c.accent}]}>La jugada de Lalo</Text>
    <Text style={[s.small,{color:c.subtext}]}>
     Lalo elige sus recorridos en la hoja; la app lee las cifras,
     forma VT2 / VT3 / VT4 y guarda sus pronósticos aparte del ranking automático.
