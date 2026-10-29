@@ -1,0 +1,2287 @@
+{
+  "method": "POST_RETROSPECTIVE_PRE_BY_TURN_AND_ONE_GENUINE_PRE_SEAL",
+  "execution": "https://github.com/y0t3/Modelo-Papa/actions/runs/40801509244",
+  "sourceCount": 80,
+  "expectedCount": 81,
+  "missing": [
+    {
+      "date": "2026-10-28",
+      "turn": "Nocturno",
+      "jur": "Santa Fé",
+      "reason": "El proveedor de cabezas devuelve ----; no se imputa un resultado no corroborado"
+    }
+  ],
+  "totals": {
+    "days": 3,
+    "cuts": 15,
+    "heads": 80,
+    "physical": {
+      "vt2": 47,
+      "vt3": 18,
+      "vt4": 6
+    },
+    "stats": {
+      "LALO": {
+        "vt2": {
+          "top3": 6,
+          "top5": 9,
+          "top10": 17
+        },
+        "vt3": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "GEOMETRIA": {
+        "vt2": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "vt3": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "NUEVA_PRUEBA": {
+        "vt2": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "vt3": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "CONECTADAS": {
+        "vt2": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "vt3": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PULSO_TOP10": {
+        "vt2": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "vt3": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "MISMA_6": {
+        "vt2": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "vt3": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "PASO_RECIENTE": {
+        "vt2": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "vt3": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "VECTOR_CONTINUO": {
+        "vt2": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        },
+        "vt3": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "AUX_AYER": {
+        "vt2": {
+          "top3": 7,
+          "top5": 10,
+          "top10": 14
+        },
+        "vt3": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "AUX_HOY": {
+        "vt2": {
+          "top3": 2,
+          "top5": 4,
+          "top10": 7
+        },
+        "vt3": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      }
+    },
+    "byDate": [
+      {
+        "date": "2026-10-26",
+        "heads": 27,
+        "stats": {
+          "LALO": {
+            "vt2": {
+              "top3": 2,
+              "top5": 3,
+              "top10": 5
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "GEOMETRIA": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 1,
+              "top5": 1,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "NUEVA_PRUEBA": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 1,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "CONECTADAS": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "PULSO_TOP10": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "MISMA_6": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "PASO_RECIENTE": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "VECTOR_CONTINUO": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "AUX_AYER": {
+            "vt2": {
+              "top3": 3,
+              "top5": 3,
+              "top10": 5
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "AUX_HOY": {
+            "vt2": {
+              "top3": 0,
+              "top5": 2,
+              "top10": 2
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          }
+        }
+      },
+      {
+        "date": "2026-10-27",
+        "heads": 27,
+        "stats": {
+          "LALO": {
+            "vt2": {
+              "top3": 2,
+              "top5": 3,
+              "top10": 7
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "GEOMETRIA": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "NUEVA_PRUEBA": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "CONECTADAS": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 1,
+              "top5": 1,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "PULSO_TOP10": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "MISMA_6": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "PASO_RECIENTE": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "VECTOR_CONTINUO": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "AUX_AYER": {
+            "vt2": {
+              "top3": 3,
+              "top5": 4,
+              "top10": 5
+            },
+            "vt3": {
+              "top3": 1,
+              "top5": 1,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "AUX_HOY": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 1
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          }
+        }
+      },
+      {
+        "date": "2026-10-28",
+        "heads": 26,
+        "stats": {
+          "LALO": {
+            "vt2": {
+              "top3": 2,
+              "top5": 3,
+              "top10": 5
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "GEOMETRIA": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "NUEVA_PRUEBA": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "CONECTADAS": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "PULSO_TOP10": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "MISMA_6": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "PASO_RECIENTE": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "VECTOR_CONTINUO": {
+            "vt2": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "AUX_AYER": {
+            "vt2": {
+              "top3": 1,
+              "top5": 3,
+              "top10": 4
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "AUX_HOY": {
+            "vt2": {
+              "top3": 2,
+              "top5": 2,
+              "top10": 4
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 1,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          }
+        }
+      }
+    ],
+    "perTurn": [
+      {
+        "date": "2026-10-26",
+        "turn": "Previa",
+        "heads": [
+          "Ciudad:0094",
+          "Provincia:0299",
+          "Córdoba:3905",
+          "Santa Fé:6125",
+          "Entre Ríos:2724"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "205/502",
+            "025/520",
+            "255/552"
+          ],
+          "GEOMETRIA": [
+            "065/560",
+            "025/520",
+            "056/650"
+          ],
+          "NUEVA_PRUEBA": [
+            "065/560",
+            "025/520",
+            "056/650"
+          ],
+          "CONECTADAS": [
+            "205/502",
+            "026/620",
+            "255/552"
+          ],
+          "PULSO_TOP10": [
+            "205/502",
+            "025/520",
+            "255/552"
+          ],
+          "MISMA_6": [
+            "205/502",
+            "025/520",
+            "255/552"
+          ],
+          "PASO_RECIENTE": [
+            "205/502",
+            "025/520",
+            "255/552"
+          ],
+          "VECTOR_CONTINUO": [
+            "205/502",
+            "025/520",
+            "255/552"
+          ],
+          "AUX_AYER": [
+            "347/743",
+            "487/784",
+            "438/834"
+          ],
+          "AUX_HOY": []
+        },
+        "physical": {
+          "vt2": 2,
+          "vt3": 0,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 3,
+          "pulsoOriginalTop10": 0,
+          "misma6Eligible": 10,
+          "pasoEligible": 0,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-26",
+        "turn": "Primera",
+        "heads": [
+          "Ciudad:8627",
+          "Provincia:8269",
+          "Córdoba:9790",
+          "Santa Fé:1007",
+          "Entre Ríos:4056"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [
+            "Entre Ríos:4056"
+          ],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [
+            "Entre Ríos:4056"
+          ],
+          "NUEVA_PRUEBA": [
+            "Entre Ríos:4056"
+          ],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "GEOMETRIA": [
+            "065/560",
+            "025/520",
+            "056/650"
+          ],
+          "NUEVA_PRUEBA": [
+            "065/560",
+            "025/520",
+            "016/610"
+          ],
+          "CONECTADAS": [
+            "135/531",
+            "165/561",
+            "536/635"
+          ],
+          "PULSO_TOP10": [
+            "163/361",
+            "116/611",
+            "106/601"
+          ],
+          "MISMA_6": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "PASO_RECIENTE": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "VECTOR_CONTINUO": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "AUX_AYER": [
+            "347/743",
+            "487/784",
+            "438/834"
+          ],
+          "AUX_HOY": [
+            "203/302",
+            "528/825",
+            "023/320"
+          ]
+        },
+        "physical": {
+          "vt2": 3,
+          "vt3": 2,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 5,
+          "pulsoOriginalTop10": 4,
+          "misma6Eligible": 24,
+          "pasoEligible": 1,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-26",
+        "turn": "Matutino",
+        "heads": [
+          "Ciudad:4318",
+          "Provincia:0582",
+          "Córdoba:3898",
+          "Santa Fé:2604",
+          "Entre Ríos:6938",
+          "Montevideo:4890"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "GEOMETRIA": [
+            "065/560",
+            "025/520",
+            "056/650"
+          ],
+          "NUEVA_PRUEBA": [
+            "065/560",
+            "025/520",
+            "016/610"
+          ],
+          "CONECTADAS": [
+            "135/531",
+            "165/561",
+            "536/635"
+          ],
+          "PULSO_TOP10": [
+            "163/361",
+            "116/611",
+            "106/601"
+          ],
+          "MISMA_6": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "PASO_RECIENTE": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "VECTOR_CONTINUO": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "AUX_AYER": [
+            "347/743",
+            "487/784",
+            "438/834"
+          ],
+          "AUX_HOY": [
+            "010/010",
+            "308/803",
+            "193/391"
+          ]
+        },
+        "physical": {
+          "vt2": 2,
+          "vt3": 0,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 7,
+          "pulsoOriginalTop10": 4,
+          "misma6Eligible": 39,
+          "pasoEligible": 11,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-26",
+        "turn": "Vespertino",
+        "heads": [
+          "Ciudad:8996",
+          "Provincia:1219",
+          "Córdoba:6053",
+          "Santa Fé:5486",
+          "Entre Ríos:4027"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "GEOMETRIA": [
+            "065/560",
+            "025/520",
+            "056/650"
+          ],
+          "NUEVA_PRUEBA": [
+            "065/560",
+            "025/520",
+            "016/610"
+          ],
+          "CONECTADAS": [
+            "091/190",
+            "019/910",
+            "059/950"
+          ],
+          "PULSO_TOP10": [
+            "163/361",
+            "116/611",
+            "205/502"
+          ],
+          "MISMA_6": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "PASO_RECIENTE": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "VECTOR_CONTINUO": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "AUX_AYER": [
+            "347/743",
+            "487/784",
+            "438/834"
+          ],
+          "AUX_HOY": [
+            "193/391",
+            "010/010",
+            "129/921"
+          ]
+        },
+        "physical": {
+          "vt2": 4,
+          "vt3": 1,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 7,
+          "pulsoOriginalTop10": 2,
+          "misma6Eligible": 45,
+          "pasoEligible": 17,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-26",
+        "turn": "Nocturno",
+        "heads": [
+          "Ciudad:1688",
+          "Provincia:6331",
+          "Córdoba:3342",
+          "Santa Fé:5787",
+          "Entre Ríos:5398",
+          "Montevideo:1876"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "GEOMETRIA": [
+            "065/560",
+            "025/520",
+            "056/650"
+          ],
+          "NUEVA_PRUEBA": [
+            "065/560",
+            "025/520",
+            "016/610"
+          ],
+          "CONECTADAS": [
+            "091/190",
+            "019/910",
+            "059/950"
+          ],
+          "PULSO_TOP10": [
+            "163/361",
+            "116/611",
+            "205/502"
+          ],
+          "MISMA_6": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "PASO_RECIENTE": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "VECTOR_CONTINUO": [
+            "205/502",
+            "016/610",
+            "163/361"
+          ],
+          "AUX_AYER": [
+            "347/743",
+            "487/784",
+            "438/834"
+          ],
+          "AUX_HOY": [
+            "193/391",
+            "010/010",
+            "129/921"
+          ]
+        },
+        "physical": {
+          "vt2": 5,
+          "vt3": 3,
+          "vt4": 2
+        },
+        "signals": {
+          "same2DaysAll": 7,
+          "pulsoOriginalTop10": 2,
+          "misma6Eligible": 58,
+          "pasoEligible": 27,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-27",
+        "turn": "Previa",
+        "heads": [
+          "Ciudad:4267",
+          "Provincia:4915",
+          "Córdoba:6281",
+          "Santa Fé:9641",
+          "Entre Ríos:1680"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "809/908",
+            "899/998",
+            "249/942"
+          ],
+          "GEOMETRIA": [
+            "079/970",
+            "249/942",
+            "809/908"
+          ],
+          "NUEVA_PRUEBA": [
+            "079/970",
+            "249/942",
+            "809/908"
+          ],
+          "CONECTADAS": [
+            "329/923",
+            "325/523",
+            "389/983"
+          ],
+          "PULSO_TOP10": [
+            "809/908",
+            "389/983",
+            "899/998"
+          ],
+          "MISMA_6": [
+            "809/908",
+            "899/998",
+            "249/942"
+          ],
+          "PASO_RECIENTE": [
+            "809/908",
+            "899/998",
+            "249/942"
+          ],
+          "VECTOR_CONTINUO": [
+            "809/908",
+            "899/998",
+            "249/942"
+          ],
+          "AUX_AYER": [
+            "308/803",
+            "103/301",
+            "036/630"
+          ],
+          "AUX_HOY": []
+        },
+        "physical": {
+          "vt2": 1,
+          "vt3": 0,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 3,
+          "pulsoOriginalTop10": 2,
+          "misma6Eligible": 5,
+          "pasoEligible": 0,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-27",
+        "turn": "Primera",
+        "heads": [
+          "Ciudad:6613",
+          "Provincia:7638",
+          "Córdoba:5687",
+          "Santa Fé:7438",
+          "Entre Ríos:1308"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [
+            "Entre Ríos:1308"
+          ],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [
+            "Entre Ríos:1308"
+          ],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "GEOMETRIA": [
+            "079/970",
+            "249/942",
+            "809/908"
+          ],
+          "NUEVA_PRUEBA": [
+            "079/970",
+            "249/942",
+            "295/592"
+          ],
+          "CONECTADAS": [
+            "296/692",
+            "526/625",
+            "229/922"
+          ],
+          "PULSO_TOP10": [
+            "809/908",
+            "226/622",
+            "389/983"
+          ],
+          "MISMA_6": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "PASO_RECIENTE": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "VECTOR_CONTINUO": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "AUX_AYER": [
+            "308/803",
+            "103/301",
+            "036/630"
+          ],
+          "AUX_HOY": [
+            "054/450",
+            "245/542",
+            "045/540"
+          ]
+        },
+        "physical": {
+          "vt2": 4,
+          "vt3": 2,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 7,
+          "pulsoOriginalTop10": 3,
+          "misma6Eligible": 16,
+          "pasoEligible": 4,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-27",
+        "turn": "Matutino",
+        "heads": [
+          "Ciudad:8267",
+          "Provincia:7558",
+          "Córdoba:6828",
+          "Santa Fé:1613",
+          "Entre Ríos:6109",
+          "Montevideo:8391"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "GEOMETRIA": [
+            "079/970",
+            "249/942",
+            "809/908"
+          ],
+          "NUEVA_PRUEBA": [
+            "079/970",
+            "249/942",
+            "295/592"
+          ],
+          "CONECTADAS": [
+            "296/692",
+            "526/625",
+            "229/922"
+          ],
+          "PULSO_TOP10": [
+            "809/908",
+            "226/622",
+            "389/983"
+          ],
+          "MISMA_6": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "PASO_RECIENTE": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "VECTOR_CONTINUO": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "AUX_AYER": [
+            "308/803",
+            "103/301",
+            "036/630"
+          ],
+          "AUX_HOY": [
+            "157/751",
+            "195/591",
+            "054/450"
+          ]
+        },
+        "physical": {
+          "vt2": 5,
+          "vt3": 1,
+          "vt4": 1
+        },
+        "signals": {
+          "same2DaysAll": 10,
+          "pulsoOriginalTop10": 3,
+          "misma6Eligible": 25,
+          "pasoEligible": 10,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-27",
+        "turn": "Vespertino",
+        "heads": [
+          "Ciudad:7646",
+          "Provincia:1260",
+          "Córdoba:7116",
+          "Santa Fé:4010",
+          "Entre Ríos:1155"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "GEOMETRIA": [
+            "079/970",
+            "249/942",
+            "809/908"
+          ],
+          "NUEVA_PRUEBA": [
+            "079/970",
+            "249/942",
+            "295/592"
+          ],
+          "CONECTADAS": [
+            "899/998",
+            "639/936",
+            "299/992"
+          ],
+          "PULSO_TOP10": [
+            "809/908",
+            "226/622",
+            "389/983"
+          ],
+          "MISMA_6": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "PASO_RECIENTE": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "VECTOR_CONTINUO": [
+            "295/592",
+            "809/908",
+            "226/622"
+          ],
+          "AUX_AYER": [
+            "308/803",
+            "103/301",
+            "036/630"
+          ],
+          "AUX_HOY": [
+            "579/975",
+            "157/751",
+            "195/591"
+          ]
+        },
+        "physical": {
+          "vt2": 0,
+          "vt3": 0,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 11,
+          "pulsoOriginalTop10": 3,
+          "misma6Eligible": 40,
+          "pasoEligible": 10,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-27",
+        "turn": "Nocturno",
+        "heads": [
+          "Ciudad:0734",
+          "Provincia:2299",
+          "Córdoba:1066",
+          "Santa Fé:0355",
+          "Entre Ríos:3877",
+          "Montevideo:0674"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [
+            "Provincia:2299"
+          ],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [
+            "Provincia:2299"
+          ],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "295/592",
+            "277/772",
+            "127/721"
+          ],
+          "GEOMETRIA": [
+            "079/970",
+            "249/942",
+            "809/908"
+          ],
+          "NUEVA_PRUEBA": [
+            "079/970",
+            "249/942",
+            "295/592"
+          ],
+          "CONECTADAS": [
+            "899/998",
+            "639/936",
+            "299/992"
+          ],
+          "PULSO_TOP10": [
+            "122/221",
+            "809/908",
+            "226/622"
+          ],
+          "MISMA_6": [
+            "295/592",
+            "277/772",
+            "127/721"
+          ],
+          "PASO_RECIENTE": [
+            "295/592",
+            "277/772",
+            "127/721"
+          ],
+          "VECTOR_CONTINUO": [
+            "295/592",
+            "277/772",
+            "127/721"
+          ],
+          "AUX_AYER": [
+            "308/803",
+            "103/301",
+            "036/630"
+          ],
+          "AUX_HOY": [
+            "579/975",
+            "157/751",
+            "195/591"
+          ]
+        },
+        "physical": {
+          "vt2": 4,
+          "vt3": 1,
+          "vt4": 1
+        },
+        "signals": {
+          "same2DaysAll": 11,
+          "pulsoOriginalTop10": 3,
+          "misma6Eligible": 42,
+          "pasoEligible": 13,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Previa",
+        "heads": [
+          "Ciudad:7216",
+          "Provincia:8986",
+          "Córdoba:0869",
+          "Santa Fé:0307",
+          "Entre Ríos:4467"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "GEOMETRIA": [
+            "588/885",
+            "888/888",
+            "054/450"
+          ],
+          "NUEVA_PRUEBA": [
+            "588/885",
+            "888/888",
+            "054/450"
+          ],
+          "CONECTADAS": [
+            "054/450",
+            "104/401",
+            "407/704"
+          ],
+          "PULSO_TOP10": [
+            "677/776",
+            "017/710",
+            "588/885"
+          ],
+          "MISMA_6": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "PASO_RECIENTE": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "VECTOR_CONTINUO": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "AUX_AYER": [
+            "455/554",
+            "588/885",
+            "044/440"
+          ],
+          "AUX_HOY": []
+        },
+        "physical": {
+          "vt2": 3,
+          "vt3": 0,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 4,
+          "pulsoOriginalTop10": 2,
+          "misma6Eligible": 17,
+          "pasoEligible": 0,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Primera",
+        "heads": [
+          "Ciudad:2224",
+          "Provincia:5279",
+          "Córdoba:1525",
+          "Santa Fé:1290",
+          "Entre Ríos:7757"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "GEOMETRIA": [
+            "588/885",
+            "888/888",
+            "054/450"
+          ],
+          "NUEVA_PRUEBA": [
+            "588/885",
+            "888/888",
+            "188/881"
+          ],
+          "CONECTADAS": [
+            "729/927",
+            "077/770",
+            "789/987"
+          ],
+          "PULSO_TOP10": [
+            "677/776",
+            "188/881",
+            "588/885"
+          ],
+          "MISMA_6": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "PASO_RECIENTE": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "VECTOR_CONTINUO": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "AUX_AYER": [
+            "455/554",
+            "588/885",
+            "044/440"
+          ],
+          "AUX_HOY": [
+            "137/731",
+            "133/331",
+            "173/371"
+          ]
+        },
+        "physical": {
+          "vt2": 2,
+          "vt3": 2,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 10,
+          "pulsoOriginalTop10": 2,
+          "misma6Eligible": 35,
+          "pasoEligible": 10,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Matutino",
+        "heads": [
+          "Ciudad:9178",
+          "Provincia:6195",
+          "Córdoba:5043",
+          "Santa Fé:6755",
+          "Entre Ríos:9153",
+          "Montevideo:9176"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [
+            "Montevideo:9176"
+          ],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [
+            "Montevideo:9176"
+          ],
+          "MISMA_6": [
+            "Montevideo:9176"
+          ],
+          "PASO_RECIENTE": [
+            "Montevideo:9176"
+          ],
+          "VECTOR_CONTINUO": [
+            "Montevideo:9176"
+          ],
+          "AUX_AYER": [],
+          "AUX_HOY": [
+            "Entre Ríos:9153"
+          ]
+        },
+        "top3vt3": {
+          "LALO": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "GEOMETRIA": [
+            "588/885",
+            "888/888",
+            "054/450"
+          ],
+          "NUEVA_PRUEBA": [
+            "588/885",
+            "888/888",
+            "069/960"
+          ],
+          "CONECTADAS": [
+            "729/927",
+            "077/770",
+            "789/987"
+          ],
+          "PULSO_TOP10": [
+            "677/776",
+            "588/885",
+            "768/867"
+          ],
+          "MISMA_6": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "PASO_RECIENTE": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "VECTOR_CONTINUO": [
+            "588/885",
+            "768/867",
+            "668/866"
+          ],
+          "AUX_AYER": [
+            "455/554",
+            "588/885",
+            "044/440"
+          ],
+          "AUX_HOY": [
+            "155/551",
+            "355/553",
+            "137/731"
+          ]
+        },
+        "physical": {
+          "vt2": 4,
+          "vt3": 2,
+          "vt4": 0
+        },
+        "signals": {
+          "same2DaysAll": 11,
+          "pulsoOriginalTop10": 1,
+          "misma6Eligible": 45,
+          "pasoEligible": 15,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Vespertino",
+        "heads": [
+          "Ciudad:8180",
+          "Provincia:5494",
+          "Córdoba:6189",
+          "Santa Fé:8495",
+          "Entre Ríos:2569"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "466/664",
+            "588/885",
+            "646/646"
+          ],
+          "GEOMETRIA": [
+            "588/885",
+            "888/888",
+            "054/450"
+          ],
+          "NUEVA_PRUEBA": [
+            "588/885",
+            "888/888",
+            "466/664"
+          ],
+          "CONECTADAS": [
+            "698/896",
+            "068/860",
+            "468/864"
+          ],
+          "PULSO_TOP10": [
+            "466/664",
+            "646/646",
+            "648/846"
+          ],
+          "MISMA_6": [
+            "466/664",
+            "588/885",
+            "646/646"
+          ],
+          "PASO_RECIENTE": [
+            "466/664",
+            "588/885",
+            "646/646"
+          ],
+          "VECTOR_CONTINUO": [
+            "466/664",
+            "588/885",
+            "646/646"
+          ],
+          "AUX_AYER": [
+            "455/554",
+            "588/885",
+            "044/440"
+          ],
+          "AUX_HOY": [
+            "153/351",
+            "155/551",
+            "355/553"
+          ]
+        },
+        "physical": {
+          "vt2": 4,
+          "vt3": 3,
+          "vt4": 1
+        },
+        "signals": {
+          "same2DaysAll": 11,
+          "pulsoOriginalTop10": 4,
+          "misma6Eligible": 55,
+          "pasoEligible": 15,
+          "vectorEligible": 0
+        }
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Nocturno",
+        "heads": [
+          "Ciudad:2902",
+          "Provincia:3946",
+          "Córdoba:4510",
+          "Entre Ríos:2547",
+          "Montevideo:2446"
+        ],
+        "hitTop3": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "hitTop10": {
+          "LALO": [],
+          "GEOMETRIA": [],
+          "NUEVA_PRUEBA": [],
+          "CONECTADAS": [],
+          "PULSO_TOP10": [],
+          "MISMA_6": [],
+          "PASO_RECIENTE": [],
+          "VECTOR_CONTINUO": [],
+          "AUX_AYER": [],
+          "AUX_HOY": []
+        },
+        "top3vt3": {
+          "LALO": [
+            "000/000",
+            "068/860",
+            "466/664"
+          ],
+          "GEOMETRIA": [
+            "588/885",
+            "888/888",
+            "054/450"
+          ],
+          "NUEVA_PRUEBA": [
+            "588/885",
+            "888/888",
+            "000/000"
+          ],
+          "CONECTADAS": [
+            "698/896",
+            "068/860",
+            "468/864"
+          ],
+          "PULSO_TOP10": [
+            "466/664",
+            "646/646",
+            "648/846"
+          ],
+          "MISMA_6": [
+            "000/000",
+            "068/860",
+            "466/664"
+          ],
+          "PASO_RECIENTE": [
+            "000/000",
+            "068/860",
+            "466/664"
+          ],
+          "VECTOR_CONTINUO": [
+            "000/000",
+            "068/860",
+            "466/664"
+          ],
+          "AUX_AYER": [
+            "455/554",
+            "588/885",
+            "044/440"
+          ],
+          "AUX_HOY": [
+            "153/351",
+            "155/551",
+            "355/553"
+          ]
+        },
+        "physical": {
+          "vt2": 4,
+          "vt3": 1,
+          "vt4": 1
+        },
+        "signals": {
+          "same2DaysAll": 11,
+          "pulsoOriginalTop10": 3,
+          "misma6Eligible": 57,
+          "pasoEligible": 17,
+          "vectorEligible": 0
+        }
+      }
+    ]
+  },
+  "seal": {
+    "genuinePre": true,
+    "sealedAtUtc": "2026-10-25T10:13:57.326Z",
+    "sha256": "3d4c8bc10b24f8f23290c2f41b7692aef9a1897163c1cb1d684c6609b00f8771",
+    "date": "2026-10-26",
+    "turn": "Previa",
+    "heads": [
+      {
+        "jur": "Ciudad",
+        "head": "0094",
+        "vt2": "49/94",
+        "vt3": "094/490",
+        "vt4": "0094"
+      },
+      {
+        "jur": "Provincia",
+        "head": "0299",
+        "vt2": "99/99",
+        "vt3": "299/992",
+        "vt4": "0299"
+      },
+      {
+        "jur": "Córdoba",
+        "head": "3905",
+        "vt2": "05/50",
+        "vt3": "509/905",
+        "vt4": "3905"
+      },
+      {
+        "jur": "Santa Fé",
+        "head": "6125",
+        "vt2": "25/52",
+        "vt3": "125/521",
+        "vt4": "6125"
+      },
+      {
+        "jur": "Entre Ríos",
+        "head": "2724",
+        "vt2": "24/42",
+        "vt3": "427/724",
+        "vt4": "2724"
+      }
+    ],
+    "Lalo": {
+      "top3": [],
+      "top5": [],
+      "top10": []
+    },
+    "Pulso": {
+      "top3": [],
+      "top5": [],
+      "top10": []
+    },
+    "sameTop10": true
+  }
+}
