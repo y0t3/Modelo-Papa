@@ -1,0 +1,29 @@
+name: LAB Montevideo como raiz VT2 VT3
+on:
+  push:
+    branches:
+      - lab/montevideo-raices-vt2-vt3-29oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  montevideo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Comparacion PRE 635 cortes VT2 VT3 con y sin Montevideo
+        run: npx --yes tsx scripts/lab-montevideo-raices-635.ts
+      - name: Regresion Lalo
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Regresion Conectadas
+        run: npx --yes tsx scripts/test-connected-vt3.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: montevideo-raices-comparacion-vt2-vt3
+          path: auditorias/montevideo-raices/resultados.json
+          if-no-files-found: error
