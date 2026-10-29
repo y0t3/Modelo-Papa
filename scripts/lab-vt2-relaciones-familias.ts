@@ -12,7 +12,7 @@ type Cut={date:string;turn:string;turnIndex:number;rankedFamilies:string[];
  usedBefore:number[];heads:ResultHead[];freePositions:number[]};
 type Win={position:number;family:string;jur:string;head:string};
 type Night={
- date:string;hits:Win[];priorWinners:Win[];
+ date:string;hits:Win[];priorWinners:(Win&{turn:string})[];
  markedFamilyPositions:number[];markedRankPositions:number[];
  markedFamilies:string[];rankedFamilies:string[];
  hitsPriorFamily:number;hitsPriorRank:number;
@@ -43,7 +43,7 @@ for(const [i,date] of dates.entries()){
  const noct=get(date,'Nocturno');
  // Solo cabezas reales del día anteriores a Nocturna que coincidieron con
  // el Top PRE de SU respectivo turno. No presupone ninguna repetición.
- const priorWinners=pre.flatMap(wins);
+ const priorWinners=pre.flatMap(r=>wins(r).map(w=>({...w,turn:r.turn})));
  const wonFamilies=new Set(priorWinners.map(w=>w.family));
  const wonRanks=new Set(priorWinners.map(w=>w.position));
  const markedFamilies=noct.rankedFamilies.filter(f=>wonFamilies.has(f));
@@ -155,9 +155,7 @@ const selectionTests={
  shuffledWithinMonthAndWeekday:distribution(stratified),
  strata:byStrata.size};
 const windowDays=nights.slice(-6).map(n=>({
- date:n.date,priorHits:n.priorWinners.map(w=>({turn:rows.find(r=>r.date===n.date&&
-  r.heads.some(h=>h.head===w.head&&h.family===w.family&&h.position===w.position))?.turn||'',
-  ...w})),
+ date:n.date,priorHits:n.priorWinners.map(w=>({...w})),
  nocturno:n.rankedFamilies.map((family,i)=>({
   rank:i+1,family,
   alreadyWonFamily:n.markedFamilyPositions.includes(i+1),
