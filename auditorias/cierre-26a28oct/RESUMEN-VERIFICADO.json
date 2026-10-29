@@ -1,6 +1,6 @@
 {
   "method": "POST_RETROSPECTIVE_PRE_BY_TURN_AND_ONE_GENUINE_PRE_SEAL",
-  "execution": "https://github.com/y0t3/Modelo-Papa/actions/runs/40801509244",
+  "execution": "https://github.com/y0t3/Modelo-Papa/actions/runs/40801945258",
   "sourceCount": 80,
   "expectedCount": 81,
   "missing": [
@@ -8,7 +8,7 @@
       "date": "2026-10-28",
       "turn": "Nocturno",
       "jur": "Santa Fé",
-      "reason": "El proveedor de cabezas devuelve ----; no se imputa un resultado no corroborado"
+      "reason": "No publicada en proveedor al ejecutar; no se imputa ganador no corroborado"
     }
   ],
   "totals": {
@@ -31,6 +31,23 @@
           "top3": 0,
           "top5": 0,
           "top10": 1
+        },
+        "vt4": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 0
+        }
+      },
+      "INTEGRAL": {
+        "vt2": {
+          "top3": 6,
+          "top5": 10,
+          "top10": 19
+        },
+        "vt3": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 2
         },
         "vt4": {
           "top3": 0,
@@ -202,6 +219,23 @@
               "top3": 2,
               "top5": 3,
               "top10": 5
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "INTEGRAL": {
+            "vt2": {
+              "top3": 3,
+              "top5": 3,
+              "top10": 7
             },
             "vt3": {
               "top3": 0,
@@ -390,6 +424,23 @@
               "top10": 0
             }
           },
+          "INTEGRAL": {
+            "vt2": {
+              "top3": 2,
+              "top5": 4,
+              "top10": 7
+            },
+            "vt3": {
+              "top3": 1,
+              "top5": 1,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
           "GEOMETRIA": {
             "vt2": {
               "top3": 0,
@@ -552,6 +603,23 @@
           "LALO": {
             "vt2": {
               "top3": 2,
+              "top5": 3,
+              "top10": 5
+            },
+            "vt3": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 1
+            },
+            "vt4": {
+              "top3": 0,
+              "top5": 0,
+              "top10": 0
+            }
+          },
+          "INTEGRAL": {
+            "vt2": {
+              "top3": 1,
               "top5": 3,
               "top10": 5
             },
@@ -735,6 +803,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -747,6 +816,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -762,6 +832,11 @@
             "205/502",
             "025/520",
             "255/552"
+          ],
+          "INTEGRAL": [
+            "205/502",
+            "347/743",
+            "025/520"
           ],
           "GEOMETRIA": [
             "065/560",
@@ -830,6 +905,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [
             "Entre Ríos:4056"
           ],
@@ -844,6 +920,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [
             "Entre Ríos:4056"
           ],
@@ -863,6 +940,11 @@
             "205/502",
             "016/610",
             "163/361"
+          ],
+          "INTEGRAL": [
+            "205/502",
+            "347/743",
+            "016/610"
           ],
           "GEOMETRIA": [
             "065/560",
@@ -936,6 +1018,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -948,6 +1031,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -963,6 +1047,11 @@
             "205/502",
             "016/610",
             "163/361"
+          ],
+          "INTEGRAL": [
+            "205/502",
+            "347/743",
+            "016/610"
           ],
           "GEOMETRIA": [
             "065/560",
@@ -1035,6 +1124,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1047,6 +1137,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1062,6 +1153,11 @@
             "205/502",
             "016/610",
             "163/361"
+          ],
+          "INTEGRAL": [
+            "205/502",
+            "347/743",
+            "016/610"
           ],
           "GEOMETRIA": [
             "065/560",
@@ -1135,6 +1231,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1147,6 +1244,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1162,6 +1260,11 @@
             "205/502",
             "016/610",
             "163/361"
+          ],
+          "INTEGRAL": [
+            "205/502",
+            "347/743",
+            "016/610"
           ],
           "GEOMETRIA": [
             "065/560",
@@ -1234,6 +1337,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1246,6 +1350,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1261,6 +1366,11 @@
             "809/908",
             "899/998",
             "249/942"
+          ],
+          "INTEGRAL": [
+            "809/908",
+            "308/803",
+            "899/998"
           ],
           "GEOMETRIA": [
             "079/970",
@@ -1329,6 +1439,9 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [
+            "Entre Ríos:1308"
+          ],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1343,6 +1456,9 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [
+            "Entre Ríos:1308"
+          ],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1360,6 +1476,11 @@
             "295/592",
             "809/908",
             "226/622"
+          ],
+          "INTEGRAL": [
+            "295/592",
+            "308/803",
+            "809/908"
           ],
           "GEOMETRIA": [
             "079/970",
@@ -1433,6 +1554,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1445,6 +1567,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1460,6 +1583,11 @@
             "295/592",
             "809/908",
             "226/622"
+          ],
+          "INTEGRAL": [
+            "295/592",
+            "308/803",
+            "809/908"
           ],
           "GEOMETRIA": [
             "079/970",
@@ -1532,6 +1660,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1544,6 +1673,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1559,6 +1689,11 @@
             "295/592",
             "809/908",
             "226/622"
+          ],
+          "INTEGRAL": [
+            "295/592",
+            "308/803",
+            "809/908"
           ],
           "GEOMETRIA": [
             "079/970",
@@ -1632,6 +1767,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [
@@ -1646,6 +1782,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [
@@ -1663,6 +1800,11 @@
             "295/592",
             "277/772",
             "127/721"
+          ],
+          "INTEGRAL": [
+            "295/592",
+            "308/803",
+            "277/772"
           ],
           "GEOMETRIA": [
             "079/970",
@@ -1735,6 +1877,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1747,6 +1890,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1762,6 +1906,11 @@
             "588/885",
             "768/867",
             "668/866"
+          ],
+          "INTEGRAL": [
+            "588/885",
+            "455/554",
+            "768/867"
           ],
           "GEOMETRIA": [
             "588/885",
@@ -1830,6 +1979,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1842,6 +1992,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1857,6 +2008,11 @@
             "588/885",
             "768/867",
             "668/866"
+          ],
+          "INTEGRAL": [
+            "588/885",
+            "455/554",
+            "768/867"
           ],
           "GEOMETRIA": [
             "588/885",
@@ -1930,6 +2086,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -1942,6 +2099,9 @@
         },
         "hitTop10": {
           "LALO": [
+            "Montevideo:9176"
+          ],
+          "INTEGRAL": [
             "Montevideo:9176"
           ],
           "GEOMETRIA": [],
@@ -1969,6 +2129,11 @@
             "588/885",
             "768/867",
             "668/866"
+          ],
+          "INTEGRAL": [
+            "588/885",
+            "455/554",
+            "768/867"
           ],
           "GEOMETRIA": [
             "588/885",
@@ -2041,6 +2206,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -2053,6 +2219,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -2068,6 +2235,11 @@
             "466/664",
             "588/885",
             "646/646"
+          ],
+          "INTEGRAL": [
+            "466/664",
+            "588/885",
+            "455/554"
           ],
           "GEOMETRIA": [
             "588/885",
@@ -2140,6 +2312,7 @@
         ],
         "hitTop3": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -2152,6 +2325,7 @@
         },
         "hitTop10": {
           "LALO": [],
+          "INTEGRAL": [],
           "GEOMETRIA": [],
           "NUEVA_PRUEBA": [],
           "CONECTADAS": [],
@@ -2167,6 +2341,11 @@
             "000/000",
             "068/860",
             "466/664"
+          ],
+          "INTEGRAL": [
+            "000/000",
+            "455/554",
+            "588/885"
           ],
           "GEOMETRIA": [
             "588/885",
