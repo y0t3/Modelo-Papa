@@ -5,6 +5,7 @@ on:
       - lab/vt2-posiciones-libres-intradia-29oct2026
       - lab/vt2-transiciones-familias-cinco-dias-29oct2026
       - lab/vt2-trayectorias-rank-movimiento-29oct2026
+      - lab/vt2-cruce-previa-semana-29oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -30,6 +31,8 @@ jobs:
         run: npx --yes tsx scripts/lab-vt2-trayectorias-familias.ts
       - name: Control del movimiento por mismo puesto y periodo
         run: npx --yes tsx scripts/lab-vt2-control-movimiento.ts
+      - name: Cruce de familias ganadoras hoy y presentes en D-7
+        run: python3 scripts/lab-vt2-cruce-previa-semana.py
       - name: Regression MV1 sin cambios
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - uses: actions/upload-artifact@v4
@@ -46,4 +49,9 @@ jobs:
         with:
           name: vt2-trayectorias-rank-movimiento
           path: auditorias/vt2-trayectorias/*.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt2-cruce-previa-semana
+          path: auditorias/vt2-cruce-previa-semana/resultados.json
           if-no-files-found: error
