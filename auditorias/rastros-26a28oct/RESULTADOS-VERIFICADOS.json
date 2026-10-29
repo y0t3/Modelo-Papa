@@ -1,0 +1,874 @@
+{
+  "execution": "https://github.com/y0t3/Modelo-Papa/actions/runs/40803763988",
+  "dataProvider": "Vivitusuerte through current App GitHub Actions",
+  "headProvisional": {
+    "date": "2026-10-28",
+    "turn": "Nocturno",
+    "jur": "Santa Fé",
+    "head": "6666",
+    "independentVerification": "Not yet found in public result sites at analysis time"
+  },
+  "verifiedSubset80": {
+    "totals": {
+      "physicalVT3": 18,
+      "top10": 1,
+      "recognisedBelow": 3,
+      "notRecognised": 14
+    },
+    "flagWinners": {
+      "SAME6": 8,
+      "SAME_TWO_DAYS_2_ROWS": 1,
+      "SAME_TWO_DAYS_1_ROW": 0,
+      "NEIGHBOR3": 5,
+      "RECENT_STEP": 2,
+      "CONSTANT_VECTOR": 0,
+      "GEO3": 1,
+      "CONNECT3": 1,
+      "AUX_AYER3": 0,
+      "AUX_HOY3": 0,
+      "ANY_INDEPENDENT10": 2,
+      "TWO_INDEPENDENT10": 0,
+      "TIGHT2_PLUS_INDEPENDENT": 0,
+      "SAME6_PLUS_INDEPENDENT": 1
+    }
+  },
+  "withProviderHead81": {
+    "physicallyFormableHeads": 19,
+    "inLaloTop10": 1,
+    "recognizedBelowTop10": 3,
+    "neverRecognized": 15,
+    "winners": [
+      {
+        "date": "2026-10-26",
+        "turn": "Primera",
+        "jur": "Entre Ríos",
+        "head": "4056",
+        "family": "056/650",
+        "status": "BELOW10",
+        "rank": 13,
+        "sources": [
+          "prevNocturno"
+        ],
+        "routes": 4,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": 3,
+          "NUEVA_PRUEBA": 4,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6",
+          "SAME_TWO_DAYS_2_ROWS",
+          "GEO3",
+          "ANY_INDEPENDENT10",
+          "SAME6_PLUS_INDEPENDENT"
+        ],
+        "sameDays": 3,
+        "tightDays": 1,
+        "witnesses": [
+          {
+            "date": "2026-10-19",
+            "head": "3019",
+            "value": "019",
+            "source": "prevNocturno",
+            "deltaRow": 0
+          }
+        ]
+      },
+      {
+        "date": "2026-10-26",
+        "turn": "Primera",
+        "jur": "Ciudad",
+        "head": "8627",
+        "family": "627/726",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "prevNocturno"
+        ],
+        "routes": 1,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "NEIGHBOR3"
+        ],
+        "sameDays": 0,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-26",
+        "turn": "Vespertino",
+        "jur": "Entre Ríos",
+        "head": "4027",
+        "family": "027/720",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "prevNocturno"
+        ],
+        "routes": 1,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "NEIGHBOR3"
+        ],
+        "sameDays": 0,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-26",
+        "turn": "Nocturno",
+        "jur": "Provincia",
+        "head": "6331",
+        "family": "133/331",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Previa"
+        ],
+        "routes": 1,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6"
+        ],
+        "sameDays": 1,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-26",
+        "turn": "Nocturno",
+        "jur": "Montevideo",
+        "head": "1876",
+        "family": "678/876",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Primera",
+          "Vespertino"
+        ],
+        "routes": 2,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6",
+          "NEIGHBOR3",
+          "RECENT_STEP"
+        ],
+        "sameDays": 1,
+        "tightDays": 1,
+        "witnesses": [
+          {
+            "date": "2026-10-23",
+            "head": "3103",
+            "value": "103",
+            "source": "Primera",
+            "deltaRow": 0
+          }
+        ]
+      },
+      {
+        "date": "2026-10-26",
+        "turn": "Nocturno",
+        "jur": "Entre Ríos",
+        "head": "5398",
+        "family": "398/893",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Vespertino"
+        ],
+        "routes": 1,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [],
+        "sameDays": 0,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-27",
+        "turn": "Primera",
+        "jur": "Santa Fé",
+        "head": "7438",
+        "family": "438/834",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "prevNocturno"
+        ],
+        "routes": 1,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [],
+        "sameDays": 0,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-27",
+        "turn": "Primera",
+        "jur": "Córdoba",
+        "head": "5687",
+        "family": "687/786",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Previa"
+        ],
+        "routes": 1,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [],
+        "sameDays": 0,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-27",
+        "turn": "Matutino",
+        "jur": "Ciudad",
+        "head": "8267",
+        "family": "267/762",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Previa"
+        ],
+        "routes": 2,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "NEIGHBOR3"
+        ],
+        "sameDays": 0,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-27",
+        "turn": "Nocturno",
+        "jur": "Provincia",
+        "head": "2299",
+        "family": "299/992",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "prevNocturno",
+          "Primera",
+          "Matutino"
+        ],
+        "routes": 4,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": 3,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "CONNECT3",
+          "ANY_INDEPENDENT10"
+        ],
+        "sameDays": 0,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Primera",
+        "jur": "Provincia",
+        "head": "5279",
+        "family": "279/972",
+        "status": "BELOW10",
+        "rank": 19,
+        "sources": [
+          "Previa"
+        ],
+        "routes": 2,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6"
+        ],
+        "sameDays": 1,
+        "tightDays": 1,
+        "witnesses": [
+          {
+            "date": "2026-10-27",
+            "head": "8267",
+            "value": "267",
+            "source": "Previa",
+            "deltaRow": 0
+          }
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Primera",
+        "jur": "Santa Fé",
+        "head": "1290",
+        "family": "092/290",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Previa"
+        ],
+        "routes": 1,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6"
+        ],
+        "sameDays": 1,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Matutino",
+        "jur": "Montevideo",
+        "head": "9176",
+        "family": "176/671",
+        "status": "TOP10",
+        "rank": 7,
+        "sources": [
+          "prevNocturno"
+        ],
+        "routes": 4,
+        "engine": {
+          "LALO": 7,
+          "INTEGRAL": 10,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": 7,
+          "MISMA_6": 7,
+          "PASO_RECIENTE": 7,
+          "VECTOR_CONTINUO": 7,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6",
+          "SAME_TWO_DAYS_2_ROWS",
+          "SAME_TWO_DAYS_1_ROW",
+          "NEIGHBOR3"
+        ],
+        "sameDays": 2,
+        "tightDays": 2,
+        "witnesses": [
+          {
+            "date": "2026-10-26",
+            "head": "4056",
+            "value": "056",
+            "source": "prevNocturno",
+            "deltaRow": 1
+          },
+          {
+            "date": "2026-10-27",
+            "head": "7438",
+            "value": "438",
+            "source": "prevNocturno",
+            "deltaRow": 0
+          }
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Matutino",
+        "jur": "Ciudad",
+        "head": "9178",
+        "family": "178/871",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Previa"
+        ],
+        "routes": 2,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [],
+        "sameDays": 0,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Vespertino",
+        "jur": "Córdoba",
+        "head": "6189",
+        "family": "189/981",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Previa"
+        ],
+        "routes": 1,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6",
+          "NEIGHBOR3",
+          "RECENT_STEP"
+        ],
+        "sameDays": 1,
+        "tightDays": 1,
+        "witnesses": [
+          {
+            "date": "2026-10-26",
+            "head": "6331",
+            "value": "331",
+            "source": "Previa",
+            "deltaRow": -1
+          }
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Vespertino",
+        "jur": "Ciudad",
+        "head": "8180",
+        "family": "081/180",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Previa",
+          "Primera"
+        ],
+        "routes": 3,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [],
+        "sameDays": 0,
+        "tightDays": 0,
+        "witnesses": []
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Vespertino",
+        "jur": "Entre Ríos",
+        "head": "2569",
+        "family": "569/965",
+        "status": "BELOW10",
+        "rank": 35,
+        "sources": [
+          "Matutino"
+        ],
+        "routes": 1,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6"
+        ],
+        "sameDays": 1,
+        "tightDays": 1,
+        "witnesses": [
+          {
+            "date": "2026-10-27",
+            "head": "2299",
+            "value": "299",
+            "source": "Matutino",
+            "deltaRow": -1
+          }
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Nocturno",
+        "jur": "Córdoba",
+        "head": "4510",
+        "family": "015/510",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "prevNocturno",
+          "Vespertino"
+        ],
+        "routes": 2,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6"
+        ],
+        "sameDays": 1,
+        "tightDays": 1,
+        "witnesses": [
+          {
+            "date": "2026-10-22",
+            "head": "8257",
+            "value": "257",
+            "source": "prevNocturno",
+            "deltaRow": -1
+          }
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "turn": "Nocturno",
+        "jur": "Santa Fé",
+        "head": "6666",
+        "family": "666/666",
+        "status": "ABSENT",
+        "rank": null,
+        "sources": [
+          "Matutino"
+        ],
+        "routes": 3,
+        "engine": {
+          "LALO": null,
+          "INTEGRAL": null,
+          "GEOMETRIA": null,
+          "NUEVA_PRUEBA": null,
+          "CONECTADAS": null,
+          "PULSO_TOP10": null,
+          "MISMA_6": null,
+          "PASO_RECIENTE": null,
+          "VECTOR_CONTINUO": null,
+          "AUX_AYER": null,
+          "AUX_HOY": null
+        },
+        "flags": [
+          "SAME6"
+        ],
+        "sameDays": 1,
+        "tightDays": 1,
+        "witnesses": [
+          {
+            "date": "2026-10-24",
+            "head": "5739",
+            "value": "739",
+            "source": "Matutino",
+            "deltaRow": 1
+          }
+        ]
+      }
+    ],
+    "controls": [
+      {
+        "flag": "SAME6",
+        "pool": 1703,
+        "selected": 932,
+        "hits": 9,
+        "nonwinners": 923,
+        "totalWinners": 18,
+        "randomExpected": 10.24187357562916,
+        "randomAtLeastObserved": 0.7982
+      },
+      {
+        "flag": "SAME_TWO_DAYS_2_ROWS",
+        "pool": 1703,
+        "selected": 279,
+        "hits": 1,
+        "nonwinners": 278,
+        "totalWinners": 18,
+        "randomExpected": 2.983644574479446,
+        "randomAtLeastObserved": 0.9626
+      },
+      {
+        "flag": "SAME_TWO_DAYS_1_ROW",
+        "pool": 1703,
+        "selected": 168,
+        "hits": 0,
+        "nonwinners": 168,
+        "totalWinners": 18,
+        "randomExpected": 1.7606676057480115,
+        "randomAtLeastObserved": 1
+      },
+      {
+        "flag": "NEIGHBOR3",
+        "pool": 1703,
+        "selected": 773,
+        "hits": 5,
+        "nonwinners": 768,
+        "totalWinners": 18,
+        "randomExpected": 8.239102304997823,
+        "randomAtLeastObserved": 0.961
+      },
+      {
+        "flag": "RECENT_STEP",
+        "pool": 1703,
+        "selected": 221,
+        "hits": 2,
+        "nonwinners": 219,
+        "totalWinners": 18,
+        "randomExpected": 2.6180212762413593,
+        "randomAtLeastObserved": 0.7562
+      },
+      {
+        "flag": "CONSTANT_VECTOR",
+        "pool": 1703,
+        "selected": 0,
+        "hits": 0,
+        "nonwinners": 0,
+        "totalWinners": 18,
+        "randomExpected": 0,
+        "randomAtLeastObserved": 1
+      },
+      {
+        "flag": "GEO3",
+        "pool": 1703,
+        "selected": 21,
+        "hits": 1,
+        "nonwinners": 20,
+        "totalWinners": 18,
+        "randomExpected": 0.24443830092345661,
+        "randomAtLeastObserved": 0.2258
+      },
+      {
+        "flag": "CONNECT3",
+        "pool": 1703,
+        "selected": 34,
+        "hits": 1,
+        "nonwinners": 33,
+        "totalWinners": 18,
+        "randomExpected": 0.42396580261119665,
+        "randomAtLeastObserved": 0.3446
+      },
+      {
+        "flag": "AUX_AYER3",
+        "pool": 1703,
+        "selected": 1,
+        "hits": 0,
+        "nonwinners": 1,
+        "totalWinners": 18,
+        "randomExpected": 0.014084507042253521,
+        "randomAtLeastObserved": 1
+      },
+      {
+        "flag": "AUX_HOY3",
+        "pool": 1703,
+        "selected": 11,
+        "hits": 0,
+        "nonwinners": 11,
+        "totalWinners": 18,
+        "randomExpected": 0.08071155629167624,
+        "randomAtLeastObserved": 1
+      },
+      {
+        "flag": "ANY_INDEPENDENT10",
+        "pool": 1703,
+        "selected": 270,
+        "hits": 2,
+        "nonwinners": 268,
+        "totalWinners": 18,
+        "randomExpected": 3.022074024066043,
+        "randomAtLeastObserved": 0.8368
+      },
+      {
+        "flag": "TWO_INDEPENDENT10",
+        "pool": 1703,
+        "selected": 19,
+        "hits": 0,
+        "nonwinners": 19,
+        "totalWinners": 18,
+        "randomExpected": 0.20464537872972607,
+        "randomAtLeastObserved": 1
+      },
+      {
+        "flag": "TIGHT2_PLUS_INDEPENDENT",
+        "pool": 1703,
+        "selected": 48,
+        "hits": 0,
+        "nonwinners": 48,
+        "totalWinners": 18,
+        "randomExpected": 0.5396844220128496,
+        "randomAtLeastObserved": 1
+      },
+      {
+        "flag": "SAME6_PLUS_INDEPENDENT",
+        "pool": 1703,
+        "selected": 196,
+        "hits": 1,
+        "nonwinners": 195,
+        "totalWinners": 18,
+        "randomExpected": 2.2483147438515316,
+        "randomAtLeastObserved": 0.911
+      }
+    ],
+    "observation": "Only exact physically matching VT3 suffixes count; inverse-only family outcomes are kept separately.",
+    "limitations": "All PRE cuts reconstructed retrospectively, not prospective seals. Missing Santa Fe Nocturna 28/10 excluded."
+  },
+  "warning": "Family-cut controls include locally physical candidates, not all numerical combinations or demonstrated predictive advantage."
+}
