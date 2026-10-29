@@ -3,7 +3,8 @@ import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {DailySheet,SourceId} from '../sheet';
 import type {Turno} from '../domain';
 import type {LaloView} from '../motorLalo';
-import type {FormMotorView,FormCell} from '../motorFormasPrimero';
+import type {FormMotorView,FormCell,FormKind} from '../motorFormasPrimero';
+import {classifyFigureMotion} from '../figureMotionAudit';
 import type {InfoVisualDay} from '../infoTurnHistory';
 import {readableWeekday} from '../infoTurnHistory';
 import {buildFigureRescueAudit} from '../figureRescueAudit';
@@ -13,18 +14,19 @@ import RouteMiniBoard from './RouteMiniBoard';
 
 type Filter='RESCATE'|'COMPARTIDO'|'LALO';
 type Board={source:SourceId;cells:FormCell[];label:string;key:string};
-export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,published}:{
+export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,published,kind='vt3'}:{
  date:string;turn:Turno;pre:DailySheet|null;forms:FormMotorView|null;
  lalo:LaloView|null;days:InfoVisualDay[];
- published:{jur:string;head:string}[];
+ published:{jur:string;head:string}[];kind?:FormKind;
 }){
  const {colors:c,kinds}=useLaloTheme();
+ const visual=kinds[kind];
  const [filter,setFilter]=useState<Filter>('RESCATE');
  const [selected,setSelected]=useState<string|null>(null);
  const [showAllRoots,setShowAllRoots]=useState(false);
- const report=useMemo(()=>pre&&forms&&lalo?
+ const report=useMemo(()=>pre&&forms&&forms.kind===kind&&lalo?
   buildFigureRescueAudit(date,turn,pre,forms,lalo,published):null,
-  [date,turn,pre,forms,lalo,published]);
+  [date,turn,pre,forms,lalo,published,kind]);
  if(!report)return null;
  const formItems=report.forms.filter(x=>x.kind===filter);
  const listed=filter==='LALO'?report.laloOnly:formItems;
@@ -37,6 +39,7 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
  const onlyLalo=focused&&!chosen?focused as AuditedLaloOnly:null;
  const current=chosen?pre?.columns.find(col=>col.id===chosen.choice.source):null;
  const roots=chosen?.choice.support.roots||[];
+ const motion=chosen?classifyFigureMotion(chosen.choice):null;
  const groupedRoots=roots.filter((r,i)=>roots.findIndex(q=>q.event===r.event&&q.source===r.source&&
   q.cells.map(c=>c.row+':'+c.col).join('>')===r.cells.map(c=>c.row+':'+c.col).join('>'))===i);
  const shownRoots=showAllRoots?groupedRoots:groupedRoots.slice(0,8);
@@ -46,7 +49,7 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
   label:x.origin+' · '+x.value,key:'lalo-'+i
  })):[];
  return <View style={[s.panel,{backgroundColor:c.surfaceAlt,borderColor:c.accent}]}>
-  <Text style={[s.heading,{color:c.accent}]}>AUDITORÍA DE FIGURAS · VT3</Text>
+  <Text style={[s.heading,{color:c.accent}]}>AUDITORÍA DE FIGURAS · {kind.toUpperCase()}</Text>
   <Text style={[s.note,{color:c.text}]}>
    Observamos las familias propuestas por Formas Primero fuera del Top10 de Lalo,
    las coincidencias entre motores y las familias que sólo eligió Lalo.
@@ -91,8 +94,8 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
    const form='choice' in item?item:null;
    return <Pressable accessibilityRole="button" key={id}
     onPress={()=>{setSelected(active?null:id);setShowAllRoots(false)}}
-    style={[s.candidate,{borderColor:hit?kinds.vt3.line:c.border,
-     backgroundColor:hit?kinds.vt3.fill:c.card,borderWidth:hit?2:1}]}>
+    style={[s.candidate,{borderColor:hit?visual.line:c.border,
+     backgroundColor:hit?visual.fill:c.card,borderWidth:hit?2:1}]}>
     <Text style={{color:c.text,fontSize:13,fontWeight:'900'}}>
      {active?'▾':'▸'} {family}
      {'  ·  '}#{form?.choice.rank??(item as AuditedLaloOnly).rank}
@@ -117,7 +120,7 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
     {chosen.choice.source} · fila {chosen.choice.anchor+1} ·
     {' '}{chosen.choice.cells.map(p=>'F'+(p.row+1)+(p.col?'D':'I')).join(' → ')}
    </Text>
-   <RouteMiniBoard values={current.values} cells={chosen.choice.cells} kind="vt3"/>
+   <RouteMiniBoard values={current.values} cells={chosen.choice.cells} kind={kind}/>
    <Text style={[s.note,{color:c.text}]}>
     Aquí forma {chosen.choice.value} · familia {chosen.choice.family}.
     {' '}{chosen.laloRank?'Lalo la ubica en #'+chosen.laloRank:
@@ -130,6 +133,27 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
     {' '}{chosen.choice.support.d1?'Hay marca D−1. ':''}
     {chosen.choice.support.d7?'Hay marca D−7. ':''}
    </Text>
+   {motion?<View style={[s.summary,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+    <Text style={[s.emphasis,{color:c.text}]}>
+     MOVIMIENTO DE ESTA FIGURA (MISMAS REGLAS VT2/VT3)
+    </Text>
+    <Text style={[s.note,{color:c.subtext}]}>
+     Misma posición: {motion.exactEvents} evento(s) ganadores, en
+     {' '}{motion.exactDays} jornada(s). Desplazamiento vertical:
+     {' '}{motion.verticalEvents} evento(s), en {motion.verticalDays} jornada(s).
+     Cambio de fuente: {motion.sourceChangeEvents} evento(s), en
+     {' '}{motion.sourceChangeDays} jornada(s).
+    </Text>
+    <Text style={[s.note,{color:c.muted}]}>
+     {motion.verticalOffsets.length?
+      'Traslados desde antecedentes: '+motion.verticalOffsets.map(v=>
+       (v>0?'+':'')+v+' fila(s)').join(', ')+'. ':''}
+     {motion.sourceOffsets.length?
+      'Cambios de fuente: '+motion.sourceOffsets.join(', ')+'. ':''}
+     Una posición puede tener varias clases de antecedentes ganadores.
+     Estas cifras describen movimientos, no cambian el orden del Top.
+    </Text>
+   </View>:null}
    <Text style={[s.emphasis,{color:c.text}]}>
     ANTECEDENTES REALES QUE RESPALDAN ESTA SILUETA
    </Text>
@@ -148,7 +172,7 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
       <Text style={[s.note,{color:c.text}]}>
        {r.jurisdiction} {r.head} · tramo {r.reading}
       </Text>
-      {col?<RouteMiniBoard kind="vt3" compact values={col.values} cells={r.cells}/>:
+      {col?<RouteMiniBoard kind={kind} compact values={col.values} cells={r.cells}/>:
        <Text style={[s.note,{color:c.muted}]}>Hoja antigua no disponible</Text>}
       <Text style={[s.note,{color:c.subtext}]}>{r.source} · fila {r.anchor+1}</Text>
      </View>;
@@ -174,7 +198,7 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
       <Text style={[s.note,{color:c.text,fontWeight:'800'}]}>
        {b.source} · {b.label}
       </Text>
-      {col?<RouteMiniBoard kind="vt3" compact values={col.values} cells={b.cells}/>:null}
+      {col?<RouteMiniBoard kind={kind} compact values={col.values} cells={b.cells}/>:null}
      </View>;
     })}
    </ScrollView>
@@ -186,11 +210,11 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
    {report.publicationCount===0?<Text style={[s.note,{color:c.muted}]}>
     POST pendiente. No se interpreta todavía como acierto ni desacierto.
    </Text>:focused.published.length===0?<Text style={[s.note,{color:c.subtext}]}>
-    Ninguna de las cabezas publicadas hasta ahora termina con esta familia VT3.
+    Ninguna de las cabezas publicadas hasta ahora termina con esta familia {kind.toUpperCase()}.
    </Text>:focused.published.map((h,i)=><View key={h.jur+'|'+h.head+'|'+i}
-    style={[s.result,{borderColor:kinds.vt3.line,backgroundColor:c.surfaceAlt}]}>
+    style={[s.result,{borderColor:visual.line,backgroundColor:c.surfaceAlt}]}>
     <Text style={[s.emphasis,{color:c.text}]}>
-     {h.jur} {h.head} · últimas 3: {h.suffix}
+     {h.jur} {h.head} · últimas {kind==='vt2'?'2':'3'}: {h.suffix}
     </Text>
     <Text style={[s.note,{color:c.subtext}]}>
      {h.physicalPaths.length} recorrido(s) físico(s) válido(s) en la hoja PRE;
@@ -206,7 +230,7 @@ export default function FigureRescueAuditPanel({date,turn,pre,forms,lalo,days,pu
        <Text style={[s.note,{color:c.text,fontWeight:'800'}]}>
         {p.source} · {p.orientation==='INVERSA'?'lectura inversa':'lectura directa'}
        </Text>
-       {col?<RouteMiniBoard kind="vt3" compact values={col.values} cells={p.cells}/>:null}
+       {col?<RouteMiniBoard kind={kind} compact values={col.values} cells={p.cells}/>:null}
        <Text style={[s.note,{color:c.subtext}]}>
         {chosen&&p.positionKey===chosen.choice.positionKey?
          'Recorrido seleccionado antes del sorteo':'Otro recorrido válido'}
