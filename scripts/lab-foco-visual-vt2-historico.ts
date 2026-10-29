@@ -175,6 +175,13 @@ async function main(){
    const historicMarks={
     LALO:plusMarks,AUX_AYER:auxAyerMarks,AUX_HOY:auxHoyMarks
    };
+   const d7HistoricalMarks={
+    LALO:previousPlusVt2Marks(refs.filter(r=>r.date===weekDay)
+      .map(r=>({date:r.date,sheet:r.sheet}))),
+    AUX_AYER:previousAuxVt2Marks(histAuxAyer.filter(r=>r.date===weekDay)),
+    AUX_HOY:previousAuxVt2Marks(histAuxHoy.filter(r=>r.date===weekDay))
+   };
+   const lastTwoDates=new Set(history.slice(-2).map(x=>x.date));
    const focusCase:Record<string,unknown>={date,turn,heads:heads.map(h=>h.jur+':'+h.head)};
    for(const model of ['LALO','AUX_AYER','AUX_HOY'] as Model[]){
     const ext=physical[model],parent=mothers[model],marks=historicMarks[model];
@@ -204,6 +211,27 @@ async function main(){
       }))
      }));
      (focusSummary.byMode as Record<string,unknown>)[mode]={one:results[0],two:results[1]};
+    }
+    // Contraste con ventanas visuales breves, sin introducir nuevas puntuaciones.
+    const windows:{name:string;marks:typeof marks}[]=[
+      {name:'DOS_JORNADAS',marks:marks.filter(m=>lastTwoDates.has(m.date))},
+      {name:'MISMO_DIA_SEMANA',marks:d7HistoricalMarks[model]}
+    ];
+    (focusSummary as Record<string,unknown>).byWindow={};
+    for(const window of windows){
+     const out:Record<string,unknown>={};
+     for(const mode of focusModes){
+      const foci=findVisualFoci(ext,parent,window.marks,date,mode,2);
+      out[mode]={
+       ...evaluateFoci(ext,foci,heads.map(h=>h.head)),
+       foci:foci.map(f=>({
+        family:f.family,rank:f.originalRank,source:f.zone.source,
+        cells:f.zone.cells,exactDays:f.zone.sameDays,nearDays:f.zone.nearDays,
+        extensions:f.zone.extensions,witness:f.hasWitness,witnesses:f.zone.witnesses
+       }))
+      };
+     }
+     ((focusSummary as Record<string,any>).byWindow as Record<string,unknown>)[window.name]=out;
     }
     focusCase[model]=focusSummary;
    }
@@ -261,6 +289,12 @@ async function main(){
    nearZoneTwo:sum('byMode.VECINDAD.two.zoneExact'),
    exactOne:sum('byMode.SITIO_EXACTO.one.exact'),
    nearOne:sum('byMode.VECINDAD.one.exact'),
+   recentExactTwo:sum('byWindow.DOS_JORNADAS.SITIO_EXACTO.exact'),
+   recentNearTwo:sum('byWindow.DOS_JORNADAS.VECINDAD.exact'),
+   weekdayExactTwo:sum('byWindow.MISMO_DIA_SEMANA.SITIO_EXACTO.exact'),
+   weekdayNearTwo:sum('byWindow.MISMO_DIA_SEMANA.VECINDAD.exact'),
+   recentExactWitness:sum('byWindow.DOS_JORNADAS.SITIO_EXACTO.withWitness'),
+   weekdayExactWitness:sum('byWindow.MISMO_DIA_SEMANA.SITIO_EXACTO.withWitness'),
    witnessExactTwo:sum('byMode.SITIO_EXACTO.two.withWitness'),
    witnessNearTwo:sum('byMode.VECINDAD.two.withWitness'),
    perPeriod
