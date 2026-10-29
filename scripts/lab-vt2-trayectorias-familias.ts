@@ -205,6 +205,7 @@ const out='auditorias/vt2-trayectorias';
 fs.mkdirSync(out,{recursive:true});
 fs.writeFileSync(out+'/resumen.json',JSON.stringify(output,null,2)+'\n');
 fs.writeFileSync(out+'/ventana-6-dias.json',JSON.stringify(lastSix,null,2)+'\n');
+fs.writeFileSync(out+'/nocturnas-127.json',JSON.stringify(nights,null,2)+'\n');
 console.log('VT2_TRAYECTORIAS_SUMMARY',JSON.stringify({
  baseline:output.baseline,results,adaptive,
  lastSix: lastSix.map(d=>({date:d.date,nightWinners:d.turns[4].headsTop10.map(w=>({
