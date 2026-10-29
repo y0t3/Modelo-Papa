@@ -26,6 +26,7 @@ import {fetchAuxiliaryHeads} from '../src/auxSantiagoSource';
 import type {AuxiliaryHeads} from '../src/auxSantiagoNeuquen';
 import {auxAtCut,extractAuxHistoryMode} from '../src/auxTemporalModes';
 import {buildMotorLaloAuxiliar} from '../src/motorLaloAuxiliar';
+import {buildMotorLaloIntegral} from '../src/motorLaloIntegral';
 import type {AuxiliarHistory} from '../src/motorLaloAuxiliar';
 
 const valid=(x:string)=>/^\d{4}$/.test(x);
@@ -238,12 +239,12 @@ function classOf(f:Features){
 }
 
 
-type Name='LALO'|'GEOMETRIA'|'NUEVA_PRUEBA'|'CONECTADAS'|
+type Name='LALO'|'INTEGRAL'|'GEOMETRIA'|'NUEVA_PRUEBA'|'CONECTADAS'|
  'PULSO_TOP10'|'MISMA_6'|'PASO_RECIENTE'|'VECTOR_CONTINUO'|'AUX_AYER'|'AUX_HOY';
 type Kind='vt2'|'vt3'|'vt4';
 type Pick={family:string;values:string[];originalRank?:number};
 type Ranking={vt2:Pick[];vt3:Pick[];vt4:Pick[]};
-const names:Name[]=['LALO','GEOMETRIA','NUEVA_PRUEBA','CONECTADAS',
+const names:Name[]=['LALO','INTEGRAL','GEOMETRIA','NUEVA_PRUEBA','CONECTADAS',
  'PULSO_TOP10','MISMA_6','PASO_RECIENTE','VECTOR_CONTINUO','AUX_AYER','AUX_HOY'];
 const kinds:Kind[]=['vt2','vt3','vt4'];
 type Win={jur:string;head:string;vt2:string;vt3:string;vt4:string};
@@ -383,6 +384,11 @@ async function main(){
     auxAtCut(yesterdayAux,turn,'anterior'),pastAuxAyer);
    const hoyCut=auxAtCut(liveAux,turn,'intrajornada');
    const hoy=buildMotorLaloAuxiliar(date,turn,hoyCut,pastAuxHoy);
+   const integral=buildMotorLaloIntegral(date,turn,safe,
+    auxAtCut(yesterdayAux,turn,'anterior'),refs.map(ref=>({
+     date:ref.date,period:ref.period,plus11:ref.sheet,
+     aux:pastAuxAyer.find(x=>x.date===ref.date)!.aux
+    })));
    const toVt3=(xs:string[]):Ranking=>({
     vt2:[],vt3:xs.map(f=>({family:f,values:f.split('/')})),vt4:[]
    });
@@ -398,6 +404,11 @@ async function main(){
    });
    const ranks:Record<Name,Ranking>={
     LALO:official,
+    INTEGRAL:{
+     vt2:integral.ranks[2].slice(0,10).map(makePick),
+     vt3:integral.ranks[3].slice(0,10).map(makePick),
+     vt4:integral.ranks[4].slice(0,10).map(makePick)
+    },
     GEOMETRIA:toVt3(geo.top.slice(0,10).map(x=>x.family)),
     NUEVA_PRUEBA:toVt3(trial.top.slice(0,10).map(x=>x.family)),
     CONECTADAS:toVt3(connected.top.slice(0,10).map(x=>x.family)),
