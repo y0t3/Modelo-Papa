@@ -12,7 +12,8 @@ import {hasDrawResults} from '../src/drawHistory';
 import {nocturnaAnteriorPorJur} from '../src/nocturnaAnteriorPorJur';
 import {buildSheet} from '../src/sheet';
 import {preSheetAtCut} from '../src/infoCandidatos';
-import {enumerateFigures,winningFigures,moveWinnerFigures,evaluateAgainstShapeControl} from '../src/labWinningFootprintTransfer';
+import {enumerateFigures,winningFigures,moveWinnerFigures,evaluateAgainstShapeControl,
+ controlFromNonWinningPast,matchesSuffix} from '../src/labWinningFootprintTransfer';
 import type {N,Mode,Figure} from '../src/labWinningFootprintTransfer';
 const from=process.env.FIG_FROM||'2026-10-12';
 const through=process.env.FIG_TO||'2026-10-28';
@@ -62,6 +63,9 @@ async function main(){
    for(const n of [2,3] as N[]){
     const all=enumerateFigures(pre,n);
     const winners=winningFigures(week.sheet,pastDate,n);
+    const winnersSites=new Set(winners.map(x=>x.key));
+    const pastNonWinning=enumerateFigures(week.sheet,n)
+     .filter(x=>!winnersSites.has(x.key));
     pastWinningEvents['vt'+n]=winners.length;
     const sameScope=new Set(all.map(f=>group(f)));
     for(const mode of modes){
@@ -70,9 +74,19 @@ async function main(){
      const stats=evaluateAgainstShapeControl(figures,all,heads.map(h=>h.head),n);
      const memberSources=[...new Set(figures.map(f=>f.source))];
      const oldCovered=transferred.selected.reduce((s,x)=>s+x.roots.length,0);
+     const negative=controlFromNonWinningPast(
+      figures,pastNonWinning,pastDate,all,mode,date);
+     const negativeHits=heads.filter(h=>negative.figures.some(f=>
+      matchesSuffix(f,h.head,n))).length;
+     if(negative.figures.length!==figures.length)
+      throw Error('Control negativo no iguala presupuesto '+date+' '+n+' '+mode);
      // Las figuras se fijaron primero, los números del objetivo solo POST.
      const key='VT'+n+'_'+mode;
      data[key]={...stats,rootSites:winners.length,rootReused:oldCovered,
+      negativeHits,negativeSites:negative.figures.length,
+      strictlyOldNonWinning:negative.strictNegative,
+      negativeFallback:negative.shortage,
+      negativePool:negative.negativePool,
       selectedSources:memberSources,shapeGroups:[...new Set(figures.map(group))].length,
       exampleFigures:transferred.selected.slice(0,6).map(x=>({
        source:x.fig.source,shape:x.fig.shape,
@@ -107,6 +121,7 @@ async function main(){
   }));
   summary[key]={cuts:cases.length,heads:values.reduce((n,x)=>n+x.heads,0),
    observed:sum('observed'),expected:sum('expected'),
+   negativeObserved,negativeStrict,negativeFallback,
    opportunities:sum('eligibleHeadsFromSameShape'),
    selectedSites:sum('selectedSites'),availableSites:sum('availableSites'),
    otherPhysicalHeads:sum('otherPhysicalHeads'),
