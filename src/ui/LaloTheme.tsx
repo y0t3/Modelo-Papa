@@ -11,8 +11,8 @@ export type LaloColors={
  button:string;buttonText:string;divider:string;statusBar:'light'|'dark';
 };
 const LIGHT:LaloColors={
- canvas:'#F6F3FA',nav:'#1B1227',navActive:'#18578A',
- surface:'#FCFAFE',surfaceAlt:'#F5F0F9',card:'#FFFFFF',
+ canvas:'#F2F5F9',nav:'#0D2F66',navActive:'#164D95',
+ surface:'#FFFFFF',surfaceAlt:'#EDF3FA',card:'#FFFFFF',
  board:'#FDFBFF',boardAlt:'#F6F1F8',cell:'#FFFFFF',
  text:'#282039',subtext:'#665A73',muted:'#72657C',
  border:'#DCD3E3',accent:'#603E83',accentFill:'#EDE1F6',
@@ -20,11 +20,11 @@ const LIGHT:LaloColors={
  buttonText:'#FFFFFF',divider:'#E4DBE9',statusBar:'dark'
 };
 const DARK:LaloColors={
- canvas:'#101019',nav:'#14101E',navActive:'#234C83',
- surface:'#1C1927',surfaceAlt:'#221E2F',card:'#292436',
+ canvas:'#07142D',nav:'#081D42',navActive:'#164B90',
+ surface:'#101E39',surfaceAlt:'#142749',card:'#1B2C4E',
  board:'#191722',boardAlt:'#211C2C',cell:'#2C2639',
  text:'#F8F3FF',subtext:'#C8BDD7',muted:'#B8ADCB',
- border:'#50465F',accent:'#C9A6FF',accentFill:'#3D2C56',
+ border:'#405274',accent:'#C9A6FF',accentFill:'#3D2C56',
  selected:'#372A4C',callout:'#30263E',button:'#28669D',
  buttonText:'#FFFFFF',divider:'#42384F',statusBar:'light'
 };
