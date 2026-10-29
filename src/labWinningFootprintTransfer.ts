@@ -150,3 +150,48 @@ export function evaluateAgainstShapeControl(selected:Figure[],available:Figure[]
   matchedExamples:actual.filter(h=>selected.some(f=>matchesSuffix(f,h,n))).slice(0,8)
  };
 }
+
+/**
+ * Control negativo EXPLÍCITO: partir de figuras D−7 que NO explicaron
+ * ninguna cabeza Nocturna. Se trasladan con el mismo movimiento.
+ * Tomar igual cantidad por fuente y silueta, sin usar cifras ni el POST.
+ * Si faltan candidatas negativas, se añade un control físico neutral,
+ * identificando el faltante para que la comparación no se disfrace.
+ */
+const hash=(s:string)=>{
+ let h=2166136261;
+ for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619);
+ return h>>>0;
+};
+export function controlFromNonWinningPast(positive:Figure[],pastNonWinning:Figure[],
+ pastDate:string,available:Figure[],mode:Mode,targetDate:string){
+ const pseudo:PastWinnerFigure[]=pastNonWinning.map(p=>({
+  ...p,event:'NO_POST',date:pastDate,head:'',turn:'Nocturno',jur:'CONTROL'
+ }));
+ const negatives=moveWinnerFigures(pseudo,available,mode).selected.map(x=>x.fig);
+ const byGroup=(p:Figure)=>p.source+'|'+p.shape;
+ const taken=new Set(positive.map(p=>p.key));
+ const negativeKeys=new Set(negatives.map(x=>x.key));
+ const result:Figure[]=[];
+ let shortage=0,strictNeg=0;
+ const groups=new Map<string,number>();
+ for(const x of positive)groups.set(byGroup(x),(groups.get(byGroup(x))||0)+1);
+ for(const [g,k] of groups){
+  const sort=(a:Figure,b:Figure)=>hash(targetDate+'|'+g+'|'+a.key)-
+    hash(targetDate+'|'+g+'|'+b.key)||a.key.localeCompare(b.key);
+  const candidates=negatives.filter(x=>byGroup(x)===g&&!taken.has(x.key)).sort(sort);
+  const first=candidates.slice(0,k);
+  first.forEach(x=>taken.add(x.key));
+  result.push(...first);strictNeg+=first.length;
+  if(first.length<k){
+   shortage+=k-first.length;
+   const fallback=available.filter(x=>byGroup(x)===g&&!taken.has(x.key))
+    .sort(sort).slice(0,k-first.length);
+   result.push(...fallback);
+   fallback.forEach(x=>taken.add(x.key));
+  }
+ }
+ return {figures:result,strictNegative:strictNeg,shortage,
+  negativePool:new Set(negatives.map(x=>x.key)).size,
+  originallyNonWinning:new Set(result.filter(x=>negativeKeys.has(x.key)).map(x=>x.key)).size};
+}
