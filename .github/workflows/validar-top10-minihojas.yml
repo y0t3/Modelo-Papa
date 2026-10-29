@@ -16,6 +16,6 @@ jobs:
       - name: Instalar dependencias
         run: npm install
       - name: Comprobar tipos de la app
-        run: npx tsc --noEmit
+        run: npx tsc --noEmit --project tsconfig.ui-check.json
       - name: Regresión Lalo principal
         run: npx --yes tsx scripts/test-motor-lalo.ts
