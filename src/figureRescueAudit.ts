@@ -59,7 +59,7 @@ export function buildFigureRescueAudit(
  for(const path of paths){
   const column=safe.columns.find(c=>c.id===path.source)!;
   const reading=path.cells.map(c=>column.values[c.row]?.[c.col]||'').join('');
-  if(!new RegExp('^\\d{'+size+'}
+  if(reading.length!==size||!/^[0-9]+$/.test(reading))continue;
   const f=reversibleFamily(reading);
   const list=allByFamily.get(f)||[];
   // Route appears once (the reverse orientation is derived on demand).
@@ -97,52 +97,6 @@ export function buildFigureRescueAudit(
  const count=(records:{published:AuditedHead[]}[])=>
   records.reduce((n,x)=>n+x.published.length,0);
  return {date,turn,kind,mode:'RECONSTRUCCION_PRE_NO_SELLADA',
-  publicationCount:valid.length,physicalRoutes:paths.length,
-  physicalFamilies:allByFamily.size,
-  rescueCount:rescues.length,sharedCount:shared.length,
-  laloOnlyCount:laloOnly.length,
-  rescueHeadHits:count(rescues),sharedHeadHits:count(shared),
-  laloOnlyHeadHits:count(laloOnly),
-  forms:auditedForms,laloOnly};
-}
-).test(reading))continue;
-  const f=reversibleFamily(reading);
-  const list=allByFamily.get(f)||[];
-  // Route appears once (the reverse orientation is derived on demand).
-  list.push({source:path.source,cells:path.cells,reading,
-   orientation:'DIRECTA',positionKey:path.positionKey});
-  allByFamily.set(f,list);
- }
- const matches=(family:string,chosen?:FormChoice):AuditedHead[]=>
-  valid.filter(x=>reversibleFamily(x.head.slice(-3))===family).map(x=>{
-   const suffix=x.head.slice(-3);
-   const physicalPaths=(allByFamily.get(family)||[]).map(p=>{
-    if(p.reading===suffix)return p;
-    if([...p.reading].reverse().join('')===suffix)return{
-     ...p,cells:[...p.cells].reverse(),reading:suffix,
-     orientation:'INVERSA' as const
-    };
-    return null;
-   }).filter((p):p is AuditedPhysicalRoute=>p!==null);
-   return {...x,suffix,family,physicalPaths,
-    selectedPositionMatches:!!chosen&&physicalPaths.some(p=>
-     p.positionKey===chosen.positionKey)};
-  });
- const auditedForms:AuditedFormChoice[]=forms.top.map(choice=>{
-  const official=ranked.get(choice.family);
-  return {kind:official?'COMPARTIDO':'RESCATE',choice,
-   laloRank:official?.rank??null,
-   published:matches(choice.family,choice)};
- });
- const laloOnly:AuditedLaloOnly[]=lalo.ranks.vt3.slice(0,10)
-  .filter(f=>!formSet.has(f.family))
-  .map(f=>({family:f.family,rank:f.rank,routes:f.paths,
-   published:matches(f.family)}));
- const rescues=auditedForms.filter(f=>f.kind==='RESCATE');
- const shared=auditedForms.filter(f=>f.kind==='COMPARTIDO');
- const count=(records:{published:AuditedHead[]}[])=>
-  records.reduce((n,x)=>n+x.published.length,0);
- return {date,turn,mode:'RECONSTRUCCION_PRE_NO_SELLADA',
   publicationCount:valid.length,physicalRoutes:paths.length,
   physicalFamilies:allByFamily.size,
   rescueCount:rescues.length,sharedCount:shared.length,
