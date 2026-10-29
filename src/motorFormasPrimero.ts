@@ -53,7 +53,7 @@ const pathKey=(p:FormCell[])=>
  [p.map(cellKey).join('>'),[...p].reverse().map(cellKey).join('>')].sort()[0];
 const anchor=(p:FormCell[])=>Math.min(...p.map(c=>c.row));
 const physical=(p:FormCell[],sourceValues:string[],length:2|3=3)=>p.length===length&&
- new Set(p.map(cellKey)).size===3&&p.every((c,i)=>c.row>=0&&c.row<6&&
+ new Set(p.map(cellKey)).size===length&&p.every((c,i)=>c.row>=0&&c.row<6&&
   (c.col===0||c.col===1)&&/^[0-9]$/.test(sourceValues[c.row]?.[c.col]||'')&&
   (!i||Math.max(Math.abs(c.row-p[i-1].row),Math.abs(c.col-p[i-1].col))===1));
 export function historicalFormRoots(date:string,days:InfoVisualDay[],kind:FormKind='vt3'):{
