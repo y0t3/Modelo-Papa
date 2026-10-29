@@ -28,6 +28,8 @@ jobs:
         run: npx --yes tsx scripts/lab-vt2-dos-familias.ts
       - name: Trayectorias rango VT2 y ventanas de cinco seis dias
         run: npx --yes tsx scripts/lab-vt2-trayectorias-familias.ts
+      - name: Control del movimiento por mismo puesto y periodo
+        run: npx --yes tsx scripts/lab-vt2-control-movimiento.ts
       - name: Regression MV1 sin cambios
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - uses: actions/upload-artifact@v4
