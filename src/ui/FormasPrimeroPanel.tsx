@@ -27,8 +27,6 @@ export default function FormasPrimeroPanel({date,turn,pre,days,lalo,heads}:{
  const laloHits=laloTop.filter(f=>winners.has(f));
  const chosen=model?.top.find(x=>x.rank===selected)||null;
  const source=pre?.columns.find(x=>x.id===chosen?.source);
- const old=chosen?.support.roots[0];
- const past=days.find(d=>d.date===old?.date)?.sheet.columns.find(x=>x.id===old?.source);
  return <View style={[s.panel,{borderColor:kinds.vt3.line,backgroundColor:c.surfaceAlt}]}>
   <Text style={{color:kinds.vt3.line,fontWeight:'900',fontSize:15}}>
    FORMAS PRIMERO · VT3 · NUEVO EXPERIMENTO
