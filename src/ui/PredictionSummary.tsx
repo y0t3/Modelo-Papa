@@ -10,15 +10,13 @@ import {useLaloTheme} from './LaloTheme';
 import {readableWeekday} from '../infoTurnHistory';
 import {explainFamilyRationale} from '../friendlyExplanations';
 
-type TopCount=3|5|10;
-const defaults:Record<LaloKind,TopCount>={vt2:3,vt3:3,vt4:3};
 const explanation:Record<string,string>={
  EN_FORMACIÓN:'En formación',EN_SEGUIMIENTO:'Con antecedentes',CON_APOYO:'Con varios apoyos'
 };
 
 /**
  * Una modalidad por página horizontal; dentro de cada modalidad, los candidatos
- * se leen de arriba hacia abajo. Los chips Top3/5/10 amplían esa misma lista.
+ * se leen de arriba hacia abajo. El Top10 siempre está completo y las coincidencias visibles.
  * No se modifica la selección, el orden, el cotejo POST ni el acceso al recorrido.
  */
 export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onTrackFamily,post,heads=[],model='lalo',auxiliar}:{
@@ -29,7 +27,6 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
  post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
- const [limits,setLimits]=useState<Record<LaloKind,TopCount>>(defaults);
  const [active,setActive]=useState<LaloKind>('vt2');
  const [expanded,setExpanded]=useState<string|null>(null);
  const [pagerWidth,setPagerWidth]=useState(0);
@@ -37,7 +34,6 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
  const pager=useRef<ScrollView>(null);
 
  useEffect(()=>{
-  setLimits({...defaults});
   setActive('vt2');
   pager.current?.scrollTo({x:0,animated:false});
   setExpanded(null);
@@ -95,7 +91,7 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
      setActive(KINDS[index]);
     }}>
     {KINDS.map(kind=>{
-     const limit=limits[kind];
+     const limit=10;
      const rows=rowsForModel(model,kind,view,auxiliar||null).slice(0,limit);
      const winners:HeadEvent[]=heads.map(head=>({jur:'',head}));
      const winnerHeads=(family:typeof rows[number])=>hitsForFamily(family,winners)
@@ -117,21 +113,10 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
        Se alternan los candidatos de cada familia de 3 cifras con recorrido válido;
        después sus siguientes hijas. No equivale a una probabilidad de acierto.
       </Text>:null}
-      <View style={s.tabs}>{([3,5,10] as const).map(n=>
-       <Pressable key={n} accessibilityRole="button"
-        accessibilityState={{selected:limit===n}}
-        onPress={()=>setLimits(prev=>({...prev,[kind]:n}))}
-        style={[s.tab,{backgroundColor:limit===n?kinds[kind].fill:c.card,
-         borderColor:limit===n?kinds[kind].line:c.border}]}>
-        <Text style={{fontSize:11,fontWeight:'900',
-         color:limit===n?kinds[kind].text:c.subtext}}>
-         Top {n}
-        </Text>
-       </Pressable>)}</View>
       {heads.some(x=>/^[0-9]{4}$/.test(x))&&(view||auxiliar)?<View style={[s.postPanel,{backgroundColor:hitRows.length?kinds[kind].fill:c.surfaceAlt,
        borderColor:hitRows.length?kinds[kind].line:c.border}]}>
        <Text style={[s.postTitle,{color:hitRows.length?kinds[kind].text:c.text}]}>
-        POST · {hitRows.length} acierto(s) en Top{limit}
+        POST · {hitRows.length} familia(s) coincidente(s) en Top10
        </Text>
        <Text style={[s.postInfo,{color:c.subtext}]}>
         {hitRows.length?hitRows.map(f=>'#'+f.rank+' '+f.family+' ('+winnerHeads(f).join(', ')+')').join('  ·  '):
@@ -209,10 +194,8 @@ const s=StyleSheet.create({
  page:{paddingTop:9,paddingBottom:8},
  headingRow:{flexDirection:'row',justifyContent:'space-between',alignItems:'center',gap:8},
  heading:{fontSize:15,fontWeight:'900'},aux:{fontSize:10,fontWeight:'700'},
- tabs:{flexDirection:'row',gap:7,marginTop:10,marginBottom:9},
- tab:{flex:1,borderWidth:1,borderRadius:9,paddingVertical:8,alignItems:'center'},
  families:{gap:8},
- family:{minHeight:86,borderRadius:11,borderWidth:1,padding:10},
+ family:{minHeight:62,borderRadius:11,borderWidth:1,padding:9},
  familyTitle:{flexDirection:'row',alignItems:'center',gap:9},
  rank:{fontSize:13,fontWeight:'900',minWidth:27},
  familyName:{fontSize:18,fontWeight:'900',flex:1,flexWrap:'wrap'},
