@@ -1,0 +1,27 @@
+name: LAB VT2 cinco turnos complementariedad
+on:
+  push:
+    branches: [lab/vt2-todos-turnos-complementariedad-29oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evalua:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Reproducir Lalo VT2 PRE 635 cortes
+        run: npx --yes tsx scripts/lab-vt2-posiciones-libres.ts
+      - name: Comparar cinco turnos con señales y controles D7
+        run: python3 scripts/lab-vt2-todos-turnos.py
+      - name: Regresión oficial de Lalo
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vt2-cinco-turnos-complementariedad
+          path: auditorias/vt2-todos-turnos/resultados.json
+          if-no-files-found: error
