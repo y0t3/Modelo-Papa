@@ -440,13 +440,13 @@ async function main(){
    // Every physical VT3 family is included as a negative control in its cut.
    // A winning label requires an EXACT suffix path, not only a reversed family.
    const fullRank=new Map(view.ranks.vt3.map(x=>[x.family,x.rank]));
-   const ranked=Object.fromEntries(names.map(n=>[n,new Map(
-    ranks[n].vt3.map((x,i)=>[x.family,i+1]))])) as Record<Name,Map<string,number>>;
+   const ranked={} as Record<Name,Map<string,number>>;
+   for(const n of names)ranked[n]=new Map(ranks[n].vt3.map((x,i)=>[x.family,i+1]));
    const independent:Name[]=['GEOMETRIA','CONECTADAS','AUX_AYER','AUX_HOY'];
    const evidence=[...families].map(([family,paths])=>{
     const rank=fullRank.get(family)??null;
-    const engine=Object.fromEntries(names.map(n=>[n,ranked[n].get(family)??null]))
-     as Record<Name,number|null>;
+    const engine={} as Record<Name,number|null>;
+    for(const n of names)engine[n]=ranked[n].get(family)??null;
     const datesTight=new Set<string>(),witnesses=new Map<string,any>();
     for(const p of paths)for(const r of marks){
      if(p.shape!==r.shape||p.source!==r.source||
