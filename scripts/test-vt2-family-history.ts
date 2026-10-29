@@ -18,6 +18,7 @@ const sheet=buildSheet(actual,noc);
 const historic=diaVacio();
 historic.Matutino.Provincia='4455'; // No corresponde a la familia 45.
 historic.Vespertino.Provincia='0045'; // Testigo histórico real.
+historic.Vespertino.Montevideo='9945'; // No se agrega como raíz histórica MV1.
 const historicalSheet=buildSheet(historic,noc);
 const visualDays:InfoVisualDay[]=[
  {date:'2026-10-22',heads:historic,sheet:historicalSheet},
@@ -29,6 +30,7 @@ assert.ok(preFirst.some(x=>x.scope==='HOY'&&x.turn==='Previa'&&x.head==='0045'))
 assert.ok(preFirst.some(x=>x.scope==='ANTERIOR'&&x.turn==='Vespertino'&&x.head==='0045'));
 assert.ok(!preFirst.some(x=>x.scope==='HOY'&&x.turn==='Primera'));
 assert.ok(!preFirst.some(x=>x.date>='2026-10-29'&&x.scope==='ANTERIOR'));
+assert.ok(!preFirst.some(x=>x.scope==='ANTERIOR'&&x.jurisdiction==='Montevideo'));
 assert.ok(preFirst.every(x=>x.paths.length>0&&x.paths.every(p=>p.length===2)));
 assert.ok(preFirst.every(x=>x.paths.every(p=>p.every(c=>x.values[c.row]?.[c.col]===c.digit))));
 const prePrevia=buildVt2FamilyWitnesses('2026-10-29','Previa',family,sheet,visualDays);
