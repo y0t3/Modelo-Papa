@@ -66,3 +66,41 @@ export function classifyFigureMotion(location:Pick<FormChoice,'source'|'shape'|'
 /** Two lengths, identical physical definitions. */
 export const summarizeFigureMotions=(items:FormLocation[])=>
  items.map(x=>({positionKey:x.positionKey,motion:classifyFigureMotion(x)}));
+
+/**
+ * A physical position is "active" on a historical day iff a real published
+ * winning head was explained by exactly that source and route. Inactive days
+ * are observations in the six-day window, not proof that the figure vanished
+ * from the board (it may still be physically formable).
+ */
+export type ExactActivationState=
+ 'SIN_ACTIVACION_EXACTA'|'ACTIVACION_NUEVA'|'ACTIVA_REPETIDA'|
+ 'REAPARECIO_TRAS_PAUSA'|'SIN_ACTIVACION_RECIENTE';
+export type ExactActivationTimeline={
+ dates:string[];activated:boolean[];days:number;lastDayActive:boolean;
+ currentStreak:number;state:ExactActivationState;lastWinDate:string|null;
+};
+export function exactActivationTimeline(
+ location:Pick<FormChoice,'source'|'shape'|'cells'|'support'>,
+ previousDays:string[]
+):ExactActivationTimeline{
+ const dates=[...new Set(previousDays)].sort((a,b)=>b.localeCompare(a));
+ const here=position(location.cells);
+ const won=new Set(location.support.roots.filter(r=>
+  r.source===location.source&&r.shape===location.shape&&position(r.cells)===here).map(r=>r.date));
+ const activated=dates.map(d=>won.has(d));
+ const days=activated.filter(Boolean).length;
+ const first=activated.indexOf(true);
+ const lastDayActive=activated[0]||false;
+ let currentStreak=0;
+ for(const value of activated){if(!value)break;currentStreak++;}
+ let state:ExactActivationState;
+ if(!days)state='SIN_ACTIVACION_EXACTA';
+ else if(!lastDayActive)state='SIN_ACTIVACION_RECIENTE';
+ else if(days===1)state='ACTIVACION_NUEVA';
+ else if(activated.some((v,i)=>!v&&activated.slice(i+1).some(Boolean)))
+  state='REAPARECIO_TRAS_PAUSA';
+ else state='ACTIVA_REPETIDA';
+ return {dates,activated,days,lastDayActive,currentStreak,state,
+  lastWinDate:first<0?null:dates[first]};
+}
