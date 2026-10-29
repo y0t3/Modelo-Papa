@@ -7,7 +7,12 @@
     "userInterfaceStyle": "dark",
     "android": {
       "package": "com.y0t3.modelopapa",
-      "versionCode": 15
-    }
+      "versionCode": 15,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/la-posta-launcher-foreground.png",
+        "backgroundColor": "#07142D"
+      }
+    },
+    "icon": "./assets/la-posta-launcher-icon.png"
   }
 }
