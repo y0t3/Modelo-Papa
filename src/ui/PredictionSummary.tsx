@@ -1,4 +1,5 @@
 import React,{useEffect,useMemo,useRef,useState} from 'react';
+import BosteroWatermark from './BosteroWatermark';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {Turno} from '../domain';
 import type {DailySheet} from '../sheet';
@@ -68,8 +69,14 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
    pager.current?.scrollTo({x:KINDS.indexOf(kind)*pagerWidth,animated:true});
  };
 
- return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
-  <Text style={[s.title,{color:c.text}]}>{model==='auxiliar'?'PREDICCIÓN · LALO AUXILIAR':'PREDICCIÓN · MODELO LALO'}</Text>
+ return <View style={[s.surface,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
+  <View style={{position:'relative',overflow:'hidden',paddingTop:7,paddingBottom:10,
+   paddingRight:65,minHeight:62}}>
+   <BosteroWatermark opacity={0.16}/>
+   <Text style={[s.title,{color:c.accent}]}>
+    {model==='auxiliar'?'Números de Lalo · Auxiliar':'Los números de Lalo'}
+   </Text>
+  </View>
   <Text style={[s.subtitle,{color:c.subtext}]}>
    {date.includes('/')?readableWeekday(date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2)).toLowerCase():readableWeekday(date).toLowerCase()} · {turn}
   </Text>
@@ -210,7 +217,7 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
  </View>;
 }
 const s=StyleSheet.create({
- surface:{borderRadius:13,padding:14,marginTop:10,borderWidth:1},
+ surface:{borderRadius:13,padding:14,marginTop:10,borderWidth:1.2},
  title:{fontSize:18,fontWeight:'900'},subtitle:{fontSize:12,fontWeight:'800',marginTop:4},
  caution:{fontSize:11,lineHeight:16,marginTop:8},
  kindTabs:{flexDirection:'row',gap:7,marginTop:14},

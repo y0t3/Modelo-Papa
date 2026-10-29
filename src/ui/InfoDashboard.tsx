@@ -1,4 +1,5 @@
 import React,{useMemo} from 'react';
+import BosteroWatermark from './BosteroWatermark';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import type {DailySheet} from '../sheet';
@@ -80,9 +81,11 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
  const availability=report.availableSources.filter(x=>x.active);
  const displayDate=date?readableWeekday(date):'Sin fecha';
  return <View style={s.root}>
-  <View style={[s.hero,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.kicker,{color:c.accent}]}>JORNADA Y GUÍA</Text>
-   <Text style={[s.title,{color:c.text}]}>INFO · MODELO LALO</Text>
+  <View style={[s.hero,{backgroundColor:c.surface,borderColor:'#B9903F',
+   overflow:'hidden',paddingRight:80}]}>
+   <BosteroWatermark opacity={0.27}/>
+   <Text style={[s.kicker,{color:c.accent}]}>EL CUADERNO DE LALO</Text>
+   <Text style={[s.title,{color:c.text}]}>Resultados y figuras</Text>
    <Text style={[s.desc,{color:c.subtext}]}>
     Mirá cómo salió el mismo turno en otras jornadas y qué muestra la hoja para el próximo sorteo.
    </Text>
@@ -198,7 +201,7 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
 }
 const s=StyleSheet.create({
  root:{marginTop:10,gap:11,paddingBottom:18},
- hero:{borderWidth:1,borderRadius:14,padding:15,gap:4},
+ hero:{borderWidth:1.3,borderRadius:14,padding:15,gap:4,minHeight:113},
  kicker:{fontSize:10,fontWeight:'900',letterSpacing:1.5},
  title:{fontSize:19,fontWeight:'900'},heading:{fontSize:15,fontWeight:'900',marginBottom:5},
  desc:{fontSize:11,lineHeight:17},paragraph:{fontSize:12,lineHeight:19,marginTop:6},

@@ -46,6 +46,7 @@ import type {MovementMode} from './src/infoCandidatos';
 import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 import ZoomableTab from './src/ui/ZoomableTab';
+import BrandHero from './src/ui/BrandHero';
 import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './src/tabZoom';
 import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
 import type {NavigationEntry} from './src/tabNavigation';
@@ -434,6 +435,7 @@ function LaloApp(){
  };
 
  return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar} backgroundColor={c.canvas}/>
+  <BrandHero mode={mode} onToggle={toggle}/>
   <View style={s.nav}>{nav.map(x=><Pressable key={x.id} accessibilityRole="tab"
     accessibilityState={{selected:screen===x.id}}
     style={[s.tab,screen===x.id&&s.tabOn]}
@@ -461,26 +463,8 @@ function LaloApp(){
    onZoomChange={updateZoom} scrollRef={scrollRef}
    restoreY={restoreScroll.y} restoreToken={restoreScroll.token}
    onScrollY={y=>{scrollOffsets.current[screen]=safeScrollY(y)}}>
-   <View style={[s.header,{backgroundColor:mode==='dark'?'#0C2A57':'#E6EFFA',borderColor:'#B58732'}]}>
-    <View style={s.brandMark} accessibilityLabel="Escudo de bolillas de quiniela de Lalo">
-     <View style={[s.brandBall,s.brandBallBack]}><Text style={s.brandBallText}>2</Text></View>
-     <View style={[s.brandBall,s.brandBallLeft]}><Text style={s.brandBallText}>7</Text></View>
-     <View style={[s.brandBall,s.brandBallRight]}><Text style={[s.brandBallText,{color:'#13315E'}]}>11</Text></View>
-    </View>
-    <View style={s.brandText}>
-     <Text numberOfLines={1} adjustsFontSizeToFit style={[s.title,{color:mode==='dark'?'#F8F4ED':'#11305A'}]}>
-      La posta de <Text style={{color:'#E5B54B'}}>Lalo</Text>
-     </Text>
-     <Text style={[s.subtitle,{color:mode==='dark'?'#E0B85D':'#93681D'}]}>Su quiniela, sus figuras, su historia</Text>
-    </View>
-    <Pressable accessibilityRole="switch" accessibilityLabel="Cambiar modo claro u oscuro"
-     accessibilityState={{checked:mode==='dark'}} onPress={toggle}
-     style={[s.modeButton,{backgroundColor:mode==='dark'?'#15294B':'#F8FBFF',borderColor:'#987333'}]}>
-     <Text style={[s.modeLabel,{color:c.text}]}>{mode==='dark'?'☾':'☀'}</Text>
-    </Pressable>
-   </View>
-   <View style={[s.selector,{backgroundColor:c.surface,borderColor:mode==='dark'?'#9B793A':'#C1A572',borderWidth:1}]}>
-    <Text style={[s.label,{color:mode==='dark'?'#ECC56F':'#99691D'}]}>LA HOJA DEL DÍA</Text>
+   <View style={[s.selector,{backgroundColor:c.surface,borderColor:'#CA973E',borderWidth:1.4}]}>
+    <Text style={[s.label,{color:c.accent}]}>LA HOJA DEL DÍA</Text>
     <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
      resetHistory();setHistoricalPreview(null);
      setDateText(value);setData(null);setAuxHeads(null);setAuxToday(null);
@@ -675,30 +659,31 @@ const s=StyleSheet.create({
   justifyContent:'center'},
  modeLabel:{fontSize:17,fontWeight:'900'},
 
- safe:{flex:1,backgroundColor:'#0c0812',paddingTop:insets},
- nav:{flexDirection:'row',backgroundColor:'#081A3D',gap:3,
-  paddingHorizontal:5,paddingVertical:8,borderBottomWidth:1,borderBottomColor:'#B58A37'},
- tab:{flex:1,alignItems:'center',justifyContent:'center',borderRadius:8,paddingVertical:11},
- tabOn:{backgroundColor:'#17549B',borderBottomWidth:2,borderBottomColor:'#E4B54E'},
- tabText:{fontSize:10,color:'#fff',fontWeight:'900'},
- content:{paddingHorizontal:11,paddingTop:9,paddingBottom:70},
- zoomBar:{minHeight:39,flexDirection:'row',alignItems:'center',justifyContent:'space-between',
+ safe:{flex:1,backgroundColor:'#061631',paddingTop:insets},
+ nav:{flexDirection:'row',backgroundColor:'#061E43',gap:3,
+  marginHorizontal:8,paddingHorizontal:5,paddingVertical:6,
+  borderWidth:1,borderColor:'#B48938',borderRadius:13,overflow:'hidden'},
+ tab:{flex:1,alignItems:'center',justifyContent:'center',borderRadius:8,paddingVertical:9},
+ tabOn:{backgroundColor:'#145AAA',borderBottomWidth:3,borderBottomColor:'#F3C251'},
+ tabText:{fontSize:10,color:'#FFFFFF',fontWeight:'900'},
+ content:{paddingHorizontal:10,paddingTop:8,paddingBottom:70},
+ zoomBar:{minHeight:31,flexDirection:'row',alignItems:'center',justifyContent:'space-between',
   gap:8,borderBottomWidth:1,paddingHorizontal:11,paddingVertical:4},
  zoomHint:{fontSize:10,flexShrink:1},
  zoomButton:{paddingVertical:6,paddingHorizontal:10,borderWidth:1,borderRadius:8},
  zoomButtonText:{fontSize:10,fontWeight:'900'},
  title:{color:'#fff',fontWeight:'900',fontSize:23,textAlign:'left',letterSpacing:-0.6},
  subtitle:{fontSize:10,textAlign:'left',marginTop:2,fontWeight:'700'},
- selector:{borderRadius:12,padding:9},
+ selector:{borderRadius:13,padding:8,marginTop:3},
  label:{fontSize:10,fontWeight:'900',letterSpacing:0.8,marginBottom:5},
  shortcuts:{flexDirection:'row',gap:6,marginTop:6},
- shortcut:{flex:1,paddingVertical:7,paddingHorizontal:3,borderRadius:8,minHeight:34,
+ shortcut:{flex:1,paddingVertical:6,paddingHorizontal:3,borderRadius:9,minHeight:32,
   justifyContent:'center'},
- shortText:{color:'#d9c1ef',fontSize:11,textAlign:'center',fontWeight:'800'},
- reload:{marginTop:7,paddingVertical:10,backgroundColor:'#175AA2',borderRadius:9},
+ shortText:{color:'#F5F1E6',fontSize:11,textAlign:'center',fontWeight:'800'},
+ reload:{marginTop:7,paddingVertical:9,backgroundColor:'#1560AB',borderRadius:10},
  reloadText:{color:'#fff',textAlign:'center',fontWeight:'900'},
- heading:{fontSize:12,color:'#e2d5ed',fontWeight:'800',marginTop:13,marginBottom:7},
- empty:{color:'#d0c2d8',padding:16,fontSize:12,lineHeight:19},
+ heading:{fontSize:12,color:'#F2C660',fontWeight:'800',marginTop:13,marginBottom:7},
+ empty:{color:'#C7D7ED',padding:16,fontSize:12,lineHeight:19},
  previewBanner:{borderWidth:1,borderRadius:10,padding:10,marginBottom:9,gap:7},
  previewBack:{borderWidth:1,borderRadius:7,padding:8,alignSelf:'flex-start'}
 });
