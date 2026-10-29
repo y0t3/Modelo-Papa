@@ -51,8 +51,10 @@ type Cut={kind:FormKind;date:string;turn:string;period:string;heads:{jur:string;
  formRoots:number;formPositions:number;formCandidates:number;formSourceDays:number};
 type RescueCase={
  kind:FormKind;movement:string;movementCategories:string[];
- exactEvents:number;verticalEvents:number;sourceChangeEvents:number;
- verticalOffsets:number[];sourceOffsets:string[];
+ exactEvents:number;verticalEvents:number;horizontalEvents:number;
+ diagonalEvents:number;sourceChangeEvents:number;
+ verticalOffsets:number[];horizontalOffsets:number[];
+ diagonalOffsets:{row:number;col:number}[];sourceOffsets:string[];
  date:string;turn:string;period:string;rank:number;family:string;reading:string;
  source:string;shape:string;anchor:number;path:{row:number;col:number}[];
  roots:number;rootDays:number;sameSourceRoots:number;d1:boolean;d7:boolean;
@@ -149,8 +151,10 @@ async function main(){
     rescues.push({kind,movement:movement.predominant,
      movementCategories:movement.categories,
      exactEvents:movement.exactEvents,verticalEvents:movement.verticalEvents,
+     horizontalEvents:movement.horizontalEvents,diagonalEvents:movement.diagonalEvents,
      sourceChangeEvents:movement.sourceChangeEvents,
-     verticalOffsets:movement.verticalOffsets,sourceOffsets:movement.sourceOffsets,
+     verticalOffsets:movement.verticalOffsets,horizontalOffsets:movement.horizontalOffsets,
+     diagonalOffsets:movement.diagonalOffsets,sourceOffsets:movement.sourceOffsets,
      date,turn,period:date<='2026-07-31'?'JUN_JUL':
       date<='2026-09-30'?'AGO_SEP':'OCT',rank:f.rank,family:f.family,reading:f.value,
      source:f.source,shape:f.shape,anchor:f.anchor,path:f.cells,
@@ -228,6 +232,8 @@ async function main(){
    group('EXACTA_ACTIVADA',x=>x.exactEvents>0),
    group('SIN_EXACTA',x=>x.exactEvents===0),
    group('DESPLAZO_VERTICAL',x=>x.verticalEvents>0),
+   group('DESPLAZO_HORIZONTAL',x=>x.horizontalEvents>0),
+   group('DESPLAZO_DIAGONAL',x=>x.diagonalEvents>0),
    group('SIN_DESPLAZO',x=>x.verticalEvents===0),
    group('CAMBIO_FUENTE',x=>x.sourceChangeEvents>0),
    group('SIN_CAMBIO_FUENTE',x=>x.sourceChangeEvents===0),
