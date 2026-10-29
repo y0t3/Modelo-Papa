@@ -29,7 +29,8 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
  historical:LaloHistorical[];heads:string[];publishedHeads?:{jur:string;head:string}[];
  autoVersion?:number;visualDays?:InfoVisualDay[];
 }){
- const {colors:c}=useLaloTheme();
+ const {colors:c,kinds}=useLaloTheme();
+ const [activeLength,setActiveLength]=useState<'vt2'|'vt3'>('vt2');
  const [stored,setStored]=useState<FrozenRecord|null>(null);
  const [busy,setBusy]=useState(false);
  const [error,setError]=useState('');
@@ -97,31 +98,44 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
   return {...section,matches};
  });
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
-  <Text style={[s.title,{color:c.text}]}>DOS AUDITORÍAS FÍSICAS · VT2 Y VT3</Text>
+  <Text style={[s.title,{color:c.text}]}>Laboratorio de Lalo</Text>
   <Text style={[s.note,{color:c.subtext}]}>
-   Las mismas pruebas de recorridos, movimientos y cabezas ganadoras se
-   aplican a las dos longitudes; ninguna modifica el Top oficial.
+   Elegí dos o tres cifras. Mirá qué formas encontró cada prueba y
+   qué cabezas anteriores las respaldan.
   </Text>
-  <FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
-   forms={formsFirstVt2} lalo={safeView} days={visualDays}
-   published={publishedHeads} kind="vt2"/>
-  <FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
-   forms={formsFirst} lalo={safeView} days={visualDays}
-   published={publishedHeads} kind="vt3"/>
-  <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
-   days={visualDays} lalo={safeView} heads={publishedHeads.map(x=>x.head)}
-   kind="vt2"/>
-  <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
-   days={visualDays} lalo={safeView} heads={heads} kind="vt3"/>
-  <Vt2ExperimentalPanel date={date} turn={turn} sheet={safeSheet}
-   history={historical} days={visualDays} heads={heads}
-   publishedHeads={publishedHeads}/>
-  <Text style={[s.title,{color:c.text,marginTop:12}]}>VT3 · DOS LECTORES EXPERIMENTALES</Text>
+  <View style={{flexDirection:'row',gap:8,marginTop:10}}>
+   {(['vt2','vt3'] as const).map(kind=><Pressable key={kind}
+    accessibilityRole="tab" accessibilityState={{selected:activeLength===kind}}
+    onPress={()=>setActiveLength(kind)}
+    style={{flex:1,paddingVertical:12,borderRadius:10,borderWidth:2,
+     alignItems:'center',backgroundColor:activeLength===kind?kinds[kind].fill:c.card,
+     borderColor:activeLength===kind?kinds[kind].line:c.border}}>
+    <Text style={{fontWeight:'900',fontSize:15,
+     color:activeLength===kind?kinds[kind].text:c.text}}>
+     {kind==='vt2'?'VT2 · Dos cifras':'VT3 · Tres cifras'}
+    </Text>
+   </Pressable>)}
+  </View>
+  {activeLength==='vt2'?<>
+   <FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
+    forms={formsFirstVt2} lalo={safeView} days={visualDays}
+    published={publishedHeads} kind="vt2"/>
+   <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
+    days={visualDays} lalo={safeView} heads={publishedHeads.map(x=>x.head)}
+    kind="vt2"/>
+   <Vt2ExperimentalPanel date={date} turn={turn} sheet={safeSheet}
+    history={historical} days={visualDays} heads={heads}
+    publishedHeads={publishedHeads}/>
+  </>:<>
+   <FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
+    forms={formsFirst} lalo={safeView} days={visualDays}
+    published={publishedHeads} kind="vt3"/>
+   <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
+    days={visualDays} lalo={safeView} heads={heads} kind="vt3"/>
+  <Text style={[s.title,{color:c.text,marginTop:12}]}>Otras pruebas de tres cifras</Text>
   <Text style={[s.note,{color:c.subtext}]}>
-   Geometría Completa · Configuraciones Conectadas. Lalo MV1
-   continúa disponible en Predicción oficial. Las configuraciones exigen dos
-   cabezas ganadoras independientes y trasladan figuras físicas a otra fuente PRE.
-   Estos ensayos no modifican VT4 ni el ranking oficial.
+   Dos maneras más de seguir figuras que tuvieron antecedentes ganadores.
+   No cambian los candidatos oficiales de Lalo.
   </Text>
   {observed.length?<View style={[s.resultBox,{borderColor:c.accent,backgroundColor:c.accentFill}]}>
    <Text style={[s.resultTitle,{color:c.text}]}>COINCIDENCIAS POST · TOP10</Text>
@@ -206,6 +220,7 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
    Geometría {result.geometric.matches.length} ·
    Conectadas {result.connected?.matches.length??'sin PRE'}.
   </Text>:null}
+  </>}
  </View>;
 }
 const s=StyleSheet.create({
