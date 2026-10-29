@@ -1,0 +1,25 @@
+name: LAB 635 cortes VT3 Geo Nueva Conectadas
+on:
+  push:
+    branches: [lab/seguimiento-vt3-26a28oct-controles]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Contraste cronologico 620 antes y 15 nuevos
+        run: npx --yes tsx scripts/lab-vt3-historico-635-cortes.ts
+      - name: Lalo MV1 original
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: geometria-nueva-conectadas-635-cortes
+          path: auditorias/rastros-26a28oct/extenso/*.json
+          if-no-files-found: error
