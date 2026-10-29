@@ -81,7 +81,7 @@ export default function Vt2ExperimentalPanel({date,turn,sheet,history,days,heads
      No hay figuras conectadas válidas bajo estas reglas en este corte.
     </Text>}
    </View>)}
-   {item&&path&&col?<View style={[s.reader,{borderColor:kinds.vt2.line,
+   {item&&path&&col&&sheet?<View style={[s.reader,{borderColor:kinds.vt2.line,
     backgroundColor:c.card}]}>
     <Text style={{color:c.text,fontWeight:'900',fontSize:12}}>
      Figura seleccionada · #{(picked?.id||'').split('|').at(-1)}
