@@ -8,6 +8,7 @@ import {buildInfoAuxFrames} from '../infoAuxGallery';
 import {AUX_SOURCE_TURNS,AUX_ROWS} from '../auxSantiagoNeuquen';
 import type {AuxiliaryBoard} from '../auxSantiagoNeuquen';
 import AuxModeSwitch from './AuxModeSwitch';
+import InfoAuxTraceExplorer from './InfoAuxTraceExplorer';
 import {useLaloTheme} from './LaloTheme';
 import type {PanoramaKind} from '../panoramaModel';
 
@@ -68,6 +69,7 @@ export default function InfoAuxGallery({days,current,turn,mode,onMode,onOpenDay,
  const [chosen,setChosen]=useState<string|null>(null);
  const index=frames.findIndex(x=>x.date===chosen);
  const active=frames[index<0?0:index],position=index<0?0:index;
+ const currentFrame=frames.find(f=>f.isCurrent)||null;
  const choose=(day:string)=>setChosen(day);
  return <View style={{gap:10}}>
   <Text style={{color:c.subtext,fontSize:11,lineHeight:17}}>
@@ -128,11 +130,9 @@ export default function InfoAuxGallery({days,current,turn,mode,onMode,onOpenDay,
        'Sin candidatos AUX Top3 con recorridos disponibles para este turno. Revisá la carga de fuentes históricas.'}
      </Text>}
     </View>:null}
-    {active.matchedHeads.length&&!active.isCurrent?<View style={s.badges}>
-     {active.matchedHeads.map(h=><Text key={h} style={{
-      color:c.text,backgroundColor:c.card,borderRadius:6,padding:6,
-      fontWeight:'800',fontSize:10}}>{h}</Text>)}
-    </View>:null}
+    <InfoAuxTraceExplorer key={active.date+'|'+mode}
+     active={active} current={currentFrame} mode={mode}
+     prediction={prediction} history={history}/>
     {onOpenDay&&!active.isCurrent?<Pressable accessibilityRole="button"
      onPress={()=>onOpenDay(active.date)}
      style={[s.button,{borderColor:c.accent,backgroundColor:c.accentFill}]}>

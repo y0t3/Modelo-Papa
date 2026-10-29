@@ -1,0 +1,27 @@
+name: Verificar INFO AUX comparativas físicas 29oct
+on:
+  push:
+    branches: [feature/info-aux-trazas-visuales-29oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Validar tipos de toda la UI Android
+        run: npx tsc --noEmit --project tsconfig.ui-check.json
+      - name: Prueba de antecedentes AUX PRE y POST
+        run: npx --yes tsx scripts/test-info-aux-trazas-visuales.ts
+      - name: Regresion de galeria AUX y formatos VT4
+        run: |
+          npx --yes tsx scripts/test-info-aux-predictiva-top3.ts
+          npx --yes tsx scripts/test-aux-correcciones-info-vt4.ts
+          npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
+      - name: Regresion de Lalo MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
