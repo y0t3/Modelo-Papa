@@ -1,6 +1,10 @@
-import React,{useEffect,useRef,useState} from 'react';
+import React,{useEffect,useMemo,useRef,useState} from 'react';
 import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
 import type {Turno} from '../domain';
+import type {DailySheet} from '../sheet';
+import type {InfoVisualDay} from '../infoTurnHistory';
+import {buildVt2FamilyWitnesses} from '../vt2FamilyHistory';
+import Vt2FamilyHistoryModal from './Vt2FamilyHistoryModal';
 import type {LaloView,LaloKind} from '../motorLalo';
 import type {AuxiliarView} from '../motorLaloAuxiliar';
 import {familyKey,rowsForModel,hitsForFamily} from '../predictionParallel';
@@ -19,9 +23,10 @@ const explanation:Record<string,string>={
  * se leen de arriba hacia abajo. El Top10 siempre está completo y las coincidencias visibles.
  * No se modifica la selección, el orden, el cotejo POST ni el acceso al recorrido.
  */
-export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onTrackFamily,post,heads=[],model='lalo',auxiliar}:{
+export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onTrackFamily,post,heads=[],model='lalo',auxiliar,sheet=null,visualDays=[]}:{
  date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
  auxiliar?:AuxiliarView|null;
+ sheet?:DailySheet|null;visualDays?:InfoVisualDay[];
  onFocus:(id:string)=>void;onAuxFocus?:(id:string)=>void;
  onTrackFamily?:(family:string)=>void;
  post?:Record<LaloKind,string[]>|null;heads?:string[]
@@ -29,6 +34,7 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
  const {colors:c,kinds}=useLaloTheme();
  const [active,setActive]=useState<LaloKind>('vt2');
  const [expanded,setExpanded]=useState<string|null>(null);
+ const [historyFamily,setHistoryFamily]=useState<string|null>(null);
  const [pagerWidth,setPagerWidth]=useState(0);
  const [pageHeights,setPageHeights]=useState<Partial<Record<LaloKind,number>>>({});
  const pager=useRef<ScrollView>(null);
@@ -37,6 +43,7 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
   setActive('vt2');
   pager.current?.scrollTo({x:0,animated:false});
   setExpanded(null);
+  setHistoryFamily(null);
  },[date,turn,model]);
 
  useEffect(()=>{
@@ -45,6 +52,15 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
  // La posición sólo se recalcula cuando cambia el ancho (rotación o resize).
  // eslint-disable-next-line react-hooks/exhaustive-deps
  },[pagerWidth]);
+
+ const isoDate=date.includes('/')?date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2):date;
+ const vt2Witnesses=useMemo(()=>{
+  const map=new Map<string,ReturnType<typeof buildVt2FamilyWitnesses>>();
+  if(model!=='lalo'||!sheet)return map;
+  for(const f of view?.ranks.vt2.slice(0,10)||[])
+   map.set(f.family,buildVt2FamilyWitnesses(isoDate,turn,f.family,sheet,visualDays));
+  return map;
+ },[model,sheet,view,isoDate,turn,visualDays]);
 
  const selectKind=(kind:LaloKind)=>{
   setActive(kind);
@@ -161,6 +177,14 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
           <Text style={[s.open,{color:c.accent}]}>Ver recorrido +11 ›</Text>
          </Pressable>:null}
         </View>:null}
+        {kind==='vt2'&&model==='lalo'&&(vt2Witnesses.get(f.family)?.length||0)>0?<Pressable
+         accessibilityRole="button" onPress={e=>{e.stopPropagation();setHistoryFamily(f.family)}}
+         style={s.historyLink}>
+         <Text style={{color:c.accent,fontWeight:'900',fontSize:11}}>
+          {vt2Witnesses.get(f.family)?.[0]?.scope==='HOY'? 
+           'Salió antes hoy · Ver minihoja ›':'Tiene antecedentes · Ver minihoja ›'}
+         </Text>
+        </Pressable>:null}
         {kind==='vt3'&&model==='lalo'&&onTrackFamily?<Pressable
          accessibilityRole="button" onPress={e=>{e.stopPropagation();onTrackFamily(f.family)}}
          style={{paddingVertical:8}}>
@@ -179,6 +203,10 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
     })}
    </ScrollView>
   </View>
+  {model==='lalo'?<Vt2FamilyHistoryModal date={isoDate} turn={turn} family={historyFamily}
+   view={view} sheet={sheet} days={visualDays}
+   onClose={()=>setHistoryFamily(null)}
+   onOpenCurrent={()=>{const id=historyFamily;setHistoryFamily(null);if(id)onFocus('vt2|'+id)}}/>:null}
  </View>;
 }
 const s=StyleSheet.create({
@@ -196,6 +224,7 @@ const s=StyleSheet.create({
  heading:{fontSize:15,fontWeight:'900'},aux:{fontSize:10,fontWeight:'700'},
  families:{gap:8},
  family:{minHeight:62,borderRadius:11,borderWidth:1,padding:9},
+ historyLink:{paddingTop:7,paddingBottom:5,alignSelf:'flex-start'},
  familyTitle:{flexDirection:'row',alignItems:'center',gap:9},
  rank:{fontSize:13,fontWeight:'900',minWidth:27},
  familyName:{fontSize:18,fontWeight:'900',flex:1,flexWrap:'wrap'},
