@@ -1,0 +1,26 @@
+name: Validar geometria VT2 y seguimiento visual por formas
+on:
+  push:
+    branches: [feature/experimental-vt2-formas-30oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Tipos app Android
+        run: npx tsc --noEmit --project tsconfig.ui-check.json
+      - name: VT2 forma antes que numero
+        run: npx --yes tsx scripts/test-vt2-formas-experimental.ts
+      - name: Regresion visual figuras y motor
+        run: |
+          npx --yes tsx scripts/test-figure-tracking.ts
+          npx --yes tsx scripts/test-vt2-family-history.ts
+          npx --yes tsx scripts/test-info-aux-trazas-visuales.ts
+          npx --yes tsx scripts/test-motor-lalo.ts

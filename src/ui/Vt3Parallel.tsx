@@ -14,6 +14,8 @@ import {useLaloTheme} from './LaloTheme';
 import {buildConnectedVt3} from '../connectedVt3';
 import type {ConnectedDay} from '../connectedVt3';
 import {reversibleFamily} from '../motorLalo';
+import Vt2ExperimentalPanel from './Vt2ExperimentalPanel';
+import type {InfoVisualDay} from '../infoTurnHistory';
 
 const localToday=()=>{
  const d=new Date();
@@ -21,7 +23,7 @@ const localToday=()=>{
 };
 export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoVersion=0,visualDays=[]}:{
  date:string;turn:Turno;sheet:DailySheet|null;view:LaloView|null;
- historical:LaloHistorical[];heads:string[];autoVersion?:number;visualDays?:ConnectedDay[];
+ historical:LaloHistorical[];heads:string[];autoVersion?:number;visualDays?:InfoVisualDay[];
 }){
  const {colors:c}=useLaloTheme();
  const [stored,setStored]=useState<FrozenRecord|null>(null);
@@ -85,7 +87,9 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,autoV
   return {...section,matches};
  });
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
-  <Text style={[s.title,{color:c.text}]}>VT3 · DOS LECTORES EXPERIMENTALES</Text>
+  <Vt2ExperimentalPanel date={date} turn={turn} sheet={safeSheet}
+   history={historical} days={visualDays} heads={heads}/>
+  <Text style={[s.title,{color:c.text,marginTop:12}]}>VT3 · DOS LECTORES EXPERIMENTALES</Text>
   <Text style={[s.note,{color:c.subtext}]}>
    Geometría Completa · Configuraciones Conectadas. Lalo MV1
    continúa disponible en Predicción oficial. Las configuraciones exigen dos

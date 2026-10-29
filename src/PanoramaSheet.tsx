@@ -2,6 +2,7 @@ import React,{useEffect,useMemo,useState} from 'react';
 import {View,Text,Pressable,ScrollView,Modal,StyleSheet} from 'react-native';
 import type {DailySheet} from './sheet';
 import type {CabezasDia,Turno} from './domain';
+import type {InfoVisualDay} from './infoTurnHistory';
 import type {AuxiliaryHeads} from './auxSantiagoNeuquen';
 import {auxiliaryBoard} from './auxSantiagoNeuquen';
 import {auxAtCut} from './auxTemporalModes';
@@ -31,11 +32,11 @@ const detectKind=(id:string|null|undefined):KindFilter=>{
 
 export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner,initialTurn,
  initialTurnOnly=false,auxHeads,auxSourceDate,drawHeads,date='',
- auxMode='anterior',onAuxModeChange}:{
+ auxMode='anterior',onAuxModeChange,visualDays=[]}:{
  sheet:DailySheet;data:PanoramaData;mode:'hoja'|'predictiva';
  target?:Turno;onInfo:()=>void;focusedOwner?:string|null;initialTurn?:Turno;
  initialTurnOnly?:boolean;auxHeads?:AuxiliaryHeads|null;auxSourceDate?:string|null;drawHeads?:CabezasDia|null;date?:string;
- auxMode?:AuxMode;onAuxModeChange?:(mode:AuxMode)=>void
+ auxMode?:AuxMode;onAuxModeChange?:(mode:AuxMode)=>void;visualDays?:InfoVisualDay[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [active,setActive]=useState<string|null>(focusedOwner||null);
@@ -279,7 +280,8 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
      {KINDS.filter(k=>selectedRoutes.some(r=>r.kind===k)).map(k=><View key={k}>
       <Text style={[s.groupTitle,{color:kinds[k].line}]}>{kinds[k].label}</Text>
       {selectedRoutes.filter(r=>r.kind===k).map(r=>
-       <MiniRoutePreview key={r.id+'-'+r.ownerId} sheet={sheet} route={r}/>)}
+       <MiniRoutePreview key={r.id+'-'+r.ownerId} sheet={sheet} route={r}
+        date={mode==='predictiva'?date:''} turn={target} days={visualDays}/>)}
      </View>)}
      <Text style={[s.note,{color:c.subtext,marginTop:16}]}>
       El orden físico se indica en cada miniatura. Ningún recorrido fue añadido por el filtro.
