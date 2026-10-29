@@ -47,6 +47,7 @@ import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 import ZoomableTab from './src/ui/ZoomableTab';
 import BrandHero from './src/ui/BrandHero';
+import LaloWallpaper from './src/ui/LaloWallpaper';
 import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './src/tabZoom';
 import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
 import type {NavigationEntry} from './src/tabNavigation';
@@ -435,6 +436,7 @@ function LaloApp(){
  };
 
  return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar} backgroundColor={c.canvas}/>
+  <LaloWallpaper/>
   <BrandHero mode={mode} onToggle={toggle}/>
   <View style={s.nav}>{nav.map(x=><Pressable key={x.id} accessibilityRole="tab"
     accessibilityState={{selected:screen===x.id}}

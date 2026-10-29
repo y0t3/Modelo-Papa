@@ -12,7 +12,7 @@ export type LaloColors={
 };
 const LIGHT:LaloColors={
  canvas:'#EEF3FA',nav:'#071D42',navActive:'#1754A1',
- surface:'#FFFFFF',surfaceAlt:'#F4F7FC',card:'#FFFFFF',
+ surface:'rgba(255,255,255,0.94)',surfaceAlt:'rgba(244,247,252,0.95)',card:'rgba(255,255,255,0.97)',
  board:'#F9FBFF',boardAlt:'#EFF3F9',cell:'#FFFFFF',
  text:'#10274D',subtext:'#4B6180',muted:'#667997',
  border:'#C5D3E6',accent:'#AD7618',accentFill:'#FFF0CC',
@@ -21,7 +21,7 @@ const LIGHT:LaloColors={
 };
 const DARK:LaloColors={
  canvas:'#05152F',nav:'#061C3E',navActive:'#1457A6',
- surface:'#091D3D',surfaceAlt:'#102A50',card:'#102347',
+ surface:'rgba(9,29,61,0.88)',surfaceAlt:'rgba(16,42,80,0.91)',card:'rgba(16,35,71,0.95)',
  board:'#0A1933',boardAlt:'#10254B',cell:'#1A2945',
  text:'#F8F5EA',subtext:'#BDCEE4',muted:'#8EA4C3',
  border:'#28548A',accent:'#F3C251',accentFill:'#233B61',

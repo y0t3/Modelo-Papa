@@ -1,0 +1,48 @@
+name: La posta de Lalo - Fondo ilustrado general
+on:
+  push:
+    branches: [lab/fondo-marca-agua-general-29oct2026]
+    paths:
+      - 'App.tsx'
+      - 'package.json'
+      - 'scripts/test-la-posta-identidad.ts'
+      - 'scripts/test-hero-composition.ts'
+      - 'scripts/test-wallpaper-lalo.ts'
+      - 'src/PanoramaSheet.tsx'
+      - 'src/ui/**'
+      - 'src/DateField.tsx'
+      - 'assets/la-posta-de-lalo.svg'
+      - '.github/workflows/lab-fondo-general-lalo.yml'
+      - '.github/scripts/icon-modelo-lalo.sh'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validacion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificar tipos de toda la interfaz
+        run: npx tsc --noEmit -p tsconfig.ui-check.json
+      - name: Verificar identidad y colores de los VT
+        run: npx --yes tsx scripts/test-la-posta-identidad.ts
+      - name: Verificar que el escudo auténtico se reutiliza sin redibujarlo
+        run: npx --yes tsx scripts/test-hero-composition.ts
+      - name: Verificar fondo, contraste y gestos
+        run: npx --yes tsx scripts/test-wallpaper-lalo.ts
+      - name: Regresiones Lalo y figuras VT2/VT3
+        run: |
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-motor-formas-primero-vt2.ts
+          npx --yes tsx scripts/test-motor-formas-primero.ts
+          npx --yes tsx scripts/test-figure-motion-vt2-vt3.ts
+      - name: Validar SVG del nuevo emblema
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin
+          rsvg-convert --width 512 --height 512 assets/la-posta-de-lalo.svg -o /tmp/icon-lalo.png
+          test -s /tmp/icon-lalo.png
