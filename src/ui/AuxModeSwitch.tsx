@@ -18,15 +18,15 @@ export default function AuxModeSwitch({value,onChange}:{
    accessibilityState={{selected:value===choice.id}}
    onPress={()=>onChange(choice.id)}
    style={[s.option,{borderColor:value===choice.id?c.accent:c.border,
-    backgroundColor:value===choice.id?c.accentFill:c.card}]}>
-   <Text style={[s.optionText,{color:value===choice.id?c.accent:c.text}]}>
+    backgroundColor:value===choice.id?c.accent:c.card}]}>
+   <Text style={[s.optionText,{color:value===choice.id?'#0A2A54':c.text}]}>
     {value===choice.id?'✓ ':''}{choice.label}
    </Text>
   </Pressable>)}</View>
  </View>;
 }
 const s=StyleSheet.create({
- container:{borderWidth:1,borderRadius:10,padding:7,gap:5,marginVertical:5},
+ container:{borderWidth:1.1,borderRadius:11,padding:9,gap:6,marginVertical:6},
  label:{fontSize:10,fontWeight:'900'},
  row:{flexDirection:'row',gap:6},
  option:{flex:1,borderWidth:1,borderRadius:8,paddingVertical:10,
