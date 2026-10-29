@@ -31,6 +31,7 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [activeLength,setActiveLength]=useState<'vt2'|'vt3'>('vt2');
+ const [activeReader,setActiveReader]=useState<'audit'|'forms'|'other'>('audit');
  const [stored,setStored]=useState<FrozenRecord|null>(null);
  const [busy,setBusy]=useState(false);
  const [error,setError]=useState('');
@@ -106,7 +107,7 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
   <View style={{flexDirection:'row',gap:8,marginTop:10}}>
    {(['vt2','vt3'] as const).map(kind=><Pressable key={kind}
     accessibilityRole="tab" accessibilityState={{selected:activeLength===kind}}
-    onPress={()=>setActiveLength(kind)}
+    onPress={()=>{setActiveLength(kind);setActiveReader('audit')}}
     style={{flex:1,paddingVertical:12,borderRadius:10,borderWidth:2,
      alignItems:'center',backgroundColor:activeLength===kind?kinds[kind].fill:c.card,
      borderColor:activeLength===kind?kinds[kind].line:c.border}}>
@@ -116,22 +117,35 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
     </Text>
    </Pressable>)}
   </View>
+  <View style={{flexDirection:'row',gap:5,marginTop:8}}>
+   {([['audit','Figuras'],['forms','Formas primero'],
+    ['other','Otras pruebas']] as const).map(([id,label])=><Pressable
+    key={id} accessibilityRole="tab"
+    accessibilityState={{selected:activeReader===id}}
+    onPress={()=>setActiveReader(id)}
+    style={{flex:1,paddingVertical:9,borderRadius:8,borderWidth:1,
+     alignItems:'center',backgroundColor:activeReader===id?c.accentFill:c.card,
+     borderColor:activeReader===id?c.accent:c.border}}>
+    <Text style={{fontSize:11,fontWeight:'800',color:c.text}}>{label}</Text>
+   </Pressable>)}
+  </View>
   {activeLength==='vt2'?<>
-   <FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
+   {activeReader==='audit'?<FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
     forms={formsFirstVt2} lalo={safeView} days={visualDays}
-    published={publishedHeads} kind="vt2"/>
-   <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
+    published={publishedHeads} kind="vt2"/>:null}
+   {activeReader==='forms'?<FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
     days={visualDays} lalo={safeView} heads={publishedHeads.map(x=>x.head)}
-    kind="vt2"/>
-   <Vt2ExperimentalPanel date={date} turn={turn} sheet={safeSheet}
+    kind="vt2"/>:null}
+   {activeReader==='other'?<Vt2ExperimentalPanel date={date} turn={turn} sheet={safeSheet}
     history={historical} days={visualDays} heads={heads}
-    publishedHeads={publishedHeads}/>
+    publishedHeads={publishedHeads}/>:null}
   </>:<>
-   <FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
+   {activeReader==='audit'?<FigureRescueAuditPanel date={date} turn={turn} pre={safeSheet}
     forms={formsFirst} lalo={safeView} days={visualDays}
-    published={publishedHeads} kind="vt3"/>
-   <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
-    days={visualDays} lalo={safeView} heads={heads} kind="vt3"/>
+    published={publishedHeads} kind="vt3"/>:null}
+   {activeReader==='forms'?<FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
+    days={visualDays} lalo={safeView} heads={heads} kind="vt3"/>:null}
+  {activeReader==='other'?<>
   <Text style={[s.title,{color:c.text,marginTop:12}]}>Otras pruebas de tres cifras</Text>
   <Text style={[s.note,{color:c.subtext}]}>
    Dos maneras más de seguir figuras que tuvieron antecedentes ganadores.
@@ -220,6 +234,7 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
    Geometría {result.geometric.matches.length} ·
    Conectadas {result.connected?.matches.length??'sin PRE'}.
   </Text>:null}
+  </>:null}
   </>}
  </View>;
 }
