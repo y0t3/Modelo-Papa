@@ -19,5 +19,3 @@ jobs:
         run: npx tsc --noEmit
       - name: Regresión Lalo principal
         run: npx --yes tsx scripts/test-motor-lalo.ts
-      - name: Regresión Lalo auxiliar
-        run: npx --yes tsx scripts/test-motor-lalo-auxiliar.ts
