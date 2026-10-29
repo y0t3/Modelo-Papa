@@ -15,6 +15,7 @@ import {buildConnectedVt3} from '../connectedVt3';
 import type {ConnectedDay} from '../connectedVt3';
 import {reversibleFamily} from '../motorLalo';
 import Vt2ExperimentalPanel from './Vt2ExperimentalPanel';
+import FormasPrimeroPanel from './FormasPrimeroPanel';
 import type {InfoVisualDay} from '../infoTurnHistory';
 
 const localToday=()=>{
@@ -88,6 +89,8 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
   return {...section,matches};
  });
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
+  <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
+   days={visualDays} lalo={safeView} heads={heads}/>
   <Vt2ExperimentalPanel date={date} turn={turn} sheet={safeSheet}
    history={historical} days={visualDays} heads={heads}
    publishedHeads={publishedHeads}/>
