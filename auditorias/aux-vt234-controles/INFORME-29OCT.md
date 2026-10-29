@@ -41,6 +41,22 @@ Los cuellos de botella no son iguales: debemos distinguir **no reconocida** de *
 
 En la muestra AYER: Top2 original **15** cabezas; priorizar las familias que habían ganado antes de ese mismo día **20**; preferir familias con presencia en los últimos seis Tops anteriores del mismo turno **20**. HOY: respectivamente **12, 14 y 10**. Son hipótesis retrospectivas, con muestra pequeña y comparaciones múltiples; **no justifican alterar prioridades**. La persistencia de ranking no representa movimiento físico de celdas.
 
+## Inspección individual de las tres VT4 con madre Top10
+
+Se repitió el ensayo imprimiendo el **recorrido físico PRE**, su modalidad y las hijas VT4 con raíces históricas trasladadas. Las tres formaciones son físicamente legítimas, pero **no son una predicción retrospectiva ganadora del motor**.
+
+| Fecha y turno | Modo | Cabeza real | Madre VT3 | Forma física PRE | Hijas VT4 reconocidas de esa madre |
+|---|---|---|---|---|---|
+| 15/10 Matutino, Provincia | AYER | **4942** | 249/942 **#3** | 3 recorridos en la franja Matutino | Solo **9942** (puesto #1 de VT4); **4942 ausente** |
+| 20/10 Nocturno, Ciudad | HOY | **2697** | 697/796 **#2** | 1 recorrido válido, cruzando en contacto Primera y Previa | **Ninguna** |
+| 23/10 Matutino, Santa Fé | AYER | **4862** | 268/862 **#8** | 2 recorridos en la franja Previa | **Ninguna** |
+
+En el primer caso, el motor sí proyectó una **hija diferente de la misma madre**, pero no el recorrido 4942. Los otros dos casos no generaron ninguna hija VT4 de su madre. Esto descarta que una simple reordenación de las familias VT4 existentes pudiera recuperar esos tres resultados. La geometría física **sí existe**; lo que falta es una ruta histórica ganadora proyectada que reconozca esa cuatro cifras como candidata. Inyectarla por haber salido sería fuga POST.
+
+**Siguiente control geométrico recomendado:** comparar las siluetas de estas rutas con testigos VT3 antiguos de la madre y medir también cuántas **no ganadoras** tienen rutas similares. No aprobar automáticamente una cuarta cifra física sin evidencia selectiva y contrastes fuera de muestra.
+
+[Prueba de tres casos y rutas en GitHub Actions](https://github.com/y0t3/Modelo-Papa/actions/runs/40845566809).
+
 ## Próximo paso de interfaz
 
 Agregar al **Info Auxiliar**, previa verificación de diseño, el historial de cada raíz ganadora al tocarla: minihoja de su fecha real y minihoja del corte actual, con modo AYER/HOY, columnas realmente disponibles, orden de recorrido y fuente. Mostrar por separado el reconocimiento/puesto de VT3 y el motivo de exclusión de su VT4 física. No pintar rutas inventadas ni mezclar los movimientos AUX con los de +11. Conservar el Top10 fijo y los aciertos POST ya implementados.
