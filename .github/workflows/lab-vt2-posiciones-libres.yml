@@ -23,6 +23,8 @@ jobs:
         run: npx --yes tsx scripts/lab-vt2-congelar-puestos.ts
       - name: Seguimiento de familias entre turnos y seis dias
         run: npx --yes tsx scripts/lab-vt2-relaciones-familias.ts
+      - name: Comparación VT2 de hasta dos familias con testigos del mismo día
+        run: npx --yes tsx scripts/lab-vt2-dos-familias.ts
       - name: Regression MV1 sin cambios
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - uses: actions/upload-artifact@v4
