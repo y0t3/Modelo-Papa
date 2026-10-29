@@ -16,9 +16,11 @@ Cada candidatura de Formas Primero es **una posición concreta** (fuente + casil
 
 Antecedentes reales (últimas seis jornadas con publicación): sólo rutas que explicaron una cabeza ganadora anterior, con igual silueta normalizada y movimiento admitido por el motor.
 
-Tres categorías **no excluyentes** para una candidatura:
+Cinco categorías **no excluyentes** para una candidatura:
 - **Misma posición:** existe una activación ganadora de la misma ruta física (idénticas casillas y misma fuente) en una jornada anterior.
-- **Desplazamiento vertical:** existe activación con igual silueta y fuente, pero en otra posición/casillas.
+- **Desplazamiento vertical:** misma silueta y fuente con distinta fila de anclaje, sin mover horizontalmente la figura.
+- **Desplazamiento horizontal:** misma silueta, fuente y fila de anclaje, pero otro lado de la columna de dos dígitos.
+- **Desplazamiento diagonal:** cambiaron a la vez fila y lado dentro de la misma columna.
 - **Cambio de fuente:** existe activación de la silueta en otra columna fuente histórica; cada recorrido sigue siendo interno a su respectiva columna.
 
 Las categorías se superponen cuando una figura tuvo antecedentes de varios tipos. Separar siempre "presencia de una silueta" de **activación por cabeza real**, no inferir trayectorias causales del sorteo.
@@ -51,15 +53,16 @@ VT2 **no superó** al control en el grupo de ruta idéntica. VT3 tuvo 30 acierto
 
 ### Movimiento vertical y entre fuentes
 
-En **VT2, los 2.984 rescates** tenían al menos un antecedente de desplazamiento vertical y de cambio de fuente; ambos indicadores están **saturados** y no clasifican resultados. Esto se debe a siluetas de sólo dos casillas y su altísima repetición.
+En **VT2**, los **2.984 rescates** tenían antecedente ganador en otra fuente y **2.959 de 2.984** también antecedente de desplazamiento vertical estricto; son características **casi saturadas** y poco selectivas. La precisión al distinguir movimientos dentro de una columna también permitió ver **1.719 desplazamientos horizontales** (149 cabezas frente a 143,10 esperadas por silueta y fuente) y **1.938 diagonales** (169 frente a 165,05). Estas diferencias pequeñas fluctúan entre períodos y no demuestran señal.
 
 En **VT3**:
-- Desplazamiento vertical presente: 3.369 propuestas, 27 coincidencias (control ≈29,51).
-- Desplazamiento vertical ausente: 1.274 propuestas, 18 coincidencias (control ≈15,70).
+- Desplazamiento vertical estricto presente: **3.220 propuestas, 26 coincidencias** (control ≈28,06).
+- Horizontal presente: **129 propuestas y cero coincidencias** (control ≈0,91).
+- Diagonal presente: **158 propuestas y una coincidencia** (control ≈1,49).
 - Cambio de fuente presente: 3.391 propuestas, 35 coincidencias (control ≈32,70).
 - Cambio de fuente ausente: 1.252 propuestas, 10 coincidencias (control ≈12,51).
 
-Las oscilaciones tampoco muestran un sentido estable al dividir junio–julio, agosto–septiembre y octubre. Las combinaciones son exploratorias y no se deben convertir a filtros predictivos mirando el mismo histórico.
+Las clases de movimiento **pueden superponerse** por la diversidad de testigos históricos. Las oscilaciones tampoco muestran un sentido estable al dividir junio–julio, agosto–septiembre y octubre. Las combinaciones son exploratorias y no se deben convertir a filtros predictivos mirando el mismo histórico.
 
 ## Qué cambia en la app
 
