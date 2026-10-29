@@ -14,7 +14,7 @@ import {shiftDay} from '../src/dates';
 import {fetchAuxiliaryHeads,auxiliarySourceDate} from '../src/auxSantiagoSource';
 import {auxAtCut,extractAuxHistoryMode} from '../src/auxTemporalModes';
 import type {AuxMode} from '../src/auxTemporalModes';
-import {auxiliaryBoard,findAuxPaths} from '../src/auxSantiagoNeuquen';
+import {auxiliaryBoard,findAuxPaths,enumerateAuxPaths} from '../src/auxSantiagoNeuquen';
 import {buildMotorLaloAuxiliar} from '../src/motorLaloAuxiliar';
 import type {AuxiliarHistory,AuxiliarFamily} from '../src/motorLaloAuxiliar';
 import {reversibleFamily} from '../src/motorLalo';
@@ -37,6 +37,8 @@ type Row={
  ranks:Record<Kind,Candidate[]>;outcomes:Outcome[];
  priorWinners:Record<Kind,string[]>;
  boardCells:number;
+ negativeVt4:{eligibleCount:number;recognizedPhysicalCount:number;
+  rescueDistinctWins:number;rescueHeadHits:number;zeroHitCandidates:number};
 };
 const drawCache=new Map<string,Promise<CabezasDia>>();
 const auxCache=new Map<string,ReturnType<typeof fetchAuxiliaryHeads>>();
@@ -149,7 +151,17 @@ async function main(){
     const mothers=new Set(view.ranks[3].slice(0,10).map(c=>c.family));
     if(view.ranks[4].some(c=>!c.mother||!mothers.has(c.mother)))
      throw Error('VT4 sin madre VT3 AUX en '+date+' '+mode+' '+turn);
-    const ranks={} as Row['ranks'];
+    // Universo PRE negativo: cada valor VT4 exacto, físicamente formable,
+     // con madre en Top10 VT3, todavía no reconocida como hija VT4.
+     // Un valor cuenta una sola vez por corte, tenga una o muchas rutas.
+     const physical4=new Set(enumerateAuxPaths(board,4)
+      .map(path=>path.map(cell=>cell.digit).join('')));
+     const eligibleVt4=[...physical4].filter(v=>
+      mothers.has(reversibleFamily(v.slice(1)))&&
+      !view.ranks[4].some(f=>f.values.includes(v)));
+     const rankedPhysical4=[...physical4].filter(v=>
+      view.ranks[4].some(f=>f.values.includes(v)));
+     const ranks={} as Row['ranks'];
     for(const kind of KINDS){
      const sameTurnEarlier=records.filter(r=>r.mode===mode&&r.turn===turn&&r.date<date).slice(-6);
      const prev=sameTurnEarlier.at(-1);
@@ -194,7 +206,15 @@ async function main(){
        wasWinnerEarlierToday:winners[kind].has(family),vt4MotherRank});
      }
     }
-    records.push({date,mode,turn,ranks,outcomes,boardCells:board.cells.length,
+    const eligibleSet=new Set(eligibleVt4);
+     const rescueHeads=outcomes.filter(o=>o.kind===4&&eligibleSet.has(o.exactSuffix));
+     const rescueValues=new Set(rescueHeads.map(o=>o.exactSuffix));
+     const negativeVt4={
+      eligibleCount:eligibleVt4.length,recognizedPhysicalCount:rankedPhysical4.length,
+      rescueDistinctWins:rescueValues.size,rescueHeadHits:rescueHeads.length,
+      zeroHitCandidates:eligibleVt4.length-rescueValues.size
+     };
+     records.push({date,mode,turn,ranks,outcomes,negativeVt4,boardCells:board.cells.length,
      priorWinners:{2:[...winners[2]],3:[...winners[3]],4:[...winners[4]]},
      sourceDates:{current:mode==='anterior'?auxiliarySourceDate(date):date,
       d1:last.date,d7:hasDrawResults(week)?weekDate:null}});
@@ -205,6 +225,19 @@ async function main(){
   console.log('AUX_VT234_DAY',date);
  }
  if(days<8)throw Error('Muestra insuficiente '+days+' jornadas; '+failures.join(' | '));
+ const negativeControl=Object.fromEntries(['OCT_12_20','OCT_21_28','ALL'].map(p=>[
+  p,Object.fromEntries((['anterior','intrajornada'] as AuxMode[]).map(mode=>{
+   const sub=records.filter(r=>r.mode===mode&&(p==='ALL'||period(r.date)===p));
+   return [mode,{
+    cuts:sub.length,
+    eligibleVt4FamilyTop10ButUnranked:total(sub,r=>r.negativeVt4.eligibleCount),
+    eligibleValuesWithRealHit:total(sub,r=>r.negativeVt4.rescueDistinctWins),
+    eligibleHeadsHit:total(sub,r=>r.negativeVt4.rescueHeadHits),
+    candidateExposuresWithoutHit:total(sub,r=>r.negativeVt4.zeroHitCandidates),
+    alreadyRankedPhysicalVt4:total(sub,r=>r.negativeVt4.recognizedPhysicalCount)
+   }];
+  }))
+ ]));
  const byPeriod=Object.fromEntries(['OCT_12_20','OCT_21_28','ALL'].map(p=>
   [p,groupedSummary(records.filter(r=>p==='ALL'||period(r.date)===p))]));
  const provisionalHeads=records.filter(r=>r.date==='2026-10-28'&&r.turn==='Nocturno'&&r.mode==='anterior')
@@ -215,7 +248,7 @@ async function main(){
   [p,groupedSummary(withoutProvisional.filter(r=>p==='ALL'||period(r.date)===p))]));
  const result={study:'AUX_VT234_PRE_RECONSTRUIDO_POST_COTEJADO_NO_PROSPECTIVO',
   dates:{from:'2026-10-12',to:'2026-10-28'},days,cuts:records.length,
-  failures,provisionalHeads,byPeriod,byPeriodWithoutProvisional,records,
+  failures,provisionalHeads,byPeriod,byPeriodWithoutProvisional,negativeControl,records,
   rules:[
    'AY​ER usa Santiago y Neuquen RAW de la ultima jornada sorteable anterior; HOY solo columnas anteriores al turno objetivo.',
    'VT2/VT3 se cotejan como familia reversible; VT4 por valor exacto proyectado, sin invertir cuatro cifras.',
@@ -232,6 +265,6 @@ async function main(){
  fs.mkdirSync(dir,{recursive:true});
  fs.writeFileSync(dir+'/resultados.json',JSON.stringify(result,null,2)+'\n');
  console.log('AUX_VT234_SUMMARY',JSON.stringify({
-  days,cuts:records.length,failures,provisionalHeads,byPeriod,byPeriodWithoutProvisional}));
+  days,cuts:records.length,failures,provisionalHeads,byPeriod,byPeriodWithoutProvisional,negativeControl}));
 }
 main().catch(e=>{console.error('AUX_VT234_ERROR',e);process.exitCode=1});
