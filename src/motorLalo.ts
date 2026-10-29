@@ -199,7 +199,8 @@ export function distributeVt4ByMother(candidates:LaloFamily[],mothers:LaloFamily
 /** La única entrada PRE del sistema. Altera el pasado disponible, NUNCA el objetivo. */
 export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
  historical:LaloHistorical[],
- vt3Priority:'ORIGINAL'|'BIFURCACION_LUEGO_D1'|'BIFURCACION_LUEGO_D1_TOP10'|'BIFURCACION_LUEGO_D1_TOP10_VT4_ESTABLE'='ORIGINAL'):LaloView{
+ vt3Priority:'ORIGINAL'|'BIFURCACION_LUEGO_D1'|'BIFURCACION_LUEGO_D1_TOP10'|'BIFURCACION_LUEGO_D1_TOP10_VT4_ESTABLE'='ORIGINAL',
+ montevideoHistoricalRoots=false):LaloView{
  const targetIdx=TURNOS.indexOf(target);
  if(targetIdx<0)throw Error('Turno inválido');
  const visible=current.columns.slice(0,targetIdx+1);
@@ -209,7 +210,7 @@ export function buildMotorLalo(current:DailySheet,date:string,target:Turno,
  for(const historic of historical){
   for(const t of TURNOS)for(const match of historic.sheet.matches[t]||[])
    for(const hit of match.hits){
-    if(match.jurisdiccion==='Montevideo')continue; // solo geometría del +11
+    if(!montevideoHistoricalRoots&&match.jurisdiccion==='Montevideo')continue; // oficial sin Montevideo como raíz
     if(hit.kind!=='vt2'&&hit.kind!=='vt3')continue;
     const column=visible.find(x=>x.id===hit.sourceId);
     if(!column)continue;
