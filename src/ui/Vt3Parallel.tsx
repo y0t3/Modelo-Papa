@@ -90,7 +90,10 @@ export default function Vt3Parallel({date,turn,sheet,view,historical,heads,publi
  });
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:c.border}]}>
   <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
-   days={visualDays} lalo={safeView} heads={heads}/>
+   days={visualDays} lalo={safeView} heads={publishedHeads.map(x=>x.head)}
+   kind="vt2"/>
+  <FormasPrimeroPanel date={date} turn={turn} pre={safeSheet}
+   days={visualDays} lalo={safeView} heads={heads} kind="vt3"/>
   <Vt2ExperimentalPanel date={date} turn={turn} sheet={safeSheet}
    history={historical} days={visualDays} heads={heads}
    publishedHeads={publishedHeads}/>
