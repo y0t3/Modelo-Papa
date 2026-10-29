@@ -122,10 +122,12 @@ export function formPositions(pre:DailySheet,target:Turno):FormLocation[]{
 }
 /** Score and candidate ranking use only coordinates and past verified marks. */
 export function rankFormLocations(
- locations:FormLocation[],roots:FormRoot[],recentDates:string[],limit=10
+ locations:FormLocation[],roots:FormRoot[],recentDates:string[],limit=10,cutDate=''
 ):FormLocation[]{
- const d1=recentDates[0],d7=recentDates.find(d=>
-  recentDates.length>0&&d===recentDates[recentDates.length-1]);
+ const d1=recentDates[0];
+ const d7Date=cutDate?new Date(Date.parse(cutDate+'T00:00:00Z')-7*86400000)
+  .toISOString().slice(0,10):'';
+ const d7=recentDates.find(d=>d===d7Date);
  const ordered=locations.map(loc=>{
   const near=roots.filter(r=>r.shape===loc.shape&&
    Math.abs(r.anchor-loc.anchor)<=2&&
@@ -176,7 +178,7 @@ export function buildFormFirstMotor(
  const historical=historicalFormRoots(date,days);
  const locations=formPositions(pre,target);
  // Rank enough *physical* positions for de-duplicating numerical readings later.
- const ranked=rankFormLocations(locations,historical.roots,historical.dates,locations.length);
+ const ranked=rankFormLocations(locations,historical.roots,historical.dates,locations.length,date);
  const availableFamilies=new Set<string>(),top:FormChoice[]=[];
  for(const position of ranked){
   const column=pre.columns.find(c=>c.id===position.source)!;
