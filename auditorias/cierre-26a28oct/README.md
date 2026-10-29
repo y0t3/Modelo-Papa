@@ -1,7 +1,7 @@
 # Modelo Lalo — control de jornadas 26, 27 y 28/10/2026
 
 **Rama:** `lab/auditoria-26a28oct-todos-motores`  
-**Estado:** ejecución GitHub Actions correcta [#40801509244](https://github.com/y0t3/Modelo-Papa/actions/runs/40801509244).  
+**Estado:** ejecución GitHub Actions correcta [#40801945258](https://github.com/y0t3/Modelo-Papa/actions/runs/40801509244).  
 **Código oficial, APK y Tops históricos intactos.** No se grabó ningún PRE nuevo con fecha falsa.
 
 ## 1. En qué punto nos habíamos quedado
@@ -17,6 +17,7 @@ Se estudiaron **15 cortes**, 5 por fecha 26, 27, 28/10. Cada PRE se reconstruye 
 | Motor/criterio | Top3 | Top5 | Top10 | Observación |
 |---|---:|---:|---:|---|
 | Lalo MV1 | 0 | 0 | **1** | Único hit: 28/10 Matutino Montevideo `9176` |
+| **Integral 65/35** | **1** | **1** | **2** | 27/10 Primera Entre Ríos `1308` y 28/10 Matutino Montevideo `9176`; ambos ya presentes en AUX AYER o Lalo |
 | Geometría Completa | **1** | 1 | 1 | 26/10 Primera Entre Ríos `4056` |
 | Nueva Prueba | 0 | 1 | 1 | Repite el `4056` de Geometría, pero no en Top3 |
 | Configuraciones Conectadas | **1** | 1 | 1 | 27/10 Nocturno Provincia `2299` |
@@ -34,6 +35,8 @@ Se estudiaron **15 cortes**, 5 por fecha 26, 27, 28/10. Cada PRE se reconstruye 
 | Modalidad | Lalo Top3 | Lalo Top5 | Lalo Top10 | AUX AYER Top3 | AUX AYER Top5 | AUX AYER Top10 | AUX HOY Top3 | AUX HOY Top5 | AUX HOY Top10 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | VT2 | **6** | **9** | **17** | **7** | **10** | **14** | **2** | **4** | **7** |
+
+**Integral 65/35, VT2:** Top3 **6**, Top5 **10** y Top10 **19**. Aumenta dos coincidencias netas frente al Top10 MV1 (17), pero conserva un coste de diez familias por corte y no constituye aún una mejora validada; tampoco consiguió ningún VT4.
 | VT4 | **0** | **0** | **0** | **0** | **0** | **0** | **0** | **0** | **0** |
 
 En +11, de las 80 cabezas **47** tenían VT2 físicamente formable, **18** VT3 formable y **6** VT4 formable en sus respectivos cortes PRE. El problema del motor sigue siendo **seleccionar/rastrear VT3 y sus madres VT4**, no alterar la regla geométrica. El hecho de que VT4 fuera formable en seis ocasiones no significa que un motor validado hubiera debido colocarlas en Top.
@@ -57,6 +60,7 @@ Los tres días agregan **80 cabezas** y **15 cortes** a las 561 cabezas y 105 co
 
 ## 4. Decisiones por motor
 - **Lalo MV1** sigue siendo la referencia; no modificar madre VT3, prefijo VT4, raíces o Tops oficiales por este tramo de tres jornadas.
+- **Integral 65/35** registró VT2 **6/10/19** y VT3 **1/1/2** (Top3/5/10), sin aciertos VT4. Sus dos VT3 ya estaban presentes entre las coberturas de Lalo o AUX AYER: es mezcla, no evidencia independiente. Mantenerlo como laboratorio y contrastar con presupuesto fijo.
 - **Geometría Completa** sí agregó el `4056` fuera del Top10 oficial. Retener como lectura independiente de cobertura, no promover en MV1.
 - **Configuraciones Conectadas** agregó `2299`, también exclusivo: preservar como fuente estructural diferente.
 - **Nueva Prueba** simplemente duplicó una parte de Geometría con otra colocación, sin acierto Top3. Dejar de considerarla una tercera evidencia independiente y, si se desea, archivarla visualmente.
