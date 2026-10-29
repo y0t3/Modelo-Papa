@@ -1,0 +1,55 @@
+# Modelo Lalo Auxiliar — control PRE de VT2, VT3 y VT4 (29/10/2026)
+
+**Rama experimental:** lab/aux-vt234-pre-controles-29oct2026. **Sin cambios en main, MV1, APK ni prioridades oficiales.**
+
+## Protocolo auditado
+
+15 jornadas sorteables entre el 12 y el 28 de octubre; cinco turnos × dos modos: **150 cortes PRE reconstruidos**. Se evaluaron **400 cabezas reales verificadas por modo**. El proveedor también entregó Santa Fé Nocturno 28/10 = 6666, aún provisional; se calcularon ambos escenarios. Incluirla o excluirla no cambia los aciertos Top10 ni la formabilidad aquí informados.
+
+- **AUX AYER:** grilla completa de Santiago/Neuquén de la jornada anterior desde Previa.
+- **AUX HOY:** sin celdas para Previa; en Primera solo columna Previa; en Matutino dos columnas; desde Vespertino tres columnas.
+- Los rankings se construyen **antes** de consultar la cabeza objetivo. Después, POST verifica formabilidad exacta por rutas contiguas y reconocimiento en el ranking.
+- **VT2 y VT3** se cotejan por familia reversible; **VT4**, por valor físico exacto, con madre VT3 reconocida entre las diez primeras de ese modo.
+- Las filas AYER/HOY usan las **mismas cabezas reales**, por lo que no son predicciones independientes que deban sumarse.
+
+## Resultados: 400 cabezas por modo, sin el dato provisional
+
+| Modo | Tipo | Formables exactas | Reconocidas en ranking total | En Top10 | En Top2 |
+|---|---|---:|---:|---:|---:|
+| AYER | VT2 | 226 | 226 | 79 | 15 |
+| AYER | VT3 | 91 | 74 | 3 | 1 |
+| AYER | VT4 | 34 | 0 | 0 | 0 |
+| HOY | VT2 | 127 | 127 | 47 | 12 |
+| HOY | VT3 | 50 | 25 | 5 | 2 |
+| HOY | VT4 | 13 | 0 | 0 | 0 |
+
+### Embudo VT3
+
+**AYER:** 17 de 91 VT3 formables quedaron sin reconocimiento, 71 fueron reconocidas **por debajo del Top10** y tres llegaron al Top10.
+
+**HOY:** 25 de 50 formables quedaron sin reconocimiento, 20 fueron reconocidas **por debajo del Top10** y cinco llegaron al Top10.
+
+Los cuellos de botella no son iguales: debemos distinguir **no reconocida** de **reconocida pero mal posicionada**, sin aumentar artificialmente los cupos.
+
+### Embudo VT4: madre VT3 frente a ruta histórica
+
+- **AYER:** de 34 VT4 formables, solo **2** tenían una madre VT3 dentro del Top10; **26** tenían madre por debajo del puesto 10 y **6** madre no reconocida.
+- **HOY:** de 13 VT4 formables, solo **1** tenía madre en Top10; **5** estaban por debajo y **7** no tenían madre reconocida.
+- **Ninguno de los tres casos con madre habilitada fue reconocido como VT4**. La falta de rutas/raíces históricas trasladadas es un obstáculo adicional al filtro de madres; no se debe generar una hija inversa ni incluirla sin recorrido físico.
+
+### Controles de continuidad, presupuesto de dos candidatas VT2
+
+En la muestra AYER: Top2 original **15** cabezas; priorizar las familias que habían ganado antes de ese mismo día **20**; preferir familias con presencia en los últimos seis Tops anteriores del mismo turno **20**. HOY: respectivamente **12, 14 y 10**. Son hipótesis retrospectivas, con muestra pequeña y comparaciones múltiples; **no justifican alterar prioridades**. La persistencia de ranking no representa movimiento físico de celdas.
+
+## Próximo paso de interfaz
+
+Agregar al **Info Auxiliar**, previa verificación de diseño, el historial de cada raíz ganadora al tocarla: minihoja de su fecha real y minihoja del corte actual, con modo AYER/HOY, columnas realmente disponibles, orden de recorrido y fuente. Mostrar por separado el reconocimiento/puesto de VT3 y el motivo de exclusión de su VT4 física. No pintar rutas inventadas ni mezclar los movimientos AUX con los de +11. Conservar el Top10 fijo y los aciertos POST ya implementados.
+
+## Reproducción
+
+- [Script de estudio](../../scripts/lab-aux-vt234-pre-controles.ts)
+- [Workflow de ensayo](../../.github/workflows/lab-aux-vt234.yml)
+- [Ejecución de GitHub Actions](https://github.com/y0t3/Modelo-Papa/actions/runs/40845211344) con regresiones de Lalo/AUX y artefacto auxiliar-vt234-pre-ayer-hoy-29oct, que contiene el JSON por corte y las dos versiones del cotejo.
+- Los PRE son reconstrucciones cronológicamente correctas, **no sellos prospectivos guardados por la app**.
+
+**Decisión:** preservar MV1 y los motores AUX tal como están; estudiar visualmente los **tres VT4 con madre Top10** antes de formular una nueva regla. Los sorteos son aleatorios y no existe ventaja predictiva validada aquí.
