@@ -14,7 +14,7 @@ import {buildSheet} from '../src/sheet';
 import {preSheetAtCut} from '../src/infoCandidatos';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
 import type {LaloHistorical} from '../src/motorLalo';
-import {buildVt3Shadow} from '../src/vt3Shadow';
+import {buildVt3Shadow,allPhysicalVt3} from '../src/vt3Shadow';
 import {buildVt3Trial} from '../src/vt3Trial';
 import {buildConnectedVt3} from '../src/connectedVt3';
 const start='2026-06-01',end='2026-10-28';
@@ -37,6 +37,7 @@ const counts=(a:CabezasDia)=>TURNOS.reduce((n,t)=>n+JURS.filter(j=>valid(a[t]?.[
 type Mode='LALO'|'GEOMETRIA'|'NUEVA_PRUEBA'|'CONECTADAS';
 const MODES:Mode[]=['LALO','GEOMETRIA','NUEVA_PRUEBA','CONECTADAS'];
 type Cut={date:string;turn:string;numHeads:number;futureHeadsHidden:boolean;
+ physicalCandidates:number;physicalHeads:number;
  ranks:Record<Mode,string[]>;eligible:Record<Mode,number>;selectedSources:{
  connectedHistoricalPairs:number;connectedHistoricalDays:number;geometricPhysicalRoutes:number
  };results:{jur:string;head:string;family:string}[]};
@@ -98,7 +99,11 @@ async function main(){
    const results=JURS.map(jur=>({jur,head:actual[turn]?.[jur]||''}))
     .filter(x=>valid(x.head))
     .map(x=>({...x,family:reversibleFamily(x.head.slice(-3))}));
+   const physical=new Set(safe.columns.slice(0,idx+1).flatMap(col=>
+    allPhysicalVt3(col.values).map(p=>reversibleFamily(p.map(x=>x.digit).join('')))));
    cuts.push({date,turn,numHeads:results.length,futureHeadsHidden:true,
+    physicalCandidates:physical.size,
+    physicalHeads:results.filter(h=>physical.has(h.family)).length,
     ranks:selections,eligible:{
      LALO:lalo.ranks.vt3.length,
      GEOMETRIA:geo.availableFamilies,
@@ -163,9 +168,73 @@ async function main(){
    ]))];
   }))
  ]));
+
+ const PR=['JUN_JUL','AGO_SEP','OCT_OLD','NEW_15','TOTAL'];
+ const matchPeriod=(c:Cut,k:string)=>k==='TOTAL'||k==='JUN_JUL'?
+  k==='TOTAL'||c.date<='2026-07-31':k==='AGO_SEP'?
+  c.date>='2026-08-01'&&c.date<='2026-09-30':k==='OCT_OLD'?
+  c.date>='2026-10-01'&&c.date<='2026-10-24':
+  c.date>='2026-10-26';
+ const signTest=(a:number,b:number)=>{
+  const n=a+b;if(n===0)return 1;
+  let p=Math.pow(0.5,n),sum=p;
+  for(let i=1;i<=Math.min(a,b);i++){p=p*(n-i+1)/i;sum+=p;}
+  return Math.min(1,2*sum);
+ };
+ const paired:any[]=[];
+ let seed=20261028;
+ const rand=()=>{seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return(seed>>>0)/4294967296};
+ for(const period of PR){
+  const subset=cuts.filter(c=>matchPeriod(c,period));
+  for(const m of MODES.filter(x=>x!=='LALO')){
+   for(const k of [3,5,10]){
+    let both=0,onlyOriginal=0,onlyExperimental=0,neither=0;
+    const byDay=new Map<string,number>();
+    for(const c of subset){
+     let diff=0;
+     for(const h of c.results){
+      const original=c.ranks.LALO.slice(0,k).includes(h.family);
+      const experimental=c.ranks[m].slice(0,k).includes(h.family);
+      if(original&&experimental)both++;
+      else if(original){onlyOriginal++;diff--;}
+      else if(experimental){onlyExperimental++;diff++;}
+      else neither++;
+     }
+     byDay.set(c.date,(byDay.get(c.date)||0)+diff);
+    }
+    const dayDiff=[...byDay.values()],boots:number[]=[];
+    for(let iter=0;iter<4000;iter++){
+     let score=0;
+     for(let d=0;d<dayDiff.length;d++)
+      score+=dayDiff[Math.floor(rand()*dayDiff.length)]||0;
+     boots.push(score);
+    }
+    boots.sort((a,b)=>a-b);
+    paired.push({period,engine:m,top:k,cuts:subset.length,
+     heads:subset.reduce((n,c)=>n+c.numHeads,0),
+     both,onlyOriginal,onlyExperimental,neither,
+     netGain:onlyExperimental-onlyOriginal,
+     exactTwoSidedDiscordanceP:signTest(onlyOriginal,onlyExperimental),
+     bootstrapByDay95:[boots[Math.floor(.025*boots.length)]||0,
+      boots[Math.floor(.975*boots.length)]||0]});
+   }
+  }
+ }
+ const physicalNull={byPeriod:PR.map(period=>{
+  const sub=cuts.filter(c=>matchPeriod(c,period));
+  return {period,cuts:sub.length,
+   physicalHeadHits:sub.reduce((n,c)=>n+c.physicalHeads,0),
+   meanPhysicalFamilies:sub.reduce((n,c)=>n+c.physicalCandidates,0)/
+     Math.max(1,sub.length),
+   randomExpectedTop:Object.fromEntries([3,5,10].map(k=>[
+    'top'+k,sub.reduce((n,c)=>n+(c.physicalCandidates?
+     c.physicalHeads*Math.min(k,c.physicalCandidates)/c.physicalCandidates:0),0)
+   ]))
+  };
+ })};
  const data={type:'RETROSPECTIVE_PRE_RECONSTRUCTION_NOT_SEALED',
   start,end,days:completedDates,cuts:cuts.length,heads:baselineHeads,
-  aggregate,periods,rescue,postResultsNeverUsedToRank:true,
+  aggregate,periods,rescue,paired,physicalNull,postResultsNeverUsedToRank:true,
   snapshotAvailabilityNotKnown:true,
   notes:[
    'All readers compared with same PRE cut and heads, but no genuine device snapshot is claimed.',
