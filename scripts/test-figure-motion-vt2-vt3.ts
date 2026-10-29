@@ -6,7 +6,7 @@ import type {LaloView,LaloFamily} from '../src/motorLalo';
 import type {FormKind} from '../src/motorFormasPrimero';
 import {buildFormFirstVt2,buildFormFirstMotor,formPositions} from '../src/motorFormasPrimero';
 import {buildFigureRescueAudit} from '../src/figureRescueAudit';
-import {classifyFigureMotion} from '../src/figureMotionAudit';
+import {classifyFigureMotion,exactActivationTimeline} from '../src/figureMotionAudit';
 import {reversibleFamily} from '../src/motorLalo';
 
 const date='2026-10-29';
@@ -115,4 +115,19 @@ assert.equal(hm.verticalEvents,0);
 assert.equal(hm.diagonalEvents,1,'Mover fila y columna es diagonal');
 assert(hm.categories.includes('DESPLAZAMIENTO_HORIZONTAL')&&
  hm.categories.includes('DESPLAZAMIENTO_DIAGONAL'));
+const six=['2026-10-28','2026-10-27','2026-10-26','2026-10-25',
+ '2026-10-24','2026-10-23'];
+const positionRoot=loc.support.roots[0];
+const sequence=(dates:string[])=>exactActivationTimeline({
+ ...loc,support:{...loc.support,roots:dates.map((date,i)=>({
+  ...positionRoot,source:loc.source,shape:loc.shape,
+  cells:loc.cells,anchor:loc.anchor,date,event:'TEST-'+i
+ }))}},six);
+assert.equal(sequence([]).state,'SIN_ACTIVACION_EXACTA');
+assert.equal(sequence([six[0]]).state,'ACTIVACION_NUEVA');
+assert.equal(sequence([six[0],six[1]]).state,'ACTIVA_REPETIDA');
+assert.equal(sequence([six[0],six[2]]).state,'REAPARECIO_TRAS_PAUSA');
+assert.equal(sequence([six[1],six[3]]).state,'SIN_ACTIVACION_RECIENTE');
+assert.equal(sequence([six[0],six[2]]).currentStreak,1);
+assert.equal(sequence([six[0],six[2]]).days,2);
 console.log('TEST_MOVIMIENTOS_DOBLE_OK');
