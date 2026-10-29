@@ -262,7 +262,7 @@ type Case={
 };
 const cases:Case[]=[];
 const noRankChanges=(v:any,b:any)=>JSON.stringify(v.ranks)===b;
-const sourceOrder:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
+const order:SourceId[]=['prevNocturno','Previa','Primera','Matutino','Vespertino'];
 const blank=():Ranking=>({vt2:[],vt3:[],vt4:[]});
 const makePick=(f:{family:string;values?:string[];rank?:number;paths?:{value:string}[]}):Pick=>({
  family:f.family,
