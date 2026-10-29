@@ -7,6 +7,8 @@ import type {LaloView} from '../motorLalo';
 import type {InfoVisualDay} from '../infoTurnHistory';
 import {readableWeekday} from '../infoTurnHistory';
 import {buildVt2FamilyWitnesses} from '../vt2FamilyHistory';
+import {shapeWitnesses} from '../shapeWitnesses';
+import type {PanoramaRoute} from '../panoramaModel';
 import type {Vt2Witness} from '../vt2FamilyHistory';
 import {useLaloTheme} from './LaloTheme';
 
@@ -47,32 +49,159 @@ export default function Vt2FamilyHistoryModal({date,turn,family,view,sheet,days,
   [date,turn,family,sheet,days]);
  const [selectedId,setSelectedId]=useState<string|null>(null);
  const [routeIndex,setRouteIndex]=useState(0);
- useEffect(()=>{setSelectedId(null);setRouteIndex(0)},[family,date,turn]);
+ const [shapeIndex,setShapeIndex]=useState(0);
+ useEffect(()=>{setSelectedId(null);setRouteIndex(0);setShapeIndex(0)},[family,date,turn]);
  const selected=witnesses.find(x=>x.id===selectedId)||witnesses[0]||null;
  const route=selected?.paths[routeIndex]||selected?.paths[0]||null;
  const current=useMemo(()=>{
   if(!family)return null;
   const rank=view?.ranks.vt2.find(f=>f.family===family);
-  for(const r of rank?.paths||[]){
+  const actualPaths=[...(rank?.paths||[])].sort((a,b)=>b.rootIds.length-a.rootIds.length);
+  for(const r of actualPaths){
    const column=sheet?.columns.find(c=>c.id===r.sourceId);
    if(!column||r.path.length!==2||
     !r.path.every(x=>column.values[x.row]?.[x.col]===x.digit))continue;
-   return {sourceId:r.sourceId,values:column.values,path:r.path,source:column.sourceLabel};
+   return {sourceId:r.sourceId,values:column.values,path:r.path,
+    source:column.sourceLabel,rootIds:r.rootIds,parents:rank?.parentFamilies||[]};
   }
   return null;
  },[family,view,sheet]);
+ const currentRoute=useMemo(():PanoramaRoute|null=>current?({
+  id:'vt2|current|'+family,ownerId:'vt2|'+family,kind:'vt2',
+  sourceId:current.sourceId,cells:current.path.map(p=>({row:p.row,col:p.col})),
+  readings:[current.path.map(p=>p.digit).join('')],headSources:[]
+ }):null,[current,family]);
+ const sameShape=useMemo(()=>currentRoute&&sheet?
+  shapeWitnesses(date,turn,currentRoute,sheet,days):[],
+  [date,turn,currentRoute,sheet,days]);
+ const shapeEntry=sameShape[shapeIndex%sameShape.length]||null;
+ const supportingRoots=useMemo(()=>{
+  if(!view||!current)return [];
+  const entries=[];
+  for(const id of current.rootIds){
+   const ref=view.roots.find(r=>r.id===id);
+   if(!ref)continue;
+   const day=days.find(d=>d.date===ref.date);
+   const col=day?.sheet.columns.find(c=>c.id===ref.sourceId);
+   const points=ref.oldCells.map(value=>{
+    const m=/^([0-5]):([01])$/.exec(value);
+    if(!m||!col)return null;
+    const row=Number(m[1]),column=Number(m[2]);
+    const digit=col.values[row]?.[column];
+    return digit&&/^\d$/.test(digit)?{row,col:column,digit}:null;
+   });
+   const path=points.every(Boolean)?points as Path:null;
+   const reading=path?.map(p=>p.digit).join('')||'';
+   if(path&&(!/^\d{4}$/.test(ref.head)||!ref.head.endsWith(reading)))continue;
+   entries.push({ref,values:col?.values||null,
+    source:col?.sourceLabel||ref.sourceId,path});
+  }
+  return entries;
+ },[view,current,days]);
  const summary=selected?
   selected.scope==='HOY'?'Acertó hoy en '+selected.turn:
   'Coincidió el '+readableWeekday(selected.date):'';
  return <Modal transparent visible={!!family} animationType="fade" onRequestClose={onClose}>
   <View style={s.backdrop}>
    <View style={[s.modal,{backgroundColor:c.surface,borderColor:c.border}]}>
-    <Text style={[s.title,{color:c.text}]}>Movimientos de la familia {family||''}</Text>
+    <Text style={[s.title,{color:c.text}]}>¿Qué respalda esta selección VT2? · {family||''}</Text>
     <Text style={[s.note,{color:c.subtext}]}>
-     Se muestran cabezas que realmente coincidieron con recorridos físicos en las últimas
-     seis jornadas, y los turnos anteriores de hoy.
+     Lalo parte de figuras ganadoras y las traslada, pero el TOP se ordena por familia.
+     Primero la figura del camino seleccionado, después sus raíces reales;
+     al final las coincidencias numéricas que NO son necesariamente la misma forma.
     </Text>
     <ScrollView contentContainerStyle={s.content} showsVerticalScrollIndicator>
+     {current?<View style={[s.detail,{backgroundColor:c.surfaceAlt}]}>
+      <Text style={[s.detailTitle,{color:c.text}]}>
+       1 · FIGURA ACTUAL QUE PRODUCE LA FAMILIA
+      </Text>
+      <View style={s.boards}>
+       <MiniColumn title="PRE DE HOY" source={current.source}
+        values={current.values} path={current.path}/>
+      </View>
+      <Text style={[s.note,{color:c.subtext}]}>
+       {current.path.map(p=>'F'+(p.row+1)+(p.col?'D':'I')).join(' → ')}.
+       Lectura actual: {current.path.map(p=>p.digit).join('')}.
+       Este es uno de los recorridos admitidos de la familia; el TOP
+       contabiliza también los demás recorridos propios.
+      </Text>
+      <Text style={[s.detailTitle,{color:c.text}]}>
+       2 · APARICIONES DE ESTA MISMA FORMA, CON CUALQUIER CIFRA
+      </Text>
+      <Text style={[s.note,{color:c.subtext}]}>
+       {sameShape.length} camino(s) ganador(es) anteriores con la misma silueta.
+       Son memoria visual para comparar, NO votos nuevos para el ranking.
+      </Text>
+      {shapeEntry?<View style={s.boards}>
+       <MiniColumn title={'ANTERIOR · '+readableWeekday(shapeEntry.date)}
+        source={shapeEntry.sourceLabel} values={shapeEntry.values}
+        path={shapeEntry.cells.map(p=>({row:p.row,col:p.col,
+         digit:shapeEntry.values[p.row]?.[p.col]||''}))}/>
+      </View>:<Text style={[s.note,{color:c.muted}]}>
+       Sin antecedentes ganadores comprobados de esta misma silueta
+       en la ventana disponible. No se inventa una figura antigua.
+      </Text>}
+      {shapeEntry?<Text style={[s.note,{color:c.text}]}>
+       {shapeEntry.jurisdiction} · {shapeEntry.head} · produjo {shapeEntry.reading}.
+       {shapeEntry.sourceChanged?' Cambió de fuente.':' Misma fuente.'}
+       {shapeEntry.rowShift===0?' Misma altura.':
+        ' Se desplazó '+Math.abs(shapeEntry.rowShift)+' fila(s).'}
+      </Text>:null}
+      {sameShape.length>1?<View style={s.routes}>
+       <Pressable accessibilityRole="button"
+        onPress={()=>setShapeIndex(i=>(i+sameShape.length-1)%sameShape.length)}
+        style={[s.routeButton,{borderColor:c.border}]}>
+        <Text style={{color:c.accent,fontWeight:'900'}}>← Figura</Text>
+       </Pressable>
+       <Text style={{color:c.subtext,fontSize:11}}>
+        {(shapeIndex%sameShape.length)+1}/{sameShape.length}
+       </Text>
+       <Pressable accessibilityRole="button"
+        onPress={()=>setShapeIndex(i=>(i+1)%sameShape.length)}
+        style={[s.routeButton,{borderColor:c.border}]}>
+        <Text style={{color:c.accent,fontWeight:'900'}}>Otra figura →</Text>
+       </Pressable>
+      </View>:null}
+      <Text style={[s.detailTitle,{color:c.text}]}>
+       3 · RAÍCES QUE LALO EFECTIVAMENTE UTILIZÓ
+      </Text>
+      <Text style={[s.note,{color:c.subtext}]}>
+       {current.rootIds.length} ruta(s) raíz vinculada(s) a este camino.
+       Los resultados antiguos aquí sí provienen de testigos del motor;
+       no se sumaron por simplemente parecerse.
+      </Text>
+      {supportingRoots.slice(0,12).map(({ref,values,source,path})=>
+       <View key={ref.id} style={{gap:5,borderTopWidth:1,borderTopColor:c.border,paddingTop:7}}>
+        <Text style={[s.note,{color:c.text}]}>
+         {ref.period} · {readableWeekday(ref.date)} · {ref.oldTurn} ·
+         {ref.jurisdiction} {ref.head}
+        </Text>
+        {values&&path?<View style={s.boards}>
+         <MiniColumn title="RAÍZ FÍSICA" source={source}
+          values={values} path={path}/>
+        </View>:<Text style={[s.note,{color:c.muted}]}>
+         No hay minihoja histórica completa disponible para dibujar esta raíz.
+        </Text>}
+       </View>)}
+      {current.rootIds.length===0?<Text style={[s.note,{color:c.subtext}]}>
+       Este recorrido no tiene una raíz VT2 directa visible.
+       {current.parents.length?' Deriva físicamente de madre(s) VT3: '+
+        current.parents.join(' · ')+'.':''}
+       La familia puede tener otros recorridos respaldados.
+      </Text>:null}
+      {supportingRoots.length>12?<Text style={[s.note,{color:c.muted}]}>
+       Se muestran las primeras 12 raíces de este camino; hay
+       {supportingRoots.length-12} más.
+      </Text>:null}
+     </View>:null}
+     <Text style={[s.detailTitle,{color:c.text}]}>
+      4 · COINCIDENCIAS DE LA FAMILIA (OTROS RECORRIDOS)
+     </Text>
+     <Text style={[s.note,{color:c.subtext}]}>
+      Estas cabezas comparten las últimas cifras, pero podrían usar
+      formas geométricas distintas. No son automáticamente el respaldo
+      físico de este camino.
+     </Text>
      {witnesses.length?<View style={s.witnesses}>
       {witnesses.map(item=><Pressable key={item.id} accessibilityRole="button"
        accessibilityState={{selected:selected?.id===item.id}}
@@ -107,8 +236,8 @@ export default function Vt2FamilyHistoryModal({date,turn,family,view,sheet,days,
         values={current.values} path={current.path}/>:null}
       </View>
       <Text style={[s.note,{color:c.subtext}]}>
-       Es la misma familia de dos cifras. El dibujo muestra sus recorridos reales,
-       aunque la posición y la orientación de las cifras sean diferentes.
+       Coincidieron las cifras de esta familia VT2. No significa que el
+       recorrido antiguo tenga la misma figura ni que sea raíz de esta selección.
       </Text>
       {selected.paths.length>1?<View style={s.routes}>
        <Pressable accessibilityRole="button" onPress={()=>setRouteIndex(i=>(i-1+selected.paths.length)%selected.paths.length)}

@@ -7,25 +7,28 @@ import type {InfoVisualDay} from '../infoTurnHistory';
 import type {PanoramaRoute} from '../panoramaModel';
 import {buildExperimentalVt2} from '../experimentalVt2';
 import type {Vt2ExperimentalItem} from '../experimentalVt2';
-import {reversibleFamily} from '../motorLalo';
+import {evaluateExperimentalVt2Post} from '../vt2ExperimentalPost';
+import type {Vt2PublishedHead} from '../vt2ExperimentalPost';
 import RouteMiniBoard from './RouteMiniBoard';
 import PhysicalShapeHistory from './PhysicalShapeHistory';
 import {useLaloTheme} from './LaloTheme';
 
-export default function Vt2ExperimentalPanel({date,turn,sheet,history,days,heads}:{
+export default function Vt2ExperimentalPanel({date,turn,sheet,history,days,heads,publishedHeads}:{
  date:string;turn:Turno;sheet:DailySheet|null;
- history:LaloHistorical[];days:InfoVisualDay[];heads:string[]
+ history:LaloHistorical[];days:InfoVisualDay[];heads:string[];
+ publishedHeads?:Vt2PublishedHead[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [selected,setSelected]=useState<string|null>(null);
  const model=useMemo(()=>sheet&&date?
   buildExperimentalVt2(sheet,date,turn,[...days,...history]):null,
   [sheet,date,turn,days,history]);
- const winners=new Set(heads.filter(h=>/^\d{4}$/.test(h))
-  .map(h=>reversibleFamily(h.slice(-2))));
- const sections:[string,Vt2ExperimentalItem[]][]=[
-  ['GEOMETRÍA COMPLETA · VT2',model?.geometric||[]],
-  ['CONFIGURACIONES CONECTADAS · VT2',model?.connected||[]]
+ const post=useMemo(()=>model?evaluateExperimentalVt2Post(model,
+  publishedHeads?.length?publishedHeads:heads.map(head=>({jur:'',head}))):null,
+  [model,publishedHeads,heads]);
+ const sections:[string,Vt2ExperimentalItem[],'geometric'|'connected'][]=[
+  ['GEOMETRÍA COMPLETA · VT2',model?.geometric||[],'geometric'],
+  ['CONFIGURACIONES CONECTADAS · VT2',model?.connected||[],'connected']
  ];
  const picked=sections.flatMap(([heading,values])=>values.map((v,i)=>({
   id:heading+'|'+i,item:v
@@ -56,20 +59,54 @@ export default function Vt2ExperimentalPanel({date,turn,sheet,history,days,heads
     {model.allRoutes} recorridos PRE · {model.historicalEvents} eventos ganadores
     de referencia. Son reconstrucciones de estudio, no rankings sellados.
    </Text>
-   {sections.map(([name,values])=><View key={name}
+   {post?.published.length?<View style={[s.reader,{borderColor:kinds.vt2.line,
+    backgroundColor:kinds.vt2.fill}]}>
+    <Text style={{color:kinds.vt2.text,fontWeight:'900',fontSize:12}}>
+     POST · {post.published.length} cabeza(s) publicada(s) · {turn}
+    </Text>
+    <Text style={[s.hint,{color:kinds.vt2.text}]}>
+     {post.published.map(h=>(h.jur?h.jur+' ':'')+h.head).join(' · ')}
+    </Text>
+    <Text style={[s.hint,{color:kinds.vt2.text}]}>
+     Las coincidencias se cotejan por terminación VT2 (familia reversible).
+     El puesto corresponde al Top10 PRE, sin reordenarlo después del sorteo.
+    </Text>
+   </View>:<Text style={[s.hint,{color:c.muted}]}>
+    POST pendiente · todavía no hay cabezas publicadas de este turno.
+   </Text>}
+   {sections.map(([name,values,reader])=>{
+    const score=post?.[reader];
+    return <View key={name}
     style={[s.reader,{borderColor:c.border,backgroundColor:c.card}]}>
     <Text style={{color:c.text,fontWeight:'900',fontSize:12}}>{name}</Text>
+    {score&&post?.published.length?<View style={[s.post,{borderColor:score.matches.length?
+     kinds.vt2.line:c.border,backgroundColor:score.matches.length?kinds.vt2.fill:c.surfaceAlt}]}>
+     <Text style={{color:score.matches.length?kinds.vt2.text:c.text,fontSize:12,fontWeight:'900'}}>
+      POST · {score.matchedFamilies} familia(s) en Top10 · {score.matchedHeads} cabeza(s)
+     </Text>
+     <Text style={[s.small,{color:c.subtext}]}>
+      Top3: {score.top3Families} familia(s) · {score.top3Heads} cabeza(s)
+      {score.matches.length?' · Puestos '+score.matches.map(m=>'#'+m.rank).join(', '):
+       ' · Sin coincidencias en esta lista'}
+     </Text>
+    </View>:null}
     {values.length?values.map((v,i)=>{
      const id=name+'|'+i;
+     const match=score?.matches.find(m=>m.rank===i+1&&m.family===v.family);
      return <Pressable accessibilityRole="button" key={id}
       accessibilityLabel={'Ver figura de '+v.family+' en '+name}
       onPress={()=>setSelected(old=>old===id?null:id)}
-      style={[s.row,{borderColor:selected===id?kinds.vt2.line:c.border,
-       backgroundColor:selected===id?kinds.vt2.fill:c.surface}]}>
+      style={[s.row,{borderColor:match||selected===id?kinds.vt2.line:c.border,
+       borderWidth:match?2:1,
+       backgroundColor:match||selected===id?kinds.vt2.fill:c.surface}]}>
       <Text style={{color:selected===id?kinds.vt2.text:c.text,fontWeight:'900',fontSize:12}}>
        #{i+1} · {v.family}
-       {winners.has(v.family)?'  ✓ POST':''}
+       {match?'  ✓ POST':''}
       </Text>
+      {match?<Text style={{color:kinds.vt2.text,fontWeight:'900',fontSize:11}}>
+       ✓ Coincidencia de familia VT2: {match.heads.map(h=>(h.jur?h.jur+' ':'')+h.head).join(' · ')}
+       {i<3?' · TOP3':' · TOP10'}
+      </Text>:null}
       <Text style={[s.small,{color:c.subtext}]}>
        Forma {v.source} · {v.cells.map(x=>{
         const [r,k]=x.split(':').map(Number);
@@ -80,7 +117,8 @@ export default function Vt2ExperimentalPanel({date,turn,sheet,history,days,heads
     }):<Text style={[s.hint,{color:c.muted}]}>
      No hay figuras conectadas válidas bajo estas reglas en este corte.
     </Text>}
-   </View>)}
+   </View>;
+   })}
    {item&&path&&col&&sheet?<View style={[s.reader,{borderColor:kinds.vt2.line,
     backgroundColor:c.card}]}>
     <Text style={{color:c.text,fontWeight:'900',fontSize:12}}>
@@ -108,5 +146,6 @@ const s=StyleSheet.create({
  root:{borderWidth:1,borderRadius:12,marginTop:12,padding:12,gap:7},
  hint:{fontSize:11,lineHeight:17},small:{fontSize:10,lineHeight:15},
  reader:{borderWidth:1,borderRadius:10,padding:9,gap:6},
- row:{borderWidth:1,borderRadius:8,padding:8,gap:3}
+ row:{borderWidth:1,borderRadius:8,padding:8,gap:3},
+ post:{borderWidth:1,borderRadius:8,padding:9,gap:5}
 });

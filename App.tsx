@@ -604,7 +604,11 @@ function LaloApp(){
       <Text style={[s.reloadText,{color:c.accent}]}>← Volver a Predicción</Text>
      </Pressable>
      <Vt3Parallel date={date||''} turn={target} sheet={sheet} view={motor}
-      historical={hist} heads={fiveHeads} autoVersion={autoVersion}
+      historical={hist} heads={fiveHeads}
+       publishedHeads={JURS.filter(j=>j!=='Montevideo')
+        .map(jur=>({jur,head:data?.[target]?.[jur]||''}))
+        .filter(x=>/^\d{4,5}$/.test(x.head))}
+       autoVersion={autoVersion}
        visualDays={visualDays}/>
      <Vt3Explainer sheet={sheet} view={motor} turn={target}
       heads={sheet?.heads[target]||[]} onFocus={showFamily}/>

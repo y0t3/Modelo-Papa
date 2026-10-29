@@ -1,10 +1,11 @@
 name: APK Modelo Lalo FORMAS VT2 - prueba Android
 on:
   push:
-    branches: [feature/experimental-vt2-formas-30oct2026]
+    branches: [feature/experimental-vt2-formas-30oct2026, fix/vt2-post-figuras-29oct2026]
     paths:
       - '.github/workflows/apk-vt2-formas-prueba.yml'
       - 'src/**'
+      - 'scripts/test-vt2-experimental-post.ts'
       - 'App.tsx'
       - 'app.json'
   workflow_dispatch:
@@ -35,6 +36,7 @@ jobs:
           npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
           npx --yes tsx scripts/test-figure-tracking.ts
           npx --yes tsx scripts/test-vt2-formas-experimental.ts
+          npx --yes tsx scripts/test-vt2-experimental-post.ts
           npx --yes tsx scripts/test-motor-lalo.ts
           npx --yes tsx scripts/test-consolidacion-lalo.ts
       - name: Nombre e identificador de prueba - no reemplaza la app estable
@@ -44,9 +46,9 @@ jobs:
           const path = 'app.json';
           const app = JSON.parse(fs.readFileSync(path, 'utf8'));
           app.expo.name = 'Modelo Lalo Formas';
-          app.expo.version = '0.3.11';
+          app.expo.version = '0.3.12';
           app.expo.android.package = 'com.y0t3.modelopapa.formas';
-          app.expo.android.versionCode = 17;
+          app.expo.android.versionCode = 18;
           fs.writeFileSync(path, JSON.stringify(app, null, 2) + '\n');
           console.log('APK de prueba independiente:', app.expo.name, app.expo.android.package);
           NODE
@@ -69,7 +71,7 @@ jobs:
       - name: Publicar instalador de prueba
         uses: actions/upload-artifact@v4
         with:
-          name: Modelo-Lalo-VT2-Formas-Prueba-APK
+          name: Modelo-Lalo-VT2-POST-Formas-APK
           path: android/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
           retention-days: 30
