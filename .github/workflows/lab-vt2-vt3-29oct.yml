@@ -1,0 +1,31 @@
+name: LAB VT2 hacia VT3 recorridos 29 octubre
+on:
+  push:
+    branches: [lab/vt2-a-vt3-recorridos-29oct2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Pruebas físicas y temporales
+        run: npx --yes tsx scripts/test-lab-vt2-vt3-29oct.ts
+      - name: Regresión Lalo oficial
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Regresión AUX
+        run: npx --yes tsx scripts/lab-aux-dos-modos-regresion-test.ts
+      - name: Reconstruir 15 cortes PRE 26 a 28 octubre
+        run: npx --yes tsx scripts/lab-vt2-hacia-vt3-29oct.ts
+      - name: Guardar resultados de laboratorio
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lab-vt2-hacia-vt3-26-28oct
+          path: auditorias/vt2-hacia-vt3-29oct/*.json
+          if-no-files-found: warn
