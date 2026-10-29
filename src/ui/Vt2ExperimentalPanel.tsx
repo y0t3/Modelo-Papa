@@ -104,7 +104,7 @@ export default function Vt2ExperimentalPanel({date,turn,sheet,history,days,heads
        {match?'  ✓ POST':''}
       </Text>
       {match?<Text style={{color:kinds.vt2.text,fontWeight:'900',fontSize:11}}>
-       ✓ Coincidió: {match.heads.map(h=>(h.jur?h.jur+' ':'')+h.head).join(' · ')}
+       ✓ Coincidencia de familia VT2: {match.heads.map(h=>(h.jur?h.jur+' ':'')+h.head).join(' · ')}
        {i<3?' · TOP3':' · TOP10'}
       </Text>:null}
       <Text style={[s.small,{color:c.subtext}]}>
