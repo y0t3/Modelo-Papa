@@ -110,6 +110,9 @@ async function main(){
   const values=cases.map(c=>c.data[key] as ReturnType<typeof evaluateAgainstShapeControl>);
   const sum=(field:'observed'|'expected'|'selectedSites'|'availableSites'|
     'otherPhysicalHeads'|'eligibleHeadsFromSameShape')=>values.reduce((a,x)=>a+x[field],0);
+  const negativeObserved=cases.reduce((a,c)=>a+Number((c.data[key] as any).negativeHits||0),0);
+  const negativeStrict=cases.reduce((a,c)=>a+Number((c.data[key] as any).strictlyOldNonWinning||0),0);
+  const negativeFallback=cases.reduce((a,c)=>a+Number((c.data[key] as any).negativeFallback||0),0);
   const byMonth=Object.fromEntries([...new Set(cases.map(x=>x.date.slice(0,7)))].map(mon=>{
    const v=cases.filter(c=>c.date.startsWith(mon)).map(c=>c.data[key] as ReturnType<typeof evaluateAgainstShapeControl>);
    return [mon,{days:v.length,observed:v.reduce((a,x)=>a+x.observed,0),
