@@ -1,0 +1,60 @@
+name: Auditoria rescates figuras VT3 - PRE y POST
+on:
+  push:
+    branches: [lab/auditoria-rescates-figuras-vt3-29oct2026]
+    paths:
+      - '.github/workflows/lab-rescates-figuras-vt3.yml'
+      - 'src/figureRescueAudit.ts'
+      - 'src/ui/FigureRescueAuditPanel.tsx'
+      - 'src/ui/Vt3Parallel.tsx'
+      - 'scripts/test-figure-rescue-audit.ts'
+      - 'scripts/lab-auditar-rescates-figuras-vt3.ts'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificar tipos de interfaz y motores
+        run: npx tsc --noEmit -p tsconfig.ui-check.json
+      - name: Auditoria PRE POST y todos los caminos fisicos
+        run: npx --yes tsx scripts/test-figure-rescue-audit.ts
+      - name: Motores VT3 y VT2 invariantes, y MV1
+        run: |
+          npx --yes tsx scripts/test-motor-formas-primero.ts
+          npx --yes tsx scripts/test-motor-formas-primero-vt2.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+  periodos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        period:
+          - {label: jun-jul, from: '2026-06-01', through: '2026-07-31'}
+          - {label: ago-sep, from: '2026-08-01', through: '2026-09-30'}
+          - {label: oct, from: '2026-10-12', through: '2026-10-28'}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Contraste PRE POST de las figuras rescatadas
+        env:
+          FORMAS_FROM: ${{ matrix.period.from }}
+          FORMAS_THROUGH: ${{ matrix.period.through }}
+          FORMAS_PERIOD: ${{ matrix.period.label }}
+        run: npx --yes tsx scripts/lab-auditar-rescates-figuras-vt3.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Auditoria-Figuras-VT3-${{ matrix.period.label }}
+          path: auditorias/rescates-figuras-vt3/*-${{ matrix.period.label }}.json
+          if-no-files-found: warn
+          retention-days: 30
