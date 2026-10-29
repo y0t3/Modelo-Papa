@@ -1,0 +1,1056 @@
+{
+  "run": "https://github.com/y0t3/Modelo-Papa/actions/runs/40804471448",
+  "type": "RETROSPECTIVE_PRE_RECONSTRUCTION_NOT_SEALED",
+  "start": "2026-06-01",
+  "end": "2026-10-28",
+  "days": 127,
+  "cuts": 635,
+  "heads": 3402,
+  "aggregate": {
+    "LALO": {
+      "top": {
+        "top3": 17,
+        "top5": 35,
+        "top10": 60
+      },
+      "cutsWithCandidates": 634,
+      "cutsWithThree": 634,
+      "cutsWithTen": 632,
+      "meanCandidates": 9.979527559055118,
+      "uniqueToReaderTop3Heads": 0,
+      "sharedWithLaloTop3": 1902
+    },
+    "GEOMETRIA": {
+      "top": {
+        "top3": 20,
+        "top5": 32,
+        "top10": 57
+      },
+      "cutsWithCandidates": 635,
+      "cutsWithThree": 635,
+      "cutsWithTen": 635,
+      "meanCandidates": 10,
+      "uniqueToReaderTop3Heads": 17,
+      "sharedWithLaloTop3": 145
+    },
+    "NUEVA_PRUEBA": {
+      "top": {
+        "top3": 16,
+        "top5": 32,
+        "top10": 57
+      },
+      "cutsWithCandidates": 635,
+      "cutsWithThree": 635,
+      "cutsWithTen": 635,
+      "meanCandidates": 10,
+      "uniqueToReaderTop3Heads": 12,
+      "sharedWithLaloTop3": 479
+    },
+    "CONECTADAS": {
+      "top": {
+        "top3": 25,
+        "top5": 46,
+        "top10": 81
+      },
+      "cutsWithCandidates": 635,
+      "cutsWithThree": 635,
+      "cutsWithTen": 635,
+      "meanCandidates": 10,
+      "uniqueToReaderTop3Heads": 24,
+      "sharedWithLaloTop3": 96
+    }
+  },
+  "periods": [
+    {
+      "from": "2026-06-01",
+      "until": "2026-07-31",
+      "results": {
+        "LALO": {
+          "top3": 8,
+          "top5": 14,
+          "top10": 24
+        },
+        "GEOMETRIA": {
+          "top3": 7,
+          "top5": 13,
+          "top10": 25
+        },
+        "NUEVA_PRUEBA": {
+          "top3": 7,
+          "top5": 14,
+          "top10": 25
+        },
+        "CONECTADAS": {
+          "top3": 7,
+          "top5": 19,
+          "top10": 37
+        }
+      }
+    },
+    {
+      "from": "2026-08-01",
+      "until": "2026-09-30",
+      "results": {
+        "LALO": {
+          "top3": 7,
+          "top5": 10,
+          "top10": 20
+        },
+        "GEOMETRIA": {
+          "top3": 9,
+          "top5": 14,
+          "top10": 22
+        },
+        "NUEVA_PRUEBA": {
+          "top3": 6,
+          "top5": 12,
+          "top10": 21
+        },
+        "CONECTADAS": {
+          "top3": 14,
+          "top5": 23,
+          "top10": 34
+        }
+      }
+    },
+    {
+      "from": "2026-10-01",
+      "until": "2026-10-25",
+      "results": {
+        "LALO": {
+          "top3": 2,
+          "top5": 11,
+          "top10": 15
+        },
+        "GEOMETRIA": {
+          "top3": 3,
+          "top5": 4,
+          "top10": 9
+        },
+        "NUEVA_PRUEBA": {
+          "top3": 3,
+          "top5": 5,
+          "top10": 10
+        },
+        "CONECTADAS": {
+          "top3": 3,
+          "top5": 3,
+          "top10": 9
+        }
+      }
+    },
+    {
+      "from": "2026-10-26",
+      "until": "2026-10-28",
+      "results": {
+        "LALO": {
+          "top3": 0,
+          "top5": 0,
+          "top10": 1
+        },
+        "GEOMETRIA": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 1
+        },
+        "NUEVA_PRUEBA": {
+          "top3": 0,
+          "top5": 1,
+          "top10": 1
+        },
+        "CONECTADAS": {
+          "top3": 1,
+          "top5": 1,
+          "top10": 1
+        }
+      }
+    }
+  ],
+  "rescue": {
+    "GEOMETRIA": {
+      "HIST_620": {
+        "top3": 13,
+        "top5": 21,
+        "top10": 43
+      },
+      "NEW_15": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 1
+      },
+      "ALL": {
+        "top3": 14,
+        "top5": 22,
+        "top10": 44
+      }
+    },
+    "NUEVA_PRUEBA": {
+      "HIST_620": {
+        "top3": 8,
+        "top5": 18,
+        "top10": 41
+      },
+      "NEW_15": {
+        "top3": 0,
+        "top5": 1,
+        "top10": 1
+      },
+      "ALL": {
+        "top3": 8,
+        "top5": 19,
+        "top10": 42
+      }
+    },
+    "CONECTADAS": {
+      "HIST_620": {
+        "top3": 23,
+        "top5": 41,
+        "top10": 68
+      },
+      "NEW_15": {
+        "top3": 1,
+        "top5": 1,
+        "top10": 1
+      },
+      "ALL": {
+        "top3": 24,
+        "top5": 42,
+        "top10": 69
+      }
+    }
+  },
+  "paired": [
+    {
+      "period": "JUN_JUL",
+      "engine": "GEOMETRIA",
+      "top": 3,
+      "cuts": 255,
+      "heads": 1367,
+      "both": 1,
+      "onlyOriginal": 7,
+      "onlyExperimental": 6,
+      "neither": 1353,
+      "netGain": -1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -9,
+        6
+      ]
+    },
+    {
+      "period": "JUN_JUL",
+      "engine": "GEOMETRIA",
+      "top": 5,
+      "cuts": 255,
+      "heads": 1367,
+      "both": 3,
+      "onlyOriginal": 11,
+      "onlyExperimental": 10,
+      "neither": 1343,
+      "netGain": -1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -9,
+        7
+      ]
+    },
+    {
+      "period": "JUN_JUL",
+      "engine": "GEOMETRIA",
+      "top": 10,
+      "cuts": 255,
+      "heads": 1367,
+      "both": 7,
+      "onlyOriginal": 17,
+      "onlyExperimental": 18,
+      "neither": 1325,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -12,
+        13
+      ]
+    },
+    {
+      "period": "JUN_JUL",
+      "engine": "NUEVA_PRUEBA",
+      "top": 3,
+      "cuts": 255,
+      "heads": 1367,
+      "both": 2,
+      "onlyOriginal": 6,
+      "onlyExperimental": 5,
+      "neither": 1354,
+      "netGain": -1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -8,
+        6
+      ]
+    },
+    {
+      "period": "JUN_JUL",
+      "engine": "NUEVA_PRUEBA",
+      "top": 5,
+      "cuts": 255,
+      "heads": 1367,
+      "both": 5,
+      "onlyOriginal": 9,
+      "onlyExperimental": 9,
+      "neither": 1344,
+      "netGain": 0,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -8,
+        8
+      ]
+    },
+    {
+      "period": "JUN_JUL",
+      "engine": "NUEVA_PRUEBA",
+      "top": 10,
+      "cuts": 255,
+      "heads": 1367,
+      "both": 8,
+      "onlyOriginal": 16,
+      "onlyExperimental": 17,
+      "neither": 1326,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -11,
+        13
+      ]
+    },
+    {
+      "period": "JUN_JUL",
+      "engine": "CONECTADAS",
+      "top": 3,
+      "cuts": 255,
+      "heads": 1367,
+      "both": 0,
+      "onlyOriginal": 8,
+      "onlyExperimental": 7,
+      "neither": 1352,
+      "netGain": -1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -9,
+        7
+      ]
+    },
+    {
+      "period": "JUN_JUL",
+      "engine": "CONECTADAS",
+      "top": 5,
+      "cuts": 255,
+      "heads": 1367,
+      "both": 1,
+      "onlyOriginal": 13,
+      "onlyExperimental": 18,
+      "neither": 1335,
+      "netGain": 5,
+      "exactTwoSidedDiscordanceP": 0.47312965989112854,
+      "bootstrapByDay95": [
+        -5,
+        16
+      ]
+    },
+    {
+      "period": "JUN_JUL",
+      "engine": "CONECTADAS",
+      "top": 10,
+      "cuts": 255,
+      "heads": 1367,
+      "both": 5,
+      "onlyOriginal": 19,
+      "onlyExperimental": 32,
+      "neither": 1311,
+      "netGain": 13,
+      "exactTwoSidedDiscordanceP": 0.09191454981585423,
+      "bootstrapByDay95": [
+        0,
+        26
+      ]
+    },
+    {
+      "period": "AGO_SEP",
+      "engine": "GEOMETRIA",
+      "top": 3,
+      "cuts": 260,
+      "heads": 1393,
+      "both": 1,
+      "onlyOriginal": 6,
+      "onlyExperimental": 8,
+      "neither": 1378,
+      "netGain": 2,
+      "exactTwoSidedDiscordanceP": 0.79052734375,
+      "bootstrapByDay95": [
+        -6,
+        10
+      ]
+    },
+    {
+      "period": "AGO_SEP",
+      "engine": "GEOMETRIA",
+      "top": 5,
+      "cuts": 260,
+      "heads": 1393,
+      "both": 1,
+      "onlyOriginal": 9,
+      "onlyExperimental": 13,
+      "neither": 1370,
+      "netGain": 4,
+      "exactTwoSidedDiscordanceP": 0.5234670639038086,
+      "bootstrapByDay95": [
+        -6,
+        13
+      ]
+    },
+    {
+      "period": "AGO_SEP",
+      "engine": "GEOMETRIA",
+      "top": 10,
+      "cuts": 260,
+      "heads": 1393,
+      "both": 4,
+      "onlyOriginal": 16,
+      "onlyExperimental": 18,
+      "neither": 1355,
+      "netGain": 2,
+      "exactTwoSidedDiscordanceP": 0.8641662404406816,
+      "bootstrapByDay95": [
+        -11,
+        15
+      ]
+    },
+    {
+      "period": "AGO_SEP",
+      "engine": "NUEVA_PRUEBA",
+      "top": 3,
+      "cuts": 260,
+      "heads": 1393,
+      "both": 1,
+      "onlyOriginal": 6,
+      "onlyExperimental": 5,
+      "neither": 1381,
+      "netGain": -1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -9,
+        6
+      ]
+    },
+    {
+      "period": "AGO_SEP",
+      "engine": "NUEVA_PRUEBA",
+      "top": 5,
+      "cuts": 260,
+      "heads": 1393,
+      "both": 1,
+      "onlyOriginal": 9,
+      "onlyExperimental": 11,
+      "neither": 1372,
+      "netGain": 2,
+      "exactTwoSidedDiscordanceP": 0.8238029479980469,
+      "bootstrapByDay95": [
+        -8,
+        11
+      ]
+    },
+    {
+      "period": "AGO_SEP",
+      "engine": "NUEVA_PRUEBA",
+      "top": 10,
+      "cuts": 260,
+      "heads": 1393,
+      "both": 4,
+      "onlyOriginal": 16,
+      "onlyExperimental": 17,
+      "neither": 1356,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -11,
+        14
+      ]
+    },
+    {
+      "period": "AGO_SEP",
+      "engine": "CONECTADAS",
+      "top": 3,
+      "cuts": 260,
+      "heads": 1393,
+      "both": 1,
+      "onlyOriginal": 6,
+      "onlyExperimental": 13,
+      "neither": 1373,
+      "netGain": 7,
+      "exactTwoSidedDiscordanceP": 0.1670684814453125,
+      "bootstrapByDay95": [
+        -1,
+        16
+      ]
+    },
+    {
+      "period": "AGO_SEP",
+      "engine": "CONECTADAS",
+      "top": 5,
+      "cuts": 260,
+      "heads": 1393,
+      "both": 1,
+      "onlyOriginal": 9,
+      "onlyExperimental": 22,
+      "neither": 1361,
+      "netGain": 13,
+      "exactTwoSidedDiscordanceP": 0.029449373483657837,
+      "bootstrapByDay95": [
+        3,
+        24
+      ]
+    },
+    {
+      "period": "AGO_SEP",
+      "engine": "CONECTADAS",
+      "top": 10,
+      "cuts": 260,
+      "heads": 1393,
+      "both": 4,
+      "onlyOriginal": 16,
+      "onlyExperimental": 30,
+      "neither": 1343,
+      "netGain": 14,
+      "exactTwoSidedDiscordanceP": 0.054076031858869555,
+      "bootstrapByDay95": [
+        2,
+        25
+      ]
+    },
+    {
+      "period": "OCT_OLD",
+      "engine": "GEOMETRIA",
+      "top": 3,
+      "cuts": 105,
+      "heads": 561,
+      "both": 1,
+      "onlyOriginal": 1,
+      "onlyExperimental": 2,
+      "neither": 557,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -2,
+        4
+      ]
+    },
+    {
+      "period": "OCT_OLD",
+      "engine": "GEOMETRIA",
+      "top": 5,
+      "cuts": 105,
+      "heads": 561,
+      "both": 2,
+      "onlyOriginal": 9,
+      "onlyExperimental": 2,
+      "neither": 548,
+      "netGain": -7,
+      "exactTwoSidedDiscordanceP": 0.0654296875,
+      "bootstrapByDay95": [
+        -14,
+        -1
+      ]
+    },
+    {
+      "period": "OCT_OLD",
+      "engine": "GEOMETRIA",
+      "top": 10,
+      "cuts": 105,
+      "heads": 561,
+      "both": 2,
+      "onlyOriginal": 13,
+      "onlyExperimental": 7,
+      "neither": 539,
+      "netGain": -6,
+      "exactTwoSidedDiscordanceP": 0.26317596435546875,
+      "bootstrapByDay95": [
+        -14,
+        3
+      ]
+    },
+    {
+      "period": "OCT_OLD",
+      "engine": "NUEVA_PRUEBA",
+      "top": 3,
+      "cuts": 105,
+      "heads": 561,
+      "both": 1,
+      "onlyOriginal": 1,
+      "onlyExperimental": 2,
+      "neither": 557,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -2,
+        4
+      ]
+    },
+    {
+      "period": "OCT_OLD",
+      "engine": "NUEVA_PRUEBA",
+      "top": 5,
+      "cuts": 105,
+      "heads": 561,
+      "both": 3,
+      "onlyOriginal": 8,
+      "onlyExperimental": 2,
+      "neither": 548,
+      "netGain": -6,
+      "exactTwoSidedDiscordanceP": 0.109375,
+      "bootstrapByDay95": [
+        -13,
+        0
+      ]
+    },
+    {
+      "period": "OCT_OLD",
+      "engine": "NUEVA_PRUEBA",
+      "top": 10,
+      "cuts": 105,
+      "heads": 561,
+      "both": 3,
+      "onlyOriginal": 12,
+      "onlyExperimental": 7,
+      "neither": 539,
+      "netGain": -5,
+      "exactTwoSidedDiscordanceP": 0.359283447265625,
+      "bootstrapByDay95": [
+        -13,
+        4
+      ]
+    },
+    {
+      "period": "OCT_OLD",
+      "engine": "CONECTADAS",
+      "top": 3,
+      "cuts": 105,
+      "heads": 561,
+      "both": 0,
+      "onlyOriginal": 2,
+      "onlyExperimental": 3,
+      "neither": 556,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -3,
+        5
+      ]
+    },
+    {
+      "period": "OCT_OLD",
+      "engine": "CONECTADAS",
+      "top": 5,
+      "cuts": 105,
+      "heads": 561,
+      "both": 0,
+      "onlyOriginal": 11,
+      "onlyExperimental": 3,
+      "neither": 547,
+      "netGain": -8,
+      "exactTwoSidedDiscordanceP": 0.057373046875,
+      "bootstrapByDay95": [
+        -16,
+        0
+      ]
+    },
+    {
+      "period": "OCT_OLD",
+      "engine": "CONECTADAS",
+      "top": 10,
+      "cuts": 105,
+      "heads": 561,
+      "both": 3,
+      "onlyOriginal": 12,
+      "onlyExperimental": 6,
+      "neither": 540,
+      "netGain": -6,
+      "exactTwoSidedDiscordanceP": 0.237884521484375,
+      "bootstrapByDay95": [
+        -15,
+        2
+      ]
+    },
+    {
+      "period": "NEW_15",
+      "engine": "GEOMETRIA",
+      "top": 3,
+      "cuts": 15,
+      "heads": 81,
+      "both": 0,
+      "onlyOriginal": 0,
+      "onlyExperimental": 1,
+      "neither": 80,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        0,
+        3
+      ]
+    },
+    {
+      "period": "NEW_15",
+      "engine": "GEOMETRIA",
+      "top": 5,
+      "cuts": 15,
+      "heads": 81,
+      "both": 0,
+      "onlyOriginal": 0,
+      "onlyExperimental": 1,
+      "neither": 80,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        0,
+        3
+      ]
+    },
+    {
+      "period": "NEW_15",
+      "engine": "GEOMETRIA",
+      "top": 10,
+      "cuts": 15,
+      "heads": 81,
+      "both": 0,
+      "onlyOriginal": 1,
+      "onlyExperimental": 1,
+      "neither": 79,
+      "netGain": 0,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -3,
+        3
+      ]
+    },
+    {
+      "period": "NEW_15",
+      "engine": "NUEVA_PRUEBA",
+      "top": 3,
+      "cuts": 15,
+      "heads": 81,
+      "both": 0,
+      "onlyOriginal": 0,
+      "onlyExperimental": 0,
+      "neither": 81,
+      "netGain": 0,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        0,
+        0
+      ]
+    },
+    {
+      "period": "NEW_15",
+      "engine": "NUEVA_PRUEBA",
+      "top": 5,
+      "cuts": 15,
+      "heads": 81,
+      "both": 0,
+      "onlyOriginal": 0,
+      "onlyExperimental": 1,
+      "neither": 80,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        0,
+        3
+      ]
+    },
+    {
+      "period": "NEW_15",
+      "engine": "NUEVA_PRUEBA",
+      "top": 10,
+      "cuts": 15,
+      "heads": 81,
+      "both": 0,
+      "onlyOriginal": 1,
+      "onlyExperimental": 1,
+      "neither": 79,
+      "netGain": 0,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -3,
+        3
+      ]
+    },
+    {
+      "period": "NEW_15",
+      "engine": "CONECTADAS",
+      "top": 3,
+      "cuts": 15,
+      "heads": 81,
+      "both": 0,
+      "onlyOriginal": 0,
+      "onlyExperimental": 1,
+      "neither": 80,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        0,
+        3
+      ]
+    },
+    {
+      "period": "NEW_15",
+      "engine": "CONECTADAS",
+      "top": 5,
+      "cuts": 15,
+      "heads": 81,
+      "both": 0,
+      "onlyOriginal": 0,
+      "onlyExperimental": 1,
+      "neither": 80,
+      "netGain": 1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        0,
+        3
+      ]
+    },
+    {
+      "period": "NEW_15",
+      "engine": "CONECTADAS",
+      "top": 10,
+      "cuts": 15,
+      "heads": 81,
+      "both": 0,
+      "onlyOriginal": 1,
+      "onlyExperimental": 1,
+      "neither": 79,
+      "netGain": 0,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -3,
+        3
+      ]
+    },
+    {
+      "period": "TOTAL",
+      "engine": "GEOMETRIA",
+      "top": 3,
+      "cuts": 635,
+      "heads": 3402,
+      "both": 3,
+      "onlyOriginal": 14,
+      "onlyExperimental": 17,
+      "neither": 3368,
+      "netGain": 3,
+      "exactTwoSidedDiscordanceP": 0.720100131817162,
+      "bootstrapByDay95": [
+        -8,
+        14
+      ]
+    },
+    {
+      "period": "TOTAL",
+      "engine": "GEOMETRIA",
+      "top": 5,
+      "cuts": 635,
+      "heads": 3402,
+      "both": 6,
+      "onlyOriginal": 29,
+      "onlyExperimental": 26,
+      "neither": 3341,
+      "netGain": -3,
+      "exactTwoSidedDiscordanceP": 0.7877061896700435,
+      "bootstrapByDay95": [
+        -18,
+        11
+      ]
+    },
+    {
+      "period": "TOTAL",
+      "engine": "GEOMETRIA",
+      "top": 10,
+      "cuts": 635,
+      "heads": 3402,
+      "both": 13,
+      "onlyOriginal": 47,
+      "onlyExperimental": 44,
+      "neither": 3298,
+      "netGain": -3,
+      "exactTwoSidedDiscordanceP": 0.8340810393049424,
+      "bootstrapByDay95": [
+        -23,
+        17
+      ]
+    },
+    {
+      "period": "TOTAL",
+      "engine": "NUEVA_PRUEBA",
+      "top": 3,
+      "cuts": 635,
+      "heads": 3402,
+      "both": 4,
+      "onlyOriginal": 13,
+      "onlyExperimental": 12,
+      "neither": 3373,
+      "netGain": -1,
+      "exactTwoSidedDiscordanceP": 1,
+      "bootstrapByDay95": [
+        -12,
+        9
+      ]
+    },
+    {
+      "period": "TOTAL",
+      "engine": "NUEVA_PRUEBA",
+      "top": 5,
+      "cuts": 635,
+      "heads": 3402,
+      "both": 9,
+      "onlyOriginal": 26,
+      "onlyExperimental": 23,
+      "neither": 3344,
+      "netGain": -3,
+      "exactTwoSidedDiscordanceP": 0.7754496546815659,
+      "bootstrapByDay95": [
+        -17,
+        11
+      ]
+    },
+    {
+      "period": "TOTAL",
+      "engine": "NUEVA_PRUEBA",
+      "top": 10,
+      "cuts": 635,
+      "heads": 3402,
+      "both": 15,
+      "onlyOriginal": 45,
+      "onlyExperimental": 42,
+      "neither": 3300,
+      "netGain": -3,
+      "exactTwoSidedDiscordanceP": 0.830373009685754,
+      "bootstrapByDay95": [
+        -24,
+        17
+      ]
+    },
+    {
+      "period": "TOTAL",
+      "engine": "CONECTADAS",
+      "top": 3,
+      "cuts": 635,
+      "heads": 3402,
+      "both": 1,
+      "onlyOriginal": 16,
+      "onlyExperimental": 24,
+      "neither": 3361,
+      "netGain": 8,
+      "exactTwoSidedDiscordanceP": 0.26818725105476915,
+      "bootstrapByDay95": [
+        -5,
+        21
+      ]
+    },
+    {
+      "period": "TOTAL",
+      "engine": "CONECTADAS",
+      "top": 5,
+      "cuts": 635,
+      "heads": 3402,
+      "both": 2,
+      "onlyOriginal": 33,
+      "onlyExperimental": 44,
+      "neither": 3323,
+      "netGain": 11,
+      "exactTwoSidedDiscordanceP": 0.2543046661477001,
+      "bootstrapByDay95": [
+        -6,
+        29
+      ]
+    },
+    {
+      "period": "TOTAL",
+      "engine": "CONECTADAS",
+      "top": 10,
+      "cuts": 635,
+      "heads": 3402,
+      "both": 12,
+      "onlyOriginal": 48,
+      "onlyExperimental": 69,
+      "neither": 3273,
+      "netGain": 21,
+      "exactTwoSidedDiscordanceP": 0.06399591064679502,
+      "bootstrapByDay95": [
+        1,
+        41
+      ]
+    }
+  ],
+  "physicalNull": {
+    "byPeriod": [
+      {
+        "period": "JUN_JUL",
+        "cuts": 255,
+        "physicalHeadHits": 355,
+        "meanPhysicalFamilies": 134.4470588235294,
+        "randomExpectedTop": {
+          "top3": 7.779952172811751,
+          "top5": 12.966586954686258,
+          "top10": 25.933173909372517
+        }
+      },
+      {
+        "period": "AGO_SEP",
+        "cuts": 260,
+        "physicalHeadHits": 371,
+        "meanPhysicalFamilies": 138.71153846153845,
+        "randomExpectedTop": {
+          "top3": 7.93785771433439,
+          "top5": 13.229762857223996,
+          "top10": 26.45952571444799
+        }
+      },
+      {
+        "period": "OCT_OLD",
+        "cuts": 105,
+        "physicalHeadHits": 133,
+        "meanPhysicalFamilies": 135.4,
+        "randomExpectedTop": {
+          "top3": 2.987250070722454,
+          "top5": 4.978750117870757,
+          "top10": 9.957500235741515
+        }
+      },
+      {
+        "period": "NEW_15",
+        "cuts": 15,
+        "physicalHeadHits": 19,
+        "meanPhysicalFamilies": 123.53333333333333,
+        "randomExpectedTop": {
+          "top3": 0.44470885032110663,
+          "top5": 0.7411814172018445,
+          "top10": 1.482362834403689
+        }
+      },
+      {
+        "period": "TOTAL",
+        "cuts": 635,
+        "physicalHeadHits": 878,
+        "meanPhysicalFamilies": 136.09291338582676,
+        "randomExpectedTop": {
+          "top3": 19.1497688081897,
+          "top5": 31.916281346982863,
+          "top10": 63.83256269396573
+        }
+      }
+    ]
+  },
+  "postResultsNeverUsedToRank": true,
+  "snapshotAvailabilityNotKnown": true,
+  "notes": [
+    "All readers compared with same PRE cut and heads, but no genuine device snapshot is claimed.",
+    "Local AsyncStorage PRE records are not available from GitHub and cannot be counted here.",
+    "No addition or change of official MV1 ranking or stored PRE.",
+    "ZERO wins need to be distinguished from zero candidates in connected configurations."
+  ]
+}
