@@ -30,7 +30,7 @@ assert.equal(post.tailOnly,3);
 assert.equal(post.both,1);
 assert.equal(post.topOnly,1);
 assert.equal(post.neither,0);
-assert.equal(post.exactVt3HitHeads,0);
+assert.equal(post.exactVt3HitHeads,1); // Provincia 1214 comparte 214 completo
 assert.equal(post.ranks[0].hitHeads,2);
 assert.equal(post.ranks[2].hitHeads,2); // 13 and 10
 const alerts=rankTailsPulses(
