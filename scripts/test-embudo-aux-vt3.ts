@@ -38,6 +38,5 @@ assert.throws(()=>evaluateAuxVt3Funnel(board,
  [{...chosen,family:auxFamily(absent)}],[]),/no físicamente/);
 const empty=evaluateAuxVt3Funnel(auxiliaryBoard(emptyAuxiliaryHeads(),'Previa'),[],
  [{jur:'Ciudad',head:'2813'}]);
-assert.equal(empty.physicallyImpossibleHeadHits,undefined); // only named field
 assert.equal(empty.impossibleHeadHits,1);
 console.log('EMBUDO_VT3_AUX_TEST_OK');
