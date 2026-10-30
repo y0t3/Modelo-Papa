@@ -32,6 +32,7 @@ import PredictionSummary from './src/ui/PredictionSummary';
 import ParallelPredictionCompare from './src/ui/ParallelPredictionCompare';
 import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
+import ExtensionExplorerPanel from './src/ui/ExtensionExplorerPanel';
 import PapaPronostico from './src/ui/PapaPronostico';
 import HeadsTable from './src/ui/HeadsTable';
 import {fetchAuxiliaryBaseForDate,fetchAuxiliaryHeads} from './src/auxSantiagoSource';
@@ -595,6 +596,10 @@ function LaloApp(){
       style={[s.reload,{backgroundColor:c.surfaceAlt,marginTop:12}]}>
       <Text style={[s.reloadText,{color:c.accent}]}>← Volver a Predicción</Text>
      </Pressable>
+     <ExtensionExplorerPanel date={date||''} turn={target} sheet={sheet}
+      historical={hist} visualDays={visualDays}
+      auxYesterday={auxHeads} auxToday={auxToday}
+      pastYesterday={auxiliarPast} pastToday={auxTodayPast}/>
      <Vt3Parallel date={date||''} turn={target} sheet={sheet} view={motor}
       historical={hist} heads={fiveHeads}
        publishedHeads={JURS.filter(j=>j!=='Montevideo')
