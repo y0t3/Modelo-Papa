@@ -386,7 +386,7 @@ async function main(){
      winnersByStatus:Object.fromEntries(statuses.map(k=>
       [k,sum(x=>x.e.post.winnerReadings[k])])),
      conditionalExpected:Object.fromEntries(statuses.map(k=>
-      [k:Number(sum(x=>x.e.post.conditionalExpected[k]).toFixed(3))])),
+      [k,Number(sum(x=>x.e.post.conditionalExpected[k]).toFixed(3))])),
      bothWithoutTop10:sum(x=>x.e.snapshot.mothers.reduce((n,g)=>
       n+g.options.filter(o=>o.status==='AMBAS'&&
        o.rankVT3Ayer===null&&o.rankVT3Hoy===null).length,0)),
