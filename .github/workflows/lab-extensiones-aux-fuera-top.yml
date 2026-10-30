@@ -21,14 +21,14 @@ jobs:
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Retro PRE de octubre y contraste de 20 hijas por madre
         env:
-          TRES_LABEL: octubre-extensiones
+          TRES_LABEL: octubre-hasta29
           TRES_FROM: '2026-10-12'
-          TRES_TO: '2026-10-28'
+          TRES_TO: '2026-10-29'
         run: npx --yes tsx scripts/lab-tres-hojas-figuras.ts
       - name: Exportar auditoria
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: extensiones-vt3-aux-octubre
-          path: auditorias/radar-tres-hojas/octubre-extensiones.json
+          name: extensiones-vt3-aux-octubre-hasta29
+          path: auditorias/radar-tres-hojas/octubre-hasta29.json
           if-no-files-found: warn
