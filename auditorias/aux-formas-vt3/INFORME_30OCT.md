@@ -27,6 +27,7 @@ Las dos auxiliares Santiago/Neuquén forman muchas VT3 físicas. El motor auxili
 - [CI contraste septiembre–octubre](https://github.com/y0t3/Modelo-Papa/actions/runs/41029455393): **success**.
 - Reconstrucción: 77 jornadas junio–agosto (385 cortes por tablero), 42 jornadas septiembre–octubre (210 cortes por tablero). **119 jornadas, 595 cortes por tablero, 2.975 cabezas por tablero**. Se omitieron el 20/6 y el 9/7 por jornadas incompletas.
 - Los totales del Top10 AUX original, con referencias D−1/D−7 restauradas, **reproducen el embudo anterior**: junio–septiembre AUX Ayer 56, AUX Hoy 41; octubre 12–29 AUX Ayer 3, AUX Hoy 4.
+- Se descartó un primer cálculo donde el comparador original recibía erróneamente seis jornadas en vez de D−1/D−7. **Todas las tablas de esta auditoría provienen de los dos replays posteriores con el motor original restablecido y pruebas aprobadas**.
 
 ## Comparación total de 119 jornadas
 
@@ -54,6 +55,12 @@ En AUX AYER, los 72 aciertos de Formas Primero fueron **13 más que los 59 del T
 | Octubre 12–29 · 16 jornadas | 3 | 6 | **8,0** | 4 | 7 | 4,2 |
 
 **Interpretación:** septiembre es la señal más favorable para Formas Primero en AUX AYER. Octubre sigue por encima del Top10 original (6 vs 3) pero no por encima de la media neutral (6 vs 8). En junio–agosto el método prácticamente empata con el control neutral. Por tanto todavía **no se valida una superioridad estable** que justifique reemplazar el ranking oficial. Las decisiones no se reoptimizaron al ver estos resultados.
+
+### ¿En qué momento de septiembre ocurrió?
+
+En las **seis jornadas sorteables del 24 al 30 de septiembre**, AUX AYER registró **13 coincidencias con Formas Primero** y **4 con el Top10 original**. Antes de esa ventana, del 1 al 23 de septiembre, Formas registró **12** y el original **14**. Así, los **+7** netos de septiembre proceden de la mejora de **+9** en los últimos seis sorteables, compensada por **−2** en los anteriores.
+
+Se trata de una **ventana elegida retrospectivamente por su resultado**; no demuestra que la próxima racha pueda identificarse de manera anticipada. A nivel de jornada completa, en 119 días el selector Formas AUX AYER superó al Top10 original en **30 días**, quedó debajo en **23** y empató en **66**. La diferencia es pequeña, con muchos días empatados.
 
 ## Solo Nocturna
 
