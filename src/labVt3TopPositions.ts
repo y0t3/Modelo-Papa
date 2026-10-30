@@ -144,3 +144,76 @@ export function fixedWinnerTrainTest(cuts:readonly PositionCut[],splitDate:strin
  }));
  return {splitDate,comparison};
 }
+
+/**
+ * Segunda pregunta del usuario: ¿coincidir en ambos Tops respalda más?
+ * Se compara cada TERMINACIÓN EXACTA y no la familia invertida.
+ * Los mismos 5 resultados se cotejan post-sortero, siempre después
+ * de clasificar la terminación en TOP2 sí/no usando datos PRE.
+ */
+export type OverlapRankRecord={
+ date:string;turn:string;rank:number;
+ hasOverlap:boolean;top2Tails:number;outsideTails:number;
+ hitOverlap:boolean;hitOutside:boolean;hitAny:boolean;
+ overlapHeadHits:number;outsideHeadHits:number;
+};
+export function overlapRows(cuts:readonly PositionCut[]):OverlapRankRecord[]{
+ const out:OverlapRankRecord[]=[];
+ for(const c of cuts){
+  const top=new Set(c.top2);
+  const heads=c.heads.filter(h=>/^\d{4,5}$/.test(h.head))
+   .map(h=>h.head.slice(-2));
+  for(const row of c.rows){
+   const set=new Set(row.tails);
+   const overlap=[...set].filter(x=>top.has(x));
+   const outside=[...set].filter(x=>!top.has(x));
+   const hitsO=heads.filter(h=>overlap.includes(h)).length;
+   const hitsX=heads.filter(h=>outside.includes(h)).length;
+   out.push({date:c.date,turn:c.turn,rank:row.rank,
+    hasOverlap:overlap.length>0,
+    top2Tails:overlap.length,outsideTails:outside.length,
+    hitOverlap:hitsO>0,hitOutside:hitsX>0,hitAny:hitsO+hitsX>0,
+    overlapHeadHits:hitsO,outsideHeadHits:hitsX});
+  }
+ }
+ return out;
+}
+export function overlapProfile(cuts:readonly PositionCut[]){
+ const rows=overlapRows(cuts);
+ const group=(records:OverlapRankRecord[])=>{
+  const sums=(fn:(x:OverlapRankRecord)=>number)=>
+   records.reduce((n,x)=>n+fn(x),0);
+  const totalOverlap=sums(x=>x.top2Tails);
+  const totalOutside=sums(x=>x.outsideTails);
+  const mixed=records.filter(x=>x.top2Tails>0&&x.outsideTails>0);
+  return {positionCuts:records.length,overlapPositionCuts:records.filter(x=>x.hasOverlap).length,
+   overlapTailExposures:totalOverlap,outsideTailExposures:totalOutside,
+   overlapHeadHits:sums(x=>x.overlapHeadHits),outsideHeadHits:sums(x=>x.outsideHeadHits),
+   hitsOnOverlapPositions:records.filter(x=>x.hasOverlap&&x.hitAny).length,
+   hitsOnNonOverlapPositions:records.filter(x=>!x.hasOverlap&&x.hitAny).length,
+   nonOverlapPositions:records.filter(x=>!x.hasOverlap).length,
+   mixedPositions:mixed.length,
+   rateOverlapPerTail:totalOverlap?sums(x=>x.overlapHeadHits)/totalOverlap:null,
+   rateOutsidePerTail:totalOutside?sums(x=>x.outsideHeadHits)/totalOutside:null,
+   overlapAnyRate:records.some(x=>x.hasOverlap)?
+    records.filter(x=>x.hasOverlap&&x.hitAny).length/
+    records.filter(x=>x.hasOverlap).length:null,
+   noOverlapAnyRate:records.some(x=>!x.hasOverlap)?
+    records.filter(x=>!x.hasOverlap&&x.hitAny).length/
+    records.filter(x=>!x.hasOverlap).length:null,
+   mixedOverlapHits:mixed.reduce((n,x)=>n+x.overlapHeadHits,0),
+   mixedOutsideHits:mixed.reduce((n,x)=>n+x.outsideHeadHits,0)
+  };
+ };
+ const turns=[...new Set(cuts.map(c=>c.turn))];
+ const ranks=Array.from({length:10},(_,i)=>i+1);
+ return {all:group(rows),
+  byTurn:Object.fromEntries(turns.map(turn=>
+   [turn,group(rows.filter(x=>x.turn===turn))])),
+  byRank:Object.fromEntries(ranks.map(rank=>
+   [rank,group(rows.filter(x=>x.rank===rank))])),
+  byTurnAndRank:Object.fromEntries(turns.map(turn=>
+   [turn,Object.fromEntries(ranks.map(rank=>[rank,
+    group(rows.filter(x=>x.rank===rank&&x.turn===turn))]))]))
+ };
+}
