@@ -1,0 +1,25 @@
+name: VALIDAR extensiones con aciertos y respaldos
+on:
+  push:
+    branches: [feature/extensiones-aciertos-y-respaldos-30oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  cotejar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: TypeScript App y UI
+        run: npx tsc -p tsconfig.app-ui.json --noEmit
+      - name: Cotejo de extensiones publicadas, directo e inverso
+        run: npx --yes tsx scripts/test-extensiones-cotejo-ui.ts
+      - name: Probar reducción reversible de extensión
+        run: npx --yes tsx scripts/test-reduccion-extensiones.ts
+      - name: Probar AUX de ayer y hoy independientemente
+        run: npx --yes tsx scripts/test-extensiones-aux.ts
+      - name: Regresión del motor oficial
+        run: npx --yes tsx scripts/test-motor-lalo.ts
