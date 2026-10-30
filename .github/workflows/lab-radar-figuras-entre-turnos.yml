@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: 24}
       - run: npm install
-      - name: Unit test: physical routes first; no value dependence
+      - name: Unit test physical routes first and no value dependence
         run: npx --yes tsx scripts/test-radar-figuras.ts
       - name: Existing temporal radar
         run: npx --yes tsx scripts/test-radar-ventana-corta.ts
