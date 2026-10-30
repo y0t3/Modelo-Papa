@@ -32,7 +32,7 @@ import {auxiliaryWitnesses,plus11Witnesses,postSupportMetrics} from '../src/labT
 import {pulsesForSnapshot,summarizePulses} from '../src/labPulsosTresHojas';
 import {prepareChangeAlerts,matchedControls,evaluateChangeAlertsPOST}
  from '../src/labAlertasCambios';
-import {shortlistSnapshot,evaluateShortlistsPOST,STRATEGIES,BUDGETS}
+import {shortlistSnapshot,evaluateShortlistsPOST,STRATEGIES,BUDGETS,compactionStats}
  from '../src/labReduccionExtensiones';
 import type {BudgetResult} from '../src/labReduccionExtensiones';
 
@@ -483,7 +483,25 @@ async function main(){
        .slice(0,8)}];
     }));
    };
+   const compact=(part:typeof reports)=>{
+    const pieces=part.map(c=>compactionStats(c.extension[cohort].snapshot));
+    const options=pieces.reduce((n,p)=>n+p.eligibleOptions,0);
+    const lines=pieces.reduce((n,p)=>n+p.visualBands,0);
+    return {cuts:pieces.length,
+     mothers:pieces.reduce((n,p)=>n+p.mothers,0),
+     physicalOptions:options,visualBands:lines,
+     visualReductionPct:options?Number(((1-lines/options)*100).toFixed(1)):null,
+     retainedCandidates:options,retainedPct:100,
+     multiOptionBands:pieces.reduce((n,p)=>n+p.bandsWithMultipleOptions,0)};
+   };
    return [cohort,{
+    compaction:{
+     all:compact(reports),
+     early:compact(reports.filter(c=>c.date<='2026-10-20')),
+     late:compact(reports.filter(c=>c.date>='2026-10-21'&&c.date<='2026-10-28')),
+     day29:compact(reports.filter(c=>c.date==='2026-10-29')),
+     nocturna:compact(reports.filter(c=>c.turn==='Nocturno'))
+    },
     all:assemble(reports),
     early:assemble(reports.filter(c=>c.date<='2026-10-20')),
     late:assemble(reports.filter(c=>c.date>='2026-10-21'&&
