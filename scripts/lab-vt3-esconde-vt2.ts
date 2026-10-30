@@ -14,7 +14,7 @@ import {buildSheet} from '../src/sheet';
 import {preSheetAtCut} from '../src/infoCandidatos';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
 import {vt2InsideVt3PRE,evaluateEmbeddedVt2POST,equalBudgetPOST} from '../src/labVt3SufijosVt2';
-import {evaluateRankPulses} from '../src/labPulsosPuestosVt3';
+import {evaluateRankPulses,evaluateAdjacentTurnPulses} from '../src/labPulsosPuestosVt3';
 import type {RankObservation} from '../src/labPulsosPuestosVt3';
 const from=process.env.VT3TO2_FROM||'2026-10-12';
 const to=process.env.VT3TO2_TO||'2026-10-29';
@@ -190,8 +190,9 @@ async function main(){
   name,evaluateRankPulses(noct.flatMap(r=>r.rankRows),
    Number(window),Number(minimum))
  ]));
+ const crossTurnPulses=evaluateAdjacentTurnPulses(rows.flatMap(x=>x.rankRows));
  const report={
-  rankPulses,noctRankPulses,
+  rankPulses,noctRankPulses,crossTurnPulses,
   method:'REPLAY PRE_RECONSTRUIDO, motor Lalo ORIGINAL, segmentos físicos contiguos de Top10 VT3, sin modelos AUX',
   period:{from,to,label},dates:new Set(rows.map(x=>x.date)).size,
   skipped,byMonth,windows5,windowCounts,summary:reportOf(rows),
@@ -229,6 +230,7 @@ async function main(){
   windowCounts:report.windowCounts,windows5:report.windows5,
   rankPulses:report.rankPulses,
   noctRankPulses:report.noctRankPulses,
+  crossTurnPulses:report.crossTurnPulses,
   first:report.first,second:report.second,
   day29:report.day29,examples:report.examples.slice(-12)
  }));
