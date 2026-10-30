@@ -1,0 +1,48 @@
+name: LAB zonas de figuras ganadoras conectadas D-7
+on:
+  push:
+    branches: [lab/figuras-conectadas-d7-29oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: junio-julio
+            from: '2026-06-01'
+            through: '2026-07-31'
+          - label: agosto-septiembre
+            from: '2026-08-01'
+            through: '2026-09-30'
+          - label: octubre
+            from: '2026-10-12'
+            through: '2026-10-28'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Validacion grafos, eventos independientes, figuras sin numeros
+        run: npx --yes tsx scripts/test-connected-winner-figures.ts
+      - name: Test transferencias ganadoras D-7
+        run: npx --yes tsx scripts/test-winning-footprint-transfer.ts
+      - name: Regresion MV1 intacto
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Retrovisor zonas conectadas VT2 VT3
+        env:
+          ZONAS_LABEL: ${{ matrix.label }}
+          ZONAS_FROM: ${{ matrix.from }}
+          ZONAS_TO: ${{ matrix.through }}
+        run: npx --yes tsx scripts/lab-zonas-conectadas-d7.ts
+      - name: Guardar todas las figuras por corte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zonas-conectadas-${{ matrix.label }}
+          path: auditorias/figuras-conectadas-d7/*.json
+          if-no-files-found: warn
