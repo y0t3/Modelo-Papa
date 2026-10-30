@@ -599,7 +599,8 @@ function LaloApp(){
      <ExtensionExplorerPanel date={date||''} turn={target} sheet={sheet}
       historical={hist} visualDays={visualDays}
       auxYesterday={auxHeads} auxToday={auxToday}
-      pastYesterday={auxiliarPast} pastToday={auxTodayPast}/>
+      pastYesterday={auxiliarPast} pastToday={auxTodayPast}
+      publishedHeads={JURS.map(jur=>({jur,head:data?.[target]?.[jur]||''}))}/>
      <Vt3Parallel date={date||''} turn={target} sheet={sheet} view={motor}
       historical={hist} heads={fiveHeads}
        publishedHeads={JURS.filter(j=>j!=='Montevideo')
