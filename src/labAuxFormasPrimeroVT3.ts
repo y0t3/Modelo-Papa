@@ -23,7 +23,7 @@ export type AuxFormChoice={rank:number;family:string;value:string;
  rootDays:number;exactEvents:number;lastDay:boolean};
 export type AuxFormSelection={date:string;turn:string;mode:string;
  historyDates:string[];winnerRoots:number;physicalSites:number;
- eligibleSites:number;supportedChosen:number;top:AuxFormChoice[]};
+ eligibleSites:number;supportedChosen:number;prioritySites:string[];top:AuxFormChoice[]};
 const coord=(c:{row:number;col:number})=>c.row+':'+c.col;
 const signature=(p:AuxPath)=>{
  const row=Math.min(...p.map(c=>c.row));
@@ -119,5 +119,6 @@ export function selectAuxFormFirst(
  return {date,turn:board.target,mode,historyDates:dates,
   winnerRoots:new Set(roots.map(r=>r.event)).size,
   physicalSites:sites.length,eligibleSites:supported.length,
+  prioritySites:ordered.map(x=>x.site),
   supportedChosen:top.filter(x=>x.rootEvents>0).length,top};
 }
