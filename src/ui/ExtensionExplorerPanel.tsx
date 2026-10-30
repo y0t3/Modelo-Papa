@@ -13,7 +13,7 @@ import type {Turno} from '../domain';
 import {TURNOS} from '../domain';
 import type {DailySheet} from '../sheet';
 import type {LaloHistorical} from '../motorLalo';
-import {buildMotorLalo,reversibleFamily} from '../motorLalo';
+import {buildMotorLalo} from '../motorLalo';
 import type {InfoVisualDay} from '../infoTurnHistory';
 import {buildFormFirstMotor} from '../motorFormasPrimero';
 import {buildExperimentalVt2} from '../experimentalVt2';
@@ -201,6 +201,11 @@ function ExplorerBody(p:Props){
   <Text style={[s.note,{color:c.subtext}]}>
    Cada madre VT2 conserva su Top10. Miramos TODAS las VT3 que pueden formarse
    físicamente en las auxiliares, incluso fuera de sus Tops. Sin mezclar hojas.
+  </Text>
+  <Text style={[s.note,{color:c.subtext}]}>
+   Borde dorado = respaldo conocido ANTES del sorteo (Top10 o antecedente).
+   Verde ✓ = coincidencia con una cabeza ya publicada. Ninguna marca PRE
+   garantiza que la extensión vaya a salir.
   </Text>
   <View style={s.line}>
    {([['lalo','Solo madres Lalo'],['todos','Todos los motores +11']] as const)
