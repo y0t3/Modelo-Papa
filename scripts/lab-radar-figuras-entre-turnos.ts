@@ -134,9 +134,58 @@ async function main(){
   }
   if(days.length%8===0)console.log('FORM_RADAR_PROGRESS',label,date,days.length);
  }
+ const byDate=new Map(days.map(d=>[d.date,d]));
+ const nocturnoFigures=(d:any,k:'VT2'|'VT3')=>
+  (d?.cuts.at(-1)?.figures||[]).filter((f:Figure)=>f.kind===k) as Figure[];
+ const crossDay:any[]=[];
+ const previousDraw=(date:string)=>days.filter(d=>d.date<date).at(-1);
+ for(const day of days){
+  for(const kind of ['VT2','VT3'] as const){
+   const current=nocturnoFigures(day,kind);
+   for(const [period,other] of [
+    ['DIA_ANTERIOR',previousDraw(day.date)],
+    ['MISMO_DIA_SEMANA_D7',byDate.get(shiftDay(day.date,-7))],
+    ['CONTROL_SEMANA_D14',byDate.get(shiftDay(day.date,-14))]
+   ] as [string,any][]){
+    if(!other)continue;
+    const old=nocturnoFigures(other,kind);
+    const stats=compareSnapshots(old,current);
+    crossDay.push({date:day.date,past:other.date,kind,period,
+     current:current.length,pastSites:old.length,
+     exact:stats.persistentExact,
+     sameFamily:stats.retainedSameFamily,
+     changedFamily:stats.retainedChangedFamily,
+     movedRow:stats.moveOneRow,movedSource:stats.moveSource,
+     sampleChanged:current.filter(f=>old.some(p=>p.source===f.source&&
+       p.site===f.site&&!p.families.some(x=>f.families.includes(x))))
+      .slice(0,4).map(f=>({source:f.source,site:f.site,
+       shape:f.shape,ranks:f.bestRanks,readings:f.readings,
+       old:old.find(x=>x.source===f.source&&x.site===f.site)?.readings||[]}))}
+    );
+   }
+  }
+ }
+ const crossDaySummary=Object.fromEntries(
+  ['VT2','VT3'].flatMap(kind=>
+   ['DIA_ANTERIOR','MISMO_DIA_SEMANA_D7','CONTROL_SEMANA_D14'].map(period=>{
+    const sub=crossDay.filter(x=>x.kind===kind&&x.period===period);
+    const count=(field:string)=>sub.reduce((n,x)=>n+Number(x[field]||0),0);
+    return [kind+'_'+period,{
+     pairs:sub.length,selectedPositions:count('current'),
+     exact:count('exact'),
+     sameFamily:count('sameFamily'),
+     changedFamily:count('changedFamily'),
+     movedRow:count('movedRow'),movedSource:count('movedSource'),
+     recent:sub.slice(-3).map(x=>({date:x.date,exact:x.exact,
+      changedFamily:x.changedFamily,sampleChanged:x.sampleChanged.slice(0,2)}))
+    }];
+   })
+  )
+ );
  const transitions=days.flatMap(d=>d.transitions);
  const summary={
   label,days:days.length,cuts:days.reduce((n,d)=>n+d.cuts.length,0),
+  crossDay:crossDaySummary,
   transitions:transitions.length,
   siteRepetitions:sum(transitions,'persistentExact'),
   rowOne:sum(transitions,'moveOneRow'),
@@ -164,7 +213,7 @@ async function main(){
   JSON.stringify({summary,days:days.map(d=>({date:d.date,
    cuts:d.cuts.map((c:any)=>({turn:c.turn,counts:c.counts,
     actualHeadCount:c.actualHeadCount,post:c.post,topOverlap:c.topOverlap})),
-   transitions:d.transitions})),skipped,
+   transitions:d.transitions})),crossDay,skipped,
    note:'Los recorridos se comparan por casillas/fuente, no familias. Un sitio que sigue físicamente disponible no es prueba de ventaja; top conserva o abandona esa huella antes de POST. Solo +11, AUX pendiente de replay.'},
    null,2)+'\n');
  console.log('FORM_RADAR_SUMMARY',JSON.stringify({label,...summary,
