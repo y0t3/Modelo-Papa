@@ -14,6 +14,7 @@ import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
 import {readableWeekday} from '../infoTurnHistory';
 import {explainFamilyRationale} from '../friendlyExplanations';
+import {vt2InsideVt3PRE} from '../labVt3SufijosVt2';
 
 const explanation:Record<string,string>={
  EN_FORMACIÓN:'En formación',EN_SEGUIMIENTO:'Con antecedentes',CON_APOYO:'Con varios apoyos'
@@ -55,6 +56,8 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
  },[pagerWidth]);
 
  const isoDate=date.includes('/')?date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2):date;
+ const vt3Edges=useMemo(()=>model==='lalo'&&view?vt2InsideVt3PRE(view):null,
+  [model,view]);
  const vt2Witnesses=useMemo(()=>{
   const map=new Map<string,ReturnType<typeof buildVt2FamilyWitnesses>>();
   if(model!=='lalo'||!sheet)return map;
@@ -192,6 +195,23 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
            'Salió antes hoy · Ver minihoja ›':'Tiene antecedentes · Ver minihoja ›'}
          </Text>
         </Pressable>:null}
+        {kind==='vt3'&&model==='lalo'&&vt3Edges?(()=>{
+         const hidden=vt3Edges.missingFromVt2Top.filter(x=>
+          x.mothers.includes(f.family));
+         const visible=vt3Edges.derived.filter(x=>
+          !x.notInTopVt2&&x.mothers.includes(f.family));
+         const all=[...hidden,...visible];
+         return all.length?<View style={{gap:3,marginTop:7}}>
+          <Text style={[s.detail,{color:c.accent,fontWeight:'900'}]}>
+           VT2 del recorrido: {all.slice(0,5)
+            .map(x=>x.family+(x.notInTopVt2?' (fuera Top10)':'')).join(' · ')}
+           {all.length>5?' · +'+(all.length-5)+' más':''}
+          </Text>
+          <Text style={[s.detail,{color:c.subtext}]}>
+           Tocá «Ver recorrido» para iluminar sus dos casillas.
+          </Text>
+         </View>:null;
+        })():null}
         {kind==='vt3'&&model==='lalo'&&onTrackFamily?<Pressable
          accessibilityRole="button" onPress={e=>{e.stopPropagation();onTrackFamily(f.family)}}
          style={{paddingVertical:8}}>
