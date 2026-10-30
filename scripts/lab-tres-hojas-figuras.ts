@@ -24,7 +24,9 @@ import {evaluateParallelPOST} from '../src/labTresHojasFiguras';
 import type {Head,ParallelSummary} from '../src/labTresHojasFiguras';
 import type {ShapeRoute,Board,Kind} from '../src/labRadarFiguras';
 import {figuresInTop,compareSnapshots} from '../src/labRadarFiguras';
-import {auxCanonicalPath} from '../src/auxSantiagoNeuquen';
+import {auxCanonicalPath,auxiliaryBoard} from '../src/auxSantiagoNeuquen';
+import {buildExtensionSnapshot,mothersFromTop,evaluateSnapshotPOST,equalBudgetComparison}
+ from '../src/labExtensionesAux';
 import {winnerRoots} from '../src/labRadarRaicesGanadoras';
 import {auxiliaryWitnesses,plus11Witnesses,postSupportMetrics} from '../src/labTresHojasTestigos';
 import {pulsesForSnapshot,summarizePulses} from '../src/labPulsosTresHojas';
@@ -78,7 +80,11 @@ async function main(){
   selected:ReturnType<typeof figuresInTop>;support:ReturnType<typeof postSupportMetrics>;
   alert:ReturnType<typeof prepareChangeAlerts>;
   matched:ReturnType<typeof matchedControls>;
-  outcomes:ReturnType<typeof evaluateChangeAlertsPOST>}[];
+  outcomes:ReturnType<typeof evaluateChangeAlertsPOST>;
+  extension:{
+   lalo:{snapshot:ReturnType<typeof buildExtensionSnapshot>;post:ReturnType<typeof evaluateSnapshotPOST>;equal:ReturnType<typeof equalBudgetComparison>};
+   combined:{snapshot:ReturnType<typeof buildExtensionSnapshot>;post:ReturnType<typeof evaluateSnapshotPOST>;equal:ReturnType<typeof equalBudgetComparison>}
+  }}[];
   pulse:ReturnType<typeof summarizePulses>}[]=[];
  const skipped:{date:string;reason:string}[]=[];
  for(let date=from;date<=to;date=shiftDay(date,1)){
@@ -135,6 +141,7 @@ async function main(){
     const form2=buildFormFirstMotor(pre,date,turn,shapeDays,10,'vt2');
     const form3=buildFormFirstMotor(pre,date,turn,shapeDays,10,'vt3');
     const routes:ShapeRoute[]=[];
+    const auxBoards={} as Record<'AUX_AYER'|'AUX_HOY',ReturnType<typeof auxiliaryBoard>>;
     for(const kind of ['vt2','vt3'] as const)
      for(const f of lal.ranks[kind].slice(0,10))
       for(const p of f.paths){
@@ -161,6 +168,7 @@ async function main(){
     for(const mode of ['anterior','intrajornada'] as AuxMode[]){
      const raw=source.get(mode==='anterior'?auxiliarySourceDate(date):date)!.heads;
      const cut=auxAtCut(raw,turn,mode);
+     auxBoards[mode==='anterior'?'AUX_AYER':'AUX_HOY']=auxiliaryBoard(cut,turn);
      if(mode==='intrajornada'&&turn==='Previa'&&
       Object.values(cut).some(x=>Object.values(x).some(h=>valid(h))))
       throw Error('FUGA AUX HOY PREVIA');
@@ -188,6 +196,15 @@ async function main(){
     ];
     if(known.some(x=>x.date>date))throw Error('FUGA testigo futuro');
     const support=postSupportMetrics(selected,known,date,postHeads);
+    // Todas las VT3 AUX físicamente posibles, incluso FUERA del Top10.
+    const ext=(mothers:ReturnType<typeof mothersFromTop>)=>{
+     const snapshot=buildExtensionSnapshot(date,turn,mothers,
+      auxBoards.AUX_AYER,auxBoards.AUX_HOY,selected,known);
+     return {snapshot,post:evaluateSnapshotPOST(snapshot,postHeads),
+      equal:equalBudgetComparison(snapshot,postHeads)};
+    };
+    const extension={lalo:ext(mothersFromTop(selected,['LALO'])),
+     combined:ext(mothersFromTop(selected))};
     // Clasificar ANTES de evaluar: no entra resultado del turno objetivo
     // al radar ni a los pares de control.
     const priorPhotos=days.slice(-6).map(p=>({
@@ -196,7 +213,7 @@ async function main(){
     const alert=prepareChangeAlerts({date,turn,figures:selected},priorPhotos,known);
     const matched=matchedControls(alert,selected,postHeads);
     const outcomes=evaluateChangeAlertsPOST(alert,selected,postHeads);
-    cuts.push({turn,summary,selected,support,alert,matched,outcomes});
+    cuts.push({turn,summary,selected,support,alert,matched,outcomes,extension});
    }
    const last=cuts.at(-1)!;
    const older=days.slice(-6).map(p=>({
@@ -350,8 +367,54 @@ async function main(){
    }))];
   })
  );
+ const extensionSummary=Object.fromEntries(
+  (['lalo','combined'] as const).map(cohort=>{
+   const sub=cuts.map(x=>({
+    date:x.date,turn:x.turn,
+    e:x.extension[cohort],
+    real:x.summary.hits.filter(h=>h.kind==='VT3')
+   }));
+   const statuses=['AMBAS','SOLO_AYER','SOLO_HOY','NINGUNA'] as const;
+   const stats=(rows:typeof sub)=>{
+    const sum=(fn:(x:typeof sub[number])=>number)=>
+     rows.reduce((n,x)=>n+fn(x),0);
+    return {
+     cuts:rows.length,mothers:sum(x=>x.e.post.mothers),
+     motherHeads:sum(x=>x.e.post.motherHeads),
+     optionsByStatus:Object.fromEntries(statuses.map(k=>
+      [k,sum(x=>x.e.post.candidates[k])])),
+     winnersByStatus:Object.fromEntries(statuses.map(k=>
+      [k,sum(x=>x.e.post.winnerReadings[k])])),
+     conditionalExpected:Object.fromEntries(statuses.map(k=>
+      [k:Number(sum(x=>x.e.post.conditionalExpected[k]).toFixed(3))])),
+     bothWithoutTop10:sum(x=>x.e.snapshot.mothers.reduce((n,g)=>
+      n+g.options.filter(o=>o.status==='AMBAS'&&
+       o.rankVT3Ayer===null&&o.rankVT3Hoy===null).length,0)),
+     hitsBothWithoutTop10:sum(x=>x.e.snapshot.mothers.reduce((n,g)=>
+      n+x.real.filter(h=>g.options.some(o=>o.value===h.ending&&
+       o.status==='AMBAS'&&o.rankVT3Ayer===null&&
+       o.rankVT3Hoy===null)).length,0)),
+     equalBudget:{
+      pairs:sum(x=>x.e.equal.pairs),
+      bothHits:sum(x=>x.e.equal.bothHits),
+      singleHits:sum(x=>x.e.equal.singleHits),
+      bothOnly:sum(x=>x.e.equal.bothOnly),
+      singleOnly:sum(x=>x.e.equal.singleOnly)
+     }
+    };
+   };
+   return [cohort,{
+    all:stats(sub),
+    byTurn:Object.fromEntries(TURNOS.map(t=>
+     [t,stats(sub.filter(x=>x.turn===t))])),
+    first:stats(sub.filter(x=>x.date<='2026-10-20')),
+    second:stats(sub.filter(x=>x.date>='2026-10-21'))
+   }];
+  })
+ );
  const report={
   periodComparison,
+  extensionSummary,
   method:'PRE_RECONSTRUIDO_NO_SELLADO; 3 HOJAS SEPARADAS; VT2 VT3 IGUAL IMPORTANCIA',
   period:{label,from,to},
   days:days.length,cuts:cuts.length,skipped,
@@ -360,6 +423,28 @@ async function main(){
   crossBoardExtensions:cuts.reduce((n,c)=>n+c.summary.crossBoardExtensions,0),
   lastThree:days.slice(-3).map(d=>({date:d.date,pulse:d.pulse,cuts:d.cuts.map(c=>({
    turn:c.turn,byKind:c.summary.byKind,support:c.support,
+   expandedVT3:{
+    lalo:{
+     mothers:c.extension.lalo.snapshot.mothers.length,
+     counts:c.extension.lalo.post.candidates,
+     winnerByStatus:c.extension.lalo.post.winnerReadings,
+     examples:c.extension.lalo.snapshot.mothers
+      .filter(g=>g.counts.AMBAS>0).slice(0,4).map(g=>({
+       mother:g.family,rank:g.ranks,
+       alternatives:g.options.filter(o=>o.status==='AMBAS')
+        .slice(0,3).map(o=>({value:o.value,
+         rankAyer:o.rankVT3Ayer,rankHoy:o.rankVT3Hoy,
+         witnessesAyer:o.winnerEventsAyer,
+         witnessesHoy:o.winnerEventsHoy,
+         routeAyer:o.exampleAyer,routeHoy:o.exampleHoy}))
+      }))
+    },
+    combined:{
+     mothers:c.extension.combined.snapshot.mothers.length,
+     counts:c.extension.combined.post.candidates,
+     winnerByStatus:c.extension.combined.post.winnerReadings
+    }
+   },
    alerts:c.alert.focus,alertCount:c.alert.proposed.length,
    alertPOST:c.outcomes.focus,matchedControls:{
     pairs:c.matched.pairs.length,
@@ -389,7 +474,8 @@ async function main(){
   totalExtensions:report.totalExtensions,
   crossBoardExtensions:report.crossBoardExtensions,
   alertSummary:report.alertSummary,
-  periodComparison:report.periodComparison
+  periodComparison:report.periodComparison,
+  extensionSummary:report.extensionSummary
  }));
  if(days<8)throw Error('Menos de 8 jornadas válidas '+days);
 }
