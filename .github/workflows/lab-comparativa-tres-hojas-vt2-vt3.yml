@@ -1,0 +1,31 @@
+name: LAB comparativa tres hojas VT2 VT3
+on:
+  push:
+    branches: [lab/comparativa-tres-hojas-vt2-vt3-29oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Tests de independencia fisica de tres hojas
+        run: npx --yes tsx scripts/test-tres-hojas-figuras.ts
+      - name: Tests originales MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Verificacion historica de octubre
+        env:
+          TRES_LABEL: octubre
+          TRES_FROM: '2026-10-12'
+          TRES_TO: '2026-10-28'
+        run: npx --yes tsx scripts/lab-tres-hojas-figuras.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: comparativa-tres-hojas-octubre
+          path: auditorias/radar-tres-hojas/*.json
+          if-no-files-found: warn
