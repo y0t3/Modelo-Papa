@@ -111,7 +111,10 @@ function ExplorerBody(p:Props){
    ['AUX_HOY',auxAtCut(p.auxToday,p.turn,'intrajornada'),p.pastToday]
   ];
   for(const [mode,raw,past] of input){
-   const ranks=buildAuxIndependent(p.date,p.turn,raw,
+   // Ayer ya está completo antes de Previa. El lector proyecta
+   // geometría sin usar el resultado de Nocturna.
+   const ranks=buildAuxIndependent(p.date,
+    mode==='AUX_AYER'?'Nocturno':p.turn,raw,
     past.filter(x=>x.date<p.date));
    const physicalBoard=mode==='AUX_AYER'?boardA:boardH;
    // Familias oficiales auxiliares indican Top10, pero cada ruta del
