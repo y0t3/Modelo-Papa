@@ -50,7 +50,7 @@ export type Evidence={
   contact:'MISMO_SITIO'|'MUEVE_UNA_FILA'|'FUENTE_VECINA'|'SOLO_SILUETA'}[]
 };
 export function evidenceForFigure(now:Figure,history:Root[]):Evidence{
- const related=history.filter(x=>x.kind===now.kind&&x.shape===now.shape);
+ const related=now.board==='PLUS11'?history.filter(x=>x.kind===now.kind&&x.shape===now.shape):[];
  const m=new Map<string,Evidence['independentEvents'][number]>();
  const diff=(a:string,b:string)=>Math.abs(sources.indexOf(a)-sources.indexOf(b))===1&&
   sources.includes(a)&&sources.includes(b);
