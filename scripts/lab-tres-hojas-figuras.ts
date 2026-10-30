@@ -317,6 +317,12 @@ async function main(){
    relaxedPairs:matchedPairs-exact,
    pairedAlertHits:total(x=>x.paired.filter(y=>y.signalHit).length),
    pairedControlHits:total(x=>x.paired.filter(y=>y.controlHit).length),
+   pairedSignalOnly:total(x=>x.paired.filter(y=>y.signalHit&&!y.controlHit).length),
+   pairedControlOnly:total(x=>x.paired.filter(y=>!y.signalHit&&y.controlHit).length),
+   pairedBoth:total(x=>x.paired.filter(y=>y.signalHit&&y.controlHit).length),
+   pairedNeither:total(x=>x.paired.filter(y=>!y.signalHit&&!y.controlHit).length),
+   exactGeometrySignalHits:total(x=>x.paired.filter(y=>y.match==='EXACTO'&&y.signalHit).length),
+   exactGeometryControlHits:total(x=>x.paired.filter(y=>y.match==='EXACTO'&&y.controlHit).length),
    unmatchedFocus:total(x=>x.c.matched.unmatched),
    byBoard:boardBreakdown,
    alertsByType:Object.fromEntries([
@@ -326,7 +332,26 @@ async function main(){
     y.alertKinds.includes(flag as any)).length)]))
   }];
  }));
+ const periodComparison=Object.fromEntries(
+  ['12-20 OCT','21-28 OCT'].map(period=>{
+   const sub=cuts.filter(c=>period==='12-20 OCT'?
+    c.date<='2026-10-20':c.date>='2026-10-21');
+   return [period,Object.fromEntries(['VT2','VT3'].map(kind=>{
+    const focused=sub.flatMap(x=>x.outcomes.focus.filter(h=>h.kind===kind));
+    const pair=sub.flatMap(x=>x.matched.pairs.filter(h=>h.signal.kind===kind));
+    return [kind,{
+     cuts:sub.length,focused:focused.length,
+     focusedHits:focused.filter(x=>x.hit).length,
+     paired:pair.length,
+     signalHits:pair.filter(x=>x.signalHit).length,
+     controlHits:pair.filter(x=>x.controlHit).length,
+     exact:pair.filter(x=>x.match==='EXACTO').length
+    }];
+   }))];
+  })
+ );
  const report={
+  periodComparison,
   method:'PRE_RECONSTRUIDO_NO_SELLADO; 3 HOJAS SEPARADAS; VT2 VT3 IGUAL IMPORTANCIA',
   period:{label,from,to},
   days:days.length,cuts:cuts.length,skipped,
@@ -363,7 +388,8 @@ async function main(){
   byTurn:report.byTurn,boardContinuity:report.boardContinuity,
   totalExtensions:report.totalExtensions,
   crossBoardExtensions:report.crossBoardExtensions,
-  alertSummary:report.alertSummary
+  alertSummary:report.alertSummary,
+  periodComparison:report.periodComparison
  }));
  if(days<8)throw Error('Menos de 8 jornadas válidas '+days);
 }
