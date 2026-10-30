@@ -11,6 +11,7 @@
  * estadísticas independientes.
  */
 import {reversibleFamily} from './motorLalo';
+import {TURNOS} from './domain';
 import {auxCanonicalPath,enumerateAuxPaths} from './auxSantiagoNeuquen';
 import type {AuxiliaryBoard,AuxPath} from './auxSantiagoNeuquen';
 import type {Board,Figure} from './labRadarFiguras';
@@ -62,17 +63,31 @@ const rankForReading=(value:string,figures:Figure[],board:Board)=>{
  const ranks=choices.flatMap(f=>Object.values(f.bestRanks));
  return ranks.length?Math.min(...ranks):null;
 };
-const eventCount=(paths:AuxPath[],board:Board,roots:Witness[])=>{
- const sites=new Set(paths.map(auxCanonicalPath));
- const events=new Set(roots.filter(w=>w.board===board&&
-  w.kind==='VT3'&&w.source==='Santiago-Neuquen'&&
-  sites.has(w.site)).map(w=>w.event));
+const witnessIndex=(roots:Witness[])=>{
+ const map=new Map<string,Set<string>>();
+ for(const w of roots)if(w.kind==='VT3'&&w.board!=='PLUS11'&&
+  w.source==='Santiago-Neuquen'){
+  const key=w.board+'|'+w.site;
+  const events=map.get(key)||new Set<string>();
+  events.add(w.event);map.set(key,events);
+ }
+ return map;
+};
+const eventCount=(paths:AuxPath[],board:Board,index:Map<string,Set<string>>)=>{
+ const events=new Set<string>();
+ for(const p of paths)
+  for(const id of index.get(board+'|'+auxCanonicalPath(p))||[])events.add(id);
  return events.size;
 };
 export function buildExtensionSnapshot(date:string,turn:string,
  mothers:Mother[],yesterday:AuxiliaryBoard,today:AuxiliaryBoard,
  selected:Figure[]=[],roots:Witness[]=[]):ExtensionSnapshot{
- if(roots.some(r=>r.date>date))throw Error('FUGA: raíz auxiliar futura');
+ const index=TURNOS.indexOf(turn as typeof TURNOS[number]);
+ if(index<0)throw Error('Turno objetivo inválido');
+ if(roots.some(r=>r.date>date||
+  (r.date===date&&TURNOS.indexOf(r.turn as typeof TURNOS[number])>=index)))
+  throw Error('FUGA: testigo de turno objetivo o posterior');
+ const rootIndex=witnessIndex(roots);
  const ayer=byReading(yesterday),hoy=byReading(today);
  const groups=[...new Map(mothers.map(m=>[m.family,m])).values()]
   .sort((a,b)=>a.family.localeCompare(b.family)).map(mother=>{
@@ -83,8 +98,8 @@ export function buildExtensionSnapshot(date:string,turn:string,
     return {mother:mother.family,value,status,ayer:p.length,hoy:q.length,
      rankVT3Ayer:rankForReading(value,selected,'AUX_AYER'),
      rankVT3Hoy:rankForReading(value,selected,'AUX_HOY'),
-     winnerEventsAyer:eventCount(p,'AUX_AYER',roots),
-     winnerEventsHoy:eventCount(q,'AUX_HOY',roots),
+     winnerEventsAyer:eventCount(p,'AUX_AYER',rootIndex),
+     winnerEventsHoy:eventCount(q,'AUX_HOY',rootIndex),
      exampleAyer:p[0]?.map(c=>({...c}))||null,
      exampleHoy:q[0]?.map(c=>({...c}))||null
     } as ExtensionOption;
