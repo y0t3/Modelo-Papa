@@ -25,6 +25,8 @@ import type {Head,ParallelSummary} from '../src/labTresHojasFiguras';
 import type {ShapeRoute,Board,Kind} from '../src/labRadarFiguras';
 import {figuresInTop,compareSnapshots} from '../src/labRadarFiguras';
 import {auxCanonicalPath} from '../src/auxSantiagoNeuquen';
+import {winnerRoots} from '../src/labRadarRaicesGanadoras';
+import {auxiliaryWitnesses,plus11Witnesses,postSupportMetrics} from '../src/labTresHojasTestigos';
 
 const from=process.env.TRES_FROM||'2026-10-12';
 const to=process.env.TRES_TO||'2026-10-28';
@@ -70,7 +72,7 @@ const routesFromAux=(ranks:Record<2|3|4,AuxRank[]>,date:string,
 };
 async function main(){
  const days:{date:string;cuts:{turn:Turno;summary:ParallelSummary;
-  selected:ReturnType<typeof figuresInTop>}[]}[]=[];
+  selected:ReturnType<typeof figuresInTop>;support:ReturnType<typeof postSupportMetrics>}[]}[]=[];
  const skipped:{date:string;reason:string}[]=[];
  for(let date=from;date<=to;date=shiftDay(date,1)){
   if(new Date(date+'T12:00:00Z').getUTCDay()===0)continue;
@@ -102,6 +104,11 @@ async function main(){
       aux:extractAuxHistoryMode(ref.date,observed,ref.heads,mode)};
     });
    }
+   const historic11=refs.flatMap(r=>winnerRoots(r.date,r.sheet));
+   const historicAux=[
+    ...auxiliaryWitnesses(auxRefs.anterior,'AUX_AYER'),
+    ...auxiliaryWitnesses(auxRefs.intrajornada,'AUX_HOY')
+   ];
    const cuts=[] as (typeof days)[number]['cuts'];
    for(let i=0;i<TURNOS.length;i++){
     const turn=TURNOS[i];
@@ -160,7 +167,21 @@ async function main(){
     const preview={date,turn,routes};
     const summary=evaluateParallelPOST(preview,postHeads);
     const selected=figuresInTop(routes);
-    cuts.push({turn,summary,selected});
+    const currentAux=[
+     ...auxiliaryWitnesses([{date,period:'D−1',aux:extractAuxHistoryMode(
+      date,source.get(auxiliarySourceDate(date))!.heads,earlier,'anterior')}],
+      'AUX_AYER'),
+     ...auxiliaryWitnesses([{date,period:'D−1',aux:extractAuxHistoryMode(
+      date,source.get(date)!.heads,earlier,'intrajornada')}],
+      'AUX_HOY')
+    ];
+    const known=[
+     ...plus11Witnesses([...historic11,...winnerRoots(date,pre)]),
+     ...historicAux,...currentAux
+    ];
+    if(known.some(x=>x.date>date))throw Error('FUGA testigo futuro');
+    const support=postSupportMetrics(selected,known,date,postHeads);
+    cuts.push({turn,summary,selected,support});
    }
    days.push({date,cuts});
    console.log('TRES_HOJAS_DAY',date,JSON.stringify(cuts.map(x=>({
@@ -219,15 +240,36 @@ async function main(){
     recent:changes.slice(-4)}];
   })
  ));
+
+ const supportSummary=Object.fromEntries(
+  ['PLUS11','AUX_AYER','AUX_HOY'].flatMap(board=>
+   (['VT2','VT3'] as const).map(kind=>{
+    const key=board+'_'+kind;
+    const records=cuts.map(x=>x.support[key] as any);
+    const sum=(fn:(x:any)=>number)=>records.reduce((n,x)=>n+fn(x),0);
+    return [key,{
+     cuts:records.length,physicalSiteExposures:sum(x=>x.figures),
+     withExactHistoricWinner:sum(x=>x.withExactRoots),
+     withDistinctWinningDays2:sum(x=>x.withRepeatedDays),
+     headHitsSupportedOnly:sum(x=>x.headWins.onlySupported),
+     headHitsUnmarkedOnly:sum(x=>x.headWins.onlyUnsupported),
+     headHitsBoth:sum(x=>x.headWins.both),
+     headHitsNeither:sum(x=>x.headWins.neither),
+     examples:records.slice(-1).flatMap(x=>x.examples)
+    }];
+   })
+  )
+ );
  const report={
+  supportSummary,
   method:'PRE_RECONSTRUIDO_NO_SELLADO; 3 HOJAS SEPARADAS; VT2 VT3 IGUAL IMPORTANCIA',
   period:{label,from,to},
   days:days.length,cuts:cuts.length,skipped,
-  byTurn,boardContinuity,
+  byTurn,boardContinuity,supportSummary,
   totalExtensions:cuts.reduce((n,c)=>n+c.summary.extensionCount,0),
   crossBoardExtensions:cuts.reduce((n,c)=>n+c.summary.crossBoardExtensions,0),
   lastThree:days.slice(-3).map(d=>({date:d.date,cuts:d.cuts.map(c=>({
-   turn:c.turn,byKind:c.summary.byKind,
+   turn:c.turn,byKind:c.summary.byKind,support:c.support,
    shared:c.summary.shared.filter(s=>s.boards.length>=2).slice(0,20),
    extensions:c.summary.examples,
    physicalSites:c.selected.length
