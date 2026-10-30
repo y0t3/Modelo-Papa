@@ -1,0 +1,21 @@
+name: LAB Radar apariciones cortas
+on:
+  push:
+    branches: [lab/radar-apariciones-cortas-29oct]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Test de pulsos, pausas, figuras y convergencia
+        run: npx --yes tsx scripts/test-radar-ventana-corta.ts
+      - name: MV1 preservado
+        run: npx --yes tsx scripts/test-motor-lalo.ts
