@@ -1,0 +1,34 @@
+name: LAB extensiones VT3 de VT2 fuera de Top AUX
+on:
+  push:
+    branches: [lab/extensiones-vt2-vt3-aux-fuera-top-29oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Test de extension fisica AUX fuera de Top
+        run: npx --yes tsx scripts/test-extensiones-aux.ts
+      - name: Regresiones de los tres tableros
+        run: npx --yes tsx scripts/test-tres-hojas-figuras.ts
+      - name: Regresiones originales Lalo
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Retro PRE de octubre y contraste de 20 hijas por madre
+        env:
+          TRES_LABEL: octubre-extensiones
+          TRES_FROM: '2026-10-12'
+          TRES_TO: '2026-10-28'
+        run: npx --yes tsx scripts/lab-tres-hojas-figuras.ts
+      - name: Exportar auditoria
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extensiones-vt3-aux-octubre
+          path: auditorias/radar-tres-hojas/octubre-extensiones.json
+          if-no-files-found: warn
