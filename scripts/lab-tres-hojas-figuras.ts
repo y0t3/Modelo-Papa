@@ -25,7 +25,7 @@ import type {Head,ParallelSummary} from '../src/labTresHojasFiguras';
 import type {ShapeRoute,Board,Kind} from '../src/labRadarFiguras';
 import {figuresInTop,compareSnapshots} from '../src/labRadarFiguras';
 import {auxCanonicalPath,auxiliaryBoard} from '../src/auxSantiagoNeuquen';
-import {buildExtensionSnapshot,mothersFromTop,evaluateSnapshotPOST,equalBudgetComparison}
+import {buildExtensionSnapshot,mothersFromTop,evaluateSnapshotPOST,equalBudgetComparison,rootCategory}
  from '../src/labExtensionesAux';
 import {winnerRoots} from '../src/labRadarRaicesGanadoras';
 import {auxiliaryWitnesses,plus11Witnesses,postSupportMetrics} from '../src/labTresHojasTestigos';
@@ -378,7 +378,20 @@ async function main(){
    const stats=(rows:typeof sub)=>{
     const sum=(fn:(x:typeof sub[number])=>number)=>
      rows.reduce((n,x)=>n+fn(x),0);
+    const categories=[
+     'CON_RAIZ_AYER','CON_RAIZ_HOY','CON_RAICES_AMBAS','SIN_RAICES'
+    ] as const;
+    const bothOptions=rows.flatMap(x=>
+     x.e.snapshot.mothers.flatMap(g=>g.options.filter(o=>o.status==='AMBAS')
+      .map(o=>({
+       o,actualHits:x.real.filter(h=>h.ending===o.value).length
+      }))));
     return {
+     bothWitnessClasses:Object.fromEntries(categories.map(cat=>[
+      cat,{options:bothOptions.filter(x=>rootCategory(x.o)===cat).length,
+       actualHits:bothOptions.filter(x=>rootCategory(x.o)===cat)
+        .reduce((n,x)=>n+x.actualHits,0)}
+     ])),
      cuts:rows.length,mothers:sum(x=>x.e.post.mothers),
      motherHeads:sum(x=>x.e.post.motherHeads),
      optionsByStatus:Object.fromEntries(statuses.map(k=>
