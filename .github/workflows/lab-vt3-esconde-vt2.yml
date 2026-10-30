@@ -1,0 +1,31 @@
+name: LAB VT2 escondidos en Top10 VT3 Lalo
+on:
+  push:
+    branches: [lab/vt3-deriva-vt2-en-11-30oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  historico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificar tramos físicos VT3 y no saltos
+        run: npx --yes tsx scripts/test-vt3-sufijos-vt2.ts
+      - name: Regresión del Modelo Lalo original
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Revisar cinco turnos, 12 a 29 octubre
+        env:
+          VT3TO2_FROM: '2026-10-12'
+          VT3TO2_TO: '2026-10-29'
+          VT3TO2_LABEL: 'octubre'
+        run: npx --yes tsx scripts/lab-vt3-esconde-vt2.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vt3-sufijos-vt2-lalo-octubre
+          path: auditorias/vt3-esconde-vt2/octubre.json
+          if-no-files-found: warn
