@@ -12,7 +12,7 @@ import {descargarCabezas} from '../src/cabezas';
 import {TURNOS,JURS} from '../src/domain';
 import type {Turno,CabezasDia} from '../src/domain';
 import {shiftDay} from '../src/dates';
-import {loadPreviousDraws} from '../src/drawHistory';
+import {loadPreviousDraws,hasDrawResults} from '../src/drawHistory';
 import {fetchAuxiliaryHeads,auxiliarySourceDate} from '../src/auxSantiagoSource';
 import {auxAtCut,extractAuxHistoryMode} from '../src/auxTemporalModes';
 import type {AuxMode} from '../src/auxTemporalModes';
@@ -100,23 +100,37 @@ async function main(){
   if(new Date(date+'T12:00:00Z').getUTCDay()===0)continue;
   if(ignoreEarlyOctober&&date>='2026-10-01'&&date<'2026-10-12')continue;
   try{
-   const [today,previous]=await Promise.all([
-    draw(date),loadPreviousDraws(date,6,draw)]);
+   const weekDate=shiftDay(date,-7);
+   const [today,previous,weekHeads]=await Promise.all([
+    draw(date),loadPreviousDraws(date,6,draw),draw(weekDate)]);
    if(TURNOS.some(t=>JURS.filter(j=>j!=='Montevideo')
     .some(j=>!/^\d{4}$/.test(today[t]?.[j]||''))))
     throw Error('Jornada incompleta');
-   const dates=new Set<string>([date,auxiliarySourceDate(date)]);
+   const dates=new Set<string>([date,auxiliarySourceDate(date),
+    weekDate,auxiliarySourceDate(weekDate)]);
    for(const prev of previous){
     dates.add(prev.date);dates.add(auxiliarySourceDate(prev.date));
    }
    const observations=new Map(await Promise.all([...dates].map(async d=>
     [d,(await aux(d)).heads] as const)));
    const history={} as Record<AuxMode,AuxiliaryHistorical[]>;
+   const baselineHistory={} as Record<AuxMode,AuxiliaryHistorical[]>;
+   const lastDraw=previous.at(-1)!;
+   const baselineRefs=[{date:lastDraw.date,heads:lastDraw.heads,
+    period:'D−1' as const},
+    ...(hasDrawResults(weekHeads)?[{
+     date:weekDate,heads:weekHeads,period:'D−7' as const
+    }]:[])];
    for(const mode of modes){
     history[mode]=previous.map(p=>{
      const src=mode==='anterior'?auxiliarySourceDate(p.date):p.date;
      return {date:p.date,period:'D−1' as const,
       aux:extractAuxHistoryMode(p.date,observations.get(src)!,p.heads,mode)};
+    });
+    baselineHistory[mode]=baselineRefs.map(ref=>{
+     const src=mode==='anterior'?auxiliarySourceDate(ref.date):ref.date;
+     return {date:ref.date,period:ref.period,
+      aux:extractAuxHistoryMode(ref.date,observations.get(src)!,ref.heads,mode)};
     });
    }
    const dayRows:Cut[]=[];
@@ -132,7 +146,7 @@ async function main(){
      const families=collectAuxFamilies(board,3).map(f=>f.family);
      const possible=new Set(families);
      const historic=buildAuxIndependent(date,turn,
-      auxAtCut(input,turn,mode),history[mode])[3];
+      auxAtCut(input,turn,mode),baselineHistory[mode])[3];
      const selected=selectAuxFormFirst(board,history[mode],date,bname(mode));
      const old=historic.slice(0,10).map(x=>x.family);
      const next=historic.slice(10,20).map(x=>x.family);
@@ -191,7 +205,7 @@ async function main(){
  const result={
   label,from,to,dates:[...new Set(rows.map(x=>x.date))].length,
   cuts:rows.length,skipped,
-  method:'PRE reconstruido +11 no interviene; AUX_AYER y AUX_HOY independientes. Formas prioriza sitios PRE sin leer cifras. 10 familias por tablero; neutral 5 semillas',
+  method:'PRE reconstruido sin +11. AUX_AYER y AUX_HOY independientes. Motor original D−1/D−7; Formas Primero hasta seis jornadas previas. Sitios antes de cifras. 10 familias por tablero, cinco controles neutrales',
   byBoard,
   byPeriod:Object.fromEntries([
    ['junio-agosto',x=>x.date<'2026-09-01'],
