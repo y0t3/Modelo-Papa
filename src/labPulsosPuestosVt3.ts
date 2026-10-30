@@ -71,3 +71,42 @@ export function evaluateRankPulses(
   slots,recent:events.sort((a,b)=>a.date.localeCompare(b.date))
    .filter(x=>x.date>=events.at(-1)?.date!).slice(-50)};
 }
+
+/** Al pasar de un sorteo al siguiente dentro de LA MISMA jornada,
+ * ¿el puesto VT3 que dio una cabeza VT2 extra vuelve a hacerlo?
+ * La señal para turno actual usa exclusivamente el turno ANTERIOR.
+ * Reportar exposición: una Previa con menos columnas no es igual
+ * que una Nocturna con más columnas.
+ */
+export function evaluateAdjacentTurnPulses(rows:RankObservation[]){
+ const turns=['Previa','Primera','Matutino','Vespertino','Nocturno'];
+ const map=new Map(rows.map(x=>[x.date+'|'+x.turn+'|'+x.rank,x]));
+ const pairs:{date:string;rank:number;from:string;to:string;
+  priorHit:boolean;currentHit:boolean;priorExposure:number;
+  currentExposure:number}[]=[];
+ for(const now of rows){
+  const index=turns.indexOf(now.turn);
+  if(index<=0||now.exposed===0)continue;
+  const past=map.get(now.date+'|'+turns[index-1]+'|'+now.rank);
+  if(!past||!past.exposed)continue;
+  pairs.push({date:now.date,rank:now.rank,
+   from:turns[index-1],to:now.turn,
+   priorHit:past.hits>0,currentHit:now.hits>0,
+   priorExposure:past.exposed,currentExposure:now.exposed});
+ }
+ const summary=(data:typeof pairs)=>{
+  const alerted=data.filter(x=>x.priorHit),normal=data.filter(x=>!x.priorHit);
+  return {compared:data.length,
+   alerted:alerted.length,alertHits:alerted.filter(x=>x.currentHit).length,
+   nonAlerts:normal.length,nonAlertHits:normal.filter(x=>x.currentHit).length,
+   meanExposureAlerts:alerted.length?
+    alerted.reduce((n,x)=>n+x.currentExposure,0)/alerted.length:null,
+   meanExposureNonAlerts:normal.length?
+    normal.reduce((n,x)=>n+x.currentExposure,0)/normal.length:null};
+ };
+ return {all:summary(pairs),
+  byTransition:Object.fromEntries(turns.slice(1).map(t=>
+   [t,summary(pairs.filter(x=>x.to===t))])),
+  byRank:Object.fromEntries(Array.from({length:10},(_,i)=>i+1).map(rank=>
+   [rank,summary(pairs.filter(x=>x.rank===rank))]))};
+}
