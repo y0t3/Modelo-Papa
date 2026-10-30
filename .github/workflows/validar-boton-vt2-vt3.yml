@@ -1,0 +1,24 @@
+name: VALIDAR boton VT2 de VT3 en Modelo Lalo
+on:
+  push:
+    branches: [feature/boton-vt2-de-vt3-30oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: TypeScript de la app y nuevo selector
+        run: npx tsc -p tsconfig.app-ui.json --noEmit
+      - name: Dos terminaciones exactas VT3 y POST sin duplicados
+        run: npx --yes tsx scripts/test-boton-vt2-de-vt3.ts
+      - name: Regresiones de lectura literal VT3
+        run: npx --yes tsx scripts/test-vt3-ultimas-dos.ts
+      - name: Regresion oficial Lalo
+        run: npx --yes tsx scripts/test-motor-lalo.ts
