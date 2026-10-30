@@ -167,6 +167,20 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
         {matched.has(f.key)?<Text style={[s.winnerHeads,{color:kinds[kind].text}]}>
          Cabeza(s): {winnerHeads(f).join(' · ')}
         </Text>:null}
+        {kind==='vt3'&&model==='lalo'?<View style={{flexDirection:'row',
+         alignItems:'center',flexWrap:'wrap',gap:6,marginTop:7}}>
+         <Text style={[s.detail,{color:c.accent,fontWeight:'900'}]}>
+          Últimas 2:
+         </Text>
+         {f.family.split('/').map((value,i)=>{
+          const suffix=value.slice(-2);
+          const matched2=heads.some(head=>/^\\d{4,5}$/.test(head)&&
+           head.slice(-2)===suffix);
+          return <Text key={i} style={[s.detail,{
+           fontWeight:'900',color:matched2?kinds.vt2.line:c.text
+          }]}>{suffix}{matched2?' ✓':''}{i===0?' /':''}</Text>;
+         })}
+        </View>:null}
         <Text style={[s.detail,{color:c.subtext}]}>
          {model==='auxiliar'?f.source:
           view?.ranks[kind].find(x=>familyKey(x.family)===f.key)?.rationale?
