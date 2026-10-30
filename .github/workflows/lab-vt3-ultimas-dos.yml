@@ -1,0 +1,37 @@
+name: LAB lectura literal dos últimas del Top10 VT3
+on:
+  push:
+    branches: [lab/top-vt3-ultimas-dos-exactas-30oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  analizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Probar exactamente las dos terminaciones de cada puesto
+        run: npx --yes tsx scripts/test-vt3-ultimas-dos.ts
+      - name: Asegurar motor original
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Retro PRE junio-septiembre
+        env:
+          VT3TAIL_FROM: '2026-06-01'
+          VT3TAIL_TO: '2026-09-30'
+          VT3TAIL_LABEL: 'junio-septiembre'
+        run: npx --yes tsx scripts/lab-vt3-ultimas-dos.ts
+      - name: Retro PRE octubre
+        env:
+          VT3TAIL_FROM: '2026-10-12'
+          VT3TAIL_TO: '2026-10-29'
+          VT3TAIL_LABEL: 'octubre'
+        run: npx --yes tsx scripts/lab-vt3-ultimas-dos.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vt3-dos-ultimas-lalo-jun-oct
+          path: auditorias/vt3-ultimas-dos/*.json
+          if-no-files-found: warn
