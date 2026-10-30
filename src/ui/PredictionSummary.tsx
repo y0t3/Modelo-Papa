@@ -11,6 +11,8 @@ import type {AuxiliarView} from '../motorLaloAuxiliar';
 import {familyKey,rowsForModel,hitsForFamily} from '../predictionParallel';
 import type {HeadEvent,ModelChoice} from '../predictionParallel';
 import {KINDS} from './visualTokens';
+import Vt2FromVt3Top from './Vt2FromVt3Top';
+type SummaryPage=LaloKind|'vt2fromvt3';
 import {useLaloTheme} from './LaloTheme';
 import {readableWeekday} from '../infoTurnHistory';
 import {explainFamilyRationale} from '../friendlyExplanations';
@@ -33,11 +35,12 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
  post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
- const [active,setActive]=useState<LaloKind>('vt2');
+ const [active,setActive]=useState<SummaryPage>('vt2');
+ const pages:SummaryPage[]=model==='lalo'?['vt2','vt2fromvt3','vt3','vt4']:KINDS;
  const [expanded,setExpanded]=useState<string|null>(null);
  const [historyFamily,setHistoryFamily]=useState<string|null>(null);
  const [pagerWidth,setPagerWidth]=useState(0);
- const [pageHeights,setPageHeights]=useState<Partial<Record<LaloKind,number>>>({});
+ const [pageHeights,setPageHeights]=useState<Partial<Record<SummaryPage,number>>>({});
  const pager=useRef<ScrollView>(null);
 
  useEffect(()=>{
@@ -49,7 +52,7 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
 
  useEffect(()=>{
   if(pagerWidth>0)
-   pager.current?.scrollTo({x:KINDS.indexOf(active)*pagerWidth,animated:false});
+   pager.current?.scrollTo({x:pages.indexOf(active)*pagerWidth,animated:false});
  // La posición sólo se recalcula cuando cambia el ancho (rotación o resize).
  // eslint-disable-next-line react-hooks/exhaustive-deps
  },[pagerWidth]);
@@ -63,10 +66,10 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
   return map;
  },[model,sheet,view,isoDate,turn,visualDays]);
 
- const selectKind=(kind:LaloKind)=>{
+ const selectKind=(kind:SummaryPage)=>{
   setActive(kind);
   if(pagerWidth>0)
-   pager.current?.scrollTo({x:KINDS.indexOf(kind)*pagerWidth,animated:true});
+   pager.current?.scrollTo({x:pages.indexOf(kind)*pagerWidth,animated:true});
  };
 
  return <View style={[s.surface,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
@@ -85,19 +88,24 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
    {model==='auxiliar'?' Solo utiliza la hoja Santiago–Neuquén; el Top de MV1 es independiente.':''}
   </Text>
   <View style={s.kindTabs}>
-   {KINDS.map(kind=><Pressable key={kind} accessibilityRole="tab"
-    accessibilityState={{selected:active===kind}}
-    accessibilityLabel={'Ver '+kind.toUpperCase()}
-    onPress={()=>selectKind(kind)}
-    style={[s.kindTab,{borderColor:active===kind?kinds[kind].line:c.border,
-     backgroundColor:active===kind?kinds[kind].fill:c.card}]}>
-    <Text style={[s.kindTabText,{color:active===kind?kinds[kind].text:c.subtext}]}>
-     {kind.toUpperCase()}
-    </Text>
-   </Pressable>)}
+   {pages.map(kind=>{
+    const styleKind=kind==='vt2fromvt3'?'vt2':kind;
+    return <Pressable key={kind} accessibilityRole="tab"
+     accessibilityState={{selected:active===kind}}
+     accessibilityLabel={kind==='vt2fromvt3'?'Ver VT2 de VT3':'Ver '+kind.toUpperCase()}
+     onPress={()=>selectKind(kind)}
+     style={[s.kindTab,{borderColor:active===kind?kinds[styleKind].line:c.border,
+      backgroundColor:active===kind?kinds[styleKind].fill:c.card}]}>
+     <Text style={[s.kindTabText,{
+      color:active===kind?kinds[styleKind].text:c.subtext,
+      fontSize:kind==='vt2fromvt3'?10:12}]}>
+      {kind==='vt2fromvt3'?'VT2 de VT3':kind.toUpperCase()}
+     </Text>
+    </Pressable>;
+   })}
   </View>
   <Text style={[s.hint,{color:c.muted}]}>
-   Deslizá para cambiar de VT · Tocá una familia para ver su respaldo
+   Deslizá entre los Tops · VT2 de VT3: mismas diez posiciones, dos terminaciones
   </Text>
   <View style={s.pager} onLayout={e=>{
    const width=Math.round(e.nativeEvent.layout.width);
@@ -109,11 +117,19 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
     contentContainerStyle={s.pages}
     onMomentumScrollEnd={e=>{
      if(!pagerWidth)return;
-     const index=Math.max(0,Math.min(KINDS.length-1,
+     const index=Math.max(0,Math.min(pages.length-1,
       Math.round(e.nativeEvent.contentOffset.x/pagerWidth)));
-     setActive(KINDS[index]);
+     setActive(pages[index]);
     }}>
-    {KINDS.map(kind=>{
+    {pages.map(kind=>{
+     if(kind==='vt2fromvt3')return <View key={kind}
+      style={[s.page,{width:pagerWidth||undefined}]}
+      onLayout={e=>{
+       const height=Math.ceil(e.nativeEvent.layout.height);
+       if(height>0)setPageHeights(prev=>prev[kind]===height?prev:{...prev,[kind]:height});
+      }}>
+      <Vt2FromVt3Top view={view} heads={heads} onFocus={onFocus}/>
+     </View>;
      const limit=10;
      const rows=rowsForModel(model,kind,view,auxiliar||null).slice(0,limit);
      const winners:HeadEvent[]=heads.map(head=>({jur:'',head}));
@@ -167,20 +183,6 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
         {matched.has(f.key)?<Text style={[s.winnerHeads,{color:kinds[kind].text}]}>
          Cabeza(s): {winnerHeads(f).join(' · ')}
         </Text>:null}
-        {kind==='vt3'&&model==='lalo'?<View style={{flexDirection:'row',
-         alignItems:'center',flexWrap:'wrap',gap:6,marginTop:7}}>
-         <Text style={[s.detail,{color:c.accent,fontWeight:'900'}]}>
-          Últimas 2:
-         </Text>
-         {f.family.split('/').map((value,i)=>{
-          const suffix=value.slice(-2);
-          const matched2=heads.some(head=>/^\\d{4,5}$/.test(head)&&
-           head.slice(-2)===suffix);
-          return <Text key={i} style={[s.detail,{
-           fontWeight:'900',color:matched2?kinds.vt2.line:c.text
-          }]}>{suffix}{matched2?' ✓':''}{i===0?' /':''}</Text>;
-         })}
-        </View>:null}
         <Text style={[s.detail,{color:c.subtext}]}>
          {model==='auxiliar'?f.source:
           view?.ranks[kind].find(x=>familyKey(x.family)===f.key)?.rationale?
