@@ -12,6 +12,7 @@ import type {Figure,Board,Kind} from './labRadarFiguras';
 import type {Witness} from './labTresHojasTestigos';
 import {figureSupport} from './labTresHojasTestigos';
 import {reversibleFamily} from './motorLalo';
+import {TURNOS} from './domain';
 
 export type RecordOfTop={date:string;turn:string;figures:Figure[]};
 export type AlertKind='NACE_CON_TESTIGO'|'REAPARECE_CON_TESTIGO'|
@@ -60,8 +61,12 @@ export function prepareChangeAlerts(
  if(current.figures.some(f=>f.date!==current.date||f.turn!==current.turn))
   throw Error('FUGA: figura de otro corte');
  const recent=concatHistory(older,current.date,current.turn);
- if(witnesses.some(w=>w.date>current.date))
-  throw Error('FUGA: testigo del futuro');
+ const targetIndex=TURNOS.indexOf(current.turn as typeof TURNOS[number]);
+ if(targetIndex<0)throw Error('Turno no reconocido');
+ if(witnesses.some(w=>w.date>current.date||
+    (w.date===current.date&&
+     TURNOS.indexOf(w.turn as typeof TURNOS[number])>=targetIndex)))
+  throw Error('FUGA: testigo del objetivo o del futuro');
  const recentSets=recent.map(x=>new Set(x.figures.map(figureKey)));
  const today=recent.at(-1)?.date;
  const proposed:FigureAlert[]=[];
@@ -88,8 +93,12 @@ export function prepareChangeAlerts(
   const prev6=recentSets.filter(set=>set.has(figureKey(f))).length;
   const prev3=recentSets.slice(-3).filter(set=>set.has(figureKey(f))).length;
   const support=figureSupport(f,witnesses,current.date);
-  const rootsToday=support.exactWitnesses.filter(x=>x.date===current.date).length;
-  const historicalRoots=support.exactWitnesses.filter(x=>x.date<current.date).length;
+  // No depender de los seis ejemplos visuales, que son sólo una muestra
+  // de los testigos. La identidad física puede contener más antecedentes.
+  const exactRoots=witnesses.filter(w=>w.kind===f.kind&&w.board===f.board&&
+   w.source===f.source&&w.site===f.site);
+  const rootsToday=exactRoots.some(w=>w.date===current.date);
+  const historicalRoots=exactRoots.some(w=>w.date<current.date);
   const kinds:AlertKind[]=[];
   if(recent.length>=3&&prev6===0&&historicalRoots>0)
    kinds.push('NACE_CON_TESTIGO');
@@ -98,7 +107,7 @@ export function prepareChangeAlerts(
   if(recent.length>=3&&prev6>0&&
     !recentSets.at(-1)!.has(figureKey(f))&&support.exactEvents>0)
    kinds.push('REAPARECE_CON_TESTIGO');
-  if(rootsToday>0)kinds.push('REFUERZO_REAL_INTRADIA');
+  if(rootsToday)kinds.push('REFUERZO_REAL_INTRADIA');
   // Conserva la lectura VT2 destacada en una hoja y sus dos opciones
   // de extensión VT3 realmente presentes en sendas auxiliares.
   if(f.kind==='VT2'&&f.families.some(fam=>
