@@ -1,0 +1,29 @@
+name: LAB VT3->VT2 controles junio-septiembre
+on:
+  push:
+    branches: [lab/vt3-deriva-vt2-en-11-30oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Reglas físicas VT3 a VT2 congeladas
+        run: npx --yes tsx scripts/test-vt3-sufijos-vt2.ts
+      - name: Junio a septiembre sin cambiar selector de octubre
+        env:
+          VT3TO2_FROM: '2026-06-01'
+          VT3TO2_TO: '2026-09-30'
+          VT3TO2_LABEL: 'junio-septiembre'
+        run: npx --yes tsx scripts/lab-vt3-esconde-vt2.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vt3-sufijos-vt2-lalo-junio-septiembre
+          path: auditorias/vt3-esconde-vt2/junio-septiembre.json
+          if-no-files-found: warn
