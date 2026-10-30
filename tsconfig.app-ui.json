@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["App.tsx", "src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["scripts/**", "node_modules/**", "android/**"]
+}
