@@ -17,7 +17,7 @@ import {buildMotorLalo} from '../src/motorLalo';
 import {topVt3AsVt2PRE,evaluateTailPOST,rankTailsPulses}
  from '../src/labVt3Terminations';
 import type {PublishedHead} from '../src/labVt3Terminations';
-import {periodProfile,fixedWinnerTrainTest}
+import {periodProfile,fixedWinnerTrainTest,overlapProfile}
  from '../src/labVt3TopPositions';
 import type {PositionCut} from '../src/labVt3TopPositions';
 
@@ -150,7 +150,11 @@ async function main(){
  const splitBySeptember=fixedWinnerTrainTest(positions,'2026-10-12');
  const midSummerTest=fixedWinnerTrainTest(positions.filter(x=>x.date<'2026-10-12'),
   '2026-08-01');
- const report={positionSummary,splitBySeptember,midSummerTest,method:'LECTURA LITERAL DOS ULTIMAS CIFRAS DE DOS VT3 POR PUESTO, no familias VT2 ni rutas parciales',
+ const overlapSummary=overlapProfile(positions);
+ const overlapTrain=overlapProfile(positions.filter(c=>c.date<'2026-10-12'));
+ const overlapOct=overlapProfile(positions.filter(c=>c.date>='2026-10-12'));
+ const report={positionSummary,splitBySeptember,midSummerTest,
+  overlapSummary,overlapTrain,overlapOct,method:'LECTURA LITERAL DOS ULTIMAS CIFRAS DE DOS VT3 POR PUESTO, no familias VT2 ni rutas parciales',
   period:{from,to,label},days:new Set(rows.map(r=>r.date)).size,cuts:rows.length,
   skipped,overall:stats(rows),byTurn,byMonth,
   pulses:pulse(rankRecords),
@@ -173,7 +177,10 @@ async function main(){
   day29:report.day29,latest:report.latest.filter(r=>r.turn==='Nocturno').slice(-3),
   positionSummary:report.positionSummary,
   splitBySeptember:report.splitBySeptember,
-  midSummerTest:report.midSummerTest
+  midSummerTest:report.midSummerTest,
+  overlapSummary:report.overlapSummary,
+  overlapTrain:report.overlapTrain,
+  overlapOct:report.overlapOct
  }));
  if(rows.length<45)throw Error('Muestra insuficiente '+rows.length);
 }
