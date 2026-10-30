@@ -164,8 +164,7 @@ export function groupByOrientedMother(group:MotherSnapshot):OrientationBand[]{
  }
  return [...groups].sort(([a],[b])=>a.localeCompare(b)).map(([suffix,items])=>{
   const options=[...items].sort((a,b)=>a.value.localeCompare(b.value));
-  const byStatus={AMBAS:[],SOLO_AYER:[],SOLO_HOY:[],NINGUNA:[]}
-   as Record<ExtensionStatus,string[]>;
+  const byStatus:Record<ExtensionStatus,string[]>={AMBAS:[],SOLO_AYER:[],SOLO_HOY:[],NINGUNA:[]};
   for(const item of options)byStatus[item.status].push(item.value[0]);
   return {mother:group.family,orientedSuffix:suffix,
    digits:options.map(x=>x.value[0]),
