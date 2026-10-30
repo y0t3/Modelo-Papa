@@ -412,9 +412,26 @@ async function main(){
    }];
   })
  );
+ const winningBridgeExamples=cuts.flatMap(c=>
+  c.summary.hits.filter(h=>h.kind==='VT3').flatMap(h=>
+   c.extension.combined.snapshot.mothers.flatMap(g=>
+    g.options.filter(o=>o.value===h.ending&&o.status==='AMBAS')
+     .map(o=>({
+      date:c.date,turn:c.turn,jur:h.head.jur,head:h.head.head,
+      ending:h.ending,mother:g.family,
+      engines:g.engines,topRanksMother:g.ranks,
+      rankVT3Ayer:o.rankVT3Ayer,rankVT3Hoy:o.rankVT3Hoy,
+      actualRoutesAyer:o.ayer,actualRoutesHoy:o.hoy,
+      physicalPathAyer:o.exampleAyer,physicalPathHoy:o.exampleHoy,
+      winningRootsAyer:o.winnerEventsAyer,
+      winningRootsHoy:o.winnerEventsHoy
+     }))
+   )
+  ));
  const report={
   periodComparison,
   extensionSummary,
+  winningBridgeExamples,
   method:'PRE_RECONSTRUIDO_NO_SELLADO; 3 HOJAS SEPARADAS; VT2 VT3 IGUAL IMPORTANCIA',
   period:{label,from,to},
   days:days.length,cuts:cuts.length,skipped,
@@ -475,7 +492,8 @@ async function main(){
   crossBoardExtensions:report.crossBoardExtensions,
   alertSummary:report.alertSummary,
   periodComparison:report.periodComparison,
-  extensionSummary:report.extensionSummary
+  extensionSummary:report.extensionSummary,
+  winningBridgeExamples:report.winningBridgeExamples
  }));
  if(days<8)throw Error('Menos de 8 jornadas válidas '+days);
 }
