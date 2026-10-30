@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import {allowedVT3} from '../src/labExtensionesAux';
 import type {MotherSnapshot,ExtensionOption} from '../src/labExtensionesAux';
-import {BUDGETS,STRATEGIES,shortlistMother,shortlistSnapshot,evaluateShortlistsPOST}
+import {BUDGETS,STRATEGIES,shortlistMother,shortlistSnapshot,evaluateShortlistsPOST,
+ groupByOrientedMother,compactionStats}
  from '../src/labReduccionExtensiones';
 const date='2026-10-29',turn='Nocturno';
 const mother='13/31';
@@ -42,6 +43,13 @@ for(const strategy of STRATEGIES)for(const budget of BUDGETS){
  assert.equal(measured.availableOptions,4);
  assert.equal(measured.shownOptions,Math.min(budget,4));
 }
+const groups=groupByOrientedMother(group);
+assert.equal(groups.length,1,'Todas las opciones construidas de x13 son un renglón');
+assert.deepEqual(groups.flatMap(x=>x.values).sort(),
+ options.filter(x=>x.status!=='NINGUNA').map(x=>x.value).sort(),
+ 'Compresión jamás descarta una alternativa válida');
+assert.equal(compactionStats({date,turn,mothers:[group],optionsTotal:20,
+ optionsBoth:2,auxBoardCells:{ayer:24,hoy:24}}).visualBands,1);
 const at10=shortlistMother(date,turn,group,'DIVERSIDAD',10);
 assert(at10.shown.some(x=>x.value==='813'));
 assert(at10.shown.some(x=>x.value==='513'));
