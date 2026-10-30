@@ -21,6 +21,8 @@ El motor se reconstruyó PRE en 119 jornadas completas (103 de junio a septiembr
 
 Cada número es la cantidad de **jornadas con ≥1 cabeza coincidente en ese puesto**. Las tasas del #8 fueron 13/103 (12,6 %) en el historial previo y 4/16 (25 %) en octubre; 17/119 (14,3 %) en conjunto. Una jornada podía registrar más de una cabeza o contener números repetidos en varios puestos; aquí se cuenta cada jornada una vez por puesto.
 
+En las **50 combinaciones** observadas de cinco turnos por diez puestos, las **dos puntuaciones brutas más altas** fueron precisamente los #8 de Vespertino y Nocturna con 17/119; las siguientes puntuaciones fueron 15/119. Esa comparación fue escogida POST entre muchos puestos y no acredita predicción.
+
 **Control interno de puestos:** el promedio de los diez puestos en Vespertino fue 8,9 jornadas coincidentes de 103 en junio–septiembre y 1,7 de 16 en octubre. Para Nocturna fue 9,9 de 103 y 2,3 de 16. El #8 supera esos promedios en ambos períodos, pero el número de puestos explorados es elevado y hay solapamientos.
 
 No se trata de una diferencia robusta demostrada. Un control matemático muy básico, suponiendo 2 terminaciones distintas y 5 cabezas uniformes por sorteo, daría una coincidencia por puesto con probabilidad `1−(98/100)^5 ≈ 9,61 %`; 17/119 tendría una cola binomial aproximada del 6,3 % **si el puesto hubiera sido seleccionado por adelantado**. Esa suposición no captura dependencia, terminaciones duplicadas, distintas jurisdicciones o búsqueda posterior entre **50 combinaciones de turno×puesto**. Por lo tanto, NO da una evidencia estadística suficiente para marcar el #8 como predictor.
