@@ -1,7 +1,7 @@
-name: LAB lectura literal dos últimas del Top10 VT3
+name: LAB rangos VT3 y refuerzo en VT2
 on:
   push:
-    branches: [lab/top-vt3-ultimas-dos-exactas-30oct]
+    branches: [lab/puestos-vt3-vt2-unicos-30oct]
   workflow_dispatch:
 permissions: {contents: read}
 jobs:
