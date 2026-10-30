@@ -1,0 +1,21 @@
+name: VALIDAR minihoja VT3 con sus VT2 internos
+on:
+  push:
+    branches: [lab/vt3-deriva-vt2-en-11-30oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Revisar tipos de App y minihoja
+        run: npx tsc -p tsconfig.app-ui.json --noEmit
+      - name: Probar bordes válidos, dos lecturas y rachas PRE
+        run: npx --yes tsx scripts/test-vt3-pulso-puestos.ts
+      - name: Regresión Lalo MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
