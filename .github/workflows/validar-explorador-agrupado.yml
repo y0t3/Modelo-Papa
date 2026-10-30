@@ -14,7 +14,7 @@ jobs:
         with: {node-version: 24}
       - run: npm install
       - name: Comprobar tipos de App y panel visual
-        run: npx tsc --noEmit
+        run: npx tsc -p tsconfig.app-ui.json --noEmit
       - name: Verificar compresión de extensiones sin descartes
         run: npx --yes tsx scripts/test-reduccion-extensiones.ts
       - name: Probar formaciones auxiliares fuera de Top10
