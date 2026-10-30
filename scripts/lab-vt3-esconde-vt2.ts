@@ -146,10 +146,31 @@ async function main(){
    budgets};
  };
  const noct=rows.filter(x=>x.turn==='Nocturno');
+ const months=[...new Set(rows.map(x=>x.date.slice(0,7)))].sort();
+ const byMonth=Object.fromEntries(months.map(month=>[month,{
+  all:reportOf(rows.filter(x=>x.date.startsWith(month))),
+  nocturna:reportOf(noct.filter(x=>x.date.startsWith(month)))
+ }]));
+ // Las ventanas se forman por JORNADAS SORTEABLES, no por días
+ // calendario, y son disjuntas para no contar una semana cinco veces.
+ const windows5=Array.from({length:Math.ceil(noct.length/5)},(_,i)=>{
+  const part=noct.slice(5*i,5*i+5);
+  return {from:part[0].date,to:part.at(-1)!.date,
+   days:part.length,summary:reportOf(part)};
+ });
+ const windowCounts={
+  total:windows5.length,
+  positive5:windows5.filter(w=>w.summary.budgets[1].focusHeads>
+   w.summary.budgets[1].disjointControlHeads).length,
+  negative5:windows5.filter(w=>w.summary.budgets[1].focusHeads<
+   w.summary.budgets[1].disjointControlHeads).length,
+  tied5:windows5.filter(w=>w.summary.budgets[1].focusHeads===
+   w.summary.budgets[1].disjointControlHeads).length
+ };
  const report={
   method:'REPLAY PRE_RECONSTRUIDO, motor Lalo ORIGINAL, segmentos físicos contiguos de Top10 VT3, sin modelos AUX',
   period:{from,to,label},dates:new Set(rows.map(x=>x.date)).size,
-  skipped,summary:reportOf(rows),
+  skipped,byMonth,windows5,windowCounts,summary:reportOf(rows),
   byTurn:Object.fromEntries(TURNOS.map(t=>
    [t,reportOf(rows.filter(x=>x.turn===t))])),
   nocturna:reportOf(noct),
@@ -180,7 +201,9 @@ async function main(){
  console.log('VT3TO2_RESUMEN',JSON.stringify({
   dates:report.dates,cuts:rows.length,skipped:skipped.length,
   summary:report.summary,byTurn:report.byTurn,
-  nocturna:report.nocturna,first:report.first,second:report.second,
+  nocturna:report.nocturna,byMonth:report.byMonth,
+  windowCounts:report.windowCounts,windows5:report.windows5,
+  first:report.first,second:report.second,
   day29:report.day29,examples:report.examples.slice(-12)
  }));
  if(rows.length<45)throw Error('Menos de 45 cortes históricos: '+rows.length);
