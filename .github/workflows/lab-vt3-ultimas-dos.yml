@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: 24}
       - run: npm install
+      - name: Validar TypeScript de la vista Top10
+        run: npx tsc -p tsconfig.app-ui.json --noEmit
       - name: Probar exactamente las dos terminaciones de cada puesto
         run: npx --yes tsx scripts/test-vt3-ultimas-dos.ts
       - name: Asegurar motor original
