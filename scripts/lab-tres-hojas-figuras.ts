@@ -27,6 +27,7 @@ import {figuresInTop,compareSnapshots} from '../src/labRadarFiguras';
 import {auxCanonicalPath} from '../src/auxSantiagoNeuquen';
 import {winnerRoots} from '../src/labRadarRaicesGanadoras';
 import {auxiliaryWitnesses,plus11Witnesses,postSupportMetrics} from '../src/labTresHojasTestigos';
+import {pulsesForSnapshot,summarizePulses} from '../src/labPulsosTresHojas';
 
 const from=process.env.TRES_FROM||'2026-10-12';
 const to=process.env.TRES_TO||'2026-10-28';
@@ -72,7 +73,8 @@ const routesFromAux=(ranks:Record<2|3|4,AuxRank[]>,date:string,
 };
 async function main(){
  const days:{date:string;cuts:{turn:Turno;summary:ParallelSummary;
-  selected:ReturnType<typeof figuresInTop>;support:ReturnType<typeof postSupportMetrics>}[]}[]=[];
+  selected:ReturnType<typeof figuresInTop>;support:ReturnType<typeof postSupportMetrics>}[];
+  pulse:ReturnType<typeof summarizePulses>}[]=[];
  const skipped:{date:string;reason:string}[]=[];
  for(let date=from;date<=to;date=shiftDay(date,1)){
   if(new Date(date+'T12:00:00Z').getUTCDay()===0)continue;
@@ -183,7 +185,14 @@ async function main(){
     const support=postSupportMetrics(selected,known,date,postHeads);
     cuts.push({turn,summary,selected,support});
    }
-   days.push({date,cuts});
+   const last=cuts.at(-1)!;
+   const older=days.slice(-6).map(p=>({
+    date:p.date,turn:'Nocturno',figures:p.cuts.at(-1)!.selected
+   }));
+   const pulse=summarizePulses(pulsesForSnapshot({
+    date,turn:'Nocturno',figures:last.selected
+   },older));
+   days.push({date,cuts,pulse});
    console.log('TRES_HOJAS_DAY',date,JSON.stringify(cuts.map(x=>({
     turn:x.turn,
     VT2:x.summary.byKind.VT2.headHitsByBoard,
@@ -260,14 +269,25 @@ async function main(){
    })
   )
  );
+ const pulseSummary=Object.fromEntries(['PLUS11','AUX_AYER','AUX_HOY']
+  .flatMap(board=>(['VT2','VT3'] as const).map(kind=>{
+   const key=board+'_'+kind;
+   const a=days.map(x=>x.pulse[key] as any);
+   const sum=(name:string)=>a.reduce((v,x)=>v+Number(x[name]||0),0);
+   return [key,{daySnapshots:a.length,
+    sites:sum('sites'),withEnoughHistory:sum('withEnoughHistory'),
+    newAfter3:sum('newAfter3'),previousDay:sum('previousDay'),
+    atLeast3Days:sum('atLeast3Days'),
+    recent:a.slice(-3).map(x=>x.topExamples)}];
+  })));
  const report={
   method:'PRE_RECONSTRUIDO_NO_SELLADO; 3 HOJAS SEPARADAS; VT2 VT3 IGUAL IMPORTANCIA',
   period:{label,from,to},
   days:days.length,cuts:cuts.length,skipped,
-  byTurn,boardContinuity,supportSummary,
+  byTurn,boardContinuity,supportSummary,pulseSummary,
   totalExtensions:cuts.reduce((n,c)=>n+c.summary.extensionCount,0),
   crossBoardExtensions:cuts.reduce((n,c)=>n+c.summary.crossBoardExtensions,0),
-  lastThree:days.slice(-3).map(d=>({date:d.date,cuts:d.cuts.map(c=>({
+  lastThree:days.slice(-3).map(d=>({date:d.date,pulse:d.pulse,cuts:d.cuts.map(c=>({
    turn:c.turn,byKind:c.summary.byKind,support:c.support,
    shared:c.summary.shared.filter(s=>s.boards.length>=2).slice(0,20),
    extensions:c.summary.examples,
