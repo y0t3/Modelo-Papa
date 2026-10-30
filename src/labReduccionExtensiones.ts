@@ -139,3 +139,56 @@ export function evaluateShortlistsPOST(
   answer.shownOptions/answer.availableOptions:null;
  return answer;
 }
+
+/**
+ * Compresión VISUAL sin pérdida: la madre 13/31 se muestra en como mucho
+ * DOS líneas, "x13" y "x31", con todos los dígitos iniciales disponibles.
+ * No se pierde ninguna opción ni se pretende escoger el prefijo ganador.
+ * Cada opción conserva TODOS sus caminos en la ficha expandible.
+ */
+export type OrientationBand={
+ mother:string;orientedSuffix:string;
+ digits:string[];values:string[];
+ count:number;withTwoBoards:number;
+ withPreviousWinner:number;
+ byStatus:Record<ExtensionStatus,string[]>;
+ options:ExtensionOption[];
+};
+export function groupByOrientedMother(group:MotherSnapshot):OrientationBand[]{
+ const groups=new Map<string,ExtensionOption[]>();
+ for(const x of group.options.filter(physical)){
+  const suffix=x.value.slice(1);
+  const arr=groups.get(suffix)||[];
+  arr.push(x);
+  groups.set(suffix,arr);
+ }
+ return [...groups].sort(([a],[b])=>a.localeCompare(b)).map(([suffix,items])=>{
+  const options=[...items].sort((a,b)=>a.value.localeCompare(b.value));
+  const byStatus={AMBAS:[],SOLO_AYER:[],SOLO_HOY:[],NINGUNA:[]}
+   as Record<ExtensionStatus,string[]>;
+  for(const item of options)byStatus[item.status].push(item.value[0]);
+  return {mother:group.family,orientedSuffix:suffix,
+   digits:options.map(x=>x.value[0]),
+   values:options.map(x=>x.value),count:options.length,
+   withTwoBoards:options.filter(x=>x.status==='AMBAS').length,
+   withPreviousWinner:options.filter(x=>witnesses(x)>0).length,
+   byStatus,options};
+ });
+}
+export function compactionStats(snapshot:ExtensionSnapshot){
+ const all=snapshot.mothers.flatMap(groupByOrientedMother);
+ const eligible=all.reduce((n,x)=>n+x.count,0);
+ const dist=all.reduce((m,x)=>{
+  m[x.count]=(m[x.count]||0)+1;
+  return m;
+ },{} as Record<number,number>);
+ return {mothers:snapshot.mothers.length,
+  eligibleOptions:eligible,visualBands:all.length,
+  optionsPerBand:all.length?Number((eligible/all.length).toFixed(3)):0,
+  lineReduction:eligible?Number(((1-all.length/eligible)*100).toFixed(1)):0,
+  noCandidateLoss:true,
+  withBoth:all.reduce((n,x)=>n+x.withTwoBoards,0),
+  bandsWithMultipleOptions:all.filter(x=>x.count>=2).length,
+  bandsBySize:dist
+ };
+}
