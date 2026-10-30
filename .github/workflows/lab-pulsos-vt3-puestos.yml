@@ -1,0 +1,37 @@
+name: LAB pulsos por puesto VT3 Lalo
+on:
+  push:
+    branches: [lab/vt3-deriva-vt2-en-11-30oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  pulsos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Comprobar dos aristas VT2 y pulse PRE
+        run: npx --yes tsx scripts/test-vt3-pulso-puestos.ts
+      - name: Comprobar motor oficial
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Backtest puestos junio a septiembre
+        env:
+          VT3TO2_FROM: '2026-06-01'
+          VT3TO2_TO: '2026-09-30'
+          VT3TO2_LABEL: 'pulso-jun-sep'
+        run: npx --yes tsx scripts/lab-vt3-esconde-vt2.ts
+      - name: Backtest puestos octubre
+        env:
+          VT3TO2_FROM: '2026-10-12'
+          VT3TO2_TO: '2026-10-29'
+          VT3TO2_LABEL: 'pulso-oct'
+        run: npx --yes tsx scripts/lab-vt3-esconde-vt2.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pulsos-puestos-vt3-lalo
+          path: auditorias/vt3-esconde-vt2/pulso-*.json
+          if-no-files-found: warn
