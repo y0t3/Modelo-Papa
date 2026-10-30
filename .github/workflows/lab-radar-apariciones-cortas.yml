@@ -17,5 +17,13 @@ jobs:
       - run: npm install
       - name: Test de pulsos, pausas, figuras y convergencia
         run: npx --yes tsx scripts/test-radar-ventana-corta.ts
+      - name: Retro de 118 Nocturnas y auditoría de controles
+        run: npx --yes tsx scripts/lab-radar-ventana-corta.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: radar-ventana-corta
+          path: auditorias/radar-ventana-corta/retro.json
+          if-no-files-found: warn
       - name: MV1 preservado
         run: npx --yes tsx scripts/test-motor-lalo.ts
