@@ -91,7 +91,7 @@ export function prepareChangeAlerts(
   const rootsToday=support.exactWitnesses.filter(x=>x.date===current.date).length;
   const historicalRoots=support.exactWitnesses.filter(x=>x.date<current.date).length;
   const kinds:AlertKind[]=[];
-  if(recent.length>=3&&prev3===0&&historicalRoots>0)
+  if(recent.length>=3&&prev6===0&&historicalRoots>0)
    kinds.push('NACE_CON_TESTIGO');
   // Debe haber figurado antes, estar ausente en la última jornada y
   // retornar tras al menos una jornada de intervalo.
@@ -118,8 +118,7 @@ export function prepareChangeAlerts(
  for(const kind of ['VT2','VT3'] as const){
   const same=proposed.filter(x=>x.kind===kind).sort(compare);
   // Primero cada tablero por separado (sin mezclar geometrías), luego
-  // dos focos por longitud. Si hay tres hojas, se rota prioridad de
-  // tablero entre cortes: NO se elige por cifras del futuro.
+  // dos focos por longitud. No se decide segun cifras del futuro.
   const topByBoard=['PLUS11','AUX_AYER','AUX_HOY']
    .map(board=>same.find(x=>x.board===board)).filter(Boolean) as FigureAlert[];
   chosen.push(...topByBoard.sort(compare).slice(0,2));
