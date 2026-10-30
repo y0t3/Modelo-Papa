@@ -21,7 +21,7 @@ const oldDates=['2026-10-24','2026-10-26','2026-10-27','2026-10-28'];
 const older=oldDates.map((d,i)=>({
  date:d,turn,figures:i===0?
  [mk(d,'PLUS11','LALO','13',7)]:i===3?
- [mk(d,'PLUS11','LALO','84',3),
+ [mk(d,'PLUS11','LALO','84',3,2),
   mk(d,'AUX_AYER','AUX_AYER','41',9,1)]:
  [mk(d,'PLUS11','LALO','84',3,2)]
 }));
