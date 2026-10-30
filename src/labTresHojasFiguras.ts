@@ -108,7 +108,7 @@ export function evaluateParallelPOST(preview:Preview,heads:Head[]):ParallelSumma
  const extensions=physicalExtensions(figures);
  const hits:BoardHit[]=[];
  const out={} as ParallelSummary['byKind'];
- for(const kind of KINDS){
+ for(const kind of KINDS.filter(x=>x==='VT2'||x==='VT3') as ('VT2'|'VT3')[]){
   const byBoard=Object.fromEntries(BOARDS.map(b=>
    [b,boardFigureFamilies(figures,b,kind)])) as Record<Board,Map<string,Figure[]>>;
   const totalFamilies=new Set([...BOARDS.flatMap(b=>[...byBoard[b].keys()])]);
