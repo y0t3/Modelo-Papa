@@ -37,6 +37,9 @@ const roots=[witnessed(now[0],'2026-10-24','9913'),
 const preview=prepareChangeAlerts({date,turn,figures:now},older,roots);
 assert(preview.proposed.some(x=>x.site===now[0].site&&
  x.board==='PLUS11'&&x.alertKinds.includes('REAPARECE_CON_TESTIGO')));
+assert(!preview.proposed.find(x=>x.site===now[0].site&&x.board==='PLUS11')!
+ .alertKinds.includes('NACE_CON_TESTIGO'),
+ 'Una figura vista cuatro noches atrás REAPARECE: no vuelve a nacer');
 assert(preview.proposed.some(x=>x.site===now[1].site&&
  x.board==='PLUS11'&&x.alertKinds.includes('NACE_CON_TESTIGO')));
 assert(preview.focus.filter(x=>x.kind==='VT2').length<=2);
@@ -53,6 +56,9 @@ assert.throws(()=>prepareChangeAlerts({date,turn,figures:now},[
  {date,turn,figures:now}],roots),/FUGA/);
 assert.throws(()=>prepareChangeAlerts({date,turn,figures:now},older,[
  ...roots,witnessed(now[0],'2026-10-30','9913')]),/FUGA/);
+assert.throws(()=>prepareChangeAlerts({date,turn,figures:now},older,[
+ ...roots,{...witnessed(now[0],date,'9913'),turn:'Nocturno'}]),/FUGA/,
+ 'La cabeza del propio turno objetivo jamás puede crear la alerta');
 const aux=mk(date,'AUX_AYER','AUX_AYER','13',4);
 const geo=mk(date,'PLUS11','LALO','13',4);
 assert.notEqual(aux.id,geo.id,'Distintos tableros nunca son mismo sitio');
