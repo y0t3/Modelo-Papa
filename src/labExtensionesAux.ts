@@ -162,6 +162,15 @@ export function evaluateSnapshotPOST(snapshot:ExtensionSnapshot,
   mothersWithBoth:snapshot.mothers.filter(g=>g.counts.AMBAS>0).length,
   distinctActualHeadsByCategory:byHead};
 }
+export type RootCategory='CON_RAIZ_AYER'|'CON_RAIZ_HOY'|
+ 'CON_RAICES_AMBAS'|'SIN_RAICES';
+export function rootCategory(o:ExtensionOption):RootCategory{
+ return o.winnerEventsAyer>0&&o.winnerEventsHoy>0?
+  'CON_RAICES_AMBAS':
+  o.winnerEventsAyer>0?'CON_RAIZ_AYER':
+  o.winnerEventsHoy>0?'CON_RAIZ_HOY':'SIN_RAICES';
+}
+
 export function equalBudgetComparison(snapshot:ExtensionSnapshot,
  heads:{jur:string;head:string}[]){
  // Predefinido: si hay ambas y una sola AUX, comparar 1 opción
