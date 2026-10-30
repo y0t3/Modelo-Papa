@@ -17,6 +17,7 @@ import {preSheetAtCut} from '../src/infoCandidatos';
 import {buildMotorLalo} from '../src/motorLalo';
 import {buildExperimentalVt2} from '../src/experimentalVt2';
 import {figuresInTop,compareSnapshots} from '../src/labRadarFiguras';
+import {winnerRoots,evidenceForFigure,strongestEvidence} from '../src/labRadarRaicesGanadoras';
 import type {Figure,ShapeRoute,Kind,Source} from '../src/labRadarFiguras';
 const from=process.env.FORMS_FROM||'2026-10-12';
 const through=process.env.FORMS_TO||'2026-10-28';
@@ -65,6 +66,7 @@ async function main(){
    if(available<20||base.missing.length){
     skipped.push({date,reason:'Parcial/nocturna anterior ausente'});continue;
    }
+   const rootsBeforeToday=previous.flatMap(p=>winnerRoots(p.date,p.sheet));
    const cuts:any[]=[];
    for(let i=0;i<TURNOS.length;i++){
     const turn=TURNOS[i];
@@ -99,9 +101,28 @@ async function main(){
       })
      }));
     const figures=figuresInTop(routes);
+    const knownRoots=[...rootsBeforeToday,...winnerRoots(date,pre)];
+    const evidenced=figures.map(f=>({figure:f,e:evidenceForFigure(f,knownRoots),
+      label:strongestEvidence(f,knownRoots)}));
+    const strongest=evidenced.filter(x=>x.label==='HUELLA_REITERADA');
+    const previousWinner=evidenced.filter(x=>x.e.exactEvents>0);
     const heads=JURS.filter(j=>j!=='Montevideo')
      .map(j=>actual[turn][j]||'').filter(valid);
     cuts.push({turn,figures,
+     evidence:{stronglyRepeated:strongest.length,
+      priorExactWinning:previousWinner.length,
+      winnerSupportedByTwoEngines:evidenced.filter(x=>
+       x.figure.engines.length>=2&&x.e.exactEvents>0).length,
+      examples:evidenced.filter(x=>x.e.exactEvents>0)
+       .sort((a,b)=>b.e.winnerDays-a.e.winnerDays||
+        b.e.exactEvents-a.e.exactEvents).slice(0,5).map(x=>({
+         kind:x.figure.kind,source:x.figure.source,site:x.figure.site,
+         readingCurrent:x.figure.readings.slice(0,3),
+         antecedents:x.e.independentEvents.slice(0,5),
+         events:x.e.winnerEvents,days:x.e.winnerDays,
+         exact:x.e.exactEvents,engines:x.figure.engines
+        }))
+     },
      counts:{vt2:figures.filter(f=>f.kind==='VT2').length,
       vt3:figures.filter(f=>f.kind==='VT3').length},
      actualHeadCount:heads.length,
@@ -205,14 +226,14 @@ async function main(){
   })),
   lastThree:days.slice(-3).map(d=>({date:d.date,
    transitions:d.transitions,cuts:d.cuts.map((c:any)=>({
-    turn:c.turn,counts:c.counts,post:c.post,topOverlap:c.topOverlap
+    turn:c.turn,counts:c.counts,post:c.post,evidence:c.evidence,topOverlap:c.topOverlap
    }))}))
  };
  fs.mkdirSync('auditorias/radar-figuras',{recursive:true});
  fs.writeFileSync('auditorias/radar-figuras/'+label+'.json',
   JSON.stringify({summary,days:days.map(d=>({date:d.date,
    cuts:d.cuts.map((c:any)=>({turn:c.turn,counts:c.counts,
-    actualHeadCount:c.actualHeadCount,post:c.post,topOverlap:c.topOverlap})),
+    actualHeadCount:c.actualHeadCount,post:c.post,evidence:c.evidence,topOverlap:c.topOverlap})),
    transitions:d.transitions})),crossDay,skipped,
    note:'Los recorridos se comparan por casillas/fuente, no familias. Un sitio que sigue físicamente disponible no es prueba de ventaja; top conserva o abandona esa huella antes de POST. Solo +11, AUX pendiente de replay.'},
    null,2)+'\n');
