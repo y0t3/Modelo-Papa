@@ -1,0 +1,34 @@
+name: LAB diagnostico embudo VT3 AUX
+on:
+  push:
+    branches: [lab/diagnostico-embudo-vt3-aux-30oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Validar embudo con tablero artificial
+        run: npx --yes tsx scripts/test-embudo-aux-vt3.ts
+      - name: Comprobar AUX sin cruces ilegales
+        run: npx --yes tsx scripts/test-extensiones-aux.ts
+      - name: Regresion MV1 oficial
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Replay 16 jornadas octubre
+        env:
+          TRES_LABEL: embudo-aux-vt3-octubre
+          TRES_FROM: '2026-10-12'
+          TRES_TO: '2026-10-29'
+        run: npx --yes tsx scripts/lab-tres-hojas-figuras.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: embudo-vt3-aux-octubre
+          path: auditorias/radar-tres-hojas/embudo-aux-vt3-octubre.json
+          if-no-files-found: warn
