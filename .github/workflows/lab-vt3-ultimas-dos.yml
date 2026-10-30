@@ -17,6 +17,8 @@ jobs:
         run: npx tsc -p tsconfig.app-ui.json --noEmit
       - name: Probar exactamente las dos terminaciones de cada puesto
         run: npx --yes tsx scripts/test-vt3-ultimas-dos.ts
+      - name: Verificar exclusividad y pruebas de rachas por puesto
+        run: npx --yes tsx scripts/test-vt3-puestos-unicos.ts
       - name: Asegurar motor original
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Retro PRE junio-septiembre
