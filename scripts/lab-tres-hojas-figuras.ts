@@ -28,6 +28,8 @@ import {auxCanonicalPath} from '../src/auxSantiagoNeuquen';
 import {winnerRoots} from '../src/labRadarRaicesGanadoras';
 import {auxiliaryWitnesses,plus11Witnesses,postSupportMetrics} from '../src/labTresHojasTestigos';
 import {pulsesForSnapshot,summarizePulses} from '../src/labPulsosTresHojas';
+import {prepareChangeAlerts,matchedControls,evaluateChangeAlertsPOST}
+ from '../src/labAlertasCambios';
 
 const from=process.env.TRES_FROM||'2026-10-12';
 const to=process.env.TRES_TO||'2026-10-28';
@@ -73,7 +75,10 @@ const routesFromAux=(ranks:Record<2|3|4,AuxRank[]>,date:string,
 };
 async function main(){
  const days:{date:string;cuts:{turn:Turno;summary:ParallelSummary;
-  selected:ReturnType<typeof figuresInTop>;support:ReturnType<typeof postSupportMetrics>}[];
+  selected:ReturnType<typeof figuresInTop>;support:ReturnType<typeof postSupportMetrics>;
+  alert:ReturnType<typeof prepareChangeAlerts>;
+  matched:ReturnType<typeof matchedControls>;
+  outcomes:ReturnType<typeof evaluateChangeAlertsPOST>}[];
   pulse:ReturnType<typeof summarizePulses>}[]=[];
  const skipped:{date:string;reason:string}[]=[];
  for(let date=from;date<=to;date=shiftDay(date,1)){
@@ -183,7 +188,15 @@ async function main(){
     ];
     if(known.some(x=>x.date>date))throw Error('FUGA testigo futuro');
     const support=postSupportMetrics(selected,known,date,postHeads);
-    cuts.push({turn,summary,selected,support});
+    // Clasificar ANTES de evaluar: no entra resultado del turno objetivo
+    // al radar ni a los pares de control.
+    const priorPhotos=days.slice(-6).map(p=>({
+     date:p.date,turn,figures:p.cuts[i].selected
+    }));
+    const alert=prepareChangeAlerts({date,turn,figures:selected},priorPhotos,known);
+    const matched=matchedControls(alert,selected,postHeads);
+    const outcomes=evaluateChangeAlertsPOST(alert,selected,postHeads);
+    cuts.push({turn,summary,selected,support,alert,matched,outcomes});
    }
    const last=cuts.at(-1)!;
    const older=days.slice(-6).map(p=>({
@@ -280,15 +293,55 @@ async function main(){
     atLeast3Days:sum('atLeast3Days'),
     recent:a.slice(-3).map(x=>x.topExamples)}];
   })));
+ const alertSummary=Object.fromEntries(['VT2','VT3'].map(kind=>{
+  const same=cuts.map(c=>({c,alerts:c.alert.proposed.filter(x=>x.kind===kind),
+   focus:c.alert.focus.filter(x=>x.kind===kind),
+   scored:c.outcomes.focus.filter(x=>x.kind===kind),
+   paired:c.matched.pairs.filter(x=>x.signal.kind===kind)}));
+  const total=(fn:(x:typeof same[number])=>number)=>
+   same.reduce((n,r)=>n+fn(r),0);
+  const boardBreakdown=Object.fromEntries(['PLUS11','AUX_AYER','AUX_HOY'].map(board=>
+   [board,{all:total(x=>x.alerts.filter(y=>y.board===board).length),
+    focused:total(x=>x.focus.filter(y=>y.board===board).length),
+    focusedHit:total(x=>x.scored.filter(y=>y.board===board&&y.hit).length),
+    matchedPairs:total(x=>x.paired.filter(y=>y.signal.board===board).length),
+    controlHits:total(x=>x.paired.filter(y=>y.signal.board===board&&y.controlHit).length),
+    pairSignalHits:total(x=>x.paired.filter(y=>y.signal.board===board&&y.signalHit).length)}]));
+  const exact=total(x=>x.paired.filter(y=>y.match==='EXACTO').length);
+  const matchedPairs=total(x=>x.paired.length);
+  return [kind,{
+   cuts:same.length,alertsTotal:total(x=>x.alerts.length),
+   focusedTotal:total(x=>x.focus.length),
+   focusedHits:total(x=>x.scored.filter(y=>y.hit).length),
+   totalPairs:matchedPairs,exactGeometryPairs:exact,
+   relaxedPairs:matchedPairs-exact,
+   pairedAlertHits:total(x=>x.paired.filter(y=>y.signalHit).length),
+   pairedControlHits:total(x=>x.paired.filter(y=>y.controlHit).length),
+   unmatchedFocus:total(x=>x.c.matched.unmatched),
+   byBoard:boardBreakdown,
+   alertsByType:Object.fromEntries([
+    'NACE_CON_TESTIGO','REAPARECE_CON_TESTIGO',
+    'REFUERZO_REAL_INTRADIA','MADRE_CON_EXTENSION_AUXILIAR'
+   ].map(flag=>[flag,total(x=>x.alerts.filter(y=>
+    y.alertKinds.includes(flag as any)).length)]))
+  }];
+ }));
  const report={
+  alertSummary,
   method:'PRE_RECONSTRUIDO_NO_SELLADO; 3 HOJAS SEPARADAS; VT2 VT3 IGUAL IMPORTANCIA',
   period:{label,from,to},
   days:days.length,cuts:cuts.length,skipped,
-  byTurn,boardContinuity,supportSummary,pulseSummary,
+  byTurn,boardContinuity,supportSummary,pulseSummary,alertSummary,
   totalExtensions:cuts.reduce((n,c)=>n+c.summary.extensionCount,0),
   crossBoardExtensions:cuts.reduce((n,c)=>n+c.summary.crossBoardExtensions,0),
   lastThree:days.slice(-3).map(d=>({date:d.date,pulse:d.pulse,cuts:d.cuts.map(c=>({
    turn:c.turn,byKind:c.summary.byKind,support:c.support,
+   alerts:c.alert.focus,alertCount:c.alert.proposed.length,
+   alertPOST:c.outcomes.focus,matchedControls:{
+    pairs:c.matched.pairs.length,
+    exact:c.matched.exactGeometry,
+    relaxed:c.matched.relaxedGeometry,
+    unmatched:c.matched.unmatched},
    shared:c.summary.shared.filter(s=>s.boards.length>=2).slice(0,20),
    extensions:c.summary.examples,
    physicalSites:c.selected.length
@@ -310,7 +363,8 @@ async function main(){
   label,days:report.days,cuts:report.cuts,skipped:skipped.length,
   byTurn:report.byTurn,boardContinuity:report.boardContinuity,
   totalExtensions:report.totalExtensions,
-  crossBoardExtensions:report.crossBoardExtensions
+  crossBoardExtensions:report.crossBoardExtensions,
+  alertSummary:report.alertSummary
  }));
  if(days<8)throw Error('Menos de 8 jornadas válidas '+days);
 }
