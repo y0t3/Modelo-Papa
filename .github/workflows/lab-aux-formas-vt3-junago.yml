@@ -1,0 +1,35 @@
+name: LAB Formas Primero VT3 AUX - desarrollo junio-agosto
+on:
+  push:
+    branches: [lab/aux-seleccion-geometrica-vt3]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  historico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Probar que cifras actuales no afectan ranking de sitios
+        run: npx --yes tsx scripts/test-aux-formas-primero-vt3.ts
+      - name: Geometria auxiliar y cortes cronologicos
+        run: npx --yes tsx scripts/test-extensiones-aux.ts
+      - name: Regresion del motor Lalo MV1
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Replay junio-agosto - seleccion fijada antes de evaluar septiembre
+        env:
+          AUXFORMS_FROM: '2026-06-01'
+          AUXFORMS_TO: '2026-08-31'
+          AUXFORMS_LABEL: 'junio-agosto'
+          AUXFORMS_MIN_CUTS: '250'
+        run: npx --yes tsx scripts/lab-aux-formas-primero-vt3.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aux-formas-vt3-junio-agosto
+          path: auditorias/aux-formas-vt3/junio-agosto.json
+          if-no-files-found: warn
