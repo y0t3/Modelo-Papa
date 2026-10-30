@@ -35,6 +35,8 @@ import {prepareChangeAlerts,matchedControls,evaluateChangeAlertsPOST}
 import {shortlistSnapshot,evaluateShortlistsPOST,STRATEGIES,BUDGETS,compactionStats}
  from '../src/labReduccionExtensiones';
 import type {BudgetResult} from '../src/labReduccionExtensiones';
+import {evaluateAuxVt3Funnel,summarizeAuxVt3Funnel}
+ from '../src/labEmbudoAuxVT3';
 
 const from=process.env.TRES_FROM||'2026-10-12';
 const to=process.env.TRES_TO||'2026-10-28';
@@ -82,6 +84,7 @@ const routesFromAux=(ranks:Record<2|3|4,AuxRank[]>,date:string,
 async function main(){
  const days:{date:string;cuts:{turn:Turno;summary:ParallelSummary;
   selected:ReturnType<typeof figuresInTop>;support:ReturnType<typeof postSupportMetrics>;
+  auxFunnel:Record<'AUX_AYER'|'AUX_HOY',ReturnType<typeof evaluateAuxVt3Funnel>>;
   alert:ReturnType<typeof prepareChangeAlerts>;
   matched:ReturnType<typeof matchedControls>;
   outcomes:ReturnType<typeof evaluateChangeAlertsPOST>;
@@ -147,6 +150,7 @@ async function main(){
     const form3=buildFormFirstMotor(pre,date,turn,shapeDays,10,'vt3');
     const routes:ShapeRoute[]=[];
     const auxBoards={} as Record<'AUX_AYER'|'AUX_HOY',ReturnType<typeof auxiliaryBoard>>;
+    const auxRanks={} as Record<'AUX_AYER'|'AUX_HOY',ReturnType<typeof buildAuxIndependent>>;
     for(const kind of ['vt2','vt3'] as const)
      for(const f of lal.ranks[kind].slice(0,10))
       for(const p of f.paths){
@@ -178,12 +182,19 @@ async function main(){
       Object.values(cut).some(x=>Object.values(x).some(h=>valid(h))))
       throw Error('FUGA AUX HOY PREVIA');
      const ranks=buildAuxIndependent(date,turn,cut,auxRefs[mode]);
-     routes.push(...routesFromAux(ranks,date,turn,
-      mode==='anterior'?'AUX_AYER':'AUX_HOY'));
+     const key=mode==='anterior'?'AUX_AYER':'AUX_HOY';
+     auxRanks[key]=ranks;
+     routes.push(...routesFromAux(ranks,date,turn,key));
     }
     const postHeads:Head[]=JURS.filter(j=>j!=='Montevideo').map(j=>({
      jur:j,head:today[turn]?.[j]||''
     })).filter(x=>valid(x.head));
+    const auxFunnel={
+     AUX_AYER:evaluateAuxVt3Funnel(auxBoards.AUX_AYER,
+      auxRanks.AUX_AYER[3],postHeads),
+     AUX_HOY:evaluateAuxVt3Funnel(auxBoards.AUX_HOY,
+      auxRanks.AUX_HOY[3],postHeads)
+    };
     const preview={date,turn,routes};
     const summary=evaluateParallelPOST(preview,postHeads);
     const selected=figuresInTop(routes);
@@ -233,7 +244,7 @@ async function main(){
     const alert=prepareChangeAlerts({date,turn,figures:selected},priorPhotos,known);
     const matched=matchedControls(alert,selected,postHeads);
     const outcomes=evaluateChangeAlertsPOST(alert,selected,postHeads);
-    cuts.push({turn,summary,selected,support,alert,matched,outcomes,extension,reduction});
+    cuts.push({turn,summary,selected,support,alert,matched,outcomes,extension,reduction,auxFunnel});
    }
    const last=cuts.at(-1)!;
    const older=days.slice(-6).map(p=>({
@@ -278,6 +289,19 @@ async function main(){
    }];
   }))];
  }));
+ const auxFunnel=Object.fromEntries(
+  (['AUX_AYER','AUX_HOY'] as const).map(board=>[
+   board,{
+    all:summarizeAuxVt3Funnel(cuts.map(c=>c.auxFunnel[board])),
+    byTurn:Object.fromEntries(TURNOS.map(t=>
+     [t,summarizeAuxVt3Funnel(cuts.filter(c=>c.turn===t).map(c=>c.auxFunnel[board]))])),
+    nocturna:summarizeAuxVt3Funnel(cuts.filter(c=>c.turn==='Nocturno')
+     .map(c=>c.auxFunnel[board])),
+    recent:cuts.filter(c=>c.date>='2026-10-27'&&c.turn==='Nocturno').map(c=>({
+     date:c.date,cases:c.auxFunnel[board].cases
+    }))
+   }
+  ]));
  const boardContinuity=Object.fromEntries(['PLUS11','AUX_AYER','AUX_HOY'].flatMap(
   board=>['VT2','VT3'].map(kind=>{
    const changes:any[]=[];
@@ -520,7 +544,7 @@ async function main(){
   method:'PRE_RECONSTRUIDO_NO_SELLADO; 3 HOJAS SEPARADAS; VT2 VT3 IGUAL IMPORTANCIA',
   period:{label,from,to},
   days:days.length,cuts:cuts.length,skipped,
-  byTurn,boardContinuity,supportSummary,pulseSummary,alertSummary,
+  auxFunnel,byTurn,boardContinuity,supportSummary,pulseSummary,alertSummary,
   totalExtensions:cuts.reduce((n,c)=>n+c.summary.extensionCount,0),
   crossBoardExtensions:cuts.reduce((n,c)=>n+c.summary.crossBoardExtensions,0),
   lastThree:days.slice(-3).map(d=>({date:d.date,pulse:d.pulse,cuts:d.cuts.map(c=>({
@@ -572,7 +596,7 @@ async function main(){
   JSON.stringify(report,null,2)+'\n');
  console.log('TRES_HOJAS_SUMMARY',JSON.stringify({
   label,days:report.days,cuts:report.cuts,skipped:skipped.length,
-  byTurn:report.byTurn,boardContinuity:report.boardContinuity,
+  byTurn:report.byTurn,auxFunnel:report.auxFunnel,boardContinuity:report.boardContinuity,
   totalExtensions:report.totalExtensions,
   crossBoardExtensions:report.crossBoardExtensions,
   alertSummary:report.alertSummary,
