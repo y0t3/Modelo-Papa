@@ -32,11 +32,14 @@ import type {Figure} from '../labRadarFiguras';
 import {figuresInTop} from '../labRadarFiguras';
 import {AuxMiniBoard} from './AuxRouteMiniPreview';
 import {useLaloTheme} from './LaloTheme';
+import {extensionReviewPOST,plus11Rankings} from '../extensionReview';
+import type {PublishedExtensionHead,Vt3Plus11Rank} from '../extensionReview';
 
 type Props={date:string;turn:Turno;sheet:DailySheet|null;
  historical:LaloHistorical[];visualDays:InfoVisualDay[];
  auxYesterday:AuxiliaryHeads|null;auxToday:AuxiliaryHeads|null;
- pastYesterday:AuxiliarHistory[];pastToday:AuxiliarHistory[]};
+ pastYesterday:AuxiliarHistory[];pastToday:AuxiliarHistory[];
+ publishedHeads:PublishedExtensionHead[]};
 type AuxKey='AUX_AYER'|'AUX_HOY';
 const topTitles:Record<string,string>={LALO:'Lalo',
  GEOMETRIA:'Geometría',CONECTADAS:'Conectadas',
@@ -44,7 +47,6 @@ const topTitles:Record<string,string>={LALO:'Lalo',
 const statusLabel=(s:ExtensionOption['status'])=>
  s==='AMBAS'?'Ayer + Hoy':s==='SOLO_AYER'?'Solo Ayer':
  s==='SOLO_HOY'?'Solo Hoy':'Sin camino';
-const familyName=(v:string)=>reversibleFamily(v);
 const unique=(x:Witness[])=>[...new Map(x.map(r=>[r.event+'|'+r.board,r])).values()];
 const witnessesFor=(paths:AuxPath[],board:AuxKey,history:Witness[])=>{
  const sites=new Set(paths.map(auxCanonicalPath));
@@ -70,6 +72,8 @@ function ExplorerBody(p:Props){
   if(!pre||!p.date)return null;
   const lalo=buildMotorLalo(pre,p.date,p.turn,p.historical.filter(x=>x.date<p.date));
   const all=new Map<string,Mother>();
+  const vt3Ranks:Vt3Plus11Rank[]=lalo.ranks.vt3.slice(0,10)
+   .map(f=>({engine:'LALO',family:f.family,rank:f.rank}));
   for(const f of lalo.ranks.vt2.slice(0,10))
    addMother(all,f.family,'LALO',f.rank);
   const days=[...p.visualDays,...p.historical].filter(x=>x.date<p.date);
@@ -82,10 +86,14 @@ function ExplorerBody(p:Props){
    p.visualDays.filter(x=>x.date<p.date),10,'vt2');
   forms.top.slice(0,10).forEach(f=>
    addMother(all,f.family,'FORMAS_PRIMERO',f.rank));
-  return [...all.values()].sort((a,b)=>
+  const formsVt3=buildFormFirstMotor(pre,p.date,p.turn,
+   p.visualDays.filter(x=>x.date<p.date),10,'vt3');
+  formsVt3.top.slice(0,10).forEach(f=>
+   vt3Ranks.push({engine:'FORMAS_PRIMERO',family:f.family,rank:f.rank}));
+  return {vt3Ranks,mothers:[...all.values()].sort((a,b)=>
    (a.ranks.LALO??99)-(b.ranks.LALO??99)||
    Math.min(...Object.values(a.ranks))-Math.min(...Object.values(b.ranks))||
-   a.family.localeCompare(b.family));
+   a.family.localeCompare(b.family))};
  },[pre,p.date,p.turn,p.historical,p.visualDays]);
  // IMPORTANT: Ayer está completo desde el inicio de jornada. El argumento
  // 'Nocturno' se usa SOLO para renderizar sus 3 columnas; nunca lee resultado.
@@ -134,7 +142,7 @@ function ExplorerBody(p:Props){
   }
   return out;
  },[p.date,p.turn,p.auxYesterday,p.auxToday,p.pastYesterday,p.pastToday,boardA,boardH]);
- const selectedMothers=useMemo(()=>reference?.filter(x=>
+ const selectedMothers=useMemo(()=>reference?.mothers.filter(x=>
   scope==='todos'||x.engines.includes('LALO'))||[],[reference,scope]);
  useEffect(()=>{
   setMother(null);setOption(null);setShowAllRoutes(false);setShowWitnesses(false);
@@ -145,7 +153,16 @@ function ExplorerBody(p:Props){
   [p.date,p.turn,selectedMothers,boardA,boardH,auxRanks,roots]);
  const active=snapshot?.mothers.find(x=>x.family===(mother||snapshot.mothers[0]?.family));
  const bands=useMemo(()=>active?groupByOrientedMother(active):[],[active]);
+ // POST: resultados publicados se consultan sólo para colorear el cotejo.
+ // Esta información no participa en la creación ni orden de las opciones PRE.
+ const reviewed=useMemo(()=>new Map((active?.options||[])
+  .filter(x=>x.status!=='NINGUNA').map(x=>[
+    x.value,extensionReviewPOST(x.value,p.publishedHeads)
+  ])),[active,p.publishedHeads]);
+ const publishedCount=p.publishedHeads.filter(x=>/^\d{4,5}$/.test(x.head)).length;
  const picked=active?.options.find(x=>x.value===option&&x.status!=='NINGUNA');
+ const pickedReview=picked?reviewed.get(picked.value):null;
+ const pickedPlus=picked?plus11Rankings(picked.value,reference?.vt3Ranks||[]):[];
  const routeA=useMemo(()=>picked&&boardA?findAuxPaths(boardA,picked.value):[],
   [picked,boardA]);
  const routeH=useMemo(()=>picked&&boardH?findAuxPaths(boardH,picked.value):[],
@@ -214,6 +231,8 @@ function ExplorerBody(p:Props){
    <Text style={[s.sub,{color:c.text}]}>
     Madre {active.family} · {active.options.filter(x=>x.status!=='NINGUNA').length}
     {' '}VT3 con al menos un recorrido válido
+    {publishedCount?' · '+active.options.filter(o=>
+     reviewed.get(o.value)?.status==='COINCIDIO').length+' coincidentes (POST)':''}
    </Text>
    <Text style={[s.note,{color:c.subtext}]}>
     Dos orientaciones de lectura; una cifra puede aparecer en varias formas
@@ -224,18 +243,33 @@ function ExplorerBody(p:Props){
     <Text style={[s.sub,{color:c.accent}]}>
      _{band.orientedSuffix} · {band.count} extensiones
     </Text>
-    <View style={s.line}>{band.options.map(o=><Pressable
+    <View style={s.line}>{band.options.map(o=>{
+     const review=reviewed.get(o.value);
+     const pre11=plus11Rankings(o.value,reference?.vt3Ranks||[]);
+     const hasPreSupport=pre11.length>0||o.winnerEventsAyer+
+      o.winnerEventsHoy>0||o.rankVT3Ayer!==null||o.rankVT3Hoy!==null;
+     const winner=review?.status==='COINCIDIO';
+     return <Pressable
      key={o.value} accessibilityRole="button"
      accessibilityState={{selected:picked?.value===o.value}}
      onPress={()=>{setOption(o.value);setShowAllRoutes(false);setShowWitnesses(false)}}
-     style={[s.digit,{borderColor:picked?.value===o.value?
-      kinds.vt3.line:c.border,backgroundColor:picked?.value===o.value?
+     style={[s.digit,{borderColor:winner?'#3BC78F':
+      picked?.value===o.value?kinds.vt3.line:
+      hasPreSupport?c.accent:c.border,
+      borderWidth:winner?2:1,
+      backgroundColor:winner?'#123F36':picked?.value===o.value?
       kinds.vt3.fill:c.surface}]}>
-     <Text style={[s.number,{color:c.text}]}>{o.value}</Text>
-     <Text style={[s.tiny,{color:c.subtext}]}>
+     <Text style={[s.number,{color:winner?'#B6FFE4':c.text}]}>
+      {o.value}{winner?' ✓':''}
+     </Text>
+     <Text style={[s.tiny,{color:winner?'#B6FFE4':c.subtext}]}>
       {o.status==='AMBAS'?'A+H':o.status==='SOLO_AYER'?'AYER':'HOY'}
      </Text>
-    </Pressable>)}</View>
+     {hasPreSupport?<Text style={[s.tiny,{color:c.accent}]}>
+      ● Respaldo PRE
+     </Text>:null}
+    </Pressable>;
+    })}</View>
    </View>):<Text style={[s.note,{color:c.muted}]}>
     Esta madre no forma extensiones VT3 en ninguna auxiliar para este corte.
    </Text>}
@@ -244,11 +278,32 @@ function ExplorerBody(p:Props){
    <Text style={[s.sub,{color:kinds.vt3.line}]}>
     {picked.value} · {statusLabel(picked.status)}
    </Text>
+   <Text style={[s.note,{color:pickedReview?.status==='COINCIDIO'?
+    '#3BC78F':c.subtext,fontWeight:'800'}]}>
+    {pickedReview?.status==='COINCIDIO'?
+     '✓ Coincidió con '+pickedReview.matches.map(x=>
+      x.jur+' '+x.head+(x.direction==='INVERSA'?' (lectura inversa)':'')
+     ).join(' · '):
+     pickedReview?.status==='SIN_COINCIDENCIA_PUBLICADA'?
+     'Sin coincidencia en '+pickedReview.observed+
+      ' cabezas publicadas hasta ahora (POST)':
+     'Aún no hay resultados publicados del turno (PRE)'}
+   </Text>
    <Text style={[s.note,{color:c.subtext}]}>
     Ayer: {picked.ayer} caminos · Hoy: {picked.hoy} caminos
     {'\n'}VT3 Top10 auxiliar: Ayer {picked.rankVT3Ayer?
      '#'+picked.rankVT3Ayer:'fuera del Top10'} · Hoy {picked.rankVT3Hoy?
      '#'+picked.rankVT3Hoy:'fuera del Top10'}
+   </Text>
+   <Text style={[s.note,{color:c.text}]}>
+    Testigos ganadores anteriores en estas casillas: Ayer
+    {' '}{picked.winnerEventsAyer} · Hoy {picked.winnerEventsHoy}.
+   </Text>
+   <Text style={[s.note,{color:pickedPlus.length?c.accent:c.subtext}]}>
+    VT3 en los Top10 +11:
+    {' '}{pickedPlus.length?pickedPlus.map(x=>
+      (x.engine==='LALO'?'Lalo':'Formas primero')+' #'+x.rank).join(' · '):
+     'no figura entre los Tops revisados'}
    </Text>
    {boardA?renderPaths(boardA,routeA,'AUX_AYER'):null}
    {boardH?renderPaths(boardH,routeH,'AUX_HOY'):null}
