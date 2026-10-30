@@ -17,6 +17,8 @@ jobs:
         run: npx --yes tsx scripts/test-tres-hojas-figuras.ts
       - name: Tests de antecedentes de hojas independientes
         run: npx --yes tsx scripts/test-tres-hojas-testigos.ts
+      - name: Tests de movimientos cortos sin seguir numeros
+        run: npx --yes tsx scripts/test-pulsos-tres-hojas.ts
       - name: Tests originales MV1
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Verificacion historica de octubre
