@@ -8,6 +8,7 @@ import PhysicalShapeHistory from './PhysicalShapeHistory';
 import type {Turno} from '../domain';
 import type {InfoVisualDay} from '../infoTurnHistory';
 import {useLaloTheme} from './LaloTheme';
+import {extractVt2EdgesFromVt3} from '../vt3EdgePreview';
 
 const sourceName=(id:SourceId)=>({
  prevNocturno:'Nocturna anterior',Previa:'Previa',Primera:'Primera',
@@ -68,10 +69,12 @@ export default function MiniRoutePreview({sheet,route,date='',turn,days=[]}:{
 }){
  const {colors:c}=useLaloTheme();
  const [expanded,setExpanded]=useState(false);
+ const [selectedEdge,setSelectedEdge]=useState<number|null>(null);
  const column=sheet.columns.find(x=>x.id===route.sourceId);
  if(!column)return null;
  const antecedents=route.antecedents||[];
  const kindLabel=route.kind==='vt2'?'2 cifras':route.kind==='vt3'?'3 cifras':'4 cifras';
+ const vt2Edges=route.kind==='vt3'?extractVt2EdgesFromVt3(column.values,route.cells):[];
  return <View style={[s.wrap,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
   <Text style={[s.heading,{color:c.text}]}>
    Recorrido actual · {sourceName(route.sourceId)} · {kindLabel}
@@ -80,6 +83,32 @@ export default function MiniRoutePreview({sheet,route,date='',turn,days=[]}:{
   <Text style={[s.caption,{color:c.subtext}]}>
    Forma {route.readings.join(' o ')}. Camino: {walk(route.cells)}.
   </Text>
+  {vt2Edges.length>0?<View style={[s.edgeBox,{borderColor:c.border,backgroundColor:c.card}]}>
+   <Text style={[s.heading,{color:c.accent}]}>VT2 contenidos en este recorrido VT3</Text>
+   <Text style={[s.hint,{color:c.subtext,marginVertical:3}]}>
+    Dos tramos de casillas consecutivas. Tocá uno para resaltarlo en la minihoja.
+    No son candidatos nuevos ni alteran el Top10 VT2.
+   </Text>
+   <View style={s.edgeRow}>
+    {vt2Edges.map((edge,i)=><Pressable key={i} accessibilityRole="button"
+     accessibilityLabel={edge.label+': '+edge.family}
+     accessibilityState={{selected:selectedEdge===i}}
+     onPress={()=>setSelectedEdge(prev=>prev===i?null:i)}
+     style={[s.edgeChip,{borderColor:selectedEdge===i?c.accent:c.border,
+      backgroundColor:selectedEdge===i?c.accentFill:c.surfaceAlt}]}>
+     <Text style={{color:c.text,fontWeight:'900',fontSize:12}}>{edge.family}</Text>
+     <Text style={{color:c.subtext,fontSize:9}}>{edge.label}</Text>
+    </Pressable>)}
+   </View>
+   {selectedEdge!==null&&vt2Edges[selectedEdge]?
+    <View style={{gap:5,paddingTop:6}}>
+     <Text style={[s.caption,{color:c.text,marginTop:0}]}>
+      {vt2Edges[selectedEdge].label} · {vt2Edges[selectedEdge].reading}
+     </Text>
+     <RouteMiniBoard values={column.values} cells={vt2Edges[selectedEdge].cells}
+      kind="vt2" compact/>
+    </View>:null}
+  </View>:null}
   {date&&turn?<PhysicalShapeHistory key={route.id+'|'+route.ownerId}
    route={route} sheet={sheet} date={date} turn={turn} days={days}/>:null}
   <Text style={[s.heading,{color:c.text,marginTop:12}]}>
@@ -135,5 +164,8 @@ const s=StyleSheet.create({
  historyText:{fontSize:11,fontWeight:'700',lineHeight:17},
  historyMeta:{fontSize:10,lineHeight:17,marginTop:6},
  explanation:{marginTop:11,borderRadius:8,padding:9},
- explanationTitle:{fontWeight:'900',fontSize:11}
+ explanationTitle:{fontWeight:'900',fontSize:11},
+ edgeBox:{marginTop:9,padding:9,borderRadius:9,borderWidth:1,gap:5},
+ edgeRow:{flexDirection:'row',flexWrap:'wrap',gap:7},
+ edgeChip:{paddingHorizontal:10,paddingVertical:9,borderWidth:1,borderRadius:8,gap:3}
 });
