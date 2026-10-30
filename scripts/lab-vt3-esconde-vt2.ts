@@ -14,6 +14,8 @@ import {buildSheet} from '../src/sheet';
 import {preSheetAtCut} from '../src/infoCandidatos';
 import {buildMotorLalo,reversibleFamily} from '../src/motorLalo';
 import {vt2InsideVt3PRE,evaluateEmbeddedVt2POST,equalBudgetPOST} from '../src/labVt3SufijosVt2';
+import {evaluateRankPulses} from '../src/labPulsosPuestosVt3';
+import type {RankObservation} from '../src/labPulsosPuestosVt3';
 const from=process.env.VT3TO2_FROM||'2026-10-12';
 const to=process.env.VT3TO2_TO||'2026-10-29';
 const label=process.env.VT3TO2_LABEL||'octubre';
@@ -45,6 +47,7 @@ type DayRecord={
  scores:ReturnType<typeof evaluateEmbeddedVt2POST>;
  budgets:ReturnType<typeof equalBudgetPOST>;
  plainRankBudgets:{size:number;rank11Hits:number;count:number;extraOverlap:number}[];
+ rankRows:RankObservation[];
 };
 async function main(){
  const rows:DayRecord[]=[],skipped:{date:string;reason:string}[]=[];
@@ -81,6 +84,14 @@ async function main(){
      .filter(x=>/^\d{4}$/.test(x.head));
     const scores=evaluateEmbeddedVt2POST(shown,heads);
     const budgets=equalBudgetPOST(shown,lalo.ranks.vt2,heads);
+    const rankRows:RankObservation[]=lalo.ranks.vt3.slice(0,10).map(mother=>{
+     const same=shown.missingFromVt2Top.filter(x=>
+      x.motherRanks.includes(mother.rank));
+     const set=new Set(same.map(x=>x.family));
+     const hits=scores.cases.filter(x=>set.has(x.vt2)).length;
+     return {date,turn,rank:mother.rank,exposed:same.length,
+      hits,mothers:[mother.family],families:[...set]};
+    });
     const plainRankBudgets=budgets.map(b=>{
      const rank11=new Set(lalo.ranks.vt2.slice(10,10+b.focusSize).map(x=>x.family));
      const vals=heads.map(h=>reversibleFamily(h.head.slice(-2)));
@@ -93,7 +104,7 @@ async function main(){
      vt2Hidden:shown.hiddenFamilies,derivedOutsideTopAtRanks:shown.missingVt2Ranks,
      allBordes:shown.derived.reduce((n,x)=>n+x.edges.length,0),
      physicalBlocks:shown.derived.reduce((n,x)=>n+x.uniqueSites,0),
-     numberOfMothers:shown.vt3Top.length,scores,budgets,plainRankBudgets});
+     numberOfMothers:shown.vt3Top.length,scores,budgets,plainRankBudgets,rankRows});
    }
    console.log('VT3TO2_DAY',date,JSON.stringify(
     rows.filter(x=>x.date===date).map(x=>({
@@ -167,7 +178,20 @@ async function main(){
   tied5:windows5.filter(w=>w.summary.budgets[1].focusHeads===
    w.summary.budgets[1].disjointControlHeads).length
  };
+ const rankPulses=Object.fromEntries([
+  ['2_en_3',3,2],['2_en_5',5,2],['3_en_5',5,3]
+ ].map(([name,window,minimum])=>[
+  name,evaluateRankPulses(rows.flatMap(r=>r.rankRows),
+   Number(window),Number(minimum))
+ ]));
+ const noctRankPulses=Object.fromEntries([
+  ['2_en_3',3,2],['2_en_5',5,2],['3_en_5',5,3]
+ ].map(([name,window,minimum])=>[
+  name,evaluateRankPulses(noct.flatMap(r=>r.rankRows),
+   Number(window),Number(minimum))
+ ]));
  const report={
+  rankPulses,noctRankPulses,
   method:'REPLAY PRE_RECONSTRUIDO, motor Lalo ORIGINAL, segmentos físicos contiguos de Top10 VT3, sin modelos AUX',
   period:{from,to,label},dates:new Set(rows.map(x=>x.date)).size,
   skipped,byMonth,windows5,windowCounts,summary:reportOf(rows),
@@ -203,6 +227,8 @@ async function main(){
   summary:report.summary,byTurn:report.byTurn,
   nocturna:report.nocturna,byMonth:report.byMonth,
   windowCounts:report.windowCounts,windows5:report.windows5,
+  rankPulses:report.rankPulses,
+  noctRankPulses:report.noctRankPulses,
   first:report.first,second:report.second,
   day29:report.day29,examples:report.examples.slice(-12)
  }));
