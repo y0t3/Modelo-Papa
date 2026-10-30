@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {emptyAuxiliaryHeads,auxiliaryBoard,findAuxPaths} from '../src/auxSantiagoNeuquen';
 import {figuresInTop} from '../src/labRadarFiguras';
 import {allowedVT3,buildExtensionSnapshot,evaluateSnapshotPOST,
- equalBudgetComparison,mothersFromTop} from '../src/labExtensionesAux';
+ equalBudgetComparison,mothersFromTop,rootCategory} from '../src/labExtensionesAux';
 
 const date='2026-10-29',turn='Nocturno';
 const ayer=emptyAuxiliaryHeads(),hoy=emptyAuxiliaryHeads();
@@ -44,6 +44,10 @@ assert.equal(eight.rankVT3Ayer,null,'813 fisicamente presente SIN entrar TOP AUX
 assert.equal(eight.rankVT3Hoy,null);
 assert.equal(five.rankVT3Hoy,null);
 assert.equal(options.length,20);
+assert.equal(rootCategory(eight),'SIN_RAICES');
+assert.equal(rootCategory({...eight,winnerEventsAyer:1}),'CON_RAIZ_AYER');
+assert.equal(rootCategory({...eight,winnerEventsHoy:1}),'CON_RAIZ_HOY');
+assert.equal(rootCategory({...eight,winnerEventsAyer:1,winnerEventsHoy:1}),'CON_RAICES_AMBAS');
 assert.equal(options.reduce((s,x)=>s+x.status.includes('SOLO')*1,0)>0,true);
 const actual=evaluateSnapshotPOST(snapshot,[{jur:'Santa Fe',head:'2813'}]);
 assert.equal(actual.motherHeads,1);
