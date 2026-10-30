@@ -1,62 +1,85 @@
-# Auditoría preliminar: ¿hay un puesto VT3 que destaque como el famoso #7?
+# Estudio corregido: reiteración de PUESTOS VT3 y respaldo en ambos Tops
 
-**Modelo Lalo — 30/10/2026 · lectura exacta de las dos terminaciones del Top10 VT3.**
+**Fecha:** 30/10/2026. **Rama:** `lab/puestos-vt3-vt2-unicos-30oct`.
 
-## Método correcto
+## Regla del usuario (sin descuentos)
 
-Cada puesto aporta exclusivamente los dos sufijos de las dos lecturas VT3 que ya publica Lalo: por ejemplo `513/315→13/15`. NO se invierten las cifras extraídas, NO se crean familias VT2 y NO se cortan ni amplían recorridos. Una jornada cuenta como coincidencia de un puesto si una de sus dos terminaciones aparece entre las cinco cabezas reales del turno. Varios puestos pueden compartir la misma terminación: **sus coincidencias por puesto NO deben sumarse como cabezas independientes**.
+Un puesto VT3 de Lalo expone **EXACTAMENTE** las últimas dos cifras de cada una de sus dos lecturas existentes: por ejemplo `513/315 → 13/15`, sin inversiones VT2, nuevas familias, ni recortes adicionales. La pregunta principal es si **el MISMO PUESTO** (ej. #8 de Nocturna) coincide en numerosas jornadas: **cuenta como coincidencia aunque la terminación figure también en el Top10 VT2**, independientemente de si se encuentra en el #6 o en el #10 VT2. Es incorrecto penalizar o descontar la coincidencia a la posición #8. Los aciertos exclusivos son únicamente un **análisis secundario de cobertura**, no un criterio para declarar ganador de puesto.
 
-El motor se reconstruyó PRE en 119 jornadas completas (103 de junio a septiembre y 16 del 12 al 29 de octubre), cinco turnos, cinco jurisdicciones base sin Montevideo por su calendario. Los resultados publicados se usan POST para cotejar. Los totales por puesto se extrajeron de la prueba validada: [GitHub Actions 41017620733](https://github.com/y0t3/Modelo-Papa/actions/runs/41017620733), artefacto `vt3-dos-ultimas-lalo-jun-oct`.
+Segunda hipótesis distinta: una **terminación EXACTA compartida** entre Top10 VT2 y las dos terminaciones de un puesto VT3 podría tener más respaldo. La información proviene de la misma hoja +11 y motores relacionados, no de dos experimentos independientes. Para evaluarla, cada terminación se categoriza PRE: `En ambos` o `Solo en VT3`, y solo POST se mide coincidencia con cabezas reales.
 
-## Candidatos a seguir: puesto #8
+**Muestra:** 103 jornadas (junio–septiembre, 515 cortes), 16 jornadas (12–29 octubre, 80 cortes), 5 jurisdicciones sin Montevideo por calendario. 119 jornadas, 595 cortes y 2.975 cabezas en total. Se reconstruye cada corte PRE, sin leer el turno objetivo para crear Tops; el cotejo de resultados es POST. Octubre se examina después del histórico junio–septiembre sin modificar la regla de lectura, pero todos estos datos son retrospectivos: no son pronósticos prospectivos.
 
-| Puesto y turno | 103 jornadas junio–septiembre | 16 jornadas octubre | 119 jornadas totales |
+## 1. Primer indicador: puestos que más REPITEN coincidencia, sin restar cruces VT2
+
+| Puesto | Jun–sep (103 jornadas) | Oct (16 jornadas) | Total de jornadas con acierto |
 |---|---:|---:|---:|
-| **#8 · Vespertino** | **13** | **4** | **17** |
-| **#8 · Nocturna** | **13** | **4** | **17** |
-| #7 · Nocturna | 13 | 1 | 14 |
-| #3 · Nocturna | 12 | 3 | 15 |
-| #5 · Nocturna | 12 | 3 | 15 |
-| #6 · Vespertino | 13 | 1 | 14 |
+| **#8 · Vespertino** | **13** | **4** | **17/119** |
+| **#8 · Nocturna** | **13** | **4** | **17/119** |
+| #7 · Nocturna | 13 | 1 | 14/119 |
+| #3 · Nocturna | 12 | 3 | 15/119 |
+| #5 · Nocturna | 12 | 3 | 15/119 |
 
-Cada número es la cantidad de **jornadas con ≥1 cabeza coincidente en ese puesto**. Las tasas del #8 fueron 13/103 (12,6 %) en el historial previo y 4/16 (25 %) en octubre; 17/119 (14,3 %) en conjunto. Una jornada podía registrar más de una cabeza o contener números repetidos en varios puestos; aquí se cuenta cada jornada una vez por puesto.
+Cada cifra es cantidad de jornadas con **al menos una cabeza** cuya última pareja coincide con una de las **dos terminaciones** del puesto VT3, incluso cuando el Top10 VT2 también tiene esa pareja. Si varias jurisdicciones aciertan, el mismo día cuenta como un día para el seguimiento de persistencia del puesto. Los puestos pueden compartir una terminación entre sí, de manera que no se suman puestos como si fueran cabezas distintas.
 
-En las **50 combinaciones** observadas de cinco turnos por diez puestos, las **dos puntuaciones brutas más altas** fueron precisamente los #8 de Vespertino y Nocturna con 17/119; las siguientes puntuaciones fueron 15/119. Esa comparación fue escogida POST entre muchos puestos y no acredita predicción.
+De las **50 combinaciones** turno×puesto observadas, #8 Vespertino y #8 Nocturna quedaron arriba en la comparación descriptiva. Que hayan sido elegidas entre 50 resultados observados significa que esta clasificación está expuesta a sesgo de selección. No calificar el #8 de activo ni declarar una racha explotable.
 
-**Control interno de puestos:** el promedio de los diez puestos en Vespertino fue 8,9 jornadas coincidentes de 103 en junio–septiembre y 1,7 de 16 en octubre. Para Nocturna fue 9,9 de 103 y 2,3 de 16. El #8 supera esos promedios en ambos períodos, pero el número de puestos explorados es elevado y hay solapamientos.
+### Control separado: aporte adicional fuera del Top10 VT2
 
-No se trata de una diferencia robusta demostrada. Un control matemático muy básico, suponiendo 2 terminaciones distintas y 5 cabezas uniformes por sorteo, daría una coincidencia por puesto con probabilidad `1−(98/100)^5 ≈ 9,61 %`; 17/119 tendría una cola binomial aproximada del 6,3 % **si el puesto hubiera sido seleccionado por adelantado**. Esa suposición no captura dependencia, terminaciones duplicadas, distintas jurisdicciones o búsqueda posterior entre **50 combinaciones de turno×puesto**. Por lo tanto, NO da una evidencia estadística suficiente para marcar el #8 como predictor.
+Esto no se usa para descontar aciertos del #8, solamente responde qué más aporta el conjunto:
+- **#8 · Nocturna**: junio–septiembre, **8 cabezas** por terminaciones fuera de Top10 VT2 (13 jornadas con alguna coincidencia en total); octubre, **3 cabezas** por terminaciones fuera del Top10 VT2 (4 jornadas con alguna coincidencia). En junio–septiembre el puesto #8 fue además uno de los más destacados por aporte extra; en octubre comparte la mayor puntuación adicional con otros puestos.
+- **#8 · Vespertino**: junio–septiembre, **7 cabezas extra** (6 jornadas con extra) y octubre **2 cabezas extra** (2 jornadas).
 
-## Ejemplos reales que explican por qué no basta con contar aciertos por puesto
+Estas cifras de "cabezas extra" por puesto pueden solaparse con otras posiciones VT3 y no deben sumarse como aporte único a la cobertura de los diez puestos.
 
-- **27/10, Nocturna:** #8 `899/998→99/98` coincidió con Provincia **2299**. Pero esta cabeza **NO figura entre los aciertos exclusivos de las terminaciones VT3** de ese corte; el Top10 VT2 ya cubría su sufijo. Así que cuenta como coincidencia del #8, **no como mejora exclusiva**.
-- **28/10, Nocturna:** #8 `050/050→50/50` no coincidió; ese puesto exponía **una** terminación distinta, no dos.
-- **29/10, Vespertino Y Nocturna:** el #8 conservó `117/711→17/11` en ambos turnos y **no coincidió**. La persistencia intrajornada de la familia no implica una señal predictiva.
+## 2. Segunda hipótesis: doble presencia VT2 + VT3
 
-Estos tres ejemplos proceden del detalle de los cortes guardado en el JSON histórico; no son pronósticos publicados antes del resultado.
+Se midió cada terminación **exacta** disponible por puesto contra las cinco cabezas. Las categorías son definidas antes de los sorteos:
 
-## Hipótesis de rachas cortas: contrastada con los resultados actuales
+| Período | Exposiciones de terminación en ambos Top10 | Cabezas coincidentes en esas exposiciones | Por 100 exposiciones | Exposiciones solo VT3 | Cabezas coincidentes | Por 100 exposiciones |
+|---|---:|---:|---:|---:|---:|---:|
+| Junio–septiembre | 6.154 | 297 | **4,83** | 3.681 | 155 | **4,21** |
+| Octubre 12–29 | 1.002 | 55 | **5,49** | 535 | 38 | **7,10** |
 
-En Nocturna, con el criterio PRE **2 coincidencias en las 3 jornadas anteriores en el MISMO puesto**, hubo:
-- Junio–septiembre: **30 alertas**, de las cuales **3** coincidieron en la jornada siguiente; entre no alertadas coincidieron 91 de 970 observaciones.
-- Octubre 12–29: **1 alerta**, **0** coincidencias posteriores.
-  
-Con 2 de 5 jornadas, junio–septiembre: **11 coincidencias de 82 alertas** versus 82 de 898 sin alerta; octubre: **0 de 6**. No hay ventaja estable en estas reglas; no las integrar en el radar como "activación" por el momento.
+Una exposición = una terminación en un determinado puesto VT3 y corte, por lo que el mismo número puede repetirse en distintos puestos. Los numeradores también pueden incluir la misma cabeza en varios puestos: **no se trata de cabezas únicas ni de ensayos estadísticos independientes**.
 
-## Qué habría que exigir antes de declarar un puesto destacado
+**Resultado:** la diferencia se invierte entre períodos. No se puede afirmar que la doble aparición mejore las posibilidades de acertar. Tampoco se debe considerar la coincidencia como una señal negativa: es un dato explicativo del origen, que puede mostrarse visualmente sin mover rankings.
 
-La distinción crítica es **coincidencias brutas** vs **aciertos exclusivos frente al Top10 VT2 de Lalo**. Las 119 jornadas sumaron **172 cabezas de aporte exclusivo** para el conjunto completo de terminaciones VT3, pero **los resúmenes históricos publicados no reparten esas 172 cabezas exclusivamente por puesto**. Sería incorrecto adjudicar al #8 una parte concreta sin ejecutar y auditar ese nuevo desglose.
+### Nocturna: doble presencia no se destacó
 
-La rama `lab/puestos-vt3-vt2-unicos-30oct` añade un evaluador puro `src/labVt3TopPositions.ts` y pruebas `scripts/test-vt3-puestos-unicos.ts`, para medir por puesto:
-1. Las dos terminaciones distintas disponibles y cuántas están **fuera** del Top10 VT2 (cero, una o dos).
-2. Cabezas captadas por ese puesto que **no cubre el Top10 VT2**; desglose adicional de cuántas no aparecen en ningún otro puesto VT3.
-3. Rachas de 3 y 5 jornadas del MISMO turno con información PRE, separando 103 jornadas históricas y el tramo posterior de octubre.
-4. Comparación de puestos a presupuesto/exposición igual; evaluar en octubre un puesto escogido exclusivamente con datos anteriores.
+- Junio–septiembre: ambos **52/1.046 = 4,97 por 100 exposiciones**, solo VT3 **49/906 = 5,41**.
+- Octubre: ambos **4/167 = 2,40**, solo VT3 **19/134 = 14,18**.
 
-Ese evaluador **no tiene un replay histórico ejecutado y aprobado aún**. Hasta tenerlo, el #8 debe permanecer como **candidato descriptivo de investigación**, no como posición oficialmente activa.
+Este contraste resalta lo variable que es una muestra corta, los efectos de varias posiciones repetidas y la necesidad de comparar a igual exposición antes de concluir; no permite asegurar superioridad de "solo VT3".
 
-## Decisión
+### #8 de Nocturna en particular
 
-**En la interfaz:** mostrar solamente `Últimas 2: XX / YY` en cada uno de los mismos Top10 VT3, resaltando tras el sorteo las coincidencias. Mantener visibles todos los puestos, no crear candidatos adicionales, no marcar como apuestas ni emitir alarmas anticipadas por rachas.
+- Junio–septiembre: **6 coincidencias de cabeza con terminaciones compartidas** entre los dos Tops, y **8 con terminaciones solo VT3**. Exposiciones de cada grupo: 100 y 99 respectivamente.
+- Octubre: **1 coincidencia compartida** y **3 de terminaciones solo VT3**; exposiciones: 17 y 13.
 
-**En investigación:** el #8 de Vespertino y de Nocturna merece inspección de *aporte exclusivo* y control del solapamiento con VT2. No elegirlo permanentemente ni modificar el Modelo Lalo MV1 en función de aciertos históricos aislados.
+Por tanto el #8 reúne tanto coincidencias compartidas como exclusivas. **Ambas cuentan para su reiteración**, y no hay base para asignar mayor probabilidad a una subcategoría.
+
+## 3. ¿Se sostiene la racha la jornada siguiente?
+
+Ensayo histórico de una alerta PRE por el mismo puesto y turno cuando una de sus terminaciones había coincidido en 2 de las 3 jornadas anteriores:
+- Nocturna junio–septiembre: **3 aciertos entre 30 alertas**; sin alerta hubo 91 aciertos en 970 observaciones.
+- Nocturna octubre: **0 aciertos en 1 alerta**.
+
+Esto significa que el detector simple 2/3 NO mostró una ventaja suficiente. Tampoco la regla 2/5 fue estable. Como se estudian decenas de posiciones y ventanas, no premiar retrospectivamente la que más acertó.
+
+## 4. Qué cambia en la investigación, y qué NO
+
+**Sí:** seguir los diez puestos y sus dos terminaciones, contar **todos los aciertos de cada puesto**, observar continuidad por turno/semana y mostrar opcionalmente «también está en Top10 VT2 #N». Nunca penalizar una coincidencia por existir en VT2.
+
+**No:** crear un Top adicional, convertir terminaciones en nuevas familias, invertir sus sufijos, priorizar #8 en los motores oficiales, ni afirmar que dos Tops duplican las probabilidades.
+
+El siguiente experimento útil sería analizar **formas/huellas físicas** de las mismas posiciones que repiten coincidencias a pesar de cambiar sus cifras y comparar contra los otros nueve puestos, siempre manteniendo los dos sufijos exactos.
+
+## Reproducibilidad
+
+- `src/labVt3Terminations.ts`: los dos sufijos literales de cada Top10 VT3, cotejo POST.
+- `src/labVt3TopPositions.ts`: seguimiento por posición, aportes extras como secundaria, alertas temporales PRE y `overlapProfile` para doble presencia.
+- `scripts/lab-vt3-ultimas-dos.ts`: reconstrucción histórica con `positionSummary`, `overlapSummary`, `overlapTrain` y `overlapOct`.
+- `scripts/test-vt3-puestos-unicos.ts`: comprueba deduplicación de cifras repetidas y distinción de aporte adicional.
+- [GitHub Actions con los dos períodos y perfiles](https://github.com/y0t3/Modelo-Papa/actions/runs/41020005501) validado.
+- No se modificó APK ni motor Lalo MV1.
