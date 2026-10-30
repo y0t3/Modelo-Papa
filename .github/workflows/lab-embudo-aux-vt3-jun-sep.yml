@@ -1,0 +1,30 @@
+name: LAB embudo AUX VT3 junio-septiembre
+on:
+  push:
+    branches: [lab/diagnostico-embudo-vt3-aux-30oct]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Validacion de geometria y embudo
+        run: npx --yes tsx scripts/test-embudo-aux-vt3.ts
+      - name: Reconstruir mismas reglas junio-septiembre
+        env:
+          TRES_LABEL: embudo-aux-vt3-junio-septiembre
+          TRES_FROM: '2026-06-01'
+          TRES_TO: '2026-09-30'
+        run: npx --yes tsx scripts/lab-tres-hojas-figuras.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: embudo-vt3-aux-junio-septiembre
+          path: auditorias/radar-tres-hojas/embudo-aux-vt3-junio-septiembre.json
+          if-no-files-found: warn
