@@ -32,10 +32,14 @@ import {auxiliaryWitnesses,plus11Witnesses,postSupportMetrics} from '../src/labT
 import {pulsesForSnapshot,summarizePulses} from '../src/labPulsosTresHojas';
 import {prepareChangeAlerts,matchedControls,evaluateChangeAlertsPOST}
  from '../src/labAlertasCambios';
+import {shortlistSnapshot,evaluateShortlistsPOST,STRATEGIES,BUDGETS}
+ from '../src/labReduccionExtensiones';
+import type {BudgetResult} from '../src/labReduccionExtensiones';
 
 const from=process.env.TRES_FROM||'2026-10-12';
 const to=process.env.TRES_TO||'2026-10-28';
 const label=process.env.TRES_LABEL||'octubre';
+const measureReduction=process.env.REDUCIR_EXT==='1';
 const drawCache=new Map<string,Promise<CabezasDia>>();
 const auxCache=new Map<string,ReturnType<typeof fetchAuxiliaryHeads>>();
 const fullCache=new Map<string,Promise<{date:string;heads:CabezasDia;sheet:ReturnType<typeof buildSheet>}>>();
@@ -84,7 +88,8 @@ async function main(){
   extension:{
    lalo:{snapshot:ReturnType<typeof buildExtensionSnapshot>;post:ReturnType<typeof evaluateSnapshotPOST>;equal:ReturnType<typeof equalBudgetComparison>};
    combined:{snapshot:ReturnType<typeof buildExtensionSnapshot>;post:ReturnType<typeof evaluateSnapshotPOST>;equal:ReturnType<typeof equalBudgetComparison>}
-  }}[];
+  };
+  reduction?:Record<'lalo'|'combined',Record<string,BudgetResult>>}[];
   pulse:ReturnType<typeof summarizePulses>}[]=[];
  const skipped:{date:string;reason:string}[]=[];
  for(let date=from;date<=to;date=shiftDay(date,1)){
@@ -205,6 +210,21 @@ async function main(){
     };
     const extension={lalo:ext(mothersFromTop(selected,['LALO'])),
      combined:ext(mothersFromTop(selected))};
+    const reduction=measureReduction?Object.fromEntries(
+     (['lalo','combined'] as const).map(cohort=>{
+      const snapshot=extension[cohort].snapshot;
+      const comparisons:Record<string,BudgetResult>={};
+      for(const budget of BUDGETS){
+       for(const strategy of STRATEGIES)
+        comparisons[strategy+'_'+budget]=evaluateShortlistsPOST(
+         shortlistSnapshot(snapshot,strategy,budget,0),postHeads);
+       for(let seed=1;seed<=9;seed++)
+        comparisons['NEUTRO'+seed+'_'+budget]=evaluateShortlistsPOST(
+         shortlistSnapshot(snapshot,'NEUTRO',budget,seed),postHeads);
+      }
+      return [cohort,comparisons];
+     })
+    ) as Record<'lalo'|'combined',Record<string,BudgetResult>>:undefined;
     // Clasificar ANTES de evaluar: no entra resultado del turno objetivo
     // al radar ni a los pares de control.
     const priorPhotos=days.slice(-6).map(p=>({
@@ -213,7 +233,7 @@ async function main(){
     const alert=prepareChangeAlerts({date,turn,figures:selected},priorPhotos,known);
     const matched=matchedControls(alert,selected,postHeads);
     const outcomes=evaluateChangeAlertsPOST(alert,selected,postHeads);
-    cuts.push({turn,summary,selected,support,alert,matched,outcomes,extension});
+    cuts.push({turn,summary,selected,support,alert,matched,outcomes,extension,reduction});
    }
    const last=cuts.at(-1)!;
    const older=days.slice(-6).map(p=>({
@@ -441,7 +461,41 @@ async function main(){
      }))
    )
   ));
+ const reductionSummary=measureReduction?Object.fromEntries(
+  (['lalo','combined'] as const).map(cohort=>{
+   const reports=cuts.filter(c=>c.reduction);
+   const assemble=(part:typeof reports)=>{
+    const keys=Object.keys(part[0]?.reduction?.[cohort]||{});
+    return Object.fromEntries(keys.map(key=>{
+     const records=part.map(c=>c.reduction![cohort][key]);
+     const sum=(field:keyof BudgetResult)=>records.reduce((n,r)=>
+      n+(typeof r[field]==='number'?r[field] as number:0),0);
+     const options=sum('availableOptions'),shown=sum('shownOptions'),
+      availableHits=sum('headsPhysicallyCovered'),kept=sum('wonFromShown');
+     return [key,{cuts:records.length,mothers:sum('mothers'),
+      physicalOptions:options,shown,
+      keptPct:options?Number((shown/options*100).toFixed(1)):null,
+      headsWithMother:sum('headsWithMother'),
+      physicalWinnerHeads:availableHits,retainedWinners:kept,
+      recallPhysicalPct:availableHits?Number((kept/availableHits*100).toFixed(1)):null,
+      missedPhysicalWinners:availableHits-kept,
+      recentLost:records.slice(-5).flatMap(x=>x.winningExamples.filter(y=>!y.shown))
+       .slice(0,8)}];
+    }));
+   };
+   return [cohort,{
+    all:assemble(reports),
+    early:assemble(reports.filter(c=>c.date<='2026-10-20')),
+    late:assemble(reports.filter(c=>c.date>='2026-10-21'&&
+     c.date<='2026-10-28')),
+    day29:assemble(reports.filter(c=>c.date==='2026-10-29')),
+    nocturna:assemble(reports.filter(c=>c.turn==='Nocturno')),
+    nocturna29:assemble(reports.filter(c=>c.date==='2026-10-29'&&c.turn==='Nocturno'))
+   }];
+  })
+ ):null;
  const report={
+  reductionSummary,
   periodComparison,
   extensionSummary,
   winningBridgeExamples,
@@ -506,6 +560,7 @@ async function main(){
   alertSummary:report.alertSummary,
   periodComparison:report.periodComparison,
   extensionSummary:report.extensionSummary,
+  reductionSummary:report.reductionSummary,
   winningBridgeExamples:report.winningBridgeExamples
  }));
  if(days<8)throw Error('Menos de 8 jornadas válidas '+days);
