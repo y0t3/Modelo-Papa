@@ -17,6 +17,9 @@ import {buildMotorLalo} from '../src/motorLalo';
 import {topVt3AsVt2PRE,evaluateTailPOST,rankTailsPulses}
  from '../src/labVt3Terminations';
 import type {PublishedHead} from '../src/labVt3Terminations';
+import {periodProfile,fixedWinnerTrainTest}
+ from '../src/labVt3TopPositions';
+import type {PositionCut} from '../src/labVt3TopPositions';
 
 const from=process.env.VT3TAIL_FROM||'2026-10-12';
 const to=process.env.VT3TAIL_TO||'2026-10-29';
@@ -49,6 +52,8 @@ async function main(){
  const rows:RecordOne[]=[],skipped:{date:string;reason:string}[]=[];
  for(let date=from;date<=to;date=shiftDay(date,1)){
   if(new Date(date+'T12:00:00Z').getUTCDay()===0)continue;
+  if(process.env.VT3TAIL_SKIP_OCT_EARLY==='1'&&
+   date>='2026-10-01'&&date<'2026-10-12')continue;
   try{
    const [today,history,base]=await Promise.all([
     get(date),loadPreviousDraws(date,6,get),
@@ -136,7 +141,16 @@ async function main(){
    tails:x.tails,hitHeads:x.hitHeads,matched:x.matched})),
   extra:r.scores.extras
  }));
- const report={method:'LECTURA LITERAL DOS ULTIMAS CIFRAS DE DOS VT3 POR PUESTO, no familias VT2 ni rutas parciales',
+ const positions:PositionCut[]=rows.map(r=>({
+  date:r.date,turn:r.turn,top2:r.vt2TopTails,
+  rows:r.vt3Ranks.map(x=>({rank:x.rank,tails:x.tails})),
+  heads:r.heads
+ }));
+ const positionSummary=periodProfile(positions);
+ const splitBySeptember=fixedWinnerTrainTest(positions,'2026-10-12');
+ const midSummerTest=fixedWinnerTrainTest(positions.filter(x=>x.date<'2026-10-12'),
+  '2026-08-01');
+ const report={positionSummary,splitBySeptember,midSummerTest,method:'LECTURA LITERAL DOS ULTIMAS CIFRAS DE DOS VT3 POR PUESTO, no familias VT2 ni rutas parciales',
   period:{from,to,label},days:new Set(rows.map(r=>r.date)).size,cuts:rows.length,
   skipped,overall:stats(rows),byTurn,byMonth,
   pulses:pulse(rankRecords),
@@ -156,7 +170,10 @@ async function main(){
    summary:byTurn[t].summary,rankSummary:byTurn[t].rankSummary,
    pulses:byTurn[t].pulses.dos_en_tres
   }])),nocturnaPulses:report.nocturnaPulses,
-  day29:report.day29,latest:report.latest.filter(r=>r.turn==='Nocturno').slice(-3)
+  day29:report.day29,latest:report.latest.filter(r=>r.turn==='Nocturno').slice(-3),
+  positionSummary:report.positionSummary,
+  splitBySeptember:report.splitBySeptember,
+  midSummerTest:report.midSummerTest
  }));
  if(rows.length<45)throw Error('Muestra insuficiente '+rows.length);
 }
