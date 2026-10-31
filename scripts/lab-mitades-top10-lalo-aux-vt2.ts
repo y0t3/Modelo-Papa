@@ -239,8 +239,10 @@ async function main(){
    trainJunAug:{...samples(training),bootstrap:bootstrap(training,31225)},
    validationSepOct:{...samples(holdout),bootstrap:bootstrap(holdout,41699)},
    months:months.map(month=>({month,...samples(rows.filter(r=>r.date.startsWith(month)))})),
-   byTurn:TURNOS.map(turn=>({turn,...samples(rows.filter(r=>r.turn===turn))})),
-   validationByTurn:TURNOS.map(turn=>({turn,...samples(holdout.filter(r=>r.turn===turn))})),
+   byTurn:TURNOS.map(turn=>({turn,...samples(rows.filter(r=>r.turn===turn)),
+    bootstrap:bootstrap(full.filter(r=>r.turn===turn),2982026)})),
+   validationByTurn:TURNOS.map(turn=>({turn,...samples(holdout.filter(r=>r.turn===turn)),
+    bootstrap:bootstrap(holdout.filter(r=>r.turn===turn),17092026)})),
    trendByTurn
   }];
  }));
