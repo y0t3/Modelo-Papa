@@ -111,8 +111,7 @@ function LaloApp(){
  const auxInfoRequest=useRef(0);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
  const [busy,setBusy]=useState(false);
- const [comparisonOpen,setComparisonOpen]=useState(false);
- const [baseHeads,setBaseHeads]=useState<CabezasDia|null>(null);
+  const [baseHeads,setBaseHeads]=useState<CabezasDia|null>(null);
  const [autoVersion,setAutoVersion]=useState(0);
  const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
  const [focused,setFocused]=useState<string|null>(null);
@@ -336,11 +335,11 @@ function LaloApp(){
  },[screen,date,target,activeAuxHeads,activeAuxHistory,hist,auxMode]);
  // Presencias independientes del seguimiento. Cada uno conserva el
  // origen PRE y sus propias raíces; jamás se mezclan con MV1.
- const trackingAyerView=useMemo(()=>screen==='info'&&date&&auxHeads&&
+ const trackingAyerView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxHeads&&
   auxiliarPast.length===hist.length&&auxiliarPast.length?
   buildMotorLaloAuxiliar(date,target,auxAtCut(auxHeads,target,'anterior'),auxiliarPast):null,
   [screen,date,target,auxHeads,auxiliarPast,hist]);
- const trackingHoyView=useMemo(()=>screen==='info'&&date&&auxToday&&
+ const trackingHoyView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxToday&&
   auxTodayPast.length===hist.length&&auxTodayPast.length?
   buildMotorLaloAuxiliar(date,target,auxAtCut(auxToday,target,'intrajornada'),auxTodayPast):null,
   [screen,date,target,auxToday,auxTodayPast,hist]);
@@ -495,9 +494,13 @@ function LaloApp(){
     </Pressable>
    </View>
    {screen==='inicio'?<HomeDashboard date={date||''} turn={target} data={data}
-     sheet={sheet} view={motor} auxiliar={auxiliar} overview={overview} busy={busy}
+     sheet={sheet} view={motor} auxAyer={trackingAyerView}
+     auxHoy={trackingHoyView} overview={overview} busy={busy}
      onNavigate={navigateTo} onTurnChange={changeTurn}
-     onSelectPrediction={mode=>{setPredictionMode(mode);navigateTo('prediccion')}}
+     onSelectPrediction={(mode,forcedAux)=>{
+      if(forcedAux)setAuxMode(forcedAux);
+      setPredictionMode(mode);navigateTo('prediccion')
+     }}
      onFocus={family=>showFamily('vt2|'+family)}/>:
     screen==='hoja'?
     showingSheet&&showingHoja?<View onLayout={e=>alignHojaOnReturn(e.nativeEvent.layout.y)}>
@@ -563,7 +566,7 @@ function LaloApp(){
      {([{id:'lalo',label:'LALO'},{id:'auxiliar',label:'AUXILIAR'},{id:'combinado',label:'COMBINADO'}] as const)
       .map(item=><Pressable key={item.id} accessibilityRole="button"
        accessibilityState={{selected:predictionMode===item.id}}
-       onPress={()=>{setPredictionMode(item.id);setComparisonOpen(false)}}
+       onPress={()=>setPredictionMode(item.id)}
        style={[s.predictorButton,{
         borderColor:predictionMode===item.id?c.accent:c.border,
         backgroundColor:predictionMode===item.id?c.accentFill:c.surfaceAlt}]}>
@@ -571,16 +574,14 @@ function LaloApp(){
       </Pressable>)}
     </View>
     {predictionMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
-    {predictionMode==='lalo'?
+     {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
-       auxiliar={auxiliar} post={post} heads={sheet?.heads[target]||[]}
-       sheet={sheet} visualDays={visualDays}
-       onFocus={showFamily} onTrackFamily={trackFigure}/>:
+       heads={sheet?.heads[target]||[]} sheet={sheet}/>:
       predictionMode==='auxiliar'?
        auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
-        date={dateText} turn={target} view={motor}
-        auxiliar={auxiliar} heads={sheet?.heads[target]||[]}
-        onFocus={showFamily} onAuxFocus={showAuxFamily}/>:
+        date={dateText} turn={target} view={motor} auxiliar={auxiliar}
+        auxHeads={activeAuxHeads?auxAtCut(activeAuxHeads,target,auxMode):null}
+        heads={sheet?.heads[target]||[]}/>:
        <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
         <Text style={{color:c.text,fontWeight:'800'}}>No está lista la hoja auxiliar.</Text>
         <Text style={{color:c.subtext,marginTop:5}}>
@@ -589,18 +590,6 @@ function LaloApp(){
        </View>:
        <CombinedVt3Panel date={date||''} turn={target} sheet={sheet}
         historical={hist} heads={fiveHeads}/>}
-    {predictionMode==='lalo'&&motor&&auxiliar?<View style={{marginTop:12}}>
-     <Pressable onPress={()=>setComparisonOpen(x=>!x)} accessibilityRole="button"
-      accessibilityState={{expanded:comparisonOpen}}
-      style={[s.previewBack,{borderColor:c.accent,backgroundColor:c.surface,
-       paddingVertical:13,alignItems:'center'}]}>
-      <Text style={{color:c.accent,fontWeight:'900'}}>
-       {comparisonOpen?'▴ Ocultar comparación':'⇄ Ver qué tienen en común Lalo y Auxiliar'}
-      </Text>
-     </Pressable>
-     {comparisonOpen?<ParallelPredictionCompare lalo={motor}
-      auxiliar={auxiliar} heads={headEvents}/>:null}
-    </View>:null}
    </>:screen==='papa'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico de Lalo</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
