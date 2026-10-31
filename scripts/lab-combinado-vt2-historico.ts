@@ -251,6 +251,11 @@ async function main(){
     lift:+((b.observed+PRIOR_LIFT)/(b.expected+PRIOR_LIFT)).toFixed(4)}]))])),
   august:[3,5,10].map(k=>groupReport(validRows,bins,k)),
   sepOct:[3,5,10].map(k=>groupReport(holdRows,bins,k)),
+  augustByTurn:TURNOS.map(t=>({turn:t,
+   top10:groupReport(validRows.filter(r=>r.turn===t),bins,10)})),
+  sepOctByMonth:['2026-09','2026-10'].map(month=>({month,
+   top3:groupReport(holdRows.filter(r=>r.date.startsWith(month)),bins,3),
+   top10:groupReport(holdRows.filter(r=>r.date.startsWith(month)),bins,10)})),
   sepOctByTurn:TURNOS.map(t=>({turn:t,
    top10:groupReport(holdRows.filter(r=>r.turn===t),bins,10)}))
  };
