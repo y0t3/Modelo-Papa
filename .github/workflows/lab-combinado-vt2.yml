@@ -21,6 +21,6 @@ jobs:
       - name: Instalar dependencias
         run: npm install
       - name: Validar el laboratorio y las fuentes
-        run: npx tsc --noEmit
+        run: npx tsc --noEmit -p tsconfig.lab-vt2.json
       - name: Comparar junio-julio vs agosto y septiembre-octubre
         run: npx --yes tsx scripts/lab-combinado-vt2-historico.ts
