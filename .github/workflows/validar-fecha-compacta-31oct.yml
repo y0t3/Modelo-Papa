@@ -1,0 +1,29 @@
+name: Verificar Inicio unico y fecha compacta
+on:
+  push:
+    branches: ['feature/inicio-sin-tabs-fecha-compacta-31oct2026']
+    paths: ['App.tsx','src/**','scripts/test-inicio-unico-fecha.ts','.github/workflows/validar-fecha-compacta-31oct.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Comprobar TypeScript y controles visibles
+        run: |
+          npx tsc --noEmit --project tsconfig.ui-check.json
+          npx --yes tsx scripts/test-inicio-unico-fecha.ts
+          npx --yes tsx scripts/test-inicio-resumen.ts
+      - name: Conservar las reglas originales, el banner y el fondo
+        run: |
+          npx --yes tsx scripts/test-la-posta-identidad.ts
+          npx --yes tsx scripts/test-hero-composition.ts
+          npx --yes tsx scripts/test-wallpaper-lalo.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-lalo-vt3-estadistico.ts
+          npx --yes tsx scripts/test-lalo-bayes-geometria-vt3.ts
