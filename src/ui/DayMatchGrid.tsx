@@ -29,10 +29,10 @@ export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [showAll,setShowAll]=useState(false);
- const matches=useMemo(()=>dayCandidates(overview),[overview]);
+ const matches=useMemo(()=>dayCandidates({...overview,matches:overview.matches.filter(m=>m.turn===turn)}),[overview,turn]);
  const heads=JURS.map(jur=>({jur,head:data?.[turn]?.[jur]||''}))
   .filter(x=>/^\d{4}$/.test(x.head));
- const visible=showAll?matches:matches.slice(0,short?3:6);
+ const visible=showAll?matches:matches.slice(0,short?6:6);
  return <View style={s.root}>
   <Text style={{fontSize:11,color:c.subtext}}>{overview.statusText}</Text>
   <Text style={[s.heading,{color:c.text}]}>Cabezas de {turn}</Text>
@@ -48,8 +48,8 @@ export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false
   <Text style={[s.heading,{color:c.text}]}>Los números que coincidieron</Text>
   {!overview.exactHistory?<Text style={{color:c.subtext,fontSize:12}}>
    Actualizá la hoja para comparar con las listas de Lalo.
-  </Text>:overview.heads===0?<Text style={{color:c.subtext,fontSize:12}}>
-   La jornada todavía no tiene resultados cargados.
+  </Text>:overview.countByTurn[turn].heads===0?<Text style={{color:c.subtext,fontSize:12}}>
+   Este turno todavía no tiene resultados cargados.
   </Text>:!matches.length?<Text style={{color:c.subtext,fontSize:12}}>
    No hubo coincidencias con los diez primeros de Lalo.
   </Text>:<>
