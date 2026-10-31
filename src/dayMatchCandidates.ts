@@ -43,6 +43,7 @@ export function auxDayCandidates(view:AuxiliarView|null,heads:CabezasDia|null,tu
  for(const n of [2,3,4] as const){
   const kind=('vt'+n) as LaloKind;
   for(const family of view.ranks[n].slice(0,10)){
+   if(family.rank>10)continue;
    const accepted=new Set(family.values.filter(value=>value.length===n));
    const details=published.filter(x=>accepted.has(x.head.slice(-n)))
     .map(x=>({...x,value:x.head.slice(-n),turn}));
