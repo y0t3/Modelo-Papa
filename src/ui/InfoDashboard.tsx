@@ -127,6 +127,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      </Pressable>
     </>:null}
     {section==='historial'?<>
+     <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Elegí un día o una figura para verla más grande.</Text>
      <InfoTurnGallery gallery={gallery} selectedFrameId={selectedFrameId}
       onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}
