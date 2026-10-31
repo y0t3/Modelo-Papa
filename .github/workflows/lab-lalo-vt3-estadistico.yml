@@ -1,0 +1,47 @@
+name: LAB Lalo VT3 - Top10 probabilidad y estadistica
+on:
+  push:
+    branches:
+      - 'lab/lalo-vt3-baseline-estadistico-31oct2026'
+    paths:
+      - 'src/labLaloEstadisticoVT3.ts'
+      - 'scripts/lab-lalo-vt3-estadistico.ts'
+      - 'scripts/test-lalo-vt3-estadistico.ts'
+      - '.github/workflows/lab-lalo-vt3-estadistico.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  evaluar:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {label: 'junio-agosto', from: '2026-06-01', to: '2026-08-31', min: '250', skip: '0'}
+          - {label: 'septiembre-octubre', from: '2026-09-01', to: '2026-10-29', min: '130', skip: '1'}
+          - {label: 'viernes-30oct', from: '2026-10-30', to: '2026-10-30', min: '5', skip: '0'}
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Invariantes estadisticos y fisicos del motor +11
+        run: |
+          npx --yes tsx scripts/test-lalo-vt3-estadistico.ts
+          npx --yes tsx scripts/test-lalo-anatomia-vt3.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: PRE con frecuencias 6 o 30 jornadas contra 20 controles pareados
+        env:
+          ESTAD_FROM: ${{ matrix.from }}
+          ESTAD_TO: ${{ matrix.to }}
+          ESTAD_LABEL: ${{ matrix.label }}
+          ESTAD_MIN_CUTS: ${{ matrix.min }}
+          ESTAD_SKIP_OCT_EARLY: ${{ matrix.skip }}
+        run: npx --yes tsx scripts/lab-lalo-vt3-estadistico.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lalo-vt3-estadistico-${{ matrix.label }}
+          path: auditorias/lalo-vt3-estadistico/${{ matrix.label }}.json
+          if-no-files-found: warn
