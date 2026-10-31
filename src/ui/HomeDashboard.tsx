@@ -98,7 +98,7 @@ export default function HomeDashboard({date,turn,sheet,view,auxiliar,overview,
      </View>
      <View style={[s.track,{backgroundColor:c.surfaceAlt}]}>
       <View style={[s.bar,{backgroundColor:kinds.vt2.line,
-       width:(100*f.directRoots/maxSupport)+'%'}]}/>
+       width:((100*f.directRoots/maxSupport)+'%') as `${number}%`}]}/>
      </View>
     </View>
     <Text style={{color:c.accent,fontSize:17,fontWeight:'900'}}>›</Text>
