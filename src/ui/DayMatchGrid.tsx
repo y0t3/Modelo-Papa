@@ -8,9 +8,9 @@ import {useLaloTheme} from './LaloTheme';
 
 type Candidate={kind:LaloKind;family:string;rank:number;
  details:{value:string;head:string;jur:string;turn:Turno}[]};
-export function dayCandidates(overview:DayOverview):Candidate[]{
+export function dayCandidates(overview:DayOverview,onlyTurn?:Turno):Candidate[]{
  const found=new Map<string,Candidate>();
- for(const event of overview.matches)for(const m of event.kinds){
+ for(const event of overview.matches.filter(x=>!onlyTurn||x.turn===onlyTurn))for(const m of event.kinds){
   const id=m.kind+'|'+m.family;
   let item=found.get(id);
   if(!item){item={kind:m.kind,family:m.family,rank:m.rank,details:[]};found.set(id,item)}
@@ -23,18 +23,22 @@ export function dayCandidates(overview:DayOverview):Candidate[]{
  return [...found.values()].sort((a,b)=>order(a.kind)-order(b.kind)||
   a.rank-b.rank||a.family.localeCompare(b.family));
 }
-export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false}:{
+export default function DayMatchGrid({overview,turn,data,onOpenHeads,onOpenFamily,short=false,onlyTurn=false}:{
  overview:DayOverview;turn:Turno;data:CabezasDia|null;
- onOpenHeads:()=>void;short?:boolean
+ onOpenHeads:()=>void;onOpenFamily?:(kind:LaloKind,family:string,turn:Turno)=>void;
+ short?:boolean;onlyTurn?:boolean
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [showAll,setShowAll]=useState(false);
- const matches=useMemo(()=>dayCandidates(overview),[overview]);
+ const matches=useMemo(()=>dayCandidates(overview,onlyTurn?turn:undefined),
+  [overview,turn,onlyTurn]);
  const heads=JURS.map(jur=>({jur,head:data?.[turn]?.[jur]||''}))
   .filter(x=>/^\d{4}$/.test(x.head));
- const visible=showAll?matches:matches.slice(0,short?3:6);
+ const visible=showAll||onlyTurn?matches:matches.slice(0,short?3:6);
  return <View style={s.root}>
-  <Text style={{fontSize:11,color:c.subtext}}>{overview.statusText}</Text>
+  <Text style={{fontSize:11,color:c.subtext}}>
+   {onlyTurn?(heads.length?turn+' · resultados publicados':'Todavía no salieron cabezas en '+turn):overview.statusText}
+  </Text>
   <Text style={[s.heading,{color:c.text}]}>Cabezas de {turn}</Text>
   {heads.length?<View style={s.grid}>
    {heads.map(h=><View key={h.jur} style={[s.tile,{borderColor:c.border,
@@ -48,8 +52,8 @@ export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false
   <Text style={[s.heading,{color:c.text}]}>Los números que coincidieron</Text>
   {!overview.exactHistory?<Text style={{color:c.subtext,fontSize:12}}>
    Actualizá la hoja para comparar con las listas de Lalo.
-  </Text>:overview.heads===0?<Text style={{color:c.subtext,fontSize:12}}>
-   La jornada todavía no tiene resultados cargados.
+  </Text>:(onlyTurn?heads.length===0:overview.heads===0)?<Text style={{color:c.subtext,fontSize:12}}>
+   Este turno todavía no tiene resultados cargados.
   </Text>:!matches.length?<Text style={{color:c.subtext,fontSize:12}}>
    No hubo coincidencias con los diez primeros de Lalo.
   </Text>:<>
@@ -57,7 +61,11 @@ export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false
     const colors=kinds[item.kind];
     const members=[...new Set(item.family.split('/'))];
     const hitValues=new Set(item.details.map(x=>x.value));
-    return <View key={item.kind+'|'+item.family} style={[s.tile,{
+    return <Pressable key={item.kind+'|'+item.family}
+     accessibilityRole={onOpenFamily?'button':undefined}
+     accessibilityLabel={'Ver formación de '+item.family+' en '+item.details[0]?.turn}
+     onPress={()=>onOpenFamily?.(item.kind,item.family,item.details[0]?.turn||turn)}
+     style={[s.tile,{
      borderColor:colors.line,backgroundColor:colors.fill,borderWidth:2}]}>
      <View style={{flexDirection:'row',alignItems:'center',flexWrap:'wrap',gap:2}}>
       {members.map((member,i)=><React.Fragment key={member}>
@@ -80,9 +88,9 @@ export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false
      {item.details.length>(short?1:3)?<Text style={{color:c.subtext,fontSize:9}}>
       +{item.details.length-(short?1:3)} más
      </Text>:null}
-    </View>;
+    </Pressable>;
    })}</View>
-   {matches.length>(short?3:6)?<Pressable accessibilityRole="button"
+   {!onlyTurn&&matches.length>(short?3:6)?<Pressable accessibilityRole="button"
     onPress={()=>setShowAll(v=>!v)}
     style={[s.button,{borderColor:c.accent}]}>
     <Text style={{color:c.accent,fontWeight:'900'}}>
