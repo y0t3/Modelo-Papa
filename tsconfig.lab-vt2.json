@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "scripts/lab-combinado-vt2-historico.ts"
+  ],
+  "exclude": [
+    "scripts/lab-*.ts",
+    "scripts/test-*.ts"
+  ]
+}
