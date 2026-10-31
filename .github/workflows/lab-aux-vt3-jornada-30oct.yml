@@ -1,0 +1,65 @@
+name: LAB AUX VT3 - cotejo jornada 30 octubre 2026
+on:
+  push:
+    branches:
+      - 'lab/aux-vt3-intercambios-borde-31oct2026'
+    paths:
+      - '.github/workflows/lab-aux-vt3-jornada-30oct.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  cotejar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Verificar geometria y regresion
+        run: |
+          npx --yes tsx scripts/test-aux-borde-vt3.ts
+          npx --yes tsx scripts/test-aux-temporal-vt3.ts
+      - name: Revisar Formas Primero y Top10 original contra POST
+        env:
+          AUXFORMS_FROM: '2026-10-30'
+          AUXFORMS_TO: '2026-10-30'
+          AUXFORMS_LABEL: jornada-30oct
+          AUXFORMS_MIN_CUTS: '10'
+          AUXFORMS_SKIP_OCT_EARLY: '0'
+        run: npx --yes tsx scripts/lab-aux-formas-primero-vt3.ts
+      - name: Cotejar Top10 vs 11-20 y evidencia por familia
+        env:
+          VT3TOP20_FROM: '2026-10-30'
+          VT3TOP20_TO: '2026-10-30'
+          VT3TOP20_LABEL: jornada-30oct
+          VT3TOP20_MIN_CUTS: '10'
+          VT3TOP20_SKIP_OCT_EARLY: '0'
+        run: npx --yes tsx scripts/lab-aux-top20-vt3.ts
+      - name: Cotejar prioridad temporal
+        env:
+          VT3TOP20_FROM: '2026-10-30'
+          VT3TOP20_TO: '2026-10-30'
+          VT3TOP20_LABEL: jornada-30oct
+          VT3TOP20_MIN_CUTS: '10'
+          VT3TOP20_SKIP_OCT_EARLY: '0'
+        run: npx --yes tsx scripts/lab-aux-temporal-vt3.ts
+      - name: Cotejar intercambios de uno y dos puestos
+        env:
+          VT3TOP20_FROM: '2026-10-30'
+          VT3TOP20_TO: '2026-10-30'
+          VT3TOP20_LABEL: jornada-30oct
+          VT3TOP20_MIN_CUTS: '10'
+          VT3TOP20_SKIP_OCT_EARLY: '0'
+        run: npx --yes tsx scripts/lab-aux-borde-vt3.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aux-vt3-cotejo-30oct
+          path: |
+            auditorias/aux-formas-vt3/jornada-30oct.json
+            auditorias/aux-top20-vt3/jornada-30oct.json
+            auditorias/aux-temporal-vt3/jornada-30oct.json
+            auditorias/aux-borde-vt3/jornada-30oct.json
+          if-no-files-found: warn
