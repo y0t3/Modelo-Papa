@@ -43,6 +43,8 @@ import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import {buildHeadHighlights} from './src/headHighlights';
 import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
+import HomeDashboard from './src/ui/HomeDashboard';
+import {summarizeDay} from './src/homeDaySummary';
 import type {MovementMode} from './src/infoCandidatos';
 import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
@@ -53,10 +55,10 @@ import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './s
 import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
 import type {NavigationEntry} from './src/tabNavigation';
 
-type Screen='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
+type Screen='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const nav: {id:Screen;label:string}[]=[
+ {id:'inicio',label:'INICIO'},
  {id:'hoja',label:'HOJA'},
- {id:'predictiva',label:'PREDICTIVA'},
  {id:'prediccion',label:'PREDICCIÓN'},{id:'papa',label:'LALO'},
  {id:'cabezas',label:'CABEZAS'},
  {id:'info',label:'INFO'}
@@ -64,11 +66,11 @@ const nav: {id:Screen;label:string}[]=[
 const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
 function LaloApp(){
  const {mode,colors:c,toggle}=useLaloTheme();
- const [screen,setScreen]=useState<Screen>('hoja');
- const activeScreenRef=useRef<Screen>('hoja');
+ const [screen,setScreen]=useState<Screen>('inicio');
+ const activeScreenRef=useRef<Screen>('inicio');
  const historyRef=useRef<NavigationEntry[]>([]);
  const scrollOffsets=useRef<Record<Screen,number>>({
-  hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
+  inicio:0,hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
  });
  const [restoreScroll,setRestoreScroll]=useState({token:0,y:0});
  const [infoFrameId,setInfoFrameId]=useState('inicio');
@@ -278,6 +280,7 @@ function LaloApp(){
    Alert.alert('No se pudo cargar',error?.message||String(error));
   }finally{setBusy(false)}
  };
+ useEffect(()=>{void cargar(today())},[]);
  const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
   if(base)void cargar(shiftDrawDay(base,n))};
  // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
@@ -329,7 +332,7 @@ function LaloApp(){
  const activeAuxError=auxMode==='intrajornada'?auxTodayError:auxiliarError;
  const activeAuxDate=auxMode==='intrajornada'?date:auxSourceDate;
  const auxiliar=useMemo(()=>{
-  if((screen!=='prediccion'&&screen!=='predictiva'&&screen!=='info')||!date||!activeAuxHeads||
+  if((screen!=='inicio'&&screen!=='prediccion'&&screen!=='predictiva'&&screen!=='info')||!date||!activeAuxHeads||
    activeAuxHistory.length!==hist.length||!activeAuxHistory.length)return null;
   const input=auxAtCut(activeAuxHeads,target,auxMode);
   return buildMotorLaloAuxiliar(date,target,input,activeAuxHistory);
@@ -387,6 +390,8 @@ function LaloApp(){
   if(!motor||!sheet||!sheet.heads[target]?.length)return null;
   return compareMotorLaloAfterDraw(motor,sheet.heads[target]);
  },[motor,sheet,target]);
+ const overview=useMemo(()=>summarizeDay(date||'',data,sheet,hist,today()),
+  [date,data,sheet,hist]);
  const fiveHeads=useMemo(()=>JURS.filter(j=>j!=='Montevideo')
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
@@ -478,17 +483,22 @@ function LaloApp(){
      setInfoAuxDays([]);setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
-    <View style={s.shortcuts}>
+    {screen!=='inicio'?<View style={s.shortcuts}>
      <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(-1)}><Text style={[s.shortText,{color:c.text}]}>‹ Día</Text></Pressable>
      <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>{const shown=historicalPreview?.day.date||date;
       if(shown)void cargar(shiftDay(shown,-7))}}><Text style={[s.shortText,{color:c.text}]}>−7 días</Text></Pressable>
      <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(1)}><Text style={[s.shortText,{color:c.text}]}>Día ›</Text></Pressable>
-    </View>
+    </View>:null}
     <Pressable style={[s.reload,{backgroundColor:'#195DA6'}]} onPress={()=>{void cargar(historicalPreview?.day.date)}} disabled={busy}>
      {busy?<ActivityIndicator color="#fff"/>:<Text style={s.reloadText}>↻ ACTUALIZAR HOJA</Text>}
     </Pressable>
    </View>
-   {screen==='hoja'?
+   {screen==='inicio'?<HomeDashboard date={date||''} turn={target} data={data}
+     sheet={sheet} view={motor} auxiliar={auxiliar} overview={overview} busy={busy}
+     onNavigate={navigateTo} onTurnChange={changeTurn}
+     onSelectPrediction={mode=>{setPredictionMode(mode);navigateTo('prediccion')}}
+     onFocus={family=>showFamily('vt2|'+family)}/>:
+    screen==='hoja'?
     showingSheet&&showingHoja?<View onLayout={e=>alignHojaOnReturn(e.nativeEvent.layout.y)}>
      {historicalPreview?<View style={[s.previewBanner,{backgroundColor:c.accentFill,borderColor:c.accent}]}>
       <Text style={{color:c.text,fontWeight:'800',fontSize:12}}>
@@ -599,7 +609,7 @@ function LaloApp(){
     <HeadsTable data={data} highlights={headHighlights.merged}
      sourceLabels={headHighlights.labels} onOpenHead={openHeadInHoja}/>
    </>:
-    <InfoDashboard date={date||''} turn={target} data={data} sheet={sheet}
+    <InfoDashboard date={date||''} turn={target} data={data} overview={overview} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
      auxDays={infoAuxDays}
      currentAux={data&&date?{
