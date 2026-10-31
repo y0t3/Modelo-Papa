@@ -29,6 +29,7 @@ import type {AuxGalleryDay} from './src/infoAuxGallery';
 import PanoramaSheet from './src/PanoramaSheet';
 import AuxiliaryPredictiveSheet from './src/ui/AuxiliaryPredictiveSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
+import CombinedVt3Panel from './src/ui/CombinedVt3Panel';
 import ParallelPredictionCompare from './src/ui/ParallelPredictionCompare';
 import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
@@ -103,7 +104,7 @@ function LaloApp(){
  const [auxTodayPast,setAuxTodayPast]=useState<AuxiliarHistory[]>([]);
  const [auxTodayError,setAuxTodayError]=useState<string|null>(null);
  const [figureFocus,setFigureFocus]=useState<string|null>(null);
- const [predictionMode,setPredictionMode]=useState<'lalo'|'auxiliar'>('lalo');
+ const [predictionMode,setPredictionMode]=useState<'lalo'|'auxiliar'|'combinado'>('lalo');
  const [predictiveMode,setPredictiveMode]=useState<'lalo'|'auxiliar'>('lalo');
 
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
@@ -111,7 +112,7 @@ function LaloApp(){
  const auxInfoRequest=useRef(0);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
  const [busy,setBusy]=useState(false);
- const [experimental,setExperimental]=useState(false);
+ const [comparisonOpen,setComparisonOpen]=useState(false);
  const [baseHeads,setBaseHeads]=useState<CabezasDia|null>(null);
  const [autoVersion,setAutoVersion]=useState(0);
  const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
@@ -131,7 +132,7 @@ function LaloApp(){
   scrollOffsets.current[next]=0;
   setRestoreScroll(old=>({token:old.token+1,y:0}));
   setScreen(next);
-  if(next!=='prediccion')setExperimental(false);
+  if(next!=='prediccion')setComparisonOpen(false);
  };
  const goBack=()=>{
   const {entry,remaining}=backNavigation(historyRef.current);
@@ -548,10 +549,10 @@ function LaloApp(){
     <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
     <View style={[s.predictorOptions,{borderColor:c.border}]}>
-     {([{id:'lalo',label:'MODELO LALO'},{id:'auxiliar',label:'LALO AUXILIAR'}] as const)
+     {([{id:'lalo',label:'LALO'},{id:'auxiliar',label:'AUXILIAR'},{id:'combinado',label:'COMBINADO'}] as const)
       .map(item=><Pressable key={item.id} accessibilityRole="button"
        accessibilityState={{selected:predictionMode===item.id}}
-       onPress={()=>{setPredictionMode(item.id);setExperimental(false)}}
+       onPress={()=>{setPredictionMode(item.id);setComparisonOpen(false)}}
        style={[s.predictorButton,{
         borderColor:predictionMode===item.id?c.accent:c.border,
         backgroundColor:predictionMode===item.id?c.accentFill:c.surfaceAlt}]}>
@@ -559,52 +560,36 @@ function LaloApp(){
       </Pressable>)}
     </View>
     {predictionMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
-    {!experimental?<>
-     {predictionMode==='lalo'?
+    {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
        auxiliar={auxiliar} post={post} heads={sheet?.heads[target]||[]}
        sheet={sheet} visualDays={visualDays}
-       onFocus={showFamily} onTrackFamily={trackFigure}/>: 
-      auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
-       date={dateText} turn={target} view={motor}
-       auxiliar={auxiliar} heads={sheet?.heads[target]||[]}
-       onFocus={showFamily} onAuxFocus={showAuxFamily}/>:
-      <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
-       <Text style={{color:c.text,fontWeight:'800'}}>Modelo Lalo Auxiliar no disponible para este corte.</Text>
-       <Text style={{color:c.subtext,marginTop:5}}>
-        {activeAuxError||'Cargá el modo elegido y sus raíces históricas D−1/D−7.'}
-       </Text>
-       <Text style={{color:c.subtext,marginTop:5}}>
-        Los Tops originales de Lalo siguen disponibles sin modificaciones.
-       </Text>
-      </View>}
-     {motor&&auxiliar?
-      <ParallelPredictionCompare lalo={motor} auxiliar={auxiliar} heads={headEvents}/>:
-      <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border,marginTop:12}]}>
-       <Text style={{color:c.text,fontWeight:'800'}}>TOP GENERAL · Familias coincidentes</Text>
-       <Text style={{color:c.subtext,marginTop:5}}>
-        {activeAuxError||'Cargá ambas fuentes para comparar los Tops independientes.'}
-       </Text>
-      </View>}
-     {predictionMode==='lalo'?<Pressable accessibilityRole="button" onPress={()=>setExperimental(true)}
-      style={[s.reload,{backgroundColor:c.surface,borderWidth:1,borderColor:c.accent,marginTop:12}]}>
-      <Text style={[s.reloadText,{color:c.accent}]}>🧪 Experimental · Figuras VT2 y VT3 →</Text>
-     </Pressable>:null}
-    </>:<>
-     <Pressable accessibilityRole="button" onPress={()=>setExperimental(false)}
-      style={[s.reload,{backgroundColor:c.surfaceAlt,marginTop:12}]}>
-      <Text style={[s.reloadText,{color:c.accent}]}>← Volver a Predicción</Text>
+       onFocus={showFamily} onTrackFamily={trackFigure}/>:
+      predictionMode==='auxiliar'?
+       auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
+        date={dateText} turn={target} view={motor}
+        auxiliar={auxiliar} heads={sheet?.heads[target]||[]}
+        onFocus={showFamily} onAuxFocus={showAuxFamily}/>:
+       <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+        <Text style={{color:c.text,fontWeight:'800'}}>No está lista la hoja auxiliar.</Text>
+        <Text style={{color:c.subtext,marginTop:5}}>
+         {activeAuxError||'Primero actualizá las cifras de Santiago y Neuquén.'}
+        </Text>
+       </View>:
+       <CombinedVt3Panel date={date||''} turn={target} sheet={sheet}
+        historical={hist} heads={fiveHeads}/>}
+    {predictionMode==='lalo'&&motor&&auxiliar?<View style={{marginTop:12}}>
+     <Pressable onPress={()=>setComparisonOpen(x=>!x)} accessibilityRole="button"
+      accessibilityState={{expanded:comparisonOpen}}
+      style={[s.previewBack,{borderColor:c.accent,backgroundColor:c.surface,
+       paddingVertical:13,alignItems:'center'}]}>
+      <Text style={{color:c.accent,fontWeight:'900'}}>
+       {comparisonOpen?'▴ Ocultar comparación':'⇄ Ver qué tienen en común Lalo y Auxiliar'}
+      </Text>
      </Pressable>
-     <Vt3Parallel date={date||''} turn={target} sheet={sheet} view={motor}
-      historical={hist} heads={fiveHeads}
-       publishedHeads={JURS.filter(j=>j!=='Montevideo')
-        .map(jur=>({jur,head:data?.[target]?.[jur]||''}))
-        .filter(x=>/^\d{4,5}$/.test(x.head))}
-       autoVersion={autoVersion}
-       visualDays={visualDays}/>
-     <Vt3Explainer sheet={sheet} view={motor} turn={target}
-      heads={sheet?.heads[target]||[]} onFocus={showFamily}/>
-    </>}
+     {comparisonOpen?<ParallelPredictionCompare lalo={motor}
+      auxiliar={auxiliar} heads={headEvents}/>:null}
+    </View>:null}
    </>:screen==='papa'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico de Lalo</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
@@ -645,9 +630,9 @@ const insets=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+7:7;
 const s=StyleSheet.create({
  header:{flexDirection:'row',alignItems:'center',gap:10,marginBottom:9,
   borderWidth:1,borderRadius:15,paddingHorizontal:11,paddingVertical:9},
- predictorOptions:{flexDirection:'row',gap:8,marginTop:10,padding:6,borderWidth:1,borderRadius:11},
- predictorButton:{flex:1,borderWidth:1,borderRadius:9,paddingVertical:12,alignItems:'center'},
- predictorLabel:{fontSize:12,fontWeight:'900'},
+ predictorOptions:{flexDirection:'row',gap:5,marginTop:10,padding:5,borderWidth:1,borderRadius:13,backgroundColor:'rgba(4,20,49,.63)'},
+ predictorButton:{flex:1,borderWidth:1,borderRadius:10,paddingVertical:12,alignItems:'center',minWidth:0},
+ predictorLabel:{fontSize:10,fontWeight:'900'},
  brandMark:{width:48,height:48,borderWidth:2,borderColor:'#E2B34B',borderRadius:15,
   backgroundColor:'#071F47',overflow:'hidden',position:'relative'},
  brandBall:{position:'absolute',borderRadius:20,alignItems:'center',justifyContent:'center',
