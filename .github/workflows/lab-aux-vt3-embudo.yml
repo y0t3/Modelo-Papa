@@ -1,0 +1,47 @@
+name: LAB AUX VT3 - embudo fisico y candidatos sin raiz
+on:
+  push:
+    branches:
+      - 'lab/aux-vt3-embudo-sin-raiz-31oct2026'
+    paths:
+      - 'src/labAuxEmbudoVT3.ts'
+      - 'scripts/lab-aux-embudo-vt3.ts'
+      - 'scripts/test-aux-embudo-vt3.ts'
+      - '.github/workflows/lab-aux-vt3-embudo.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  replay:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {label: 'junio-agosto', from: '2026-06-01', to: '2026-08-31', min: '250', skip: '0'}
+          - {label: 'septiembre-octubre', from: '2026-09-01', to: '2026-10-29', min: '130', skip: '1'}
+          - {label: 'viernes-30oct', from: '2026-10-30', to: '2026-10-30', min: '10', skip: '0'}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificacion de cupos iguales y regresion AUX geometrico
+        run: |
+          npx --yes tsx scripts/test-aux-embudo-vt3.ts
+          npx --yes tsx scripts/test-aux-formas-primero-vt3.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: PRE reconstruido contra POST y controles pareados por clase
+        env:
+          EMBUDO_FROM: ${{ matrix.from }}
+          EMBUDO_TO: ${{ matrix.to }}
+          EMBUDO_LABEL: ${{ matrix.label }}
+          EMBUDO_MIN_CUTS: ${{ matrix.min }}
+          EMBUDO_SKIP_OCT_EARLY: ${{ matrix.skip }}
+        run: npx --yes tsx scripts/lab-aux-embudo-vt3.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aux-vt3-embudo-${{ matrix.label }}
+          path: auditorias/aux-embudo-vt3/${{ matrix.label }}.json
+          if-no-files-found: warn
