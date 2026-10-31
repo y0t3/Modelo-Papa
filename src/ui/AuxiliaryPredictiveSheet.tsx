@@ -22,10 +22,10 @@ export default function AuxiliaryPredictiveSheet({
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [selected,setSelected]=useState<string|null>(focusedOwner||null);
- const [filter,setFilter]=useState<Filter>('all');
+ const [filter,setFilter]=useState<Filter>('vt2');
  const [topOnly,setTopOnly]=useState(true);
  const [expanded,setExpanded]=useState<Record<AuxVisualKind,boolean>>({
-  vt2:false,vt3:true,vt4:false
+  vt2:true,vt3:false,vt4:false
  });
  const [detail,setDetail]=useState(false);
  const board=useMemo(()=>auxiliaryBoard(auxAtCut(heads,turn,auxMode),turn),[heads,turn,auxMode]);
@@ -34,7 +34,7 @@ export default function AuxiliaryPredictiveSheet({
  useEffect(()=>{
   setSelected(focusedOwner||null);setDetail(false);
   const m=/^(vt2|vt3|vt4)\|/.exec(focusedOwner||'');
-  setFilter(m?m[1] as Filter:'all');
+  setFilter(m?m[1] as Filter:'vt2');
  },[date,turn,focusedOwner,view]);
  const byKind=useMemo(()=>Object.fromEntries(ALL.map(kind=>[
   kind,visual.groups.filter(g=>g.id.startsWith(kind+'|'))
