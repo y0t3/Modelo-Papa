@@ -1,3 +1,4 @@
+# Versión validada con TypeScript y los motores originales sin cambios.
 name: APK prueba - Lalo vistas simples 31oct
 on:
   push:
