@@ -61,6 +61,7 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
  const {colors:c}=useLaloTheme();
  const [section,setSection]=useState<Section|null>(null);
  useEffect(()=>{setSection(null)},[date]);
+ useEffect(()=>{if(figureFocus)setSection('seguir')},[figureFocus]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
  const report=useMemo(()=>buildInfoReport(date,turn,data,sheet,historical,view),
