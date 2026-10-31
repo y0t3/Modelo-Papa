@@ -199,6 +199,27 @@ async function main(){
      .map(([k,v]:[string,any])=>[k,v.hitHeads]))
    ]))
   ]))}));
+ console.log('TOP20_EVIDENCE',JSON.stringify({
+  label,winnersNext:result.winnersNext,
+  stages:Object.fromEntries(['AUX_AYER','AUX_HOY'].map(board=>[board,
+   Object.fromEntries(['temprana','completa'].map(stage=>[stage,{
+    all:summary[board][stage].overall,
+    byMonth:Object.fromEntries(Object.entries(summary[board][stage].byMonth)
+     .map(([month,m]:[string,any])=>[month,{
+      cuts:m.cuts,full20Cuts:m.full20Cuts,
+      metrics:m.metrics,blocks:Object.fromEntries(Object.entries(m.blocks)
+       .map(([block,b]:[string,any])=>[block,{
+        n:b.n,winners:b.winners,headHits:b.headHits,
+        featureBreakdown:b.featureBreakdown
+       }]))
+     }])),
+    byTurn:Object.fromEntries(Object.entries(summary[board][stage].byTurn)
+     .map(([turn,m]:[string,any])=>[turn,{
+      cuts:m.cuts,full20Cuts:m.full20Cuts,metrics:m.metrics
+     }]))
+   }]))
+  ]))
+ }));
  if(cuts.length<Number(process.env.VT3TOP20_MIN_CUTS||100))
   throw Error('Cortes insuficientes: '+cuts.length);
 }
