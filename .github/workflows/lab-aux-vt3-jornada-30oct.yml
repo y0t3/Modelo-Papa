@@ -53,6 +53,14 @@ jobs:
           VT3TOP20_MIN_CUTS: '10'
           VT3TOP20_SKIP_OCT_EARLY: '0'
         run: npx --yes tsx scripts/lab-aux-borde-vt3.ts
+      - name: Mostrar las cabezas reales y los puestos de cada VT3 formable
+        env:
+          AUXFORMS_FROM: '2026-10-30'
+          AUXFORMS_TO: '2026-10-30'
+          AUXFORMS_LABEL: jornada-30oct-detalle
+          AUXFORMS_MIN_CUTS: '10'
+          AUXFORMS_SKIP_OCT_EARLY: '0'
+        run: npx --yes tsx scripts/lab-aux-30oct-detalle.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:
