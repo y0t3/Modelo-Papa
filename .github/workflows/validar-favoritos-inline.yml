@@ -2,7 +2,7 @@ name: Verificar Favoritos y recorridos unificados Lalo
 on:
   push:
     branches: ['feature/favoritos-inline-motores-31oct2026']
-    paths: ['App.tsx','src/**','scripts/test-favoritos-inline.ts','.github/workflows/validar-favoritos-inline.yml']
+    paths: ['App.tsx','src/**','scripts/test-favoritos-inline.ts','scripts/test-inicio-unico-fecha.ts','.github/workflows/validar-favoritos-inline.yml']
   workflow_dispatch:
 permissions: {contents: read}
 jobs:
