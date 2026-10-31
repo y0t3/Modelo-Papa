@@ -22,7 +22,7 @@ export default function PredictionSummary({date,turn,view,heads=[],
  const {colors:c,kinds}=useLaloTheme();
  const [kind,setKind]=useState<LaloKind>('vt2');
  const [opened,setOpened]=useState<string|null>(null);
- useEffect(()=>{setKind('vt2');setOpened(null)},[date,turn,model,auxHeads]);
+ useEffect(()=>{setKind('vt2');setOpened(null)},[date,turn,model]);
  const iso=date.includes('/')?date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2):date;
  const rows=useMemo(()=>rowsForModel(model,kind,view,auxiliar||null).slice(0,10),
   [model,kind,view,auxiliar]);
