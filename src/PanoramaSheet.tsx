@@ -25,7 +25,7 @@ import {useLaloTheme} from './ui/LaloTheme';
 import {explainFamilyRationale} from './friendlyExplanations';
 
 type KindFilter='all'|PanoramaKind;
-const defaultOpen:Record<PanoramaKind,boolean>={vt2:false,vt3:true,vt4:false};
+const defaultOpen:Record<PanoramaKind,boolean>={vt2:true,vt3:false,vt4:false};
 const detectKind=(id:string|null|undefined):KindFilter=>{
  const prefix=id?.split('|')[0];
  return prefix==='vt2'||prefix==='vt3'||prefix==='vt4'?prefix:'all';
@@ -43,14 +43,14 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
  const [active,setActive]=useState<string|null>(focusedOwner||null);
  const [turn,setTurn]=useState<Turno>(initialTurn||'Previa');
  const [turnOnly,setTurnOnly]=useState(initialTurnOnly);
- const [filter,setFilter]=useState<KindFilter>('all');
+ const [filter,setFilter]=useState<KindFilter>(mode==='predictiva'?'vt2':'all');
  const [topOnly,setTopOnly]=useState(true);
  const [expanded,setExpanded]=useState<Record<PanoramaKind,boolean>>(defaultOpen);
  const [detail,setDetail]=useState(false);
  useEffect(()=>{
   setActive(focusedOwner||null);
   setTurn(initialTurn||'Previa');setDetail(false);setTurnOnly(initialTurnOnly);
-  setFilter(detectKind(focusedOwner));
+  setFilter(focusedOwner?detectKind(focusedOwner):mode==='predictiva'?'vt2':'all');
   setTopOnly(true);setExpanded(defaultOpen);
  },[sheet,data,mode,target,focusedOwner,initialTurn,initialTurnOnly]);
  const ledger=useMemo(()=>mode==='hoja'&&auxHeads&&drawHeads?
@@ -90,6 +90,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
    if(active)return data.routes.filter(r=>r.ownerId===active);
    return turnOnly?routesForDailyTurn(data,turn):data.routes;
   }
+  if(active)return data.routes.filter(r=>r.ownerId===active);
   return data.routes.filter(r=>visibleIds.has(r.ownerId));
  },[mode,data,visibleIds,active,turnOnly,turn]);
  const auxHighlighted=useMemo(()=>{
