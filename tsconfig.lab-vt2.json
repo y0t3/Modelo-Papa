@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "scripts/lab-combinado-vt2-historico.ts"
+  ]
+}

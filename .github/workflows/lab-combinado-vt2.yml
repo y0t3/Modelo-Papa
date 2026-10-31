@@ -1,0 +1,26 @@
+name: Laboratorio histórico Combinado VT2
+on:
+  push:
+    branches:
+      - lab/combinado-vt2-historico-31oct2026
+  pull_request:
+    branches:
+      - feature/resumen-chips-aux-cabezas-31oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparar-vt2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Validar el laboratorio y las fuentes
+        run: npx tsc --noEmit -p tsconfig.lab-vt2.json
+      - name: Comparar junio-julio vs agosto y septiembre-octubre
+        run: npx --yes tsx scripts/lab-combinado-vt2-historico.ts
