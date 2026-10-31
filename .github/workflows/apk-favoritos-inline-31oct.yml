@@ -1,0 +1,64 @@
+# Versión revisada: sin comparativa en Inicio; Info compacto; banner/fondo intactos.
+name: APK Lalo Favoritos 3 hojas y rutas inline 0.3.26
+on:
+  push:
+    branches: ['feature/inicio-sin-tabs-fecha-compacta-31oct2026']
+    paths: ['.github/workflows/apk-inicio-unico-fecha-31oct.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Instalar paquetes
+        run: npm install
+      - name: Verificaciones de vistas, calendario, motores y banner
+        run: |
+          npx tsc --noEmit --project tsconfig.ui-check.json
+          npx --yes tsx scripts/test-inicio-unico-fecha.ts
+          npx --yes tsx scripts/test-favoritos-inline.ts
+          npx --yes tsx scripts/test-inicio-resumen.ts
+          npx --yes tsx scripts/test-la-posta-identidad.ts
+          npx --yes tsx scripts/test-wallpaper-lalo.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: APK de prueba independiente
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const p='app.json';
+          const app=JSON.parse(fs.readFileSync(p,'utf8'));
+          app.expo.name='Lalo - Favoritos 3 hojas';
+          app.expo.version='0.3.26';
+          app.expo.android.package='com.y0t3.modelopapa.favoritosinline';
+          app.expo.android.versionCode=32;
+          fs.writeFileSync(p,JSON.stringify(app,null,2)+'\n');
+          NODE
+      - name: Preparar Android con banner y fondo aprobados
+        env: {CI: '1'}
+        run: npx expo prebuild --platform android --clean
+      - name: Mantener icono aprobado
+        run: bash .github/scripts/icon-modelo-lalo.sh
+      - name: Compilar APK
+        working-directory: android
+        env: {NODE_ENV: production}
+        run: ./gradlew assembleRelease --no-daemon
+      - name: Verificar instalador
+        run: |
+          test -s android/app/build/outputs/apk/release/app-release.apk
+          sha256sum android/app/build/outputs/apk/release/app-release.apk
+          ls -lh android/app/build/outputs/apk/release/app-release.apk
+      - name: Descargar APK de prueba
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lalo-Favoritos-Inline-APK-0.3.26
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 30
