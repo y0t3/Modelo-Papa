@@ -16,9 +16,9 @@ import InlineFamilyPaths from './InlineFamilyPaths';
 const readableKind:Record<LaloKind,string>={vt2:'2 cifras',vt3:'3 cifras',vt4:'4 cifras'};
 type Props={date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
  auxiliar?:AuxiliarView|null;sheet?:DailySheet|null;auxHeads?:AuxiliaryHeads|null;
- heads?:string[]};
+ heads?:string[];onOpenFamily?:(id:string)=>void};
 export default function PredictionSummary({date,turn,view,heads=[],
- model='lalo',auxiliar,sheet=null,auxHeads=null}:Props){
+ model='lalo',auxiliar,sheet=null,auxHeads=null,onOpenFamily}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const [kind,setKind]=useState<LaloKind>('vt2');
  const [opened,setOpened]=useState<string|null>(null);
@@ -63,10 +63,10 @@ export default function PredictionSummary({date,turn,view,heads=[],
     {summaries.length?'Coincidieron estos números:':'Sin coincidencias en esta lista'}
    </Text>
    {summaries.length?<View style={s.matchChips}>
-    {summaries.map((h,i)=><Text onPress={()=>setOpened(v=>v===rows.find(f=>f.rank===h.rank)?.key?null:rows.find(f=>f.rank===h.rank)?.key||null)} key={h.head+'|'+h.rank+'|'+i}
+    {summaries.map((h,i)=><Text accessibilityRole="link" onPress={()=>onOpenFamily?.(h.kind+'|'+h.family)} key={h.head+'|'+h.rank+'|'+i}
      style={[s.matchChip,{color:indicator.text,borderColor:indicator.line,
       backgroundColor:c.card}]}>
-     #{h.rank} · {h.family} · {h.head}
+     #{h.rank} · {h.family} · {h.head}  ›
     </Text>)}
    </View>:null}
   </View>:null}
