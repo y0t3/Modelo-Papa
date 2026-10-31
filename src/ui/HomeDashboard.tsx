@@ -40,7 +40,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
  return <View style={s.root}>
   <View style={[s.hero,{backgroundColor:c.surface,borderColor:'#E6B34D'}]}>
    <Text style={[s.kicker,{color:c.accent}]}>LA POSTA DEL DÍA · {turn.toUpperCase()}</Text>
-   <Text style={[s.title,{color:c.text}]}>Los favoritos de Lalo</Text>
+   <Text style={[s.title,{color:c.accent}]}>Los favoritos de Lalo</Text>
    <Text style={[s.desc,{color:c.subtext}]}>
     {date?readableWeekday(date):'Elegí una fecha'} · {overview.statusText}
    </Text>
@@ -78,11 +78,11 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    </Pressable>
   </View>
   <View style={[s.summary,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>Resumen del día</Text>
+   <Text style={[s.heading,{color:c.accent}]}>Resumen del día</Text>
    <DayMatchGrid overview={overview} data={data} turn={turn}
     short onOpenHeads={()=>onNavigate('cabezas')}/>
   </View>
-  <Text style={[s.heading,{color:c.text}]}>¿Qué querés mirar?</Text>
+  <Text style={[s.heading,{color:c.accent}]}>¿Qué querés mirar?</Text>
   <View style={s.shortcutGrid}>
    <Pressable accessibilityRole="button" onPress={()=>onNavigate('hoja')}
     style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#68B1FF'}]}>
@@ -129,9 +129,9 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
 }
 const s=StyleSheet.create({
  root:{marginTop:9,gap:12,paddingBottom:25},
- hero:{borderWidth:1.4,borderRadius:18,padding:13,gap:10},
+ hero:{borderWidth:2,borderRadius:18,padding:13,gap:10},
  kicker:{fontSize:10,fontWeight:'900',letterSpacing:1.1},
- title:{fontSize:22,fontWeight:'900'},
+ title:{fontSize:22,fontWeight:'900',color:'#F5C04B'},
  desc:{fontSize:11,lineHeight:17},
  note:{fontSize:10,lineHeight:16},
  groupHeader:{flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
@@ -141,7 +141,7 @@ const s=StyleSheet.create({
   alignItems:'center',gap:3,padding:8},
  mainButton:{borderRadius:11,padding:12,alignItems:'center'},
  heading:{fontSize:18,fontWeight:'900'},
- summary:{borderWidth:1,borderRadius:15,padding:13,gap:12},
+ summary:{borderWidth:1.5,borderRadius:15,padding:13,gap:12},
  outline:{borderWidth:1,borderRadius:10,padding:11,alignItems:'center'},
  shortcutGrid:{flexDirection:'row',gap:9,alignItems:'stretch'},
  shortcut:{flex:1,borderWidth:1.2,borderRadius:15,
