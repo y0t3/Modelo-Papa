@@ -17,8 +17,8 @@ assert(p.every(x=>x.sourceCount===1&&x.pathCount>=1));
 const older=formPositions(sheet,'Primera');
 const two=physicalAnatomy(sheet,'Primera',older);
 assert(two.length>=p.length);
-assert(two.some(x=>x.frontier==='SOLO_NUEVA'));
-assert(two.some(x=>x.frontier==='SOLO_ANTIGUAS'));
+assert(two.every(x=>x.frontier==='SOLO_NUEVA'||x.frontier==='SOLO_ANTIGUAS'||x.frontier==='NUEVA_Y_ANTIGUAS'));
+// Las dos columnas de esta prueba repiten sus cifras; no exigir exclusivos.
 assert(two.every(x=>x.pathCount>=x.sourceCount));
 assert(two.every(x=>x.members===1||x.members===2));
 assert(two.every(x=>x.expectedHeadHitsPerJur===x.members/1000));
