@@ -30,6 +30,8 @@ import PanoramaSheet from './src/PanoramaSheet';
 import AuxiliaryPredictiveSheet from './src/ui/AuxiliaryPredictiveSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
 import CombinedVt3Panel from './src/ui/CombinedVt3Panel';
+import type {CombinedPick} from './src/laloCombinedRuntime';
+import {combinedFocusVisual,combinedOwnerId} from './src/combinedFocusVisual';
 import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
 import PapaPronostico from './src/ui/PapaPronostico';
@@ -114,6 +116,7 @@ function LaloApp(){
  const [autoVersion,setAutoVersion]=useState(0);
  const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
  const [focused,setFocused]=useState<string|null>(null);
+ const [combinedFocus,setCombinedFocus]=useState<CombinedPick|null>(null);
  const [hojaFocused,setHojaFocused]=useState<string|null>(null);
  const [hojaTurn,setHojaTurn]=useState<Turno>('Previa');
  const scrollRef=useRef<ScrollView>(null);
@@ -380,6 +383,14 @@ function LaloApp(){
  const showingSheet=historicalPreview?.day.sheet||sheet;
  const showingHoja=historicalHoja||hoja;
  const predictiva=useMemo(()=>motor?buildPredictivePanorama(motor,hist):null,[motor,hist]);
+ // El Combinado conserva sus rutas físicas aunque no figure en el Top10 Lalo.
+ const predictivaEnPantalla=useMemo(()=>{
+  if(!predictiva||!combinedFocus||focused!==combinedOwnerId(combinedFocus.family))
+   return predictiva;
+  const extra=combinedFocusVisual(combinedFocus);
+  return {groups:[...predictiva.groups,...extra.groups],
+   routes:[...predictiva.routes,...extra.routes]};
+ },[predictiva,combinedFocus,focused]);
  const post=useMemo(()=>{
   if(!motor||!sheet||!sheet.heads[target]?.length)return null;
   return compareMotorLaloAfterDraw(motor,sheet.heads[target]);
@@ -391,7 +402,15 @@ function LaloApp(){
   [data,target]);
  const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
  const changeAuxMode=(next:AuxMode)=>{setAuxMode(next);setFocused(null)};
- const showFamily=(id:string)=>{setPredictiveMode('lalo');navigateTo('predictiva');setFocused(id)};
+ const showFamily=(id:string)=>{
+  setCombinedFocus(null);setPredictiveMode('lalo');
+  navigateTo('predictiva');setFocused(id);
+ };
+ const showCombinedFamily=(pick:CombinedPick)=>{
+  if(!pick.paths.length)return;
+  setCombinedFocus(pick);setPredictiveMode('lalo');
+  navigateTo('predictiva');setFocused(combinedOwnerId(pick.family));
+ };
  const trackFigure=(family:string)=>{
   setFigureFocus('vt3|'+family);navigateTo('info');
  };
@@ -400,7 +419,7 @@ function LaloApp(){
   navigateTo('predictiva');setFocused('vt3|'+family);
  };
  const showAuxFamily=(id:string)=>{
-  setPredictiveMode('auxiliar');navigateTo('predictiva');setFocused(id);
+  setCombinedFocus(null);setPredictiveMode('auxiliar');navigateTo('predictiva');setFocused(id);
  };
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);
@@ -542,8 +561,8 @@ function LaloApp(){
     </View>
     {predictiveMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
     {predictiveMode==='lalo'?
-     sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet} date={date||''}
-      data={predictiva} target={target} focusedOwner={focused} visualDays={visualDays}
+     sheet&&predictivaEnPantalla?<PanoramaSheet mode="predictiva" sheet={sheet} date={date||''}
+      data={predictivaEnPantalla} target={target} focusedOwner={focused} visualDays={visualDays}
       onInfo={()=>navigateTo('info')}/>:
       <Text style={[s.empty,{color:c.subtext}]}>Cargá la hoja para consultar Lalo +11.</Text>:
      activeAuxHeads&&auxiliar?
@@ -587,7 +606,7 @@ function LaloApp(){
         </Text>
        </View>:
        <CombinedVt3Panel date={date||''} turn={target} sheet={sheet}
-        historical={hist} heads={fiveHeads}/>}
+        historical={hist} heads={fiveHeads} onOpenFamily={showCombinedFamily}/>}
    </>:screen==='papa'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico de Lalo</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
