@@ -22,6 +22,7 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
  turn:Turno;sheet:DailySheet|null;historical:LaloHistorical[];
  heads:string[]}){
  const {colors:c,kinds}=useLaloTheme();
+ const highlight=kinds.vt3;
  const [memory,setMemory]=useState<CombinedMemory|null>(null);
  const [error,setError]=useState('');
  const [loading,setLoading]=useState(false);
@@ -98,30 +99,45 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
   {top.length?<View style={s.list}>
    {top.slice(0,10).map((entry,i)=>{
     const matched=hits.get(entry.family)||[];
-    const paths=entry.paths;
-    return <Pressable key={entry.family} accessibilityRole="button"
-     accessibilityState={{expanded:opened===entry.family}}
-     onPress={()=>setOpened(old=>old===entry.family?null:entry.family)}
-     style={[s.item,{backgroundColor:matched.length?c.accentFill:c.card,
-      borderColor:matched.length?c.accent:c.border}]}>
-     <View style={s.line}>
+    const exact=new Set(matched.map(h=>h.slice(-3)));
+    const isOpen=opened===entry.family;
+    const members=[...new Set(entry.family.split('/'))];
+    return <View key={entry.family} style={[s.item,{
+     backgroundColor:matched.length?highlight.fill:c.card,
+     borderColor:matched.length?highlight.line:c.border,
+     borderWidth:matched.length?2:1}]}>
+     <Pressable accessibilityRole="button"
+      accessibilityState={{expanded:isOpen}}
+      accessibilityLabel={'Puesto '+(i+1)+', '+entry.family+', ver recorrido'}
+      onPress={()=>setOpened(v=>v===entry.family?null:entry.family)}
+      style={s.line}>
       <Text style={[s.rank,{backgroundColor:i===0?c.accent:c.surfaceAlt,
        color:i===0?'#082046':c.subtext}]}>{i+1}</Text>
-      <Text style={[s.family,{color:c.text}]}>{entry.family}</Text>
-      {matched.length?<Text style={{fontSize:10,color:c.accent,fontWeight:'900'}}>✓ Salió</Text>:
-       <Text style={{fontSize:11,color:c.subtext}}>Ver forma  ›</Text>}
-     </View>
-     {matched.length?<Text style={[s.meta,{color:c.accent}]}>
-      Coincidió con {matched.join(', ')}
-     </Text>:null}
-     {opened===entry.family?<Text style={[s.meta,{color:c.subtext}]}>
-      Mirá las casillas marcadas aquí mismo.
-     </Text>:null}
-     {opened===entry.family&&pre?<InlineFamilyPaths kind="vt3"
-      family={entry.family} turn={turn} plus={{sheet:pre,
-       routes:paths.map(p=>({sourceId:p.source as any,value:p.value,path:p.cells}))}}/>:null}
-
-    </Pressable>
+      <View style={{flex:1,gap:3}}>
+       <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'center',gap:3}}>
+        {members.map((part,j)=><React.Fragment key={part}>
+         {j>0?<Text style={{color:c.subtext}}>/</Text>:null}
+         <Text style={[s.family,{color:exact.has(part)?highlight.text:c.text,
+          backgroundColor:exact.has(part)?highlight.fill:'transparent',
+          borderColor:exact.has(part)?highlight.line:'transparent',
+          borderWidth:exact.has(part)?1.5:0,
+          paddingHorizontal:exact.has(part)?4:0,
+          borderRadius:5,overflow:'hidden'}]}>{part}</Text>
+        </React.Fragment>)}
+       </View>
+       {matched.length?<Text style={{fontSize:10,fontWeight:'900',color:highlight.text}}>
+        Coincidió con {matched.join(' · ')}
+       </Text>:null}
+      </View>
+      <Text style={{fontSize:11,color:matched.length?highlight.line:c.subtext}}>
+       {isOpen?'Cerrar ▴':'Ver forma ›'}
+      </Text>
+     </Pressable>
+     {isOpen&&pre?<InlineFamilyPaths kind="vt3" family={entry.family}
+      turn={turn} plus={{sheet:pre,routes:entry.paths.map(path=>({
+       sourceId:path.source as any,value:path.value,path:path.cells
+      }))}}/>:null}
+    </View>;
    })}
   </View>:null}
   {top.length?<View style={[s.footer,{backgroundColor:c.surfaceAlt}]}>
@@ -146,7 +162,7 @@ const s=StyleSheet.create({
  loading:{flexDirection:'row',gap:10,alignItems:'center',padding:12},
  warning:{borderRadius:10,padding:11,gap:4},
  list:{gap:7,marginTop:6},
- item:{borderWidth:1,borderRadius:11,paddingVertical:10,paddingHorizontal:9,gap:6},
+ item:{borderWidth:1,borderRadius:11,paddingVertical:10,paddingHorizontal:9,gap:9},
  line:{flexDirection:'row',gap:8,alignItems:'center'},
  rank:{fontSize:13,fontWeight:'900',width:29,height:29,textAlign:'center',
   textAlignVertical:'center',overflow:'hidden',borderRadius:8},
