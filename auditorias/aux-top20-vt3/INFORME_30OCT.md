@@ -56,7 +56,7 @@ En AUX Ayer con hoja completa, nuevo orden por posición exacta: junio–agosto 
 
 **Mantener Motor Lalo y los Top10 operativos tal como están**, sin incorporar ranking nuevo, eliminación automática de VT3 ni aumento de jugadas.
 
-Prioridad del próximo estudio: en **AUX Hoy completa**, contrastar si el ranking original concede una precedencia inadecuada a raíces que aportan muchos caminos/turnos frente a eventos ganadores verdaderamente distintos, usando los mismos 20 candidatos y diez posiciones. En paralelo conservar como **alerta observacional** (sin filtrar) la condición de antecedentes en varias jornadas de AUX Ayer completa. Toda hipótesis posterior deberá quedar fijada antes de mirar otro período o, idealmente, sellada prospectivamente por turno.
+Prioridad del próximo estudio: en **AUX Hoy completa**, contrastar si el orden actual —que **ya deduplica eventos ganadores**, prioriza número de raíces y luego referencias anterior/semanal, cruces y desempates— separa adecuadamente la **cantidad de eventos únicos** de su **distribución entre jornadas**, siempre con los mismos 20 candidatos y diez posiciones. No presentar multiplicidad de caminos como múltiples raíces: el motor actual no comete ese error. En paralelo conservar como **alerta observacional** (sin filtrar) la condición de antecedentes en varias jornadas de AUX Ayer completa. Toda hipótesis posterior deberá quedar fijada antes de mirar otro período o, idealmente, sellada prospectivamente por turno.
 
 ## Archivos y reproducción
 
