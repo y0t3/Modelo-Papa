@@ -87,12 +87,13 @@ export default function PredictionSummary({date,turn,view,heads=[],
      borderColor:wins.length?indicator.line:c.border,
      borderWidth:wins.length?2:1}]}>
      <Pressable accessibilityRole="button"
-      accessibilityLabel={'Puesto '+f.rank+', '+f.family+', ver su formación'}
-      accessibilityState={{expanded:isOpen}}
-      onPress={()=>setOpened(v=>v===f.key?null:f.key)}
+      accessibilityLabel={'Puesto '+f.rank+', '+f.family+', mostrar en Predictiva'}
+      onPress={()=>onOpenFamily?.(kind+'|'+f.family)}
       style={s.rowHead}>
-      <Text style={[s.rank,{backgroundColor:i===0?c.accent:c.surfaceAlt,
-       color:i===0?'#071A38':c.subtext}]}>{f.rank}</Text>
+      <Text style={[s.rank,{backgroundColor:wins.length?indicator.fill:c.surfaceAlt,
+       color:wins.length?indicator.text:c.subtext,
+       borderColor:wins.length?indicator.line:c.border,
+       borderWidth:wins.length?1.5:0}]}>{f.rank}</Text>
       <View style={{flex:1,gap:4}}>
        <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'center',gap:4}}>
         {parts.map((part,j)=><React.Fragment key={part+'|'+j}>
@@ -110,7 +111,13 @@ export default function PredictionSummary({date,turn,view,heads=[],
        </Text>:null}
       </View>
       <Text style={{fontSize:11,fontWeight:'800',color:wins.length?indicator.line:c.subtext}}>
-       {isOpen?'Cerrar ▴':'Ver forma ›'}
+       Ver en hoja ›
+      </Text>
+     </Pressable>
+     <Pressable accessibilityRole="button" accessibilityState={{expanded:isOpen}}
+      onPress={()=>setOpened(v=>v===f.key?null:f.key)} style={s.inlineToggle}>
+      <Text style={{fontSize:10,fontWeight:'800',color:c.accent}}>
+       {isOpen?'▴ Cerrar formación':'▾ Ver formación aquí'}
       </Text>
      </Pressable>
      {isOpen?<InlineFamilyPaths kind={kind} family={f.family} turn={turn}
@@ -144,6 +151,7 @@ const s=StyleSheet.create({
  list:{gap:3},
  row:{borderRadius:11,paddingHorizontal:10,paddingVertical:6,gap:6},
  rowHead:{flexDirection:'row',alignItems:'center',gap:10,minHeight:35},
+ inlineToggle:{paddingLeft:38,paddingVertical:2,alignSelf:'flex-start'},
  rank:{width:30,height:30,borderRadius:8,overflow:'hidden',textAlign:'center',
   textAlignVertical:'center',fontWeight:'900',fontSize:14}
 });
