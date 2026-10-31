@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - lab/cotejo-formas-combinado-vt3-31oct2026
+  pull_request:
+    branches:
+      - feature/resumen-chips-aux-cabezas-31oct2026
   workflow_dispatch:
 permissions:
   contents: read
