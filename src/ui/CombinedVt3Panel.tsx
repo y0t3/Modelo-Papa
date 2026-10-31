@@ -74,7 +74,6 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
   }).catch(()=>{if(active)setSavedState('no guardado')});
   return()=>{active=false};
  },[current,saved,published,date,turn,savedState,top.length]);
- const paths=opened?top.find(x=>x.family===opened)?.paths||[]:[];
  const hits=new Map<string,string[]>();
  for(const h of heads.filter(x=>/^\d{4}$/.test(x))){
   const key=reversibleFamily(h.slice(-3));
@@ -103,6 +102,7 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
   {top.length?<View style={s.list}>
    {top.slice(0,10).map((entry,i)=>{
     const matched=hits.get(entry.family)||[];
+    const paths=entry.paths;
     return <Pressable key={entry.family} accessibilityRole="button"
      accessibilityState={{expanded:opened===entry.family}}
      onPress={()=>setOpened(old=>old===entry.family?null:entry.family)}
@@ -119,18 +119,15 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
       Coincidió con {matched.join(', ')}
      </Text>:null}
      {opened===entry.family?<Text style={[s.meta,{color:c.subtext}]}>
-      Mirá las casillas marcadas más abajo.
+      Mirá las casillas marcadas aquí mismo.
      </Text>:null}
-    </Pressable>
-   })}
-  </View>:null}
-  {opened&&paths.length&&pre?<View style={[s.routeCard,{backgroundColor:c.surfaceAlt,
+  {opened===entry.family&&paths.length&&pre?<View style={[s.routeCard,{backgroundColor:c.surfaceAlt,
     borderColor:c.border}]}>
     <Text style={{color:c.accent,fontSize:13,fontWeight:'900'}}>
-     Así se forma {opened}
+     Así se forma {entry.family}
     </Text>
     <Text style={[s.meta,{color:c.subtext}]}>
-     {paths.length} recorrido(s) posible(s) en la hoja. Cada camino sigue la misma columna.
+     {paths.length===1?'Un recorrido posible':paths.length+' recorridos posibles'} en la hoja. Sin cruzar columnas.
     </Text>
     {paths.slice(0,3).map((path,i)=>{
      const col=pre.columns.find(x=>x.id===path.source);
@@ -148,6 +145,9 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
      Hay {paths.length-3} recorridos más en esta familia.
     </Text>:null}
    </View>:null}
+    </Pressable>
+   })}
+  </View>:null}
   {top.length?<View style={[s.footer,{backgroundColor:c.surfaceAlt}]}>
    <Text style={{color:c.subtext,fontSize:11,lineHeight:17}}>
     {saved?
