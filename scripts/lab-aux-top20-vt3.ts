@@ -64,6 +64,14 @@ function summarize(cuts:Cut[],rows:Candidate[]){
   hitFamilies:total(cuts,c=>c.selection[v]?.hitFamilies||0),
   slots:total(cuts,c=>c.selection[v]?.slots||0)
  }]));
+ const matched=cuts.filter(c=>c.ranked>=20);
+ const matchedOnly={
+  cuts:matched.length,heads:total(matched,c=>c.headCount),
+  metrics:Object.fromEntries([...variants,'neutral1','neutral2','neutral3','neutral4']
+    .map(v=>[v,{hitHeads:total(matched,c=>c.selection[v]?.hitHeads||0),
+     hitFamilies:total(matched,c=>c.selection[v]?.hitFamilies||0),
+     slots:total(matched,c=>c.selection[v]?.slots||0)}]))
+ };
  const blocks=Object.fromEntries(['top10','11-20'].map(name=>{
   const part=candidateRows.filter(r=>name==='top10'?r.rank<=10:r.rank>10);
   const win=part.filter(r=>r.headHits>0),lose=part.filter(r=>r.headHits===0);
@@ -82,7 +90,7 @@ function summarize(cuts:Cut[],rows:Candidate[]){
     shifted:part.length?total(part,r=>r.shiftEvents)/part.length:null}
   }];
  }));
- return {cuts:countCuts,full20Cuts:cuts.filter(c=>c.ranked>=20).length,
+ return {cuts:countCuts,full20Cuts:cuts.filter(c=>c.ranked>=20).length,matchedOnly,
   heads,formable,candidateCount:candidateRows.length,metrics,blocks};
 }
 async function main(){
