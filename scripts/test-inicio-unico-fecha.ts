@@ -16,7 +16,7 @@ assert(date.includes('onPress={show}')&&date.includes('<Modal visible={open}'));
 assert(date.includes('compact?:boolean'));
 assert(home.includes("onNavigate('hoja')")&&home.includes("onNavigate('predictiva')"));
 assert(!home.includes('Comparativa')&&!home.includes('shared.length'));
-assert(home.includes("onNavigate('cabezas')")&&home.includes("onNavigate('info')"));
+assert(home.includes("onNavigate('cabezas')")&&home.includes("['info','Resumen del día'"));
 assert.equal(isoToDisplay('2026-10-31'),'31/10/2026');
 assert.equal(shiftDrawDay('2026-10-31',-1),'2026-10-30');
 assert.equal(shiftDrawDay('2026-10-31',1),'2026-11-02');
