@@ -1,0 +1,47 @@
+name: LAB Lalo VT3 - Top10 7+3 versus Formas Primero
+on:
+  push:
+    branches:
+      - 'lab/lalo-vt3-7mas3-formas-31oct2026'
+    paths:
+      - 'src/labLalo7mas3VT3.ts'
+      - 'scripts/lab-lalo-vt3-7mas3.ts'
+      - 'scripts/test-lalo-vt3-7mas3.ts'
+      - '.github/workflows/lab-lalo-vt3-7mas3.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  evaluar:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {label: 'junio-agosto', from: '2026-06-01', to: '2026-08-31', min: '250', skip: '0'}
+          - {label: 'septiembre-octubre', from: '2026-09-01', to: '2026-10-29', min: '130', skip: '1'}
+          - {label: 'viernes-30oct', from: '2026-10-30', to: '2026-10-30', min: '5', skip: '0'}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Invariantes 7+3 y PRE del modelo Lalo
+        run: |
+          npx --yes tsx scripts/test-lalo-vt3-7mas3.ts
+          npx --yes tsx scripts/test-motor-formas-primero.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Comparar Lalo original contra 7+3 y controles
+        env:
+          LALO7_FROM: ${{ matrix.from }}
+          LALO7_TO: ${{ matrix.to }}
+          LALO7_LABEL: ${{ matrix.label }}
+          LALO7_MIN_CUTS: ${{ matrix.min }}
+          LALO7_SKIP_OCT_EARLY: ${{ matrix.skip }}
+        run: npx --yes tsx scripts/lab-lalo-vt3-7mas3.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lalo-vt3-7mas3-${{ matrix.label }}
+          path: auditorias/lalo-vt3-7mas3/${{ matrix.label }}.json
+          if-no-files-found: warn
