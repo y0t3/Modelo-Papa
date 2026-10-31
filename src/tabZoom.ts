@@ -1,10 +1,10 @@
-export const ZOOM_TABS=['hoja','predictiva','prediccion','papa','cabezas','info'] as const;
+export const ZOOM_TABS=['inicio','hoja','predictiva','prediccion','papa','cabezas','info'] as const;
 export type ZoomTab=typeof ZOOM_TABS[number];
 export const ZOOM_MIN=1,ZOOM_MAX=2.5;
 export const ZOOM_STORAGE_KEY='modelo-lalo:zoom-pestanas-v1';
 export type TabZoomLevels=Record<ZoomTab,number>;
 export const defaultZoomLevels=():TabZoomLevels=>({
- hoja:1,predictiva:1,prediccion:1,papa:1,cabezas:1,info:1
+ inicio:1,hoja:1,predictiva:1,prediccion:1,papa:1,cabezas:1,info:1
 });
 export function clampZoom(value:number){
  if(!Number.isFinite(value))return ZOOM_MIN;
