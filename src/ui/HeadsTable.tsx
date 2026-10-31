@@ -31,7 +31,9 @@ export default function HeadsTable({data,highlights,onOpenHead,sourceLabels={}}:
      {TURNOS.map(t=><Text key={t} style={[s.cell,s.header,{color:c.subtext}]}>{t}</Text>)}
     </View>
     {JURS.map(j=><View key={j} style={[s.row,{borderBottomColor:c.divider}]}>
-     <Text style={[s.first,s.jur,{color:c.text}]}>{j}</Text>
+     <View style={[s.first,s.jurWrap,{borderColor:'#D4A640',backgroundColor:c.surfaceAlt}]}>
+      <Text style={[s.jur,{color:c.text}]}>{j}</Text>
+     </View>
      {TURNOS.map(t=>{
       const h=data?.[t]?.[j]||'----';
       const id=dailyHeadOwnerId(t,j,h);
@@ -69,7 +71,9 @@ const s=StyleSheet.create({
  row:{flexDirection:'row',borderBottomWidth:1,alignItems:'center'},
  first:{width:104,padding:7},header:{fontSize:11,color:'#57456a',fontWeight:'800'},
  cell:{width:102,padding:7,textAlign:'center'},
- jur:{fontSize:11,fontWeight:'800',color:'#352743'},
+ jur:{fontSize:11,fontWeight:'900',color:'#352743',textAlign:'center'},
+ jurWrap:{borderWidth:1.3,borderRadius:9,marginVertical:6,minHeight:35,
+  alignItems:'center',justifyContent:'center'},
  value:{width:102,minHeight:71,padding:7,justifyContent:'center',alignItems:'center'},
  muted:{opacity:.36},
  tags:{flexDirection:'row',flexWrap:'wrap',justifyContent:'center'},
