@@ -1,0 +1,50 @@
+name: LAB AUX VT3 - dispersion temporal y concentracion
+on:
+  push:
+    branches:
+      - 'lab/aux-vt3-respaldo-temporal-31oct2026'
+    paths:
+      - 'src/labAuxTemporalVT3.ts'
+      - 'scripts/lab-aux-temporal-vt3.ts'
+      - 'scripts/test-aux-temporal-vt3.ts'
+      - '.github/workflows/lab-aux-vt3-temporal.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  evaluar:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {label: 'junio-agosto', from: '2026-06-01', to: '2026-08-31', min: '250', skip: '0'}
+          - {label: 'septiembre-octubre', from: '2026-09-01', to: '2026-10-29', min: '130', skip: '1'}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Eventos unicos, dias distintos, prioridades y anti-fuga
+        run: |
+          npx --yes tsx scripts/test-aux-temporal-vt3.ts
+          npx --yes tsx scripts/test-aux-top20-vt3.ts
+      - name: Regresion motor Lalo y AUX
+        run: |
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-aux-etapas-respaldos-vt3.ts
+      - name: Replay PRE - fases de disponibilidad y control Top20 igualado
+        env:
+          VT3TOP20_FROM: ${{ matrix.from }}
+          VT3TOP20_TO: ${{ matrix.to }}
+          VT3TOP20_LABEL: ${{ matrix.label }}
+          VT3TOP20_MIN_CUTS: ${{ matrix.min }}
+          VT3TOP20_SKIP_OCT_EARLY: ${{ matrix.skip }}
+        run: npx --yes tsx scripts/lab-aux-temporal-vt3.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aux-temporal-vt3-${{ matrix.label }}
+          path: auditorias/aux-temporal-vt3/${{ matrix.label }}.json
+          if-no-files-found: warn
