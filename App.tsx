@@ -593,7 +593,6 @@ function LaloApp(){
     <TurnStrip value={target} onChange={changeTurn}/>
     <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
    </>:screen==='cabezas'?<>
-    <AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>
     <HeadsTable data={data} highlights={headHighlights.merged}
      sourceLabels={headHighlights.labels} onOpenHead={openHeadInHoja}/>
    </>:
