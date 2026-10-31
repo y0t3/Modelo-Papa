@@ -1,5 +1,5 @@
 import type {Turno} from './domain';
-export type AppTab='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
+export type AppTab='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 export type NavigationEntry={
  screen:AppTab;scrollY:number;
  selectedTurn:Turno|null;focused:string|null;
