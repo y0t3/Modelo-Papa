@@ -1,0 +1,1094 @@
+{
+  "sha256": "32635805ddbb028db6170475ee7ddaf4ca92383f97e18849af01512d39bbe552",
+  "targetDate": "2026-10-31",
+  "sourceMode": "AUX_AYER",
+  "auxSourceDate": "2026-10-30",
+  "observation": "Sin consultar ninguna cabeza ganadora del día objetivo",
+  "generatedUtc": "2026-10-31T04:25:26.443Z",
+  "referenceDates": [
+    {
+      "date": "2026-10-30",
+      "period": "D−1"
+    },
+    {
+      "date": "2026-10-24",
+      "period": "D−7"
+    }
+  ],
+  "memoryDates": [
+    "2026-10-24",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30"
+  ],
+  "auxiliarySourceDates": [
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30"
+  ],
+  "algorithms": [
+    "Top10 original D-1/D-7",
+    "Formas Primero",
+    "7 oficiales + 3 familias del puesto 21 en adelante",
+    "5 controles neutrales pareados"
+  ],
+  "rules": "Misma hoja, VT3 contiguas reversibles, diez familias, sin Post y sin intercambio entre hojas",
+  "draws": [
+    {
+      "turn": "Previa",
+      "availableDigits": 24,
+      "availablePhysicalVT3": 111,
+      "rankedFamilies": 56,
+      "officialTop10": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "formsFirstTop10": [
+        "246/642",
+        "224/422",
+        "018/810",
+        "002/200",
+        "133/331",
+        "367/763",
+        "012/210",
+        "024/420",
+        "022/220",
+        "008/800"
+      ],
+      "experimentDeep3": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "246/642",
+        "121/121",
+        "356/653"
+      ],
+      "admissions": [
+        {
+          "family": "246/642",
+          "originalRank": 38,
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "121/121",
+          "originalRank": 22,
+          "siteRank": 20,
+          "rootEvents": 4,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "356/653",
+          "originalRank": 27,
+          "siteRank": 21,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        }
+      ],
+      "dropped": [
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "neutralDeep3": [
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "424/424",
+          "464/464",
+          "014/410"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "356/653",
+          "273/372",
+          "103/301"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "354/453",
+          "121/121",
+          "065/560"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "021/120",
+          "056/650",
+          "065/560"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "014/410",
+          "273/372",
+          "056/650"
+        ]
+      ],
+      "formFirstMetadata": [
+        {
+          "family": "246/642",
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3
+        },
+        {
+          "family": "224/422",
+          "siteRank": 2,
+          "rootEvents": 5,
+          "rootDays": 4,
+          "exactEvents": 1
+        },
+        {
+          "family": "018/810",
+          "siteRank": 3,
+          "rootEvents": 5,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "002/200",
+          "siteRank": 4,
+          "rootEvents": 3,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "133/331",
+          "siteRank": 5,
+          "rootEvents": 3,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "367/763",
+          "siteRank": 6,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "012/210",
+          "siteRank": 7,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "024/420",
+          "siteRank": 8,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "022/220",
+          "siteRank": 9,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "008/800",
+          "siteRank": 10,
+          "rootEvents": 2,
+          "rootDays": 1,
+          "exactEvents": 1
+        }
+      ]
+    },
+    {
+      "turn": "Primera",
+      "availableDigits": 24,
+      "availablePhysicalVT3": 111,
+      "rankedFamilies": 56,
+      "officialTop10": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "formsFirstTop10": [
+        "246/642",
+        "224/422",
+        "018/810",
+        "002/200",
+        "133/331",
+        "367/763",
+        "012/210",
+        "024/420",
+        "022/220",
+        "008/800"
+      ],
+      "experimentDeep3": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "246/642",
+        "121/121",
+        "356/653"
+      ],
+      "admissions": [
+        {
+          "family": "246/642",
+          "originalRank": 38,
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "121/121",
+          "originalRank": 22,
+          "siteRank": 20,
+          "rootEvents": 4,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "356/653",
+          "originalRank": 27,
+          "siteRank": 21,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        }
+      ],
+      "dropped": [
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "neutralDeep3": [
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "273/372",
+          "121/121",
+          "657/756"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "203/302",
+          "318/813",
+          "354/453"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "467/764",
+          "218/812",
+          "043/340"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "273/372",
+          "467/764",
+          "387/783"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "243/342",
+          "056/650",
+          "435/534"
+        ]
+      ],
+      "formFirstMetadata": [
+        {
+          "family": "246/642",
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3
+        },
+        {
+          "family": "224/422",
+          "siteRank": 2,
+          "rootEvents": 5,
+          "rootDays": 4,
+          "exactEvents": 1
+        },
+        {
+          "family": "018/810",
+          "siteRank": 3,
+          "rootEvents": 5,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "002/200",
+          "siteRank": 4,
+          "rootEvents": 3,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "133/331",
+          "siteRank": 5,
+          "rootEvents": 3,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "367/763",
+          "siteRank": 6,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "012/210",
+          "siteRank": 7,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "024/420",
+          "siteRank": 8,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "022/220",
+          "siteRank": 9,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "008/800",
+          "siteRank": 10,
+          "rootEvents": 2,
+          "rootDays": 1,
+          "exactEvents": 1
+        }
+      ]
+    },
+    {
+      "turn": "Matutino",
+      "availableDigits": 24,
+      "availablePhysicalVT3": 111,
+      "rankedFamilies": 56,
+      "officialTop10": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "formsFirstTop10": [
+        "246/642",
+        "224/422",
+        "018/810",
+        "002/200",
+        "133/331",
+        "367/763",
+        "012/210",
+        "024/420",
+        "022/220",
+        "008/800"
+      ],
+      "experimentDeep3": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "246/642",
+        "121/121",
+        "356/653"
+      ],
+      "admissions": [
+        {
+          "family": "246/642",
+          "originalRank": 38,
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "121/121",
+          "originalRank": 22,
+          "siteRank": 20,
+          "rootEvents": 4,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "356/653",
+          "originalRank": 27,
+          "siteRank": 21,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        }
+      ],
+      "dropped": [
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "neutralDeep3": [
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "056/650",
+          "464/464",
+          "546/645"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "142/241",
+          "246/642",
+          "506/605"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "137/731",
+          "056/650",
+          "276/672"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "043/340",
+          "142/241",
+          "476/674"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "043/340",
+          "272/272",
+          "203/302"
+        ]
+      ],
+      "formFirstMetadata": [
+        {
+          "family": "246/642",
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3
+        },
+        {
+          "family": "224/422",
+          "siteRank": 2,
+          "rootEvents": 5,
+          "rootDays": 4,
+          "exactEvents": 1
+        },
+        {
+          "family": "018/810",
+          "siteRank": 3,
+          "rootEvents": 5,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "002/200",
+          "siteRank": 4,
+          "rootEvents": 3,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "133/331",
+          "siteRank": 5,
+          "rootEvents": 3,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "367/763",
+          "siteRank": 6,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "012/210",
+          "siteRank": 7,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "024/420",
+          "siteRank": 8,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "022/220",
+          "siteRank": 9,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "008/800",
+          "siteRank": 10,
+          "rootEvents": 2,
+          "rootDays": 1,
+          "exactEvents": 1
+        }
+      ]
+    },
+    {
+      "turn": "Vespertino",
+      "availableDigits": 24,
+      "availablePhysicalVT3": 111,
+      "rankedFamilies": 56,
+      "officialTop10": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "formsFirstTop10": [
+        "246/642",
+        "224/422",
+        "018/810",
+        "002/200",
+        "133/331",
+        "367/763",
+        "012/210",
+        "024/420",
+        "022/220",
+        "008/800"
+      ],
+      "experimentDeep3": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "246/642",
+        "121/121",
+        "356/653"
+      ],
+      "admissions": [
+        {
+          "family": "246/642",
+          "originalRank": 38,
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "121/121",
+          "originalRank": 22,
+          "siteRank": 20,
+          "rootEvents": 4,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "356/653",
+          "originalRank": 27,
+          "siteRank": 21,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        }
+      ],
+      "dropped": [
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "neutralDeep3": [
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "546/645",
+          "043/340",
+          "203/302"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "246/642",
+          "505/505",
+          "043/340"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "387/783",
+          "467/764",
+          "218/812"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "435/534",
+          "356/653",
+          "427/724"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "354/453",
+          "505/505",
+          "405/504"
+        ]
+      ],
+      "formFirstMetadata": [
+        {
+          "family": "246/642",
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3
+        },
+        {
+          "family": "224/422",
+          "siteRank": 2,
+          "rootEvents": 5,
+          "rootDays": 4,
+          "exactEvents": 1
+        },
+        {
+          "family": "018/810",
+          "siteRank": 3,
+          "rootEvents": 5,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "002/200",
+          "siteRank": 4,
+          "rootEvents": 3,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "133/331",
+          "siteRank": 5,
+          "rootEvents": 3,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "367/763",
+          "siteRank": 6,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "012/210",
+          "siteRank": 7,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "024/420",
+          "siteRank": 8,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "022/220",
+          "siteRank": 9,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "008/800",
+          "siteRank": 10,
+          "rootEvents": 2,
+          "rootDays": 1,
+          "exactEvents": 1
+        }
+      ]
+    },
+    {
+      "turn": "Nocturno",
+      "availableDigits": 24,
+      "availablePhysicalVT3": 111,
+      "rankedFamilies": 56,
+      "officialTop10": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "formsFirstTop10": [
+        "246/642",
+        "224/422",
+        "018/810",
+        "002/200",
+        "133/331",
+        "367/763",
+        "012/210",
+        "024/420",
+        "022/220",
+        "008/800"
+      ],
+      "experimentDeep3": [
+        "242/242",
+        "012/210",
+        "122/221",
+        "224/422",
+        "183/381",
+        "222/222",
+        "374/473",
+        "246/642",
+        "121/121",
+        "356/653"
+      ],
+      "admissions": [
+        {
+          "family": "246/642",
+          "originalRank": 38,
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "121/121",
+          "originalRank": 22,
+          "siteRank": 20,
+          "rootEvents": 4,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        },
+        {
+          "family": "356/653",
+          "originalRank": 27,
+          "siteRank": 21,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1,
+          "sourceClass": "deep"
+        }
+      ],
+      "dropped": [
+        "465/564",
+        "002/200",
+        "227/722"
+      ],
+      "neutralDeep3": [
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "506/605",
+          "137/731",
+          "246/642"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "056/650",
+          "218/812",
+          "505/505"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "476/674",
+          "014/410",
+          "546/645"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "467/764",
+          "436/634",
+          "424/424"
+        ],
+        [
+          "242/242",
+          "012/210",
+          "122/221",
+          "224/422",
+          "183/381",
+          "222/222",
+          "374/473",
+          "276/672",
+          "218/812",
+          "043/340"
+        ]
+      ],
+      "formFirstMetadata": [
+        {
+          "family": "246/642",
+          "siteRank": 1,
+          "rootEvents": 4,
+          "rootDays": 4,
+          "exactEvents": 3
+        },
+        {
+          "family": "224/422",
+          "siteRank": 2,
+          "rootEvents": 5,
+          "rootDays": 4,
+          "exactEvents": 1
+        },
+        {
+          "family": "018/810",
+          "siteRank": 3,
+          "rootEvents": 5,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "002/200",
+          "siteRank": 4,
+          "rootEvents": 3,
+          "rootDays": 3,
+          "exactEvents": 1
+        },
+        {
+          "family": "133/331",
+          "siteRank": 5,
+          "rootEvents": 3,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "367/763",
+          "siteRank": 6,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "012/210",
+          "siteRank": 7,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 2
+        },
+        {
+          "family": "024/420",
+          "siteRank": 8,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "022/220",
+          "siteRank": 9,
+          "rootEvents": 2,
+          "rootDays": 2,
+          "exactEvents": 1
+        },
+        {
+          "family": "008/800",
+          "siteRank": 10,
+          "rootEvents": 2,
+          "rootDays": 1,
+          "exactEvents": 1
+        }
+      ]
+    }
+  ]
+}
