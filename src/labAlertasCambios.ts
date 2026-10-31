@@ -100,7 +100,7 @@ export function prepareChangeAlerts(
   const rootsToday=exactRoots.some(w=>w.date===current.date);
   const historicalRoots=exactRoots.some(w=>w.date<current.date);
   const kinds:AlertKind[]=[];
-  if(recent.length>=3&&prev6===0&&historicalRoots>0)
+  if(recent.length>=3&&prev6===0&&historicalRoots)
    kinds.push('NACE_CON_TESTIGO');
   // Debe haber figurado antes, estar ausente en la última jornada y
   // retornar tras al menos una jornada de intervalo.
