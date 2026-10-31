@@ -1,0 +1,40 @@
+import assert from 'node:assert/strict';
+import {diaVacio,TURNOS,JURS} from '../src/domain';
+import {buildSheet} from '../src/sheet';
+import {summarizeDay} from '../src/homeDaySummary';
+const date='2026-10-31';
+const empty=diaVacio();
+const base=diaVacio();
+for(const jur of JURS)base.Nocturno[jur]='0123';
+const noData=summarizeDay(date,null,null,[],date);
+assert.equal(noData.status,'no_cargada');
+assert.equal(noData.exactHistory,false);
+const zero=summarizeDay(date,empty,buildSheet(empty,base),[],date);
+assert.equal(zero.status,'sin_resultados');
+assert.match(zero.statusText,/Todavía no empezó/);
+assert.equal(zero.heads,0);
+const earlier=summarizeDay('2026-10-30',empty,buildSheet(empty,base),[],'2026-10-31');
+assert.equal(earlier.statusText,'Sin resultados cargados');
+empty.Previa.Ciudad='2197';
+const one=summarizeDay(date,empty,buildSheet(empty,base),[],date);
+assert.equal(one.status,'en_marcha');
+assert.equal(one.countByTurn.Previa.heads,1);
+assert.equal(one.matchedHeads,0);
+assert.equal(one.exactHistory,false);
+for(const t of TURNOS)empty[t].Provincia='1299';
+const five=summarizeDay(date,empty,buildSheet(empty,base),[],date);
+assert.equal(five.status,'cinco_turnos');
+assert.equal(five.turnsWithHeads,5);
+assert.equal(five.heads,6);
+const historySheet=buildSheet(empty,base);
+const past=[{date:'2026-10-30',period:'D−1' as const,sheet:historySheet}];
+const withHistory=summarizeDay(date,empty,buildSheet(empty,base),past,date);
+assert.equal(withHistory.exactHistory,true);
+assert.equal(withHistory.heads,6);
+assert.equal(withHistory.byKind.vt2+withHistory.byKind.vt3+withHistory.byKind.vt4,
+ withHistory.matches.reduce((n,x)=>n+x.kinds.length,0));
+assert(withHistory.matchedHeads<=withHistory.heads);
+const future=summarizeDay(date,empty,buildSheet(empty,base),
+ [{...past[0],date}],date);
+assert.equal(future.exactHistory,false); // no datos futuros como raíz.
+console.log('INICIO_RESUMEN_TEST_OK');
