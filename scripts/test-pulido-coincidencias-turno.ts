@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {dayCandidates} from '../src/ui/DayMatchGrid';
+import {dayCandidates} from '../src/dayMatchCandidates';
 import type {DayOverview} from '../src/homeDaySummary';
 const source=(file:string)=>fs.readFileSync(file,'utf8');
 const sample:DayOverview={
