@@ -18,9 +18,9 @@ const dayLocal=()=>{const d=new Date();return [
  d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),
  String(d.getDate()).padStart(2,'0')].join('-')};
 const localKey=(date:string,turn:Turno)=>'modelo-lalo:combinado-pre-1:'+date+'|'+turn;
-export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{date:string;
+export default function CombinedVt3Panel({date,turn,sheet,historical,heads,onOpenCoincidence}:{date:string;
  turn:Turno;sheet:DailySheet|null;historical:LaloHistorical[];
- heads:string[]}){
+ heads:string[];onOpenCoincidence?:(entry:CombinedPick)=>void}){
  const {colors:c,kinds}=useLaloTheme();
  const highlight=kinds.vt3;
  const [memory,setMemory]=useState<CombinedMemory|null>(null);
@@ -96,6 +96,23 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
    <Text style={{color:c.text,fontSize:12}}>No pudimos armar la comparación.</Text>
    <Text style={{color:c.subtext,fontSize:11}}>{error||current?.error}</Text>
   </View>:null}
+  {top.some(x=>(hits.get(x.family)||[]).length)?<View
+   style={[s.matchBar,{borderColor:highlight.line,backgroundColor:highlight.fill}]}>
+   <Text style={{fontSize:12,fontWeight:'900',color:highlight.text}}>
+    Coincidieron estos números
+   </Text>
+   <View style={{flexDirection:'row',flexWrap:'wrap',gap:6}}>
+    {top.filter(x=>(hits.get(x.family)||[]).length).flatMap(entry=>
+     (hits.get(entry.family)||[]).map(head=><Pressable key={entry.family+'|'+head}
+      accessibilityRole="button" onPress={()=>onOpenCoincidence?.(entry)}
+      style={{borderWidth:1,borderColor:highlight.line,borderRadius:8,padding:7,
+       backgroundColor:c.card}}>
+      <Text style={{color:highlight.text,fontSize:11,fontWeight:'900'}}>
+       #{entry.rank} · {entry.family} · {head}  ›
+      </Text>
+     </Pressable>))}
+   </View>
+  </View>:null}
   {top.length?<View style={s.list}>
    {top.slice(0,10).map((entry,i)=>{
     const matched=hits.get(entry.family)||[];
@@ -161,12 +178,13 @@ const s=StyleSheet.create({
  hint:{fontSize:11,lineHeight:17},
  loading:{flexDirection:'row',gap:10,alignItems:'center',padding:12},
  warning:{borderRadius:10,padding:11,gap:4},
- list:{gap:7,marginTop:6},
- item:{borderWidth:1,borderRadius:11,paddingVertical:10,paddingHorizontal:9,gap:9},
+ list:{gap:5,marginTop:4},
+ item:{borderWidth:1,borderRadius:11,paddingVertical:8,paddingHorizontal:9,gap:6},
  line:{flexDirection:'row',gap:8,alignItems:'center'},
  rank:{fontSize:13,fontWeight:'900',width:29,height:29,textAlign:'center',
   textAlignVertical:'center',overflow:'hidden',borderRadius:8},
- family:{fontSize:15,fontWeight:'900',flex:1},
+ family:{fontSize:15,fontWeight:'900'},
  meta:{fontSize:11,lineHeight:17},
+ matchBar:{borderWidth:1.4,borderRadius:11,padding:10,gap:8},
  footer:{borderRadius:9,padding:9}
 });
