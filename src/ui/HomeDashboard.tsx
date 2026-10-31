@@ -80,7 +80,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
   <View style={[s.summary,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.accent}]}>Resumen del día</Text>
    <DayMatchGrid overview={overview} data={data} turn={turn}
-    short onOpenHeads={()=>onNavigate('cabezas')}/>
+    auxAyer={auxAyer} auxHoy={auxHoy} short onOpenHeads={()=>onNavigate('cabezas')}/>
   </View>
   <Text style={[s.heading,{color:c.accent}]}>¿Qué querés mirar?</Text>
   <View style={s.shortcutGrid}>
