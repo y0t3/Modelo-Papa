@@ -40,7 +40,7 @@ assert.deepEqual(d.dropped,[family(7),family(8),family(9)]);
 const u=selectLalo7mas3({ranks,forms,poolKind:'unranked',quota:3,seed:'x'});
 assert.deepEqual(u.admissions.map(x=>x.family),[family(34),family(32),family(35)]);
 const partial=selectLalo7mas3({ranks:ranks.slice(0,7),forms:forms.slice(0,2),
- poolKind:'unranked',quota:3,seed:'x'});
+ poolKind:'deep',quota:3,seed:'x'});
 assert.equal(partial.top.length,7);
 assert.equal(partial.admissions.length,0);
 console.log('LAB_LALO_7MAS3_TEST_OK');
