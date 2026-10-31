@@ -33,7 +33,7 @@ export function validatePRE(preview:Preview){
  for(const route of preview.routes){
   if(route.date!==preview.date||route.turn!==preview.turn)
    throw Error('La ruta no pertenece al corte PRE');
-  if(!KINDS.includes(route.kind))throw Error('Solo VT2 y VT3');
+  if(!(KINDS as readonly Kind[]).includes(route.kind))throw Error('Solo VT2 y VT3');
   if(route.board==='PLUS11'&&
    (route.cells.some(c=>c.row>5||c.col>1)||!route.source))
     throw Error('Celdas PLUS11 fuera de su columna');
