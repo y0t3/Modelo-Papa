@@ -1,0 +1,24 @@
+name: Comparación histórica Formas Primero vs Combinado VT3
+on:
+  push:
+    branches:
+      - lab/formas-vs-combinado-vt3-historico-31oct2026
+  pull_request:
+    branches:
+      - lab/cotejo-formas-combinado-vt3-31oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comparar cinco meses y aislar agosto-octubre
+        run: npx --yes tsx scripts/lab-comparar-formas-combinado-vt3-historico.ts
