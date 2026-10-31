@@ -30,7 +30,6 @@ import PanoramaSheet from './src/PanoramaSheet';
 import AuxiliaryPredictiveSheet from './src/ui/AuxiliaryPredictiveSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
 import CombinedVt3Panel from './src/ui/CombinedVt3Panel';
-import ParallelPredictionCompare from './src/ui/ParallelPredictionCompare';
 import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
 import PapaPronostico from './src/ui/PapaPronostico';
@@ -130,7 +129,6 @@ function LaloApp(){
   scrollOffsets.current[next]=0;
   setRestoreScroll(old=>({token:old.token+1,y:0}));
   setScreen(next);
-  if(next!=='prediccion')setComparisonOpen(false);
  };
  const goBack=()=>{
   const {entry,remaining}=backNavigation(historyRef.current);
