@@ -18,9 +18,9 @@ const dayLocal=()=>{const d=new Date();return [
  d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),
  String(d.getDate()).padStart(2,'0')].join('-')};
 const localKey=(date:string,turn:Turno)=>'modelo-lalo:combinado-pre-1:'+date+'|'+turn;
-export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{date:string;
+export default function CombinedVt3Panel({date,turn,sheet,historical,heads,onOpenFamily}:{date:string;
  turn:Turno;sheet:DailySheet|null;historical:LaloHistorical[];
- heads:string[]}){
+ heads:string[];onOpenFamily?:(pick:CombinedPick)=>void}){
  const {colors:c,kinds}=useLaloTheme();
  const highlight=kinds.vt3;
  const [memory,setMemory]=useState<CombinedMemory|null>(null);
@@ -107,12 +107,13 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
      borderColor:matched.length?highlight.line:c.border,
      borderWidth:matched.length?2:1}]}>
      <Pressable accessibilityRole="button"
-      accessibilityState={{expanded:isOpen}}
-      accessibilityLabel={'Puesto '+(i+1)+', '+entry.family+', ver recorrido'}
-      onPress={()=>setOpened(v=>v===entry.family?null:entry.family)}
+      accessibilityLabel={'Puesto '+(i+1)+', '+entry.family+', ver en Predictiva'}
+      onPress={()=>onOpenFamily?.(entry)}
       style={s.line}>
-      <Text style={[s.rank,{backgroundColor:i===0?c.accent:c.surfaceAlt,
-       color:i===0?'#082046':c.subtext}]}>{i+1}</Text>
+      <Text style={[s.rank,{backgroundColor:matched.length?highlight.fill:c.surfaceAlt,
+       color:matched.length?highlight.text:c.subtext,
+       borderColor:matched.length?highlight.line:c.border,
+       borderWidth:matched.length?1.5:0}]}>{i+1}</Text>
       <View style={{flex:1,gap:3}}>
        <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'center',gap:3}}>
         {members.map((part,j)=><React.Fragment key={part}>
@@ -130,7 +131,13 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
        </Text>:null}
       </View>
       <Text style={{fontSize:11,color:matched.length?highlight.line:c.subtext}}>
-       {isOpen?'Cerrar ▴':'Ver forma ›'}
+       Ver en hoja ›
+      </Text>
+     </Pressable>
+     <Pressable accessibilityRole="button" accessibilityState={{expanded:isOpen}}
+      onPress={()=>setOpened(v=>v===entry.family?null:entry.family)} style={s.inlineToggle}>
+      <Text style={{color:c.accent,fontSize:10,fontWeight:'800'}}>
+       {isOpen?'▴ Cerrar formación':'▾ Ver formación aquí'}
       </Text>
      </Pressable>
      {isOpen&&pre?<InlineFamilyPaths kind="vt3" family={entry.family}
@@ -161,12 +168,13 @@ const s=StyleSheet.create({
  hint:{fontSize:11,lineHeight:17},
  loading:{flexDirection:'row',gap:10,alignItems:'center',padding:12},
  warning:{borderRadius:10,padding:11,gap:4},
- list:{gap:7,marginTop:6},
- item:{borderWidth:1,borderRadius:11,paddingVertical:10,paddingHorizontal:9,gap:9},
- line:{flexDirection:'row',gap:8,alignItems:'center'},
+ list:{gap:3,marginTop:5},
+ item:{borderWidth:1,borderRadius:10,paddingVertical:6,paddingHorizontal:9,gap:5},
+ inlineToggle:{paddingLeft:37,paddingVertical:2,alignSelf:'flex-start'},
+ line:{flexDirection:'row',gap:7,alignItems:'center',minHeight:35},
  rank:{fontSize:13,fontWeight:'900',width:29,height:29,textAlign:'center',
   textAlignVertical:'center',overflow:'hidden',borderRadius:8},
- family:{fontSize:15,fontWeight:'900',flex:1},
+ family:{fontSize:15,fontWeight:'900'},
  meta:{fontSize:11,lineHeight:17},
  footer:{borderRadius:9,padding:9}
 });
