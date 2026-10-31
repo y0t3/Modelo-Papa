@@ -31,7 +31,7 @@ export default function HeadsTable({data,highlights,onOpenHead,sourceLabels={}}:
      {TURNOS.map(t=><Text key={t} style={[s.cell,s.header,{color:c.subtext}]}>{t}</Text>)}
     </View>
     {JURS.map(j=><View key={j} style={[s.row,{borderBottomColor:c.divider}]}>
-     <Text style={[s.first,s.jur,{color:c.text}]}>{j}</Text>
+     <View style={s.first}><View style={[s.jurFrame,{borderColor:'#D9A83E',backgroundColor:c.surfaceAlt}]}><Text style={[s.jur,{color:c.accent}]}>{j}</Text></View></View>
      {TURNOS.map(t=>{
       const h=data?.[t]?.[j]||'----';
       const id=dailyHeadOwnerId(t,j,h);
@@ -51,9 +51,6 @@ export default function HeadsTable({data,highlights,onOpenHead,sourceLabels={}}:
        <ColoredDigits value={h} kinds={kinds} large/>
        <View style={s.tags}>{(['vt2','vt3','vt4'] as PanoramaKind[]).filter(k=>kinds.includes(k)).map(k=>
         <Text key={k} style={[s.tag,{color:vtColors[k].line}]}>{k.toUpperCase()} </Text>)}</View>
-       {sourceLabel?<Text style={[s.openHint,{color:c.accent}]}>
-        AUX {sourceLabel} · marca comprobada</Text>:null}
-       {onlyAux&&!sourceLabel?<Text style={[s.openHint,{color:c.accent}]}>AUX · recorrido válido</Text>:null}
        {!muted?<Text style={[s.openHint,{color:c.accent}]}>↗ Ver en hoja</Text>:null}
       </Pressable>;
      })}
@@ -67,6 +64,7 @@ const s=StyleSheet.create({
  title:{fontSize:19,fontWeight:'900',fontStyle:'italic'},
  note:{color:'#786982',fontSize:11,marginTop:6,marginBottom:12,lineHeight:16},
  row:{flexDirection:'row',borderBottomWidth:1,alignItems:'center'},
+ jurFrame:{paddingVertical:9,paddingHorizontal:5,borderRadius:9,borderWidth:1.2,alignItems:'center'},
  first:{width:104,padding:7},header:{fontSize:11,color:'#57456a',fontWeight:'800'},
  cell:{width:102,padding:7,textAlign:'center'},
  jur:{fontSize:11,fontWeight:'800',color:'#352743'},
