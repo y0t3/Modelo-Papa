@@ -27,45 +27,32 @@ export default function HomeDashboard({date,turn,sheet,view,auxiliar,overview,
  const pre=useMemo(()=>sheet?preSheetAtCut(sheet,turn,TURNOS.indexOf(turn)):null,[sheet,turn]);
  const col=pre?.columns.find(x=>x.id===first?.sourceId);
  const maxSupport=Math.max(1,...top.slice(0,5).map(f=>f.directRoots));
- const ready=overview.exactHistory&&!!view;
  return <View style={s.root}>
   <View style={[s.hero,{backgroundColor:c.surface,borderColor:'#E6B34D'}]}>
-   <Text style={[s.kicker,{color:c.accent}]}>TU VISTAZO DE HOY</Text>
-   <Text style={[s.title,{color:c.text}]}>La posta del día</Text>
-   <Text style={[s.desc,{color:c.subtext}]}>{date?readableWeekday(date):'Elegí una fecha'} · {overview.statusText}</Text>
-   <View style={s.stats}>
-    <View style={[s.stat,{backgroundColor:c.surfaceAlt}]}>
-     <Text style={[s.statNumber,{color:c.accent}]}>{overview.heads}</Text>
-     <Text style={[s.statLabel,{color:c.subtext}]}>Cabezas publicadas</Text>
-    </View>
-    <View style={[s.stat,{backgroundColor:c.surfaceAlt}]}>
-     <Text style={[s.statNumber,{color:c.accent}]}>
-      {ready?overview.matchedHeads:'–'}
+   <Text style={[s.kicker,{color:c.accent}]}>LA POSTA DEL DÍA · {turn.toUpperCase()}</Text>
+   <Text style={[s.title,{color:c.text}]}>Los favoritos de Lalo</Text>
+   <Text style={[s.desc,{color:c.subtext}]}>
+    {date?readableWeekday(date):'Elegí una fecha'} · {overview.statusText}
+   </Text>
+   {top.length?<View style={s.favRow}>
+    {top.slice(0,3).map((f,i)=><Pressable key={f.family}
+     accessibilityRole="button" accessibilityLabel={'Ver número '+f.family}
+     onPress={()=>onFocus(f.family)}
+     style={[s.favChip,{backgroundColor:c.surfaceAlt,borderColor:i===0?c.accent:c.border}]}>
+     <Text style={{color:c.subtext,fontSize:10}}>Puesto {i+1}</Text>
+     <Text style={{color:i===0?c.accent:c.text,fontSize:17,fontWeight:'900'}}>
+      {f.family}
      </Text>
-     <Text style={[s.statLabel,{color:c.subtext}]}>Cabezas que coinciden</Text>
-    </View>
-    <View style={[s.stat,{backgroundColor:c.surfaceAlt}]}>
-     <Text style={[s.statNumber,{color:kinds.vt2.line}]}>
-      {ready?overview.byKind.vt2:'–'}
-     </Text>
-     <Text style={[s.statLabel,{color:c.subtext}]}>Coincidencias de 2 cifras</Text>
-    </View>
-   </View>
+    </Pressable>)}
+   </View>:<Text style={[s.desc,{color:c.subtext}]}>
+    Actualizá la hoja para ver los números de dos cifras.
+   </Text>}
    <Text style={[s.note,{color:c.subtext}]}>
-    {busy?'Actualizando la hoja y los resultados…':
-     overview.heads===0?overview.statusText+'.':
-     !ready?'Actualizá la hoja para cotejar las coincidencias.':
-     overview.matchedHeads?
-      overview.matchedHeads+' cabeza(s) coincidieron con alguna lista de Lalo.':
-      'No hubo coincidencias con las listas de diez números de Lalo.'}
+    Los primeros de su lista de dos cifras, para mirar. No son apuestas automáticas.
    </Text>
    <Text style={[s.note,{color:c.muted}]}>
-    Cotejo reconstruido con los resultados publicados, no una jugada anticipada.
+    Los sueños de la quiniela: 00, los huevos · 23, el cocinero.
    </Text>
-   <Pressable accessibilityRole="button" style={[s.mainButton,{backgroundColor:c.accent}]}
-    onPress={()=>onNavigate('cabezas')}>
-    <Text style={{color:'#092347',fontWeight:'900',fontSize:13}}>Ver las cabezas reales   ›</Text>
-   </Pressable>
   </View>
   <View style={s.sectionHead}>
    <View style={{flex:1}}>
@@ -170,10 +157,8 @@ const s=StyleSheet.create({
  kicker:{fontSize:10,fontWeight:'900',letterSpacing:1.1},
  title:{fontSize:23,fontWeight:'900'},
  desc:{fontSize:11,lineHeight:17},
- stats:{flexDirection:'row',gap:7},
- stat:{flex:1,borderRadius:11,padding:8,gap:4,minWidth:0},
- statNumber:{fontSize:23,fontWeight:'900'},
- statLabel:{fontSize:10,lineHeight:14},
+ favRow:{flexDirection:'row',gap:7,marginTop:2},
+ favChip:{flex:1,minWidth:0,borderWidth:1,borderRadius:11,padding:9,gap:5,alignItems:'center'},
  note:{fontSize:10,lineHeight:16},
  mainButton:{borderRadius:11,paddingVertical:12,paddingHorizontal:9,alignItems:'center'},
  sectionHead:{flexDirection:'row',gap:8,alignItems:'center'},
