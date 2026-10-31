@@ -97,7 +97,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      </View>
     </View>
     {section==='resumen'?<DayMatchGrid overview={overview} turn={turn}
-     data={data} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
+     data={data} auxAyer={trackingAyer.view} auxHoy={trackingHoy.view} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
     {section==='historial'?<>
      <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Elegí un día o una figura para verla más grande.</Text>
