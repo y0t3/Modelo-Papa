@@ -1,0 +1,35 @@
+name: LAB Lalo VT3 - Bayes historico + geometria
+on:
+  push:
+    branches:
+      - 'lab/lalo-vt3-bayes-geometria-31oct2026'
+    paths:
+      - 'src/labLaloBayesGeometriaVT3.ts'
+      - 'scripts/lab-lalo-bayes-geometria-vt3.ts'
+      - 'scripts/test-lalo-bayes-geometria-vt3.ts'
+      - '.github/workflows/lab-lalo-bayes-geometria.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  calibracion_congelada:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Verificar construccion estadistica, rutas fisicas y MV1
+        run: |
+          npx --yes tsx scripts/test-lalo-bayes-geometria-vt3.ts
+          npx --yes tsx scripts/test-lalo-anatomia-vt3.ts
+          npx --yes tsx scripts/test-lalo-vt3-estadistico.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Entrenar hasta 31 julio y congelar, evaluar agosto y septiembre-octubre
+        run: npx --yes tsx scripts/lab-lalo-bayes-geometria-vt3.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lalo-vt3-bayes-geometria-estudio
+          path: auditorias/lalo-bayes-geometria/resultado.json
+          if-no-files-found: warn
