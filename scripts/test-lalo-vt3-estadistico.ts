@@ -25,7 +25,7 @@ const pool=[
  {family:reversibleFamily('432'),members:2},
  {family:reversibleFamily('555'),members:1},
  {family:reversibleFamily('123'),members:2},
- {family:reversibleFamily('131'),members:2},
+ {family:reversibleFamily('132'),members:2},
  {family:reversibleFamily('456'),members:2},
  {family:reversibleFamily('987'),members:2},
  {family:reversibleFamily('222'),members:1},
