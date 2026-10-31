@@ -17,6 +17,7 @@ import FigureTrackingPanel from './FigureTrackingPanel';
 import type {TrackingAuxInput} from '../figureTracking';
 import {useLaloTheme} from './LaloTheme';
 import type {DayOverview} from '../homeDaySummary';
+import DayMatchGrid from './DayMatchGrid';
 
 type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
 type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
@@ -61,8 +62,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  figureFocus,onFigureLalo,onFigureAux}:Props){
  const {colors:c}=useLaloTheme();
  const [section,setSection]=useState<Section|null>(null);
- const [showAllMatches,setShowAllMatches]=useState(false);
- useEffect(()=>{setSection(null);setShowAllMatches(false)},[date]);
+ useEffect(()=>{setSection(null)},[date]);
  useEffect(()=>{if(figureFocus)setSection('seguir')},[figureFocus]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
@@ -70,21 +70,6 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
   [date,turn,data,sheet,historical,view]);
  const selected=OPTIONS.find(x=>x.id===section);
  const top=view?.ranks.vt2.slice(0,3).map(x=>x.family)||[];
- const matchingCandidates=useMemo(()=>{
-  const found=new Map<string,{family:string;kind:'vt2'|'vt3'|'vt4';rank:number;details:string[]}>();
-  for(const match of overview.matches)for(const hit of match.kinds){
-   const key=hit.kind+'|'+hit.family;
-   const old=found.get(key);
-   const detail=match.head+' · '+match.jur+' · '+match.turn;
-   if(old){if(!old.details.includes(detail))old.details.push(detail)}
-   else found.set(key,{family:hit.family,kind:hit.kind,rank:hit.rank,details:[detail]});
-  }
-  return [...found.values()].sort((a,b)=>{
-   const weight=(kind:string)=>kind==='vt2'?0:kind==='vt3'?1:2;
-   return weight(a.kind)-weight(b.kind)||a.rank-b.rank||
-    a.family.localeCompare(b.family);
-  });
- },[overview.matches]);
  return <View style={s.root}>
   <View style={[s.welcome,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
    <Text style={[s.kicker,{color:c.accent}]}>INFO · EL CUADERNO DE LALO</Text>
@@ -131,59 +116,8 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       <Text style={[s.small,{color:c.subtext}]}>{selected?.subtitle}</Text>
      </View>
     </View>
-    {section==='resumen'?<>
-     <Text style={[s.small,{color:c.subtext}]}>{overview.statusText}</Text>
-     <Text style={[s.heading,{color:c.text}]}>Cabezas de {turn}</Text>
-     <View style={s.matchGrid}>
-      {report.observed.map(x=><View key={x.jurisdiction}
-       style={[s.compactTile,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
-       <Text numberOfLines={1} style={{color:c.subtext,fontSize:10}}>{x.jurisdiction}</Text>
-       <Text style={{color:c.text,fontSize:15,fontWeight:'900'}}>{x.head}</Text>
-      </View>)}
-     </View>
-     {!report.observed.length?<Text style={[s.text,{color:c.subtext}]}>
-      Todavía no salieron cabezas en este turno.
-     </Text>:null}
-     <Text style={[s.heading,{color:c.text}]}>Los números que coincidieron</Text>
-     {!overview.exactHistory?<Text style={[s.text,{color:c.subtext}]}>
-      Actualizá la hoja para poder cotejar las cifras con los números de Lalo.
-     </Text>:overview.heads===0?<Text style={[s.text,{color:c.subtext}]}>
-      Todavía no empezó la jornada. Acá aparecerán los candidatos que coincidan.
-     </Text>:!matchingCandidates.length?<Text style={[s.text,{color:c.subtext}]}>
-      No hubo coincidencias con las listas de diez números de Lalo.
-     </Text>:<>
-      <View style={s.matchGrid}>
-       {(showAllMatches?matchingCandidates:matchingCandidates.slice(0,6)).map(x=>
-        <View key={x.kind+'|'+x.family}
-         style={[s.compactTile,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
-         <Text style={{color:c.accent,fontWeight:'900',fontSize:15}}>{x.family}</Text>
-         <Text style={{color:c.subtext,fontSize:10,fontWeight:'700'}}>
-          {x.kind==='vt2'?'2 cifras':x.kind==='vt3'?'3 cifras':'4 cifras'} · puesto {x.rank}
-         </Text>
-         {x.details.slice(0,2).map((detail,i)=>
-          <Text key={i} style={{color:c.text,fontSize:9,lineHeight:14}}>{detail}</Text>)}
-         {x.details.length>2?<Text style={{color:c.subtext,fontSize:9}}>
-          +{x.details.length-2} coincidencias más
-         </Text>:null}
-        </View>)}
-      </View>
-      {matchingCandidates.length>6?<Pressable accessibilityRole="button"
-       onPress={()=>setShowAllMatches(v=>!v)}
-       style={[s.slimButton,{borderColor:c.accent}]}>
-       <Text style={{color:c.accent,fontWeight:'900'}}>
-        {showAllMatches?'Mostrar seis':'Ver todos los números que coincidieron'}
-       </Text>
-      </Pressable>:null}
-     </>}
-     <Text style={[s.small,{color:c.subtext}]}>
-      Se comparan los números con la hoja anterior a cada turno.
-      No significa que se hayan jugado.
-     </Text>
-     <Pressable accessibilityRole="button" onPress={()=>onNavigate('cabezas')}
-      style={[s.slimButton,{borderColor:c.accent}]}>
-      <Text style={{color:c.accent,fontWeight:'800'}}>Ver las cabezas completas  ›</Text>
-     </Pressable>
-    </>:null}
+    {section==='resumen'?<DayMatchGrid overview={overview} turn={turn}
+     data={data} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
     {section==='viene'?<>
      <Text style={[s.text,{color:c.text}]}>{gallery.summary}</Text>
      <Text style={[s.small,{color:c.subtext}]}>Lo que pasó otros días no asegura que se repita.</Text>
