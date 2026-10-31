@@ -1,0 +1,29 @@
+name: PRESELLADO Lalo VT3 - bayes geometria 31oct Previa
+on:
+  push:
+    branches:
+      - 'lab/lalo-vt3-bayes-geometria-31oct2026'
+    paths:
+      - '.github/workflows/lab-lalo-bayes-presellado-31oct.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  pre:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Validar modelos, sin fugas ni recorridos invalidos
+        run: |
+          npx --yes tsx scripts/test-lalo-bayes-geometria-vt3.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: PRE independiente del resultado objetivo
+        run: npx --yes tsx scripts/lock-lalo-bayes-previa-31oct.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PRESELLADO-LALO-VT3-BAYES-PREVIA-31OCT
+          path: auditorias/lalo-bayes-geometria/PRE_PREVIA_31OCT.json
+          if-no-files-found: error
