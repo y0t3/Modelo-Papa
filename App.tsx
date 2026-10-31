@@ -56,13 +56,10 @@ import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
 import type {NavigationEntry} from './src/tabNavigation';
 
 type Screen='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
-const nav: {id:Screen;label:string}[]=[
- {id:'inicio',label:'INICIO'},
- {id:'hoja',label:'HOJA'},
- {id:'prediccion',label:'PREDICCIÓN'},{id:'papa',label:'LALO'},
- {id:'cabezas',label:'CABEZAS'},
- {id:'info',label:'INFO'}
-];
+const screenTitles:Record<Screen,string>={
+ inicio:'Inicio',hoja:'La hoja',predictiva:'Recorridos',prediccion:'Predicción',
+ papa:'Lalo',cabezas:'Cabezas',info:'Info'
+};
 const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
 function LaloApp(){
  const {mode,colors:c,toggle}=useLaloTheme();
@@ -444,18 +441,16 @@ function LaloApp(){
  return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar} backgroundColor={c.canvas}/>
   <LaloWallpaper/>
   <BrandHero mode={mode} onToggle={toggle}/>
-  <View style={s.nav}>{nav.map(x=><Pressable key={x.id} accessibilityRole="tab"
-    accessibilityState={{selected:screen===x.id}}
-    style={[s.tab,screen===x.id&&s.tabOn]}
-    onPress={()=>{
-     if(activeScreenRef.current===x.id)return;
-     navigateTo(x.id);
-     if(x.id==='hoja'){
-      setFocused(null);setHojaFocused(null);setHojaTurn('Previa');
-     }
-    }}>
-    <Text style={s.tabText} numberOfLines={1} adjustsFontSizeToFit>{x.label}</Text>
-   </Pressable>)}</View>
+  {screen!=='inicio'?<View style={[s.homeBar,{backgroundColor:c.canvas,borderBottomColor:c.border}]}>
+    <Pressable accessibilityRole="button" accessibilityLabel="Volver a Inicio"
+     onPress={()=>navigateTo('inicio')}
+     style={[s.homeButton,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+     <Text style={{color:c.accent,fontWeight:'900',fontSize:13}}>‹ Inicio</Text>
+    </Pressable>
+    <Text style={{color:c.text,fontSize:13,fontWeight:'900',flex:1}}>
+     {screenTitles[screen]}
+    </Text>
+   </View>:null}
   <View style={[s.zoomBar,{backgroundColor:c.canvas,borderBottomColor:c.border}]}>
    <Text style={[s.zoomHint,{color:c.subtext}]}>Pellizcá con dos dedos para ampliar</Text>
    <Pressable accessibilityRole="button"
@@ -471,9 +466,13 @@ function LaloApp(){
    onZoomChange={updateZoom} scrollRef={scrollRef}
    restoreY={restoreScroll.y} restoreToken={restoreScroll.token}
    onScrollY={y=>{scrollOffsets.current[screen]=safeScrollY(y)}}>
-   <View style={[s.selector,{backgroundColor:c.surface,borderColor:'#CA973E',borderWidth:1.4}]}>
-    <Text style={[s.label,{color:c.accent}]}>LA HOJA DEL DÍA</Text>
-    <DateField value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
+   <View style={[s.compactDateBar,{backgroundColor:c.surface,borderColor:'#C69A43'}]}>
+    <Pressable accessibilityRole="button" accessibilityLabel="Ir al día anterior"
+     disabled={busy||!date} onPress={()=>move(-1)}
+     style={[s.dayArrow,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+     <Text style={[s.dayArrowText,{color:busy?c.muted:c.accent}]}>‹</Text>
+    </Pressable>
+    <DateField compact value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
      resetHistory();setHistoricalPreview(null);
      setDateText(value);setData(null);setAuxHeads(null);setAuxToday(null);
      setAuxSourceDate(null);setHistoricalAux(null);setSheet(null);setBaseHeads(null);setHist([]);
@@ -483,14 +482,16 @@ function LaloApp(){
      setInfoAuxDays([]);setVisualDays([]);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
-    {screen!=='inicio'?<View style={s.shortcuts}>
-     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(-1)}><Text style={[s.shortText,{color:c.text}]}>‹ Día</Text></Pressable>
-     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>{const shown=historicalPreview?.day.date||date;
-      if(shown)void cargar(shiftDay(shown,-7))}}><Text style={[s.shortText,{color:c.text}]}>−7 días</Text></Pressable>
-     <Pressable style={[s.shortcut,{backgroundColor:c.surfaceAlt}]} onPress={()=>move(1)}><Text style={[s.shortText,{color:c.text}]}>Día ›</Text></Pressable>
-    </View>:null}
-    <Pressable style={[s.reload,{backgroundColor:'#195DA6'}]} onPress={()=>{void cargar(historicalPreview?.day.date)}} disabled={busy}>
-     {busy?<ActivityIndicator color="#fff"/>:<Text style={s.reloadText}>↻ ACTUALIZAR HOJA</Text>}
+    <Pressable accessibilityRole="button" accessibilityLabel="Ir al día siguiente"
+     disabled={busy||!date} onPress={()=>move(1)}
+     style={[s.dayArrow,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+     <Text style={[s.dayArrowText,{color:busy?c.muted:c.accent}]}>›</Text>
+    </Pressable>
+    <Pressable accessibilityRole="button" accessibilityLabel="Actualizar resultados de la fecha"
+     disabled={busy||!date} onPress={()=>{void cargar(historicalPreview?.day.date)}}
+     style={[s.reloadMini,{backgroundColor:'#195DA6'}]}>
+     {busy?<ActivityIndicator color="#fff" size="small"/>:
+      <Text style={s.reloadMiniText}>↻</Text>}
     </Pressable>
    </View>
    {screen==='inicio'?<HomeDashboard date={date||''} turn={target} data={data}
@@ -657,12 +658,9 @@ const s=StyleSheet.create({
  modeLabel:{fontSize:17,fontWeight:'900'},
 
  safe:{flex:1,backgroundColor:'#061631',paddingTop:insets},
- nav:{flexDirection:'row',backgroundColor:'#061E43',gap:3,
-  marginHorizontal:8,paddingHorizontal:5,paddingVertical:6,
-  borderWidth:1,borderColor:'#B48938',borderRadius:13,overflow:'hidden'},
- tab:{flex:1,alignItems:'center',justifyContent:'center',borderRadius:8,paddingVertical:9},
- tabOn:{backgroundColor:'#145AAA',borderBottomWidth:3,borderBottomColor:'#F3C251'},
- tabText:{fontSize:10,color:'#FFFFFF',fontWeight:'900'},
+ homeBar:{minHeight:37,flexDirection:'row',alignItems:'center',gap:12,
+  borderBottomWidth:1,paddingHorizontal:12,paddingVertical:5},
+ homeButton:{borderWidth:1,borderRadius:9,paddingHorizontal:12,paddingVertical:6},
  content:{paddingHorizontal:10,paddingTop:8,paddingBottom:70},
  zoomBar:{minHeight:31,flexDirection:'row',alignItems:'center',justifyContent:'space-between',
   gap:8,borderBottomWidth:1,paddingHorizontal:11,paddingVertical:4},
@@ -671,14 +669,13 @@ const s=StyleSheet.create({
  zoomButtonText:{fontSize:10,fontWeight:'900'},
  title:{color:'#fff',fontWeight:'900',fontSize:23,textAlign:'left',letterSpacing:-0.6},
  subtitle:{fontSize:10,textAlign:'left',marginTop:2,fontWeight:'700'},
- selector:{borderRadius:13,padding:8,marginTop:3},
- label:{fontSize:10,fontWeight:'900',letterSpacing:0.8,marginBottom:5},
- shortcuts:{flexDirection:'row',gap:6,marginTop:6},
- shortcut:{flex:1,paddingVertical:6,paddingHorizontal:3,borderRadius:9,minHeight:32,
-  justifyContent:'center'},
- shortText:{color:'#F5F1E6',fontSize:11,textAlign:'center',fontWeight:'800'},
- reload:{marginTop:7,paddingVertical:9,backgroundColor:'#1560AB',borderRadius:10},
- reloadText:{color:'#fff',textAlign:'center',fontWeight:'900'},
+ compactDateBar:{borderWidth:1,borderRadius:12,marginTop:3,
+  flexDirection:'row',alignItems:'center',gap:5,paddingHorizontal:6,paddingVertical:6},
+ dayArrow:{width:32,height:38,borderWidth:1,borderRadius:9,
+  alignItems:'center',justifyContent:'center'},
+ dayArrowText:{fontWeight:'900',fontSize:28,lineHeight:31},
+ reloadMini:{width:37,height:38,borderRadius:9,alignItems:'center',justifyContent:'center'},
+ reloadMiniText:{color:'#fff',fontSize:25,fontWeight:'900'},
  heading:{fontSize:12,color:'#F2C660',fontWeight:'800',marginTop:13,marginBottom:7},
  empty:{color:'#C7D7ED',padding:16,fontSize:12,lineHeight:19},
  previewBanner:{borderWidth:1,borderRadius:10,padding:10,marginBottom:9,gap:7},
