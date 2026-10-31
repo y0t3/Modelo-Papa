@@ -13,7 +13,8 @@ assert(hero.includes("require('../../assets/la-posta-header-banner.jpg')")&&
  read('src/ui/BosteroWatermark.tsx').includes('BocaShieldImage'),
  'El encabezado debe utilizar el banner original y las marcas de agua conservar el escudo real');
 assert(app.includes('<BrandHero mode={mode} onToggle={toggle}/>'),'El hero debe quedar antes de los tabs');
-assert(app.indexOf('<BrandHero')<app.indexOf('<View style={s.nav}'),'Debe ir encima del menú');
+assert(app.indexOf('<BrandHero')<app.indexOf("{screen!=='inicio'?<View style={[s.homeBar"),'El banner debe quedar encima de Volver a Inicio');
+assert(!app.includes('<View style={s.nav}>'),'La interfaz nueva no debe mostrar pestañas superiores');
 assert(sheet.includes('BosteroWatermark'),'Falta marca de agua discreta en Hoja');
 assert(heads.includes('BosteroWatermark'),'Falta marca de agua en Cabezas');
 assert(movements.includes("'vt2','vt3'"),'VT2 y VT3 deben estar en paralelo');
