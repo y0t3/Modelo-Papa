@@ -81,10 +81,6 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    <Text style={[s.heading,{color:c.text}]}>Resumen del día</Text>
    <DayMatchGrid overview={overview} data={data} turn={turn}
     short onOpenHeads={()=>onNavigate('cabezas')}/>
-   <Pressable accessibilityRole="button" onPress={()=>onNavigate('info')}
-    style={[s.outline,{borderColor:c.accent}]}>
-    <Text style={{color:c.accent,fontWeight:'900'}}>Abrir el resumen completo  ›</Text>
-   </Pressable>
   </View>
   <Text style={[s.heading,{color:c.text}]}>¿Qué querés mirar?</Text>
   <View style={s.shortcutGrid}>
