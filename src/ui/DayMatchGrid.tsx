@@ -1,38 +1,84 @@
-import React,{useMemo,useState} from 'react';
+import React,{useEffect,useMemo,useState} from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {Turno,CabezasDia} from '../domain';
 import {JURS} from '../domain';
 import type {DayOverview} from '../homeDaySummary';
 import type {LaloKind} from '../motorLalo';
+import type {AuxiliarView} from '../motorLaloAuxiliar';
 import {useLaloTheme} from './LaloTheme';
 
-type Candidate={kind:LaloKind;family:string;rank:number;
- details:{value:string;head:string;jur:string;turn:Turno}[]};
-export function dayCandidates(overview:DayOverview):Candidate[]{
- const found=new Map<string,Candidate>();
- for(const event of overview.matches)for(const m of event.kinds){
-  const id=m.kind+'|'+m.family;
-  let item=found.get(id);
-  if(!item){item={kind:m.kind,family:m.family,rank:m.rank,details:[]};found.set(id,item)}
-  const detail={value:event.head.slice(-Number(m.kind.slice(-1))),
-   head:event.head,jur:event.jur,turn:event.turn};
-  if(!item.details.some(x=>x.head===detail.head&&x.jur===detail.jur&&x.turn===detail.turn))
-   item.details.push(detail);
- }
- const order=(k:LaloKind)=>k==='vt2'?0:k==='vt3'?1:2;
- return [...found.values()].sort((a,b)=>order(a.kind)-order(b.kind)||
+type Model='lalo'|'ayer'|'hoy';
+type MatchDetail={value:string;head:string;jur:string;turn:Turno};
+export type Candidate={kind:LaloKind;family:string;rank:number;details:MatchDetail[]};
+
+const kindOrder=(kind:LaloKind)=>Number(kind.slice(-1));
+function sortCandidates(found:Map<string,Candidate>):Candidate[]{
+ return [...found.values()].sort((a,b)=>kindOrder(a.kind)-kindOrder(b.kind)||
   a.rank-b.rank||a.family.localeCompare(b.family));
 }
-export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false}:{
+/** Acertantes de Lalo: cortes PRE reconstruidos para cada turno, sin usar turnos posteriores. */
+export function dayCandidates(overview:DayOverview,turn?:Turno):Candidate[]{
+ const found=new Map<string,Candidate>();
+ for(const event of overview.matches){
+  if(turn&&event.turn!==turn)continue;
+  for(const m of event.kinds){
+   const id=m.kind+'|'+m.family;
+   let item=found.get(id);
+   if(!item){
+    item={kind:m.kind,family:m.family,rank:m.rank,details:[]};
+    found.set(id,item);
+   }
+   const detail={value:event.head.slice(-Number(m.kind.slice(-1))),
+    head:event.head,jur:event.jur,turn:event.turn};
+   if(!item.details.some(x=>x.head===detail.head&&x.jur===detail.jur&&x.turn===detail.turn))
+    item.details.push(detail);
+  }
+ }
+ return sortCandidates(found);
+}
+/** Las auxiliares usan sus propios Top10 y sus TERMINACIONES físicas, sin mezclar
+ * la hoja +11 ni declarar ganadoras a familias que no estén rankeadas en AUX.
+ * La vista recibida debe ser la reconstruida antes del turno consultado.
+ */
+export function auxDayCandidates(view:AuxiliarView|null,heads:CabezasDia|null,turn:Turno):Candidate[]{
+ if(!view||view.turn!==turn||!heads)return [];
+ const published=JURS.map(jur=>({jur,head:heads[turn]?.[jur]||''}))
+  .filter(x=>/^\d{4}$/.test(x.head));
+ const found=new Map<string,Candidate>();
+ for(const n of [2,3,4] as const){
+  const kind=('vt'+n) as LaloKind;
+  for(const family of view.ranks[n].slice(0,10)){
+   const accepted=new Set(family.values.filter(value=>value.length===n));
+   const details=published.filter(x=>accepted.has(x.head.slice(-n)))
+    .map(x=>({...x,value:x.head.slice(-n),turn}));
+   if(details.length)found.set(kind+'|'+family.family,{
+    kind,family:family.family,rank:family.rank,details
+   });
+  }
+ }
+ return sortCandidates(found);
+}
+
+export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false,
+ auxAyer=null,auxHoy=null}:{
  overview:DayOverview;turn:Turno;data:CabezasDia|null;
- onOpenHeads:()=>void;short?:boolean
+ onOpenHeads:()=>void;short?:boolean;
+ auxAyer?:AuxiliarView|null;auxHoy?:AuxiliarView|null;
 }){
  const {colors:c,kinds}=useLaloTheme();
+ const [selected,setSelected]=useState<Model>('lalo');
  const [showAll,setShowAll]=useState(false);
- const matches=useMemo(()=>dayCandidates({...overview,matches:overview.matches.filter(m=>m.turn===turn)}),[overview,turn]);
+ useEffect(()=>{setShowAll(false)},[turn,selected]);
+ const mainMatches=useMemo(()=>dayCandidates(overview,turn),[overview,turn]);
+ const ayerMatches=useMemo(()=>auxDayCandidates(auxAyer,data,turn),[auxAyer,data,turn]);
+ const hoyMatches=useMemo(()=>auxDayCandidates(auxHoy,data,turn),[auxHoy,data,turn]);
+ const matches=selected==='lalo'?mainMatches:selected==='ayer'?ayerMatches:hoyMatches;
+ const ready=selected==='lalo'?overview.exactHistory:
+  selected==='ayer'?!!auxAyer&&auxAyer.turn===turn:!!auxHoy&&auxHoy.turn===turn;
  const heads=JURS.map(jur=>({jur,head:data?.[turn]?.[jur]||''}))
   .filter(x=>/^\d{4}$/.test(x.head));
- const visible=showAll?matches:matches.slice(0,short?6:6);
+ const maxDisplayed=short?6:6;
+ const visible=showAll?matches:matches.slice(0,maxDisplayed);
  return <View style={s.root}>
   <Text style={{fontSize:11,color:c.subtext}}>{overview.statusText}</Text>
   <Text style={[s.heading,{color:c.text}]}>Cabezas de {turn}</Text>
@@ -46,12 +92,30 @@ export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false
    Todavía no salieron cabezas en este turno.
   </Text>}
   <Text style={[s.heading,{color:c.text}]}>Los números que coincidieron</Text>
-  {!overview.exactHistory?<Text style={{color:c.subtext,fontSize:12}}>
-   Actualizá la hoja para comparar con las listas de Lalo.
-  </Text>:overview.countByTurn[turn].heads===0?<Text style={{color:c.subtext,fontSize:12}}>
+  <View style={s.chips}>
+   {([
+    {id:'lalo',label:'Lalo'},
+    {id:'ayer',label:'Aux ayer'},
+    {id:'hoy',label:'Aux hoy'}
+   ] as const).map(model=><Pressable key={model.id} accessibilityRole="button"
+    accessibilityState={{selected:selected===model.id}}
+    accessibilityLabel={'Ver coincidencias de '+model.label}
+    onPress={()=>setSelected(model.id)}
+    style={[s.chip,{backgroundColor:selected===model.id?c.accent:c.surfaceAlt,
+     borderColor:selected===model.id?c.accent:c.border}]}>
+    <Text style={{fontSize:11,fontWeight:'900',
+     color:selected===model.id?'#08254C':c.subtext}}>{model.label}</Text>
+   </Pressable>)}
+  </View>
+  {!ready?<Text style={{color:c.subtext,fontSize:12,lineHeight:17}}>
+   {selected==='lalo'?'Actualizá la hoja para comparar con las listas de Lalo.':
+    'No están disponibles los antecedentes de Aux '+(selected==='ayer'?'ayer':'hoy')+
+    ' para este turno. Actualizá las hojas.'}
+  </Text>:heads.length===0?<Text style={{color:c.subtext,fontSize:12}}>
    Este turno todavía no tiene resultados cargados.
   </Text>:!matches.length?<Text style={{color:c.subtext,fontSize:12}}>
-   No hubo coincidencias con los diez primeros de Lalo.
+   No hubo coincidencias con los diez primeros de {selected==='lalo'?'Lalo':
+    selected==='ayer'?'Auxiliar ayer':'Auxiliar hoy'}.
   </Text>:<>
    <View style={s.grid}>{visible.map(item=>{
     const colors=kinds[item.kind];
@@ -60,9 +124,10 @@ export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false
     return <View key={item.kind+'|'+item.family} style={[s.tile,{
      borderColor:colors.line,backgroundColor:colors.fill,borderWidth:2}]}>
      <View style={{flexDirection:'row',alignItems:'center',flexWrap:'wrap',gap:2}}>
-      {members.map((member,i)=><React.Fragment key={member}>
+      {members.map((member,i)=><React.Fragment key={member+'|'+i}>
        {i>0?<Text style={{color:c.subtext,fontSize:14}}>/</Text>:null}
-       <Text style={{fontSize:14,fontWeight:'900',color:hitValues.has(member)?colors.text:c.subtext,
+       <Text style={{fontSize:14,fontWeight:'900',
+        color:hitValues.has(member)?colors.text:c.subtext,
         borderWidth:hitValues.has(member)?1.7:0,
         borderColor:colors.line,backgroundColor:hitValues.has(member)?c.card:'transparent',
         paddingHorizontal:hitValues.has(member)?4:0,
@@ -73,16 +138,13 @@ export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false
      <Text style={{fontSize:10,fontWeight:'800',color:colors.text}}>
       {item.kind==='vt2'?'2':item.kind==='vt3'?'3':'4'} cifras · #{item.rank}
      </Text>
-     {item.details.slice(0,short?1:3).map((x,i)=><Text key={i}
+     {item.details.map((x,i)=><Text key={x.head+'|'+x.jur+'|'+i}
       style={{color:c.text,fontSize:10,lineHeight:15}}>
       {x.head} · {x.jur}{short?'':' · '+x.turn}
      </Text>)}
-     {item.details.length>(short?1:3)?<Text style={{color:c.subtext,fontSize:9}}>
-      +{item.details.length-(short?1:3)} más
-     </Text>:null}
     </View>;
    })}</View>
-   {matches.length>(short?3:6)?<Pressable accessibilityRole="button"
+   {matches.length>maxDisplayed?<Pressable accessibilityRole="button"
     onPress={()=>setShowAll(v=>!v)}
     style={[s.button,{borderColor:c.accent}]}>
     <Text style={{color:c.accent,fontWeight:'900'}}>
@@ -102,7 +164,10 @@ export default function DayMatchGrid({overview,turn,data,onOpenHeads,short=false
 const s=StyleSheet.create({
  root:{gap:10},
  heading:{fontSize:17,fontWeight:'900'},
- grid:{flexDirection:'row',flexWrap:'wrap',gap:'2%',rowGap:8},
+ chips:{flexDirection:'row',flexWrap:'wrap',gap:6,marginTop:-2},
+ chip:{borderWidth:1.1,borderRadius:20,paddingVertical:8,paddingHorizontal:12,
+  minWidth:78,alignItems:'center'},
+ grid:{flexDirection:'row',flexWrap:'wrap',columnGap:'2%',rowGap:8},
  tile:{width:'32%',minHeight:56,borderWidth:1,borderRadius:10,
   padding:7,gap:4},
  button:{borderWidth:1,borderRadius:10,padding:11,alignItems:'center'}
