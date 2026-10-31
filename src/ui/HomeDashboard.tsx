@@ -3,6 +3,7 @@ import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import {TURNOS} from '../domain';
 import type {DailySheet} from '../sheet';
+import type {LaloKind} from '../motorLalo';
 import type {LaloView} from '../motorLalo';
 import type {AuxiliarView} from '../motorLaloAuxiliar';
 import type {AuxMode} from '../auxTemporalModes';
@@ -19,9 +20,10 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;sheet:DailySheet|null;
  view:LaloView|null;auxAyer:AuxiliarView|null;auxHoy:AuxiliarView|null;
  overview:DayOverview;onNavigate:(page:Destination)=>void;
  onSelectPrediction:(mode:'lalo'|'auxiliar'|'combinado',auxMode?:AuxMode)=>void;
- onTurnChange:(turn:Turno)=>void;onFocus:(family:string)=>void;busy:boolean};
+ onTurnChange:(turn:Turno)=>void;onFocus:(family:string)=>void;
+ onOpenMatch:(kind:LaloKind,family:string,turn:Turno)=>void;busy:boolean};
 export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
- overview,onNavigate,onSelectPrediction,onTurnChange,onFocus,busy}:Props){
+ overview,onNavigate,onSelectPrediction,onTurnChange,onFocus,onOpenMatch,busy}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const top=view?.ranks.vt2.slice(0,3)||[];
  const yesterday=auxAyer?.ranks[2].slice(0,3)||[];
@@ -38,9 +40,9 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    onPress:()=>onSelectPrediction('auxiliar','intrajornada')}
  ];
  return <View style={s.root}>
-  <View style={[s.hero,{backgroundColor:c.surface,borderColor:'#E6B34D'}]}>
+  <View style={[s.hero,{backgroundColor:c.surface,borderColor:'#F7C650'}]}>
    <Text style={[s.kicker,{color:c.accent}]}>LA POSTA DEL DÍA · {turn.toUpperCase()}</Text>
-   <Text style={[s.title,{color:c.text}]}>Los favoritos de Lalo</Text>
+   <Text style={[s.title,{color:c.accent}]}>Los favoritos de Lalo</Text>
    <Text style={[s.desc,{color:c.subtext}]}>
     {date?readableWeekday(date):'Elegí una fecha'} · {overview.statusText}
    </Text>
@@ -77,16 +79,12 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
     </Text>
    </Pressable>
   </View>
-  <View style={[s.summary,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>Resumen del día</Text>
-   <DayMatchGrid overview={overview} data={data} turn={turn}
-    short onOpenHeads={()=>onNavigate('cabezas')}/>
-   <Pressable accessibilityRole="button" onPress={()=>onNavigate('info')}
-    style={[s.outline,{borderColor:c.accent}]}>
-    <Text style={{color:c.accent,fontWeight:'900'}}>Abrir el resumen completo  ›</Text>
-   </Pressable>
+  <View style={[s.summary,{backgroundColor:c.surface,borderColor:'#C69B46'}]}>
+   <Text style={[s.heading,{color:c.accent}]}>Resumen de {turn}</Text>
+   <DayMatchGrid overview={overview} data={data} turn={turn} onlyTurn
+    onOpenFamily={onOpenMatch} onOpenHeads={()=>onNavigate('cabezas')}/>
   </View>
-  <Text style={[s.heading,{color:c.text}]}>¿Qué querés mirar?</Text>
+  <Text style={[s.heading,{color:c.accent}]}>¿Qué querés mirar?</Text>
   <View style={s.shortcutGrid}>
    <Pressable accessibilityRole="button" onPress={()=>onNavigate('hoja')}
     style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#68B1FF'}]}>
@@ -112,7 +110,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    </Pressable>
   </View>
   <View style={[s.bottomCard,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>Todo desde un lugar</Text>
+   <Text style={[s.heading,{color:c.accent}]}>Todo desde un lugar</Text>
    <View style={s.actions}>
     {([
      ['info','Info','☀'],['cabezas','Cabezas reales','▤'],
@@ -133,7 +131,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
 }
 const s=StyleSheet.create({
  root:{marginTop:9,gap:12,paddingBottom:25},
- hero:{borderWidth:1.4,borderRadius:18,padding:13,gap:10},
+ hero:{borderWidth:1.8,borderRadius:18,padding:13,gap:10},
  kicker:{fontSize:10,fontWeight:'900',letterSpacing:1.1},
  title:{fontSize:22,fontWeight:'900'},
  desc:{fontSize:11,lineHeight:17},
@@ -145,7 +143,7 @@ const s=StyleSheet.create({
   alignItems:'center',gap:3,padding:8},
  mainButton:{borderRadius:11,padding:12,alignItems:'center'},
  heading:{fontSize:18,fontWeight:'900'},
- summary:{borderWidth:1,borderRadius:15,padding:13,gap:12},
+ summary:{borderWidth:1.4,borderRadius:15,padding:13,gap:12},
  outline:{borderWidth:1,borderRadius:10,padding:11,alignItems:'center'},
  shortcutGrid:{flexDirection:'row',gap:9,alignItems:'stretch'},
  shortcut:{flex:1,borderWidth:1.2,borderRadius:15,
@@ -153,7 +151,7 @@ const s=StyleSheet.create({
  shortcutTitle:{fontSize:15,fontWeight:'900'},
  mini:{alignItems:'center',minHeight:80,justifyContent:'center'},
  link:{fontWeight:'900',fontSize:11},
- bottomCard:{borderRadius:15,borderWidth:1,padding:13,gap:9},
+ bottomCard:{borderRadius:15,borderWidth:1.2,padding:13,gap:9},
  actions:{flexDirection:'row',flexWrap:'wrap',gap:7},
  action:{minWidth:'48%',flexGrow:1,borderWidth:1,borderRadius:9,padding:9,
   flexDirection:'row',alignItems:'center',gap:6}
