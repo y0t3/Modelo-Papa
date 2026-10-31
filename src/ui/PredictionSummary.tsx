@@ -1,6 +1,6 @@
-import React,{useEffect,useMemo,useRef,useState} from 'react';
+import React,{useEffect,useMemo,useState} from 'react';
 import BosteroWatermark from './BosteroWatermark';
-import {View,Text,Pressable,ScrollView,StyleSheet} from 'react-native';
+import {View,Text,Pressable,StyleSheet} from 'react-native';
 import type {Turno} from '../domain';
 import type {DailySheet} from '../sheet';
 import type {InfoVisualDay} from '../infoTurnHistory';
@@ -13,234 +13,168 @@ import type {HeadEvent,ModelChoice} from '../predictionParallel';
 import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
 import {readableWeekday} from '../infoTurnHistory';
-import {explainFamilyRationale} from '../friendlyExplanations';
-
-const explanation:Record<string,string>={
- EN_FORMACIÓN:'En formación',EN_SEGUIMIENTO:'Con antecedentes',CON_APOYO:'Con varios apoyos'
-};
-
-/**
- * Una modalidad por página horizontal; dentro de cada modalidad, los candidatos
- * se leen de arriba hacia abajo. El Top10 siempre está completo y las coincidencias visibles.
- * No se modifica la selección, el orden, el cotejo POST ni el acceso al recorrido.
- */
-export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onTrackFamily,post,heads=[],model='lalo',auxiliar,sheet=null,visualDays=[]}:{
+const readableKind:Record<LaloKind,string>={vt2:'2 cifras',vt3:'3 cifras',vt4:'4 cifras'};
+export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onTrackFamily,
+ heads=[],model='lalo',auxiliar,sheet=null,visualDays=[]}:{
  date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
- auxiliar?:AuxiliarView|null;
- sheet?:DailySheet|null;visualDays?:InfoVisualDay[];
- onFocus:(id:string)=>void;onAuxFocus?:(id:string)=>void;
- onTrackFamily?:(family:string)=>void;
+ auxiliar?:AuxiliarView|null;sheet?:DailySheet|null;visualDays?:InfoVisualDay[];
+ onFocus:(id:string)=>void;onAuxFocus?:(id:string)=>void;onTrackFamily?:(family:string)=>void;
  post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
- const [active,setActive]=useState<LaloKind>('vt2');
+ const [active,setActive]=useState<LaloKind>('vt3');
  const [expanded,setExpanded]=useState<string|null>(null);
  const [historyFamily,setHistoryFamily]=useState<string|null>(null);
- const [pagerWidth,setPagerWidth]=useState(0);
- const [pageHeights,setPageHeights]=useState<Partial<Record<LaloKind,number>>>({});
- const pager=useRef<ScrollView>(null);
-
- useEffect(()=>{
-  setActive('vt2');
-  pager.current?.scrollTo({x:0,animated:false});
-  setExpanded(null);
-  setHistoryFamily(null);
- },[date,turn,model]);
-
- useEffect(()=>{
-  if(pagerWidth>0)
-   pager.current?.scrollTo({x:KINDS.indexOf(active)*pagerWidth,animated:false});
- // La posición sólo se recalcula cuando cambia el ancho (rotación o resize).
- // eslint-disable-next-line react-hooks/exhaustive-deps
- },[pagerWidth]);
-
+ useEffect(()=>{setActive('vt3');setExpanded(null);setHistoryFamily(null)},
+  [date,turn,model]);
  const isoDate=date.includes('/')?date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2):date;
  const vt2Witnesses=useMemo(()=>{
-  const map=new Map<string,ReturnType<typeof buildVt2FamilyWitnesses>>();
-  if(model!=='lalo'||!sheet)return map;
+  const m=new Map<string,ReturnType<typeof buildVt2FamilyWitnesses>>();
+  if(model!=='lalo'||!sheet)return m;
   for(const f of view?.ranks.vt2.slice(0,10)||[])
-   map.set(f.family,buildVt2FamilyWitnesses(isoDate,turn,f.family,sheet,visualDays));
-  return map;
+   m.set(f.family,buildVt2FamilyWitnesses(isoDate,turn,f.family,sheet,visualDays));
+  return m;
  },[model,sheet,view,isoDate,turn,visualDays]);
-
- const selectKind=(kind:LaloKind)=>{
-  setActive(kind);
-  if(pagerWidth>0)
-   pager.current?.scrollTo({x:KINDS.indexOf(kind)*pagerWidth,animated:true});
+ const rows=rowsForModel(model,active,view,auxiliar||null).slice(0,10);
+ const events:HeadEvent[]=heads.map(head=>({jur:'',head}));
+ const matchedHeads=(family:typeof rows[number])=>hitsForFamily(family,events).map(x=>x.head);
+ const matching=rows.filter(x=>matchedHeads(x).length>0);
+ const accent=kinds[active].line;
+ const labelFor=(family:string)=>{
+  if(model==='auxiliar')return 'Hoja auxiliar';
+  const original=view?.ranks[active].find(x=>familyKey(x.family)===familyKey(family));
+  if(!original)return 'Con recorrido en la hoja';
+  return original.state==='CON_APOYO'?'Con varios apoyos':
+   original.state==='EN_SEGUIMIENTO'?'Con antecedentes':'En formación';
  };
-
- return <View style={[s.surface,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
-  <View style={{position:'relative',overflow:'hidden',paddingTop:7,paddingBottom:10,
-   paddingRight:65,minHeight:62}}>
-   <BosteroWatermark opacity={0.16}/>
-   <Text style={[s.title,{color:c.accent}]}>
-    {model==='auxiliar'?'Números de Lalo · Auxiliar':'Los números de Lalo'}
+ const openRow=(f:typeof rows[number])=>{
+  if(model==='auxiliar')setExpanded(x=>x===f.key?null:f.key);
+  else onFocus(active+'|'+f.family);
+ };
+ return <View style={[s.panel,{backgroundColor:c.surface,borderColor:'#BC9241'}]}>
+  <View style={s.header}>
+   <BosteroWatermark opacity={0.12}/>
+   <Text style={[s.eyebrow,{color:c.accent}]}>
+    {model==='auxiliar'?'LA OTRA HOJA':'EL CUADERNO DE LALO'}
+   </Text>
+   <Text style={[s.title,{color:c.text}]}>Números para mirar hoy</Text>
+   <Text style={[s.subtitle,{color:c.subtext}]}>
+    {date?readableWeekday(isoDate):'Elegí una fecha'} · {turn}
    </Text>
   </View>
-  <Text style={[s.subtitle,{color:c.subtext}]}>
-   {date.includes('/')?readableWeekday(date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2)).toLowerCase():readableWeekday(date).toLowerCase()} · {turn}
-  </Text>
-  <Text style={[s.caution,{color:c.subtext}]}>
-   Propuestas experimentales: el puesto no equivale a una probabilidad demostrada.
-   {model==='auxiliar'?' Solo utiliza la hoja Santiago–Neuquén; el Top de MV1 es independiente.':''}
+  <Text style={[s.description,{color:c.subtext}]}>
+   {model==='auxiliar'?
+    'Estos números salen de Santiago y Neuquén. Mirá sus recorridos en esa hoja.':
+    'Estos son los diez primeros que encontró Lalo. Tocá uno para ver cómo se formó.'}
   </Text>
   <View style={s.kindTabs}>
    {KINDS.map(kind=><Pressable key={kind} accessibilityRole="tab"
-    accessibilityState={{selected:active===kind}}
-    accessibilityLabel={'Ver '+kind.toUpperCase()}
-    onPress={()=>selectKind(kind)}
-    style={[s.kindTab,{borderColor:active===kind?kinds[kind].line:c.border,
-     backgroundColor:active===kind?kinds[kind].fill:c.card}]}>
-    <Text style={[s.kindTabText,{color:active===kind?kinds[kind].text:c.subtext}]}>
-     {kind.toUpperCase()}
-    </Text>
+    accessibilityState={{selected:active===kind}} onPress={()=>{setActive(kind);setExpanded(null)}}
+    style={[s.kindTab,{backgroundColor:active===kind?kinds[kind].fill:c.surfaceAlt,
+     borderColor:active===kind?kinds[kind].line:c.border}]}>
+    <Text style={{color:active===kind?kinds[kind].text:c.subtext,
+     fontSize:12,fontWeight:'900'}}>{readableKind[kind]}</Text>
    </Pressable>)}
   </View>
-  <Text style={[s.hint,{color:c.muted}]}>
-   Deslizá para cambiar de VT · Tocá una familia para ver su respaldo
-  </Text>
-  <View style={s.pager} onLayout={e=>{
-   const width=Math.round(e.nativeEvent.layout.width);
-   if(width>0&&width!==pagerWidth)setPagerWidth(width);
-  }}>
-   <ScrollView ref={pager} horizontal pagingEnabled nestedScrollEnabled
-    scrollEnabled={pagerWidth>0} showsHorizontalScrollIndicator={false}
-    style={pageHeights[active]?{height:pageHeights[active]}:undefined}
-    contentContainerStyle={s.pages}
-    onMomentumScrollEnd={e=>{
-     if(!pagerWidth)return;
-     const index=Math.max(0,Math.min(KINDS.length-1,
-      Math.round(e.nativeEvent.contentOffset.x/pagerWidth)));
-     setActive(KINDS[index]);
-    }}>
-    {KINDS.map(kind=>{
-     const limit=10;
-     const rows=rowsForModel(model,kind,view,auxiliar||null).slice(0,limit);
-     const winners:HeadEvent[]=heads.map(head=>({jur:'',head}));
-     const winnerHeads=(family:typeof rows[number])=>hitsForFamily(family,winners)
-       .map(x=>x.head);
-     const matched=new Set(rows.filter(f=>winnerHeads(f).length>0).map(f=>f.key));
-     const hitRows=rows.filter(f=>matched.has(f.key));
-     return <View key={kind} style={[s.page,{width:pagerWidth||undefined}]}
-      onLayout={e=>{
-       const height=Math.ceil(e.nativeEvent.layout.height);
-       if(height>0)setPageHeights(prev=>prev[kind]===height?prev:{...prev,[kind]:height});
-      }}>
-      <View style={s.headingRow}>
-       <Text style={[s.heading,{color:kinds[kind].line}]}>
-        {kind.toUpperCase()} · {kinds[kind].label}
+  {heads.some(x=>/^\d{4}$/.test(x))?<View style={[s.matchBar,{
+   backgroundColor:matching.length?c.accentFill:c.surfaceAlt,
+   borderColor:matching.length?c.accent:c.border}]}>
+    <Text style={{fontSize:12,fontWeight:'900',color:matching.length?c.accent:c.text}}>
+     {matching.length?'✓ '+matching.length+' coincidencia(s) en la lista':
+      'Todavía no coincidió ninguno de esta lista'}
+    </Text>
+    <Text style={{fontSize:10,color:c.subtext}}>
+     Comparado con las cabezas que ya salieron
+    </Text>
+   </View>:null}
+  <View style={s.list}>
+   {rows.map((f,i)=>{
+    const wins=matchedHeads(f);
+    const history=active==='vt2'&&model==='lalo'?vt2Witnesses.get(f.family):null;
+    return <View key={f.key+'|'+i} style={[s.row,{
+     backgroundColor:wins.length?c.accentFill:c.card,
+     borderColor:wins.length?c.accent:c.border}]}>
+     <Pressable accessibilityRole="button"
+      accessibilityLabel={'Puesto '+f.rank+', número '+f.family+', ver recorrido'}
+      onPress={()=>openRow(f)}
+      style={s.rowHead}>
+      <Text style={[s.rank,{backgroundColor:i===0?c.accent:c.surfaceAlt,
+       color:i===0?'#071A38':c.subtext}]}>{f.rank}</Text>
+      <View style={{flex:1,gap:3}}>
+       <Text style={{fontSize:17,fontWeight:'900',color:c.text}} numberOfLines={2}>
+        {model==='auxiliar'&&active==='vt4'?f.values.join(' / '):f.family}
        </Text>
-       <Text style={[s.aux,{color:c.muted}]}>{rowsForModel(model,kind,view,auxiliar||null).length} familias</Text>
+       <Text style={{fontSize:10,color:c.subtext}} numberOfLines={1}>
+        {labelFor(f.family)}
+       </Text>
       </View>
-      {kind==='vt4'&&(view||auxiliar)?<Text style={[s.caution,{color:c.subtext}]}>
-       Se alternan los candidatos de cada familia de 3 cifras con recorrido válido;
-       después sus siguientes hijas. No equivale a una probabilidad de acierto.
-      </Text>:null}
-      {heads.some(x=>/^[0-9]{4}$/.test(x))&&(view||auxiliar)?<View style={[s.postPanel,{backgroundColor:hitRows.length?kinds[kind].fill:c.surfaceAlt,
-       borderColor:hitRows.length?kinds[kind].line:c.border}]}>
-       <Text style={[s.postTitle,{color:hitRows.length?kinds[kind].text:c.text}]}>
-        POST · {hitRows.length} familia(s) coincidente(s) en Top10
+      {wins.length?<Text style={{fontSize:11,fontWeight:'900',color:c.accent}}>✓ Salió</Text>:
+       <Text style={{fontSize:11,fontWeight:'900',color:c.accent}}>›</Text>}
+     </Pressable>
+     {wins.length?<Text style={{fontSize:11,color:c.accent,fontWeight:'800'}}>
+      Coincidió con {wins.join(' · ')}
+     </Text>:null}
+     {model==='auxiliar'&&expanded===f.key?<View style={{gap:6,marginTop:6}}>
+      {f.details.map((detail,k)=><Text key={k}
+       style={{fontSize:11,lineHeight:17,color:c.subtext}}>{detail}</Text>)}
+      {onAuxFocus?<Pressable accessibilityRole="button"
+       onPress={()=>onAuxFocus(active+'|'+f.family)} style={s.inlineButton}>
+       <Text style={{color:c.accent,fontWeight:'800'}}>Ver minihoja y recorridos  ›</Text>
+      </Pressable>:null}
+     </View>:null}
+     {!!history?.length?<Pressable accessibilityRole="button"
+      onPress={()=>setHistoryFamily(f.family)} style={s.link}>
+      <Text style={{color:c.accent,fontSize:11,fontWeight:'800'}}>
+       Mirar dónde apareció antes  ›
+      </Text>
+     </Pressable>:null}
+     {active==='vt3'&&model==='lalo'&&onTrackFamily?
+      <Pressable accessibilityRole="button" onPress={()=>onTrackFamily(f.family)}
+       style={s.link}>
+       <Text style={{color:c.accent,fontSize:11,fontWeight:'800'}}>
+        Seguir este número en Info  ›
        </Text>
-       <Text style={[s.postInfo,{color:c.subtext}]}>
-        {hitRows.length?hitRows.map(f=>'#'+f.rank+' '+f.family+' ('+winnerHeads(f).join(', ')+')').join('  ·  '):
-         'Ninguna familia de este Top acertó una terminación publicada.'}
-       </Text>
-      </View>:null}
-      {rows.length?<View style={s.families}>
-       {rows.map(f=><Pressable key={f.family} accessibilityRole="button"
-        accessibilityLabel={kind.toUpperCase()+', puesto '+f.rank+', familia '+f.family}
-        onPress={()=>{
-         if(model==='auxiliar')setExpanded(old=>old===f.key?null:f.key);
-         else onFocus(kind+'|'+f.family);
-        }}
-        style={[s.family,{backgroundColor:matched.has(f.key)?kinds[kind].fill:c.card,
-         borderColor:matched.has(f.key)?kinds[kind].line:c.border,
-         borderWidth:matched.has(f.key)?2:1}]}>
-        <View style={s.familyTitle}>
-         <Text style={[s.rank,{color:kinds[kind].line}]}>#{f.rank}</Text>
-         <Text style={[s.familyName,{color:c.text}]}>
-          {model==='auxiliar'&&kind==='vt4'?f.values.join(' / '):f.family}
-         </Text>
-         {matched.has(f.key)?<Text style={[s.hitLabel,{color:kinds[kind].text}]}>✓ POST</Text>:null}
-         <Text style={[s.chevron,{color:c.accent}]}>›</Text>
-        </View>
-        {matched.has(f.key)?<Text style={[s.winnerHeads,{color:kinds[kind].text}]}>
-         Cabeza(s): {winnerHeads(f).join(' · ')}
-        </Text>:null}
-        <Text style={[s.detail,{color:c.subtext}]}>
-         {model==='auxiliar'?f.source:
-          view?.ranks[kind].find(x=>familyKey(x.family)===f.key)?.rationale?
-          explainFamilyRationale(view.ranks[kind].find(x=>familyKey(x.family)===f.key)!.rationale):
-          'Familia con recorridos físicos'} · {f.values.join(' / ')}
-        </Text>
-        {model==='auxiliar'&&expanded===f.key?<View style={{gap:5,marginTop:8}}>
-         {f.details.map((line,i)=><Text key={i} style={[s.detail,{color:c.text}]}>{line}</Text>)}
-         {!f.canFocusPlus&&onAuxFocus?<Pressable accessibilityRole="button"
-          onPress={()=>onAuxFocus(kind+'|'+f.family)}>
-          <Text style={[s.open,{color:c.accent}]}>Ver recorridos AUX y mini captura ›</Text>
-         </Pressable>:null}
-         {f.canFocusPlus?<Pressable accessibilityRole="button"
-          onPress={()=>onFocus(kind+'|'+f.family)}>
-          <Text style={[s.open,{color:c.accent}]}>Ver recorrido +11 ›</Text>
-         </Pressable>:null}
-        </View>:null}
-        {kind==='vt2'&&model==='lalo'&&(vt2Witnesses.get(f.family)?.length||0)>0?<Pressable
-         accessibilityRole="button" onPress={e=>{e.stopPropagation();setHistoryFamily(f.family)}}
-         style={s.historyLink}>
-         <Text style={{color:c.accent,fontWeight:'900',fontSize:11}}>
-          {vt2Witnesses.get(f.family)?.[0]?.scope==='HOY'? 
-           'Salió antes hoy · Ver minihoja ›':'Tiene antecedentes · Ver minihoja ›'}
-         </Text>
-        </Pressable>:null}
-        {kind==='vt3'&&model==='lalo'&&onTrackFamily?<Pressable
-         accessibilityRole="button" onPress={e=>{e.stopPropagation();onTrackFamily(f.family)}}
-         style={{paddingVertical:8}}>
-         <Text style={{color:c.accent,fontWeight:'900',fontSize:12}}>Seguir esta figura en Info →</Text>
-        </Pressable>:null}
-        <Text style={[s.open,{color:c.accent}]}>
-         {model==='auxiliar'?'Ver recorridos auxiliares ›':'Ver recorrido ›'}
-        </Text>
-       </Pressable>)}
-      </View>:<Text style={[s.empty,{color:c.muted}]}>
-       {!(model==='auxiliar'?auxiliar:view)?'Cargá las fuentes para generar candidatos.':
-        'Sin candidatos con recorrido físico válido para esta modalidad.'}
-      </Text>}
-
-     </View>;
-    })}
-   </ScrollView>
+      </Pressable>:null}
+    </View>;
+   })}
+   {!rows.length?<Text style={{color:c.subtext,fontSize:12,padding:14}}>
+    {model==='auxiliar'?'Todavía no hay números de esa hoja.':
+     'Todavía no hay números para este turno. Actualizá la hoja.'}
+   </Text>:null}
   </View>
-  {model==='lalo'?<Vt2FamilyHistoryModal date={isoDate} turn={turn} family={historyFamily}
-   view={view} sheet={sheet} days={visualDays}
+  {rows.length&&model==='lalo'?<Pressable accessibilityRole="button"
+   onPress={()=>onFocus(active+'|'+rows[0].family)}
+   style={[s.bigButton,{backgroundColor:c.accent}]}>
+    <Text style={{color:'#072348',fontWeight:'900',fontSize:14}}>⌁  Ver recorridos de la lista   ›</Text>
+    <Text style={{color:'#13375D',fontSize:11}}>Mirá cómo se armó el primero</Text>
+   </Pressable>:null}
+  <Text style={{color:c.muted,fontSize:10,lineHeight:16}}>
+   Este orden sirve para estudiar. No significa que un número tenga más chances comprobadas.
+  </Text>
+  {model==='lalo'?<Vt2FamilyHistoryModal date={isoDate} turn={turn}
+   family={historyFamily} view={view} sheet={sheet} days={visualDays}
    onClose={()=>setHistoryFamily(null)}
-   onOpenCurrent={()=>{const id=historyFamily;setHistoryFamily(null);if(id)onFocus('vt2|'+id)}}/>:null}
+   onOpenCurrent={()=>{const f=historyFamily;setHistoryFamily(null);
+    if(f)onFocus('vt2|'+f)}}/>:null}
  </View>;
 }
 const s=StyleSheet.create({
- surface:{borderRadius:13,padding:14,marginTop:10,borderWidth:1.2},
- title:{fontSize:18,fontWeight:'900'},subtitle:{fontSize:12,fontWeight:'800',marginTop:4},
- caution:{fontSize:11,lineHeight:16,marginTop:8},
- kindTabs:{flexDirection:'row',gap:7,marginTop:14},
- kindTab:{flex:1,borderWidth:1,borderRadius:9,paddingVertical:10,alignItems:'center'},
- kindTabText:{fontSize:13,fontWeight:'900'},
- hint:{fontSize:10,lineHeight:15,marginTop:7,marginBottom:3},
- pager:{width:'100%',overflow:'hidden'},
- pages:{alignItems:'flex-start'},
- page:{paddingTop:9,paddingBottom:8},
- headingRow:{flexDirection:'row',justifyContent:'space-between',alignItems:'center',gap:8},
- heading:{fontSize:15,fontWeight:'900'},aux:{fontSize:10,fontWeight:'700'},
- families:{gap:8},
- family:{minHeight:62,borderRadius:11,borderWidth:1,padding:9},
- historyLink:{paddingTop:7,paddingBottom:5,alignSelf:'flex-start'},
- familyTitle:{flexDirection:'row',alignItems:'center',gap:9},
- rank:{fontSize:13,fontWeight:'900',minWidth:27},
- familyName:{fontSize:18,fontWeight:'900',flex:1,flexWrap:'wrap'},
- chevron:{fontSize:20,fontWeight:'900'},
- detail:{fontSize:11,lineHeight:15,marginTop:3},
- open:{fontSize:10,fontWeight:'900',marginTop:5,alignSelf:'flex-end'},
- empty:{fontSize:11,lineHeight:17,marginVertical:7},
- postPanel:{borderWidth:1,borderRadius:10,padding:12,marginVertical:10,gap:5},
- postTitle:{fontSize:14,fontWeight:'900'},postInfo:{fontSize:12,lineHeight:18,fontWeight:'700'},
- hitLabel:{fontSize:11,fontWeight:'900'},
- winnerHeads:{fontSize:12,fontWeight:'900',marginTop:4}
+ panel:{borderWidth:1.3,borderRadius:17,padding:13,gap:10,marginTop:10},
+ header:{position:'relative',overflow:'hidden',borderRadius:11,paddingVertical:10,
+  paddingHorizontal:11,backgroundColor:'rgba(2,20,44,.22)',minHeight:88},
+ eyebrow:{fontSize:10,fontWeight:'900',letterSpacing:1.1},
+ title:{fontSize:22,fontWeight:'900',marginTop:6},
+ subtitle:{fontSize:12,fontWeight:'700',marginTop:3},
+ description:{fontSize:12,lineHeight:18},
+ kindTabs:{flexDirection:'row',gap:7},
+ kindTab:{flex:1,paddingVertical:10,borderRadius:10,borderWidth:1,alignItems:'center'},
+ matchBar:{padding:10,borderWidth:1,borderRadius:11,gap:4},
+ list:{gap:6},
+ row:{borderWidth:1,borderRadius:11,paddingHorizontal:10,paddingVertical:8,gap:4},
+ rowHead:{flexDirection:'row',alignItems:'center',gap:10,minHeight:39},
+ rank:{width:30,height:30,borderRadius:8,overflow:'hidden',textAlign:'center',
+  textAlignVertical:'center',fontWeight:'900',fontSize:14},
+ link:{paddingLeft:39,paddingVertical:4},
+ inlineButton:{padding:8,alignSelf:'flex-start'},
+ bigButton:{borderRadius:13,alignItems:'center',padding:13,gap:2}
 });
