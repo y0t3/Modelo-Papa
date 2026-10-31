@@ -1,0 +1,29 @@
+name: Validar Resumen con Lalo AUX Ayer Hoy
+on:
+  push:
+    branches: ['feature/resumen-chips-aux-cabezas-31oct2026']
+    paths: ['App.tsx','src/**','scripts/test-resumen-chips-aux.ts','.github/workflows/validar-resumen-aux-chips.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Código, doble coincidencia y motor AUX independiente
+        run: |
+          npx tsc --noEmit --project tsconfig.ui-check.json
+          npx --yes tsx scripts/test-resumen-chips-aux.ts
+          npx --yes tsx scripts/test-inicio-resumen.ts
+          npx --yes tsx scripts/test-vt2-default-navegacion.ts
+          npx --yes tsx scripts/test-favoritos-inline.ts
+      - name: Geometría, banner y fondo originales
+        run: |
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-la-posta-identidad.ts
+          npx --yes tsx scripts/test-hero-composition.ts
+          npx --yes tsx scripts/test-wallpaper-lalo.ts
