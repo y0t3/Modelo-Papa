@@ -10,7 +10,7 @@ import type {ShapeRoute,Board,Kind,Figure} from './labRadarFiguras';
 import {figuresInTop} from './labRadarFiguras';
 export type Head={jur:string;head:string};
 export const BOARDS:Board[]=['PLUS11','AUX_AYER','AUX_HOY'];
-export const KINDS:Kind[]=['VT2','VT3'];
+export const KINDS=['VT2','VT3'] as const satisfies readonly Kind[];
 export type Preview={date:string;turn:string;routes:ShapeRoute[]};
 export type SharedFamily={kind:Kind;family:string;boards:Board[];
  sources:{board:Board;engines:string[];bestRank:number;figureCount:number}[]};
