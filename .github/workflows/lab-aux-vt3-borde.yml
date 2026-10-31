@@ -1,0 +1,47 @@
+name: LAB AUX VT3 intercambios controlados en borde Top10
+on:
+  push:
+    branches:
+      - 'lab/aux-vt3-intercambios-borde-31oct2026'
+    paths:
+      - 'src/labAuxBorderSwapsVT3.ts'
+      - 'scripts/lab-aux-borde-vt3.ts'
+      - 'scripts/test-aux-borde-vt3.ts'
+      - '.github/workflows/lab-aux-vt3-borde.yml'
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  estudiar:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {label: 'junio-agosto', from: '2026-06-01', to: '2026-08-31', min: '250', skip: '0'}
+          - {label: 'septiembre-octubre', from: '2026-09-01', to: '2026-10-29', min: '130', skip: '1'}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Regresiones y presupuesto conservador PRE
+        run: |
+          npx --yes tsx scripts/test-aux-borde-vt3.ts
+          npx --yes tsx scripts/test-aux-temporal-vt3.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Replay - swaps 1/2 versus igual numero de swaps neutros
+        env:
+          VT3TOP20_FROM: ${{ matrix.from }}
+          VT3TOP20_TO: ${{ matrix.to }}
+          VT3TOP20_LABEL: ${{ matrix.label }}
+          VT3TOP20_MIN_CUTS: ${{ matrix.min }}
+          VT3TOP20_SKIP_OCT_EARLY: ${{ matrix.skip }}
+        run: npx --yes tsx scripts/lab-aux-borde-vt3.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aux-borde-vt3-${{ matrix.label }}
+          path: auditorias/aux-borde-vt3/${{ matrix.label }}.json
+          if-no-files-found: warn
