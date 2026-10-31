@@ -10,7 +10,7 @@ import {TURNOS} from '../domain';
 import {loadCombinedMemory,buildCombinedTop} from '../laloCombinedRuntime';
 import type {CombinedMemory,CombinedPick} from '../laloCombinedRuntime';
 import {useLaloTheme} from './LaloTheme';
-import RouteMiniBoard from './RouteMiniBoard';
+import InlineFamilyPaths from './InlineFamilyPaths';
 
 type Saved={schema:'COMBINADO_PRE_LOCAL_1';date:string;turn:Turno;
  savedAt:string;top:CombinedPick[]};
@@ -18,10 +18,6 @@ const dayLocal=()=>{const d=new Date();return [
  d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),
  String(d.getDate()).padStart(2,'0')].join('-')};
 const localKey=(date:string,turn:Turno)=>'modelo-lalo:combinado-pre-1:'+date+'|'+turn;
-const sourceLabel=(s:string)=>({
- prevNocturno:'Nocturna anterior',Previa:'Previa',Primera:'Primera',
- Matutino:'Matutina',Vespertino:'Vespertina'
-} as Record<string,string>)[s]||s;
 export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{date:string;
  turn:Turno;sheet:DailySheet|null;historical:LaloHistorical[];
  heads:string[]}){
@@ -121,30 +117,10 @@ export default function CombinedVt3Panel({date,turn,sheet,historical,heads}:{dat
      {opened===entry.family?<Text style={[s.meta,{color:c.subtext}]}>
       Mirá las casillas marcadas aquí mismo.
      </Text>:null}
-  {opened===entry.family&&paths.length&&pre?<View style={[s.routeCard,{backgroundColor:c.surfaceAlt,
-    borderColor:c.border}]}>
-    <Text style={{color:c.accent,fontSize:13,fontWeight:'900'}}>
-     Así se forma {entry.family}
-    </Text>
-    <Text style={[s.meta,{color:c.subtext}]}>
-     {paths.length===1?'Un recorrido posible':paths.length+' recorridos posibles'} en la hoja. Sin cruzar columnas.
-    </Text>
-    {paths.slice(0,3).map((path,i)=>{
-     const col=pre.columns.find(x=>x.id===path.source);
-     return <View key={path.source+'|'+i} style={s.pathRow}>
-      <View style={{flex:1,gap:3}}>
-       <Text style={{color:c.text,fontWeight:'800'}}>
-        {sourceLabel(path.source)} · {path.value}
-       </Text>
-       <Text style={{color:c.subtext,fontSize:11}}>Camino {i+1} de {paths.length}</Text>
-      </View>
-      {col?<RouteMiniBoard values={col.values} cells={path.cells} kind="vt3" compact/>:null}
-     </View>
-    })}
-    {paths.length>3?<Text style={{color:c.subtext,fontSize:11}}>
-     Hay {paths.length-3} recorridos más en esta familia.
-    </Text>:null}
-   </View>:null}
+     {opened===entry.family&&pre?<InlineFamilyPaths kind="vt3"
+      family={entry.family} turn={turn} plus={{sheet:pre,
+       routes:paths.map(p=>({sourceId:p.source as any,value:p.value,path:p.cells}))}}/>:null}
+
     </Pressable>
    })}
   </View>:null}
@@ -176,7 +152,5 @@ const s=StyleSheet.create({
   textAlignVertical:'center',overflow:'hidden',borderRadius:8},
  family:{fontSize:15,fontWeight:'900',flex:1},
  meta:{fontSize:11,lineHeight:17},
- routeCard:{borderWidth:1,borderRadius:12,padding:12,gap:10},
- pathRow:{flexDirection:'row',alignItems:'center',padding:6,gap:10},
  footer:{borderRadius:9,padding:9}
 });
