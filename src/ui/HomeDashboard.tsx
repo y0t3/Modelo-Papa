@@ -18,7 +18,6 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;sheet:DailySheet|null;
  overview:DayOverview;onNavigate:(page:Destination)=>void;
  onSelectPrediction:(mode:'lalo'|'auxiliar'|'combinado')=>void;
  onTurnChange:(turn:Turno)=>void;onFocus:(family:string)=>void;busy:boolean};
-const name=(f:string)=>f.split('/')[0];
 export default function HomeDashboard({date,turn,sheet,view,auxiliar,overview,
  onNavigate,onSelectPrediction,onTurnChange,onFocus,busy}:Props){
  const {colors:c,kinds}=useLaloTheme();
@@ -27,7 +26,6 @@ export default function HomeDashboard({date,turn,sheet,view,auxiliar,overview,
  const first=top[0]?.paths[0];
  const pre=useMemo(()=>sheet?preSheetAtCut(sheet,turn,TURNOS.indexOf(turn)):null,[sheet,turn]);
  const col=pre?.columns.find(x=>x.id===first?.sourceId);
- const shared=top.filter(f=>auxiliar?.ranks[2].slice(0,10).some(g=>g.family===f.family));
  const maxSupport=Math.max(1,...top.slice(0,5).map(f=>f.directRoots));
  const ready=overview.exactHistory&&!!view;
  return <View style={s.root}>
@@ -119,30 +117,28 @@ export default function HomeDashboard({date,turn,sheet,view,auxiliar,overview,
    </Pressable>
   </View>
   <View style={s.shortcutGrid}>
-   <Pressable accessibilityRole="button" onPress={()=>onNavigate('predictiva')}
+   <Pressable accessibilityRole="button" onPress={()=>onNavigate('hoja')}
     style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#68B1FF'}]}>
     <Text style={{color:'#68B1FF',fontSize:25,fontWeight:'900'}}>▦</Text>
     <Text style={[s.shortcutTitle,{color:c.text}]}>Mirá la hoja</Text>
-    <Text style={[s.note,{color:c.subtext}]}>Así se dibuja el primer número</Text>
+    <Text style={[s.note,{color:c.subtext}]}>La hoja +11, con sus números y caminos</Text>
     <View style={{alignItems:'center',minHeight:80,justifyContent:'center'}}>
      {col&&first?<RouteMiniBoard values={col.values} cells={first.path}
       kind="vt2" compact/>:<Text style={{color:c.muted,fontSize:11}}>Sin hoja cargada</Text>}
     </View>
-    <Text style={[s.link,{color:'#76BCFF'}]}>Ver todos los recorridos  ›</Text>
+    <Text style={[s.link,{color:'#76BCFF'}]}>Abrir la hoja  ›</Text>
    </Pressable>
-   <Pressable accessibilityRole="button" onPress={()=>onSelectPrediction('auxiliar')}
+   <Pressable accessibilityRole="button" onPress={()=>onNavigate('predictiva')}
     style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#E9BA61'}]}>
-    <Text style={{color:'#E9BA61',fontSize:25,fontWeight:'900'}}>⇄</Text>
-    <Text style={[s.shortcutTitle,{color:c.text}]}>Comparativa</Text>
-    <Text style={[s.note,{color:c.subtext}]}>Lalo y la hoja auxiliar</Text>
-    <Text style={[s.compareNumber,{color:c.accent}]}>
-     {auxiliar?shared.length:'–'}
-    </Text>
-    <Text style={[s.note,{color:c.subtext}]}>
-     {auxiliar?'Familias de 2 cifras que aparecen en ambos Top10':
-      'Actualizá ambas hojas para comparar'}
-    </Text>
-    <Text style={[s.link,{color:'#E9BA61'}]}>Ver la hoja auxiliar  ›</Text>
+    <Text style={{color:'#E9BA61',fontSize:25,fontWeight:'900'}}>⌁</Text>
+    <Text style={[s.shortcutTitle,{color:c.text}]}>Los recorridos</Text>
+    <Text style={[s.note,{color:c.subtext}]}>Mirá los números que Lalo encontró en la hoja.</Text>
+    <View style={{alignItems:'center',minHeight:80,justifyContent:'center',gap:5}}>
+     {col&&first?<RouteMiniBoard values={col.values} cells={first.path}
+      kind="vt2" compact/>:
+      <Text style={{color:c.muted,fontSize:11}}>Todavía no hay recorridos</Text>}
+    </View>
+    <Text style={[s.link,{color:'#E9BA61'}]}>Ver las figuras  ›</Text>
    </Pressable>
   </View>
   <View style={[s.bottomCard,{backgroundColor:c.surface,borderColor:c.border}]}>
@@ -151,8 +147,8 @@ export default function HomeDashboard({date,turn,sheet,view,auxiliar,overview,
    <View style={s.actions}>
     {([
      ['info','Resumen del día','☀'],
-     ['prediccion','Top completo','◎'],
-     ['hoja','Hoja marcada','▤'],
+     ['prediccion','Predicción: Top10','◎'],
+     ['cabezas','Cabezas reales','▤'],
      ['papa','Lo que eligió Lalo','★']
     ] as const).map(([to,label,icon])=><Pressable key={to} accessibilityRole="button"
      style={[s.action,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}
@@ -197,8 +193,7 @@ const s=StyleSheet.create({
  shortcut:{flex:1,borderWidth:1.2,borderRadius:15,padding:12,gap:7,justifyContent:'space-between'},
  shortcutTitle:{fontSize:15,fontWeight:'900'},
  link:{fontWeight:'900',fontSize:11},
- compareNumber:{fontSize:30,fontWeight:'900'},
- bottomCard:{borderRadius:15,borderWidth:1,padding:13,gap:9},
+  bottomCard:{borderRadius:15,borderWidth:1,padding:13,gap:9},
  actions:{flexDirection:'row',flexWrap:'wrap',justifyContent:'space-between',gap:7},
  action:{width:'48%',borderWidth:1,borderRadius:9,padding:9,flexDirection:'row',alignItems:'center',gap:6}
 });
