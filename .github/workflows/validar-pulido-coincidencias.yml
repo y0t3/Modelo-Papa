@@ -1,0 +1,31 @@
+name: Verificar pulido coincidencias y navegación
+on:
+  push:
+    branches: ['feature/pulido-coincidencias-turno-31oct2026']
+    paths: ['App.tsx','src/**','scripts/test-pulido-coincidencias-turno.ts','.github/workflows/validar-pulido-coincidencias.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Tipos y casos de coincidencias por turno
+        run: |
+          npx tsc --noEmit --project tsconfig.ui-check.json
+          npx --yes tsx scripts/test-pulido-coincidencias-turno.ts
+          npx --yes tsx scripts/test-inicio-unico-fecha.ts
+          npx --yes tsx scripts/test-inicio-resumen.ts
+          npx --yes tsx scripts/test-favoritos-inline.ts
+      - name: Motores original, banner y fondo aprobados
+        run: |
+          npx --yes tsx scripts/test-la-posta-identidad.ts
+          npx --yes tsx scripts/test-hero-composition.ts
+          npx --yes tsx scripts/test-wallpaper-lalo.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-lalo-bayes-geometria-vt3.ts
+          npx --yes tsx scripts/test-info-aux-trazas-visuales.ts
