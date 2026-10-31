@@ -1,0 +1,24 @@
+name: LAB VT2 · mitades Top10 Lalo y Auxiliares
+on:
+  push:
+    branches:
+      - lab/mitades-top10-vt2-lalo-aux-31oct2026
+  pull_request:
+    branches:
+      - feature/resumen-chips-aux-cabezas-31oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Dependencias
+        run: npm install
+      - name: Backtest 1–5 contra 6–10 con mismos PRE
+        run: npx --yes tsx scripts/lab-mitades-top10-lalo-aux-vt2.ts
