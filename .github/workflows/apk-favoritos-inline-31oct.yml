@@ -2,8 +2,8 @@
 name: APK Lalo Favoritos 3 hojas y rutas inline 0.3.26
 on:
   push:
-    branches: ['feature/inicio-sin-tabs-fecha-compacta-31oct2026']
-    paths: ['.github/workflows/apk-inicio-unico-fecha-31oct.yml']
+    branches: ['feature/favoritos-inline-motores-31oct2026']
+    paths: ['.github/workflows/apk-favoritos-inline-31oct.yml']
   workflow_dispatch:
 permissions: {contents: read}
 jobs:
