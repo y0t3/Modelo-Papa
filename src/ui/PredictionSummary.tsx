@@ -22,10 +22,10 @@ export default function PredictionSummary({date,turn,view,onFocus,onAuxFocus,onT
  post?:Record<LaloKind,string[]>|null;heads?:string[]
 }){
  const {colors:c,kinds}=useLaloTheme();
- const [active,setActive]=useState<LaloKind>('vt3');
+ const [active,setActive]=useState<LaloKind>('vt2');
  const [expanded,setExpanded]=useState<string|null>(null);
  const [historyFamily,setHistoryFamily]=useState<string|null>(null);
- useEffect(()=>{setActive('vt3');setExpanded(null);setHistoryFamily(null)},
+ useEffect(()=>{setActive('vt2');setExpanded(null);setHistoryFamily(null)},
   [date,turn,model]);
  const isoDate=date.includes('/')?date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2):date;
  const vt2Witnesses=useMemo(()=>{
