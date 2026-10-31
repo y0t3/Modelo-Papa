@@ -2,7 +2,7 @@ import React,{useEffect,useMemo,useState} from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import type {DailySheet} from '../sheet';
-import type {LaloHistorical,LaloView} from '../motorLalo';
+import type {LaloHistorical,LaloView,LaloKind} from '../motorLalo';
 import {buildInfoReport} from '../infoInterpretacion';
 import type {MovementMode} from '../infoCandidatos';
 import type {InfoVisualDay,TurnHistoryFrame} from '../infoTurnHistory';
@@ -23,6 +23,7 @@ type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
 type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  sheet:DailySheet|null;historical:LaloHistorical[];visualDays:InfoVisualDay[];
  view:LaloView|null;onNavigate:(screen:Destination)=>void;
+ onOpenMatch:(kind:LaloKind,family:string,turn:Turno)=>void;
  auxDays:AuxGalleryDay[];currentAux:AuxGalleryDay|null;
  auxMode:AuxMode;onAuxMode:(mode:AuxMode)=>void;
  auxPrediction:AuxiliarView|null;auxHistory:AuxiliarHistory[];
@@ -55,7 +56,7 @@ const tips=[
  {key:'apuesta',title:'¿Lo que aparece es una apuesta?',body:'No. Los números que muestra la aplicación son para mirar y estudiar. Las jugadas de Lalo se anotan aparte, antes del sorteo.',to:'papa' as Destination,button:'Ver elecciones de Lalo'}
 ] as const;
 
-export default function InfoDashboard({date,turn,data,overview,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
+export default function InfoDashboard({date,turn,data,overview,sheet,historical,visualDays,view,onNavigate,onOpenMatch,onTurnChange,onOpenFrame,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
@@ -117,7 +118,8 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      </View>
     </View>
     {section==='resumen'?<DayMatchGrid overview={overview} turn={turn}
-     data={data} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
+     data={data} onOpenFamily={onOpenMatch}
+     onOpenHeads={()=>onNavigate('cabezas')}/>:null}
     {section==='viene'?<>
      <Text style={[s.text,{color:c.text}]}>{gallery.summary}</Text>
      <Text style={[s.small,{color:c.subtext}]}>Lo que pasó otros días no asegura que se repita.</Text>
