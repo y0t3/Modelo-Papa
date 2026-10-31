@@ -1,14 +1,12 @@
-import React,{useMemo} from 'react';
-import BosteroWatermark from './BosteroWatermark';
+import React,{useEffect,useMemo,useState} from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import type {DailySheet} from '../sheet';
 import type {LaloHistorical,LaloView} from '../motorLalo';
-import {buildInfoReport,sourceLabel} from '../infoInterpretacion';
+import {buildInfoReport} from '../infoInterpretacion';
 import type {MovementMode} from '../infoCandidatos';
-import type {InfoVisualDay} from '../infoTurnHistory';
+import type {InfoVisualDay,TurnHistoryFrame} from '../infoTurnHistory';
 import {buildTurnHistory,readableWeekday} from '../infoTurnHistory';
-import type {TurnHistoryFrame} from '../infoTurnHistory';
 import InfoTurnGallery from './InfoTurnGallery';
 import InfoAuxGallery from './InfoAuxGallery';
 import type {AuxGalleryDay} from '../infoAuxGallery';
@@ -17,7 +15,6 @@ import type {AuxiliarHistory,AuxiliarView} from '../motorLaloAuxiliar';
 import TurnStrip from './TurnStrip';
 import FigureTrackingPanel from './FigureTrackingPanel';
 import type {TrackingAuxInput} from '../figureTracking';
-import {KINDS} from './visualTokens';
 import {useLaloTheme} from './LaloTheme';
 
 type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
@@ -35,202 +32,215 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
  expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void};
-const guides=[
- {key:'tablero',title:'01 · La hoja +11',sub:'De dónde vienen las cifras',content:
-  'Cada cabeza anterior aporta sus últimas dos cifras más 11 (módulo 100). Se dibujan seis filas con dos columnas por fuente. Los caminos coincidentes se marcan al conocer las cabezas: son explicaciones de resultados ya publicados, no pronósticos previos.',
-  link:'hoja' as Destination,label:'Abrir Hoja'},
- {key:'recorridos',title:'02 · VT2, VT3 y VT4',sub:'La geometría de los números',content:
-  'VT2 recorre dos casillas y VT3 tres, siempre contiguas, sin saltos ni reutilizaciones. VT3 044 y 440 son una misma familia para estudiar recorridos reversibles. VT4 nace agregando una cuarta casilla al INICIO de su recorrido VT3: 044/440 con un 3 físico permite 3044/3440, no 0443/4403.',
-  link:'predictiva' as Destination,label:'Ver recorridos'},
- {key:'top',title:'03 · Familias y posiciones',sub:'Cómo interpretar los Tops',content:
-  'El motor busca respaldos geométricos y antecedentes D−1/D−7. Un Top3, Top5 o Top10 organiza familias según criterios definidos, pero NO representa probabilidades comprobadas. En VT4 se intercala primero la mejor hija física de cada madre VT3 válida, y después sus siguientes hijas.',
-  link:'prediccion' as Destination,label:'Abrir Predicción'},
- {key:'tab',title:'04 · Hoja, Predictiva y Cabezas',sub:'Qué tiene cada pestaña',content:
-  'HOJA resalta recorridos que coincidieron con sorteos publicados (POST). PREDICTIVA dibuja recorridos candidatos antes del turno (PRE). PREDICCIÓN explica por qué las familias entran a los Tops. CABEZAS muestra los resultados completos disponibles por jurisdicción y turno.',
-  link:'cabezas' as Destination,label:'Consultar cabezas'},
- {key:'lalo',title:'05 · Pronóstico personal de Lalo',sub:'Elegir, bajar y congelar',content:
-  'Lalo marca sus propios recorridos físicos y congela la elección antes de que se conozca el resultado. Una VT4 como 3044 baja a 044 (VT3) y 44 (VT2); una VT3 como 768 baja a 68 (VT2). Congelar el PRE conserva lo realmente elegido. Las selecciones antiguas no se reescriben con reglas nuevas.',
-  link:'papa' as Destination,label:'Abrir Lalo'},
- {key:'dinero',title:'06 · Apuestas y balance',sub:'Dinero real, no aciertos supuestos',content:
-  'Seleccionar un candidato no significa haber apostado. Una boleta real se confirma aparte: cada 4, 3 y 2 cifras bajadas recibe el mismo importe, repetido en las jurisdicciones elegidas. Se juega a la cabeza. Una familia reversible sirve para analizar, pero al cobrar importan las cifras exactas. Sólo se contabiliza como ingreso el premio realmente cobrado.',
-  link:'papa' as Destination,label:'Ir a Apuestas'},
- {key:'glosario',title:'07 · Palabras útiles',sub:'Fuente, madre, PRE y POST',content:
-  'Fuente: columna construida desde un turno ya sorteado. Recorrido: secuencia de celdas físicamente vecinas. Madre VT3: terna que se extiende por la izquierda para crear una hija VT4. PRE: elección guardada antes del sorteo. POST: cotejo con resultados ya publicados. D−1 y D−7: jornadas anteriores utilizadas como antecedentes.',
-  link:'predictiva' as Destination,label:'Ver un ejemplo'}
+
+type Section='resumen'|'viene'|'historial'|'auxiliar'|'seguir'|'comparar'|'ayuda'|'recorridos';
+const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
+ {id:'resumen',icon:'☀',title:'Resumen del día',subtitle:'Lo importante de este turno',accent:'#F3C251'},
+ {id:'viene',icon:'↗',title:'Cómo vienen',subtitle:'Mirá los últimos días',accent:'#57B4FF'},
+ {id:'historial',icon:'▦',title:'Día por día',subtitle:'Las hojas anteriores',accent:'#A68AFF'},
+ {id:'auxiliar',icon:'▤',title:'Hoja auxiliar',subtitle:'Santiago y Neuquén',accent:'#E18AF6'},
+ {id:'seguir',icon:'◎',title:'Seguir un número',subtitle:'Cómo fue apareciendo',accent:'#51D7AF'},
+ {id:'comparar',icon:'⇄',title:'Comparar turnos',subtitle:'Qué cambió en la hoja',accent:'#FFAC60'},
+ {id:'recorridos',icon:'⌁',title:'Ver recorridos',subtitle:'Abrí la hoja con marcas',accent:'#74B9FF'},
+ {id:'ayuda',icon:'?',title:'Ayuda sencilla',subtitle:'Cómo leer cada cosa',accent:'#8EC2F6'}
+];
+const tips=[
+ {key:'hoja',title:'¿Cómo se arma la hoja?',body:'Se toman las últimas dos cifras de cada cabeza y se les suma 11. Con eso se llena la columna del turno. Los caminos siempre siguen casillas vecinas, sin saltos.',to:'hoja' as Destination,button:'Abrir hoja'},
+ {key:'figura',title:'¿Qué significa un recorrido?',body:'Es la forma de leer dos, tres o cuatro cifras tocando casillas vecinas de una misma columna. Cuando una cabeza sale, la hoja puede mostrar todos los caminos que la explican.',to:'predictiva' as Destination,button:'Ver recorridos'},
+ {key:'top',title:'¿Por qué un número está primero?',body:'Lalo busca parecidos entre caminos de otras jornadas. El puesto sirve para ordenar lo que encontró, pero no significa que ese número tenga más chances comprobadas de salir.',to:'prediccion' as Destination,button:'Ver números'},
+ {key:'tres',title:'¿Qué significa leerlo al revés?',body:'Al estudiar tres cifras, 123 y 321 se consideran una misma familia. Para jugar o cobrar importa el número exacto que se elige.',to:'papa' as Destination,button:'Ir a Lalo'},
+ {key:'cuatro',title:'¿Y las cuatro cifras?',body:'La cuarta cifra se agrega a la izquierda de un camino de tres ya formado, no al final. Tiene que existir el recorrido completo en la misma columna.',to:'predictiva' as Destination,button:'Mirar la hoja'},
+ {key:'apuesta',title:'¿Lo que aparece es una apuesta?',body:'No. Los números que muestra la aplicación son para mirar y estudiar. Las jugadas de Lalo se anotan aparte, antes del sorteo.',to:'papa' as Destination,button:'Ver elecciones de Lalo'}
 ] as const;
 
-function LegendColor({kind}:{kind:'vt2'|'vt3'|'vt4'}){
- const {colors:c,kinds}=useLaloTheme();
- return <View style={s.legendItem}>
-  <View style={[s.legendSwatch,{backgroundColor:kinds[kind].fill,
-   borderColor:kinds[kind].line}]}/>
-  <Text style={{color:c.subtext,fontSize:11,fontWeight:'700'}}>{kind.toUpperCase()} · {kinds[kind].label}</Text>
- </View>;
-}
 export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
  figureFocus,onFigureLalo,onFigureAux}:Props){
- const {colors:c,kinds}=useLaloTheme();
+ const {colors:c}=useLaloTheme();
+ const [section,setSection]=useState<Section|null>(null);
+ useEffect(()=>{setSection(null)},[date]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
  const report=useMemo(()=>buildInfoReport(date,turn,data,sheet,historical,view),
   [date,turn,data,sheet,historical,view]);
- const loaded=report.observed.length;
- const availability=report.availableSources.filter(x=>x.active);
- const displayDate=date?readableWeekday(date):'Sin fecha';
+ const selected=OPTIONS.find(x=>x.id===section);
+ const shown=report.observed.length;
+ const available=report.availableSources.filter(x=>x.active).length;
+ const top=view?.ranks.vt3.slice(0,3).map(x=>x.family)||[];
  return <View style={s.root}>
-  <View style={[s.hero,{backgroundColor:c.surface,borderColor:'#B9903F',
-   overflow:'hidden',paddingRight:80}]}>
-   <BosteroWatermark opacity={0.27}/>
+  <View style={[s.welcome,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
    <Text style={[s.kicker,{color:c.accent}]}>EL CUADERNO DE LALO</Text>
-   <Text style={[s.title,{color:c.text}]}>Resultados y figuras</Text>
-   <Text style={[s.desc,{color:c.subtext}]}>
-    Mirá cómo salió el mismo turno en otras jornadas y qué muestra la hoja para el próximo sorteo.
-   </Text>
-  </View>
-  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>01 · Información del sorteo</Text>
-   <Text style={[s.desc,{color:c.subtext}]}>Fecha: {displayDate} · Turno en foco: {turn}</Text>
-   <View style={s.statRow}>
-    <View style={[s.stat,{backgroundColor:c.surfaceAlt}]}>
-     <Text style={[s.statNumber,{color:c.text}]}>{loaded} / {report.expected.length||'—'}</Text>
-     <Text style={[s.statLabel,{color:c.subtext}]}>Resultados publicados / habituales</Text>
+   <Text style={[s.title,{color:c.text}]}>Todo más a mano</Text>
+   <Text style={[s.subtitle,{color:c.subtext}]}>{date?readableWeekday(date):'Elegí una fecha'} · {turn}</Text>
+   <View style={s.quickRow}>
+    <View style={[s.quick,{backgroundColor:c.surfaceAlt}]}>
+     <Text style={[s.quickNumber,{color:c.accent}]}>{shown}</Text>
+     <Text style={[s.quickLabel,{color:c.subtext}]}>cabezas que salieron</Text>
     </View>
-    <View style={[s.stat,{backgroundColor:c.surfaceAlt}]}>
-     <Text style={[s.statNumber,{color:c.text}]}>{availability.length}</Text>
-     <Text style={[s.statLabel,{color:c.subtext}]}>Columnas disponibles antes del sorteo</Text>
+    <View style={[s.quick,{backgroundColor:c.surfaceAlt}]}>
+     <Text style={[s.quickNumber,{color:c.accent}]}>{available}</Text>
+     <Text style={[s.quickLabel,{color:c.subtext}]}>columnas para mirar</Text>
     </View>
    </View>
-   <Text style={[s.microHeader,{color:c.text}]}>Resultados anteriores utilizados</Text>
-   <View style={s.pills}>
-    {report.availableSources.map(col=><View key={col.id} style={[s.pill,{
-     borderColor:col.active?c.accent:c.border,
-     backgroundColor:col.active?c.accentFill:c.surfaceAlt}]}>
-     <Text style={{fontWeight:'700',fontSize:10,color:col.active?c.accent:c.subtext}}>
-      {col.active?'● ':'○ '}{col.label}
-     </Text>
-    </View>)}
+  </View>
+  {!section?<View style={s.menu}>
+   <Text style={[s.heading,{color:c.text}]}>¿Qué querés mirar?</Text>
+   <Text style={[s.small,{color:c.subtext}]}>Tocá un botón. Se abre solo esa parte, sin llenar toda la pantalla.</Text>
+   <View style={s.tiles}>
+    {OPTIONS.map(item=><Pressable key={item.id} accessibilityRole="button"
+     accessibilityLabel={'Abrir '+item.title}
+     onPress={()=>item.id==='recorridos'?onNavigate('predictiva'):setSection(item.id)}
+     style={[s.tile,{backgroundColor:c.surface,borderColor:item.accent}]}>
+     <Text style={[s.tileIcon,{color:item.accent}]}>{item.icon}</Text>
+     <Text style={[s.tileTitle,{color:c.text}]}>{item.title}</Text>
+     <Text style={[s.tileSubtitle,{color:c.subtext}]}>{item.subtitle}</Text>
+     <Text style={[s.tileLink,{color:item.accent}]}>Tocá para ver  ›</Text>
+    </Pressable>)}
    </View>
-   {!sheet?<Text style={[s.desc,{color:c.subtext}]}>
-    Actualizá la hoja para mostrar fuentes y resultados.
-   </Text>:null}
-   <Text style={[s.note,{color:c.subtext}]}>
-    {report.expected.length===0?
-     'Para este día no hay sorteos habituales previstos en el calendario básico.':
-     report.withoutHead.length?
-     'Sin cabeza registrada todavía: '+report.withoutHead.join(', ')+'. Puede ser un resultado pendiente o un sorteo no realizado.':
-     'Se registraron las cabezas de todas las jurisdicciones habituales de este turno.'}
-   </Text>
-   {!!report.observed.length&&<View style={s.pills}>
-    {report.observed.map(x=><Text key={x.jurisdiction}
-     style={[s.observed,{color:c.text,backgroundColor:c.surfaceAlt}]}>
-     {x.jurisdiction}: {x.head}
-    </Text>)}
-   </View>}
-   <Text style={[s.note,{color:c.muted}]}>
-    Cantidad habitual no equivale a disponibilidad confirmada; Montevideo tiene turnos propios.
-   </Text>
-  </View>
-  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>Elegí el turno para comparar</Text>
-   <TurnStrip value={turn} onChange={onTurnChange}/>
-  </View>
-  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>02 · Cómo viene el {turn}</Text>
-   <Text style={[s.paragraph,{color:c.text}]}>{gallery.summary}</Text>
-   <Text style={[s.note,{color:c.subtext}]}>
-    Se comparan sorteos reales del mismo turno. Lo que ocurrió otros días
-    no asegura que vuelva a repetirse.
-   </Text>
-  </View>
-  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>03 · El turno, jornada por jornada</Text>
-   <InfoTurnGallery gallery={gallery} selectedFrameId={selectedFrameId}
-    onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}
-    onOpenFrame={onOpenFrame}/>
-  </View>
-  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>04 · Minihojas Santiago–Neuquén · semana previa</Text>
-   <InfoAuxGallery days={auxDays} current={currentAux} turn={turn}
-    mode={auxMode} onMode={onAuxMode} onOpenDay={onOpenAuxDay}
-    prediction={auxPrediction} history={auxHistory}/>
-  </View>
-  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>05 · Seguimiento de figuras</Text>
-   <Text style={[s.desc,{color:c.subtext}]}>
-    Analizá figuras físicamente presentes, marcas ganadoras históricas y
-    reconocimiento en ambos motores. No crea nuevas predicciones.
-   </Text>
-   <FigureTrackingPanel date={date} turn={turn} sheet={sheet}
-    history={visualDays} view={view} ayer={trackingAyer} hoy={trackingHoy}
-    focusRequest={figureFocus} onOpenLalo={onFigureLalo}
-    onOpenAux={onFigureAux}/>
-  </View>
-  <View style={[s.card,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>06 · Guía del sistema</Text>
-   <Text style={[s.desc,{color:c.subtext}]}>Abrí únicamente lo que quieras consultar.</Text>
-   <View style={s.legend}>
-    {KINDS.map(k=><LegendColor key={k} kind={k}/>)}
-   </View>
-   {guides.map(g=><View key={g.key} style={[s.guide,{borderColor:c.divider}]}>
-    <Pressable accessibilityRole="button" accessibilityState={{expanded:expandedGuide===g.key}}
-     onPress={()=>onExpandedGuide(expandedGuide===g.key?null:g.key)}
-     style={s.guideHead}>
-     <View style={{flex:1}}>
-      <Text style={[s.guideTitle,{color:c.text}]}>{g.title}</Text>
-      <Text style={[s.note,{color:c.subtext}]}>{g.sub}</Text>
-     </View>
-     <Text style={{color:c.accent,fontSize:18,fontWeight:'900'}}>{expandedGuide===g.key?'−':'+'}</Text>
+   <View style={[s.preview,{backgroundColor:c.surface,borderColor:c.border}]}>
+    <Text style={[s.previewTitle,{color:c.accent}]}>Un vistazo rápido</Text>
+    <Text style={[s.small,{color:c.subtext}]}>Tres cifras que destaca Lalo para {turn}</Text>
+    <View style={s.numberChips}>
+     {top.length?top.map((f,i)=><View key={f} style={[s.numberChip,{
+      backgroundColor:i===0?'#E9B94E':c.surfaceAlt,borderColor:c.border}]}>
+      <Text style={{fontWeight:'900',fontSize:13,color:i===0?'#05152F':c.text}}>{f}</Text>
+     </View>):<Text style={[s.small,{color:c.subtext}]}>Cargá la hoja para ver sus números.</Text>}
+    </View>
+    <Pressable onPress={()=>onNavigate('prediccion')} accessibilityRole="button"
+     style={[s.slimButton,{borderColor:c.accent}]}>
+     <Text style={{color:c.accent,fontWeight:'900'}}>Ver los diez números  ›</Text>
     </Pressable>
-    {expandedGuide===g.key&&<View style={s.guideBody}>
-     <Text style={[s.paragraph,{color:c.text}]}>{g.content}</Text>
-     <Pressable accessibilityRole="button" style={[s.goto,{borderColor:c.border}]}
-      onPress={()=>onNavigate(g.link)}>
-      <Text style={{color:c.accent,fontSize:12,fontWeight:'800'}}>{g.label} →</Text>
+   </View>
+  </View>:<View style={{gap:10}}>
+   <Pressable onPress={()=>setSection(null)} accessibilityRole="button"
+    style={[s.back,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+    <Text style={{color:c.accent,fontWeight:'900',fontSize:13}}>‹  Volver a los botones</Text>
+   </Pressable>
+   <View style={[s.detailCard,{backgroundColor:c.surface,borderColor:selected?.accent||c.border}]}>
+    <View style={s.detailTitle}>
+     <Text style={{fontSize:29,color:selected?.accent}}>{selected?.icon}</Text>
+     <View style={{flex:1}}>
+      <Text style={[s.heading,{color:c.text}]}>{selected?.title}</Text>
+      <Text style={[s.small,{color:c.subtext}]}>{selected?.subtitle}</Text>
+     </View>
+    </View>
+    {section==='resumen'?<>
+     <Text style={[s.text,{color:c.text}]}>
+      {shown?shown+' resultados cargados de este turno.':'Todavía no hay cabezas cargadas para este turno.'}
+     </Text>
+     <View style={s.numberChips}>
+      {report.observed.map(x=><View key={x.jurisdiction}
+       style={[s.resultChip,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+       <Text style={{color:c.subtext,fontSize:10}}>{x.jurisdiction}</Text>
+       <Text style={{color:c.text,fontSize:17,fontWeight:'900'}}>{x.head}</Text>
+      </View>)}
+     </View>
+     <Text style={[s.small,{color:c.subtext}]}>Columnas listas para este turno</Text>
+     <View style={s.numberChips}>{report.availableSources.map(x=>
+      <Text key={x.id} style={[s.tag,{color:x.active?c.accent:c.muted,
+       backgroundColor:c.surfaceAlt}]}>{x.active?'✓ ':'· '}{x.label}</Text>)}</View>
+     <Pressable accessibilityRole="button" onPress={()=>onNavigate('cabezas')}
+      style={[s.slimButton,{borderColor:c.accent}]}>
+      <Text style={{color:c.accent,fontWeight:'800'}}>Ver todas las cabezas  ›</Text>
      </Pressable>
-    </View>}
-   </View>)}
-  </View>
-  <Text style={[s.foot,{color:c.muted}]}>
-   Modelo experimental. Las cabezas y trayectorias pasadas sirven para estudiar recorridos;
-   ninguna señal constituye una garantía de acierto o beneficio económico.
+    </>:null}
+    {section==='viene'?<>
+     <Text style={[s.text,{color:c.text}]}>{gallery.summary}</Text>
+     <Text style={[s.small,{color:c.subtext}]}>Lo que pasó otros días no asegura que se repita.</Text>
+     <Pressable accessibilityRole="button" onPress={()=>setSection('historial')}
+      style={[s.slimButton,{borderColor:c.accent}]}>
+      <Text style={{color:c.accent,fontWeight:'800'}}>Mirar las minihojas  ›</Text>
+     </Pressable>
+    </>:null}
+    {section==='historial'?<>
+     <Text style={[s.small,{color:c.subtext}]}>Elegí un día o una figura para verla más grande.</Text>
+     <InfoTurnGallery gallery={gallery} selectedFrameId={selectedFrameId}
+      onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}
+      onOpenFrame={onOpenFrame}/>
+    </>:null}
+    {section==='auxiliar'?<>
+     <Text style={[s.small,{color:c.subtext}]}>Los recorridos de Santiago y Neuquén, separados de la hoja principal.</Text>
+     <InfoAuxGallery days={auxDays} current={currentAux} turn={turn}
+      mode={auxMode} onMode={onAuxMode} onOpenDay={onOpenAuxDay}
+      prediction={auxPrediction} history={auxHistory}/>
+    </>:null}
+    {section==='seguir'?<>
+     <Text style={[s.small,{color:c.subtext}]}>Buscá una cifra y mirá cómo aparece en las hojas anteriores.</Text>
+     <FigureTrackingPanel date={date} turn={turn} sheet={sheet}
+      history={visualDays} view={view} ayer={trackingAyer} hoy={trackingHoy}
+      focusRequest={figureFocus} onOpenLalo={onFigureLalo}
+      onOpenAux={onFigureAux}/>
+    </>:null}
+    {section==='comparar'?<>
+     <Text style={[s.small,{color:c.subtext}]}>Elegí el turno que querés mirar.</Text>
+     <TurnStrip value={turn} onChange={onTurnChange}/>
+     <Text style={[s.text,{color:c.text}]}>{gallery.summary}</Text>
+     <Pressable accessibilityRole="button" onPress={()=>setSection('historial')}
+      style={[s.slimButton,{borderColor:c.accent}]}>
+      <Text style={{color:c.accent,fontWeight:'800'}}>Ver los días anteriores  ›</Text>
+     </Pressable>
+    </>:null}
+    {section==='ayuda'?<>
+     <Text style={[s.small,{color:c.subtext}]}>Preguntas cortitas para entender la hoja y los números.</Text>
+     {tips.map(tip=><View key={tip.key} style={[s.tip,{borderColor:c.divider}]}>
+      <Pressable onPress={()=>onExpandedGuide(expandedGuide===tip.key?null:tip.key)}
+       accessibilityRole="button" accessibilityState={{expanded:expandedGuide===tip.key}}
+       style={s.tipTop}>
+       <Text style={{fontWeight:'800',color:c.text,flex:1,fontSize:13}}>{tip.title}</Text>
+       <Text style={{color:c.accent,fontWeight:'900',fontSize:18}}>
+        {expandedGuide===tip.key?'−':'+'}
+       </Text>
+      </Pressable>
+      {expandedGuide===tip.key?<View style={{gap:10,paddingBottom:12}}>
+       <Text style={[s.text,{color:c.subtext}]}>{tip.body}</Text>
+       <Pressable onPress={()=>onNavigate(tip.to)} accessibilityRole="button"
+        style={[s.slimButton,{borderColor:c.accent}]}>
+        <Text style={{color:c.accent,fontWeight:'800'}}>{tip.button}  ›</Text>
+       </Pressable>
+      </View>:null}
+     </View>)}
+    </>:null}
+   </View>
+  </View>}
+  <Text style={[s.footer,{color:c.muted}]}>
+   Estas vistas ayudan a estudiar las hojas. Ninguna garantiza resultados.
   </Text>
  </View>;
 }
 const s=StyleSheet.create({
- root:{marginTop:10,gap:11,paddingBottom:18},
- hero:{borderWidth:1.3,borderRadius:14,padding:15,gap:4,minHeight:113},
- kicker:{fontSize:10,fontWeight:'900',letterSpacing:1.5},
- title:{fontSize:19,fontWeight:'900'},heading:{fontSize:15,fontWeight:'900',marginBottom:5},
- desc:{fontSize:11,lineHeight:17},paragraph:{fontSize:12,lineHeight:19,marginTop:6},
- card:{borderWidth:1,borderRadius:13,padding:13,gap:9},
- statRow:{flexDirection:'row',gap:8},stat:{flex:1,borderRadius:9,padding:10,gap:4},
- statNumber:{fontSize:20,fontWeight:'900'},statLabel:{fontSize:10,lineHeight:15},
- microHeader:{fontSize:11,fontWeight:'900'},
- pills:{flexDirection:'row',gap:5,flexWrap:'wrap'},
- pill:{borderWidth:1,paddingHorizontal:9,paddingVertical:6,borderRadius:18},
- note:{fontSize:10,lineHeight:16},observed:{fontSize:10,padding:6,borderRadius:7},
- notice:{borderRadius:8,padding:9},
- goto:{borderWidth:1,borderRadius:8,padding:10,alignSelf:'flex-start'},
- motionStrip:{flexDirection:'row',flexWrap:'wrap',gap:7},
- motionThumb:{borderWidth:1,borderRadius:9,padding:7,alignItems:'center',
-  minWidth:93,maxWidth:125,flexGrow:1,gap:5},
- miniLabel:{fontSize:10,textAlign:'center',fontWeight:'800'},
- miniType:{fontSize:9,textAlign:'center'},
- motionDetail:{borderRadius:9,padding:12,flexDirection:'row',alignItems:'center',gap:12},
- grid:{borderWidth:1,borderRadius:4,padding:2,gap:2},
- gridRow:{flexDirection:'row',gap:2},
- gridCell:{alignItems:'center',justifyContent:'center',borderRadius:2},
- motionActions:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:4},
- motionButton:{borderWidth:1,paddingVertical:8,paddingHorizontal:11,borderRadius:8},
- legend:{flexDirection:'row',flexWrap:'wrap',gap:8},
- legendItem:{flexDirection:'row',alignItems:'center',gap:4},
- legendSwatch:{width:12,height:12,borderWidth:2,borderRadius:3},
- guide:{borderTopWidth:1,paddingVertical:4},
- guideHead:{paddingVertical:8,flexDirection:'row',alignItems:'center',gap:8},
- guideTitle:{fontSize:12,fontWeight:'900'},
- guideBody:{paddingBottom:10,gap:7},
- foot:{textAlign:'center',fontSize:10,lineHeight:16,padding:8}
+ root:{marginTop:10,gap:12,paddingBottom:28},
+ welcome:{borderWidth:1.3,borderRadius:18,padding:16,gap:8},
+ kicker:{fontSize:10,fontWeight:'900',letterSpacing:1.4},
+ title:{fontSize:24,fontWeight:'900'},
+ subtitle:{fontSize:12},
+ quickRow:{flexDirection:'row',gap:9,marginTop:4},
+ quick:{flex:1,borderRadius:12,padding:11,gap:4},
+ quickNumber:{fontSize:23,fontWeight:'900'},
+ quickLabel:{fontSize:11,lineHeight:16},
+ menu:{gap:11},
+ heading:{fontSize:18,fontWeight:'900'},
+ small:{fontSize:11,lineHeight:17},
+ text:{fontSize:13,lineHeight:20},
+ tiles:{flexDirection:'row',flexWrap:'wrap',justifyContent:'space-between',gap:10},
+ tile:{width:'48%',minHeight:142,borderWidth:1.2,borderRadius:15,
+  padding:12,justifyContent:'space-between',gap:6},
+ tileIcon:{fontSize:31,fontWeight:'900'},
+ tileTitle:{fontSize:13,fontWeight:'900'},
+ tileSubtitle:{fontSize:11,lineHeight:16},
+ tileLink:{fontSize:10,fontWeight:'900',marginTop:2},
+ preview:{borderWidth:1,borderRadius:15,padding:14,gap:10,marginTop:2},
+ previewTitle:{fontSize:16,fontWeight:'900'},
+ numberChips:{flexDirection:'row',flexWrap:'wrap',gap:7},
+ numberChip:{borderRadius:11,borderWidth:1,paddingHorizontal:10,paddingVertical:9},
+ slimButton:{borderWidth:1,borderRadius:11,padding:11,alignItems:'center'},
+ back:{borderWidth:1,borderRadius:11,padding:12},
+ detailCard:{borderWidth:1.2,borderRadius:16,padding:13,gap:11},
+ detailTitle:{flexDirection:'row',alignItems:'center',gap:10,marginBottom:4},
+ resultChip:{borderWidth:1,borderRadius:10,padding:10,gap:3,minWidth:100},
+ tag:{fontSize:11,paddingHorizontal:10,paddingVertical:7,borderRadius:20},
+ tip:{borderTopWidth:1},
+ tipTop:{flexDirection:'row',gap:10,paddingVertical:13},
+ footer:{textAlign:'center',fontSize:10,lineHeight:16,marginTop:3}
 });
