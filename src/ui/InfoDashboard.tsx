@@ -16,9 +16,10 @@ import TurnStrip from './TurnStrip';
 import FigureTrackingPanel from './FigureTrackingPanel';
 import type {TrackingAuxInput} from '../figureTracking';
 import {useLaloTheme} from './LaloTheme';
+import type {DayOverview} from '../homeDaySummary';
 
 type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
-type Props={date:string;turn:Turno;data:CabezasDia|null;
+type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  sheet:DailySheet|null;historical:LaloHistorical[];visualDays:InfoVisualDay[];
  view:LaloView|null;onNavigate:(screen:Destination)=>void;
  auxDays:AuxGalleryDay[];currentAux:AuxGalleryDay|null;
@@ -53,7 +54,7 @@ const tips=[
  {key:'apuesta',title:'¿Lo que aparece es una apuesta?',body:'No. Los números que muestra la aplicación son para mirar y estudiar. Las jugadas de Lalo se anotan aparte, antes del sorteo.',to:'papa' as Destination,button:'Ver elecciones de Lalo'}
 ] as const;
 
-export default function InfoDashboard({date,turn,data,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
+export default function InfoDashboard({date,turn,data,overview,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
@@ -69,7 +70,7 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
  const selected=OPTIONS.find(x=>x.id===section);
  const shown=report.observed.length;
  const available=report.availableSources.filter(x=>x.active).length;
- const top=view?.ranks.vt3.slice(0,3).map(x=>x.family)||[];
+ const top=view?.ranks.vt2.slice(0,3).map(x=>x.family)||[];
  return <View style={s.root}>
   <View style={[s.welcome,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
    <Text style={[s.kicker,{color:c.accent}]}>EL CUADERNO DE LALO</Text>
@@ -102,7 +103,7 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
    </View>
    <View style={[s.preview,{backgroundColor:c.surface,borderColor:c.border}]}>
     <Text style={[s.previewTitle,{color:c.accent}]}>Un vistazo rápido</Text>
-    <Text style={[s.small,{color:c.subtext}]}>Tres cifras que destaca Lalo para {turn}</Text>
+    <Text style={[s.small,{color:c.subtext}]}>Dos cifras que destaca Lalo para {turn}</Text>
     <View style={s.numberChips}>
      {top.length?top.map((f,i)=><View key={f} style={[s.numberChip,{
       backgroundColor:i===0?'#E9B94E':c.surfaceAlt,borderColor:c.border}]}>
@@ -128,8 +129,55 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
      </View>
     </View>
     {section==='resumen'?<>
-     <Text style={[s.text,{color:c.text}]}>
-      {shown?shown+' resultados cargados de este turno.':'Todavía no hay cabezas cargadas para este turno.'}
+     <View style={[s.preview,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+      <Text style={[s.previewTitle,{color:c.accent}]}>{overview.statusText}</Text>
+      <Text style={[s.small,{color:c.subtext}]}>
+       {overview.heads} cabezas publicadas en la jornada ·
+       {overview.turnsWithHeads} de 5 turnos con resultados
+      </Text>
+      {overview.exactHistory?<View style={s.quickRow}>
+       <View style={[s.quick,{backgroundColor:c.card}]}>
+        <Text style={[s.quickNumber,{color:c.accent}]}>{overview.matchedHeads}</Text>
+        <Text style={[s.quickLabel,{color:c.subtext}]}>Cabezas con coincidencia</Text>
+       </View>
+       <View style={[s.quick,{backgroundColor:c.card}]}>
+        <Text style={[s.quickNumber,{color:c.accent}]}>{overview.byKind.vt2}</Text>
+        <Text style={[s.quickLabel,{color:c.subtext}]}>Coincidencias de dos cifras</Text>
+       </View>
+      </View>:null}
+      {overview.exactHistory&&overview.heads?
+       <Text style={[s.small,{color:c.subtext}]}>
+        También: tres cifras {overview.byKind.vt3} · cuatro cifras {overview.byKind.vt4}.
+       </Text>:null}
+     </View>
+     {!overview.exactHistory?<Text style={[s.text,{color:c.subtext}]}>
+      Actualizá las hojas para poder comparar los números publicados con las listas de Lalo.
+     </Text>:overview.heads===0?<Text style={[s.text,{color:c.subtext}]}>
+      Cuando salgan cabezas, acá vas a encontrar cuáles coincidieron y en qué turno.
+     </Text>:overview.matches.length===0?<Text style={[s.text,{color:c.subtext}]}>
+      Ninguna cabeza coincidió con los diez primeros números de Lalo en los turnos publicados.
+     </Text>:<>
+      <Text style={[s.heading,{color:c.text}]}>Estas cabezas coincidieron</Text>
+      {overview.matches.map((match,i)=><View key={match.turn+'|'+match.jur+'|'+match.head+'|'+i}
+       style={[s.resultChip,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+       <Text style={{color:c.subtext,fontSize:11}}>
+        {match.turn} · {match.jur}
+       </Text>
+       <Text style={{color:c.text,fontSize:17,fontWeight:'900'}}>{match.head}</Text>
+       <Text style={{color:c.accent,fontSize:11,fontWeight:'800'}}>
+        {match.kinds.map(k=>
+         (k.kind==='vt2'?'2 cifras':k.kind==='vt3'?'3 cifras':'4 cifras')+' · puesto '+k.rank
+        ).join('   ·   ')}
+       </Text>
+      </View>)}
+     </>}
+     <Text style={[s.small,{color:c.subtext}]}>
+      Coincidencias reconstruidas con la hoja anterior a cada turno: no equivalen a jugadas guardadas ni premios cobrados.
+     </Text>
+     <Text style={[s.heading,{color:c.text}]}>Cabezas de {turn}</Text>
+     <Text style={[s.small,{color:c.subtext}]}>
+      {overview.countByTurn[turn].heads} publicadas ·
+      {overview.exactHistory?overview.countByTurn[turn].matched+' coincidencias':' falta cotejar'}
      </Text>
      <View style={s.numberChips}>
       {report.observed.map(x=><View key={x.jurisdiction}
@@ -138,13 +186,9 @@ export default function InfoDashboard({date,turn,data,sheet,historical,visualDay
        <Text style={{color:c.text,fontSize:17,fontWeight:'900'}}>{x.head}</Text>
       </View>)}
      </View>
-     <Text style={[s.small,{color:c.subtext}]}>Columnas listas para este turno</Text>
-     <View style={s.numberChips}>{report.availableSources.map(x=>
-      <Text key={x.id} style={[s.tag,{color:x.active?c.accent:c.muted,
-       backgroundColor:c.surfaceAlt}]}>{x.active?'✓ ':'· '}{x.label}</Text>)}</View>
      <Pressable accessibilityRole="button" onPress={()=>onNavigate('cabezas')}
       style={[s.slimButton,{borderColor:c.accent}]}>
-      <Text style={{color:c.accent,fontWeight:'800'}}>Ver todas las cabezas  ›</Text>
+      <Text style={{color:c.accent,fontWeight:'800'}}>Ir a Cabezas para corroborar  ›</Text>
      </Pressable>
     </>:null}
     {section==='viene'?<>
