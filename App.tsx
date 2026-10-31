@@ -8,7 +8,7 @@ import {descargarCabezas} from './src/cabezas';
 import type {CabezasDia,Turno} from './src/domain';
 import {JURS,TURNOS} from './src/domain';
 import {buildSheet} from './src/sheet';
-import type {DailySheet} from './src/sheet';
+import type {DailySheet,SourceId} from './src/sheet';
 import {displayToIso,isoToDisplay,shiftDay,shiftDrawDay,previousDrawDay} from './src/dates';
 import {loadPreviousDraws,hasDrawResults} from './src/drawHistory';
 import {buildInfoWeekPorJur} from './src/infoWeek';
@@ -23,13 +23,15 @@ import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
 import {buildMotorLaloAuxiliar,extractAuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {AuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {TrackingAuxInput} from './src/figureTracking';
-import type {LaloHistorical} from './src/motorLalo';
+import type {LaloHistorical,LaloKind} from './src/motorLalo';
 import type {InfoVisualDay,TurnHistoryFrame} from './src/infoTurnHistory';
 import type {AuxGalleryDay} from './src/infoAuxGallery';
 import PanoramaSheet from './src/PanoramaSheet';
 import AuxiliaryPredictiveSheet from './src/ui/AuxiliaryPredictiveSheet';
 import PredictionSummary from './src/ui/PredictionSummary';
 import CombinedVt3Panel from './src/ui/CombinedVt3Panel';
+import InlineFamilyPaths from './src/ui/InlineFamilyPaths';
+import type {CombinedPick} from './src/laloCombinedRuntime';
 import Vt3Explainer from './src/ui/Vt3Explainer';
 import Vt3Parallel from './src/ui/Vt3Parallel';
 import PapaPronostico from './src/ui/PapaPronostico';
@@ -114,6 +116,7 @@ function LaloApp(){
  const [autoVersion,setAutoVersion]=useState(0);
  const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
  const [focused,setFocused]=useState<string|null>(null);
+ const [focusedCombined,setFocusedCombined]=useState<{entry:CombinedPick;turn:Turno}|null>(null);
  const [hojaFocused,setHojaFocused]=useState<string|null>(null);
  const [hojaTurn,setHojaTurn]=useState<Turno>('Previa');
  const scrollRef=useRef<ScrollView>(null);
@@ -389,9 +392,16 @@ function LaloApp(){
  const fiveHeads=useMemo(()=>JURS.filter(j=>j!=='Montevideo')
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
- const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
+ const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setFocusedCombined(null);setInfoFrameId('inicio')};
  const changeAuxMode=(next:AuxMode)=>{setAuxMode(next);setFocused(null)};
- const showFamily=(id:string)=>{setPredictiveMode('lalo');navigateTo('predictiva');setFocused(id)};
+ const showFamily=(id:string)=>{setFocusedCombined(null);setPredictiveMode('lalo');navigateTo('predictiva');setFocused(id)};
+ const openSummaryMatch=(kind:LaloKind,family:string,turn:Turno)=>{
+  setSelectedTurn(turn);showFamily(kind+'|'+family);
+ };
+ const openCombinedMatch=(entry:CombinedPick)=>{
+  setFocusedCombined({entry,turn:target});setPredictiveMode('lalo');
+  navigateTo('predictiva');setFocused('vt3|'+entry.family);
+ };
  const trackFigure=(family:string)=>{
   setFigureFocus('vt3|'+family);navigateTo('info');
  };
@@ -400,7 +410,7 @@ function LaloApp(){
   navigateTo('predictiva');setFocused('vt3|'+family);
  };
  const showAuxFamily=(id:string)=>{
-  setPredictiveMode('auxiliar');navigateTo('predictiva');setFocused(id);
+  setFocusedCombined(null);setPredictiveMode('auxiliar');navigateTo('predictiva');setFocused(id);
  };
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);
@@ -499,7 +509,7 @@ function LaloApp(){
       if(forcedAux)setAuxMode(forcedAux);
       setPredictionMode(mode);navigateTo('prediccion')
      }}
-     onFocus={family=>showFamily('vt2|'+family)}/>:
+     onFocus={family=>showFamily('vt2|'+family)} onOpenMatch={openSummaryMatch}/>:
     screen==='hoja'?
     showingSheet&&showingHoja?<View onLayout={e=>alignHojaOnReturn(e.nativeEvent.layout.y)}>
      {historicalPreview?<View style={[s.previewBanner,{backgroundColor:c.accentFill,borderColor:c.accent}]}>
@@ -541,6 +551,16 @@ function LaloApp(){
       </Pressable>)}
     </View>
     {predictiveMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
+    {predictiveMode==='lalo'&&focusedCombined&&sheet&&focusedCombined.turn===target?
+     <View style={[s.previewBanner,{borderColor:c.accent,backgroundColor:c.surface}]}>
+      <Text style={{color:c.accent,fontWeight:'900'}}>
+       Así se forma {focusedCombined.entry.family} · Modelo Combinado
+      </Text>
+      <InlineFamilyPaths kind="vt3" family={focusedCombined.entry.family} turn={target}
+       plus={{sheet,routes:focusedCombined.entry.paths.map(path=>({
+        sourceId:path.source as SourceId,value:path.value,path:path.cells
+       }))}}/>
+     </View>:null}
     {predictiveMode==='lalo'?
      sheet&&predictiva?<PanoramaSheet mode="predictiva" sheet={sheet} date={date||''}
       data={predictiva} target={target} focusedOwner={focused} visualDays={visualDays}
@@ -574,12 +594,14 @@ function LaloApp(){
     {predictionMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
-       heads={sheet?.heads[target]||[]} sheet={sheet}/>:
+       heads={sheet?.heads[target]||[]} sheet={sheet}
+       onOpenCoincidence={(kind,family)=>showFamily(kind+'|'+family)}/>:
       predictionMode==='auxiliar'?
        auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
         date={dateText} turn={target} view={motor} auxiliar={auxiliar}
         auxHeads={activeAuxHeads?auxAtCut(activeAuxHeads,target,auxMode):null}
-        heads={sheet?.heads[target]||[]}/>:
+        heads={sheet?.heads[target]||[]}
+         onOpenCoincidence={(kind,family)=>showAuxFamily(kind+'|'+family)}/>:
        <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
         <Text style={{color:c.text,fontWeight:'800'}}>No está lista la hoja auxiliar.</Text>
         <Text style={{color:c.subtext,marginTop:5}}>
@@ -587,18 +609,17 @@ function LaloApp(){
         </Text>
        </View>:
        <CombinedVt3Panel date={date||''} turn={target} sheet={sheet}
-        historical={hist} heads={fiveHeads}/>}
+        historical={hist} heads={fiveHeads} onOpenCoincidence={openCombinedMatch}/>}
    </>:screen==='papa'?<>
     <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico de Lalo</Text>
     <TurnStrip value={target} onChange={changeTurn}/>
     <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
    </>:screen==='cabezas'?<>
-    <AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>
     <HeadsTable data={data} highlights={headHighlights.merged}
-     sourceLabels={headHighlights.labels} onOpenHead={openHeadInHoja}/>
+     onOpenHead={openHeadInHoja}/>
    </>:
     <InfoDashboard date={date||''} turn={target} data={data} overview={overview} sheet={sheet}
-     historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
+     historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo} onOpenMatch={openSummaryMatch}
      auxDays={infoAuxDays}
      currentAux={data&&date?{
       date,heads:data,yesterday:auxHeads,today:auxToday,sourceDate:auxSourceDate
