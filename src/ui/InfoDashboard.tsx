@@ -35,14 +35,12 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
  expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void};
 
-type Section='resumen'|'viene'|'historial'|'auxiliar'|'seguir'|'comparar'|'ayuda'|'recorridos';
+type Section='resumen'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
  {id:'resumen',icon:'☀',title:'Resumen del día',subtitle:'Lo importante de este turno',accent:'#F3C251'},
- {id:'viene',icon:'↗',title:'Cómo vienen',subtitle:'Mirá los últimos días',accent:'#57B4FF'},
  {id:'historial',icon:'▦',title:'Día por día',subtitle:'Las hojas anteriores',accent:'#A68AFF'},
  {id:'auxiliar',icon:'▤',title:'Hoja auxiliar',subtitle:'Santiago y Neuquén',accent:'#E18AF6'},
  {id:'seguir',icon:'◎',title:'Seguir un número',subtitle:'Cómo fue apareciendo',accent:'#51D7AF'},
- {id:'comparar',icon:'⇄',title:'Comparar turnos',subtitle:'Qué cambió en la hoja',accent:'#FFAC60'},
  {id:'recorridos',icon:'⌁',title:'Ver recorridos',subtitle:'Abrí la hoja con marcas',accent:'#74B9FF'},
  {id:'ayuda',icon:'?',title:'Ayuda sencilla',subtitle:'Cómo leer cada cosa',accent:'#8EC2F6'}
 ];
@@ -69,7 +67,6 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  const report=useMemo(()=>buildInfoReport(date,turn,data,sheet,historical,view),
   [date,turn,data,sheet,historical,view]);
  const selected=OPTIONS.find(x=>x.id===section);
- const top=view?.ranks.vt2.slice(0,3).map(x=>x.family)||[];
  return <View style={s.root}>
   <View style={[s.welcome,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
    <Text style={[s.kicker,{color:c.accent}]}>INFO · EL CUADERNO DE LALO</Text>
@@ -88,20 +85,6 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      <Text style={[s.tileSubtitle,{color:c.subtext}]}>{item.subtitle}</Text>
      <Text style={[s.tileLink,{color:item.accent}]}>Tocá para ver  ›</Text>
     </Pressable>)}
-   </View>
-   <View style={[s.preview,{backgroundColor:c.surface,borderColor:c.border}]}>
-    <Text style={[s.previewTitle,{color:c.accent}]}>Un vistazo rápido</Text>
-    <Text style={[s.small,{color:c.subtext}]}>Dos cifras que destaca Lalo para {turn}</Text>
-    <View style={s.numberChips}>
-     {top.length?top.map((f,i)=><View key={f} style={[s.numberChip,{
-      backgroundColor:i===0?'#E9B94E':c.surfaceAlt,borderColor:c.border}]}>
-      <Text style={{fontWeight:'900',fontSize:13,color:i===0?'#05152F':c.text}}>{f}</Text>
-     </View>):<Text style={[s.small,{color:c.subtext}]}>Cargá la hoja para ver sus números.</Text>}
-    </View>
-    <Pressable onPress={()=>onNavigate('prediccion')} accessibilityRole="button"
-     style={[s.slimButton,{borderColor:c.accent}]}>
-     <Text style={{color:c.accent,fontWeight:'900'}}>Ver los diez números  ›</Text>
-    </Pressable>
    </View>
   </View>:<View style={{gap:10}}>
    <Pressable onPress={()=>setSection(null)} accessibilityRole="button"
