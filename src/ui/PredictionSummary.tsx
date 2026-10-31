@@ -63,10 +63,10 @@ export default function PredictionSummary({date,turn,view,heads=[],
     {summaries.length?'Coincidieron estos números:':'Sin coincidencias en esta lista'}
    </Text>
    {summaries.length?<View style={s.matchChips}>
-    {summaries.map((h,i)=><Text key={h.head+'|'+h.rank+'|'+i}
+    {summaries.map((h,i)=><Text onPress={()=>setOpened(v=>v===rows.find(f=>f.rank===h.rank)?.key?null:rows.find(f=>f.rank===h.rank)?.key||null)} key={h.head+'|'+h.rank+'|'+i}
      style={[s.matchChip,{color:indicator.text,borderColor:indicator.line,
       backgroundColor:c.card}]}>
-     #{h.rank} · {h.head}
+     #{h.rank} · {h.family} · {h.head}
     </Text>)}
    </View>:null}
   </View>:null}
@@ -97,7 +97,7 @@ export default function PredictionSummary({date,turn,view,heads=[],
        <View style={{flexDirection:'row',flexWrap:'wrap',alignItems:'center',gap:4}}>
         {parts.map((part,j)=><React.Fragment key={part+'|'+j}>
          {j>0?<Text style={{color:c.subtext,fontWeight:'800'}}>/</Text>:null}
-         <Text style={{fontSize:17,fontWeight:'900',borderRadius:6,overflow:'hidden',
+         <Text style={{fontSize:16,fontWeight:'900',borderRadius:6,overflow:'hidden',
           paddingHorizontal:exact.has(part)?5:0,paddingVertical:exact.has(part)?2:0,
           borderWidth:exact.has(part)?1.6:0,
           borderColor:exact.has(part)?indicator.line:'transparent',
@@ -141,9 +141,9 @@ const s=StyleSheet.create({
  matchChips:{flexDirection:'row',flexWrap:'wrap',gap:5},
  matchChip:{fontSize:11,fontWeight:'900',borderWidth:1,borderRadius:8,
   paddingHorizontal:9,paddingVertical:6,overflow:'hidden'},
- list:{gap:6},
- row:{borderRadius:11,paddingHorizontal:10,paddingVertical:9,gap:9},
- rowHead:{flexDirection:'row',alignItems:'center',gap:10,minHeight:41},
+ list:{gap:3},
+ row:{borderRadius:11,paddingHorizontal:10,paddingVertical:6,gap:6},
+ rowHead:{flexDirection:'row',alignItems:'center',gap:10,minHeight:35},
  rank:{width:30,height:30,borderRadius:8,overflow:'hidden',textAlign:'center',
   textAlignVertical:'center',fontWeight:'900',fontSize:14}
 });
