@@ -16,9 +16,9 @@ import InlineFamilyPaths from './InlineFamilyPaths';
 const readableKind:Record<LaloKind,string>={vt2:'2 cifras',vt3:'3 cifras',vt4:'4 cifras'};
 type Props={date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
  auxiliar?:AuxiliarView|null;sheet?:DailySheet|null;auxHeads?:AuxiliaryHeads|null;
- heads?:string[]};
+ heads?:string[];onOpenCoincidence?:(kind:LaloKind,family:string)=>void};
 export default function PredictionSummary({date,turn,view,heads=[],
- model='lalo',auxiliar,sheet=null,auxHeads=null}:Props){
+ model='lalo',auxiliar,sheet=null,auxHeads=null,onOpenCoincidence}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const [kind,setKind]=useState<LaloKind>('vt2');
  const [opened,setOpened]=useState<string|null>(null);
@@ -63,11 +63,14 @@ export default function PredictionSummary({date,turn,view,heads=[],
     {summaries.length?'Coincidieron estos números:':'Sin coincidencias en esta lista'}
    </Text>
    {summaries.length?<View style={s.matchChips}>
-    {summaries.map((h,i)=><Text key={h.head+'|'+h.rank+'|'+i}
-     style={[s.matchChip,{color:indicator.text,borderColor:indicator.line,
-      backgroundColor:c.card}]}>
-     #{h.rank} · {h.head}
-    </Text>)}
+    {summaries.map((h,i)=><Pressable key={h.head+'|'+h.rank+'|'+i}
+     accessibilityRole="button" accessibilityLabel={'Ver formación '+h.family+' en Predictiva'}
+     onPress={()=>onOpenCoincidence?.(kind,h.family)}
+     style={[s.matchChip,{borderColor:indicator.line,backgroundColor:c.card}]}>
+     <Text style={{color:indicator.text,fontSize:11,fontWeight:'900'}}>
+      #{h.rank} · {h.family} · {h.head}  ›
+     </Text>
+    </Pressable>)}
    </View>:null}
   </View>:null}
   <View style={s.list}>
@@ -128,7 +131,7 @@ export default function PredictionSummary({date,turn,view,heads=[],
  </View>;
 }
 const s=StyleSheet.create({
- panel:{borderWidth:1.3,borderRadius:17,padding:13,gap:10,marginTop:10},
+ panel:{borderWidth:1.3,borderRadius:17,padding:12,gap:8,marginTop:8},
  header:{position:'relative',overflow:'hidden',borderRadius:11,paddingVertical:10,
   paddingHorizontal:11,backgroundColor:'rgba(2,20,44,.22)',minHeight:88},
  eyebrow:{fontSize:10,fontWeight:'900',letterSpacing:1.1},
@@ -139,11 +142,11 @@ const s=StyleSheet.create({
  kindTab:{flex:1,paddingVertical:10,borderRadius:10,borderWidth:1,alignItems:'center'},
  matchBar:{padding:10,borderWidth:1.3,borderRadius:11,gap:7},
  matchChips:{flexDirection:'row',flexWrap:'wrap',gap:5},
- matchChip:{fontSize:11,fontWeight:'900',borderWidth:1,borderRadius:8,
+ matchChip:{borderWidth:1,borderRadius:8,
   paddingHorizontal:9,paddingVertical:6,overflow:'hidden'},
- list:{gap:6},
- row:{borderRadius:11,paddingHorizontal:10,paddingVertical:9,gap:9},
- rowHead:{flexDirection:'row',alignItems:'center',gap:10,minHeight:41},
+ list:{gap:4},
+ row:{borderRadius:11,paddingHorizontal:9,paddingVertical:7,gap:6},
+ rowHead:{flexDirection:'row',alignItems:'center',gap:8,minHeight:36},
  rank:{width:30,height:30,borderRadius:8,overflow:'hidden',textAlign:'center',
   textAlignVertical:'center',fontWeight:'900',fontSize:14}
 });
