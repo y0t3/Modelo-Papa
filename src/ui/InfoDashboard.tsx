@@ -3,7 +3,6 @@ import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
 import type {DailySheet} from '../sheet';
 import type {LaloHistorical,LaloView} from '../motorLalo';
-import {buildInfoReport} from '../infoInterpretacion';
 import type {MovementMode} from '../infoCandidatos';
 import type {InfoVisualDay,TurnHistoryFrame} from '../infoTurnHistory';
 import {buildTurnHistory,readableWeekday} from '../infoTurnHistory';
@@ -64,8 +63,6 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  useEffect(()=>{if(figureFocus)setSection('seguir')},[figureFocus]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
- const report=useMemo(()=>buildInfoReport(date,turn,data,sheet,historical,view),
-  [date,turn,data,sheet,historical,view]);
  const selected=OPTIONS.find(x=>x.id===section);
  return <View style={s.root}>
   <View style={[s.welcome,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
@@ -101,14 +98,6 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
     </View>
     {section==='resumen'?<DayMatchGrid overview={overview} turn={turn}
      data={data} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
-    {section==='viene'?<>
-     <Text style={[s.text,{color:c.text}]}>{gallery.summary}</Text>
-     <Text style={[s.small,{color:c.subtext}]}>Lo que pasó otros días no asegura que se repita.</Text>
-     <Pressable accessibilityRole="button" onPress={()=>setSection('historial')}
-      style={[s.slimButton,{borderColor:c.accent}]}>
-      <Text style={{color:c.accent,fontWeight:'800'}}>Mirar las minihojas  ›</Text>
-     </Pressable>
-    </>:null}
     {section==='historial'?<>
      <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Elegí un día o una figura para verla más grande.</Text>
@@ -117,6 +106,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       onOpenFrame={onOpenFrame}/>
     </>:null}
     {section==='auxiliar'?<>
+     <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Los recorridos de Santiago y Neuquén, separados de la hoja principal.</Text>
      <InfoAuxGallery days={auxDays} current={currentAux} turn={turn}
       mode={auxMode} onMode={onAuxMode} onOpenDay={onOpenAuxDay}
@@ -128,15 +118,6 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       history={visualDays} view={view} ayer={trackingAyer} hoy={trackingHoy}
       focusRequest={figureFocus} onOpenLalo={onFigureLalo}
       onOpenAux={onFigureAux}/>
-    </>:null}
-    {section==='comparar'?<>
-     <Text style={[s.small,{color:c.subtext}]}>Elegí el turno que querés mirar.</Text>
-     <TurnStrip value={turn} onChange={onTurnChange}/>
-     <Text style={[s.text,{color:c.text}]}>{gallery.summary}</Text>
-     <Pressable accessibilityRole="button" onPress={()=>setSection('historial')}
-      style={[s.slimButton,{borderColor:c.accent}]}>
-      <Text style={{color:c.accent,fontWeight:'800'}}>Ver los días anteriores  ›</Text>
-     </Pressable>
     </>:null}
     {section==='ayuda'?<>
      <Text style={[s.small,{color:c.subtext}]}>Preguntas cortitas para entender la hoja y los números.</Text>
