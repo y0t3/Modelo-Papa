@@ -1,0 +1,30 @@
+name: Verificar Favoritos y recorridos unificados Lalo
+on:
+  push:
+    branches: ['feature/favoritos-inline-motores-31oct2026']
+    paths: ['App.tsx','src/**','scripts/test-favoritos-inline.ts','.github/workflows/validar-favoritos-inline.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Tipos y reglas de las nuevas pantallas
+        run: |
+          npx tsc --noEmit --project tsconfig.ui-check.json
+          npx --yes tsx scripts/test-favoritos-inline.ts
+          npx --yes tsx scripts/test-inicio-unico-fecha.ts
+          npx --yes tsx scripts/test-inicio-resumen.ts
+      - name: Verificar banner, fondo y motores originales
+        run: |
+          npx --yes tsx scripts/test-la-posta-identidad.ts
+          npx --yes tsx scripts/test-hero-composition.ts
+          npx --yes tsx scripts/test-wallpaper-lalo.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-lalo-vt3-estadistico.ts
+          npx --yes tsx scripts/test-lalo-bayes-geometria-vt3.ts
