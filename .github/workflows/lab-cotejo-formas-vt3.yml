@@ -1,0 +1,20 @@
+name: Cotejo Formas Primero y Combinado VT3 31oct
+on:
+  push:
+    branches:
+      - lab/cotejo-formas-combinado-vt3-31oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comparar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Comparar PRE reconstruido y resultados reales
+        run: npx --yes tsx scripts/lab-cotejo-formas-combinado-vt3-31oct.ts
