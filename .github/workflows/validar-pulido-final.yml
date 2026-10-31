@@ -1,0 +1,29 @@
+name: Verificar pulido Inicio Prediccion Cabezas Info
+on:
+  push:
+    branches: ['feature/pulido-resumen-predictiva-cabezas-31oct2026']
+    paths: ['App.tsx','src/**','.github/workflows/validar-pulido-final.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24}
+      - run: npm install
+      - name: Revisar tipos, fecha y motores
+        run: |
+          npx tsc --noEmit --project tsconfig.ui-check.json
+          npx --yes tsx scripts/test-inicio-resumen.ts
+          npx --yes tsx scripts/test-favoritos-inline.ts
+          npx --yes tsx scripts/test-inicio-unico-fecha.ts
+          npx --yes tsx scripts/test-motor-lalo.ts
+          npx --yes tsx scripts/test-lalo-bayes-geometria-vt3.ts
+      - name: Preservar identidad Boca
+        run: |
+          npx --yes tsx scripts/test-la-posta-identidad.ts
+          npx --yes tsx scripts/test-hero-composition.ts
+          npx --yes tsx scripts/test-wallpaper-lalo.ts
