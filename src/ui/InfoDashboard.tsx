@@ -61,31 +61,34 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  figureFocus,onFigureLalo,onFigureAux}:Props){
  const {colors:c}=useLaloTheme();
  const [section,setSection]=useState<Section|null>(null);
- useEffect(()=>{setSection(null)},[date]);
+ const [showAllMatches,setShowAllMatches]=useState(false);
+ useEffect(()=>{setSection(null);setShowAllMatches(false)},[date]);
  useEffect(()=>{if(figureFocus)setSection('seguir')},[figureFocus]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
  const report=useMemo(()=>buildInfoReport(date,turn,data,sheet,historical,view),
   [date,turn,data,sheet,historical,view]);
  const selected=OPTIONS.find(x=>x.id===section);
- const shown=report.observed.length;
- const available=report.availableSources.filter(x=>x.active).length;
  const top=view?.ranks.vt2.slice(0,3).map(x=>x.family)||[];
+ const matchingCandidates=useMemo(()=>{
+  const found=new Map<string,{family:string;kind:'vt2'|'vt3'|'vt4';rank:number;details:string[]}>();
+  for(const match of overview.matches)for(const hit of match.kinds){
+   const key=hit.kind+'|'+hit.family;
+   const old=found.get(key);
+   const detail=match.head+' · '+match.jur+' · '+match.turn;
+   if(old){if(!old.details.includes(detail))old.details.push(detail)}
+   else found.set(key,{family:hit.family,kind:hit.kind,rank:hit.rank,details:[detail]});
+  }
+  return [...found.values()].sort((a,b)=>{
+   const weight=(kind:string)=>kind==='vt2'?0:kind==='vt3'?1:2;
+   return weight(a.kind)-weight(b.kind)||a.rank-b.rank||
+    a.family.localeCompare(b.family);
+  });
+ },[overview.matches]);
  return <View style={s.root}>
   <View style={[s.welcome,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
-   <Text style={[s.kicker,{color:c.accent}]}>EL CUADERNO DE LALO</Text>
-   <Text style={[s.title,{color:c.text}]}>Todo más a mano</Text>
-   <Text style={[s.subtitle,{color:c.subtext}]}>{date?readableWeekday(date):'Elegí una fecha'} · {turn}</Text>
-   <View style={s.quickRow}>
-    <View style={[s.quick,{backgroundColor:c.surfaceAlt}]}>
-     <Text style={[s.quickNumber,{color:c.accent}]}>{shown}</Text>
-     <Text style={[s.quickLabel,{color:c.subtext}]}>cabezas que salieron</Text>
-    </View>
-    <View style={[s.quick,{backgroundColor:c.surfaceAlt}]}>
-     <Text style={[s.quickNumber,{color:c.accent}]}>{available}</Text>
-     <Text style={[s.quickLabel,{color:c.subtext}]}>columnas para mirar</Text>
-    </View>
-   </View>
+   <Text style={[s.kicker,{color:c.accent}]}>INFO · EL CUADERNO DE LALO</Text>
+   <Text style={[s.welcomeTitle,{color:c.text}]}>{date?readableWeekday(date):'Elegí una fecha'} · {turn}</Text>
   </View>
   {!section?<View style={s.menu}>
    <Text style={[s.heading,{color:c.text}]}>¿Qué querés mirar?</Text>
@@ -129,66 +132,56 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      </View>
     </View>
     {section==='resumen'?<>
-     <View style={[s.preview,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
-      <Text style={[s.previewTitle,{color:c.accent}]}>{overview.statusText}</Text>
-      <Text style={[s.small,{color:c.subtext}]}>
-       {overview.heads} cabezas publicadas en la jornada ·
-       {overview.turnsWithHeads} de 5 turnos con resultados
-      </Text>
-      {overview.exactHistory?<View style={s.quickRow}>
-       <View style={[s.quick,{backgroundColor:c.card}]}>
-        <Text style={[s.quickNumber,{color:c.accent}]}>{overview.matchedHeads}</Text>
-        <Text style={[s.quickLabel,{color:c.subtext}]}>Cabezas con coincidencia</Text>
-       </View>
-       <View style={[s.quick,{backgroundColor:c.card}]}>
-        <Text style={[s.quickNumber,{color:c.accent}]}>{overview.byKind.vt2}</Text>
-        <Text style={[s.quickLabel,{color:c.subtext}]}>Coincidencias de dos cifras</Text>
-       </View>
-      </View>:null}
-      {overview.exactHistory&&overview.heads?
-       <Text style={[s.small,{color:c.subtext}]}>
-        También: tres cifras {overview.byKind.vt3} · cuatro cifras {overview.byKind.vt4}.
-       </Text>:null}
-     </View>
-     {!overview.exactHistory?<Text style={[s.text,{color:c.subtext}]}>
-      Actualizá las hojas para poder comparar los números publicados con las listas de Lalo.
-     </Text>:overview.heads===0?<Text style={[s.text,{color:c.subtext}]}>
-      Cuando salgan cabezas, acá vas a encontrar cuáles coincidieron y en qué turno.
-     </Text>:overview.matches.length===0?<Text style={[s.text,{color:c.subtext}]}>
-      Ninguna cabeza coincidió con los diez primeros números de Lalo en los turnos publicados.
-     </Text>:<>
-      <Text style={[s.heading,{color:c.text}]}>Estas cabezas coincidieron</Text>
-      {overview.matches.map((match,i)=><View key={match.turn+'|'+match.jur+'|'+match.head+'|'+i}
-       style={[s.resultChip,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
-       <Text style={{color:c.subtext,fontSize:11}}>
-        {match.turn} · {match.jur}
-       </Text>
-       <Text style={{color:c.text,fontSize:17,fontWeight:'900'}}>{match.head}</Text>
-       <Text style={{color:c.accent,fontSize:11,fontWeight:'800'}}>
-        {match.kinds.map(k=>
-         (k.kind==='vt2'?'2 cifras':k.kind==='vt3'?'3 cifras':'4 cifras')+' · puesto '+k.rank
-        ).join('   ·   ')}
-       </Text>
+     <Text style={[s.small,{color:c.subtext}]}>{overview.statusText}</Text>
+     <Text style={[s.heading,{color:c.text}]}>Cabezas de {turn}</Text>
+     <View style={s.matchGrid}>
+      {report.observed.map(x=><View key={x.jurisdiction}
+       style={[s.compactTile,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+       <Text numberOfLines={1} style={{color:c.subtext,fontSize:10}}>{x.jurisdiction}</Text>
+       <Text style={{color:c.text,fontSize:15,fontWeight:'900'}}>{x.head}</Text>
       </View>)}
+     </View>
+     {!report.observed.length?<Text style={[s.text,{color:c.subtext}]}>
+      Todavía no salieron cabezas en este turno.
+     </Text>:null}
+     <Text style={[s.heading,{color:c.text}]}>Los números que coincidieron</Text>
+     {!overview.exactHistory?<Text style={[s.text,{color:c.subtext}]}>
+      Actualizá la hoja para poder cotejar las cifras con los números de Lalo.
+     </Text>:overview.heads===0?<Text style={[s.text,{color:c.subtext}]}>
+      Todavía no empezó la jornada. Acá aparecerán los candidatos que coincidan.
+     </Text>:!matchingCandidates.length?<Text style={[s.text,{color:c.subtext}]}>
+      No hubo coincidencias con las listas de diez números de Lalo.
+     </Text>:<>
+      <View style={s.matchGrid}>
+       {(showAllMatches?matchingCandidates:matchingCandidates.slice(0,6)).map(x=>
+        <View key={x.kind+'|'+x.family}
+         style={[s.compactTile,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+         <Text style={{color:c.accent,fontWeight:'900',fontSize:15}}>{x.family}</Text>
+         <Text style={{color:c.subtext,fontSize:10,fontWeight:'700'}}>
+          {x.kind==='vt2'?'2 cifras':x.kind==='vt3'?'3 cifras':'4 cifras'} · puesto {x.rank}
+         </Text>
+         {x.details.slice(0,2).map((detail,i)=>
+          <Text key={i} style={{color:c.text,fontSize:9,lineHeight:14}}>{detail}</Text>)}
+         {x.details.length>2?<Text style={{color:c.subtext,fontSize:9}}>
+          +{x.details.length-2} coincidencias más
+         </Text>:null}
+        </View>)}
+      </View>
+      {matchingCandidates.length>6?<Pressable accessibilityRole="button"
+       onPress={()=>setShowAllMatches(v=>!v)}
+       style={[s.slimButton,{borderColor:c.accent}]}>
+       <Text style={{color:c.accent,fontWeight:'900'}}>
+        {showAllMatches?'Mostrar seis':'Ver todos los números que coincidieron'}
+       </Text>
+      </Pressable>:null}
      </>}
      <Text style={[s.small,{color:c.subtext}]}>
-      Coincidencias reconstruidas con la hoja anterior a cada turno: no equivalen a jugadas guardadas ni premios cobrados.
+      Se comparan los números con la hoja anterior a cada turno.
+      No significa que se hayan jugado.
      </Text>
-     <Text style={[s.heading,{color:c.text}]}>Cabezas de {turn}</Text>
-     <Text style={[s.small,{color:c.subtext}]}>
-      {overview.countByTurn[turn].heads} publicadas ·
-      {overview.exactHistory?overview.countByTurn[turn].matched+' coincidencias':' falta cotejar'}
-     </Text>
-     <View style={s.numberChips}>
-      {report.observed.map(x=><View key={x.jurisdiction}
-       style={[s.resultChip,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
-       <Text style={{color:c.subtext,fontSize:10}}>{x.jurisdiction}</Text>
-       <Text style={{color:c.text,fontSize:17,fontWeight:'900'}}>{x.head}</Text>
-      </View>)}
-     </View>
      <Pressable accessibilityRole="button" onPress={()=>onNavigate('cabezas')}
       style={[s.slimButton,{borderColor:c.accent}]}>
-      <Text style={{color:c.accent,fontWeight:'800'}}>Ir a Cabezas para corroborar  ›</Text>
+      <Text style={{color:c.accent,fontWeight:'800'}}>Ver las cabezas completas  ›</Text>
      </Pressable>
     </>:null}
     {section==='viene'?<>
@@ -256,9 +249,9 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
 }
 const s=StyleSheet.create({
  root:{marginTop:10,gap:12,paddingBottom:28},
- welcome:{borderWidth:1.3,borderRadius:18,padding:16,gap:8},
+ welcome:{borderWidth:1.3,borderRadius:14,padding:10,gap:4},
  kicker:{fontSize:10,fontWeight:'900',letterSpacing:1.4},
- title:{fontSize:24,fontWeight:'900'},
+ title:{fontSize:24,fontWeight:'900'},welcomeTitle:{fontSize:14,fontWeight:'800'},
  subtitle:{fontSize:12},
  quickRow:{flexDirection:'row',gap:9,marginTop:4},
  quick:{flex:1,borderRadius:12,padding:11,gap:4},
@@ -277,6 +270,8 @@ const s=StyleSheet.create({
  tileLink:{fontSize:10,fontWeight:'900',marginTop:2},
  preview:{borderWidth:1,borderRadius:15,padding:14,gap:10,marginTop:2},
  previewTitle:{fontSize:16,fontWeight:'900'},
+ matchGrid:{flexDirection:'row',flexWrap:'wrap',gap:'2%',rowGap:7},
+ compactTile:{width:'32%',borderWidth:1,borderRadius:10,padding:7,gap:3,minHeight:58},
  numberChips:{flexDirection:'row',flexWrap:'wrap',gap:7},
  numberChip:{borderRadius:11,borderWidth:1,paddingHorizontal:10,paddingVertical:9},
  slimButton:{borderWidth:1,borderRadius:11,padding:11,alignItems:'center'},
