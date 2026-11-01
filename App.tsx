@@ -45,6 +45,7 @@ import {buildHeadHighlights} from './src/headHighlights';
 import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
 import HomeDashboard from './src/ui/HomeDashboard';
+import type {TrendEngine} from './src/trendHistoryVt2';
 import {summarizeDay} from './src/homeDaySummary';
 import type {MovementMode} from './src/infoCandidatos';
 import TurnStrip from './src/ui/TurnStrip';
@@ -65,6 +66,8 @@ const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+
 function LaloApp(){
  const {mode,colors:c,toggle}=useLaloTheme();
  const [screen,setScreen]=useState<Screen>('inicio');
+ const [trendEngine,setTrendEngine]=useState<TrendEngine>('lalo');
+ const [infoEntrySection,setInfoEntrySection]=useState<'tendencias'|null>(null);
  const activeScreenRef=useRef<Screen>('inicio');
  const historyRef=useRef<NavigationEntry[]>([]);
  const scrollOffsets=useRef<Record<Screen,number>>({
@@ -120,9 +123,10 @@ function LaloApp(){
  const [hojaFocused,setHojaFocused]=useState<string|null>(null);
  const [hojaTurn,setHojaTurn]=useState<Turno>('Previa');
  const scrollRef=useRef<ScrollView>(null);
- const navigateTo=(next:Screen)=>{
+ const navigateTo=(next:Screen,infoSection?:'tendencias')=>{
   const from=activeScreenRef.current;
   if(from===next)return;
+  setInfoEntrySection(next==='info'&&infoSection?'tendencias':null);
   if(next!=='hoja'){setHistoricalPreview(null);setHistoricalAux(null);}
   historyRef.current=pushNavigation(historyRef.current,{
    screen:from,scrollY:scrollOffsets.current[from],selectedTurn,
@@ -138,6 +142,7 @@ function LaloApp(){
   if(!entry)return false; // sin historial, Android conserva Atrás del sistema
   setHistoricalPreview(null);setHistoricalAux(null);
   historyRef.current=remaining;
+  setInfoEntrySection(null);
   activeScreenRef.current=entry.screen;
   setSelectedTurn(entry.selectedTurn);
   setFocused(entry.focused);
@@ -518,7 +523,9 @@ function LaloApp(){
       if(forcedAux)setAuxMode(forcedAux);
       setPredictionMode(mode);navigateTo('prediccion')
      }}
-     onFocus={family=>showFamily('vt2|'+family)}/>:
+     onFocus={family=>showFamily('vt2|'+family)}
+     trendEngine={trendEngine} onTrendEngineChange={setTrendEngine}
+     onOpenTrendInfo={()=>navigateTo('info','tendencias')}/>: 
     screen==='hoja'?
     showingSheet&&showingHoja?<View onLayout={e=>alignHojaOnReturn(e.nativeEvent.layout.y)}>
      {historicalPreview?<View style={[s.previewBanner,{backgroundColor:c.accentFill,borderColor:c.accent}]}>
@@ -637,7 +644,9 @@ function LaloApp(){
       onTurnChange={changeTurn} onOpenFrame={openInfoFrame}
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
      movementMode={infoMode} onMovementMode={setInfoMode}
-     expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}/>}
+     expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}
+     initialSection={infoEntrySection} trendEngine={trendEngine}
+     onTrendEngineChange={setTrendEngine}/>}
   </ZoomableTab>
  </SafeAreaView>;
 }
