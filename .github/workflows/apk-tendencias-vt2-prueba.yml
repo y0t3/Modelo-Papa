@@ -1,0 +1,53 @@
+name: APK de prueba - Tendencias VT2 Inicio Info
+on:
+  push:
+    branches:
+      - feature/tendencias-vt2-inicio-info-31oct2026
+    paths:
+      - '.github/workflows/apk-tendencias-vt2-prueba.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Obtener código de la rama de prueba
+        uses: actions/checkout@v4
+      - name: Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Java 17 para Android
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Instalar dependencias
+        run: npm install
+      - name: Verificar componentes de la app
+        run: npx tsc --noEmit --project tsconfig.tendencias-app.json
+      - name: Verificar porcentajes históricos VT2
+        run: npx --yes tsx scripts/test-tendencias-vt2.ts
+      - name: Verificar navegación Atrás Android
+        run: npx --yes tsx scripts/test-info-fechas-atras.ts
+      - name: Verificar motor Lalo
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Generar proyecto Android con iconos actuales
+        env:
+          CI: '1'
+        run: npx expo prebuild --platform android --clean
+      - name: Compilar APK release independiente
+        working-directory: android
+        env:
+          NODE_ENV: production
+          CI: '1'
+        run: ./gradlew assembleRelease --no-daemon
+      - name: Publicar archivo de instalación de prueba
+        uses: actions/upload-artifact@v4
+        with:
+          name: Modelo-Lalo-Tendencias-VT2-APK
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 14
