@@ -42,7 +42,7 @@ function safeEntry(x:unknown):x is TrendSaved{
  return /^\d{4}-\d{2}-\d{2}$/.test(r.date)&&r.date>TREND_WINDOW.end&&
   TURNOS.includes(r.turn)&&TREND_ENGINES.includes(r.engine)&&
   (r.origin==='capturado'||r.origin==='reconstruido')&&
-  typeof r.createdAt==='string'&&!!cleanTop(r.top)&&
+  typeof r.createdAt==='string'&&Array.isArray(r.top)&&!!cleanTop(r.top)&&
   (!r.heads||(r.heads.length===5&&r.heads.every(valid)));
 }
 export function parseJournal(raw:string|null):TrendJournal{
