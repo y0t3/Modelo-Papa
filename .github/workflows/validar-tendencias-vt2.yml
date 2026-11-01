@@ -2,10 +2,10 @@ name: Validar tarjeta Tendencias VT2 Inicio Info
 on:
   push:
     branches:
-      - feature/tendencias-vt2-inicio-info-31oct2026
+      - feature/tendencias-vt2-actualizacion-diaria-31oct2026
   pull_request:
     branches:
-      - feature/resumen-chips-aux-cabezas-31oct2026
+      - feature/tendencias-vt2-inicio-info-31oct2026
   workflow_dispatch:
 permissions:
   contents: read
@@ -24,6 +24,8 @@ jobs:
         run: npx tsc --noEmit --project tsconfig.tendencias-app.json
       - name: Probar distribución histórica de tendencias
         run: npx --yes tsx scripts/test-tendencias-vt2.ts
+      - name: Probar seguimiento diario sin alterar PRE ni duplicar aciertos
+        run: npx --yes tsx scripts/test-tendencias-vt2-vivas.ts
       - name: Regresiones de navegación y pestañas
         run: npx --yes tsx scripts/test-info-fechas-atras.ts
       - name: Motor Lalo intacto

@@ -46,6 +46,9 @@ import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
 import HomeDashboard from './src/ui/HomeDashboard';
 import type {TrendEngine} from './src/trendHistoryVt2';
+import {emptyTrendJournal,buildTrendSnapshot} from './src/trendVt2Journal';
+import type {TrendPeriod} from './src/trendVt2Journal';
+import {syncTrendJournal} from './src/trendVt2Sync';
 import {summarizeDay} from './src/homeDaySummary';
 import type {MovementMode} from './src/infoCandidatos';
 import TurnStrip from './src/ui/TurnStrip';
@@ -67,6 +70,12 @@ function LaloApp(){
  const {mode,colors:c,toggle}=useLaloTheme();
  const [screen,setScreen]=useState<Screen>('inicio');
  const [trendEngine,setTrendEngine]=useState<TrendEngine>('lalo');
+ const [trendJournal,setTrendJournal]=useState(emptyTrendJournal);
+ const [trendPeriod,setTrendPeriod]=useState<TrendPeriod>('acumulado');
+ const [trendTick,setTrendTick]=useState(0);
+ const trendSyncLock=useRef(false);
+ const trendSnapshot=useMemo(()=>buildTrendSnapshot(trendJournal,trendPeriod),
+  [trendJournal,trendPeriod]);
  const [infoEntrySection,setInfoEntrySection]=useState<'tendencias'|null>(null);
  const activeScreenRef=useRef<Screen>('inicio');
  const historyRef=useRef<NavigationEntry[]>([]);
@@ -283,6 +292,15 @@ function LaloApp(){
   }finally{setBusy(false)}
  };
  useEffect(()=>{void cargar(today())},[]);
+ // Seguir cortes PRE y cotejarlos con POST; si la app estuvo cerrada,
+ // reconstruir solamente fuentes cronológicamente disponibles por turno.
+ useEffect(()=>{
+  if(!data||!sheet||busy||date!==today()||trendSyncLock.current)return;
+  trendSyncLock.current=true;
+  void syncTrendJournal(today(),setTrendJournal).catch(()=>{}).finally(()=>{
+   trendSyncLock.current=false;
+  });
+ },[date,data,sheet,busy,trendTick]);
  const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
   if(base)void cargar(shiftDrawDay(base,n))};
  // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
@@ -320,6 +338,7 @@ function LaloApp(){
     // HOY incorpora nuevas cabezas; AYER permanece fija.
     if(live)setAuxToday(live.heads);
     setSheet(buildSheet(fresh,baseHeads));
+    setTrendTick(t=>t+1);
    }catch{}finally{loading=false}
   };
   const interval=setInterval(()=>{void update()},120000);
@@ -525,6 +544,7 @@ function LaloApp(){
      }}
      onFocus={family=>showFamily('vt2|'+family)}
      trendEngine={trendEngine} onTrendEngineChange={setTrendEngine}
+     trendSnapshot={trendSnapshot}
      onOpenTrendInfo={()=>navigateTo('info','tendencias')}/>: 
     screen==='hoja'?
     showingSheet&&showingHoja?<View onLayout={e=>alignHojaOnReturn(e.nativeEvent.layout.y)}>
@@ -646,7 +666,8 @@ function LaloApp(){
      movementMode={infoMode} onMovementMode={setInfoMode}
      expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}
      initialSection={infoEntrySection} trendEngine={trendEngine}
-     onTrendEngineChange={setTrendEngine}/>}
+     onTrendEngineChange={setTrendEngine} trendSnapshot={trendSnapshot}
+     onTrendPeriodChange={setTrendPeriod}/>}
   </ZoomableTab>
  </SafeAreaView>;
 }

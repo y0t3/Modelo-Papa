@@ -6,15 +6,18 @@ import {useLaloTheme} from './LaloTheme';
 import TurnStrip from './TurnStrip';
 import {
  HALF_COLORS,TREND_COLORS,TREND_ENGINES,TREND_LABELS,
- TREND_WINDOW,VT2_TRENDS,halfPercent,hits,motorShares,
+ TREND_WINDOW,halfPercent,hits,
  isRetrospective
 } from '../trendHistoryVt2';
 import type {TrendEngine} from '../trendHistoryVt2';
+import {snapshotShares} from '../trendVt2Journal';
+import type {TrendPeriod,TrendSnapshot} from '../trendVt2Journal';
 
 type Props={
  date:string;turn:Turno;selectedEngine:TrendEngine;
  onEngineChange:(value:TrendEngine)=>void;
- compact?:boolean;onDetails?:()=>void;onTurnChange?:(turn:Turno)=>void
+ compact?:boolean;onDetails?:()=>void;onTurnChange?:(turn:Turno)=>void;
+ trendSnapshot:TrendSnapshot;onPeriodChange?:(period:TrendPeriod)=>void
 };
 type Slice={key:string;label:string;amount:number;color:string};
 function StackedBar({slices,height=29}:{slices:Slice[];height?:number}){
@@ -40,23 +43,28 @@ const HalfBar=({record}:{record:{first:number;last:number;cuts:number}})=>{
  </Text>;
 };
 export default function TurnTrendPanel({date,turn,selectedEngine,onEngineChange,
- compact=false,onDetails,onTurnChange}:Props){
+ compact=false,onDetails,onTurnChange,trendSnapshot,onPeriodChange}:Props){
  const {colors:c}=useLaloTheme();
- const record=VT2_TRENDS[turn][selectedEngine];
+ const table=trendSnapshot.totals;
+ const record=table[turn][selectedEngine];
  const pct=halfPercent(record);
- const portions=motorShares(turn);
- const available=TREND_ENGINES.filter(id=>VT2_TRENDS[turn][id].cuts>0);
+ const portions=snapshotShares(trendSnapshot,turn);
+ const newest=trendSnapshot.period==='reciente'&&!trendSnapshot.loggedCuts?'Sin datos':
+  trendSnapshot.latestDate.slice(8,10)+'/'+trendSnapshot.latestDate.slice(5,7)+'/'+
+   trendSnapshot.latestDate.slice(2,4);
+ const periodLabel=trendSnapshot.period==='acumulado'?
+  'Histórico + seguimiento':'Últimas '+trendSnapshot.recentDateCount+' jornadas registradas';
  return <View style={[s.panel,{backgroundColor:c.surface,
   borderColor:compact?c.accent:c.border}]}>
   <View style={s.head}>
    <View style={{flex:1,gap:3}}>
     <Text style={[s.overline,{color:c.accent}]}>UN VISTAZO AL HISTÓRICO · VT2</Text>
     <Text style={[s.title,{color:c.text}]}>Dónde mirar hoy</Text>
-    <Text style={[s.sub,{color:c.subtext}]}>{turn} · {TREND_WINDOW.label}</Text>
+    <Text style={[s.sub,{color:c.subtext}]}>{turn} · {periodLabel}</Text>
    </View>
    <View style={[s.infoTag,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
     <Text style={{color:c.subtext,fontSize:10,fontWeight:'800'}}>Datos hasta</Text>
-    <Text style={{color:c.text,fontSize:12,fontWeight:'900'}}>30/10/26</Text>
+    <Text style={{color:c.text,fontSize:12,fontWeight:'900'}}>{newest}</Text>
    </View>
   </View>
   {isRetrospective(date)?<View style={[s.warning,{borderColor:c.border}]}>
@@ -64,6 +72,16 @@ export default function TurnTrendPanel({date,turn,selectedEngine,onEngineChange,
     Fecha histórica seleccionada: este estudio se calculó después de ese día.
     No representa información disponible antes de aquel sorteo.
    </Text>
+  </View>:null}
+  {!compact&&onPeriodChange?<View style={s.chips}>
+   {([{id:'acumulado',label:'Histórico acumulado'},{id:'reciente',label:'Últimas 30'}] as const).map(p=>
+    <Pressable key={p.id} accessibilityRole="button"
+     accessibilityState={{selected:trendSnapshot.period===p.id}}
+     onPress={()=>onPeriodChange(p.id)}
+     style={[s.chip,{backgroundColor:trendSnapshot.period===p.id?c.accentFill:c.surfaceAlt,
+      borderColor:trendSnapshot.period===p.id?c.accent:c.border}]}>
+     <Text style={[s.chipLabel,{color:trendSnapshot.period===p.id?c.accent:c.subtext}]}>{p.label}</Text>
+    </Pressable>)}
   </View>:null}
   {!compact&&onTurnChange?<TurnStrip value={turn} onChange={onTurnChange}/>:null}
   <View style={[s.divider,{backgroundColor:c.divider}]}/>
@@ -109,13 +127,14 @@ export default function TurnTrendPanel({date,turn,selectedEngine,onEngineChange,
     <View style={[s.dot,{backgroundColor:TREND_COLORS[id]}]}/>
     <Text style={[s.legendText,{color:c.subtext}]}>
      {id==='lalo'?'Lalo':id==='ayer'?'Aux ayer':'Aux hoy'}:
-     <Text style={{color:c.text,fontWeight:'900'}}> {VT2_TRENDS[turn][id].cuts?portions[id]+'%':'s/d'}</Text>
+     <Text style={{color:c.text,fontWeight:'900'}}> {table[turn][id].cuts?portions[id]+'%':'s/d'}</Text>
     </Text>
    </View>)}
   </View>
   <Text style={[s.micro,{color:c.muted}]}>
    Cuota relativa de coincidencias por turno elegible; se ajusta por días disponibles.
    Una misma cabeza puede aparecer en varios motores.
+   {' '}Seguimiento nuevo: {trendSnapshot.newDateCount} jornadas registradas.
   </Text>
   {compact?<>
    <Pressable accessibilityRole="button" accessibilityLabel="Ver análisis completo en Info"
@@ -127,7 +146,7 @@ export default function TurnTrendPanel({date,turn,selectedEngine,onEngineChange,
    <View style={[s.divider,{backgroundColor:c.divider}]}/>
    <Text style={[s.sectionTitle,{color:c.text}]}>Cada motor por separado · {turn}</Text>
    {TREND_ENGINES.map(id=>{
-    const r=VT2_TRENDS[turn][id], p=halfPercent(r);
+    const r=table[turn][id], p=halfPercent(r);
     return <View key={id} style={[s.detailRow,{borderColor:c.border}]}>
      <View style={s.detailHeading}>
       <Text style={{color:c.text,fontSize:12,fontWeight:'900'}}>{TREND_LABELS[id]}</Text>
@@ -152,7 +171,7 @@ export default function TurnTrendPanel({date,turn,selectedEngine,onEngineChange,
     no las probabilidades de la próxima quiniela.
    </Text>
    {TURNOS.map(t=>{
-    const r=VT2_TRENDS[t][selectedEngine], p=halfPercent(r);
+    const r=table[t][selectedEngine], p=halfPercent(r);
     return <Pressable key={t} accessibilityRole="button"
      onPress={()=>onTurnChange?.(t)} disabled={!onTurnChange}
      style={[s.turnRow,{borderColor:t===turn?c.accent:c.border,
@@ -171,9 +190,12 @@ export default function TurnTrendPanel({date,turn,selectedEngine,onEngineChange,
    })}
    <View style={[s.note,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
     <Text style={{fontSize:11,lineHeight:17,color:c.subtext}}>
-     Estudio histórico cerrado al 30/10/2026. No se actualiza automáticamente.
-     Los porcentajes describen coincidencias pasadas, no una ventaja demostrada.
-     No se recomienda elegir una mitad solo por esta distribución.
+     {trendSnapshot.period==='acumulado'?
+      'Base histórica: septiembre–octubre 2026. Se suman las jornadas nuevas registradas en este teléfono.':
+      'Ventana reciente: hasta 30 jornadas con resultados registrados desde el inicio del seguimiento.'}
+     {' '}Nuevas jornadas: {trendSnapshot.newDateCount}. Cortes contabilizados en esta vista: {trendSnapshot.loggedCuts}.
+     {' '}Los resultados reconstruidos a posteriori se distinguen de los PRE capturados
+     antes del sorteo. No son probabilidades ni garantizan aciertos.
     </Text>
    </View>
   </>}

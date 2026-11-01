@@ -19,6 +19,7 @@ import type {DayOverview} from '../homeDaySummary';
 import DayMatchGrid from './DayMatchGrid';
 import TurnTrendPanel from './TurnTrendPanel';
 import type {TrendEngine} from '../trendHistoryVt2';
+import type {TrendPeriod,TrendSnapshot} from '../trendVt2Journal';
 
 type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
 type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
@@ -36,7 +37,8 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
  expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void;
  initialSection?:'tendencias'|null;trendEngine:TrendEngine;
- onTrendEngineChange:(engine:TrendEngine)=>void};
+ onTrendEngineChange:(engine:TrendEngine)=>void;
+ trendSnapshot:TrendSnapshot;onTrendPeriodChange:(period:TrendPeriod)=>void};
 
 type Section='resumen'|'tendencias'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
@@ -62,7 +64,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
  figureFocus,onFigureLalo,onFigureAux,initialSection=null,
- trendEngine,onTrendEngineChange}:Props){
+ trendEngine,onTrendEngineChange,trendSnapshot,onTrendPeriodChange}:Props){
  const {colors:c}=useLaloTheme();
  const [section,setSection]=useState<Section|null>(initialSection);
  useEffect(()=>{setSection(initialSection)},[date,initialSection]);
@@ -106,6 +108,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      data={data} auxAyer={trackingAyer.view} auxHoy={trackingHoy.view} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
     {section==='tendencias'?<TurnTrendPanel date={date} turn={turn}
      selectedEngine={trendEngine} onEngineChange={onTrendEngineChange}
+     trendSnapshot={trendSnapshot} onPeriodChange={onTrendPeriodChange}
      onTurnChange={onTurnChange}/>:null}
     {section==='historial'?<>
      <TurnStrip value={turn} onChange={onTurnChange}/>

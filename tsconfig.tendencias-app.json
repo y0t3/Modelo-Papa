@@ -4,7 +4,8 @@
     "App.tsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "scripts/test-tendencias-vt2.ts"
+    "scripts/test-tendencias-vt2.ts",
+    "scripts/test-tendencias-vt2-vivas.ts"
   ],
   "exclude": [
     "node_modules",

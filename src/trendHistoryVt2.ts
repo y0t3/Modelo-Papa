@@ -55,8 +55,7 @@ export function halfPercent(record:HalfRecord):[number,number]|null{
  * el auxiliar HOY solo produjo Top10 completo en 39 de 52 jornadas.
  * No deduplica cabezas compartidas por motores: no son sucesos exclusivos.
  */
-export function motorShares(turn:Turno):Record<TrendEngine,number>{
- const row=VT2_TRENDS[turn];
+export function motorSharesFrom(row:TurnRecord):Record<TrendEngine,number>{
  const rates=TREND_ENGINES.map(id=>row[id].cuts?hits(row[id])/row[id].cuts:0);
  const total=rates.reduce((n,x)=>n+x,0);
  if(total===0)return {lalo:0,ayer:0,hoy:0};
@@ -66,6 +65,9 @@ export function motorShares(turn:Turno):Record<TrendEngine,number>{
  const ranked=[0,1,2].sort((a,b)=>(exact[b]-base[b])-(exact[a]-base[a])||a-b);
  for(let i=0;i<remainder;i++)base[ranked[i]]++;
  return {lalo:base[0],ayer:base[1],hoy:base[2]};
+}
+export function motorShares(turn:Turno):Record<TrendEngine,number>{
+ return motorSharesFrom(VT2_TRENDS[turn]);
 }
 export function totalHeads(record:HalfRecord):number{return record.cuts*5}
 export function isRetrospective(selectedDate:string):boolean{
