@@ -6,7 +6,7 @@
  * cronológicamente anteriores al turno; se indica como reconstruido,
  * NUNCA como predicción sellada antes del sorteo.
  *
- * Revisa el día actual y hasta 10 jornadas sorteables anteriores al abrir
+ * Revisa el día actual y hasta 30 jornadas sorteables anteriores al abrir
  * o actualizar, para recuperar períodos con la app cerrada sin servicios.
  */
 import {descargarCabezas} from './cabezas';
@@ -32,7 +32,7 @@ import {
 } from './trendVt2Journal';
 import type {TrendJournal,TrendSaved} from './trendVt2Journal';
 
-export const TREND_BACKFILL_DRAW_DAYS=10;
+export const TREND_BACKFILL_DRAW_DAYS=30;
 const valid=(s:string)=>/^\d{4}$/.test(s);
 export const localDay=()=>{
  const d=new Date();
