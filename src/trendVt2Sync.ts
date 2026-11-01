@@ -59,7 +59,7 @@ export async function replayOneTrendDate(date:string,today:string,
  const complete=TURNOS.every(turn=>fiveHeads(current,turn)!==null);
  let result=journal,changed=false;
  // Si no hay resultados y ya es un día anterior, tampoco se inventa PRE.
- if(!hasDrawResults(current)&&date<today)return {journal,changed:false,complete:false};
+ if(!hasDrawResults(current)&&date<today)return {journal,changed:false,complete:false,finalizable:false};
  const past=await loadPreviousDraws(date,4,sources.getDraw);
  const last=past[3],beforeLast=past[2];
  const historical:LaloHistorical[]=[{
