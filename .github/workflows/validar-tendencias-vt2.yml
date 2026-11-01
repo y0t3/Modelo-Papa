@@ -2,10 +2,10 @@ name: Validar tarjeta Tendencias VT2 Inicio Info
 on:
   push:
     branches:
-      - feature/tendencias-vt2-inicio-info-31oct2026
+      - feature/tendencias-vt2-actualizacion-diaria-31oct2026
   pull_request:
     branches:
-      - feature/resumen-chips-aux-cabezas-31oct2026
+      - feature/tendencias-vt2-inicio-info-31oct2026
   workflow_dispatch:
 permissions:
   contents: read
