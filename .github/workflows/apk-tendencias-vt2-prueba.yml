@@ -1,10 +1,8 @@
 name: APK de prueba - Tendencias VT2 Inicio Info
 on:
-  push:
+  pull_request:
     branches:
-      - feature/tendencias-vt2-inicio-info-31oct2026
-    paths:
-      - '.github/workflows/apk-tendencias-vt2-prueba.yml'
+      - feature/resumen-chips-aux-cabezas-31oct2026
   workflow_dispatch:
 permissions:
   contents: read
