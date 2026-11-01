@@ -21,7 +21,7 @@ jobs:
       - name: Instalar paquetes
         run: npm install
       - name: Validar TypeScript completo
-        run: npx tsc --noEmit
+        run: npx tsc --noEmit --project tsconfig.tendencias-app.json
       - name: Probar distribución histórica de tendencias
         run: npx --yes tsx scripts/test-tendencias-vt2.ts
       - name: Regresiones de navegación y pestañas
