@@ -21,8 +21,8 @@ export type TrendSaved={
  /** Sólo se fija cuando se publicaron las cinco jurisdicciones. */
  heads?:string[];
 };
-export type TrendJournal={version:1;items:TrendSaved[]};
-export const emptyTrendJournal=():TrendJournal=>({version:1,items:[]});
+export type TrendJournal={version:1;items:TrendSaved[];scannedDates:string[]};
+export const emptyTrendJournal=():TrendJournal=>({version:1,items:[],scannedDates:[]});
 const valid=(x:string)=>/^\d{4}$/.test(x);
 const key=(r:Pick<TrendSaved,'date'|'turn'|'engine'>)=>r.date+'|'+r.turn+'|'+r.engine;
 export function cleanTop(families:string[]):string[]|null{
@@ -51,7 +51,9 @@ export function parseJournal(raw:string|null):TrendJournal{
   const x=JSON.parse(raw) as TrendJournal;
   if(x.version!==1||!Array.isArray(x.items))return emptyTrendJournal();
   const seen=new Set<string>();
-  return {version:1,items:x.items.filter(item=>{
+  return {version:1,scannedDates:Array.isArray(x.scannedDates)?x.scannedDates.filter((d):d is string=>
+   typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d)):[],
+   items:x.items.filter(item=>{
    if(!safeEntry(item)||seen.has(key(item)))return false;
    seen.add(key(item));return true;
   })};
@@ -68,10 +70,10 @@ export function recordTrend(journal:TrendJournal,candidate:TrendSaved):TrendJour
  const existing=journal.items.find(x=>key(x)===key(candidate));
  if(existing){
   if(existing.heads||!candidate.heads)return journal;
-  return {version:1,items:journal.items.map(x=>key(x)===key(candidate)?
+  return {...journal,items:journal.items.map(x=>key(x)===key(candidate)?
    {...x,heads:candidate.heads}:x)};
  }
- return {version:1,items:[...journal.items,candidate]};
+ return {...journal,items:[...journal.items,candidate]};
 }
 export function trendHits(record:TrendSaved):{first:number;last:number}|null{
  if(!record.heads||record.top.length!==10)return null;
