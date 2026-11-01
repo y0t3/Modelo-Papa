@@ -103,6 +103,10 @@ export async function replayOneTrendDate(date:string,today:string,
   // Con al menos una cabeza publicada sólo podemos reconstruir el PRE;
   // el ranking de hoy no se presenta como capturado antes del sorteo.
   const exists=JURS.some(j=>valid(current[turn]?.[j]||''));
+  // Sólo congelar el Top de un turno cuando las cabezas anteriores,
+  // que alimentan su hoja +11, ya están completas.
+  if(date===today&&!exists&&TURNOS.slice(0,TURNOS.indexOf(turn)).some(
+   earlier=>fiveHeads(current,earlier)===null))continue;
   if(exists&&!published&&date===today)continue;
   const origin:TrendSaved['origin']=date===today&&!exists?'capturado':'reconstruido';
   const cutoff=preSheetAtCut(full,turn,TURNOS.indexOf(turn));
