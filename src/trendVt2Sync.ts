@@ -53,8 +53,8 @@ type Sources={
  getAux:(day:string)=>Promise<AuxiliaryHeads>
 };
 export async function replayOneTrendDate(date:string,today:string,
- journal:TrendJournal,sources:Sources):Promise<{journal:TrendJournal;changed:boolean;complete:boolean}>{
- if(date<=TREND_WINDOW.end||date>today)return {journal,changed:false,complete:false};
+ journal:TrendJournal,sources:Sources):Promise<{journal:TrendJournal;changed:boolean;complete:boolean;finalizable:boolean}>{
+ if(date<=TREND_WINDOW.end||date>today)return {journal,changed:false,complete:false,finalizable:false};
  const current=await sources.getDraw(date);
  const complete=TURNOS.every(turn=>fiveHeads(current,turn)!==null);
  let result=journal,changed=false;
@@ -132,7 +132,8 @@ export async function replayOneTrendDate(date:string,today:string,
    if(next!==result){result=next;changed=true}
   }
  }
- return {journal:result,changed,complete};
+ return {journal:result,changed,complete,
+  finalizable:!!auxYesterday&&!!auxToday&&!!refs.ayer&&!!refs.hoy};
 }
 export async function syncTrendJournal(today=localDay(),
  onUpdated?:(journal:TrendJournal)=>void):Promise<TrendJournal>{
@@ -157,7 +158,8 @@ export async function syncTrendJournal(today=localDay(),
   try{
    const outcome=await replayOneTrendDate(date,today,journal,sources);
    if(outcome.changed)journal=outcome.journal;
-   const scanned=outcome.complete&&date<today&&!journal.scannedDates.includes(date);
+   const scanned=outcome.complete&&outcome.finalizable&&date<today&&
+    !journal.scannedDates.includes(date);
    if(scanned)journal={...journal,scannedDates:[...journal.scannedDates,date]};
    if(outcome.changed||scanned){
     await saveTrendJournal(journal);
