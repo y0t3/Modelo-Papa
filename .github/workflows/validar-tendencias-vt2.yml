@@ -1,0 +1,30 @@
+name: Validar tarjeta Tendencias VT2 Inicio Info
+on:
+  push:
+    branches:
+      - feature/tendencias-vt2-inicio-info-31oct2026
+  pull_request:
+    branches:
+      - feature/resumen-chips-aux-cabezas-31oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar paquetes
+        run: npm install
+      - name: Validar TypeScript completo
+        run: npx tsc --noEmit
+      - name: Probar distribución histórica de tendencias
+        run: npx --yes tsx scripts/test-tendencias-vt2.ts
+      - name: Regresiones de navegación y pestañas
+        run: npx --yes tsx scripts/test-info-fechas-atras.ts
+      - name: Motor Lalo intacto
+        run: npx --yes tsx scripts/test-motor-lalo.ts
