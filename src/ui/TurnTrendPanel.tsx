@@ -49,7 +49,9 @@ export default function TurnTrendPanel({date,turn,selectedEngine,onEngineChange,
  const record=table[turn][selectedEngine];
  const pct=halfPercent(record);
  const portions=snapshotShares(trendSnapshot,turn);
- const newest=trendSnapshot.latestDate.split('-').reverse().join('/').slice(0,8);
+ const newest=trendSnapshot.period==='reciente'&&!trendSnapshot.loggedCuts?'Sin datos':
+  trendSnapshot.latestDate.slice(8,10)+'/'+trendSnapshot.latestDate.slice(5,7)+'/'+
+   trendSnapshot.latestDate.slice(2,4);
  const periodLabel=trendSnapshot.period==='acumulado'?
   'Histórico + seguimiento':'Últimas '+trendSnapshot.recentDateCount+' jornadas registradas';
  return <View style={[s.panel,{backgroundColor:c.surface,
