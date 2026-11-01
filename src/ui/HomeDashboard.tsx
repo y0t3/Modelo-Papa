@@ -13,15 +13,20 @@ import {readableWeekday} from '../infoTurnHistory';
 import RouteMiniBoard from './RouteMiniBoard';
 import DayMatchGrid from './DayMatchGrid';
 import TurnStrip from './TurnStrip';
+import TurnTrendPanel from './TurnTrendPanel';
+import type {TrendEngine} from '../trendHistoryVt2';
 
 type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 type Props={date:string;turn:Turno;data:CabezasDia|null;sheet:DailySheet|null;
  view:LaloView|null;auxAyer:AuxiliarView|null;auxHoy:AuxiliarView|null;
  overview:DayOverview;onNavigate:(page:Destination)=>void;
  onSelectPrediction:(mode:'lalo'|'auxiliar'|'combinado',auxMode?:AuxMode)=>void;
- onTurnChange:(turn:Turno)=>void;onFocus:(family:string)=>void;busy:boolean};
+ onTurnChange:(turn:Turno)=>void;onFocus:(family:string)=>void;busy:boolean;
+ trendEngine:TrendEngine;onTrendEngineChange:(engine:TrendEngine)=>void;
+ onOpenTrendInfo:()=>void};
 export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
- overview,onNavigate,onSelectPrediction,onTurnChange,onFocus,busy}:Props){
+ overview,onNavigate,onSelectPrediction,onTurnChange,onFocus,busy,
+ trendEngine,onTrendEngineChange,onOpenTrendInfo}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const top=view?.ranks.vt2.slice(0,3)||[];
  const yesterday=auxAyer?.ranks[2].slice(0,3)||[];
@@ -107,6 +112,8 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
     <Text style={[s.link,{color:'#E9BA61'}]}>Ver figuras  ›</Text>
    </Pressable>
   </View>
+  <TurnTrendPanel compact date={date} turn={turn} selectedEngine={trendEngine}
+   onEngineChange={onTrendEngineChange} onDetails={onOpenTrendInfo}/>
   <View style={[s.bottomCard,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.text}]}>Todo desde un lugar</Text>
    <View style={s.actions}>

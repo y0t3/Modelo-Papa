@@ -17,6 +17,8 @@ import type {TrackingAuxInput} from '../figureTracking';
 import {useLaloTheme} from './LaloTheme';
 import type {DayOverview} from '../homeDaySummary';
 import DayMatchGrid from './DayMatchGrid';
+import TurnTrendPanel from './TurnTrendPanel';
+import type {TrendEngine} from '../trendHistoryVt2';
 
 type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
 type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
@@ -32,11 +34,14 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  onTurnChange:(turn:Turno)=>void;onOpenFrame:(frame:TurnHistoryFrame)=>void;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
- expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void};
+ expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void;
+ initialSection?:'tendencias'|null;trendEngine:TrendEngine;
+ onTrendEngineChange:(engine:TrendEngine)=>void};
 
-type Section='resumen'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+type Section='resumen'|'tendencias'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
  {id:'resumen',icon:'☀',title:'Resumen del día',subtitle:'Lo importante de este turno',accent:'#F3C251'},
+ {id:'tendencias',icon:'▥',title:'Tendencias VT2',subtitle:'Qué mitad y qué motor mirar',accent:'#4ABDEB'},
  {id:'historial',icon:'▦',title:'Día por día',subtitle:'Las hojas anteriores',accent:'#A68AFF'},
  {id:'auxiliar',icon:'▤',title:'Hoja auxiliar',subtitle:'Santiago y Neuquén',accent:'#E18AF6'},
  {id:'seguir',icon:'◎',title:'Seguir un número',subtitle:'Cómo fue apareciendo',accent:'#51D7AF'},
@@ -56,11 +61,12 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
- figureFocus,onFigureLalo,onFigureAux}:Props){
+ figureFocus,onFigureLalo,onFigureAux,initialSection=null,
+ trendEngine,onTrendEngineChange}:Props){
  const {colors:c}=useLaloTheme();
- const [section,setSection]=useState<Section|null>(null);
- useEffect(()=>{setSection(null)},[date]);
- useEffect(()=>{if(figureFocus)setSection('seguir')},[figureFocus]);
+ const [section,setSection]=useState<Section|null>(initialSection);
+ useEffect(()=>{setSection(initialSection)},[date,initialSection]);
+ useEffect(()=>{if(figureFocus&&initialSection!=='tendencias')setSection('seguir')},[figureFocus,initialSection]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
  const selected=OPTIONS.find(x=>x.id===section);
@@ -98,6 +104,9 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
     </View>
     {section==='resumen'?<DayMatchGrid overview={overview} turn={turn}
      data={data} auxAyer={trackingAyer.view} auxHoy={trackingHoy.view} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
+    {section==='tendencias'?<TurnTrendPanel date={date} turn={turn}
+     selectedEngine={trendEngine} onEngineChange={onTrendEngineChange}
+     onTurnChange={onTurnChange}/>:null}
     {section==='historial'?<>
      <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Elegí un día o una figura para verla más grande.</Text>
