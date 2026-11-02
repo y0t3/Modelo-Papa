@@ -1,0 +1,21 @@
+name: LAB Aux VT3 Previa 02nov2026
+on:
+  push:
+    branches:
+      - lab/aux-vt3-previa-02nov2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Instalar dependencias
+        run: npm install
+      - name: Reconstruir PRE y cotejar PREVIA VT3 auxiliares 02nov
+        run: npx --yes tsx scripts/lab-aux-vt3-previa-02nov2026.ts
