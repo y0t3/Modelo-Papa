@@ -12,7 +12,7 @@ permissions:
 jobs:
   auditar:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,3 +21,5 @@ jobs:
       - run: npm install
       - name: Auditar raíces y desempate de 155/551
         run: npx --yes tsx scripts/lab-aux-vt3-auditoria-raiz17.ts
+      - name: Contrastar desempates en septiembre y octubre
+        run: npx --yes tsx scripts/lab-aux-vt3-historico-empates.ts
