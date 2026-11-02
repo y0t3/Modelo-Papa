@@ -1,0 +1,20 @@
+name: LAB Aux VT3 auditoría #17 02nov
+on:
+  push:
+    branches:
+      - lab/aux-vt3-auditoria-puesto17-02nov2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - name: Auditar raíces y desempate de 155/551
+        run: npx --yes tsx scripts/lab-aux-vt3-auditoria-raiz17.ts
