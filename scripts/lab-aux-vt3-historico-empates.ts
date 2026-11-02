@@ -101,7 +101,7 @@ function summary(rows:Result[]){
  const cum=Object.fromEntries(options.map(o=>[o,sum(r=>r.hits[o])]));
  const valid=rows.flatMap(r=>r.wins.filter(x=>x.formable));
  const ranked=valid.filter(x=>x.original!==null);
- const observed=ranked.filter(x=>x.original!>10);
+ const observed=ranked.filter(x=>x.original!<=10);
  const outside=ranked.filter(x=>x.original!>10&&x.original!<=20);
  const crosses=observed.filter(x=>x.originalCrossing);
  const without=observed.filter(x=>!x.originalCrossing);
