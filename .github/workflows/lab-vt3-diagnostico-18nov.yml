@@ -25,10 +25,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Instalar dependencias
-        run: npm install
+      - name: Instalar únicamente el ejecutor TypeScript en entorno aislado
+        run: npm install --prefix /tmp/vt3runner --no-save --no-package-lock tsx@4.20.6
       - name: Diagnosticar VT3 sin contaminacion por resultados
         env:
           VT3_FROM: ${{ matrix.periodo.from }}
           VT3_TO: ${{ matrix.periodo.to }}
-        run: npx --yes tsx scripts/lab-vt3-cobertura-seleccion.ts
+        run: /tmp/vt3runner/node_modules/.bin/tsx scripts/lab-vt3-cobertura-seleccion.ts
