@@ -1,0 +1,24 @@
+name: LAB balance de motores 02 a 17 nov 2026
+on:
+  push:
+    branches:
+      - lab/balance-motores-02a17nov2026
+  pull_request:
+    branches:
+      - feature/tendencias-vt2-actualizacion-diaria-31oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evaluar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Instalar dependencias
+        run: npm install
+      - name: Auditar Lalo y Aux VT2/VT3 desde 02 a 17 nov con PRE sin POST
+        run: npx --yes tsx scripts/lab-balance-motores-02a17nov2026.ts
