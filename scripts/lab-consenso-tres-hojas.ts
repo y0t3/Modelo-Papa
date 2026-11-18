@@ -419,8 +419,60 @@ async function main(){
   };
  };
  const crossSheet={VT2:analyzeConsensus('VT2'),VT3:analyzeConsensus('VT3')};
+
+ // HIPÓTESIS TEMPORAL, fija: conservar Top8 originales y, como máximo,
+ // elevar dos posiciones #11-20 si esa misma familia apareció en el
+ // Top10 del MISMO motor y turno en al menos 2 de las 6 jornadas previas.
+ // La memoria son PRE de jornadas anteriores; resultados sólo se cotejan al final.
+ const temporal=Object.fromEntries((['VT2','VT3'] as const).map(vt=>[
+  vt,Object.fromEntries((['lalo','aux_ayer','aux_hoy'] as const).map(model=>{
+   const summary={cuts:0,heads:0,baselineHits:0,promotedHits:0,
+    promotedCuts:0,promotedFamilies:0,
+    persistentTop10Families:0,persistentTop10Heads:0,persistentUniformHeads:0,
+    otherTop10Families:0,otherTop10Heads:0,otherUniformHeads:0,
+    firstDate:'',lastDate:'',days:0};
+   const used=new Set<string>();
+   for(let i=6;i<successes.length;i++){
+    const day=successes[i];
+    for(const turn of TURNOS){
+     const cur=day.rows.find(r=>r.turn===turn&&r.model===model&&r.vt===vt);
+     const hist=successes.slice(i-6,i).map(d=>d.rows.find(r=>
+      r.turn===turn&&r.model===model&&r.vt===vt));
+     if(!cur||cur.top10===null||hist.some(x=>!x||x.top10===null))continue;
+     if(!summary.firstDate)summary.firstDate=day.date;
+     summary.lastDate=day.date;summary.cuts++;summary.heads+=cur.winnerDetails.length;
+     used.add(day.date);
+     const prior=hist as Datum[];
+     const rec=(fam:string)=>prior.filter(r=>r.top.slice(0,10).includes(fam)).length;
+     const base=cur.top.slice(0,10);
+     const p=cur.top.slice(10,20).filter(f=>rec(f)>=2).slice(0,2);
+     const promoted=[...base.slice(0,10-p.length),...p];
+     summary.promotedFamilies+=p.length;
+     if(p.length)summary.promotedCuts++;
+     const winners=cur.winnerDetails;
+     summary.baselineHits+=winners.filter(w=>base.includes(w.family)).length;
+     summary.promotedHits+=winners.filter(w=>promoted.includes(w.family)).length;
+     for(const fam of base){
+      const exposure=5*[...new Set(fam.split('/'))].length/(vt==='VT2'?100:1000);
+      const recurrent=rec(fam)>=2;
+      if(recurrent){
+       summary.persistentTop10Families++;
+       summary.persistentUniformHeads+=exposure;
+       summary.persistentTop10Heads+=winners.filter(w=>w.family===fam).length;
+      }else{
+       summary.otherTop10Families++;
+       summary.otherUniformHeads+=exposure;
+       summary.otherTop10Heads+=winners.filter(w=>w.family===fam).length;
+      }
+     }
+    }
+   }
+   summary.days=used.size;
+   return [model,summary];
+  }))
+ ]));
  const result={
-  dates:dates,dayCount:successes.length,from:FROM,to:TO,comparable,pairedTests,crossSheet,
+  dates:dates,dayCount:successes.length,from:FROM,to:TO,comparable,pairedTests,crossSheet,temporal,
   skipped,missingDraws:successes.filter(x=>x.missing.length).map(x=>({
    date:x.date,missing:x.missing})),
   method:'PRE reconstruido: +11 y Aux Ayer/Hoy D−1 y D−7, Formas Primero seis jornadas. Montevideo sólo como fuente, no objetivo. 5 jurisdicciones objetivo por corte. Top10 requiere 10 familias completas.',
@@ -434,6 +486,9 @@ async function main(){
     .map(v=>[v,x.rows.filter(y=>y.model===m&&y.vt===v)
      .reduce((s,y)=>s+(y.top10??0),0)]))]))}))
  };
+ console.log('TEMPORAL_JSON_START');
+ console.log(JSON.stringify({from:FROM,to:TO,temporal}));
+ console.log('TEMPORAL_JSON_END');
  console.log('CONSENSO_JSON_START');
  console.log(JSON.stringify({from:FROM,to:TO,days:successes.length,
   skipped,VT2:{...crossSheet.VT2,all:{...crossSheet.VT2.all,daily:[]},
