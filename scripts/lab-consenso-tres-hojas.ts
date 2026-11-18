@@ -299,7 +299,7 @@ async function main(){
     const hoy=group.find(x=>x.model==='aux_hoy');
     if(!lalo||!ayer||lalo.top10===null||ayer.top10===null)continue;
     if(turn!=='Previa'&&(!hoy||hoy.top10===null))continue;
-    allCuts.push({date:day.date,turn,engines:{lalo,aux_ayer:ayer,...(hoy?{aux_hoy:hoy}:{})},
+    allCuts.push({date:day.date,turn,engines:{lalo,aux_ayer:ayer,...(hoy?.top10!==null&&hoy?{aux_hoy:hoy}:{})},
      winners:lalo.winnerDetails.map(x=>x.family)});
    }
   }
@@ -334,14 +334,14 @@ async function main(){
     const win=cut.winners;
     for(const fam of allPhysical){
      const n=physical.filter(p=>p.has(fam)).length;
-     const exposure=5*endpoints(fam)/100;
+     const exposure=5*endpoints(fam)/(vt==='VT2'?100:1000);
      physicalBuckets[n].availableFamilias++;
      physicalBuckets[n].expectedUniform+=exposure;
     }
     for(const fam of allTop){
      const n=tops.filter(p=>p.has(fam)).length;
      topBuckets[n].selectedFamilias++;
-     topBuckets[n].expectedUniform+=5*endpoints(fam)/100;
+     topBuckets[n].expectedUniform+=5*endpoints(fam)/(vt==='VT2'?100:1000);
     }
     for(const fam of win){
      const k=physical.filter(p=>p.has(fam)).length;
