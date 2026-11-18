@@ -1,0 +1,34 @@
+name: LAB Consenso fisico y respaldo entre tres hojas
+on:
+  push:
+    branches:
+      - lab/consenso-geom-tres-hojas-nov18
+  pull_request:
+    branches:
+      - lab/balance-motores-02a17nov2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        rango:
+          - {etiqueta: "control-sep-oct", inicio: "2026-09-01", fin: "2026-10-30"}
+          - {etiqueta: "validacion-noviembre", inicio: "2026-11-02", fin: "2026-11-17"}
+    name: ${{ matrix.rango.etiqueta }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Instalar dependencias
+        run: npm install
+      - name: Comparar convergencia geometrica, raices y tops de 3 hojas
+        env:
+          CONSENSO_FROM: ${{ matrix.rango.inicio }}
+          CONSENSO_TO: ${{ matrix.rango.fin }}
+        run: npx --yes tsx scripts/lab-consenso-tres-hojas.ts
