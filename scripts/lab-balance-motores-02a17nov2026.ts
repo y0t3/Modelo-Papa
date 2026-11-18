@@ -24,7 +24,7 @@ import {auxAtCut,extractAuxHistoryMode} from '../src/auxTemporalModes';
 import type {AuxMode} from '../src/auxTemporalModes';
 import {buildAuxIndependent} from '../src/motorLaloIntegral';
 import type {AuxiliaryHistorical} from '../src/motorLaloIntegral';
-import {auxFamily,auxiliaryBoard,collectAuxFamilies} from '../src/auxSantiagoNeuquen';
+import {auxFamily,auxiliaryBoard,collectAuxFamilies,enumerateAuxPaths} from '../src/auxSantiagoNeuquen';
 import {selectAuxFormFirst} from '../src/labAuxFormasPrimeroVT3';
 import {formPositions} from '../src/motorFormasPrimero';
 
@@ -45,7 +45,7 @@ function aux(d:string){
  return promise;
 }
 type Model='lalo'|'aux_ayer'|'aux_hoy'|'formas_ayer'|'formas_hoy';
-type Vt='VT2'|'VT3';
+type Vt='VT2'|'VT3'|'VT4';
 type Datum={
  date:string;turn:Turno;model:Model;vt:Vt;
  top:string[];topLength:number;top3:number|null;top5:number|null;
@@ -59,16 +59,15 @@ type Datum={
 const rankOnce=(date:string,turn:Turno,model:Model,vt:Vt,top:string[],
  winners:{jur:string;head:string}[],formable:number|null,
  physicalPool:string[],historicalRoots?:number):Datum=>{
- const familyOf=vt==='VT2'?
-  (s:string)=>reversibleFamily(s):(s:string)=>auxFamily(s);
+ const familyOf=(s:string)=>vt==='VT2'?reversibleFamily(s):auxFamily(s);
  const details=winners.map(w=>{
-  const f=familyOf(w.head.slice(vt==='VT2'?-2:-3));
-  const pos=top.indexOf(f);
+  const f=vt==='VT4'?w.head:familyOf(w.head.slice(vt==='VT2'?-2:-3));
+  const pos=top.findIndex(family=>vt==='VT4'?family.split('/').includes(f):family===f);
   return {...w,family:f,rank:pos<0?null:pos+1};
  });
  const hit=(l:number,h:number)=>details.filter(x=>x.rank!==null&&x.rank>=l&&x.rank<=h).length;
  const n=top.length;
- const controls=n>=10?Array.from({length:20},(_,seed)=>{
+ const controls=n>=10&&vt!=='VT4'?Array.from({length:20},(_,seed)=>{
   const list=[...new Set(physicalPool)].sort((a,b)=>
    hash(date+'|'+turn+'|'+model+'|'+vt+'|control'+seed+'|'+a)-
    hash(date+'|'+turn+'|'+model+'|'+vt+'|control'+seed+'|'+b)||a.localeCompare(b)).slice(0,10);
@@ -161,9 +160,9 @@ async function one(date:string):Promise<{date:string;rows:Datum[];missing:{turn:
   }
   const pre=preSheetAtCut(whole,turn,TURNOS.indexOf(turn));
   const lalo=buildMotorLalo(pre,date,turn,hist);
-  for(const [vt,k] of [['VT2','vt2'],['VT3','vt3']] as const){
+  for(const [vt,k] of [['VT2','vt2'],['VT3','vt3'],['VT4','vt4']] as const){
    const ranks=lalo.ranks[k].map(x=>x.family);
-   const possible=[...new Set(formPositions(pre,turn,k)
+   const possible=k==='vt4'?ranks:[...new Set(formPositions(pre,turn,k)
     .map(loc=>{
      const col=pre.columns.find(c=>c.id===loc.source)!;
      return reversibleFamily(loc.cells.map(cell=>col.values[cell.row][cell.col]).join(''));
@@ -177,12 +176,19 @@ async function one(date:string):Promise<{date:string;rows:Datum[];missing:{turn:
    const boardHeads=auxAtCut(observations.get(source)!,turn,mode);
    const board=auxiliaryBoard(boardHeads,turn);
    const ranks=buildAuxIndependent(date,turn,boardHeads,auxHist[mode]);
-   for(const [vt,length] of [['VT2',2],['VT3',3]] as const){
+   for(const [vt,length] of [['VT2',2],['VT3',3],['VT4',4]] as const){
     const values=ranks[length].map(x=>x.family);
-    const physical=collectAuxFamilies(board,length);
-    const possible=new Set(physical.map(x=>x.family));
-    const hit=observed.filter(x=>possible.has(auxFamily(x.head.slice(-length)))).length;
-    rows.push(rankOnce(date,turn,name,vt,values,observed,hit,physical.map(x=>x.family)));
+    if(length===4){
+     const formed=new Set(enumerateAuxPaths(board,4)
+      .map(p=>p.map(c=>c.digit).join('')));
+     rows.push(rankOnce(date,turn,name,vt,values,observed,
+      observed.filter(x=>formed.has(x.head)).length,values));
+    }else{
+     const physical=collectAuxFamilies(board,length);
+     const possible=new Set(physical.map(x=>x.family));
+     const hit=observed.filter(x=>possible.has(auxFamily(x.head.slice(-length)))).length;
+     rows.push(rankOnce(date,turn,name,vt,values,observed,hit,physical.map(x=>x.family)));
+    }
    }
    const forms=selectAuxFormFirst(board,sixHist[mode],date,name);
    const families=forms.top.map(x=>x.family);
@@ -220,13 +226,13 @@ async function main(){
  }
  const all=successes.flatMap(x=>x.rows);
  const models=['lalo','aux_ayer','aux_hoy','formas_ayer','formas_hoy'] as Model[];
- const vts=['VT2','VT3'] as Vt[];
+ const vts=['VT2','VT3','VT4'] as Vt[];
  const byModel=Object.fromEntries(models.map(m=>[m,Object.fromEntries(vts
-  .filter(v=>!(m.startsWith('formas')&&v==='VT2'))
+  .filter(v=>!m.startsWith('formas')||v==='VT3')
   .map(v=>[v,summarize(all.filter(x=>x.model===m&&x.vt===v))]))]));
  const byTurn=Object.fromEntries(TURNOS.map(turn=>[
   turn,Object.fromEntries(models.map(m=>[m,Object.fromEntries(vts
-   .filter(v=>!(m.startsWith('formas')&&v==='VT2'))
+   .filter(v=>!m.startsWith('formas')||v==='VT3')
    .map(v=>[v,summarize(all.filter(x=>x.turn===turn&&x.model===m&&x.vt===v))]))]))
  ]));
  const comparable=Object.fromEntries(vts.map(vt=>{
@@ -288,7 +294,7 @@ async function main(){
     .map(y=>({date:x.date,turn:x.turn,model:x.model,...y}))).slice(-75),
   daily:successes.map(x=>({date:x.date,cuts:5-x.missing.length,
    hits:Object.fromEntries(models.map(m=>[m,Object.fromEntries(vts
-    .filter(v=>!(m.startsWith('formas')&&v==='VT2'))
+    .filter(v=>!m.startsWith('formas')||v==='VT3')
     .map(v=>[v,x.rows.filter(y=>y.model===m&&y.vt===v)
      .reduce((s,y)=>s+(y.top10??0),0)]))]))}))
  };
