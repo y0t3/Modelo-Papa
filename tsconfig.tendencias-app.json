@@ -5,7 +5,8 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "scripts/test-tendencias-vt2.ts",
-    "scripts/test-tendencias-vt2-vivas.ts"
+    "scripts/test-tendencias-vt2-vivas.ts",
+    "scripts/test-info-vt3-diagnostico.ts"
   ],
   "exclude": [
     "node_modules",
