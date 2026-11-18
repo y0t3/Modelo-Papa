@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - lab/diagnostico-vt3-cobertura-seleccion-18nov2026
+  pull_request:
+    branches:
+      - lab/balance-motores-02a17nov2026
   workflow_dispatch:
 permissions:
   contents: read
