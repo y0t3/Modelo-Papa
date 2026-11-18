@@ -349,7 +349,7 @@ async function main(){
      const j=tops.filter(p=>p.has(fam)).length;
      topBuckets[j].observed++;
     }
-    sharedPhys3+=[...allPhysical].filter(f=>physical.every(p=>p.has(f))).length;
+    if(models.length===3)sharedPhys3+=[...allPhysical].filter(f=>physical.every(p=>p.has(f))).length;
     sharedPhys2+=[...allPhysical].filter(f=>physical.filter(p=>p.has(f)).length>=2).length;
     unionPhys+=allPhysical.size;
     topOverlap2+=[...allTop].filter(f=>tops.filter(p=>p.has(f)).length>=2).length;
@@ -369,7 +369,7 @@ async function main(){
     const geom=[...lalo.top.slice(0,20)].sort((a,b)=>{
      const sa=physical.filter(p=>p.has(a)).length,sb=physical.filter(p=>p.has(b)).length;
      const ia=lalo.top.indexOf(a),ib=lalo.top.indexOf(b);
-     return (ib-ia)+3*(sb-sa)||ia-ib||a.localeCompare(b);
+     return (ib-ia)+3*(sa-sb)||ia-ib||a.localeCompare(b);
     }).slice(0,10);
     if(geom.some(x=>!base.includes(x)))geomChanges++;
     // FUSIÓN: puntaje fijo de posiciones 1-20, separado por motor.
