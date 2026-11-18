@@ -242,8 +242,43 @@ async function main(){
     return [m,summarize(xs)];
    }))}];
  }));
+ const pairs=[
+  ['aux_hoy','lalo'],['aux_hoy','aux_ayer'],['aux_ayer','lalo'],
+  ['formas_ayer','aux_ayer'],['formas_hoy','aux_hoy']
+ ] as const;
+ const pairedTests=Object.fromEntries(vts.map(vt=>[vt,Object.fromEntries(pairs
+  .filter(([a,b])=>vt==='VT3'||(!a.startsWith('formas')&&!b.startsWith('formas')))
+  .map(([a,b],p)=>{
+   const daily=successes.map(day=>{
+    let hitsA=0,hitsB=0,cuts=0;
+    for(const turn of TURNOS){
+     const A=day.rows.find(r=>r.turn===turn&&r.vt===vt&&r.model===a);
+     const B=day.rows.find(r=>r.turn===turn&&r.vt===vt&&r.model===b);
+     if(A?.top10===null||B?.top10===null||!A||!B)continue;
+     cuts++;hitsA+=A.top10;hitsB+=B.top10;
+    }
+    return {date:day.date,hitsA,hitsB,cuts,delta:hitsA-hitsB};
+   });
+   let seed=(20261118+p*197+Number(vt==='VT3')*2003)>>>0;
+   const random=()=>{seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return (seed>>>0)/4294967296};
+   const bSamples=Array.from({length:3000},()=>{
+    let total=0;
+    for(let i=0;i<daily.length;i++)total+=daily[Math.floor(random()*daily.length)].delta;
+    return total;
+   }).sort((x,y)=>x-y);
+   return [a+'__'+b,{
+    cuts:daily.reduce((n,x)=>n+x.cuts,0),
+    hitsA:daily.reduce((n,x)=>n+x.hitsA,0),
+    hitsB:daily.reduce((n,x)=>n+x.hitsB,0),
+    difference:daily.reduce((n,x)=>n+x.delta,0),
+    dayBootstrap95:[bSamples[74],bSamples[2924]],
+    daysBetter:daily.filter(x=>x.delta>0).length,
+    daysWorse:daily.filter(x=>x.delta<0).length,
+    daysTied:daily.filter(x=>x.delta===0).length
+   }];
+  }))]));
  const result={
-  dates:dates,dayCount:successes.length,from:FROM,to:TO,comparable,
+  dates:dates,dayCount:successes.length,from:FROM,to:TO,comparable,pairedTests,
   skipped,missingDraws:successes.filter(x=>x.missing.length).map(x=>({
    date:x.date,missing:x.missing})),
   method:'PRE reconstruido: +11 y Aux Ayer/Hoy D−1 y D−7, Formas Primero seis jornadas. Montevideo sólo como fuente, no objetivo. 5 jurisdicciones objetivo por corte. Top10 requiere 10 familias completas.',
