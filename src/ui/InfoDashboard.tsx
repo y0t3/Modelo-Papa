@@ -18,6 +18,7 @@ import {useLaloTheme} from './LaloTheme';
 import type {DayOverview} from '../homeDaySummary';
 import DayMatchGrid from './DayMatchGrid';
 import TurnTrendPanel from './TurnTrendPanel';
+import Vt3DiagnosticPanel from './Vt3DiagnosticPanel';
 import type {TrendEngine} from '../trendHistoryVt2';
 import type {TrendPeriod,TrendSnapshot} from '../trendVt2Journal';
 
@@ -40,10 +41,11 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  onTrendEngineChange:(engine:TrendEngine)=>void;
  trendSnapshot:TrendSnapshot;onTrendPeriodChange:(period:TrendPeriod)=>void};
 
-type Section='resumen'|'tendencias'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+type Section='resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
  {id:'resumen',icon:'☀',title:'Resumen del día',subtitle:'Lo importante de este turno',accent:'#F3C251'},
  {id:'tendencias',icon:'▥',title:'Tendencias VT2',subtitle:'Qué mitad y qué motor mirar',accent:'#4ABDEB'},
+ {id:'vt3',icon:'⌗',title:'Diagnóstico VT3',subtitle:'Formación, raíces y Top10',accent:'#60E1DB'},
  {id:'historial',icon:'▦',title:'Día por día',subtitle:'Las hojas anteriores',accent:'#A68AFF'},
  {id:'auxiliar',icon:'▤',title:'Hoja auxiliar',subtitle:'Santiago y Neuquén',accent:'#E18AF6'},
  {id:'seguir',icon:'◎',title:'Seguir un número',subtitle:'Cómo fue apareciendo',accent:'#51D7AF'},
@@ -67,7 +69,8 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  trendEngine,onTrendEngineChange,trendSnapshot,onTrendPeriodChange}:Props){
  const {colors:c}=useLaloTheme();
  const [section,setSection]=useState<Section|null>(initialSection);
- useEffect(()=>{setSection(initialSection)},[date,initialSection]);
+ const [focusedVt3,setFocusedVt3]=useState<string|null>(null);
+ useEffect(()=>{setSection(initialSection);setFocusedVt3(null)},[date,initialSection]);
  useEffect(()=>{if(figureFocus&&initialSection!=='tendencias')setSection('seguir')},[figureFocus,initialSection]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
@@ -83,7 +86,10 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
    <View style={s.tiles}>
     {OPTIONS.map(item=><Pressable key={item.id} accessibilityRole="button"
      accessibilityLabel={'Abrir '+item.title}
-     onPress={()=>item.id==='recorridos'?onNavigate('predictiva'):setSection(item.id)}
+     onPress={()=>{
+       if(item.id==='recorridos')onNavigate('predictiva');
+       else {if(item.id==='seguir')setFocusedVt3(null);setSection(item.id)}
+      }}
      style={[s.tile,{backgroundColor:c.surface,borderColor:item.accent}]}>
      <Text style={[s.tileIcon,{color:item.accent}]}>{item.icon}</Text>
      <Text style={[s.tileTitle,{color:c.text}]}>{item.title}</Text>
@@ -110,6 +116,14 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      selectedEngine={trendEngine} onEngineChange={onTrendEngineChange}
      trendSnapshot={trendSnapshot} onPeriodChange={onTrendPeriodChange}
      onTurnChange={onTurnChange}/>:null}
+    {section==='vt3'?<>
+     <TurnStrip value={turn} onChange={onTurnChange}/>
+     <Vt3DiagnosticPanel date={date} turn={turn} data={data} sheet={sheet}
+      view={view} ayer={trackingAyer} hoy={trackingHoy}
+      onFocusFamily={family=>{setFocusedVt3('vt3|'+family);setSection('seguir')}}
+      onOpenAux={onFigureAux}
+      onOpenTracking={()=>{setFocusedVt3(null);setSection('seguir')}}/>
+    </>:null}
     {section==='historial'?<>
      <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Elegí un día o una figura para verla más grande.</Text>
@@ -128,7 +142,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      <Text style={[s.small,{color:c.subtext}]}>Buscá una cifra y mirá cómo aparece en las hojas anteriores.</Text>
      <FigureTrackingPanel date={date} turn={turn} sheet={sheet}
       history={visualDays} view={view} ayer={trackingAyer} hoy={trackingHoy}
-      focusRequest={figureFocus} onOpenLalo={onFigureLalo}
+      focusRequest={focusedVt3||figureFocus} onOpenLalo={onFigureLalo}
       onOpenAux={onFigureAux}/>
     </>:null}
     {section==='ayuda'?<>
