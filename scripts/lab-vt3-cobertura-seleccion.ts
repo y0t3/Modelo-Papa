@@ -27,7 +27,7 @@ import {buildAuxIndependent} from '../src/motorLaloIntegral';
 import type {AuxiliaryHistorical,AuxRank} from '../src/motorLaloIntegral';
 import {auxFamily,auxiliaryBoard,collectAuxFamilies,enumerateAuxPaths} from '../src/auxSantiagoNeuquen';
 import {selectAuxFormFirst} from '../src/labAuxFormasPrimeroVT3';
-import {formPositions} from '../src/motorFormasPrimero';
+import {formPositions,buildFormFirstMotor} from '../src/motorFormasPrimero';
 
 const FROM=process.env.VT3_FROM||'2026-11-02',TO=process.env.VT3_TO||'2026-11-17';
 const headJurs=JURS.filter(j=>j!=='Montevideo');
@@ -53,6 +53,10 @@ const variantNames:Vt3Variant[]=[
  'original','independentRoots','recentFirst','balancedD1D7',
  'shapeBreadth','noCrossOrBranch','shapePriority','sparse'
 ];
+type ShapeTrial={date:string;turn:Turno;heads:number;
+ original:number;formasPrimero:number;mix8y2:number;
+ formasCount:number;mixCount:number;newFamilies:number;
+ rootlessPromoted:number;rootlessWinners:number};
 type VT3Cut={
  date:string;turn:Turno;model:VT3Model;
  heads:number;physicalHeads:number;rankedHeads:number;top10Heads:number;
@@ -217,7 +221,8 @@ function summarize(xs:Datum[]){
   top10HitExamples:headHits.slice(0,20).map(x=>({jur:x.jur,head:x.head,family:x.family,rank:x.rank}))
  };
 }
-async function one(date:string):Promise<{date:string;rows:Datum[];diagnostics:VT3Cut[];missing:{turn:Turno;found:number}[]}>{
+async function one(date:string):Promise<{date:string;rows:Datum[];diagnostics:VT3Cut[];
+ shapeTrials:ShapeTrial[];missing:{turn:Turno;found:number}[]}>{
  const weekDate=shiftDay(date,-7);
  const [current,previous,weekly,noctBase]=await Promise.all([
   draw(date),loadPreviousDraws(date,6,draw),draw(weekDate),
@@ -259,7 +264,12 @@ async function one(date:string):Promise<{date:string;rows:Datum[];diagnostics:VT
   }));
  }
  const whole=buildSheet(current,noctBase.heads);
- const rows:Datum[]=[],diagnostics:VT3Cut[]=[],missing:{turn:Turno;found:number}[]=[];
+ const visualDays=await Promise.all(previous.map(async p=>{
+  const prevNoct=await nocturnaAnteriorPorJur(p.date,draw);
+  return {date:p.date,heads:p.heads,sheet:buildSheet(p.heads,prevNoct.heads)};
+ }));
+ const rows:Datum[]=[],diagnostics:VT3Cut[]=[],shapeTrials:ShapeTrial[]=[],
+  missing:{turn:Turno;found:number}[]=[];
  for(const turn of TURNOS){
   const observed=headJurs.map(jur=>({jur,head:current[turn]?.[jur]||''}));
   if(observed.some(x=>!valid(x.head))){
@@ -273,6 +283,24 @@ async function one(date:string):Promise<{date:string;rows:Datum[];diagnostics:VT
    return reversibleFamily(loc.cells.map(cell=>col.values[cell.row][cell.col]).join(''));
   }))];
   diagnostics.push(diagnosticVT3(date,turn,'lalo',lalo.ranks.vt3,physicallyLalo,observed));
+  // Formas Primero Lalo: se ordenan primero siluetas con 6 jornadas
+  // PRE previas y recién entonces se leen las cifras actuales.
+  const physicalForms=buildFormFirstMotor(pre,date,turn,visualDays,10,'vt3');
+  const official=lalo.ranks.vt3.slice(0,10).map(x=>x.family);
+  const shapeTop=physicalForms.top.map(x=>x.family);
+  const blend=[...official.slice(0,8),...shapeTop.filter(x=>
+   !official.slice(0,8).includes(x)).slice(0,2)];
+  const actual=observed.map(x=>auxFamily(x.head.slice(-3)));
+  const hit=(top:string[])=>actual.filter(x=>top.includes(x)).length;
+  shapeTrials.push({date,turn,heads:actual.length,
+   original:hit(official),formasPrimero:shapeTop.length===10?hit(shapeTop):0,
+   mix8y2:blend.length===10?hit(blend):0,
+   formasCount:shapeTop.length,mixCount:blend.length,
+   newFamilies:blend.filter(x=>!official.includes(x)).length,
+   rootlessPromoted:blend.filter(x=>!lalo.ranks.vt3.some(r=>r.family===x)).length,
+   rootlessWinners:actual.filter(x=>blend.includes(x)&&
+    !lalo.ranks.vt3.some(r=>r.family===x)).length
+  });
   for(const [vt,k] of [['VT2','vt2'],['VT3','vt3'],['VT4','vt4']] as const){
    const ranks=lalo.ranks[k].map(x=>x.family);
    const possible=k==='vt4'?ranks:[...new Set(formPositions(pre,turn,k)
@@ -314,7 +342,7 @@ async function one(date:string):Promise<{date:string;rows:Datum[];diagnostics:VT
     physical,forms.winnerRoots));
   }
  }
- return {date,rows,diagnostics,missing};
+ return {date,rows,diagnostics,shapeTrials,missing};
 }
 async function main(){
  const dates:string[]=[];
@@ -404,8 +432,23 @@ async function main(){
    byTurn:Object.fromEntries(TURNOS.map(t=>[t,summarizeVt3(allDiagnostic.filter(
     x=>x.model===model&&x.turn===t))]))}
  ]));
+ const allShapes=successes.flatMap(x=>x.shapeTrials);
+ const sum=(name:keyof ShapeTrial,rows=allShapes)=>rows.reduce((n,x)=>n+Number(x[name]),0);
+ const shapes={cuts:allShapes.length,formsFull:allShapes.filter(x=>x.formasCount===10).length,
+  mixFull:allShapes.filter(x=>x.mixCount===10).length,
+  original:sum('original'),formasPrimero:sum('formasPrimero'),mix8y2:sum('mix8y2'),
+  mixedNewFamilies:sum('newFamilies'),mixedRootless:sum('rootlessPromoted'),
+  mixedRootlessWins:sum('rootlessWinners'),
+  byTurn:Object.fromEntries(TURNOS.map(turn=>{const x=allShapes.filter(t=>t.turn===turn);
+   return [turn,{cuts:x.length,original:sum('original',x),
+    formasPrimero:sum('formasPrimero',x),mix8y2:sum('mix8y2',x)}]})),
+  byDate:Object.fromEntries([...new Set(allShapes.map(x=>x.date))].sort().map(date=>{
+   const x=allShapes.filter(t=>t.date===date);
+   return [date,{original:sum('original',x),formasPrimero:sum('formasPrimero',x),
+    mix8y2:sum('mix8y2',x)}]}))
+ };
  const result={
-  dates:dates,dayCount:successes.length,from:FROM,to:TO,comparable,pairedTests,vt3Diagnostic,
+  dates:dates,dayCount:successes.length,from:FROM,to:TO,comparable,pairedTests,vt3Diagnostic,shapes,
   skipped,missingDraws:successes.filter(x=>x.missing.length).map(x=>({
    date:x.date,missing:x.missing})),
   method:'PRE reconstruido: +11 y Aux Ayer/Hoy D−1 y D−7, Formas Primero seis jornadas. Montevideo sólo como fuente, no objetivo. 5 jurisdicciones objetivo por corte. Top10 requiere 10 familias completas.',
@@ -419,6 +462,9 @@ async function main(){
     .map(v=>[v,x.rows.filter(y=>y.model===m&&y.vt===v)
      .reduce((s,y)=>s+(y.top10??0),0)]))]))}))
  };
+ console.log('VT3_FORMAS_START');
+ console.log(JSON.stringify({window:[FROM,TO],shapes}));
+ console.log('VT3_FORMAS_END');
  console.log('VT3_DIAGNOSTICO_START');
  console.log(JSON.stringify({from:FROM,to:TO,days:successes.length,skipped,vt3Diagnostic,
   examples:allDiagnostic.flatMap(x=>x.winners.filter(w=>w.physical&&w.rank===null)
