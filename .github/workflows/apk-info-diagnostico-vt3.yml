@@ -5,6 +5,9 @@ on:
       - feature/info-diagnostico-vt3-corte-18nov2026
     paths:
       - '.github/workflows/apk-info-diagnostico-vt3.yml'
+  pull_request:
+    branches:
+      - feature/tendencias-vt2-actualizacion-diaria-31oct2026
   workflow_dispatch:
 permissions:
   contents: read
