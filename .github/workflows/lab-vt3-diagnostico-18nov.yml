@@ -1,0 +1,31 @@
+name: Laboratorio VT3 - cobertura, raices y seleccion
+on:
+  push:
+    branches:
+      - lab/diagnostico-vt3-cobertura-seleccion-18nov2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  vt3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        periodo:
+          - {label: sep-oct, from: '2026-09-01', to: '2026-10-30'}
+          - {label: nov, from: '2026-11-02', to: '2026-11-17'}
+    name: ${{ matrix.periodo.label }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Instalar dependencias
+        run: npm install
+      - name: Diagnosticar VT3 sin contaminacion por resultados
+        env:
+          VT3_FROM: ${{ matrix.periodo.from }}
+          VT3_TO: ${{ matrix.periodo.to }}
+        run: npx --yes tsx scripts/lab-vt3-cobertura-seleccion.ts
