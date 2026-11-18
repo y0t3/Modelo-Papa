@@ -1,0 +1,49 @@
+name: APK de prueba - Diagnostico VT3 en Info
+on:
+  push:
+    branches:
+      - feature/info-diagnostico-vt3-corte-18nov2026
+    paths:
+      - '.github/workflows/apk-info-diagnostico-vt3.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - name: Código de la versión de prueba
+        uses: actions/checkout@v4
+      - name: Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Java 17 para Gradle
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Instalar dependencias
+        run: npm install --omit=optional --no-audit --no-fund
+      - name: Verificar TypeScript de la app
+        run: npx tsc --noEmit --project tsconfig.tendencias-app.json
+      - name: Probar diagnóstico VT3
+        run: npx --yes tsx scripts/test-info-vt3-diagnostico.ts
+      - name: Generar Android con los diseños actuales
+        env:
+          CI: '1'
+        run: npx expo prebuild --platform android --clean
+      - name: Compilar APK release
+        working-directory: android
+        env:
+          CI: '1'
+          NODE_ENV: production
+        run: ./gradlew assembleRelease --no-daemon
+      - name: Publicar APK de prueba
+        uses: actions/upload-artifact@v4
+        with:
+          name: Modelo-Lalo-Diagnostico-VT3-Prueba
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 14
