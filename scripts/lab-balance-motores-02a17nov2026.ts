@@ -26,10 +26,12 @@ import {buildAuxIndependent} from '../src/motorLaloIntegral';
 import type {AuxiliaryHistorical} from '../src/motorLaloIntegral';
 import {auxFamily,auxiliaryBoard,collectAuxFamilies} from '../src/auxSantiagoNeuquen';
 import {selectAuxFormFirst} from '../src/labAuxFormasPrimeroVT3';
+import {formPositions} from '../src/motorFormasPrimero';
 
 const FROM='2026-11-02',TO='2026-11-17';
 const headJurs=JURS.filter(j=>j!=='Montevideo');
 const valid=(s:string)=>/^\d{4}$/.test(s);
+const hash=(s:string)=>{let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
 const drawCache=new Map<string,Promise<CabezasDia>>();
 const auxCache=new Map<string,ReturnType<typeof fetchAuxiliaryHeads>>();
 function draw(d:string){
@@ -52,10 +54,11 @@ type Datum={
   jur:string;head:string;family:string;rank:number|null
  }[];
  formable:number|null;historicalRoots?:number;
+ controls:number[];physicalFamilies:number;
 };
 const rankOnce=(date:string,turn:Turno,model:Model,vt:Vt,top:string[],
  winners:{jur:string;head:string}[],formable:number|null,
- historicalRoots?:number):Datum=>{
+ physicalPool:string[],historicalRoots?:number):Datum=>{
  const familyOf=vt==='VT2'?
   (s:string)=>reversibleFamily(s):(s:string)=>auxFamily(s);
  const details=winners.map(w=>{
@@ -65,7 +68,15 @@ const rankOnce=(date:string,turn:Turno,model:Model,vt:Vt,top:string[],
  });
  const hit=(l:number,h:number)=>details.filter(x=>x.rank!==null&&x.rank>=l&&x.rank<=h).length;
  const n=top.length;
- return {date,turn,model,vt,top,topLength:n,
+ const controls=n>=10?Array.from({length:20},(_,seed)=>{
+  const list=[...new Set(physicalPool)].sort((a,b)=>
+   hash(date+'|'+turn+'|'+model+'|'+vt+'|control'+seed+'|'+a)-
+   hash(date+'|'+turn+'|'+model+'|'+vt+'|control'+seed+'|'+b)||a.localeCompare(b)).slice(0,10);
+  const selected=new Set(list);
+  return details.filter(x=>selected.has(x.family)).length;
+ }):[];
+ return {date,turn,model,vt,top,topLength:n,controls,
+  physicalFamilies:new Set(physicalPool).size,
   top3:n>=3?hit(1,3):null,top5:n>=5?hit(1,5):null,
   top10:n>=10?hit(1,10):null,
   first:n>=10?hit(1,5):null,second:n>=10?hit(6,10):null,
@@ -91,6 +102,11 @@ function summarize(xs:Datum[]){
   allRankedHeads:allRanked.length,rankedButOutsideTop10:allRanked.filter(x=>x.rank!>10).length,
   validHeadsFormable:xs.filter(x=>x.formable!==null).reduce((s,x)=>s+x.formable!,0),
   headsOnFormableCuts:xs.filter(x=>x.formable!==null).length*5,
+  neutralControl:(()=>{
+   const totals=Array.from({length:20},(_,i)=>xs.reduce((sum,r)=>sum+(r.controls[i]||0),0));
+   return {mean:Number((totals.reduce((a,b)=>a+b,0)/20).toFixed(2)),
+    min:Math.min(...totals),max:Math.max(...totals)};
+  })(),
   top10HitExamples:headHits.slice(0,20).map(x=>({jur:x.jur,head:x.head,family:x.family,rank:x.rank}))
  };
 }
@@ -147,7 +163,12 @@ async function one(date:string):Promise<{date:string;rows:Datum[];missing:{turn:
   const lalo=buildMotorLalo(pre,date,turn,hist);
   for(const [vt,k] of [['VT2','vt2'],['VT3','vt3']] as const){
    const ranks=lalo.ranks[k].map(x=>x.family);
-   rows.push(rankOnce(date,turn,'lalo',vt,ranks,observed,null));
+   const possible=[...new Set(formPositions(pre,turn,k)
+    .map(loc=>{
+     const col=pre.columns.find(c=>c.id===loc.source)!;
+     return reversibleFamily(loc.cells.map(cell=>col.values[cell.row][cell.col]).join(''));
+    }))];
+   rows.push(rankOnce(date,turn,'lalo',vt,ranks,observed,null,possible));
   }
   for(const mode of ['anterior','intrajornada'] as const){
    const name:Model=mode==='anterior'?'aux_ayer':'aux_hoy';
@@ -158,10 +179,10 @@ async function one(date:string):Promise<{date:string;rows:Datum[];missing:{turn:
    const ranks=buildAuxIndependent(date,turn,boardHeads,auxHist[mode]);
    for(const [vt,length] of [['VT2',2],['VT3',3]] as const){
     const values=ranks[length].map(x=>x.family);
-    const physical=new Set(collectAuxFamilies(board,length));
-    const possible=new Set([...physical].map(x=>x.family));
+    const physical=collectAuxFamilies(board,length);
+    const possible=new Set(physical.map(x=>x.family));
     const hit=observed.filter(x=>possible.has(auxFamily(x.head.slice(-length)))).length;
-    rows.push(rankOnce(date,turn,name,vt,values,observed,hit));
+    rows.push(rankOnce(date,turn,name,vt,values,observed,hit,physical.map(x=>x.family)));
    }
    const forms=selectAuxFormFirst(board,sixHist[mode],date,name);
    const families=forms.top.map(x=>x.family);
@@ -169,7 +190,7 @@ async function one(date:string):Promise<{date:string;rows:Datum[];missing:{turn:
    const physicalSet=new Set(physical);
    rows.push(rankOnce(date,turn,formName,'VT3',families,observed,
     observed.filter(x=>physicalSet.has(auxFamily(x.head.slice(-3)))).length,
-    forms.winnerRoots));
+    physical,forms.winnerRoots));
   }
  }
  return {date,rows,missing};
@@ -208,8 +229,21 @@ async function main(){
    .filter(v=>!(m.startsWith('formas')&&v==='VT2'))
    .map(v=>[v,summarize(all.filter(x=>x.turn===turn&&x.model===m&&x.vt===v))]))]))
  ]));
+ const comparable=Object.fromEntries(vts.map(vt=>{
+  const groups=new Map<string,Datum[]>();
+  for(const r of all.filter(x=>x.vt===vt&&['lalo','aux_ayer','aux_hoy'].includes(x.model))){
+   const id=r.date+'|'+r.turn;
+   const pool=groups.get(id)||[];pool.push(r);groups.set(id,pool);
+  }
+  const common=[...groups.values()].filter(rs=>rs.length===3&&rs.every(r=>r.top10!==null));
+  return [vt,{cuts:common.length,heads:common.length*5,
+   byMotor:Object.fromEntries((['lalo','aux_ayer','aux_hoy'] as Model[]).map(m=>{
+    const xs=common.map(rs=>rs.find(r=>r.model===m)!);
+    return [m,summarize(xs)];
+   }))}];
+ }));
  const result={
-  dates:dates,dayCount:successes.length,from:FROM,to:TO,
+  dates:dates,dayCount:successes.length,from:FROM,to:TO,comparable,
   skipped,missingDraws:successes.filter(x=>x.missing.length).map(x=>({
    date:x.date,missing:x.missing})),
   method:'PRE reconstruido: +11 y Aux Ayer/Hoy D−1 y D−7, Formas Primero seis jornadas. Montevideo sólo como fuente, no objetivo. 5 jurisdicciones objetivo por corte. Top10 requiere 10 familias completas.',
