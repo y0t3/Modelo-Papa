@@ -1,0 +1,30 @@
+name: Verificar Diagnostico VT3 en Info
+on:
+  push:
+    branches:
+      - feature/info-diagnostico-vt3-corte-18nov2026
+  pull_request:
+    branches:
+      - feature/tendencias-vt2-actualizacion-diaria-31oct2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Instalar dependencias de verificacion
+        run: npm install --omit=optional --no-audit --no-fund
+      - name: Tipado de toda la interfaz
+        run: npx tsc --noEmit --project tsconfig.tendencias-app.json
+      - name: Clasificacion VT3 sin fuga temporal
+        run: npx --yes tsx scripts/test-info-vt3-diagnostico.ts
+      - name: Motor Lalo original intacto
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Regresiones de fechas y navegacion
+        run: npx --yes tsx scripts/test-info-fechas-atras.ts
