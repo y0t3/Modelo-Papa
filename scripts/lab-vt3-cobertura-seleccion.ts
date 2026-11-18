@@ -28,6 +28,7 @@ import type {AuxiliaryHistorical,AuxRank} from '../src/motorLaloIntegral';
 import {auxFamily,auxiliaryBoard,collectAuxFamilies,enumerateAuxPaths} from '../src/auxSantiagoNeuquen';
 import {selectAuxFormFirst} from '../src/labAuxFormasPrimeroVT3';
 import {formPositions,buildFormFirstMotor} from '../src/motorFormasPrimero';
+import {buildFigureTracking} from '../src/figureTracking';
 
 const FROM=process.env.VT3_FROM||'2026-11-02',TO=process.env.VT3_TO||'2026-11-17';
 const headJurs=JURS.filter(j=>j!=='Montevideo');
@@ -53,6 +54,13 @@ const variantNames:Vt3Variant[]=[
  'original','independentRoots','recentFirst','balancedD1D7',
  'shapeBreadth','noCrossOrBranch','shapePriority','sparse'
 ];
+type ShadowTrial={date:string;turn:Turno;heads:number;
+ baseline:number;rootlessWitness:number;rootlessStrong:number;
+ rootlessWitnessFamilies:number;rootlessStrongFamilies:number;
+ promotedWinningHeads:number;strongWinningHeads:number;
+ sameSourcePromoted:number;chosenWithTwoEvents:number;
+ totalStrongCandidates:number;totalRootlessCandidates:number;
+};
 type ShapeTrial={date:string;turn:Turno;heads:number;
  original:number;formasPrimero:number;mix8y2:number;
  formasCount:number;mixCount:number;newFamilies:number;
@@ -222,7 +230,8 @@ function summarize(xs:Datum[]){
  };
 }
 async function one(date:string):Promise<{date:string;rows:Datum[];diagnostics:VT3Cut[];
- shapeTrials:ShapeTrial[];missing:{turn:Turno;found:number}[]}>{
+ shapeTrials:ShapeTrial[];shadowTrials:ShadowTrial[];
+ missing:{turn:Turno;found:number}[]}>{
  const weekDate=shiftDay(date,-7);
  const [current,previous,weekly,noctBase]=await Promise.all([
   draw(date),loadPreviousDraws(date,6,draw),draw(weekDate),
@@ -269,7 +278,7 @@ async function one(date:string):Promise<{date:string;rows:Datum[];diagnostics:VT
   return {date:p.date,heads:p.heads,sheet:buildSheet(p.heads,prevNoct.heads)};
  }));
  const rows:Datum[]=[],diagnostics:VT3Cut[]=[],shapeTrials:ShapeTrial[]=[],
-  missing:{turn:Turno;found:number}[]=[];
+  shadowTrials:ShadowTrial[]=[],missing:{turn:Turno;found:number}[]=[];
  for(const turn of TURNOS){
   const observed=headJurs.map(jur=>({jur,head:current[turn]?.[jur]||''}));
   if(observed.some(x=>!valid(x.head))){
@@ -292,6 +301,48 @@ async function one(date:string):Promise<{date:string;rows:Datum[];diagnostics:VT
    !official.slice(0,8).includes(x)).slice(0,2)];
   const actual=observed.map(x=>auxFamily(x.head.slice(-3)));
   const hit=(top:string[])=>actual.filter(x=>top.includes(x)).length;
+
+  // SHADOW DE FIGURAS, sin usar un solo POST: cada testigo es
+  // un evento histórico ganador distinto, NO cada trazo/minihoja.
+  // El motor Lalo oficial no cambia. Se prueba sustitución limitada
+  // de 2 puestos al final del Top10, junto con variante más estricta.
+  const trace=buildFigureTracking(date,turn,pre,visualDays,lalo);
+  const shadow=trace.records.filter(x=>!x.recognized&&x.antecedents.length)
+   .map(x=>{
+    const events=new Set(x.antecedents.map(a=>
+     [a.date,a.turn,a.jurisdiction,a.head].join('|')));
+    const sameSource=new Set(x.antecedents.filter(a=>a.relation==='MISMA_FUENTE')
+     .map(a=>[a.date,a.turn,a.jurisdiction,a.head].join('|')));
+    const nearest=Math.min(...x.antecedents.map(a=>Math.abs(a.verticalShift)));
+    const days=new Set(x.antecedents.map(a=>a.date));
+    return {family:x.family,events:events.size,sameSource:sameSource.size,
+     nearest,days:days.size,roots:x.antecedents.length};
+   }).sort((a,b)=>b.events-a.events||b.days-a.days||
+    b.sameSource-a.sameSource||a.nearest-b.nearest||
+    a.family.localeCompare(b.family));
+  const choose=(xs:typeof shadow)=>{
+   const extras=xs.slice(0,2).map(x=>x.family);
+   const first=official.slice(0,8),remaining=official.slice(8);
+   return [...first,...extras.filter(x=>!first.includes(x)),
+    ...remaining.filter(x=>!first.includes(x)&&!extras.includes(x))].slice(0,10);
+  };
+  const witnessTop=choose(shadow);
+  const strong=shadow.filter(x=>x.events>=2&&x.days>=2&&x.nearest<=1);
+  const strongTop=choose(strong);
+  const rootlessWinners=actual.filter(x=>!lalo.ranks.vt3.some(r=>r.family===x));
+  const chosenFrom=(chosen:string[])=>chosen.filter(x=>!official.includes(x));
+  const inserted=chosenFrom(witnessTop),insertedStrong=chosenFrom(strongTop);
+  shadowTrials.push({date,turn,heads:actual.length,baseline:hit(official),
+   rootlessWitness:hit(witnessTop),rootlessStrong:hit(strongTop),
+   rootlessWitnessFamilies:inserted.length,
+   rootlessStrongFamilies:insertedStrong.length,
+   promotedWinningHeads:rootlessWinners.filter(x=>inserted.includes(x)).length,
+   strongWinningHeads:rootlessWinners.filter(x=>insertedStrong.includes(x)).length,
+   sameSourcePromoted:shadow.filter(x=>inserted.includes(x)&&x.sameSource>0).length,
+   chosenWithTwoEvents:shadow.filter(x=>inserted.includes(x)&&x.events>=2).length,
+   totalStrongCandidates:strong.length,totalRootlessCandidates:shadow.length
+  });
+
   shapeTrials.push({date,turn,heads:actual.length,
    original:hit(official),formasPrimero:shapeTop.length===10?hit(shapeTop):0,
    mix8y2:blend.length===10?hit(blend):0,
@@ -342,7 +393,7 @@ async function one(date:string):Promise<{date:string;rows:Datum[];diagnostics:VT
     physical,forms.winnerRoots));
   }
  }
- return {date,rows,diagnostics,shapeTrials,missing};
+ return {date,rows,diagnostics,shapeTrials,shadowTrials,missing};
 }
 async function main(){
  const dates:string[]=[];
@@ -432,6 +483,29 @@ async function main(){
    byTurn:Object.fromEntries(TURNOS.map(t=>[t,summarizeVt3(allDiagnostic.filter(
     x=>x.model===model&&x.turn===t))]))}
  ]));
+
+ const allShadow=successes.flatMap(x=>x.shadowTrials);
+ const shadowCount=(field:keyof ShadowTrial,rows=allShadow)=>
+  rows.reduce((n,r)=>n+Number(r[field]),0);
+ const shadowSummary=(rows:ShadowTrial[])=>({
+  cuts:rows.length,heads:shadowCount('heads',rows),
+  baseline:shadowCount('baseline',rows),
+  witness:shadowCount('rootlessWitness',rows),
+  strong:shadowCount('rootlessStrong',rows),
+  promotedFamilies:shadowCount('rootlessWitnessFamilies',rows),
+  strongPromoted:shadowCount('rootlessStrongFamilies',rows),
+  promotedReal:shadowCount('promotedWinningHeads',rows),
+  strongReal:shadowCount('strongWinningHeads',rows),
+  meanRootless:rows.length?Number((shadowCount('totalRootlessCandidates',rows)/rows.length).toFixed(1)):0,
+  meanStrong:rows.length?Number((shadowCount('totalStrongCandidates',rows)/rows.length).toFixed(1)):0,
+ });
+ const shadowEvidence={
+  all:shadowSummary(allShadow),
+  byTurn:Object.fromEntries(TURNOS.map(t=>[t,shadowSummary(allShadow.filter(x=>x.turn===t))])),
+  byDate:Object.fromEntries([...new Set(allShadow.map(x=>x.date))].sort()
+   .map(d=>[d,shadowSummary(allShadow.filter(x=>x.date===d))]))
+ };
+
  const allShapes=successes.flatMap(x=>x.shapeTrials);
  const sum=(name:keyof ShapeTrial,rows=allShapes)=>rows.reduce((n,x)=>n+Number(x[name]),0);
  const shapes={cuts:allShapes.length,formsFull:allShapes.filter(x=>x.formasCount===10).length,
@@ -448,7 +522,7 @@ async function main(){
     mix8y2:sum('mix8y2',x)}]}))
  };
  const result={
-  dates:dates,dayCount:successes.length,from:FROM,to:TO,comparable,pairedTests,vt3Diagnostic,shapes,
+  dates:dates,dayCount:successes.length,from:FROM,to:TO,comparable,pairedTests,vt3Diagnostic,shapes,shadowEvidence,
   skipped,missingDraws:successes.filter(x=>x.missing.length).map(x=>({
    date:x.date,missing:x.missing})),
   method:'PRE reconstruido: +11 y Aux Ayer/Hoy D−1 y D−7, Formas Primero seis jornadas. Montevideo sólo como fuente, no objetivo. 5 jurisdicciones objetivo por corte. Top10 requiere 10 familias completas.',
@@ -462,6 +536,9 @@ async function main(){
     .map(v=>[v,x.rows.filter(y=>y.model===m&&y.vt===v)
      .reduce((s,y)=>s+(y.top10??0),0)]))]))}))
  };
+ console.log('VT3_SHADOW_START');
+ console.log(JSON.stringify({from:FROM,to:TO,shadowEvidence}));
+ console.log('VT3_SHADOW_END');
  console.log('VT3_FORMAS_START');
  console.log(JSON.stringify({window:[FROM,TO],shapes}));
  console.log('VT3_FORMAS_END');
