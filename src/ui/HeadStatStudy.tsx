@@ -49,7 +49,7 @@ export default function HeadStatStudy({date,turn,history,historyBusy,
     backgroundColor:window===w?c.accentFill:c.card}}>
     <Text style={{color:window===w?c.accent:c.text,fontWeight:'900',
      fontSize:11}}>{w} jornadas</Text>
-   </Press>)}
+   </Pressable>)}
   </View>
   <Text style={{color:c.subtext,fontSize:11}}>
    {historyBusy?'Cargando resultados: '+historyProgress+' de 110 fechas…':

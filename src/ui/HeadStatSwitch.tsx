@@ -15,6 +15,6 @@ export default function HeadStatSwitch({mode,onMode}:{mode:StatMode;
     backgroundColor:x===mode?c.accentFill:c.surfaceAlt}}>
    <Text style={{fontWeight:'900',fontSize:11,
     color:x===mode?c.accent:c.text}}>{STAT_MODE_LABELS[x]}</Text>
-  </Press>)}
+  </Pressable>)}
  </View>;
 }
