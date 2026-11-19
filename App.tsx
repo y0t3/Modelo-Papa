@@ -597,7 +597,7 @@ function LaloApp(){
       </Pressable>
      </View>:null}
      <PanoramaSheet mode="hoja" sheet={showingSheet} data={showingHoja}
-      initialTurn={hojaTurn} initialTurnOnly={!!historicalPreview}
+      initialTurn={historicalPreview?.turn||target} initialTurnOnly={true}
       focusedOwner={hojaFocused} onInfo={()=>navigateTo('info')}
       auxHeads={historicalPreview?
        (historicalAux?.date===historicalPreview.day.date?
@@ -607,7 +607,8 @@ function LaloApp(){
        (auxMode==='intrajornada'?historicalPreview.day.date:historicalAux?.sourceDate||null):
        activeAuxDate}
       auxMode={auxMode} onAuxModeChange={changeAuxMode}
-      drawHeads={historicalPreview?historicalPreview.day.heads:data}
+       onTurnChange={historicalPreview?undefined:changeTurn}
+       drawHeads={historicalPreview?historicalPreview.day.heads:data}
       date={historicalPreview?.day.date||date||''}/>
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
@@ -659,12 +660,14 @@ function LaloApp(){
     {predictionMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
-       heads={sheet?.heads[target]||[]} sheet={sheet} onOpenFamily={showFamily}/>:
+       heads={sheet?.heads[target]||[]} sheet={sheet} onOpenFamily={showFamily}
+        selectedKind={candidateKind} onKindChange={setCandidateKind}/>:
       predictionMode==='auxiliar'?
        auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
         date={dateText} turn={target} view={motor} auxiliar={auxiliar}
         auxHeads={activeAuxHeads?auxAtCut(activeAuxHeads,target,auxMode):null}
-        heads={sheet?.heads[target]||[]} onOpenFamily={showAuxFamily}/>:
+        heads={sheet?.heads[target]||[]} onOpenFamily={showAuxFamily}
+         selectedKind={candidateKind} onKindChange={setCandidateKind}/>:
        <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
         <Text style={{color:c.text,fontWeight:'800'}}>No está lista la hoja auxiliar.</Text>
         <Text style={{color:c.subtext,marginTop:5}}>
@@ -681,6 +684,28 @@ function LaloApp(){
     <HeadsTable data={data} highlights={headHighlights.merged}
      sourceLabels={headHighlights.labels} onOpenHead={openHeadInHoja}/>
    </>:
+    screen==='investigar'&&investigation?(()=>{
+     const [kind,family]=investigation.id.split('|');
+     if((kind!=='vt2'&&kind!=='vt3'&&kind!=='vt4')||!family)return <Text
+      style={[s.empty,{color:c.subtext}]}>No pudimos abrir esa familia.</Text>;
+     return <FamilyInvestigation key={investigation.id+'|'+investigation.origin}
+      date={date||''} turn={target} family={family} kind={kind}
+      origin={investigation.origin} mode={investigation.mode}
+      data={data} sheet={sheet} lalo={motor}
+      ayer={trackingAyer} hoy={trackingHoy} history={visualDays}
+      onTurnChange={changeTurn}
+      onOpenPaths={(origin,forced)=>{
+       const mode=forced||investigation.mode;
+       if(origin==='auxiliar')setAuxMode(mode);
+       setPredictiveMode(origin);
+       navigateTo('predictiva');setFocused(investigation.id);
+      }}
+      onOpenStudy={()=>{
+       setStudySection(kind==='vt3'?'seguir':'tendencias');
+       if(kind==='vt3')setFigureFocus(investigation.id);
+       navigateTo('info');
+      }}/>;
+    })():
     <InfoDashboard date={date||''} turn={target} data={data} overview={overview} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
      auxDays={infoAuxDays}
@@ -704,10 +729,16 @@ function LaloApp(){
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
      movementMode={infoMode} onMovementMode={setInfoMode}
      expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}
-     initialSection={infoEntrySection} trendEngine={trendEngine}
+     initialSection={infoEntrySection} selectedSection={studySection}
+     onSectionChange={setStudySection} trendEngine={trendEngine}
      onTrendEngineChange={setTrendEngine} trendSnapshot={trendSnapshot}
      onTrendPeriodChange={setTrendPeriod}/>}
   </ZoomableTab>
+  <MainBottomTabs active={screen==='inicio'?'inicio':screen==='hoja'?'hoja':
+    screen==='info'?'info':'prediccion'} onChange={(tab:MainTab)=>{
+     if(tab==='info'&&screen==='info'){setStudySection(null);return}
+     navigateTo(tab);
+    }}/>
  </SafeAreaView>;
 }
 export default function App(){return <GestureHandlerRootView style={{flex:1}}><LaloThemeProvider><LaloApp/></LaloThemeProvider></GestureHandlerRootView>}
