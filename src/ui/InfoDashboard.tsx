@@ -36,11 +36,13 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
  expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void;
- initialSection?:'tendencias'|null;trendEngine:TrendEngine;
+ initialSection?:StudySection|null;onSectionChange?:(value:StudySection|null)=>void;
+ trendEngine:TrendEngine;
  onTrendEngineChange:(engine:TrendEngine)=>void;
  trendSnapshot:TrendSnapshot;onTrendPeriodChange:(period:TrendPeriod)=>void};
 
-type Section='resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+export type StudySection='resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+type Section=StudySection;
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
  {id:'tendencias',icon:'▥',title:'Gráficos VT2',subtitle:'Dónde hubo más coincidencias',accent:'#4ABDEB'},
  {id:'vt3',icon:'⌗',title:'¿Qué pasó con VT3?',subtitle:'Cómo se formaron las cabezas',accent:'#60E1DB'},
@@ -62,13 +64,14 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
- figureFocus,onFigureLalo,onFigureAux,initialSection=null,
+ figureFocus,onFigureLalo,onFigureAux,initialSection=null,onSectionChange,
  trendEngine,onTrendEngineChange,trendSnapshot,onTrendPeriodChange}:Props){
  const {colors:c}=useLaloTheme();
- const [section,setSection]=useState<Section|null>(initialSection);
+ const [section,setSectionState]=useState<Section|null>(initialSection);
+ const setSection=(value:Section|null)=>{setSectionState(value);onSectionChange?.(value)};
  const [focusedVt3,setFocusedVt3]=useState<string|null>(null);
- useEffect(()=>{setSection(initialSection);setFocusedVt3(null)},[date,initialSection]);
- useEffect(()=>{if(figureFocus&&initialSection!=='tendencias')setSection('seguir')},[figureFocus,initialSection]);
+ useEffect(()=>{setSectionState(initialSection);setFocusedVt3(null)},[date,initialSection]);
+ useEffect(()=>{if(figureFocus){setSectionState('seguir');onSectionChange?.('seguir')}},[figureFocus,initialSection]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
  const selected=OPTIONS.find(x=>x.id===section);
