@@ -27,6 +27,7 @@ const complete={Nocturno:Object.fromEntries(J.map((j,k)=>[j,
  k===0?'12'+first:'12'+other]))};
 const post=mergeStatResults(checked,complete,'2026-11-19T22:00:00Z');
 assert.equal(post.results.length,5);
+assert.equal(mergeStatResults(post,partial,'2026-11-19T23:00:00Z'),post);
 assert.equal(buildTop6Pre('2026-11-19','Nocturno',history,partial,'late'),null);
 assert.equal(readStatJournal(JSON.stringify([post])).length,1);
 assert.equal(readStatJournal('garbage').length,0);

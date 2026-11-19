@@ -217,7 +217,7 @@ function LaloApp(){
  };
  const date=displayToIso(dateText);
  const target=useMemo<Turno>(()=>selectedTurn||TURNOS.find(t=>
-  !data||JURS.every(j=>!/^\d{4}$/.test(data[t]?.[j]||'')))||'Nocturno',
+  !data||STAT_JURS.every(j=>!/^\d{4}$/.test(data[t]?.[j]||'')))||'Nocturno',
   [data,selectedTurn]);
 
  const cargar=async(requested?:string)=>{

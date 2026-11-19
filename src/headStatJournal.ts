@@ -40,8 +40,10 @@ export function buildTop6Pre(date:string,turn:Turno,history:HistoricHeadsDay[],
 export function mergeStatResults(record:Top6Snapshot,heads:CabezasDia|null,
  checkedAt:string):Top6Snapshot{
  if(!heads)return record;
+ const saved=new Map(record.results.map(x=>[x.jur,x.head]));
  const results=STAT_JURS.flatMap(jur=>{
-  const head=heads?.[record.turn]?.[jur]||'';
+  const recent=heads?.[record.turn]?.[jur]||'';
+  const head=valid(recent)?recent:(saved.get(jur)||'');
   return valid(head)?[{jur,head}]:[];
  });
  if(!results.length)return record;
