@@ -37,19 +37,19 @@ function auxPresence(input:TrackingAuxInput,turn:Turno,family:string):AuxPresenc
  return {available:true,formable,rank,topComplete:ranks.length>=10};
 }
 function auxDescription(p:AuxPresence){
- if(!p.available)return 'Sin hoja en este corte';
+ if(!p.available)return 'Todavía no hay cifras';
  if(!p.formable)return 'No se forma';
- if(p.rank===null)return 'Formable · sin raíz reconocida';
- return p.rank<=10?'Top10 · #'+p.rank:'Con raíz · #'+p.rank;
+ if(p.rank===null)return 'Se forma, sin antecedentes';
+ return p.rank<=10?'Top10 · #'+p.rank:'Con antecedentes · puesto #'+p.rank;
 }
 function laloDescription(d:Vt3FamilyDiagnostic|null){
- if(!d)return 'PRE no disponible';
+ if(!d)return 'Aún no hay datos anteriores';
  switch(d.status){
   case 'SIN_FORMACION':return 'No se forma';
-  case 'FISICA_SIN_ANCLAJE':return 'Formable · sin raíz D−1/D−7';
+  case 'FISICA_SIN_ANCLAJE':return 'Se forma, sin antecedentes';
   case 'EN_TOP3':return 'Top3 · #'+d.officialRank;
   case 'EN_TOP10':return 'Top10 · #'+d.officialRank;
-  case 'FUERA_TOP10':return 'Con raíces · #'+d.officialRank;
+  case 'FUERA_TOP10':return 'Con antecedentes · puesto #'+d.officialRank;
  }
 }
 export default function Vt3DiagnosticPanel({date,turn,data,sheet,view,
@@ -83,22 +83,21 @@ export default function Vt3DiagnosticPanel({date,turn,data,sheet,view,
  ];
  return <View style={s.wrapper}>
   <Text style={[s.body,{color:c.subtext}]}>
-   Este análisis explica las cabezas reales del turno usando únicamente las
-   hojas y los rankings disponibles antes de ese sorteo. No agrega
-   familias al Top10.
+   Veamos cuáles de las cabezas salidas podían formarse en cada hoja,
+   y si estaban entre los diez números elegidos antes del sorteo.
   </Text>
   {total===0?<View style={[s.empty,{borderColor:c.border,backgroundColor:c.surfaceAlt}]}>
    <Text style={[s.bold,{color:c.text}]}>Todavía no hay cabezas publicadas para {turn}.</Text>
    <Text style={[s.body,{color:c.subtext}]}>
-    Podés consultar las formaciones PRE en «Seguir un número». El diagnóstico
-    de aciertos se completa después del resultado.
+    Podés investigar cómo se van formando los números. Cuando salgan las cabezas,
+    esta pantalla mostrará dónde aparecieron.
    </Text>
   </View>:<>
    <Text style={[s.bold,{color:c.text}]}>
     {complete?'Turno completo':'Turno parcial'} · {total} de 5 cabezas
    </Text>
    {!complete?<Text style={[s.body,{color:c.subtext}]}>
-    Los conteos son parciales: no representan una jornada terminada.
+    Todavía faltan cabezas. Estos resultados pueden cambiar.
    </Text>:null}
    <View style={s.summaryRow}>
     {tallies.map(({id,title,x})=><View key={id} style={[s.summary,{
@@ -107,7 +106,7 @@ export default function Vt3DiagnosticPanel({date,turn,data,sheet,view,
      <Text style={[s.stat,{color:c.accent}]}>{x.physical}/{total}</Text>
      <Text style={[s.tiny,{color:c.subtext}]}>Se formaron</Text>
      <Text style={[s.tiny,{color:c.subtext}]}>
-      {x.ranked} con raíces · {x.top10} Top10
+      {x.ranked} con antecedentes · {x.top10} Top10
      </Text>
     </View>)}
    </View>
@@ -139,12 +138,12 @@ export default function Vt3DiagnosticPanel({date,turn,data,sheet,view,
       </Text>
       {row.diagnostic?.physicalRoutes?<Text style={[s.body,{color:c.subtext}]}>
        {row.diagnostic.physicalRoutes} recorrido(s) físico(s) en
-       {row.diagnostic.physicalSources} fuente(s). {row.diagnostic.independentRootEvents} cabeza(s)
-       histórica(s) independiente(s) reconocida(s) por Lalo.
+       {row.diagnostic.physicalSources} columna(s). Se encontraron {row.diagnostic.independentRootEvents}
+       cabezas anteriores con recorridos parecidos.
       </Text>:null}
       {row.diagnostic?.priorityReasons.filter(x=>x.cutoff===10)
        .map(r=><Text key={r.cutoff} style={[s.body,{color:c.subtext}]}>
-        Fuera del Top10 frente a {r.boundaryFamily} (#{r.boundaryRank}):
+        Quedó detrás de {r.boundaryFamily} (#{r.boundaryRank}):
         {' '}{r.decisiveCriterion}.
        </Text>)}
       {routeAvailable?<Pressable accessibilityRole="button"
@@ -162,12 +161,12 @@ export default function Vt3DiagnosticPanel({date,turn,data,sheet,view,
   </>}
   <Pressable accessibilityRole="button"
    onPress={onOpenTracking} style={[s.action,{borderColor:c.accent}]}>
-   <Text style={[s.actionText,{color:c.accent}]}>Abrir seguimiento completo de figuras VT3 ›</Text>
+   <Text style={[s.actionText,{color:c.accent}]}>Investigar otras familias de tres cifras ›</Text>
   </Pressable>
   <Text style={[s.tiny,{color:c.muted}]}>
-   Se reconstruye el corte PRE de {date}. No es una captura sellada antes
-   del sorteo. Un recorrido físico por sí solo no predice resultados;
-   «sin raíces» se refiere exclusivamente a las reglas oficiales D−1/D−7.
+   Para el {date} se usan las cifras que correspondían a ese momento.
+   Si revisás un sorteo pasado, algunas formaciones fueron reconstruidas
+   después. Que un número se forme no significa que vaya a salir.
   </Text>
  </View>;
 }
