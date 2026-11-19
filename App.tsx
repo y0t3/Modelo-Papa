@@ -45,6 +45,8 @@ import {buildHeadHighlights} from './src/headHighlights';
 import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
 import HomeDashboard from './src/ui/HomeDashboard';
+import MainBottomTabs from './src/ui/MainBottomTabs';
+import type {MainSpace} from './src/ui/MainBottomTabs';
 import type {TrendEngine} from './src/trendHistoryVt2';
 import {emptyTrendJournal,buildTrendSnapshot} from './src/trendVt2Journal';
 import type {TrendPeriod} from './src/trendVt2Journal';
@@ -63,7 +65,7 @@ import type {NavigationEntry} from './src/tabNavigation';
 type Screen='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const screenTitles:Record<Screen,string>={
  inicio:'Inicio',hoja:'La hoja',predictiva:'Recorridos',prediccion:'Predicción',
- papa:'Lalo',cabezas:'Cabezas',info:'Info'
+ papa:'Lalo',cabezas:'Cabezas',info:'Estudio'
 };
 const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
 function LaloApp(){
@@ -301,6 +303,7 @@ function LaloApp(){
    trendSyncLock.current=false;
   });
  },[date,data,sheet,busy,trendTick]);
+ const goNextDraw=()=>{setSelectedTurn(null);if(date!==today())void cargar(today());};
  const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
   if(base)void cargar(shiftDrawDay(base,n))};
  // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
@@ -534,6 +537,19 @@ function LaloApp(){
       <Text style={s.reloadMiniText}>↻</Text>}
     </Pressable>
    </View>
+   <View style={[s.sharedTurn,{backgroundColor:c.surface,borderColor:c.border}]}>
+    <View style={s.sharedTurnTop}>
+     <Text style={{fontSize:12,fontWeight:'900',color:c.text}}>
+      {selectedTurn?'Turno que elegiste':'Próximo turno para mirar'}: {target}
+     </Text>
+     <Pressable accessibilityRole="button"
+      accessibilityLabel="Volver al próximo turno"
+      onPress={goNextDraw} style={[s.nextTurn,{borderColor:c.accent}]}>
+      <Text style={{color:c.accent,fontSize:11,fontWeight:'900'}}>↻ Próximo</Text>
+     </Pressable>
+    </View>
+    <TurnStrip value={target} onChange={changeTurn}/>
+   </View>
    {screen==='inicio'?<HomeDashboard date={date||''} turn={target} data={data}
      sheet={sheet} view={motor} auxAyer={trackingAyerView}
      auxHoy={trackingHoyView} overview={overview} busy={busy}
@@ -573,8 +589,7 @@ function LaloApp(){
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
    :screen==='predictiva'?<>
-    <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
-    <TurnStrip value={target} onChange={changeTurn}/>
+
     <View style={[s.predictorOptions,{borderColor:c.border}]}>
      {([{id:'lalo',label:'PREDICTIVA LALO'},{id:'auxiliar',label:'PREDICTIVA AUXILIAR'}] as const)
       .map(item=><Pressable key={item.id} accessibilityRole="button"
@@ -604,8 +619,7 @@ function LaloApp(){
        {activeAuxError?' '+activeAuxError:''}
       </Text>}
    </>:screen==='prediccion'?<>
-    <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
-    <TurnStrip value={target} onChange={changeTurn}/>
+
     <View style={[s.predictorOptions,{borderColor:c.border}]}>
      {([{id:'lalo',label:'LALO'},{id:'auxiliar',label:'AUXILIAR'},{id:'combinado',label:'COMBINADO'}] as const)
       .map(item=><Pressable key={item.id} accessibilityRole="button"
@@ -620,12 +634,13 @@ function LaloApp(){
     {predictionMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
-       heads={sheet?.heads[target]||[]} sheet={sheet} onOpenFamily={showFamily}/>:
+       heads={sheet?.heads[target]||[]} sheet={sheet} onOpenFamily={id=>id.startsWith('vt3|')?trackFigure(id.slice(4)):showFamily(id)}/>:
       predictionMode==='auxiliar'?
        auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
         date={dateText} turn={target} view={motor} auxiliar={auxiliar}
         auxHeads={activeAuxHeads?auxAtCut(activeAuxHeads,target,auxMode):null}
-        heads={sheet?.heads[target]||[]} onOpenFamily={showAuxFamily}/>:
+        heads={sheet?.heads[target]||[]}
+         onOpenFamily={id=>id.startsWith('vt3|')?trackFigure(id.slice(4)):showAuxFamily(id)}/>:
        <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
         <Text style={{color:c.text,fontWeight:'800'}}>No está lista la hoja auxiliar.</Text>
         <Text style={{color:c.subtext,marginTop:5}}>
@@ -669,11 +684,23 @@ function LaloApp(){
      onTrendEngineChange={setTrendEngine} trendSnapshot={trendSnapshot}
      onTrendPeriodChange={setTrendPeriod}/>}
   </ZoomableTab>
+  <MainBottomTabs active={screen==='hoja'?'hoja':screen==='prediccion'||screen==='predictiva'?'prediccion':screen==='info'?'info':'inicio'}
+   onSelect={(next:MainSpace)=>{
+    if(next==='info')setFigureFocus(null);
+    if(next==='prediccion')setPredictionMode('lalo');
+    if(next==='hoja')setHojaTurn(target);
+    navigateTo(next);
+   }}/>
  </SafeAreaView>;
 }
 export default function App(){return <GestureHandlerRootView style={{flex:1}}><LaloThemeProvider><LaloApp/></LaloThemeProvider></GestureHandlerRootView>}
 const insets=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+7:7;
 const s=StyleSheet.create({
+ sharedTurn:{borderWidth:1,borderRadius:13,paddingHorizontal:9,paddingTop:8,
+  paddingBottom:5,marginTop:7,marginBottom:5},
+ sharedTurnTop:{flexDirection:'row',justifyContent:'space-between',
+  alignItems:'center',gap:8},
+ nextTurn:{paddingHorizontal:9,paddingVertical:5,borderWidth:1,borderRadius:9},
  header:{flexDirection:'row',alignItems:'center',gap:10,marginBottom:9,
   borderWidth:1,borderRadius:15,paddingHorizontal:11,paddingVertical:9},
  predictorOptions:{flexDirection:'row',gap:5,marginTop:10,padding:5,borderWidth:1,borderRadius:13,backgroundColor:'rgba(4,20,49,.63)'},
