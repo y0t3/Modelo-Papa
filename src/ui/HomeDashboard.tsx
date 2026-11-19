@@ -12,7 +12,7 @@ import {useLaloTheme} from './LaloTheme';
 import {readableWeekday} from '../infoTurnHistory';
 import RouteMiniBoard from './RouteMiniBoard';
 import DayMatchGrid from './DayMatchGrid';
-import TurnStrip from './TurnStrip';
+// El turno se elige en la barra que comparten las cuatro pantallas.
 import TurnTrendPanel from './TurnTrendPanel';
 import type {TrendEngine} from '../trendHistoryVt2';
 import type {TrendSnapshot} from '../trendVt2Journal';
@@ -80,7 +80,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    <Pressable accessibilityRole="button" onPress={()=>onSelectPrediction('lalo')}
     style={[s.mainButton,{backgroundColor:c.accent}]}>
     <Text style={{fontSize:13,fontWeight:'900',color:'#092347'}}>
-     Ir a Predicción y ver los diez números  ›
+     Ver los diez candidatos del turno ›
     </Text>
    </Pressable>
   </View>
@@ -89,39 +89,29 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    <DayMatchGrid overview={overview} data={data} turn={turn}
     auxAyer={auxAyer} auxHoy={auxHoy} short onOpenHeads={()=>onNavigate('cabezas')}/>
   </View>
-  <Text style={[s.heading,{color:c.accent}]}>¿Qué querés mirar?</Text>
+  <Text style={[s.heading,{color:c.accent}]}>Para seguir mirando</Text>
   <View style={s.shortcutGrid}>
    <Pressable accessibilityRole="button" onPress={()=>onNavigate('hoja')}
     style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#68B1FF'}]}>
-    <Text style={{color:'#68B1FF',fontSize:24,fontWeight:'900'}}>▦</Text>
-    <Text style={[s.shortcutTitle,{color:c.text}]}>La hoja</Text>
-    <Text style={[s.note,{color:c.subtext}]}>Números del día y sus caminos</Text>
-    <View style={s.mini}>
-     {column&&first?<RouteMiniBoard values={column.values} cells={first.path}
-      kind="vt2" compact/>:<Text style={{color:c.muted,fontSize:11}}>Sin hoja cargada</Text>}
-    </View>
-    <Text style={[s.link,{color:'#76BCFF'}]}>Abrir hoja  ›</Text>
+    <Text style={[s.shortcutTitle,{color:c.text}]}>▦  Ver las hojas</Text>
+    <Text style={[s.note,{color:c.subtext}]}>La +11, ayer y hoy, con sus marcas.</Text>
+    <Text style={[s.link,{color:'#76BCFF'}]}>Abrir ›</Text>
    </Pressable>
-   <Pressable accessibilityRole="button" onPress={()=>onNavigate('predictiva')}
+   <Pressable accessibilityRole="button" onPress={()=>onSelectPrediction('lalo')}
     style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#E9BA61'}]}>
-    <Text style={{color:'#E9BA61',fontSize:24,fontWeight:'900'}}>⌁</Text>
-    <Text style={[s.shortcutTitle,{color:c.text}]}>Los recorridos</Text>
-    <Text style={[s.note,{color:c.subtext}]}>Cómo se forman las cifras</Text>
-    <View style={s.mini}>
-     {column&&first?<RouteMiniBoard values={column.values} cells={first.path}
-      kind="vt2" compact/>:<Text style={{color:c.muted,fontSize:11}}>Sin recorridos</Text>}
-    </View>
-    <Text style={[s.link,{color:'#E9BA61'}]}>Ver figuras  ›</Text>
+    <Text style={[s.shortcutTitle,{color:c.text}]}>★  Ver candidatos</Text>
+    <Text style={[s.note,{color:c.subtext}]}>Los diez de cada motor, por cifras.</Text>
+    <Text style={[s.link,{color:'#E9BA61'}]}>Abrir ›</Text>
    </Pressable>
   </View>
   <TurnTrendPanel compact date={date} turn={turn} selectedEngine={trendEngine}
    trendSnapshot={trendSnapshot}
    onEngineChange={onTrendEngineChange} onDetails={onOpenTrendInfo}/>
   <View style={[s.bottomCard,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>Todo desde un lugar</Text>
+   <Text style={[s.heading,{color:c.text}]}>Otras consultas</Text>
    <View style={s.actions}>
     {([
-     ['info','Info','☀'],['cabezas','Cabezas reales','▤'],
+     ['info','Estudio','☀'],['cabezas','Cabezas reales','▤'],
      ['papa','Lo que eligió Lalo','★']
     ] as const).map(([to,label,icon])=><Pressable key={to} accessibilityRole="button"
      style={[s.action,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}
@@ -133,7 +123,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    </View>
   </View>
   <Text style={[s.note,{color:c.muted,textAlign:'center'}]}>
-   Los puestos de los favoritos sirven para observar y comparar, no aseguran resultados.
+   Estos números ayudan a mirar las hojas. No aseguran resultados.
   </Text>
  </View>;
 }
@@ -143,7 +133,7 @@ const s=StyleSheet.create({
  kicker:{fontSize:10,fontWeight:'900',letterSpacing:1.1},
  title:{fontSize:22,fontWeight:'900',color:'#F5C04B'},
  desc:{fontSize:11,lineHeight:17},
- note:{fontSize:10,lineHeight:16},
+ note:{fontSize:11,lineHeight:17},
  groupHeader:{flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
  favoriteGroup:{gap:6},
  favRow:{flexDirection:'row',gap:7},
