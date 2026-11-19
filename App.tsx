@@ -54,7 +54,6 @@ import type {TrendPeriod} from './src/trendVt2Journal';
 import {syncTrendJournal} from './src/trendVt2Sync';
 import {summarizeDay} from './src/homeDaySummary';
 import type {MovementMode} from './src/infoCandidatos';
-import {previousDrawDay} from './src/dates';
 import type {StatMode} from './src/headStats';
 import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
