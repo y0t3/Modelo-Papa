@@ -48,7 +48,7 @@ export default function FamilyInvestigation({date,turn,family,kind,origin,mode,
  const physicalPlus=useMemo(()=>{
   if(!pre)return false;
   if(plusRoutes.length)return true;
-  return formPositions(pre,turn,kind).some(pos=>{
+  return kind!=='vt4'&&formPositions(pre,turn,kind).some(pos=>{
    const col=pre.columns.find(x=>x.id===pos.source);
    const digits=col?pos.cells.map(p=>col.values[p.row][p.col]).join(''):'';
    return reversibleFamily(digits)===family;
@@ -60,7 +60,8 @@ export default function FamilyInvestigation({date,turn,family,kind,origin,mode,
   const board=auxiliaryBoard(cut,turn);
   if(!board.cells.length)return {available:false,physical:false,rank:null as number|null,heads:cut};
   const physical=values.some(x=>findAuxPaths(board,x).length>0);
-  const match=input.view?.ranks[Number(kind.slice(-1))]?.find(x=>x.family===family);
+  const length=kind==='vt2'?2:kind==='vt3'?3:4;
+  const match=input.view?.ranks[length]?.find(x=>x.family===family);
   return {available:true,physical,rank:match?.rank??null,heads:cut};
  };
  const a=auxPresence(ayer),h=auxPresence(hoy);
