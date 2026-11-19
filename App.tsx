@@ -1,5 +1,5 @@
 import React,{useEffect,useMemo,useRef,useState} from 'react';
-import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator,Alert,BackHandler,Platform,StatusBar as RNStatusBar} from 'react-native';
+import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator,Alert,BackHandler,Platform,StatusBar as RNStatusBar,AppState} from 'react-native';
 import {StatusBar} from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
@@ -44,13 +44,20 @@ import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import {buildHeadHighlights} from './src/headHighlights';
 import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
+import type {StudySection} from './src/ui/InfoDashboard';
 import HomeDashboard from './src/ui/HomeDashboard';
+import MainBottomTabs from './src/ui/MainBottomTabs';
+import type {MainSpace} from './src/ui/MainBottomTabs';
 import type {TrendEngine} from './src/trendHistoryVt2';
 import {emptyTrendJournal,buildTrendSnapshot} from './src/trendVt2Journal';
 import type {TrendPeriod} from './src/trendVt2Journal';
 import {syncTrendJournal} from './src/trendVt2Sync';
 import {summarizeDay} from './src/homeDaySummary';
 import type {MovementMode} from './src/infoCandidatos';
+import type {StatMode} from './src/headStats';
+import {STAT_JURS} from './src/headStats';
+import {STATS_JOURNAL_KEY,readStatJournal,buildTop6Pre,mergeStatResults,statKey} from './src/headStatJournal';
+import type {Top6Snapshot} from './src/headStatJournal';
 import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 import ZoomableTab from './src/ui/ZoomableTab';
@@ -63,7 +70,7 @@ import type {NavigationEntry} from './src/tabNavigation';
 type Screen='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const screenTitles:Record<Screen,string>={
  inicio:'Inicio',hoja:'La hoja',predictiva:'Recorridos',prediccion:'Predicción',
- papa:'Lalo',cabezas:'Cabezas',info:'Info'
+ papa:'Lalo',cabezas:'Cabezas',info:'Estudio'
 };
 const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
 function LaloApp(){
@@ -76,7 +83,7 @@ function LaloApp(){
  const trendSyncLock=useRef(false);
  const trendSnapshot=useMemo(()=>buildTrendSnapshot(trendJournal,trendPeriod),
   [trendJournal,trendPeriod]);
- const [infoEntrySection,setInfoEntrySection]=useState<'tendencias'|null>(null);
+ const [infoEntrySection,setInfoEntrySection]=useState<StudySection|null>(null);
  const activeScreenRef=useRef<Screen>('inicio');
  const historyRef=useRef<NavigationEntry[]>([]);
  const scrollOffsets=useRef<Record<Screen,number>>({
@@ -120,6 +127,39 @@ function LaloApp(){
  const [predictiveMode,setPredictiveMode]=useState<'lalo'|'auxiliar'>('lalo');
 
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
+ const [frequencyDays,setFrequencyDays]=useState<{date:string;heads:CabezasDia}[]>([]);
+ const [frequencyBusy,setFrequencyBusy]=useState(false);
+ const [frequencyProgress,setFrequencyProgress]=useState(0);
+ const [statMode,setStatMode]=useState<StatMode>('atrasados');
+ const historicalHeadsCache=useRef(new Map<string,CabezasDia>());
+ const [statJournal,setStatJournal]=useState<Top6Snapshot[]>([]);
+ const [statJournalReady,setStatJournalReady]=useState(false);
+ const statJournalSave=useRef<Promise<void>>(Promise.resolve());
+ const [autoPollTick,setAutoPollTick]=useState(0);
+ const manualDateRef=useRef(false);
+ const autoPollingRef=useRef(false);
+ useEffect(()=>{
+  let alive=true;
+  void AsyncStorage.getItem(STATS_JOURNAL_KEY).then(raw=>{
+   if(alive)setStatJournal(readStatJournal(raw));
+  }).catch(()=>{}).finally(()=>{if(alive)setStatJournalReady(true)});
+  return ()=>{alive=false};
+ },[]);
+ useEffect(()=>{
+  if(!statJournalReady)return;
+  const value=JSON.stringify(statJournal);
+  statJournalSave.current=statJournalSave.current.then(()=>
+   AsyncStorage.setItem(STATS_JOURNAL_KEY,value)).catch(()=>{});
+ },[statJournal,statJournalReady]);
+ useEffect(()=>{
+  const interval=setInterval(()=>{
+   if(AppState.currentState==='active')setAutoPollTick(x=>x+1);
+  },180000);
+  const sub=AppState.addEventListener('change',state=>{
+   if(state==='active')setAutoPollTick(x=>x+1);
+  });
+  return ()=>{clearInterval(interval);sub.remove()};
+ },[]);
  const [infoAuxDays,setInfoAuxDays]=useState<AuxGalleryDay[]>([]);
  const auxInfoRequest=useRef(0);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
@@ -132,18 +172,18 @@ function LaloApp(){
  const [hojaFocused,setHojaFocused]=useState<string|null>(null);
  const [hojaTurn,setHojaTurn]=useState<Turno>('Previa');
  const scrollRef=useRef<ScrollView>(null);
- const navigateTo=(next:Screen,infoSection?:'tendencias')=>{
+ const navigateTo=(next:Screen,infoSection?:StudySection,preserveScroll=false)=>{
   const from=activeScreenRef.current;
   if(from===next)return;
-  setInfoEntrySection(next==='info'&&infoSection?'tendencias':null);
+  if(next==='info'&&infoSection)setInfoEntrySection(infoSection);
   if(next!=='hoja'){setHistoricalPreview(null);setHistoricalAux(null);}
   historyRef.current=pushNavigation(historyRef.current,{
    screen:from,scrollY:scrollOffsets.current[from],selectedTurn,
    focused,hojaFocused,hojaTurn
   },next);
   activeScreenRef.current=next;
-  scrollOffsets.current[next]=0;
-  setRestoreScroll(old=>({token:old.token+1,y:0}));
+  if(!preserveScroll)scrollOffsets.current[next]=0;
+  setRestoreScroll(old=>({token:old.token+1,y:scrollOffsets.current[next]}));
   setScreen(next);
  };
  const goBack=()=>{
@@ -151,9 +191,7 @@ function LaloApp(){
   if(!entry)return false; // sin historial, Android conserva Atrás del sistema
   setHistoricalPreview(null);setHistoricalAux(null);
   historyRef.current=remaining;
-  setInfoEntrySection(null);
   activeScreenRef.current=entry.screen;
-  setSelectedTurn(entry.selectedTurn);
   setFocused(entry.focused);
   setHojaFocused(entry.hojaFocused);
   setHojaTurn(entry.hojaTurn);
@@ -179,14 +217,14 @@ function LaloApp(){
  };
  const date=displayToIso(dateText);
  const target=useMemo<Turno>(()=>selectedTurn||TURNOS.find(t=>
-  !data||JURS.every(j=>!/^\d{4}$/.test(data[t]?.[j]||'')))||'Nocturno',
+  !data||STAT_JURS.every(j=>!/^\d{4}$/.test(data[t]?.[j]||'')))||'Nocturno',
   [data,selectedTurn]);
 
  const cargar=async(requested?:string)=>{
   const d=requested||date;
   if(!d){Alert.alert('Fecha inválida','Usá DD/MM/AAAA.');return}
   const request=++auxInfoRequest.current;
-  setInfoAuxDays([]);
+  setInfoAuxDays([]);setFrequencyDays([]);setFrequencyBusy(true);setFrequencyProgress(0);
   try{
    setBusy(true);
    // Una carga = una versión de cada fecha: evitar llamadas repetidas al
@@ -196,7 +234,13 @@ function LaloApp(){
    const readDay=(day:string):Promise<CabezasDia>=>{
     let pending=requestCache.get(day);
     if(!pending){
-     pending=descargarCabezas(day,true);
+     const cached=day<today()?historicalHeadsCache.current.get(day):null;
+     pending=cached?Promise.resolve(cached):descargarCabezas(day,true).then(result=>{
+      if(day<today()&&TURNOS.every(t=>STAT_JURS.every(j=>
+       /^\d{4}$/.test(result[t]?.[j]||''))))
+       historicalHeadsCache.current.set(day,result);
+      return result;
+     });
      requestCache.set(day,pending);
     }
     return pending;
@@ -271,6 +315,25 @@ function LaloApp(){
    setAuxiliarPast(auxiliarHistory);setAuxiliarError(auxWarning);
    setAuxTodayPast(todayHistory);setAuxTodayError(todayWarning);
     setVisualDays(recentDays);
+   // Frecuencia de resultados reales: ventana independiente y anterior al día
+   // consultado. Se carga sin bloquear los motores ni las hojas.
+   void (async()=>{
+    const candidates:string[]=[];
+    let cursor=d;
+    for(let i=0;i<110;i++){cursor=previousDrawDay(cursor);candidates.push(cursor);}
+    const found:{date:string;heads:CabezasDia}[]=[];
+    for(let pos=0;pos<candidates.length;pos+=8){
+     const batch=await Promise.all(candidates.slice(pos,pos+8).map(async date=>{
+      try{return {date,heads:await readDay(date)}}catch{return null}
+     }));
+     if(auxInfoRequest.current!==request)return;
+     for(const item of batch)if(item)found.push(item);
+     setFrequencyProgress(Math.min(pos+batch.length,candidates.length));
+    }
+    if(auxInfoRequest.current===request)setFrequencyDays(found);
+   })().catch(()=>{}).finally(()=>{
+    if(auxInfoRequest.current===request)setFrequencyBusy(false);
+   });
    // INFO: cargar la semana AUX en paralelo sin bloquear la hoja diaria.
    // El identificador de solicitud evita reutilizar minihojas de otra fecha.
    void Promise.all(recentDays.map(async day=>{
@@ -288,10 +351,74 @@ function LaloApp(){
    
    setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
+   setFrequencyBusy(false);
    Alert.alert('No se pudo cargar',error?.message||String(error));
   }finally{setBusy(false)}
  };
- useEffect(()=>{void cargar(today())},[]);
+ const nextDrawDate=async()=>{
+  const d=today();
+  if(new Date(d+'T12:00:00').getDay()===0)return shiftDrawDay(d,1);
+  try{
+   const heads=await descargarCabezas(d,true);
+   const complete=TURNOS.every(t=>STAT_JURS.every(j=>/^\d{4}$/.test(heads[t]?.[j]||'')));
+   return complete?shiftDrawDay(d,1):d;
+  }catch{return d}
+ };
+ useEffect(()=>{void nextDrawDate().then(d=>cargar(d))},[]);
+ // Si terminó el último turno, volver a apuntar al próximo sorteo.
+ // Sólo en modo automático: la consulta manual nunca se interrumpe.
+ useEffect(()=>{
+  if(!data||busy||selectedTurn||date!==today())return;
+  const complete=TURNOS.every(t=>STAT_JURS.every(j=>/^\d{4}$/.test(data[t]?.[j]||'')));
+  if(complete)void cargar(shiftDrawDay(date,1));
+ },[data,date,busy,selectedTurn]);
+ // Mientras la app está abierta, consultar resultados sin tocar fecha, pantalla
+ // ni selección manual. También comprobar al volver al primer plano.
+ useEffect(()=>{
+  if(autoPollTick===0||busy||!data||autoPollingRef.current||
+   manualDateRef.current||selectedTurn||!date)return;
+  if(date<today()){
+   void nextDrawDate().then(d=>{
+    if(!manualDateRef.current&&d!==date)void cargar(d);
+   }).catch(()=>{});
+   return;
+  }
+  if(date!==today()||AppState.currentState!=='active')return;
+  autoPollingRef.current=true;
+  void descargarCabezas(date,true).then(latest=>{
+   if(manualDateRef.current||date!==today())return;
+   if(JSON.stringify(latest)===JSON.stringify(data))return;
+   setData(latest);
+   if(baseHeads)setSheet(buildSheet(latest,baseHeads));
+  }).catch(()=>{}).finally(()=>{autoPollingRef.current=false});
+ },[autoPollTick]);
+ // Guardar las cuatro listas Top6 como PRE antes de cualquier cabeza publicada.
+ // No se crean PRE retroactivos al consultar un sorteo ya resuelto.
+ useEffect(()=>{
+  if(!statJournalReady||frequencyBusy||frequencyDays.length===0||!data||
+   date!==today()||!date||manualDateRef.current)return;
+  const record=buildTop6Pre(date,target,frequencyDays,data,new Date().toISOString());
+  if(!record)return;
+  setStatJournal(prev=>prev.some(x=>x.key===record.key)?prev:
+   [...prev,record].slice(-160));
+ },[statJournalReady,frequencyBusy,frequencyDays,date,target,data]);
+ // Actualizar las cabezas reales y conservar las listas PRE sin reordenarlas.
+ // También completa registros de días anteriores al abrir de nuevo la app.
+ useEffect(()=>{
+  if(!statJournalReady||!data||!date)return;
+  const byDate=new Map(frequencyDays.map(x=>[x.date,x.heads]));
+  byDate.set(date,data);
+  const checkedAt=new Date().toISOString();
+  setStatJournal(prev=>{
+   let changed=false;
+   const next=prev.map(rec=>{
+    const updated=mergeStatResults(rec,byDate.get(rec.date)||null,checkedAt);
+    if(updated!==rec)changed=true;
+    return updated;
+   });
+   return changed?next:prev;
+  });
+ },[statJournalReady,data,date,frequencyDays]);
  // Seguir cortes PRE y cotejarlos con POST; si la app estuvo cerrada,
  // reconstruir solamente fuentes cronológicamente disponibles por turno.
  useEffect(()=>{
@@ -301,7 +428,12 @@ function LaloApp(){
    trendSyncLock.current=false;
   });
  },[date,data,sheet,busy,trendTick]);
- const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
+ const goNextDraw=()=>{
+  manualDateRef.current=false;
+  setSelectedTurn(null);
+  void nextDrawDate().then(d=>{if(date!==d)void cargar(d)});
+ };
+ const move=(n:1|-1)=>{manualDateRef.current=true;const base=historicalPreview?.day.date||date;
   if(base)void cargar(shiftDrawDay(base,n))};
  // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
  useEffect(()=>{
@@ -436,7 +568,7 @@ function LaloApp(){
   navigateTo('predictiva');setFocused(combinedOwnerId(pick.family));
  };
  const trackFigure=(family:string)=>{
-  setFigureFocus('vt3|'+family);navigateTo('info');
+  setFigureFocus('vt3|'+family);navigateTo('info','seguir');
  };
  const openFigureAux=(family:string,mode:'anterior'|'intrajornada')=>{
   setAuxMode(mode);setPredictiveMode('auxiliar');
@@ -481,11 +613,11 @@ function LaloApp(){
  return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar} backgroundColor={c.canvas}/>
   <LaloWallpaper/>
   <BrandHero mode={mode} onToggle={toggle}/>
-  {screen!=='inicio'?<View style={[s.homeBar,{backgroundColor:c.canvas,borderBottomColor:c.border}]}>
-    <Pressable accessibilityRole="button" accessibilityLabel="Volver a Inicio"
-     onPress={()=>navigateTo('inicio')}
+  {(screen==='predictiva'||screen==='papa')?<View style={[s.homeBar,{backgroundColor:c.canvas,borderBottomColor:c.border}]}>
+    <Pressable accessibilityRole="button" accessibilityLabel={screen==='predictiva'?'Volver a Hojas':'Volver a Candidatos'}
+     onPress={()=>navigateTo(screen==='predictiva'?'hoja':'prediccion')}
      style={[s.homeButton,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
-     <Text style={{color:c.accent,fontWeight:'900',fontSize:13}}>‹ Inicio</Text>
+     <Text style={{color:c.accent,fontWeight:'900',fontSize:13}}>{screen==='predictiva'?'‹ Hojas':'‹ Candidatos'}</Text>
     </Pressable>
     <Text style={{color:c.text,fontSize:13,fontWeight:'900',flex:1}}>
      {screenTitles[screen]}
@@ -513,13 +645,14 @@ function LaloApp(){
      <Text style={[s.dayArrowText,{color:busy?c.muted:c.accent}]}>‹</Text>
     </Pressable>
     <DateField compact value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
+     manualDateRef.current=true;
      resetHistory();setHistoricalPreview(null);
      setDateText(value);setData(null);setAuxHeads(null);setAuxToday(null);
      setAuxSourceDate(null);setHistoricalAux(null);setSheet(null);setBaseHeads(null);setHist([]);
      setAuxiliarPast([]);setAuxiliarError(null);
      setAuxTodayPast([]);setAuxTodayError(null);
      ++auxInfoRequest.current;
-     setInfoAuxDays([]);setVisualDays([]);setFocused(null);
+     setInfoAuxDays([]);setVisualDays([]);setFrequencyDays([]);setFrequencyBusy(false);setFrequencyProgress(0);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <Pressable accessibilityRole="button" accessibilityLabel="Ir al día siguiente"
@@ -534,15 +667,31 @@ function LaloApp(){
       <Text style={s.reloadMiniText}>↻</Text>}
     </Pressable>
    </View>
+   <View style={[s.sharedTurn,{backgroundColor:c.surface,borderColor:c.border}]}>
+    <View style={s.sharedTurnTop}>
+     <Text style={{fontSize:12,fontWeight:'900',color:c.text}}>
+      {selectedTurn?'Turno que elegiste':'Próximo turno para mirar'}: {target}
+     </Text>
+     <Pressable accessibilityRole="button"
+      accessibilityLabel="Volver al próximo turno"
+      onPress={goNextDraw} style={[s.nextTurn,{borderColor:c.accent}]}>
+      <Text style={{color:c.accent,fontSize:11,fontWeight:'900'}}>↻ Próximo</Text>
+     </Pressable>
+    </View>
+    <TurnStrip value={target} onChange={changeTurn}/>
+   </View>
+   {screen==='hoja'?<Pressable accessibilityRole="button" onPress={()=>navigateTo('predictiva')}
+    style={[s.quickAccess,{borderColor:c.accent,backgroundColor:c.accentFill}]}>
+    <Text style={[s.quickAccessText,{color:c.accent}]}>⌁  Ver cómo se forman las cifras  ›</Text>
+   </Pressable>:null}
    {screen==='inicio'?<HomeDashboard date={date||''} turn={target} data={data}
-     sheet={sheet} view={motor} auxAyer={trackingAyerView}
-     auxHoy={trackingHoyView} overview={overview} busy={busy}
-     onNavigate={navigateTo} onTurnChange={changeTurn}
-     onSelectPrediction={(mode,forcedAux)=>{
-      if(forcedAux)setAuxMode(forcedAux);
-      setPredictionMode(mode);navigateTo('prediccion')
-     }}
-     onFocus={family=>showFamily('vt2|'+family)}
+     auxAyer={trackingAyerView} auxHoy={trackingHoyView} overview={overview}
+     history={frequencyDays} historyBusy={frequencyBusy} historyProgress={frequencyProgress}
+     statMode={statMode} onStatMode={setStatMode}
+     statSnapshot={statJournal.find(x=>x.key===statKey(date||'',target))||null}
+     statJournal={statJournal}
+     onOpenStats={()=>{setFigureFocus(null);navigateTo('info','estadisticas')}}
+     onOpenHeads={()=>navigateTo('cabezas')}
      trendEngine={trendEngine} onTrendEngineChange={setTrendEngine}
      trendSnapshot={trendSnapshot}
      onOpenTrendInfo={()=>navigateTo('info','tendencias')}/>: 
@@ -573,8 +722,7 @@ function LaloApp(){
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
    :screen==='predictiva'?<>
-    <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
-    <TurnStrip value={target} onChange={changeTurn}/>
+
     <View style={[s.predictorOptions,{borderColor:c.border}]}>
      {([{id:'lalo',label:'PREDICTIVA LALO'},{id:'auxiliar',label:'PREDICTIVA AUXILIAR'}] as const)
       .map(item=><Pressable key={item.id} accessibilityRole="button"
@@ -604,8 +752,10 @@ function LaloApp(){
        {activeAuxError?' '+activeAuxError:''}
       </Text>}
    </>:screen==='prediccion'?<>
-    <Text style={[s.heading,{color:c.text}]}>Turno que queremos anticipar</Text>
-    <TurnStrip value={target} onChange={changeTurn}/>
+    <Pressable accessibilityRole="button" onPress={()=>navigateTo('papa')}
+     style={[s.quickAccess,{backgroundColor:c.accentFill,borderColor:c.accent}]}>
+     <Text style={[s.quickAccessText,{color:c.accent}]}>★  Lo que eligió Lalo  ›</Text>
+    </Pressable>
     <View style={[s.predictorOptions,{borderColor:c.border}]}>
      {([{id:'lalo',label:'LALO'},{id:'auxiliar',label:'AUXILIAR'},{id:'combinado',label:'COMBINADO'}] as const)
       .map(item=><Pressable key={item.id} accessibilityRole="button"
@@ -620,12 +770,13 @@ function LaloApp(){
     {predictionMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
-       heads={sheet?.heads[target]||[]} sheet={sheet} onOpenFamily={showFamily}/>:
+       heads={sheet?.heads[target]||[]} sheet={sheet} onOpenFamily={id=>id.startsWith('vt3|')?trackFigure(id.slice(4)):showFamily(id)}/>:
       predictionMode==='auxiliar'?
        auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
         date={dateText} turn={target} view={motor} auxiliar={auxiliar}
         auxHeads={activeAuxHeads?auxAtCut(activeAuxHeads,target,auxMode):null}
-        heads={sheet?.heads[target]||[]} onOpenFamily={showAuxFamily}/>:
+        heads={sheet?.heads[target]||[]}
+         onOpenFamily={id=>id.startsWith('vt3|')?trackFigure(id.slice(4)):showAuxFamily(id)}/>:
        <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
         <Text style={{color:c.text,fontWeight:'800'}}>No está lista la hoja auxiliar.</Text>
         <Text style={{color:c.subtext,marginTop:5}}>
@@ -635,8 +786,7 @@ function LaloApp(){
        <CombinedVt3Panel date={date||''} turn={target} sheet={sheet}
         historical={hist} heads={fiveHeads} onOpenFamily={showCombinedFamily}/>}
    </>:screen==='papa'?<>
-    <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico de Lalo</Text>
-    <TurnStrip value={target} onChange={changeTurn}/>
+    <Text style={[s.heading,{color:c.text}]}>Elecciones personales de Lalo · {target}</Text>
     <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
    </>:screen==='cabezas'?<>
     <HeadsTable data={data} highlights={headHighlights.merged}
@@ -644,6 +794,9 @@ function LaloApp(){
    </>:
     <InfoDashboard date={date||''} turn={target} data={data} overview={overview} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
+     statsHistory={frequencyDays} statsBusy={frequencyBusy} statsProgress={frequencyProgress}
+     statsMode={statMode} onStatsMode={setStatMode}
+     statsData={data} statsJournal={statJournal}
      auxDays={infoAuxDays}
      currentAux={data&&date?{
       date,heads:data,yesterday:auxHeads,today:auxToday,sourceDate:auxSourceDate
@@ -665,15 +818,29 @@ function LaloApp(){
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
      movementMode={infoMode} onMovementMode={setInfoMode}
      expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}
-     initialSection={infoEntrySection} trendEngine={trendEngine}
+     initialSection={infoEntrySection} onSectionChange={setInfoEntrySection}
+     trendEngine={trendEngine}
      onTrendEngineChange={setTrendEngine} trendSnapshot={trendSnapshot}
      onTrendPeriodChange={setTrendPeriod}/>}
   </ZoomableTab>
+  <MainBottomTabs active={screen==='hoja'||screen==='predictiva'?'hoja':screen==='prediccion'||screen==='papa'?'prediccion':screen==='cabezas'?'cabezas':screen==='info'?'info':'inicio'}
+   onSelect={(next:MainSpace)=>{
+    if(next==='info')setFigureFocus(null);
+    if(next==='hoja')setHojaTurn(target);
+    navigateTo(next,undefined,true);
+   }}/>
  </SafeAreaView>;
 }
 export default function App(){return <GestureHandlerRootView style={{flex:1}}><LaloThemeProvider><LaloApp/></LaloThemeProvider></GestureHandlerRootView>}
 const insets=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+7:7;
 const s=StyleSheet.create({
+ quickAccess:{borderWidth:1.5,borderRadius:12,marginTop:8,padding:13,alignItems:'center'},
+ quickAccessText:{fontWeight:'900',fontSize:13},
+ sharedTurn:{borderWidth:1,borderRadius:13,paddingHorizontal:9,paddingTop:8,
+  paddingBottom:5,marginTop:7,marginBottom:5},
+ sharedTurnTop:{flexDirection:'row',justifyContent:'space-between',
+  alignItems:'center',gap:8},
+ nextTurn:{paddingHorizontal:9,paddingVertical:5,borderWidth:1,borderRadius:9},
  header:{flexDirection:'row',alignItems:'center',gap:10,marginBottom:9,
   borderWidth:1,borderRadius:15,paddingHorizontal:11,paddingVertical:9},
  predictorOptions:{flexDirection:'row',gap:5,marginTop:10,padding:5,borderWidth:1,borderRadius:13,backgroundColor:'rgba(4,20,49,.63)'},

@@ -11,11 +11,14 @@ import InfoAuxGallery from './InfoAuxGallery';
 import type {AuxGalleryDay} from '../infoAuxGallery';
 import type {AuxMode} from '../auxTemporalModes';
 import type {AuxiliarHistory,AuxiliarView} from '../motorLaloAuxiliar';
-import TurnStrip from './TurnStrip';
 import FigureTrackingPanel from './FigureTrackingPanel';
 import type {TrackingAuxInput} from '../figureTracking';
 import {useLaloTheme} from './LaloTheme';
 import type {DayOverview} from '../homeDaySummary';
+import type {HistoricHeadsDay} from '../historicalHeadFrequency';
+import type {StatMode} from '../headStats';
+import type {Top6Snapshot} from '../headStatJournal';
+import HeadStatStudy from './HeadStatStudy';
 import DayMatchGrid from './DayMatchGrid';
 import TurnTrendPanel from './TurnTrendPanel';
 import Vt3DiagnosticPanel from './Vt3DiagnosticPanel';
@@ -37,19 +40,23 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
  expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void;
- initialSection?:'tendencias'|null;trendEngine:TrendEngine;
+ initialSection?:StudySection|null;onSectionChange?:(value:StudySection|null)=>void;
+ trendEngine:TrendEngine;
  onTrendEngineChange:(engine:TrendEngine)=>void;
- trendSnapshot:TrendSnapshot;onTrendPeriodChange:(period:TrendPeriod)=>void};
+ trendSnapshot:TrendSnapshot;onTrendPeriodChange:(period:TrendPeriod)=>void;
+ statsHistory:HistoricHeadsDay[];statsBusy:boolean;statsProgress:number;
+ statsMode:StatMode;onStatsMode:(mode:StatMode)=>void;
+ statsData:CabezasDia|null;statsJournal:Top6Snapshot[]};
 
-type Section='resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+export type StudySection='estadisticas'|'resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+type Section=StudySection;
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
- {id:'resumen',icon:'☀',title:'Resumen del día',subtitle:'Lo importante de este turno',accent:'#F3C251'},
- {id:'tendencias',icon:'▥',title:'Tendencias VT2',subtitle:'Qué mitad y qué motor mirar',accent:'#4ABDEB'},
- {id:'vt3',icon:'⌗',title:'Diagnóstico VT3',subtitle:'Formación, raíces y Top10',accent:'#60E1DB'},
+ {id:'estadisticas',icon:'◷',title:'Atrasados y frecuencias',subtitle:'Resultados reales, por turno y jurisdicción',accent:'#F0B858'},
+ {id:'tendencias',icon:'▥',title:'Gráficos VT2',subtitle:'Dónde hubo más coincidencias',accent:'#4ABDEB'},
+ {id:'vt3',icon:'⌗',title:'¿Qué pasó con VT3?',subtitle:'Cómo se formaron las cabezas',accent:'#60E1DB'},
  {id:'historial',icon:'▦',title:'Día por día',subtitle:'Las hojas anteriores',accent:'#A68AFF'},
- {id:'auxiliar',icon:'▤',title:'Hoja auxiliar',subtitle:'Santiago y Neuquén',accent:'#E18AF6'},
- {id:'seguir',icon:'◎',title:'Seguir un número',subtitle:'Cómo fue apareciendo',accent:'#51D7AF'},
- {id:'recorridos',icon:'⌁',title:'Ver recorridos',subtitle:'Abrí la hoja con marcas',accent:'#74B9FF'},
+ {id:'auxiliar',icon:'▤',title:'Hojas de Santiago y Neuquén',subtitle:'Ver figuras de otros días',accent:'#E18AF6'},
+ {id:'seguir',icon:'◎',title:'Investigar un número',subtitle:'Formaciones y recorridos',accent:'#51D7AF'},
  {id:'ayuda',icon:'?',title:'Ayuda sencilla',subtitle:'Cómo leer cada cosa',accent:'#8EC2F6'}
 ];
 const tips=[
@@ -65,24 +72,27 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
- figureFocus,onFigureLalo,onFigureAux,initialSection=null,
- trendEngine,onTrendEngineChange,trendSnapshot,onTrendPeriodChange}:Props){
+ figureFocus,onFigureLalo,onFigureAux,initialSection=null,onSectionChange,
+ trendEngine,onTrendEngineChange,trendSnapshot,onTrendPeriodChange,
+ statsHistory,statsBusy,statsProgress,statsMode,onStatsMode,
+ statsData,statsJournal}:Props){
  const {colors:c}=useLaloTheme();
- const [section,setSection]=useState<Section|null>(initialSection);
+ const [section,setSectionState]=useState<Section|null>(initialSection);
+ const setSection=(value:Section|null)=>{setSectionState(value);onSectionChange?.(value)};
  const [focusedVt3,setFocusedVt3]=useState<string|null>(null);
- useEffect(()=>{setSection(initialSection);setFocusedVt3(null)},[date,initialSection]);
- useEffect(()=>{if(figureFocus&&initialSection!=='tendencias')setSection('seguir')},[figureFocus,initialSection]);
+ useEffect(()=>{setSectionState(initialSection);setFocusedVt3(null)},[date,initialSection]);
+ useEffect(()=>{if(figureFocus){setSectionState('seguir');onSectionChange?.('seguir')}},[figureFocus,initialSection]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
  const selected=OPTIONS.find(x=>x.id===section);
  return <View style={s.root}>
   <View style={[s.welcome,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
-   <Text style={[s.kicker,{color:c.accent}]}>INFO · EL CUADERNO DE LALO</Text>
+   <Text style={[s.kicker,{color:c.accent}]}>ESTUDIO · EL CUADERNO DE LALO</Text>
    <Text style={[s.welcomeTitle,{color:c.text}]}>{date?readableWeekday(date):'Elegí una fecha'} · {turn}</Text>
   </View>
   {!section?<View style={s.menu}>
    <Text style={[s.heading,{color:c.text}]}>¿Qué querés mirar?</Text>
-   <Text style={[s.small,{color:c.subtext}]}>Tocá un botón. Se abre solo esa parte, sin llenar toda la pantalla.</Text>
+   <Text style={[s.small,{color:c.subtext}]}>Elegí qué querés estudiar. Todo queda guardado para volver.</Text>
    <View style={s.tiles}>
     {OPTIONS.map(item=><Pressable key={item.id} accessibilityRole="button"
      accessibilityLabel={'Abrir '+item.title}
@@ -110,6 +120,10 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       <Text style={[s.small,{color:c.subtext}]}>{selected?.subtitle}</Text>
      </View>
     </View>
+    {section==='estadisticas'?<HeadStatStudy date={date} turn={turn}
+     history={statsHistory} historyBusy={statsBusy} historyProgress={statsProgress}
+     mode={statsMode} onMode={onStatsMode}
+     data={statsData} journal={statsJournal}/>:null}
     {section==='resumen'?<DayMatchGrid overview={overview} turn={turn}
      data={data} auxAyer={trackingAyer.view} auxHoy={trackingHoy.view} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
     {section==='tendencias'?<TurnTrendPanel date={date} turn={turn}
@@ -117,7 +131,6 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      trendSnapshot={trendSnapshot} onPeriodChange={onTrendPeriodChange}
      onTurnChange={onTurnChange}/>:null}
     {section==='vt3'?<>
-     <TurnStrip value={turn} onChange={onTurnChange}/>
      <Vt3DiagnosticPanel date={date} turn={turn} data={data} sheet={sheet}
       view={view} ayer={trackingAyer} hoy={trackingHoy}
       onFocusFamily={family=>{setFocusedVt3('vt3|'+family);setSection('seguir')}}
@@ -125,21 +138,19 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       onOpenTracking={()=>{setFocusedVt3(null);setSection('seguir')}}/>
     </>:null}
     {section==='historial'?<>
-     <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Elegí un día o una figura para verla más grande.</Text>
-     <InfoTurnGallery gallery={gallery} selectedFrameId={selectedFrameId}
+     <InfoTurnGallery gallery={gallery} view={view} historical={historical} selectedFrameId={selectedFrameId}
       onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}
       onOpenFrame={onOpenFrame}/>
     </>:null}
     {section==='auxiliar'?<>
-     <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Los recorridos de Santiago y Neuquén, separados de la hoja principal.</Text>
      <InfoAuxGallery days={auxDays} current={currentAux} turn={turn}
       mode={auxMode} onMode={onAuxMode} onOpenDay={onOpenAuxDay}
       prediction={auxPrediction} history={auxHistory}/>
     </>:null}
     {section==='seguir'?<>
-     <Text style={[s.small,{color:c.subtext}]}>Buscá una cifra y mirá cómo aparece en las hojas anteriores.</Text>
+     <Text style={[s.small,{color:c.subtext}]}>Tocá una familia para ver su formación y sus movimientos entre hojas.</Text>
      <FigureTrackingPanel date={date} turn={turn} sheet={sheet}
       history={visualDays} view={view} ayer={trackingAyer} hoy={trackingHoy}
       focusRequest={focusedVt3||figureFocus} onOpenLalo={onFigureLalo}
