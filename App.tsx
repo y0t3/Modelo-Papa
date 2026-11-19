@@ -23,7 +23,7 @@ import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
 import {buildMotorLaloAuxiliar,extractAuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {AuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {TrackingAuxInput} from './src/figureTracking';
-import type {LaloHistorical} from './src/motorLalo';
+import type {LaloHistorical,LaloKind} from './src/motorLalo';
 import type {InfoVisualDay,TurnHistoryFrame} from './src/infoTurnHistory';
 import type {AuxGalleryDay} from './src/infoAuxGallery';
 import PanoramaSheet from './src/PanoramaSheet';
@@ -44,6 +44,10 @@ import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import {buildHeadHighlights} from './src/headHighlights';
 import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
+import type {StudySection} from './src/ui/InfoDashboard';
+import MainBottomTabs from './src/ui/MainBottomTabs';
+import type {MainTab} from './src/ui/MainBottomTabs';
+import FamilyInvestigation from './src/ui/FamilyInvestigation';
 import HomeDashboard from './src/ui/HomeDashboard';
 import type {TrendEngine} from './src/trendHistoryVt2';
 import {emptyTrendJournal,buildTrendSnapshot} from './src/trendVt2Journal';
@@ -60,15 +64,21 @@ import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './s
 import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
 import type {NavigationEntry} from './src/tabNavigation';
 
-type Screen='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
+type Screen='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info'|'investigar';
 const screenTitles:Record<Screen,string>={
  inicio:'Inicio',hoja:'La hoja',predictiva:'Recorridos',prediccion:'Predicción',
- papa:'Lalo',cabezas:'Cabezas',info:'Info'
+ papa:'Lalo',cabezas:'Cabezas',info:'Estudio',investigar:'Investigar familia'
 };
 const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
 function LaloApp(){
  const {mode,colors:c,toggle}=useLaloTheme();
  const [screen,setScreen]=useState<Screen>('inicio');
+ const [studySection,setStudySection]=useState<StudySection|null>(null);
+ const [candidateKind,setCandidateKind]=useState<LaloKind>('vt2');
+ const [followingNext,setFollowingNext]=useState(true);
+ const [investigation,setInvestigation]=useState<{
+  id:string;origin:'lalo'|'auxiliar';mode:AuxMode
+ }|null>(null);
  const [trendEngine,setTrendEngine]=useState<TrendEngine>('lalo');
  const [trendJournal,setTrendJournal]=useState(emptyTrendJournal);
  const [trendPeriod,setTrendPeriod]=useState<TrendPeriod>('acumulado');
@@ -80,7 +90,7 @@ function LaloApp(){
  const activeScreenRef=useRef<Screen>('inicio');
  const historyRef=useRef<NavigationEntry[]>([]);
  const scrollOffsets=useRef<Record<Screen,number>>({
-  inicio:0,hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
+  inicio:0,hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0,investigar:0
  });
  const [restoreScroll,setRestoreScroll]=useState({token:0,y:0});
  const [infoFrameId,setInfoFrameId]=useState('inicio');
@@ -136,6 +146,7 @@ function LaloApp(){
   const from=activeScreenRef.current;
   if(from===next)return;
   setInfoEntrySection(next==='info'&&infoSection?'tendencias':null);
+  if(next==='info'&&infoSection)setStudySection('tendencias');
   if(next!=='hoja'){setHistoricalPreview(null);setHistoricalAux(null);}
   historyRef.current=pushNavigation(historyRef.current,{
    screen:from,scrollY:scrollOffsets.current[from],selectedTurn,
@@ -178,9 +189,19 @@ function LaloApp(){
   setInfoGuide('tablero');
  };
  const date=displayToIso(dateText);
- const target=useMemo<Turno>(()=>selectedTurn||TURNOS.find(t=>
-  !data||JURS.every(j=>!/^\d{4}$/.test(data[t]?.[j]||'')))||'Nocturno',
-  [data,selectedTurn]);
+ const upcomingTurn=useMemo<Turno>(()=>TURNOS.find(t=>
+  !data||JURS.filter(j=>j!=='Montevideo')
+    .every(j=>!/^[0-9]{4}$/.test(data[t]?.[j]||'')))||'Nocturno',[data]);
+ const target=selectedTurn||upcomingTurn;
+ const changeTurn=(turn:Turno)=>{
+  setSelectedTurn(turn);setFollowingNext(false);
+  setHojaTurn(turn);setFocused(null);setInfoFrameId('inicio');
+ };
+ const returnToNext=()=>{
+  setFollowingNext(true);setSelectedTurn(null);
+  setHojaTurn(upcomingTurn);setFocused(null);
+  if(date!==today())void cargar(today());
+ };
 
  const cargar=async(requested?:string)=>{
   const d=requested||date;
@@ -285,6 +306,7 @@ function LaloApp(){
     if(auxInfoRequest.current===request)setInfoAuxDays(days);
    }).catch(()=>{if(auxInfoRequest.current===request)setInfoAuxDays([])});
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);setFigureFocus(null);
+   setHojaTurn(upcomingTurn);
    
    setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
@@ -302,7 +324,7 @@ function LaloApp(){
   });
  },[date,data,sheet,busy,trendTick]);
  const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
-  if(base)void cargar(shiftDrawDay(base,n))};
+  if(base){setFollowingNext(false);void cargar(shiftDrawDay(base,n))}};
  // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
  useEffect(()=>{
   if(!sheet||!data||!hist.length||date!==today()||busy)return;
@@ -353,18 +375,18 @@ function LaloApp(){
  const activeAuxError=auxMode==='intrajornada'?auxTodayError:auxiliarError;
  const activeAuxDate=auxMode==='intrajornada'?date:auxSourceDate;
  const auxiliar=useMemo(()=>{
-  if((screen!=='inicio'&&screen!=='prediccion'&&screen!=='predictiva'&&screen!=='info')||!date||!activeAuxHeads||
+  if((screen!=='inicio'&&screen!=='prediccion'&&screen!=='predictiva'&&screen!=='info'&&screen!=='investigar')||!date||!activeAuxHeads||
    activeAuxHistory.length!==hist.length||!activeAuxHistory.length)return null;
   const input=auxAtCut(activeAuxHeads,target,auxMode);
   return buildMotorLaloAuxiliar(date,target,input,activeAuxHistory);
  },[screen,date,target,activeAuxHeads,activeAuxHistory,hist,auxMode]);
  // Presencias independientes del seguimiento. Cada uno conserva el
  // origen PRE y sus propias raíces; jamás se mezclan con MV1.
- const trackingAyerView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxHeads&&
+ const trackingAyerView=useMemo(()=>(screen==='info'||screen==='inicio'||screen==='investigar')&&date&&auxHeads&&
   auxiliarPast.length===hist.length&&auxiliarPast.length?
   buildMotorLaloAuxiliar(date,target,auxAtCut(auxHeads,target,'anterior'),auxiliarPast):null,
   [screen,date,target,auxHeads,auxiliarPast,hist]);
- const trackingHoyView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxToday&&
+ const trackingHoyView=useMemo(()=>(screen==='info'||screen==='inicio'||screen==='investigar')&&date&&auxToday&&
   auxTodayPast.length===hist.length&&auxTodayPast.length?
   buildMotorLaloAuxiliar(date,target,auxAtCut(auxToday,target,'intrajornada'),auxTodayPast):null,
   [screen,date,target,auxToday,auxTodayPast,hist]);
@@ -424,12 +446,12 @@ function LaloApp(){
  const fiveHeads=useMemo(()=>JURS.filter(j=>j!=='Montevideo')
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
- const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
  const changeAuxMode=(next:AuxMode)=>{setAuxMode(next);setFocused(null)};
- const showFamily=(id:string)=>{
-  setCombinedFocus(null);setPredictiveMode('lalo');
-  navigateTo('predictiva');setFocused(id);
+ const investigate=(id:string,origin:'lalo'|'auxiliar',mode:AuxMode=auxMode)=>{
+  setInvestigation({id,origin,mode});setFigureFocus(null);
+  navigateTo('investigar');
  };
+ const showFamily=(id:string)=>investigate(id,'lalo');
  const showCombinedFamily=(pick:CombinedPick)=>{
   if(!pick.paths.length)return;
   setCombinedFocus(pick);setPredictiveMode('lalo');
@@ -442,9 +464,7 @@ function LaloApp(){
   setAuxMode(mode);setPredictiveMode('auxiliar');
   navigateTo('predictiva');setFocused('vt3|'+family);
  };
- const showAuxFamily=(id:string)=>{
-  setCombinedFocus(null);setPredictiveMode('auxiliar');navigateTo('predictiva');setFocused(id);
- };
+ const showAuxFamily=(id:string)=>investigate(id,'auxiliar',auxMode);
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);
   if(!headHighlights.merged[id]?.kinds.length)return;
