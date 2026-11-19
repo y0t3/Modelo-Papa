@@ -292,7 +292,23 @@ function LaloApp(){
    Alert.alert('No se pudo cargar',error?.message||String(error));
   }finally{setBusy(false)}
  };
- useEffect(()=>{void cargar(today())},[]);
+ const nextDrawDate=async()=>{
+  const d=today();
+  if(new Date(d+'T12:00:00').getDay()===0)return shiftDrawDay(d,1);
+  try{
+   const heads=await descargarCabezas(d,true);
+   const complete=TURNOS.every(t=>JURS.every(j=>/^\d{4}$/.test(heads[t]?.[j]||'')));
+   return complete?shiftDrawDay(d,1):d;
+  }catch{return d}
+ };
+ useEffect(()=>{void nextDrawDate().then(d=>cargar(d))},[]);
+ // Si terminó el último turno, volver a apuntar al próximo sorteo.
+ // Sólo en modo automático: la consulta manual nunca se interrumpe.
+ useEffect(()=>{
+  if(!data||busy||selectedTurn||date!==today())return;
+  const complete=TURNOS.every(t=>JURS.every(j=>/^\d{4}$/.test(data[t]?.[j]||'')));
+  if(complete)void cargar(shiftDrawDay(date,1));
+ },[data,date,busy,selectedTurn]);
  // Seguir cortes PRE y cotejarlos con POST; si la app estuvo cerrada,
  // reconstruir solamente fuentes cronológicamente disponibles por turno.
  useEffect(()=>{
@@ -302,7 +318,10 @@ function LaloApp(){
    trendSyncLock.current=false;
   });
  },[date,data,sheet,busy,trendTick]);
- const goNextDraw=()=>{setSelectedTurn(null);if(date!==today())void cargar(today());};
+ const goNextDraw=()=>{
+  setSelectedTurn(null);
+  void nextDrawDate().then(d=>{if(date!==d)void cargar(d)});
+ };
  const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
   if(base)void cargar(shiftDrawDay(base,n))};
  // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
