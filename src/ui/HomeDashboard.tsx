@@ -5,6 +5,8 @@ import type {AuxiliarView} from '../motorLaloAuxiliar';
 import type {DayOverview} from '../homeDaySummary';
 import type {HistoricHeadsDay} from '../historicalHeadFrequency';
 import type {StatMode} from '../headStats';
+import type {Top6Snapshot} from '../headStatJournal';
+import {hitsForTop6,lastStatSnapshots} from '../headStatJournal';
 import {headStats,STAT_MODE_LABELS} from '../headStats';
 import HeadStatSwitch from './HeadStatSwitch';
 import {useLaloTheme} from './LaloTheme';
@@ -19,15 +21,20 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;
  overview:DayOverview;onOpenStats:()=>void;onOpenHeads:()=>void;
  history:HistoricHeadsDay[];historyBusy:boolean;historyProgress:number;
  statMode:StatMode;onStatMode:(mode:StatMode)=>void;
+ statSnapshot:Top6Snapshot|null;statJournal:Top6Snapshot[];
  trendEngine:TrendEngine;onTrendEngineChange:(engine:TrendEngine)=>void;
  trendSnapshot:TrendSnapshot;onOpenTrendInfo:()=>void};
 const shortDate=(iso:string|null)=>iso?iso.slice(8,10)+'/'+iso.slice(5,7):'sin registro';
 export default function HomeDashboard({date,turn,data,auxAyer,auxHoy,
  overview,onOpenStats,onOpenHeads,history,historyBusy,historyProgress,
- statMode,onStatMode,trendEngine,onTrendEngineChange,onOpenTrendInfo,trendSnapshot}:Props){
+ statMode,onStatMode,statSnapshot,statJournal,trendEngine,onTrendEngineChange,onOpenTrendInfo,trendSnapshot}:Props){
  const {colors:c}=useLaloTheme();
  const stats=useMemo(()=>headStats(history,date,turn,110,statMode),
   [history,date,turn,statMode]);
+ const hits=statSnapshot?hitsForTop6(statSnapshot,statMode):[];
+ const last=lastStatSnapshots(statJournal)[0]||null;
+ const lastHits=last?hitsForTop6(last,statMode):[];
+ const currentHeads=statSnapshot?.results.length||0;
  return <View style={s.root}>
   <View style={[s.hero,{backgroundColor:c.surface,borderColor:c.accent}]}>
    <Text style={[s.kicker,{color:c.accent}]}>ESTADÍSTICAS · {turn.toUpperCase()}</Text>
@@ -48,7 +55,9 @@ export default function HomeDashboard({date,turn,data,auxAyer,auxHoy,
    </Text>:<>
     <View style={s.grid}>
      {stats.top.map((item,index)=><View key={item.value}
-      style={[s.chip,{backgroundColor:c.surfaceAlt,borderColor:index===0?c.accent:c.border}]}>
+      style={[s.chip,{backgroundColor:c.surfaceAlt,
+       borderColor:hits.some(h=>h.value===item.value)?'#57D5A5':index===0?c.accent:c.border,
+       borderWidth:hits.some(h=>h.value===item.value)?2:1}]}>
       <Text style={{color:c.subtext,fontSize:10}}>#{index+1}</Text>
       <Text style={{color:index===0?c.accent:c.text,fontSize:25,fontWeight:'900'}}>
        {item.value}
@@ -58,8 +67,17 @@ export default function HomeDashboard({date,turn,data,auxAyer,auxHoy,
         statMode==='recientes'?'Últ. '+shortDate(item.lastDate):
         item.count+' '+(item.count===1?'vez':'veces')}
       </Text>
+      {hits.some(h=>h.value===item.value)?<Text style={{
+       fontSize:10,fontWeight:'900',color:'#57D5A5',textAlign:'center'}}>
+       ✓ Coincidió
+      </Text>:null}
      </View>)}
     </View>
+    {statSnapshot&&currentHeads>0?<Text style={[s.match,{color:'#57D5A5'}]}>
+     {hits.length?'✓ '+hits.length+' coincidencia(s) del Top6 '+STAT_MODE_LABELS[statMode]:
+      'Sin coincidencias del Top6 '+STAT_MODE_LABELS[statMode]} ·
+     {' '+currentHeads+' de 5 cabezas publicadas.'}
+    </Text>:null}
     <Text style={[s.note,{color:c.subtext}]}>
      {stats.days} jornadas completas anteriores · {stats.heads} cabezas.
      {stats.days<110?' Historial limitado.':''}
@@ -67,6 +85,17 @@ export default function HomeDashboard({date,turn,data,auxAyer,auxHoy,
       ' '+stats.unseen+' números sin aparición conocida en este período (atraso indeterminado).':''}
     </Text>
    </>}
+   {!statSnapshot&&last?<View style={{gap:3,backgroundColor:c.surfaceAlt,
+    padding:9,borderRadius:9}}>
+    <Text style={{fontSize:11,fontWeight:'900',color:c.text}}>
+     Último Top6 guardado · {last.date.slice(8,10)}/{last.date.slice(5,7)} · {last.turn}
+    </Text>
+    <Text style={{fontSize:11,color:lastHits.length?'#57D5A5':c.subtext}}>
+     {lastHits.length? '✓ '+lastHits.length+' coincidencia(s) de '+STAT_MODE_LABELS[statMode]:
+      'Sin coincidencias de '+STAT_MODE_LABELS[statMode]} ·
+     {' '+last.results.length+' cabezas publicadas
+    </Text>
+   </View>:null}
    <Pressable accessibilityRole="button" onPress={onOpenStats}
     style={[s.button,{backgroundColor:c.accent}]}>
     <Text style={{fontWeight:'900',color:'#092347',fontSize:13}}>
@@ -95,6 +124,7 @@ const s=StyleSheet.create({
  title:{fontSize:22,fontWeight:'900'},
  desc:{fontSize:11,lineHeight:17},
  note:{fontSize:10,lineHeight:16},
+ match:{fontSize:11,fontWeight:'900',lineHeight:17},
  grid:{flexDirection:'row',flexWrap:'wrap',columnGap:'2%',rowGap:8},
  chip:{width:'32%',borderWidth:1,borderRadius:11,alignItems:'center',
   gap:4,padding:10,minHeight:95,justifyContent:'center'},

@@ -3,6 +3,9 @@ import {View,Text,Pressable,ScrollView} from 'react-native';
 import type {Turno} from '../domain';
 import type {HistoricHeadsDay} from '../historicalHeadFrequency';
 import type {StatMode,StatScope,StatNumber} from '../headStats';
+import type {CabezasDia} from '../domain';
+import type {Top6Snapshot} from '../headStatJournal';
+import {hitsForTop6,lastStatSnapshots,statKey} from '../headStatJournal';
 import {STAT_JURS,headStats,STAT_MODE_LABELS} from '../headStats';
 import HeadStatSwitch from './HeadStatSwitch';
 import {useLaloTheme} from './LaloTheme';
@@ -10,14 +13,19 @@ import {useLaloTheme} from './LaloTheme';
 const dmy=(date:string|null)=>date?
  date.slice(8,10)+'/'+date.slice(5,7)+'/'+date.slice(0,4):'No registrada';
 export default function HeadStatStudy({date,turn,history,historyBusy,
- historyProgress,mode,onMode}:{date:string;turn:Turno;
+ historyProgress,mode,onMode,data,journal}:{date:string;turn:Turno;
  history:HistoricHeadsDay[];historyBusy:boolean;historyProgress:number;
- mode:StatMode;onMode:(mode:StatMode)=>void}){
+ mode:StatMode;onMode:(mode:StatMode)=>void;
+ data:CabezasDia|null;journal:Top6Snapshot[]}){
  const {colors:c}=useLaloTheme();
  const [window,setWindow]=useState<60|110>(110);
  const [scope,setScope]=useState<StatScope>('todas');
  const [selected,setSelected]=useState<string|null>(null);
  const [allOpen,setAllOpen]=useState(false);
+ const [journalOpen,setJournalOpen]=useState(false);
+ const snapshot=journal.find(x=>x.key===statKey(date,turn))||null;
+ const savedHits=snapshot?hitsForTop6(snapshot,mode):[];
+ const recent=lastStatSnapshots(journal).slice(0,journalOpen?45:8);
  const stats=useMemo(()=>headStats(history,date,turn,window,mode,scope),
   [history,date,turn,window,mode,scope]);
  const focus:StatNumber|null=(selected?stats.all.find(x=>x.value===selected):null)||null;
@@ -71,6 +79,26 @@ export default function HeadStatStudy({date,turn,history,historyBusy,
    </Pressable>)}
   </ScrollView>
   <Text style={{fontSize:11,color:c.subtext,lineHeight:17}}>{explain}</Text>
+  {snapshot?<View style={{borderWidth:1,borderColor:c.accent,
+   borderRadius:11,padding:10,gap:5,backgroundColor:c.card}}>
+   <Text style={{fontSize:12,fontWeight:'900',color:c.accent}}>
+    Top6 guardado antes de publicarse las cabezas
+   </Text>
+   <Text style={{fontSize:11,color:c.subtext}}>
+    {snapshot.date} · {snapshot.turn} · {snapshot.results.length} de 5 cabezas.
+    {' '}Las listas guardadas no se reordenan después.
+   </Text>
+   <Text style={{fontSize:12,fontWeight:'900',
+    color:savedHits.length?'#57D5A5':c.text}}>
+    {savedHits.length?'✓ '+savedHits.length+' coincidencia(s) '+STAT_MODE_LABELS[mode]:
+     snapshot.results.length?'Sin coincidencias '+STAT_MODE_LABELS[mode]:
+     'Aún no hay resultados publicados'}
+   </Text>
+   {savedHits.map((hit,i)=><Text key={i}
+    style={{fontSize:11,color:c.text}}>
+    #{hit.rank} · {hit.value} · {hit.jur} · cabeza {hit.head}
+   </Text>)}
+  </View>:null}
   {historyBusy?<Text style={{color:c.subtext,fontSize:12}}>
    Leyendo las fechas anteriores. Podés seguir usando la app mientras tanto.
   </Text>:stats.days<12?<Text style={{color:c.subtext,fontSize:12}}>
@@ -149,6 +177,43 @@ export default function HeadStatStudy({date,turn,history,historyBusy,
     </View>)}
    </View>
   </>}
+  <View style={{borderTopWidth:1,borderTopColor:c.border,paddingTop:12,gap:8}}>
+   <Text style={{fontSize:15,fontWeight:'900',color:c.text}}>
+    Historial de coincidencias guardadas
+   </Text>
+   <Text style={{fontSize:11,lineHeight:17,color:c.subtext}}>
+    Cada lista se guardó sin cabezas publicadas para ese turno. Se comparan
+    las terminaciones exactas con el primer premio de las cinco jurisdicciones.
+    Las consultas retrospectivas sin lista previa no se anotan como aciertos.
+   </Text>
+   {recent.length?recent.map(row=>{
+    const found=hitsForTop6(row,mode);
+    return <View key={row.key} style={{padding:10,borderRadius:9,
+     borderWidth:1,borderColor:found.length?'#57D5A5':c.border,
+     backgroundColor:c.card,gap:4}}>
+     <Text style={{fontSize:11,fontWeight:'900',color:c.text}}>
+      {dmy(row.date)} · {row.turn} · {row.results.length}/5 cabezas
+     </Text>
+     <Text style={{fontSize:11,color:found.length?'#57D5A5':c.subtext}}>
+      {found.length?'✓ '+found.length+' coincidencia(s)':'Sin coincidencias'} ·
+      {' '+STAT_MODE_LABELS[mode]}
+     </Text>
+     {found.slice(0,6).map((hit,i)=><Text key={i}
+      style={{fontSize:10,color:c.text}}>
+      #{hit.rank} · {hit.value} · {hit.jur}: {hit.head}
+     </Text>)}
+    </View>;
+   }):<Text style={{fontSize:11,color:c.subtext}}>
+    Todavía no hay Top6 guardados con resultados para comparar.
+    Los registros empezarán a acumularse cuando se consulten turnos pendientes.
+   </Text>}
+   {journal.length>8?<Pressable onPress={()=>setJournalOpen(x=>!x)}
+    style={{borderWidth:1,borderColor:c.accent,borderRadius:9,padding:11}}>
+    <Text style={{color:c.accent,fontWeight:'900',fontSize:11,textAlign:'center'}}>
+     {journalOpen?'Mostrar menos registros':'Ver más registros'}
+    </Text>
+   </Pressable>:null}
+  </View>
   <Text style={{color:c.muted,fontSize:10,lineHeight:16}}>
    Se cuentan solamente jornadas con las cinco cabezas publicadas.
    Una terminación es exacta: 37 y 73 son números diferentes.

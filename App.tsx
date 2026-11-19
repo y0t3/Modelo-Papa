@@ -1,5 +1,5 @@
 import React,{useEffect,useMemo,useRef,useState} from 'react';
-import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator,Alert,BackHandler,Platform,StatusBar as RNStatusBar} from 'react-native';
+import {SafeAreaView,ScrollView,View,Text,Pressable,StyleSheet,ActivityIndicator,Alert,BackHandler,Platform,StatusBar as RNStatusBar,AppState} from 'react-native';
 import {StatusBar} from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
@@ -55,6 +55,9 @@ import {syncTrendJournal} from './src/trendVt2Sync';
 import {summarizeDay} from './src/homeDaySummary';
 import type {MovementMode} from './src/infoCandidatos';
 import type {StatMode} from './src/headStats';
+import {STAT_JURS} from './src/headStats';
+import {STATS_JOURNAL_KEY,readStatJournal,buildTop6Pre,mergeStatResults,statKey} from './src/headStatJournal';
+import type {Top6Snapshot} from './src/headStatJournal';
 import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 import ZoomableTab from './src/ui/ZoomableTab';
@@ -129,6 +132,34 @@ function LaloApp(){
  const [frequencyProgress,setFrequencyProgress]=useState(0);
  const [statMode,setStatMode]=useState<StatMode>('atrasados');
  const historicalHeadsCache=useRef(new Map<string,CabezasDia>());
+ const [statJournal,setStatJournal]=useState<Top6Snapshot[]>([]);
+ const [statJournalReady,setStatJournalReady]=useState(false);
+ const statJournalSave=useRef<Promise<void>>(Promise.resolve());
+ const [autoPollTick,setAutoPollTick]=useState(0);
+ const manualDateRef=useRef(false);
+ const autoPollingRef=useRef(false);
+ useEffect(()=>{
+  let alive=true;
+  void AsyncStorage.getItem(STATS_JOURNAL_KEY).then(raw=>{
+   if(alive)setStatJournal(readStatJournal(raw));
+  }).catch(()=>{}).finally(()=>{if(alive)setStatJournalReady(true)});
+  return ()=>{alive=false};
+ },[]);
+ useEffect(()=>{
+  if(!statJournalReady)return;
+  const value=JSON.stringify(statJournal);
+  statJournalSave.current=statJournalSave.current.then(()=>
+   AsyncStorage.setItem(STATS_JOURNAL_KEY,value)).catch(()=>{});
+ },[statJournal,statJournalReady]);
+ useEffect(()=>{
+  const interval=setInterval(()=>{
+   if(AppState.currentState==='active')setAutoPollTick(x=>x+1);
+  },180000);
+  const sub=AppState.addEventListener('change',state=>{
+   if(state==='active')setAutoPollTick(x=>x+1);
+  });
+  return ()=>{clearInterval(interval);sub.remove()};
+ },[]);
  const [infoAuxDays,setInfoAuxDays]=useState<AuxGalleryDay[]>([]);
  const auxInfoRequest=useRef(0);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
@@ -205,7 +236,8 @@ function LaloApp(){
     if(!pending){
      const cached=day<today()?historicalHeadsCache.current.get(day):null;
      pending=cached?Promise.resolve(cached):descargarCabezas(day,true).then(result=>{
-      if(day<today()&&hasDrawResults(result))
+      if(day<today()&&TURNOS.every(t=>STAT_JURS.every(j=>
+       /^\d{4}$/.test(result[t]?.[j]||''))))
        historicalHeadsCache.current.set(day,result);
       return result;
      });
@@ -328,7 +360,7 @@ function LaloApp(){
   if(new Date(d+'T12:00:00').getDay()===0)return shiftDrawDay(d,1);
   try{
    const heads=await descargarCabezas(d,true);
-   const complete=TURNOS.every(t=>JURS.every(j=>/^\d{4}$/.test(heads[t]?.[j]||'')));
+   const complete=TURNOS.every(t=>STAT_JURS.every(j=>/^\d{4}$/.test(heads[t]?.[j]||'')));
    return complete?shiftDrawDay(d,1):d;
   }catch{return d}
  };
@@ -337,9 +369,56 @@ function LaloApp(){
  // Sólo en modo automático: la consulta manual nunca se interrumpe.
  useEffect(()=>{
   if(!data||busy||selectedTurn||date!==today())return;
-  const complete=TURNOS.every(t=>JURS.every(j=>/^\d{4}$/.test(data[t]?.[j]||'')));
+  const complete=TURNOS.every(t=>STAT_JURS.every(j=>/^\d{4}$/.test(data[t]?.[j]||'')));
   if(complete)void cargar(shiftDrawDay(date,1));
  },[data,date,busy,selectedTurn]);
+ // Mientras la app está abierta, consultar resultados sin tocar fecha, pantalla
+ // ni selección manual. También comprobar al volver al primer plano.
+ useEffect(()=>{
+  if(autoPollTick===0||busy||!data||autoPollingRef.current||
+   manualDateRef.current||selectedTurn||!date)return;
+  if(date<today()){
+   void nextDrawDate().then(d=>{
+    if(!manualDateRef.current&&d!==date)void cargar(d);
+   }).catch(()=>{});
+   return;
+  }
+  if(date!==today()||AppState.currentState!=='active')return;
+  autoPollingRef.current=true;
+  void descargarCabezas(date,true).then(latest=>{
+   if(manualDateRef.current||date!==today())return;
+   if(JSON.stringify(latest)===JSON.stringify(data))return;
+   setData(latest);
+   if(baseHeads)setSheet(buildSheet(latest,baseHeads));
+  }).catch(()=>{}).finally(()=>{autoPollingRef.current=false});
+ },[autoPollTick]);
+ // Guardar las cuatro listas Top6 como PRE antes de cualquier cabeza publicada.
+ // No se crean PRE retroactivos al consultar un sorteo ya resuelto.
+ useEffect(()=>{
+  if(!statJournalReady||frequencyBusy||frequencyDays.length===0||!data||
+   date!==today()||!date||manualDateRef.current)return;
+  const record=buildTop6Pre(date,target,frequencyDays,data,new Date().toISOString());
+  if(!record)return;
+  setStatJournal(prev=>prev.some(x=>x.key===record.key)?prev:
+   [...prev,record].slice(-160));
+ },[statJournalReady,frequencyBusy,frequencyDays,date,target,data]);
+ // Actualizar las cabezas reales y conservar las listas PRE sin reordenarlas.
+ // También completa registros de días anteriores al abrir de nuevo la app.
+ useEffect(()=>{
+  if(!statJournalReady||!data||!date)return;
+  const byDate=new Map(frequencyDays.map(x=>[x.date,x.heads]));
+  byDate.set(date,data);
+  const checkedAt=new Date().toISOString();
+  setStatJournal(prev=>{
+   let changed=false;
+   const next=prev.map(rec=>{
+    const updated=mergeStatResults(rec,byDate.get(rec.date)||null,checkedAt);
+    if(updated!==rec)changed=true;
+    return updated;
+   });
+   return changed?next:prev;
+  });
+ },[statJournalReady,data,date,frequencyDays]);
  // Seguir cortes PRE y cotejarlos con POST; si la app estuvo cerrada,
  // reconstruir solamente fuentes cronológicamente disponibles por turno.
  useEffect(()=>{
@@ -350,10 +429,11 @@ function LaloApp(){
   });
  },[date,data,sheet,busy,trendTick]);
  const goNextDraw=()=>{
+  manualDateRef.current=false;
   setSelectedTurn(null);
   void nextDrawDate().then(d=>{if(date!==d)void cargar(d)});
  };
- const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
+ const move=(n:1|-1)=>{manualDateRef.current=true;const base=historicalPreview?.day.date||date;
   if(base)void cargar(shiftDrawDay(base,n))};
  // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
  useEffect(()=>{
@@ -565,6 +645,7 @@ function LaloApp(){
      <Text style={[s.dayArrowText,{color:busy?c.muted:c.accent}]}>‹</Text>
     </Pressable>
     <DateField compact value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
+     manualDateRef.current=true;
      resetHistory();setHistoricalPreview(null);
      setDateText(value);setData(null);setAuxHeads(null);setAuxToday(null);
      setAuxSourceDate(null);setHistoricalAux(null);setSheet(null);setBaseHeads(null);setHist([]);
@@ -607,6 +688,8 @@ function LaloApp(){
      auxAyer={trackingAyerView} auxHoy={trackingHoyView} overview={overview}
      history={frequencyDays} historyBusy={frequencyBusy} historyProgress={frequencyProgress}
      statMode={statMode} onStatMode={setStatMode}
+     statSnapshot={statJournal.find(x=>x.key===statKey(date||'',target))||null}
+     statJournal={statJournal}
      onOpenStats={()=>{setFigureFocus(null);navigateTo('info','estadisticas')}}
      onOpenHeads={()=>navigateTo('cabezas')}
      trendEngine={trendEngine} onTrendEngineChange={setTrendEngine}
@@ -713,6 +796,7 @@ function LaloApp(){
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
      statsHistory={frequencyDays} statsBusy={frequencyBusy} statsProgress={frequencyProgress}
      statsMode={statMode} onStatsMode={setStatMode}
+     statsData={data} statsJournal={statJournal}
      auxDays={infoAuxDays}
      currentAux={data&&date?{
       date,heads:data,yesterday:auxHeads,today:auxToday,sourceDate:auxSourceDate

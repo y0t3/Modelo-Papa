@@ -17,6 +17,7 @@ import {useLaloTheme} from './LaloTheme';
 import type {DayOverview} from '../homeDaySummary';
 import type {HistoricHeadsDay} from '../historicalHeadFrequency';
 import type {StatMode} from '../headStats';
+import type {Top6Snapshot} from '../headStatJournal';
 import HeadStatStudy from './HeadStatStudy';
 import DayMatchGrid from './DayMatchGrid';
 import TurnTrendPanel from './TurnTrendPanel';
@@ -44,7 +45,8 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  onTrendEngineChange:(engine:TrendEngine)=>void;
  trendSnapshot:TrendSnapshot;onTrendPeriodChange:(period:TrendPeriod)=>void;
  statsHistory:HistoricHeadsDay[];statsBusy:boolean;statsProgress:number;
- statsMode:StatMode;onStatsMode:(mode:StatMode)=>void};
+ statsMode:StatMode;onStatsMode:(mode:StatMode)=>void;
+ statsData:CabezasDia|null;statsJournal:Top6Snapshot[]};
 
 export type StudySection='estadisticas'|'resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
 type Section=StudySection;
@@ -72,7 +74,8 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
  figureFocus,onFigureLalo,onFigureAux,initialSection=null,onSectionChange,
  trendEngine,onTrendEngineChange,trendSnapshot,onTrendPeriodChange,
- statsHistory,statsBusy,statsProgress,statsMode,onStatsMode}:Props){
+ statsHistory,statsBusy,statsProgress,statsMode,onStatsMode,
+ statsData,statsJournal}:Props){
  const {colors:c}=useLaloTheme();
  const [section,setSectionState]=useState<Section|null>(initialSection);
  const setSection=(value:Section|null)=>{setSectionState(value);onSectionChange?.(value)};
@@ -119,7 +122,8 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
     </View>
     {section==='estadisticas'?<HeadStatStudy date={date} turn={turn}
      history={statsHistory} historyBusy={statsBusy} historyProgress={statsProgress}
-     mode={statsMode} onMode={onStatsMode}/>:null}
+     mode={statsMode} onMode={onStatsMode}
+     data={statsData} journal={statsJournal}/>:null}
     {section==='resumen'?<DayMatchGrid overview={overview} turn={turn}
      data={data} auxAyer={trackingAyer.view} auxHoy={trackingHoy.view} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
     {section==='tendencias'?<TurnTrendPanel date={date} turn={turn}

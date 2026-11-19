@@ -1,4 +1,4 @@
-name: Modelo Lalo 0.4.2 - Navegacion y APK actualizable
+name: Modelo Lalo 0.4.3 - Navegacion y APK actualizable
 on:
   push:
     branches:
@@ -28,6 +28,8 @@ jobs:
         run: npx --yes tsx scripts/test-historical-head-stats.ts
       - name: Atrasos y frecuencias sin fuga de resultados
         run: npx --yes tsx scripts/test-head-stats.ts
+      - name: Comprobar PRE guardado y coincidencias POST
+        run: npx --yes tsx scripts/test-head-stat-journal.ts
       - name: Motor Lalo sin cambios
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Historial y navegacion
@@ -55,7 +57,7 @@ jobs:
         env:
           CI: '1'
         run: npx expo prebuild --platform android --clean
-      - name: Compilar APK release 0.4.2
+      - name: Compilar APK release 0.4.3
         working-directory: android
         env:
           CI: '1'
@@ -75,7 +77,7 @@ jobs:
       - name: Publicar APK para actualizar sin desinstalar
         uses: actions/upload-artifact@v4
         with:
-          name: Modelo-Lalo-0.4.2-Actualizacion-APK
+          name: Modelo-Lalo-0.4.3-Actualizacion-APK
           path: android/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
           retention-days: 21
