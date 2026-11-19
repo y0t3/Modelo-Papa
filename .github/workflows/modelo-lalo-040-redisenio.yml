@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - feature/redisenio-navegacion-lalo-18nov2026
+  pull_request:
+    branches:
+      - feature/info-diagnostico-vt3-corte-18nov2026
   workflow_dispatch:
 permissions:
   contents: read
