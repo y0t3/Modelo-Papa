@@ -51,7 +51,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    <Text style={[s.desc,{color:c.subtext}]}>
     {date?readableWeekday(date):'Elegí una fecha'} · {overview.statusText}
    </Text>
-   <TurnStrip value={turn} onChange={onTurnChange}/>
+
    {groups.map((group,i)=><View key={group.name} style={s.favoriteGroup}>
     <View style={s.groupHeader}>
      <Text style={{fontSize:12,fontWeight:'900',color:i===0?c.accent:c.text}}>
