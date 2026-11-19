@@ -2,11 +2,12 @@ import React from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import {useLaloTheme} from './LaloTheme';
 
-export type MainSpace='inicio'|'hoja'|'prediccion'|'info';
+export type MainSpace='inicio'|'hoja'|'prediccion'|'cabezas'|'info';
 const tabs:{id:MainSpace;label:string;icon:string}[]=[
  {id:'inicio',label:'Inicio',icon:'⌂'},
  {id:'hoja',label:'Hojas',icon:'▦'},
  {id:'prediccion',label:'Candidatos',icon:'★'},
+ {id:'cabezas',label:'Cabezas',icon:'▤'},
  {id:'info',label:'Estudio',icon:'▥'}
 ];
 export default function MainBottomTabs({active,onSelect}:{

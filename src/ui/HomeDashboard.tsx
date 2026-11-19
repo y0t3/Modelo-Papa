@@ -1,165 +1,100 @@
-import React,{useMemo} from 'react';
-import {Pressable,StyleSheet,Text,View} from 'react-native';
+import React from 'react';
+import {View,Text,StyleSheet} from 'react-native';
 import type {CabezasDia,Turno} from '../domain';
-import {TURNOS} from '../domain';
-import type {DailySheet} from '../sheet';
-import type {LaloView} from '../motorLalo';
 import type {AuxiliarView} from '../motorLaloAuxiliar';
-import type {AuxMode} from '../auxTemporalModes';
 import type {DayOverview} from '../homeDaySummary';
-import {preSheetAtCut} from '../infoCandidatos';
+import type {HistoricHeadsDay} from '../historicalHeadFrequency';
+import {historicalHeadFrequency} from '../historicalHeadFrequency';
 import {useLaloTheme} from './LaloTheme';
 import {readableWeekday} from '../infoTurnHistory';
-import RouteMiniBoard from './RouteMiniBoard';
 import DayMatchGrid from './DayMatchGrid';
 import TurnTrendPanel from './TurnTrendPanel';
 import type {TrendEngine} from '../trendHistoryVt2';
 import type {TrendSnapshot} from '../trendVt2Journal';
 
-type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
-type Props={date:string;turn:Turno;data:CabezasDia|null;sheet:DailySheet|null;
- view:LaloView|null;auxAyer:AuxiliarView|null;auxHoy:AuxiliarView|null;
+type Destination='cabezas';
+type Props={date:string;turn:Turno;data:CabezasDia|null;
+ auxAyer:AuxiliarView|null;auxHoy:AuxiliarView|null;
  overview:DayOverview;onNavigate:(page:Destination)=>void;
- onSelectPrediction:(mode:'lalo'|'auxiliar'|'combinado',auxMode?:AuxMode)=>void;
- onTurnChange:(turn:Turno)=>void;onFocus:(family:string)=>void;busy:boolean;
+ history:HistoricHeadsDay[];historyBusy:boolean;
  trendEngine:TrendEngine;onTrendEngineChange:(engine:TrendEngine)=>void;
- trendSnapshot:TrendSnapshot;
- onOpenTrendInfo:()=>void};
-export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
- overview,onNavigate,onSelectPrediction,onTurnChange,onFocus,busy,
- trendEngine,onTrendEngineChange,onOpenTrendInfo,trendSnapshot}:Props){
- const {colors:c,kinds}=useLaloTheme();
- const top=view?.ranks.vt2.slice(0,3)||[];
- const yesterday=auxAyer?.ranks[2].slice(0,3)||[];
- const intraday=auxHoy?.ranks[2].slice(0,3)||[];
- const first=top[0]?.paths[0];
- const pre=useMemo(()=>sheet?preSheetAtCut(sheet,turn,TURNOS.indexOf(turn)):null,[sheet,turn]);
- const column=pre?.columns.find(x=>x.id===first?.sourceId);
- const groups=[
-  {name:'Lalo · Hoja +11',list:top,mode:'lalo' as const,
-   onPress:(family:string)=>onFocus(family)},
-  {name:'Auxiliar · Ayer',list:yesterday,mode:'anterior' as const,
-   onPress:()=>onSelectPrediction('auxiliar','anterior')},
-  {name:'Auxiliar · Hoy',list:intraday,mode:'intrajornada' as const,
-   onPress:()=>onSelectPrediction('auxiliar','intrajornada')}
- ];
+ trendSnapshot:TrendSnapshot;onOpenTrendInfo:()=>void};
+const categories=[{digits:2 as const,title:'2 cifras'},
+ {digits:3 as const,title:'3 cifras'},{digits:4 as const,title:'4 cifras'}];
+export default function HomeDashboard({date,turn,data,auxAyer,auxHoy,
+ overview,onNavigate,history,historyBusy,trendEngine,
+ onTrendEngineChange,onOpenTrendInfo,trendSnapshot}:Props){
+ const {colors:c}=useLaloTheme();
  return <View style={s.root}>
-  <View style={[s.hero,{backgroundColor:c.surface,borderColor:'#E6B34D'}]}>
-   <Text style={[s.kicker,{color:c.accent}]}>LA POSTA DEL DÍA · {turn.toUpperCase()}</Text>
-   <Text style={[s.title,{color:c.accent}]}>Los favoritos de Lalo</Text>
+  <View style={[s.hero,{backgroundColor:c.surface,borderColor:c.accent}]}>
+   <Text style={[s.kicker,{color:c.accent}]}>RESULTADOS DEL TURNO · {turn.toUpperCase()}</Text>
+   <Text style={[s.title,{color:c.accent}]}>Los más repetidos</Text>
    <Text style={[s.desc,{color:c.subtext}]}>
-    {date?readableWeekday(date):'Elegí una fecha'} · {overview.statusText}
+    {date?readableWeekday(date):'Elegí una fecha'} · solo cabezas publicadas
    </Text>
-
-   {groups.map((group,i)=><View key={group.name} style={s.favoriteGroup}>
-    <View style={s.groupHeader}>
-     <Text style={{fontSize:12,fontWeight:'900',color:i===0?c.accent:c.text}}>
-      {group.name}
-     </Text>
-     {i>0?<Text style={{fontSize:10,color:c.subtext}}>2 cifras</Text>:null}
-    </View>
-    {group.list.length?<View style={s.favRow}>
-     {group.list.map((f,n)=><Pressable accessibilityRole="button" key={f.family+'|'+n}
-      onPress={()=>group.onPress(f.family)}
-      style={[s.favChip,{backgroundColor:c.surfaceAlt,
-       borderColor:n===0?i===0?c.accent:kinds.vt2.line:c.border}]}>
-      <Text style={{color:c.subtext,fontSize:10}}>#{f.rank}</Text>
-      <Text style={{color:n===0?i===0?c.accent:kinds.vt2.line:c.text,
-       fontSize:16,fontWeight:'900'}} numberOfLines={1}>{f.family}</Text>
-     </Pressable>)}
-    </View>:<Text style={{fontSize:11,color:c.subtext,lineHeight:17}}>
-     {busy?'Buscando números de esta hoja…':
-      i===2?'Todavía faltan cifras de hoy para este turno.':
-      'No hay candidatos disponibles para esta hoja y turno.'}
-    </Text>}
-   </View>)}
-   <Text style={[s.note,{color:c.subtext}]}>
-    Son los primeros de cada hoja; no son apuestas automáticas.
+   <Text style={[s.desc,{color:c.subtext}]}>
+    Miramos hasta 28 fechas anteriores del mismo turno, en cinco jurisdicciones.
+    Sin hoja +11, sin motores y sin usar el resultado del turno elegido.
    </Text>
-   <Pressable accessibilityRole="button" onPress={()=>onSelectPrediction('lalo')}
-    style={[s.mainButton,{backgroundColor:c.accent}]}>
-    <Text style={{fontSize:13,fontWeight:'900',color:'#092347'}}>
-     Ver los diez candidatos  ›
-    </Text>
-   </Pressable>
+   {historyBusy?<Text style={[s.note,{color:c.subtext}]}>
+    Consultando los resultados anteriores…
+   </Text>:categories.map(item=>{
+    const result=historicalHeadFrequency(history,date,turn,item.digits);
+    return <View key={item.digits} style={s.category}>
+     <View style={s.categoryHeading}>
+      <Text style={{fontSize:13,fontWeight:'900',color:c.text}}>{item.title}</Text>
+      <Text style={{fontSize:10,color:c.subtext}}>
+       {result.observations} cabezas · {result.days} jornadas
+      </Text>
+     </View>
+     {result.top.length?<View style={s.row}>{result.top.map((x,i)=>
+      <View key={x.value} style={[s.chip,{backgroundColor:c.surfaceAlt,
+       borderColor:i===0?c.accent:c.border}]}>
+       <Text style={{color:c.subtext,fontSize:10}}>#{i+1}</Text>
+       <Text style={{color:i===0?c.accent:c.text,fontSize:item.digits===4?15:17,
+        fontWeight:'900'}}>{x.value}</Text>
+       <Text style={{color:c.subtext,fontSize:10}}>
+        {x.count} {x.count===1?'vez':'veces'}
+       </Text>
+      </View>)}</View>:<Text style={[s.note,{color:c.subtext}]}>
+      Todavía no hay resultados suficientes para mostrar.
+     </Text>}
+     {item.digits===4&&result.top.length>0&&result.top[0].count===1?
+      <Text style={[s.note,{color:c.subtext}]}>
+       Ninguna de estas cuatro cifras se repitió: solo figuran por fecha reciente.
+      </Text>:null}
+     {result.thirdTied?<Text style={[s.note,{color:c.subtext}]}>
+      Hay más números con igual cantidad de apariciones; el orden del empate usa la fecha más reciente.
+     </Text>:null}
+    </View>;
+   })}
+   <Text style={[s.note,{color:c.muted}]}>
+    Es un conteo de resultados pasados, no una predicción ni una ventaja comprobada.
+    Los números invertidos se cuentan por separado.
+   </Text>
   </View>
   <View style={[s.summary,{backgroundColor:c.surface,borderColor:c.border}]}>
    <Text style={[s.heading,{color:c.accent}]}>Resumen del día</Text>
    <DayMatchGrid overview={overview} data={data} turn={turn}
-    auxAyer={auxAyer} auxHoy={auxHoy} short onOpenHeads={()=>onNavigate('cabezas')}/>
-  </View>
-  <Text style={[s.heading,{color:c.accent}]}>¿Qué querés mirar?</Text>
-  <View style={s.shortcutGrid}>
-   <Pressable accessibilityRole="button" onPress={()=>onNavigate('hoja')}
-    style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#68B1FF'}]}>
-    <Text style={{color:'#68B1FF',fontSize:24,fontWeight:'900'}}>▦</Text>
-    <Text style={[s.shortcutTitle,{color:c.text}]}>Hojas</Text>
-    <Text style={[s.note,{color:c.subtext}]}>Números del día y sus caminos</Text>
-    <View style={s.mini}>
-     {column&&first?<RouteMiniBoard values={column.values} cells={first.path}
-      kind="vt2" compact/>:<Text style={{color:c.muted,fontSize:11}}>Sin hoja cargada</Text>}
-    </View>
-    <Text style={[s.link,{color:'#76BCFF'}]}>Abrir hoja  ›</Text>
-   </Pressable>
-   <Pressable accessibilityRole="button" onPress={()=>onNavigate('predictiva')}
-    style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#E9BA61'}]}>
-    <Text style={{color:'#E9BA61',fontSize:24,fontWeight:'900'}}>⌁</Text>
-    <Text style={[s.shortcutTitle,{color:c.text}]}>Ver cómo se forman</Text>
-    <Text style={[s.note,{color:c.subtext}]}>Cómo se forman las cifras</Text>
-    <View style={s.mini}>
-     {column&&first?<RouteMiniBoard values={column.values} cells={first.path}
-      kind="vt2" compact/>:<Text style={{color:c.muted,fontSize:11}}>Sin recorridos</Text>}
-    </View>
-    <Text style={[s.link,{color:'#E9BA61'}]}>Ver figuras  ›</Text>
-   </Pressable>
+    auxAyer={auxAyer} auxHoy={auxHoy} short
+    onOpenHeads={()=>onNavigate('cabezas')}/>
   </View>
   <TurnTrendPanel compact date={date} turn={turn} selectedEngine={trendEngine}
-   trendSnapshot={trendSnapshot}
-   onEngineChange={onTrendEngineChange} onDetails={onOpenTrendInfo}/>
-  <View style={[s.bottomCard,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>Otras consultas</Text>
-   <View style={s.actions}>
-    {([
-     ['info','Info','☀'],['cabezas','Cabezas reales','▤'],
-     ['papa','Lo que eligió Lalo','★']
-    ] as const).map(([to,label,icon])=><Pressable key={to} accessibilityRole="button"
-     style={[s.action,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}
-     onPress={()=>onNavigate(to)}>
-     <Text style={{color:c.accent,fontWeight:'900',fontSize:18}}>{icon}</Text>
-     <Text style={{color:c.text,fontWeight:'800',fontSize:11,flex:1}}>{label}</Text>
-     <Text style={{color:c.accent}}>›</Text>
-    </Pressable>)}
-   </View>
-  </View>
-  <Text style={[s.note,{color:c.muted,textAlign:'center'}]}>
-   Los puestos de los favoritos sirven para observar y comparar, no aseguran resultados.
-  </Text>
+   trendSnapshot={trendSnapshot} onEngineChange={onTrendEngineChange}
+   onDetails={onOpenTrendInfo}/>
  </View>;
 }
 const s=StyleSheet.create({
  root:{marginTop:9,gap:12,paddingBottom:25},
  hero:{borderWidth:2,borderRadius:18,padding:13,gap:10},
  kicker:{fontSize:10,fontWeight:'900',letterSpacing:1.1},
- title:{fontSize:22,fontWeight:'900',color:'#F5C04B'},
+ title:{fontSize:22,fontWeight:'900'},
  desc:{fontSize:11,lineHeight:17},
  note:{fontSize:10,lineHeight:16},
- groupHeader:{flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
- favoriteGroup:{gap:6},
- favRow:{flexDirection:'row',gap:7},
- favChip:{flex:1,minWidth:0,borderWidth:1,borderRadius:10,
-  alignItems:'center',gap:3,padding:8},
- mainButton:{borderRadius:11,padding:12,alignItems:'center'},
- heading:{fontSize:18,fontWeight:'900'},
+ category:{gap:6,paddingTop:6,borderTopWidth:1,borderTopColor:'rgba(170,180,190,.25)'},
+ categoryHeading:{flexDirection:'row',justifyContent:'space-between',gap:6,alignItems:'center'},
+ row:{flexDirection:'row',gap:7},
+ chip:{flex:1,minWidth:0,borderWidth:1,borderRadius:10,alignItems:'center',gap:3,padding:8},
  summary:{borderWidth:1.5,borderRadius:15,padding:13,gap:12},
- outline:{borderWidth:1,borderRadius:10,padding:11,alignItems:'center'},
- shortcutGrid:{flexDirection:'row',gap:9,alignItems:'stretch'},
- shortcut:{flex:1,borderWidth:1.2,borderRadius:15,
-  padding:12,gap:7,justifyContent:'space-between'},
- shortcutTitle:{fontSize:15,fontWeight:'900'},
- mini:{alignItems:'center',minHeight:80,justifyContent:'center'},
- link:{fontWeight:'900',fontSize:11},
- bottomCard:{borderRadius:15,borderWidth:1,padding:13,gap:9},
- actions:{flexDirection:'row',flexWrap:'wrap',gap:7},
- action:{minWidth:'48%',flexGrow:1,borderWidth:1,borderRadius:9,padding:9,
-  flexDirection:'row',alignItems:'center',gap:6}
+ heading:{fontSize:18,fontWeight:'900'}
 });

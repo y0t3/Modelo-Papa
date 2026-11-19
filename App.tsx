@@ -123,6 +123,8 @@ function LaloApp(){
  const [predictiveMode,setPredictiveMode]=useState<'lalo'|'auxiliar'>('lalo');
 
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
+ const [frequencyDays,setFrequencyDays]=useState<{date:string;heads:CabezasDia}[]>([]);
+ const [frequencyBusy,setFrequencyBusy]=useState(false);
  const [infoAuxDays,setInfoAuxDays]=useState<AuxGalleryDay[]>([]);
  const auxInfoRequest=useRef(0);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
@@ -187,7 +189,7 @@ function LaloApp(){
   const d=requested||date;
   if(!d){Alert.alert('Fecha inválida','Usá DD/MM/AAAA.');return}
   const request=++auxInfoRequest.current;
-  setInfoAuxDays([]);
+  setInfoAuxDays([]);setFrequencyDays([]);setFrequencyBusy(true);
   try{
    setBusy(true);
    // Una carga = una versión de cada fecha: evitar llamadas repetidas al
@@ -272,6 +274,22 @@ function LaloApp(){
    setAuxiliarPast(auxiliarHistory);setAuxiliarError(auxWarning);
    setAuxTodayPast(todayHistory);setAuxTodayError(todayWarning);
     setVisualDays(recentDays);
+   // Frecuencia de resultados reales: ventana independiente y anterior al día
+   // consultado. Se carga sin bloquear los motores ni las hojas.
+   void (async()=>{
+    const candidates=Array.from({length:28},(_,i)=>shiftDay(d,-28+i));
+    const found:{date:string;heads:CabezasDia}[]=[];
+    for(let pos=0;pos<candidates.length;pos+=6){
+     const batch=await Promise.all(candidates.slice(pos,pos+6).map(async date=>{
+      try{return {date,heads:await readDay(date)}}catch{return null}
+     }));
+     if(auxInfoRequest.current!==request)return;
+     for(const item of batch)if(item)found.push(item);
+    }
+    if(auxInfoRequest.current===request)setFrequencyDays(found);
+   })().catch(()=>{}).finally(()=>{
+    if(auxInfoRequest.current===request)setFrequencyBusy(false);
+   });
    // INFO: cargar la semana AUX en paralelo sin bloquear la hoja diaria.
    // El identificador de solicitud evita reutilizar minihojas de otra fecha.
    void Promise.all(recentDays.map(async day=>{
@@ -289,6 +307,7 @@ function LaloApp(){
    
    setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
+   setFrequencyBusy(false);
    Alert.alert('No se pudo cargar',error?.message||String(error));
   }finally{setBusy(false)}
  };
@@ -502,11 +521,11 @@ function LaloApp(){
  return <SafeAreaView style={[s.safe,{backgroundColor:c.canvas}]}><StatusBar style={c.statusBar} backgroundColor={c.canvas}/>
   <LaloWallpaper/>
   <BrandHero mode={mode} onToggle={toggle}/>
-  {screen!=='inicio'?<View style={[s.homeBar,{backgroundColor:c.canvas,borderBottomColor:c.border}]}>
-    <Pressable accessibilityRole="button" accessibilityLabel="Volver a Inicio"
-     onPress={()=>navigateTo('inicio')}
+  {(screen==='predictiva'||screen==='papa')?<View style={[s.homeBar,{backgroundColor:c.canvas,borderBottomColor:c.border}]}>
+    <Pressable accessibilityRole="button" accessibilityLabel={screen==='predictiva'?'Volver a Hojas':'Volver a Candidatos'}
+     onPress={()=>navigateTo(screen==='predictiva'?'hoja':'prediccion')}
      style={[s.homeButton,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
-     <Text style={{color:c.accent,fontWeight:'900',fontSize:13}}>‹ Inicio</Text>
+     <Text style={{color:c.accent,fontWeight:'900',fontSize:13}}>{screen==='predictiva'?'‹ Hojas':'‹ Candidatos'}</Text>
     </Pressable>
     <Text style={{color:c.text,fontSize:13,fontWeight:'900',flex:1}}>
      {screenTitles[screen]}
@@ -540,7 +559,7 @@ function LaloApp(){
      setAuxiliarPast([]);setAuxiliarError(null);
      setAuxTodayPast([]);setAuxTodayError(null);
      ++auxInfoRequest.current;
-     setInfoAuxDays([]);setVisualDays([]);setFocused(null);
+     setInfoAuxDays([]);setVisualDays([]);setFrequencyDays([]);setFrequencyBusy(false);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <Pressable accessibilityRole="button" accessibilityLabel="Ir al día siguiente"
@@ -568,15 +587,14 @@ function LaloApp(){
     </View>
     <TurnStrip value={target} onChange={changeTurn}/>
    </View>
+   {screen==='hoja'?<Pressable accessibilityRole="button" onPress={()=>navigateTo('predictiva')}
+    style={[s.quickAccess,{borderColor:c.accent,backgroundColor:c.accentFill}]}>
+    <Text style={[s.quickAccessText,{color:c.accent}]}>⌁  Ver cómo se forman las cifras  ›</Text>
+   </Pressable>:null}
    {screen==='inicio'?<HomeDashboard date={date||''} turn={target} data={data}
-     sheet={sheet} view={motor} auxAyer={trackingAyerView}
-     auxHoy={trackingHoyView} overview={overview} busy={busy}
-     onNavigate={navigateTo} onTurnChange={changeTurn}
-     onSelectPrediction={(mode,forcedAux)=>{
-      if(forcedAux)setAuxMode(forcedAux);
-      setPredictionMode(mode);navigateTo('prediccion')
-     }}
-     onFocus={family=>showFamily('vt2|'+family)}
+     auxAyer={trackingAyerView} auxHoy={trackingHoyView} overview={overview}
+     history={frequencyDays} historyBusy={frequencyBusy}
+     onNavigate={navigateTo}
      trendEngine={trendEngine} onTrendEngineChange={setTrendEngine}
      trendSnapshot={trendSnapshot}
      onOpenTrendInfo={()=>navigateTo('info','tendencias')}/>: 
@@ -637,7 +655,10 @@ function LaloApp(){
        {activeAuxError?' '+activeAuxError:''}
       </Text>}
    </>:screen==='prediccion'?<>
-
+    <Pressable accessibilityRole="button" onPress={()=>navigateTo('papa')}
+     style={[s.quickAccess,{backgroundColor:c.accentFill,borderColor:c.accent}]}>
+     <Text style={[s.quickAccessText,{color:c.accent}]}>★  Lo que eligió Lalo  ›</Text>
+    </Pressable>
     <View style={[s.predictorOptions,{borderColor:c.border}]}>
      {([{id:'lalo',label:'LALO'},{id:'auxiliar',label:'AUXILIAR'},{id:'combinado',label:'COMBINADO'}] as const)
       .map(item=><Pressable key={item.id} accessibilityRole="button"
@@ -668,8 +689,7 @@ function LaloApp(){
        <CombinedVt3Panel date={date||''} turn={target} sheet={sheet}
         historical={hist} heads={fiveHeads} onOpenFamily={showCombinedFamily}/>}
    </>:screen==='papa'?<>
-    <Text style={[s.heading,{color:c.text}]}>Turno del pronóstico de Lalo</Text>
-    <TurnStrip value={target} onChange={changeTurn}/>
+    <Text style={[s.heading,{color:c.text}]}>Elecciones personales de Lalo · {target}</Text>
     <PapaPronostico date={date||''} turn={target} sheet={sheet} heads={data}/>
    </>:screen==='cabezas'?<>
     <HeadsTable data={data} highlights={headHighlights.merged}
@@ -703,7 +723,7 @@ function LaloApp(){
      onTrendEngineChange={setTrendEngine} trendSnapshot={trendSnapshot}
      onTrendPeriodChange={setTrendPeriod}/>}
   </ZoomableTab>
-  <MainBottomTabs active={screen==='hoja'?'hoja':screen==='prediccion'||screen==='predictiva'?'prediccion':screen==='info'?'info':'inicio'}
+  <MainBottomTabs active={screen==='hoja'||screen==='predictiva'?'hoja':screen==='prediccion'||screen==='papa'?'prediccion':screen==='cabezas'?'cabezas':screen==='info'?'info':'inicio'}
    onSelect={(next:MainSpace)=>{
     if(next==='info')setFigureFocus(null);
     if(next==='hoja')setHojaTurn(target);
@@ -714,6 +734,8 @@ function LaloApp(){
 export default function App(){return <GestureHandlerRootView style={{flex:1}}><LaloThemeProvider><LaloApp/></LaloThemeProvider></GestureHandlerRootView>}
 const insets=Platform.OS==='android'?(RNStatusBar.currentHeight||24)+7:7;
 const s=StyleSheet.create({
+ quickAccess:{borderWidth:1.5,borderRadius:12,marginTop:8,padding:13,alignItems:'center'},
+ quickAccessText:{fontWeight:'900',fontSize:13},
  sharedTurn:{borderWidth:1,borderRadius:13,paddingHorizontal:9,paddingTop:8,
   paddingBottom:5,marginTop:7,marginBottom:5},
  sharedTurnTop:{flexDirection:'row',justifyContent:'space-between',

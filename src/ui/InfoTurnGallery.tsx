@@ -1,12 +1,14 @@
 import React,{useEffect,useMemo,useState} from 'react';
 import {Pressable,StyleSheet,Text,View} from 'react-native';
 import type {PanoramaKind} from '../panoramaModel';
+import type {LaloView,LaloHistorical} from '../motorLalo';
+import LaloTraceExplorer from './LaloTraceExplorer';
 import type {TurnHistory,TurnHistoryFrame} from '../infoTurnHistory';
 import {visibleTurnRoutes} from '../infoTurnHistory';
 import {useLaloTheme} from './LaloTheme';
 
 export type GalleryMode='todos'|'vt2'|'vt3'|'vt4';
-type Props={gallery:TurnHistory;selectedFrameId:string;
+type Props={gallery:TurnHistory;view:LaloView|null;historical:LaloHistorical[];selectedFrameId:string;
  onSelectFrame:(id:string)=>void;mode:GalleryMode;onMode:(m:GalleryMode)=>void;
  onOpenFrame:(frame:TurnHistoryFrame)=>void};
 const options:{id:GalleryMode;label:string}[]=[
@@ -79,7 +81,7 @@ const stats=(f:TurnHistoryFrame,mode:GalleryMode)=>{
   new Set(routes.map(r=>r.ownerId)).size+' cabezas con marca · '+routes.length+' recorridos':
   new Set(routes.map(r=>r.ownerId)).size+' familias principales';
 };
-export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,mode,onMode,onOpenFrame}:Props){
+export default function InfoTurnGallery({gallery,view,historical,selectedFrameId,onSelectFrame,mode,onMode,onOpenFrame}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const {frames}=gallery;
  const [playing,setPlaying]=useState(false);
@@ -166,6 +168,7 @@ export default function InfoTurnGallery({gallery,selectedFrameId,onSelectFrame,m
     </Text>
    </Pressable>
   </View>
+  {active.kind==='proximo'?<LaloTraceExplorer frame={active} view={view} historical={historical}/>:null}
   <View style={s.controls}>
    <Pressable disabled={idx===0} accessibilityRole="button"
     onPress={()=>{setPlaying(false);onSelectFrame(frames[Math.max(0,idx-1)].id)}}
