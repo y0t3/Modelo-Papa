@@ -44,6 +44,7 @@ import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import {buildHeadHighlights} from './src/headHighlights';
 import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
+import type {StudySection} from './src/ui/InfoDashboard';
 import HomeDashboard from './src/ui/HomeDashboard';
 import MainBottomTabs from './src/ui/MainBottomTabs';
 import type {MainSpace} from './src/ui/MainBottomTabs';
@@ -78,7 +79,7 @@ function LaloApp(){
  const trendSyncLock=useRef(false);
  const trendSnapshot=useMemo(()=>buildTrendSnapshot(trendJournal,trendPeriod),
   [trendJournal,trendPeriod]);
- const [infoEntrySection,setInfoEntrySection]=useState<'tendencias'|null>(null);
+ const [infoEntrySection,setInfoEntrySection]=useState<StudySection|null>(null);
  const activeScreenRef=useRef<Screen>('inicio');
  const historyRef=useRef<NavigationEntry[]>([]);
  const scrollOffsets=useRef<Record<Screen,number>>({
@@ -134,18 +135,18 @@ function LaloApp(){
  const [hojaFocused,setHojaFocused]=useState<string|null>(null);
  const [hojaTurn,setHojaTurn]=useState<Turno>('Previa');
  const scrollRef=useRef<ScrollView>(null);
- const navigateTo=(next:Screen,infoSection?:'tendencias')=>{
+ const navigateTo=(next:Screen,infoSection?:StudySection,preserveScroll=false)=>{
   const from=activeScreenRef.current;
   if(from===next)return;
-  setInfoEntrySection(next==='info'&&infoSection?'tendencias':null);
+  if(next==='info'&&infoSection)setInfoEntrySection(infoSection);
   if(next!=='hoja'){setHistoricalPreview(null);setHistoricalAux(null);}
   historyRef.current=pushNavigation(historyRef.current,{
    screen:from,scrollY:scrollOffsets.current[from],selectedTurn,
    focused,hojaFocused,hojaTurn
   },next);
   activeScreenRef.current=next;
-  scrollOffsets.current[next]=0;
-  setRestoreScroll(old=>({token:old.token+1,y:0}));
+  if(!preserveScroll)scrollOffsets.current[next]=0;
+  setRestoreScroll(old=>({token:old.token+1,y:scrollOffsets.current[next]}));
   setScreen(next);
  };
  const goBack=()=>{
@@ -153,9 +154,7 @@ function LaloApp(){
   if(!entry)return false; // sin historial, Android conserva Atrás del sistema
   setHistoricalPreview(null);setHistoricalAux(null);
   historyRef.current=remaining;
-  setInfoEntrySection(null);
   activeScreenRef.current=entry.screen;
-  setSelectedTurn(entry.selectedTurn);
   setFocused(entry.focused);
   setHojaFocused(entry.hojaFocused);
   setHojaTurn(entry.hojaTurn);
@@ -439,7 +438,7 @@ function LaloApp(){
   navigateTo('predictiva');setFocused(combinedOwnerId(pick.family));
  };
  const trackFigure=(family:string)=>{
-  setFigureFocus('vt3|'+family);navigateTo('info');
+  setFigureFocus('vt3|'+family);navigateTo('info','seguir');
  };
  const openFigureAux=(family:string,mode:'anterior'|'intrajornada')=>{
   setAuxMode(mode);setPredictiveMode('auxiliar');
@@ -680,16 +679,16 @@ function LaloApp(){
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
      movementMode={infoMode} onMovementMode={setInfoMode}
      expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}
-     initialSection={infoEntrySection} trendEngine={trendEngine}
+     initialSection={infoEntrySection} onSectionChange={setInfoEntrySection}
+     trendEngine={trendEngine}
      onTrendEngineChange={setTrendEngine} trendSnapshot={trendSnapshot}
      onTrendPeriodChange={setTrendPeriod}/>}
   </ZoomableTab>
   <MainBottomTabs active={screen==='hoja'?'hoja':screen==='prediccion'||screen==='predictiva'?'prediccion':screen==='info'?'info':'inicio'}
    onSelect={(next:MainSpace)=>{
     if(next==='info')setFigureFocus(null);
-    if(next==='prediccion')setPredictionMode('lalo');
     if(next==='hoja')setHojaTurn(target);
-    navigateTo(next);
+    navigateTo(next,undefined,true);
    }}/>
  </SafeAreaView>;
 }
