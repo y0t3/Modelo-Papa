@@ -24,6 +24,8 @@ jobs:
         run: npx tsc --noEmit --project tsconfig.tendencias-app.json
       - name: Revisar cortes previos VT3 sin fuga
         run: npx --yes tsx scripts/test-info-vt3-diagnostico.ts
+      - name: Top3 estadistico sin usar resultados futuros
+        run: npx --yes tsx scripts/test-historical-head-stats.ts
       - name: Motor Lalo sin cambios
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Historial y navegacion
@@ -51,7 +53,7 @@ jobs:
         env:
           CI: '1'
         run: npx expo prebuild --platform android --clean
-      - name: Compilar APK release 0.4.0
+      - name: Compilar APK release 0.4.1
         working-directory: android
         env:
           CI: '1'
