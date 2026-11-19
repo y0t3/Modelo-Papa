@@ -1,0 +1,32 @@
+name: Laboratorio Polla - VT2 original
+on:
+  pull_request:
+    branches: [feature/redisenio-navegacion-lalo-18nov2026]
+    paths:
+      - 'scripts/experimento-polla-lalo.ts'
+      - '.github/workflows/laboratorio-polla.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar-polla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Instalar dependencias del motor original
+        run: npm install
+      - name: Descargar extractos de seis jurisdicciones
+        run: git clone --depth=1 https://github.com/nfgalindez-aiko/sorteos-ar.git /tmp/sorteos-ar
+      - name: Ejecutar PRE VT2 y 10.000 controles por semana
+        run: npx --yes tsx scripts/experimento-polla-lalo.ts
+      - name: Guardar resultados para auditoría
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Laboratorio-Polla-VT2
+          path: research/polla-reporte-2026-11-19.json
+          if-no-files-found: warn
