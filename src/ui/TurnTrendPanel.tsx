@@ -193,7 +193,7 @@ export default function TurnTrendPanel({date,turn,selectedEngine,onEngineChange,
      {trendSnapshot.period==='acumulado'?
       'Base histórica: septiembre–octubre 2026. Se suman las jornadas nuevas registradas en este teléfono.':
       'Ventana reciente: hasta 30 jornadas con resultados registrados desde el inicio del seguimiento.'}
-     {' '}Nuevas jornadas: {trendSnapshot.newDateCount}. Cortes contabilizados en esta vista: {trendSnapshot.loggedCuts}.
+     {' '}Nuevas jornadas: {trendSnapshot.newDateCount}. Turnos contabilizados en esta vista: {trendSnapshot.loggedCuts}.
      {' '}Los resultados reconstruidos a posteriori se distinguen de los PRE capturados
      antes del sorteo. No son probabilidades ni garantizan aciertos.
     </Text>
