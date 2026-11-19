@@ -522,10 +522,7 @@ function LaloApp(){
     </Text>
    </Pressable>
   </View>
-  <ZoomableTab key={screen} zoom={zoomLevels[screen]}
-   onZoomChange={updateZoom} scrollRef={scrollRef}
-   restoreY={restoreScroll.y} restoreToken={restoreScroll.token}
-   onScrollY={y=>{scrollOffsets.current[screen]=safeScrollY(y)}}>
+  <View style={[s.globalChooser,{backgroundColor:c.canvas,borderBottomColor:c.border}]}>
    <View style={[s.compactDateBar,{backgroundColor:c.surface,borderColor:'#C69A43'}]}>
     <Pressable accessibilityRole="button" accessibilityLabel="Ir al día anterior"
      disabled={busy||!date} onPress={()=>move(-1)}
@@ -533,14 +530,14 @@ function LaloApp(){
      <Text style={[s.dayArrowText,{color:busy?c.muted:c.accent}]}>‹</Text>
     </Pressable>
     <DateField compact value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
-     resetHistory();setHistoricalPreview(null);
+     setFollowingNext(false);resetHistory();setHistoricalPreview(null);
      setDateText(value);setData(null);setAuxHeads(null);setAuxToday(null);
      setAuxSourceDate(null);setHistoricalAux(null);setSheet(null);setBaseHeads(null);setHist([]);
      setAuxiliarPast([]);setAuxiliarError(null);
      setAuxTodayPast([]);setAuxTodayError(null);
      ++auxInfoRequest.current;
      setInfoAuxDays([]);setVisualDays([]);setFocused(null);
-     setHojaFocused(null);setHojaTurn('Previa');
+     setHojaFocused(null);setHojaTurn('Previa');setSelectedTurn(null);
     }}/>
     <Pressable accessibilityRole="button" accessibilityLabel="Ir al día siguiente"
      disabled={busy||!date} onPress={()=>move(1)}
@@ -548,12 +545,34 @@ function LaloApp(){
      <Text style={[s.dayArrowText,{color:busy?c.muted:c.accent}]}>›</Text>
     </Pressable>
     <Pressable accessibilityRole="button" accessibilityLabel="Actualizar resultados de la fecha"
-     disabled={busy||!date} onPress={()=>{void cargar(historicalPreview?.day.date)}}
+     disabled={busy||!date} onPress={()=>{
+      const old=selectedTurn;
+      void cargar(historicalPreview?.day.date||date||undefined).then(()=>{
+       if(old)setSelectedTurn(old);
+      });
+     }}
      style={[s.reloadMini,{backgroundColor:'#195DA6'}]}>
      {busy?<ActivityIndicator color="#fff" size="small"/>:
       <Text style={s.reloadMiniText}>↻</Text>}
     </Pressable>
    </View>
+   <View style={s.turnHeading}>
+    <Text style={{color:c.text,fontWeight:'900',fontSize:12,flex:1}}>
+     {followingNext&&selectedTurn===null?'Próximo sorteo':'Turno que estás mirando'}
+     {' · '}{target}
+    </Text>
+    {(!followingNext||selectedTurn!==null||date!==today())?
+     <Pressable accessibilityRole="button" onPress={returnToNext}
+      style={[s.nextButton,{borderColor:c.accent}]}>
+      <Text style={{color:c.accent,fontWeight:'900',fontSize:11}}>Ir al próximo ↻</Text>
+     </Pressable>:null}
+   </View>
+   <TurnStrip value={target} onChange={changeTurn}/>
+  </View>
+  <ZoomableTab key={screen} zoom={zoomLevels[screen]}
+   onZoomChange={updateZoom} scrollRef={scrollRef}
+   restoreY={restoreScroll.y} restoreToken={restoreScroll.token}
+   onScrollY={y=>{scrollOffsets.current[screen]=safeScrollY(y)}}>
    {screen==='inicio'?<HomeDashboard date={date||''} turn={target} data={data}
      sheet={sheet} view={motor} auxAyer={trackingAyerView}
      auxHoy={trackingHoyView} overview={overview} busy={busy}
@@ -713,6 +732,9 @@ const s=StyleSheet.create({
  modeLabel:{fontSize:17,fontWeight:'900'},
 
  safe:{flex:1,backgroundColor:'#061631',paddingTop:insets},
+ globalChooser:{borderBottomWidth:1,paddingHorizontal:9,paddingBottom:3,gap:2},
+ turnHeading:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingHorizontal:5,minHeight:25},
+ nextButton:{borderWidth:1,borderRadius:9,paddingVertical:5,paddingHorizontal:8},
  homeBar:{minHeight:37,flexDirection:'row',alignItems:'center',gap:12,
   borderBottomWidth:1,paddingHorizontal:12,paddingVertical:5},
  homeButton:{borderWidth:1,borderRadius:9,paddingHorizontal:12,paddingVertical:6},
