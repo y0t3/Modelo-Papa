@@ -12,7 +12,6 @@ import {useLaloTheme} from './LaloTheme';
 import {readableWeekday} from '../infoTurnHistory';
 import RouteMiniBoard from './RouteMiniBoard';
 import DayMatchGrid from './DayMatchGrid';
-import TurnStrip from './TurnStrip';
 import TurnTrendPanel from './TurnTrendPanel';
 import type {TrendEngine} from '../trendHistoryVt2';
 import type {TrendSnapshot} from '../trendVt2Journal';
@@ -80,7 +79,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    <Pressable accessibilityRole="button" onPress={()=>onSelectPrediction('lalo')}
     style={[s.mainButton,{backgroundColor:c.accent}]}>
     <Text style={{fontSize:13,fontWeight:'900',color:'#092347'}}>
-     Ir a Predicción y ver los diez números  ›
+     Ver los diez candidatos  ›
     </Text>
    </Pressable>
   </View>
@@ -94,7 +93,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    <Pressable accessibilityRole="button" onPress={()=>onNavigate('hoja')}
     style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#68B1FF'}]}>
     <Text style={{color:'#68B1FF',fontSize:24,fontWeight:'900'}}>▦</Text>
-    <Text style={[s.shortcutTitle,{color:c.text}]}>La hoja</Text>
+    <Text style={[s.shortcutTitle,{color:c.text}]}>Hojas</Text>
     <Text style={[s.note,{color:c.subtext}]}>Números del día y sus caminos</Text>
     <View style={s.mini}>
      {column&&first?<RouteMiniBoard values={column.values} cells={first.path}
@@ -105,7 +104,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    <Pressable accessibilityRole="button" onPress={()=>onNavigate('predictiva')}
     style={[s.shortcut,{backgroundColor:c.surface,borderColor:'#E9BA61'}]}>
     <Text style={{color:'#E9BA61',fontSize:24,fontWeight:'900'}}>⌁</Text>
-    <Text style={[s.shortcutTitle,{color:c.text}]}>Los recorridos</Text>
+    <Text style={[s.shortcutTitle,{color:c.text}]}>Ver cómo se forman</Text>
     <Text style={[s.note,{color:c.subtext}]}>Cómo se forman las cifras</Text>
     <View style={s.mini}>
      {column&&first?<RouteMiniBoard values={column.values} cells={first.path}
@@ -118,7 +117,7 @@ export default function HomeDashboard({date,turn,data,sheet,view,auxAyer,auxHoy,
    trendSnapshot={trendSnapshot}
    onEngineChange={onTrendEngineChange} onDetails={onOpenTrendInfo}/>
   <View style={[s.bottomCard,{backgroundColor:c.surface,borderColor:c.border}]}>
-   <Text style={[s.heading,{color:c.text}]}>Todo desde un lugar</Text>
+   <Text style={[s.heading,{color:c.text}]}>Otras consultas</Text>
    <View style={s.actions}>
     {([
      ['info','Info','☀'],['cabezas','Cabezas reales','▤'],
