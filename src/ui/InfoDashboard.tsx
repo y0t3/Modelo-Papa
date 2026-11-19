@@ -15,6 +15,9 @@ import FigureTrackingPanel from './FigureTrackingPanel';
 import type {TrackingAuxInput} from '../figureTracking';
 import {useLaloTheme} from './LaloTheme';
 import type {DayOverview} from '../homeDaySummary';
+import type {HistoricHeadsDay} from '../historicalHeadFrequency';
+import type {StatMode} from '../headStats';
+import HeadStatStudy from './HeadStatStudy';
 import DayMatchGrid from './DayMatchGrid';
 import TurnTrendPanel from './TurnTrendPanel';
 import Vt3DiagnosticPanel from './Vt3DiagnosticPanel';
@@ -39,11 +42,14 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  initialSection?:StudySection|null;onSectionChange?:(value:StudySection|null)=>void;
  trendEngine:TrendEngine;
  onTrendEngineChange:(engine:TrendEngine)=>void;
- trendSnapshot:TrendSnapshot;onTrendPeriodChange:(period:TrendPeriod)=>void};
+ trendSnapshot:TrendSnapshot;onTrendPeriodChange:(period:TrendPeriod)=>void;
+ statsHistory:HistoricHeadsDay[];statsBusy:boolean;statsProgress:number;
+ statsMode:StatMode;onStatsMode:(mode:StatMode)=>void};
 
-export type StudySection='resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+export type StudySection='estadisticas'|'resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
 type Section=StudySection;
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
+ {id:'estadisticas',icon:'◷',title:'Atrasados y frecuencias',subtitle:'Resultados reales, por turno y jurisdicción',accent:'#F0B858'},
  {id:'tendencias',icon:'▥',title:'Gráficos VT2',subtitle:'Dónde hubo más coincidencias',accent:'#4ABDEB'},
  {id:'vt3',icon:'⌗',title:'¿Qué pasó con VT3?',subtitle:'Cómo se formaron las cabezas',accent:'#60E1DB'},
  {id:'historial',icon:'▦',title:'Día por día',subtitle:'Las hojas anteriores',accent:'#A68AFF'},
@@ -65,7 +71,8 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
  figureFocus,onFigureLalo,onFigureAux,initialSection=null,onSectionChange,
- trendEngine,onTrendEngineChange,trendSnapshot,onTrendPeriodChange}:Props){
+ trendEngine,onTrendEngineChange,trendSnapshot,onTrendPeriodChange,
+ statsHistory,statsBusy,statsProgress,statsMode,onStatsMode}:Props){
  const {colors:c}=useLaloTheme();
  const [section,setSectionState]=useState<Section|null>(initialSection);
  const setSection=(value:Section|null)=>{setSectionState(value);onSectionChange?.(value)};
@@ -110,6 +117,9 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       <Text style={[s.small,{color:c.subtext}]}>{selected?.subtitle}</Text>
      </View>
     </View>
+    {section==='estadisticas'?<HeadStatStudy date={date} turn={turn}
+     history={statsHistory} historyBusy={statsBusy} historyProgress={statsProgress}
+     mode={statsMode} onMode={onStatsMode}/>:null}
     {section==='resumen'?<DayMatchGrid overview={overview} turn={turn}
      data={data} auxAyer={trackingAyer.view} auxHoy={trackingHoy.view} onOpenHeads={()=>onNavigate('cabezas')}/>:null}
     {section==='tendencias'?<TurnTrendPanel date={date} turn={turn}

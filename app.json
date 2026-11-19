@@ -2,12 +2,12 @@
   "expo": {
     "name": "La posta de Lalo",
     "slug": "modelo-papa",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "orientation": "default",
     "userInterfaceStyle": "dark",
     "android": {
       "package": "com.y0t3.modelopapa",
-      "versionCode": 17,
+      "versionCode": 18,
       "adaptiveIcon": {
         "foregroundImage": "./assets/la-posta-launcher-foreground.png",
         "backgroundColor": "#07142D"

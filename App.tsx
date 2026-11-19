@@ -54,6 +54,8 @@ import type {TrendPeriod} from './src/trendVt2Journal';
 import {syncTrendJournal} from './src/trendVt2Sync';
 import {summarizeDay} from './src/homeDaySummary';
 import type {MovementMode} from './src/infoCandidatos';
+import {previousDrawDay} from './src/dates';
+import type {StatMode} from './src/headStats';
 import TurnStrip from './src/ui/TurnStrip';
 import {LaloThemeProvider,useLaloTheme} from './src/ui/LaloTheme';
 import ZoomableTab from './src/ui/ZoomableTab';
@@ -125,6 +127,9 @@ function LaloApp(){
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
  const [frequencyDays,setFrequencyDays]=useState<{date:string;heads:CabezasDia}[]>([]);
  const [frequencyBusy,setFrequencyBusy]=useState(false);
+ const [frequencyProgress,setFrequencyProgress]=useState(0);
+ const [statMode,setStatMode]=useState<StatMode>('atrasados');
+ const historicalHeadsCache=useRef(new Map<string,CabezasDia>());
  const [infoAuxDays,setInfoAuxDays]=useState<AuxGalleryDay[]>([]);
  const auxInfoRequest=useRef(0);
  const [historicalPreview,setHistoricalPreview]=useState<{day:InfoVisualDay;turn:Turno}|null>(null);
@@ -189,7 +194,7 @@ function LaloApp(){
   const d=requested||date;
   if(!d){Alert.alert('Fecha inválida','Usá DD/MM/AAAA.');return}
   const request=++auxInfoRequest.current;
-  setInfoAuxDays([]);setFrequencyDays([]);setFrequencyBusy(true);
+  setInfoAuxDays([]);setFrequencyDays([]);setFrequencyBusy(true);setFrequencyProgress(0);
   try{
    setBusy(true);
    // Una carga = una versión de cada fecha: evitar llamadas repetidas al
@@ -199,7 +204,12 @@ function LaloApp(){
    const readDay=(day:string):Promise<CabezasDia>=>{
     let pending=requestCache.get(day);
     if(!pending){
-     pending=descargarCabezas(day,true);
+     const cached=day<today()?historicalHeadsCache.current.get(day):null;
+     pending=cached?Promise.resolve(cached):descargarCabezas(day,true).then(result=>{
+      if(day<today()&&hasDrawResults(result))
+       historicalHeadsCache.current.set(day,result);
+      return result;
+     });
      requestCache.set(day,pending);
     }
     return pending;
@@ -277,14 +287,17 @@ function LaloApp(){
    // Frecuencia de resultados reales: ventana independiente y anterior al día
    // consultado. Se carga sin bloquear los motores ni las hojas.
    void (async()=>{
-    const candidates=Array.from({length:28},(_,i)=>shiftDay(d,-28+i));
+    const candidates:string[]=[];
+    let cursor=d;
+    for(let i=0;i<110;i++){cursor=previousDrawDay(cursor);candidates.push(cursor);}
     const found:{date:string;heads:CabezasDia}[]=[];
-    for(let pos=0;pos<candidates.length;pos+=6){
-     const batch=await Promise.all(candidates.slice(pos,pos+6).map(async date=>{
+    for(let pos=0;pos<candidates.length;pos+=8){
+     const batch=await Promise.all(candidates.slice(pos,pos+8).map(async date=>{
       try{return {date,heads:await readDay(date)}}catch{return null}
      }));
      if(auxInfoRequest.current!==request)return;
      for(const item of batch)if(item)found.push(item);
+     setFrequencyProgress(Math.min(pos+batch.length,candidates.length));
     }
     if(auxInfoRequest.current===request)setFrequencyDays(found);
    })().catch(()=>{}).finally(()=>{
@@ -559,7 +572,7 @@ function LaloApp(){
      setAuxiliarPast([]);setAuxiliarError(null);
      setAuxTodayPast([]);setAuxTodayError(null);
      ++auxInfoRequest.current;
-     setInfoAuxDays([]);setVisualDays([]);setFrequencyDays([]);setFrequencyBusy(false);setFocused(null);
+     setInfoAuxDays([]);setVisualDays([]);setFrequencyDays([]);setFrequencyBusy(false);setFrequencyProgress(0);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <Pressable accessibilityRole="button" accessibilityLabel="Ir al día siguiente"
@@ -593,8 +606,10 @@ function LaloApp(){
    </Pressable>:null}
    {screen==='inicio'?<HomeDashboard date={date||''} turn={target} data={data}
      auxAyer={trackingAyerView} auxHoy={trackingHoyView} overview={overview}
-     history={frequencyDays} historyBusy={frequencyBusy}
-     onNavigate={navigateTo}
+     history={frequencyDays} historyBusy={frequencyBusy} historyProgress={frequencyProgress}
+     statMode={statMode} onStatMode={setStatMode}
+     onOpenStats={()=>{setFigureFocus(null);navigateTo('info','estadisticas')}}
+     onOpenHeads={()=>navigateTo('cabezas')}
      trendEngine={trendEngine} onTrendEngineChange={setTrendEngine}
      trendSnapshot={trendSnapshot}
      onOpenTrendInfo={()=>navigateTo('info','tendencias')}/>: 
@@ -697,6 +712,8 @@ function LaloApp(){
    </>:
     <InfoDashboard date={date||''} turn={target} data={data} overview={overview} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
+     statsHistory={frequencyDays} statsBusy={frequencyBusy} statsProgress={frequencyProgress}
+     statsMode={statMode} onStatsMode={setStatMode}
      auxDays={infoAuxDays}
      currentAux={data&&date?{
       date,heads:data,yesterday:auxHeads,today:auxToday,sourceDate:auxSourceDate
