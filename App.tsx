@@ -23,7 +23,7 @@ import {buildMotorLalo,compareMotorLaloAfterDraw} from './src/motorLalo';
 import {buildMotorLaloAuxiliar,extractAuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {AuxiliarHistory} from './src/motorLaloAuxiliar';
 import type {TrackingAuxInput} from './src/figureTracking';
-import type {LaloHistorical} from './src/motorLalo';
+import type {LaloHistorical,LaloKind} from './src/motorLalo';
 import type {InfoVisualDay,TurnHistoryFrame} from './src/infoTurnHistory';
 import type {AuxGalleryDay} from './src/infoAuxGallery';
 import PanoramaSheet from './src/PanoramaSheet';
@@ -44,6 +44,10 @@ import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import {buildHeadHighlights} from './src/headHighlights';
 import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
+import type {StudySection} from './src/ui/InfoDashboard';
+import MainBottomTabs from './src/ui/MainBottomTabs';
+import type {MainTab} from './src/ui/MainBottomTabs';
+import FamilyInvestigation from './src/ui/FamilyInvestigation';
 import HomeDashboard from './src/ui/HomeDashboard';
 import type {TrendEngine} from './src/trendHistoryVt2';
 import {emptyTrendJournal,buildTrendSnapshot} from './src/trendVt2Journal';
@@ -60,15 +64,21 @@ import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './s
 import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
 import type {NavigationEntry} from './src/tabNavigation';
 
-type Screen='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
+type Screen='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info'|'investigar';
 const screenTitles:Record<Screen,string>={
  inicio:'Inicio',hoja:'La hoja',predictiva:'Recorridos',prediccion:'Predicción',
- papa:'Lalo',cabezas:'Cabezas',info:'Info'
+ papa:'Lalo',cabezas:'Cabezas',info:'Estudio',investigar:'Investigar familia'
 };
 const today=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
 function LaloApp(){
  const {mode,colors:c,toggle}=useLaloTheme();
  const [screen,setScreen]=useState<Screen>('inicio');
+ const [studySection,setStudySection]=useState<StudySection|null>(null);
+ const [candidateKind,setCandidateKind]=useState<LaloKind>('vt2');
+ const [followingNext,setFollowingNext]=useState(true);
+ const [investigation,setInvestigation]=useState<{
+  id:string;origin:'lalo'|'auxiliar';mode:AuxMode
+ }|null>(null);
  const [trendEngine,setTrendEngine]=useState<TrendEngine>('lalo');
  const [trendJournal,setTrendJournal]=useState(emptyTrendJournal);
  const [trendPeriod,setTrendPeriod]=useState<TrendPeriod>('acumulado');
@@ -80,7 +90,7 @@ function LaloApp(){
  const activeScreenRef=useRef<Screen>('inicio');
  const historyRef=useRef<NavigationEntry[]>([]);
  const scrollOffsets=useRef<Record<Screen,number>>({
-  inicio:0,hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0
+  inicio:0,hoja:0,predictiva:0,prediccion:0,papa:0,cabezas:0,info:0,investigar:0
  });
  const [restoreScroll,setRestoreScroll]=useState({token:0,y:0});
  const [infoFrameId,setInfoFrameId]=useState('inicio');
@@ -136,6 +146,7 @@ function LaloApp(){
   const from=activeScreenRef.current;
   if(from===next)return;
   setInfoEntrySection(next==='info'&&infoSection?'tendencias':null);
+  if(next==='info'&&infoSection)setStudySection('tendencias');
   if(next!=='hoja'){setHistoricalPreview(null);setHistoricalAux(null);}
   historyRef.current=pushNavigation(historyRef.current,{
    screen:from,scrollY:scrollOffsets.current[from],selectedTurn,
@@ -178,9 +189,19 @@ function LaloApp(){
   setInfoGuide('tablero');
  };
  const date=displayToIso(dateText);
- const target=useMemo<Turno>(()=>selectedTurn||TURNOS.find(t=>
-  !data||JURS.every(j=>!/^\d{4}$/.test(data[t]?.[j]||'')))||'Nocturno',
-  [data,selectedTurn]);
+ const upcomingTurn=useMemo<Turno>(()=>TURNOS.find(t=>
+  !data||JURS.filter(j=>j!=='Montevideo')
+    .every(j=>!/^[0-9]{4}$/.test(data[t]?.[j]||'')))||'Nocturno',[data]);
+ const target=selectedTurn||upcomingTurn;
+ const changeTurn=(turn:Turno)=>{
+  setSelectedTurn(turn);setFollowingNext(false);
+  setHojaTurn(turn);setFocused(null);setInfoFrameId('inicio');
+ };
+ const returnToNext=()=>{
+  setFollowingNext(true);setSelectedTurn(null);
+  setHojaTurn(upcomingTurn);setFocused(null);
+  if(date!==today())void cargar(today());
+ };
 
  const cargar=async(requested?:string)=>{
   const d=requested||date;
@@ -285,8 +306,10 @@ function LaloApp(){
     if(auxInfoRequest.current===request)setInfoAuxDays(days);
    }).catch(()=>{if(auxInfoRequest.current===request)setInfoAuxDays([])});
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);setFigureFocus(null);
+   setHojaTurn(upcomingTurn);
    
-   setHojaFocused(null);setHojaTurn('Previa');
+   setHojaFocused(null);setHojaTurn(TURNOS.find(t=>
+    JURS.filter(j=>j!=='Montevideo').every(j=>!/^[0-9]{4}$/.test(current[t]?.[j]||'')))||'Nocturno');
   }catch(error:any){
    Alert.alert('No se pudo cargar',error?.message||String(error));
   }finally{setBusy(false)}
@@ -302,7 +325,7 @@ function LaloApp(){
   });
  },[date,data,sheet,busy,trendTick]);
  const move=(n:1|-1)=>{const base=historicalPreview?.day.date||date;
-  if(base)void cargar(shiftDrawDay(base,n))};
+  if(base){setFollowingNext(false);void cargar(shiftDrawDay(base,n))}};
  // Congelar únicamente el siguiente turno sin ninguna cabeza publicada.
  useEffect(()=>{
   if(!sheet||!data||!hist.length||date!==today()||busy)return;
@@ -323,6 +346,23 @@ function LaloApp(){
   void capture();
   return ()=>{cancelled=true};
  },[sheet,data,hist,date,busy,visualDays]);
+ // Si ya terminaron los cinco sorteos, apuntar a la Previa del próximo día.
+ useEffect(()=>{
+  if(!followingNext||selectedTurn!==null||busy||!data||date!==today())return;
+  const jurs=JURS.filter(j=>j!=='Montevideo');
+  const complete=TURNOS.every(t=>jurs.every(j=>/^[0-9]{4}$/.test(data[t]?.[j]||'')));
+  if(complete)void cargar(shiftDrawDay(date,1));
+ },[followingNext,selectedTurn,busy,date,data]);
+ // Cuando cambia la fecha del calendario, seguir el nuevo día sólo
+ // mientras el usuario no haya entrado a investigar otra jornada.
+ const [clockDay,setClockDay]=useState(today());
+ useEffect(()=>{
+  const timer=setInterval(()=>setClockDay(today()),60000);
+  return ()=>clearInterval(timer);
+ },[]);
+ useEffect(()=>{
+  if(followingNext&&date&&date<clockDay&&!busy)void cargar(clockDay);
+ },[clockDay,followingNext,date,busy]);
  // Con la app abierta, refrescar sin cambiar pestaña ni desplazar la hoja.
  useEffect(()=>{
   if(date!==today()||!baseHeads)return;
@@ -343,7 +383,7 @@ function LaloApp(){
   };
   const interval=setInterval(()=>{void update()},120000);
   return ()=>clearInterval(interval);
- },[date,baseHeads]);
+ },[date,baseHeads,clockDay]);
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
  // Cada modo conserva su ranking y memoria propios. Nunca mezclamos
@@ -353,18 +393,18 @@ function LaloApp(){
  const activeAuxError=auxMode==='intrajornada'?auxTodayError:auxiliarError;
  const activeAuxDate=auxMode==='intrajornada'?date:auxSourceDate;
  const auxiliar=useMemo(()=>{
-  if((screen!=='inicio'&&screen!=='prediccion'&&screen!=='predictiva'&&screen!=='info')||!date||!activeAuxHeads||
+  if((screen!=='inicio'&&screen!=='prediccion'&&screen!=='predictiva'&&screen!=='info'&&screen!=='investigar')||!date||!activeAuxHeads||
    activeAuxHistory.length!==hist.length||!activeAuxHistory.length)return null;
   const input=auxAtCut(activeAuxHeads,target,auxMode);
   return buildMotorLaloAuxiliar(date,target,input,activeAuxHistory);
  },[screen,date,target,activeAuxHeads,activeAuxHistory,hist,auxMode]);
  // Presencias independientes del seguimiento. Cada uno conserva el
  // origen PRE y sus propias raíces; jamás se mezclan con MV1.
- const trackingAyerView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxHeads&&
+ const trackingAyerView=useMemo(()=>(screen==='info'||screen==='inicio'||screen==='investigar')&&date&&auxHeads&&
   auxiliarPast.length===hist.length&&auxiliarPast.length?
   buildMotorLaloAuxiliar(date,target,auxAtCut(auxHeads,target,'anterior'),auxiliarPast):null,
   [screen,date,target,auxHeads,auxiliarPast,hist]);
- const trackingHoyView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxToday&&
+ const trackingHoyView=useMemo(()=>(screen==='info'||screen==='inicio'||screen==='investigar')&&date&&auxToday&&
   auxTodayPast.length===hist.length&&auxTodayPast.length?
   buildMotorLaloAuxiliar(date,target,auxAtCut(auxToday,target,'intrajornada'),auxTodayPast):null,
   [screen,date,target,auxToday,auxTodayPast,hist]);
@@ -424,12 +464,12 @@ function LaloApp(){
  const fiveHeads=useMemo(()=>JURS.filter(j=>j!=='Montevideo')
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
- const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
  const changeAuxMode=(next:AuxMode)=>{setAuxMode(next);setFocused(null)};
- const showFamily=(id:string)=>{
-  setCombinedFocus(null);setPredictiveMode('lalo');
-  navigateTo('predictiva');setFocused(id);
+ const investigate=(id:string,origin:'lalo'|'auxiliar',mode:AuxMode=auxMode)=>{
+  setInvestigation({id,origin,mode});setFigureFocus(null);
+  navigateTo('investigar');
  };
+ const showFamily=(id:string)=>investigate(id,'lalo');
  const showCombinedFamily=(pick:CombinedPick)=>{
   if(!pick.paths.length)return;
   setCombinedFocus(pick);setPredictiveMode('lalo');
@@ -442,9 +482,7 @@ function LaloApp(){
   setAuxMode(mode);setPredictiveMode('auxiliar');
   navigateTo('predictiva');setFocused('vt3|'+family);
  };
- const showAuxFamily=(id:string)=>{
-  setCombinedFocus(null);setPredictiveMode('auxiliar');navigateTo('predictiva');setFocused(id);
- };
+ const showAuxFamily=(id:string)=>investigate(id,'auxiliar',auxMode);
  const openHeadInHoja=(turn:Turno,jurisdiction:string,head:string)=>{
   const id=dailyHeadOwnerId(turn,jurisdiction,head);
   if(!headHighlights.merged[id]?.kinds.length)return;
@@ -502,10 +540,7 @@ function LaloApp(){
     </Text>
    </Pressable>
   </View>
-  <ZoomableTab key={screen} zoom={zoomLevels[screen]}
-   onZoomChange={updateZoom} scrollRef={scrollRef}
-   restoreY={restoreScroll.y} restoreToken={restoreScroll.token}
-   onScrollY={y=>{scrollOffsets.current[screen]=safeScrollY(y)}}>
+  <View style={[s.globalChooser,{backgroundColor:c.canvas,borderBottomColor:c.border}]}>
    <View style={[s.compactDateBar,{backgroundColor:c.surface,borderColor:'#C69A43'}]}>
     <Pressable accessibilityRole="button" accessibilityLabel="Ir al día anterior"
      disabled={busy||!date} onPress={()=>move(-1)}
@@ -513,14 +548,14 @@ function LaloApp(){
      <Text style={[s.dayArrowText,{color:busy?c.muted:c.accent}]}>‹</Text>
     </Pressable>
     <DateField compact value={historicalPreview?isoToDisplay(historicalPreview.day.date):dateText} onChange={value=>{
-     resetHistory();setHistoricalPreview(null);
+     setFollowingNext(false);resetHistory();setHistoricalPreview(null);
      setDateText(value);setData(null);setAuxHeads(null);setAuxToday(null);
      setAuxSourceDate(null);setHistoricalAux(null);setSheet(null);setBaseHeads(null);setHist([]);
      setAuxiliarPast([]);setAuxiliarError(null);
      setAuxTodayPast([]);setAuxTodayError(null);
      ++auxInfoRequest.current;
      setInfoAuxDays([]);setVisualDays([]);setFocused(null);
-     setHojaFocused(null);setHojaTurn('Previa');
+     setHojaFocused(null);setHojaTurn('Previa');setSelectedTurn(null);
     }}/>
     <Pressable accessibilityRole="button" accessibilityLabel="Ir al día siguiente"
      disabled={busy||!date} onPress={()=>move(1)}
@@ -528,12 +563,34 @@ function LaloApp(){
      <Text style={[s.dayArrowText,{color:busy?c.muted:c.accent}]}>›</Text>
     </Pressable>
     <Pressable accessibilityRole="button" accessibilityLabel="Actualizar resultados de la fecha"
-     disabled={busy||!date} onPress={()=>{void cargar(historicalPreview?.day.date)}}
+     disabled={busy||!date} onPress={()=>{
+      const old=selectedTurn;
+      void cargar(historicalPreview?.day.date||date||undefined).then(()=>{
+       if(old)setSelectedTurn(old);
+      });
+     }}
      style={[s.reloadMini,{backgroundColor:'#195DA6'}]}>
      {busy?<ActivityIndicator color="#fff" size="small"/>:
       <Text style={s.reloadMiniText}>↻</Text>}
     </Pressable>
    </View>
+   <View style={s.turnHeading}>
+    <Text style={{color:c.text,fontWeight:'900',fontSize:12,flex:1}}>
+     {followingNext&&selectedTurn===null?'Próximo sorteo':'Turno que estás mirando'}
+     {' · '}{target}
+    </Text>
+    {(!followingNext||selectedTurn!==null||date!==today())?
+     <Pressable accessibilityRole="button" onPress={returnToNext}
+      style={[s.nextButton,{borderColor:c.accent}]}>
+      <Text style={{color:c.accent,fontWeight:'900',fontSize:11}}>Ir al próximo ↻</Text>
+     </Pressable>:null}
+   </View>
+   <TurnStrip value={target} onChange={changeTurn}/>
+  </View>
+  <ZoomableTab key={screen} zoom={zoomLevels[screen]}
+   onZoomChange={updateZoom} scrollRef={scrollRef}
+   restoreY={restoreScroll.y} restoreToken={restoreScroll.token}
+   onScrollY={y=>{scrollOffsets.current[screen]=safeScrollY(y)}}>
    {screen==='inicio'?<HomeDashboard date={date||''} turn={target} data={data}
      sheet={sheet} view={motor} auxAyer={trackingAyerView}
      auxHoy={trackingHoyView} overview={overview} busy={busy}
@@ -558,7 +615,8 @@ function LaloApp(){
       </Pressable>
      </View>:null}
      <PanoramaSheet mode="hoja" sheet={showingSheet} data={showingHoja}
-      initialTurn={hojaTurn} initialTurnOnly={!!historicalPreview}
+      initialTurn={historicalPreview?.turn||target} initialTurnOnly={true}
+       showTurnStrip={false}
       focusedOwner={hojaFocused} onInfo={()=>navigateTo('info')}
       auxHeads={historicalPreview?
        (historicalAux?.date===historicalPreview.day.date?
@@ -568,7 +626,8 @@ function LaloApp(){
        (auxMode==='intrajornada'?historicalPreview.day.date:historicalAux?.sourceDate||null):
        activeAuxDate}
       auxMode={auxMode} onAuxModeChange={changeAuxMode}
-      drawHeads={historicalPreview?historicalPreview.day.heads:data}
+       onTurnChange={historicalPreview?undefined:changeTurn}
+       drawHeads={historicalPreview?historicalPreview.day.heads:data}
       date={historicalPreview?.day.date||date||''}/>
     </View>:
     <Text style={[s.empty,{color:c.subtext}]}>Elegí una fecha y actualizá la hoja para ver sus coincidencias.</Text>
@@ -620,12 +679,14 @@ function LaloApp(){
     {predictionMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
-       heads={sheet?.heads[target]||[]} sheet={sheet} onOpenFamily={showFamily}/>:
+       heads={sheet?.heads[target]||[]} sheet={sheet} onOpenFamily={showFamily}
+        selectedKind={candidateKind} onKindChange={setCandidateKind}/>:
       predictionMode==='auxiliar'?
        auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
         date={dateText} turn={target} view={motor} auxiliar={auxiliar}
         auxHeads={activeAuxHeads?auxAtCut(activeAuxHeads,target,auxMode):null}
-        heads={sheet?.heads[target]||[]} onOpenFamily={showAuxFamily}/>:
+        heads={sheet?.heads[target]||[]} onOpenFamily={showAuxFamily}
+         selectedKind={candidateKind} onKindChange={setCandidateKind}/>:
        <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
         <Text style={{color:c.text,fontWeight:'800'}}>No está lista la hoja auxiliar.</Text>
         <Text style={{color:c.subtext,marginTop:5}}>
@@ -642,6 +703,28 @@ function LaloApp(){
     <HeadsTable data={data} highlights={headHighlights.merged}
      sourceLabels={headHighlights.labels} onOpenHead={openHeadInHoja}/>
    </>:
+    screen==='investigar'&&investigation?(()=>{
+     const [kind,family]=investigation.id.split('|');
+     if((kind!=='vt2'&&kind!=='vt3'&&kind!=='vt4')||!family)return <Text
+      style={[s.empty,{color:c.subtext}]}>No pudimos abrir esa familia.</Text>;
+     return <FamilyInvestigation key={investigation.id+'|'+investigation.origin}
+      date={date||''} turn={target} family={family} kind={kind}
+      origin={investigation.origin} mode={investigation.mode}
+      data={data} sheet={sheet} lalo={motor}
+      ayer={trackingAyer} hoy={trackingHoy} history={visualDays}
+      onTurnChange={changeTurn}
+      onOpenPaths={(origin,forced)=>{
+       const mode=forced||investigation.mode;
+       if(origin==='auxiliar')setAuxMode(mode);
+       setPredictiveMode(origin);
+       navigateTo('predictiva');setFocused(investigation.id);
+      }}
+      onOpenStudy={()=>{
+       setStudySection(kind==='vt3'?'seguir':'tendencias');
+       if(kind==='vt3')setFigureFocus(investigation.id);
+       navigateTo('info');
+      }}/>;
+    })():
     <InfoDashboard date={date||''} turn={target} data={data} overview={overview} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
      auxDays={infoAuxDays}
@@ -665,10 +748,16 @@ function LaloApp(){
      selectedFrameId={infoFrameId} onSelectFrame={setInfoFrameId}
      movementMode={infoMode} onMovementMode={setInfoMode}
      expandedGuide={infoGuide} onExpandedGuide={setInfoGuide}
-     initialSection={infoEntrySection} trendEngine={trendEngine}
+     initialSection={infoEntrySection} selectedSection={studySection}
+     onSectionChange={setStudySection} trendEngine={trendEngine}
      onTrendEngineChange={setTrendEngine} trendSnapshot={trendSnapshot}
      onTrendPeriodChange={setTrendPeriod}/>}
   </ZoomableTab>
+  <MainBottomTabs active={screen==='inicio'?'inicio':screen==='hoja'?'hoja':
+    screen==='info'?'info':'prediccion'} onChange={(tab:MainTab)=>{
+     if(tab==='info'&&screen==='info'){setStudySection(null);return}
+     navigateTo(tab);
+    }}/>
  </SafeAreaView>;
 }
 export default function App(){return <GestureHandlerRootView style={{flex:1}}><LaloThemeProvider><LaloApp/></LaloThemeProvider></GestureHandlerRootView>}
@@ -693,6 +782,9 @@ const s=StyleSheet.create({
  modeLabel:{fontSize:17,fontWeight:'900'},
 
  safe:{flex:1,backgroundColor:'#061631',paddingTop:insets},
+ globalChooser:{borderBottomWidth:1,paddingHorizontal:9,paddingBottom:3,gap:2},
+ turnHeading:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingHorizontal:5,minHeight:25},
+ nextButton:{borderWidth:1,borderRadius:9,paddingVertical:5,paddingHorizontal:8},
  homeBar:{minHeight:37,flexDirection:'row',alignItems:'center',gap:12,
   borderBottomWidth:1,paddingHorizontal:12,paddingVertical:5},
  homeButton:{borderWidth:1,borderRadius:9,paddingHorizontal:12,paddingVertical:6},

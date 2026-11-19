@@ -11,7 +11,7 @@ import InfoAuxGallery from './InfoAuxGallery';
 import type {AuxGalleryDay} from '../infoAuxGallery';
 import type {AuxMode} from '../auxTemporalModes';
 import type {AuxiliarHistory,AuxiliarView} from '../motorLaloAuxiliar';
-import TurnStrip from './TurnStrip';
+// Fecha y turno se cambian desde la barra superior de toda la app.
 import FigureTrackingPanel from './FigureTrackingPanel';
 import type {TrackingAuxInput} from '../figureTracking';
 import {useLaloTheme} from './LaloTheme';
@@ -37,18 +37,22 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  selectedFrameId:string;onSelectFrame:(id:string)=>void;
  movementMode:MovementMode;onMovementMode:(mode:MovementMode)=>void;
  expandedGuide:string|null;onExpandedGuide:(id:string|null)=>void;
- initialSection?:'tendencias'|null;trendEngine:TrendEngine;
+ initialSection?:'tendencias'|null;
+ selectedSection?:StudySection|null;
+ onSectionChange?:(section:StudySection|null)=>void;
+ trendEngine:TrendEngine;
  onTrendEngineChange:(engine:TrendEngine)=>void;
  trendSnapshot:TrendSnapshot;onTrendPeriodChange:(period:TrendPeriod)=>void};
 
-type Section='resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+export type StudySection='resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+type Section=StudySection;
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
  {id:'resumen',icon:'☀',title:'Resumen del día',subtitle:'Lo importante de este turno',accent:'#F3C251'},
- {id:'tendencias',icon:'▥',title:'Tendencias VT2',subtitle:'Qué mitad y qué motor mirar',accent:'#4ABDEB'},
- {id:'vt3',icon:'⌗',title:'Diagnóstico VT3',subtitle:'Formación, raíces y Top10',accent:'#60E1DB'},
+ {id:'tendencias',icon:'▥',title:'Tendencias VT2',subtitle:'Cómo se repartieron los aciertos',accent:'#4ABDEB'},
+ {id:'vt3',icon:'⌗',title:'Diagnóstico VT3',subtitle:'Cómo se formaron y dónde quedaron',accent:'#60E1DB'},
  {id:'historial',icon:'▦',title:'Día por día',subtitle:'Las hojas anteriores',accent:'#A68AFF'},
  {id:'auxiliar',icon:'▤',title:'Hoja auxiliar',subtitle:'Santiago y Neuquén',accent:'#E18AF6'},
- {id:'seguir',icon:'◎',title:'Seguir un número',subtitle:'Cómo fue apareciendo',accent:'#51D7AF'},
+ {id:'seguir',icon:'◎',title:'Seguir un número',subtitle:'Mirar sus caminos paso a paso',accent:'#51D7AF'},
  {id:'recorridos',icon:'⌁',title:'Ver recorridos',subtitle:'Abrí la hoja con marcas',accent:'#74B9FF'},
  {id:'ayuda',icon:'?',title:'Ayuda sencilla',subtitle:'Cómo leer cada cosa',accent:'#8EC2F6'}
 ];
@@ -66,15 +70,33 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
  figureFocus,onFigureLalo,onFigureAux,initialSection=null,
+ selectedSection,onSectionChange,
  trendEngine,onTrendEngineChange,trendSnapshot,onTrendPeriodChange}:Props){
  const {colors:c}=useLaloTheme();
- const [section,setSection]=useState<Section|null>(initialSection);
+ const [localSection,setLocalSection]=useState<Section|null>(initialSection);
+ const section=selectedSection===undefined?localSection:selectedSection;
+ const setSection=(next:Section|null)=>{setLocalSection(next);onSectionChange?.(next)};
  const [focusedVt3,setFocusedVt3]=useState<string|null>(null);
- useEffect(()=>{setSection(initialSection);setFocusedVt3(null)},[date,initialSection]);
- useEffect(()=>{if(figureFocus&&initialSection!=='tendencias')setSection('seguir')},[figureFocus,initialSection]);
+ useEffect(()=>{setFocusedVt3(null)},[date]);
+ useEffect(()=>{if(initialSection==='tendencias')setSection('tendencias')},[initialSection]);
+ useEffect(()=>{if(figureFocus&&initialSection!=='tendencias')setSection('seguir')},[figureFocus]);
  const gallery=useMemo(()=>buildTurnHistory(date,turn,sheet,view,visualDays),
   [date,turn,sheet,view,visualDays]);
  const selected=OPTIONS.find(x=>x.id===section);
+ const primary=OPTIONS.filter(x=>['tendencias','vt3','seguir','historial'].includes(x.id));
+ const extra=OPTIONS.filter(x=>!primary.includes(x));
+ const [showExtra,setShowExtra]=useState(false);
+ const tile=(item:typeof OPTIONS[number])=><Pressable key={item.id} accessibilityRole="button"
+  accessibilityLabel={'Abrir '+item.title}
+  onPress={()=>{
+   if(item.id==='recorridos')onNavigate('predictiva');
+   else {if(item.id==='seguir')setFocusedVt3(null);setSection(item.id)}
+  }} style={[s.tile,{backgroundColor:c.surface,borderColor:item.accent}]}>
+  <Text style={[s.tileIcon,{color:item.accent}]}>{item.icon}</Text>
+  <Text style={[s.tileTitle,{color:c.text}]}>{item.title}</Text>
+  <Text style={[s.tileSubtitle,{color:c.subtext}]}>{item.subtitle}</Text>
+  <Text style={[s.tileLink,{color:item.accent}]}>Abrir ›</Text>
+ </Pressable>;
  return <View style={s.root}>
   <View style={[s.welcome,{backgroundColor:c.surface,borderColor:'#B9903F'}]}>
    <Text style={[s.kicker,{color:c.accent}]}>INFO · EL CUADERNO DE LALO</Text>
@@ -82,21 +104,16 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
   </View>
   {!section?<View style={s.menu}>
    <Text style={[s.heading,{color:c.text}]}>¿Qué querés mirar?</Text>
-   <Text style={[s.small,{color:c.subtext}]}>Tocá un botón. Se abre solo esa parte, sin llenar toda la pantalla.</Text>
-   <View style={s.tiles}>
-    {OPTIONS.map(item=><Pressable key={item.id} accessibilityRole="button"
-     accessibilityLabel={'Abrir '+item.title}
-     onPress={()=>{
-       if(item.id==='recorridos')onNavigate('predictiva');
-       else {if(item.id==='seguir')setFocusedVt3(null);setSection(item.id)}
-      }}
-     style={[s.tile,{backgroundColor:c.surface,borderColor:item.accent}]}>
-     <Text style={[s.tileIcon,{color:item.accent}]}>{item.icon}</Text>
-     <Text style={[s.tileTitle,{color:c.text}]}>{item.title}</Text>
-     <Text style={[s.tileSubtitle,{color:c.subtext}]}>{item.subtitle}</Text>
-     <Text style={[s.tileLink,{color:item.accent}]}>Tocá para ver  ›</Text>
-    </Pressable>)}
-   </View>
+   <Text style={[s.small,{color:c.subtext}]}>Elegí qué querés mirar. Podés volver sin perder lo que estabas viendo.</Text>
+   <View style={s.tiles}>{primary.map(tile)}</View>
+   <Pressable accessibilityRole="button" accessibilityState={{expanded:showExtra}}
+    onPress={()=>setShowExtra(v=>!v)}
+    style={[s.back,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
+    <Text style={{color:c.accent,fontWeight:'900',fontSize:13}}>
+     {showExtra?'− Ocultar otras herramientas':'＋ Ver otras herramientas'}
+    </Text>
+   </Pressable>
+   {showExtra?<View style={s.tiles}>{extra.map(tile)}</View>:null}
   </View>:<View style={{gap:10}}>
    <Pressable onPress={()=>setSection(null)} accessibilityRole="button"
     style={[s.back,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
@@ -117,7 +134,6 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
      trendSnapshot={trendSnapshot} onPeriodChange={onTrendPeriodChange}
      onTurnChange={onTurnChange}/>:null}
     {section==='vt3'?<>
-     <TurnStrip value={turn} onChange={onTurnChange}/>
      <Vt3DiagnosticPanel date={date} turn={turn} data={data} sheet={sheet}
       view={view} ayer={trackingAyer} hoy={trackingHoy}
       onFocusFamily={family=>{setFocusedVt3('vt3|'+family);setSection('seguir')}}
@@ -125,14 +141,12 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       onOpenTracking={()=>{setFocusedVt3(null);setSection('seguir')}}/>
     </>:null}
     {section==='historial'?<>
-     <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Elegí un día o una figura para verla más grande.</Text>
      <InfoTurnGallery gallery={gallery} selectedFrameId={selectedFrameId}
       onSelectFrame={onSelectFrame} mode={movementMode} onMode={onMovementMode}
       onOpenFrame={onOpenFrame}/>
     </>:null}
     {section==='auxiliar'?<>
-     <TurnStrip value={turn} onChange={onTurnChange}/>
      <Text style={[s.small,{color:c.subtext}]}>Los recorridos de Santiago y Neuquén, separados de la hoja principal.</Text>
      <InfoAuxGallery days={auxDays} current={currentAux} turn={turn}
       mode={auxMode} onMode={onAuxMode} onOpenDay={onOpenAuxDay}

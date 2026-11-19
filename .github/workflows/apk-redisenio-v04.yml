@@ -1,0 +1,95 @@
+name: Modelo Lalo 0.4 - prueba y APK actualizable
+on:
+  push:
+    branches:
+      - feature/redisenio-cuatro-pestanas-18nov2026
+  pull_request:
+    branches:
+      - feature/info-diagnostico-vt3-corte-18nov2026
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Instalar paquetes
+        run: npm install --omit=optional --no-audit --no-fund
+      - name: Comprobar que toda la app compile
+        run: npx tsc --noEmit --project tsconfig.tendencias-app.json
+      - name: Comprobar motores originales
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Comprobar navegacion, fechas y regreso
+        run: npx --yes tsx scripts/test-info-fechas-atras.ts
+      - name: Comprobar tendencias y memoria local
+        run: npx --yes tsx scripts/test-tendencias-vt2-vivas.ts
+      - name: Comprobar diagnostico VT3
+        run: npx --yes tsx scripts/test-info-vt3-diagnostico.ts
+  apk:
+    needs: pruebas
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Instalar dependencias
+        run: npm install --omit=optional --no-audit --no-fund
+      - name: Generar Android manteniendo paquete e icono
+        env:
+          CI: '1'
+        run: npx expo prebuild --platform android --clean
+      - name: Compilar APK instalable
+        working-directory: android
+        env:
+          CI: '1'
+          NODE_ENV: production
+        run: ./gradlew assembleRelease --no-daemon
+      - name: Publicar APK para comprobarla independientemente
+        uses: actions/upload-artifact@v4
+        with:
+          name: Modelo-Lalo-0.4-APK
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 30
+      - name: Verificar firma contra APK anterior para actualizacion en el mismo celular
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          mkdir -p /tmp/lalo-vieja
+          echo "Descargando el APK anterior desde GitHub..."
+          gh run download 44421739564 --repo "$GITHUB_REPOSITORY" \
+            --name Modelo-Lalo-Diagnostico-VT3-Prueba --dir /tmp/lalo-vieja
+          echo "Archivo anterior:"; ls -lh /tmp/lalo-vieja
+          ANTERIOR="$(find /tmp/lalo-vieja -iname '*.apk' -print -quit)"
+          NUEVA="android/app/build/outputs/apk/release/app-release.apk"
+          APKSIGNER="$(find "$ANDROID_HOME/build-tools" -type f -name apksigner | sort -V | tail -1)"
+          echo "Comparador: $APKSIGNER"
+          test -f "$ANTERIOR" && test -f "$NUEVA" && test -x "$APKSIGNER"
+          echo "Datos de firma anterior:"
+          "$APKSIGNER" verify --print-certs "$ANTERIOR" | head -8
+          echo "Datos de firma nueva:"
+          "$APKSIGNER" verify --print-certs "$NUEVA" | head -8
+          VIEJA="$("$APKSIGNER" verify --print-certs "$ANTERIOR" | grep -m1 'Signer #1 certificate SHA-256 digest' | cut -d: -f2 | tr -d '[:space:]')"
+          NUEVO="$("$APKSIGNER" verify --print-certs "$NUEVA" | grep -m1 'Signer #1 certificate SHA-256 digest' | cut -d: -f2 | tr -d '[:space:]')"
+          echo "Firma anterior: $VIEJA"
+          echo "Firma nueva:    $NUEVO"
+          test -n "$VIEJA" && test "$VIEJA" = "$NUEVO" || {
+            echo "::error::La firma cambió. No publicar como actualización sin desinstalar."
+            exit 1
+          }
+          AAPT="$(find "$ANDROID_HOME/build-tools" -type f -name aapt | sort -V | tail -1)"
+          "$AAPT" dump badging "$NUEVA" | grep "^package:"

@@ -16,13 +16,17 @@ import InlineFamilyPaths from './InlineFamilyPaths';
 const readableKind:Record<LaloKind,string>={vt2:'2 cifras',vt3:'3 cifras',vt4:'4 cifras'};
 type Props={date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
  auxiliar?:AuxiliarView|null;sheet?:DailySheet|null;auxHeads?:AuxiliaryHeads|null;
- heads?:string[];onOpenFamily?:(id:string)=>void};
+ heads?:string[];onOpenFamily?:(id:string)=>void;
+ selectedKind?:LaloKind;onKindChange?:(kind:LaloKind)=>void};
 export default function PredictionSummary({date,turn,view,heads=[],
- model='lalo',auxiliar,sheet=null,auxHeads=null,onOpenFamily}:Props){
+ model='lalo',auxiliar,sheet=null,auxHeads=null,onOpenFamily,
+ selectedKind,onKindChange}:Props){
  const {colors:c,kinds}=useLaloTheme();
- const [kind,setKind]=useState<LaloKind>('vt2');
+ const [localKind,setLocalKind]=useState<LaloKind>('vt2');
+ const kind=selectedKind||localKind;
+ const setKind=(next:LaloKind)=>{setLocalKind(next);onKindChange?.(next)};
  const [opened,setOpened]=useState<string|null>(null);
- useEffect(()=>{setKind('vt2');setOpened(null)},[date,turn,model]);
+ useEffect(()=>{setOpened(null)},[date,turn,model]);
  const iso=date.includes('/')?date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2):date;
  const rows=useMemo(()=>rowsForModel(model,kind,view,auxiliar||null).slice(0,10),
   [model,kind,view,auxiliar]);
@@ -36,9 +40,9 @@ export default function PredictionSummary({date,turn,view,heads=[],
   <View style={s.header}>
    <BosteroWatermark opacity={0.12}/>
    <Text style={[s.eyebrow,{color:c.accent}]}>
-    {model==='auxiliar'?'LA OTRA HOJA':'EL CUADERNO DE LALO'}
+    {model==='auxiliar'?'HOJA AUXILIAR':'EL CUADERNO DE LALO'}
    </Text>
-   <Text style={[s.title,{color:c.text}]}>Números para mirar hoy</Text>
+   <Text style={[s.title,{color:c.text}]}>Candidatos del turno</Text>
    <Text style={[s.subtitle,{color:c.subtext}]}>
     {iso?readableWeekday(iso):'Elegí una fecha'} · {turn}
    </Text>
