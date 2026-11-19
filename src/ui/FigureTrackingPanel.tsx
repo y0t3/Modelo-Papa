@@ -92,8 +92,8 @@ function StatusLine({name,formable,rank,available,rankingAvailable=true}:{
  return <View style={styles.statusRow}>
   <Text style={[styles.small,{fontWeight:'800',color:c.text,flex:1}]}>{name}</Text>
   <Text style={[styles.small,{color:c.subtext,textAlign:'right',flex:1}]}>
-   {!available?'Sin datos':!rankingAvailable?'Hoja lista · ranking no disponible':rank!==null?'Reconocida · #'+rank:
-    formable?'Formable · no reconocida':'No formable'}
+   {!available?'Sin datos':!rankingAvailable?'Hoja lista · ranking no disponible':rank!==null?'Elegida · puesto #'+rank:
+    formable?'Se forma · no fue elegida':'No se forma'}
   </Text>
  </View>;
 }
@@ -106,6 +106,7 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
  const [limit,setLimit]=useState(12);
  const [selected,setSelected]=useState<string|null>(null);
  const [showAux,setShowAux]=useState<AuxMode|null>(null);
+ const [detailTab,setDetailTab]=useState<'formacion'|'antes'|'otras'>('formacion');
  const [openAntecedent,setOpenAntecedent]=useState<FigureAntecedent|null>(null);
  const tracking=useMemo(()=>sheet&&date&&expanded?
   buildFigureTracking(date,turn,sheet,history,view,ayer,hoy):null,
@@ -114,9 +115,9 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
   if(!focusRequest)return;
   const family=focusRequest.startsWith('vt3|')?focusRequest.slice(4):focusRequest;
   setExpanded(true);setFilter('todas');setQuery(family);
-  setSelected(family);setLimit(12);
+  setSelected(family);setLimit(12);setDetailTab('formacion');
  },[focusRequest]);
- useEffect(()=>{setSelected(null);setShowAux(null);setOpenAntecedent(null);setLimit(12);},[date,turn]);
+ useEffect(()=>{setSelected(null);setShowAux(null);setOpenAntecedent(null);setLimit(12);setDetailTab('formacion');},[date,turn]);
  const filtered=(tracking?.records||[]).filter(f=>
   (filter==='todas'||filter==='top'&&f.top10||
    filter==='sin'&&!f.recognized&&f.antecedents.length>0)&&
@@ -137,9 +138,9 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
    onPress={()=>setExpanded(v=>!v)}
    style={[styles.header,{borderColor:c.border,backgroundColor:c.surfaceAlt}]}>
    <View style={{flex:1,gap:4}}>
-    <Text style={[styles.heading,{color:c.text}]}>Seguimiento de figuras VT3</Text>
+    <Text style={[styles.heading,{color:c.text}]}>Investigar una familia de tres cifras</Text>
     <Text style={[styles.small,{color:c.subtext}]}>
-     Observá rastros ganadores, movimientos y presencia en cada motor. No cambia los Tops.
+     Mirá cómo se forma, qué salió antes y en qué hojas aparece.
     </Text>
    </View>
    <Text style={{fontSize:22,color:c.accent,fontWeight:'900'}}>{expanded?'−':'+'}</Text>
@@ -181,7 +182,7 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
     {filtered.length} familias en este filtro. Orden de consulta, no prioridad predictiva.
    </Text>
    <View style={styles.families}>{shown.map(f=><Pressable key={f.family}
-    onPress={()=>{setSelected(f.family);setShowAux(null)}}
+    onPress={()=>{setSelected(f.family);setShowAux(null);setDetailTab('formacion')}}
     accessibilityRole="button"
     style={[styles.family,{borderColor:current?.family===f.family?c.accent:c.border,
      backgroundColor:current?.family===f.family?c.accentFill:c.card}]}>
@@ -195,7 +196,16 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
     <Text style={{color:c.accent,fontWeight:'800'}}>Mostrar más ({filtered.length-limit} restantes)</Text>
    </Pressable>:null}
    {current&&active?<View style={[styles.detail,{borderColor:c.border,backgroundColor:c.card}]}>
-    <Text style={[styles.heading,{color:c.text}]}>{current.family}</Text>
+    <Text style={[styles.heading,{color:c.text,fontSize:21}]}>{current.family}</Text>
+    <View style={styles.detailTabs}>
+     {([{id:'formacion',label:'Formación'},{id:'antes',label:'Antes'},{id:'otras',label:'Otras hojas'}] as const).map(tab=><Pressable
+      key={tab.id} accessibilityRole="tab" accessibilityState={{selected:detailTab===tab.id}}
+      onPress={()=>setDetailTab(tab.id)} style={[styles.detailTab,{
+       borderColor:detailTab===tab.id?c.accent:c.border,
+       backgroundColor:detailTab===tab.id?c.accentFill:c.surfaceAlt}]}>
+      <Text style={{fontSize:11,fontWeight:'900',color:detailTab===tab.id?c.accent:c.text}}>{tab.label}</Text>
+     </Pressable>)}
+    </View>
     <Text style={[styles.small,{color:c.subtext}]}>
      Aparece físicamente por {current.current.length} recorrido(s), en
      {new Set(current.current.map(r=>r.source)).size} fuente(s) +11.
@@ -207,6 +217,7 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
     <StatusLine name="AUX HOY" available={current.auxToday.available}
      rankingAvailable={current.auxToday.rankingAvailable}
      formable={current.auxToday.formable} rank={current.auxToday.rank}/>
+    {detailTab==='formacion'?<>
     <View style={styles.miniLine}>
      <FigureMini route={active} source={currentColumn(active)}
       title={'HOY · '+sourceName[active.source]}/>
@@ -218,7 +229,9 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
      </>:null}
     </View>
     <Text style={[styles.small,{color:c.subtext}]}>Ruta actual: {place(active)}</Text>
-    <Text style={{fontWeight:'900',color:c.text,marginTop:5}}>Antecedentes ganadores reales</Text>
+    </>:null}
+    {detailTab==='antes'?<>
+    <Text style={{fontWeight:'900',color:c.text,marginTop:5}}>Qué figuras salieron antes</Text>
     {current.antecedents.length?current.antecedents.slice(0,6).map((root,i)=>
      <Pressable key={[root.date,root.turn,root.jurisdiction,root.head,root.source,i].join('|')}
       accessibilityRole="button"
@@ -235,11 +248,13 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
        Figura {root.digits} · {sourceName[root.source]} → {sourceName[root.currentRoute.source]}
       </Text>
      </Pressable>):<Text style={[styles.small,{color:c.subtext}]}>
-      No se registraron figuras ganadoras de esta silueta en las jornadas cargadas.
+      No encontramos figuras parecidas en los días que tenemos guardados.
      </Text>}
     {current.antecedents.length>6?<Text style={[styles.small,{color:c.muted}]}>
      Hay {current.antecedents.length-6} testigos adicionales; se muestran seis para evitar saturar.
     </Text>:null}
+    </>:null}
+    {detailTab==='otras'?<>
     <View style={styles.actions}>
      {current.recognized?<Pressable onPress={()=>onOpenLalo(current.family)}
        accessibilityRole="button" style={[styles.action,{borderColor:c.accent}]}>
@@ -264,8 +279,9 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
       <Text style={{color:c.accent,fontWeight:'800'}}>Abrir predictiva AUX</Text>
      </Pressable>:null}
     {!current.recognized?<Text style={[styles.small,{color:c.muted}]}>
-     La familia no forma parte del ranking oficial: su minihoja se muestra aquí sin inventar una propuesta Lalo.
+     Esta familia se forma, pero no fue elegida por Lalo entre sus números.
     </Text>:null}
+    </>:null}
    </View>:<Text style={{color:c.subtext,fontSize:12}}>
     No hay familias que cumplan este filtro en el corte seleccionado.
    </Text>}
@@ -311,12 +327,14 @@ export default function FigureTrackingPanel({date,turn,sheet,history,view,ayer,h
 }
 const styles=StyleSheet.create({
  header:{borderWidth:1,borderRadius:10,padding:11,flexDirection:'row',alignItems:'center',gap:8},
+ detailTabs:{flexDirection:'row',gap:6,marginVertical:5},
+ detailTab:{flex:1,borderWidth:1,borderRadius:9,paddingVertical:11,alignItems:'center'},
  heading:{fontWeight:'900',fontSize:14},
- small:{fontSize:10,lineHeight:16},
+ small:{fontSize:11,lineHeight:18},
  summary:{padding:10,borderRadius:9,gap:5},
  filters:{flexDirection:'row',flexWrap:'wrap',gap:5},
  chip:{borderWidth:1,paddingVertical:7,paddingHorizontal:8,borderRadius:8},
- chipText:{fontSize:10,fontWeight:'800'},
+ chipText:{fontSize:11,fontWeight:'800'},
  input:{borderWidth:1,borderRadius:8,paddingHorizontal:10,paddingVertical:8,fontSize:13},
  families:{flexDirection:'row',flexWrap:'wrap',gap:6},
  family:{borderWidth:1,paddingHorizontal:9,paddingVertical:7,borderRadius:8,gap:2},
