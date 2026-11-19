@@ -33,11 +33,11 @@ const detectKind=(id:string|null|undefined):KindFilter=>{
 
 export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwner,initialTurn,
  initialTurnOnly=false,auxHeads,auxSourceDate,drawHeads,date='',
- auxMode='anterior',onAuxModeChange,onTurnChange,visualDays=[]}:{
+ auxMode='anterior',onAuxModeChange,onTurnChange,showTurnStrip=true,visualDays=[]}:{
  sheet:DailySheet;data:PanoramaData;mode:'hoja'|'predictiva';
  target?:Turno;onInfo:()=>void;focusedOwner?:string|null;initialTurn?:Turno;
  initialTurnOnly?:boolean;auxHeads?:AuxiliaryHeads|null;auxSourceDate?:string|null;drawHeads?:CabezasDia|null;date?:string;
- auxMode?:AuxMode;onAuxModeChange?:(mode:AuxMode)=>void;onTurnChange?:(turn:Turno)=>void;visualDays?:InfoVisualDay[]
+ auxMode?:AuxMode;onAuxModeChange?:(mode:AuxMode)=>void;onTurnChange?:(turn:Turno)=>void;showTurnStrip?:boolean;visualDays?:InfoVisualDay[]
 }){
  const {colors:c,kinds}=useLaloTheme();
  const [active,setActive]=useState<string|null>(focusedOwner||null);
@@ -139,7 +139,7 @@ export default function PanoramaSheet({sheet,data,mode,target,onInfo,focusedOwne
    <Text style={[s.note,{color:c.subtext}]}>
     Tocá un turno para ver juntas todas las coincidencias físicas de sus cabezas.
    </Text>
-   <TurnStrip value={turn} onChange={changeHojaTurn}/>
+   {showTurnStrip?<TurnStrip value={turn} onChange={changeHojaTurn}/>:null}
    <View style={s.turnActions}>
     <Pressable accessibilityRole="button"
      accessibilityLabel="Ver recorridos de todos los turnos"
