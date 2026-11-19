@@ -4,6 +4,7 @@ on:
     branches: [feature/redisenio-navegacion-lalo-18nov2026]
     paths:
       - 'scripts/experimento-polla-lalo.ts'
+      - 'scripts/experimento-polla-aux.ts'
       - '.github/workflows/laboratorio-polla.yml'
   workflow_dispatch:
 permissions:
@@ -25,10 +26,14 @@ jobs:
         run: npx --yes tsx scripts/experimento-polla-lalo.ts
       - name: Verificar proveedor histórico Santiago y Neuquén
         run: npx --yes tsx scripts/polla-probar-fuente-aux.ts
+      - name: Ejecutar comparativo auxiliar e integral contra los 20 puestos
+        run: npx --yes tsx scripts/experimento-polla-aux.ts
       - name: Guardar resultados para auditoría
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: Laboratorio-Polla-VT2
-          path: research/polla-reporte-2026-11-19.json
+          path: |
+            research/polla-reporte-2026-11-19.json
+            research/polla-reporte-aux-2026-11-19.json
           if-no-files-found: warn
