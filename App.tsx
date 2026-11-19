@@ -308,7 +308,8 @@ function LaloApp(){
    setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);setFigureFocus(null);
    setHojaTurn(upcomingTurn);
    
-   setHojaFocused(null);setHojaTurn('Previa');
+   setHojaFocused(null);setHojaTurn(TURNOS.find(t=>
+    JURS.filter(j=>j!=='Montevideo').every(j=>!/^[0-9]{4}$/.test(current[t]?.[j]||'')))||'Nocturno');
   }catch(error:any){
    Alert.alert('No se pudo cargar',error?.message||String(error));
   }finally{setBusy(false)}
@@ -345,6 +346,23 @@ function LaloApp(){
   void capture();
   return ()=>{cancelled=true};
  },[sheet,data,hist,date,busy,visualDays]);
+ // Si ya terminaron los cinco sorteos, apuntar a la Previa del próximo día.
+ useEffect(()=>{
+  if(!followingNext||selectedTurn!==null||busy||!data||date!==today())return;
+  const jurs=JURS.filter(j=>j!=='Montevideo');
+  const complete=TURNOS.every(t=>jurs.every(j=>/^[0-9]{4}$/.test(data[t]?.[j]||'')));
+  if(complete)void cargar(shiftDrawDay(date,1));
+ },[followingNext,selectedTurn,busy,date,data]);
+ // Cuando cambia la fecha del calendario, seguir el nuevo día sólo
+ // mientras el usuario no haya entrado a investigar otra jornada.
+ const [clockDay,setClockDay]=useState(today());
+ useEffect(()=>{
+  const timer=setInterval(()=>setClockDay(today()),60000);
+  return ()=>clearInterval(timer);
+ },[]);
+ useEffect(()=>{
+  if(followingNext&&date&&date<clockDay&&!busy)void cargar(clockDay);
+ },[clockDay,followingNext,date,busy]);
  // Con la app abierta, refrescar sin cambiar pestaña ni desplazar la hoja.
  useEffect(()=>{
   if(date!==today()||!baseHeads)return;
@@ -365,7 +383,7 @@ function LaloApp(){
   };
   const interval=setInterval(()=>{void update()},120000);
   return ()=>clearInterval(interval);
- },[date,baseHeads]);
+ },[date,baseHeads,clockDay]);
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
  // Cada modo conserva su ranking y memoria propios. Nunca mezclamos
@@ -598,6 +616,7 @@ function LaloApp(){
      </View>:null}
      <PanoramaSheet mode="hoja" sheet={showingSheet} data={showingHoja}
       initialTurn={historicalPreview?.turn||target} initialTurnOnly={true}
+       showTurnStrip={false}
       focusedOwner={hojaFocused} onInfo={()=>navigateTo('info')}
       auxHeads={historicalPreview?
        (historicalAux?.date===historicalPreview.day.date?
