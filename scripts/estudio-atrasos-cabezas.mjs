@@ -77,6 +77,27 @@ function result(window){
  return {window,total:summarize(total),porTurno:Object.fromEntries(Object.entries(perTurn)
  .map(([t,x])=>[t,{diasCompletos:x.completeDays,...summarize(x)}]))};
 }
+
+function fotoAtrasos(turn='Nocturno',window=110){
+ const valid=good.map(d=>({date:d.date,heads:d.turns[turn]})).filter(d=>juris.every(j=>/^\d{4}$/.test(d.heads?.[j]||'')));
+ const tail=valid.slice(-window);
+ const ranking=(rows)=>{
+  const map=new Map();
+  for(let i=0;i<rows.length;i++)for(const number of rows[i].numbers){
+   const item=map.get(number)||{numero:String(number).padStart(2,'0'),apariciones:0,ultima:null,indice:-1};
+   item.apariciones++;item.indice=i;item.ultima=rows[i].date;map.set(number,item);
+  }
+  return [...map.values()].sort((a,b)=>a.indice-b.indice||a.numero.localeCompare(b.numero))
+   .slice(0,3).map(x=>({numero:x.numero,ultima:x.ultima,
+    jornadasSinSalir:rows.length-1-x.indice,apariciones:x.apariciones}));
+ };
+ const pool=tail.map(d=>({date:d.date,numbers:juris.map(j=>+d.heads[j].slice(-2))}));
+ const local=Object.fromEntries(juris.map(j=>[j,ranking(tail.map(d=>({date:d.date,numbers:[+d.heads[j].slice(-2)]})))]));
+ return {hasta:tail.at(-1)?.date,ventana:tail.length,turno:turn,
+  combinado:ranking(pool),porJurisdiccion:local,
+  advertencia:'Atrasos solo de numeros observados en la ventana; los nunca vistos no son atrasos conocidos'};
+}
+
 const report={fuente:endpoint,cobertura:{desde:dates[0],hasta:end,fechasConsultadas:dates.length,
  fechasConDatos:good.length,errores:errors.slice(0,12)},
 criterios:{premio:'solo primera cabeza',jurisdicciones:juris,turnos:Object.keys(turns),
@@ -85,6 +106,8 @@ retrospectivo:'solo usa fechas anteriores; nunca resultados del turno a evaluar'
 atrasos_sin_origen:'no se inventan; números nunca vistos en ventana no entran como atraso confirmado',
 referenciaProbabilidad:'3% por cabeza uniforme; no indica ventaja real',
 comparabilidad:'para atraso individual se generan 3 candidatos por jurisdiccion, conjunto usa 3 comunes'}, 
-evaluaciones:win.map(result)};
+evaluaciones:win.map(result),fotoNocturno:fotoAtrasos()};
 fs.mkdirSync('research-output',{recursive:true});fs.writeFileSync('research-output/estudio-atrasos.json',JSON.stringify(report,null,2));
 for(const x of report.evaluaciones)console.log('RESULTADO VENTANA '+x.window+' '+JSON.stringify(x));
+
+console.log('FOTO NOCTURNO '+JSON.stringify(report.fotoNocturno));
