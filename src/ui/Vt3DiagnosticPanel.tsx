@@ -1,6 +1,6 @@
 /**
- * POST observacional: explica qué pasó con cada VT3 realmente sorteado.
- * Usa el PRE del turno para cotejar rutas; no genera pronósticos nuevos,
+ * después del sorteo observacional: explica qué pasó con cada VT3 realmente sorteado.
+ * Usa el antes del sorteo del turno para cotejar rutas; no genera pronósticos nuevos,
  * no cambia rankings y no penaliza ausencia de hoja AUX HOY en Previa.
  */
 import React,{useMemo,useState} from 'react';
@@ -43,13 +43,13 @@ function auxDescription(p:AuxPresence){
  return p.rank<=10?'Top10 · #'+p.rank:'Con raíz · #'+p.rank;
 }
 function laloDescription(d:Vt3FamilyDiagnostic|null){
- if(!d)return 'PRE no disponible';
+ if(!d)return 'antes del sorteo no disponible';
  switch(d.status){
   case 'SIN_FORMACION':return 'No se forma';
   case 'FISICA_SIN_ANCLAJE':return 'Formable · sin raíz D−1/D−7';
   case 'EN_TOP3':return 'Top3 · #'+d.officialRank;
   case 'EN_TOP10':return 'Top10 · #'+d.officialRank;
-  case 'FUERA_TOP10':return 'Con raíces · #'+d.officialRank;
+  case 'FUERA_TOP10':return 'Con antecedentes · #'+d.officialRank;
  }
 }
 export default function Vt3DiagnosticPanel({date,turn,data,sheet,view,
@@ -90,7 +90,7 @@ export default function Vt3DiagnosticPanel({date,turn,data,sheet,view,
   {total===0?<View style={[s.empty,{borderColor:c.border,backgroundColor:c.surfaceAlt}]}>
    <Text style={[s.bold,{color:c.text}]}>Todavía no hay cabezas publicadas para {turn}.</Text>
    <Text style={[s.body,{color:c.subtext}]}>
-    Podés consultar las formaciones PRE en «Seguir un número». El diagnóstico
+    Podés consultar las formaciones antes del sorteo en «Seguir un número». El diagnóstico
     de aciertos se completa después del resultado.
    </Text>
   </View>:<>
@@ -107,7 +107,7 @@ export default function Vt3DiagnosticPanel({date,turn,data,sheet,view,
      <Text style={[s.stat,{color:c.accent}]}>{x.physical}/{total}</Text>
      <Text style={[s.tiny,{color:c.subtext}]}>Se formaron</Text>
      <Text style={[s.tiny,{color:c.subtext}]}>
-      {x.ranked} con raíces · {x.top10} Top10
+      {x.ranked} con antecedentes · {x.top10} Top10
      </Text>
     </View>)}
    </View>
@@ -165,9 +165,9 @@ export default function Vt3DiagnosticPanel({date,turn,data,sheet,view,
    <Text style={[s.actionText,{color:c.accent}]}>Abrir seguimiento completo de figuras VT3 ›</Text>
   </Pressable>
   <Text style={[s.tiny,{color:c.muted}]}>
-   Se reconstruye el corte PRE de {date}. No es una captura sellada antes
+   Se reconstruye el corte antes del sorteo de {date}. No es una captura sellada antes
    del sorteo. Un recorrido físico por sí solo no predice resultados;
-   «sin raíces» se refiere exclusivamente a las reglas oficiales D−1/D−7.
+   «sin antecedentes» se refiere exclusivamente a las reglas oficiales D−1/D−7.
   </Text>
  </View>;
 }
