@@ -1,0 +1,29 @@
+name: Estabilidad de atrasos por periodos historicos
+on:
+  push:
+    branches: ['research/atrasos-quiniela-19nov2026']
+    paths:
+      - scripts/estudio-estabilidad-atrasos.mjs
+      - .github/workflows/estabilidad-atrasos-quiniela.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Comprobar estabilidad temporal de estadisticas PRE
+        run: node scripts/estudio-estabilidad-atrasos.mjs
+      - name: Publicar reporte historico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Quiniela-Estabilidad-Atrasos
+          path: research-output/estabilidad-atrasos-2026.json
+          if-no-files-found: warn
+          retention-days: 14
