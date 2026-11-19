@@ -93,7 +93,7 @@ export default function HomeDashboard({date,turn,data,auxAyer,auxHoy,
     <Text style={{fontSize:11,color:lastHits.length?'#57D5A5':c.subtext}}>
      {lastHits.length? '✓ '+lastHits.length+' coincidencia(s) de '+STAT_MODE_LABELS[statMode]:
       'Sin coincidencias de '+STAT_MODE_LABELS[statMode]} ·
-     {' '+last.results.length+' cabezas publicadas
+     {' '+last.results.length+' cabezas publicadas'}
     </Text>
    </View>:null}
    <Pressable accessibilityRole="button" onPress={onOpenStats}
