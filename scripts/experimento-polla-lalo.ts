@@ -214,3 +214,5 @@ console.log('AZAR fijo',JSON.stringify(randomStats.fija));
 console.log('AZAR dinámico',JSON.stringify(randomStats.dinamica));
 console.log('DETALLE:',out);
 if(accepted.length<4)throw Error('Insuficientes semanas válidas para emitir reporte');
+
+// Control experimental: los datos AUX se comprueban en una etapa separada.
