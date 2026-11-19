@@ -23,6 +23,8 @@ jobs:
         run: git clone --depth=1 https://github.com/nfgalindez-aiko/sorteos-ar.git /tmp/sorteos-ar
       - name: Ejecutar PRE VT2 y 10.000 controles por semana
         run: npx --yes tsx scripts/experimento-polla-lalo.ts
+      - name: Verificar proveedor histórico Santiago y Neuquén
+        run: npx --yes tsx scripts/polla-probar-fuente-aux.ts
       - name: Guardar resultados para auditoría
         uses: actions/upload-artifact@v4
         if: always()
