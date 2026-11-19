@@ -1,0 +1,26 @@
+name: Estudio historico de atrasos quiniela
+on:
+  push:
+    branches: ['research/atrasos-quiniela-19nov2026']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Estudio independiente con resultados reales
+        run: node scripts/estudio-atrasos-cabezas.mjs
+      - name: Publicar reporte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Quiniela-Estudio-Atrasos-19Nov2026
+          path: research-output/estudio-atrasos.json
+          if-no-files-found: warn
+          retention-days: 10
