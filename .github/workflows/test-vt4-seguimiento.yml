@@ -1,0 +1,19 @@
+name: VT4 seguimiento visual pruebas
+on:
+  push:
+    branches: [feature/vt4-seguimiento-visual-24nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - run: npx tsc --noEmit -p tsconfig.tendencias-app.json
+      - run: npx --yes tsx scripts/test-vt4-independent.ts
+      - run: npx --yes tsx scripts/test-vt4-timeline.ts
