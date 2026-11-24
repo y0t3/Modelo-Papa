@@ -15,7 +15,7 @@ export type RootRef={
 };
 export type LaloRoute={
  kind:LaloKind;family:string;value:string;sourceId:SourceId;path:Path;
- origin:'TRASLADO'|'BIFURCACIÓN'|'DESDE_VT3';
+ origin:'TRASLADO'|'BIFURCACIÓN'|'DESDE_VT3'|'FISICO_VT4';
  rootIds:string[];mother?:string;mothers?:string[];addedDigit?:string;
 };
 export type LaloFamily={
