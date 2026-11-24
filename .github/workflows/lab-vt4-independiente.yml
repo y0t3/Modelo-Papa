@@ -1,0 +1,30 @@
+name: LAB VT4 independiente tres hojas
+on:
+  push:
+    branches:
+      - lab/vt4-independiente-24nov2026
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        rango:
+          - {nombre: septiembre-octubre, inicio: '2026-09-15', fin: '2026-10-10'}
+          - {nombre: noviembre, inicio: '2026-11-02', fin: '2026-11-23'}
+    name: ${{ matrix.rango.nombre }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Backtest exacto VT4
+        env:
+          VT4_FROM: ${{ matrix.rango.inicio }}
+          VT4_TO: ${{ matrix.rango.fin }}
+        run: npx --yes tsx scripts/lab-vt4-independiente.ts
