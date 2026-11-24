@@ -16,8 +16,8 @@ import InlineFamilyPaths from './InlineFamilyPaths';
 const readableKind:Record<LaloKind,string>={vt2:'2 cifras',vt3:'3 cifras',vt4:'4 cifras'};
 type Props={date:string;turn:Turno;view:LaloView|null;model?:ModelChoice;
  auxiliar?:AuxiliarView|null;sheet?:DailySheet|null;auxHeads?:AuxiliaryHeads|null;
- heads?:string[];onOpenFamily?:(id:string)=>void};
-export default function PredictionSummary({date,turn,view,heads=[],
+ heads?:string[];vt4Heads?:string[];onOpenFamily?:(id:string)=>void};
+export default function PredictionSummary({date,turn,view,heads=[],vt4Heads,
  model='lalo',auxiliar,sheet=null,auxHeads=null,onOpenFamily}:Props){
  const {colors:c,kinds}=useLaloTheme();
  const [kind,setKind]=useState<LaloKind>('vt2');
@@ -26,7 +26,7 @@ export default function PredictionSummary({date,turn,view,heads=[],
  const iso=date.includes('/')?date.slice(6,10)+'-'+date.slice(3,5)+'-'+date.slice(0,2):date;
  const rows=useMemo(()=>rowsForModel(model,kind,view,auxiliar||null).slice(0,10),
   [model,kind,view,auxiliar]);
- const events:HeadEvent[]=heads.filter(h=>/^\d{4}$/.test(h))
+ const events:HeadEvent[]=(kind==='vt4'&&vt4Heads?vt4Heads:heads).filter(h=>/^\d{4}$/.test(h))
   .map(head=>({jur:'',head}));
  const summaries=rows.flatMap(f=>hitsForFamily(f,events).map(h=>({
   rank:f.rank,head:h.head,family:f.family,kind
@@ -48,6 +48,7 @@ export default function PredictionSummary({date,turn,view,heads=[],
     'Santiago y Neuquén. Tocá un número para ver todos sus caminos.':
     'Hoja +11 de Lalo. Tocá un número y mirá su formación aquí mismo.'}
   </Text>
+  {kind==='vt4'?<Text style={{color:c.subtext,fontSize:11,lineHeight:17}}>4 cifras exactas · motor independiente por bloques físicos. Orden experimental, no probabilidades comprobadas.</Text>:null}
   <View style={s.kindTabs}>
    {KINDS.map(k=><Pressable key={k} accessibilityRole="tab"
     accessibilityState={{selected:kind===k}} onPress={()=>{setKind(k);setOpened(null)}}
