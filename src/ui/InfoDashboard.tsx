@@ -22,6 +22,7 @@ import HeadStatStudy from './HeadStatStudy';
 import DayMatchGrid from './DayMatchGrid';
 import TurnTrendPanel from './TurnTrendPanel';
 import Vt3DiagnosticPanel from './Vt3DiagnosticPanel';
+import Vt4StudyPanel from './Vt4StudyPanel';
 import type {TrendEngine} from '../trendHistoryVt2';
 import type {TrendPeriod,TrendSnapshot} from '../trendVt2Journal';
 
@@ -48,12 +49,13 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  statsMode:StatMode;onStatsMode:(mode:StatMode)=>void;
  statsData:CabezasDia|null;statsJournal:Top6Snapshot[]};
 
-export type StudySection='estadisticas'|'resumen'|'tendencias'|'vt3'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+export type StudySection='estadisticas'|'resumen'|'tendencias'|'vt3'|'vt4'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
 type Section=StudySection;
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
  {id:'estadisticas',icon:'◷',title:'Atrasados y frecuencias',subtitle:'Resultados reales, por turno y jurisdicción',accent:'#F0B858'},
  {id:'tendencias',icon:'▥',title:'Gráficos VT2',subtitle:'Dónde hubo más coincidencias',accent:'#4ABDEB'},
  {id:'vt3',icon:'⌗',title:'¿Qué pasó con VT3?',subtitle:'Cómo se formaron las cabezas',accent:'#60E1DB'},
+ {id:'vt4',icon:'④',title:'Estudio de 4 cifras',subtitle:'Formaciones VT4, cabezas reales y minihojas',accent:'#F0B858'},
  {id:'historial',icon:'▦',title:'Día por día',subtitle:'Las hojas anteriores',accent:'#A68AFF'},
  {id:'auxiliar',icon:'▤',title:'Hojas de Santiago y Neuquén',subtitle:'Ver figuras de otros días',accent:'#E18AF6'},
  {id:'seguir',icon:'◎',title:'Investigar un número',subtitle:'Formaciones y recorridos',accent:'#51D7AF'},
@@ -64,7 +66,7 @@ const tips=[
  {key:'figura',title:'¿Qué significa un recorrido?',body:'Es la forma de leer dos, tres o cuatro cifras tocando casillas vecinas de una misma columna. Cuando una cabeza sale, la hoja puede mostrar todos los caminos que la explican.',to:'predictiva' as Destination,button:'Ver recorridos'},
  {key:'top',title:'¿Por qué un número está primero?',body:'Lalo busca parecidos entre caminos de otras jornadas. El puesto sirve para ordenar lo que encontró, pero no significa que ese número tenga más chances comprobadas de salir.',to:'prediccion' as Destination,button:'Ver números'},
  {key:'tres',title:'¿Qué significa leerlo al revés?',body:'Al estudiar tres cifras, 123 y 321 se consideran una misma familia. Para jugar o cobrar importa el número exacto que se elige.',to:'papa' as Destination,button:'Ir a Lalo'},
- {key:'cuatro',title:'¿Y las cuatro cifras?',body:'La cuarta cifra se agrega a la izquierda de un camino de tres ya formado, no al final. Tiene que existir el recorrido completo en la misma columna.',to:'predictiva' as Destination,button:'Mirar la hoja'},
+ {key:'cuatro',title:'¿Y las cuatro cifras?',body:'Cada número de cuatro cifras se busca completo, sin depender de VT3. En +11 queda en una columna; en AUX puede cruzar turnos vecinos.',to:'predictiva' as Destination,button:'Mirar la hoja'},
  {key:'apuesta',title:'¿Lo que aparece es una apuesta?',body:'No. Los números que muestra la aplicación son para mirar y estudiar. Las jugadas de Lalo se anotan aparte, antes del sorteo.',to:'papa' as Destination,button:'Ver elecciones de Lalo'}
 ] as const;
 
@@ -137,6 +139,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       onOpenAux={onFigureAux}
       onOpenTracking={()=>{setFocusedVt3(null);setSection('seguir')}}/>
     </>:null}
+    {section==='vt4'?<Vt4StudyPanel date={date} turn={turn} data={data} sheet={sheet} view={view} ayer={trackingAyer} hoy={trackingHoy} visualDays={visualDays} auxDays={auxDays} onTurnChange={onTurnChange}/>:null}
     {section==='historial'?<>
      <Text style={[s.small,{color:c.subtext}]}>Elegí un día o una figura para verla más grande.</Text>
      <InfoTurnGallery gallery={gallery} view={view} historical={historical} selectedFrameId={selectedFrameId}
