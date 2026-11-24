@@ -12,6 +12,7 @@ import {auxAtCut} from '../auxTemporalModes';
 import {rankPlusVt4,rankAuxVt4} from '../vt4Independent';
 import type {AuxVt4Exact} from '../vt4Independent';
 import type {LaloFamily} from '../motorLalo';
+import {plusVt4Timeline,auxVt4Timeline,unchangedSince} from '../vt4Timeline';
 import InlineFamilyPaths from './InlineFamilyPaths';
 import {useLaloTheme} from './LaloTheme';
 
@@ -54,15 +55,38 @@ export default function Vt4StudyPanel({date,turn,data,sheet,view,ayer,hoy,visual
  const expected=hist.reduce((n,f)=>n+observations(f,turn).length*f.rows.length/10000,0);
  const formed=evaluated.filter(h=>h.row).length,top10=evaluated.filter(h=>h.row&&h.row.rank<=10).length;
  const color=kinds.vt4.line;
- const mini=(f:Frame,r:Row,key:string)=><>
-  <Pressable accessibilityRole="button" onPress={()=>setExpanded(v=>v===key?null:key)}
-   style={[s.toggle,{borderColor:c.border,backgroundColor:c.surfaceAlt}]}>
-   <Text style={{color:c.accent,fontWeight:'900',fontSize:12}}>{expanded===key?'▴ Cerrar minihoja':'▾ Ver minihoja'}</Text>
-  </Pressable>
-  {expanded===key?<InlineFamilyPaths kind="vt4" family={r.value} turn={turn}
-   plus={r.plus&&f.sheet?{sheet:f.sheet,routes:r.plus.paths}:undefined}
-   aux={r.aux&&f.aux?{heads:f.aux,values:[r.value]}:undefined}/>:null}
- </>;
+ const mini=(f:Frame,r:Row,key:string)=>{
+  const open=expanded===key;
+  const entries=open?(r.plus&&f.sheet?plusVt4Timeline(f.sheet,r.plus.paths,turn):
+   r.aux?auxVt4Timeline(r.aux.routes,turn,engine==='ayer'?'ayer':'hoy'):[]):[];
+  const since=unchangedSince(entries);
+  return <>
+   <Pressable accessibilityRole="button" onPress={()=>setExpanded(v=>v===key?null:key)}
+    style={[s.toggle,{borderColor:c.border,backgroundColor:c.surfaceAlt}]}>
+    <Text style={{color:c.accent,fontWeight:'900',fontSize:12}}>{open?'▴ Cerrar minihoja':'▾ Ver minihoja y evolución'}</Text>
+   </Pressable>
+   {open?<View style={{gap:8}}>
+    <View style={[s.timeline,{borderColor:c.border,backgroundColor:c.surfaceAlt}]}>
+     <Text style={{color:c.text,fontWeight:'900',fontSize:13}}>Cómo se fue formando</Text>
+     <View style={s.timelineRow}>{TURNOS.map((t,i)=>{
+      const entry=entries[i],active=!!entry?.blocks;
+      return <View key={t} style={s.timelineCell}>
+       <Text style={{color:c.subtext,fontSize:10,fontWeight:'800'}}>{['Pre.','Pri.','Mat.','Ves.','Noc.'][i]}</Text>
+       <View style={[s.timelineCount,{borderColor:active?color:c.border,backgroundColor:active?kinds.vt4.fill:c.surfaceAlt}]}>
+        <Text style={{color:active?kinds.vt4.text:c.subtext,fontSize:18,fontWeight:'900'}}>{entry?entry.blocks:'—'}</Text>
+       </View>
+       <Text style={{color:c.subtext,fontSize:9,textAlign:'center'}}>{!entry?'Sin cotejar':entry.state==='Suma bloques'?'Suma':entry.state==='Sin cambios'?'Sigue':entry.state}</Text>
+      </View>;
+     })}</View>
+     {since?<Text style={{color:c.text,fontSize:12,fontWeight:'800'}}>{r.blocks===2?'Misma pareja':r.blocks===1?'Mismo bloque':'Mismos bloques'} desde {since}.</Text>:null}
+     <Text style={{color:c.subtext,fontSize:11,lineHeight:15}}>Bloques distintos antes de cada turno, reconstruidos con las cifras disponibles. No cambia el Top ni indica más chances.</Text>
+    </View>
+    <InlineFamilyPaths kind="vt4" family={r.value} turn={turn}
+     plus={r.plus&&f.sheet?{sheet:f.sheet,routes:r.plus.paths}:undefined}
+     aux={r.aux&&f.aux?{heads:f.aux,values:[r.value]}:undefined}/>
+   </View>:null}
+  </>;
+ };
  return <View style={s.root}>
   <Text style={{color:c.subtext,fontSize:12,lineHeight:18}}>Cuatro cifras exactas, sin depender de VT3. Elegí una hoja y un turno. El orden prioriza bloques físicos distintos; no indica chances comprobadas.</Text>
   <View style={s.chips}>{(['lalo','ayer','hoy'] as Engine[]).map(e=><Pressable key={e} accessibilityRole="tab" accessibilityState={{selected:e===engine}} onPress={()=>setEngine(e)}
@@ -104,4 +128,4 @@ export default function Vt4StudyPanel({date,turn,data,sheet,view,ayer,hoy,visual
   </View>
  </View>;
 }
-const s=StyleSheet.create({root:{gap:12},chips:{flexDirection:'row',flexWrap:'wrap',gap:5},chip:{borderWidth:1,borderRadius:9,paddingHorizontal:9,paddingVertical:8},card:{borderWidth:1.2,borderRadius:13,padding:10,gap:8},title:{fontWeight:'900',fontSize:16},item:{borderTopWidth:1,paddingVertical:8,gap:5},toggle:{alignSelf:'flex-start',borderWidth:1,borderRadius:8,padding:7}});
+const s=StyleSheet.create({root:{gap:12},chips:{flexDirection:'row',flexWrap:'wrap',gap:5},chip:{borderWidth:1,borderRadius:9,paddingHorizontal:9,paddingVertical:8},card:{borderWidth:1.2,borderRadius:13,padding:10,gap:8},title:{fontWeight:'900',fontSize:16},item:{borderTopWidth:1,paddingVertical:8,gap:5},timeline:{borderWidth:1,borderRadius:10,padding:8,gap:6},timelineRow:{flexDirection:'row',gap:4},timelineCell:{flex:1,alignItems:'center',gap:3},timelineCount:{borderWidth:1,borderRadius:7,width:'100%',alignItems:'center',paddingVertical:6},toggle:{alignSelf:'flex-start',borderWidth:1,borderRadius:8,padding:7}});
