@@ -768,12 +768,12 @@ function LaloApp(){
     {predictionMode==='auxiliar'?<AuxModeSwitch value={auxMode} onChange={changeAuxMode}/>:null}
      {predictionMode==='lalo'?
       <PredictionSummary model="lalo" date={dateText} turn={target} view={motor}
-       heads={sheet?.heads[target]||[]} sheet={sheet} onOpenFamily={id=>id.startsWith('vt3|')?trackFigure(id.slice(4)):showFamily(id)}/>:
+       heads={sheet?.heads[target]||[]} vt4Heads={fiveHeads} sheet={sheet} onOpenFamily={id=>id.startsWith('vt3|')?trackFigure(id.slice(4)):showFamily(id)}/>:
       predictionMode==='auxiliar'?
        auxiliar?<PredictionSummary key={auxMode+'-'+target} model="auxiliar"
         date={dateText} turn={target} view={motor} auxiliar={auxiliar}
         auxHeads={activeAuxHeads?auxAtCut(activeAuxHeads,target,auxMode):null}
-        heads={sheet?.heads[target]||[]}
+        heads={sheet?.heads[target]||[]} vt4Heads={fiveHeads}
          onOpenFamily={id=>id.startsWith('vt3|')?trackFigure(id.slice(4)):showAuxFamily(id)}/>:
        <View style={[s.previewBanner,{backgroundColor:c.surfaceAlt,borderColor:c.border}]}>
         <Text style={{color:c.text,fontWeight:'800'}}>No está lista la hoja auxiliar.</Text>
