@@ -1,0 +1,31 @@
+name: LAB VT4 control condicional de parejas
+on:
+  push:
+    branches: [lab/vt4-control-parejas-24nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        rango:
+          - {nombre: contraste-abril-mayo-2026, inicio: '2026-04-01', fin: '2026-05-31'}
+          - {nombre: contraste-agosto-octubre-2025, inicio: '2025-08-01', fin: '2025-10-20'}
+          - {nombre: adicional-mayo-junio-2025, inicio: '2025-05-01', fin: '2025-06-30'}
+          - {nombre: adicional-febrero-marzo-2026, inicio: '2026-02-01', fin: '2026-03-31'}
+    name: ${{ matrix.rango.nombre }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Contraste condicional y reproduccion
+        env:
+          VT4_FROM: ${{ matrix.rango.inicio }}
+          VT4_TO: ${{ matrix.rango.fin }}
+        run: npx --yes tsx scripts/lab-vt4-control-parejas.ts
