@@ -3,6 +3,9 @@ on:
   workflow_dispatch:
   push:
     branches: [feature/vt4-independiente-estudio-24nov2026]
+concurrency:
+  group: apk-vt4-estudio
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
@@ -20,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: TypeScript check
-        run: npx tsc --noEmit
+        run: npx tsc --noEmit -p tsconfig.tendencias-app.json
       - name: Pruebas motor Lalo VT2 VT3 VT4
         run: npx --yes tsx scripts/test-motor-lalo.ts
       - name: Probar observabilidad VT3
