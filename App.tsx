@@ -486,20 +486,17 @@ function LaloApp(){
  const activeAuxError=auxMode==='intrajornada'?auxTodayError:auxiliarError;
  const activeAuxDate=auxMode==='intrajornada'?date:auxSourceDate;
  const auxiliar=useMemo(()=>{
-  if((screen!=='inicio'&&screen!=='prediccion'&&screen!=='predictiva'&&screen!=='info')||!date||!activeAuxHeads||
-   activeAuxHistory.length!==hist.length||!activeAuxHistory.length)return null;
+  if((screen!=='inicio'&&screen!=='prediccion'&&screen!=='predictiva'&&screen!=='info')||!date||!activeAuxHeads)return null;
   const input=auxAtCut(activeAuxHeads,target,auxMode);
-  return buildMotorLaloAuxiliar(date,target,input,activeAuxHistory);
+  return buildMotorLaloAuxiliar(date,target,input,activeAuxHistory.length===hist.length?activeAuxHistory:[]);
  },[screen,date,target,activeAuxHeads,activeAuxHistory,hist,auxMode]);
  // Presencias independientes del seguimiento. Cada uno conserva el
  // origen PRE y sus propias raíces; jamás se mezclan con MV1.
- const trackingAyerView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxHeads&&
-  auxiliarPast.length===hist.length&&auxiliarPast.length?
-  buildMotorLaloAuxiliar(date,target,auxAtCut(auxHeads,target,'anterior'),auxiliarPast):null,
+ const trackingAyerView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxHeads?
+  buildMotorLaloAuxiliar(date,target,auxAtCut(auxHeads,target,'anterior'),auxiliarPast.length===hist.length?auxiliarPast:[]):null,
   [screen,date,target,auxHeads,auxiliarPast,hist]);
- const trackingHoyView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxToday&&
-  auxTodayPast.length===hist.length&&auxTodayPast.length?
-  buildMotorLaloAuxiliar(date,target,auxAtCut(auxToday,target,'intrajornada'),auxTodayPast):null,
+ const trackingHoyView=useMemo(()=>(screen==='info'||screen==='inicio')&&date&&auxToday?
+  buildMotorLaloAuxiliar(date,target,auxAtCut(auxToday,target,'intrajornada'),auxTodayPast.length===hist.length?auxTodayPast:[]):null,
   [screen,date,target,auxToday,auxTodayPast,hist]);
  const trackingAyer:TrackingAuxInput=useMemo(()=>({
   heads:auxHeads,view:trackingAyerView,mode:'anterior'
