@@ -2,7 +2,7 @@ import type {Turno} from './domain';
 import type {MarkLedger,MarkKind} from './auxMarkLedger';
 import type {AuxiliarView,AuxiliarHistory} from './motorLaloAuxiliar';
 import type {AuxiliaryBoard,AuxPath,AuxSourceTurn} from './auxSantiagoNeuquen';
-import {auxiliaryBoard,auxCanonicalPath} from './auxSantiagoNeuquen';
+import {auxiliaryBoard,auxCanonicalPath,enumerateAuxPaths,auxPathKey} from './auxSantiagoNeuquen';
 import {projectAuxShape} from './auxWinningMemory';
 import {auxAtCut} from './auxTemporalModes';
 import type {AuxMode} from './auxTemporalModes';
@@ -67,6 +67,21 @@ export function buildAuxPredictiveVisual(date:string,turn:Turno,
  for(const kind of KINDS){
   const length=Number(kind.slice(-1)) as 2|3|4;
   const families=view.ranks[length];
+  // VT4 exacto: todas las rutas físicas, sin requerir una marca histórica.
+  if(kind==='vt4'&&families.every(f=>f.mother===null)){
+   const byValue=new Map(families.map(f=>[f.family,f]));
+   const counts=new Map<string,number>();
+   for(const path of enumerateAuxPaths(aux,4)){
+    const reading=path.map(c=>c.digit).join('');const f=byValue.get(reading);if(!f)continue;
+    const ownerId=kind+'|'+f.family;const key=auxPathKey(path);
+    routes.push({id:ownerId+'|'+key,ownerId,kind,cells:path,reading,rootEvents:[]});
+    counts.set(ownerId,(counts.get(ownerId)||0)+1);
+   }
+   for(const f of families){const id=kind+'|'+f.family;const count=counts.get(id)||0;
+    groups.push({id,family:f.family,routeCount:count,kinds:count?[kind]:[],subtitle:'Puesto #'+f.rank+' · '+count+' recorridos físicos'});
+   }
+   continue;
+  }
   // Cada figura histórica se traslada SOLO UNA VEZ. Luego se atribuye
   // por terminación física al ranking inmutable, sin crear candidatas.
   const byValue=new Map<string,string>();
