@@ -62,7 +62,7 @@ export default function MatchStudyPanel({date,turn,prepared}:Props){
   {label('Jurisdicción')}<View style={s.chips}>{['Todas',...STAT_JURS].map(j=>chip(j,f.jur===j,()=>setF(x=>({...x,jur:j}))))}</View>
   {historyBusy||working?<View style={s.chips}><ActivityIndicator color={c.accent}/><Text style={{color:c.subtext,fontSize:12}}>{historyBusy?'Cargando jornadas anteriores…':'Preparando historial '+progress+' de '+prepared.dates.length+' jornadas…'}</Text></View>:null}
   {error?<Text style={{color:orange}}>{error}</Text>:null}
-  {!working&&!historyBusy&&(coverage<frames.length||error)?chip('Reintentar hojas faltantes',false,prepared.retry):null}
+  {!working&&!historyBusy?<Pressable accessibilityRole="button" onPress={prepared.retry} style={{alignSelf:'flex-end',paddingVertical:3}}><Text style={{color:c.accent,fontSize:11,fontWeight:'800'}}>{error?'Reintentar historial':'↻ Actualizar historial'}</Text></Pressable>:null}
   <View style={s.chips}>{[{title:'Top 10',value:String(top.length),color:green},{title:'Fuera del Top',value:String(outside),color:orange},{title:'Más repetida',value:peak||'—',color:c.accent}].map(x=><View key={x.title} style={[s.metric,card]}>
    <Text style={{color:c.subtext,fontSize:10,fontWeight:'700'}}>{x.title}</Text><Text style={{color:x.color,fontSize:19,fontWeight:'900',textAlign:'center'}}>{x.value}</Text>
   </View>)}</View>

@@ -26,6 +26,7 @@ type Input={date:string;today:string;data:CabezasDia|null;sheet:DailySheet|null;
 const PREFIX='lalo:coincidencias:cache:v2:';
 const INDEX=PREFIX+'index';
 const TTL=6*60*60*1000;
+const HISTORICAL_TTL=30*24*60*60*1000;
 const pause=()=>new Promise<void>(resolve=>setTimeout(resolve,0));
 const memory=new Map<string,PreparedDay>();
 const auxMemory=new Map<string,{time:number,promise:Promise<AuxiliaryHeads|null>}>();
@@ -37,7 +38,8 @@ function getAuxSource(date:string){
 }
 async function getCached(date:string,signature:string,persist:boolean,force:boolean){
  if(force)return null;
- const okay=(x:PreparedDay|null|undefined)=>!!x&&x.date===date&&x.signature===signature&&Date.now()-x.storedAt<(x.complete?TTL:60000)&&MATCH_KINDS.every(k=>Array.isArray(x.frames?.[k]));
+ const historicalTtl=Date.now()-Date.parse(date+'T00:00:00Z')>2*24*60*60*1000?HISTORICAL_TTL:TTL;
+ const okay=(x:PreparedDay|null|undefined)=>!!x&&x.date===date&&x.signature===signature&&Date.now()-x.storedAt<(x.complete?historicalTtl:60000)&&MATCH_KINDS.every(k=>Array.isArray(x.frames?.[k]));
  const m=memory.get(date);if(okay(m))return m!;
  if(!persist)return null;
  try{
@@ -49,15 +51,15 @@ async function getCached(date:string,signature:string,persist:boolean,force:bool
 }
 async function saveCached(d:PreparedDay,persist:boolean){
  memory.set(d.date,d);
- if(memory.size>65)memory.delete(memory.keys().next().value!);
+ if(memory.size>35)memory.delete(memory.keys().next().value!);
  if(persist&&d.complete)try{await AsyncStorage.setItem(PREFIX+d.date,JSON.stringify(d))}catch{}
 }
 async function trimCache(dates:string[]){
- // Keep the two most recent windows, rather than unbounded historical blobs.
+ // Keep a bounded 30-day window with a few spare entries.
  try{
   const raw=await AsyncStorage.getItem(INDEX);
   const old=raw?JSON.parse(raw) as string[]:[];
-  const keep=[...new Set([...dates,...old])].slice(0,65);
+  const keep=[...new Set([...dates,...old])].slice(0,35);
   const remove=old.filter(d=>!keep.includes(d));
   if(remove.length)await AsyncStorage.multiRemove(remove.map(d=>PREFIX+d));
   await AsyncStorage.setItem(INDEX,JSON.stringify(keep));
@@ -83,7 +85,7 @@ export function useMatchStudyData(input:Input):PreparedStudy{
   if(force){auxMemory.clear()}
   if(!date||!data||!sheet||loading||!history.length)return;
   const selectedDates=selected.map(d=>d.date);
-  setState(prev=>({date,dates:selectedDates,days:prev.days.filter(d=>selectedDates.includes(d.date)),progress:0,working:true,error:''}));
+  setState(prev=>({date,dates:selectedDates,days:prev.days.filter(d=>d.date<today&&selectedDates.includes(d.date)),progress:0,working:true,error:''}));
   const run=async()=>{
    const byDate=new Map(days.map(d=>[d.date,d]));
    const sorted=days.filter(d=>d.date<date);
@@ -94,15 +96,22 @@ export function useMatchStudyData(input:Input):PreparedStudy{
     for(const p of sorted){if(p.date>=d.date)break;previous=fusionarNocturnasPorJur(previous,p.heads)}
     return buildSheet(d.heads,previous);
    };
+   const rootSheetCache=new Map<string,DailySheet>();
+   const rootSheet=(current:typeof days[number],previous:typeof days[number])=>{
+    const id=current.date+'|'+previous.date;
+    let cached=rootSheetCache.get(id);
+    if(!cached){cached=buildSheet(current.heads,previous.heads);rootSheetCache.set(id,cached)}
+    return cached;
+   };
    const rootRefs=(d:typeof days[number]):LaloHistorical[]=>{
     if(d.date===date)return historical;
     const refs:LaloHistorical[]=[];
     const last=oldNight.filter(p=>p.date<d.date).slice(-1)[0];
     const beforeLast=last&&oldNight.filter(p=>p.date<last.date).slice(-1)[0];
-    if(last&&beforeLast)refs.push({date:last.date,period:'D−1',sheet:buildSheet(last.heads,beforeLast.heads)});
+    if(last&&beforeLast)refs.push({date:last.date,period:'D−1',sheet:rootSheet(last,beforeLast)});
     const week=shiftDay(d.date,-7),weekly=byDate.get(week);
     const before=oldNight.filter(p=>p.date<week).slice(-1)[0];
-    if(weekly&&before&&hasDrawResults(weekly.heads))refs.push({date:week,period:'D−7',sheet:buildSheet(weekly.heads,before.heads)});
+    if(weekly&&before&&hasDrawResults(weekly.heads))refs.push({date:week,period:'D−7',sheet:rootSheet(weekly,before)});
     return refs;
    };
    const localAux=new Map(auxDays.map(a=>[a.date,a]));
@@ -118,12 +127,17 @@ export function useMatchStudyData(input:Input):PreparedStudy{
     localAux.set(d,result);return result;
    };
    // Read disk entries before any network request; newest days are prepared first.
-   const inputs=selected.map(d=>{
+   const inputs: {d:typeof days[number];refs:LaloHistorical[];board:DailySheet;signature:string;persist:boolean}[]=[];
+   for(const d of selected){
+    if(!alive)return;
     const refs=rootRefs(d),board=targetSheet(d);
     const local=d.date===date&&d.date>=today?currentAux:null;
     const signature=compactSignature(d.heads,board.columns,[refs,local?.yesterday,local?.today,local?.sourceDate]);
-    return {d,refs,board,signature,persist:d.date<today};
-   });
+    inputs.push({d,refs,board,signature,persist:d.date<today});
+    await pause();
+   }
+   if(!alive)return;
+   await trimCache(selectedDates);
    const cached=await Promise.all(inputs.map(x=>getCached(x.d.date,x.signature,x.persist,force)));
    if(!alive)return;
    const output=cached.filter((x):x is PreparedDay=>!!x);
@@ -180,7 +194,7 @@ export function useMatchStudyData(input:Input):PreparedStudy{
        const frame:MatchFrame={date:d.date,turn:t,engine:e,count:ranked?.length||0,published,
         available:!!ranked,captured:!!saved,hits:ranked?compareRankedHeads(ranked,d.heads,t,k):[]};
        if(plus){frame.sheet={columns:board.columns,heads:{},matches:{}};frame.routes={};
-        for(const hit of frame.hits){const row=plus.ranks[k].find(r=>r.family===hit.family);if(row)frame.routes[hit.family]=row.paths}}
+        for(const hit of frame.hits){const row=plus.ranks[k].find(r=>r.family===hit.family);if(row)frame.routes[hit.family]=row.paths.map(p=>({sourceId:p.sourceId,value:p.value,path:p.path.map(c=>({row:c.row,col:c.col}))}))}}
        if(cut)frame.aux=cut;
        day.frames[k].push(frame);
        if(!frame.available&&!(e==='hoy'&&t==='Previa'))day.complete=false;
@@ -199,5 +213,5 @@ export function useMatchStudyData(input:Input):PreparedStudy{
   return()=>{alive=false};
  },[inputKey,refresh]);
  return {...(state.date===date?state:{date,dates:selected.map(d=>d.date),days:[],progress:0,working:true,error:''}),
-  working:loading||state.date!==date||state.working,retry:()=>setRefresh(n=>n+1)};
+  working:!!date&&(loading||state.date!==date||state.working),retry:()=>setRefresh(n=>n+1)};
 }
