@@ -123,7 +123,8 @@ function pairs(history:AuxiliaryHistorical[],t:Turno,offset:number):Pair[]{
  const b=week.aux.events[3].filter(e=>e.turn===t&&e.jur!=='Montevideo');
  const matched=a.flatMap(e=>{const w=b.find(x=>x.jur===e.jur);return w?[{a:e,b:w}]:[]}).sort((x,y)=>x.a.jur.localeCompare(y.a.jur));
  if(matched.length<2)return [];
- return matched.map((x,i)=>({recent:forms(x.a.paths),week:forms(matched[(i+offset)%matched.length].b.paths)})).filter(x=>x.recent.length&&x.week.length);
+ const rotation=offset===0?0:1+(offset-1)%(matched.length-1);
+ return matched.map((x,i)=>({recent:forms(x.a.paths),week:forms(matched[(i+rotation)%matched.length].b.paths)})).filter(x=>x.recent.length&&x.week.length);
 }
 function evidence(x:Form,ps:Pair[]){
  let near=0,continuity=0,trajectory=0;
