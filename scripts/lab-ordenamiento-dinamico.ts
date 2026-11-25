@@ -110,6 +110,7 @@ function score(r:Frame,history:DayRow[]){
  const baseline=rankings.actual.slice(0,10);
  const result:Record<string,Result>={},selected:Record<string,string>={},weights:Record<string,Record<string,number>>={};
  const put=(rule:string,ranking:F[])=>{
+  if(!Array.isArray(ranking))throw Error('Regla fuera del catálogo: '+rule);
   const full=sameBudget(ranking,baseline);
   rankings[rule]=full;
   const chosen=full.slice(0,baseline.length),values=new Set(chosen.flatMap(f=>f.v.split('/')));
@@ -122,7 +123,7 @@ function score(r:Frame,history:DayRow[]){
   const sample=history.slice(-w),available=sample.length===w;
   const eligible=activeRules(kind);
   const gain=(rule:string,rows:DayRow[])=>rows.reduce((n,x)=>n+x.results[rule].hits-x.results.actual.hits,0);
-  const direct=choose(history,w);
+  const direct=choose(history,w,kind);
   selected['adapt_'+w]=direct;
   put('adapt_'+w,rankings[direct]);
   // Stable: positive paired gains in both halves, total at least two.
@@ -200,12 +201,12 @@ async function build(d:string):Promise<Frame[]>{
 const empty=():Aggregate=>({cuts:0,hits:0,expected:0,exposure:0,familyCount:0,any:0,heads:0,conditional:0});
 function add(a:Aggregate,b:Result){a.cuts++;for(const k of ['hits','expected','exposure','familyCount','any','heads','conditional'] as const)a[k]+=b[k];}
 const key=(r:Pick<DayRow,'engine'|'kind'|'turn'>)=>[r.engine,r.kind,r.turn].join('|');
-function choose(past:DayRow[],w:number):string{
+function choose(past:DayRow[],w:number,kind:number):string{
  const sample=past.slice(-w);
  if(sample.length<w)return 'actual';
  let selected='actual',best=0;
- for(const rule of Object.keys(sample[0].results)){
-  if(rule==='actual'||rule==='control')continue;
+ for(const rule of activeRules(kind)){
+  if(rule==='actual')continue;
   // Paired excess vs fixed baseline. Equal exposure by construction.
   const gain=sample.reduce((n,r)=>n+r.results[rule].hits-r.results.actual.hits,0);
   if(gain>best){selected=rule;best=gain;}
@@ -251,4 +252,30 @@ async function main(){
   console.log('ORDER_METRICS',JSON.stringify({engine,kind,aggregate:subset(aggregate),choices:subset(choices),positionStats:subset(positionStats),weightSums:subset(weightSums)}));
  }
 }
+function selfTest(){
+ for(const kind of [2,3,4]){
+  const fs:F[]=Array.from({length:24},(_,i)=>{
+   const v=String(i+1).padStart(kind,'0'),rev=[...v].reverse().join('');
+   return {v:kind===4?v:[v,rev].sort().join('/'),rank:i+1,d1:i%3,d7:i%5,blocks:i%4+1,sources:i%2+1,age:i%3};
+  }).filter((f,i,a)=>a.findIndex(x=>x.v===f.v)===i).map(f=>({...f,v:[...new Set(f.v.split('/'))].join('/')}));
+  const r:Frame={date:'2026-11-24',turn:'Nocturno',engine:'lalo',kind,fs,heads:['0001','0002','0010','0013','0021'],physical:new Set(fs.flatMap(f=>f.v.split('/')))};
+  const initial=score(r,[]);
+  const alt=activeRules(kind).find(x=>x!=='actual')!;
+  const results={...initial.result};
+  for(const rule of Object.keys(results))results[rule]={...results[rule],hits:0};
+  results[alt]={...results[alt],hits:1};
+  results.adapt_5={...results.adapt_5,hits:5};
+  results.weighted_5={...results.weighted_5,hits:5};
+  const history:DayRow[]=Array.from({length:30},(_,i)=>({date:shiftDay(r.date,i-30),turn:r.turn,engine:r.engine,kind,results}));
+  const a=score(r,history),b=score({...r,heads:['9999','9998','9997','9996','9995']},history);
+  if(a.selected.adapt_5!==alt||a.selected.stable_5!==alt)throw Error('Regresión de catálogo');
+  for(const [rule,x] of Object.entries(a.result)){
+   if(x.exposure!==a.result.actual.exposure||x.familyCount!==a.result.actual.familyCount)throw Error('Regresión de exposición');
+   if(a.rankings[rule].map(x=>x.v).join('|')!==b.rankings[rule].map(x=>x.v).join('|'))throw Error('Fuga de resultado objetivo');
+   positions(emptyPosition(),a.rankings[rule],r.physical,r.heads,kind);
+  }
+ }
+ console.log('ORDER_SELF_TEST_OK');
+}
+try{selfTest();}catch(e){console.error(e);process.exit(1);}
 main().catch(e=>{console.error(e);process.exitCode=1});
