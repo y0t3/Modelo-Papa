@@ -24,11 +24,12 @@ import TurnTrendPanel from './TurnTrendPanel';
 import Vt3DiagnosticPanel from './Vt3DiagnosticPanel';
 import Vt4StudyPanel from './Vt4StudyPanel';
 import MatchStudyPanel from './MatchStudyPanel';
+import type {PreparedStudy} from '../matchStudyCache';
 import type {TrendEngine} from '../trendHistoryVt2';
 import type {TrendPeriod,TrendSnapshot} from '../trendVt2Journal';
 
 type Destination='hoja'|'predictiva'|'prediccion'|'papa'|'cabezas';
-type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
+type Props={matchPrepared:PreparedStudy;date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  sheet:DailySheet|null;historical:LaloHistorical[];visualDays:InfoVisualDay[];
  view:LaloView|null;onNavigate:(screen:Destination)=>void;
  auxDays:AuxGalleryDay[];currentAux:AuxGalleryDay|null;
@@ -72,7 +73,7 @@ const tips=[
  {key:'apuesta',title:'¿Lo que aparece es una apuesta?',body:'No. Los números que muestra la aplicación son para mirar y estudiar. Las jugadas de Lalo se anotan aparte, antes del sorteo.',to:'papa' as Destination,button:'Ver elecciones de Lalo'}
 ] as const;
 
-export default function InfoDashboard({date,turn,data,overview,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
+export default function InfoDashboard({matchPrepared,date,turn,data,overview,sheet,historical,visualDays,view,onNavigate,onTurnChange,onOpenFrame,
  selectedFrameId,onSelectFrame,movementMode,onMovementMode,
  expandedGuide,onExpandedGuide,auxDays,currentAux,auxMode,onAuxMode,
  auxPrediction,auxHistory,onOpenAuxDay,trackingAyer,trackingHoy,
@@ -124,7 +125,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       <Text style={[s.small,{color:c.subtext}]}>{selected?.subtitle}</Text>
      </View>
     </View>
-    {section==='coincidencias'?<MatchStudyPanel date={date} turn={turn} data={data} sheet={sheet} historical={historical} history={statsHistory} historyBusy={statsBusy} auxDays={auxDays} currentAux={currentAux}/>:null}
+    {section==='coincidencias'?<MatchStudyPanel date={date} turn={turn} prepared={matchPrepared}/>:null}
     {section==='estadisticas'?<HeadStatStudy date={date} turn={turn}
      history={statsHistory} historyBusy={statsBusy} historyProgress={statsProgress}
      mode={statsMode} onMode={onStatsMode}

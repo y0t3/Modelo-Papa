@@ -1,59 +1,29 @@
 import React,{useEffect,useMemo,useState} from 'react';
 import {ActivityIndicator,Pressable,ScrollView,Text,View,StyleSheet} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {TURNOS,diaVacio} from '../domain';
-import type {CabezasDia,Turno} from '../domain';
+import {TURNOS} from '../domain';
+import type {Turno} from '../domain';
 import {STAT_JURS} from '../headStats';
-import {shiftDay,isoToDisplay} from '../dates';
-import {hasDrawResults,hasNocturnoBase} from '../drawHistory';
-import {buildSheet} from '../sheet';
-import type {DailySheet} from '../sheet';
-import type {LaloHistorical,LaloKind,LaloRoute} from '../motorLalo';
-import {buildMotorLaloApp,buildMotorLaloAuxiliarApp} from '../vt4Independent';
-import type {AuxiliarHistory} from '../motorLaloAuxiliar';
-import {auxAtCut,extractAuxHistoryMode} from '../auxTemporalModes';
-import {auxiliaryBoard} from '../auxSantiagoNeuquen';
-import type {AuxiliaryHeads} from '../auxSantiagoNeuquen';
-import {fetchAuxiliaryBaseForDate,fetchAuxiliaryHeads} from '../auxSantiagoSource';
-import type {AuxGalleryDay} from '../infoAuxGallery';
-import type {HistoricHeadsDay} from '../historicalHeadFrequency';
-import {fusionarNocturnasPorJur} from '../nocturnaAnteriorPorJur';
-import {MATCH_ENGINES,MATCH_LABELS,MATCH_KINDS,plusMatchRanks,auxMatchRanks,compareRankedHeads,validHeadCount} from '../matchStudy';
-import type {MatchEngine,MatchHit} from '../matchStudy';
-import {readMatchSnapshot} from '../matchStudyStorage';
+import {isoToDisplay} from '../dates';
+import type {LaloKind} from '../motorLalo';
+import {MATCH_ENGINES,MATCH_LABELS,MATCH_KINDS} from '../matchStudy';
+import type {MatchEngine} from '../matchStudy';
+import type {PreparedStudy} from '../matchStudyCache';
+import {selectMatchFrames} from '../matchStudyCache';
 import InlineFamilyPaths from './InlineFamilyPaths';
 import {useLaloTheme} from './LaloTheme';
 
-type Props={date:string;turn:Turno;data:CabezasDia|null;sheet:DailySheet|null;historical:LaloHistorical[];
- history:HistoricHeadsDay[];historyBusy:boolean;auxDays:AuxGalleryDay[];currentAux:AuxGalleryDay|null};
-type Frame={date:string;turn:Turno;engine:MatchEngine;count:number;published:number;
- available:boolean;captured:boolean;hits:MatchHit[];sheet?:DailySheet;aux?:AuxiliaryHeads;
- routes?:Record<string,LaloRoute[]>};
+type Props={date:string;turn:Turno;prepared:PreparedStudy};
 type Filter={kind:LaloKind;engine:MatchEngine|'todos';turn:Turno|'todos';period:1|7|15|30;jur:string;all:boolean};
 const PREF='lalo:coincidencias:filtros:v1';
 const short=(d:string)=>isoToDisplay(d).slice(0,5);
 const absTurn:Record<Turno,string>={Previa:'Pre.',Primera:'Pri.',Matutino:'Mat.',Vespertino:'Vesp.',Nocturno:'Noc.'};
-const pause=()=>new Promise<void>(r=>setTimeout(r,0));
-const auxCache=new Map<string,Promise<AuxGalleryDay|null>>();
-function makeAux(date:string,heads:CabezasDia):Promise<AuxGalleryDay|null>{
- const old=auxCache.get(date);if(old)return old;
- const promise=Promise.all([fetchAuxiliaryBaseForDate(date).catch(()=>null),fetchAuxiliaryHeads(date).catch(()=>null)])
-  .then(([y,t])=>{
-   if(!y||!t)auxCache.delete(date);
-   return {date,heads,yesterday:y?.heads||null,today:t?.heads||null,sourceDate:y?.sourceDate||null};
-  }).catch(()=>{auxCache.delete(date);return null});
- auxCache.set(date,promise);return promise;
-}
-export default function MatchStudyPanel({date,turn,data,sheet,historical,history,historyBusy,auxDays,currentAux}:Props){
+export default function MatchStudyPanel({date,turn,prepared}:Props){
  const {colors:c,mode}=useLaloTheme();
  const [f,setF]=useState<Filter>({kind:'vt2',engine:'todos',turn,period:7,jur:'Todas',all:false});
  const [prefsReady,setPrefsReady]=useState(false);
- const [frames,setFrames]=useState<Frame[]>([]);
- const [progress,setProgress]=useState(0),[working,setWorking]=useState(false);
  const [opened,setOpened]=useState<string|null>(null),[rank,setRank]=useState<number|null>(null);
  const [mini,setMini]=useState<string|null>(null);
- const [retry,setRetry]=useState(0);
- const [error,setError]=useState('');
  const green=mode==='dark'?'#78E2AA':'#167445',greenBg=mode==='dark'?'#205A46':'#DDF4E7';
  const orange=mode==='dark'?'#FFC47F':'#8F4C08',orangeBg=mode==='dark'?'#65451F':'#FFF0DA';
  useEffect(()=>{let live=true;void AsyncStorage.getItem(PREF).then(raw=>{
@@ -64,122 +34,13 @@ export default function MatchStudyPanel({date,turn,data,sheet,historical,history
    ['Todas',...STAT_JURS].includes(p.jur)&&typeof p.all==='boolean')setF(p);
  }).catch(()=>{}).finally(()=>{if(live)setPrefsReady(true)});return()=>{live=false}},[]);
  useEffect(()=>{if(prefsReady)void AsyncStorage.setItem(PREF,JSON.stringify(f)).catch(()=>{})},[f,prefsReady]);
- const days=useMemo(()=>{
-  const map=new Map(history.filter(d=>d.date<date).map(d=>[d.date,d.heads]));
-  if(date&&data)map.set(date,data);
-  return [...map].sort((a,b)=>a[0].localeCompare(b[0])).map(([date,heads])=>({date,heads}));
- },[history,date,data]);
- const selectedDays=useMemo(()=>days.filter(d=>hasDrawResults(d.heads)).slice(-f.period).reverse(),[days,f.period]);
+ const selectedDates=useMemo(()=>prepared.dates.slice(0,f.period),[prepared.dates,f.period]);
+ const selectedDays=useMemo(()=>selectedDates.map(date=>({date})),[selectedDates]);
  const engines=useMemo(()=>f.engine==='todos'?[...MATCH_ENGINES]:[f.engine],[f.engine]);
  const turns=useMemo(()=>f.turn==='todos'?[...TURNOS]:[f.turn],[f.turn]);
+ const frames=useMemo(()=>selectMatchFrames(prepared.days,selectedDates,f.kind,engines,turns),[prepared.days,selectedDates,f.kind,engines,turns]);
+ const historyBusy=false,working=prepared.working,progress=prepared.progress,error=prepared.error;
  useEffect(()=>{setRank(null);setMini(null);setOpened(null)},[f.kind,f.engine,f.turn,f.period,f.jur,date]);
- useEffect(()=>{
-  let alive=true;setFrames([]);setProgress(0);setError('');
-  if(!date||!data||historyBusy||!prefsReady){setWorking(false);return}
-  setWorking(true);
-  const run=async()=>{
-   const byDate=new Map(days.map(d=>[d.date,d]));
-   const sorted=days.filter(d=>d.date<date);
-   const oldNight=sorted.filter(d=>hasNocturnoBase(d.heads));
-   const targetSheet=(d:typeof days[number])=>{
-    if(d.date===date&&sheet)return sheet;
-    let previous=diaVacio();
-    for(const p of sorted){if(p.date>=d.date)break;previous=fusionarNocturnasPorJur(previous,p.heads)}
-    return buildSheet(d.heads,previous);
-   };
-   const rootRefs=(d:typeof days[number]):LaloHistorical[]=>{
-    if(d.date===date)return historical;
-    const refs:LaloHistorical[]=[];
-    const last=oldNight.filter(p=>p.date<d.date).slice(-1)[0];
-    const beforeLast=last&&oldNight.filter(p=>p.date<last.date).slice(-1)[0];
-    if(last&&beforeLast)refs.push({date:last.date,period:'D−1',sheet:buildSheet(last.heads,beforeLast.heads)});
-    const week=shiftDay(d.date,-7),weekly=byDate.get(week);
-    const before=oldNight.filter(p=>p.date<week).slice(-1)[0];
-    if(weekly&&before&&hasDrawResults(weekly.heads))refs.push({date:week,period:'D−7',sheet:buildSheet(weekly.heads,before.heads)});
-    return refs;
-   };
-   const localAux=new Map(auxDays.map(a=>[a.date,a]));
-   if(currentAux)localAux.set(currentAux.date,currentAux);
-   const getAux=async(d:string)=>{
-    const local=localAux.get(d);
-    if(local?.today&&local.yesterday)return local;
-    const source=byDate.get(d);
-    // A live partial source must never be frozen by the historical cache.
-    if(d===date)return local||null;
-    if(!source)return local||null;
-    const fetched=await makeAux(d,source.heads);
-    if(!fetched)return local||null;
-    const result={...fetched,yesterday:local?.yesterday||fetched.yesterday,today:local?.today||fetched.today,
-     sourceDate:local?.sourceDate||fetched.sourceDate};localAux.set(d,result);return result;
-   };
-   const output:Frame[]=[];
-   for(let i=0;i<selectedDays.length;i++){
-    if(!alive)return;
-    const d=selectedDays[i],refs=rootRefs(d),board=targetSheet(d);
-    const auxNeeded=engines.some(e=>e!=='lalo');
-    const [raw,refAux]=auxNeeded?await Promise.all([getAux(d.date),Promise.all(refs.map(r=>getAux(r.date))) ]):[null,[]] as const;
-    if(!alive)return;
-    for(const t of turns){
-     const published=validHeadCount(d.heads,t);
-     if(!published)continue;
-     for(const e of engines){
-      if(!alive)return;
-      const frame:Frame={date:d.date,turn:t,engine:e,count:0,published,available:false,captured:false,hits:[]};
-      const saved=await readMatchSnapshot(d.date,t,e);
-      try{
-       if(!alive)return;
-       if(e==='lalo'){
-        // The current APP uses D-1/D-7 and the same VT4 wrapper.
-        // Do not invent a historical ranking if its D-1 reference is missing.
-        if(refs.some(r=>r.period==='D−1')){
-         const view=buildMotorLaloApp(board,d.date,t,refs);
-         const ranked=saved?.ranks[f.kind]||plusMatchRanks(view)[f.kind];
-         frame.available=true;frame.count=ranked.length;
-         frame.hits=compareRankedHeads(ranked,d.heads,t,f.kind);
-         frame.sheet=board;frame.routes={};
-         for(const hit of frame.hits){
-          const row=view.ranks[f.kind].find(r=>r.family===hit.family);
-          if(row)frame.routes[hit.family]=row.paths;
-         }
-        }
-       }else{
-        const mode=e==='ayer'?'anterior':'intrajornada';
-        const source=e==='ayer'?raw?.yesterday:raw?.today;
-        if(source&&!(e==='hoy'&&t==='Previa')){
-         const cut=auxAtCut(source,t,mode);
-         if(auxiliaryBoard(cut,t).cells.length){
-          const prior:AuxiliarHistory[]=[];
-          let complete=refs.some(r=>r.period==='D−1');
-          refs.forEach((r,index)=>{
-           const a=refAux[index],h=e==='ayer'?a?.yesterday:a?.today,old=byDate.get(r.date);
-           if(!h||!old){complete=false;return}
-           prior.push({date:r.date,period:r.period,heads:h,
-            ...(e==='ayer'&&a?.sourceDate?{sourceDate:a.sourceDate}:{}),
-            aux:extractAuxHistoryMode(r.date,h,old.heads,mode)});
-          });
-          if(complete||f.kind==='vt4'){
-           const view=buildMotorLaloAuxiliarApp(d.date,t,cut,complete?prior:[]);
-           const ranked=saved?.ranks[f.kind]||auxMatchRanks(view)[f.kind];
-           frame.available=true;frame.count=ranked.length;frame.aux=cut;
-           frame.hits=compareRankedHeads(ranked,d.heads,t,f.kind);
-          }
-         }
-        }
-       }
-      }catch{frame.available=false;frame.hits=[]}
-      if(saved){frame.available=true;frame.captured=true;frame.count=saved.ranks[f.kind].length;
-       frame.hits=compareRankedHeads(saved.ranks[f.kind],d.heads,t,f.kind)}
-      output.push(frame);
-     }
-     await pause();
-    }
-    if(alive){setFrames([...output]);setProgress(i+1)}
-   }
-  };
-  void run().catch(()=>{if(alive)setError('No se pudo completar el historial. Probá actualizar.')})
-   .finally(()=>{if(alive)setWorking(false)});
-  return()=>{alive=false};
- },[date,data,sheet,historical,historyBusy,days,selectedDays,engines,turns,f.kind,prefsReady,auxDays,currentAux?.date,currentAux?.yesterday,currentAux?.today,currentAux?.sourceDate,retry]);
  const relevant=useMemo(()=>frames.flatMap(frame=>frame.available?frame.hits.filter(h=>f.jur==='Todas'||h.jur===f.jur).map(hit=>({frame,hit})):[]),[frames,f.jur]);
  const top=relevant.filter(x=>x.hit.rank<=10),outside=relevant.length-top.length;
  const counts=Array.from({length:10},(_,i)=>top.filter(x=>x.hit.rank===i+1).length);
@@ -199,9 +60,9 @@ export default function MatchStudyPanel({date,turn,data,sheet,historical,history
   {label('Turno')}<View style={s.chips}>{(['todos',...TURNOS] as const).map(t=>chip(t==='todos'?'Todos':t,f.turn===t,()=>setF(x=>({...x,turn:t}))))}</View>
   {label('Jornadas')}<View style={s.chips}>{([1,7,15,30] as const).map(p=>chip(p===1?'Última':String(p),f.period===p,()=>setF(x=>({...x,period:p}))))}</View>
   {label('Jurisdicción')}<View style={s.chips}>{['Todas',...STAT_JURS].map(j=>chip(j,f.jur===j,()=>setF(x=>({...x,jur:j}))))}</View>
-  {historyBusy||working?<View style={s.chips}><ActivityIndicator color={c.accent}/><Text style={{color:c.subtext,fontSize:12}}>{historyBusy?'Cargando jornadas anteriores…':'Revisando '+progress+' de '+selectedDays.length+' jornadas…'}</Text></View>:null}
+  {historyBusy||working?<View style={s.chips}><ActivityIndicator color={c.accent}/><Text style={{color:c.subtext,fontSize:12}}>{historyBusy?'Cargando jornadas anteriores…':'Preparando historial '+progress+' de '+prepared.dates.length+' jornadas…'}</Text></View>:null}
   {error?<Text style={{color:orange}}>{error}</Text>:null}
-  {!working&&!historyBusy&&coverage<frames.length?chip('Reintentar hojas faltantes',false,()=>setRetry(n=>n+1)):null}
+  {!working&&!historyBusy&&(coverage<frames.length||error)?chip('Reintentar hojas faltantes',false,prepared.retry):null}
   <View style={s.chips}>{[{title:'Top 10',value:String(top.length),color:green},{title:'Fuera del Top',value:String(outside),color:orange},{title:'Más repetida',value:peak||'—',color:c.accent}].map(x=><View key={x.title} style={[s.metric,card]}>
    <Text style={{color:c.subtext,fontSize:10,fontWeight:'700'}}>{x.title}</Text><Text style={{color:x.color,fontSize:19,fontWeight:'900',textAlign:'center'}}>{x.value}</Text>
   </View>)}</View>
@@ -246,7 +107,7 @@ export default function MatchStudyPanel({date,turn,data,sheet,historical,history
    <Text style={[s.title,{color:c.accent}]}>Jornada por jornada</Text>
    <View style={s.chips}>{chip('Top 10',!f.all,()=>{setF(x=>({...x,all:false}));setRank(null)})}{chip('Todas las coincidencias',f.all,()=>{setF(x=>({...x,all:true}));setRank(null)})}</View>
    {rank!==null?chip((rank===-1?'Fuera del Top 10':'Puesto #'+rank)+' · quitar filtro',true,()=>setRank(null)):null}
-   {!selectedDays.length&&!historyBusy?<Text style={{color:c.subtext}}>Todavía no hay jornadas con resultados disponibles.</Text>:null}
+   {!selectedDays.length&&!working?<Text style={{color:c.subtext}}>Todavía no hay jornadas con resultados disponibles.</Text>:null}
    {selectedDays.map(d=>{
     const list=shown.filter(x=>x.frame.date===d.date);
     const open=dateOpen===d.date;
@@ -264,7 +125,7 @@ export default function MatchStudyPanel({date,turn,data,sheet,historical,history
           <Text style={{color:hit.rank<=10?green:orange,fontSize:10,fontWeight:'800'}}>#{hit.rank}{f.turn==='todos'?' '+absTurn[frame.turn]:''}</Text>
           <Text style={{color:c.text,fontSize:12,fontWeight:'900'}}>{hit.family}</Text>
          </View>)}
-         {!matches.length?<Text style={{color:c.muted,fontSize:11,paddingTop:6}}>{!records.length?'Sin cotejar':!records.some(x=>x.available)?'Sin hoja o memoria':'Sin coincidencias'}</Text>:null}
+         {!matches.length?<Text style={{color:c.muted,fontSize:11,paddingTop:6}}>{!records.length?(working?'Preparando…':'Sin cotejar'):!records.some(x=>x.available)?'Sin hoja o memoria':'Sin coincidencias'}</Text>:null}
         </View>
        </View>
       })}

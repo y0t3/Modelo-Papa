@@ -45,6 +45,7 @@ import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import {buildHeadHighlights} from './src/headHighlights';
 import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
+import {useMatchStudyData} from './src/useMatchStudyData';
 import {plusMatchRanks,auxMatchRanks} from './src/matchStudy';
 import {captureMatchSnapshot} from './src/matchStudyStorage';
 import type {StudySection} from './src/ui/InfoDashboard';
@@ -132,6 +133,7 @@ function LaloApp(){
 
  const [visualDays,setVisualDays]=useState<InfoVisualDay[]>([]);
  const [frequencyDays,setFrequencyDays]=useState<{date:string;heads:CabezasDia}[]>([]);
+ const [matchHistory,setMatchHistory]=useState<{date:string;heads:CabezasDia}[]>([]);
  const [frequencyBusy,setFrequencyBusy]=useState(false);
  const [frequencyProgress,setFrequencyProgress]=useState(0);
  const [statMode,setStatMode]=useState<StatMode>('atrasados');
@@ -231,7 +233,7 @@ function LaloApp(){
   const d=requested||date;
   if(!d){Alert.alert('Fecha inválida','Usá DD/MM/AAAA.');return}
   const request=++auxInfoRequest.current;
-  setInfoAuxDays([]);setFrequencyDays([]);setFrequencyBusy(true);setFrequencyProgress(0);
+  setInfoAuxDays([]);setFrequencyDays([]);setMatchHistory([]);setFrequencyBusy(true);setFrequencyProgress(0);
   try{
    setBusy(true);
    // Una carga = una versión de cada fecha: evitar llamadas repetidas al
@@ -337,8 +339,9 @@ function LaloApp(){
      if(auxInfoRequest.current!==request)return;
      for(const item of batch)if(item)found.push(item);
      setFrequencyProgress(Math.min(pos+batch.length,candidates.length));
+     if(pos+batch.length===48&&found.filter(x=>hasDrawResults(x.heads)).length>=38)setMatchHistory([...found]);
     }
-    if(auxInfoRequest.current===request)setFrequencyDays(found);
+    if(auxInfoRequest.current===request){setFrequencyDays(found);setMatchHistory(prev=>prev.length?prev:found);}
    })().catch(()=>{}).finally(()=>{
     if(auxInfoRequest.current===request)setFrequencyBusy(false);
    });
@@ -499,6 +502,7 @@ function LaloApp(){
   const interval=setInterval(()=>{void update()},120000);
   return ()=>{cancelled=true;clearInterval(interval)};
  },[date,baseHeads,busy]);
+ const matchPrepared=useMatchStudyData({date:date||'',today:today(),data,sheet,historical:hist,history:matchHistory,loading:busy||(!matchHistory.length&&frequencyBusy),auxDays:infoAuxDays,currentAux:data&&date?{date,heads:data,yesterday:auxHeads,today:auxToday,sourceDate:auxSourceDate}:null});
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
  // Cada modo conserva su ranking y memoria propios. Nunca mezclamos
@@ -684,7 +688,7 @@ function LaloApp(){
      setAuxTodayPast([]);setAuxTodayError(null);
      ++auxInfoRequest.current;setBusy(false);
      selectedTurnRef.current=null;setSelectedTurn(null);
-     setInfoAuxDays([]);setVisualDays([]);setFrequencyDays([]);setFrequencyBusy(false);setFrequencyProgress(0);setFocused(null);
+     setInfoAuxDays([]);setVisualDays([]);setFrequencyDays([]);setMatchHistory([]);setFrequencyBusy(false);setFrequencyProgress(0);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
     <Pressable accessibilityRole="button" accessibilityLabel="Ir al día siguiente"
@@ -824,7 +828,7 @@ function LaloApp(){
     <HeadsTable data={data} highlights={headHighlights.merged}
      sourceLabels={headHighlights.labels} onOpenHead={openHeadInHoja}/>
    </>:
-    <InfoDashboard date={date||''} turn={target} data={data} overview={overview} sheet={sheet}
+    <InfoDashboard matchPrepared={matchPrepared} date={date||''} turn={target} data={data} overview={overview} sheet={sheet}
      historical={hist} visualDays={visualDays} view={motor} onNavigate={navigateTo}
      statsHistory={frequencyDays} statsBusy={frequencyBusy} statsProgress={frequencyProgress}
      statsMode={statMode} onStatsMode={setStatMode}
