@@ -1,0 +1,32 @@
+name: LAB VT3 independencia fisica AUX AYER
+on:
+  push:
+    branches: [lab/vt3-independencia-fisica-25nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        rango:
+          - {nombre: marzo-2024, inicio: '2024-03-01', fin: '2024-03-31'}
+          - {nombre: abril-2024, inicio: '2024-04-01', fin: '2024-04-30'}
+          - {nombre: referencia-julio-2024, inicio: '2024-07-01', fin: '2024-07-31'}
+          - {nombre: octubre-2025, inicio: '2025-10-01', fin: '2025-10-31'}
+          - {nombre: referencia-agosto-2026, inicio: '2026-08-01', fin: '2026-08-31'}
+    name: ${{ matrix.rango.nombre }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Contrastar independencia solapamiento y grupos
+        env:
+          ADM_FROM: ${{ matrix.rango.inicio }}
+          ADM_TO: ${{ matrix.rango.fin }}
+        run: npx --yes tsx scripts/lab-vt3-independencia-fisica.ts
