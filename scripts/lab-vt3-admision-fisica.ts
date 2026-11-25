@@ -101,6 +101,25 @@ function tops(fs:Family[],d:string,t:Turno){
  }
  return out;
 }
+// Primary comparisons frozen on discovery data. Other criteria are descriptive.
+const primary:Record<string,string>={lalo:'bloques',ayer:'compactos',hoy:'historico_mas_fisico'};
+type Paired={cuts:number;heads:number;both:number;onlyActual:number;onlyVariant:number;neither:number;exclusive:number;expected:number;controlHits:number;variantHits:number;actualHits:number};
+const paired:Record<string,Paired>={},daily:Record<string,Paired>={};
+const emptyPair=():Paired=>({cuts:0,heads:0,both:0,onlyActual:0,onlyVariant:0,neither:0,exclusive:0,expected:0,controlHits:0,variantHits:0,actualHits:0});
+function pairAudit(engine:string,t:Turno,d:string,top:Record<string,Family[]>,actual:string[]){
+ const a=new Set(top.actual.flatMap(f=>f.values)),b=new Set(top[primary[engine]].flatMap(f=>f.values)),control=new Set(top.control.flatMap(f=>f.values));
+ if(a.size!==b.size||a.size!==control.size)throw Error('Cobertura diferente');
+ const exclusive=[...b].filter(v=>!a.has(v)).length;
+ const keys=[[paired,engine],[paired,engine+'|'+t],[daily,d+'|'+engine]] as const;
+ for(const [store,key] of keys){
+  const p=store[key]||(store[key]=emptyPair());p.cuts++;p.heads+=actual.length;p.exclusive+=exclusive;p.expected+=actual.length*a.size/1000;
+  for(const x of actual){
+   const aa=a.has(x),bb=b.has(x);
+   p.actualHits+=Number(aa);p.variantHits+=Number(bb);p.controlHits+=Number(control.has(x));
+   if(aa&&bb)p.both++;else if(aa)p.onlyActual++;else if(bb)p.onlyVariant++;else p.neither++;
+  }
+ }
+}
 function audit(engine:string,t:Turno,d:string,fs:Family[],heads:string[]){
  if(!fs.length)return;
  const actual=heads.map(h=>h.slice(-3)),all=new Set(fs.flatMap(f=>f.values)),formed=actual.filter(h=>all.has(h)).length;
@@ -112,7 +131,9 @@ function audit(engine:string,t:Turno,d:string,fs:Family[],heads:string[]){
   }
  };
  add('universo',fs);add('admitidas',fs.filter(f=>f.admitted));add('descartadas',fs.filter(f=>!f.admitted));
- for(const [rule,group] of Object.entries(tops(fs,d,t)))add('top_'+rule,group);
+ const top=tops(fs,d,t);
+ pairAudit(engine,t,d,top,actual);
+ for(const [rule,group] of Object.entries(top))add('top_'+rule,group);
  for(const f of fs){
   const v=f.values[0],mult=new Set(v).size,blocks=f.blocks.size===1?'1':f.blocks.size===2?'2':'3+';
   const key=[engine,t,mult,blocks,f.sources.size===1?'una':'varias',f.admitted?'admitida':'descartada'].join('|');
@@ -185,7 +206,8 @@ async function main(){
   }
  }
  if(!stats['lalo|universo']?.cuts)throw Error('Sin cortes');
- console.log('ADM_JSON_START');console.log(JSON.stringify({from:FROM,to:TO,days,skips,stats}));console.log('ADM_JSON_END');
+ console.log('ADM_JSON_START');console.log(JSON.stringify({from:FROM,to:TO,days,skips,stats,primary,paired}));console.log('ADM_JSON_END');
+ for(const [key,metric] of Object.entries(daily))console.log('ADM_PAIRED_DAY',JSON.stringify({key,metric}));
  for(const engine of ['lalo','ayer','hoy']){
   const subset=<T>(x:Record<string,T>)=>Object.fromEntries(Object.entries(x).filter(([k])=>k.startsWith(engine+'|')));
   console.log('ADM_DETAIL',JSON.stringify({engine,byTurn:subset(byTurn),strata:subset(strata)}));
