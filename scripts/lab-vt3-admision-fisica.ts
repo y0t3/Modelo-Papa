@@ -131,8 +131,8 @@ function audit(engine:string,t:Turno,d:string,fs:Family[],heads:string[]){
   for(const admitted of [true,false])add((admitted?'admitidas_':'descartadas_')+name,fs.filter(f=>f.admitted===admitted&&test(f)));
  }
 }
-async function build(d:string):Promise<void>{
- const current=await draw(d);if(!hasDrawResults(current))return;
+async function build(d:string):Promise<number>{
+ const current=await draw(d);if(!hasDrawResults(current))return 0;
  const week=shiftDay(d,-7);
  const [previous,weekly,beforeWeek,noct]=await Promise.all([loadPreviousDraws(d,2,draw),draw(week),loadPreviousDraws(week,1,draw),nocturnaAnteriorPorJur(d,draw)]);
  const last=previous[1],before=previous[0];
@@ -148,9 +148,11 @@ async function build(d:string):Promise<void>{
   }catch{return null}
  }));
 
+ let completeCuts=0;
  for(const t of TURNOS){
   const heads=JURS.filter(j=>j!=='Montevideo').map(j=>current[t]?.[j]||'');
   if(!heads.every(x=>/^\d{4}$/.test(x)))continue;
+  completeCuts++;
   const view=buildMotorLalo(sheet,d,t,hist);
   audit('lalo',t,d,pool(plusRoutes(sheet.columns.slice(0,TURNOS.indexOf(t)+1)),view.ranks.vt3.map(f=>f.family)),heads);
   for(const input of auxInputs){
@@ -161,6 +163,7 @@ async function build(d:string):Promise<void>{
    audit(engine,t,d,pool(routes,ranks[3].map(f=>f.family)),heads);
   }
  }
+ return completeCuts;
 }
 function selfTest(){
  const routes=plusRoutes([{id:'p',values:['12','34','56','78','90','12']}]);
@@ -176,7 +179,7 @@ async function main(){
  for(let d=FROM;d<=TO;d=shiftDay(d,1)){
   if(new Date(d+'T12:00:00Z').getUTCDay()===0)continue;
   // Fail loudly on broken invariants. Skip only unavailable source data.
-  try{await build(d);days++;}catch(e){
+  try{if(await build(d))days++;}catch(e){
    if(/Ruta física inválida|Histórica sin ruta física|Cobertura diferente/.test(String(e)))throw e;
    skips.push({date:d,error:String(e)});
   }
