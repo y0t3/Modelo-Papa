@@ -1,0 +1,32 @@
+name: LAB VT3 evolucion geometrica AUX AYER
+on:
+  push:
+    branches: [lab/vt3-evolucion-geometrica-25nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        rango:
+          - {nombre: enero-2025, inicio: '2025-01-01', fin: '2025-01-31'}
+          - {nombre: julio-2025, inicio: '2025-07-01', fin: '2025-07-31'}
+          - {nombre: noviembre-2025, inicio: '2025-11-01', fin: '2025-11-30'}
+          - {nombre: diciembre-2025, inicio: '2025-12-01', fin: '2025-12-31'}
+          - {nombre: enero-2026, inicio: '2026-01-01', fin: '2026-01-31'}
+    name: ${{ matrix.rango.nombre }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Comparar continuidad, desplazamiento y controles
+        env:
+          ADM_FROM: ${{ matrix.rango.inicio }}
+          ADM_TO: ${{ matrix.rango.fin }}
+        run: npx --yes tsx scripts/lab-vt3-evolucion-geometrica.ts
