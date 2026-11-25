@@ -223,11 +223,11 @@ const measures:Record<string,Result>={},days:Record<string,Record<string,number>
 const features:Record<string,{n:number;hit:number;expected:number}>={};
 const paired:Record<string,{both:number;onlyReal:number;onlyControl:number;neither:number}>={};
 const availability:Record<string,{cuts:number;matched:number;moving:number;events:number;movingEvents:number;ambiguous:number}>={};
-function select(fs:Family[],rows:{f:Family;x:number[]}[],d:string,t:Turno,eligible:boolean){
+function select(fs:Family[],rows:{f:Family;x:number[]}[],d:string,t:Turno,eligible:boolean,moving:boolean){
  const hist=ranked(fs.filter(f=>f.admitted),'actual',d,t),baseline=hist.slice(0,10);
  const tie=(a:Family,b:Family)=>hash(d+'|'+t+'|'+a.v)-hash(d+'|'+t+'|'+b.v)||a.v.localeCompare(b.v);
  const orders:Record<string,Family[]>={actual:hist,control:ranked(fs,'control',d,t),bloques:ranked(fs,'bloques',d,t),compactos:ranked(fs,'compactos',d,t),historico_mas_fisico:ranked(fs,'historico_mas_fisico',d,t)};
- for(let i=0;i<names.length;i++){const score=new Map(rows.map(r=>[r.f.v,r.x[i]]));orders[names[i]]=eligible?[...fs].sort((a,b)=>score.get(b.v)!-score.get(a.v)!||tie(a,b)):hist;}
+ for(let i=0;i<names.length;i++){const score=new Map(rows.map(r=>[r.f.v,r.x[i]]));orders[names[i]]=(i<2?eligible:moving)?[...fs].sort((a,b)=>score.get(b.v)!-score.get(a.v)!||tie(a,b)):hist;}
  const quota=new Map<number,number>();for(const f of baseline)quota.set(f.values.length,(quota.get(f.values.length)||0)+1);
  const out:Record<string,{top:Family[];full:Family[]}>={};
  for(const name of methods){const rem=new Map(quota),top:Family[]=[],rest:Family[]=[];
@@ -242,7 +242,7 @@ function audit(engine:string,t:Turno,d:string,fs:Family[],routes:Route[],heads:s
  const eligible=seq.length>0;
  const moving=seq.some(e=>e.pairs.some(p=>distance(p.old,p.recent)>=eps));
  if(!fs.length){recordMarks(engine,d,t,routes,heads);return;}
- const rows=profiles(engine,fs,routes,seq),picks=select(fs,rows,d,t,eligible);
+ const rows=profiles(engine,fs,routes,seq),picks=select(fs,rows,d,t,eligible,moving);
  const h=heads.map(x=>x.slice(-3)),all=exact(fs),formed=h.filter(x=>all.has(x)).length,a=exact(picks.actual.top);
  for(const key of [engine,engine+'|'+t]){
   const z=availability[key]||(availability[key]={cuts:0,matched:0,moving:0,events:0,movingEvents:0,ambiguous:0});
@@ -326,7 +326,7 @@ function selfTest(){
  const seq=sequence('lalo',priorMark('lalo',d,'Matutino',1),priorMark('lalo',d,'Matutino',2));
  const rows=profiles('lalo',fs,routes,seq),swapped=profiles('lalo',fs,routes,seq.map(e=>({...e,pairs:e.pairs.map(p=>({old:p.recent,recent:p.old}))})));
  for(let i=0;i<rows.length;i++)if(rows[i].x[3]!==swapped[i].x[4]||rows[i].x[5]!==swapped[i].x[5])throw Error('Control invertido no conserva eventos');
- const p=select(fs,rows,d,'Matutino',!!seq.length);for(const v of Object.values(p))if(exact(v.top).size!==exact(p.actual.top).size)throw Error('Cobertura diferente');
+ const p=select(fs,rows,d,'Matutino',!!seq.length,seq.some(e=>e.pairs.some(p=>distance(p.old,p.recent)>=eps)));for(const v of Object.values(p))if(exact(v.top).size!==exact(p.actual.top).size)throw Error('Cobertura diferente');
  let rejected=false;marks.set('lalo|Previa',{date:'2026-11-26',turn:'Previa',marks:[]});
  try{priorMark('lalo',d,'Primera',1)}catch(e){rejected=String(e).includes('Fuga temporal');}if(!rejected)throw Error('No rechazó futuro');
  marks.clear();console.log('SEQUENCE_SELF_TEST_OK');
