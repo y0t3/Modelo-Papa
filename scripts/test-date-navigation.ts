@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {followsNextDraw,shouldAdvanceCompletedDay,acceptsDateResponse} from '../src/dateNavigation';
+const today='2026-11-24';
+const base={manual:false,selectedTurn:null,busy:false,date:today,today,complete:true};
+assert.equal(shouldAdvanceCompletedDay(base),true);
+assert.equal(shouldAdvanceCompletedDay({...base,manual:true}),false,'volver desde mañana a hoy completo debe quedarse en hoy');
+assert.equal(shouldAdvanceCompletedDay({...base,manual:true,date:'2026-11-23'}),false);
+assert.equal(shouldAdvanceCompletedDay({...base,selectedTurn:'Nocturno'}),false);
+assert.equal(shouldAdvanceCompletedDay({...base,busy:true}),false);
+assert.equal(shouldAdvanceCompletedDay({...base,complete:false}),false);
+assert.equal(shouldAdvanceCompletedDay({...base,date:'2026-11-25'}),false);
+assert.equal(followsNextDraw(true,null),false);
+assert.equal(followsNextDraw(false,'Primera'),false);
+assert.equal(followsNextDraw(false,null),true);
+assert.equal(acceptsDateResponse(1,2),false,'una respuesta anterior no puede sobrescribir la jornada elegida');
+assert.equal(acceptsDateResponse(2,2),true);
+console.log('DATE_NAVIGATION_OK');
