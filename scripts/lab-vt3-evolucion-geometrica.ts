@@ -238,7 +238,9 @@ async function main(){
    console.log('EVOLUTION_DAY',JSON.stringify(a));
   }catch(e){if(/Fuga temporal|Presupuesto distinto|Ruta física inválida|Histórica sin ruta física/.test(String(e)))throw e;skips.push({date:d,error:String(e)})}
  }
- if(!days||!total.eligible)throw Error('Sin cortes elegibles');
- console.log('EVOLUTION_TOTAL',JSON.stringify({from:FROM,to:TO,days,skips,total,rules}));
+ if(!days)throw Error('Sin jornadas disponibles');
+ const status=total.eligible?'evaluado':'sin_antecedentes_suficientes';
+ if(!total.eligible)console.log('EVOLUTION_NO_ELIGIBLE_CUTS',FROM,TO);
+ console.log('EVOLUTION_TOTAL',JSON.stringify({from:FROM,to:TO,status,days,skips,total,rules}));
 }
 main().catch(e=>{console.error(e);process.exitCode=1});
