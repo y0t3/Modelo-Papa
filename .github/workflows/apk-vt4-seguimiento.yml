@@ -32,6 +32,8 @@ jobs:
         run: npx --yes tsx scripts/test-vt4-independent.ts
       - name: Pruebas seguimiento visual VT4
         run: npx --yes tsx scripts/test-vt4-timeline.ts
+      - name: Pruebas navegación de jornadas
+        run: npx --yes tsx scripts/test-date-navigation.ts
       - name: Generate Android project
         env:
           CI: '1'
@@ -48,6 +50,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Modelo-Lalo-v0.4.5-VT4-Seguimiento
+          name: Modelo-Lalo-v0.4.5-VT4-Seguimiento-Fecha
           path: android/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
