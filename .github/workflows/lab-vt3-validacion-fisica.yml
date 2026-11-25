@@ -1,0 +1,33 @@
+name: LAB validacion VT3 fisico
+on:
+  push:
+    branches: [lab/vt3-validacion-fisica-24nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        rango:
+          - {nombre: noviembre-diciembre-2024, inicio: '2024-11-01', fin: '2024-12-31'}
+          - {nombre: febrero-marzo-2025, inicio: '2025-02-01', fin: '2025-03-31'}
+          - {nombre: mayo-junio-2025, inicio: '2025-05-01', fin: '2025-06-30'}
+          - {nombre: febrero-marzo-2026, inicio: '2026-02-01', fin: '2026-03-31'}
+          - {nombre: abril-mayo-2026, inicio: '2026-04-01', fin: '2026-05-31'}
+          - {nombre: agosto-2026, inicio: '2026-08-01', fin: '2026-08-31'}
+    name: ${{ matrix.rango.nombre }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Validar variantes congeladas y diferencias pareadas
+        env:
+          ADM_FROM: ${{ matrix.rango.inicio }}
+          ADM_TO: ${{ matrix.rango.fin }}
+        run: npx --yes tsx scripts/lab-vt3-admision-fisica.ts
