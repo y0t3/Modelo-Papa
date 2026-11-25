@@ -1,0 +1,35 @@
+name: LAB validacion mapas de influencia VT3
+on:
+  push:
+    branches: [lab/vt3-mapas-influencia-validacion-25nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        rango:
+          - {nombre: noviembre-diciembre-2024, inicio: '2024-11-01', fin: '2024-12-31'}
+          - {nombre: febrero-marzo-2025, inicio: '2025-02-01', fin: '2025-03-31'}
+          - {nombre: mayo-junio-2025, inicio: '2025-05-01', fin: '2025-06-30'}
+          - {nombre: febrero-marzo-2026, inicio: '2026-02-01', fin: '2026-03-31'}
+          - {nombre: abril-mayo-2026, inicio: '2026-04-01', fin: '2026-05-31'}
+          - {nombre: agosto-2026, inicio: '2026-08-01', fin: '2026-08-31'}
+    name: ${{ matrix.rango.nombre }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Verificar que el motor sea idéntico al exploratorio
+        run: test "$(git hash-object scripts/lab-vt3-mapas-influencia.ts)" = c9d4798c2a9d8471e2dbcf22a545f705157b6cea
+      - name: Validar expansión fija de dos celdas y controles
+        env:
+          ADM_FROM: ${{ matrix.rango.inicio }}
+          ADM_TO: ${{ matrix.rango.fin }}
+        run: npx --yes tsx scripts/lab-vt3-mapas-influencia.ts
