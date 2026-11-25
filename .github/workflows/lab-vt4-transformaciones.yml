@@ -1,0 +1,32 @@
+name: LAB VT4 transformaciones entre jornadas
+on:
+  push:
+    branches: [lab/vt4-transformaciones-24nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        rango:
+          - {nombre: agosto-octubre-2024, inicio: '2024-08-01', fin: '2024-10-20'}
+          - {nombre: agosto-octubre-2025, inicio: '2025-08-01', fin: '2025-10-20'}
+          - {nombre: junio-julio-2026, inicio: '2026-06-01', fin: '2026-07-31'}
+          - {nombre: septiembre-octubre-2026, inicio: '2026-09-15', fin: '2026-10-10'}
+          - {nombre: noviembre-2026, inicio: '2026-11-02', fin: '2026-11-23'}
+    name: ${{ matrix.rango.nombre }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Cotejar relaciones geometricas PRE D1 y D7
+        env:
+          VT4_FROM: ${{ matrix.rango.inicio }}
+          VT4_TO: ${{ matrix.rango.fin }}
+        run: npx --yes tsx scripts/lab-vt4-transformaciones.ts
