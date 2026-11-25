@@ -476,7 +476,7 @@ function LaloApp(){
  },[sheet,data,hist,date,busy,visualDays]);
  // Con la app abierta, refrescar sin cambiar pestaña ni desplazar la hoja.
  useEffect(()=>{
-  if(date!==today()||!baseHeads||busy||manualDateRef.current)return;
+  if(date!==today()||!baseHeads||busy)return;
   const request=auxInfoRequest.current;
   let loading=false,cancelled=false;
   const update=async()=>{
