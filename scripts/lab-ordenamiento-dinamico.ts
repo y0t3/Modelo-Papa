@@ -244,6 +244,11 @@ async function main(){
  }
  if(!evaluated)throw Error('Sin jornadas evaluadas');
  for(const [date,metrics] of Object.entries(days))console.log('ADAPT_DAILY',JSON.stringify({date,metrics:Object.fromEntries(Object.entries(metrics).map(([k,v])=>[k,[v.hits,v.expected,v.heads,v.cuts]]))}));
- console.log('ADAPT_JSON_START');console.log(JSON.stringify({from:FROM,to:TO,warm,evaluated,skips,aggregate,choices,positionStats,weightSums}));console.log('ADAPT_JSON_END');
+ console.log('ADAPT_JSON_START');console.log(JSON.stringify({from:FROM,to:TO,warm,evaluated,skips}));console.log('ADAPT_JSON_END');
+ for(const engine of ['lalo','ayer','hoy'])for(const kind of [2,3,4]){
+  const prefix=engine+'|'+kind+'|';
+  const subset=<T>(x:Record<string,T>)=>Object.fromEntries(Object.entries(x).filter(([k])=>k.startsWith(prefix)));
+  console.log('ORDER_METRICS',JSON.stringify({engine,kind,aggregate:subset(aggregate),choices:subset(choices),positionStats:subset(positionStats),weightSums:subset(weightSums)}));
+ }
 }
 main().catch(e=>{console.error(e);process.exitCode=1});
