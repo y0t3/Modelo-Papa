@@ -182,8 +182,13 @@ type Sample={date:string;turn:Turno;rows:{x:number[];n:number;y:number}[]};
 const memory=new Map<string,Sample[]>();
 const fitCache=new Map<string,number[]>();
 const coefficients:Record<string,{n:number;trained:number;sum:number[]}>= {};
-const windows=[10,30,60] as const;
-const models=windows.flatMap(w=>['global','turno'].flatMap(scope=>['geometry','all'].map(mode=>({id:'aprende_'+scope+'_'+mode+'_'+w,w,scope,mode}))));
+// Freeze the two learned configurations before reading validation outcomes.
+const models=[{id:'aprende_global_all_60',w:60,scope:'global',mode:'all'},{id:'aprende_global_all_10',w:10,scope:'global',mode:'all'}];
+const primary:Record<string,string>={lalo:'aprende_global_all_60',ayer:'compactos',hoy:'aprende_global_all_10'};
+const fixed:Record<string,string>={lalo:'rigido',ayer:'actual',hoy:'historico_mas_fisico'};
+type WeightDay={date:string;engine:string;model:string;trained:boolean;beta:number[]};
+const weightDays:WeightDay[]=[];
+const paired:Record<string,{heads:number;both:number;onlyPrimary:number;onlyReference:number;neither:number}>={};
 function features(fs:Family[],routes:Route[],events:Event[],t:Turno):FeatureRow[]{
  const profiles=new Map<string,Map<string,Shape>>();
  for(const r of routes){const k=label(r.path.map(c=>c.digit).join('')),m=profiles.get(k)||new Map<string,Shape>();for(const x of shape(r))m.set(JSON.stringify(x),x);profiles.set(k,m);}
@@ -245,7 +250,7 @@ function prior(engine:string,t:Turno,d:string,w:number,scope:string){
  const eligible=all.filter(s=>scope==='global'||s.turn===t),dates=[...new Set(eligible.map(s=>s.date))].slice(-w);
  return dates.length===w?eligible.filter(s=>dates.includes(s.date)):[];
 }
-const methods=['actual','bloques','compactos','control','rigido','flexible','contexto','flex_D1','flex_D7','flex_raro','mixto_fisico','historico_mas_fisico',...models.map(m=>m.id)];
+const methods=['actual','bloques','compactos','control','rigido','flexible','contexto','flex_D1','flex_D7','flex_raro','mixto_fisico','historico_mas_fisico'];
 type Result=Metric&{formed:number;position:number;admitted:number;onlyActual:number;onlyMethod:number;onlyCompact:number;onlyMethodCompact:number};
 const measures:Record<string,Result>={},days:Record<string,Record<string,number>>={};
 function select(fs:Family[],routes:Route[],events:Event[],d:string,t:Turno,engine:string,recordWeights=false){
@@ -261,9 +266,9 @@ function select(fs:Family[],routes:Route[],events:Event[],d:string,t:Turno,engin
  flex_raro:orderBy(f=>ev.get(f.v)!.rarity),mixto_fisico:orderBy(f=>1/(10+cr.get(f.v)!)+1/(10+gr.get(f.v)!))};
  const rows=features(fs,routes,events,t);
  orders.historico_mas_fisico=ranked(fs,'historico_mas_fisico',d,t);
- for(const m of models){
+ for(const m of models.filter(m=>m.id===primary[engine])){
   const kfit=[engine,m.id,m.scope==='turno'?t:'todos'].join('|');
-  let beta=fitCache.get(kfit);if(!beta){beta=fit(prior(engine,t,d,m.w,m.scope),m.mode);fitCache.set(kfit,beta);}
+  let beta=fitCache.get(kfit);if(!beta){beta=fit(prior(engine,t,d,m.w,m.scope),m.mode);fitCache.set(kfit,beta);if(recordWeights)weightDays.push({date:d,engine,model:m.id,trained:beta.some(x=>x!==0),beta:[...beta]});}
   const score=new Map(rows.map(r=>[r.f.v,r.x.reduce((a,v,i)=>a+v*beta[i],0)]));
   orders[m.id]=beta.some(x=>x!==0)?orderBy(f=>score.get(f.v)!):geometry;
   if(recordWeights){const k=engine+'|'+m.id,a=coefficients[k]||(coefficients[k]={n:0,trained:0,sum:Array(featureNames.length).fill(0)});a.n++;a.trained+=Number(beta.some(x=>x!==0));beta.forEach((v,i)=>a.sum[i]+=v);}
@@ -271,7 +276,7 @@ function select(fs:Family[],routes:Route[],events:Event[],d:string,t:Turno,engin
  const quotas=new Map<number,number>();
  for(const f of baseline)quotas.set(f.values.length,(quotas.get(f.values.length)||0)+1);
  const out:Record<string,{top:Family[];full:Family[]}>= {};
- for(const name of methods){
+ for(const name of [...methods,...models.filter(m=>m.id===primary[engine]).map(m=>m.id)]){
   const rem=new Map(quotas),top:Family[]=[],rest:Family[]=[];
   for(const f of orders[name]){
    const q=rem.get(f.values.length)||0;
@@ -294,6 +299,15 @@ function audit(engine:string,t:Turno,d:string,fs:Family[],routes:Route[],events:
  if(!chosen)return;
  const picks=chosen.picks;
  const a=exact(picks.actual.top),c=exact(picks.compactos.top);
+ const pset=exact(picks[primary[engine]].top);
+ for(const name of [...new Set(['actual','control','compactos',fixed[engine]])]){
+  const ref=exact(picks[name].top);
+  if(pset.size!==ref.size)throw Error('Cobertura diferente');
+  for(const key of [engine+'|'+name,engine+'|'+t+'|'+name]){
+   const p=paired[key]||(paired[key]={heads:0,both:0,onlyPrimary:0,onlyReference:0,neither:0});
+   for(const v of h){p.heads++;const aa=pset.has(v),bb=ref.has(v);if(aa&&bb)p.both++;else if(aa)p.onlyPrimary++;else if(bb)p.onlyReference++;else p.neither++;}
+  }
+ }
  for(const [name,p] of Object.entries(picks)){
   const set=exact(p.top),hits=h.filter(v=>set.has(v)).length;
   const ranks=new Map<string,number>();let before=0;
@@ -378,7 +392,8 @@ async function main(){
   }
  }
  if(!count)throw Error('Sin jornadas');
- console.log('LEARN_JSON',JSON.stringify({from:FROM,to:TO,days:count,warm,skips,features:featureNames}));
+ console.log('LEARN_JSON',JSON.stringify({from:FROM,to:TO,days:count,warm,skips,features:featureNames,primary,fixed,paired}));
+ for(const row of weightDays)console.log('LEARN_WEIGHT_DAY',JSON.stringify(row));
  for(const engine of ['lalo','ayer','hoy'])console.log('LEARN_ENGINE',JSON.stringify({engine,coefficients:Object.fromEntries(Object.entries(coefficients).filter(([k])=>k.startsWith(engine+'|'))),metrics:Object.fromEntries(Object.entries(measures).filter(([k])=>k.startsWith(engine+'|')&&k.split('|').length===2))}));
  for(const engine of ['lalo','ayer','hoy'])console.log('LEARN_TURNS',JSON.stringify({engine,metrics:Object.fromEntries(Object.entries(measures).filter(([k])=>k.startsWith(engine+'|')&&k.split('|').length===3))}));
  for(const [date,metrics] of Object.entries(days))console.log('LEARN_DAY',JSON.stringify({date,metrics}));
