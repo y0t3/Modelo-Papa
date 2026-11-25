@@ -104,6 +104,8 @@ export default function MatchStudyPanel({date,turn,data,sheet,historical,history
     const local=localAux.get(d);
     if(local?.today&&local.yesterday)return local;
     const source=byDate.get(d);
+    // A live partial source must never be frozen by the historical cache.
+    if(d===date)return local||null;
     if(!source)return local||null;
     const fetched=await makeAux(d,source.heads);
     if(!fetched)return local||null;
@@ -123,8 +125,8 @@ export default function MatchStudyPanel({date,turn,data,sheet,historical,history
      for(const e of engines){
       if(!alive)return;
       const frame:Frame={date:d.date,turn:t,engine:e,count:0,published,available:false,captured:false,hits:[]};
+      const saved=await readMatchSnapshot(d.date,t,e);
       try{
-       const saved=await readMatchSnapshot(d.date,t,e);
        if(!alive)return;
        if(e==='lalo'){
         // The current APP uses D-1/D-7 and the same VT4 wrapper.
@@ -164,9 +166,9 @@ export default function MatchStudyPanel({date,turn,data,sheet,historical,history
          }
         }
        }
-       if(saved){frame.available=true;frame.captured=true;frame.count=saved.ranks[f.kind].length;
-        frame.hits=compareRankedHeads(saved.ranks[f.kind],d.heads,t,f.kind)}
       }catch{frame.available=false;frame.hits=[]}
+      if(saved){frame.available=true;frame.captured=true;frame.count=saved.ranks[f.kind].length;
+       frame.hits=compareRankedHeads(saved.ranks[f.kind],d.heads,t,f.kind)}
       output.push(frame);
      }
      await pause();
@@ -269,7 +271,7 @@ export default function MatchStudyPanel({date,turn,data,sheet,historical,history
      </Pressable>
      {open?<View style={{gap:7}}>
       <Text style={{color:c.accent,fontWeight:'900',fontSize:13}}>Cabezas coincidentes</Text>
-      {dayFrames.filter(x=>x.available).map(x=><Text key={x.turn+'|'+x.engine} style={{color:c.muted,fontSize:10}}>{MATCH_LABELS[x.engine]} · {x.turn} · {x.count} candidatos · {x.captured?'Guardado':'Reconstruido'}</Text>)}
+      <Text style={{color:c.muted,fontSize:10}}>{dayFrames.filter(x=>x.available).length} cortes disponibles · {dayFrames.filter(x=>x.captured).length} guardados</Text>
       {list.map(({frame,hit})=>{
        const id=frame.date+'|'+frame.turn+'|'+frame.engine+'|'+hit.jur+'|'+hit.rank;
        const k=f.kind;
@@ -281,7 +283,7 @@ export default function MatchStudyPanel({date,turn,data,sheet,historical,history
           <Text style={{color:c.muted}}>→</Text>
           <View><Text style={{color:c.subtext,fontSize:10}}>Cabeza real</Text><Text style={{fontSize:23,fontWeight:'900',color:c.text}}>{hit.head.slice(0,4-hit.value.length)}<Text style={{color:green,backgroundColor:greenBg}}>{hit.value}</Text></Text></View>
          </View>
-         <Text style={{color:c.subtext,fontSize:11}}>{short(frame.date)} · {hit.jur} · {frame.turn} · {MATCH_LABELS[frame.engine]} · {mini===id?'▴':'▾'}</Text>
+         <Text style={{color:c.subtext,fontSize:11}}>{short(frame.date)} · {hit.jur} · {frame.turn} · {MATCH_LABELS[frame.engine]} · {frame.count} candidatos · {frame.captured?'Guardado':'Reconstruido'} · {mini===id?'▴':'▾'}</Text>
         </Pressable>
         {mini===id?(frame.sheet&&frame.routes?.[hit.family]?.length||frame.aux?<InlineFamilyPaths kind={k} family={hit.family} turn={frame.turn}
          plus={frame.sheet&&frame.routes?.[hit.family]?{sheet:frame.sheet,routes:frame.routes[hit.family]}:undefined}
