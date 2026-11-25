@@ -1,0 +1,30 @@
+name: LAB VT3 adaptacion por turno
+on:
+  push:
+    branches: [lab/vt3-adaptativo-por-turno-25nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reciente:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        periodo:
+          - {nombre: reciente-2026, inicio: '2026-08-01', prueba: '2026-09-01', fin: '2026-11-24'}
+          - {nombre: contraste-2025, inicio: '2025-08-01', prueba: '2025-09-01', fin: '2025-11-30'}
+    name: ${{ matrix.periodo.nombre }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Comparar adaptación dura y gradual por turno
+        env:
+          ADM_FROM: ${{ matrix.periodo.inicio }}
+          ADM_TO: ${{ matrix.periodo.fin }}
+          TEST_FROM: ${{ matrix.periodo.prueba }}
+        run: npx --yes tsx scripts/lab-vt3-adaptativo-turno.ts
