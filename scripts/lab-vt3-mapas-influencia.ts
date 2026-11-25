@@ -129,36 +129,39 @@ function permutation(cut:Cut,seed:string){
 // of the ORIGINAL pre-draw board; no extra cells or future columns.
 const seeds=['p1','p2','p3','p4'];
 const names=['concentracion','expansion','poco_usada','intermedia','nueva_zona','concentracion_reciente'] as const;
-type Influence={mass:Map<string,{p:Point;w:number}>;events:number;covered:Set<string>};
+type Influence={mass:Map<string,{p:Point;w:number}>;events:number;covered:Set<string>;eventMass:Map<string,{p:Point;w:number}>[]};
 function influence(cuts:Cut[],seed?:string,recent=false):Influence{
- const mass=new Map<string,{p:Point;w:number}>(),covered=new Set<string>();let events=0;
+ const mass=new Map<string,{p:Point;w:number}>(),covered=new Set<string>(),eventMass:Influence['eventMass']=[];let events=0;
  const use=recent?cuts.slice(-1):cuts;
  for(const cut of use){
   for(const k of cut.visible)covered.add(k);
   const es=seed?permutation(cut,seed+'|'+cut.date+'|'+cut.turn):cut.events;
-  for(const e of es){events++;for(const b of e.blocks)for(const p of b.points){const k=xy(p),old=mass.get(k)||{p,w:0};old.w+=1/(3*e.blocks.length);mass.set(k,old);}}
+  for(const e of es){events++;const em=new Map<string,{p:Point;w:number}>();for(const b of e.blocks)for(const p of b.points){const k=xy(p),w=1/(3*e.blocks.length),old=mass.get(k)||{p,w:0},own=em.get(k)||{p,w:0};old.w+=w;own.w+=w;mass.set(k,old);em.set(k,own);}eventMass.push(em);}
  }
  if(events)for(const a of mass.values())a.w/=events;
- return {mass,events,covered};
+ return {mass,events,covered,eventMass};
 }
 function cellScore(p:Point,map:Influence){
- let near=0,ring=0,mid=0;
+ let near=0,ring=0;
  for(const a of map.mass.values()){
   const d=dist(p,a.p);
   near+=a.w*Math.exp(-d/1.5);
   ring+=a.w*Math.exp(-((d-2)**2)/2);
-  mid+=a.w*Math.exp(-((d-1)**2)/2);
+
  }
- return [near,ring,map.covered.has(xy(p))?1-near:0,mid,Number(!map.covered.has(xy(p)))];
+ const strengths=map.eventMass.map(em=>[...em.values()].reduce((s,a)=>s+a.w*Math.exp(-dist(p,a.p)/1.5),0)).sort((a,b)=>b-a);
+ // Overlap of at least two distinct observed heads, not repeated paths.
+ return [near,ring,map.covered.has(xy(p))?1-near:0,strengths[1]||0,Number(!map.covered.has(xy(p)))];
 }
 function profiles(engine:string,fs:Family[],routes:Route[],cuts:Cut[],seed?:string){
  const all=influence(cuts,seed),last=influence(cuts,seed,true);
  const groups=new Map<string,Block[]>();
  for(const r of routes){const k=label(r.path.map(c=>c.digit).join('')),a=groups.get(k)||[];a.push(makeBlock(engine,r));groups.set(k,a);}
- const cache=new Map<string,number[]>();
+ const cache=new Map<string,number[]>(),allCells=new Map<string,number[]>(),lastCells=new Map<string,number[]>();
+ const cell=(p:Point,m:Influence,c:Map<string,number[]>)=>{const k=xy(p);let v=c.get(k);if(!v){v=cellScore(p,m);c.set(k,v);}return v;};
  function score(b:Block){
   let v=cache.get(b.id);if(v)return v;
-  const cs=b.points.map(p=>cellScore(p,all)),rs=b.points.map(p=>cellScore(p,last));
+  const cs=b.points.map(p=>cell(p,all,allCells)),rs=b.points.map(p=>cell(p,last,lastCells));
   v=Array.from({length:5},(_,i)=>cs.reduce((n,x)=>n+x[i],0)/3);
   v.push(last.events?rs.reduce((n,x)=>n+x[0],0)/3:0);
   cache.set(b.id,v);return v;
