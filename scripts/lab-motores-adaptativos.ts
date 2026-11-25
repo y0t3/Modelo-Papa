@@ -68,6 +68,7 @@ function score(fs:F[],d:string,t:Turno,kind:number,heads:string[]):Record<string
    if(chosen.length===baseline.length)break;
   }
   const values=new Set(chosen.flatMap(f=>f.v.split('/')));
+  if(chosen.length!==baseline.length||values.size!==[...quotas].reduce((n,[capacity,count])=>n+capacity*count,0))throw Error('Exposición distinta '+rule);
   const hits=h.filter(x=>values.has(x)).length;
   return [rule,{hits,expected:h.length*values.size/10**kind,exposure:values.size,familyCount:chosen.length,
    any:Number(hits>0),heads:h.length,conditional:pool.size?formed*values.size/pool.size:0}];
@@ -160,6 +161,7 @@ async function main(){
   console.log('ADAPT_DAY',d,rows.length,d<FROM?'warm':'eval');
  }
  if(!evaluated)throw Error('Sin jornadas evaluadas');
- console.log('ADAPT_JSON_START');console.log(JSON.stringify({from:FROM,to:TO,warm,evaluated,skips,aggregate,choices,days}));console.log('ADAPT_JSON_END');
+ for(const [date,metrics] of Object.entries(days))console.log('ADAPT_DAILY',JSON.stringify({date,metrics:Object.fromEntries(Object.entries(metrics).map(([k,v])=>[k,[v.hits,v.expected,v.heads,v.cuts]]))}));
+ console.log('ADAPT_JSON_START');console.log(JSON.stringify({from:FROM,to:TO,warm,evaluated,skips,aggregate,choices}));console.log('ADAPT_JSON_END');
 }
 main().catch(e=>{console.error(e);process.exitCode=1});
