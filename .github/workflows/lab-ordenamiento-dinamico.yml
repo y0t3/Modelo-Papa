@@ -1,0 +1,33 @@
+name: LAB ordenamiento dinamico
+on:
+  push:
+    branches: [lab/ordenamiento-dinamico-24nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cotejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        rango:
+          - {nombre: exploracion-ago-oct-2024, inicio: '2024-08-01', fin: '2024-10-20'}
+          - {nombre: exploracion-ago-oct-2025, inicio: '2025-08-01', fin: '2025-10-20'}
+          - {nombre: exploracion-jun-jul-2026, inicio: '2026-06-01', fin: '2026-07-31'}
+          - {nombre: exploracion-sep-nov-2026, inicio: '2026-09-15', fin: '2026-11-23'}
+          - {nombre: contraste-feb-mar-2025, inicio: '2025-02-01', fin: '2025-03-31'}
+          - {nombre: contraste-feb-mar-2026, inicio: '2026-02-01', fin: '2026-03-31'}
+    name: ${{ matrix.rango.nombre }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Contraste cronologico de rankings y cobertura fisica
+        env:
+          ADAPT_FROM: ${{ matrix.rango.inicio }}
+          ADAPT_TO: ${{ matrix.rango.fin }}
+        run: npx --yes tsx scripts/lab-ordenamiento-dinamico.ts
