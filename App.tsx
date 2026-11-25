@@ -67,6 +67,7 @@ import LaloWallpaper from './src/ui/LaloWallpaper';
 import {ZOOM_STORAGE_KEY,defaultZoomLevels,decodeTabZoom,applyTabZoom} from './src/tabZoom';
 import {pushNavigation,backNavigation,safeScrollY} from './src/tabNavigation';
 import type {NavigationEntry} from './src/tabNavigation';
+import {followsNextDraw,shouldAdvanceCompletedDay,acceptsDateResponse} from './src/dateNavigation';
 
 type Screen='inicio'|'hoja'|'predictiva'|'prediccion'|'papa'|'cabezas'|'info';
 const screenTitles:Record<Screen,string>={
@@ -168,6 +169,9 @@ function LaloApp(){
   const [baseHeads,setBaseHeads]=useState<CabezasDia|null>(null);
  const [autoVersion,setAutoVersion]=useState(0);
  const [selectedTurn,setSelectedTurn]=useState<Turno|null>(null);
+ const selectedTurnRef=useRef<Turno|null>(null);
+ selectedTurnRef.current=selectedTurn;
+ const followsLive=()=>followsNextDraw(manualDateRef.current,selectedTurnRef.current);
  const [focused,setFocused]=useState<string|null>(null);
  const [combinedFocus,setCombinedFocus]=useState<CombinedPick|null>(null);
  const [hojaFocused,setHojaFocused]=useState<string|null>(null);
@@ -307,6 +311,7 @@ function LaloApp(){
       (error?.message||String(error));
     }
    }
+   if(!acceptsDateResponse(request,auxInfoRequest.current))return;
    resetHistory();
    setHistoricalPreview(null);setHistoricalAux(null);
    setData(current);setAuxHeads(auxResult?.heads||null);
@@ -348,13 +353,15 @@ function LaloApp(){
    })).then(days=>{
     if(auxInfoRequest.current===request)setInfoAuxDays(days);
    }).catch(()=>{if(auxInfoRequest.current===request)setInfoAuxDays([])});
-   setDateText(isoToDisplay(d));setSelectedTurn(null);setFocused(null);setFigureFocus(null);
+   setDateText(isoToDisplay(d));selectedTurnRef.current=null;setSelectedTurn(null);setFocused(null);setFigureFocus(null);
    
    setHojaFocused(null);setHojaTurn('Previa');
   }catch(error:any){
-   setFrequencyBusy(false);
-   Alert.alert('No se pudo cargar',error?.message||String(error));
-  }finally{setBusy(false)}
+   if(acceptsDateResponse(request,auxInfoRequest.current)){
+    setFrequencyBusy(false);
+    Alert.alert('No se pudo cargar',error?.message||String(error));
+   }
+  }finally{if(acceptsDateResponse(request,auxInfoRequest.current))setBusy(false)}
  };
  const nextDrawDate=async()=>{
   const d=today();
@@ -365,29 +372,35 @@ function LaloApp(){
    return complete?shiftDrawDay(d,1):d;
   }catch{return d}
  };
- useEffect(()=>{void nextDrawDate().then(d=>cargar(d))},[]);
+ useEffect(()=>{
+  const request=auxInfoRequest.current;
+  let cancelled=false;
+  void nextDrawDate().then(d=>{if(!cancelled&&followsLive()&&acceptsDateResponse(request,auxInfoRequest.current))void cargar(d)});
+  return ()=>{cancelled=true};
+ },[]);
  // Si terminó el último turno, volver a apuntar al próximo sorteo.
  // Sólo en modo automático: la consulta manual nunca se interrumpe.
  useEffect(()=>{
-  if(!data||busy||selectedTurn||date!==today())return;
+  if(!data||!date)return;
   const complete=TURNOS.every(t=>STAT_JURS.every(j=>/^\d{4}$/.test(data[t]?.[j]||'')));
-  if(complete)void cargar(shiftDrawDay(date,1));
+  if(shouldAdvanceCompletedDay({manual:manualDateRef.current,selectedTurn,busy,date,today:today(),complete}))void cargar(shiftDrawDay(date,1));
  },[data,date,busy,selectedTurn]);
  // Mientras la app está abierta, consultar resultados sin tocar fecha, pantalla
  // ni selección manual. También comprobar al volver al primer plano.
  useEffect(()=>{
   if(autoPollTick===0||busy||!data||autoPollingRef.current||
-   manualDateRef.current||selectedTurn||!date)return;
+   !followsLive()||!date)return;
+  const request=auxInfoRequest.current;
   if(date<today()){
    void nextDrawDate().then(d=>{
-    if(!manualDateRef.current&&d!==date)void cargar(d);
+    if(followsLive()&&acceptsDateResponse(request,auxInfoRequest.current)&&d!==date)void cargar(d);
    }).catch(()=>{});
    return;
   }
   if(date!==today()||AppState.currentState!=='active')return;
   autoPollingRef.current=true;
   void descargarCabezas(date,true).then(latest=>{
-   if(manualDateRef.current||date!==today())return;
+   if(!followsLive()||!acceptsDateResponse(request,auxInfoRequest.current)||date!==today())return;
    if(JSON.stringify(latest)===JSON.stringify(data))return;
    setData(latest);
    if(baseHeads)setSheet(buildSheet(latest,baseHeads));
@@ -430,9 +443,14 @@ function LaloApp(){
   });
  },[date,data,sheet,busy,trendTick]);
  const goNextDraw=()=>{
+  if(busy)return;
   manualDateRef.current=false;
-  setSelectedTurn(null);
-  void nextDrawDate().then(d=>{if(date!==d)void cargar(d)});
+  selectedTurnRef.current=null;setSelectedTurn(null);
+  setHistoricalPreview(null);setHistoricalAux(null);
+  const request=auxInfoRequest.current;
+  void nextDrawDate().then(d=>{
+   if(followsLive()&&acceptsDateResponse(request,auxInfoRequest.current)&&(date!==d||!data))void cargar(d);
+  });
  };
  const move=(n:1|-1)=>{manualDateRef.current=true;const base=historicalPreview?.day.date||date;
   if(base)void cargar(shiftDrawDay(base,n))};
@@ -458,15 +476,17 @@ function LaloApp(){
  },[sheet,data,hist,date,busy,visualDays]);
  // Con la app abierta, refrescar sin cambiar pestaña ni desplazar la hoja.
  useEffect(()=>{
-  if(date!==today()||!baseHeads)return;
-  let loading=false;
+  if(date!==today()||!baseHeads||busy||manualDateRef.current)return;
+  const request=auxInfoRequest.current;
+  let loading=false,cancelled=false;
   const update=async()=>{
-   if(loading)return;
+   if(loading||cancelled||manualDateRef.current||!acceptsDateResponse(request,auxInfoRequest.current))return;
    loading=true;
    try{
     const [fresh,live]=await Promise.all([
      descargarCabezas(date,true),fetchAuxiliaryHeads(date).catch(()=>null)
     ]);
+    if(cancelled||manualDateRef.current||!acceptsDateResponse(request,auxInfoRequest.current))return;
     setData(fresh);
     // HOY incorpora nuevas cabezas; AYER permanece fija.
     if(live)setAuxToday(live.heads);
@@ -475,8 +495,8 @@ function LaloApp(){
    }catch{}finally{loading=false}
   };
   const interval=setInterval(()=>{void update()},120000);
-  return ()=>clearInterval(interval);
- },[date,baseHeads]);
+  return ()=>{cancelled=true;clearInterval(interval)};
+ },[date,baseHeads,busy]);
  const motor=useMemo(()=>sheet&&date?buildMotorLalo(sheet,date,target,hist):null,
   [sheet,date,target,hist]);
  // Cada modo conserva su ranking y memoria propios. Nunca mezclamos
@@ -554,7 +574,7 @@ function LaloApp(){
  const fiveHeads=useMemo(()=>JURS.filter(j=>j!=='Montevideo')
   .map(j=>data?.[target]?.[j]||'').filter(h=>/^\d{4}$/.test(h)),
   [data,target]);
- const changeTurn=(turn:Turno)=>{setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
+ const changeTurn=(turn:Turno)=>{selectedTurnRef.current=turn;setSelectedTurn(turn);setFocused(null);setInfoFrameId('inicio')};
  const changeAuxMode=(next:AuxMode)=>{setAuxMode(next);setFocused(null)};
  const showFamily=(id:string)=>{
   setCombinedFocus(null);setPredictiveMode('lalo');
@@ -592,6 +612,7 @@ function LaloApp(){
   }
   const day=visualDays.find(item=>item.date===frame.date);
   if(!day){Alert.alert('Hoja no disponible','No se encontró la jornada en la memoria de INFO.');return}
+  manualDateRef.current=true;
   navigateTo('hoja');
   setHistoricalPreview({day,turn:target});setHistoricalAux(null);
   setHojaTurn(target);setHojaFocused(null);
@@ -649,7 +670,8 @@ function LaloApp(){
      setAuxSourceDate(null);setHistoricalAux(null);setSheet(null);setBaseHeads(null);setHist([]);
      setAuxiliarPast([]);setAuxiliarError(null);
      setAuxTodayPast([]);setAuxTodayError(null);
-     ++auxInfoRequest.current;
+     ++auxInfoRequest.current;setBusy(false);
+     selectedTurnRef.current=null;setSelectedTurn(null);
      setInfoAuxDays([]);setVisualDays([]);setFrequencyDays([]);setFrequencyBusy(false);setFrequencyProgress(0);setFocused(null);
      setHojaFocused(null);setHojaTurn('Previa');
     }}/>
@@ -672,7 +694,7 @@ function LaloApp(){
      </Text>
      <Pressable accessibilityRole="button"
       accessibilityLabel="Volver al próximo turno"
-      onPress={goNextDraw} style={[s.nextTurn,{borderColor:c.accent}]}>
+      disabled={busy} onPress={goNextDraw} style={[s.nextTurn,{borderColor:c.accent}]}>
       <Text style={{color:c.accent,fontSize:11,fontWeight:'900'}}>↻ Próximo</Text>
      </Pressable>
     </View>
