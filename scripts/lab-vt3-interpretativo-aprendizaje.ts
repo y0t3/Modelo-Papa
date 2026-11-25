@@ -181,7 +181,7 @@ type FeatureRow={f:Family;x:number[]};
 type Sample={date:string;turn:Turno;rows:{x:number[];n:number;y:number}[]};
 const memory=new Map<string,Sample[]>();
 const fitCache=new Map<string,number[]>();
-const coefficients:Record<string,{n:number;sum:number[]}>= {};
+const coefficients:Record<string,{n:number;trained:number;sum:number[]}>= {};
 const windows=[10,30,60] as const;
 const models=windows.flatMap(w=>['global','turno'].flatMap(scope=>['geometry','all'].map(mode=>({id:'aprende_'+scope+'_'+mode+'_'+w,w,scope,mode}))));
 function features(fs:Family[],routes:Route[],events:Event[],t:Turno):FeatureRow[]{
@@ -266,7 +266,7 @@ function select(fs:Family[],routes:Route[],events:Event[],d:string,t:Turno,engin
   let beta=fitCache.get(kfit);if(!beta){beta=fit(prior(engine,t,d,m.w,m.scope),m.mode);fitCache.set(kfit,beta);}
   const score=new Map(rows.map(r=>[r.f.v,r.x.reduce((a,v,i)=>a+v*beta[i],0)]));
   orders[m.id]=beta.some(x=>x!==0)?orderBy(f=>score.get(f.v)!):geometry;
-  if(recordWeights){const k=engine+'|'+m.id,a=coefficients[k]||(coefficients[k]={n:0,sum:Array(featureNames.length).fill(0)});a.n++;beta.forEach((v,i)=>a.sum[i]+=v);}
+  if(recordWeights){const k=engine+'|'+m.id,a=coefficients[k]||(coefficients[k]={n:0,trained:0,sum:Array(featureNames.length).fill(0)});a.n++;a.trained+=Number(beta.some(x=>x!==0));beta.forEach((v,i)=>a.sum[i]+=v);}
  }
  const quotas=new Map<number,number>();
  for(const f of baseline)quotas.set(f.values.length,(quotas.get(f.values.length)||0)+1);
@@ -286,10 +286,13 @@ const exact=(f:Family[])=>new Set(f.flatMap(x=>x.values));
 let pending:{engine:string;sample:Sample}[]=[];
 function audit(engine:string,t:Turno,d:string,fs:Family[],routes:Route[],events:Event[],heads:string[]){
  if(!fs.length)return;
- const {picks,rows}=select(fs,routes,events,d,t,engine,d>=FROM);
+ const evaluated=d>=FROM;
+ const chosen=evaluated?select(fs,routes,events,d,t,engine,true):null;
+ const rows=chosen?.rows||features(fs,routes,events,t);
  const h=heads.map(x=>x.slice(-3)),all=exact(fs),formed=h.filter(x=>all.has(x)).length;
  pending.push({engine,sample:{date:d,turn:t,rows:rows.map(r=>({x:r.x,n:r.f.values.length,y:h.filter(v=>r.f.values.includes(v)).length}))}});
- if(d<FROM)return;
+ if(!chosen)return;
+ const picks=chosen.picks;
  const a=exact(picks.actual.top),c=exact(picks.compactos.top);
  for(const [name,p] of Object.entries(picks)){
   const set=exact(p.top),hits=h.filter(v=>set.has(v)).length;
@@ -370,12 +373,13 @@ async function main(){
   try{if(await build(d)){if(d<FROM)warm++;else count++;}
    for(const {engine,sample} of pending){const a=memory.get(engine)||[];a.push(sample);const dates=[...new Set(a.map(s=>s.date))].slice(-60);memory.set(engine,a.filter(s=>dates.includes(s.date)));}
   }catch(e){
-   if(/Ruta física inválida|Histórica sin ruta física|Cobertura diferente|Fuga temporal/.test(String(e)))throw e;
+   if(pending.length||/Ruta física inválida|Histórica sin ruta física|Cobertura diferente|Fuga temporal/.test(String(e)))throw e;
    skips.push({date:d,error:String(e)});
   }
  }
  if(!count)throw Error('Sin jornadas');
- console.log('LEARN_JSON',JSON.stringify({from:FROM,to:TO,days:count,warm,skips,features:featureNames,coefficients,metrics:Object.fromEntries(Object.entries(measures).filter(([k])=>k.split('|').length===2))}));
+ console.log('LEARN_JSON',JSON.stringify({from:FROM,to:TO,days:count,warm,skips,features:featureNames}));
+ for(const engine of ['lalo','ayer','hoy'])console.log('LEARN_ENGINE',JSON.stringify({engine,coefficients:Object.fromEntries(Object.entries(coefficients).filter(([k])=>k.startsWith(engine+'|'))),metrics:Object.fromEntries(Object.entries(measures).filter(([k])=>k.startsWith(engine+'|')&&k.split('|').length===2))}));
  for(const engine of ['lalo','ayer','hoy'])console.log('LEARN_TURNS',JSON.stringify({engine,metrics:Object.fromEntries(Object.entries(measures).filter(([k])=>k.startsWith(engine+'|')&&k.split('|').length===3))}));
  for(const [date,metrics] of Object.entries(days))console.log('LEARN_DAY',JSON.stringify({date,metrics}));
 }
