@@ -1,0 +1,22 @@
+name: LAB VT3 adaptacion mensual y quincenal
+on:
+  push:
+    branches: [lab/vt3-adaptativo-15-30-25nov2026]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reciente:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - name: Validar reglas congeladas por ventanas cronologicas
+        env:
+          ADM_FROM: '2026-08-01'
+          ADM_TO: '2026-11-24'
+        run: npx --yes tsx scripts/lab-vt3-adaptativo.ts
