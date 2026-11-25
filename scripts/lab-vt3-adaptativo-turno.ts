@@ -67,7 +67,92 @@ function plusRoutes(columns:{id:string;values:string[]}[]){
  return out;
 }
 function ranked(fs:Family[],rule:string,d:string,t:Turno){
- 
+ const features=(f:Family)=>rule==='bloques'?[f.blocks.size,f.sources.size]:rule==='fuentes'?[f.sources.size,f.blocks.size]:
+ rule==='compactos'?[f.compact.size,f.blocks.size]:rule==='rectos'?[f.straight.size,f.blocks.size]:
+ rule==='lecturas'?[f.paths.size,f.blocks.size]:rule==='historico_mas_fisico'?[Number(f.admitted),f.blocks.size,f.sources.size]:
+ rule==='solo_descartadas'?[Number(!f.admitted),f.blocks.size,f.sources.size]:[];
+ const tie=(a:Family,b:Family)=>hash(d+'|'+t+'|'+a.v)-hash(d+'|'+t+'|'+b.v)||a.v.localeCompare(b.v);
+ return [...fs].sort((a,b)=>{
+  if(rule==='actual')return a.rank-b.rank||tie(a,b);
+  if(rule==='control')return tie(a,b);
+  const x=features(a),y=features(b);
+  for(let i=0;i<x.length;i++)if(x[i]!==y[i])return y[i]-x[i];
+  return tie(a,b);
+ });
+}
+
+
+
+/** Frozen audit: no fitting or selection of a winner after observing POST.
+ * Only AUX AYER, one observation per jurisdiction, equal exact-value budgets.
+ * Conditional comparisons weight each exact suffix, not each route.
+ */
+
+const N=64;
+const rules=['actual','combinado_original','compacidad','independientes','separacion','menos_solapamiento','mas_solapamiento','bordes_distintos','grupos_separados'] as const;
+type Rule=typeof rules[number];
+const modes=['global','admision','admision_bloques','admision_bloques_fuentes'] as const;
+type Mode=typeof modes[number];
+const exact=(fs:Family[])=>new Set(fs.flatMap(f=>f.values));
+const k0=(f:Family)=>String(f.values.length);
+const key:Record<Mode,(f:Family)=>string>={
+ global:k0,
+ admision:f=>[k0(f),+f.admitted].join('|'),
+ admision_bloques:f=>[k0(f),+f.admitted,f.blocks.size].join('|'),
+ admision_bloques_fuentes:f=>[k0(f),+f.admitted,f.blocks.size,f.sources.size].join('|')
+};
+function quotaTop(order:Family[],target:Family[],group:(f:Family)=>string){
+ const quota=new Map<string,number>();for(const f of target){const k=group(f);quota.set(k,(quota.get(k)||0)+1)}
+ const out:Family[]=[];for(const f of order){const k=group(f),q=quota.get(k)||0;if(q){out.push(f);quota.set(k,q-1)}}
+ if(out.length!==target.length||exact(out).size!==exact(target).size||[...quota.values()].some(q=>q!==0))throw Error('Presupuesto distinto');
+ return out;
+}
+function shuffled(fs:Family[],seed:string){
+ let state=hash(seed)||1;const a=[...fs].sort((x,y)=>x.v.localeCompare(y.v));
+ for(let i=a.length-1;i>0;i--){state^=state<<13;state^=state>>>17;state^=state<<5;const j=Math.floor((state>>>0)/4294967296*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+ return a;
+}
+type Geometry={independent:number;disjoint:number;overlap:number;edges:number;components:number;compact:number};
+// Physical blocks are unordered cell triples; paths reversed do not count twice.
+// Exact set packing, branching on one occupied cell and memoizing available cells.
+function geometry(f:Family):Geometry{
+ const blocks=[...f.blocks].map(b=>b.split('|').slice(1));
+ const cells=[...new Set(blocks.flat())];
+ if(cells.length>30||blocks.some(b=>b.length!==3||new Set(b).size!==3))throw Error('Geometría inválida');
+ const masks=blocks.map(b=>b.reduce((m,p)=>m|(1<<cells.indexOf(p)),0));
+ const memo=new Map<number,number>();
+ function pack(available:number):number{
+  const cached=memo.get(available);if(cached!==undefined)return cached;
+  const possible=masks.filter(m=>(m&available)===m);
+  if(!possible.length)return 0;
+  const used=possible.reduce((s,m)=>s|m,0),pivot=used&-used;
+  let best=pack(used&~pivot);
+  for(const m of possible)if(m&pivot)best=Math.max(best,1+pack(used&~m));
+  memo.set(available,best);return best;
+ }
+ let disjoint=0,overlap=0,edgeShared=0,pairs=0;
+ const parent=blocks.map((_,i)=>i);
+ const root=(i:number):number=>parent[i]===i?i:root(parent[i]);
+ // Edge sharing means two cells used by both blocks, regardless of path order.
+ for(let i=0;i<blocks.length;i++)for(let j=i+1;j<blocks.length;j++){
+  const common=blocks[i].filter(p=>blocks[j].includes(p)).length;pairs++;
+  if(!common)disjoint++;else{parent[root(i)]=root(j);overlap+=common;if(common>=2)edgeShared++}
+ }
+ return {independent:pack(masks.reduce((s,m)=>s|m,0)),disjoint:disjoint/Math.max(1,pairs),overlap:overlap/Math.max(1,pairs),edges:edgeShared/Math.max(1,pairs),components:new Set(parent.map((_,i)=>root(i))).size,compact:f.compact.size/Math.max(1,f.blocks.size)};
+}
+function order(fs:Family[],rule:Rule,d:string,t:Turno,geo:Map<string,Geometry>){
+ const score=(f:Family)=>{const g=geo.get(f.v)!;switch(rule){
+ case 'compacidad':return [g.compact];
+ case 'independientes':return [g.independent,g.disjoint];
+ case 'separacion':return [g.disjoint];
+ case 'menos_solapamiento':return [-g.overlap];
+ case 'mas_solapamiento':return [g.overlap];
+ case 'bordes_distintos':return [-g.edges];
+ case 'grupos_separados':return [g.components];
+ default:return [0];
+ }};
+ return [...fs].sort((a,b)=>{const x=score(a),y=score(b);for(let i=0;i<x.length;i++)if(x[i]!==y[i])return y[i]-x[i];return hash(d+'|'+t+'|'+a.v)-hash(d+'|'+t+'|'+b.v)||a.v.localeCompare(b.v)});
+}
 const experts=rules.filter(r=>r!=='separacion');
 const windows=[7,15,30] as const;
 const START=process.env.TEST_FROM||'2026-09-01';
