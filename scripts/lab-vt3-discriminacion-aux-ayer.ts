@@ -16,7 +16,6 @@ const FROM=process.env.ADM_FROM||'2026-09-15',TO=process.env.ADM_TO||'2026-11-23
 type Cell={row:number;col:number;digit:string;source?:string};
 type Family={v:string;values:string[];blocks:Set<string>;sources:Set<string>;straight:Set<string>;compact:Set<string>;paths:Set<string>;admitted:boolean;rank:number};
 type Metric={cuts:number;heads:number;hits:number;expected:number;conditional:number;size:number;any:number};
-const stats:Record<string,Metric>={},byTurn:Record<string,Metric>={},strata:Record<string,{hits:number;expected:number;size:number}>={};
 const empty=():Metric=>({cuts:0,heads:0,hits:0,expected:0,conditional:0,size:0,any:0});
 const rev=(v:string)=>[...v].reverse().join('');
 const label=(v:string)=>[v,rev(v)].sort().join('/');
