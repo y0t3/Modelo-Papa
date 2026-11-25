@@ -45,6 +45,8 @@ import type {AuxiliaryHeads} from './src/auxSantiagoNeuquen';
 import {buildHeadHighlights} from './src/headHighlights';
 import type {HeadHighlight} from './src/headHighlights';
 import InfoDashboard from './src/ui/InfoDashboard';
+import {plusMatchRanks,auxMatchRanks} from './src/matchStudy';
+import {captureMatchSnapshot} from './src/matchStudyStorage';
 import type {StudySection} from './src/ui/InfoDashboard';
 import HomeDashboard from './src/ui/HomeDashboard';
 import MainBottomTabs from './src/ui/MainBottomTabs';
@@ -524,6 +526,16 @@ function LaloApp(){
  const trackingHoy:TrackingAuxInput=useMemo(()=>({
   heads:auxToday,view:trackingHoyView,mode:'intrajornada'
  }),[auxToday,trackingHoyView]);
+ // Historical observations are separate from the motors; freeze only the real-day PRE.
+ useEffect(()=>{
+  if(busy||!data||!date||date!==today()||!sheet)return;
+  if(motor&&motor.date===date&&motor.target===target&&hist.length)
+   void captureMatchSnapshot(date,target,'lalo',data,plusMatchRanks(motor));
+  if(trackingAyerView&&trackingAyerView.date===date&&trackingAyerView.turn===target&&hist.length&&auxiliarPast.length===hist.length)
+   void captureMatchSnapshot(date,target,'ayer',data,auxMatchRanks(trackingAyerView));
+  if(target!=='Previa'&&trackingHoyView&&trackingHoyView.date===date&&trackingHoyView.turn===target&&hist.length&&auxTodayPast.length===hist.length)
+   void captureMatchSnapshot(date,target,'hoy',data,auxMatchRanks(trackingHoyView));
+ },[busy,data,date,sheet,target,motor,hist,trackingAyerView,trackingHoyView,auxiliarPast,auxTodayPast]);
  const headEvents=useMemo(()=>JURS.map(jur=>({
   jur,head:data?.[target]?.[jur]||''
  })).filter(x=>/^\d{4}$/.test(x.head)),[data,target]);

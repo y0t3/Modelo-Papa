@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {diaVacio} from '../src/domain';
+import {compareRankedHeads} from '../src/matchStudy';
+const heads=diaVacio();heads.Vespertino.Ciudad='3412';heads.Vespertino.Provincia='0021';heads.Vespertino.Córdoba='0012';heads.Vespertino.Montevideo='9912';
+const rows=[{rank:3,family:'12/21',values:['12','21']},{rank:83,family:'03/30',values:['03','30']}];
+assert.deepEqual(compareRankedHeads(rows,heads,'Vespertino','vt2').map(h=>h.rank),[3,3,3]);
+assert.equal(compareRankedHeads(rows,heads,'Previa','vt2').length,0);
+assert.equal(compareRankedHeads([{rank:83,family:'3412',values:['3412']}],heads,'Vespertino','vt4')[0].rank,83);
+assert.equal(compareRankedHeads([{rank:83,family:'2143',values:['2143']}],heads,'Vespertino','vt4').length,0);
+console.log('Cotejo posiciones originales, jurisdicciones, VT4 exacto OK');

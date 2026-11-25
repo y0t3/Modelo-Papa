@@ -1,0 +1,57 @@
+name: APK Estudio coincidencias
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/estudio-coincidencias-25nov2026]
+concurrency:
+  group: apk-estudio-coincidencias
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install dependencies
+        run: npm install
+      - name: TypeScript check
+        run: npx tsc --noEmit -p tsconfig.tendencias-app.json
+      - name: Pruebas motor Lalo VT2 VT3 VT4
+        run: npx --yes tsx scripts/test-motor-lalo.ts
+      - name: Probar observabilidad VT3
+        run: npx --yes tsx scripts/test-consolidacion-lalo.ts
+      - name: Pruebas VT4 independiente
+        run: npx --yes tsx scripts/test-vt4-independent.ts
+      - name: Pruebas seguimiento visual VT4
+        run: npx --yes tsx scripts/test-vt4-timeline.ts
+      - name: Pruebas navegación de jornadas
+        run: npx --yes tsx scripts/test-date-navigation.ts
+      - name: Pruebas coincidencias históricas
+        run: npx --yes tsx scripts/test-match-study.ts
+      - name: Generate Android project
+        env:
+          CI: '1'
+        run: npx expo prebuild --platform android --clean
+      - name: Create Modelo Lalo launcher icon (azul y dorado)
+        env:
+          MODELO_LALO_ICON_LABEL: LALO
+        run: bash .github/scripts/icon-modelo-lalo.sh
+      - name: Build standalone release APK
+        working-directory: android
+        env:
+          NODE_ENV: production
+        run: ./gradlew assembleRelease
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Modelo-Lalo-v0.4.6-Coincidencias
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error

@@ -23,6 +23,7 @@ import DayMatchGrid from './DayMatchGrid';
 import TurnTrendPanel from './TurnTrendPanel';
 import Vt3DiagnosticPanel from './Vt3DiagnosticPanel';
 import Vt4StudyPanel from './Vt4StudyPanel';
+import MatchStudyPanel from './MatchStudyPanel';
 import type {TrendEngine} from '../trendHistoryVt2';
 import type {TrendPeriod,TrendSnapshot} from '../trendVt2Journal';
 
@@ -49,9 +50,10 @@ type Props={date:string;turn:Turno;data:CabezasDia|null;overview:DayOverview;
  statsMode:StatMode;onStatsMode:(mode:StatMode)=>void;
  statsData:CabezasDia|null;statsJournal:Top6Snapshot[]};
 
-export type StudySection='estadisticas'|'resumen'|'tendencias'|'vt3'|'vt4'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
+export type StudySection='coincidencias'|'estadisticas'|'resumen'|'tendencias'|'vt3'|'vt4'|'historial'|'auxiliar'|'seguir'|'ayuda'|'recorridos';
 type Section=StudySection;
 const OPTIONS:{id:Section;icon:string;title:string;subtitle:string;accent:string}[]=[
+ {id:'coincidencias',icon:'▦',title:'Coincidencias de los motores',subtitle:'Puestos, familias y cabezas por jornada',accent:'#F0B858'},
  {id:'estadisticas',icon:'◷',title:'Atrasados y frecuencias',subtitle:'Resultados reales, por turno y jurisdicción',accent:'#F0B858'},
  {id:'tendencias',icon:'▥',title:'Gráficos VT2',subtitle:'Dónde hubo más coincidencias',accent:'#4ABDEB'},
  {id:'vt3',icon:'⌗',title:'¿Qué pasó con VT3?',subtitle:'Cómo se formaron las cabezas',accent:'#60E1DB'},
@@ -122,6 +124,7 @@ export default function InfoDashboard({date,turn,data,overview,sheet,historical,
       <Text style={[s.small,{color:c.subtext}]}>{selected?.subtitle}</Text>
      </View>
     </View>
+    {section==='coincidencias'?<MatchStudyPanel date={date} turn={turn} data={data} sheet={sheet} historical={historical} history={statsHistory} historyBusy={statsBusy} auxDays={auxDays} currentAux={currentAux}/>:null}
     {section==='estadisticas'?<HeadStatStudy date={date} turn={turn}
      history={statsHistory} historyBusy={statsBusy} historyProgress={statsProgress}
      mode={statsMode} onMode={onStatsMode}
